@@ -42,6 +42,10 @@ MATHJAX_CONFIG_FORMAT = "./res/mathjax-config-format.js"
 # Contents in this folder will be copied to the output folder.
 STATIC_FOLDER = "./res/static/"
 
+# Path that you want the 404 page to be outputted at.
+# None if you do not want the page to be generated.
+PAGE_404 = "../public/404.html"
+
 # URL path to the root of the output folder.
 # It must end with /.
 # For files on the same domain, start with /.
