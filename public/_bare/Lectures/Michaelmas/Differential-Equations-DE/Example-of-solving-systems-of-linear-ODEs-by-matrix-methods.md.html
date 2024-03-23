@@ -1,0 +1,41 @@
+<p>
+    <span class="display-math">$$ \dv Y = \pmat{-4 &amp; 24\\ 1 &amp; -2} \v Y + \pmat{4\\1} e^t. $$</span>
+</p>
+<p>
+    Look for <span class="inline-math">$\v Y_c = \v v e^{\lambda t}$</span>:
+    <span class="display-math">$$\begin{align*}
+    0 = \det(M-\lambda I) &amp;= \begin{vmatrix}
+    -4-\lambda &amp; 24 \\ 1 &amp; -2-\lambda
+    \end{vmatrix} \\
+    &amp;= 8 + 6\lambda + \lambda^2 - 24 \\
+    &amp;= \lambda^2 + 6\lambda - 16 \\
+    &amp;= (\lambda + 8)(\lambda - 2)
+    \end{align*}$$</span>
+    so <span class="inline-math">$\lambda = 2, -8$</span>.
+</p>
+<p>
+    We want to find the eigenvectors now. For <span class="inline-math">$\lambda=2$</span>,
+    <span class="display-math">$$ \pmat{-6 &amp; 24 \\ 1 &amp; -4} \v v = \v 0 \implies \v v = \pmat{4\\1}.$$</span>
+    For <span class="inline-math">$\lambda=-8$</span>,
+    <span class="display-math">$$ \pmat{4&amp;24\\1&amp;6} \v v = \v 0 \implies \v v = \pmat{-6\\1}. $$</span>
+</p>
+<p>
+    Therefore, the general complementary function is
+    <span class="display-math">$$ \v Y_c = A\pmat{4\\1}e^{2t} + B\pmat{-6\\1}e^{-8t}. $$</span>
+</p>
+<p>
+    For the particular solution, we try
+    <span class="display-math">$$ \v Y_p = \v u e^t. $$</span>
+    So substituting,
+    <span class="display-math">$$ \begin{align*}
+    \v u e^t &amp;= M\v u e^t + \pmat{4\\1}e^t \\
+    (I - M)\v u &amp;= \pmat{4\\1} \\
+    \pmat{5&amp;-24\\-1&amp;3}\v u &amp;= \pmat{4\\1} \\
+    \v u &amp;= -\frac19\pmat{3&amp;24\\1&amp;5}\pmat{4\\1} \\
+    &amp;= -\pmat{4\\1} \\
+    \end{align*} $$</span>
+</p>
+<p>
+    Hence,
+    <span class="display-math">$$ \v Y = A\pmat{4\\1}e^{2t} + B\pmat{-6\\1}e^{-8t} - \pmat{4\\1}e^t. $$</span>
+</p>

@@ -1,0 +1,53 @@
+<p>
+    First we show that <span class="inline-math">$\sup_I |f| - \inf_I |f| \leq \sup_I f - \inf_I f$</span>.
+    We have three cases:
+</p>
+<ul>
+<li>
+    <p>
+        if <span class="inline-math">$f(x) \geq  0$</span> for all <span class="inline-math">$x$</span>, then <span class="inline-math">$|f| = f$</span> so <span class="inline-math">$\sup_I |f| - \inf_I |f| = \sup_I f - \inf_I f$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$f(x) \leq  0$</span> for all <span class="inline-math">$x$</span>, then <span class="inline-math">$|f| = -f$</span> so
+        <span class="display-math">$$ \begin{align*}
+            \sup_I|f| - \inf_I |f| = \sup_I(-f) - \inf_I(-f) = -\inf_I f + \sup_I f
+        \end{align*} $$</span>
+        where the second step uses <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-integral-of-scalar-multiple.html#^89a5fa">this</a>.
+    </p>
+    
+</li><li>
+    <p>
+        Otherwise, <span class="inline-math">$\inf_I f &lt; 0$</span> and <span class="inline-math">$\sup_I f &gt; 0$</span>. Then
+        <span class="display-math">$$ \begin{align*}
+            \sup_I|f| - \inf_I|f| &amp;\leq \sup_I |f| \\
+            &amp;= \sup_I \max\set{f,-f} \\
+            &amp;= \max\set{\sup_I f, \sup_I(-f)} \\
+            &amp;= \max\set{\ub{\sup_I f}_{\geq 0}, \ub{-\inf_I f}_{\geq 0}} \\
+            &amp;\leq \sup_I f - \inf_I f.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>
+<p>
+    This implies that for any dissections <span class="inline-math">$\mathcal{D}$</span>, <span class="inline-math">$U(|f|,\mathcal{D}) - L(|f|, \mathcal{D}) \leq  U(f,\mathcal{D}) - L(f,\mathcal{D})$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$f$</span> is integrable, by Cauchy criterion, for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists a dissection <span class="inline-math">$\mathcal{D}$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \epsilon &gt; U(f,\mathcal{D}) - L(f,\mathcal{D}) \geq U(|f|, \mathcal{D}) - L(|f|, \mathcal{D})
+    \end{align*} $$</span>
+    so <span class="inline-math">$|f|$</span> is integrable by Cauchy criterion.
+</p>
+<p>
+    Besides
+    <span class="display-math">$$ \begin{align*}
+        -|f(x)| \leq f(x) \leq |f(x)| \quad \forall x,
+    \end{align*} $$</span>
+    so <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Elementary-properties-of-the-integral.html#^7c8fd6">applying integrals</a> gives
+    <span class="display-math">$$ \begin{align*}
+        -\int_{a}^{b} |f| \leq  \int_{a}^{b} f \leq  \int_{a}^{b} |f| \implies \left|\int_{a}^{b} f \right| \leq  \int_{a}^{b} |f|.
+    \end{align*} $$</span>
+</p>

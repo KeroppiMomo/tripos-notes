@@ -1,0 +1,60 @@
+<p>
+    Find the series solution about <span class="inline-math">$x=0$</span> of the equation
+    <span class="display-math">$$ (1-x^2)y&#x27;&#x27; - 2xy&#x27; + 2y = 0. $$</span>
+</p>
+<p>
+    By <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Theorem-Fuchs-theorem.html">Fuchs' theorem</a>, since <span class="inline-math">$x=0$</span> is an ordinary point, there are two linearly independent power series solution. So let
+    <span class="display-math">$$ y(x) = \sum_{n=0}^\infty a_n x^n. $$</span>
+    Computing the derivatives,
+    <span class="display-math">$$\begin{align*}
+    y&#x27; &amp;= \sum_{n=1}^\infty na_n x^{n-1}, \\
+    y&#x27;&#x27; &amp;= \sum_{n=2}^\infty n(n-1)a_{n} x^{n-2}, \\
+    \end{align*}$$</span>
+    Substituting into the equation,
+    <span class="display-math">$$\begin{align*}
+    0&amp;= \sum_{n=2}^\infty n(n-1)a_nx^{n-2} - \sum_{n=2}^\infty n(n-1)a_n x^n - \sum_{n=1}^\infty 2na_n x^n + \sum_{n=0}^\infty 2a_nx^n \\
+    &amp;= \sum_{n=0}^\infty \big((n+1)(n+2)a_{n+2} - n(n-1)a_n - 2na_n + 2a_n\big) x^n \\
+    &amp;= \sum_{n=0}^\infty \big((n+1)(n+2)a_{n+2} -(n^2 + n-2)a_n\big) x^n \\
+    &amp;= \sum_{n=0}^\infty \big((n+1)(n+2)a_{n+2} - (n-1)(n+2)a_n\big) x^n \\
+    \end{align*}$$</span>
+    where in the second line, the first term has the index relabelled, and the other terms have the starting index extended by adding zeros.
+</p>
+<p>
+    Equating coefficients,
+    <span class="display-math">$$\begin{align*}
+    (n+1)(n+2)a_{n+2} &amp;= (n-1)(n+2)a_n \\
+    a_{n+2} &amp;= \frac{n-1}{n+1} a_n.
+    \end{align*}$$</span>
+</p>
+<p>
+    Note that <span class="inline-math">$a_0$</span> and <span class="inline-math">$a_1$</span> are not fixed and so are arbitrary constants. One solution has <span class="inline-math">$a_0=0$</span> and another has <span class="inline-math">$a_1=0$</span>, and they are linearly independent.
+</p>
+<p>
+    For the first case, since
+    <span class="display-math">$$ a_3 = \frac{1-1}{1+1}a_1 = 0, $$</span>
+    subsequent odd elements <span class="inline-math">$a_5 = a_7 = \ldots = 0$</span>, so the solution is
+    <span class="display-math">$$ y(x) = a_1x. $$</span>
+</p>
+<p>
+    For the second case, note that for even <span class="inline-math">$n$</span>,
+    <span class="display-math">$$\begin{align*}
+    a_n &amp;= \frac{n-3}{n-1}a_{n-2} \\
+    &amp;= \frac{n-3}{n-1}\frac{n-5}{n-3}a_{n-4} = \frac{n-5}{n-1} a_{n-4} \\
+    &amp;= \frac{n-7}{n-1} a_{n-6} \\
+    &amp;= \ldots \\
+    &amp;= \frac{-1}{n-1} a_0
+    \end{align*}$$</span>
+    so the solution is
+    <span class="display-math">$$ y(x) = a_0 \Big(1 - x^2 - \frac13x^4 - \frac15x^6 - \ldots\Big). $$</span>
+    This can be simplified using <span class="inline-math">$\ln(1\pm x) = \pm x - \frac12 x^2 \pm \frac13 x^3 - \ldots$</span>:
+    <span class="display-math">$$\begin{align*}
+    y(x) &amp;= a_0\Big(1 - x\big(x + \frac13 x^3 +\frac15 x^5 + \ldots\big)\Big) \\
+    &amp;= a_0\Big(1 - \frac x2\big(\ln(1+x) - \ln(1-x)\big)\Big) \\
+    &amp;= a_0\Big(1-\frac x2\ln\frac{1+x}{1-x}\Big).
+    \end{align*}$$</span>
+</p>
+<p>
+    Therefore the general solution is
+    <span class="display-math">$$ y(x) = a_1 x + a_0\Big(1 - \frac x2 \ln\frac{1+x}{1-x}\Big). $$</span>
+    This in fact satisfies the equation everywhere except at <span class="inline-math">$x=\pm 1$</span>, where only <span class="inline-math">$a_1 x$</span> is the only series solution.
+</p>

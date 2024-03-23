@@ -1,0 +1,41 @@
+<p>
+    Set <span class="inline-math">$Y_n = X_n - \mu$</span>.
+    Then <span class="inline-math">$\expect(Y_n) = 0$</span> and <span class="inline-math">$S_n/n - \mu = (Y_1+\ldots+Y_n)/n$</span>.
+    Moreover,
+    <span class="display-math">$$ \begin{align*}
+        \expect(Y_1^4) = \expect(X_1^4) + 4\mu \expect(X_1^3) + 6\mu^2\expect(X_1^2) + 4\mu^3\expect(X_1) + \mu^4 &lt; \infty
+    \end{align*} $$</span>
+    since
+    <span class="display-math">$$ \begin{align*}
+        \expect(X_1^k) \leq \expect(\max\set{X_1^4, 1}) \leq \expect(X_1^4) + 1 &lt; \infty,\quad k=1,2,3.
+    \end{align*} $$</span>
+</p>
+<p>
+    It suffices to show that
+    <span class="display-math">$$ \begin{align*}
+        \expect\left(\sum_{n=1}^{\infty} \left(\frac{S_n}{n}\right)^4\right) &lt; \infty
+    \end{align*} $$</span>
+    because <span class="inline-math">$\sum_{n=1}^{\infty} (S_n/n)^4 &lt; \infty \implies S_n/n\to 0 \text{ as } n\to\infty$</span> so
+    <span class="display-math">$$ \begin{align*}
+        \prob\left(\frac{S_n}{n} \to 0 \text{ as } n\to\infty\right) \geq \prob\left(\sum_{n=1}^{\infty} \left(\frac{S_n}{n}\right)^4 &lt; \infty\right) = 1.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        S_n^4 = (X_1 + \ldots + X_n)^4 = \sum_{i=1}^{n} X_i^4 + \pmat{4 \\ 2}\sum_{1\leq i&lt;j\leq n}  X_i^2X_j^2 + R
+    \end{align*} $$</span>
+    where <span class="inline-math">$R$</span> is a finite sum of terms of the form <span class="inline-math">$X_i X_j X_k X_l, X_i X_j X_k^2, X_i X_j^3$</span> for <span class="inline-math">$i,j,k,l$</span> distinct.
+    But then by independence and <span class="inline-math">$\expect(X_i) = 0$</span>, <span class="inline-math">$\expect(R) = 0$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \expect(S_n^4) &amp;= \sum_{i=1}^{n} \expect(X_i^4) + 6\cdot \frac{1}{2}n(n-1) \expect(X_1^2)^2 \\
+        &amp;\leq n\expect(X_1^4) + 3n(n-1) \expect(X_1^4) &amp;&amp;\text{by Jensen or Cauchy-Schwarz} \\
+        &amp;\leq 3n^2 \expect(X_1^4).
+    \end{align*} $$</span>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \expect\left(\sum_{n=1}^{\infty} \left(\frac{S_n}{n}\right)^4\right) = \sum_{n=1}^{\infty} \expect\left(\frac{S_n^4}{n^4}\right) \leq 3\expect(X_1^4) \sum_{n=1}^{\infty} \frac{1}{n^2} &lt; \infty
+    \end{align*} $$</span>
+    as required.
+</p>

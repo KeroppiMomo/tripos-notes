@@ -1,0 +1,24 @@
+<p>
+    Often we want to know how large <span class="inline-math">$N$</span> needs to be such that
+    <span class="display-math">$$ \begin{align*}
+        \prob\left(\left|\frac{S_N}{N} - \mu \right| \geq \epsilon\right) \leq \delta.
+    \end{align*} $$</span>
+    By the central limit theorem, for large <span class="inline-math">$N$</span>, the normalised random variable
+    <span class="display-math">$$ \begin{align*}
+        Z_N = \frac{S_N - N\mu}{\sigma\sqrt{N}} \stackrel{\text{approx.}}{\sim} N(0,1).
+    \end{align*} $$</span>
+</p>
+<p>
+    Since <span class="inline-math">$S_N/N - \mu = (\sigma/\sqrt{N})Z_N$</span>, the event
+    <span class="display-math">$$ \begin{align*}
+        \left|\frac{S_N}{N}-\mu \right|\geq \epsilon \iff \left|Z_N \right| \geq \frac{\epsilon}{\sigma}\sqrt{N}.
+    \end{align*} $$</span>
+    By symmetry,
+    <span class="display-math">$$ \begin{align*}
+        \prob\left(\left|\frac{S_N}{N}-\mu \right|\geq \epsilon\right) = 2\prob\left(Z_N \geq \frac{\epsilon}{\sigma}\sqrt{N}\right) = 2\left(1-\Phi\left(\frac{\epsilon}{\sigma}\sqrt{N}\right)\right).
+    \end{align*} $$</span>
+    So we want
+    <span class="display-math">$$ \begin{align*}
+        N = \left(\frac{\sigma}{\epsilon}\Phi\inv\left(1-\frac{\delta}{2}\right)\right)^2.
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,27 @@
+<p>
+    =>: By independence,
+    <span class="display-math">$$ \begin{align*}
+        \prob(X_1\leq x_1, \ldots, X_n\leq x_n) &amp;= \prod_{i=1}^{n} \prob(X_i \leq x_i) \\
+        &amp;= \prod_{i=1}^{n} \int_{-\infty}^{x_i} f_i(x_i) \, dx_i \\
+        &amp;= \int_{-\infty}^{x_1} \ldots \int_{-\infty}^{x_n} \prod_{i=1}^{n} f_i(y_i) \, dy_n \ldots dy_1
+    \end{align*} $$</span>
+    as required.
+</p>
+<p>
+    <=: Consider <span class="inline-math">$B=B_1\times\ldots B_n$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        \prob(x_1\in B_1, \ldots, X_n\in B_n) &amp;= \prob(x\in B) \\
+        &amp;= \int_{B} f_X(x) \, dx \\
+        &amp;= \int_{B} \prod_{i=1}^{n} f_i(x_i) \, dx \\
+        &amp;= \prod_{i=1}^{n} \int_{B_i} f_i(x_i) \, dx_i.
+    \end{align*} $$</span>
+    For all <span class="inline-math">$j$</span>, by taking <span class="inline-math">$B_i=\R$</span> for all <span class="inline-math">$i\neq j$</span>, since <span class="inline-math">$\int_{\R} f_i(x_i) \, dx_i = 1$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        \prob(X_j\in B_j) = \int_{B_j} f_j(x_j) \, dx_j.
+    \end{align*} $$</span>
+    Hence <span class="inline-math">$X_i$</span> has density function <span class="inline-math">$f_i$</span> for all <span class="inline-math">$i$</span>, and
+    <span class="display-math">$$ \begin{align*}
+        \prob(X_1\in B_1, \ldots, X_n\in B_n) = \prod_{i=1}^{n} \prob(X_i\in B_i)
+    \end{align*} $$</span>
+    so <span class="inline-math">$X_1,\ldots, X_n$</span> are independent.
+</p>

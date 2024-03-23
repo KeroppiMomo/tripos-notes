@@ -1,0 +1,167 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (fixed or equilibrium point of an ODE)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Definition-fixed-or-equilibrium-point-of-an-ODE.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A fixed point of an ODE
+                <span class="display-math">$$ \frac{dy}{dt} = f(t,y) $$</span>
+                is a constant solution <span class="inline-math">$y=c$</span>, i.e. <span class="inline-math">$dy/dt = 0$</span> for all <span class="inline-math">$t$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (stability of fixed point)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Definition-stability-of-fixed-point.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    A fixed point <span class="inline-math">$y=c$</span> is stable if whenever <span class="inline-math">$y$</span> deviates slightly from <span class="inline-math">$c$</span>, <span class="inline-math">$y$</span> converges to <span class="inline-math">$c$</span> as <span class="inline-math">$t\to\infty$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    It is unstable if whenever <span class="inline-math">$y$</span> deviates slightly from <span class="inline-math">$c$</span>, <span class="inline-math">$y$</span> diverges from <span class="inline-math">$c$</span> as <span class="inline-math">$t\to\infty$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Using perturbation to find stability of ODE
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Using-perturbation-to-find-stability-of-ODE.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                To find out the stability of a fixed point, we consider a small perturbation of <span class="inline-math">$y$</span> from <span class="inline-math">$c$</span>,
+                <span class="display-math">$$ y(t) = c + \epsilon(t). $$</span>
+                So
+                <span class="display-math">$$ \frac{d\epsilon}{dt} = f(t, c+\epsilon(t)) = \underbrace{f(t, c)}_0 + \epsilon\frac{\partial f}{\partial y}\Big|_{t,c} + O(\epsilon^2). $$</span>
+                Linearising the small <span class="inline-math">$\epsilon$</span>,
+                <span class="display-math">$$ \frac{d\epsilon}{dt} \approx \epsilon\frac{\partial f}{\partial y}\Big|_{t,c}. $$</span>
+                Then solve for <span class="inline-math">$\epsilon$</span> to find out behaviour as <span class="inline-math">$t\to\infty$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Stability in autonomous systems and phase portraits
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Stability-in-autonomous-systems-and-phase-portraits.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                An autonomous system has a differential equation of the form
+                <span class="display-math">$$ \frac{dy}{dt} = f(y) $$</span>
+                which does not depend on <span class="inline-math">$t$</span>.
+            </p>
+            <p>
+                Suppose we have a fixed point <span class="inline-math">$y=c$</span>, i.e. <span class="inline-math">$f(c) = 0$</span>. Then
+                <span class="display-math">$$ \frac{d\epsilon}{dt} = \epsilon f&#x27;(c) + O(\epsilon^2) $$</span>
+            </p>
+            <blockquote>
+                <p>
+                    Lectures notes say that by linearising, we have the solution
+                    <span class="display-math">$$ \epsilon(t) = \epsilon_0 e^{f&#x27;(c)t}. $$</span>
+                    In practice, just considering the sign of <span class="inline-math">$f&#x27;(c)$</span>, or the first non-zero derivative of <span class="inline-math">$f$</span>, is enough to determine the stability.
+                </p>
+                
+            </blockquote>
+            <p>
+                Hence the fixed point is
+            </p>
+            <ul>
+            <li>
+                <p>
+                    stable when <span class="inline-math">$f&#x27;(c) &lt; 0$</span>;
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID 2f7664 -->
+            <li id="^2f7664">
+                <p>
+                    unstable when <span class="inline-math">$f&#x27;(c) &gt; 0$</span>.
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID 2f7664 -->
+            
+            </ul>
+            <p>
+                A phase diagram shows the direction solutions flow as <span class="inline-math">$t$</span> increases.
+                <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231029182541.png">
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Fixed points in discrete equations
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Fixed-points-in-discrete-equations.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a first-order discrete equation which is independent of <span class="inline-math">$n$</span>
+                <span class="display-math">$$ x_{n+1} = f(x_n). $$</span>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (fixed point of a discrete equation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Definition-fixed-point-of-a-discrete-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A fixed point of a first-order discrete equation is a value <span class="inline-math">$x_n$</span> such that
+                            <span class="display-math">$$ x_{n+1} = x_n $$</span>
+                            i.e.
+                            <span class="display-math">$$ f(x_n) = x_n. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Using perturbation analysis, let <span class="inline-math">$x_f$</span> be a fixed point and we let
+                <span class="display-math">$$ x_n = x_f + \epsilon_n. $$</span>
+                Then
+                <span class="display-math">$$ x_f + \epsilon_{n+1} = f(x_f + \epsilon_n) = \underbrace{f(x_f)}_{x_f\text{ by fixed point}} + \epsilon_n f&#x27;(x_f) + O(\epsilon_n)^2. $$</span>
+                Neglecting higher order terms,
+                <span class="display-math">$$ \epsilon_{n+1} \approx \epsilon_n f&#x27;(x_f). $$</span>
+            </p>
+            <p>
+                Therefore, a stable point is
+            </p>
+            <ul>
+            <li>
+                <p>
+                    stable when <span class="inline-math">$|f&#x27;(x_f)| &lt; 1$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    unstable when <span class="inline-math">$|f&#x27;(x_f)| &gt; 1$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

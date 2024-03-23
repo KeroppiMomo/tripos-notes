@@ -1,0 +1,32 @@
+<p>
+    Suppose <span class="inline-math">$X \sim N(0,1)$</span>.
+    <span class="display-math">$$ \begin{align*}
+        \expect(X) = \int_{\R} x \cdot \frac{1}{\sqrt{2\pi}} e^{-x^2/2} \, dx.
+    \end{align*} $$</span>
+    This is the integral of an odd function, but we have to check it is integrable first:
+    <span class="display-math">$$ \begin{align*}
+        \expect|X| &amp;= 2\int_{0}^{\infty} x\cdot \frac{1}{\sqrt{2\pi}} e^{-x^2/2}\, dx \\
+        &amp;= -\frac{2}{\sqrt{2\pi}} \left[e^{-x^2/2}\right]_{0}^{\infty} \\
+        &amp;= \sqrt\frac{2}{\pi} &lt; \infty.
+    \end{align*} $$</span>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \expect(X) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    And for variance,
+    <span class="display-math">$$ \begin{align*}
+        \op{var}(X) &amp;= \expect(X^2) - \ub{\expect(X)^2}_{0} \\
+        &amp;= \int_{\R} x^2 \frac{1}{\sqrt{2\pi}} e^{-x^2/2} \, dx \\
+        &amp;= -\frac{1}{\sqrt{2\pi}} \int x \, d(e^{-x^2/2}) \\
+        &amp;= \frac{1}{\sqrt{2\pi}}\left(\left[-x e^{-x^2/2}\right]_{-\infty}^{\infty} + \int_{\R} e^{-x^2/2} \, dx\right) \\
+        &amp;= 1.
+    \end{align*} $$</span>
+</p>
+<p>
+    So for <span class="inline-math">$X\sim N(\mu, \sigma^2)$</span>, <span class="inline-math">$X = \sigma Z + \mu$</span> where <span class="inline-math">$Z\sim N(0,1)$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \expect(X) = \mu, \quad \op{var}(X) = \sigma^2.
+    \end{align*} $$</span>
+</p>

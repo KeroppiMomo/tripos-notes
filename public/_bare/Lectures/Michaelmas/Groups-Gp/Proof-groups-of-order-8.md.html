@@ -1,0 +1,190 @@
+<p>
+    Sketch of proof: <span class="inline-math">$o(a) = 4$</span>
+</p>
+<ul>
+<li>
+    <p>
+        Consider <span class="inline-math">$ab$</span>
+    </p>
+    
+</li><li>
+    <p>
+        Consider <span class="inline-math">$b^2$</span>
+    </p>
+    
+</li><li>
+    <p>
+        Handle each cases
+    </p>
+    
+</li>
+</ul>
+<p>
+    By <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Corollary-order-of-a-group-element-divides-order-of-group.html">Lagrange's theorem</a>, every element of <span class="inline-math">$G$</span> has order 1, 2, 4 or 8.
+</p>
+<p>
+    If there is an element of order 8, then <span class="inline-math">$G\isom C_8$</span>.
+</p>
+<p>
+    If every non-trivial element has order 2, then <span class="inline-math">$G$</span> is <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proposition-group-with-all-non-trivial-elements-of-order-2-is-abelian.html">abelian</a>. We can choose <span class="inline-math">$a,b,c\in G\setminus\set e$</span> such that <span class="inline-math">$a\neq b$</span> and <span class="inline-math">$c\not\in \langle a,b\rangle$</span>. Repeated application of the <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Theorem-direct-product-theorem.html">direct product theorem</a> yields <span class="inline-math">$G\isom\gen a\times\gen b\times\gen c\isom C_2\times C_2\times C_2$</span>.
+</p>
+<p>
+    Now we can pick some element <span class="inline-math">$a\in G$</span> which has order 4. Let <span class="inline-math">$b\in G\setminus\gen a$</span>. Since <span class="inline-math">$|G:\gen a| = 2$</span>, we have
+    <span class="display-math">$$ b\gen a = \gen a b.$$</span>
+    Therefore <span class="inline-math">$ba = a^i b$</span> for some <span class="inline-math">$i=0,1,2,3$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$i=0$</span> is impossible since then <span class="inline-math">$ba=b$</span> and so <span class="inline-math">$a=e$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$i=2$</span> is also impossible since then <span class="inline-math">$bab\inv = a^2$</span>, but <span class="inline-math">$o(bab\inv) = o(a) = 4 \neq 2 = o(a^2)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$i=1$</span>, we have <span class="inline-math">$ba = ab$</span>, so <span class="inline-math">$ba^j = a^j  b$</span> for all <span class="inline-math">$j\in\Z$</span>. Hence <span class="inline-math">$G$</span> is abelian. We call this case A.
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$i=3$</span>, we have <span class="inline-math">$ba = a\inv b$</span>. Call this case B.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Now we also think about <span class="inline-math">$b^2$</span>. <span class="inline-math">$b^2\in\gen a$</span> since otherwise <span class="inline-math">$b^2 \in b\gen a$</span> would imply <span class="inline-math">$b\in\gen a$</span>, a contradiction.
+</p>
+<p>
+    Therefore <span class="inline-math">$b^2 = a^j$</span> for some <span class="inline-math">$j=0,1,2,3$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        For <span class="inline-math">$j=1$</span>, we have <span class="inline-math">$b^2 = a$</span>, so <span class="inline-math">$o(b) = 8$</span>, which means <span class="inline-math">$G\isom C_8$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Similarly for <span class="inline-math">$j=3$</span>, we have <span class="inline-math">$b^2 = a\inv$</span>, so <span class="inline-math">$o(b) = 8$</span> and <span class="inline-math">$G\isom C_8$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$j=0$</span>, we have <span class="inline-math">$b^2 = e$</span>, which we call case 0.
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$j=2$</span>, we have <span class="inline-math">$b^2 = a^2$</span>, which we call case 2.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Finally we have 4 cases to analyse:
+</p>
+<ul>
+<li>
+    <p>
+        Case A0:
+        we have <span class="inline-math">$G$</span> abelian and <span class="inline-math">$b^2 = e$</span>. Notice that <span class="inline-math">$\gen a\cap\gen b = \set e$</span> since <span class="inline-math">$b\not\in\gen a$</span>. By the <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Theorem-direct-product-theorem.html">direct product theorem</a>, <span class="inline-math">$G\isom\gen a\times\gen b\isom C_4\times C_2$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Case A2:
+        we have <span class="inline-math">$G$</span> abelian and <span class="inline-math">$b^2 = a^2$</span>, so <span class="inline-math">$b^2 a^{-2} = e$</span>. Since <span class="inline-math">$G$</span> is abelian, <span class="inline-math">$e = (ba\inv)^2$</span>. Similar to above, <span class="inline-math">$G\isom\gen a\times\gen{ba\inv}\isom C_4\times C_2$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Case B0:
+        we have <span class="inline-math">$ba = a\inv b$</span> with <span class="inline-math">$o(a) = 4$</span> and <span class="inline-math">$o(b) = 2$</span>. This resembles the dihedral relation with isomorphism
+        <span class="display-math">$$\begin{align*}
+        \phi: G&amp;\to D_8 \\
+        a&amp;\mapsto r \\
+        b&amp;\mapsto s.
+        \end{align*}$$</span>
+        We can list all the elements
+        <span class="display-math">$$G = \set{e,a,a^2,a^3,b,ab,a^2b,a^3b}.$$</span>
+        Using the dihedral relation we can check that the multiplication rules check out:
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$\phi(a^i)\phi(a^j) = r^ir^j = r^{i+j} = \phi(a^{i+j}) = \phi(a^ia^j)$</span>;
+        </p>
+        <ul>
+        <li>
+            <p>
+                <span class="inline-math">$\phi(a^ib)\phi(a^j) = r^isr^j = r^{i-j}s = \phi(a^{i-j}b) = \phi(a^iba^j)$</span>;
+            </p>
+            
+        </li><li>
+            <p>
+                <span class="inline-math">$\phi(a^i)\phi(a^jb) = r^ir^js = r^{i+j}s = \phi(a^{i+j}b) = \phi(a^ia^jb)$</span>;
+            </p>
+            
+        </li><li>
+            <p>
+                <span class="inline-math">$\phi(a^ib)\phi(a^jb) = r^isr^js = r^{i-j} = \phi(a^{i-j}) = \phi(a^iba^jb)$</span>.
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li>
+    </ul>
+    <p>
+        Therefore <span class="inline-math">$G\isom D_8$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Case B2:
+        we have <span class="inline-math">$ba=a\inv b$</span> with <span class="inline-math">$o(a) = 4$</span> and <span class="inline-math">$a^2 = b^2$</span>. 
+        We want to show the isomorphism
+        <span class="display-math">$$\begin{align*}
+        \phi: G &amp;\to Q_8 \\
+        a &amp;\mapsto i \\
+        b &amp;\mapsto j \\
+        ab &amp;\mapsto k
+        \end{align*}$$</span>
+        works. Listing the elements in <span class="inline-math">$G$</span>,
+        <span class="display-math">$$ G = \set{e,a,a^2,a^3, b, ab, a^2b, a^3b}.$$</span>
+        Now we will do the incredibly fun thing of checking the multiplication rules:
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$\phi(a^m)\phi(a^n) = i^mi^n = i^{m+n} = \phi(a^{m+n}) = \phi(a^ma^n)$</span>;
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$\phi(a^m b)\phi(a^n) = i^mji^n = (-1)^n i^{m+n} j = i^{m+3n} j = \phi(a^{m+3n} b) = \phi(a^m(a\inv)^nb) = \phi(a^mba^n)$</span>;
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$\phi(a^m)\phi(a^nb) = i^mi^nj = i^{m+n}j = \phi(a^{m+n}b) = \phi(a^ma^nb)$</span>;
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$\phi(a^m b)\phi(a^n b) = i^mji^nj = (-1)^n i^{m+n} jj = i^{m+3n+2} = \phi(a^{m+3n+2}) = \phi(a^m(a\inv)^nbb) = \phi(a^mba^nb)$</span>.
+        </p>
+        
+    </li>
+    </ul>
+    <p>
+        Therefore <span class="inline-math">$G\isom Q_8$</span>.
+    </p>
+    
+</li>
+</ul>

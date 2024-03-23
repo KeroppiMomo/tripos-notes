@@ -1,0 +1,14 @@
+<p>
+    We will prove by induction. <span class="inline-math">$n=1$</span> is the case of the <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Proposition-product-rule.html">product rule</a>.
+</p>
+<p>
+    Suppose this is true for <span class="inline-math">$n\geq 1$</span>.
+    <span class="display-math">$$\begin{align*}
+    f^{(n+1)} &amp;= \frac{d}{dx}\sum_{r=0}^n\begin{pmatrix}n\\r\end{pmatrix}u^{(n-r)}v^{(r)} \\
+    &amp;= \sum_{r=0}^n\begin{pmatrix}n\\r\end{pmatrix}\big(u^{(n-r+1)}v^{(r)} + u^{(n-r)}v^{(r+1)}\big) \\
+    &amp;= \sum_{r=0}^n\begin{pmatrix}n\\r\end{pmatrix}u^{((n+1)-r)}v^{(r)} + \sum_{r=1}^{n+1}\begin{pmatrix}n\\r-1\end{pmatrix} u^{((n+1)-r)}v^{(r)}\big) \\
+    &amp;= u^{(n+1)} + \sum_{r=1}^n\Big[\begin{pmatrix}n\\r\end{pmatrix} + \begin{pmatrix}n\\r-1\end{pmatrix}\Big]u^{(n+1)-r}v^{(r)} + v^{(n+1)} \\
+    &amp;= u^{(n+1)} + \sum_{r=1}^n\begin{pmatrix}n+1\\r\end{pmatrix}u^{(n+1)-r}v^{(r)} + v^{(n+1)} \\
+    &amp;= \sum_{r=0}^{n+1}\begin{pmatrix}n+1\\r\end{pmatrix}u^{(n+1)-r}v^{(r)} \\
+    \end{align*}$$</span>
+</p>

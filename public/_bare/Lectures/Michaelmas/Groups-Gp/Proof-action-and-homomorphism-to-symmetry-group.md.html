@@ -1,0 +1,60 @@
+<p>
+    Suppose <span class="inline-math">$G\curvearrowright X$</span>. For any <span class="inline-math">$g\in G$</span>, consider
+    <span class="display-math">$$\begin{align*}
+    t_g : X&amp;\to X \\
+    x&amp;\mapsto gx.
+    \end{align*}$$</span>
+</p>
+<p>
+    To show <span class="inline-math">$t_g$</span> is a bijection, notice that for all <span class="inline-math">$x\in X$</span>,
+    <span class="display-math">$$\begin{align*}
+    t_{g^{-1}}\big(t_g(x)\big) &amp;= t_{g^{-1}}(gx) \\
+    &amp;= g^{-1}(gx) \\
+    &amp;= (g^{-1}g)x \\
+    &amp;= ex \\
+    &amp;= x
+    \end{align*}$$</span>
+    so <span class="inline-math">$t_{g^{-1}} = (t_g)^{-1}$</span>. Therefore <span class="inline-math">$t_g$</span> is a bijection and so <span class="inline-math">$t_g \in\mathrm{Sym}(X)$</span>.
+</p>
+<p>
+    Define a function
+    <span class="display-math">$$\begin{align*}
+    \phi : G &amp;\to \mathrm{Sym}(X) \\
+    g &amp;\mapsto  t_g.
+    \end{align*}$$</span>
+    To show that <span class="inline-math">$\phi$</span> is a homomorphism, note that for all <span class="inline-math">$g,h\in G, x\in X$</span>,
+    <span class="display-math">$$\begin{align*}
+    (t_g\circ t_h)(x) &amp;= t_g(hx) \\
+    &amp;= g(hx) \\ 
+    &amp;= (gh)x \\
+    &amp;= t_{gh}(x),
+    \end{align*}$$</span>
+    so <span class="inline-math">$t_g \circ t_h = t_{gh}$</span> and hence <span class="inline-math">$\phi(g)\phi(h) = \phi(gh)$</span>. Therefore <span class="inline-math">$\phi$</span> is a homomorphism.
+</p>
+<p>
+    Conversely, given a homomorphism
+    <span class="display-math">$$ \phi: G \to \mathrm{Sym}(X), $$</span>
+    define an action <span class="inline-math">$G\curvearrowright X$</span> as
+    <span class="display-math">$$ gx \mapsto \phi(g)(x). $$</span>
+    This is an action because
+</p>
+<ul>
+<li>
+    <p>
+        for all <span class="inline-math">$x\in X$</span>, <span class="inline-math">$ex = \phi(e)(x) = \mathrm{Id}_X(x) = x$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        for all <span class="inline-math">$g,h\in G$</span> and <span class="inline-math">$x\in X$</span>,
+        <span class="display-math">$$\begin{align*}
+        (gh)x &amp;= \phi(gh)(x) \\
+        &amp;= (\phi(g)\circ\phi(h))(x) \\
+        &amp;= \phi(g)\big(\phi(h)(x)\big) \\
+        &amp;= \phi(g)(hx) \\
+        &amp;= g(hx).
+        \end{align*}$$</span>
+    </p>
+    
+</li>
+</ul>

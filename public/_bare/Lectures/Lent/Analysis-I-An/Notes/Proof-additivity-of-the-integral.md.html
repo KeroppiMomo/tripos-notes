@@ -1,0 +1,51 @@
+<p>
+    Suppose <span class="inline-math">$f: [a,b]\to\R$</span> is integrable and fix <span class="inline-math">$\epsilon &gt; 0$</span>.
+    By Cauchy criterion, there exists some dissection <span class="inline-math">$\mathcal{D}$</span> of <span class="inline-math">$[a,b]$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}) - L(f,\mathcal{D}) &lt; \epsilon.
+    \end{align*} $$</span>
+    By considering <span class="inline-math">$\mathcal{D}\cup\set{c}$</span> if necessary, we can assume <span class="inline-math">$\mathcal{D} = \set{x_0, x_1, \ldots, x_n}$</span> and <span class="inline-math">$x_l = c$</span> for some <span class="inline-math">$l$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$\mathcal{D}_L = \set{x_0, \ldots, x_l}$</span> and <span class="inline-math">$\mathcal{D}_R = \set{x_l, \ldots, x_n}$</span>.
+    Then <span class="inline-math">$\mathcal{D}_L, \mathcal{D}_R$</span> are dissections of <span class="inline-math">$[a,c]$</span> and <span class="inline-math">$[c,b]$</span> respectively with
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            L(f,\mathcal{D}) &amp;= L(f\big|_{[a,c]}, \mathcal{D}_L) + L(f\big|_{[c,b]}, \mathcal{D}_R), \\
+            U(f,\mathcal{D}) &amp;= U(f\big|_{[a,c]}, \mathcal{D}_L) + U(f\big|_{[c,b]}, \mathcal{D}_R).
+        \end{cases} \tag{*}
+    \end{align*} $$</span>
+    Subtracting them gives
+    <span class="display-math">$$ \begin{align*}
+        \ub{\left[U(f\big|_{[a,c]}, \mathcal{D}_L) - L(f\big|_{[a,c]}, \mathcal{D}_R)\right]}_{\geq 0} + \ub{\left[U(f|_{[a,c]}, \mathcal{D}_L) - L(f|_{[c,b]}, \mathcal{D}_L)\right]}_{\geq 0} &lt; \epsilon
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            U(f\big|_{[a,c]}, \mathcal{D}_L) - L(f\big|_{[a,c]}, \mathcal{D}_R) &amp;&lt; \epsilon, \\
+            U(f\big|_{[c,b]}, \mathcal{D}_L) - L(f\big|_{[c,b]}, \mathcal{D}_R) &amp;&lt; \epsilon.
+        \end{cases} \tag{\dagger}
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$f\big|_{[a,c]}$</span> and <span class="inline-math">$f\big|_{[c,b]}$</span> are integrable.
+</p>
+<p>
+    Now suppose <span class="inline-math">$f\big|_{[a,c]}$</span> and <span class="inline-math">$f\big|_{[c,b]}$</span> are integrable.
+    Then by Cauchy criterion, there exist <span class="inline-math">$\mathcal{D}_L, \mathcal{D}_R$</span> such that <span class="inline-math">$(\dagger)$</span> is true.
+    Let <span class="inline-math">$\mathcal{D} = \mathcal{D}_L \cup \mathcal{D}_R$</span>. Then by (*) we deduce
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}) - U(f,\mathcal{D}) &lt; 2\epsilon.
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$f$</span> is integrable.
+</p>
+<p>
+    Finally note that (*) and <span class="inline-math">$(\dagger)$</span> imply
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} f \geq L(f,\mathcal{D}) = L(f\big|_{[a,c]}, \mathcal{D}_L) + L(f\big|_{[c,b]}, \mathcal{D}_R) \geq  \int_{a}^{c} f - \epsilon + \int_{a}^{b} f - \epsilon, \\
+        \int_{a}^{b} f \leq U(f,\mathcal{D}) = U(f\big|_{[a,c]}, \mathcal{D}_L) + U(f\big|_{[c,b]}, \mathcal{D}_R) \leq  \int_{a}^{c} f + \epsilon + \int_{a}^{b} f + \epsilon,
+    \end{align*} $$</span>
+    and therefore
+    <span class="display-math">$$ \begin{align*}
+        \left|\int_{a}^{b} f - \int_{a}^{c} f - \int_{c}^{b} f \right| \leq 2\epsilon
+    \end{align*} $$</span>
+    but <span class="inline-math">$\epsilon$</span> is arbitrary so we are done.
+</p>

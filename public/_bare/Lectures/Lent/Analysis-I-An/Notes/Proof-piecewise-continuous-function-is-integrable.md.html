@@ -1,0 +1,36 @@
+<p>
+    Define <span class="inline-math">$\mathcal{D}$</span>, <span class="inline-math">$f_i$</span> and <span class="inline-math">$n$</span> as <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Definition-piecewise-continuous-function.html">here</a>.
+    Extend <span class="inline-math">$f_i$</span> to <span class="inline-math">$\bar f_i: [x_{i-1}, x_i] \to \R$</span> by
+    <span class="display-math">$$ \begin{align*}
+        \bar f_i(x) = \begin{cases}
+            \lim_{x\to x_{i-1}} f_i(x), &amp; x=x_{i-1}, \\
+            f_i(x), &amp;x\in(x_{i-1}, x_i), \\
+            \lim_{x\to x_i} f(x), &amp; x=x_i.
+        \end{cases}
+    \end{align*} $$</span>
+    so that <span class="inline-math">$\bar f_i$</span> is continuous and hence integrable.
+</p>
+<p>
+    Since each <span class="inline-math">$\bar f_i$</span> is bounded, <span class="inline-math">$f$</span> is bounded so let <span class="inline-math">$|f(x)| &lt; K$</span>.
+    Fix <span class="inline-math">$\epsilon&gt;0$</span> sufficiently small such that <span class="inline-math">$x_i - x_{i-1} &lt; 4\epsilon$</span> for all <span class="inline-math">$i$</span>.
+    Let <span class="inline-math">$\epsilon = \epsilon/4nK$</span>.
+</p>
+<p>
+    By integrability of <span class="inline-math">$\bar f_i$</span>, for each <span class="inline-math">$i$</span> there exists a dissection <span class="inline-math">$\mathcal{D}_i$</span> of <span class="inline-math">$[x_{i-1} + \delta, x_{i} - \delta]$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        U(f\big|_{[x_{i-1} + \delta, x_i - \delta]}, \mathcal{D}_i) - L(f\big|_{[x_{i-1} + \delta, x_i - \delta]}, \mathcal{D}_i) \leq \frac{\epsilon}{2n}, \\
+    \end{align*} $$</span>
+    Also note that
+    <span class="display-math">$$ \begin{align*}
+        \delta\sup_{[x_i - \delta, x_i]} f \leq \frac{\epsilon}{4n}, \qquad \delta\inf_{[x_i - \delta, x_i]} f \geq -\frac{\epsilon}{4n}, \\
+        \delta\sup_{[x_i, x_i + \delta]} f \leq \frac{\epsilon}{4n}, \qquad \delta\inf_{[x_i, x_i + \delta]} f \geq -\frac{\epsilon}{4n}, \\
+    \end{align*} $$</span>
+    so for the dissection <span class="inline-math">$\mathcal{D} = \set{x_0, x_1, \ldots, x_n} \cup U_1 \cup U_2 \cup \ldots \cup U_n$</span>,
+    <span class="display-math">$$ \begin{align*}
+        U(f, \mathcal{D}) - L(f, \mathcal{D}) =&amp;\ \left(\sum_{i=1}^{n} U(f|_{[x_{i-1}+\delta, x_i -\delta]}, \mathcal{D}_i) - L(f|_{[x_{i-1}+\delta, x_i -\delta]}, \mathcal{D}_i) \right) \\
+        &amp;+ \sum_{i=1}^{n} \delta \left(\sup_{[x_i-\delta, x_i]} f - \inf_{[x_i-\delta, x_i]} f\right) \\
+        &amp;+ \sum_{i=0}^{n-1} \delta \left(\sup_{[x_i, x_i+\delta]} f - \inf_{[x_i, x_i+\delta]} f\right) \\
+        \leq&amp; \ n \frac{\epsilon}{2n} + n\frac{\epsilon}{4n} + n\frac{\epsilon}{4n} \\
+        =&amp; \ \epsilon.
+    \end{align*} $$</span>
+</p>

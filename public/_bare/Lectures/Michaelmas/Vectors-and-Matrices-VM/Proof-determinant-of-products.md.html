@@ -1,0 +1,53 @@
+<ul>
+<li>
+    <p>
+        Claim: for any <span class="inline-math">$\epsilon,\rho\in S_n$</span> and matrix <span class="inline-math">$M$</span>,
+        <span class="display-math">$$ \sum_{\sigma\in S_n} \epsilon(\sigma) \prod_{i=1}^n M_{\sigma(i)\rho(i)} = \epsilon(\rho) \det M. $$</span>
+    </p>
+    
+</li>
+</ul>
+<p>
+    Proof. Let
+    <span class="display-math">$$ \sigma = \mu\rho $$</span>
+    by <span class="inline-math">$\mu = \sigma\rho\inv$</span>.
+    Then
+    <span class="display-math">$$\begin{align*}
+    \prod_{i=1}^n M_{\sigma(i)\rho(i)} &amp;= \prod_{i} M_{\mu\big(\rho(i)\big)\rho(i)} \\
+    &amp;= \prod_i M_{\mu(i)i}
+    \end{align*}$$</span>
+    since applying <span class="inline-math">$\rho$</span> just multiplies the factors in a different order.
+    Also we have
+    <span class="display-math">$$ \epsilon(\sigma) = \epsilon(\mu)\epsilon(\rho). $$</span>
+</p>
+<p>
+    Therefore,
+    <span class="display-math">$$\begin{align*}
+    \sum_{\sigma\in S_n} \epsilon(\sigma) \prod_i M_{\sigma(i)\rho(i)} &amp;= \sum_{\mu\in S_n}\epsilon(\rho)\epsilon(\mu) \prod_i M_{\mu(i)i} \\
+    &amp;= \epsilon(\rho)\det M
+    \end{align*}$$</span>
+    as required.
+</p>
+<p>
+    Now,
+    <span class="display-math">$$\begin{align*}
+    \det AB &amp;= \sum_{\sigma\in S_n} \epsilon(\sigma) \prod_{i=1}^n (AB)_{\sigma(i)i} \\
+    &amp;= \sum_{\sigma\in S_n} \epsilon(\sigma) \prod_{i=1}^n \Big(\sum_{k_i=1}^n A_{\sigma(i)k_i} B_{k_i i}\Big) \\
+    &amp;= \sum_{\sigma\in S_n} \Big( \epsilon(\sigma) \sum_{k_1,\ldots,k_n=1}^n \prod_{i=1}^n A_{\sigma(i) k_i} B_{k_i i} \Big) \\
+    &amp;= \sum_{k_1,\ldots,k_n=1}^n \bigg[\Big(\prod_{i=1}^n B_{k_ii}\Big)\Big(\underbrace{\sum_{\sigma\in S_n} \epsilon(\sigma) \prod_{i=1}^n A_{\sigma(i) k_i}}_S\Big) \bigg]
+    \end{align*}$$</span>
+</p>
+<p>
+    In <span class="inline-math">$S$</span>, if two of <span class="inline-math">$k_1,\ldots,k_n$</span> are the same, then <span class="inline-math">$S$</span> is the determinant of a matrix with equal columns, so <span class="inline-math">$S=0$</span>.
+</p>
+<p>
+    Therefore, we can consider <span class="inline-math">$k_1,\ldots,k_n$</span> being a permutation of <span class="inline-math">$1,\ldots,n$</span> only, so let <span class="inline-math">$k_i = \rho(i)$</span> for all <span class="inline-math">$i$</span>.
+</p>
+<p>
+    Hence
+    <span class="display-math">$$\begin{align*}
+    \det AB &amp;= \sum_{\rho\in S_n}\bigg[\Big(\prod_{i=1}^n B_{\sigma(i)i}\Big) \Big(\sum_{\sigma\in S_n} \epsilon(\sigma) \prod_{i=1}^n A_{\sigma(i)\rho(i)} \Big)\bigg] \\
+    &amp;= \sum_{\rho\in S_n}\Big(\prod_{i=1}^n B_{\sigma(i)i}\Big)\epsilon(\rho)\det A \\
+    &amp;= \det A \det B.
+    \end{align*}$$</span>
+</p>

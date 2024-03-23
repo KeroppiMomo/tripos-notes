@@ -1,0 +1,94 @@
+<p>
+    We have access to a sequence of independent <span class="inline-math">$U[0,1]$</span> random variables <span class="inline-math">$U_1, U_2, \ldots, U_n$</span>,
+    and we want to simulate independent random variables <span class="inline-math">$(X_1, X_2, \ldots, X_n)$</span> having a given distribution.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Simulation using inverse function
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simulation-using-inverse-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose our desired density function is <span class="inline-math">$f$</span> in an open interval <span class="inline-math">$I$</span>.
+                Then the distribution function <span class="inline-math">$F(x) = \int_{-\infty}^{x} f(y) dy$</span> is an increasing map from <span class="inline-math">$I$</span> to <span class="inline-math">$(0,1)$</span>.
+                Let
+                <span class="display-math">$$ \begin{align*}
+                    G(u) = \inf\sb{x\in\R}{u\leq F(x)}.
+                \end{align*} $$</span>
+                (When <span class="inline-math">$f$</span> is positive everywhere, <span class="inline-math">$G=F\inv$</span>.)
+                Note that for all <span class="inline-math">$x\in\R, u\in(0,1)$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    G(u) \leq x \iff u \leq F(x).
+                \end{align*} $$</span>
+                Then when we have <span class="inline-math">$U\sim U[0,1]$</span> and let <span class="inline-math">$X=G(U)$</span>, we have
+                <span class="display-math">$$ \begin{align*}
+                    \prob(X\leq x) = \prob(G(U)\leq x) = \prob(U\leq F(x)) = F(x)
+                \end{align*} $$</span>
+                so <span class="inline-math">$X$</span> has a distribution function <span class="inline-math">$F_X$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Box-Muller transform
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Box-Muller-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                To simulate <span class="inline-math">$X\sim N(0,1)$</span>, we take <span class="inline-math">$U,V\sim U[0,1]$</span> and set
+                <span class="display-math">$$ \begin{align*}
+                    \Theta = 2\pi U, \quad R = \sqrt{-2\log V} \implies V = e^{-R^2/2}, \quad \Theta\sim U[0,2\pi].
+                \end{align*} $$</span>
+                Then <span class="inline-math">$X=R\cos\Theta$</span> and <span class="inline-math">$Y=R\sin\Theta$</span> are independent <span class="inline-math">$N(0,1)$</span> random variables.
+                (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-Box-Muller-transform.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Rejection sampling
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Rejection-sampling.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                To simulate <span class="inline-math">$U\sim U([0,1]^d)$</span>, we take <span class="inline-math">$U = (\bar U_1, \bar U_2, \ldots, \bar U_d)$</span> where <span class="inline-math">$\bar U_i \sim U[0,1]$</span> are independent.
+            </p>
+            <p>
+                For some <span class="inline-math">$A\subseteq [0,1]^d$</span>, to simulate a random variable <span class="inline-math">$X$</span> in <span class="inline-math">$[0,1]^d$</span> having density
+                <span class="display-math">$$ \begin{align*}
+                    f(x) = \frac{1_A(x)}{|A|},
+                \end{align*} $$</span>
+                take <span class="inline-math">$U_1,U_2,\ldots$</span> independent <span class="inline-math">$U([0,1]^d)$</span> random variables and
+                <span class="inline-math">$X$</span> to be the first of those which land in <span class="inline-math">$A$</span>, i.e. reject the others:
+                <span class="display-math">$$ \begin{align*}
+                    X = U_N, \quad N=\min\sb{n\geq 1}{U_n \in A}.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-rejection-sampling-for-uniform-distribution.html">Derivation</a>)
+            </p>
+            <p>
+                In general to simulate <span class="inline-math">$X$</span> having a bounded density <span class="inline-math">$f$</span> in <span class="inline-math">$[0,1]^d$</span>, let <span class="inline-math">$f(x)\leq \lambda$</span> for all <span class="inline-math">$x$</span>.
+                We'll apply the same technique as above to <span class="inline-math">$[0,1]^{d+1}$</span>:
+            </p>
+            <p>
+                Take <span class="inline-math">$U_1, U_2, \ldots \sim U([0,1]^d)$</span> and <span class="inline-math">$V_1,V_2,\ldots\sim U[0,1]$</span> all independent random variables,
+                and <span class="inline-math">$X$</span> to be the the first <span class="inline-math">$U_n$</span> such that <span class="inline-math">$V_n\leq f(U_n)/\lambda$</span>:
+                <span class="display-math">$$ \begin{align*}
+                    X = U_n, \quad N = \min\sb{n\geq 1}{V_n \leq f(U_n)/\lambda}.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-rejection-sampling-for-general-distribution.html">Derivation</a>)
+            </p>
+            <p>
+                <img src="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240304150408.png" width="400.0">
+                https://www.geogebra.org/calculator/gtjdw2kc
+            </p>
+            
+        </div>
+    </div>
+</p>

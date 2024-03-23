@@ -1,0 +1,323 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (sesquilinear form, Hermitian form, quadratic form)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-sesquilinear-form-Hermitian-form-quadratic-form.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span> and <span class="inline-math">$\v x\in\R^n$</span>, an expression of the form
+                <span class="display-math">$$\v x^T A \v x = x_i^* A_{ij} x_j$$</span>
+                is
+            </p>
+            <ul>
+            <li>
+                <p>
+                    a <em>sesquilinear form</em>;
+                </p>
+                
+            </li><li>
+                <p>
+                    a <em>Hermitian form</em> if <span class="inline-math">$A$</span> is Hermitian; and
+                </p>
+                
+            </li><li>
+                <p>
+                    a <em>quadratic form</em> if <span class="inline-math">$A$</span> is real symmetric.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Properties of sesquilinear forms
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Properties-of-sesquilinear-forms.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    Hermitian forms are real. (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-Hermitian-forms-are-real.html">Proof</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    Since any Hermitian matrix <span class="inline-math">$H$</span> can be diagonalised with a unitary transform <span class="inline-math">$U$</span>,
+                    <span class="display-math">$$ F(\v x) = \v x^\dagger H\v x = \v x^\dagger UDU^\dagger\v x = \v x&#x27;^\dagger D \v x&#x27; $$</span>
+                    where <span class="inline-math">$D = \mrm{diag}(\lambda_1, \lambda_2, \ldots, \lambda_n)$</span> and <span class="inline-math">$\v x&#x27; = U^\dagger\v x$</span> is the vector <span class="inline-math">$x$</span> relative to the orthonormal eigenvector basis called the <em>principal axes</em>.
+                    Therefore, by inspecting
+                    <span class="display-math">$$ F(\v x) = \pmat{x&#x27;_1 &amp; x&#x27;_2 &amp; \ldots &amp; x&#x27;_n}
+                    \pmat{\lambda_1 &amp; 0 &amp; \ldots &amp; 0 \\ 0 &amp; \lambda_2 &amp; \ldots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; \lambda_n}
+                    \pmat{x_1&#x27; \\ x_2&#x27; \\ \vdots \\ x_n&#x27;},$$</span>
+                    we can write
+                    <span class="display-math">$$ F(\v x) = \sum_{i=1}^n \lambda_i(x_i)^2. $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    For any quadratic form <span class="inline-math">$\v x^T A \v x$</span>, we can write it as
+                    <span class="display-math">$$ \v x^T A\v x = \v x^T S\v x, \quad \text{$S$ is real symmetric}. $$</span>
+                    (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-quadratic-form-written-using-symmetric-matrix.html">Derivation</a>) Hence as above,
+                    <span class="display-math">$$ \v x^T A\v x = \v x&#x27;^\dagger D\v x&#x27; $$</span>
+                    where <span class="inline-math">$S = QDQ^T$</span>, <span class="inline-math">$\v x&#x27; = Q^T\v x$</span> and <span class="inline-math">$Q$</span> is a real diagonal matrix.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (quadric)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-quadric.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A quadric is an <span class="inline-math">$n$</span>-dimensional surface defined by the zero of a real quadratic polynomial, i.e. its equation is
+                <span class="display-math">$$ \v x^T A\v x + \v b^T \v x + c = 0 $$</span>
+                where <span class="inline-math">$A$</span> is an <span class="inline-math">$n\times n$</span> real matrix, <span class="inline-math">$\v x$</span> and <span class="inline-math">$\v b$</span> are <span class="inline-math">$n$</span>-dimensional column vectors, and <span class="inline-math">$c$</span> is a constant.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Equation of quadric equation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Equation-of-quadric-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    We have shown that <span class="inline-math">$\v x^T A \v x = \v x^T S\v x = \v x^T QDQ^T \v x$</span>. So by changing basis <span class="inline-math">$\v x \leftarrow Q^T\v x, \v b\leftarrow Q^T\v b$</span>, the quadric equation is equivalent to
+                    <span class="display-math">$$ \v x^T D\v x + \v b^T \v x + c = 0 $$</span>
+                    since <span class="inline-math">$(Q^T \v b)^T Q^T \v x = \v b^T \v x$</span> as <span class="inline-math">$QQ^T = I$</span>.
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID fed174 -->
+            <li id="^fed174">
+                <p>
+                    If <span class="inline-math">$S$</span> has no zero eigenvalue, then <span class="inline-math">$D$</span> is invertible. We can shift the origin to eliminate the linear term,
+                    <span class="display-math">$$ \v x \leftarrow \v x + \frac 12 D\inv \v b. $$</span>
+                    Then
+                    <span class="display-math">$$ \v x^T D\v x = k. $$</span>
+                    (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-elimination-of-linear-term-in-a-quadric-equation.html">Derivation</a>)
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID fed174 -->
+            
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Quadric in 2D - conic sections
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Quadric-in-2D---conic-sections.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$D = \mrm{diag}(\lambda_1, \lambda_2)$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$\lambda_1, \lambda_2\neq 0$</span>, we can <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Equation-of-quadric-equation.html#^fed174">eliminate</a> the linear term:
+                    <span class="display-math">$$ \lambda_1 x_1^2 + \lambda_2 x_2^2 = k. $$</span>
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        If <span class="inline-math">$\lambda_1 \lambda_2 &gt; 0$</span>, then we required <span class="inline-math">$\mrm{sgn}(\lambda_1) = \mrm{sgn}(k).$</span> This is a ellipse with axes coinciding with eigenvectors of <span class="inline-math">$S$</span>, with semi-axes <span class="inline-math">$\sqrt{k/\lambda_1}$</span> and <span class="inline-math">$\sqrt{k/\lambda_2}$</span>.
+                    </p>
+                    <p>
+                        <img src="/tripos-notes/media/Lectures/Michaelmas/Vectors-and-Matrices-VM/Pasted-image-20231127220755.png" width="300.0">
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        If <span class="inline-math">$\lambda_1 \lambda_2 &lt; 0$</span>, set <span class="inline-math">$\lambda_1 = k/a^2 &gt; 0$</span> and <span class="inline-math">$\lambda_2 = -k/b^2 &lt; 0$</span>. This is an hyperbola
+                        <span class="display-math">$$ \frac{x_1^2}{a^2} - \frac{x_2^2}{b^2} = 1. $$</span>
+                    </p>
+                    <p>
+                        <img src="/tripos-notes/media/Lectures/Michaelmas/Vectors-and-Matrices-VM/Pasted-image-20231127220836.png" width="300.0">
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$\lambda_1 \lambda_2 = 0$</span>, take <span class="inline-math">$\lambda_2 = 0$</span>. <span class="inline-math">$\lambda_1\neq 0$</span> because otherwise <span class="inline-math">$A$</span> is just a zero matrix.
+                    <span class="display-math">$$ \lambda_1 x_1^2 + b_1 x_1 + b_2 x_2 + c = 0. $$</span>
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        If <span class="inline-math">$b_2 \neq 0$</span>, then we can shift the origin <span class="inline-math">$x_1 \leftarrow x_1 - b_1/2\lambda_1$</span> to eliminate <span class="inline-math">$b_1x_1$</span>, and <span class="inline-math">$x_2 \leftarrow x_2 - c/b_2 + b_1^2/4\lambda_1 b_2$</span> to eliminate the constants to get a parabola
+                        <span class="display-math">$$ \lambda_1 + b_2 x_2 = 0. $$</span>
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        If <span class="inline-math">$b_2 = 0$</span>, then we get two straight line or no solution depending on the discriminant.
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Focus-directrix property
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Focus-directrix-property.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (geometric definition of conic section)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-geometric-definition-of-conic-section.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a given eccentricity <span class="inline-math">$e$</span> and scale <span class="inline-math">$a$</span>, define
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                foci be <span class="inline-math">$(\pm ae, 0)$</span> and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                directrix <span class="inline-math">$x = \pm a/e$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            A conic section is the set of points satisfying the property that
+                            <span class="display-math">$$ \text{distance from focus} = e\times\text{distance from closer directrix}$$</span>
+                            except when <span class="inline-math">$e=1$</span>, then take the distance to the further directrix.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Eccentricity and type of conic section
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Eccentricity-and-type-of-conic-section.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <table>
+                            <tr>
+                                <th class="table-cell-left"><p>
+                                    <span class="inline-math">$e$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Type of conic section
+                                </p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$0$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    Circle
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$(0,1)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    Ellipse
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$1$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    Parabola
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$(1, \infty)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    Hyperbola
+                                </p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <p>
+                        </p>
+                        <p>
+                            <iframe src="https://www.desmos.com/calculator/0ugbajvnn0?embed" width="100%" height="100"></iframe>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Polar focus-directrix property
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Polar-focus-directrix-property.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let the distance between a focus and the closer directrix be <span class="inline-math">$l/e$</span>, so <span class="inline-math">$l = a|1-e^2|$</span>.
+                        </p>
+                        <p>
+                            <img src="/tripos-notes/media/Lectures/Michaelmas/Vectors-and-Matrices-VM/Pasted-image-20231127223758.png" width="400.0">
+                        </p>
+                        <p>
+                            So putting the origin at one of the focus,
+                            <span class="display-math">$$\begin{align*}
+                            r &amp;= e\big(\frac le - r\cos \theta\big) \\
+                            r &amp;= \frac{l}{1 + r\cos\theta}.
+                            \end{align*}$$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

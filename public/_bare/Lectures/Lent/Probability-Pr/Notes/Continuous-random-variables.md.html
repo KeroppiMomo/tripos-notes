@@ -1,0 +1,116 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (continuous random variable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-continuous-random-variable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A random variable <span class="inline-math">$X$</span> is <em>continuous</em>
+                if its distribution function <span class="inline-math">$F_X$</span> is a continuous function <span class="inline-math">$\R \to [0,1]$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Defintiion (absolutely continuous random variable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintiion-absolutely-continuous-random-variable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A random variable <span class="inline-math">$X$</span> is <em>absolutely continuous</em>
+                if there exists a probability density function <span class="inline-math">$f_X$</span> such that its distribution function <span class="inline-math">$F_X(x)$</span> satisfies
+                <span class="display-math">$$ \begin{align*}
+                    F_X (x) = \int_{-\infty}^{x} f_X(y)\, dy, \quad x\in\R.
+                \end{align*} $$</span>
+                Equivalently, the distribution <span class="inline-math">$\mu_X$</span> satisfies
+                <span class="display-math">$$ \begin{align*}
+                    \mu_X(B) = \int_{B} f_X(x) \, dx.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                We will simply say that <span class="inline-math">$X$</span> has a density function <span class="inline-math">$f_X$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        For a random variable <span class="inline-math">$X$</span>, it is continuous iff <span class="inline-math">$\prob(X=x) = 0$</span> for all <span class="inline-math">$x\in\R$</span>.
+        <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-continuous-random-variable-iff-zero-proabbility-at-each-value.html">Proof</a>
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$X$</span> has density function <span class="inline-math">$f_X$</span>, then <span class="inline-math">$X$</span> is a continuous random variable,
+        since <span class="inline-math">$\prob(X=x) = \int_{\set{x}} f_X(y) \, dy = 0$</span>.
+    </p>
+    <p>
+        The converse is not true: a random variable with the <a href="https://en.wikipedia.org/wiki/Cantor_function">Cantor function</a> as its distribution function.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$F_X$</span> is piecewise continuously differentiable, or <span class="inline-math">$f_X$</span> is continuous at <span class="inline-math">$x$</span>, then
+        <span class="display-math">$$ \begin{align*}
+            F&#x27;_X(x) = f_X(x), \qquad \int_{-\infty}^{x} f_X(y) \, dy = F_x(x).
+        \end{align*} $$</span>
+        (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-good-hypothesis-for-continuous-random-variable.html">Derivation</a>)
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (applying function to continuous random variable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-applying-function-to-continuous-random-variable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a continuous random variable with piecewise continuous density function <span class="inline-math">$f_X$</span>, and <span class="inline-math">$X$</span> takes values in <span class="inline-math">$I$</span>.
+            </p>
+            <p>
+                For some continuously differentiable function <span class="inline-math">$\phi: I\to\R$</span> with <span class="inline-math">$\phi&#x27;(x)\neq 0$</span> for any <span class="inline-math">$x$</span>,
+                set <span class="inline-math">$y=\phi(x)$</span> and define a new random variable <span class="inline-math">$Y=\phi(x)$</span>.
+            </p>
+            <p>
+                Then <span class="inline-math">$Y$</span> has density function given by
+                <span class="display-math">$$ \begin{align*}
+                    f_Y(y) = f_X(x) \left|\dfd xy\right|.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-applying-function-to-continuous-random-variable.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (expectation of continuous random variable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-expectation-of-continuous-random-variable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a random variable with desnity function <span class="inline-math">$f_X$</span> and
+                let <span class="inline-math">$g$</span> be a non-negative Borel function on <span class="inline-math">$\R$</span>.
+            </p>
+            <p>
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \expect(g(X)) = \int_{\R} g(x) f_X(x)\, dx.
+                \end{align*} $$</span>
+                This remains valid without assuming <span class="inline-math">$g$</span> integrable provided that <span class="inline-math">$\expect|g(x)|&lt;\infty$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>

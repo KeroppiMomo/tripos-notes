@@ -1,0 +1,44 @@
+<p>
+    Let <span class="inline-math">$X = X_1$</span>. Assume for some <span class="inline-math">$\delta&gt;0$</span>, <span class="inline-math">$M_{X}(\delta) &lt; \infty$</span> and <span class="inline-math">$M_X(-\delta)&lt;\infty$</span>.
+</p>
+<p>
+    It suffices to deal with the case <span class="inline-math">$\mu=0$</span> and <span class="inline-math">$\sigma^2=1$</span>, since otherwise we can consider instead
+    <span class="display-math">$$ \begin{align*}
+        Y_n = \frac{X_n - \mu}{\sigma} \implies \frac{Y_1 + \ldots + Y_n}{\sqrt{n}} = \frac{S_n - \mu n}{\sigma\sqrt{n}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    We will use Taylor's theorem with integral remainder to get the identity
+    <span class="display-math">$$ \begin{align*}
+        e^{x} = 1+x+\frac{x^2}{2} + R(x), \quad R(x) = \frac{x^3}{2}\int_{0}^{1} (1-t)^2 e^{tx}\, dt.
+    \end{align*} $$</span>
+    Setting <span class="inline-math">$x=\lambda X$</span> and taking expectation,
+    <span class="display-math">$$ \begin{align*}
+        M_X(\lambda) = \expect(e^{\lambda X}) &amp;= 1+\lambda \expect(X) + \frac{\lambda^2 \expect(X^2)}{2} + \expect(R(\lambda x)) \\
+        &amp;= 1+\frac{\lambda^2}{2} + \expect(R(\lambda x)).
+    \end{align*} $$</span>
+</p>
+<p>
+    It suffices to show that <span class="inline-math">$\expect(R(\lambda X)) = O(|\lambda|^3)$</span> as <span class="inline-math">$\lambda \to 0$</span>, since then
+    <span class="display-math">$$ \begin{align*}
+        M_{Z_n}(\lambda) &amp;= \expect(e^{\lambda(X_1+\ldots+X_n)/\sqrt{n}}) \\
+        &amp;= \left(M_X\left(\frac{\lambda}{\sqrt{n}}\right)\right)^n \\
+        &amp;= \left(1+\frac{\lambda^2}{n} + O\left(\frac{|\lambda|^3}{n^{3/2}}\right)\right)^{n} \\
+        &amp;\to e^{\lambda^2/2} = M_{Z}(\lambda)
+    \end{align*} $$</span>
+    and therefore <span class="inline-math">$Z_n \to Z$</span> in distribution by the continuity of moment generating function.
+</p>
+<p>
+    Now for <span class="inline-math">$|\lambda|\leq \delta/2$</span>,
+    <span class="display-math">$$ \begin{align*}
+        |R(\lambda x)| &amp;= \frac{|\lambda x|^3}{2}\int_{0}^{1} (1-t)^2 e^{t|\lambda x|}\, dx \\
+        &amp;\leq \frac{|\lambda x|^3}{2} e^{\delta|x|/2}\int_{0}^{1} (1-t)^2\, dx \\
+        &amp;= \left(\frac{2|\lambda|}{\delta}\right)^3 \ub{\frac{(\delta|x|/2)^3}{3!}}_{\leq e^{\delta|x|/2}} e^{\delta|x|/2} \\
+        &amp;\leq \left(\frac{2|\lambda|}{\delta}\right)^3 e^{\delta|x|} \\
+        &amp;\leq \left(\frac{2|\lambda|}{\delta}\right)^3 \left(e^{\delta x} - e^{-\delta x}\right)
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        |\expect(R(\lambda X))| \leq \expect\left|R(\lambda X) \right| = \left(\frac{2|\lambda|}{\delta}\right)^3 \ub{(\expect(e^{\delta x}) - \expect(e^{-\delta x}))}_{&lt; \infty} = O(|\lambda|^3).
+    \end{align*} $$</span>
+</p>

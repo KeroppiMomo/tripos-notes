@@ -1,0 +1,135 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (orthogonal curvilinear coordinates)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Definition-orthogonal-curvilinear-coordinates.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For coordinates <span class="inline-math">$\v x(u,v,w)$</span>, it is said to be <em>orthogonal curvilinear</em> if <span class="inline-math">$\partial\v x/\partial u$</span>, <span class="inline-math">$\partial\v x/\partial v$</span>, <span class="inline-math">$\partial\v x/\partial w$</span> are mutually orthogonal.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    We can introduce normalised tangent vectors
+    <span class="display-math">$$ \pdvd xu = h_u \v e_u, \quad \pdvd xv = h_v \v e_v, \quad \pdvd xw = h_w \v e_w $$</span>
+    where <span class="inline-math">$h_u, h_v, h_w&gt;0$</span>, <span class="inline-math">$\v e_u, \v e_v, \v e_w$</span> orthonormal and by reordering the coordinates <span class="inline-math">$\v e_u\times\v e_v = \v e_w$</span>.
+</p>
+<p>
+    Then we have length element
+    <span class="display-math">$$ d\v x = h_u \v e_u\,du + h_v \v e_v\,dv + h_w\v e_w\,dw. $$</span>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (nabla in orthogonal curvilinear coordinates)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Lemma-nabla-in-orthogonal-curvilinear-coordinates.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In orthogonal curvilinear coordinates <span class="inline-math">$\v x(u,v,w)$</span>,
+                <span class="display-math">$$ \nabla = \frac1{h_u}\v e_u \pdd u + \frac1{h_v}\v e_v\pdd v + \frac1{h_w}\v e_w \pdd w $$</span>
+                and for scalar field <span class="inline-math">$f: \R^3\to\R$</span> and vector field <span class="inline-math">$\v F:\R^3\to\R^3$</span>,
+                <span class="display-math">$$\begin{align*}
+                \nabla f &amp;= \frac1{h_u} \pdfd fu \v e_u + \frac1{h_v}\pdfd fv\v e_v + \frac1{h_w}\pdfd fw \v e_w, \\
+                \nabla\cdot\v F &amp;= \frac{1}{h_u h_v h_w} \bigg(\pdd u(h_v h_w F_u) + \pdd v(h_u h_w F_v) + \pdd w (h_uh_v F_w)\bigg), \\
+                \nabla\times\v F &amp;= \frac1{h_uh_v h_w}\begin{vmatrix}h_u\v e_u &amp; h_v\v e_v &amp; h_w\v e_w \\
+                \pdd u &amp; \pdd v &amp; \pdd w \\
+                h_uF_u &amp; h_v F_v &amp; h_w F_w
+                \end{vmatrix}.
+                \end{align*}$$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-nabla-in-orthogonal-curvilinear-coordinates.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-example">
+        <div class="markdown-embed-title">
+            Example (cylindrical polar coordinates)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-coordinates.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Cylindrical polar coordinates are given by
+                <span class="display-math">$$\begin{align*}
+                x &amp;= \rho \cos \phi &amp; &amp; &amp; \rho&amp;\in[0,\infty) \\
+                y &amp;= \rho \sin \phi &amp; &amp;\text{with} &amp; \phi&amp;\in[0, 2\pi) \\
+                z &amp;= z &amp;&amp;&amp; z&amp;\in(-\infty, \infty).
+                \end{align*}$$</span>
+                The inverse map is
+                <span class="display-math">$$ \begin{align*}
+                \rho &amp;= \sqrt{x^2+y^2}, \\
+                \tan\phi &amp;= \frac yx.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The orthonormal vectors are
+                <span class="display-math">$$ \begin{align*}
+                \v e_\rho \equiv \vhat\rho &amp;= (\cos\phi,\sin\phi,0), &amp; h_\rho &amp;= 1, \\
+                \v e_\phi \equiv \vhat\phi &amp;= (-\sin\phi, \cos\phi,0), &amp; h_\phi &amp;= \rho, \\
+                \v e_z \equiv\vhat z &amp;= (0,0,1), &amp;h_z &amp;= 1.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                So the Jacobian is
+                <span class="display-math">$$ \pdfd{(x,y,z)}{(\rho,\phi,z)} = h_\rho h_\phi h_z = \rho. $$</span>
+                The derivative stuff are
+                <span class="display-math">$$\begin{align*}
+                \nabla &amp;= \vhat\rho \pdd \rho + \frac1\rho\vhat\phi\pdd\phi + \vhat z\pdd z, \\
+                \nabla f &amp;= \vhat\rho \pdfd f \rho + \frac1\rho\vhat\phi\pdfd f\phi + \vhat z\pdfd fz, \\
+                \nabla\cdot\v F &amp;= \frac1\rho\pdfd{(\rho F_\rho)}\rho + \frac1\rho\pdfd{F_\phi}\phi + \pdfd{F_z}z, \\
+                \nabla^2 f &amp;= \frac1\rho\pdd\rho\bigg(\rho\pdfd f\rho\bigg) + \frac1{\rho^2}\pdfd[2]f\phi + \pdfd[2]fz.
+                \end{align*}$$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-example">
+        <div class="markdown-embed-title">
+            Example (spherical polar coordinates)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-coordinates.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Spherical polar coordinates are defined as
+                <span class="display-math">$$\begin{align*}
+                x &amp;= r\sin\theta\cos\phi  &amp; &amp; &amp; r &amp;\in [0,\infty) \\
+                y &amp;= r\sin\theta\sin\phi &amp; &amp;\text{with} &amp; \theta &amp;\in [0,\pi] \\
+                z &amp;= r\cos\theta &amp; &amp; &amp; \phi &amp;\in [0,2\pi).
+                \end{align*}$$</span>
+                The inverse map is
+                <span class="display-math">$$\begin{align*}
+                r &amp;= \sqrt{x^2+y^2+z^2}, \\
+                \tan\theta &amp;= \frac{\sqrt{x^2+y^2}}z, \\
+                \tan\phi &amp;= \frac yx.
+                \end{align*}$$</span>
+            </p>
+            <p>
+                The tangent vectors are
+                <span class="display-math">$$\begin{align*}
+                \v e_r \equiv \vhat r &amp;= (\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta), &amp; h_r &amp;= 1, \\
+                \v e_\theta \equiv \vhat\theta &amp;= (\cos\theta\cos\phi, \cos\theta\sin\phi, -\sin\theta), &amp;h_\theta &amp;= r, \\
+                \v e_\phi \equiv \vhat \phi &amp;= (-\sin\phi, \cos\phi, 0), &amp; h_\phi &amp;= r\sin\theta.
+                \end{align*}$$</span>
+            </p>
+            <p>
+                The derivative stuff are
+                <span class="display-math">$$\begin{align*}
+                \nabla &amp;= \vhat r \pdd r +\frac1r\vhat\theta \pdd\theta + \frac1{r\sin\theta}\vhat \phi\pdd \phi, \\
+                \nabla f &amp;= \vhat r \pdfd fr +\frac1r\vhat\theta \pdfd f\theta + \frac1{r\sin\theta}\vhat \phi\pdfd f\phi, \\
+                \nabla\cdot\v F &amp;= \frac1{r^2} \pdfd{(r^2 F_r)}r + \frac1{r\sin\theta} \pdfd{(\sin\theta F_\theta)}\theta + \frac1{r\sin\theta}\pdfd{F_\phi}{\phi} \\
+                \nabla^2 f &amp;= \frac1{r^2} \pdd r\bigg(r^2\pdfd fr\bigg) + \frac1{r^2\sin\theta}\pdd\theta\bigg(\sin\theta\pdfd f\theta\bigg) + \frac1{r^2\sin^2\theta} \pdfd[2]f\phi.
+                \end{align*}$$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>

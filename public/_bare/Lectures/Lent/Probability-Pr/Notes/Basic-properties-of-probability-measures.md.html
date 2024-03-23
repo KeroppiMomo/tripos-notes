@@ -1,0 +1,120 @@
+<p>
+    Let <span class="inline-math">$(\Omega, \mathcal F, \mathbb P)$</span> be a probability space.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (union bound of probability)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-union-bound-of-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For every sequence <span class="inline-math">$(A_n)_{n\in\N}$</span> in <span class="inline-math">$\mathcal F$</span>,
+                <span class="display-math">$$ \mathbb P\Big(\bigcup_{n\in\N} A_n\Big) \leq \sum_{n\in\N} \mathbb P(A_n). $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-union-bound-of-probability.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    This is useful for showing <span class="inline-math">$\prob=0$</span> or <span class="inline-math">$1$</span>.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (continuity of probability)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-continuity-of-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(A_n)_{n\in\N}$</span> be a sequence of <span class="inline-math">$\mathcal F$</span> and suppose <span class="inline-math">$A_n\subseteq A_{n+1}$</span> for all <span class="inline-math">$n$</span>. Then
+                <span class="display-math">$$ \mathbb P(A_n) \to \mathbb P\Big(\bigcup_n A_n\Big) \quad\text{as } n\to\infty. $$</span>
+            </p>
+            <p>
+                Equivalently, let <span class="inline-math">$(C_n)_{n\in\N}$</span> be a sequence of <span class="inline-math">$\mathcal F$</span> and suppose <span class="inline-math">$C_n \supseteq C_{n+1}$</span> for all <span class="inline-math">$n$</span>. Then
+                <span class="display-math">$$ \prob(C_n) \to \prob\Big(\bigcap_n C_n\Big) \quad\text{as } n\to\infty. $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-continuity-of-probability.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Borel-Cantelli lemma)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-Borel-Cantelli-lemma.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a sequence of events <span class="inline-math">$(A_n: n\in\N)$</span>, let <span class="inline-math">$A$</span> be the event where <span class="inline-math">$A_n$</span> happens infinitely often:
+                <span class="display-math">$$ A = \sb{\omega\in \Omega}{\omega\in A_n \text{ infintiely often}}. $$</span>
+            </p>
+            <p>
+                Then
+            </p>
+            <ul>
+            <li>
+                <p>
+                    if <span class="inline-math">$\sum\prob(A_n)$</span> converges, then <span class="inline-math">$\prob(A) = 0$</span>;
+                    (Example sheet 1 Q6)
+                </p>
+                
+            </li><li>
+                <p>
+                    provided that <span class="inline-math">$(A_n)$</span> are independent, if <span class="inline-math">$\sum\prob(A_n)=\infty$</span>, then <span class="inline-math">$\prob(A)=1$</span>. (Non-examinable)
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Borel-Cantelli-lemma.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    Dropping the condition that <span class="inline-math">$(A_n)$</span> are independent allows <span class="inline-math">$\prob(A)$</span>  to be anything: set <span class="inline-math">$A_1=A_2=\ldots=C$</span> to get <span class="inline-math">$\prob(A)=\prob(C)\neq0$</span>, and set <span class="inline-math">$A_1\supset A_2\supset A_3\supset\ldots$</span> with <span class="inline-math">$\prob(A_n) = 1/n$</span> to get <span class="inline-math">$\prob(A)=0$</span>.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (inclusion-exclusion formula for probability)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-inclusion-exclusion-formula-for-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$A_1, A_2, \ldots, A_n\in\mathcal F$</span>. Then
+                <span class="display-math">$$ \mathbb P(A_1\union A_2\union\ldots\union A_n) = \sum_{k=1}^n(-1)^{k+1} \sum_{1\leq i_1&lt;i_2&lt;\ldots&lt;i_k\leq n} \mathbb P(A_{i_1}\union A_{i_2}\union\ldots\union A_{i_k}). $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-inclusion-exclusion-formula-for-probability.html">Proof using expectation</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (partial sums in inclusion-exclusion formula overestimate and underestimate)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-partial-sums-in-inclusion-exclusion-formula-overestimate-and-underestimate.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Referring to the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-inclusion-exclusion-formula-for-probability.html">inclusion-exclusion formula</a>, let <span class="inline-math">$S_k$</span> be the partial sums
+                <span class="display-math">$$ S_k = \fsum j1k (-1)^{j+1} \sum_{1\leq i_1&lt;\ldots&lt;i_j\leq n} \prob(A_{i_1}\cap \ldots\cap A_{i_j}). $$</span>
+            </p>
+            <p>
+                Then sum of odd terms overestimates and sum of even terms underestimate:
+                <span class="display-math">$$ S_{2k} \leq \prob(A_1\cup\ldots\cup A_n) \leq S_{2k+1}. $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-partial-sums-in-inclusion-exclusion-formula-overestimate-and-underestimate.html">Proof (non-examinable)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

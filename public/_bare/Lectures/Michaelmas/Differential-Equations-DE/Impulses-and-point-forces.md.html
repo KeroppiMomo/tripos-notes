@@ -1,0 +1,123 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Dirac delta function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Definition-Dirac-delta-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider any family of functions <span class="inline-math">$D(t; \epsilon)$</span> satisfying
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\lim_{\epsilon\to 0} D(t;\epsilon) = 0$</span> for all <span class="inline-math">$t\neq 0$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\int_{-\infty}^\infty D(t;\epsilon)\,dt = 1$</span> for all <span class="inline-math">$\epsilon$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                We define the Dirac delta function as
+                <span class="display-math">$$ \delta(x) \equiv \lim_{\epsilon\to 0} D(x;\epsilon). $$</span>
+            </p>
+            <!-- BEGIN BLOCK ID 123 -->
+            <p id="^123">
+                We just focus on these properties:
+            </p>
+            
+            <!-- END BLOCK ID 123 -->
+            <!-- BEGIN BLOCK ID properties -->
+            <ul id="^properties">
+            <li>
+                <p>
+                    <span class="inline-math">$\delta(x) = 0$</span> for all <span class="inline-math">$x\neq 0$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\int_{-\infty}^\infty \delta(x)\, dt = 1$</span>;
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID abc -->
+            <li id="^abc">
+                <p>
+                    If <span class="inline-math">$g(x)$</span> is continuous at <span class="inline-math">$x=0$</span>, then <span class="inline-math">$\int_{-\infty}^\infty g(x) \delta(x) \, dt = g(0)$</span>. It follows that
+                    <span class="display-math">$$ \int_a^b g(x) \delta(x-x_0)\,dt = \begin{cases}
+                     g(x_0), &amp; a &lt; x &lt; b, \\
+                     0, &amp; x &lt; a \text{ or } x &gt; b, \\
+                     \text{undefined}, &amp; x=a \text{ or } x=b.
+                    \end{cases} $$</span>
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID abc -->
+            
+            </ul>
+            
+            <!-- END BLOCK ID properties -->
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Delta-function forcing
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Delta-function-forcing.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For the equation <span class="display-math">$$y&#x27;&#x27; + p(x) y&#x27; + q(x) y = \delta(x)$$</span>
+                where <span class="inline-math">$p(x)$</span> and <span class="inline-math">$q(x)$</span> are continuous at <span class="inline-math">$x=0$</span>, we use the jump condition
+                <span class="display-math">$$ \lim_{\epsilon\to 0} [y&#x27;]_{-\epsilon}^\epsilon = 1. $$</span>
+                (<a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Derivation-of-delta-function-forcing.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Heaviside step function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Definition-Heaviside-step-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We define the Heaviside step function to be
+                <span class="display-math">$$ H(x) = \int_{-\infty}^x \delta(t)\, dt, $$</span>
+                so
+                <span class="display-math">$$\begin{align*}
+                H(x) &amp;= \begin{cases}
+                0, &amp; x&lt;0, \\
+                1, &amp; x&gt;0, \\
+                \text{undefined}, &amp;x=0;
+                \end{cases} \\
+                \frac{dH}{dx} &amp;= \delta(x).
+                \end{align*}$$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Heaviside step function forcing
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Heaviside-step-function-forcing.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="display-math">$$ y&#x27;&#x27; + p(x) y&#x27; + q(x) y = H(x) $$</span>
+                If we assume <span class="inline-math">$y&#x27;&#x27; \sim H(x)$</span>, then <span class="inline-math">$y&#x27;\sim xH(x)$</span> and <span class="inline-math">$y\sim x^2 H(x)$</span>, which are continuous. So we have
+                <span class="display-math">$$ \lim_{\epsilon\to 0} [y&#x27;]_{-\epsilon}^{\epsilon} = 0 = \lim_{\epsilon\to 0} [y]_{-\epsilon}^\epsilon. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>

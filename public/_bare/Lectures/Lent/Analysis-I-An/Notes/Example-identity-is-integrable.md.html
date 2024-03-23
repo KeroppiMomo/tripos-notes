@@ -1,0 +1,33 @@
+<p>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        f: [0,1] &amp;\to 1 \\
+        x &amp;\mapsto x.
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$\mathcal{D}_k = \set{0,\frac{1}{k}, \ldots, \frac{k-1}{k}, 1}$</span> be the uniform dissection.
+</p>
+<p>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}_k) &amp;= \sum_{j=1}^{k} \left(\frac{j}{k} - \frac{j-1}{k}\right)\sup_{x\in[\frac{j-1}{k}, \frac{j}{k}]} f(x) \\
+        &amp;= \sum_{j=1}^{k} \frac{1}{k}\frac{j}{k} \\
+        &amp;= \frac{k(k+1)}{2k^2} = \frac{1}{2} + \frac{1}{2k}.
+    \end{align*} $$</span>
+    Similarly
+    <span class="display-math">$$ \begin{align*}
+        L(f,\mathcal{D}_k) &amp;= \sum_{j=1}^{k} \left(\frac{j}{k}-\frac{j-1}{k}\right) \inf_{x\in[\frac{j-1}{k}, \frac{j}{k}]} f(x) \\
+        &amp;= \sum_{j=1}^{k} \frac{1}{k}\frac{j-1}{k} \\
+        &amp;= \frac{k(k-1)}{2k^2} = \frac{1}{2} - \frac{1}{2k}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        I^\star(f) &amp;= \inf_\mathcal{D} U(f,\mathcal{D}) \leq \inf_{\mathcal{D}_k} U(f,\mathcal{D}_k) = \frac{1}{2} \\
+        I_\star(f) &amp;= \sup_\mathcal{D} L(f,\mathcal{D}) \geq \sup_{\mathcal{D}_k} L(f,\mathcal{D}_k) = \frac{1}{2}
+    \end{align*} $$</span>
+    But <span class="inline-math">$I_\star(f) \leq I^\star(f)$</span>, so <span class="inline-math">$I_\star(f) = I^\star(f) = 1/2$</span>.
+    Hence <span class="inline-math">$f$</span> is integrable and <span class="inline-math">$\int_{0}^{1} x \, dx = 1/2$</span>.
+</p>

@@ -1,0 +1,67 @@
+<p>
+    First consider <span class="inline-math">$\lambda &gt; 0$</span>.
+</p>
+<p>
+    To show that for any interval <span class="inline-math">$I$</span>, <span class="inline-math">$\sup_I(\lambda f) = \lambda \sup_I f$</span>, first <span class="inline-math">$\lambda \sup_I f$</span> is an upper bound since
+    <span class="display-math">$$ \begin{align*}
+        f(x) \leq \sup_I f \implies \lambda f(x) \leq \lambda\sup_I f.
+    \end{align*} $$</span>
+    Also for any <span class="inline-math">$\epsilon&gt;0$</span>, by definition of supremum, there exists <span class="inline-math">$x\in I$</span> such that 
+    <span class="display-math">$$ \begin{align*}
+        f(x) \geq \sup_I f - \frac{\epsilon}{\lambda} \implies \lambda f(x) \geq \lambda\sup_I f - \epsilon.
+    \end{align*} $$</span>
+    Hence <span class="inline-math">$\sup_I(\lambda f) = \lambda\sup_I f$</span>. Similarly <span class="inline-math">$\inf_I(\lambda f) = \lambda\inf_I(\lambda f)$</span>.
+</p>
+<p>
+    Therefore from definition, <span class="inline-math">$U(\lambda f, \mathcal{D}) = \lambda U(f, \mathcal{D})$</span> and <span class="inline-math">$L(\lambda f, \mathcal{D}) = \lambda L(f, \mathcal{D})$</span>.
+    Since <span class="inline-math">$f$</span> is integrable, for all <span class="inline-math">$\epsilon &gt; 0$</span>, there exists dissection <span class="inline-math">$\mathcal{D}$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}) &amp;\leq \int_{a}^{b} f + \frac{\epsilon}{\lambda}, \\
+        L(f,\mathcal{D}) &amp;\geq \int_{a}^{b} f - \frac{\epsilon}{\lambda}.
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \lambda \int_{a}^{b} f -\epsilon &amp;\leq \lambda L(f,\mathcal{D}) \\
+        &amp;= L(\lambda f, \mathcal{D}) \\
+        &amp;\leq I_\star(\lambda f) \\
+        &amp;\leq I^\star(\lambda f) \\
+        &amp;\leq U(\lambda f, \mathcal{D}) \\
+        &amp;= \lambda U(f, \mathcal{D}) \\
+        &amp;\leq \int_{a}^{b} f + \epsilon.
+    \end{align*} $$</span>
+    But <span class="inline-math">$\epsilon$</span> is arbitrary so <span class="inline-math">$I_\star(\lambda f) = I^\star(\lambda f) = \lambda \int_{a}^{b} f$</span>.
+</p>
+<!-- BEGIN BLOCK ID 89a5fa -->
+<p id="^89a5fa">
+    Now consider <span class="inline-math">$\lambda = -1$</span>.
+    We have <span class="inline-math">$\sup_I(-f) = -\inf_I f$</span> since <span class="inline-math">$-\inf_I f$</span> is an upper bound:
+</p>
+
+<!-- END BLOCK ID 89a5fa -->
+<p>
+    <span class="display-math">$$ \begin{align*}
+        f(x) \geq \inf_I f \implies -f(x) \leq -\inf_I f
+    \end{align*} $$</span>
+    and for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$x\in I$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        f(x) \leq \inf_I f + \epsilon \implies -f(x) \geq -\inf_I f - \epsilon.
+    \end{align*} $$</span>
+    Similarly <span class="inline-math">$\inf_I(-f) = -\sup_I f$</span>.
+    Therefore considering <span class="inline-math">$\mathcal{D}$</span> as above,
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} f - \epsilon &amp;\leq L(f,\mathcal{D}) = -U(-f,\mathcal{D}) \\
+        \int_{a}^{b} f + \epsilon &amp;\geq U(f,\mathcal{D}) = -L(-f,\mathcal{D}) \\
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        -\int_{a}^{b} f - \epsilon &amp;\leq L(-f, \mathcal{D}) \\
+        &amp;\leq I_\star(-f) \\
+        &amp;\leq I^\star(-f) \\
+        &amp;\leq U(-f, \mathcal{D}) \\
+        &amp;\leq -\int_{a}^{b} f + \epsilon.
+    \end{align*} $$</span>
+    <span class="inline-math">$\epsilon$</span> is arbitary so <span class="inline-math">$I_\star(-f) = I^\star(-f) = -\int_{a}^{b} f$</span>.
+</p>
+<p>
+    Combine the results for <span class="inline-math">$\lambda\in\R$</span>.
+</p>

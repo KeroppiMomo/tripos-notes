@@ -1,0 +1,26 @@
+<p>
+    We can assume <span class="inline-math">$\v F(\v x)=F(\v x)\vhat z$</span>, since <span class="inline-math">$\v F$</span> can be split into components.
+</p>
+<p>
+    Then
+    <span class="display-math">$$\begin{align*}
+    \int_V \nabla\cdot\v F\,dV &amp;= \int_D \,dA \int_{z_-(x,y)}^{z_+(x,y)} dz \pdfd Fz \\
+    &amp;=\int_D\big(F(x,y,z_+(x,y))-F(x,y,z_-(x,y))\big)\,dA
+    \end{align*}$$</span>
+    where <span class="inline-math">$D$</span> is the region on <span class="inline-math">$(x,y)$</span>-plane of <span class="inline-math">$V$</span> and <span class="inline-math">$z_-(x,y)$</span> and <span class="inline-math">$z_+(x,y)$</span> are the appropriate bounds of <span class="inline-math">$V$</span>. (If <span class="inline-math">$D$</span> is not convex, split it into more pieces.)
+</p>
+<p>
+    Consider the surface element <span class="inline-math">$d\v S_+$</span> at <span class="inline-math">$(x,y,z_+(x,y))$</span>.
+    Since projecting the area <span class="inline-math">$d\v S_+$</span> onto the <span class="inline-math">$(x,y)$</span>-plane gives <span class="inline-math">$dA$</span>,
+    <span class="display-math">$$ \vhat z\cdot d\v S_+ = dA. $$</span>
+    For <span class="inline-math">$d\v S_-$</span> at <span class="inline-math">$(x,y,z_-(x,y))$</span>, the normal vector points outwards, so
+    <span class="display-math">$$ \vhat z\cdot d\v S_- = -dA. $$</span>
+</p>
+<p>
+    Using these results,
+    <span class="display-math">$$\begin{align*}
+    \int_V \nabla\cdot\v F\, dV &amp;= \int_{\partial V_+} \v F\cdot d\v S_+ +\int_{\partial V_-}\v F\cdot d\v S_- \\
+    &amp;= \int_{\partial V}\v F\cdot d\v S
+    \end{align*}$$</span>
+    as required.
+</p>

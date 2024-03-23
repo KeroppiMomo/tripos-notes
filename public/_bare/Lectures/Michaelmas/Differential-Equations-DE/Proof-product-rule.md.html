@@ -1,0 +1,24 @@
+
+<h1>Method 1: using limits</h1>
+
+<p>
+    <span class="display-math">$$\begin{align*}
+    h&#x27;(x) &amp;= \lim_{h\to 0}\frac1h\big(u(x+h)v(x+h) - u(x)v(x)\big) \\
+    &amp;= \lim_{h\to 0}\frac1h\big(u(x+h)v(x+h) -u(x+h)v(x) + u(x+h)v(x) - u(x)v(x)\big) \\
+    &amp;= \lim_{h\to 0}u(x+h)\cdot\frac1h\big(v(x+h)-v(x)\big) + \lim_{h\to0} v(x)\cdot\frac1h\big(u(x+h) - u(x)\big) \\
+    &amp;= u(x)v&#x27;(x) + u&#x27;(x)v(x)
+    \end{align*}$$</span>
+</p>
+
+<h1>Method 2: using little o</h1>
+
+<p>
+    <span class="display-math">$$\begin{align*}
+    h&#x27;(x) = \lim_{h\to 0}\frac1h\Big(&amp;u(x+h)v(x+h) - u(x)v(x)\Big) \\
+    = \lim_{h\to 0}\frac1h\Big(&amp;\big(u(x)+hu&#x27;(x)+o(h)\big)\big(v(x)+hv&#x27;(x)+o(h)\big)- u(x)v(x)\Big) \\
+    = \lim_{h\to0}\frac1h\Big(&amp;hu&#x27;(x)v(x)+hu(x)v&#x27;(x)+h^2 u&#x27;(x)v&#x27;(x) \\
+    &amp;+\big(u(x)+hu&#x27;(x)+v(x)+hv&#x27;(x)+o(h)\big)o(h)\Big) \\
+    = \lim_{h\to0}\Big(u&#x27;&amp;(x)v(x) + u(x)v&#x27;(x) + hu&#x27;(x)v&#x27;(x) + (\ldots)\frac{o(h)}{h}\Big) \\
+    = u&#x27;(x)v(&amp;x) + u(x)v&#x27;(x)
+    \end{align*}$$</span>
+</p>

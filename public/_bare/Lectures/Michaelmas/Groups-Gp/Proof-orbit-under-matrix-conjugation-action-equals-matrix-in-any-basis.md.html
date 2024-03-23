@@ -1,0 +1,33 @@
+<p>
+    A basis <span class="inline-math">$\set{v_1, \ldots, v_n}$</span> for <span class="inline-math">$V$</span> defines an isomorphism of vector spaces
+    <span class="display-math">$$\begin{align*}
+    \phi :&amp;&amp; \R^n &amp;\to V \\
+    &amp;&amp;(\lambda_1, \ldots, \lambda_n) &amp;\mapsto \sum_{i=1}^n \lambda_i v_i.
+    \end{align*}$$</span>
+</p>
+<p>
+    The hypothesis that <span class="inline-math">$A$</span> represents <span class="inline-math">$\alpha$</span> in this basis means that
+    <span class="display-math">$$ A = \phi\inv \circ \alpha\circ \phi $$</span>
+    so
+    <span class="display-math">$$ \alpha = \phi\circ A\circ \phi\inv. $$</span>
+    <img src="/tripos-notes/media/Lectures/Michaelmas/Groups-Gp/Pasted-image-20231121180758.png">
+</p>
+<p>
+    Likewise another basis <span class="inline-math">$\set{u_1, \ldots, u_n}$</span> corresponds to an isomorphism
+    <span class="display-math">$$ \psi: \R^n \to V $$</span>
+    and <span class="inline-math">$B\in M_n(\R)$</span> represents <span class="inline-math">$\alpha$</span> in this basis if
+    <span class="display-math">$$\begin{align*}
+    B &amp;= \psi\inv\circ\alpha\circ\psi \\
+    &amp;= \psi\inv\circ(\phi\circ A\circ \phi\inv)\circ \psi \\
+    &amp;= (\psi\inv\circ \phi)\circ A\circ(\psi\inv\circ\phi)\inv \\
+    &amp;= PAP\inv
+    \end{align*}$$</span>
+    where <span class="inline-math">$P = \psi\inv\circ\phi$</span>. <span class="inline-math">$P\in\gl n\R$</span> since <span class="inline-math">$\psi\inv\circ\psi$</span> is an isomorphism so it is invertible.
+    Hence every matrix representing <span class="inline-math">$\alpha$</span> is in <span class="inline-math">$\gl n\R A$</span>.
+</p>
+<p>
+    Conversely, suppose <span class="inline-math">$B = PAP\inv$</span> where <span class="inline-math">$P\in\gl n\R A$</span>.
+    Then setting <span class="inline-math">$\psi = \phi\circ P\inv$</span> defines a basis
+    <span class="display-math">$$ \sb{u_i = \psi(e_i)}{\text{standard basis vector } e_i \text{ of } \R^n} $$</span>
+    for <span class="inline-math">$V$</span>. So <span class="inline-math">$B$</span> is the matrix for <span class="inline-math">$\alpha$</span> in this basis.
+</p>

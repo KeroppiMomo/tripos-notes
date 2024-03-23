@@ -1,0 +1,25 @@
+<p>
+    Since <span class="inline-math">$q_n\to q$</span>, taking the limit in <span class="inline-math">$q_{n+1}=F(q_n)$</span> gives <span class="inline-math">$q=F(q)$</span>.
+</p>
+<p>
+    <span class="inline-math">$F(t)$</span> is continuous and non-decreasing on <span class="inline-math">$[0,1]$</span> with <span class="inline-math">$F(1)=1$</span>. Let <span class="inline-math">$t$</span> for the smallest non-negative solution of <span class="inline-math">$t=F(t)$</span>.
+    Then <span class="inline-math">$q_0=0\leq t$</span>.
+    Suppose inductively <span class="inline-math">$q_n \leq t$</span>, then <span class="inline-math">$q_{n+1}=F(q_n)\leq F(t)=t$</span> since <span class="inline-math">$F$</span> is non-decreasing, so the induction proceeds.
+    Hence <span class="inline-math">$q\leq t$</span>, but since <span class="inline-math">$q=F(q)$</span>, we get <span class="inline-math">$q=t$</span> as required.
+</p>
+<p>
+    Consider first the case <span class="inline-math">$\mu\equiv\expect(X_1)&gt;1$</span>.
+    Note that <span class="inline-math">$F&#x27;(t)\to\mu$</span> as <span class="inline-math">$t\to 1$</span> where <span class="inline-math">$t\in[0,1)$</span>, so <span class="inline-math">$F&#x27;(t)&gt;1$</span> for all <span class="inline-math">$t$</span> sufficiently close to <span class="inline-math">$1$</span>, say <span class="inline-math">$t&gt;T$</span>.
+    Since <span class="inline-math">$F(1)=1$</span>, by the mean value theorem, <span class="inline-math">$F(t)&lt;t$</span> for <span class="inline-math">$t&gt;T$</span>. But <span class="inline-math">$F(0)=\prob(X_1=0) &gt; 0$</span>, so by the intermediate value theorem, there exists <span class="inline-math">$t\in[0,1)$</span> such that <span class="inline-math">$F(t)=t$</span>, so <span class="inline-math">$q&lt;1$</span>.
+</p>
+<p>
+    Next consider the case <span class="inline-math">$\mu\leq 1$</span> with <span class="display-math">$$\prob(X_1\leq 1)=1.$$</span>
+    Then <span class="inline-math">$F(t) = 1-\mu+\mu t$</span>.
+    Since <span class="inline-math">$\prob(X_1=1)&lt;1$</span> is assumed,
+    <span class="inline-math">$\mu\neq1$</span>, so the only solution to <span class="inline-math">$F(t)=t$</span> is <span class="inline-math">$t=1$</span>. Hence <span class="inline-math">$q=1$</span>.
+</p>
+<p>
+    Finally consider the case <span class="inline-math">$\mu\leq 1$</span> with <span class="inline-math">$\prob(X_1\geq 2)&gt;0$</span>. Then
+    <span class="display-math">$$ F&#x27;(t) = \fsum k1\infty kt^{k-1} \prob(X_1=k) $$</span>
+    is strictly increasing. Now <span class="inline-math">$F&#x27;(t)\to\mu\leq 1$</span> as <span class="inline-math">$t\to1$</span>, so <span class="inline-math">$F&#x27;(t)&lt;1$</span> for all <span class="inline-math">$t\in[0,1)$</span>. Hence by the mean value theorem, <span class="inline-math">$F(t)&gt;t$</span> for all <span class="inline-math">$t\in[0,1)$</span> and so <span class="inline-math">$q=1$</span>.
+</p>

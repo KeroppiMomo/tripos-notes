@@ -1,0 +1,42 @@
+<p>
+    Write <span class="inline-math">$\dim U = N$</span> and <span class="inline-math">$n(f) = m$</span>.
+    We have <span class="inline-math">$m\leq n$</span> since <span class="inline-math">$\mrm{kernel}(f)$</span> is a subspace of <span class="inline-math">$U$</span>. Also if <span class="inline-math">$m=n$</span>, then <span class="inline-math">$f$</span> sends everything to <span class="inline-math">$\vec 0$</span> so this is trivially true. Therefore we assume <span class="inline-math">$m&lt;n$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$(\vec e_1, \vec e_2, \ldots, \vec e_m$</span>) be a basis of <span class="inline-math">$\mrm{kernel}(f)$</span>.
+    Extend this to a basis of <span class="inline-math">$U$</span>,
+    <span class="display-math">$$ (\vec e_1, \vec e_2, \ldots, \vec e_m, \vec e_{m+1}, \vec e_{m+2}, \ldots, \vec e_N). $$</span>
+</p>
+<p>
+    To prove the theorem, we need to show that
+    <span class="display-math">$$ \big(f(\vec e_{m+1}), f(\vec e_{m+2}), \ldots, f(\vec e_N)\big) $$</span>
+    is a basis of <span class="inline-math">$\mrm{image(f)}$</span>.
+</p>
+<p>
+    Firstly, we will show that this spans <span class="inline-math">$\mrm{image}(f)$</span>.
+    For all <span class="inline-math">$\vec y\in\mrm{image(f)}$</span>, we have <span class="inline-math">$\vec x\in U$</span> such that <span class="inline-math">$f(\vec x) = \vec y$</span>.
+    Since <span class="inline-math">$(\vec e_1, \ldots, \vec e_N)$</span> is a basis of <span class="inline-math">$U$</span>,
+    <span class="display-math">$$\begin{align*}
+    \vec y &amp;= f(\vec x) \\
+    &amp;= f(\alpha_1\vec e_1 + \ldots + \alpha_m\vec e_m + \alpha_{m+1}\vec e_{m+1} + \ldots + \alpha_N\vec e_N) \\
+    &amp;= \underbrace{\alpha_1 f(\vec e_1) + \ldots + \alpha_m f(\vec e_m)}_{\vec 0 \text{ since } (\vec e_1,\ldots,\vec e_m) \text{ is a basis of } \mrm{kernel}(f)} + \alpha_{m+1} f(\vec e_{m+1}) + \ldots + \alpha_N f(\vec e_N) \\
+    &amp;= \alpha_{m+1} f(\vec e_{m+1}) + \alpha_{m+2} f(\vec e_{m+1}) + \ldots + \alpha_N f(\vec e_N) \\
+    &amp;\in \mrm{span}\{f(\vec e_{m+1}), f(\vec e_{m+2}), \ldots, f(\vec e_N)\}
+    \end{align*}$$</span>
+    so <span class="inline-math">$(f(\vec e_{m+1}), f(\vec e_{m+2}), \ldots, f(\vec e_N))$</span> spans <span class="inline-math">$\mrm{image}(f)$</span>.
+</p>
+<p>
+    Next, we will show that this is linearly independent.
+    Suppose for some scalars <span class="inline-math">$\alpha_i$</span>,
+    <span class="display-math">$$ \alpha_{m+1} f(\vec e_{m+1}) + \ldots + \alpha_N f(\vec e_N) = \vec 0. $$</span>
+    Then since <span class="inline-math">$f$</span> is a linear map,
+    <span class="display-math">$$ f(\alpha_{m+1}\vec e_{m+1} + \ldots + \alpha_N \vec e_N) = \vec 0. $$</span>
+    This means that <span class="inline-math">$\alpha_{m+1}\vec e_{m+1} + \ldots + \alpha_N \vec e_N \in \mrm{kernel}(f)$</span>. Therefore it can be written as a linear combination of its basis, <span class="inline-math">$(\vec e_1, \ldots, \vec e_m)$</span>,
+    <span class="display-math">$$\begin{align*}
+    \alpha_{m+1}\vec e_{m+1} + \ldots + \alpha_N \vec e_N &amp;= \alpha_1\vec e_1 + \ldots + \alpha_m \vec e_m \\
+    \vec 0&amp;= \alpha_1\vec e_1 + \ldots + \alpha_m \vec e_m - \alpha_{m+1}\vec e_{m+1} - \ldots - \alpha_N \vec e_N.
+    \end{align*}$$</span>
+    But since <span class="inline-math">$\vec e_1, \ldots, \vec e_N$</span> is a basis of <span class="inline-math">$U$</span>, they are linearly independent, so
+    <span class="display-math">$$ \alpha_1 = \alpha_2 = \ldots = \alpha_{m+1} = \ldots = \alpha_N = 0. $$</span>
+    Thus, <span class="inline-math">$f(\vec e_{m+1}), \ldots, f(\vec e_N)$</span> are linearly independent, as required.
+</p>

@@ -1,0 +1,79 @@
+<p>
+    A system of first-order linear ODEs has a phase portrait with points
+    <span class="display-math">$$ \v Y = \pmat{y_1 \\ y_2 \\ \vdots \\ y_n}. $$</span>
+</p>
+<p>
+    For the equation <span class="inline-math">$\dv Y = M\v Y$</span>, consider the non-degenerate general solution
+    <span class="display-math">$$ \v Y(t) = \v v_1 e^{\lambda_1 t} + \v v_2 e^{\lambda_2 t}, \quad 0\neq \lambda_1 \neq \lambda_2 \neq 0. $$</span>
+</p>
+<p>
+    <span class="inline-math">$\v 0$</span> is a fixed point. The phase portraits depend on <span class="inline-math">$\lambda_1, \lambda_2$</span>:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\lambda_1, \lambda_2\in\R$</span>
+    </p>
+    <p>
+        <span class="inline-math">$\v v_1, \v v_2$</span> are real.
+    </p>
+    <ul>
+    <li>
+        <p>
+            Opposite signs (WLOG <span class="inline-math">$\lambda_1 &gt; 0$</span> and <span class="inline-math">$\lambda_2 &lt; 0$</span>): this is called <em>saddle node</em>.
+            <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231126165355.png">
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$\lambda_1, \lambda_2&gt;0$</span> (WLOG <span class="inline-math">$|\lambda_1| &gt; |\lambda_2|$</span>):
+            <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231126165646.png">
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$\lambda_1, \lambda_2 &lt; 0$</span> (WLOG <span class="inline-math">$|\lambda_1| &gt; |\lambda_2|$</span>):
+            <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231126165926.png">
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\lambda_1, \lambda_2 \not\in \R$</span>
+    </p>
+    <p>
+        Then since <span class="inline-math">$M$</span> is real, <span class="inline-math">$\lambda_2 = \lambda_1^*$</span>. Also <span class="inline-math">$\lambda_1^* \v v_1^* = (M\v v_1)^* = M\v v_1^*$</span> so <span class="inline-math">$\v v_2 = C\v v_1^*$</span>.
+        Now
+        <span class="display-math">$$ \begin{align*}
+        \v Y(t) &amp;= \v v_1 e^{\lambda_1 t} + C\v v_1^* e^{\lambda_1^* t} \\
+        &amp;= e^{\mrm{Re}(\lambda_1) t} (\v v_1 e^{\mrm{Im}(\lambda_1)it} + C\v v_1^* e^{-\mrm{Im}(\lambda_1)it})
+        \end{align*}  $$</span>
+    </p>
+    <ul>
+    <li>
+        <p>
+            If <span class="inline-math">$\mrm{Re}(\lambda_1) &lt; 0$</span>, then this is a stable spiral:
+            <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231126172256.png">
+        </p>
+        
+    </li><li>
+        <p>
+            If <span class="inline-math">$\mrm{Re}(\lambda_2) &gt; 0$</span>, then this is an unstable spiral.
+        </p>
+        
+    </li><li>
+        <p>
+            If <span class="inline-math">$\mrm{Re}(\lambda_1) = 0$</span>, then this is a centre:
+            <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231126172421.png">
+        </p>
+        
+    </li>
+    </ul>
+    <p>
+        To find out the direction of rotation, evaluate <span class="inline-math">$\dv Y$</span> at any point, such as determining the sign of <span class="inline-math">$\dot y_2$</span> at <span class="inline-math">$\v Y = (1, 0)^T$</span>.
+    </p>
+    
+</li>
+</ul>

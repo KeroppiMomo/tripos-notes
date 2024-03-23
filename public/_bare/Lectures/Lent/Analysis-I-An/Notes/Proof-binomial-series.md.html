@@ -1,0 +1,36 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Proof (binomial series for $x>0$)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-binomial-series-for-x-0.html#^3d10b4">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p id="^3d10b4">
+                Clearly
+                <span class="display-math">$$ f^{(n)}(x) = r(r-1)\ldots(r-n+1)(1+x)^{r-n}. $$</span>
+            </p>
+        </div>
+    </div>
+</p>
+<p>
+    Consider the Cauchy's remainder
+    <span class="display-math">$$ \begin{align*}
+    R_n &amp;= \frac{(1-\theta)^{n-1}x^n}{(n-1)!} r(r-1)\ldots(r-n+1)(1+\theta x)^{r-n} \\
+    &amp;= r \Big(\frac{1-\theta}{1+\theta x}\Big)^{n-1}(1+\theta x)^{r-1}\pmat{r-1\\n-1}x^n
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that <span class="inline-math">$1+\theta x&gt;1-\theta$</span> since <span class="inline-math">$x\in(-1,1)$</span>, so
+    <span class="display-math">$$ \Big(\frac{1-\theta}{1+\theta x}\Big)^{n-1} &lt; 1. $$</span>
+    Also we can bound
+    <span class="display-math">$$ (1+\theta x)^{r-1} \leq \max\set{(1-|x|)^{r-1}, (1+|x|)^{r-1}}. $$</span>
+    Therefore
+    <span class="display-math">$$\begin{align*}
+    |R_n| &amp;\leq \ub{r|x|\max\set{(1-|x|)^{r-1}, (1+|x|)^{r-1}}}_\text{independent of $n$} \left|\pmat{r-1\\n-1} x^{n-1}\right|\\
+    &amp;\to0 \quad \text{as }n\to\infty
+    \end{align*}$$</span>
+    as shown <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-binomial-series-for-x-0.html">here</a>.
+</p>
+<p>
+    Thus <span class="inline-math">$R_n\to 0$</span> as <span class="inline-math">$n\to\infty$</span> for <span class="inline-math">$x$</span> fixed in <span class="inline-math">$(-1,1)$</span>.
+</p>

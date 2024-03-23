@@ -1,0 +1,28 @@
+<p>
+    Actually the Riemann sum does not depend on how the rectangles are chosen, e.g. non-uniform <span class="inline-math">$\Delta x$</span> can be chosen, provided that they all go to 0 as <span class="inline-math">$N\to\infty$</span>.
+</p>
+<p>
+    Given that <span class="inline-math">$f(x)$</span> is continuous, by the mean-value theorem, the area under the curve between <span class="inline-math">$x_n$</span> and <span class="inline-math">$x_{n+1}$</span> is
+    <span class="display-math">$$ A_n = (x_{n+1} - x_n)f(c_n) $$</span>
+    where <span class="inline-math">$c_n\in[x_n, x_{n+1}]$</span>.
+</p>
+<p>
+    If <span class="inline-math">$f(x)$</span> is differentiable, then we Taylor expand to the first term,
+    <span class="display-math">$$\begin{align*}
+    f(c_n) &amp;= f(x_n) + O(c_n - x_n) \\
+    &amp;= f(x_n) + O(\Delta x),
+    \end{align*}$$</span>
+    as <span class="inline-math">$\Delta x\to 0$</span>, since <span class="inline-math">$c_n - x_n\leq \Delta x$</span>.
+</p>
+<p>
+    Therefore the area under graph is
+    <span class="display-math">$$\begin{align*}
+    A &amp;= \lim_{N\to\infty}\sum_{n=0}^{N-1} A_n \\
+    &amp;= \lim_{N\to\infty}\sum_{n=0}^{N-1} \Delta x\cdot f(x_n)+O(\Delta x^2) \\
+    &amp;= \lim_{N\to\infty}\sum_{n=0}^{N-1} \Delta x\cdot f(x_n) + \lim_{N\to\infty}\sum_{n=0}^{N-1}O\Big(\frac{1}{N^2}\Big) \\
+    &amp;= \lim_{N\to\infty}\sum_{n=0}^{N-1} \Delta x\cdot f(x_n) + \lim_{N\to\infty}N\cdot O\Big(\frac{1}{N^2}\Big) \\
+    &amp;= \lim_{N\to\infty}\sum_{n=0}^{N-1} \Delta x\cdot f(x_n) + \lim_{N\to\infty}O\Big(\frac{1}{N}\Big) \\
+    &amp;= \lim_{N\to\infty}\sum_{n=0}^{N-1} \Delta x\cdot f(x_n)\\
+    &amp;= \int_a^b f(x)\,dx
+    \end{align*}$$</span>
+</p>

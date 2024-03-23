@@ -1,0 +1,49 @@
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$f$</span> is injective: if <span class="inline-math">$x\neq y$</span>, then WLOG let <span class="inline-math">$a\leq x&lt;y\leq b$</span>. Then <span class="inline-math">$f(x) &lt; f(y)$</span> so <span class="inline-math">$f(x)\neq f(y)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$f$</span> is maps into <span class="inline-math">$[c,d]$</span>: for all <span class="inline-math">$x$</span> where <span class="inline-math">$a\leq x\leq b$</span>, monotonicity implies <span class="inline-math">$c = f(a) \leq f(x) \leq f(b) = d$</span>, so indeed <span class="inline-math">$f: [a,b]\to[c,d]$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$f$</span> is surjective: for all <span class="inline-math">$\eta\in[c,d]$</span>, by the <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-intermediate-value-theorem.html">intermediate value theorem</a>, there exists <span class="inline-math">$x\in[a,b]$</span> with <span class="inline-math">$f(x) = \eta$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    This proves that <span class="inline-math">$f$</span> is bijective.
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$f\inv$</span> is continuous: first consider <span class="inline-math">$z\in(c,d)$</span> and let <span class="inline-math">$y=f\inv(z)\in(a,b)$</span>.
+        For all <span class="inline-math">$\epsilon&gt;0$</span> that is sufficiently small that <span class="inline-math">$a\leq y-\epsilon &lt; y &lt; y+\epsilon\leq b$</span>, monotonicity implies
+        <span class="display-math">$$ c = f(a) \leq f(y-\epsilon) &lt; f(y) &lt; f(y+\epsilon) \leq f(b) = d. $$</span>
+        Pick <span class="inline-math">$\delta &gt; 0$</span> such that <span class="inline-math">$(z-\delta, z+\delta)\subset \big(f(y-\epsilon), f(y+\epsilon)\big)$</span>.
+    </p>
+    <p>
+        Now if for some <span class="inline-math">$z&#x27;\in[c,d]$</span> where <span class="inline-math">$|z&#x27;-z| &lt; \delta$</span>,
+        then since <span class="inline-math">$f: (y-\epsilon, y+\epsilon) \to \big(f(y-\delta), f(y+\epsilon)\big)$</span> is a bijection,
+        <span class="display-math">$$z&#x27;\in\big(f(y-\delta), f(y+\delta)\big) \implies f\inv(z&#x27;) \in (y-\epsilon, y+\epsilon) $$</span>
+        so <span class="inline-math">$|f\inv(z&#x27;) - f\inv(z)| &lt; \epsilon$</span>.
+    </p>
+    <p>
+        If <span class="inline-math">$z=c$</span> or <span class="inline-math">$d$</span>, a similar argument works. Hence <span class="inline-math">$f\inv$</span> is continuous.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$f\inv$</span> is strictly increasing, suppose not. Then there exists <span class="inline-math">$c\leq z_1 &lt; z_2\leq d$</span> with <span class="inline-math">$f\inv(z_1) \geq f\inv(z_2)$</span>.
+        But <span class="inline-math">$f$</span> is strictly increasing, so
+        <span class="display-math">$$ f\big(f\inv(z_1)\big) \geq f\big(f\inv(z_2)\big) \implies z_1 \geq z_2, $$</span>
+        which is a contradiction.
+    </p>
+    
+</li>
+</ul>

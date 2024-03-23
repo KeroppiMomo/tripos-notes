@@ -1,0 +1,24 @@
+<p>
+    Since <span class="inline-math">$a_n$</span> is decreasing, we have the inequality
+    <span class="display-math">$$ a_{2^k} \leq a_{2^{k-1} + i} \leq a_{2^{k-1}}, \quad 0\leq i \leq 2^{k-1}. $$</span>
+</p>
+<p>
+    =>: Suppose <span class="inline-math">$\sum a_n$</span> converges. We have
+    <span class="display-math">$$ \begin{align*}
+    \sum_{k=1}^K 2^{k-1}a_{2^k} &amp;= \fsum k1K \fsum n{2^{k-1}+1}{2^k} a_{2^k} \\
+    &amp;\leq \fsum k1K \fsum n{2^{k-1}+1}{2^k} a_n \\
+    &amp;= \fsum n2{2^K} a_n \leq \fsum n1\infty a_n
+    \end{align*} $$</span>
+    so <span class="inline-math">$\sum{2^k a_{2^k}}$</span> is an increasing sequence that is bounded above, so it converges.
+</p>
+<p>
+    <=: Suppose <span class="inline-math">$\sum 2^k a_{2^k}$</span> converges.
+    <span class="display-math">$$\begin{align*}
+    \fsum n2{2^K}a_n &amp;= \fsum k1K\fsum n{2^{k-1}+1}{2^k} a_n \\
+    &amp;\leq \fsum k1K \fsum n{2^{k-1}+1}{2^k} a_{2^{k-1}} \\
+    &amp;= \fsum k1K 2^{k-1} a_{2^{k-1}} \leq \fsum k1\infty 2^{k-1}a_{2^{k-1}}
+    \end{align*}$$</span>
+    and for any <span class="inline-math">$N$</span>, pick <span class="inline-math">$K$</span> that makes <span class="inline-math">$2^K &gt; N$</span>. Then
+    <span class="display-math">$$ \fsum n2N \leq \fsum n2{2^K} a_n \leq \fsum k1\infty 2^{k-1}a_{2^{k-1}} $$</span>
+    so the partial sums are bounded and increasing. Hence it converges.
+</p>

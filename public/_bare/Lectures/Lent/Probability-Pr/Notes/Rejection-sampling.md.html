@@ -1,0 +1,31 @@
+<p>
+    To simulate <span class="inline-math">$U\sim U([0,1]^d)$</span>, we take <span class="inline-math">$U = (\bar U_1, \bar U_2, \ldots, \bar U_d)$</span> where <span class="inline-math">$\bar U_i \sim U[0,1]$</span> are independent.
+</p>
+<p>
+    For some <span class="inline-math">$A\subseteq [0,1]^d$</span>, to simulate a random variable <span class="inline-math">$X$</span> in <span class="inline-math">$[0,1]^d$</span> having density
+    <span class="display-math">$$ \begin{align*}
+        f(x) = \frac{1_A(x)}{|A|},
+    \end{align*} $$</span>
+    take <span class="inline-math">$U_1,U_2,\ldots$</span> independent <span class="inline-math">$U([0,1]^d)$</span> random variables and
+    <span class="inline-math">$X$</span> to be the first of those which land in <span class="inline-math">$A$</span>, i.e. reject the others:
+    <span class="display-math">$$ \begin{align*}
+        X = U_N, \quad N=\min\sb{n\geq 1}{U_n \in A}.
+    \end{align*} $$</span>
+    (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-rejection-sampling-for-uniform-distribution.html">Derivation</a>)
+</p>
+<p>
+    In general to simulate <span class="inline-math">$X$</span> having a bounded density <span class="inline-math">$f$</span> in <span class="inline-math">$[0,1]^d$</span>, let <span class="inline-math">$f(x)\leq \lambda$</span> for all <span class="inline-math">$x$</span>.
+    We'll apply the same technique as above to <span class="inline-math">$[0,1]^{d+1}$</span>:
+</p>
+<p>
+    Take <span class="inline-math">$U_1, U_2, \ldots \sim U([0,1]^d)$</span> and <span class="inline-math">$V_1,V_2,\ldots\sim U[0,1]$</span> all independent random variables,
+    and <span class="inline-math">$X$</span> to be the the first <span class="inline-math">$U_n$</span> such that <span class="inline-math">$V_n\leq f(U_n)/\lambda$</span>:
+    <span class="display-math">$$ \begin{align*}
+        X = U_n, \quad N = \min\sb{n\geq 1}{V_n \leq f(U_n)/\lambda}.
+    \end{align*} $$</span>
+    (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-rejection-sampling-for-general-distribution.html">Derivation</a>)
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240304150408.png" width="400.0">
+    https://www.geogebra.org/calculator/gtjdw2kc
+</p>

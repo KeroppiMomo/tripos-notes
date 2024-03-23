@@ -1,0 +1,32 @@
+<p>
+    <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-1-Taylor-s-theorem-with-Lagrange-remainder.html">Again</a> WLOG assume <span class="inline-math">$a=0$</span>.
+    For <span class="inline-math">$0\leq t\leq h$</span>, let
+    <span class="display-math">$$ F(t) = f(h) - f(t) - (h-t)f&#x27;(t) - \frac{(h-t)^2}{2!}f&#x27;&#x27;(t) - \ldots - \frac{(h-t)^{n-1}}{(n-1)!} f^{(n-1)}(t). $$</span>
+    We do this because <span class="inline-math">$F$</span> is continuous on <span class="inline-math">$[0,h]$</span>, differentiable on <span class="inline-math">$(0,h)$</span>, and using product rule,
+    <span class="display-math">$$\begin{align*}
+    F&#x27;(t) =&amp; -f&#x27;(t) \\
+    &amp;+\Big(f&#x27;(t) - (h-t)f&#x27;&#x27;(t)\Big) \\
+    &amp;+\Big((h-t)f&#x27;&#x27;(t) - \frac{(h-t)^2}{2!}f&#x27;&#x27;&#x27;(t)\Big) \\
+    &amp;\vdots \\
+    &amp;+\Big(\frac{(h-t)^{n-2}}{(n-1)!}f^{(n-1)}(t) - \frac{(h-t)^{n-1}}{(n-1)!} f^{(n)}(t)\Big) \\
+    =&amp;- \frac{(h-t)^{n-1}}{(n-1)!} f^{(n)}(t).
+    \end{align*}$$</span>
+</p>
+<p>
+    Now to apply Rolle's theorem, there are many ways to make <span class="inline-math">$\phi(0)=\phi(h)$</span>. In particular, for any <span class="inline-math">$p\in\N$</span> with <span class="inline-math">$1\leq p&lt;n$</span>,
+    <span class="display-math">$$ \phi(t) = F(t) - \Big(1-\frac th\Big)^p F(0)$$</span>
+    then we'll get <span class="inline-math">$\phi(0)=\phi(h)=0$</span>.
+</p>
+<p>
+    So by Rolle's theorem, there exists <span class="inline-math">$\theta\in(0,1)$</span> such that
+    <span class="display-math">$$\begin{align*}
+    0 =&amp;\ \phi&#x27;(\theta h) \\
+    =&amp; -\frac{(1-\theta)^{n-1} h^{n-1}}{(n-1)!} f^{(n)}(\theta h) \\
+    &amp;+ \frac{p(1-\theta)^{p-1}}h \Big(f(h)-f(0)-hf&#x27;(0)-\frac{h^2}{2!}f&#x27;&#x27;(0) - \ldots - \frac{h^{n-1}}{(n-1)!}f^{(n-1)}(0)\Big)
+    \end{align*}$$</span>
+    so
+    <span class="display-math">$$ f(h) = f(0) + hf&#x27;(0) + \frac{h^2}{2!}f&#x27;&#x27;(0) + \ldots + \frac{h^{n-1}}{(n-1)!} f^{(n-1)}(0) +\frac{(1-\theta)^{n-p} h^n}{p(n-1)!} f^{(n)}(\theta h).$$</span>
+</p>
+<p>
+    Setting <span class="inline-math">$p=n$</span> gives Lagrange remainder; <span class="inline-math">$p=1$</span> gives Cauchy remainder.
+</p>

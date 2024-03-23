@@ -1,0 +1,29 @@
+<p>
+    Solve
+    <span class="display-math">$$ \ddot y + \omega_0^2 y = \sin\omega_0 t. $$</span>
+</p>
+<p>
+    We have the general complimentary function
+    <span class="display-math">$$ y_c(t) = A\sin\omega_0t + B\cos\omega_0t $$</span>
+    so the forcing term is a complimentary function.
+</p>
+<p>
+    Therefore we write a detuned equation
+    <span class="display-math">$$ \ddot y + \omega_0^2 y = \sin\omega t. $$</span>
+    Trying particular integral <span class="inline-math">$y_p(t) = C\sin\omega t$</span>,
+    <span class="display-math">$$\begin{align*}
+    -C\omega^2 \sin\omega t + C \omega_0^2 \sin\omega t &amp;= \sin \omega t \\
+    C &amp;= \frac{1}{\omega_0^2 - \omega ^2}.
+    \end{align*}$$</span>
+    Note that <span class="inline-math">$y_p$</span> does not converge as <span class="inline-math">$\omega\to\omega_0$</span>, so we will add a complimentary function to regularise the limit:
+    <span class="display-math">$$ y_p(t) = \frac{\sin\omega t - \sin\omega_0 t}{\omega_0^2 - \omega^2}. $$</span>
+</p>
+<p>
+    Evaluating the limit,
+    <span class="display-math">$$\begin{align*}
+    \lim_{\omega\to\omega_0} y_p(t)&amp;= \lim_{\omega\to\omega_0} \frac{t\cos\omega t}{-2\omega} &amp;&amp; \text{L&#x27;Hopital&#x27;s rule} \\
+    &amp;= -\frac{t\cos\omega_0 t}{2\omega_0}. 
+    \end{align*}$$</span>
+    Therefore a particular solution of our original equation is
+    <span class="display-math">$$ y_p(t) = -\frac{1}{2\omega_0} t\cos\omega_0 t. $$</span>
+</p>

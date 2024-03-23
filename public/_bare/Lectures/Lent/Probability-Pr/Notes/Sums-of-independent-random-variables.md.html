@@ -1,0 +1,104 @@
+<p>
+    Let <span class="inline-math">$(X_n: x\in\N)$</span> be a sequence of independent identically distributed integrable random variables.
+    Set <span class="inline-math">$S_n = X_1 + \ldots + X_n$</span>, <span class="inline-math">$\mu = \expect(X_1)$</span> and <span class="inline-math">$\sigma^2 = \var(X_1)$</span>.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (weak law of large numbers)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-weak-law-of-large-numbers.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For all <span class="inline-math">$\epsilon&gt;0$</span>, as <span class="inline-math">$n\to\infty$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \prob\left(\left|\frac{S_n}{n} - \mu \right| &gt; \epsilon\right) \to 0.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-weak-law-of-large-numbers-for-finite-second-moment.html">Proof for finite second moment</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (strong law of large numbers)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-strong-law-of-large-numbers.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For all <span class="inline-math">$\epsilon&gt;0$</span>, as <span class="inline-math">$n\to\infty$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \prob\left(\frac{S_n}{n} \to \mu \text{ as }n \to \infty\right) = 1.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-strong-law-of-large-numbers-for-finite-fourth-moment.html">Proof for finite fourth moment</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (central limit theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-central-limit-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$X_n$</span> are square-integrable. As <span class="inline-math">$n\to\infty$</span>, the normalised random variables
+                <span class="display-math">$$ \begin{align*}
+                    Z_n = \frac{S_n - \mu n}{\sigma\sqrt{n}} \to Z \sim N(0,1) \text{ in distribution}.
+                \end{align*} $$</span>
+                Equivalently, for all <span class="inline-math">$x\in\R$</span>
+                <span class="display-math">$$ \begin{align*}
+                    \prob\left(\frac{S_n - \mu n}{\sigma\sqrt{n}} \leq x\right) \to \Phi(x) = \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}} e^{-y^2/2}\, dy.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-central-limit-theorem-with-finite-exponential-moment.html">Proof with finite exponential moment</a>
+            </p>
+            
+        </div>
+    </div>
+    In applications, we imprecisely write <span class="inline-math">$Z_n \stackrel{\text{approx.}}{\sim} N(0,1)$</span> or <span class="inline-math">$S_n \stackrel{\text{approx.}}{\sim} N(n\mu, n\sigma^2)$</span>.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Sample error via central limit theorem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Sample-error-via-central-limit-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Often we want to know how large <span class="inline-math">$N$</span> needs to be such that
+                <span class="display-math">$$ \begin{align*}
+                    \prob\left(\left|\frac{S_N}{N} - \mu \right| \geq \epsilon\right) \leq \delta.
+                \end{align*} $$</span>
+                By the central limit theorem, for large <span class="inline-math">$N$</span>, the normalised random variable
+                <span class="display-math">$$ \begin{align*}
+                    Z_N = \frac{S_N - N\mu}{\sigma\sqrt{N}} \stackrel{\text{approx.}}{\sim} N(0,1).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Since <span class="inline-math">$S_N/N - \mu = (\sigma/\sqrt{N})Z_N$</span>, the event
+                <span class="display-math">$$ \begin{align*}
+                    \left|\frac{S_N}{N}-\mu \right|\geq \epsilon \iff \left|Z_N \right| \geq \frac{\epsilon}{\sigma}\sqrt{N}.
+                \end{align*} $$</span>
+                By symmetry,
+                <span class="display-math">$$ \begin{align*}
+                    \prob\left(\left|\frac{S_N}{N}-\mu \right|\geq \epsilon\right) = 2\prob\left(Z_N \geq \frac{\epsilon}{\sigma}\sqrt{N}\right) = 2\left(1-\Phi\left(\frac{\epsilon}{\sigma}\sqrt{N}\right)\right).
+                \end{align*} $$</span>
+                So we want
+                <span class="display-math">$$ \begin{align*}
+                    N = \left(\frac{\sigma}{\epsilon}\Phi\inv\left(1-\frac{\delta}{2}\right)\right)^2.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>

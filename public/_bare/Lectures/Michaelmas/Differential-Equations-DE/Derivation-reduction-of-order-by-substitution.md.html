@@ -1,0 +1,22 @@
+<p>
+    We let
+    <span class="display-math">$$ y_2(x) = \nu(x) y_1(x). $$</span>
+    Computing the derivatives,
+    <span class="display-math">$$\begin{align*}
+    y_2&#x27; &amp;= \nu y_1&#x27; + \nu&#x27;y_1 \\
+    y_2&#x27;&#x27; &amp;= \nu y_1&#x27;&#x27; + 2\nu&#x27;y_1&#x27; + \nu&#x27;&#x27;y_1
+    \end{align*}$$</span>
+    then substituting into the ODE,
+    <span class="display-math">$$\begin{align*}
+    (\nu y_1&#x27;&#x27; + 2\nu&#x27;y_1&#x27; + \nu &#x27;&#x27;y_1) + (p\nu y_1&#x27; + p\nu&#x27; y_1) + q\nu y_1 &amp;= 0 \\
+    \nu&#x27;&#x27;y_1 + \nu&#x27;(2y_1&#x27; + py_1) + \nu\underbrace{(y_1&#x27;&#x27; + py_1&#x27; + qy_1)}_{0 \text{ since } y_1 \text{ is a solution}} &amp;= 0
+    \end{align*}$$</span>
+    Letting <span class="inline-math">$u = v&#x27;$</span> makes this a first-order ODE of <span class="inline-math">$u$</span>,
+    <span class="display-math">$$\begin{align*}
+    u&#x27; y_1 + u(2y_1&#x27; + py_1) &amp; = 0\\
+    \frac{u&#x27;}{u} &amp;= -\Big(2\frac{y_1&#x27;}{y_1} + p\Big) \\
+    \ln u &amp;= -\Big(2\ln y_1 + \int^x p(w)\,dw\Big) \\
+    v&#x27; = u &amp;=  \frac{1}{y_1^2 }\exp\Big(-\int^x p(w)\,dw\Big).
+    \end{align*}$$</span>
+    Then integrate to get <span class="inline-math">$v$</span> and then get <span class="inline-math">$y_2$</span>.
+</p>

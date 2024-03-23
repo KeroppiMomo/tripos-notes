@@ -1,0 +1,22 @@
+<p>
+    For <span class="inline-math">$X\sim P(\lambda)$</span>,
+    <span class="display-math">$$ \begin{align*}
+    \expect(X) &amp;= \fsum k0\infty k\cdot e^{-\lambda}\frac{\lambda^k}{k!} \\
+    &amp;=\lambda e^{-\lambda} \fsum k1\infty \frac{\lambda^{k-1}}{(k-1)!} \\
+    &amp;= \lambda.
+    \end{align*}$$</span>
+</p>
+<p>
+    To find variance, it's often helpful to first compute
+    <span class="display-math">$$ \begin{align*}
+    \expect\big(X(X-1)\big) &amp;= \fsum k0\infty k(k-1)e^{-\lambda}\frac{\lambda^k}{k!}\\
+    &amp;= \lambda^2 e^{-\lambda} \fsum k2\infty\frac{\lambda^{k-2}}{(k-2)!} \\
+    &amp;= \lambda^2.
+    \end{align*} $$</span>
+    Hence
+    <span class="display-math">$$\begin{align*}
+    \op{var}(X) &amp;= \expect(X^2) - \expect(X)^2 \\
+    &amp;= \expect\big(X(X-1)\big) + \expect(X) - \expect(X)^2 \\
+    &amp;= \lambda^2 + \lambda - \lambda^2 = \lambda.
+    \end{align*}$$</span>
+</p>

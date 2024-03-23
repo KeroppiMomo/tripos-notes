@@ -1,0 +1,35 @@
+<p>
+    We'll prove the second statement explicitly since it's easy: for <span class="inline-math">$n-1\leq x\leq n$</span>, we have the identity
+    <span class="display-math">$$ \begin{align*}
+        f(n-1) \geq f(x) \geq f(n).
+    \end{align*} $$</span>
+    Integrating over <span class="inline-math">$[n-1, n]$</span>,
+    <span class="display-math">$$ \begin{align*}
+        f(n-1) \geq \int_{n-1}^{n} f(x)\, dx \geq f(n). \tag{*}
+    \end{align*} $$</span>
+    Summing up,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{r=1}^{n-1} f(r)\geq \int_{1}^{n} f(x)\, dx \geq \sum_{r=2}^{n} f(r). \tag{\dagger}
+    \end{align*} $$</span>
+    Therefore if <span class="inline-math">$\int_{1}^{\infty} f(x)\, dx$</span> converges, <span class="inline-math">$\sum_{r=2}^{n} f(r)$</span> is bounded and increasing with <span class="inline-math">$n$</span> and therefore converges.
+    If <span class="inline-math">$\sum_n f(n)$</span> converges, then <span class="inline-math">$\int_{1}^{n} f(x)\, dx$</span> is bounded and increasing with <span class="inline-math">$n$</span> and <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Lemma-monotone-convergence-of-functions.html">therefore</a> converges.
+</p>
+<hr>
+<p>
+    Let
+    <span class="display-math">$$ \begin{align*}
+        \phi(n) = \sum_{r=1}^{n} f(r) - \int_{1}^{n} f(x)\, dx.
+    \end{align*} $$</span>
+    <span class="inline-math">$\phi$</span> is decreasing since by (*),
+    <span class="display-math">$$ \begin{align*}
+        \phi(n) - \phi(n-1) = f(n) - \int_{n-1}^{n} f(x)\, dx \leq 0.
+    \end{align*} $$</span>
+    But from (<span class="inline-math">$\dagger$</span>),
+    <span class="display-math">$$ \begin{align*}
+        \phi(n) = f(n) + \sum_{r=1}^{n-1} f(r) - \int_{1}^{n} f(x)\, dx \geq  f(n) \geq 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$\phi$</span> is bounded below.
+</p>
+<p>
+    Therefore <span class="inline-math">$\phi(n)\to l$</span> as <span class="inline-math">$n\to\infty$</span> for some <span class="inline-math">$0\leq l\leq \phi(1) = f(1)$</span>.
+</p>

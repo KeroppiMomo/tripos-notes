@@ -1,0 +1,384 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (differentiability)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Definition-differentiability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For some <span class="inline-math">$E\subseteq\C$</span>,  let <span class="inline-math">$f: E\to\C$</span> and let <span class="inline-math">$x\in E$</span> be a limit point.
+            </p>
+            <p>
+                <span class="inline-math">$f$</span> is <em>differentiable</em> at <span class="inline-math">$x$</span>, with <em>derivative</em> <span class="inline-math">$f&#x27;(x)$</span>, if
+                <span class="display-math">$$ \lim_{y\to x} \frac{f(y) - f(x)}{y-x} = f&#x27;(x). $$</span>
+            </p>
+            <p>
+                Equivalent definitions, assuming <span class="inline-math">$E$</span> has no isolated points:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Using <span class="inline-math">$h=y-x$</span>: <span class="display-math">$$ f&#x27;(x) = \lim_{h\to0} \frac{f(x+h) - f(x)}{h}. $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Best affine approximation exists: there exists <span class="inline-math">$f&#x27;(x)$</span> and <span class="inline-math">$\epsilon(h)$</span> such that
+                    <span class="display-math">$$ f(x+h) = f(x) + hf&#x27;(x) + \epsilon(h) \quad\text{and}\quad \lim_{h\to0} \frac{\epsilon(h)}{h} = 0. $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Continuous error term: there exists <span class="inline-math">$f&#x27;(x)$</span> and <span class="inline-math">$\epsilon(h)$</span> such that
+                    <span class="display-math">$$ f(x+h) = f(x) + hf&#x27;(x) + h\epsilon(h), $$</span>
+                    with <span class="inline-math">$\epsilon(0)=0$</span> and continuous at <span class="inline-math">$h=0$</span>. (<a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Derivation-of-equivalence-of-definitions-of-error-term-in-differentiability.html">Derivation of equivalence</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Properties of differentiability
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Properties-of-differentiability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (differentiability implies continuity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Lemma-differentiability-implies-continuity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$f: E\to\C$</span> is differentiable at <span class="inline-math">$x$</span>, then <span class="inline-math">$f$</span> is continuous at <span class="inline-math">$x$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-differentiability-implies-continuity.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Suppose <span class="inline-math">$f,g$</span> are differentiable at <span class="inline-math">$x$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$f+g$</span> is differentiable at <span class="inline-math">$x$</span> and <span class="inline-math">$(f+g)&#x27;(x) = f&#x27;(x) + g&#x27;(x)$</span> (<a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-sum-of-differentiable-functions-is-differentiable.html">Proof</a>).
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$fg$</span> is differentiable at <span class="inline-math">$x$</span> and <span class="inline-math">$(fg)&#x27;(x) = f&#x27;(x)g(x) + f(x)g&#x27;(x)$</span> (<a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Proof-product-rule.html">Proof</a>).
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$f(y)\neq 0$</span> for all <span class="inline-math">$y\in E$</span>, then <span class="inline-math">$1/f$</span> is differentiable at <span class="inline-math">$x$</span> and <span class="inline-math">$(1/f)&#x27; = -f&#x27;(x)/f(x)^2$</span> (<a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-differentiability-of-reciprocal-of-differentiable-function.html">Proof</a>).
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (chain rule)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Lemma-chain-rule.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$U,V\subseteq\C$</span> and <span class="inline-math">$f: U\to V, g: V\to\C$</span> are such that <span class="inline-math">$f$</span> is differentiable at <span class="inline-math">$a\in U$</span> and <span class="inline-math">$g$</span> is differentiable at <span class="inline-math">$b=f(a)\in V$</span>.
+                        </p>
+                        <p>
+                            Then <span class="inline-math">$g\circ f: U \to \C$</span> is differentiable at <span class="inline-math">$a$</span> and
+                            <span class="display-math">$$ (g\circ f)&#x27;(a) = g&#x27;\big(f(a)\big)\cdot f&#x27;(a) $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Proof-chain-rule.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Mean value theorem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Mean-value-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (Rolle's theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Lemma-Rolle-s-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: [a,b]\to\R$</span> be continuous on <span class="inline-math">$[a,b]$</span> and differentiable at <span class="inline-math">$(a,b)$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f(a)=f(b)$</span>, then there exists <span class="inline-math">$c\in(a,b)$</span> such that <span class="inline-math">$f&#x27;(c)=0$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-Rolle-s-theorem.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (mean value theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-mean-value-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: [a,b]\to\R$</span> be continuous on <span class="inline-math">$[a,b]$</span> and differentiable on <span class="inline-math">$(a,b)$</span>.
+                        </p>
+                        <p>
+                            Then there exists <span class="inline-math">$c\in(a,b)$</span> such that
+                            <span class="display-math">$$ f(b) - f(a) = (b-a)f&#x27;(c). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-mean-value-theorem.html">Proof</a>
+                        </p>
+                        <p>
+                            Equivalently, if <span class="inline-math">$f$</span> is differentiable on an open interval <span class="inline-math">$I$</span> containing <span class="inline-math">$a$</span>, then for all <span class="inline-math">$h\in\R$</span> where <span class="inline-math">$a+h\in I$</span>, there exists <span class="inline-math">$\theta\in(0,1)$</span> such that
+                            <span class="display-math">$$ f(a+h) = f(a) + hf&#x27;(a+\theta h). $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (derivative and monotonicity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Corollary-derivative-and-monotonicity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: [a,b]\to\R$</span> be a continuous function which is differentiable on <span class="inline-math">$(a,b)$</span>.
+                            Then
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                if <span class="inline-math">$f&#x27;(x)&gt;0$</span> for all <span class="inline-math">$x\in(a,b)$</span>, then <span class="inline-math">$f$</span> is strictly increasing;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                if <span class="inline-math">$f&#x27;(x)\geq 0$</span> for all <span class="inline-math">$x\in(a,b)$</span>, then <span class="inline-math">$f$</span> is increasing;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                if <span class="inline-math">$f&#x27;(x) = 0$</span> for all <span class="inline-math">$x\in(a,b)$</span>, then <span class="inline-math">$f$</span> is constant.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            Also if <span class="inline-math">$f: \C\to\C$</span> with <span class="inline-math">$f&#x27;(z)=0$</span> for all <span class="inline-math">$z\in\C$</span>, then <span class="inline-math">$F$</span> is constant.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-derivative-and-monotonicity.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                Not true on general sets: <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Example-of-differentiable-function-with-derivative-0-but-not-constant.html">Example of differentiable function with derivative 0 but not constant</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Cauchy's mean value theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-Cauchy-s-mean-value-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f,g: [a,b]\to\R$</span> be a continuous functions which are differentiable on <span class="inline-math">$(a,b)$</span>.
+                        </p>
+                        <p>
+                            Then there exists <span class="inline-math">$c\in(a,b)$</span> such that
+                            <span class="display-math">$$ g&#x27;(c)\,\big(f(a)-f(b)\big) = f&#x27;(c)\,\big(g(a)-g(b)\big).$$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-Cauchy-s-mean-value-theorem.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (inverse function theorem for differentiability)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-inverse-function-theorem-for-differentiability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$f:[a,b]\to\R$</span> is a continuous function which is differentiable on <span class="inline-math">$(a,b)$</span> with <span class="inline-math">$f&#x27;(x)&gt;0$</span> for all <span class="inline-math">$x\in(a,b)$</span>.
+                Let <span class="inline-math">$f(a) = c$</span> and <span class="inline-math">$f(b)=d$</span>.
+            </p>
+            <p>
+                Then <span class="inline-math">$f: [a,b]\to[c,d]$</span> is a bijective function and <span class="inline-math">$f\inv$</span> is differentiable on <span class="inline-math">$(c,d)$</span> with
+                <span class="display-math">$$ (f\inv)&#x27;(y) = \frac1{f&#x27;\big(f\inv(y)\big)}. $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-inverse-function-theorem-for-differentiability.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Taylor's theorem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Taylor-s-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (higher derivatives)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Definition-higher-derivatives.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose a function <span class="inline-math">$f: (a,b)\to\R$</span> is differentiable on <span class="inline-math">$(a,b)$</span>. If <span class="inline-math">$f&#x27;(x)$</span> is a function differentiable at <span class="inline-math">$x\in(a,b)$</span>, then we say <span class="inline-math">$f$</span> is <em>twice differentiable</em> at <span class="inline-math">$x$</span> and write
+                            <span class="display-math">$$f&#x27;&#x27;(x) \equiv f^{(2)}(x) = (f&#x27;)&#x27;(x)$$</span>
+                        </p>
+                        <p>
+                            Iterate to define <em><span class="inline-math">$k$</span>-times differentiable</em> and
+                            <span class="display-math">$$ f^{(k)}(x) = (f^{(k-1)})&#x27;(x). $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (smooth function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Definition-smooth-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A function <span class="inline-math">$f: (a,b) \to\R$</span> is <em>smooth</em> if it is <span class="inline-math">$k$</span>-times differentiable on <span class="inline-math">$(a,b)$</span> for every <span class="inline-math">$k$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Taylor's theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-Taylor-s-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$f$</span> and its first <span class="inline-math">$n-1$</span> derivatives are continuous on <span class="inline-math">$[a,a+h]$</span>, and <span class="inline-math">$f$</span> is <span class="inline-math">$n$</span>-times differentiable on <span class="inline-math">$(a,a+h)$</span>.
+                        </p>
+                        <p>
+                            Then
+                            <span class="display-math">$$ f(a+h) = P_{n-1}(a+h) + R_n(a+h) $$</span>
+                            where <span class="inline-math">$P_{n-1}$</span> is the <span class="inline-math">$(n-1)$</span>-th order <em>Taylor polynomial</em>
+                            <span class="display-math">$$ P_{n-1}(a+h) = \fsum i0{n-1} \frac{h^i}{i!} f^{(i)}(a) $$</span>
+                            and the error term <span class="inline-math">$R_n(h)$</span> can be written in the form of
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Lagrange remainder: there exists <span class="inline-math">$\theta\in(0,1)$</span> such that
+                                <span class="display-math">$$ R_n(a+h) = \frac{h^n}{n!}f^{(n)}(a+\theta h); $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Cauchy remainder: there exists <span class="inline-math">$\theta\in(0,1)$</span> such that
+                                <span class="display-math">$$ R_n(a+h) = \frac{(1-\theta)^{n-1} h^n}{(n-1)!} f^{(n)}(a+\theta h). $$</span>
+                            </p>
+                            
+                        </li><!-- BEGIN BLOCK ID 858b72 -->
+                        <li id="^858b72">
+                            <p>
+                                Integral remainder: if we further assume <span class="inline-math">$f^{(n)}$</span> is continuous on <span class="inline-math">$x\in[a,a+h]$</span>, then
+                                <span class="display-math">$$ \begin{align*}
+                                    R_n(a+h) = \frac{h^n}{(n-1)!} \int_{0}^{1} (1-t)^{n-1} f^{(n)}(a+th)\, dt.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        <!-- END BLOCK ID 858b72 -->
+                        
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-1-Taylor-s-theorem-with-Lagrange-remainder.html">Proof 1 (Lagrange remainder only)</a>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-2-Taylor-s-theorem-with-Lagrange-and-Cauchy-remainder.html">Proof 2 (less motivated)</a>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-Taylor-s-theorem-with-integral-remainder.html">Proof (integral remainder)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The integral form can be used to recover Cauchy and Lagrange form of the remainder if the additional assumption is made. (<a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Derivation-Cauchy-and-Lagrange-remainder-from-integral-form.html">Derivation</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$f(h)$</span> being equal to the Taylor series is generally false, even if <span class="inline-math">$f$</span> is smooth and the series converges.
+                </p>
+                
+            </li><li>
+                <p>
+                    To show a function equals its Taylor series, we need to show <span class="inline-math">$R_n(h)\to 0$</span> as <span class="inline-math">$n\to\infty$</span> for fixed <span class="inline-math">$h$</span>, e.g. <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proposition-binomial-series.html">Proposition (binomial series)</a>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Complex differentiability is much more restrictive than in the reals, e.g. <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-complex-conjugate-is-not-differentiable.html">complex conjugate is not differentiable</a>.
+</p>
+<p>
+    But they have much more properties, e.g. suppose <span class="inline-math">$f: D\to\C$</span> is complex differentiable on <span class="inline-math">$D=\sb{z\in\C}{|z|&lt;1}$</span>. Then
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$f$</span> is infinitely differentiable;
+    </p>
+    
+</li><li>
+    <p>
+        the Taylor series about 0 of <span class="inline-math">$f$</span> converges to <span class="inline-math">$f$</span> on <span class="inline-math">$D$</span>.
+    </p>
+    
+</li>
+</ul>

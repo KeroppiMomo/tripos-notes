@@ -1,0 +1,65 @@
+<p>
+    We use the identity
+    <span class="display-math">$$ \int_a^b f(x)\, dx = \frac{f(b) - f(a)}2 (b-a) + \frac12 \int_a^b (x-a)(b-x)f&#x27;&#x27;(x)\, dx.$$</span>
+    To see this, we use integration by parts twice:
+    <span class="display-math">$$\begin{align*}
+    \int_a^b (x-a)(b-x)f&#x27;&#x27;(x)\, dx &amp;= \int_a^b \left(-x^2 + (a+b)x - ab\right)\,d\big(f&#x27;(x)\big) \\
+    &amp;= \big[(x-a)(b-x)f&#x27;(x)\big]_a^b - \int_a^b(-2x +a+b)f&#x27;(x)\,dx \\
+    &amp;= \int_a^b(2x-a-b)\,df(x) \\
+    &amp;= \big[(2x-a-b)f(x)\big]_a^b - \int_a^b-2f(x)\,dx \\
+    &amp;= \big(f(b) - f(a)\big)(b-a) + 2\int_a^b f(x)\,dx
+    \end{align*}$$</span>
+    and rearrange.
+</p>
+<p>
+    Applying this,
+    <span class="display-math">$$ \begin{align*}
+    \int_1^n \log x\, dx &amp;= \sum_{k=1}^{n-1}\bigg(\frac{\log(k+1)-\log k}2 + \frac12\int_k^{k+1}(x-k)(k+1-x)\frac1{x^2}\,dx\bigg) \\
+    n\log n - n + 1&amp;=\bigg(\sum_{k=1}^n \log k\bigg) - \frac{\log 1}2 - \frac{\log n}2 + \sum_{k=1}^{n-1}a_k \\
+    \log n! &amp;= \Big(n+\frac12\Big)\log n - n + 1 + \sum_{k=1}^{n-1} a_k \tag{*}
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ a_k = \frac12\int_0^1 t(1-t)\frac1{(t+k)^2}\,dt \leq \frac1{2k^2}\int_0^1t(1-t)\,dt = \frac1{12k^2}.$$</span>
+    So
+    <span class="display-math">$$ a \equiv \sum_{k=1}^\infty a_k \leq \sum_{k=1}^\infty \frac1{12k^2}=\frac{\pi^2}{72}$$</span>
+    converges.
+</p>
+<p>
+    Hence exponentiating (\*) gives
+    <span class="display-math">$$ n! = n^{n+1/2} e^{-n} \exp\bigg(1+a-\sum_{k=n}^\infty a_k\bigg) $$</span>
+    and as <span class="inline-math">$n\to\infty$</span>,
+    <span class="display-math">$$n! \sim An^{n+1/2} e^{-n}$$</span>
+    where <span class="inline-math">$A=e^{1-a}$</span>.
+</p>
+<p>
+    To find <span class="inline-math">$A$</span>, we'll consider
+    <span class="display-math">$$ I_n = \int_0^{\pi/2}\cos^n\theta\,d\theta. $$</span>
+    Note that <span class="inline-math">$I_0 = \pi/2, I_1 = 1, I_n \geq I_{n+1}$</span>. Using integration by parts,
+    <span class="display-math">$$\begin{align*}
+    I_n &amp;= \int_0^{\pi/2} \cos\theta\cos^{n-1}\theta\,d\theta \\
+    &amp;= \big[\sin\theta\cos^{n-1}\theta\big]_0^{\pi/2} + \int_0^{\pi/2}(n-1)\cos^{n-2}\theta\sin^2\theta\,d\theta \\
+    &amp;= (n-1)(I_{n-2} - I_n)
+    \end{align*}$$</span>
+    so we have a recurrence relation
+    <span class="display-math">$$ I_n = \frac{n-1}n I_{n-2}. $$</span>
+</p>
+<p>
+    So we can solve that
+    <span class="display-math">$$\begin{align*}
+    I_{2n} &amp;= \frac{2n-1}{2n} I_{2n-2} = \frac{(2n-1)(2n-3)\ldots(3)(1)}{(2n)(2n-2)\ldots(4)(2)}\frac\pi2 = \frac{(2n)!}{2^{2n}(n!)^2}\frac\pi2 \\
+    I_{2n+1} &amp;= \frac{2n}{2n+1}I_{2n-1} = \frac{2^{2n}(n!)^2}{(2n)!}\frac1{2n+1}.
+    \end{align*}$$</span>
+</p>
+<p>
+    Now we squeeze
+    <span class="display-math">$$ 1\leq \frac{I_{2n}}{I_{2n+1}} \leq \frac{I_{2n-1}}{I_{2n+1}} = \frac{2n+1}{2n}, $$</span>
+    then
+    <span class="display-math">$$ \frac{I_{2n}}{I_{2n+1}} = \Big(\frac{(2n)!}{2^{2n}(n!)^2}\Big)^2\frac\pi2(2n+1) \to 1, $$</span>
+    so
+    <span class="display-math">$$ \frac{(2n)!}{2^{2n}(n!)^2} \sim \frac{1}{\sqrt{n\pi}}. $$</span>
+</p>
+<p>
+    Lastly using the approximation of <span class="inline-math">$n!$</span>, we have
+    <span class="display-math">$$ \frac{1}{\sqrt{n\pi}}\sim \frac{(2n)!}{2^{2n}(n!)^2} \sim \frac{A(2n)^{2n+1/2} e^{-2n}}{2^{2n}A^2n^{2n+1}e^{-2n}} = \frac{\sqrt2}{A\sqrt n}$$</span>
+    so <span class="inline-math">$A=\sqrt{2\pi}$</span> as required.
+</p>

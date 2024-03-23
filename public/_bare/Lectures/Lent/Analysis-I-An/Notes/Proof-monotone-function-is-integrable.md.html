@@ -1,0 +1,31 @@
+<p>
+    (A monotone function is bounded by the values at its endpoints <span class="inline-math">$f(a),f(b)$</span> so it makes sense to talk about integrability.)
+</p>
+<p>
+    WLOG suppose <span class="inline-math">$f$</span> is increasing.
+</p>
+<p>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \sup_{x\in[x_{j-1}, x_j]} f(x) &amp;= f(x_j) \\
+        \inf_{x\in[x_{j-1}, x_j]} f(x) &amp;= f(x_{j-1}).
+    \end{align*} $$</span>
+    Thus for any dissection <span class="inline-math">$\mathcal{D}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}) - L(f,\mathcal{D}) = \sum_{j=1}^{n} (x_j-x_{j-1})(f(x_j) - x_{j-1}).
+    \end{align*} $$</span>
+    Choose <span class="inline-math">$\mathcal{D}_n$</span> to be the uniform dissection
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{D}_n = \set{a, a+\frac{1}{n}(b-a), a+\frac{2}{n}(b-a), \ldots, a+\frac{n-1}{n}(b-a), b}.
+    \end{align*} $$</span>
+    Then we get a telescoping sum
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}) - L(f,\mathcal{D}) &amp;= \frac{b-a}{n}\sum_{j=1}^{n} (f(a+\frac{j}{n}(b-a)) - f(a+\frac{j-1}{n}(b-a))) \\
+        &amp;= \frac{b-a}{n}(f(b)-f(a)).
+    \end{align*} $$</span>
+    Taking <span class="inline-math">$n$</span> sufficiently large, we see that for all <span class="inline-math">$\epsilon&gt;0$</span>, we can find <span class="inline-math">$\mathcal{D}=\mathcal{D}_n$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}) - L(f,\mathcal{D}) &lt; \epsilon
+    \end{align*} $$</span>
+    and therefore by Cauchy criterion, <span class="inline-math">$f$</span> is integrable.
+</p>

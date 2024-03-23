@@ -1,0 +1,154 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (probability generating function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-generating-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a random variable with values in <span class="inline-math">$\Z^+ = \set{0,1,2,\ldots}$</span>.
+            </p>
+            <p>
+                The <em>probability generating function</em> of <span class="inline-math">$X$</span> is given by the power series
+                <span class="display-math">$$ G_X(t) = \expect(t^X) = \fsum n0\infty \prob(X=n)\, t^n. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        The radius of convergence <span class="inline-math">$R\geq 1$</span> since <span class="inline-math">$G_X(1) = \fsum n0\infty\prob(X=n) = 1$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$G_X(t)$</span> is unique to the distribution of <span class="inline-math">$X$</span> since we can recover the coefficients in <span class="inline-math">$G_X(t)$</span> by
+        <span class="display-math">$$ \prob(X=n)=\frac1{n!} G_X^{(n)}(0). $$</span>
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (generating function of sum of independent random variables)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-generating-function-of-sum-of-independent-random-variables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X,Y$</span> be independent random variables with values in <span class="inline-math">$\Z^+$</span>. Then "generating functions turn convolutions into products":
+                <span class="display-math">$$ G_{X+Y}(t) = G_X(t)\, G_Y(t). $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-generating-function-of-sum-of-independent-random-variables.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (generating function of random sums)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-generating-function-of-random-sums.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$N, X, X_1, X_2, X_3,\ldots$</span> be non-negative integer-valued independent random variables, and suppose <span class="inline-math">$X,X_1,X_2,X_3,\ldots$</span> are identically distributed.
+                Define the random sum
+                <span class="display-math">$$ S_N = \fsum n1N X_n. $$</span>
+            </p>
+            <p>
+                Then
+                <span class="display-math">$$ G_{S_N} = G_N \circ G_X. $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-generating-function-of-random-sums.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Generating functions and moments
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-and-moments.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (n-th moment of random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-n-th-moment-of-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <span class="inline-math">$n$</span>-th moment of <span class="inline-math">$X$</span> is <span class="inline-math">$\expect(X^n)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                If <span class="inline-math">$R&gt;1$</span>,
+                <span class="display-math">$$ \begin{align*}
+                G_X&#x27;(1) &amp;= \fsum n1\infty \prob(X=n)\,n = \expect(X) \\
+                G_X&#x27;&#x27;(1) &amp;= \fsum n1\infty \prob(X=n)\,n(n-1) = \expect(X(X-1)) \\
+                \end{align*} $$</span>
+                and so on.
+            </p>
+            <p>
+                If <span class="inline-math">$R=1$</span>, we can take the limit instead:
+                <span class="display-math">$$ G_X&#x27;(t) = \fsum n1\infty \prob(X=n) nt^{n-1} \to \fsum n1\infty \prob(X=n) n = \expect(X). $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Generating functions of some distributions
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-of-some-distributions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    Bernoulli <span class="inline-math">$X\sim B(1,p)$</span>:
+                    <span class="display-math">$$ G_X(t) = 1-p+pt, \qquad R=\infty. $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Binomial <span class="inline-math">$X\sim B(n,p)$</span>: either using binomial theorem or adding up <span class="inline-math">$n$</span> independent Bernoulli variables,
+                    <span class="display-math">$$ G_X(t) = (1-p+pt)^n, \qquad R=\infty. $$</span>
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID 539529 -->
+            <li id="^539529">
+                <p>
+                    Geometric <span class="inline-math">$X\sim G(p), p\in(0,1)$</span>,
+                    <span class="display-math">$$ G_X(t) = \fsum n0\infty (1-p)^n pt^n = \frac{p}{1-(1-p)t}, \qquad  R=\frac{1}{1-p}.$$</span>
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID 539529 -->
+            <li>
+                <p>
+                    Poisson <span class="inline-math">$X\sim P(\lambda), \lambda&gt;0$</span>,
+                    <span class="display-math">$$ G_X(t) = \fsum n0\infty e^{-\lambda} \frac{\lambda^n}{n!} t^n = e^{-\lambda + \lambda t}, \qquad R=\infty. $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    In counting, generating functions help convert convolutions into products. <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Catalan-number.html">Example (Catalan number)</a>
+</p>

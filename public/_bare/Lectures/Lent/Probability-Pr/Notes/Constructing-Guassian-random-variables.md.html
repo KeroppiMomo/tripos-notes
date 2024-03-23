@@ -1,0 +1,42 @@
+<p>
+    To construct <span class="inline-math">$Z\sim N(0, I_n)$</span> where <span class="inline-math">$I_n$</span> is the <span class="inline-math">$n\times n$</span> identity matrix,
+    take <span class="inline-math">$Z_1, \ldots, Z_n$</span> independent <span class="inline-math">$N(0,1)$</span> random varibales and set <span class="inline-math">$Z = (Z_1, \ldots, Z_n)$</span>.
+    (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-constructing-Gaussian-random-variables.html">Proof</a>)
+</p>
+<p>
+    Generally to construct <span class="inline-math">$X\sim N(\mu, V)$</span>, we define <span class="inline-math">$X=\sigma Z + \mu$</span> where <span class="inline-math">$\sigma = \sqrt{V}$</span>.
+    <span class="inline-math">$X$</span> is then Gaussian, <span class="inline-math">$\expect(X) = \mu$</span>, and
+    <span class="display-math">$$\op{var}(X) = \expect((\sigma Z)(\sigma Z)^T) = \sigma\op{var}(Z)\sigma^T = \sigma I_n \sigma^T = V.$$</span>
+    Hence <span class="inline-math">$X \sim N(\mu, V)$</span>.
+</p>
+<p>
+    (What is <span class="inline-math">$\sqrt{V}$</span>: since <span class="inline-math">$V$</span> is symmetric, <span class="inline-math">$V$</span> is diagonalisable by an orthogonal matrix <span class="inline-math">$U$</span>.
+    Also since <span class="inline-math">$V$</span> is non-negative definite, <span class="inline-math">$V$</span> has eigenvalues <span class="inline-math">$\lambda_1, \ldots, \lambda_n \geq 0$</span>.
+    <span class="display-math">$$ \begin{align*}
+        V &amp;= U\Lambda U^T, &amp; \quad \Lambda &amp;= \op{diag}(\lambda_1, \ldots, \lambda_n). \\
+        \text{Set } \sigma &amp;= U\sqrt{\Lambda} U^T, &amp;\sqrt{\Lambda} &amp;= \op{diag}(\sqrt{\lambda_1}, \ldots, \sqrt{\lambda_n})
+    \end{align*} $$</span>
+    so we have <span class="inline-math">$\sigma\sigma^T = V$</span>.)
+</p>
+<p>
+    For positive definite variance <span class="inline-math">$V$</span> (equivalently <span class="inline-math">$V$</span> is invertible), the density function of <span class="inline-math">$X\sim N(\mu, V)$</span> is
+    <span class="display-math">$$ \begin{align*}
+        f_X(x) = \frac{\exp\left(-\frac{1}{2} (x-\mu)^T V\inv (x-\mu)\right)}{\sqrt{(2\pi)^n \det V}}.
+    \end{align*} $$</span>
+    (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-density-function-of-Gaussian-random-variables-for-positive-definite-variance.html">Derivation</a>)
+</p>
+<p>
+    If <span class="inline-math">$V$</span> is not invertible, then <span class="inline-math">$U$</span> can be choosen so that <span class="inline-math">$UX \sim N(U\mu, UVU^T)$</span> with
+    <span class="display-math">$$ \begin{align*}
+        UVU^T = \op{diag}(\lambda_1, \lambda_2, \ldots, \lambda_k, 0, \ldots, 0) \equiv \pmat{V_0 &amp; 0 \\ 0 &amp; 0}.
+    \end{align*} $$</span>
+    where <span class="inline-math">$V_0$</span> is positive definite.
+    Then we can construct
+    <span class="display-math">$$ \begin{align*}
+        X = \mu + U^T \pmat{Y\\0}, \quad Y = \sqrt{V_0}\pmat{z_1 \\ z_2 \\ \vdots \\ z_k}
+    \end{align*} $$</span>
+    and <span class="inline-math">$Y$</span> has density
+    <span class="display-math">$$ \begin{align*}
+        f_Y(y) = \frac{\exp\left(-\frac{1}{2} y^T V_0\inv y\right)}{\sqrt{(2\pi)^n\det V_0}}
+    \end{align*} $$</span>
+</p>

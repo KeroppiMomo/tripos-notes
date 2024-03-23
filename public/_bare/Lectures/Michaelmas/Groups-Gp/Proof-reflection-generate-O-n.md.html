@@ -1,0 +1,33 @@
+<p>
+    We will prove by induction on <span class="inline-math">$n$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        Base case <span class="inline-math">$n=1$</span>: note that
+        <span class="display-math">$$ O(1) = \set{I, S_1} = \gen{S_1} \isom C_2 $$</span>
+        where <span class="inline-math">$S_1(x) = -x$</span> (lol).
+    </p>
+    
+</li><li>
+    <p>
+        Inductive step: let <span class="inline-math">$\set{e_1, e_2, \ldots, e_n}$</span> be the standard basis for <span class="inline-math">$\R^n$</span>.
+        We want to fix <span class="inline-math">$\v e_n$</span>. By setting <span class="inline-math">$v = e_n - Ae_n$</span>, we have
+        <span class="display-math">$$\begin{align*}
+        S_vAe_n &amp;= Ae_n - \frac{2Ae_n\cdot(e_n - Ae_n)}{(e_n-Ae_n)\cdot(e_n-Ae_n)}(e_n - Ae_n) \\
+         &amp;= Ae_n - \frac{2Ae_n\cdot e_n - 2Ae_n\cdot Ae_n}{e_n\cdot e_n - 2Ae_n\cdot e_n + Ae_n\cdot Ae_n}(e_n - Ae_n) \\
+         &amp;= Ae_n - \frac{2Ae_n\cdot e_n - 2}{1-2Ae_n\cdot e_n+1}(e_n-Ae_n) \\
+         &amp;= Ae_n + e_n - Ae_n \\
+         &amp;= e_n.
+        \end{align*}$$</span>
+        So <span class="inline-math">$S_v A$</span> preserves the plane <span class="inline-math">$P_v$</span>, which is isomorphic to <span class="inline-math">$\R^{n-1}$</span>.
+    </p>
+    <p>
+        By induction hypothesis, there exists <span class="inline-math">$w_1, w_2, \ldots, w_{n-1}\in P$</span> such that
+        <span class="display-math">$$ S_v A = S_{w_1} S_{w_2} \ldots S_{w_{n-1}} \quad\text{on }P_v.$$</span>
+        Since both sides of the equation also fix <span class="inline-math">$e_n$</span>, they are equal everywhere in <span class="inline-math">$\R^n$</span>. Therefore
+        <span class="display-math">$$ A = S_vS_{w_1}S_{w_2} \ldots S_{w_{n-1}}. $$</span>
+    </p>
+    
+</li>
+</ul>

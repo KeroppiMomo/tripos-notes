@@ -1,0 +1,49 @@
+<p>
+    Let <span class="inline-math">$I$</span> be any integer from 1 to <span class="inline-math">$n$</span>. For any permutation <span class="inline-math">$\mu:i\mapsto J_i$</span>, define <span class="inline-math">$\sigma\in S_n$</span> be the permutation which maps <span class="inline-math">$I$</span> to <span class="inline-math">$J_I$</span> and keeps other elements in their natural order, i.e.
+    <span class="display-math">$$ \sigma = \begin{cases}
+    \pmat{1 &amp; \ldots &amp; I-1 &amp; I &amp; I+1 &amp; \ldots &amp; J_I &amp; J_I+1 &amp; \ldots &amp; n \\
+    1 &amp; \ldots &amp; I-1 &amp; \color{yellow} J_I &amp; \color{yellow} I &amp; \color{yellow} \ldots &amp; \color{yellow} J_I-1 &amp; J_I+1 &amp; \ldots &amp; n }, &amp; J_I &gt; I \\
+    
+    \pmat{1 &amp; \ldots &amp; J_I-1 &amp; J_I &amp; \ldots &amp; I-1 &amp; I &amp; I+1 &amp; \ldots &amp; n \\
+    1 &amp; \ldots &amp; J_I-1 &amp; \color{yellow} J_I+1 &amp; \color{yellow} \ldots &amp; \color{yellow} I &amp; \color{yellow} J_I &amp; I+1 &amp; \ldots &amp; n }, &amp; J_I &lt; I \\
+    \mrm{Id}, &amp; J_I = I.
+    \end{cases} $$</span>
+    There are <span class="inline-math">$|I-J_I|$</span> transpositions in <span class="inline-math">$\sigma$</span>, so
+    <span class="display-math">$$ \epsilon(\sigma) = (-1)^{I-J_I}. $$</span>
+</p>
+<p>
+    Next define <span class="inline-math">$\rho\in S_n$</span> be the permutation where the top row going from 1 to <span class="inline-math">$n$</span> misses out <span class="inline-math">$J_I$</span> and the bottom row going from <span class="inline-math">$J_1$</span> to <span class="inline-math">$J_n$</span> also misses out <span class="inline-math">$J_I$</span>, i.e. using <span class="inline-math">$\color{red}\overline{\quad}$</span> to denote missing values,
+    <span class="display-math">$$
+    \rho = \begin{cases}
+    \pmat{1 &amp; \ldots &amp; I-1 &amp; &amp; I &amp; \ldots &amp; J_I-1 &amp; \color{red} \overline{J_I} &amp; J_I+1 &amp; \ldots &amp; n \\
+    J_1 &amp; \ldots &amp; J_{I-1} &amp; \color{red} \overline{J_I} &amp;  \color{yellow} J_{I+1} &amp; \color{yellow} \ldots &amp; \color{yellow} J_{J_I} &amp;  &amp; J_{J_I+1} &amp; \ldots &amp; J_n }, &amp; J_I &gt; I \\
+    
+    \pmat{1 &amp; \ldots &amp; J_I-1 &amp; \color{red}\overline{J_I} &amp; J_{I}+1 &amp; \ldots &amp; I &amp; &amp; I+1 &amp; \ldots &amp; n \\
+    J_1 &amp; \ldots &amp; J_{J_I-1} &amp; &amp; \color{yellow} J_{J_I} &amp; \color{yellow} \ldots &amp; \color{yellow} J_{I-1} &amp; \color{red}\overline{J_n} &amp; J_{J_I+1} &amp; \ldots &amp; J_n }, &amp; J_I &lt; I \\
+    \pmat{1 &amp; \ldots &amp; I - 1 &amp; \color{red}\overline{I} &amp; I + 1 &amp; \ldots &amp; n \\
+    J_1 &amp; \ldots &amp; J_{I - 1} &amp; \color{red}\overline{J_I} &amp; J_{I+1} &amp; \ldots &amp; J_n}, &amp; J_I = I.
+    \end{cases}
+    $$</span>
+    Since <span class="inline-math">$\rho$</span> is just a permutation of <span class="inline-math">$J_1, \ldots, {\color{red}\overline{J_I}}, \ldots, J_n$</span>,
+    <span class="display-math">$$ \epsilon(\rho) = \epsilon_{J_1 J_2 \ldots{\color{red}\overline{J_I}}\ldots J_n}. $$</span>
+</p>
+<p>
+    By checking case by case, we can see that
+    <span class="display-math">$$ \mu = \rho \sigma, $$</span>
+    so
+    <span class="display-math">$$ \epsilon_{J_1J_2\ldots J_n} = \epsilon(\mu) = \epsilon(\rho)\epsilon(\sigma) = (-1)^{I-J_I} \epsilon_{J_1J_2\ldots{\color{red}\overline{J_I}}\ldots J_n}.$$</span>
+</p>
+<p>
+    Finally, we can write the determinant of <span class="inline-math">$A$</span> as
+    <span class="display-math">$$\begin{align*}
+    \det A&amp; = \sum_{J_1,J_2,\ldots,J_n=1}^n \epsilon_{J_1J_2\ldots J_n} A_{J_1 1} A_{J_2 2} \ldots A_{J_n n} \\
+    &amp;= \sum_{J_I=1}^n A_{I} \sum_{J_1,J_2,\ldots,{\color{red}\overline{J_I}},\ldots J_n} \epsilon_{J_1J_2\ldots J_I \ldots J_n}  A_{J_1 1} A_{J_2 2} \ldots {\color{red}\overline{A_{J_I I}}}\ldots A_{J_n n} \\
+    &amp;= \sum_{J_I=I}^n A_I (-1)^{I-J_I} \sum_{J_1,J_2,\ldots,{\color{red}\overline{J_I}},\ldots J_n} \epsilon_{J_1J_2\ldots {\color{red}\overline{J_I}} \ldots J_n}  A_{J_1 1} A_{J_2 2} \ldots {\color{red}\overline{A_{J_I I}}}\ldots A_{J_n n} \\
+    &amp;= \sum_{J_I=1}^n A_I(-1)^{I-J_I} M_{J_I I} \\
+    &amp;= \sum_{J_I=1}^n A_I \Delta_{J_I I}
+    \end{align*}$$</span>
+    as required.
+</p>
+<p>
+    For expanding along a row, use <span class="inline-math">$\det A^T$</span>.
+</p>

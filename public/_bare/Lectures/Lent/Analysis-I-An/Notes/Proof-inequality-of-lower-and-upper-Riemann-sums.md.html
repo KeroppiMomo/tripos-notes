@@ -1,0 +1,38 @@
+<p>
+    Clearly for any dissection <span class="inline-math">$\mathcal{D}$</span>, <span class="inline-math">$L(f,\mathcal{D})\leq U(f,\mathcal{D})$</span>.
+</p>
+<p>
+    Suppose <span class="inline-math">$\mathcal{D} = \set{x_0,x_1,\ldots,x_n}$</span> with <span class="inline-math">$x_0&lt;\ldots&lt;x_n$</span>.
+    First consider the case <span class="inline-math">$\mathcal{D}&#x27;=\mathcal{D}\cup\set y$</span>.
+    Then <span class="inline-math">$y\in(x_{r-1}, x_r)$</span> for some <span class="inline-math">$r$</span>.
+    Since
+    <span class="display-math">$$ \sup_{x\in[x_{r-1}, y]} f(x), \sup_{x\in[y, x_{r}]} f(x) \leq \sup_{x\in[x_{r-1}, x_r]} f(x), $$</span>
+    we have
+    <span class="display-math">$$ \begin{align*}
+        (y-x_{r-1}) \sup_{x\in[x_{r-1}, y]} f(x) + (x_{r} - y) \sup_{x\in[y,x_r]} f(x) &amp;\leq (y-x_{r-1}) \sup_{x\in[x_{r-1}, x_{r}]} f(x) + (x_{r} - y) \sup_{x\in[x_{r-1},x_r]} f(x) \\
+        &amp;= (x_{r} - x_{r-1}) \sup_{x\in[x_{r-1}, x_{r}]} f(x)
+    \end{align*} $$</span>
+    so <span class="inline-math">$U(f,\mathcal{D}&#x27;) \leq U(f,\mathcal{D})$</span>.
+</p>
+<p>
+    Similarly
+    <span class="display-math">$$ \begin{align*}
+        \inf_{x\in[x_{r-1}, y]} f(x), \inf_{x\in[y, x_{r}]} f(x) \geq \inf_{x\in[x_{r-1}, x_r]} f(x),
+    \end{align*} $$</span>
+    so <span class="inline-math">$L(f,\mathcal{D}&#x27;) \geq L(f,\mathcal{D})$</span>.
+</p>
+<p>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        L(f, \mathcal{D}) \leq L(f, \mathcal{D}&#x27;) \leq  U(f, \mathcal{D}&#x27;) \leq U(f, \mathcal{D}).
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$\mathcal{D}&#x27;\supset D$</span>, then add the extra points one at a time and use induction.
+</p>
+<p>
+    For general <span class="inline-math">$\mathcal{D}_1, \mathcal{D}_2$</span>, since <span class="inline-math">$\mathcal{D}_1, \mathcal{D_2} \subseteq \mathcal{D}_1 \cup \mathcal{D}_2$</span>,
+    <span class="display-math">$$ \begin{align*}
+        L(f,\mathcal{D}_1) \leq L(f,\mathcal{D}_1\cup \mathcal{D}_2) \leq U(f,\mathcal{D}_1\cup \mathcal{D}_2) \leq U(f,\mathcal{D}_2).
+    \end{align*} $$</span>
+</p>

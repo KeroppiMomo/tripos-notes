@@ -1,0 +1,44 @@
+<p>
+    Abel's theorem states that the solution vectors
+    <span class="display-math">$$ \v Y_1(x) = \pmat{y_1(x) \\ y_1&#x27;(x)}, \quad \v Y_2(x) = \pmat{y_2(x) \\ y_2&#x27;(x)} $$</span>
+    are linearly independent at any <span class="inline-math">$x$</span>, so <span class="inline-math">$\v Y_1$</span> and <span class="inline-math">$\v Y_2$</span> form a basis in the phase space.
+</p>
+<p>
+    We can write the solution vector of a particular integral <span class="inline-math">$y_p$</span> as a linear combination of them,
+    <span class="display-math">$$ \v Y_p(x) = u(x) \v Y_1(x) + v(x) \v Y_2(x). $$</span>
+    Writing in components,
+    <span class="display-math">$$ \begin{cases}
+    y_p &amp;= uy_1 + vy_2, \\
+    y_p&#x27; &amp;= uy_1&#x27; + vy_2&#x27;.
+    \end{cases} $$</span>
+</p>
+<p>
+    We can relate <span class="inline-math">$u$</span> and <span class="inline-math">$v$</span> by substituting the derivative of the first equation into the second,
+    <span class="display-math">$$ {\color{yellow}uy_1&#x27;} + u&#x27;y_1 + {\color{yellow}vy_2&#x27;} + v&#x27;y_2 = y_p&#x27; = \color{yellow}uy_1&#x27; + vy_2&#x27; $$</span>
+    yielding
+    <span class="display-math">$$ u&#x27;y_1 + v&#x27;y_2 = 0. \tag{1}$$</span>
+</p>
+<p>
+    Also using the fact that <span class="inline-math">$y_p$</span> is a solution to the ODE,
+    <span class="display-math">$$\begin{align*}
+    f(x) &amp;= y_p&#x27;&#x27; + py_p&#x27; + qy_p \\
+    &amp;= (uy_1&#x27;&#x27; + u&#x27;y_1&#x27; + vy_2&#x27;&#x27; + v&#x27;y_2&#x27;) + (puy_1&#x27; + pvy_2&#x27;) + quy_1 + qvy_2 \\
+    &amp;= u\underbrace{(y_1&#x27;&#x27; + py_1&#x27; + qy_1)}_0 + v\underbrace{(y_2&#x27;&#x27; + py_2&#x27; + qy_2)}_0 + u&#x27;y_1&#x27; + v&#x27;y_2&#x27;
+    \end{align*}$$</span>
+    so
+    <span class="display-math">$$ u&#x27;y_1&#x27; + v&#x27;y_2&#x27; = f(x). \tag{2} $$</span>
+</p>
+<p>
+    Combining <span class="inline-math">$(1)$</span> and <span class="inline-math">$(2)$</span>, we can write it in matrix form
+    <span class="display-math">$$\begin{align*}
+    \pmat{y_1 &amp; y_2 \\ y_1&#x27; &amp; y_2&#x27;}\pmat{u&#x27;\\v&#x27;} &amp;= \pmat{0 \\ f} \\
+    \pmat{u&#x27;\\ v&#x27;} &amp;= \frac1W \pmat{y_2&#x27; &amp; -y_2 \\ -y_1&#x27; &amp; y_1}\pmat{0\\ f} \\
+    &amp;= \pmat{-y_2f/W \\ y_1f/W}.
+    \end{align*}$$</span>
+    Therefore
+    <span class="display-math">$$\begin{align*}
+    y_p(x) &amp;= y_2(x)v(x) + y_1(x)u(x) \\
+    &amp;= y_2(x)\int^x\frac{y_1(\xi)f(\xi)}{W(\xi)}\,d\xi - y_1(x) \int^x \frac{y_2(\xi)f(\xi)}{W(\xi)}\,d\xi
+    \end{align*}$$</span>
+    where the lower bound is irrelevant as it just adds complimentary functions onto the particular solution.
+</p>

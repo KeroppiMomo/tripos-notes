@@ -1,0 +1,121 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (partial differentiation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Definition-partial-differentiation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a scalar field <span class="inline-math">$\phi: \R^n \to \R$</span>,
+                the partial derivatives are defined to be
+                <span class="display-math">$$ \pdfd\phi{x^1}(\v x) = \lim_{\epsilon\to0}\frac1\epsilon\big(\phi(x^1 + \epsilon, x^2, x^3, \ldots, x^n) - \phi(x^1, x^2, \ldots, x^n)\big)$$</span>
+                and similarly for <span class="inline-math">$\partial\phi/\partial x^i$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (gradient)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Definition-gradient.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a scalar field <span class="inline-math">$\phi: \R^n \to \R$</span>, let <span class="inline-math">$\set{\v e_i}$</span> be an orthonormal basis of <span class="inline-math">$\R^n$</span>.
+                The gradient of <span class="inline-math">$\phi$</span> is a vector field defined as
+                <span class="display-math">$$ \v\nabla\phi = \pdfd\phi{x^i} \v e_i. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (conservative vector field)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Definition-conservative-vector-field.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A vector field <span class="inline-math">$\v F$</span> is called <em>conservative</em> if it can be written as
+                <span class="display-math">$$ \v F = \v\nabla \phi $$</span>
+                for some scalar field <span class="inline-math">$\phi$</span> called the <em>potential</em>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (conservative field and line integral)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Theorem-conservative-field-and-line-integral.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The following are equivalent: for a vector field <span class="inline-math">$\v F: \R^n \to \R^n$</span>,
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$\oint_C \v F\cdot d\v x = 0$</span> for all closed curve <span class="inline-math">$C$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\int_C \v F\cdot d\v x$</span> only depends the endpoints of <span class="inline-math">$C$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\v F$</span> is conservative;
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-conservative-field-and-line-integral.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Condition for a conservative vector field
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Condition-for-a-conservative-vector-field.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a vector field <span class="inline-math">$\v F$</span>, a necessary condition is
+                <span class="display-math">$$ \pdfd{F_i}{x^j} = \frac{\partial^2\phi}{\partial x^i \partial x^j} = \pdfd{F_j}{x^i}.$$</span>
+                This turns out to be a sufficient condition for well-behaved functions.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (exact differential)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Definition-exact-differential.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Given a function <span class="inline-math">$\phi(\v x)$</span>, its exact differential is
+                <span class="display-math">$$ d\phi = \pdfd \phi{x^i} dx^i = \nabla\phi \cdot d\v x.$$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    For a vector field <span class="inline-math">$\v F$</span>, <span class="inline-math">$\v F\cdot d\v x$</span> is an exact differential form if it can be written as <span class="inline-math">$\v F\cdot d\v x=d\phi$</span>. This means <span class="inline-math">$\v F=\nabla\phi$</span>.
+</p>
+<p>
+    If a vector field has singular points, even if it is conservative, <span class="inline-math">$\oint_C \v F\cdot d\v x$</span> may not be zero for a curve <span class="inline-math">$C$</span> around the singular point.
+</p>

@@ -1,0 +1,148 @@
+<p>
+    Consider two functions <span class="inline-math">$y_1$</span> and <span class="inline-math">$y_2$</span>,
+    <span class="display-math">$$ \begin{cases}
+    \dot y_1 &amp;= ay_1 + by_2 + f_1(t), \\
+    \dot y_2 &amp;= cy_1 + dy_2 + f_2(t).
+    \end{cases} $$</span>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Solving systems of linear ODEs by substitution
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Solving-systems-of-linear-ODEs-by-substitution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="display-math">$$ \begin{align*}
+                \ddot y_1 &amp;= a\dot y_1 + b(cy_1 + dy_2 + f_2) + \dot f_1 \\
+                &amp;= a\dot y_1 + bcy_1 + d(by_2) + bf_2 + \dot f_1 \\
+                &amp;= a\dot y_1 + bcy_1 + d(\dot y_1 - ay_1 - f_1) + bf_2 + \dot f_1 \\
+                \end{align*} $$</span>
+                and this is a linear second-order ODE with constant coefficient.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Solving systems of linear ODEs by matrix methods
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Solving-systems-of-linear-ODEs-by-matrix-methods.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We can write this in vector form
+                <span class="display-math">$$ \dv Y = M\v Y + \v F$$</span>
+                where
+                <span class="display-math">$$ \v Y = \pmat{y_1\\y_2}, \v F = \pmat{ f_1 \\ f_2 }, M = \pmat{a&amp;b \\ c&amp;d}. $$</span>
+            </p>
+            <p>
+                To look for complementary solution <span class="inline-math">$\v Y_c$</span>, we guess
+                <span class="display-math">$$ \v Y_c = \v v e^{\lambda t}.$$</span> Then
+                <span class="display-math">$$ M\v v = \lambda\v v, $$</span>
+                so <span class="inline-math">$\lambda$</span> is an eigenvalue of <span class="inline-math">$M$</span> and <span class="inline-math">$\v v$</span> is the eigenvector.
+            </p>
+            <p>
+                If there are <span class="inline-math">$n$</span> distinct eigenvalues, then there will be <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-distinct-eigenvalues-imply-linearly-independent-eigenvectors.html"><span class="inline-math">$n$</span> linearly independent complimentary functions</a>.
+            </p>
+            <p>
+                If the forcing term is a complementary function, then try <span class="inline-math">$\v Y_p = (\v a + \v bt)e^{\lambda t}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Example-of-solving-systems-of-linear-ODEs-by-matrix-methods.html">Example</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Non-degenerate phase portraits of system of first-order linear equations
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Non-degenerate-phase-portraits-of-system-of-first-order-linear-equations.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A system of first-order linear ODEs has a phase portrait with points
+                <span class="display-math">$$ \v Y = \pmat{y_1 \\ y_2 \\ \vdots \\ y_n}. $$</span>
+            </p>
+            <p>
+                For the equation <span class="inline-math">$\dv Y = M\v Y$</span>, consider the non-degenerate general solution
+                <span class="display-math">$$ \v Y(t) = \v v_1 e^{\lambda_1 t} + \v v_2 e^{\lambda_2 t}, \quad 0\neq \lambda_1 \neq \lambda_2 \neq 0. $$</span>
+            </p>
+            <p>
+                <span class="inline-math">$\v 0$</span> is a fixed point. The phase portraits depend on <span class="inline-math">$\lambda_1, \lambda_2$</span>:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\lambda_1, \lambda_2\in\R$</span>
+                </p>
+                <p>
+                    <span class="inline-math">$\v v_1, \v v_2$</span> are real.
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        Opposite signs (WLOG <span class="inline-math">$\lambda_1 &gt; 0$</span> and <span class="inline-math">$\lambda_2 &lt; 0$</span>): this is called <em>saddle node</em>.
+                        <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231126165355.png">
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$\lambda_1, \lambda_2&gt;0$</span> (WLOG <span class="inline-math">$|\lambda_1| &gt; |\lambda_2|$</span>):
+                        <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231126165646.png">
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$\lambda_1, \lambda_2 &lt; 0$</span> (WLOG <span class="inline-math">$|\lambda_1| &gt; |\lambda_2|$</span>):
+                        <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231126165926.png">
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\lambda_1, \lambda_2 \not\in \R$</span>
+                </p>
+                <p>
+                    Then since <span class="inline-math">$M$</span> is real, <span class="inline-math">$\lambda_2 = \lambda_1^*$</span>. Also <span class="inline-math">$\lambda_1^* \v v_1^* = (M\v v_1)^* = M\v v_1^*$</span> so <span class="inline-math">$\v v_2 = C\v v_1^*$</span>.
+                    Now
+                    <span class="display-math">$$ \begin{align*}
+                    \v Y(t) &amp;= \v v_1 e^{\lambda_1 t} + C\v v_1^* e^{\lambda_1^* t} \\
+                    &amp;= e^{\mrm{Re}(\lambda_1) t} (\v v_1 e^{\mrm{Im}(\lambda_1)it} + C\v v_1^* e^{-\mrm{Im}(\lambda_1)it})
+                    \end{align*}  $$</span>
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        If <span class="inline-math">$\mrm{Re}(\lambda_1) &lt; 0$</span>, then this is a stable spiral:
+                        <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231126172256.png">
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        If <span class="inline-math">$\mrm{Re}(\lambda_2) &gt; 0$</span>, then this is an unstable spiral.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        If <span class="inline-math">$\mrm{Re}(\lambda_1) = 0$</span>, then this is a centre:
+                        <img src="/tripos-notes/media/Lectures/Michaelmas/Differential-Equations-DE/Pasted-image-20231126172421.png">
+                    </p>
+                    
+                </li>
+                </ul>
+                <p>
+                    To find out the direction of rotation, evaluate <span class="inline-math">$\dv Y$</span> at any point, such as determining the sign of <span class="inline-math">$\dot y_2$</span> at <span class="inline-math">$\v Y = (1, 0)^T$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

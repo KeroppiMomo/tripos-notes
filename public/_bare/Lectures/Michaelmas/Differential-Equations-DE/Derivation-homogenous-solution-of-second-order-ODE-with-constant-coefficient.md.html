@@ -1,0 +1,91 @@
+<p>
+    We want to solve
+    <span class="display-math">$$ \mathcal D y \equiv a\frac{d^2y}{dx^2} + b\frac{dy}{dx} + cy = 0. $$</span>
+</p>
+<p>
+    <span class="inline-math">$e^{\lambda x}$</span> is an eigenfunction of <span class="inline-math">$\mathcal D$</span> since
+    <span class="display-math">$$ \mathcal D(e^{\lambda x}) = (a\lambda^2 + b\lambda + c)(e^{\lambda x}). $$</span>
+</p>
+<p>
+    Therefore for solutions in the form <span class="inline-math">$y = Ae^{\lambda x}$</span>, it has to satisfy
+    <span class="display-math">$$ a\lambda^2 + b\lambda + c = 0, $$</span>
+    which is the characteristic equation.
+    This gives two roots <span class="inline-math">$\lambda = \lambda_1, \lambda_2$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        Case 1: <span class="inline-math">$\lambda_1\neq\lambda_2$</span>
+    </p>
+    
+</li>
+</ul>
+<p>
+    We have two linearly independent solutions
+    <span class="display-math">$$ y_1(x) = Ae^{\lambda_1 x}, \quad y_2(x) = Be^{\lambda_2 x} $$</span>
+    so the general solution is
+    <span class="display-math">$$ y(x) = Ae^{\lambda_1 x} + Be^{\lambda_2 x}. $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        Case 2: <span class="inline-math">$\lambda_1=\lambda_2$</span> (degeneracy)
+    </p>
+    
+</li>
+</ul>
+<p>
+    We'll use the method of detuning here, but you can also use <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Reduction-of-order-of-linear-second-order-ODEs.html">reduction of order</a>.
+</p>
+<p>
+    <span class="display-math">$$ \frac{d^2y}{dx^2} - 2\mu\frac{dy}{dx} + \mu^2 y = 0.$$</span>
+    We will remove the degeneracy by considering a detuned equation
+    <span class="display-math">$$ \frac{d^2y}{dx^2} - 2\mu\frac{dy}{dx} + (\mu^2 - \epsilon^2) y = 0 $$</span>
+    where <span class="inline-math">$\epsilon\ll 1$</span>. In the limit <span class="inline-math">$\epsilon\to 0$</span>, the detuned equation goes back to the original equation.
+</p>
+<p>
+    Solving the characteristic equation,
+    <span class="display-math">$$\begin{align*}
+    \lambda^2 - 2\mu\lambda + \mu^2 - \epsilon^2 &amp;= 0 \\
+    (\lambda - \mu)^2 - \epsilon^2 &amp;= 0 \\
+    (\lambda - \mu + \epsilon)(\lambda - \mu - \epsilon)  &amp;= 0 \\
+    \lambda &amp;= \mu \pm \epsilon.
+    \end{align*}$$</span>
+</p>
+<p>
+    Therefore the general solution of the detuned equation is
+    <span class="display-math">$$\begin{align*}
+    y &amp;= Ae^{(\mu + \epsilon)x} + Be^{(\mu - \epsilon)x} \\
+    &amp;= e^{\mu x}(Ae^{\epsilon x} + Be^{-\epsilon x}) \\
+    &amp;= e^{\mu x}\big(A + A\epsilon x + O(A\epsilon^2) + B - B\epsilon x + O(B\epsilon^2)\big) \\
+    &amp;= e^{\mu x}\big((A+B) + (A-B)\epsilon x + O(A\epsilon^2) + O(B\epsilon^2)\big).
+    \end{align*}$$</span>
+    We do not know if <span class="inline-math">$(A-B)$</span> is in the order <span class="inline-math">$1/\epsilon$</span> so we cannot directly take the limit <span class="inline-math">$\epsilon\to 0$</span>.
+</p>
+<p>
+    Consider applying some initial conditions, such as
+    <span class="display-math">$$ y(0) = C,\quad y&#x27;(0) = D. $$</span>
+</p>
+<p>
+    Note that by product rule,
+    <span class="display-math">$$ y&#x27;(x) = e^{\mu x}\big((A-B)\epsilon + O(A\epsilon^2) + O(B\epsilon^2)\big) + \mu e^{\mu x}\big((A+B) + (A-B)\epsilon x + O(A\epsilon^2) + O(B\epsilon^2)\big)$$</span>
+    so the initial condition translates to
+    <span class="display-math">$$\begin{cases}
+    A+ B &amp;= C \\
+    (A-B)\epsilon + \mu(A+B) &amp;= D
+    \end{cases}$$</span>
+    so
+    <span class="display-math">$$ (A-B)\epsilon = D - \mu C.$$</span>
+    Also <span class="inline-math">$A = O(1/\epsilon)$</span> and <span class="inline-math">$B = O(1/\epsilon)$</span>.
+</p>
+<p>
+    Therefore,
+    <span class="display-math">$$ y = e^{\mu x}\big(C + (D-\mu C)x + O(\epsilon)\big) $$</span>
+</p>
+<p>
+    In the limit, the full solution of the original equation is
+    <span class="display-math">$$ y(x) = e^{\mu x}(\alpha + \beta x). $$</span>
+</p>
+<p>
+    The general rule is that if <span class="inline-math">$y_{c1}(x)$</span> is a degenerate complimentary function of a linear ODE with constant coefficient, the other complimentary function is <span class="inline-math">$y_{c2}(x) = xy_{c1}(x)$</span>.
+</p>

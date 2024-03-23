@@ -1,0 +1,103 @@
+<p>
+    This is to model a population, with <span class="inline-math">$X_n$</span> being the size of the population in generation <span class="inline-math">$n$</span>, and <span class="inline-math">$Y_{k,n}$</span> is the number of offspring of the <span class="inline-math">$k$</span>-th individual in generation <span class="inline-math">$n$</span>.
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (branching process)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-branching-process.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A random process <span class="inline-math">$(X_n: n\geq 0)$</span> is a <em>branching process</em> (<em>Galton-Watson process</em>) if it is in the form
+                <span class="display-math">$$ X_0 = 1, \quad X_{n+1} = \fsum n1{X_n} Y_{k,n} $$</span>
+                for some array array <span class="inline-math">$(Y_{k,n}: k\geq1, n\geq0)$</span> of independent and identically distributed non-negative integer-valued random variables. (The distribution is called the <em>offspring distribution</em>.)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Mean population of branching process
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-population-of-branching-process.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Set <span class="inline-math">$\mu=\expect(X_1)$</span>.
+                Conditioning on <span class="inline-math">$X_n$</span>,
+                <span class="display-math">$$ \expect(X_{n+1}|X_n=m) = \expect(Y_{1,n}+\ldots+Y_{m,n}) = m\mu $$</span>
+                so using the law of total expectation,
+                <span class="display-math">$$ \begin{align*}
+                \expect(X_{n+1}) &amp;= \fsum m0\infty \expect(X_{n+1}|X_n=m)\,\prob(X_n=m) \\
+                &amp;= \mu\fsum m0\infty m\prob(X_n=m) \\
+                &amp;= \mu\expect(X_n).
+                \end{align*} $$</span>
+                Applying the boundary condition of <span class="inline-math">$\expect(X_0)=1$</span>, we have <span class="inline-math">$\expect(X_n)=\mu^n$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Generating function of branching process
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-function-of-branching-process.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Generating function: let <span class="inline-math">$F(t) = \expect(t^{X_1})$</span> and <span class="inline-math">$F_n(t)=\expect(t^{X_n})$</span>. Then using the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-generating-function-of-random-sums.html">result about random sums</a>,
+                <span class="display-math">$$ F_n(t) = F_{n-1}\big(F(t)\big) = \ub{F\circ F\circ\ldots\circ F}_\text{$n$-fold composition}(t). $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    A feature to exploit is that if we condition on <span class="inline-math">$\set{X_1=m}$</span>, the descendants of any individuals in generation 1 is another branching process.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Extinction probability of branching process
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Extinction-probability-of-branching-process.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$q_n = \prob(X_n=0)$</span> and the <em>extinction probability</em> <span class="inline-math">$q=\prob(X_n=0\text{ for some } n\geq0)$</span>. Since <span class="inline-math">$\set{X_1=0}\subseteq\set{X_2=0}\subseteq\ldots$</span> and <span class="inline-math">$\bigcap_n \set{X_n=0} = \set{X_n=0\text{ for some } n\geq 0}$</span>, by continuity of probability, <span class="inline-math">$q_n\to q$</span>.
+            </p>
+            <p>
+                Note that
+                <span class="display-math">$$ q_n = \prob(X_n=0) = F_n(0)=\ub{F\circ F\circ\ldots\circ F}_\text{$n$-fold composition}(0).$$</span>
+                Alternatively we can condition on the first generation
+                <span class="display-math">$$ \begin{align*}
+                q_n &amp;= \fsum m0\infty \prob(X_1=m)\prob(X_n=0|X_1=m) \\
+                &amp;= \fsum m0\infty \prob(X_1=m) q_{n-1}^m = F(q_{n-1})
+                \end{align*} $$</span>
+                since <span class="inline-math">$\set{X_n=0|X_1=m}$</span> means that each of the descendants of the <span class="inline-math">$m$</span> individuals in generation 1 go extinct, which are independent events.
+            </p>
+            <p>
+                And using analysis (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-analysis-of-extinction-probability-of-branching-process.html">Derivation</a>), <span class="inline-math">$q$</span> is the smallest non-negative solution of <span class="inline-math">$q=F(q)$</span>. Also if <span class="inline-math">$\prob(X_1=1)&lt;1$</span>, then <span class="inline-math">$q&lt;1$</span> iff <span class="inline-math">$\mu=\expect(X_1)&gt;1$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Random walk from branching process
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walk-from-branching-process.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                List the individuals in increasing order. Set <span class="inline-math">$S_0=1$</span>, and for <span class="inline-math">$n\geq 1$</span> let <span class="inline-math">$S_n$</span> for the number of offspring of all visited individuals who have not yet been visited (think about breadth-first search).
+            </p>
+            <p>
+                Then the jumps of <span class="inline-math">$(S_n:n\geq0)$</span> are independent with the same distribution as <span class="inline-math">$X_1-1$</span>.
+                <img src="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240223173401.png">
+            </p>
+            
+        </div>
+    </div>
+</p>

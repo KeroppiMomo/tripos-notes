@@ -1,0 +1,52 @@
+<p>
+    By <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Theorem-Cauchy-s-theorem.html">Cauchy's theorem</a>, there exists <span class="inline-math">$r,s\in G$</span> such that <span class="inline-math">$o(r) = 3$</span> and <span class="inline-math">$o(s) = 2$</span> since 2 and 3 are primes. Note that <span class="inline-math">$s\not\in\gen r$</span> since no elements in <span class="inline-math">$\gen r$</span> has order 2.
+</p>
+<p>
+    Now
+    <span class="display-math">$$ |G : \gen r| = \frac{|G|}{|\gen r|} = \frac63 = 2, $$</span>
+    so <span class="inline-math">$\se{\gen r, s\gen r}$</span> partition <span class="inline-math">$G$</span>. At the same time, <span class="inline-math">$\se{\gen r, \gen r s}$</span> also partition <span class="inline-math">$G$</span>, so
+    <span class="display-math">$$ s\gen r = G\setminus \gen r = \gen r s.$$</span>
+</p>
+<p>
+    This means that <span class="inline-math">$sr = r^k s$</span> for some <span class="inline-math">$k=0,1,2$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        For <span class="inline-math">$i=0$</span>, we have <span class="inline-math">$sr=s$</span> so <span class="inline-math">$r=e$</span>, which does not have order 3, contradiction.
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$i=1$</span>, we have <span class="inline-math">$sr = rs$</span>. This means
+        <span class="display-math">$$ sr^2 = rsr = r^2 s $$</span>
+        so <span class="inline-math">$\gen r$</span> and <span class="inline-math">$\gen s$</span> commute. Therefore,
+        <span class="display-math">$$\begin{align*}
+        G &amp;\cong \gen r\times\gen s &amp;&amp;\text{by direct product theorem} \\
+        &amp;\cong C_3\times C_2 \\
+        &amp;\cong C_6 &amp;&amp;\text{by Chinese remainder theorem.}
+        \end{align*}$$</span>
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$i=2$</span>, we have <span class="inline-math">$sr = r\inv s$</span>, which is the dihedral relation.
+        We can list the elements of <span class="inline-math">$G$</span>,
+        <span class="display-math">$$ G = \set{e, r, r^2, s, rs, r^2 s}, $$</span>
+        and verify using the dihedral relation that the multiplication rules hold:
+    </p>
+    
+</li>
+</ul>
+<p>
+    -
+    	- clearly <span class="inline-math">$r^i r^j = r^{i+j}$</span>;
+    	- <span class="inline-math">$(r^i)(r^j s) = r^{i+j} s$</span>;
+    	- <span class="inline-math">$(r^i s)(r^j) = r^i r\inv s r^{j-1} = \ldots = r^i r^{-j} s = r^{i-j} s$</span>;
+    	- <span class="inline-math">$(r^i s)(r^j s) = r^i r^{-j} s s = r^{i-j}$</span>,
+</p>
+<p>
+    which agrees with the multiplication table of the dihedral group.
+    	Therefore,
+    	<span class="display-math">$$ G\cong D_6. $$</span>
+</p>

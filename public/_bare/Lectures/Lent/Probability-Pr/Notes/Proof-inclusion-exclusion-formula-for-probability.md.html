@@ -1,0 +1,33 @@
+<p>
+    We see from binomial expansion
+    <span class="display-math">$$ f(t) \equiv (1-t)^N = \fsum k0N (-1)^k \pmat{N\\k} t^k $$</span>
+    that by taking <span class="inline-math">$t=1$</span>,
+    <span class="display-math">$$ \begin{align*}
+    \sum_{k=0}^N (-1)^k \pmat{N\\k} &amp;= \begin{cases} 0, &amp;N\geq 1 \\ 1, &amp;N=0 \end{cases} \\
+    &amp;= 1_{\set{N=0}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    We'll take <span class="inline-math">$N = \fsum i1n 1_{A_i}$</span>.
+    Notice for <span class="inline-math">$k=0,1,\ldots, n$</span>,
+    <span class="display-math">$$ \sum_{1\leq i_1&lt;\ldots&lt;i_k\leq n} 1_{A_{i_1}\cap\ldots\cap A_{i_k}} = \pmat{N \\ k}. $$</span>
+    (Here's an example to aid understanding: suppose <span class="inline-math">$n=4$</span>, <span class="inline-math">$k=2$</span> and <span class="inline-math">$\omega\in A_1\cap A_2\cap A_3\cap A_4^\complement$</span>. <span class="inline-math">$N(\omega) = 3$</span>, and the non-zero terms on LHS are <span class="inline-math">$1_{A_1\cap A_2} + 1_{A_1\cap A_3} + 1_{A_2\cap A_3}$</span>.)
+</p>
+<p>
+    Then
+    <span class="display-math">$$\begin{align*}
+    1_{(A_1\cup A_2\cup\ldots\cup A_n)^\complement} &amp;= 1_{\set{N=0}} \\
+    &amp;= \fsum k0N (-1)^k \pmat{N \\ k} \\
+    &amp;= \fsum k0n (-1)^k \pmat{N \\ k} &amp; &amp;\text{by insisting that $\pmat{N\\k} = 0$ if $k\geq N+1$...} \\
+    &amp;= \fsum k0n (-1)^k \sum_{1\leq i_1&lt;\ldots&lt;i_k\leq n} 1_{{A_{i_1}}\cap\ldots\cap A_{i_k}} &amp; &amp;\text{which works here}.
+    \end{align*}$$</span>
+</p>
+<p>
+    Taking expectations on both sides and applying linearity,
+    <span class="display-math">$$ \begin{align*}
+    1 - \prob(A_1\cup\ldots\cup A_n) &amp;= \fsum k0n (-1)^k \sum_{1\leq i_1&lt;\ldots&lt;i_k\leq n} \prob(A_{i_1}\cap\ldots\cap A_{i_k}) \\
+    &amp;= 1 - \fsum k1n (-1)^{k+1} \sum_{1\leq i_1&lt;\ldots&lt;i_k\leq n} \prob(A_{i_1}\cap\ldots\cap A_{i_k}) \\
+    \prob(A_1\cup\ldots\cup A_n) &amp;= \fsum k1n (-1)^{k+1} \sum_{1\leq i_1&lt;\ldots&lt;i_k\leq n} \prob(A_{i_1}\cap\ldots\cap A_{i_k}) \\
+    \end{align*} $$</span>
+    as required.
+</p>

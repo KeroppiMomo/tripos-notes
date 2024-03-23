@@ -1,0 +1,66 @@
+<p>
+    Denote <span class="inline-math">$P_n$</span> the set of integer-valued paths <span class="inline-math">$(x_0,x_1,\ldots,x_{2n})$</span> such that
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$x_0=x_{2n}=0$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$|x_i - x_{i-1}| = 1$</span> for all <span class="inline-math">$i\geq 1$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$x_i\geq 0$</span> for all <span class="inline-math">$i$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Let <span class="inline-math">$C_n = |P_n|$</span>.
+</p>
+<p>
+    Observe that we can split the path into two parts: before and after first reaching 0. More specifically, set
+    <span class="display-math">$$ k = \min\sb{m\geq 1}{x_{2m}=0}. $$</span>
+    Then
+    <span class="display-math">$$\begin{align*}
+    (x_1-1,x_2-1,\ldots,2_{2k-1}-1)&amp;\in P_{k-1}, \\
+    (x_{2k},x_{2k+1},\ldots,x_{2n})&amp;\in P_{n-k},
+    \end{align*}$$</span>
+    and we get all pairs of path in <span class="inline-math">$P_{k-1}\times P_{n-k}$</span> in this way.
+    Hence
+    <span class="display-math">$$ C_n = \fsum k1n C_{k-1}C_{n-k}. $$</span>
+</p>
+<p>
+    To find a closed form for <span class="inline-math">$C_n$</span>, consider the generating function
+    <span class="display-math">$$ c(t) = \fsum n0\infty C_n t^n. $$</span>
+    To do anything useful with this, we need to make sure the radius convergence is non-zero. Since <span class="inline-math">$C_n \leq 2^{2n}$</span> which is the number of <span class="inline-math">$2n$</span> binary choices, <span class="inline-math">$c(t)$</span> converges for <span class="inline-math">$t&lt;1/4$</span>, so <span class="inline-math">$R\geq 1/4$</span>.
+</p>
+<p>
+    Applying the recurrence relation,
+    <span class="display-math">$$ \begin{align*}
+    c(t) &amp;= 1+\fsum n1\infty \fsum k1n C_{k-1}C_{n-k} t^n \\
+    &amp;= 1+\fsum k1\infty t\cdot C_{k-1}t^{k-1}\fsum nk\infty C_{n-k}t^{n-k} \\
+    &amp;= 1+t\left(\fsum k0\infty C_kt^k\right)\left(\fsum n0\infty C_n t^n\right) \\
+    &amp;= 1+tc(t)^2
+    \end{align*} $$</span>
+    so by quadratic formula,
+    <span class="display-math">$$ c(t) = \frac{1\pm\sqrt{1-4t}}{2t}. $$</span>
+</p>
+<p>
+    Since <span class="inline-math">$c(t)$</span> is continuous on <span class="inline-math">$[0,1/4)$</span>, the choice of <span class="inline-math">$\pm$</span> cannot change, and <span class="inline-math">$c(0)$</span> would diverge if <span class="inline-math">$+$</span> was chosen, so
+    <span class="display-math">$$ \fsum n0\infty C_n t^n = c(t) = \frac{1-\sqrt{1-4t}}{2t}. $$</span>
+</p>
+<p>
+    Hence
+    <span class="display-math">$$\begin{align*}
+    C_n &amp;= -\frac12 \pmat{1/2 \\ n+1} (-4)^{n+1} \\
+    &amp;= (-1)^n \frac12 \frac{1}{(n+1)!}\frac12\Big(-\frac12\Big)\Big(-\frac32\Big)\ldots\Big(-\frac{2n-1}{2}\Big)4^{n+1} \\
+    &amp;= \frac{1\cdot3\cdot5\cdot\ldots\cdot(2n-1)}{(n+1)!} (2^n) \\
+    &amp;= \frac{(2n)!}{2^n\,n!\,(n+1)!}(2^n) \\
+    &amp;= \frac1{n+1}\pmat{2n\\n}.
+    \end{align*}$$</span>
+</p>

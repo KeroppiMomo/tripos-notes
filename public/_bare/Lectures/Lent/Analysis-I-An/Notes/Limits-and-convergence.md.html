@@ -1,0 +1,463 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Sequences
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Sequences.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (limit of a sequence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Definition-limit-of-a-sequence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a sequence of real (or complex) numbers <span class="inline-math">$(a_n)_{n=1}^\infty$</span>,
+                            we say <span class="inline-math">$a_n\to a$</span> as <span class="inline-math">$n\to\infty$</span> for some <span class="inline-math">$a\in\R$</span> if for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$N\in\N$</span> such that
+                            <span class="display-math">$$ |a_n - a| &lt; \epsilon\quad \forall n\geq N. $$</span>
+                        </p>
+                        <p>
+                            Equivalently you can replace with <span class="inline-math">$|a_n - a| \geq \epsilon$</span>, or <span class="inline-math">$\epsilon$</span> by any multiple of <span class="inline-math">$\epsilon$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Axiom (least upper bound)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Axiom-least-upper-bound.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Every non-empty set of real numbers bounded above has a supremum.
+                        </p>
+                        <p>
+                            Similarly every non-empty set bounded below has a infimum.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Axiom (monotone convergence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Axiom-monotone-convergence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            An increasing sequence of real numbers which are bounded above converges i.e. has a limit.
+                        </p>
+                        <p>
+                            Equivalently, a decreasing sequence bounded below converges.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-of-equivalence-of-monotone-convergence-theorem-and-least-upper-bound-axiom.html">Proof of equivalence with least upper bound</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Properties of limits:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Limit is unique, i.e. if <span class="inline-math">$a_n \to a$</span> and <span class="inline-math">$a_n \to b$</span>, then <span class="inline-math">$a=b$</span>. (<a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-uniqueness-of-limit.html">Proof</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    Subsequences converge to the same limit, i.e. if <span class="inline-math">$a_n \to a$</span> and <span class="inline-math">$n_1 &lt; n_2 &lt; n_3 &lt; \ldots \in \N$</span>, then <span class="inline-math">$a_{n_j} \to a$</span> as <span class="inline-math">$j\to\infty$</span>. (<a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-subsequences-converge-to-same-limit.html">Proof</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    Operations on sequences: if <span class="inline-math">$a_n \to a$</span> and <span class="inline-math">$b_n \to b$</span>, then
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        <span class="inline-math">$a_n + b_n \to a+b$</span>; (<a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-sum-of-sequences-have-sum-of-limit.html">Proof</a>)
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$a_n b_n \to ab$</span>; (<a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-product-of-sequences-have-product-of-limit.html">Proof</a>)
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        if <span class="inline-math">$a_n\neq 0$</span> and <span class="inline-math">$a\neq 0$</span>, then <span class="inline-math">$1/a_n \to 1/a$</span>; (<a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-reciprocal-of-sequence-have-reciprocal-of-limit.html">Proof</a>)
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    Bound of sequence also bounds limit: if <span class="inline-math">$a_n \to a$</span> and <span class="inline-math">$a_n \leq A$</span> for all <span class="inline-math">$n\in\N$</span>, then <span class="inline-math">$a\leq A$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Squeeze theorem: if <span class="inline-math">$a_n\to a$</span>, <span class="inline-math">$c_n\to a$</span> and <span class="inline-math">$a_n \leq b_n \leq c_n$</span>, then <span class="inline-math">$b_n\to a$</span>. (<a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-squeeze-theorem.html">Proof</a>)
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Example-limit-of-reciprocal.html">Example (limit of reciprocal)</a>, <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Example-limit-of-power.html">Example (limit of power)</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (limit of complex sequence separates into real and imaginary parts)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Lemma-limit-of-complex-sequence-separates-into-real-and-imaginary-parts.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$(z_n)_{n\in\N}$</span> is a complex sequence, then
+                            <span class="display-math">$$ z_n \to z \iff \Re z_n\to\Re z\text{ and } \Im z_n\to\Im z. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-limit-of-complex-sequence-separates-into-real-and-imaginary-parts.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Bolzano-Weierstrass theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-Bolzano-Weierstrass-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Every bounded real sequence has a convergent subsequence.
+                        </p>
+                        <p>
+                            That is, if <span class="inline-math">$x_n\in\R$</span> and there exists <span class="inline-math">$K&gt;0$</span> such that <span class="inline-math">$|x_n|\leq K$</span> for all <span class="inline-math">$n$</span>, then there exists indices <span class="inline-math">$n_1&lt;n_2&lt;n_3&lt;\ldots$</span> and <span class="inline-math">$x\in\R$</span> such that <span class="inline-math">$x_{n_j}\to x$</span> as <span class="inline-math">$j\to\infty$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-Bolzano-Weierstrass-theorem.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Cauchy sequence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Definition-Cauchy-sequence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A sequence <span class="inline-math">$(a_n)_{n\in\C}$</span> of real numbers is <em>Cauchy</em> if for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$N\in\N$</span> such that if <span class="inline-math">$n,m\geq N$</span>, then <span class="inline-math">$|a_n - a_m| &lt; \epsilon$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (general principle of convergence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-general-principle-of-convergence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A real sequence converges iff it is Cauchy.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-convergence-implies-Cauchy.html">Proof (convergence implies Cauchy)</a>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-Cauchy-sequences-converge.html">Proof (Cauchy sequences converge)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (general principle of convergence for complex sequences)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Corollary-general-principle-of-convergence-for-complex-sequences.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A complex sequence converges iff it is Cauchy.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-general-principle-of-convergence-for-complex-sequences.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Series
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Series.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (convergence of series)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Definition-convergence-of-series.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$a_j\in\R$</span> or <span class="inline-math">$\C$</span>. We say that <span class="inline-math">$\sum_{j=1}^\infty a_j$</span> <em>converges</em> to <span class="inline-math">$S\in\R$</span> 
+                            if the sequence of partial sums <span class="inline-math">$S_N\to S$</span> as <span class="inline-math">$N\to\infty$</span>, where
+                            <span class="display-math">$$ S_N = \sum_{j=1}^N a_j. $$</span>
+                            We write <span class="inline-math">$\sum_{j=1}^\infty a_j = S$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$S_n$</span> does not converge, we say that the series <em>diverges</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Properties of series:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Linear combination of series: if <span class="inline-math">$\sum_{j=1}^\infty a_j$</span> and <span class="inline-math">$\sum_{j=1}^\infty b_j$</span> both converge, then so does <span class="inline-math">$\sum_{j=1}^\infty (\lambda a_j + \mu b_j)$</span> for any <span class="inline-math">$\lambda, \mu\in\R$</span>, and <span class="inline-math">$\sum_{j=1}^\infty (\lambda a_j + \mu b_j) = \lambda \sum_{j=1}^\infty a_j + \mu \sum_{j=1}^\infty b_j$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Only the tail matters for convergence: if there exists <span class="inline-math">$N\in\N$</span> such that <span class="inline-math">$a_j = b_j$</span> for <span class="inline-math">$j\geq N$</span>, then either both series <span class="inline-math">$\fsum j1\infty a_j$</span> and <span class="inline-math">$\fsum j1\infty b_j$</span> converge or both diverge.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (n-th term test)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Lemma-n-th-term-test.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$\sum a_j$</span> converges, then <span class="inline-math">$a_j \to 0$</span> as <span class="inline-math">$j\to\infty$</span>.
+                        </p>
+                        <p>
+                            We usually use the contrapositive: if <span class="inline-math">$a_j\not\to 0$</span>, then <span class="inline-math">$\sum a_j$</span> diverges.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-n-th-term-test.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Converse is false: <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-harmonic-series-diverge.html">the harmonic series <span class="inline-math">$\fsum j1\infty 1/j$</span> diverges.</a>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Convergence test for positive sequences
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Convergence-test-for-positive-sequences.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (comparison test)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-comparison-test.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Suppose that <span class="inline-math">$0\leq b_n\leq a_n$</span> for all <span class="inline-math">$n$</span>.
+                                        Then if <span class="inline-math">$\sum a_n$</span> converges, then so does <span class="inline-math">$\sum b_n$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-comparison-test.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (root test)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-root-test.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Suppose <span class="inline-math">$a_n\geq 0$</span> and <span class="inline-math">$a_n^{1/n}\to a$</span> as <span class="inline-math">$n\to\infty$</span>. Then
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            if <span class="inline-math">$a&lt;1$</span>, then <span class="inline-math">$\sum a_n$</span> converges;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            if <span class="inline-math">$a&gt;1$</span>, then <span class="inline-math">$\sum a_n$</span> diverges.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-root-test.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (ratio test)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-ratio-test.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Suppose <span class="inline-math">$a_n &gt; 0$</span> and <span class="inline-math">$a_{n+1}/a_n \to l$</span>.
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            If <span class="inline-math">$l&lt;1$</span>, then <span class="inline-math">$\sum a_n$</span> converges;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            if <span class="inline-math">$l&gt;1$</span>, then <span class="inline-math">$\sum a_n$</span> diverges.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-ratio-test.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (Cauchy's condensation test)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-Cauchy-s-condensation-test.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$a_n$</span> be a decreasing sequence of positive terms. Then
+                                        <span class="display-math">$$ \fsum n1\infty a_n \text{ converges} \iff \fsum n1\infty 2^n a_{2^n} \text{ converges}. $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-Cauchy-s-condensation-test.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (alternating series test)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-alternating-series-test.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$a_n$</span> is a decreasing sequence with <span class="inline-math">$a_n \to 0$</span>.
+                            Then the series
+                            <span class="display-math">$$ \fsum n1\infty (-1)^{n+1} a_n \text{ converges}. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-alternating-series-test.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (absolute convergence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Definition-absolute-convergence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$a_n \in \C$</span>. If <span class="inline-math">$\fsum n1\infty |a_n|$</span> converges, then we say <span class="inline-math">$\fsum n1\infty a_n$</span> is <em>absolutely convergent</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (absolute convergence implies convergence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-absolute-convergence-implies-convergence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$\sum a_n$</span> is absolutely convergent, it is convergent.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-absolute-convergence-implies-convergence.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Converse is false: <span class="inline-math">$\fsum n1\infty (-1)^{n+1}/n$</span>  converges to <span class="inline-math">$\log 2$</span> but not absolutely.
+            </p>
+            <p>
+                If <span class="inline-math">$\sum a_n$</span> converges but not <span class="inline-math">$\sum |a_n|$</span>, we say the series is <em>conditionally convergent</em>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (rearrangement of absolutely convergent series)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-rearrangement-of-absolutely-convergent-series.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$\sum a_n$</span> is absolutely convergent, then
+                            <span class="display-math">$$\fsum n1\infty a_{\sigma(n)} = \fsum n1\infty a_n$$</span>
+                            for any bijection <span class="inline-math">$\sigma: \N\to\N$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-rearrangement-of-absolutely-convergent-series.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Rearrangement can change the sum of a conditionally convergent series: see example sheet 1, Q7.
+            </p>
+            
+        </div>
+    </div>
+</p>

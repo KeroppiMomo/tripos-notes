@@ -1,0 +1,616 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (eigenvector, eigenvalue)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-eigenvector-eigenvalue.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider linear map <span class="inline-math">$\alpha: \C^n\to\C^n$</span> with the associated <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>.
+            </p>
+            <p>
+                A vector <span class="inline-math">$\v x\neq \v 0$</span> is an <em>eigenvector</em> of <span class="inline-math">$A$</span> and <span class="inline-math">$\lambda$</span> is the associated <em>eigenvalue</em> if
+                <span class="display-math">$$ A\v x = \lambda \v x. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (characteristic polynomial and equation of eigenvalues)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-characteristic-polynomial-and-equation-of-eigenvalues.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, the characteristic polynomial is
+                <span class="display-math">$$ p_A(\lambda) \equiv \det(A - \lambda I). $$</span>
+                Eigenvalues satisfy the characteristic equation
+                <span class="display-math">$$ p_A(\lambda) = \det(A-\lambda I) = 0. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Properties of the characteristic polynomial
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Properties-of-the-characteristic-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$p_A(\lambda)$</span> is a polynomial of order <span class="inline-math">$n$</span>.
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID 5b1203 -->
+            <li id="^5b1203">
+                <p>
+                    By the <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-fundamental-theorem-of-algebra.html">fundamental theorem of algebra</a>, <span class="inline-math">$A$</span> has <span class="inline-math">$n$</span> eigenvalues accounting multiplicity.
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID 5b1203 -->
+            <!-- BEGIN BLOCK ID ba2380 -->
+            <li id="^ba2380">
+                <p>
+                    Sum and product of eigenvalues are
+                    <span class="display-math">$$\begin{align*}
+                    \sum_{\text{eigenvalue }\lambda} \lambda &amp;= \mrm{tr}\, A, \\
+                    \prod_{\text{eigenvalue }\lambda} \lambda &amp;= \det A.
+                    \end{align*}$$</span>
+                    (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-sum-and-product-of-eigenvalues.html">Derivation</a>)
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID ba2380 -->
+            
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (eigenspace)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-eigenspace.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The eigenspace <span class="inline-math">$E_\lambda$</span> of an eigenvalue <span class="inline-math">$\lambda$</span> is <span class="display-math">$$E_\lambda = \ker(A-\lambda I) = \sb{\v x\in\C^n}{A\v x= \lambda\v x}.$$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (algebraic and geometric multiplicity, degenerate, defect)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-algebraic-and-geometric-multiplicity-degenerate-defect.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an eigenvalue <span class="inline-math">$\lambda$</span>,
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The <em>algebraic multiplicity</em> <span class="inline-math">$M_\lambda$</span> is the multiplicity of <span class="inline-math">$\lambda$</span> as a root of <span class="inline-math">$p_A(\lambda) = 0$</span>.
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        If <span class="inline-math">$M_\lambda &gt; 1$</span>, then eigenvalue <span class="inline-math">$\lambda$</span> is called <em>degenerate</em>.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        By the <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-fundamental-theorem-of-algebra.html">fundamental theorem of algebra</a>, <span class="inline-math">$\sum_{\text{eigenvalue }\lambda} M_\lambda = n$</span>.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        The <em>geometric multiplicity</em> <span class="inline-math">$m_\lambda$</span> is the maximum number of linearly independent eigenvectors with eigenvalue <span class="inline-math">$\lambda$</span>, i.e.
+                        <span class="display-math">$$ m_\lambda = \dim E_\lambda. $$</span>
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    The <em>defect</em> <span class="inline-math">$\Delta_\lambda$</span> is defined as
+                    <span class="display-math">$$ \Delta_\lambda = M_\lambda - m_\lambda. $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (non-negative defect)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-non-negative-defect.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For any matrix <span class="inline-math">$A$</span> and its eigenvalue <span class="inline-math">$\lambda$</span>, the defect
+                <span class="display-math">$$ \Delta_\lambda \geq 0. $$</span>
+            </p>
+            <p>
+                <a href="https://math.stackexchange.com/questions/458189/why-geometric-multiplicity-is-bounded-by-algebraic-multiplicity?rq=1">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (distinct eigenvalues imply linearly independent eigenvectors)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-distinct-eigenvalues-imply-linearly-independent-eigenvectors.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span> has <span class="inline-math">$n$</span> eigenvalues <span class="inline-math">$\lambda_1, \lambda_2, \ldots, \lambda_n$</span> corresponding to eigenvectors <span class="inline-math">$\v x_1, \v x_2, \ldots, \v x_n$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\lambda_1, \ldots, \lambda_n$</span> are distinct, then <span class="inline-math">$\v x_1, \ldots, \v x_n$</span> are linearly independent.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-distinct-eigenvalues-imply-linearly-independent-eigenvectors.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Eigenvector basis
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Eigenvector-basis.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                By the <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-distinct-eigenvalues-imply-linearly-independent-eigenvectors.html">above theorem</a>, if <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span> has <span class="inline-math">$n$</span> distinct eigenvalues, then <span class="inline-math">$A$</span> has <span class="inline-math">$n$</span> linearly independent <span class="inline-math">$\v v_1, \v v_2, \ldots, \v v_n$</span>, so the matrix <span class="inline-math">$A$</span> <strong><em>with respect to this basis</em></strong> is diagonal:
+                <span class="display-math">$$ A\v v_i = \lambda_i\v v_i,\quad \forall i=1,2,\ldots,n $$</span>
+                <span class="display-math">$$ A = \pmat{
+                \lambda_1 &amp; 0 &amp; \ldots &amp; 0 \\
+                0 &amp; \lambda_2 &amp; \ldots &amp; 0 \\
+                \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+                0 &amp; 0 &amp; \ldots &amp; \lambda_n} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Transformation matrices
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Transformation-matrices.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose we want to change the basis from <span class="inline-math">$\set{\v e_1, \v e_2, \ldots, \v e_n}$</span> to <span class="inline-math">$\set{\v e_1&#x27;, \v e_2&#x27;, \ldots, \v e_n&#x27;}$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Change-of-basis matrix
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Change-of-basis-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Define the change-of-basis matrix <span class="inline-math">$P$</span> by (using summation notation)
+                            <span class="display-math">$$ \v e_j&#x27; = P_{ij} \v e_i. $$</span>
+                            To change it back, use the inverse matrix <span class="inline-math">$P\inv$</span>
+                            <span class="display-math">$$ \v e_i = (P\inv)_{ij} \v e_j&#x27;. $$</span>
+                            (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-of-change-of-basis-matrix.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Transformation law for vectors
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Transformation-law-for-vectors.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            To transform a vector <span class="inline-math">$\v u$</span> from <span class="inline-math">$\v e_i$</span> to <span class="inline-math">$\v e_j&#x27;$</span> basis, multiply by <span class="inline-math">$P\inv$</span>:
+                            <span class="display-math">$$ u_j&#x27; = (P\inv)_{jk} u_k, \qquad \v u&#x27; = P\inv \v u. $$</span>
+                            To transform it back, multiply by <span class="inline-math">$P$</span>:
+                            <span class="display-math">$$ u_i = P_{ij} u_j&#x27;, \qquad \v u = P\v u&#x27;. $$</span>
+                            (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-of-transformation-law-for-vectors.html">Derivation and notes</a>)
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Example-of-transformation-law-for-vectors.html">Example</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Transformation law for matrices
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Transformation-law-for-matrices.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider linear map <span class="inline-math">$\alpha: \C^m \to \C^n$</span> with associated <span class="inline-math">$n\times m$</span> matrix <span class="inline-math">$A$</span>.
+                        </p>
+                        <p>
+                            To transform to a matrix that takes the input in the new basis and output a vector in the new basis, if <span class="inline-math">$P$</span> is the change-of-basis matrix of <span class="inline-math">$\C^m$</span> and <span class="inline-math">$Q$</span> is that of <span class="inline-math">$\C^n$</span>, use
+                            <span class="display-math">$$ A&#x27; = Q\inv A P. $$</span>
+                            (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-of-transformation-law-for-square-matrices.html">Derivation</a>)
+                        </p>
+                        <p>
+                            For <span class="inline-math">$\alpha: \C^n\to\C^n$</span>, we usually transform to the same basis in domain and codomain, so
+                            <span class="display-math">$$ A&#x27; = P\inv AP. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (similar matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-similar-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Two <span class="inline-math">$n\times n$</span> matrices <span class="inline-math">$A,B$</span> are similar if there exists an invertible matrix <span class="inline-math">$P$</span> such that
+                            <span class="display-math">$$ B = P\inv A P. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (similar matrices have the same characteristic polynomials)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-similar-matrices-have-the-same-characteristic-polynomials.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$A,B$</span> are similar matrices, then their characteristic polynomials equal:
+                            <span class="display-math">$$ p_A(\lambda) = p_B(\lambda). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-similar-matrices-have-the-same-characteristic-polynomials.html">Proof</a>
+                        </p>
+                        <p>
+                            It <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Properties-of-the-characteristic-polynomial.html">follows that</a> <span class="inline-math">$\det A = \det B$</span> and <span class="inline-math">$\mrm{tr}\, A = \mrm{tr}\, B$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (transformation matrix between orthonormal bases is unitary)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-transformation-matrix-between-orthonormal-bases-is-unitary.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$U$</span> is the change-of-basis matrix between one <em><strong>orthonormal</strong></em> basis and a new <em><strong>orthonormal</strong></em> basis. Then <span class="inline-math">$U$</span> is unitary.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-transformation-matrix-between-orthonormal-bases-is-unitary.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Diagonalisable matrices
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Diagonalisable-matrices.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (diagonalisable matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-diagonalisable-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            An <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span> is diagonalisable if it is similar to a diagonal matrix.
+                        </p>
+                        <p>
+                            Equivalently, <span class="inline-math">$A$</span> is diagonalisable if its eigenvectors form a basis of <span class="inline-math">$\C^n$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (basis vectors of eigenspaces are linearly independent)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-basis-vectors-of-eigenspaces-are-linearly-independent.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\lambda_1, \lambda_2, \ldots, \lambda_r$</span> with <span class="inline-math">$r\leq n$</span> be the distinct eigenvalues of an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, and let <span class="inline-math">$B_i$</span> be the bases of the corresponding eigenspaces <span class="inline-math">$E_{\lambda_i}$</span>.
+                        </p>
+                        <p>
+                            Then the set <span class="inline-math">$B = \bigcup_{i=1}^r B_i$</span> is linearly independent.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-basis-vectors-of-eigenspaces-are-linearly-independent.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Test for diagonalisability
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Test-for-diagonalisability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Solve <span class="inline-math">$p_A(\lambda) = 0$</span> for distinct solutions <span class="inline-math">$\lambda_1, \lambda_2, \ldots, \lambda_r$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Find the basis <span class="inline-math">$B_i$</span> of eigenspace <span class="inline-math">$E_{\lambda_i}$</span> to find <span class="inline-math">$m_{\lambda_i}$</span> for all <span class="inline-math">$i=1,2,\ldots, r$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Calculate the size of <span class="inline-math">$B$</span> <span class="inline-math">$= \sum_{i=1}^r m_{\lambda_i}$</span>.
+                            </p>
+                            <ul>
+                            <li>
+                                <p>
+                                    If this equals <span class="inline-math">$n$</span>, then <span class="inline-math">$A$</span> is diagonalisable.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Otherwise <span class="inline-math">$A$</span> is not.
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Jordan normal form
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Jordan-normal-form.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (2x2 matrix has Jordan normal form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-2x2-matrix-has-Jordan-normal-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Any <span class="inline-math">$2\times2$</span> complex matrix <span class="inline-math">$A$</span> is similar to one of
+                            <span class="display-math">$$ \pmat{\lambda_1&amp;0\\0&amp;\lambda_2}, \quad\pmat{\lambda&amp;0\\0&amp;\lambda}, \quad\pmat{\lambda&amp;1\\0&amp;\lambda}. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-2x2-matrix-has-Jordan-form.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (nxn matrix has Jordan normal form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-nxn-matrix-has-Jordan-normal-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Every complex <span class="inline-math">$n\times n$</span> matrix is similar to a matrix <span class="inline-math">$A&#x27;$</span> satisfying
+                            <span class="display-math">$$ A&#x27;_{ij} = \begin{cases}
+                            \lambda_{i}, &amp;j=i, \\
+                            0 \text{ or } 1, &amp;j=i+1, \\
+                            0, &amp;\text{otherwise}.
+                            \end{cases} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Example-finding-Jordan-normal-form.html">Example (finding Jordan normal form)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Cayley-Hamilton theorem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Cayley-Hamilton-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Cayley-Hamilton theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-Cayley-Hamilton-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Every <span class="inline-math">$n\times n$</span> complex matrix <span class="inline-math">$A$</span> satisfies its own characteristic equation, i.e.
+                            <span class="display-math">$$ p_A(A) = 0. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Partial-proof-Cayley-Hamilton-theorem.html">Partial proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (matrix inverse using coefficients in characteristic polynomial)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Corollary-matrix-inverse-using-coefficients-in-characteristic-polynomial.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$A\inv$</span> exists and
+                            <span class="display-math">$$ p_A(x) = c_0 + c_1 x + \ldots + c_n x^n, $$</span>
+                            then
+                            <span class="display-math">$$ A\inv = -\frac1{c_0}(c_1 I + c_2 A + \ldots + c_n A^{n-1}). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-matrix-inverse-using-coefficients-in-characteristic-polynomial.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Eigenvectors of normal matrices
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Eigenvectors-of-normal-matrices.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (eigenvalues of Hermitian matrix is real)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-eigenvalues-of-Hermitian-matrix-is-real.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The eigenvalues of a Hermitian matrix <span class="inline-math">$H$</span> are real.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-eigenvalues-of-Hermitian-matrix-is-real.html">Proof</a>
+                        </p>
+                        <p>
+                            Consequently so are those of a real symmetric matrix.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (distinct eigenvalues of normal matrix correspond to orthogonal eigenvectors)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Lemma-distinct-eigenvalues-of-normal-matrix-correspond-to-orthogonal-eigenvectors.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Eigenvectors of a normal matrix corresponding to distinct eigenvalues are orthogonal.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-distinct-eigenvalues-of-normal-matrix-correspond-to-orthogonal-eigenvectors.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (normal matrix has orthogonal eigenvector basis)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-normal-matrix-has-orthogonal-eigenvector-basis.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            An <span class="inline-math">$n\times n$</span> normal matrix has <span class="inline-math">$n$</span> orthogonal eigenvectors.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-normal-matrix-has-orthogonal-eigenvector-basis.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (normal matrix iff diagonalisable via unitary transform)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-normal-matrix-iff-diagonalisable-via-unitary-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A matrix <span class="inline-math">$A$</span> is similar to a diagonal matrix <span class="inline-math">$D$</span> via a unitary transform <span class="inline-math">$U$</span>, i.e.
+                            <span class="display-math">$$ A = UDU^\dagger, $$</span>
+                            iff <span class="inline-math">$A$</span> is normal.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Gershgorin circle theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-Gershgorin-circle-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, for each row <span class="inline-math">$i$</span> define
+                <span class="display-math">$$ R_i = \sum_{j\neq i} |A_{ij}| $$</span>
+                and define a disk <span class="inline-math">$D_i(A_{ii}, R_i)\subset\C$</span> to be the circle with centre <span class="inline-math">$A_{ii}$</span> and radius <span class="inline-math">$R_i$</span>.
+            </p>
+            <p>
+                Then every eigenvalues lie within a disk <span class="inline-math">$D_i$</span> for some <span class="inline-math">$i$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-Gershgorin-circle-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

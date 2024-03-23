@@ -1,0 +1,55 @@
+<p>
+    First we'll prove a lemma:
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (continuous functions bounded on closed intervals)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Lemma-continuous-functions-bounded-on-closed-intervals.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$f: [a,b]\to\R$</span> is continuous. Then there exists <span class="inline-math">$K$</span> such that <span class="inline-math">$|f(x)| &lt; K$</span> for all <span class="inline-math">$x\in[a,b]$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-continuous-functions-bounded-on-closed-intervals.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Proof (continuous functions bounded on closed intervals)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Proof-continuous-functions-bounded-on-closed-intervals.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$f$</span> is not bounded.
+                Then for all <span class="inline-math">$n=1,2,3,\ldots$</span>, there exists <span class="inline-math">$x_n\in[a,b]$</span> where <span class="inline-math">$|f(x_n)| &gt; n$</span>.
+            </p>
+            <p>
+                Since <span class="inline-math">$x_n$</span> is bounded, by <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-Bolzano-Weierstrass-theorem.html">Bolzano-Weierstrass</a>, there is a subsequence <span class="inline-math">$x_{n_j} \to x$</span> as <span class="inline-math">$j\to\infty$</span> for some <span class="inline-math">$x$</span>.
+            </p>
+            <p>
+                Since <span class="inline-math">$a\leq x_{n_j} \leq b$</span>, we have <span class="inline-math">$a\leq x\leq b$</span>. So by continuity, <span class="inline-math">$f(x_{n_j}) \to f(x)$</span>.
+                However, <span class="inline-math">$|f(x_{n_j})| &gt; n_j \geq j$</span> so <span class="inline-math">$f(x_{n_j})$</span> cannot converge, contradiction.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Let <span class="inline-math">$A = \sb{f(x)}{x\in[a,b]}$</span>. From lemma, <span class="inline-math">$A$</span> is bounded, so it has a supremum <span class="inline-math">$M$</span>.
+</p>
+<p>
+    From the definition of a supremum, for all <span class="inline-math">$n\in\N$</span>, there exists <span class="inline-math">$y_n\in A$</span> such that <span class="inline-math">$M-1/n \leq y_n \leq M$</span>. Let <span class="inline-math">$x_n\in[a,b]$</span> be such that <span class="inline-math">$f(x_n) = y_n$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$(x_n)$</span> is bounded, by <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-Bolzano-Weierstrass-theorem.html">Bolzano-Weierstrass</a>, there is a subsequence <span class="inline-math">$x_{n_j} \to Y$</span> for some <span class="inline-math">$Y\in[a,b]$</span>.
+    Using continuity,
+    <span class="display-math">$$ f(Y) = \lim_{j\to\infty} f(x_{n_j}) = M. $$</span>
+    Hence <span class="inline-math">$f(x) \leq f(Y)$</span> for all <span class="inline-math">$x\in[a,b]$</span>.
+</p>
+<p>
+    For a lower bound, either consider the infimum of <span class="inline-math">$A$</span> and argue similarly, or apply the above to <span class="inline-math">$-f$</span>.
+</p>

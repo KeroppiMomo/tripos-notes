@@ -1,0 +1,17 @@
+<p>
+    Note that we can replace each transposition with a product of even adjacent transpositions without changing the parity of <span class="inline-math">$k$</span>, so we assume <span class="inline-math">$\tau_1, \ldots, \tau_k$</span> are adjacent.
+</p>
+<p>
+    Then it suffices to prove that <span class="inline-math">$k\equiv$</span> number of inversions of <span class="inline-math">$\sigma$</span> <span class="inline-math">$\mod 2$</span> since <span class="inline-math">$e$</span> has 0 inversions.
+</p>
+<p>
+    We will prove this by induction on <span class="inline-math">$k$</span>. For base case <span class="inline-math">$k=0$</span>, <span class="inline-math">$\sigma=e$</span> has 0 inversions.
+</p>
+<p>
+    For the inductive step, let <span class="inline-math">$\sigma = \pmat{l&amp;l+1}\sigma&#x27;$</span> where <span class="inline-math">$\tau_1 = \pmat{l &amp; l+1}$</span> and <span class="inline-math">$\sigma&#x27; = \tau_2\tau_3\ldots\tau_k$</span>. We will find how many pairs <span class="inline-math">$\set{i,j}$</span> are inversions of <span class="inline-math">$\sigma&#x27;$</span> but not of <span class="inline-math">$\sigma$</span> or vice versa. The only cases where this is true (check other cases yourself; they are boring) are
+    <span class="display-math">$$ \begin{cases} \sigma&#x27;(i) &amp;= l \\ \sigma&#x27;(j) &amp;= l+1 \end{cases} \quad\text{or}\quad \begin{cases} \sigma&#x27;(j) &amp;= l \\ \sigma&#x27;(i) &amp;= l+1 \end{cases}. $$</span>
+    Since these two cases correspond to only one unique pair <span class="inline-math">$\set{\sigma&#x27;\inv(l), \sigma&#x27;\inv(l+1)}$</span>,
+    we see that
+    <span class="display-math">$$ \text{number of inversions of }\sigma = (\text{number of inversions of }\sigma&#x27;) \pm 1 $$</span>
+    as required.
+</p>

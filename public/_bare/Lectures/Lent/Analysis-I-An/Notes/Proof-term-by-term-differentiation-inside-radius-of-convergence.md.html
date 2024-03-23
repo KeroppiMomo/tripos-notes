@@ -1,0 +1,64 @@
+
+<h1>Convergence of derivative</h1>
+
+<p>
+    First we have to show that
+    <span class="display-math">$$ g(z) = \fsum n1\infty na_n z^{n-1} $$</span>
+    has a radius of convergence of <span class="inline-math">$R$</span>.
+</p>
+<p>
+    For <span class="inline-math">$0&lt;|z|&lt;R$</span>, pick <span class="inline-math">$r$</span> such that <span class="inline-math">$|z|&lt;r&lt;R$</span>.
+    Since <span class="inline-math">$\sum a_n r^n$</span> converges, by the <span class="inline-math">$n$</span>-th term test, <span class="inline-math">$a_n r^n \to 0$</span> as <span class="inline-math">$n\to\infty$</span>,
+    so there exists <span class="inline-math">$K$</span> such that <span class="inline-math">$|a_n r^n| \leq K$</span> for all <span class="inline-math">$n\geq 0$</span>.
+</p>
+<p>
+    Then
+    <span class="display-math">$$ |na_n z^{n-1}| = \frac{|a_nr^n|}{|z|}n\left|\frac{z}{r}\right|^n \leq \frac{K}{|z|} n\rho^n,\qquad \rho=\left|\frac zr\right|&lt;1$$</span>
+    but <span class="inline-math">$\sum n\rho^ n$</span> converges by the ratio test:
+    <span class="display-math">$$ \left|\frac{(n+1)\rho^{n+1}}{n\rho^n}\right|=\rho\left(1+\frac1n\right) \to \rho &lt; 1 $$</span>
+    so <span class="inline-math">$\sum na_nz^{n-1}$</span> converges absolutely by comparison.
+</p>
+<p>
+    If <span class="inline-math">$|z|&gt;R$</span>, suppose <span class="inline-math">$\sum na_n z^{n-1}$</span> converges. Then pick <span class="inline-math">$w\in\C$</span> such that <span class="inline-math">$|z|&gt;|w|&gt;R$</span>.
+    <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Lemma-power-series-absolutely-converges-if-converges-at-some-outer-point.html">This makes</a> <span class="inline-math">$\sum na_n w^{n-1}$</span> converges absolutely. But for <span class="inline-math">$n\geq 1$</span>,
+    <span class="display-math">$$ |a_n w^n| \leq \frac{1}{|z|}|na_n z^{n-1}| $$</span>
+    so <span class="inline-math">$\sum a_n w^n$</span> converges absolutely by comparison test, which contradicts with <span class="inline-math">$|w|&gt;R$</span>.
+    Hence <span class="inline-math">$\sum na_n z^{n-1}$</span> diverges.
+</p>
+<p>
+    This completes the proof for <span class="inline-math">$\sum na_n z^{n-1}$</span> having a radius of convergence of <span class="inline-math">$R$</span>.
+    Applying this result to the series <span class="inline-math">$\sum na_n z^{n-1}$</span> shows that <span class="inline-math">$\sum n(n-1)a_n z^{n-2}$</span> also has a radius of convergence of <span class="inline-math">$R$</span>.
+</p>
+
+<h1>Error term tends to zero</h1>
+
+<p>
+    We need to show
+    <span class="display-math">$$ I = \frac{f(z+h)-f(z)-hg(z)}h \to 0\qquad\text{as $h\to0$}.$$</span>
+    Fix <span class="inline-math">$z$</span> with <span class="inline-math">$|z|&lt;R$</span>, and assume <span class="inline-math">$|z|+|h|&lt;r&lt;R$</span> for some <span class="inline-math">$r$</span>.
+    By the above, all terms in <span class="inline-math">$I$</span> converge absolutely for <span class="inline-math">$|z|&lt;R$</span>, so
+    <span class="display-math">$$ \begin{align*}
+    |I| &amp;= \left|\frac1h \lim_{N\to\infty} \fsum n0N a_n\big((z+h)^n-z^n-hnz^{n-1}\big)\right| \\
+    &amp;= \frac1{|h|} \lim_{N\to\infty}\left|\fsum n0N a_n\big((z+h)^n-z^n-hnz^{n-1}\big)\right| &amp;&amp;\text{$|\cdot|$ continuous} \\
+    &amp;\leq \frac1{|h|} \lim_{N\to\infty}\fsum n0N |a_n|\big|(z+h)^n-z^n-hnz^{n-1}\big| &amp;&amp;\text{triangle inequality}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now we need an estimate for <span class="inline-math">$\big|(z+h)^n - z^n - hnz^{n-1}\big|$</span>: using binomial theorem,
+    <span class="display-math">$$\begin{align*}
+    \big|(z+h)^n - z^n - hnz^{n-1}\big| &amp;\leq \fsum k2n \left|\frac{n!}{k!(n-k)!} h^kz^{n-k}\right| &amp;&amp;\text{triangle inequality} \\
+    &amp;\leq \fsum k2n \frac{n!}{(k-2)!(n-k)!} |h|^k |z|^{n-k} \\
+    &amp;\leq n(n-1)|h|^2\fsum k0{n-2} \frac{(n-2)!}{k!(n-2-k)!} |h|^k |z|^{n-2-k} \\
+    &amp;=n(n-1)|h|^2 (|h|+|z|)^{n-2}.
+    \end{align*}$$</span>
+</p>
+<p>
+    Hence
+    <span class="display-math">$$\begin{align*}
+    |I|&amp;\leq |h|\lim_{N\to\infty}\fsum n0N n(n-1)\, |a_n|\, (|h|+|z|)^{n-2} \\
+    &amp;\leq |h|\lim_{N\to\infty}\fsum n0N n(n-1)\, |a_n|\, r^{n-2} \\
+    &amp;\equiv |h| \,A_r
+    \end{align*}$$</span>
+    where <span class="inline-math">$A_r$</span> converges since <span class="inline-math">$\sum n(n-1)a_n z^{n-2}$</span> has a radius of convergence of <span class="inline-math">$R$</span>.
+    Thus <span class="inline-math">$I\to 0$</span> as <span class="inline-math">$h\to 0$</span>.
+</p>

@@ -1,0 +1,113 @@
+
+<h1>Hermitian matrix (non-examinable)</h1>
+
+<p>
+    Let <span class="inline-math">$\lambda_1, \lambda_2, \ldots, \lambda_r$</span> where <span class="inline-math">$r\leq n$</span> be the distinct eigenvalues of <span class="inline-math">$H$</span> with the corresponding <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Lemma-distinct-eigenvalues-of-normal-matrix-correspond-to-orthogonal-eigenvectors.html">orthogonal eigenvectors</a> <span class="inline-math">$B = \set{\v v_1, \v v_2, \ldots, \v v_r}$</span>.
+</p>
+<p>
+    Spoiler alert, we are possibly going to repeat the following process, so let us set some base cases.
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$r=n$</span>, then <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-distinct-eigenvalues-imply-linearly-independent-eigenvectors.html"><span class="inline-math">$B$</span> already form an orthogonal basis</a> so we are done.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$r\geq 1$</span> since by the <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Properties-of-the-characteristic-polynomial.html#^5b1203">fundamental theorem of algebra</a>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    We can now assume <span class="inline-math">$1\leq r&lt;n$</span>. We can also assume <span class="inline-math">$B$</span> is an orthonormal set by normalising the eigenvectors.
+</p>
+<p>
+    Extend <span class="inline-math">$B$</span> to a basis of the whole of <span class="inline-math">$\C^n$</span>
+    <span class="display-math">$$ \set{\ub{\v v_1, \v v_2, \ldots, \v v_r}_\text{orthonormal}, \v w_1, \v w_2, \ldots, \v w_{n-r}}, $$</span>
+    and then perform <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Gram-Schmidt-process.html">Gram-Schmidt process</a> to form an orthonormal basis
+    <span class="display-math">$$ \set{\ub{\v v_1, \v v_2, \ldots, \v v_r}_\text{unchanged}, \v u_1, \v u_2, \ldots, \v u_{n-r}}. $$</span>
+</p>
+<p>
+    We now change the basis of <span class="inline-math">$H$</span> to this basis.
+    The first <span class="inline-math">$r$</span> columns are all 0 except on the diagonal since
+    <span class="display-math">$$ H\v v_j = \lambda_k\v v_j. $$</span>
+    For the last <span class="inline-math">$(n-r)$</span> columns, we can write the coefficient of <span class="inline-math">$\v v_i$</span> in <span class="inline-math">$H\v u_j$</span> expressed as a linear combination of the basis vectors as <span class="inline-math">$\v v_i^\dagger H\v u_j$</span> since the basis is orthonormal. To see that this is zero, take the Hermitian conjugate:
+    <span class="display-math">$$\begin{align*}
+    (\v v_i^\dagger H\v u_j)^\dagger &amp;= \v u_j^\dagger H^\dagger \v v_i \\
+    &amp;= \v u_j^\dagger H\v v_i \\
+    &amp;= \lambda_i\v u_j^\dagger \v v_i &amp;&amp;\text{$\v v_i$ is an eigenvector} \\
+    &amp;= 0 &amp;&amp;\text{$\v u_j$ and $\v v_i$ are orthonormal}.
+    \end{align*}$$</span>
+    Hence <span class="inline-math">$H$</span> after the change of basis is
+    <span class="display-math">$$\begin{align*}
+    P\inv HP &amp;= \pmat{
+    \lambda_1 &amp;0 &amp;\ldots &amp; 0 \\
+    0 &amp; \lambda_2 &amp; \ldots &amp; 0 \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    0 &amp; 0 &amp; \ldots &amp; \lambda_r \\
+    &amp;&amp;&amp;&amp; c_{11} &amp; c_{12} &amp; \ldots &amp; c_{1,n-r} \\
+    &amp;&amp;&amp;&amp; c_{21} &amp; c_{22} &amp; \ldots &amp; c_{2,n-r} \\
+    &amp;&amp;&amp;&amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+    &amp;&amp;&amp;&amp; c_{(n-r)1} &amp; c_{(n-r)2} &amp; \ldots &amp; c_{(n-r)(n-r)}
+    } \\
+    &amp;\equiv\pmat{\mrm{diag}(\lambda_1,\lambda_2,\ldots,\lambda_r) &amp; 0 \\
+    0 &amp; C}.
+    \end{align*}$$</span>
+    <span class="inline-math">$C$</span> is not <span class="inline-math">$0\times 0$</span> since we assumed <span class="inline-math">$r&lt;n$</span>.
+    Note that <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-transformation-matrix-between-orthonormal-bases-is-unitary.html">since we changed between orthonormal bases, <span class="inline-math">$P$</span> is unitary.</a>
+</p>
+<p>
+    Now to show that <span class="inline-math">$C$</span> is Hermitian, notice
+    <span class="display-math">$$\begin{align*}
+    (P\inv HP)^\dagger &amp;= (P^\dagger HP)^\dagger &amp;&amp;\text{$P$ is unitary} \\
+    &amp;= P^\dagger H^\dagger P \\
+    &amp;= P^\dagger HP &amp;&amp;\text{$H$ is Hermitian} \\
+    &amp;= P\inv HP \\
+    \pmat{\mrm{diag}(\lambda_1,\ldots,\lambda_n) &amp; 0 \\
+    0 &amp; C^\dagger}
+    &amp;= \pmat{\mrm{diag}(\lambda_1,\ldots,\lambda_n) &amp; 0 \\
+    0 &amp; C} \\
+    C^\dagger &amp;= C.
+    \end{align*}$$</span>
+</p>
+<p>
+    Also the eigenvalues of <span class="inline-math">$C$</span> are eigenvalues of <span class="inline-math">$H$</span> because
+    <span class="display-math">$$ \det(H - \lambda I) = \det(P\inv HP-\lambda I) = (\lambda_1-\lambda)\ldots(\lambda_r-\lambda)\det(C-\lambda I) $$</span>
+    where the first equality uses <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-similar-matrices-have-the-same-characteristic-polynomials.html">the fact that similar matrices have the same characteristic polynomial</a>.
+</p>
+<p>
+    Using the fact that <span class="inline-math">$C$</span> is Hermitian, we can perform this process again on <span class="inline-math">$C$</span>. This allows us to say that <span class="inline-math">$C$</span> has an orthogonal eigenvector basis, i.e.
+    <span class="display-math">$$\mrm{diag}(\lambda_{r+1},\lambda_{r+2},\ldots,\lambda_n)
+    = R\inv CR $$</span>
+    where <span class="inline-math">$R$</span> is the <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-transformation-matrix-between-orthonormal-bases-is-unitary.html">unitary change-of-basis matrix</a> and <span class="inline-math">$\lambda_{r+1}, \ldots, \lambda_n$</span> are copies of <span class="inline-math">$\lambda_1,\ldots,\lambda_r$</span>.
+</p>
+<p>
+    Finally, we can construct the change-of-basis matrix to perform these two changes of basis at once:
+    <span class="display-math">$$ Q \equiv \pmat{I_r &amp; 0 \\ 0 &amp; R} = \pmat{
+    1 &amp; 0 &amp; \ldots &amp; 0 \\
+    0 &amp; 1 &amp; \ldots &amp; 0 \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    0 &amp; 0 &amp; \ldots &amp; 1 \\
+    &amp;&amp;&amp;&amp;  R_{11} &amp; R_{12} &amp; \ldots &amp; R_{1(n-r)} \\
+    &amp;&amp;&amp;&amp;  R_{21} &amp; R_{22} &amp; \ldots &amp; R_{2(n-r)} \\
+    &amp;&amp;&amp;&amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+    &amp;&amp;&amp;&amp;  R_{(n-r)1} &amp; R_{(n-r)2} &amp; \ldots &amp; R_{(n-r)(n-r)} \\
+    } $$</span>
+    with <span class="inline-math">$Q$</span> being unitary.
+    This allows us to change the basis of <span class="inline-math">$H$</span> to a diagonal matrix
+    <span class="display-math">$$\begin{align*}
+    Q\inv(P\inv HP)Q = \pmat{\mrm{diag}(\lambda_1,\ldots,\lambda_n) &amp; 0 \\
+    0 &amp; \mrm{diag}(\lambda_{r+1},\ldots,\lambda_n)} = \mrm{diag}(\lambda_1, \ldots, \lambda_n).
+    \end{align*}$$</span>
+</p>
+<p>
+    Thus, the matrix <span class="inline-math">$PQ$</span> changes the basis such that <span class="inline-math">$H$</span> becomes diagonal. As <span class="inline-math">$P,Q$</span> are unitary, <span class="inline-math">$PQ$</span> are unitary as well, so columns of <span class="inline-math">$PQ$</span> are orthogonal. As eigenvectors are the columns of <span class="inline-math">$PQ$</span>, we have obtained <span class="inline-math">$n$</span> orthogonal eigenvectors.
+</p>
+
+<h1>Normal matrix</h1>
+
+<p>
+    https://en.wikipedia.org/wiki/Spectral_theorem
+</p>

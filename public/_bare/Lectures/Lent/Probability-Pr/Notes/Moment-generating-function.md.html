@@ -1,0 +1,101 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (moment generating function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-moment-generating-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a random variable on <span class="inline-math">$\R$</span>. 
+                The <em>moment generating function</em> of <span class="inline-math">$X$</span> is the function <span class="inline-math">$M_X: \R\to[0,\infty]$</span> given by
+                <span class="display-math">$$ \begin{align*}
+                    M_X(\lambda) = \expect(e^{\lambda X}).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                For a random variable on <span class="inline-math">$\R^n$</span>, the moment generating function <span class="inline-math">$M_X: \R^n \to [0,\infty]$</span> given by
+                <span class="display-math">$$ \begin{align*}
+                    M_X(\lambda) = \expect(e^{\lambda^T X}), \quad \lambda\in\R^n.
+                \end{align*} $$</span>
+                (<span class="inline-math">$\lambda^T X$</span> is the dot product)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    If <span class="inline-math">$X$</span> takes values in <span class="inline-math">$\Z^+$</span>, then the probability generating function is related by <span class="inline-math">$M_X(\lambda) = G_X(e^{\lambda})$</span>.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (moment generating function of sum of random variables)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-moment-generating-function-of-sum-of-random-variables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For independent random variables <span class="inline-math">$X,Y$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    M_{X+Y}(\lambda) = \expect(e^{\lambda X} e^{\lambda Y}) = \expect(e^{\lambda X}) \expect(e^{\lambda Y}) = M_X(\lambda) M_Y(\lambda).
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (uniqueness of moment generating function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-uniqueness-of-moment-generating-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X,Y$</span> be random variables having the same moment generating function <span class="inline-math">$M$</span>.
+            </p>
+            <p>
+                For <span class="inline-math">$X,Y$</span> in <span class="inline-math">$\R$</span>, if <span class="inline-math">$M(\lambda) &lt; \infty$</span> for some <span class="inline-math">$\lambda&gt;0$</span>, then <span class="inline-math">$X,Y$</span> have the same distribution <span class="inline-math">$F_X = F_Y$</span>.
+            </p>
+            <p>
+                For <span class="inline-math">$X,Y$</span> in <span class="inline-math">$\R^n$</span>, if <span class="inline-math">$M(\lambda) &lt; \infty$</span> on some open set of <span class="inline-math">$\lambda$</span>, then <span class="inline-math">$X,Y$</span> have the same distribution.
+            </p>
+            
+        </div>
+    </div>
+    The condition of finiteness is required: <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-scaling-Cauchy-distribution-has-the-same-moment-generating-function.html">Example (scaling Cauchy distribution has the same moment generating function)</a>.
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (convergence of random variables)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-convergence-of-random-variables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A sequence of random variables <span class="inline-math">$(X_n)$</span> <em>converges in distribution</em> to a random variable <span class="inline-math">$X$</span> if
+                <span class="display-math">$$ \begin{align*}
+                    F_{X_n}(x) \to F_X(x)
+                \end{align*} $$</span>
+                for all <span class="inline-math">$x\in\R$</span> where <span class="inline-math">$F_X$</span> is continuous at <span class="inline-math">$x$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-converging-random-variables-with-distribution-fails-to-converge-at-discontinuity.html">Why we exclude discontinuity</a>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (continuity of moment generating function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-continuity-of-moment-generating-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X,(X_n)$</span> be random variables.
+                Suppose that as <span class="inline-math">$n\to\R$</span>, <span class="inline-math">$M_{X_n} (\lambda) \to M_X(\lambda)$</span> for all <span class="inline-math">$\lambda\in\R$</span> and <span class="inline-math">$M_X(\lambda) &lt; \infty$</span> for some <span class="inline-math">$\lambda\neq 0$</span>.
+            </p>
+            <p>
+                Then <span class="inline-math">$X_n \to X$</span> in distribution.
+            </p>
+            
+        </div>
+    </div>
+</p>

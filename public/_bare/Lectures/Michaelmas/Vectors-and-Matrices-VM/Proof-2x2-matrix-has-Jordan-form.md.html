@@ -1,0 +1,48 @@
+<p>
+    Suppose <span class="inline-math">$A$</span> is a <span class="inline-math">$2\times 2$</span> complex matrix.
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$A$</span> has distinct eigenvalues <span class="inline-math">$\lambda_1, \lambda_2$</span>, then the <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-distinct-eigenvalues-imply-linearly-independent-eigenvectors.html">corresponding two eigenvectors are linearly independent</a>. Hence using a change-of-basis matrix formed by eigenvectors as columns, we can form
+        <span class="display-math">$$A&#x27; = \pmat{\lambda_1&amp;0\\0&amp;\lambda_2}.$$</span>
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$\lambda_1=\lambda_2\equiv\lambda$</span> and <span class="inline-math">$\dim E_\lambda=2$</span>, then we can write <span class="inline-math">$E_\lambda = \mrm{span}(\v u, \v v)$</span>. Changing to this basis gives
+        <span class="display-math">$$ A&#x27; = P\inv AP = \pmat{\lambda&amp;0\\0&amp;\lambda} = \lambda I. $$</span>
+        (Note that <span class="inline-math">$A=\lambda I$</span>, so <span class="inline-math">$A$</span> is isotropic.)
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$\lambda_1 = \lambda_2 = \lambda$</span> and <span class="inline-math">$\dim E_\lambda = 1$</span>, let <span class="inline-math">$E_\lambda = \mrm{span}(\v v)$</span>.
+        Extend this to a basis <span class="inline-math">$\C^2 = \mrm{span}(\v v, \v w)$</span> where <span class="inline-math">$\v w \not\in \C^2 \setminus E_\lambda$</span>.
+    </p>
+    <p>
+        Now since <span class="inline-math">$A\v w\in\C^2$</span>, we can write <span class="inline-math">$A\v w = \alpha\v v + \beta\v w$</span>, so changing basis to <span class="inline-math">$\set{\v v, \v w}$</span> will give matrix
+        <span class="display-math">$$ A&#x27; = \pmat{\lambda &amp; \alpha \\ 0 &amp; \beta}. $$</span>
+        Characteristic polynomial remains unchanged after change of basis, so <span class="inline-math">$A&#x27;$</span> should have eigenvalue <span class="inline-math">$\lambda$</span> with algebraic multiplicity 2. Hence <span class="inline-math">$\beta = \lambda$</span>.
+        <span class="display-math">$$ A&#x27; = \pmat{\lambda &amp; \alpha \\ 0 &amp; \lambda}. $$</span>
+    </p>
+    <p>
+        Now we want to change the basis again to have <span class="inline-math">$\alpha=1$</span>, i.e. we want the image of <span class="inline-math">$\v w$</span> to be
+        <span class="display-math">$$ A&#x27;\v w = \v u + \lambda\v w. $$</span>
+        So we introduce
+        <span class="display-math">$$ \v u = (A&#x27; - \lambda I)\v w. $$</span>
+        Notice
+        <span class="display-math">$$\begin{align*}
+        (A&#x27;-\lambda I)\v u &amp;= (A&#x27;-\lambda I)^2\v w \\
+        &amp;= \pmat{0&amp;\alpha\\0&amp;0}^2 \v w \\
+        &amp;= \v 0
+        \end{align*}$$</span>
+        so <span class="inline-math">$\v u$</span> is an eigenvector of <span class="inline-math">$A&#x27;$</span> with eigenvalue <span class="inline-math">$\lambda$</span>.
+    </p>
+    <p>
+        Finally using basis <span class="inline-math">$\set{\v u, \v v}$</span>, the matrix is
+        <span class="display-math">$$ \pmat{\lambda&amp;1 \\ 0&amp;\lambda}. $$</span>
+    </p>
+    
+</li>
+</ul>

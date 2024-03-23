@@ -1,0 +1,35 @@
+<p>
+    To show that <span class="inline-math">$\sup_I(f+g) \leq \sup_I f + \sup_I g$</span> for some interval <span class="inline-math">$I$</span>, note that
+    <span class="display-math">$$ \begin{align*}
+        &amp; f(x) \leq \sup_I f, \quad g(x) \leq \sup_I g\\
+        \implies &amp; f(x) + g(x) \leq \sup_I f + \sup_I g \\
+        \implies &amp; \sup_I (f+g) \leq \sup_I f + \sup_I g.
+    \end{align*} $$</span>
+    Similarly <span class="inline-math">$\inf_I (f+g) \geq \inf_I f + \inf_I g$</span>.
+</p>
+<p>
+    Therefore <span class="inline-math">$U(f+g, \mathcal{D}) \leq U(f,\mathcal{D}) + U(g,\mathcal{D})$</span> and <span class="inline-math">$L(f+g, \mathcal{D}) \geq L(f,\mathcal{D}) + L(g,\mathcal{D})$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$f,g$</span> integrable, there exists dissections <span class="inline-math">$\mathcal{D}_1, \mathcal{D}_2$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} f - \epsilon \leq L(f,\mathcal{D}_1) \leq U(f,\mathcal{D}_1) \leq \int_{a}^{b} f + \epsilon, \\
+        \int_{a}^{b} g - \epsilon \leq L(g,\mathcal{D}_2) \leq U(g,\mathcal{D}_2) \leq \int_{a}^{b} g + \epsilon. \\
+    \end{align*} $$</span>
+    Consider the common refinement <span class="inline-math">$\mathcal{D}=\mathcal{D}_1 \cup \mathcal{D}_2$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} f + \int_{a}^{b} g - 2\epsilon &amp;\leq L(f,\mathcal{D}_1) + L(g,\mathcal{D}_2) \\
+        &amp;\leq L(f,\mathcal{D}) + L(g,\mathcal{D}) \\
+        &amp;\leq L(f+g,\mathcal{D}) \\
+        &amp;\leq I_\star(f+g) \\
+        &amp;\leq I^\star(f+g) \\
+        &amp;\leq U(f+g,\mathcal{D}) \\
+        &amp;\leq U(f,\mathcal{D}) + U(g,\mathcal{D}) \\
+        &amp;\leq U(f,\mathcal{D}_1) + U(g, \mathcal{D}_2) \\
+        &amp;\leq \int_{a}^{b} f + \int_{a}^{b} g + 2\epsilon.
+    \end{align*} $$</span>
+    But <span class="inline-math">$\epsilon$</span> is arbitrary so
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} f+g = \int_{a}^{b} f + \int_{a}^{b} g.
+    \end{align*} $$</span>
+</p>

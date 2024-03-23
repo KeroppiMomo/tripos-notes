@@ -1,0 +1,232 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Gauss' law
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Gauss-law.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We have Newton's force and Coulomb's force
+                <span class="display-math">$$ \v F(\v x) = m\v g(\v x) + q\v E(\v x). $$</span>
+                where the gravitational field and electric field can be defined in three equivalent ways:
+                <span class="display-math">$$ \text{inverse square law} \iff \text{Gauss&#x27; law in integrated form} \iff \text{Gauss&#x27; law in differential form} $$</span>
+                <span class="display-math">$$ \begin{align*}
+                \v g(r) &amp;= -\frac{GM}{r^2}\vhat r
+                &amp;&amp;\iff&amp; \int_S \v g\cdot d\v S &amp;= -4\pi GM
+                &amp;&amp;\iff&amp; \nabla\cdot\v g &amp;= -4\pi G\rho(\v x), \\
+                \v E(r) &amp;= -\frac{Q}{4\pi \epsilon_0 r^2}\vhat r
+                &amp;&amp;\iff&amp; \int_S \v E\cdot d\v S &amp;= \frac{Q}{\epsilon_0}
+                &amp;&amp;\iff&amp; \nabla\cdot\v E &amp;= \frac{\rho(\v x)}{\epsilon_0}. \\
+                \end{align*}$$</span>
+                <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-equivalence-of-Gauss-law.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Poisson equation and Laplace equation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Poisson-equation-and-Laplace-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="display-math">$$\begin{align*}
+                \text{Poisson equation}&amp; &amp; \nabla^2\phi &amp;= f(\v x). \\
+                \text{Laplace equation}&amp; &amp; \nabla^2\phi &amp;= 0.
+                \end{align*}$$</span>
+                In static conditions, gravitational field <span class="inline-math">$\v g$</span> and electric field <span class="inline-math">$\v E$</span> are conservative, so the potentials of the fields satisfy the Poisson equation.
+            </p>
+            <p>
+                Solutions to the Laplace equation <span class="inline-math">$\nabla^2\psi=0$</span> are called <em>harmonic functions</em>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\nabla^2$</span> is linear, so sum of solutions is also a solution.
+                    Solutions to Laplace equation are complementary solutions to Poisson.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$\psi(r)$</span> is a solution, so is any derviative of <span class="inline-math">$\psi$</span>, e.g. <span class="inline-math">$\v d\cdot\nabla\psi$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Isotropic solutions of Laplace equation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Isotropic-solutions-of-Laplace-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    With spherical symmetry <span class="inline-math">$\psi(\v x) = \psi(r)$</span>, the solution is
+                    <span class="display-math">$$ \begin{align*}
+                        \psi(r) = \frac{A}{r} + B.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    With cylindrical polar <span class="inline-math">$\psi(\v x) = \psi(\rho)$</span>, the solution is
+                    <span class="display-math">$$ \begin{align*}
+                        \psi(\rho) = A \log \rho + B.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                (<a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Derivation-isotropic-solutions-of-Lapalce-equation.html">Derivation</a>)
+                <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-of-solving-isotropic-Poisson-equation-with-boundary-conditions.html">Example of solving isotropic Poisson equation with boundary conditions</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Common boundary conditions: in some region <span class="inline-math">$V\subset\R^3$</span>,
+</p>
+<ul>
+<li>
+    <p>
+        Dirichlet condition: fix <span class="inline-math">$\psi(\v x)$</span> on <span class="inline-math">$\partial V$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        Newmann condition: fix <span class="inline-math">$\v n\cdot\nabla(\v x)$</span> on <span class="inline-math">$\partial V$</span>, where <span class="inline-math">$\v n$</span> is the outward pointing normal of <span class="inline-math">$\partial V$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Green's identities)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proposition-Green-s-identities.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="display-math">$$ \begin{align*}
+                    \int_{V} \phi\nabla^2\psi \, dV = \int_{\partial V} \phi\nabla\psi \cdot d\v S - \int_{V} \nabla\phi\cdot\nabla\psi \, dV
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Derivation-Green-s-identity.html">Derivation</a>) And swapping the roles of <span class="inline-math">$\phi,\psi$</span> and subtracting gives
+                <span class="display-math">$$ \begin{align*}
+                    \int_{V} (\phi\nabla^2\psi-\psi\nabla^2\phi) \, dV = \int_{\partial V} (\phi\nabla\psi - \psi\nabla\phi) \cdot d\v S.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (unique solution to Poisson equation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proposition-unique-solution-to-Poisson-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If there is a solution to the Poisson equation on a region <span class="inline-math">$V$</span>
+                with either Dirichlet or Newmann boundary conditions specified on each <span class="inline-math">$\partial V$</span>,
+                then it is unique up to a constant.
+            </p>
+            <p>
+                In particular if Dirichlet condition is specified anywhere, then the solution is unique.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-unique-solution-to-Poisson-equation.html">Proof</a>
+            </p>
+            <p>
+                In general we can extend this to unbounded region with specified asymptotic boundary conditions.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (existence of solution of Poisson equation under Newmann condition)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proposition-existence-of-solution-of-Poisson-equation-under-Newmann-condition.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For Poisson equation <span class="inline-math">$\nabla^2\psi = -\rho(\v x)$</span> with Newmann condition <span class="inline-math">$\v n\cdot\nabla\psi = g(\v x)$</span> on <span class="inline-math">$\partial V$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    -\int_{V} \rho(\v x) \, dV = \int_{\partial V} g(\v x) \, dS.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-existence-of-solution-to-Poisson-equation-under-Newmann-condition.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (mean value property of harmonic functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proposition-mean-value-property-of-harmonic-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$\psi$</span> is harmonic in a region <span class="inline-math">$V$</span> that includes a ball with boundary <span class="inline-math">$S_R: |\v x-\v a|=R$</span>,
+                then the value of <span class="inline-math">$\psi(\v a)$</span> is the average of <span class="inline-math">$\psi$</span> on the sphere:
+                <span class="display-math">$$ \begin{align*}
+                    \psi(\v a) = \frac{1}{4\pi R^2} \int_{S_R} \psi(\v x) \, dS.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-mean-value-property-of-harmonic-functions.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (no extreme value of harmonic functions inside)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Corollary-no-extreme-value-of-harmonic-functions-inside.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A harmonic function can have neither a maximum or minimum in the interior of <span class="inline-math">$V$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-no-extreme-value-of-harmonic-functions-inside.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (integral solutions of Poisson equation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Theorem-integral-solutions-of-Poisson-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="inline-math">$\nabla^2\psi = -\rho(\v x)$</span> has integral solution
+                <span class="display-math">$$ \begin{align*}
+                    \psi(\v x) = \frac{1}{4\pi}\int_{V&#x27;} \frac{\rho(\v x&#x27;)}{|\v x-\v x&#x27;|} \, dV&#x27;.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-integral-solutions-of-Poisson-equation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

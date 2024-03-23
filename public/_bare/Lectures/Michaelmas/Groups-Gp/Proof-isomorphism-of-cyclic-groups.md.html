@@ -1,0 +1,77 @@
+<p>
+    Let <span class="inline-math">$G$</span> be a cyclic group with generator <span class="inline-math">$g$</span>. Also let
+    <span class="display-math">$$ S = \sb{k\in\N_{&gt;0}}{g^k = e}. $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        Case 1: <span class="inline-math">$S=\emptyset$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Consider the map
+    <span class="display-math">$$\begin{align*}
+    \phi: \Z &amp;\to G \\
+    k &amp;\mapsto g^k.
+    \end{align*}$$</span>
+    <span class="inline-math">$\phi$</span> is a homomorphism since for all <span class="inline-math">$k,l\in\Z$</span>,
+    <span class="display-math">$$ \phi(k+l) = g^{k+l} = g^kg^l = \phi(k)\phi(l). $$</span>
+</p>
+<p>
+    <span class="inline-math">$\phi$</span> is surjective by the definition of <span class="inline-math">$G$</span>.
+</p>
+<p>
+    To show that <span class="inline-math">$\phi$</span> is injective, suppose <span class="inline-math">$\ker\phi\neq\{0\}$</span>. There exists <span class="inline-math">$k\in\ker\phi\setminus\se{0}$</span>. If <span class="inline-math">$k&lt;0$</span>, we can replace <span class="inline-math">$k$</span> by <span class="inline-math">$-k$</span> if necessary assume <span class="inline-math">$k&gt;0$</span> as <span class="inline-math">$\ker\phi\leq\Z$</span>. This means <span class="inline-math">$k\in S$</span>, contradicting with <span class="inline-math">$S=\emptyset$</span>. Hence <span class="inline-math">$\phi$</span> is injective.
+</p>
+<p>
+    Therefore <span class="inline-math">$\phi$</span> is a bijective homomorphism, i.e. <span class="inline-math">$\Z\cong G$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        Case 2: <span class="inline-math">$S\neq\emptyset$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Let
+    <span class="display-math">$$ n = \min S. $$</span>
+    Define
+    <span class="display-math">$$\begin{align*}
+    \phi: \Z_n &amp;\to G \\
+    k &amp;\mapsto g^k.
+    \end{align*}$$</span>
+    <span class="inline-math">$\phi$</span> is a homomorphism since for all <span class="inline-math">$k,l\in\Z_n$</span>,
+    <span class="display-math">$$\begin{align*}
+    \phi(k+_n l) &amp;= g^{k +_n l} \\
+    &amp;= g^{k+l + qn} &amp;&amp;\text{for some } q\in\Z \\
+    &amp;= g^{k}g^{l}(g^n)^q \\
+    &amp;= g^kg^l &amp;&amp;g^n = e \\
+    &amp;= \phi(k)\phi(l).
+    \end{align*}$$</span>
+</p>
+<p>
+    To show that <span class="inline-math">$\phi$</span> is surjective, consider <span class="inline-math">$g^k\in G$</span> for any <span class="inline-math">$k\in\Z$</span>.
+    Division algorithm gives
+    <span class="display-math">$$ k = qn + r $$</span>
+    for some <span class="inline-math">$q\in\Z$</span> and <span class="inline-math">$r\in\Z_n$</span>.
+    Then
+    <span class="display-math">$$\begin{align*}
+    g^k &amp;= (g^{n})^q \cdot g^r \\
+    &amp;= e^q \cdot g^r \\
+    &amp;= g^r = \phi(r),
+    \end{align*}$$</span>
+    so <span class="inline-math">$\phi$</span> is surjective.
+</p>
+<p>
+    To show that <span class="inline-math">$\phi$</span> is injective, we choose <span class="inline-math">$k\in\ker\phi$</span> with the assumption that <span class="inline-math">$k\geq 0$</span> justified above.
+    Minimality of <span class="inline-math">$n$</span> ensures no <span class="inline-math">$k\in(0,n)$</span> satisfies <span class="inline-math">$g^k = e$</span>.
+    Therefore <span class="inline-math">$k=0$</span>, so <span class="inline-math">$\ker\phi = \se{0}$</span>.
+    Hence <span class="inline-math">$\phi$</span> is injective.
+</p>
+<p>
+    <span class="inline-math">$\phi$</span> is therefore an isomorphism, so <span class="inline-math">$G\cong\Z_n$</span>.
+</p>

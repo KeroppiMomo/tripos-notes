@@ -1,0 +1,37 @@
+<p>
+    2 => 1: closed curves have the same endpoints so the integral is the same as a curve that does not move.
+</p>
+<p>
+    1 => 2: suppose curves <span class="inline-math">$C_1$</span> and <span class="inline-math">$C_2$</span> have the same endpoints. Then the curve <span class="inline-math">$C_1 - C_2$</span> is closed. Hence
+    <span class="display-math">$$ 0 = \oint_{C_1 - C_2}\v F\cdot d\v x = \int_{C_1}\v F\cdot d\v x - \int_{C_2}\v F\cdot d\v x $$</span>
+    as required.
+</p>
+<p>
+    3 => 2: let <span class="inline-math">$\v F=\v\nabla\phi$</span>. Then along any open curve <span class="inline-math">$C$</span> parametrised by <span class="inline-math">$\v x(t)$</span>,
+    <span class="display-math">$$\begin{align*}
+    \int_C \v F\cdot d\v x &amp;= \int_C \nabla\phi\cdot d\v x \\
+    &amp;= \int_{t_a}^{t_b} \pdfd\phi{x^i} \dfd{x^i}t dt \\
+    &amp;= \int_{t_a}^{t_b} \dfd{\phi\big(\v x(t)\big)} t \,dt \\
+    &amp;= \phi\big(\v x(t_b)\big) - \phi\big(\v x(t_a)\big)
+    \end{align*}$$</span>
+    which only depends on endpoints.
+</p>
+<p>
+    2 => 3: suppose <span class="inline-math">$\int_C\v F\cdot d\v x$</span> only depends on endpoints. We need to construct <span class="inline-math">$\phi$</span>.
+</p>
+<p>
+    Set <span class="inline-math">$\phi(\v 0) = 0$</span>, and define
+    <span class="display-math">$$ \phi(\v y) = \int_{C(\v y)} \v F\cdot d\v x $$</span>
+    where <span class="inline-math">$C(\v y)$</span> is any path from <span class="inline-math">$\v 0$</span> to <span class="inline-math">$\v y$</span>. Any path gives the same integral by hypothesis.
+</p>
+<p>
+    Now we check that <span class="inline-math">$\v F=\nabla\phi$</span>:
+    <span class="display-math">$$\begin{align*}
+    \pdfd\phi{x^i}(\v y) &amp;= \lim_{\epsilon\to0} \frac1\epsilon\bigg[\int_{C(\v y + \epsilon\v e_i)} \v F\cdot d\v x - \int_{C(\v y)} \v F\cdot d\v x\bigg] \\
+    &amp;= \lim_{\epsilon\to 0} \frac1\epsilon\int_\v y^{\v y + \epsilon\v e_i} \v F\cdot d\v x \\
+    &amp;= \lim_{\epsilon\to 0} \frac1\epsilon\big(\epsilon F_i(\v y) + O(\epsilon^2)\big) \\
+    &amp;= F_i(\v y)
+    \end{align*}$$</span>
+    so
+    <span class="display-math">$$\nabla\phi = \v F.$$</span>
+</p>

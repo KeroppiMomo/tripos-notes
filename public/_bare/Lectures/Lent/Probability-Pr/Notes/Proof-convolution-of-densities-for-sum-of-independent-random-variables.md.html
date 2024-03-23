@@ -1,0 +1,13 @@
+<p>
+    <span class="display-math">$$ \begin{align*}
+        \prob(Z\leq z) &amp;= \int_{\R^2} 1_{\set{x+y\leq z}} f_X(x) f_Y(y) \,dx\,dy \\
+        &amp;= \int_{\R} \int_{-\infty}^{z-y} f_X(x) f_Y(y) \, dx \, dy \\
+        &amp;= \int_{\R} \int_{-\infty}^{z} f_X(w-y) f_Y(y) \, dw \, dy &amp;&amp; w=x+y\\
+        &amp;= \int_{-\infty}^{z} \int_{\R} f_X(w-y) f_Y(y) \, dy \, dw &amp;&amp; \text{Fubini&#x27;s theorem} \\
+        &amp;= \int_{-\infty}^{z} f_X * f_Y(w)\, dw
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        f_Z = f_X * f_Y.
+    \end{align*} $$</span>
+</p>

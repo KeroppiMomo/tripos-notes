@@ -1,0 +1,966 @@
+<p>
+    <div class="markdown-embed embed-example">
+        <div class="markdown-embed-title">
+            Example (rotation matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Example-rotation-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                To rotate a vector by <span class="inline-math">$\theta$</span> about axis <span class="inline-math">$\hat n$</span>,
+                the matrix is
+                <span class="display-math">$$ R_{ij} = \delta_{ij}\cos\theta + (1-\cos\theta)n_in_j - \epsilon_{ijk}n_k\sin\theta. $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-rotation-matrix.html">Derivation</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-example">
+        <div class="markdown-embed-title">
+            Example (reflection and projection onto plane)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Example-reflection-and-projection-onto-plane.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                To reflect a point in <span class="inline-math">$\R^3$</span> about a plane normal to <span class="inline-math">$\hat n$</span> through the origin, the matrix is
+                <span class="display-math">$$ R_{ij} = \delta_{ij} - 2n_in_j. $$</span>
+            </p>
+            <p>
+                To project it onto the plane, the matrix is
+                <span class="display-math">$$ R_{ij} = \delta_{ij} - n_in_j. $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-reflection-and-projection-onto-plane.html">Derivation</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (linear map)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-map.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V,W$</span> be vector spaces and <span class="inline-math">$T: V\to W$</span>. <span class="inline-math">$T$</span> is a linear map if
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$T(\vec a + \vec b) = T(\vec a) + T(\vec b)$</span> for all <span class="inline-math">$\vec a,\vec b\in V$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$T(\lambda\vec a) = \lambda T(\vec a)$</span> for all scalar <span class="inline-math">$\lambda$</span> and <span class="inline-math">$\vec a\in V$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Or equivalently, for all scalars <span class="inline-math">$\lambda,\mu$</span> and vectors <span class="inline-math">$\vec a,\vec b\in V$</span>,
+                <span class="display-math">$$ T(\lambda\vec a + \mu\vec b) = \lambda T(\vec a) + \mu T(\vec b). $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (image and kernel of linear map)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-image-and-kernel-of-linear-map.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a linear map <span class="inline-math">$f: U\to V$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The image of <span class="inline-math">$f$</span>, denoted as <span class="inline-math">$f(U)$</span> or <span class="inline-math">$\mrm{image}(f)$</span>, is the set
+                    <span class="display-math">$$ \sb{f(\vec u)}{\vec u\in U}. $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    The kernel of <span class="inline-math">$f$</span>, denoted as <span class="inline-math">$\mrm{kernel}(f)$</span>, is the set
+                    <span class="display-math">$$ \sb{\vec u\in U}{f(\vec u) = \vec 0}. $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Example-of-computing-image-and-kernel.html">Example of computing image and kernel</a>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (image and kernel are subspaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-image-and-kernel-are-subspaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider the linear map <span class="inline-math">$f: U\to V$</span> where <span class="inline-math">$U, V$</span> are vector spaces.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\mrm{image}(f)$</span> is a subspace of <span class="inline-math">$V$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mrm{kernel}(f)$</span> is a subspace of <span class="inline-math">$U$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-image-and-kernel-are-subspaces.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (rank, nullity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-rank-nullity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a linear map <span class="inline-math">$f: U\to V$</span>,
+            </p>
+            <ul>
+            <li>
+                <p>
+                    the rank of <span class="inline-math">$f$</span>, denoted as <span class="inline-math">$r(f)$</span>, is the dimension of <span class="inline-math">$f(U)$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    the nullity of <span class="inline-math">$f$</span>, denoted as <span class="inline-math">$n(f)$</span>, is the dimension of <span class="inline-math">$\mrm{kernel}(f)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (rank-nullity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-rank-nullity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a linear map of <span class="inline-math">$f: U\to V$</span> where <span class="inline-math">$U,V$</span> are vector spaces,
+                <span class="display-math">$$ r(f) + n(f) = \dim U. $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-rank-nullity.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (associated matrix of a linear map)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-associated-matrix-of-a-linear-map.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a linear map <span class="inline-math">$\alpha: \R^n \to \R^m$</span>. For a basis <span class="inline-math">$\vec e_1, \ldots, \vec e_n$</span> of <span class="inline-math">$\R^n$</span>, we have
+                <span class="display-math">$$\begin{align*}
+                \vec x&#x27; = \alpha(\vec x) &amp;= \alpha\Big(\sum_{j=1}^n x_j \vec e_j\Big) &amp;&amp;\text{for some scalars } x_j\in\R \\
+                &amp;= \sum_{j=1}^n x_j \alpha(\vec e_j).
+                \end{align*}$$</span>
+                In suffix notation,
+                <span class="display-math">$$ A_{ij} x_j = x&#x27;_i = \big[\alpha(\vec e_j)\big]_i x_j $$</span>
+                so let
+                <span class="display-math">$$ A_{ij} = \big[\alpha(\vec e_j)\big]_i. $$</span>
+            </p>
+            <p>
+                We write the <span class="inline-math">$m\times n$</span> matrix with <span class="inline-math">$A_{ij}$</span> being the entry at row <span class="inline-math">$i$</span> and column <span class="inline-math">$j$</span>:
+                <span class="display-math">$$ A = \{ A_{ij} \} = \begin{pmatrix}
+                A_{11} &amp; \ldots &amp; A_{1n} \\
+                \vdots &amp; A_{ij} &amp; \vdots \\
+                A_{m1} &amp; \ldots &amp; A_{mn}
+                \end{pmatrix} $$</span>
+                and we write
+                <span class="display-math">$$ \vec x&#x27; = A \vec x. $$</span>
+            </p>
+            <p>
+                Note that the <span class="inline-math">$j$</span>-th column represents what <span class="inline-math">$\alpha$</span> maps <span class="inline-math">$\vec e_j$</span> to.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Matrix algebra
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Matrix-algebra.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Matrix addition
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Matrix-addition.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider two linear maps <span class="inline-math">$\alpha,\beta: \R^n\to \R^m$</span>.
+                            Define the sum of linear maps as <span class="inline-math">$(\alpha+\beta)(\vec x) = \alpha(\vec x) + \beta(\vec x)$</span>.
+                            The associated matrices satisfy
+                            <span class="display-math">$$ (A+B)_{ij} x_j = A_{ij} x_j + B_{ij} x_j $$</span>
+                            so we define matrix addition as just adding it entry by entry:
+                            <span class="display-math">$$ (A+B)_{ij} = A_{ij} + B_{ij}. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Matrix scalar multiplication
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Matrix-scalar-multiplication.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We define the scalar multiplication of a linear map as
+                            <span class="display-math">$$ (\lambda\alpha)(\vec x) = \lambda\cdot\alpha(\vec x). $$</span>
+                            Therefore
+                            <span class="display-math">$$ (\lambda A)_{ij} = \lambda A_{ij}. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Matrix multiplication
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Matrix-multiplication.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider <span class="inline-math">$\alpha: \R^r \to \R^n$</span> and <span class="inline-math">$\beta: \R^n\to\R^m$</span>. <span class="inline-math">$A$</span> is the associated <span class="inline-math">$n\times r$</span> matrix and <span class="inline-math">$B$</span> is the associated <span class="inline-math">$m\times n$</span> matrix.
+                        </p>
+                        <p>
+                            We consider the composition map <span class="inline-math">$\beta\alpha: \R^r\to\R^m$</span>.
+                            <span class="display-math">$$\begin{align*}
+                            (BA)_{ij} x_j &amp;= \big(B(A\vec x)\big)_i \\
+                            &amp;= B_{ik}(A\vec x)_k \\
+                            &amp;= B_{ik}A_{kj}x_j
+                            \end{align*}$$</span>
+                            so we let
+                            <span class="display-math">$$ (BA)_{ij} = B_{ik}A_{kj}. $$</span>
+                        </p>
+                        <p>
+                            Properties:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                In general, <span class="inline-math">$AB\neq BA$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Associativity: <span class="inline-math">$(AB)C = A(BC)$</span>. <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-associativity-of-matrix-multiplication.html">Proof</a>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Matrix transpose
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Matrix-transpose.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A$</span> be a <span class="inline-math">$m\times n$</span> matrix. The transpose of <span class="inline-math">$A$</span>, denoted as <span class="inline-math">$A^T$</span>, is a <span class="inline-math">$n\times m$</span> matrix defined by
+                            <span class="display-math">$$ (A^T)_{ij} = A_{ji}. $$</span>
+                        </p>
+                        <p>
+                            Properties:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$(A^T)^T = A$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$(AB)^T = B^T A^T$</span>. <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-transpose-of-matrix-product.html">Proof</a>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Matrix inverse
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Matrix-inverse.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$B$</span> is the left inverse of <span class="inline-math">$A$</span> if <span class="inline-math">$BA = I$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$C$</span> is the right inverse of <span class="inline-math">$A$</span> if <span class="inline-math">$AC = I$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$A$</span> is a square matrix, then <span class="inline-math">$A^{-1}\equiv B=C$</span> is the inverse of <span class="inline-math">$A$</span>. <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-left-inverse-equals-right-inverse-for-square-matrix.html">Proof</a> This means inverse <span class="inline-math">$A\inv$</span> satisfies
+                                <span class="display-math">$$ A\inv A = AA \inv = I. $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$A\inv$</span> exists, then <span class="inline-math">$A$</span> is called <em>invertible</em>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$(AB)\inv = B\inv A\inv$</span>. <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-inverse-of-matrix-product.html">Proof</a>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Hermitian conjugate
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Hermitian-conjugate.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a complex matrix <span class="inline-math">$A$</span>,
+                            <span class="display-math">$$ A^\dagger \equiv (A^T)^* \equiv (A^*)^T. $$</span>
+                        </p>
+                        <p>
+                            Properties:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$(AB)^\dagger = B^\dagger A^\dagger$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Common type of matrices
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Common-type-of-matrices.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (symmetric matrix)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-symmetric-matrix.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A square matrix <span class="inline-math">$A$</span> is symmetric if <span class="display-math">$$ A^T = A. $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (Hermitian matrix)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-Hermitian-matrix.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A square matrix <span class="inline-math">$A$</span> is Hermitian if
+                                        <span class="display-math">$$ A^\dagger = A. $$</span>
+                                    </p>
+                                    <p>
+                                        The diagonal elements are necessarily real.
+                                    </p>
+                                    <p>
+                                        A real symmetric matrix is Hermitian.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (anti-symmetric matrix)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-anti-symmetric-matrix.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A square matrix is anti-symmetric if
+                                        <span class="display-math">$$ A^T = -A. $$</span>
+                                        The diagonal elements are necessarily 0.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (skew-Hermitian matrix)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-skew-Hermitian-matrix.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A square matrix is skew-Hermitian <span class="inline-math">$A$</span> if
+                                        <span class="display-math">$$ A^\dagger = -A. $$</span>
+                                    </p>
+                                    <p>
+                                        The diagonal elements are necessarily purely imaginary.
+                                    </p>
+                                    <p>
+                                        A real anti-symmetric matrix is a skew-Hermitian matrix.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (orthogonal and unitary matrix)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-orthogonal-and-unitary-matrix.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A real matrix <span class="inline-math">$A$</span> is orthogonal if
+                                        <span class="display-math">$$ A^T = A\inv \quad\text{i.e. } AA^T = A^T A = I. $$</span>
+                                    </p>
+                                    <p>
+                                        A complex matrix <span class="inline-math">$U$</span> is unitary if
+                                        <span class="display-math">$$ U^\dagger = U\inv \quad\text{i.e. } UU^\dagger = U^\dagger U = I. $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (normal matrix)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-normal-matrix.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        An <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$N$</span> is called <em>normal</em> if it commutes with its Hermitian conjugate
+                                        <span class="display-math">$$ NN^\dagger = N^\dagger N. $$</span>
+                                    </p>
+                                    <p>
+                                        Hermitian, symmetric, skew-Hermitian, anti-symmetric, orthogonal, unitary matrices are all normal.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Trace of a square matrix
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Trace-of-a-square-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a matrix <span class="inline-math">$A$</span>, the trace of <span class="inline-math">$A$</span>, denoted as <span class="inline-math">$\mrm{trace}(A)$</span>, is the sum of the diagonal elements of <span class="inline-math">$A$</span>,
+                            <span class="display-math">$$ \mrm{trace}(A) = A_{ii}. $$</span>
+                        </p>
+                        <p>
+                            Properties:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\mrm{trace}(BC) = \mrm{trace}(CB)$</span>. <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-commutativity-of-trace.html">Proof</a>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (isotropic matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-isotropic-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A matrix <span class="inline-math">$A$</span> is isotropic if
+                            <span class="display-math">$$ A = \lambda I $$</span>
+                            for some scalar <span class="inline-math">$\lambda$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Decomposition of a square matrix
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Decomposition-of-a-square-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Any <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$B$</span> can be written as a sum of symmetric and anti-symmetric parts,
+                            <span class="display-math">$$\begin{align*}
+                            B_{ij} &amp;= \frac12 (B_{ij} + B_{ji}) + \frac12 (B_{ij} - B_{ji}) \\
+                            B &amp;= \underbrace{\frac12 (B + B^T)}_{\text{symmetric } S} + \underbrace{\frac12 (B - B^T)}_{\text{anti-symmetric } A}
+                            \end{align*}$$</span>
+                        </p>
+                        <p>
+                            A symmetric matrix <span class="inline-math">$S$</span> can be decomposed an isotropic part and a traceless part,
+                            <span class="display-math">$$\begin{align*}
+                            S_{ij} &amp;= \frac1n \mrm{trace}(S)\, \delta_{ij} + \big(S_{ij} - \frac1n \mrm{trace}(S)\, \delta_{ij} \big) \\
+                            S &amp;= \underbrace{\frac1n \mrm{trace}(S)\, I}_\text{isotropic} + \underbrace{\big(S - \frac1n\mrm{trace}(S)\, I\big)}_{\text{traceless, since } \mrm{trace}(\frac1n I) = 1}
+                            \end{align*}$$</span>
+                        </p>
+                        <p>
+                            In <span class="inline-math">$\R^3$</span>, the anti-symmetric part <span class="inline-math">$A$</span> can be written in terms of a single vector <span class="inline-math">$\vec w$</span> as
+                            <span class="display-math">$$ A_{ijk} = \epsilon_{ijk}\omega_k = \begin{pmatrix}
+                            0 &amp; \omega_3 &amp; -\omega_2 \\
+                            -\omega_3 &amp; 0 &amp; \omega_1 \\
+                            \omega_2 &amp; -\omega_1 &amp; 0
+                            \end{pmatrix} $$</span>
+                            which is a general anti-symmetric matrix.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (rows and columns of orthogonal and unitary matrix are orthonormal)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-rows-and-columns-of-orthogonal-and-unitary-matrix-are-orthonormal.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an orthogonal matrix <span class="inline-math">$A$</span>, the rows of <span class="inline-math">$A$</span> form an orthonormal set. Similarly the columns of <span class="inline-math">$A$</span> also form an orthonormal set.
+                            Same for a unitary matrix.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-rows-and-columns-of-orthogonal-and-unitary-matrix-are-orthonormal.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Gram-Schmidt process
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Gram-Schmidt-process.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given a set <span class="inline-math">$\set{\v w_1, \v w_2, \ldots, \v w_r}$</span> of linearly independent vectors,
+                            we can use this process to form a orthonormal set <span class="inline-math">$\set{\v v_1, \v v_2, \ldots, \v w_r}$</span> that has the same span.
+                        </p>
+                        <p>
+                            Define the projection of <span class="inline-math">$\v w$</span> onto <span class="inline-math">$\v v$</span> by
+                            <span class="display-math">$$ \mathcal P_{\v v}(\v w) = \frac{\langle\v v|\v w\rangle}{\langle\v v|\v v\rangle}\v v.$$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Step 1: let <span class="inline-math">$\v v_1 = \v w_1 / \sqrt{\langle\v w_1|\v w_1\rangle}$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Step <span class="inline-math">$k$</span>: let <span class="display-math">$$\v u_k = \v w_k - \sum_{i=1}^{k-1} \mathcal P_{\v v_i}(\v w_k), $$</span>
+                                which gives an orthogonal vector. Then normalise it by
+                                <span class="display-math">$$ \v v_k = \frac{\v u_k}{\sqrt{\langle\v u_k|\v u_k\rangle}}. $$</span>
+                                (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Explanation-Gram-Schmidt-process.html">Explanation</a>)
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Determinant
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Determinant.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Motivation for determinant
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Motivation-for-determinant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a linear map <span class="inline-math">$\alpha: \R^3 \to \R^3$</span> and standard basis <span class="inline-math">$\vec e_1,\vec e_2,\vec e_3\mapsto \vec e_1&#x27;, \vec e_2&#x27;, \vec e_3&#x27;$</span>,
+                            the determinant is defined to be the volume of the parallelepiped formed by <span class="inline-math">$\vec e_1&#x27;, \vec e_2&#x27;, \vec e_3&#x27;$</span>,
+                            <span class="display-math">$$\begin{align*}
+                            \det A &amp;\equiv [\vec e_1&#x27;, \vec e_2&#x27;, \vec e_3&#x27;] \\
+                            &amp;= \epsilon_{ijk} (\vec e_1&#x27;)_i (\vec e_2&#x27;)_j (\vec e_3&#x27;)_k \\
+                            &amp;= \epsilon_{ijk} \big(A_{il} (\vec e_1)_l\big) \big(A_{jm} (\vec e_2)_m\big) \big(A_{kn} (\vec e_3)_n\big) \\
+                            &amp;= \epsilon_{ijk} A_{il} \delta_{l1} A_{jm} \delta_{m2} A_{kn} \delta_{n3} \\
+                            &amp;= \epsilon_{ijk} A_{i1} A_{j2} A_{k3}.
+                            \end{align*}$$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                See <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Permutations.html">permutations in Groups</a> for detailed discussion.
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (generalisation of Levi-Cevita symbol)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-generalisation-of-Levi-Cevita-symbol.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Define
+                            <span class="display-math">$$
+                            \epsilon_{j_1j_2\ldots j_n} = \begin{cases}
+                            +1 &amp; \text{if }(j_1,j_2,\ldots,j_n)\text{ is an even permutation}, \\
+                            -1 &amp; \text{if }(j_1,j_2,\ldots,j_n)\text{ is an odd permutation}, \\
+                            0 &amp; \text{otherwise.}
+                            \end{cases}
+                            $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (determinant)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-determinant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, define its determinant
+                            <span class="display-math">$$ \det A = \sum_{\sigma\in S_n} \epsilon(\sigma) A_{\sigma(1) 1} A_{\sigma(2) 2} \ldots A_{\sigma(n) n}. $$</span>
+                        </p>
+                        <p>
+                            Alternatively, in suffix notation,
+                            <span class="display-math">$$ \det A = \epsilon_{j_1j_2\ldots j_n} A_{j_1 1} A_{j_2 2} \ldots A_{j_n n}. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Properties of determinant
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Properties-of-determinant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Matrices mentioned here are of size <span class="inline-math">$n\times n$</span>.
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (transpose has the same determinant)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-transpose-has-the-same-determinant.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <span class="display-math">$$\det A = \det A^T.$$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-transpose-has-the-same-determinant.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (determinant when multiplying a row or column by scalar)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-when-multiplying-a-row-or-column-by-scalar.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If matrix <span class="inline-math">$B$</span> is formed by multiplying every entry in a single row or column of <span class="inline-math">$A$</span> by scalar <span class="inline-math">$\lambda$</span>, then <span class="display-math">$$\det B = \lambda \det A.$$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-when-multiplying-a-row-or-column-by-scalar.html">More formal description and proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (determinant of scalar multiple)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-of-scalar-multiple.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <span class="display-math">$$ \det \lambda A = \lambda^n \det A. $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-of-scalar-multiple.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (determinant when two rows or columns equal)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-when-two-rows-or-columns-equal.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If two rows or columns of <span class="inline-math">$A$</span> are identical, then <span class="inline-math">$\det A = 0$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-when-two-rows-or-columns-equal.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (determinant when adding multiple of rows or columns onto another)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-when-adding-multiple-of-rows-or-columns-onto-another.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If a matrix <span class="inline-math">$B$</span> is formed by adding a scalar multiple <span class="inline-math">$\lambda$</span> of a column (or row) of <span class="inline-math">$A$</span> onto another column (or row), then <span class="inline-math">$\det B = \det A$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-when-adding-multiple-of-rows-or-columns-onto-another.html">More formal description and proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (determinant when two rows or columns are linearly dependent)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-when-two-rows-or-columns-are-linearly-dependent.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If two rows or columns of <span class="inline-math">$A$</span> are linearly dependent, then <span class="inline-math">$\det A = 0$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-when-two-rows-or-columns-are-linearly-dependent.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (determinant of products)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-of-products.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <span class="display-math">$$ \det AB = \det A \det B. $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-of-products.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (determinant of orthogonal and unitary matrix)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-of-orthogonal-and-unitary-matrix.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            If <span class="inline-math">$A$</span> is orthogonal, then <span class="inline-math">$\det A = \pm 1$</span> (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-of-orthogonal-matrix.html">Proof</a>). In particular, in <span class="inline-math">$\R^3$</span>, <span class="inline-math">$A$</span> represents a rotation (<span class="inline-math">$\det A = 1$</span>) or a reflection (<span class="inline-math">$\det A = -1$</span>).
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            If <span class="inline-math">$U$</span> is unitary, then <span class="inline-math">$|\det U| = 1$</span> (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-of-unitary-matrix.html">Proof</a>).
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Minors and cofactors
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Minors-and-cofactors.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (minors, cofactors)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-minors-cofactors.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, define <span class="inline-math">$A^{ij}$</span> be the <span class="inline-math">$(n-1)\times(n-1)$</span> matrix in which row <span class="inline-math">$i$</span> and column <span class="inline-math">$j$</span> of <span class="inline-math">$A$</span> are removed,
+                                        <span class="display-math">$$ A^{ij} = \pmat{
+                                        A_{11} &amp; \ldots &amp; A_{1(j-1)} &amp; A_{1(j+1)} &amp; \ldots &amp; A_{1n} \\
+                                        \vdots &amp; &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+                                        A_{(i-1)1} &amp; \ldots &amp; A_{(i-1)(j-1)} &amp; A_{(i-1)(j+1)} &amp; \ldots &amp; A_{(i-1)n} \\
+                                        A_{(i+1)1} &amp; \ldots &amp; A_{(i+1)(j-1)} &amp; A_{(i+1)(j+1)} &amp; \ldots &amp; A_{(i+1)n} \\
+                                        \vdots &amp; &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+                                        A_{n1} &amp; \ldots &amp; A_{n(j-1)} &amp; A_{n(j+1)} &amp; \ldots &amp; A_{nn} \\
+                                        }.$$</span>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            The minor of the <span class="inline-math">$ij$</span>-th element of <span class="inline-math">$A$</span> is defined as
+                                            <span class="display-math">$$ M_{ij} = \det A^{ij}. $$</span>
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            The cofactor of the <span class="inline-math">$ij$</span>-th element of <span class="inline-math">$A$</span> is defined as
+                                            <span class="display-math">$$ \Delta_{ij} = (-1)^{i-j} M_{ij}. $$</span>
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (Laplace expansion)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-Laplace-expansion.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For any <span class="inline-math">$I=1,2,\ldots n$</span> of an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, the determinant of <span class="inline-math">$A$</span> can be expanded along column <span class="inline-math">$I$</span> as
+                                        <span class="display-math">$$ \det A = \sum_{J_I=1}^n  A_{J_I I} \Delta_{J_I I} $$</span>
+                                        or along row <span class="inline-math">$I$</span> as
+                                        <span class="display-math">$$ \det A = \sum_{J_I=1}^n A_{IJ_I} \Delta_{IJ_I}. $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-Laplace-expansion.html">Proof (Laplace expansion)</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (expanding wrongly gives zero determinant)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-expanding-wrongly-gives-zero-determinant.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span> and row indices <span class="inline-math">$i\neq I$</span>,
+                                        <span class="display-math">$$ \sum_{k=1}^n A_{ik} \Delta_{Ik} = 0. $$</span>
+                                        Similarly for column indices <span class="inline-math">$j\neq J$</span>,
+                                        <span class="display-math">$$ \sum_{k=1}^n A_{kj} \Delta_{kJ} = 0. $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-expanding-wrongly-gives-zero-determinant.html">Proof (expanding wrongly gives zero determinant)</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

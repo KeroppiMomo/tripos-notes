@@ -1,0 +1,308 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Motivation for determinant
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Motivation-for-determinant.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a linear map <span class="inline-math">$\alpha: \R^3 \to \R^3$</span> and standard basis <span class="inline-math">$\vec e_1,\vec e_2,\vec e_3\mapsto \vec e_1&#x27;, \vec e_2&#x27;, \vec e_3&#x27;$</span>,
+                the determinant is defined to be the volume of the parallelepiped formed by <span class="inline-math">$\vec e_1&#x27;, \vec e_2&#x27;, \vec e_3&#x27;$</span>,
+                <span class="display-math">$$\begin{align*}
+                \det A &amp;\equiv [\vec e_1&#x27;, \vec e_2&#x27;, \vec e_3&#x27;] \\
+                &amp;= \epsilon_{ijk} (\vec e_1&#x27;)_i (\vec e_2&#x27;)_j (\vec e_3&#x27;)_k \\
+                &amp;= \epsilon_{ijk} \big(A_{il} (\vec e_1)_l\big) \big(A_{jm} (\vec e_2)_m\big) \big(A_{kn} (\vec e_3)_n\big) \\
+                &amp;= \epsilon_{ijk} A_{il} \delta_{l1} A_{jm} \delta_{m2} A_{kn} \delta_{n3} \\
+                &amp;= \epsilon_{ijk} A_{i1} A_{j2} A_{k3}.
+                \end{align*}$$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    See <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Permutations.html">permutations in Groups</a> for detailed discussion.
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (generalisation of Levi-Cevita symbol)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-generalisation-of-Levi-Cevita-symbol.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Define
+                <span class="display-math">$$
+                \epsilon_{j_1j_2\ldots j_n} = \begin{cases}
+                +1 &amp; \text{if }(j_1,j_2,\ldots,j_n)\text{ is an even permutation}, \\
+                -1 &amp; \text{if }(j_1,j_2,\ldots,j_n)\text{ is an odd permutation}, \\
+                0 &amp; \text{otherwise.}
+                \end{cases}
+                $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (determinant)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-determinant.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, define its determinant
+                <span class="display-math">$$ \det A = \sum_{\sigma\in S_n} \epsilon(\sigma) A_{\sigma(1) 1} A_{\sigma(2) 2} \ldots A_{\sigma(n) n}. $$</span>
+            </p>
+            <p>
+                Alternatively, in suffix notation,
+                <span class="display-math">$$ \det A = \epsilon_{j_1j_2\ldots j_n} A_{j_1 1} A_{j_2 2} \ldots A_{j_n n}. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Properties of determinant
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Properties-of-determinant.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Matrices mentioned here are of size <span class="inline-math">$n\times n$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (transpose has the same determinant)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-transpose-has-the-same-determinant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="display-math">$$\det A = \det A^T.$$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-transpose-has-the-same-determinant.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (determinant when multiplying a row or column by scalar)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-when-multiplying-a-row-or-column-by-scalar.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If matrix <span class="inline-math">$B$</span> is formed by multiplying every entry in a single row or column of <span class="inline-math">$A$</span> by scalar <span class="inline-math">$\lambda$</span>, then <span class="display-math">$$\det B = \lambda \det A.$$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-when-multiplying-a-row-or-column-by-scalar.html">More formal description and proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (determinant of scalar multiple)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-of-scalar-multiple.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="display-math">$$ \det \lambda A = \lambda^n \det A. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-of-scalar-multiple.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (determinant when two rows or columns equal)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-when-two-rows-or-columns-equal.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If two rows or columns of <span class="inline-math">$A$</span> are identical, then <span class="inline-math">$\det A = 0$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-when-two-rows-or-columns-equal.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (determinant when adding multiple of rows or columns onto another)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-when-adding-multiple-of-rows-or-columns-onto-another.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If a matrix <span class="inline-math">$B$</span> is formed by adding a scalar multiple <span class="inline-math">$\lambda$</span> of a column (or row) of <span class="inline-math">$A$</span> onto another column (or row), then <span class="inline-math">$\det B = \det A$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-when-adding-multiple-of-rows-or-columns-onto-another.html">More formal description and proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (determinant when two rows or columns are linearly dependent)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-when-two-rows-or-columns-are-linearly-dependent.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If two rows or columns of <span class="inline-math">$A$</span> are linearly dependent, then <span class="inline-math">$\det A = 0$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-when-two-rows-or-columns-are-linearly-dependent.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (determinant of products)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-of-products.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="display-math">$$ \det AB = \det A \det B. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-of-products.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (determinant of orthogonal and unitary matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-of-orthogonal-and-unitary-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ul>
+                        <li>
+                            <p>
+                                If <span class="inline-math">$A$</span> is orthogonal, then <span class="inline-math">$\det A = \pm 1$</span> (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-of-orthogonal-matrix.html">Proof</a>). In particular, in <span class="inline-math">$\R^3$</span>, <span class="inline-math">$A$</span> represents a rotation (<span class="inline-math">$\det A = 1$</span>) or a reflection (<span class="inline-math">$\det A = -1$</span>).
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$U$</span> is unitary, then <span class="inline-math">$|\det U| = 1$</span> (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-determinant-of-unitary-matrix.html">Proof</a>).
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Minors and cofactors
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Minors-and-cofactors.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (minors, cofactors)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-minors-cofactors.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, define <span class="inline-math">$A^{ij}$</span> be the <span class="inline-math">$(n-1)\times(n-1)$</span> matrix in which row <span class="inline-math">$i$</span> and column <span class="inline-math">$j$</span> of <span class="inline-math">$A$</span> are removed,
+                            <span class="display-math">$$ A^{ij} = \pmat{
+                            A_{11} &amp; \ldots &amp; A_{1(j-1)} &amp; A_{1(j+1)} &amp; \ldots &amp; A_{1n} \\
+                            \vdots &amp; &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+                            A_{(i-1)1} &amp; \ldots &amp; A_{(i-1)(j-1)} &amp; A_{(i-1)(j+1)} &amp; \ldots &amp; A_{(i-1)n} \\
+                            A_{(i+1)1} &amp; \ldots &amp; A_{(i+1)(j-1)} &amp; A_{(i+1)(j+1)} &amp; \ldots &amp; A_{(i+1)n} \\
+                            \vdots &amp; &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+                            A_{n1} &amp; \ldots &amp; A_{n(j-1)} &amp; A_{n(j+1)} &amp; \ldots &amp; A_{nn} \\
+                            }.$$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                The minor of the <span class="inline-math">$ij$</span>-th element of <span class="inline-math">$A$</span> is defined as
+                                <span class="display-math">$$ M_{ij} = \det A^{ij}. $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The cofactor of the <span class="inline-math">$ij$</span>-th element of <span class="inline-math">$A$</span> is defined as
+                                <span class="display-math">$$ \Delta_{ij} = (-1)^{i-j} M_{ij}. $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Laplace expansion)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-Laplace-expansion.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For any <span class="inline-math">$I=1,2,\ldots n$</span> of an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, the determinant of <span class="inline-math">$A$</span> can be expanded along column <span class="inline-math">$I$</span> as
+                            <span class="display-math">$$ \det A = \sum_{J_I=1}^n  A_{J_I I} \Delta_{J_I I} $$</span>
+                            or along row <span class="inline-math">$I$</span> as
+                            <span class="display-math">$$ \det A = \sum_{J_I=1}^n A_{IJ_I} \Delta_{IJ_I}. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-Laplace-expansion.html">Proof (Laplace expansion)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (expanding wrongly gives zero determinant)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-expanding-wrongly-gives-zero-determinant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span> and row indices <span class="inline-math">$i\neq I$</span>,
+                            <span class="display-math">$$ \sum_{k=1}^n A_{ik} \Delta_{Ik} = 0. $$</span>
+                            Similarly for column indices <span class="inline-math">$j\neq J$</span>,
+                            <span class="display-math">$$ \sum_{k=1}^n A_{kj} \Delta_{kJ} = 0. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-expanding-wrongly-gives-zero-determinant.html">Proof (expanding wrongly gives zero determinant)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

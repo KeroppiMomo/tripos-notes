@@ -1,0 +1,44 @@
+<p>
+    (Since <span class="inline-math">$f$</span> is continuous on a closed interval, by the extreme value theorem,
+    <span class="inline-math">$f$</span> is bounded, so it makes sense to talk about integrability.)
+</p>
+<p>
+    We'll prove the contrapositive, i.e. if <span class="inline-math">$f$</span> is not integrable, then <span class="inline-math">$f$</span> is not continuous.
+</p>
+<p>
+    Suppose <span class="inline-math">$f$</span> is not integrable. By Cauchy criterion,
+    there exists <span class="inline-math">$\epsilon&gt;0$</span> such that for all dissections <span class="inline-math">$\mathcal{D}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}) - L(f,\mathcal{D}) &gt; \epsilon.
+    \end{align*} $$</span>
+</p>
+<p>
+    For all dissections <span class="inline-math">$\mathcal{D}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}) - L(f,\mathcal{D}) = \sum_{j=1}^{n} (x_j - x_{j-1})\left(\sup_{x\in[x_{j-1}, x_j]} f(x) - \inf_{x\in[x_{j-1}, x_j]} f(x)\right)
+    \end{align*} $$</span>
+    there exists some <span class="inline-math">$j$</span> with
+    <span class="display-math">$$ \begin{align*}
+        \sup_{x\in[x_{j-1}, x_j]} f(x) - \inf_{x\in[x_{j-1}, x_j]} f(x) &gt; \frac{\epsilon}{b-a}
+    \end{align*} $$</span>
+    because otherwise <span class="inline-math">$U(f,\mathcal{D})-L(f,\mathcal{D}) \leq (\epsilon/(b-a))\sum_{j=1}^{n} (x_j-x_{j-1}) = \epsilon$</span>.
+</p>
+<p>
+    Using definition of supermum and infimum, we can find <span class="inline-math">$y,z\in[x_{j-1}, x_j]$</span> with <span class="inline-math">$f(y) - f(z) &gt; \epsilon/(b-a)$</span>.
+</p>
+<p>
+    Apply the argument above to the uniform dissection <span class="inline-math">$\mathcal{D}_n$</span> to obtain
+    sequences <span class="inline-math">$y_n, z_n$</span> where <span class="inline-math">$|y_n-z_n| &lt; (b-a)/n$</span> with
+    <span class="display-math">$$ \begin{align*}
+        f(y_n) - f(z_n) &gt; \frac{\epsilon}{b-a}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$(y_n)$</span> is a bounded sequence, so by Bolzano-Weierstrass,
+    we can take a converging subsequence <span class="inline-math">$y_{n_k} \to \eta$</span> for some <span class="inline-math">$\eta\in[a,b]$</span>.
+    Since <span class="inline-math">$|y_{n_k} - z_{n_k}| &lt; (b-a)/n_k \leq (b-a)/k$</span>, we also have <span class="inline-math">$z_{n_k} \to \eta$</span>.
+</p>
+<p>
+    But <span class="inline-math">$f(y_{n_k}) - f(z_{n_k}) &gt; \epsilon/(b-a) &gt; 0$</span> implies <span class="inline-math">$f(y_{n_k})$</span> and <span class="inline-math">$f(z_{n_k})$</span> cannot both converge to the same limit,
+    so <span class="inline-math">$f$</span> is not continuous at <span class="inline-math">$\eta$</span>.
+</p>

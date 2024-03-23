@@ -1,0 +1,28 @@
+<p>
+    Suppose <span class="inline-math">$B$</span> is formed by adding a scalar multiple <span class="inline-math">$\lambda$</span> of column <span class="inline-math">$s$</span> of <span class="inline-math">$A$</span> onto column <span class="inline-math">$r$</span>,
+    <span class="display-math">$$ B_{ij} = \begin{cases}
+    A_{ij}, &amp;j\neq r, \\
+    A_{ij} + \lambda A_{is}, &amp;j=r.
+    \end{cases}$$</span>
+</p>
+<p>
+    Then
+    <span class="display-math">$$\begin{align*}
+    \det B &amp;= \sum_{\sigma\in S_n} \epsilon(\sigma) B_{\sigma(1)1}\ldots B_{\sigma(r-1)(r-1)} B_{\sigma(r) r} B_{\sigma(r+1)(r+1)} \ldots B_{\sigma(n)n} \\
+    &amp;= \sum_{\sigma\in S_n} \epsilon(\sigma) A_{\sigma(1)1}\ldots A_{\sigma(r-1)(r-1)} (A_{\sigma(r) r} + \lambda A_{\sigma(r) s}\big) A_{\sigma(r+1)(r+1)} \ldots A_{\sigma(n)n} \\
+    &amp;= \sum_{\sigma\in S_n} \epsilon(\sigma)A_{\sigma(1)1}\ldots A_{\sigma(n)n}
+    + \lambda \sum_{\sigma\in S_n}\epsilon(\sigma)C_{\sigma(1)1} \ldots C_{\sigma(n)n} \\
+    &amp;= \det A + \lambda\det C
+    \end{align*}$$</span>
+    where
+    <span class="display-math">$$
+    C_{ij} = \begin{cases}
+    A_{ij}, &amp;j\neq r,\\
+    A_{is}, &amp;j=r,
+    \end{cases}
+    $$</span>
+    which means that the <span class="inline-math">$s$</span>-th and <span class="inline-math">$r$</span>-th columns of <span class="inline-math">$C$</span> are identical. <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-when-two-rows-or-columns-equal.html">Therefore</a>, <span class="inline-math">$\det C = 0$</span> and so <span class="inline-math">$\det B = \det A$</span>.
+</p>
+<p>
+    Again for adding rows onto rows, use <span class="inline-math">$\det A^T = \det A$</span>.
+</p>

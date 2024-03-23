@@ -1,0 +1,21 @@
+<p>
+    We want to shift the origin by some amount <span class="inline-math">$\v a$</span> to eliminate the linear term,
+    <span class="display-math">$$ \v x \leftarrow \v x + \v a. $$</span>
+</p>
+<p>
+    Substituting,
+    <span class="display-math">$$\begin{align*}
+    0 &amp;= (\v x + \v a)^T D(\v x + \v a) + \v b^T (\v x + \v a) + c \\
+    &amp;= \v x^T D \v x + \v a^T D \v x + \v x^T D\v a + \v a^T D\v a + \v b^T \v x + \v b^T \v a + c \\
+    &amp;= \v x^T D \v x + \ub{(\v a^T D\v x + \v x^T D\v a + b^T\v x)}_{= 0} + \ub{(\v a^T D\v a + \v b^T\v a + c)}_\text{const.} \\
+    \end{align*}$$</span> 
+    We want the middle term to vanish, so we set
+    <span class="display-math">$$\begin{align*}
+    0 &amp;= (D^T\v a)^T \v x + \v x^T (D\v a) + \v b^T \v x\\
+    &amp;= (D\v a)^T \v x + \v x^T (D\v a) + \v b^T \v x &amp;&amp; \text{$D$ is diagonal} \\
+    &amp;= (D\v a)^T \v x + (D\v a)^T \v x + \v b^T \v x &amp;&amp; \text{transpose of scalar}\\
+    &amp;= (2D\v a + \v b)^T \v x
+    \end{align*}$$</span>
+    so set
+    <span class="display-math">$$ \v a = -\frac12 D\inv \v b. $$</span>
+</p>

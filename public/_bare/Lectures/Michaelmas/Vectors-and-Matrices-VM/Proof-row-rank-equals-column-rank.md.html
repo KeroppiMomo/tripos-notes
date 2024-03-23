@@ -1,0 +1,32 @@
+<p>
+    We denote the <span class="inline-math">$i$</span>-th row of <span class="inline-math">$A$</span> as the transpose of column vector
+    <span class="display-math">$$ \v r_i^T = \pmat{A_{i1} &amp; A_{i2} &amp; \ldots &amp; A_{in}} $$</span>
+    and the <span class="inline-math">$j$</span>-th column of <span class="inline-math">$A$</span> as column vector
+    <span class="display-math">$$ \v c_j = \pmat{A_{1j} \\ A_{2j} \\ \vdots \\ A_{mj}}. $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$r$</span> be the row rank of <span class="inline-math">$A$</span>. Let <span class="inline-math">$\v v_1^T, \v v_2^T, \ldots, \v v_r^T$</span> be a biggest set of linearly independent rows of <span class="inline-math">$A$</span>.
+    This means that we can write every row as a linear combination of <span class="inline-math">$\v v_i^T$</span>'s:
+    <span class="display-math">$$ \v r_i^T = \sum_{k=1}^r \alpha_{ik} \v v_k^T $$</span>
+    for some coefficients <span class="inline-math">$\alpha_{ik}$</span> where <span class="inline-math">$i=1,2,\ldots, m$</span> and <span class="inline-math">$j=1,2,\ldots, r$</span>.
+</p>
+<p>
+    But now we can flip the roles of <span class="inline-math">$c$</span> and <span class="inline-math">$\v v$</span> by considering the each column,
+    <span class="display-math">$$ A_{ij} = (\v r_i^T)_j = \sum_{k=1}^r \alpha_{ik} (\v v_k^T)_j$$</span>
+    <span class="display-math">$$ \pmat{A_{1j} \\ A_{2j} \\ \vdots \\ A_{mj}}
+    = \sum_{k=1}^r (\v v_k^T)_j \pmat{\alpha_{1k} \\ \alpha_{2k} \\ \vdots \\ \alpha_{mk}}$$</span>
+    <span class="display-math">$$ \v c_j = \sum_{k=1}^r (\v v_k^T)_j \v\alpha_k. $$</span>
+</p>
+<p>
+    Therefore any column of <span class="inline-math">$A$</span> can be expressed as a linear combination of <span class="inline-math">$r$</span> columns vectors <span class="inline-math">$\v \alpha_k$</span>, and hence
+    <span class="display-math">$$ \text{column rank} \leq r = \text{row rank}. $$</span>
+</p>
+<p>
+    Applying the same argument to <span class="inline-math">$A^T$</span> yields
+    <span class="display-math">$$ \text{row rank} \leq \text{column rank}, $$</span>
+    so they are equal.
+</p>
+<p>
+    Now for standard basis <span class="inline-math">$\v e_1, \v e_2, \ldots, \v e_n$</span> of <span class="inline-math">$\R^n$</span> (or <span class="inline-math">$\C^n$</span>), the images <span class="inline-math">$\v e_i&#x27; = A\v e_i$</span> are the columns of <span class="inline-math">$A$</span>.
+    At the same time, <span class="inline-math">$\mrm{span}\set{A\v e_1, A\v e_2, \ldots, A\v e_n} = \mrm{image}(A)$</span>, so column rank equals <span class="inline-math">$r(A)$</span> as required.
+</p>

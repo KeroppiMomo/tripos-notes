@@ -1,0 +1,102 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (conditional probability)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a probability space, for any two events <span class="inline-math">$A,B$</span> with <span class="inline-math">$\mathbb P(B) &gt; 0$</span>, the conditional probability of <span class="inline-math">$A$</span> given <span class="inline-math">$B$</span> is
+                <span class="display-math">$$ \mathbb P(A|B) = \frac{\mathbb P(A\cap B)}{\mathbb P(B)}. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (conditional probability measure)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-conditional-probability-measure.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Given a probability space <span class="inline-math">$(\Omega, \mathcal F, \mathbb P)$</span>, for any event <span class="inline-math">$B$</span> with <span class="inline-math">$\mathbb P(B) &gt; 0$</span>, the function
+                <span class="display-math">$$ \begin{align*}
+                \mathbb P_B: \mathcal F &amp;\to [0,1] \\
+                A &amp;\mapsto \mathbb P(A|B)
+                \end{align*} $$</span>
+                is a probability measure called the <em>conditional probability measure given <span class="inline-math">$B$</span></em>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-conditional-probability-measure.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Law of total probability
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(B_n)_{n\in\N}$</span> be a partition of <span class="inline-math">$\Omega$</span> (sequence of disjoint events with <span class="inline-math">$\bigcup_n B_n = \Omega$</span>) with <span class="inline-math">$\prob(B_n)&gt;0$</span>.
+                Then for all event <span class="inline-math">$A$</span>,
+                <span class="display-math">$$ \prob(A) = \sum_n \prob(A|B_n)\, \prob(B_n). $$</span>
+                The condition of positive probabilities can be dropped if we agree that <span class="inline-math">$\prob(A|B_n) \prob(B_n) = 0$</span> when <span class="inline-math">$\prob(B_n) = 0$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-law-of-total-probability.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Bayes' formula
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bayes-formula.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(B_n)_{n\in\N}$</span> be a partition of <span class="inline-math">$\Omega$</span> with positive probability and let <span class="inline-math">$A$</span> be an event of positive probability.
+                Then
+                <span class="display-math">$$ \prob(B_n | A) = \frac{\prob(A|B_n) \prob(B_n)}{\fsum k1\infty \prob(A|B_k) \prob(B_k) }. $$</span>
+            </p>
+            <p>
+                We hold a prior belief of the probabilities <span class="inline-math">$\prob(B_n)$</span>. Should we observe the event <span class="inline-math">$A$</span>, this formula gives the posterior probabilities <span class="inline-math">$\prob(B_n|A)$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Simpson's paradox
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simpson-s-paradox.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(\Omega_n)_{n\in\N}$</span> be a partition of <span class="inline-math">$\Omega$</span>. Let <span class="inline-math">$A,B$</span> be events with <span class="inline-math">$\prob(B) &gt; 0$</span>.
+            </p>
+            <p>
+                It can be that <span class="inline-math">$B$</span> makes <span class="inline-math">$A$</span> more likely on all <span class="inline-math">$\Omega_n$</span>, i.e. <span class="inline-math">$\prob(A|B\cap\Omega_n) &gt; \prob(A|\Omega_n)$</span>, but <span class="inline-math">$B$</span> makes <span class="inline-math">$A$</span> less likely on <span class="inline-math">$\Omega$</span>, i.e. <span class="inline-math">$\prob(A|B) &lt; \prob(A)$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-of-Simpson-s-paradox.html">Example</a>)
+            </p>
+            <p>
+                Using the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-probability.html">law of total probability</a>,
+                <span class="display-math">$$ \begin{matrix}
+                \prob(A) &amp; = &amp; \sum_n &amp; \prob(A|\Omega_n) &amp; \prob(\Omega_n) \\
+                \bigvee &amp; &amp; &amp; \bigwedge \\
+                \prob(A|B) &amp; = &amp; \sum_n &amp; \prob(A|B\cap\Omega_n) &amp; \prob(\Omega_n|B) \\
+                \end{matrix} $$</span>
+                and the weights <span class="inline-math">$\prob(\Omega_n)$</span> can change when conditioning on <span class="inline-math">$B$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>

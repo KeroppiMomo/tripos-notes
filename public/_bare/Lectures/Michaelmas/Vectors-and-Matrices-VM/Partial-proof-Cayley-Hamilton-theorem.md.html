@@ -1,0 +1,41 @@
+<p>
+    We will prove for the case when <span class="inline-math">$A$</span> is a diagonalisable matrix, i.e.
+    <span class="display-math">$$ A = P\inv DP $$</span>
+    where
+    <span class="display-math">$$ D = \mrm{diag}(\lambda_1, \lambda_2, \ldots, \lambda_n) $$</span>
+    and <span class="inline-math">$\lambda_j$</span> are eigenvalues.
+</p>
+<p>
+    Note that
+    <span class="display-math">$$\begin{align*}
+    A^i &amp;= \ub{P\inv D PP\inv D P\ldots P\inv DP}_{i\text{ times}} \\
+    &amp;= P\inv D^i P \\
+    &amp;= P\inv \mrm{diag}(\lambda_1^i, \lambda_2^i, \ldots, \lambda_n^i) P.
+    \end{align*}$$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$\begin{align*}
+    p_A(A) &amp;= P\inv p_A(D) P \\
+    &amp;= P\inv \mrm{diag}(p_A(\lambda_1), p_A(\lambda_2), \ldots, p_A(\lambda_n))P \\
+    &amp;= P\inv 0 P \\
+    &amp;= 0.
+    \end{align*}$$</span>
+</p>
+<hr>
+<p>
+    For the case when <span class="inline-math">$A$</span> is <span class="inline-math">$2\times 2$</span> but not diagonalisable, <span class="inline-math">$A$</span> is similar to
+    <span class="display-math">$$ B = \pmat{\lambda&amp;1 \\ 0&amp;\lambda}. $$</span>
+    Now <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-similar-matrices-have-the-same-characteristic-polynomials.html">similar matrices have the same characteristic polynomials</a>, so
+    <span class="display-math">$$ p_A(z) = p_B(z) = \det(B - zI) = (\lambda - z)^2. $$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$\begin{align*}
+    p_A(A) &amp;= p_A(P\inv BP) \\
+    &amp;= P\inv p_A(B) P \\
+    &amp;= P\inv (\lambda I - B)^2 P \\
+    &amp;= P\inv \pmat{0&amp;-1\\0&amp;0}^2 P \\
+    &amp;= 0.
+    \end{align*}$$</span>
+</p>

@@ -1,0 +1,66 @@
+
+<h1>Proof for Hermitian matrix (done in lectures)</h1>
+
+<p>
+    Suppose <span class="inline-math">$\lambda_i\neq \lambda_j$</span> be distinct eigenvalues of Hermitian matrix <span class="inline-math">$H$</span> with corresponding eigenvectors <span class="inline-math">$\v v_i, \v v_j$</span>. This means
+    <span class="display-math">$$ H\v v_i = \lambda_i\v v_i, \qquad H\v v_j = \lambda_j\v v_j. $$</span>
+</p>
+<p>
+    Premultiplying the first equation with <span class="inline-math">$\v v_j^\dagger$</span> gives
+    <span class="display-math">$$ \v v_j^\dagger H\v v_i = \lambda_i\v v_j^\dagger\v v_i. \tag{1} $$</span>
+    Now premultiply the second equation with <span class="inline-math">$\v v_i^\dagger$</span> then take the Hermitian conjugate. Then
+    <span class="display-math">$$ \v v_j^\dagger H^\dagger\v v_i = \lambda_j^*\v v_j^\dagger\v v_i. $$</span>
+    <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-eigenvalues-of-Hermitian-matrix-is-real.html">Eigenvalues of Hermitian matrices are real</a>, so <span class="inline-math">$\lambda_j^* = \lambda_j$</span>.
+    Also since <span class="inline-math">$H$</span> is Hermitian, the left hand side matches that of (1). Hence
+    <span class="display-math">$$ \lambda_i\v v_j^\dagger\v v_i = \lambda_j\v v_j^\dagger\v v_i. $$</span>
+    Since <span class="inline-math">$\lambda_i\neq\lambda_j$</span>,
+    <span class="display-math">$$ 0 = \v v_j^\dagger\v v_i = \langle \v v_j | \v v_i\rangle $$</span>
+    so <span class="inline-math">$\v v_i$</span> and <span class="inline-math">$\v v_j$</span> are orthogonal.
+</p>
+
+<h1>Proof for a general normal matrix</h1>
+
+<p>
+    Suppose <span class="inline-math">$\lambda_i\neq\lambda_j$</span> be distinct eigenvalues of normal matrix <span class="inline-math">$N$</span> with corresponding eigenvectors <span class="inline-math">$\v v_i, \v v_j$</span>. This means
+    <span class="display-math">$$ N\v v_i = \lambda_i\v v_i, \qquad N\v v_j = \lambda_j\v v_j. $$</span>
+    Using <span class="inline-math">$NN^\dagger = N^\dagger N$</span>,
+    <span class="display-math">$$\begin{align*}
+    \v0 &amp;= (N-\lambda_iI)\v v_i \\
+    0 &amp;= |(N-\lambda_iI)\v v_i|^2 \\
+    &amp;= \v v_i^\dagger (N-\lambda_i I)^\dagger (N-\lambda_iI)\v v_i \\
+    &amp;= \v v_i^\dagger(N^\dagger N - \lambda_iN - \lambda_iN^\dagger + \lambda_i^2)\v v_i \\
+    &amp;= \v v_i^\dagger(NN^\dagger - \lambda_i^* N - \lambda_i N^\dagger + \lambda_i^* \lambda_i) \v v_i \\
+    &amp;= \v v_i^\dagger(N-\lambda_i^* I)(N^\dagger - \lambda_i I)\v v_i \\
+    &amp;= \|(N^\dagger - \lambda_i^* I)\v v_i\| \\
+    N^\dagger \v v_i &amp;= \lambda_i^* \v v_i
+    \end{align*}$$</span>
+    and similarly
+    <span class="display-math">$$ N^\dagger\v v_j = \lambda_j^* v_j. $$</span>
+</p>
+<p>
+    Now
+    <span class="display-math">$$ \v v_i^\dagger N\v v_j = \v v_i^\dagger (N\v v_j) = \lambda_j \v v_i^\dagger \v v_j$$</span>
+    but also
+    <span class="display-math">$$ \v v_i^\dagger N\v v_j = (N^\dagger \v v_i)^\dagger\v v_j = (\lambda_i^*\v v_i)^\dagger \v v_j = \lambda_i\v v_i^\dagger \v v_j$$</span>
+    so
+    <span class="display-math">$$ (\lambda_j - \lambda_i)(\v v_i^\dagger \v v_j) = 0. $$</span>
+</p>
+<p>
+    Since <span class="inline-math">$\lambda_j\neq\lambda_i$</span>, <span class="inline-math">$\v v_i^\dagger \v v_j = 0$</span> and hence <span class="inline-math">$\v v_i$</span> and <span class="inline-math">$\v v_j$</span> are orthogonal.
+</p>
+<p>
+    Sources:
+</p>
+<ul>
+<li>
+    <p>
+        https://proofwiki.org/wiki/Eigenvalues<em>of</em>Normal<em>Operator</em>have<em>Orthogonal</em>Eigenspaces
+    </p>
+    
+</li><li>
+    <p>
+        https://math.stackexchange.com/questions/778946/prove-that-if-a-is-normal-then-eigenvectors-corresponding-to-distinct-eigenva
+    </p>
+    
+</li>
+</ul>

@@ -1,0 +1,19 @@
+<p>
+    Divide <span class="inline-math">$V$</span> into tiny cubes, small enough that we can assume <span class="inline-math">$\v F$</span> approximately constant on each side.
+</p>
+<p>
+    For the cube at <span class="inline-math">$(x,y,z)$</span> with size <span class="inline-math">$\delta x, \delta y, \delta z$</span>, the flow of <span class="inline-math">$\v F$</span> through the <span class="inline-math">$(y,z)$</span>-plane is
+    <span class="display-math">$$ \big(F_x(x+\delta x, y, z) - F_x(x,y,z)\big) \delta y\,\delta z \approx \pdfd{F_x}x \delta x\,\delta y\,\delta z $$</span>
+    Do the same for the other sides. Then the total flux through this box is
+    <span class="display-math">$$ \Big(\pdfd{F_x}x + \pdfd{F_y}y + \pdfd{F_z}z\Big)\delta x \, \delta y\, \delta z = \nabla\cdot\v F\, \delta x\,\delta y\,\delta z.$$</span>
+</p>
+<p>
+    When boxes are combined, the flux through internal faces cancels out, so the total flux exactly accounts for the boundary faces.
+</p>
+<p>
+    So roughly
+    <span class="display-math">$$ \sum_\text{cubes} \int \v F\cdot d\v S = \int_{\partial V} \v F\cdot d\v S = \sum_\text{cubes}\nabla\cdot\v F\,\delta x\, \delta y\, \delta z = \int_V\nabla\cdot\v F\, dV. $$</span>
+</p>
+<p>
+    But can we really approximate the boundary by cubes?
+</p>

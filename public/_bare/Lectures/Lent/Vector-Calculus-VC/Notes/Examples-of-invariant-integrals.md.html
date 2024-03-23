@@ -1,0 +1,54 @@
+<p>
+    Let <span class="inline-math">$V$</span> be a 3D ball of radius <span class="inline-math">$R$</span>.
+</p>
+<p>
+    -
+        <span class="display-math">$$ \begin{align*}
+            T_i = \int_{V} \rho(r)\, x_i\, dV
+        \end{align*} $$</span>
+        This is a rank 1 isotropic tensor, so <span class="inline-math">$T_i = 0$</span>.
+</p>
+<p>
+    (This makes sense physically, since there is no reason that <span class="inline-math">$T_i$</span> would point in any particular direction.)
+</p>
+<p>
+    -
+        <span class="display-math">$$ \begin{align*}
+            T_{ij} = \int_{V} \rho(r)\, x_i x_j\, dV
+        \end{align*} $$</span>
+        This is a rank 2 isotropic tensor, so <span class="inline-math">$T_{ij} = \alpha\delta_{ij}$</span>.
+</p>
+<p>
+    To determine <span class="inline-math">$\alpha$</span>, take the trace:
+        <span class="display-math">$$ \begin{align*}
+            3\alpha = T_{ii} = \int_{V} \rho(r) r^2\, dV = 4\pi \int_{0}^{R} r^4 \rho(r)\, dr.
+        \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        Let <span class="inline-math">$S = \partial V$</span>.
+        <span class="display-math">$$ \begin{align*}
+            T_k = a_j \int_{S} dS_i \frac{x_ix_jx_k}{r^5}
+        \end{align*} $$</span>
+        where <span class="inline-math">$a_j$</span> is a given vector.
+    </p>
+    <p>
+        The integral <span class="inline-math">$\tilde T_{jk} = \int_{S} dS_i x_ix_jx_k/r^5$</span> is a rank 2 isotropic tensor, so <span class="inline-math">$T_k = \beta a_j \delta_{jk} = \beta a_k$</span>.
+    </p>
+    <p>
+        (This makes sense physically, since the only special direction is <span class="inline-math">$\v a$</span>.)
+    </p>
+    <p>
+        To determine <span class="inline-math">$\beta$</span>, take trace of <span class="inline-math">$\tilde T_{jk}$</span>: 
+        <span class="display-math">$$ \begin{align*}
+            3\beta &amp;= \int_{S} dS_i \frac{x_i r^2}{r^5} \\
+            &amp;= \int_{S} dS_i \frac{x_i}{r^3} \\
+            &amp;= \frac{1}{R^2} \int_{S} \v n\cdot d\v S \\
+            &amp;= 4\pi
+        \end{align*} $$</span>
+        so <span class="inline-math">$\beta = 4\pi/3$</span>.
+    </p>
+    
+</li>
+</ul>

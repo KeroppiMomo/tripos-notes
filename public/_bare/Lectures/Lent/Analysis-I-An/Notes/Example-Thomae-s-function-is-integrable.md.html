@@ -1,0 +1,52 @@
+<p>
+    Thomae's function
+    <span class="display-math">$$ \begin{align*}
+        f: [0,1] &amp;\to \R \\
+        f(x) &amp;= \begin{cases}
+            1/q, &amp; x=p/q, \quad \text{$p,q$ are coprime integers} \\
+            0, &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    For any <span class="inline-math">$\mathcal{D}$</span>, <span class="inline-math">$L(f,\mathcal{D}) = 0$</span> since each subinterval contains an irrational number.
+</p>
+<p>
+    By Cauchy criterion, it suffices to show that for any <span class="inline-math">$\epsilon &gt; 0$</span>, we can find a <span class="inline-math">$\mathcal{D}$</span> with <span class="inline-math">$U(f,\mathcal{D}) &lt; \epsilon$</span>.
+</p>
+<p>
+    Pick <span class="inline-math">$N\in\N$</span> such that <span class="inline-math">$1/N &lt; \epsilon/2$</span>.
+    Consider the set
+    <span class="display-math">$$ \begin{align*}
+        P = \sb{x\in[0,1]}{f(x) \geq 1/N} = \sb{p/q}{1\leq q\leq N, 0\leq p\leq q}.
+    \end{align*} $$</span>
+    <span class="inline-math">$P$</span> is finite, so let
+    <span class="display-math">$$ \begin{align*}
+        P = \set{p_1, \ldots, p_m} \quad \text{with } 0=p_1 &lt; p_2 &lt; \ldots &lt; p_m = 1.
+    \end{align*} $$</span>
+</p>
+<p>
+    Consider a dissection <span class="inline-math">$\mathcal{D}$</span> of <span class="inline-math">$[0,1]$</span> such that for each <span class="inline-math">$p_k$</span>, <span class="inline-math">$k=1,2,\ldots,m$</span>,
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$p_k$</span> is in some <span class="inline-math">$(x_{j-1}, x_j)$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        the unique subinterval containing <span class="inline-math">$p_k$</span> has length at most <span class="inline-math">$\epsilon/2m$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    We'll abuse notation and write <span class="inline-math">$I\in \mathcal{D}$</span> to mean <span class="inline-math">$I=[x_{j-1}, x_{j}]$</span> for some <span class="inline-math">$j=1,2,\ldots,n$</span> and write <span class="inline-math">$|I| = x_j - x_{j-1}$</span>.
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}) &amp;= \sum_{I\in \mathcal{D}} |I| \sup_{x\in I} f(x) \\
+        &amp;= \sum_{\substack{I\in \mathcal{D} \\ I\cap P=\emptyset}} |I| \sup_{x\in I} f(x) + \sum_{\substack{I\in \mathcal{D} \\ I\cap P\neq \emptyset}} |I| \sup_{x\in I} f(x) \\
+        &amp;\leq 1\cdot \frac{1}{N} + m\cdot \frac{\epsilon}{2m}\cdot 1 \\
+        &amp;&lt; \epsilon.
+    \end{align*} $$</span>
+</p>

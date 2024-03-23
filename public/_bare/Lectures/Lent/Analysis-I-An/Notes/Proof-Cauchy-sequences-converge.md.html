@@ -1,0 +1,37 @@
+<p>
+    Suppose <span class="inline-math">$(a_n)_{n\in\N}$</span> is Cauchy.
+</p>
+
+<h1><span class="inline-math">$(a_n)_{n\in\N}$</span> is bounded</h1>
+
+<p>
+    There exists <span class="inline-math">$N\in\N$</span> such that <span class="inline-math">$|a_n - a_m| &lt; 1$</span> for all <span class="inline-math">$n,m\geq N$</span>.
+    So for all <span class="inline-math">$n\geq N$</span>,
+    <span class="display-math">$$ |a_n| = |a_n - a_N + a_N| \leq |a_n - a_N| + |a_N| &lt; 1+|a_N|, $$</span>
+    which is some constant.
+</p>
+<p>
+    Thus for all <span class="inline-math">$n$</span>,
+    <span class="display-math">$$|a_n| \leq 1+\max\set{|a_1|, |a_2|, \ldots, |a_N|}.$$</span>
+</p>
+<p>
+    Hence by <a href="/tripos-notes/Lectures/Lent/Analysis-I-An/Notes/Theorem-Bolzano-Weierstrass-theorem.html">Bolzano-Weierstrass theorem</a>,
+    there exists <span class="inline-math">$a\in\R$</span> and <span class="inline-math">$n_1&lt;n_2&lt;\ldots$</span> such that
+    <span class="display-math">$$ a_{n_j} \to a \quad\text{as } j\to\infty. $$</span>
+</p>
+
+<h1>Limit of subsequence is limit of sequence</h1>
+
+<p>
+    Note that for any <span class="inline-math">$n,j\in N$</span>,
+    <span class="display-math">$$ |a_n - a| = |a_n - a_{n_j} + a_{n_j} - a| \leq |a_n - a_{n_j}| + |a_{n_j} - a|. $$</span>
+</p>
+<p>
+    For any <span class="inline-math">$\epsilon&gt;0$</span>, since <span class="inline-math">$(a_n)$</span> is Cauchy, let <span class="inline-math">$N_1$</span> such that <span class="inline-math">$|a_n-a_m|&lt;\epsilon$</span> for all <span class="inline-math">$n,m\geq N_1$</span>.
+    Since <span class="inline-math">$a$</span> is the limit of the subsequence, let <span class="inline-math">$N_2$</span> such that <span class="inline-math">$|a_n-a_m| &lt; \epsilon$</span>.
+</p>
+<p>
+    Then by picking some <span class="inline-math">$j\geq \max\set{N_1, N_2}$</span>, we have for all <span class="inline-math">$n\geq N_1$</span>,
+    <span class="display-math">$$ |a_n - a| \leq \epsilon+\epsilon = 2\epsilon $$</span>
+    so <span class="inline-math">$a_n\to a$</span> as <span class="inline-math">$n\to\infty$</span>.
+</p>

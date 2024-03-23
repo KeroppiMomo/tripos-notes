@@ -1,0 +1,92 @@
+
+<h1>LUB => MCT</h1>
+
+<p>
+    For an increasing sequence <span class="inline-math">$(a_n)$</span>, let
+    <span class="display-math">$$ A = \{a_1, a_2, a_3, \ldots\}. $$</span>
+    Since <span class="inline-math">$(a_n)$</span> is bounded above, <span class="inline-math">$A$</span> is also bounded above.
+    Hence by LUB, let <span class="inline-math">$a = \sup A$</span>.
+</p>
+<p>
+    To show that <span class="inline-math">$a_n \to a$</span> as <span class="inline-math">$n\to\infty$</span>, let <span class="inline-math">$\epsilon &gt; 0$</span>.
+    Since <span class="inline-math">$a$</span> is a supremum, there exists <span class="inline-math">$a_N\in A$</span> where <span class="inline-math">$a_N &gt; a-\epsilon$</span>.
+    Then as <span class="inline-math">$(a_n)$</span> is increasing, <span class="inline-math">$a_n \geq a_N &gt; a-\epsilon$</span>.
+    Also using <span class="inline-math">$a_n \leq a$</span>, we obtain
+    <span class="display-math">$$ |a_n - a| &lt; \epsilon\quad\forall n\geq N. $$</span>
+    Hence <span class="inline-math">$a_n\to a$</span>.
+</p>
+
+<h1>MCT => LUB</h1>
+
+<p>
+    Suppose <span class="inline-math">$X\neq\emptyset$</span> is bounded above. We construct two sequences <span class="inline-math">$(x_n)_{n\in\N}$</span> and <span class="inline-math">$(y_n)_{n\in\N}$</span> as follows:
+</p>
+<ul>
+<li>
+    <p>
+        Step 1: let <span class="inline-math">$x_1 \in X$</span> as <span class="inline-math">$X$</span> is non-empty, and let <span class="inline-math">$y_1$</span> be any upper bound of <span class="inline-math">$X$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Step <span class="inline-math">$n$</span>: let <span class="inline-math">$z_n=(x_{n-1}+y_{n-1})/2$</span>. We have two cases:
+    </p>
+    <ul>
+    <li>
+        <p>
+            If <span class="inline-math">$z_n$</span> is an upper bound of <span class="inline-math">$X$</span>, then set <span class="inline-math">$x_n = x_{n-1}\in X$</span> and <span class="inline-math">$y_n = z_n$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            Otherwise, pick <span class="inline-math">$x_n\in X$</span> where <span class="inline-math">$x_n &gt; z_n$</span>, and let <span class="inline-math">$y_n = y_{n-1}$</span>.
+        </p>
+        
+    </li>
+    </ul>
+    <p>
+        In both cases,
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            <span class="inline-math">$x_{n-1}\leq x_n\in X$</span>;
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$y_n$</span> is an upper bound of <span class="inline-math">$X$</span> and <span class="inline-math">$y_n \leq y_{n-1}$</span>; and
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$y_n - x_n \leq (y_{n-1} - x_{n-1})/2$</span>.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li>
+</ul>
+<p>
+    Now from (1), <span class="inline-math">$(x_n)_{n\in\N}$</span> is an increasing sequence bounded above by any <span class="inline-math">$y$</span>, so by MCT, it converges to some value <span class="inline-math">$a$</span>.
+</p>
+<p>
+    Also from (2), <span class="inline-math">$(y_n)_{n\in\N}$</span> is a decreasing sequence bounded below by any <span class="inline-math">$x$</span>, so it converges to some value <span class="inline-math">$a&#x27;$</span>.
+</p>
+<p>
+    From (3), since <span class="inline-math">$y_n - x_n$</span> is squeezed between 0 and <span class="inline-math">$(y_1-x_1)/2^{n-1}$</span>, it has limit 0, so <span class="inline-math">$a&#x27; = a$</span>.
+</p>
+<p>
+    To show that <span class="inline-math">$a$</span> is an upper bound of <span class="inline-math">$X$</span>, <span class="inline-math">$y_n\to a$</span> means that for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$N$</span> such that <span class="inline-math">$|y_N - a| &lt; \epsilon$</span>.
+    Since <span class="inline-math">$y_N$</span> is an upper bound, for any <span class="inline-math">$x\in X$</span>,
+    <span class="display-math">$$ x \leq y_N &lt; a+\epsilon. $$</span>
+    As <span class="inline-math">$\epsilon$</span> can be arbitrarily small, <span class="inline-math">$x\leq a$</span>.
+    Hence <span class="inline-math">$a$</span> is an upper bound of <span class="inline-math">$X$</span>.
+</p>
+<p>
+    To show that <span class="inline-math">$a$</span> is the least upper bound, note that <span class="inline-math">$x_n\to a$</span> means that for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$N$</span> where <span class="inline-math">$x_N &gt; a-\epsilon$</span>.
+</p>
+<p>
+    Thus <span class="inline-math">$\sup X = a$</span> exists.
+</p>

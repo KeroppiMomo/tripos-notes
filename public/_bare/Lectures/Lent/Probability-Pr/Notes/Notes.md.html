@@ -1,0 +1,2934 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Models for randomness
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Models-for-randomness.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (sigma-algebra)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-sigma-algebra.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a set <span class="inline-math">$\Omega$</span>, a set <span class="inline-math">$\mathcal F\subseteq\mathcal P(\Omega)$</span> of subsets of <span class="inline-math">$\Omega$</span> is a <em><span class="inline-math">$\sigma$</span>-algebra</em> on <span class="inline-math">$\Omega$</span> satisfying
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\Omega \in \mathcal F$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                closure under complementation: <span class="inline-math">$A^\complement\in\mathcal F$</span> for all <span class="inline-math">$A\in\mathcal F$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                closure under countable unions: if <span class="inline-math">$(A_n)_{n\in\N}$</span> is a sequence in <span class="inline-math">$\mathcal F$</span>, then <span class="inline-math">$\bigcup_{n\in\N} A_n \in \mathcal F$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            Equivalently:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\mathcal F$</span> is non-empty;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\mathcal F$</span> is closed under countable set operations (complement, union, intersections). (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-sigma-algebra-is-closed-under-countable-intersections.html">Derivation of closure under countable intersections</a>)
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (probability measure)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-measure.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\mathcal F$</span> be a <span class="inline-math">$\sigma$</span>-algebra on <span class="inline-math">$\Omega$</span>.
+                            A function <span class="inline-math">$\mathbb P: \mathcal F \to [0,1]$</span> is a <em>probability measure</em> on <span class="inline-math">$\mathcal F$</span> if it satsifies
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$P(\Omega) = 1$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                countable additivity: for any sequences <span class="inline-math">$(A_n)_{n\in\N}$</span> of disjoint elements in <span class="inline-math">$\mathcal F$</span>,
+                                <span class="display-math">$$ \mathbb P\Big(\bigcup_n A_n\Big) = \sum_n \mathbb P(A_n). $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (probability space)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-space.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A triple <span class="inline-math">$(\Omega, \mathcal F, \mathbb P)$</span> is a <em>probability space</em> when <span class="inline-math">$\mathcal F$</span> is a <span class="inline-math">$\sigma$</span>-algebra of <span class="inline-math">$\Omega$</span> and <span class="inline-math">$\mathbb P$</span> is a probability measure on <span class="inline-math">$\mathcal F$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                We interpret:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    elements in <span class="inline-math">$\Omega$</span> as outcomes;
+                </p>
+                
+            </li><li>
+                <p>
+                    elements in <span class="inline-math">$\mathcal F$</span> as events;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mathbb P(A)$</span> as the probability of the event <span class="inline-math">$A\in\mathcal F$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Classical probability
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Classical-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In classical probability,
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\Omega$</span> is a finite set.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\mathcal F = \mathcal P(\Omega)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                We model all outcomes as equally likely, so
+                                <span class="display-math">$$\mathbb P(A) = \frac{|A|}{|\Omega|}.$$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            Examples: throwing a dice, balls from a bag, well-shuffled pack of card, distribution of the largest digit, birthdays
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Stirling's formula
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Stirling-s-formula.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We write <span class="inline-math">$a_n\sim b_n$</span> to mean that <span class="inline-math">$a_n/b_n\to 1$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Stirling's formula for log n!)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-Stirling-s-formula-for-log-n.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In the limit <span class="inline-math">$n\to\infty$</span>,
+                            <span class="display-math">$$ \log n! \sim n\log n. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-asymptotics-for-log-n.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Stirling's formula for n!)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-Stirling-s-formula-for-n.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In the limit <span class="inline-math">$n\to\infty$</span>,
+                            <span class="display-math">$$ n! \sim \sqrt{2\pi} n^{n+1/2} e^{-n}.$$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Stirling-s-formula-for-n.html">Proof (non-examinable)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Basic properties of probability measures
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Basic-properties-of-probability-measures.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(\Omega, \mathcal F, \mathbb P)$</span> be a probability space.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (union bound of probability)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-union-bound-of-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For every sequence <span class="inline-math">$(A_n)_{n\in\N}$</span> in <span class="inline-math">$\mathcal F$</span>,
+                            <span class="display-math">$$ \mathbb P\Big(\bigcup_{n\in\N} A_n\Big) \leq \sum_{n\in\N} \mathbb P(A_n). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-union-bound-of-probability.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                This is useful for showing <span class="inline-math">$\prob=0$</span> or <span class="inline-math">$1$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (continuity of probability)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-continuity-of-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(A_n)_{n\in\N}$</span> be a sequence of <span class="inline-math">$\mathcal F$</span> and suppose <span class="inline-math">$A_n\subseteq A_{n+1}$</span> for all <span class="inline-math">$n$</span>. Then
+                            <span class="display-math">$$ \mathbb P(A_n) \to \mathbb P\Big(\bigcup_n A_n\Big) \quad\text{as } n\to\infty. $$</span>
+                        </p>
+                        <p>
+                            Equivalently, let <span class="inline-math">$(C_n)_{n\in\N}$</span> be a sequence of <span class="inline-math">$\mathcal F$</span> and suppose <span class="inline-math">$C_n \supseteq C_{n+1}$</span> for all <span class="inline-math">$n$</span>. Then
+                            <span class="display-math">$$ \prob(C_n) \to \prob\Big(\bigcap_n C_n\Big) \quad\text{as } n\to\infty. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-continuity-of-probability.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Borel-Cantelli lemma)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-Borel-Cantelli-lemma.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a sequence of events <span class="inline-math">$(A_n: n\in\N)$</span>, let <span class="inline-math">$A$</span> be the event where <span class="inline-math">$A_n$</span> happens infinitely often:
+                            <span class="display-math">$$ A = \sb{\omega\in \Omega}{\omega\in A_n \text{ infintiely often}}. $$</span>
+                        </p>
+                        <p>
+                            Then
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                if <span class="inline-math">$\sum\prob(A_n)$</span> converges, then <span class="inline-math">$\prob(A) = 0$</span>;
+                                (Example sheet 1 Q6)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                provided that <span class="inline-math">$(A_n)$</span> are independent, if <span class="inline-math">$\sum\prob(A_n)=\infty$</span>, then <span class="inline-math">$\prob(A)=1$</span>. (Non-examinable)
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Borel-Cantelli-lemma.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                Dropping the condition that <span class="inline-math">$(A_n)$</span> are independent allows <span class="inline-math">$\prob(A)$</span>  to be anything: set <span class="inline-math">$A_1=A_2=\ldots=C$</span> to get <span class="inline-math">$\prob(A)=\prob(C)\neq0$</span>, and set <span class="inline-math">$A_1\supset A_2\supset A_3\supset\ldots$</span> with <span class="inline-math">$\prob(A_n) = 1/n$</span> to get <span class="inline-math">$\prob(A)=0$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (inclusion-exclusion formula for probability)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-inclusion-exclusion-formula-for-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A_1, A_2, \ldots, A_n\in\mathcal F$</span>. Then
+                            <span class="display-math">$$ \mathbb P(A_1\union A_2\union\ldots\union A_n) = \sum_{k=1}^n(-1)^{k+1} \sum_{1\leq i_1&lt;i_2&lt;\ldots&lt;i_k\leq n} \mathbb P(A_{i_1}\union A_{i_2}\union\ldots\union A_{i_k}). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-inclusion-exclusion-formula-for-probability.html">Proof using expectation</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (partial sums in inclusion-exclusion formula overestimate and underestimate)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-partial-sums-in-inclusion-exclusion-formula-overestimate-and-underestimate.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Referring to the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-inclusion-exclusion-formula-for-probability.html">inclusion-exclusion formula</a>, let <span class="inline-math">$S_k$</span> be the partial sums
+                            <span class="display-math">$$ S_k = \fsum j1k (-1)^{j+1} \sum_{1\leq i_1&lt;\ldots&lt;i_j\leq n} \prob(A_{i_1}\cap \ldots\cap A_{i_j}). $$</span>
+                        </p>
+                        <p>
+                            Then sum of odd terms overestimates and sum of even terms underestimate:
+                            <span class="display-math">$$ S_{2k} \leq \prob(A_1\cup\ldots\cup A_n) \leq S_{2k+1}. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-partial-sums-in-inclusion-exclusion-formula-overestimate-and-underestimate.html">Proof (non-examinable)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Counting finite sets
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-finite-sets.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Sums and products
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Sums-and-products.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (finite set, cardinality)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-finite-set-cardinality.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A non-empty set <span class="inline-math">$\Omega$</span> is finite if there exists <span class="inline-math">$n\in\N$</span> and a bijection
+                                        <span class="display-math">$$ \set{1,2,\ldots,n}\to \Omega. $$</span>
+                                        We call <span class="inline-math">$n$</span> the <em>cardinality</em> or <em>size</em> and write <span class="inline-math">$|\Omega| = n$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            For finite sets <span class="inline-math">$\Omega_1, \Omega_2, \ldots, \Omega_k$</span>,
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$|\Omega_1\times\Omega_2\times\ldots\times\Omega_k| = |\Omega_1| \times |\Omega_2| \times \ldots \times |\Omega_k|$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                if <span class="inline-math">$\Omega_1, \Omega_2, \ldots, \Omega_k$</span> are disjoint, then <span class="inline-math">$|\Omega_1\union\Omega_2\union\ldots\union\Omega_k| = |\Omega_1| + |\Omega_2| + \ldots + |\Omega_k|$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Counting permutations
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-permutations.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The number of bijections <span class="inline-math">$\Omega_1 \to \Omega_2$</span> for <span class="inline-math">$|\Omega_1| = |\Omega_2| = n$</span> is <span class="inline-math">$n!$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Counting subsets
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-subsets.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$n\in\N$</span> and <span class="inline-math">$k=0,1,2,\ldots,n$</span>. The number of subsets of <span class="inline-math">$\set{1,2,\ldots, n}$</span> of size <span class="inline-math">$k$</span> is
+                            <span class="display-math">$$ \pmatrix{n\\k} = \frac{n!}{k!(n-k)!}. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-of-number-of-permutations-and-subsets.html">Derivation of number of permutations and subsets</a>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Counting increasing and non-decreasing functions
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-increasing-and-non-decreasing-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider functions <span class="inline-math">$\set{1,2,\ldots,k} \to \set{1,2,\ldots,n}$</span> where <span class="inline-math">$k\leq n$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                For (strictly) increasing functions i.e. <span class="inline-math">$f(i+1) &gt; f(i)$</span>, there are <span class="inline-math">$\pmat{n\\k}$</span> of them. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-of-number-of-increasing-functions.html">Derivation</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For non-decreasing functions i.e. <span class="inline-math">$f(i+1) &gt;= f(i)$</span>, there are <span class="inline-math">$\pmat{n+k-1\\k}$</span> of them. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-of-numbers-of-non-decreasing-functions.html">Derivation</a>)
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Counting ordered partition
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-ordered-partition.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            An ordered partition of <span class="inline-math">$m$</span> of size <span class="inline-math">$n$</span> is a sequence of non-negative integers <span class="inline-math">$(m_1,m_2,\ldots, m_n)$</span> such that <span class="inline-math">$m_1+m_2+\ldots+m_n = m$</span>. There are <span class="inline-math">$\pmat{m+n-1\\m}$</span> such partitions. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-of-number-of-ordered-partition.html">Derivation</a>)
+                        </p>
+                        <p>
+                            Given <span class="inline-math">$n\in\N$</span> and <span class="inline-math">$n_1,n_2,\ldots,n_k\in\N$</span> where <span class="inline-math">$n_1+n_2+\ldots+n_k=n$</span>, an ordered partition of <span class="inline-math">$\set{1,2,\ldots,n}$</span> is a sequence of subsets <span class="inline-math">$(S_1, S_2, \ldots, S_k)$</span> such that <span class="inline-math">$|S_i| = n_i$</span> for all <span class="inline-math">$i$</span> and <span class="inline-math">$S_1\union S_2\union\ldots\union S_k = \set{1,2,\ldots,n}$</span>. The number of such partitions is
+                            <span class="display-math">$$ \pmat{n \\ n_1,n_2,\ldots,n_k} = \frac{n!}{n_1!n_2!\ldots n_k!} $$</span>
+                            by a similar argument to <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-finite-sets.html">this</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Counting surjections
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-surjections.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The number of surjections <span class="inline-math">$\set{1,2,\ldots,m}\to\set{1,2,\ldots,n}$</span> is
+                            <span class="display-math">$$ \sum_{k=0}^n (-1)^k \pmat{n\\k} (n-k)^m. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-counting-surjections.html">Derivation</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Counting derangements
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-derangements.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The probability of a randomly chosen permutations of <span class="inline-math">$\set{1,2,\ldots,n}$</span> having no fixed points (derangement) is <span class="display-math">$$ \sum_{k=0}^n \frac{(-1)^k}{k!}. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-counting-derangements.html">Derivation</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Independence
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Independence.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (independent sequence of events)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-sequence-of-events.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a finite or infinite sequence of events <span class="inline-math">$(A_1, A_2, \ldots, A_n)$</span> or <span class="inline-math">$(A_n)_{n\in\N}$</span>,
+                            we say that the sequence is <em>independent</em> if
+                            <span class="display-math">$$ \mathbb P(A_{i_1} \cap A_{i_2} \cap\ldots\cap A_{i_k}) = \mathbb P(A_{i_1}) \times \mathbb P(A_{i_2}) \times \ldots\times \mathbb P(A_{i_k}) $$</span>
+                            for all <em>finite</em> subsequence <span class="inline-math">$i_1 &lt; \ldots &lt; i_k$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Note that pairwise independent events may not be an independent sequence. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-pairwise-independent-events-but-not-independent.html">Example</a>)
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID 8d72f4 -->
+            <li id="^8d72f4">
+                <p>
+                    If <span class="inline-math">$\prob(A)=0$</span> or <span class="inline-math">$1$</span>, then <span class="inline-math">$A$</span> is independent of any event. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-event-with-0-or-1-probability-is-independent-of-any-event.html">Proof</a>)
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID 8d72f4 -->
+            <!-- BEGIN BLOCK ID 120151 -->
+            <li id="^120151">
+                <p>
+                    If <span class="inline-math">$A$</span> and <span class="inline-math">$B$</span> are independent events, then <span class="inline-math">$A^\complement$</span> and <span class="inline-math">$B$</span> are also independent.
+                    Generally for an independent sequence of events, replacing any subset of them with their complements still gives an independent sequence. (Sheet 2 Q2, <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-independence-replacing-with-complements.html">Proof</a>)
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID 120151 -->
+            <li>
+                <p>
+                    Independence is a natural property of the product of probability spaces.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Conditional probability
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Conditional-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (conditional probability)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a probability space, for any two events <span class="inline-math">$A,B$</span> with <span class="inline-math">$\mathbb P(B) &gt; 0$</span>, the conditional probability of <span class="inline-math">$A$</span> given <span class="inline-math">$B$</span> is
+                            <span class="display-math">$$ \mathbb P(A|B) = \frac{\mathbb P(A\cap B)}{\mathbb P(B)}. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (conditional probability measure)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-conditional-probability-measure.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given a probability space <span class="inline-math">$(\Omega, \mathcal F, \mathbb P)$</span>, for any event <span class="inline-math">$B$</span> with <span class="inline-math">$\mathbb P(B) &gt; 0$</span>, the function
+                            <span class="display-math">$$ \begin{align*}
+                            \mathbb P_B: \mathcal F &amp;\to [0,1] \\
+                            A &amp;\mapsto \mathbb P(A|B)
+                            \end{align*} $$</span>
+                            is a probability measure called the <em>conditional probability measure given <span class="inline-math">$B$</span></em>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-conditional-probability-measure.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Law of total probability
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(B_n)_{n\in\N}$</span> be a partition of <span class="inline-math">$\Omega$</span> (sequence of disjoint events with <span class="inline-math">$\bigcup_n B_n = \Omega$</span>) with <span class="inline-math">$\prob(B_n)&gt;0$</span>.
+                            Then for all event <span class="inline-math">$A$</span>,
+                            <span class="display-math">$$ \prob(A) = \sum_n \prob(A|B_n)\, \prob(B_n). $$</span>
+                            The condition of positive probabilities can be dropped if we agree that <span class="inline-math">$\prob(A|B_n) \prob(B_n) = 0$</span> when <span class="inline-math">$\prob(B_n) = 0$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-law-of-total-probability.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Bayes' formula
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bayes-formula.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(B_n)_{n\in\N}$</span> be a partition of <span class="inline-math">$\Omega$</span> with positive probability and let <span class="inline-math">$A$</span> be an event of positive probability.
+                            Then
+                            <span class="display-math">$$ \prob(B_n | A) = \frac{\prob(A|B_n) \prob(B_n)}{\fsum k1\infty \prob(A|B_k) \prob(B_k) }. $$</span>
+                        </p>
+                        <p>
+                            We hold a prior belief of the probabilities <span class="inline-math">$\prob(B_n)$</span>. Should we observe the event <span class="inline-math">$A$</span>, this formula gives the posterior probabilities <span class="inline-math">$\prob(B_n|A)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Simpson's paradox
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simpson-s-paradox.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(\Omega_n)_{n\in\N}$</span> be a partition of <span class="inline-math">$\Omega$</span>. Let <span class="inline-math">$A,B$</span> be events with <span class="inline-math">$\prob(B) &gt; 0$</span>.
+                        </p>
+                        <p>
+                            It can be that <span class="inline-math">$B$</span> makes <span class="inline-math">$A$</span> more likely on all <span class="inline-math">$\Omega_n$</span>, i.e. <span class="inline-math">$\prob(A|B\cap\Omega_n) &gt; \prob(A|\Omega_n)$</span>, but <span class="inline-math">$B$</span> makes <span class="inline-math">$A$</span> less likely on <span class="inline-math">$\Omega$</span>, i.e. <span class="inline-math">$\prob(A|B) &lt; \prob(A)$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-of-Simpson-s-paradox.html">Example</a>)
+                        </p>
+                        <p>
+                            Using the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-probability.html">law of total probability</a>,
+                            <span class="display-math">$$ \begin{matrix}
+                            \prob(A) &amp; = &amp; \sum_n &amp; \prob(A|\Omega_n) &amp; \prob(\Omega_n) \\
+                            \bigvee &amp; &amp; &amp; \bigwedge \\
+                            \prob(A|B) &amp; = &amp; \sum_n &amp; \prob(A|B\cap\Omega_n) &amp; \prob(\Omega_n|B) \\
+                            \end{matrix} $$</span>
+                            and the weights <span class="inline-math">$\prob(\Omega_n)$</span> can change when conditioning on <span class="inline-math">$B$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Random variables
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-variables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In a probability space <span class="inline-math">$(\Omega, \mathcal F, \prob)$</span>, a <em>random variable</em> is a function <span class="display-math">$$X: \Omega \to \R$$</span>
+                            such that for all <span class="inline-math">$x\in\R$</span>, <span class="inline-math">$\sb{\omega\in\Omega}{X(\omega)\leq x} \in \mathcal F$</span>.
+                        </p>
+                        <p>
+                            We write <span class="inline-math">$\set{X\leq x} \equiv \sb{\omega\in\Omega}{X(\omega)\leq x}$</span>.
+                        </p>
+                        <p>
+                            More generally, a random variable in <span class="inline-math">$\R^n$</span> is a function
+                            <span class="display-math">$$ X = (X_1, \ldots, X_n): \Omega \to \R^n $$</span>
+                            such that <span class="display-math">$$\set{X_1\leq x_1, \ldots, X_n\leq x_n}\in\mathcal F.$$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (distribution function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-distribution-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The distribution function of a random variable <span class="inline-math">$X$</span> is the function <span class="inline-math">$F_X: \R \to [0,1]$</span> given by
+                            <span class="display-math">$$ F_X(x) = \prob(X\leq x). $$</span>
+                        </p>
+                        <p>
+                            For a random variable <span class="inline-math">$X$</span> on <span class="inline-math">$\R^n$</span>, the distribution function of <span class="inline-math">$X$</span> (also called the joint distribution function <span class="inline-math">$X_1, \ldots, X_n$</span>) is defined as <span class="inline-math">$F_X: \R^n \to [0,1]$</span> by
+                            <span class="display-math">$$ F_X(x_1, x_2, \ldots, x_n) = \prob(X_1\leq x_1,\ \ldots,\ X_n\leq x_n). $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Properties of a distribution function:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    it is non-decreasing, i.e. <span class="inline-math">$F_X(x) \leq F_X(x+h)$</span> for all <span class="inline-math">$x\in\R, h\geq 0$</span> (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-distribution-function-is-non-decreasing.html">Derivation</a>);
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$F_X(x) \to 0$</span> as <span class="inline-math">$x\to -\infty$</span>, and <span class="inline-math">$F_X(x)\to1$</span> as <span class="inline-math">$x\to\infty$</span> (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-of-limits-of-distribution-function.html">Derivation</a>);
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$F_X$</span> is right-continuous, for <span class="inline-math">$h\geq 0$</span>, i.e. <span class="inline-math">$F_X(x+h) \to F_X(x)$</span> as <span class="inline-math">$h\to 0$</span> for all <span class="inline-math">$x\in\R$</span> (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-of-right-continuity-of-distribution-function.html">Derivation</a>);
+                </p>
+                
+            </li><li>
+                <p>
+                    for <span class="inline-math">$h\geq0$</span>, <span class="inline-math">$F_X(x-h)\to \prob(X&lt;x)$</span> as <span class="inline-math">$h\to 0$</span> for all <span class="inline-math">$x\in\R$</span> (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-of-left-limit-of-distribution-function.html">Derivation</a>);
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (sum of random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-sum-of-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$X,Y$</span> are random variables with values in <span class="inline-math">$\set{0,1,2,\ldots}$</span> and <span class="inline-math">$X,Y$</span> are independent.
+                            Then the probabilities for <span class="inline-math">$X+Y$</span> are given by the convolution
+                            <span class="display-math">$$ \prob(X+Y=n) = \sum_{k=1}^n \prob(X=k)\, \prob(Y=n-k). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-sum-of-random-variables.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Expectation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Expectation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (non-negative random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-non-negative-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a probability space <span class="inline-math">$(\Omega, \mathcal F, \prob)$</span>, a function
+                            <span class="display-math">$$ X: \Omega \to [0, \infty] $$</span>
+                            is a <em>non-negative random variable</em> if
+                            <span class="display-math">$$ \set{X\leq x}\in\mathcal F \quad\forall x\geq 0. $$</span>
+                        </p>
+                        <p>
+                            Denote <span class="inline-math">$\mathcal F^+$</span> for the set of all non-negative random variables.
+                        </p>
+                        
+                    </div>
+                </div>
+                <span class="inline-math">$X(\omega)$</span> can be <span class="inline-math">$\infty$</span> for non-negative random variable but not for random variable.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (uniqueness of expectation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-uniqueness-of-expectation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            There is a unique map, called the <em>expectation</em>,
+                            <span class="display-math">$$ \expect: \mathcal F^+ \to [0,\infty] $$</span>
+                            satisfying
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$\expect(1_A) = \prob(A)$</span> for all <span class="inline-math">$A\in\mathcal F$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\expect(\lambda X) = \lambda\expect(X)$</span> for all <span class="inline-math">$\lambda\in[0,\infty)$</span> and <span class="inline-math">$X\in\mathcal F^+$</span>;
+                            </p>
+                            
+                        </li><!-- BEGIN BLOCK ID 86c59a -->
+                        <li id="^86c59a">
+                            <p>
+                                <span class="inline-math">$\expect(\sum_n X_n) = \sum_n \expect(X_n)$</span> for all sequences <span class="inline-math">$(X_n)_{n\in\N}$</span> in <span class="inline-math">$\mathcal F^+$</span>.
+                            </p>
+                            
+                        </li>
+                        <!-- END BLOCK ID 86c59a -->
+                        
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-uniqueness-of-expectation-for-Omega-countable.html">Proof for <span class="inline-math">$\Omega$</span> countable</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (integrable, square-integrable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-integrable-square-integrable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A random variable <span class="inline-math">$X$</span> is
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <em>integrable</em> if <span class="inline-math">$\expect|X| &lt; \infty$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <em>square-integrable</em> if <span class="inline-math">$\expect(X^2) &lt; \infty$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            Denote <span class="inline-math">$L&#x27;(\prob)$</span> be the set of integrable random variables.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (expectation of integrable random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-integrable-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an integrable random variable <span class="inline-math">$X\in L&#x27;(\prob)$</span>, define
+                            <span class="display-math">$$ \expect(X) = \expect(X^+) - \expect(X^-) $$</span>
+                            where <span class="inline-math">$X^+ = \max\set{X,0}$</span> and <span class="inline-math">$X^- = \max\set{-X, 0}$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Properties of expectation:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\expect(X+Y) = \expect(X) + \expect(Y)$</span> holds for <span class="inline-math">$X,Y\in\mathcal F^+$</span> (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-of-sums-of-two-non-negative-random-variables.html">derivation</a>) and also for <span class="inline-math">$X,Y\in L&#x27;(\prob)$</span> (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-of-sums-of-two-integrable-random-variables.html">derivation</a>).
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$X(\omega)\leq Y(\omega)$</span> for all <span class="inline-math">$\omega\in\Omega$</span>, then <span class="inline-math">$\expect(X)\leq\expect(Y)$</span> for both <span class="inline-math">$X,Y\in\mathcal F^+$</span> and <span class="inline-math">$L&#x27;(\prob)$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-inequality-of-random-variables-carries-over-to-expectation.html">Derivation</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\expect(\lambda X) = \lambda \expect(X)$</span> for all <span class="inline-math">$\lambda\in\R$</span> and <span class="inline-math">$X,Y\in L&#x27;(\prob)$</span> (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-of-multiple-of-integrable-random-variable.html">derivation</a>).
+                </p>
+                
+            </li><li>
+                <p>
+                    For <span class="inline-math">$X\in\mathcal F^+$</span> (not <span class="inline-math">$L&#x27;(\prob)$</span>), <span class="inline-math">$\expect(X)=0 \iff \prob(X=0)=1$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-vanishes-iff-non-negative-random-variable-almost-certainly-vanishes.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (expectation for discrete random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-expectation-for-discrete-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a discrete random variable <span class="inline-math">$X$</span> taking values <span class="inline-math">$(x_n:n\in\N)$</span> and a function <span class="inline-math">$f$</span>,
+                            <span class="display-math">$$ \expect\big(f(X)\big) = \sum_n f(x_n)\,\prob(X=x_n) $$</span>
+                            provided that <span class="inline-math">$f$</span> is non-negative, or <span class="inline-math">$f(X)$</span> is integrable.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-expectation-for-discrete-random-variable.html">Proof</a>
+                        </p>
+                        <p>
+                            In particular, if <span class="inline-math">$X$</span> is non-negative or integrable,
+                            <span class="display-math">$$ \expect(X) = \sum_n x_n\, \prob(X=x_n). $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (expectation of product of independent random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-expectation-of-product-of-independent-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For independent random variables <span class="inline-math">$X,Y$</span> and functions <span class="inline-math">$f,g$</span>,
+                            <span class="display-math">$$ \expect\big(f(X) g(Y)\big) = \expect\big(f(X)\big)  \expect\big(g(Y)\big) $$</span>
+                            provided that <span class="inline-math">$f,g$</span> are non-negative, or <span class="inline-math">$f(X),g(Y)$</span> are integrable.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-expectation-of-product-of-independent-discrete-random-variables.html">Proof for X,Y discrete</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (expectation as sum of probabilities)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-expectation-as-sum-of-probabilities.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For non-negative integer-valued random variable <span class="inline-math">$X$</span>,
+                            <span class="display-math">$$ \expect(X) = \fsum n1\infty \prob(X\geq n). $$</span>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-expectation-as-sum-of-probabilities-for-integer-valued-case.html">Proof</a>
+                        </p>
+                        <p>
+                            For a general non-negative random variable <span class="inline-math">$X$</span>,
+                            <span class="display-math">$$\expect(X) = \int_0^\infty \prob(X\geq x)\,dx. $$</span>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-expectation-as-sum-of-probabilities-for-general-case.html">Proof requiring Fubini's theorem</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (expectation of multivariate random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-multivariate-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The expectation of a random variable <span class="inline-math">$X=(X_1, X_2, \ldots, X_n)$</span> in <span class="inline-math">$\R^n$</span> is obtained by taking expectation of each of the components:
+                            <span class="display-math">$$ \begin{align*}
+                                \expect(X) = \left(\expect(X_1), \expect(X_2), \ldots, \expect(X_n)\right).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Variance and covariance
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Variance-and-covariance.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (variance)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For an integrable random variable <span class="inline-math">$X$</span> having mean <span class="inline-math">$\mu\in\R$</span>,
+                                        the variance of <span class="inline-math">$X$</span> is
+                                        <span class="display-math">$$ \operatorname{var}(X) = \expect\big((X-\mu)^2\big). $$</span>
+                                    </p>
+                                    <p>
+                                        Equivalently (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-of-equivalence-of-definitions-of-variance.html">derivation</a>),
+                                        <span class="display-math">$$ \operatorname{var}(X) = \expect(X^2) - \expect(X)^2. $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            We see that <span class="inline-math">$\expect(X)^2 \leq \expect(X^2)$</span>, so square-integrable implies integrable.
+                        </p>
+                        <p>
+                            For <span class="inline-math">$X$</span> integrable discrete with mean <span class="inline-math">$\mu$</span>,
+                            <span class="display-math">$$\operatorname{var}(X) = \sum_n (x_n-\mu)^2\,\prob(X=x_n).$$</span>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (standard deviation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-standard-deviation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The <em>standard deviation</em> of an integrable random variable <span class="inline-math">$X$</span> is <span class="inline-math">$\sqrt{\operatorname{var}(X)}$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (covariance)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-covariance.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For square-integrable random variables <span class="inline-math">$X$</span>, <span class="inline-math">$Y$</span> with means <span class="inline-math">$\mu$</span>, <span class="inline-math">$\nu$</span>, the <em>covariance</em> is defined by
+                                        <span class="display-math">$$ \operatorname{cov}(X,Y) = \expect\big((X-\mu)(Y-\nu)\big). $$</span>
+                                        (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-X-mu-Y-nu-is-integrable-in-covariance.html">Derivation that <span class="inline-math">$(X-\mu)(Y-\nu)$</span> is integrable</a>)
+                                    </p>
+                                    <p>
+                                        Equivalently (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-equivalence-of-definition-of-covariance.html">derivation</a>),
+                                        <span class="display-math">$$ \op{cov}(X,Y) = \expect(XY) - \expect(X)\expect(Y). $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Lemma (variance of sum)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-variance-of-sum.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For square-integrable random variables <span class="inline-math">$X,Y$</span>,
+                                        <span class="display-math">$$ \op{var}(X+Y) = \op{var}(X) + 2\op{cov}(X,Y) + \op{var}(Y). $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-variance-of-sum.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Lemma (independent implies zero covariance)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-independent-implies-zero-covariance.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If <span class="inline-math">$X,Y$</span> are independent, then <span class="inline-math">$\op{cov}(X,Y)=0$</span>.
+                                    </p>
+                                    <p>
+                                        Proof: <span class="inline-math">$\expect(XY) = \expect(X) \expect(Y)$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            Converse not true: <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-of-zero-covariance-but-not-independent.html">example</a>.
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Variance of indicator function
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Variance-of-indicator-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For all <span class="inline-math">$A\in\mathcal F$</span>, if <span class="inline-math">$\prob(A) = p$</span>, then
+                                        <span class="display-math">$$ \begin{align*}
+                                        \op{var}(1_A) &amp;= \expect({1_A}^2) - \expect(1_A)^2 \\
+                                        &amp;= p - p^2.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (variance of multivariate random variable)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance-of-multivariate-random-variable.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The variance of a random variable <span class="inline-math">$X=(X_1, X_2, \ldots, X_n)$</span> in <span class="inline-math">$\R^n$</span> is its covariance matrix
+                                        <span class="display-math">$$ \begin{align*}
+                                            \op{var}(X) = (\op{cov}(X_i, X_j))_{i,j=1}^n = \expect\big[ (X-\expect(X))(X-\expect(X))^T \big].
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Conditional expectation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Conditional-expectation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (conditional expectation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-expectation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For a non-negative of integrable random variable <span class="inline-math">$X$</span> and an event <span class="inline-math">$B$</span> of positive probability, define the <em>condition expectation of <span class="inline-math">$X$</span> given <span class="inline-math">$B$</span></em> by
+                                        <span class="display-math">$$ \expect(X|B) = \frac{\expect(X1_B)}{\prob(B)}. $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Law of total expectation
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-expectation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Given disjoint events <span class="inline-math">$(B_n: n\in\N)$</span> of positive probabilities such that <span class="inline-math">$\bigcup_n B_n = \Omega$</span>, we have
+                                        <span class="display-math">$$ \expect(X) = \sum_n \expect(X|B_n) \prob(B_n). $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-law-of-total-expectation.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Discrete probability distributions
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-probability-distributions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                "Distributions" just mean probability measure.
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (discrete probability measure)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-probability-measure.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A probability measure <span class="inline-math">$\mathbb P$</span> on <span class="inline-math">$(\Omega, \mathcal F)$</span> is <em>discrete</em> if there exists a countable set <span class="inline-math">$S\subseteq\Omega$</span> and function <span class="inline-math">$(p_x: x\in S)$</span> such that
+                            <span class="display-math">$$ \mathbb P(A) = \sum_{x\in S\cap A} p_x $$</span>
+                            for all <span class="inline-math">$A\in\mathcal F$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (discrete random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A random variable <span class="inline-math">$X$</span> is discrete if there is a countable set <span class="inline-math">$S\subseteq \R$</span> such that
+                            <span class="display-math">$$ \prob(X\in S) = 1. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (distribution and mass function of discrete random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-distribution-and-mass-function-of-discrete-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given a discrete random variable <span class="inline-math">$X$</span> with values in a countable set <span class="inline-math">$S$</span>, the <em>distribution</em> of <span class="inline-math">$X$</span> is a discrete distribution <span class="inline-math">$\mu_X$</span> on <span class="inline-math">$\R$</span> by
+                            <span class="display-math">$$ \mu_X(B) = \prob(X\in B). $$</span>
+                        </p>
+                        <p>
+                            The <em>mass function</em> of <span class="inline-math">$X$</span> is
+                            <span class="display-math">$$ p_x = \mu_X(\set{x}) = \prob(X=x). $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (independent discrete random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-discrete-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Discrete random variables <span class="inline-math">$X_1, X_2, \ldots, X_n$</span> are <em>independent</em> if
+                            <span class="display-math">$$ \prob(X_1 = x_1, \ldots, X_n = x_n) = \prob(X_1=x_1) \times \prob(X_2 = x_2) \times \ldots \times \prob(X_n = x_n). $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                We only consider the case when <span class="inline-math">$\set{x}\in\mathcal F$</span> for all <span class="inline-math">$x\in S$</span>. Then <span class="inline-math">$p_x = \mathbb P(\set{x})$</span>.
+                <span class="inline-math">$p_x$</span> is called the <em>mass function</em>.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Defintion (Bernoulli distribution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintion-Bernoulli-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>Bernoulli</em> random variable <span class="inline-math">$X$</span> of parameter <span class="inline-math">$p\in[0,1]$</span>, denoted as <span class="inline-math">$X\sim B(1,p)$</span>, has a distribution on <span class="inline-math">$\set{0,1}$</span> given by
+                            <span class="display-math">$$ p_0 = 1-p, \quad p_1 = p. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                This is used to model the outcome of one biased coin toss.
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (binomial distribution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-binomial-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>binomial</em> random variable <span class="inline-math">$X\sim B(n,p)$</span> of parameters <span class="inline-math">$n\in\N$</span> and <span class="inline-math">$p\in[0,1]$</span> has a distribution on <span class="inline-math">$\set{0,1,2,\ldots,n}$</span> given by
+                            <span class="display-math">$$ p_k = \pmat{n\\k} p^k (1-p)^{n-k}, \quad k=0,1,\dots,n.$$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                Use this to model the number of heads obtained on tossing a biased coin <span class="inline-math">$n$</span> times.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (adding binomial random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-adding-binomial-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If random variables <span class="inline-math">$X\sim B(n,p)$</span> and <span class="inline-math">$Y\sim B(m, p)$</span> are independent,
+                            then <span class="inline-math">$X+Y\sim B(n+m, p)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Adding-Bernoulli-random-variables-on-a-product-space.html">Adding Bernoulli random variables on a product space</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Expectation <span class="inline-math">$=np$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    Variance <span class="inline-math">$=np(1-p)$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-and-variance-of-binomial-distribution.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (multinomial distribution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-multinomial-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>multinomial</em> random variable <span class="inline-math">$X$</span> of parameters <span class="inline-math">$n\in\N$</span> and <span class="inline-math">$(p_1, p_2, \ldots, p_k)$</span> where <span class="inline-math">$p_i\geq 0$</span> and <span class="inline-math">$p_1+p_2+\ldots+p_k = 1$</span> has a distribution on the set of ordered partitions <span class="inline-math">$(n_1, n_2, \ldots, n_k)$</span> of <span class="inline-math">$n$</span>, i.e. <span class="inline-math">$n_1+n_2+\ldots+n_k = n$</span>, given by
+                            <span class="display-math">$$ p_{(n_1,n_2,\ldots, n_k)} = \pmat{n \\ n_1, n_2, \ldots, n_k} p_1^{n_1}\times p_2^{n_2}\times \ldots \times p_k^{n_k}. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                Use this to model the number of balls in each of <span class="inline-math">$k$</span> boxes when we assign <span class="inline-math">$n$</span> balls independently to box <span class="inline-math">$i$</span> with probability <span class="inline-math">$p_i$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (geometric distribution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-geometric-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>geometric</em> random variable <span class="inline-math">$X\sim G(p)$</span> of parameter <span class="inline-math">$p\in(0,1)$</span> has a distribution on <span class="inline-math">$\N_0=\set{0,1,2,\ldots}$</span> given by
+                            <span class="display-math">$$ p_k = p(1-p)^k, \quad k=0,1,2,\ldots. $$</span>
+                        </p>
+                        <p>
+                            Alternatively some define it as the probability measure on <span class="inline-math">$\N=\set{1,2,\dots}$</span> given by
+                            <span class="display-math">$$ p_k = p(1-p)^{k-1}, \quad k=1,2,\ldots. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                Be clear with the definition. This is to model the number of tosses of a biased coin up to (or including) the first head.
+            </p>
+            <p>
+                Using the first definition,
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Expectation <span class="inline-math">$= (1-p)/p$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-of-geometric-distribution.html">Derivation</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    Variance <span class="inline-math">$= (1-p)/p^2$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-variance-of-geometric-distribution.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Poisson distribution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Poisson-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>Poisson</em> random variable <span class="inline-math">$X\sim P(\lambda)$</span> of parameter <span class="inline-math">$\lambda\in(0,\infty)$</span> has a distribution on <span class="inline-math">$\N_0 = \set{0,1,2,\dots}$</span> given by
+                            <span class="display-math">$$ p_k = e^{-\lambda}\frac{\lambda^k}{k!},\quad k=0,1,2,\ldots. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (adding Poisson random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-adding-Poisson-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If random variables <span class="inline-math">$X\sim P(\lambda)$</span> and <span class="inline-math">$Y\sim P(\mu)$</span> are independent,
+                            then <span class="inline-math">$X+Y\sim P(\lambda+\mu)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Expectation <span class="inline-math">$=\lambda$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    Variance <span class="inline-math">$=\lambda$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-and-variance-of-Poisson-distribution.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (Poisson distribution as a limit of binomial distribution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-Poisson-distribution-as-a-limit-of-binomial-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The Poisson distribution <span class="inline-math">$P(\lambda)$</span> is the limit of the binomial distribution <span class="inline-math">$B(n, \lambda/n)$</span> as <span class="inline-math">$n\to\infty$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Poisson-distribution-as-a-limit-of-binomial-distribution.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Inequalities
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Inequalities.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Markov's inequality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-Markov-s-inequality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a non-negative random variable and let <span class="inline-math">$\lambda\in(0,\infty)$</span>. Then
+                            <span class="display-math">$$ \prob(X\geq \lambda) \leq \frac{\expect(X)}\lambda. $$</span>
+                        </p>
+                        <p>
+                            In general, for any random variable <span class="inline-math">$X$</span> and a non-decreasing non-negative function <span class="inline-math">$f$</span>,
+                            <span class="display-math">$$ \prob(X\geq\lambda) \leq \frac{\expect(f(X))}{f(\lambda)}.$$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Markov-s-inequality.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Chebyshev's inequality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-Chebyshev-s-inequality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a square integrable random variable with mean <span class="inline-math">$\mu$</span> and variance <span class="inline-math">$\sigma^2$</span>. (<span class="inline-math">$\sigma^2&lt;\infty$</span> since square integrable.)
+                            Then for all <span class="inline-math">$k\in(0,\infty)$</span>,
+                            <span class="display-math">$$ \prob(|X-\mu|\geq k\sigma) \leq \frac{1}{k^2}. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Chebyshev-s-inequality.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Cauchy-Schwarz inequality for expectation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-Cauchy-Schwarz-inequality-for-expectation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For all random variables <span class="inline-math">$X,Y$</span>,
+                            <span class="display-math">$$ \expect(|XY|) \leq \sqrt{\expect(X^2)} \sqrt{\expect(Y^2)}. $$</span>
+                            (RHS takes the convention of <span class="inline-math">$0\times\infty = 0$</span>.)
+                        </p>
+                        <p>
+                            If <span class="inline-math">$\expect(X^2),\expect(Y^2)\in(0,\infty)$</span>, then equality holds iff <span class="inline-math">$\prob(Y=tX)=1$</span> for some <span class="inline-math">$t\in\R$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Cauchy-Schwarz-inequality-for-expectation.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Jensen's inequality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-Jensen-s-inequality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be an integrable random variable with values in an interval <span class="inline-math">$I$</span>, and let <span class="inline-math">$f$</span> be a convex function on <span class="inline-math">$I$</span>. Then
+                            <span class="display-math">$$ f(\expect(X)) \leq \expect(f(X)). $$</span>
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f$</span> is strictly convex, then equality holds iff <span class="inline-math">$\prob(X=m) = 1$</span> for some <span class="inline-math">$m\in I$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Jensen-s-inequality.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (AM-GM inequality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-AM-GM-inequality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$x_1,x_2,\ldots,x_n\in\R$</span>. Then
+                            <span class="display-math">$$\bigg(\for\prod k1n x_k\bigg)^{1/n} \leq \frac1n\fsum k1n x_k.$$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-AM-GM-inequality.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Random walks
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walks.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (random process, random walk)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-random-process-random-walk.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>random process</em> is a sequence <span class="inline-math">$(X_n:n\geq 0)$</span> of random variables.
+                        </p>
+                        <p>
+                            A <em>random walk</em> is a random process <span class="inline-math">$(X_n: n\geq0)$</span> that has the form
+                            <span class="display-math">$$ X_n = x+Y_1 + \ldots + Y_n $$</span>
+                            where constant <span class="inline-math">$x$</span> is the <em>initial value</em> and <span class="inline-math">$(Y_n: n\geq 1)$</span> are a sequence of independent identically distributed random variables.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Gambler's ruin
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gambler-s-ruin.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider a random walk where at each step <span class="inline-math">$k$</span>,
+                            <span class="display-math">$$ \prob(Y_k = +1) = p, \quad \prob(Y_k = -1) = 1-p \equiv q. $$</span>
+                            The gambler will walk away either when <span class="inline-math">$X_n = a$</span> or 0.
+                        </p>
+                        <p>
+                            The key is to see that if we condition on the first step, say <span class="inline-math">$Y_1=1$</span>, then <span class="inline-math">$(X_{n+1})_{n\geq 0}$</span> is again a simple random walk with the same step distribution.
+                        </p>
+                        <p>
+                            Denote <span class="inline-math">$\prob_x$</span> and <span class="inline-math">$\expect_x$</span> for probability and expectation regarding initial value <span class="inline-math">$x$</span>, and
+                            <span class="display-math">$$ T = \min\sb{n\geq 0}{X_n=0\text{ or } a}. $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                The process almost always terminates, i.e. <span class="inline-math">$\prob(T&lt;\infty) = 1$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-gambling-almost-always-terminates.html">Derivation</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Probability of succeed i.e. <span class="inline-math">$h_x = \prob(X_T=a)$</span>:
+                            </p>
+                            <p>
+                                For <span class="inline-math">$x=1,2,\ldots,a-1$</span>, using the law of total probability
+                                <span class="display-math">$$ \begin{align*}
+                                h_x &amp;= \prob(X_1=1)\prob(X_T=a|X_1=1)+\prob(X_1=-1)\prob(X_T=a|X_1=-1) \\
+                                &amp;= ph_{x+1} + qh_{x-1}
+                                \end{align*} $$</span>
+                                and boundary condition is
+                                <span class="display-math">$$ h_0 = 0, \quad h_a=1. $$</span>
+                                Solving (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-gambling-success-recurrence-relation.html">derivation</a>),
+                                <span class="display-math">$$ h_x = \begin{cases}
+                                	\dfrac ax, &amp;p=\dfrac12, \\
+                                	\dfrac{1-(p/q)^x}{1-(p/q)^a}, &amp;p\neq\dfrac12.
+                                \end{cases} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Mean time to absorption <span class="inline-math">$\tau_x = \expect_x(T)$</span>:
+                            </p>
+                            <p>
+                                For <span class="inline-math">$x=1,2,\ldots,a-1$</span>, using the law of total expectation,
+                                <span class="display-math">$$ \begin{align*}
+                                \tau_x &amp;= \prob(X_1=1)\expect(X_T=a|X_1=1)+\prob(X_1=-1)\expect(X_T=a|X_1=-1) \\
+                                &amp;= p(1+\tau_{x+1}) + q(1+\tau_{x-1}) \\
+                                &amp;= 1+p\tau_{x+1} + q\tau_{x-1}.
+                                \end{align*} $$</span>
+                                and boundary condition is
+                                <span class="display-math">$$ \tau_0 = 0,\quad \tau_a = 0. $$</span>
+                                Solving (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-gambling-mean-time-recurrence-relation.html">Derivation</a>),
+                                <span class="display-math">$$ \tau_x = \begin{cases}
+                                x(a-x),&amp; p=\dfrac12,\\
+                                \dfrac{x}{q-p}-\dfrac{a}{q-p}\dfrac{(q/p)^x - 1}{(q/p)^a-1},&amp; p\neq\dfrac12.
+                                \end{cases} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Probability generating functions
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-generating-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (probability generating function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-generating-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a random variable with values in <span class="inline-math">$\Z^+ = \set{0,1,2,\ldots}$</span>.
+                        </p>
+                        <p>
+                            The <em>probability generating function</em> of <span class="inline-math">$X$</span> is given by the power series
+                            <span class="display-math">$$ G_X(t) = \expect(t^X) = \fsum n0\infty \prob(X=n)\, t^n. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The radius of convergence <span class="inline-math">$R\geq 1$</span> since <span class="inline-math">$G_X(1) = \fsum n0\infty\prob(X=n) = 1$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$G_X(t)$</span> is unique to the distribution of <span class="inline-math">$X$</span> since we can recover the coefficients in <span class="inline-math">$G_X(t)$</span> by
+                    <span class="display-math">$$ \prob(X=n)=\frac1{n!} G_X^{(n)}(0). $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (generating function of sum of independent random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-generating-function-of-sum-of-independent-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X,Y$</span> be independent random variables with values in <span class="inline-math">$\Z^+$</span>. Then "generating functions turn convolutions into products":
+                            <span class="display-math">$$ G_{X+Y}(t) = G_X(t)\, G_Y(t). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-generating-function-of-sum-of-independent-random-variables.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (generating function of random sums)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-generating-function-of-random-sums.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$N, X, X_1, X_2, X_3,\ldots$</span> be non-negative integer-valued independent random variables, and suppose <span class="inline-math">$X,X_1,X_2,X_3,\ldots$</span> are identically distributed.
+                            Define the random sum
+                            <span class="display-math">$$ S_N = \fsum n1N X_n. $$</span>
+                        </p>
+                        <p>
+                            Then
+                            <span class="display-math">$$ G_{S_N} = G_N \circ G_X. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-generating-function-of-random-sums.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Generating functions and moments
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-and-moments.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (n-th moment of random variable)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-n-th-moment-of-random-variable.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The <span class="inline-math">$n$</span>-th moment of <span class="inline-math">$X$</span> is <span class="inline-math">$\expect(X^n)$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            If <span class="inline-math">$R&gt;1$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                            G_X&#x27;(1) &amp;= \fsum n1\infty \prob(X=n)\,n = \expect(X) \\
+                            G_X&#x27;&#x27;(1) &amp;= \fsum n1\infty \prob(X=n)\,n(n-1) = \expect(X(X-1)) \\
+                            \end{align*} $$</span>
+                            and so on.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$R=1$</span>, we can take the limit instead:
+                            <span class="display-math">$$ G_X&#x27;(t) = \fsum n1\infty \prob(X=n) nt^{n-1} \to \fsum n1\infty \prob(X=n) n = \expect(X). $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Generating functions of some distributions
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-of-some-distributions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ul>
+                        <li>
+                            <p>
+                                Bernoulli <span class="inline-math">$X\sim B(1,p)$</span>:
+                                <span class="display-math">$$ G_X(t) = 1-p+pt, \qquad R=\infty. $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Binomial <span class="inline-math">$X\sim B(n,p)$</span>: either using binomial theorem or adding up <span class="inline-math">$n$</span> independent Bernoulli variables,
+                                <span class="display-math">$$ G_X(t) = (1-p+pt)^n, \qquad R=\infty. $$</span>
+                            </p>
+                            
+                        </li><!-- BEGIN BLOCK ID 539529 -->
+                        <li id="^539529">
+                            <p>
+                                Geometric <span class="inline-math">$X\sim G(p), p\in(0,1)$</span>,
+                                <span class="display-math">$$ G_X(t) = \fsum n0\infty (1-p)^n pt^n = \frac{p}{1-(1-p)t}, \qquad  R=\frac{1}{1-p}.$$</span>
+                            </p>
+                            
+                        </li>
+                        <!-- END BLOCK ID 539529 -->
+                        <li>
+                            <p>
+                                Poisson <span class="inline-math">$X\sim P(\lambda), \lambda&gt;0$</span>,
+                                <span class="display-math">$$ G_X(t) = \fsum n0\infty e^{-\lambda} \frac{\lambda^n}{n!} t^n = e^{-\lambda + \lambda t}, \qquad R=\infty. $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                In counting, generating functions help convert convolutions into products. <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Catalan-number.html">Example (Catalan number)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Branching process
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Branching-process.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                This is to model a population, with <span class="inline-math">$X_n$</span> being the size of the population in generation <span class="inline-math">$n$</span>, and <span class="inline-math">$Y_{k,n}$</span> is the number of offspring of the <span class="inline-math">$k$</span>-th individual in generation <span class="inline-math">$n$</span>.
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (branching process)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-branching-process.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A random process <span class="inline-math">$(X_n: n\geq 0)$</span> is a <em>branching process</em> (<em>Galton-Watson process</em>) if it is in the form
+                            <span class="display-math">$$ X_0 = 1, \quad X_{n+1} = \fsum n1{X_n} Y_{k,n} $$</span>
+                            for some array array <span class="inline-math">$(Y_{k,n}: k\geq1, n\geq0)$</span> of independent and identically distributed non-negative integer-valued random variables. (The distribution is called the <em>offspring distribution</em>.)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Mean population of branching process
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-population-of-branching-process.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Set <span class="inline-math">$\mu=\expect(X_1)$</span>.
+                            Conditioning on <span class="inline-math">$X_n$</span>,
+                            <span class="display-math">$$ \expect(X_{n+1}|X_n=m) = \expect(Y_{1,n}+\ldots+Y_{m,n}) = m\mu $$</span>
+                            so using the law of total expectation,
+                            <span class="display-math">$$ \begin{align*}
+                            \expect(X_{n+1}) &amp;= \fsum m0\infty \expect(X_{n+1}|X_n=m)\,\prob(X_n=m) \\
+                            &amp;= \mu\fsum m0\infty m\prob(X_n=m) \\
+                            &amp;= \mu\expect(X_n).
+                            \end{align*} $$</span>
+                            Applying the boundary condition of <span class="inline-math">$\expect(X_0)=1$</span>, we have <span class="inline-math">$\expect(X_n)=\mu^n$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Generating function of branching process
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-function-of-branching-process.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Generating function: let <span class="inline-math">$F(t) = \expect(t^{X_1})$</span> and <span class="inline-math">$F_n(t)=\expect(t^{X_n})$</span>. Then using the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-generating-function-of-random-sums.html">result about random sums</a>,
+                            <span class="display-math">$$ F_n(t) = F_{n-1}\big(F(t)\big) = \ub{F\circ F\circ\ldots\circ F}_\text{$n$-fold composition}(t). $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                A feature to exploit is that if we condition on <span class="inline-math">$\set{X_1=m}$</span>, the descendants of any individuals in generation 1 is another branching process.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Extinction probability of branching process
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Extinction-probability-of-branching-process.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$q_n = \prob(X_n=0)$</span> and the <em>extinction probability</em> <span class="inline-math">$q=\prob(X_n=0\text{ for some } n\geq0)$</span>. Since <span class="inline-math">$\set{X_1=0}\subseteq\set{X_2=0}\subseteq\ldots$</span> and <span class="inline-math">$\bigcap_n \set{X_n=0} = \set{X_n=0\text{ for some } n\geq 0}$</span>, by continuity of probability, <span class="inline-math">$q_n\to q$</span>.
+                        </p>
+                        <p>
+                            Note that
+                            <span class="display-math">$$ q_n = \prob(X_n=0) = F_n(0)=\ub{F\circ F\circ\ldots\circ F}_\text{$n$-fold composition}(0).$$</span>
+                            Alternatively we can condition on the first generation
+                            <span class="display-math">$$ \begin{align*}
+                            q_n &amp;= \fsum m0\infty \prob(X_1=m)\prob(X_n=0|X_1=m) \\
+                            &amp;= \fsum m0\infty \prob(X_1=m) q_{n-1}^m = F(q_{n-1})
+                            \end{align*} $$</span>
+                            since <span class="inline-math">$\set{X_n=0|X_1=m}$</span> means that each of the descendants of the <span class="inline-math">$m$</span> individuals in generation 1 go extinct, which are independent events.
+                        </p>
+                        <p>
+                            And using analysis (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-analysis-of-extinction-probability-of-branching-process.html">Derivation</a>), <span class="inline-math">$q$</span> is the smallest non-negative solution of <span class="inline-math">$q=F(q)$</span>. Also if <span class="inline-math">$\prob(X_1=1)&lt;1$</span>, then <span class="inline-math">$q&lt;1$</span> iff <span class="inline-math">$\mu=\expect(X_1)&gt;1$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Random walk from branching process
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walk-from-branching-process.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            List the individuals in increasing order. Set <span class="inline-math">$S_0=1$</span>, and for <span class="inline-math">$n\geq 1$</span> let <span class="inline-math">$S_n$</span> for the number of offspring of all visited individuals who have not yet been visited (think about breadth-first search).
+                        </p>
+                        <p>
+                            Then the jumps of <span class="inline-math">$(S_n:n\geq0)$</span> are independent with the same distribution as <span class="inline-math">$X_1-1$</span>.
+                            <img src="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240223173401.png">
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Continuous probability distributions
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Continuous-probability-distributions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (probability density function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-density-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A function <span class="inline-math">$f$</span> on <span class="inline-math">$\R$</span> is a <em>probability density function</em> if <span class="inline-math">$f$</span> is non-negative, sufficiently regular (Borel measurable), and
+                            <span class="display-math">$$ \int_\R f(x)\, dx = 1. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (probability distribution given pdf)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-probability-distribution-given-pdf.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given a probability density function <span class="inline-math">$f$</span>, there is a unique probability measure <span class="inline-math">$\mu$</span> on <span class="inline-math">$\R$</span> (defined on the Borel <span class="inline-math">$\sigma$</span>-algebra <span class="inline-math">$\mathcal B$</span> which is the smallest <span class="inline-math">$\sigma$</span>-algebra containing all intervals in <span class="inline-math">$\R$</span>) such that
+                            <span class="display-math">$$ \mu\big((-\infty, x]\big) = \int_{-\infty}^x f(y) \, dy,\qquad \mu(B)=\int_B f(x)\,dx = \int_\R 1_B(x)\,f(x)\,dx.$$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Uniform distribution
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Uniform-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="inline-math">$U[a,b]$</span>, the uniform distribution on <span class="inline-math">$[a,b]$</span>, has probability density function
+                            <span class="display-math">$$ f(x) = \frac{1}{b-a}1_{[a,b]}(x). $$</span>
+                        </p>
+                        <p>
+                            Analogue to equally likely outcomes.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Mean <span class="inline-math">$= (a+b)/2$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-mean-of-uniform-distribution.html">Derivation</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Moment generating function (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-moment-generating-function-of-uniform-function.html">Derivation</a>)
+                                <span class="display-math">$$ \begin{align*}
+                                M_X(t) = \begin{cases}
+                                    \dfrac{e^{bx} - e^{ax}}{t(b-a)}, &amp;t\neq 0 \\
+                                    0, &amp;t=0.
+                                \end{cases}
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Exponential distribution
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Exponential-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="inline-math">$E(\lambda)$</span>, the exponential distribution of parameter <span class="inline-math">$\lambda\in(0,\infty)$</span>, has probability density function
+                            <span class="display-math">$$ f(x) = \lambda {\color{yellow}e^{-\lambda x}},\qquad x\in[0,\infty).$$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Mean <span class="inline-math">$= 1/\lambda$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-mean-of-exponential-distribution.html">Derivation</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Exponential distribution is the limit of geometric distributions. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Exponential-distribution-as-a-limit-of-geometric-distributions.html">How?</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Exponential distribution is unique non-trivial distribution satisfying the <em>memoryless property</em>
+                                <span class="display-math">$$ \begin{align*}
+                                    \prob(T &gt; s+t | T&gt;s) = \prob(T&gt;t).
+                                \end{align*} $$</span>
+                                (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-memoryless-property-characterises-exponential-distribution.html">Proof</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Moment generating function (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-moment-generating-function-of-exponential-distribution.html">Derivation</a>)
+                                <span class="display-math">$$ \begin{align*}
+                                    M_X(t) = \begin{cases}
+                                        \dfrac{\lambda}{\lambda-t}, &amp;t&lt;\lambda, \\
+                                        \infty, &amp;t\geq \lambda.
+                                    \end{cases}
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Gamma distribution
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gamma-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="inline-math">$\Gamma(\alpha,\lambda)$</span>, the gamma distribution of parameter <span class="inline-math">$\alpha,\lambda\in(0,\infty)$</span>, has probability density function
+                            <span class="display-math">$$ f(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)} {\color{yellow}x^{\alpha-1} e^{-\lambda x}},\qquad x\in[0,\infty) $$</span>
+                            where <span class="inline-math">$\Gamma(\alpha) = \int_0^\infty x^{\alpha-1} e^{-x}\,dx$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$\Gamma(1, \lambda)$</span> is identical to <span class="inline-math">$E(\lambda)$</span>.
+                        </p>
+                        <p>
+                            <iframe src="https://www.desmos.com/calculator/qqn9f2n0ud?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Moment generating function (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-moment-generating-function-of-gamma-distribution.html">Derivation</a>)
+                                <span class="display-math">$$ \begin{align*}
+                                    M_X(t) = \begin{cases}
+                                        \left(\dfrac{\lambda}{\lambda-t}\right)^\alpha, &amp; t&lt;\lambda, \\
+                                        \infty, &amp; t\geq \lambda.
+                                    \end{cases}
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Normal distribution
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Normal-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="inline-math">$N(\mu,\sigma^2)$</span>, the normal distribution of mean <span class="inline-math">$\mu$</span> and variance <span class="inline-math">$\sigma^2$</span>, has probability density function
+                            <span class="display-math">$$ f(x) = \frac{1}{\sigma\sqrt{2\pi}} \color{yellow}e^{-\frac{(x-\mu)^2}{2\sigma^2}}. $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                If <span class="inline-math">$X\sim N(0,1)$</span>, then <span class="inline-math">$\sigma X + \mu \sim N(\mu, \sigma^2)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Mean <span class="inline-math">$= \mu$</span>, variance <span class="inline-math">$= \sigma^2$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-mean-and-variance-of-normal-distribution.html">Derivation</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Moment generating function (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-moment-generating-function-of-normal-distribution.html">Derivation</a>)
+                            </p>
+                            <ul>
+                            <li>
+                                <p>
+                                    For <span class="inline-math">$X\sim N(0,1)$</span>,
+                                    <span class="display-math">$$ \begin{align*}
+                                        M_X(t) = e^{t^2/2}.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    For <span class="inline-math">$X\sim N(\mu, \sigma^2)$</span>,
+                                    <span class="display-math">$$ \begin{align*}
+                                        M_X(t) = e^{\mu t + (\sigma t)^2/2}.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Cauchy distribution
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Cauchy-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The Cauchy distribution has probability density function
+                            <span class="display-math">$$ \begin{align*}
+                                f(x) = \frac{1}{\pi(1+x^2)}
+                            \end{align*} $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Mean <span class="inline-math">$= \infty$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Moment generating function <span class="inline-math">$M_X(0) = 1$</span> and <span class="inline-math">$\infty$</span> elsewhere.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Continuous random variables
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Continuous-random-variables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (continuous random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-continuous-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A random variable <span class="inline-math">$X$</span> is <em>continuous</em>
+                            if its distribution function <span class="inline-math">$F_X$</span> is a continuous function <span class="inline-math">$\R \to [0,1]$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Defintiion (absolutely continuous random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintiion-absolutely-continuous-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A random variable <span class="inline-math">$X$</span> is <em>absolutely continuous</em>
+                            if there exists a probability density function <span class="inline-math">$f_X$</span> such that its distribution function <span class="inline-math">$F_X(x)$</span> satisfies
+                            <span class="display-math">$$ \begin{align*}
+                                F_X (x) = \int_{-\infty}^{x} f_X(y)\, dy, \quad x\in\R.
+                            \end{align*} $$</span>
+                            Equivalently, the distribution <span class="inline-math">$\mu_X$</span> satisfies
+                            <span class="display-math">$$ \begin{align*}
+                                \mu_X(B) = \int_{B} f_X(x) \, dx.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            We will simply say that <span class="inline-math">$X$</span> has a density function <span class="inline-math">$f_X$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    For a random variable <span class="inline-math">$X$</span>, it is continuous iff <span class="inline-math">$\prob(X=x) = 0$</span> for all <span class="inline-math">$x\in\R$</span>.
+                    <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-continuous-random-variable-iff-zero-proabbility-at-each-value.html">Proof</a>
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$X$</span> has density function <span class="inline-math">$f_X$</span>, then <span class="inline-math">$X$</span> is a continuous random variable,
+                    since <span class="inline-math">$\prob(X=x) = \int_{\set{x}} f_X(y) \, dy = 0$</span>.
+                </p>
+                <p>
+                    The converse is not true: a random variable with the <a href="https://en.wikipedia.org/wiki/Cantor_function">Cantor function</a> as its distribution function.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$F_X$</span> is piecewise continuously differentiable, or <span class="inline-math">$f_X$</span> is continuous at <span class="inline-math">$x$</span>, then
+                    <span class="display-math">$$ \begin{align*}
+                        F&#x27;_X(x) = f_X(x), \qquad \int_{-\infty}^{x} f_X(y) \, dy = F_x(x).
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-good-hypothesis-for-continuous-random-variable.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (applying function to continuous random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-applying-function-to-continuous-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a continuous random variable with piecewise continuous density function <span class="inline-math">$f_X$</span>, and <span class="inline-math">$X$</span> takes values in <span class="inline-math">$I$</span>.
+                        </p>
+                        <p>
+                            For some continuously differentiable function <span class="inline-math">$\phi: I\to\R$</span> with <span class="inline-math">$\phi&#x27;(x)\neq 0$</span> for any <span class="inline-math">$x$</span>,
+                            set <span class="inline-math">$y=\phi(x)$</span> and define a new random variable <span class="inline-math">$Y=\phi(x)$</span>.
+                        </p>
+                        <p>
+                            Then <span class="inline-math">$Y$</span> has density function given by
+                            <span class="display-math">$$ \begin{align*}
+                                f_Y(y) = f_X(x) \left|\dfd xy\right|.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-applying-function-to-continuous-random-variable.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (expectation of continuous random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-expectation-of-continuous-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a random variable with desnity function <span class="inline-math">$f_X$</span> and
+                            let <span class="inline-math">$g$</span> be a non-negative Borel function on <span class="inline-math">$\R$</span>.
+                        </p>
+                        <p>
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \expect(g(X)) = \int_{\R} g(x) f_X(x)\, dx.
+                            \end{align*} $$</span>
+                            This remains valid without assuming <span class="inline-math">$g$</span> integrable provided that <span class="inline-math">$\expect|g(x)|&lt;\infty$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Multivariate density functions
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multivariate-density-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (joint probability density function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-joint-probability-density-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We say a random variable <span class="inline-math">$X = (X_1, \ldots, X_n)$</span> in <span class="inline-math">$\R^n$</span> has probability density function <span class="inline-math">$f_X$</span>
+                            if for all <span class="inline-math">$x_1, \ldots, x_n\in\R$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                F_X(x_1, \ldots, x_n) \equiv \prob(X_1\leq x_1, \ldots, X_n\leq x_n) = \int_{-\infty}^{x_1} \ldots \int_{-\infty}^{x_n} f_X(x) \, dx
+                            \end{align*} $$</span>
+                            Equivalently for all Borel set <span class="inline-math">$B$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \prob(X\in B) = \int_{B} f_X(x) \, dx.
+                            \end{align*} $$</span>
+                            Also equivalently for all non-negative Borel function <span class="inline-math">$g$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \expect(g(X)) = \int_{\R^n} g(x) f_X(x) \, dx.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (marginal density function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-marginal-density-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$X=(X_1, X_2, \ldots, X_n)$</span> is a random variable in <span class="inline-math">$\R^n$</span> having density function <span class="inline-math">$f_X$</span>.
+                            Then each <span class="inline-math">$X_i$</span> has a density function <span class="inline-math">$f_{X_i}$</span> called <em>marginal density function</em> given by
+                            <span class="display-math">$$ \begin{align*}
+                                f_{X_i}(x_i) = \int_{\R^{n-1}} f_X(x_1, x_2, \ldots, x_n) \, \prod_{j\neq i} dx_j.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (independence iff joint pdf factorises)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-independence-iff-joint-pdf-factorises.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X=(X_1, \ldots, X_n)$</span> be a random variable in <span class="inline-math">$\R^n$</span>,
+                            and density functions <span class="inline-math">$f_1, \ldots, f_n$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$X_1, \ldots X_n$</span> are independent and have marginal density functions <span class="inline-math">$f_1, \ldots, f_n$</span>
+                            iff <span class="inline-math">$X$</span> has density function <span class="inline-math">$f_X$</span> given by
+                            <span class="display-math">$$ \begin{align*}
+                                f_X(x) = \prod_{i=1}^{n} f_i(x_i).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-independence-iff-joint-pdf-factorises.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (convolution of densities for sum of independent random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-convolution-of-densities-for-sum-of-independent-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X,Y$</span> be independent random variables in <span class="inline-math">$\R$</span> with density functions <span class="inline-math">$f_X, f_Y$</span>.
+                        </p>
+                        <p>
+                            Then <span class="inline-math">$Z=X+Y$</span> has a density function given by the convolution
+                            <span class="display-math">$$ \begin{align*}
+                                f_Z(x) = f_X * f_Y(x) \equiv \int_{\R} f(x-y) g(y) \, dy.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-convolution-of-densities-for-sum-of-independent-random-variables.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (transformation of multi-dimensional random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-transformation-of-multi-dimensional-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a random variable in <span class="inline-math">$\R^n$</span> taking values and having a density function <span class="inline-math">$f_X$</span> in an open set <span class="inline-math">$D$</span>.
+                            Let <span class="inline-math">$\phi$</span> maps <span class="inline-math">$D$</span> bijectively to <span class="inline-math">$\phi(D) \subseteq \R^n$</span> and
+                            suppose <span class="inline-math">$\phi$</span> has a continuous derivative (Jacobian matrix <span class="inline-math">$\phi&#x27;$</span>) with <span class="inline-math">$\phi&#x27;(x) \neq 0$</span>.
+                        </p>
+                        <p>
+                            Set <span class="inline-math">$y=\phi(x)$</span> and define a new random variable <span class="inline-math">$Y=\phi(X)$</span>.
+                            Then <span class="inline-math">$Y$</span> has a density function in <span class="inline-math">$\phi(D)$</span> given by
+                            <span class="display-math">$$ \begin{align*}
+                                f_Y(y) = f_X(x)\,|J|
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$J$</span> is the Jacobian
+                            <span class="display-math">$$ \begin{align*}
+                                J = \det\left(\pdfd{x_i}{y_j}\right) = \left(\det\left(\pdfd{y_i}{x_j}\right)\right)\inv.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Simulation of random variables
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simulation-of-random-variables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We have access to a sequence of independent <span class="inline-math">$U[0,1]$</span> random variables <span class="inline-math">$U_1, U_2, \ldots, U_n$</span>,
+                and we want to simulate independent random variables <span class="inline-math">$(X_1, X_2, \ldots, X_n)$</span> having a given distribution.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Simulation using inverse function
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simulation-using-inverse-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose our desired density function is <span class="inline-math">$f$</span> in an open interval <span class="inline-math">$I$</span>.
+                            Then the distribution function <span class="inline-math">$F(x) = \int_{-\infty}^{x} f(y) dy$</span> is an increasing map from <span class="inline-math">$I$</span> to <span class="inline-math">$(0,1)$</span>.
+                            Let
+                            <span class="display-math">$$ \begin{align*}
+                                G(u) = \inf\sb{x\in\R}{u\leq F(x)}.
+                            \end{align*} $$</span>
+                            (When <span class="inline-math">$f$</span> is positive everywhere, <span class="inline-math">$G=F\inv$</span>.)
+                            Note that for all <span class="inline-math">$x\in\R, u\in(0,1)$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                G(u) \leq x \iff u \leq F(x).
+                            \end{align*} $$</span>
+                            Then when we have <span class="inline-math">$U\sim U[0,1]$</span> and let <span class="inline-math">$X=G(U)$</span>, we have
+                            <span class="display-math">$$ \begin{align*}
+                                \prob(X\leq x) = \prob(G(U)\leq x) = \prob(U\leq F(x)) = F(x)
+                            \end{align*} $$</span>
+                            so <span class="inline-math">$X$</span> has a distribution function <span class="inline-math">$F_X$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Box-Muller transform
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Box-Muller-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            To simulate <span class="inline-math">$X\sim N(0,1)$</span>, we take <span class="inline-math">$U,V\sim U[0,1]$</span> and set
+                            <span class="display-math">$$ \begin{align*}
+                                \Theta = 2\pi U, \quad R = \sqrt{-2\log V} \implies V = e^{-R^2/2}, \quad \Theta\sim U[0,2\pi].
+                            \end{align*} $$</span>
+                            Then <span class="inline-math">$X=R\cos\Theta$</span> and <span class="inline-math">$Y=R\sin\Theta$</span> are independent <span class="inline-math">$N(0,1)$</span> random variables.
+                            (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-Box-Muller-transform.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Rejection sampling
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Rejection-sampling.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            To simulate <span class="inline-math">$U\sim U([0,1]^d)$</span>, we take <span class="inline-math">$U = (\bar U_1, \bar U_2, \ldots, \bar U_d)$</span> where <span class="inline-math">$\bar U_i \sim U[0,1]$</span> are independent.
+                        </p>
+                        <p>
+                            For some <span class="inline-math">$A\subseteq [0,1]^d$</span>, to simulate a random variable <span class="inline-math">$X$</span> in <span class="inline-math">$[0,1]^d$</span> having density
+                            <span class="display-math">$$ \begin{align*}
+                                f(x) = \frac{1_A(x)}{|A|},
+                            \end{align*} $$</span>
+                            take <span class="inline-math">$U_1,U_2,\ldots$</span> independent <span class="inline-math">$U([0,1]^d)$</span> random variables and
+                            <span class="inline-math">$X$</span> to be the first of those which land in <span class="inline-math">$A$</span>, i.e. reject the others:
+                            <span class="display-math">$$ \begin{align*}
+                                X = U_N, \quad N=\min\sb{n\geq 1}{U_n \in A}.
+                            \end{align*} $$</span>
+                            (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-rejection-sampling-for-uniform-distribution.html">Derivation</a>)
+                        </p>
+                        <p>
+                            In general to simulate <span class="inline-math">$X$</span> having a bounded density <span class="inline-math">$f$</span> in <span class="inline-math">$[0,1]^d$</span>, let <span class="inline-math">$f(x)\leq \lambda$</span> for all <span class="inline-math">$x$</span>.
+                            We'll apply the same technique as above to <span class="inline-math">$[0,1]^{d+1}$</span>:
+                        </p>
+                        <p>
+                            Take <span class="inline-math">$U_1, U_2, \ldots \sim U([0,1]^d)$</span> and <span class="inline-math">$V_1,V_2,\ldots\sim U[0,1]$</span> all independent random variables,
+                            and <span class="inline-math">$X$</span> to be the the first <span class="inline-math">$U_n$</span> such that <span class="inline-math">$V_n\leq f(U_n)/\lambda$</span>:
+                            <span class="display-math">$$ \begin{align*}
+                                X = U_n, \quad N = \min\sb{n\geq 1}{V_n \leq f(U_n)/\lambda}.
+                            \end{align*} $$</span>
+                            (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-rejection-sampling-for-general-distribution.html">Derivation</a>)
+                        </p>
+                        <p>
+                            <img src="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240304150408.png" width="400.0">
+                            https://www.geogebra.org/calculator/gtjdw2kc
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Moment generating function
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (moment generating function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-moment-generating-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a random variable on <span class="inline-math">$\R$</span>. 
+                            The <em>moment generating function</em> of <span class="inline-math">$X$</span> is the function <span class="inline-math">$M_X: \R\to[0,\infty]$</span> given by
+                            <span class="display-math">$$ \begin{align*}
+                                M_X(\lambda) = \expect(e^{\lambda X}).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            For a random variable on <span class="inline-math">$\R^n$</span>, the moment generating function <span class="inline-math">$M_X: \R^n \to [0,\infty]$</span> given by
+                            <span class="display-math">$$ \begin{align*}
+                                M_X(\lambda) = \expect(e^{\lambda^T X}), \quad \lambda\in\R^n.
+                            \end{align*} $$</span>
+                            (<span class="inline-math">$\lambda^T X$</span> is the dot product)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                If <span class="inline-math">$X$</span> takes values in <span class="inline-math">$\Z^+$</span>, then the probability generating function is related by <span class="inline-math">$M_X(\lambda) = G_X(e^{\lambda})$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (moment generating function of sum of random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-moment-generating-function-of-sum-of-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For independent random variables <span class="inline-math">$X,Y$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                M_{X+Y}(\lambda) = \expect(e^{\lambda X} e^{\lambda Y}) = \expect(e^{\lambda X}) \expect(e^{\lambda Y}) = M_X(\lambda) M_Y(\lambda).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (uniqueness of moment generating function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-uniqueness-of-moment-generating-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X,Y$</span> be random variables having the same moment generating function <span class="inline-math">$M$</span>.
+                        </p>
+                        <p>
+                            For <span class="inline-math">$X,Y$</span> in <span class="inline-math">$\R$</span>, if <span class="inline-math">$M(\lambda) &lt; \infty$</span> for some <span class="inline-math">$\lambda&gt;0$</span>, then <span class="inline-math">$X,Y$</span> have the same distribution <span class="inline-math">$F_X = F_Y$</span>.
+                        </p>
+                        <p>
+                            For <span class="inline-math">$X,Y$</span> in <span class="inline-math">$\R^n$</span>, if <span class="inline-math">$M(\lambda) &lt; \infty$</span> on some open set of <span class="inline-math">$\lambda$</span>, then <span class="inline-math">$X,Y$</span> have the same distribution.
+                        </p>
+                        
+                    </div>
+                </div>
+                The condition of finiteness is required: <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-scaling-Cauchy-distribution-has-the-same-moment-generating-function.html">Example (scaling Cauchy distribution has the same moment generating function)</a>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (convergence of random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-convergence-of-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A sequence of random variables <span class="inline-math">$(X_n)$</span> <em>converges in distribution</em> to a random variable <span class="inline-math">$X$</span> if
+                            <span class="display-math">$$ \begin{align*}
+                                F_{X_n}(x) \to F_X(x)
+                            \end{align*} $$</span>
+                            for all <span class="inline-math">$x\in\R$</span> where <span class="inline-math">$F_X$</span> is continuous at <span class="inline-math">$x$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-converging-random-variables-with-distribution-fails-to-converge-at-discontinuity.html">Why we exclude discontinuity</a>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (continuity of moment generating function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-continuity-of-moment-generating-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X,(X_n)$</span> be random variables.
+                            Suppose that as <span class="inline-math">$n\to\R$</span>, <span class="inline-math">$M_{X_n} (\lambda) \to M_X(\lambda)$</span> for all <span class="inline-math">$\lambda\in\R$</span> and <span class="inline-math">$M_X(\lambda) &lt; \infty$</span> for some <span class="inline-math">$\lambda\neq 0$</span>.
+                        </p>
+                        <p>
+                            Then <span class="inline-math">$X_n \to X$</span> in distribution.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Gaussian random variables
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gaussian-random-variables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Gaussian random variables)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Gaussian-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A random variable <span class="inline-math">$X$</span> in <span class="inline-math">$\R$</span> is Gaussian
+                            if <span class="inline-math">$X=\sigma Z+\mu$</span> for some <span class="inline-math">$\mu\in\R, \sigma\in[0,\infty)$</span> and <span class="inline-math">$Z\sim N(0,1)$</span>, i.e. the probability distribution function is
+                            <span class="display-math">$$ \begin{align*}
+                                f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}.
+                            \end{align*} $$</span>
+                            Then we write <span class="inline-math">$X\sim N(\mu, \sigma^2)$</span>.
+                        </p>
+                        <p>
+                            For <span class="inline-math">$n\geq 2$</span>, a random variable <span class="inline-math">$X$</span> in <span class="inline-math">$\R^n$</span> is Gaussian if <span class="inline-math">$u^T X \equiv \sum_{i=1}^{n} u_i X_i$</span> is Gaussian for all <span class="inline-math">$u\in\R^n$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (affine functions of Gaussian are Gaussian)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-affine-functions-of-Gaussian-are-Gaussian.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a Guassian random variable <span class="inline-math">$X$</span> in <span class="inline-math">$\R^n$</span>, for any <span class="inline-math">$m\times n$</span> matrix <span class="inline-math">$a$</span> and vector <span class="inline-math">$b\in\R^m$</span>,
+                            the random variable <span class="inline-math">$Y = aX + b$</span> is also Gaussian. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-affine-functions-of-Gaussian-are-Gaussian.html">Proof</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Moment generating function of Gaussian random variable
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function-of-Gaussian-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a Gaussian random variable <span class="inline-math">$X$</span> in <span class="inline-math">$\R^n$</span>, suppose it has mean <span class="inline-math">$\mu = \expect(X)$</span> and variance <span class="inline-math">$V = \op{var}(X) = \left(\op{cov}(X_i, X_j)\right)_{i,j=1}^n$</span>.
+                        </p>
+                        <p>
+                            For all <span class="inline-math">$u\in\R^n$</span>, the random variable <span class="inline-math">$u^T X \sim N(u^T \mu, u^T V u)$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-mean-and-variance-of-projection-of-multivariate-random-variable.html">Derivation</a>)
+                            Note that <span class="inline-math">$u^T V u \geq 0$</span> so <span class="inline-math">$V$</span> is non-negative definite.
+                        </p>
+                        <p>
+                            Therefore the  generating function is
+                            <span class="display-math">$$ \begin{align*}
+                                M_X(\lambda) = \expect(e^{\lambda^T X}) = e^{\lambda^T \mu + \frac{1}{2}\lambda^T V\lambda}.
+                            \end{align*} $$</span>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-uniqueness-of-moment-generating-function.html">Hence</a> the distribution of <span class="inline-math">$X$</span> is uniquely determined by <span class="inline-math">$\mu$</span> and <span class="inline-math">$V$</span>.
+                            So we write <span class="inline-math">$X\sim N(\mu, V)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Constructing Guassian random variables
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Constructing-Guassian-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            To construct <span class="inline-math">$Z\sim N(0, I_n)$</span> where <span class="inline-math">$I_n$</span> is the <span class="inline-math">$n\times n$</span> identity matrix,
+                            take <span class="inline-math">$Z_1, \ldots, Z_n$</span> independent <span class="inline-math">$N(0,1)$</span> random varibales and set <span class="inline-math">$Z = (Z_1, \ldots, Z_n)$</span>.
+                            (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-constructing-Gaussian-random-variables.html">Proof</a>)
+                        </p>
+                        <p>
+                            Generally to construct <span class="inline-math">$X\sim N(\mu, V)$</span>, we define <span class="inline-math">$X=\sigma Z + \mu$</span> where <span class="inline-math">$\sigma = \sqrt{V}$</span>.
+                            <span class="inline-math">$X$</span> is then Gaussian, <span class="inline-math">$\expect(X) = \mu$</span>, and
+                            <span class="display-math">$$\op{var}(X) = \expect((\sigma Z)(\sigma Z)^T) = \sigma\op{var}(Z)\sigma^T = \sigma I_n \sigma^T = V.$$</span>
+                            Hence <span class="inline-math">$X \sim N(\mu, V)$</span>.
+                        </p>
+                        <p>
+                            (What is <span class="inline-math">$\sqrt{V}$</span>: since <span class="inline-math">$V$</span> is symmetric, <span class="inline-math">$V$</span> is diagonalisable by an orthogonal matrix <span class="inline-math">$U$</span>.
+                            Also since <span class="inline-math">$V$</span> is non-negative definite, <span class="inline-math">$V$</span> has eigenvalues <span class="inline-math">$\lambda_1, \ldots, \lambda_n \geq 0$</span>.
+                            <span class="display-math">$$ \begin{align*}
+                                V &amp;= U\Lambda U^T, &amp; \quad \Lambda &amp;= \op{diag}(\lambda_1, \ldots, \lambda_n). \\
+                                \text{Set } \sigma &amp;= U\sqrt{\Lambda} U^T, &amp;\sqrt{\Lambda} &amp;= \op{diag}(\sqrt{\lambda_1}, \ldots, \sqrt{\lambda_n})
+                            \end{align*} $$</span>
+                            so we have <span class="inline-math">$\sigma\sigma^T = V$</span>.)
+                        </p>
+                        <p>
+                            For positive definite variance <span class="inline-math">$V$</span> (equivalently <span class="inline-math">$V$</span> is invertible), the density function of <span class="inline-math">$X\sim N(\mu, V)$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                f_X(x) = \frac{\exp\left(-\frac{1}{2} (x-\mu)^T V\inv (x-\mu)\right)}{\sqrt{(2\pi)^n \det V}}.
+                            \end{align*} $$</span>
+                            (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-density-function-of-Gaussian-random-variables-for-positive-definite-variance.html">Derivation</a>)
+                        </p>
+                        <p>
+                            If <span class="inline-math">$V$</span> is not invertible, then <span class="inline-math">$U$</span> can be choosen so that <span class="inline-math">$UX \sim N(U\mu, UVU^T)$</span> with
+                            <span class="display-math">$$ \begin{align*}
+                                UVU^T = \op{diag}(\lambda_1, \lambda_2, \ldots, \lambda_k, 0, \ldots, 0) \equiv \pmat{V_0 &amp; 0 \\ 0 &amp; 0}.
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$V_0$</span> is positive definite.
+                            Then we can construct
+                            <span class="display-math">$$ \begin{align*}
+                                X = \mu + U^T \pmat{Y\\0}, \quad Y = \sqrt{V_0}\pmat{z_1 \\ z_2 \\ \vdots \\ z_k}
+                            \end{align*} $$</span>
+                            and <span class="inline-math">$Y$</span> has density
+                            <span class="display-math">$$ \begin{align*}
+                                f_Y(y) = \frac{\exp\left(-\frac{1}{2} y^T V_0\inv y\right)}{\sqrt{(2\pi)^n\det V_0}}
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Bivariate normal
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bivariate-normal.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a non-degenerate normal random variable in <span class="inline-math">$\R^2$</span>, i.e. <span class="inline-math">$V=\var(X)$</span> is invertible.
+                            <span class="inline-math">$X$</span> is uniquely determined by each <span class="inline-math">$(\mu_1, \mu_2, \sigma_1^2, \sigma_2^2, \rho) \in \R^2\times (0,\infty)^2 \times (-1, 1)$</span>, where <span class="inline-math">$\mu_i = \expect(X_i), \sigma_i^2 = \expect(X_i), \rho = \op{corr}(X_1,X_2)$</span>.
+                            (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-bivariate-normal-determined-by-5-parameters.html">Proof</a>)
+                        </p>
+                        <p>
+                            If <span class="inline-math">$\op{corr}(X_1, X_2)=0$</span>, then <span class="inline-math">$X_1, X_2$</span> are independent. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Zero-correlation-implies-independence-for-bivariate-normal.html">Proof</a>)
+                            For a general <span class="inline-math">$\rho$</span>, we can write
+                            <span class="display-math">$$ \begin{align*}
+                                X_2 = aX_1 + Y
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$Y$</span> is normal and independent of <span class="inline-math">$X_1$</span>, and <span class="inline-math">$a = \rho\sigma_2/\sigma_1$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-bivariate-normal-as-sums-of-independent-Gaussians.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Sums of independent random variables
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Sums-of-independent-random-variables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X_n: x\in\N)$</span> be a sequence of independent identically distributed integrable random variables.
+                Set <span class="inline-math">$S_n = X_1 + \ldots + X_n$</span>, <span class="inline-math">$\mu = \expect(X_1)$</span> and <span class="inline-math">$\sigma^2 = \var(X_1)$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (weak law of large numbers)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-weak-law-of-large-numbers.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For all <span class="inline-math">$\epsilon&gt;0$</span>, as <span class="inline-math">$n\to\infty$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \prob\left(\left|\frac{S_n}{n} - \mu \right| &gt; \epsilon\right) \to 0.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-weak-law-of-large-numbers-for-finite-second-moment.html">Proof for finite second moment</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (strong law of large numbers)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-strong-law-of-large-numbers.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For all <span class="inline-math">$\epsilon&gt;0$</span>, as <span class="inline-math">$n\to\infty$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \prob\left(\frac{S_n}{n} \to \mu \text{ as }n \to \infty\right) = 1.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-strong-law-of-large-numbers-for-finite-fourth-moment.html">Proof for finite fourth moment</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (central limit theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-central-limit-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$X_n$</span> are square-integrable. As <span class="inline-math">$n\to\infty$</span>, the normalised random variables
+                            <span class="display-math">$$ \begin{align*}
+                                Z_n = \frac{S_n - \mu n}{\sigma\sqrt{n}} \to Z \sim N(0,1) \text{ in distribution}.
+                            \end{align*} $$</span>
+                            Equivalently, for all <span class="inline-math">$x\in\R$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                \prob\left(\frac{S_n - \mu n}{\sigma\sqrt{n}} \leq x\right) \to \Phi(x) = \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}} e^{-y^2/2}\, dy.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-central-limit-theorem-with-finite-exponential-moment.html">Proof with finite exponential moment</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                In applications, we imprecisely write <span class="inline-math">$Z_n \stackrel{\text{approx.}}{\sim} N(0,1)$</span> or <span class="inline-math">$S_n \stackrel{\text{approx.}}{\sim} N(n\mu, n\sigma^2)$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Sample error via central limit theorem
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Sample-error-via-central-limit-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Often we want to know how large <span class="inline-math">$N$</span> needs to be such that
+                            <span class="display-math">$$ \begin{align*}
+                                \prob\left(\left|\frac{S_N}{N} - \mu \right| \geq \epsilon\right) \leq \delta.
+                            \end{align*} $$</span>
+                            By the central limit theorem, for large <span class="inline-math">$N$</span>, the normalised random variable
+                            <span class="display-math">$$ \begin{align*}
+                                Z_N = \frac{S_N - N\mu}{\sigma\sqrt{N}} \stackrel{\text{approx.}}{\sim} N(0,1).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Since <span class="inline-math">$S_N/N - \mu = (\sigma/\sqrt{N})Z_N$</span>, the event
+                            <span class="display-math">$$ \begin{align*}
+                                \left|\frac{S_N}{N}-\mu \right|\geq \epsilon \iff \left|Z_N \right| \geq \frac{\epsilon}{\sigma}\sqrt{N}.
+                            \end{align*} $$</span>
+                            By symmetry,
+                            <span class="display-math">$$ \begin{align*}
+                                \prob\left(\left|\frac{S_N}{N}-\mu \right|\geq \epsilon\right) = 2\prob\left(Z_N \geq \frac{\epsilon}{\sigma}\sqrt{N}\right) = 2\left(1-\Phi\left(\frac{\epsilon}{\sigma}\sqrt{N}\right)\right).
+                            \end{align*} $$</span>
+                            So we want
+                            <span class="display-math">$$ \begin{align*}
+                                N = \left(\frac{\sigma}{\epsilon}\Phi\inv\left(1-\frac{\delta}{2}\right)\right)^2.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Geometric probability
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Geometric-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Bertrand-s-paradox.html">Example (Bertrand's paradox)</a>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Buffon-s-needle.html">Example (Buffon's needle)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

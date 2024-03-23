@@ -1,0 +1,45 @@
+
+<h1><span class="inline-math">$A$</span> is an event</h1>
+
+<p>
+    "<span class="inline-math">$\omega\in A_n$</span> infinitely often" means that for all <span class="inline-math">$n\in\N$</span>, there exists <span class="inline-math">$n\geq N$</span> where <span class="inline-math">$\omega\in A_n$</span>. Converting this into set,
+    <span class="display-math">$$ A = \bigcap_N \bigcup_{n\geq N} A_n, $$</span>
+    which only makes countable set operation so <span class="inline-math">$A$</span> is an event.
+</p>
+
+<h1>First lemma</h1>
+
+<p>
+    Suppose <span class="inline-math">$\sum_{n=1}^\infty \prob(A_n) = L$</span>.
+    <span class="display-math">$$\begin{align*}
+    \prob(A) &amp;= \prob\bigg(\bigcap_N \bigcup_{n\geq N} A_n\bigg) \\
+    &amp;\leq \prob\bigg(\bigcup_{n\geq k} A_n\bigg) &amp;&amp;\text{for any }k\in\N \\
+    &amp;\leq \sum_{n=k}^\infty\prob(A_n) &amp;&amp;\text{union bound} \\
+    &amp;= L-\sum_{n=1}^{k-1} \prob(A_n) \\
+    &amp;\to L-L=0
+    \end{align*}$$</span>
+    so <span class="inline-math">$\prob(A) = 0$</span>.
+</p>
+
+<h1>Second lemma</h1>
+
+<p>
+    First we will show <span class="inline-math">$\prob(\bigcup_{n\geq N} A_n) = 1$</span>.
+    <span class="display-math">$$\begin{align*}
+    \prob\bigg(\for\bigcup nNk A_n\bigg) &amp;= 1-\prob\bigg(\for\bigcap nNk A_n^\complement\bigg) \\
+    &amp;= 1-\for\prod nNk\prob(A_n^\complement) &amp;&amp;\text{independence} \\
+    &amp;= 1-\for\prod nNk(1-\prob(A_n)) \\
+    &amp;\geq 1-\for\prod nNk e^{\prob(A_n)} &amp;&amp;e^x \geq 1+x \\
+    &amp;=1-e^{\fsum nNk \prob(A_n)} \\
+    &amp;\to 1 &amp;&amp;\text{as }k\to\infty
+    \end{align*}$$</span>
+    as required.
+</p>
+<p>
+    Then it suffices to show that <span class="inline-math">$\prob(\bigcap_N C_N)=1$</span> if <span class="inline-math">$\prob(C_N)=1$</span>.
+    <span class="display-math">$$\begin{align*}
+    \prob\bigg(\bigcap_N C_N\bigg) &amp;= 1 - \prob\bigg(\bigcup_N C_N^\complement\bigg) \\
+    &amp;\geq 1-\sum_N \prob(C_N^\complement) &amp;&amp;\text{union bound} \\
+    &amp;= 1.
+    \end{align*}$$</span>
+</p>

@@ -1,0 +1,39 @@
+<p>
+    Let <span class="inline-math">$p_n$</span> be the number of permutations of a set of size <span class="inline-math">$n$</span>, and let <span class="inline-math">$s_{n,k}$</span> be the number of subsets of <span class="inline-math">$\set{1,2,\ldots,n}$</span> of size <span class="inline-math">$k$</span>. We want to show <span class="inline-math">$p_n = s_{n,k} p_k p_{n-k}$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$\Omega_n$</span> for the set of permutations of <span class="inline-math">$\set{1,2,\ldots,n}$</span>.
+    For some subset <span class="inline-math">$S\subseteq \set{1,2,\ldots,n}$</span> of size <span class="inline-math">$k$</span>, let
+    <span class="display-math">$$ \Omega_n^S = \sb{\sigma\in S_n}{\sigma(\set{1,2,\ldots,k}) = S}. $$</span>
+    Since every <span class="inline-math">$\sigma\in S_n$</span> maps <span class="inline-math">$\set{1,2,\ldots,k}$</span> to some subset of size <span class="inline-math">$k$</span>,
+    <span class="display-math">$$ \Omega_n = \bigcup_{S\subseteq\set{1,2,\ldots,n}} \Omega_n^S. $$</span>
+</p>
+<p>
+    For some <span class="inline-math">$S\subseteq\set{1,2,\ldots,n}$</span>, given some <span class="inline-math">$\sigma\in\Omega_n^S$</span>, let
+    <span class="display-math">$$\begin{align*}
+    \sigma_1:&amp; &amp;\set{1,2,\ldots,k}&amp;\to S \\
+    \sigma_2:&amp; &amp;\set{k+1, k+2, \ldots, n}&amp;\to \set{1,2,\ldots,n}\setminus S
+    \end{align*}$$</span>
+    be the restrictions <span class="inline-math">$\sigma$</span> to the respective domains.
+    Note that <span class="inline-math">$\sigma_1,\sigma_2$</span> are bijections and we obtain all pairs of bijection in this way.
+</p>
+<p>
+    Therefore we have a bijection
+    <span class="display-math">$$\begin{align*}
+    \Omega_n^S&amp;\to\set{\text{bijections } \set{1,\ldots,k}\to S}\times\set{\text{bijections }\set{k+1, \ldots,n}\to\set{1,\ldots,n}\setminus S} \\
+    \sigma&amp;\mapsto(\sigma_1, \sigma_2)
+    \end{align*}$$</span>
+    so
+    <span class="display-math">$$ |\Omega_n^S| = p_k p_{n-k}. $$</span>
+</p>
+<p>
+    Since <span class="inline-math">$\Omega_n^S$</span> for all <span class="inline-math">$S$</span> are disjoint,
+    <span class="display-math">$$\begin{align*}
+    |\Omega_n| &amp;= \sum_{S\subseteq\set{1,\ldots,n}} p_kp_{n-k} \\
+    p_n &amp;= s_{n,k} p_k p_{n-k}.
+    \end{align*}$$</span>
+</p>
+<p>
+    Now, clearly <span class="inline-math">$p_1=1$</span> and <span class="inline-math">$s_{n,1}=n$</span>. So <span class="inline-math">$p_n = np_{n-1}$</span> and by induction, <span class="inline-math">$p_n=n!$</span>. Also
+    <span class="display-math">$$ s_{n,k} = \frac{n!}{k!(n-k)!}. $$</span>
+</p>

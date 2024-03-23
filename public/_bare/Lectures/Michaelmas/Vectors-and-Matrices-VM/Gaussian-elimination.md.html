@@ -1,0 +1,115 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Process of Gaussian elimination
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Process-of-Gaussian-elimination.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a system of <span class="inline-math">$m$</span> linear equations in <span class="inline-math">$n$</span> unknowns,
+                <span class="display-math">$$\pmat{A_{11} &amp; A_{12} &amp; A_{13} &amp; \ldots &amp; A_{1n} \\
+                A_{21} &amp; A_{22} &amp; A_{23} &amp; \ldots &amp; A_{2n} \\
+                \vdots &amp; &amp; &amp; \ddots &amp; \vdots \\
+                A_{m1} &amp; A_{m2} &amp; A_{m3} &amp; \ldots &amp; A_{mn}}
+                \pmat{x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n}
+                =
+                \pmat{d_1 \\ d_2 \\ \vdots \\ d_m}
+                
+                \qquad
+                \qquad
+                
+                \begin{cases}
+                A_{11} x_1 + A_{12} x_2 + \ldots + A_{1n} x_n &amp;= d_1 \\
+                A_{21} x_1 + A_{22} x_2 + \ldots + A_{2n} x_n &amp;= d_2 \\
+                \vdots \\
+                A_{m1} x_1 + A_{m2} x_2 + \ldots + A_{mn} x_n &amp;= d_m \\
+                \end{cases}$$</span>
+            </p>
+            <p>
+                By assuming <span class="inline-math">$A_{11}\neq 0$</span> etc by reordering the equations or variables if needed, we write <span class="inline-math">$x_1$</span> in terms of the other variables, and then substitute into the other equations. Repeat and terminate when we have no equations with non-zero coefficients left. We will get
+                <span class="display-math">$$\pmat{A_{11} &amp; A_{12} &amp; A_{13} &amp; \ldots &amp; \ldots &amp; \ldots &amp; A_{1n} \\
+                0 &amp; A_{22}^{(2)} &amp; A_{23}^{(2)} &amp; \ldots &amp; \ldots &amp; \ldots &amp; A_{2n}^{(2)} \\
+                \vdots &amp; &amp; \ddots &amp;&amp;&amp; &amp;\vdots \\
+                0 &amp; \ldots &amp; 0 &amp; A_{rr}^{(r)} &amp; A_{r(r+1)}^{(r)} &amp; \ldots &amp; A_{rn}^{(n)} \\
+                0 &amp; \ldots &amp; 0 &amp; 0 &amp; 0 &amp; \ldots  &amp; 0 \\
+                \vdots &amp;&amp;&amp;&amp;&amp;&amp; \vdots \\
+                0 &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; 0}
+                \pmat{x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n}
+                =
+                \pmat{d_1 \\ d_2 \\ \vdots \\ d_m}
+                
+                \quad
+                \quad
+                
+                \begin{cases}
+                A_{11} x_1 &amp;+&amp; A_{12} x_2 &amp;+&amp; \ldots &amp;+&amp;\ldots&amp;+&amp;A_{1n} x_n &amp;=&amp; d_1 \\
+                &amp; &amp;A_{22}^{(2)} x_2 &amp;+&amp;\ldots &amp;+&amp; \ldots &amp;+&amp; A_{2n}^{(2)} x_n &amp;=&amp; d_2^{(2)} \\
+                &amp;&amp;&amp;\ddots &amp;&amp;&amp;&amp;&amp;&amp;&amp;\vdots \\
+                &amp;&amp;&amp;&amp;A_{rr}^{(r)} x_r &amp;+&amp; \ldots &amp;+&amp; A_{rn}^{(r)} x_n &amp;=&amp; d_r^{(r)} \\
+                &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;0 &amp;=&amp; d_{r+1}^{(r)} \\
+                &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;\vdots &amp;=&amp; \vdots \\
+                &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;0 &amp;=&amp; d_{n}^{(r)} \\
+                \end{cases}$$</span>
+                with <span class="inline-math">$A_{ii}^{(n)} \neq 0$</span> for all <span class="inline-math">$i=1,2,\ldots,r$</span>, where the superfix refers to the version number.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Overdetermined, determined and underdetermined system
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Overdetermined-determined-and-underdetermined-system.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$r&lt;m$</span> and <span class="inline-math">$d_i^{(r)} \neq 0$</span> for some <span class="inline-math">$i=r+1,r+2,\ldots,m$</span>, then the system is <em>inconsistent</em>, so there is no solution. <br>
+                    We say the system is <em>overdetermined</em>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$r=n\leq m$</span> and all <span class="inline-math">$d_i^{(r)} = 0$</span> for some <span class="inline-math">$i=r+1,r+2,\ldots,m$</span>, then last non-zero equation
+                    <span class="display-math">$$ A_{nn}^{(n)} x_n = d_n^{(n)} $$</span>
+                    can be solved, then performing back substitution gives a unique solution. <br>
+                    We say the system is <em>determined</em>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$r&lt;n$</span> and all <span class="inline-math">$d_i^{(r)} = 0$</span> for some <span class="inline-math">$i=r+1,r+2,\ldots,m$</span>, then the last non-zero equation is
+                    <span class="display-math">$$A_{rr}^{(r)} x_r + A_{r(r+1)}^{(r)} x_{r+1} + \ldots + A_{rn}^{(r)} x_{n} = d_{r}^{(r)}, $$</span>
+                    so <span class="inline-math">$x_{r+1}, \ldots, x_n$</span> can be chosen freely, and back substitution gives a valid solution. <br>
+                    Therefore we have infinitely many solution. <br>
+                    We say the system is <em>underdetermined</em>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Upper triangular matrix of Gaussian elimination
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Upper-triangular-matrix-of-Gaussian-elimination.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                When <span class="inline-math">$m=n$</span>,
+                <span class="inline-math">$\det A = (-1)^R \det$</span> (the <em>upper triangular matrix</em>), where <span class="inline-math">$R$</span> is the number of rearrangements of rows and columns.
+            </p>
+            <p>
+                Note that since the only <span class="inline-math">$\sigma\in S_n$</span> such that <span class="inline-math">$\sigma(i)\geq i$</span> for all <span class="inline-math">$i=1,\ldots,n$</span> is the identity,
+                <span class="display-math">$$ \det A = (-1)^R A_{11} A_{22}^{(2)} A_{33}^{(3)} \ldots A_{nn}^{(n)}. $$</span>
+                Therefore <span class="inline-math">$\det A=0$</span> iff <span class="inline-math">$r&lt;n$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>

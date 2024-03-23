@@ -1,0 +1,16 @@
+<p>
+    Let <span class="inline-math">$q_n = \prob(X_n=0)$</span> and the <em>extinction probability</em> <span class="inline-math">$q=\prob(X_n=0\text{ for some } n\geq0)$</span>. Since <span class="inline-math">$\set{X_1=0}\subseteq\set{X_2=0}\subseteq\ldots$</span> and <span class="inline-math">$\bigcap_n \set{X_n=0} = \set{X_n=0\text{ for some } n\geq 0}$</span>, by continuity of probability, <span class="inline-math">$q_n\to q$</span>.
+</p>
+<p>
+    Note that
+    <span class="display-math">$$ q_n = \prob(X_n=0) = F_n(0)=\ub{F\circ F\circ\ldots\circ F}_\text{$n$-fold composition}(0).$$</span>
+    Alternatively we can condition on the first generation
+    <span class="display-math">$$ \begin{align*}
+    q_n &amp;= \fsum m0\infty \prob(X_1=m)\prob(X_n=0|X_1=m) \\
+    &amp;= \fsum m0\infty \prob(X_1=m) q_{n-1}^m = F(q_{n-1})
+    \end{align*} $$</span>
+    since <span class="inline-math">$\set{X_n=0|X_1=m}$</span> means that each of the descendants of the <span class="inline-math">$m$</span> individuals in generation 1 go extinct, which are independent events.
+</p>
+<p>
+    And using analysis (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-analysis-of-extinction-probability-of-branching-process.html">Derivation</a>), <span class="inline-math">$q$</span> is the smallest non-negative solution of <span class="inline-math">$q=F(q)$</span>. Also if <span class="inline-math">$\prob(X_1=1)&lt;1$</span>, then <span class="inline-math">$q&lt;1$</span> iff <span class="inline-math">$\mu=\expect(X_1)&gt;1$</span>.
+</p>

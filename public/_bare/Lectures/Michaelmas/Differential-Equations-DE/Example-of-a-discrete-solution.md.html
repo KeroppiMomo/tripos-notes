@@ -1,0 +1,24 @@
+<p>
+    Consider the equation
+    <span class="display-math">$$ a\frac{dy}{dx} + by = 0\quad\text{with } y(0) =y_0.$$</span>
+</p>
+<p>
+    Discretising, the equation becomes
+    <span class="display-math">$$\begin{align*}
+    \frac ah(y_{n+1} - y_n) + by_n &amp;= 0 \\
+    y_{n+1} &amp;= \Big(1 - \frac{bh}{a}\Big)y_n.
+    \end{align*}$$</span>
+</p>
+<p>
+    Solving this recurrence relation gives
+    <span class="display-math">$$ y_n = \Big(1-\frac{bh}{a}\Big)^n y_0. $$</span>
+</p>
+<p>
+    Now setting <span class="inline-math">$h = x_n/n$</span>,
+    <span class="display-math">$$y_n = \Big(1 - \frac ba\frac{x}n\Big)^n y_0.$$</span>
+</p>
+<p>
+    We expect as <span class="inline-math">$n\to\infty$</span>, this discrete solution tends to the actual solution. Indeed,
+    <span class="display-math">$$ y = \lim_{n\to\infty} y_n = y_0e^{-(b/a)x}$$</span>
+    is the exact solution.
+</p>

@@ -1,0 +1,407 @@
+<p>
+    Revision on change of basis: for two sets of orthonormal bases <span class="inline-math">$\set{\v e_i}$</span> and <span class="inline-math">$\set{\v e&#x27;_i}$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \v e&#x27;_i = R_{ij} \v e_j,
+    \end{align*} $$</span>
+    <span class="inline-math">$R$</span> is orthonomal i.e. <span class="inline-math">$RR^T = I$</span>. (<a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Derivation-change-of-basis-matrix-between-orthonormal-bases-is-orthogonal.html">Derivation</a>)
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (tensor)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Definition-tensor.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Equivalent views:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    A <em>tensor <span class="inline-math">$T$</span> of rank <span class="inline-math">$p$</span></em> (or a <em><span class="inline-math">$p$</span>-tensor</em>) in <span class="inline-math">$\R^n$</span>
+                    is an array of numbers <span class="inline-math">$T_{i_1 i_2 \ldots i_p}$</span> where <span class="inline-math">$i_k = 1,2,\ldots,n$</span>,
+                    such that under a change of orthonormal basis
+                    from <span class="inline-math">$\set{\v e_i}$</span> to <span class="inline-math">$\set{\v e_i&#x27;}$</span> where <span class="inline-math">$\v e_i&#x27; = R_{ij} \v e_j$</span>,
+                    the components of the tensors transform as
+                    <span class="display-math">$$ \begin{align*}
+                        T_{i_1 i_2 \ldots i_p}&#x27; = R_{i_1 j_1} R_{i_2 j_2} \ldots R_{i_p j_p} T_{j_1 j_2 \ldots j_p}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    A <span class="inline-math">$p$</span>-tensor in <span class="inline-math">$R^n$</span> is a multi-linear map
+                    <span class="display-math">$$ \begin{align*}
+                        T: \ub{\R^n \times \ldots \times\R^n}_{p} \to \R
+                    \end{align*} $$</span>
+                    such that in a given basis <span class="inline-math">$\set{\v e_i}$</span>,
+                    <span class="display-math">$$ \begin{align*}
+                        T(\v a, \v b, \ldots, \v c) = T_{i_1 i_2 \ldots i_p} a_{i_1} b_{i_2} \ldots c_{i_p}.
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Derivation-tensor-as-map-to-scalar-follows-transformation-rules.html">Derivation of following transformation rules</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    A <span class="inline-math">$p$</span>-tensor in <span class="inline-math">$R^n$</span> is a multi-linear map
+                    <span class="display-math">$$ \begin{align*}
+                        T: \ub{\R^n \times \ldots \times\R^n}_{p-1} \to \R^n
+                    \end{align*} $$</span>
+                    such that in a given basis <span class="inline-math">$\set{\v e_i}$</span>,
+                    <span class="display-math">$$ \begin{align*}
+                        T(\v a, \v b, \ldots, \v c)_i = T_{i j_1 j_2 \ldots j_p} a_{j_1} b_{j_2} \ldots c_{j_p}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Tensor operations
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Tensor-operations.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$S, T$</span> are tensors of the same rank, then so is <span class="inline-math">$S+T$</span> and <span class="inline-math">$\lambda T$</span> with <span class="inline-math">$\lambda\in\R$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$S$</span> is a <span class="inline-math">$p$</span>-tensor and <span class="inline-math">$T$</span> is a <span class="inline-math">$q$</span>-tensor, then the <em>tensor product</em> <span class="inline-math">$S\otimes T$</span> is a <span class="inline-math">$(p+q)$</span>-tensor
+                    <span class="display-math">$$ \begin{align*}
+                        (S\otimes T)_{i_1 \ldots i_p j_1 \ldots j_q} = S_{i_1 \ldots i_p} T_{j_1 \ldots j_q}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$T$</span> is a <span class="inline-math">$p$</span>-tensor, we can construct a <span class="inline-math">$(p-2)$</span>-tensor by <em>contraction</em>
+                    <span class="display-math">$$ \begin{align*}
+                        S_{k_1 \ldots k_{p-2}} = \delta_{ij} T_{ijk_1\ldots k_{p-2}}.
+                    \end{align*} $$</span>
+                    For rank 2 tensor, the contraction is the trace <span class="inline-math">$A_{ii}$</span>.
+                    The dot product is the contraction of the tensor product <span class="inline-math">$\delta_{ij} a_i b_j$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (quotient rule for tensors)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proposition-quotient-rule-for-tensors.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$v_{i_1 \ldots i_p} = T_{i_1 \ldots i_p j_1 \ldots j_q} u_{j_1 \ldots j_q}$</span>.
+            </p>
+            <p>
+                Then <span class="inline-math">$T$</span> is a (<span class="inline-math">$p+q$</span>)-tensor iff for every <span class="inline-math">$q$</span>-tensor <span class="inline-math">$u$</span>, <span class="inline-math">$v$</span> is a <span class="inline-math">$p$</span>-tensor. <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-quotient-rule-for-tensors.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Symmetric and anti-symmetric tensor
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Symmetric-and-anti-symmetric-tensor.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A tensor <span class="inline-math">$T$</span> is
+            </p>
+            <ul>
+            <li>
+                <p>
+                    symmetric when <span class="inline-math">$T_{ijp\ldots q} = T_{jip\ldots q}$</span> or for any other indices;
+                </p>
+                
+            </li><li>
+                <p>
+                    anti-symmetric when <span class="inline-math">$T_{ijp\ldots q} = -T_{jip\ldots q}$</span> or for any other indices.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                (Anti-)symmetry is a basis independent property. (<a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-symmetry-is-basis-independent.html">Proof</a>)
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Decomposition of a square matrix
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Decomposition-of-a-square-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Any <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$B$</span> can be written as a sum of symmetric and anti-symmetric parts,
+                            <span class="display-math">$$\begin{align*}
+                            B_{ij} &amp;= \frac12 (B_{ij} + B_{ji}) + \frac12 (B_{ij} - B_{ji}) \\
+                            B &amp;= \underbrace{\frac12 (B + B^T)}_{\text{symmetric } S} + \underbrace{\frac12 (B - B^T)}_{\text{anti-symmetric } A}
+                            \end{align*}$$</span>
+                        </p>
+                        <p>
+                            A symmetric matrix <span class="inline-math">$S$</span> can be decomposed an isotropic part and a traceless part,
+                            <span class="display-math">$$\begin{align*}
+                            S_{ij} &amp;= \frac1n \mrm{trace}(S)\, \delta_{ij} + \big(S_{ij} - \frac1n \mrm{trace}(S)\, \delta_{ij} \big) \\
+                            S &amp;= \underbrace{\frac1n \mrm{trace}(S)\, I}_\text{isotropic} + \underbrace{\big(S - \frac1n\mrm{trace}(S)\, I\big)}_{\text{traceless, since } \mrm{trace}(\frac1n I) = 1}
+                            \end{align*}$$</span>
+                        </p>
+                        <p>
+                            In <span class="inline-math">$\R^3$</span>, the anti-symmetric part <span class="inline-math">$A$</span> can be written in terms of a single vector <span class="inline-math">$\vec w$</span> as
+                            <span class="display-math">$$ A_{ijk} = \epsilon_{ijk}\omega_k = \begin{pmatrix}
+                            0 &amp; \omega_3 &amp; -\omega_2 \\
+                            -\omega_3 &amp; 0 &amp; \omega_1 \\
+                            \omega_2 &amp; -\omega_1 &amp; 0
+                            \end{pmatrix} $$</span>
+                            which is a general anti-symmetric matrix.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Invariant tensors
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Invariant-tensors.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A tensor <span class="inline-math">$T$</span> is <em>invariant</em> or <em>isotropic</em> when <span class="inline-math">$T&#x27;_{i_1 \ldots i_p} = T_{i_1 \ldots i_p}$</span> for all <span class="inline-math">$R$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Any rank 0 tensor is isotropic.
+                </p>
+                
+            </li><li>
+                <p>
+                    There is no isotropic rank 1 tensors.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\delta_{ij}$</span> is an isotropic rank 2 tensor. (<a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-Kronecker-delta-is-isotropic.html">Proof</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\epsilon_{ijk}$</span>, the totally anti-symmetric rank 3 tensor, is isotropic under <span class="inline-math">$\mathrm{SO}(3)$</span>. (<a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-Levi-Civita-symbol-is-isotropic.html">Proof</a>)
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (only isotropic tensor in R3 of rank under 3)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Lemma-only-isotropic-tensor-in-R3-of-rank-under-3.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The only non-zero isotropic tensors in <span class="inline-math">$\R^3$</span> of rank 1,2,3 are <span class="inline-math">$\alpha \delta_{ij}$</span> and <span class="inline-math">$\beta \epsilon_{ijk}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proof-only-isotropic-tensors-with-rank-under-3.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                In fact, all isotropic tensors in <span class="inline-math">$\R^n$</span> are built from the totally anti-symmetric <span class="inline-math">$n$</span>-tensor <span class="inline-math">$\epsilon_{ijk}$</span> and the symmetric 2-tensor <span class="inline-math">$\delta_{ij}$</span>, e.g. a general isotropic rank 4 tensor in <span class="inline-math">$\R^3$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    T_{ijkl} = \alpha\delta_{ij}\delta_{kl} + \beta\delta_{ik}\delta_{jl} + \gamma\delta_{il}\delta_{jk}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Invariant integrals
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Invariant-integrals.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Noticing invariant tensors can simplify integrals. For example for a rotationally invariant volume <span class="inline-math">$V$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                T_{ij\ldots k} = \int_{V} f(r)x_i x_j \ldots x_k \, dV, \quad r = |\v x|
+                            \end{align*} $$</span>
+                            is invariant since
+                            <span class="display-math">$$ \begin{align*}
+                                T_{ij\ldots k}&#x27; &amp;= R_{ip} R_{jq} \ldots R_{kr} T_{pq\ldots r} \\
+                                &amp;= \int_{V} f(r) \, (R_{ip}x_p)(R_{jq}x_q)\ldots(R_{kr}x_r)\, dV \\
+                                &amp;= \int_{V} f(r) \,x_i&#x27; x_j&#x27; \ldots x_k&#x27;\, dV
+                            \end{align*} $$</span>
+                            and <span class="inline-math">$r$</span> and <span class="inline-math">$dV$</span> are invariant as <span class="inline-math">$V$</span> is rotationally invariant.
+                            Hence <span class="inline-math">$T_{ij\ldots k}$</span> is proportional to an invariant tensor.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Examples-of-invariant-integrals.html">Examples of invariant integrals</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Tensor field
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Tensor-field.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A tensor field over <span class="inline-math">$\R^n$</span> assigns a tensor <span class="inline-math">$T_{ij\ldots k}(\v x)$</span> to each point <span class="inline-math">$\v x\in\R^3$</span>.
+            </p>
+            <p>
+                For a <span class="inline-math">$p$</span>-tensor field <span class="inline-math">$T$</span>, we can differentiate it to get a <span class="inline-math">$(p+q)$</span>-tensor field
+                <span class="display-math">$$ \begin{align*}
+                    X_{i_1 \ldots i_q j_1 \ldots j_p}(\v x) = \pdd{x_{i_1}} \ldots \pdd{x_{i_q}} T_{j_1 \ldots j_p}(\v x).
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Derivation-derivative-of-a-tensor-field-is-a-tensor-field.html">Derivation</a>)
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This implies <span class="inline-math">$\nabla\phi$</span> is a vector field.
+                </p>
+                
+            </li><li>
+                <p>
+                    For a vector field <span class="inline-math">$\v F(\v x)$</span>, the tensor field
+                    <span class="display-math">$$ \begin{align*}
+                        T_{ij}(\v x) = \pdfd{F_i(\v x)}{x^j}
+                    \end{align*} $$</span>
+                    can be decomposed into
+                    <span class="display-math">$$ \begin{align*}
+                        T_{ij} = \ub{-\frac{1}{2}\epsilon_{ijk}\left(\nabla\times\v F\right)_k}_\text{anti-symmetric}
+                        + \ub{\frac{1}{3}(\nabla\cdot\v F)\delta_{ij}}_{\text{isotropic}}
+                        + \ub{\frac{1}{2}\left(\pdfd{F_i}{x^j} + \pdfd{F_j}{x^i}\right) - \frac{1}{3}\left(\nabla\cdot\v F\right)\delta_{ij}}_{\text{symmetric traceless}}.
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Derivation-decomposition-of-tensor-derivative-of-a-vector-field.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Physical examples of tensors
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Physical-examples-of-tensors.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Conductivity and resisitivity
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Conductivity-and-resisitivity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In a material, applying an electric field <span class="inline-math">$\v E$</span> gives rise to a current <span class="inline-math">$\v J$</span>:
+                            <span class="display-math">$$ \begin{align*}
+                                J_i = \sigma_{ij} E_j \iff E_i = \rho_{ij}J_j
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\sigma_{ij}$</span> is the <em>conductivity tensor</em> and <span class="inline-math">$\rho_{ij} = (\sigma\inv)_{ij}$</span> is the resistivity tensor.
+                        </p>
+                        <p>
+                            Isotropic material has invariant <span class="inline-math">$\sigma_{ij}$</span>:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                in 2D, <span class="inline-math">$\sigma_{ij} = \sigma\delta_{ij}$</span> where <span class="inline-math">$\sigma$</span> is the <em>conductivity</em>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                in 3D, <span class="inline-math">$\sigma_{ij} = \sigma_{xx} \delta_{ij} + \sigma_{xy} \epsilon_{ij}$</span> where <span class="inline-math">$\sigma_{xy}$</span> is the <em>Hall conductivity</em>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Inertia tensor
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Inertia-tensor.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A rigid body has angular momentum
+                            <span class="display-math">$$ \begin{align*}
+                                \v L = I\v \omega
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$I$</span> is the inertia tensor
+                            <span class="display-math">$$ \begin{align*}
+                                I_{ij} &amp;= \sum_a m_a \left(|\v x_a|^2 \delta_{ij} - (\v x_a)_i (\v x_a)_j\right) &amp;&amp;\text{for discrete object}, \\
+                                I_{ij} &amp;= \int_{V} \rho(x) \left(|\v x|^2\delta_{ij} - x_i x_j\right)\, dV &amp;&amp;\text{for continuous object}.
+                            \end{align*} $$</span>
+                            (<a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Derivation-inertia-tensor.html">Derivation</a>)
+                        </p>
+                        <p>
+                            <span class="inline-math">$I$</span> is symmetric, so it is diagonable: <span class="inline-math">$I&#x27; = RIR^T = \op{diag}(I_1, I_2, I_3)$</span> where <span class="inline-math">$R\in\mathrm{SO}(3)$</span>.
+                            Every object has a preferred set of axis i.e. the eigenvectors.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Elasticity tensor
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Elasticity-tensor.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>strain tensor</em> <span class="inline-math">$e_{ij}$</span> is a symmetric tensor that describes the deformation of the point <span class="inline-math">$x^i$</span> in the direction <span class="inline-math">$\vhat x^j$</span>.
+                        </p>
+                        <p>
+                            The <em>stress tensor</em> <span class="inline-math">$\sigma_{ij}$</span> is a symmetric tensor that describes the force <span class="inline-math">$F_i$</span> on the plane perpendicular to <span class="inline-math">$\vhat x_j$</span>
+                        </p>
+                        <p>
+                            They are related by
+                            <span class="display-math">$$ \begin{align*}
+                                \sigma_{ij} = C_{ijkl} e_{kl}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$C_{ijkl}$</span> is the <em>elasticity tensor</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

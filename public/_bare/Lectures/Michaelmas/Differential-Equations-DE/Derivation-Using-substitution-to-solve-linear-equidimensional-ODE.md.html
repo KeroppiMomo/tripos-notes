@@ -1,0 +1,32 @@
+<p>
+    Use the substitution
+    <span class="display-math">$$ z = \ln x. $$</span>
+    Then
+    <span class="display-math">$$\begin{align*}
+    \frac{dx}{dz} &amp;= e^z = x \\
+    \frac{dy}{dz} &amp;=  \frac{dx}{dz} \frac{dy}{dx} = x \frac{dy}{dx} \\
+    \frac{d^2 y}{dz^2} &amp;= \frac{dx}{dz} \frac{d}{dx}\Big(x\frac{dy}{dx}\Big) \\
+    &amp;= x^2 \frac{d^2 y}{dx^2} +  x\frac{dy}{dx}
+    \end{align*}$$</span>
+    so the ODE becomes
+    <span class="display-math">$$\begin{align*}
+    f(x) &amp;= ax^2 \frac{d^2y}{dx^2} + bx\frac{dy}{dx} + cy \\
+    &amp;= a\Big(\frac{d^2y}{dz^2} - x\frac{dy}{dx}\Big) + bx\frac{dy}{dx} + cy \\
+    &amp;= a\frac{d^2y}{dz^2} + (b-a)\frac{dy}{dz} + cy,
+    \end{align*}$$</span>
+    which has constant coefficients.
+</p>
+<p>
+    Therefore the complimentary function is <span class="inline-math">$y_c \propto e^{k z}$</span> where <span class="inline-math">$k$</span> satisfies the characteristic equation
+    <span class="display-math">$$ ak^2 + (b-a)k + c = 0. $$</span>
+    For distinct roots <span class="inline-math">$k_1, k_2$</span>, the general complimentary function is
+    <span class="display-math">$$\begin{align*}
+    y_c(x) &amp;= Ae^{k_1 z} + Be^{k_2 z} \\
+    &amp;= Ax^{k_1} + Bx^{k_2}.
+    \end{align*}$$</span>
+    For degenerate root <span class="inline-math">$k$</span>, we have
+    <span class="display-math">$$\begin{align*}
+    y_c(x) &amp;= Ae^{kz} + Bze^{kz} \\
+    &amp;= Ax^k + Bx^k \ln x
+    \end{align*}$$</span>
+</p>

@@ -1,0 +1,34 @@
+<p>
+    We will restate the differentiability of <span class="inline-math">$f$</span> at <span class="inline-math">$a$</span>, <span class="inline-math">$g$</span> at <span class="inline-math">$b$</span> as
+    <span class="display-math">$$\begin{align*}
+    f(x) &amp;= f(a) + (x-a)f&#x27;(a) + \epsilon_f(x)\,(x-a) \\
+    g(y) &amp;= g(b) + (y-b)g&#x27;(b) + \epsilon_g(y)\,(y-b)
+    \end{align*}$$</span>
+    where <span class="inline-math">$\epsilon_f(a) = \epsilon_g(b) = 0$</span> with <span class="inline-math">$\epsilon_f$</span> continuous at <span class="inline-math">$a$</span> and <span class="inline-math">$\epsilon_g$</span> continuous at <span class="inline-math">$b$</span>.
+</p>
+<p>
+    Then composing,
+    <span class="display-math">$$\begin{align*}
+    g\big(f(x)\big) &amp;= g(b) + \big(f(x)-b\big)g&#x27;(b) + \epsilon_g\big(f(x)\big)\,\big(f(x)-b\big) \\
+    &amp;= g\big(f(a)\big) + \big((x-a)f&#x27;(a) + \epsilon_f(x)\,(x-a)\big)g&#x27;\big(f(a)\big) + \epsilon_g\big(f(x)\big)\,\big((x-a)f&#x27;(a) +\epsilon_f(x)\,(x-a)\big) \\
+    &amp;= g(b) + (x-a)\,f&#x27;(a)\,g&#x27;(b) + (x-a)\ub{\big(\epsilon_f(x)\,g&#x27;(f(a)) + \epsilon_g(f(x))\,f&#x27;(a) + \epsilon_g(f(x))\,\epsilon_f(x)\big)}_{\sigma(x)}
+    \end{align*}$$</span>
+</p>
+<p>
+    Note that in <span class="inline-math">$\sigma(x)$</span>, as <span class="inline-math">$x\to a$</span>, <span class="inline-math">$\epsilon_f(x)\to0$</span> and <span class="inline-math">$\epsilon_g(f(x))\to \epsilon_g(b) = 0$</span> by continuity.
+    Hence <span class="inline-math">$\sigma(x)\to 0$</span> as <span class="inline-math">$x\to a$</span>.
+</p>
+
+<h1>Informal proof using little o</h1>
+
+<p>
+    <span class="display-math">$$\begin{align*}
+    f&#x27;(x) &amp;= \lim_{h\to0}\frac1h\Big(F\big(g(x+h)\big) - F(g(x))\Big) \\
+    &amp;= \lim_{h\to0}\frac1h\Big(F\big(g(x)+hg&#x27;(x) + o(h)\big) - F(g(x))\Big) \\
+    &amp;= \lim_{h\to0}\frac1h\Big(\big(hg&#x27;(x)+o(h)\big)F&#x27;\big(g(x)\big) + o\big(hg&#x27;(x)+o(h)\big)\Big) \\
+    &amp;= g&#x27;(x)F&#x27;\big(g(x)\big) + \lim_{h\to 0}o\Big(g&#x27;(x) + \frac{o(h)}{h}\Big)
+    \end{align*}$$</span>
+</p>
+<p>
+    <span class="inline-math">$o(h)/h\to 0$</span>. Also <span class="inline-math">$g&#x27;(x)$</span> is a constant, and the little o of a constant is 0. Therefore the last term vanishes.
+</p>

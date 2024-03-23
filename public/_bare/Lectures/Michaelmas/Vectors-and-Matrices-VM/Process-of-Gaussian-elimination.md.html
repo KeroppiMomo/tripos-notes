@@ -1,0 +1,47 @@
+<p>
+    For a system of <span class="inline-math">$m$</span> linear equations in <span class="inline-math">$n$</span> unknowns,
+    <span class="display-math">$$\pmat{A_{11} &amp; A_{12} &amp; A_{13} &amp; \ldots &amp; A_{1n} \\
+    A_{21} &amp; A_{22} &amp; A_{23} &amp; \ldots &amp; A_{2n} \\
+    \vdots &amp; &amp; &amp; \ddots &amp; \vdots \\
+    A_{m1} &amp; A_{m2} &amp; A_{m3} &amp; \ldots &amp; A_{mn}}
+    \pmat{x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n}
+    =
+    \pmat{d_1 \\ d_2 \\ \vdots \\ d_m}
+    
+    \qquad
+    \qquad
+    
+    \begin{cases}
+    A_{11} x_1 + A_{12} x_2 + \ldots + A_{1n} x_n &amp;= d_1 \\
+    A_{21} x_1 + A_{22} x_2 + \ldots + A_{2n} x_n &amp;= d_2 \\
+    \vdots \\
+    A_{m1} x_1 + A_{m2} x_2 + \ldots + A_{mn} x_n &amp;= d_m \\
+    \end{cases}$$</span>
+</p>
+<p>
+    By assuming <span class="inline-math">$A_{11}\neq 0$</span> etc by reordering the equations or variables if needed, we write <span class="inline-math">$x_1$</span> in terms of the other variables, and then substitute into the other equations. Repeat and terminate when we have no equations with non-zero coefficients left. We will get
+    <span class="display-math">$$\pmat{A_{11} &amp; A_{12} &amp; A_{13} &amp; \ldots &amp; \ldots &amp; \ldots &amp; A_{1n} \\
+    0 &amp; A_{22}^{(2)} &amp; A_{23}^{(2)} &amp; \ldots &amp; \ldots &amp; \ldots &amp; A_{2n}^{(2)} \\
+    \vdots &amp; &amp; \ddots &amp;&amp;&amp; &amp;\vdots \\
+    0 &amp; \ldots &amp; 0 &amp; A_{rr}^{(r)} &amp; A_{r(r+1)}^{(r)} &amp; \ldots &amp; A_{rn}^{(n)} \\
+    0 &amp; \ldots &amp; 0 &amp; 0 &amp; 0 &amp; \ldots  &amp; 0 \\
+    \vdots &amp;&amp;&amp;&amp;&amp;&amp; \vdots \\
+    0 &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; 0}
+    \pmat{x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n}
+    =
+    \pmat{d_1 \\ d_2 \\ \vdots \\ d_m}
+    
+    \quad
+    \quad
+    
+    \begin{cases}
+    A_{11} x_1 &amp;+&amp; A_{12} x_2 &amp;+&amp; \ldots &amp;+&amp;\ldots&amp;+&amp;A_{1n} x_n &amp;=&amp; d_1 \\
+    &amp; &amp;A_{22}^{(2)} x_2 &amp;+&amp;\ldots &amp;+&amp; \ldots &amp;+&amp; A_{2n}^{(2)} x_n &amp;=&amp; d_2^{(2)} \\
+    &amp;&amp;&amp;\ddots &amp;&amp;&amp;&amp;&amp;&amp;&amp;\vdots \\
+    &amp;&amp;&amp;&amp;A_{rr}^{(r)} x_r &amp;+&amp; \ldots &amp;+&amp; A_{rn}^{(r)} x_n &amp;=&amp; d_r^{(r)} \\
+    &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;0 &amp;=&amp; d_{r+1}^{(r)} \\
+    &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;\vdots &amp;=&amp; \vdots \\
+    &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;0 &amp;=&amp; d_{n}^{(r)} \\
+    \end{cases}$$</span>
+    with <span class="inline-math">$A_{ii}^{(n)} \neq 0$</span> for all <span class="inline-math">$i=1,2,\ldots,r$</span>, where the superfix refers to the version number.
+</p>

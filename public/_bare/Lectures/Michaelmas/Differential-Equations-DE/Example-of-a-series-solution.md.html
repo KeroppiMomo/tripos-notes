@@ -1,0 +1,35 @@
+<p>
+    Consider the equation
+    <span class="display-math">$$ \alpha\frac{dy}{dx} + \beta y = 0. $$</span>
+</p>
+<p>
+    We have
+    <span class="display-math">$$ \frac{dy}{dx} = \sum_{n=1}^\infty n a_n x^{n-1} = \sum_{n=0}^\infty (n+1)a_{n+1} x^n. $$</span>
+</p>
+<p>
+    Substituting,
+    <span class="display-math">$$\begin{align*}
+    0 &amp;= \alpha\sum_{n=0}^\infty (n+1) a_{n+1} x^n + \beta\sum_{n=0}^\infty a_n x^n \\
+    &amp;= \sum_{n=0}^\infty\Big(\alpha(n+1)a_{n+1} + \beta a_n\Big)x^n.
+    \end{align*}$$</span>
+    Since each coefficient in the power series of 0 is 0,
+    <span class="display-math">$$\begin{align*}
+    \alpha(n+1)a_{n+1} + \beta a_n &amp;= 0 \\
+    a_{n+1} &amp;= -\frac{\beta}{\alpha}\frac{1}{n+1} a_n.
+    \end{align*}$$</span>
+</p>
+<p>
+    Now solving the recurrence relation,
+    <span class="display-math">$$\begin{align*}
+    a_n &amp;= \Big(-\frac\beta\alpha\Big)\frac 1n a_{n-1} \\
+    &amp;= \Big(-\frac\beta\alpha\Big)^2 \frac 1{n(n-1)} a_{n-2} \\
+    &amp;= \Big(-\frac\beta\alpha\Big)^3 \frac 1{n(n-1)(n-2)} a_{n-3} \\
+    &amp;= \ldots \\
+    &amp;= \Big(-\frac\beta\alpha\Big)^n \frac 1{n!} a_0. \\
+    \end{align*}$$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ y(x) = a_0 \sum_{k=0}^\infty\frac{1}{n!}\Big(-\frac\beta\alpha\Big)^nx^n,$$</span>
+    which is the series expansion of the exact solution <span class="inline-math">$y(x) = A e^{-(\beta/\alpha)x}$</span>.
+</p>

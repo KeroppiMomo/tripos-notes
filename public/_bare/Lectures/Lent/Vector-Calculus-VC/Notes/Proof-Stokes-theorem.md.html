@@ -1,0 +1,18 @@
+<p>
+    Let <span class="inline-math">$\v x(u,v)$</span> be the parametrisation of <span class="inline-math">$S$</span> and <span class="inline-math">$\v x\big(u(t), v(t)\big)$</span> be the parametrisation of <span class="inline-math">$\partial S$</span>. Let <span class="inline-math">$A$</span> be the area on the <span class="inline-math">$(u,v)$</span> plane associated with <span class="inline-math">$S$</span>.
+</p>
+<p>
+    Then
+    <span class="display-math">$$\begin{align*}
+    \oint_{\partial S} \v F\cdot d\v x = \oint_{\partial A} \v F\cdot\left(\pdvd xu\,du + \pdvd xv\, dv\right) = \oint_{\partial A} \left(\v F\cdot\pdvd xu\right) du+\left(\v F\cdot\pdvd xv\right)dv.
+    \end{align*}$$</span>
+    To apply Green's theorem, we need to compute
+    <span class="display-math">$$\begin{align*}
+    \pdd u\left(\v F\cdot\pdvd xv\right) - \pdd v\left(\v F\cdot\pdvd xu\right) &amp;= \pdfd{F_i}{x^j}\pdfd{x^j}u \pdfd{x^i}v + F_i\frac{\partial^2 x_i}{} - \pdfd{F_i}{x^j}\pdfd{x^j}v \pdfd{x^i}u \\
+    &amp;= (\delta_{ip}\delta_{jq} - \delta_{jp}\delta_{iq})\pdfd{F_i}{x^j} \pdfd{x^p}v\pdfd{x^q}u \\
+    &amp;= \epsilon_{jik}\epsilon_{qpk} \pdfd{F_i}{x^j} \pdfd{x^p}v\pdfd{x^q}u \\
+    &amp;= (\nabla\times\v F)\cdot\left(\pdvd xu\times\pdvd xv\right).
+    \end{align*}$$</span>
+    Hence
+    <span class="display-math">$$ \oint_{\partial S}\v F\cdot d\v x = \int_A (\nabla\times\v F)\cdot\left(\pdvd xu\times\pdvd xv\right) \,du\,dv = \int_S(\nabla\times\v F)\cdot d\v S.$$</span>
+</p>

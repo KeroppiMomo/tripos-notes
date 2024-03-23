@@ -1,0 +1,21 @@
+<p>
+    Let us expand around <span class="inline-math">$x=0$</span>.
+    <span class="display-math">$$\begin{align*}
+    f(x) &amp;= f(0) + \int_0^x f&#x27;(t)\,dt &amp;&amp;\text{fundamental theorem of calculus} \\
+    &amp;= f(0) - \int_0^x f&#x27;(t)\,d(x-t) \\
+    &amp;= f(0) - \big[(x-t)f&#x27;(t)\big]_0^x +\int_0^x(x-t)f&#x27;&#x27;(t)\,dt &amp;&amp;\text{integration by parts}\\
+    &amp;= f(0) + f&#x27;(0)x - \frac12\int_0^xf&#x27;&#x27;(t)\,d(x-t)^2 \\
+    &amp;= f(0) + f&#x27;(0)x + \frac{f&#x27;&#x27;(0)}{2!}x^2 +\frac1{2!}\int_0^x (x-t)^2f^{(3)}(t)\,dt &amp;&amp;\text{integration by parts}\\
+    &amp;= f(0) + f^{(1)}(0)x + \frac{f^{(2)}(0)}{2!}x^2 +\frac{f^{(3)}(0)}{3!}x^3 + \frac1{3!}\int_0^x(x-t)^3f^{(4)}(t)\,dt \\
+    &amp;= \ldots \\
+    &amp;= \sum_{k=0}^n \frac{f^{(k)}(0)}{k!}x^k + \underbrace{\frac1{n!}\int_0^x (x-t)^nf^{(n+1)}(t)\,dt}_{E_n}
+    \end{align*}$$</span>
+</p>
+<p>
+    Using a variant of the mean value theorem,
+    this can be written as
+    <span class="display-math">$$\begin{align*}
+    E_n &amp;= \frac{f^{(n+1)}(x_n)}{n!}\int_0^x(x-t)^n\,dt \\
+    &amp;= \frac{f^{(n+1)}(x_n)}{(n+1)!}x^{n+1}.
+    \end{align*}$$</span>
+</p>

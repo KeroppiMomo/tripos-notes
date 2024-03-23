@@ -1,0 +1,32 @@
+<p>
+    Suppose <span class="inline-math">$0\leq x&lt;1$</span>.
+</p>
+<!-- BEGIN BLOCK ID 3d10b4 -->
+<p id="^3d10b4">
+    Clearly
+    <span class="display-math">$$ f^{(n)}(x) = r(r-1)\ldots(r-n+1)(1+x)^{r-n}. $$</span>
+</p>
+
+<!-- END BLOCK ID 3d10b4 -->
+<!-- BEGIN BLOCK ID 2d88c6 -->
+<p id="^2d88c6">
+    By Taylor's theorem with Lagrange remainder, for <span class="inline-math">$n\geq r$</span>,
+    <span class="display-math">$$ (1+x)^r = 1+\pmat{r\\1}x + \ldots + \pmat{r\\n-1}x^{n-1} + \ub{\pmat{r\\n}\frac{x^n}{(1+\theta x)^{n-r}}}_{R_n(x)}$$</span>
+    for some <span class="inline-math">$\theta\in(0,1)$</span>, which depends <span class="inline-math">$n$</span> and <span class="inline-math">$x$</span>.
+</p>
+
+<!-- END BLOCK ID 2d88c6 -->
+<p>
+    Since <span class="inline-math">$x\geq 0$</span>, we have <span class="inline-math">$1+\theta x\geq 1$</span>.
+</p>
+<p>
+    Furthermore we'll show that <span class="inline-math">$\sum_n\pmat{r\\n} x^n$</span> converges absolutely:
+    the ratio of terms is
+    <span class="display-math">$$\left|\frac{\pmat{r\\n+1}x^{n+1}}{\pmat{r\\n}x}\right| = \left|\frac{r-n}{n+1}\right||x| \to |x| &lt; 1$$</span>
+    so by the ratio test, the series converges absolutely and hence converges, and therefore <span class="inline-math">$\pmat{r\\n}x^n \to 0$</span> as <span class="inline-math">$n\to\infty$</span>.
+</p>
+<p>
+    Hence
+    <span class="display-math">$$ |R_n(x)| = \left|\pmat{r\\n} \frac{x^n}{(1+\theta x)^{n-r}}\right| \leq \left|\pmat{r\\n} x^n\right| \to 0$$</span>
+    so <span class="inline-math">$R_n(x) \to 0$</span>.
+</p>

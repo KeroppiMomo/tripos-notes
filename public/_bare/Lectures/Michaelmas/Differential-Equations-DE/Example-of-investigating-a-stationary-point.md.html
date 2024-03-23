@@ -1,0 +1,65 @@
+<p>
+    Consider
+    <span class="display-math">$$ f(x,y) = 4x^3 - 12xy + y^2 + 10y + 6. $$</span>
+</p>
+<p>
+    Computing the first derivatives
+    <span class="display-math">$$\begin{align*}
+    f_x &amp;= 12x^2 - 12y, \\
+    f_y &amp;= -12x + 2y + 10.
+    \end{align*}$$</span>
+    Stationary points satisfy <span class="inline-math">$f_x = f_y = 0$</span>. So
+    <span class="display-math">$$\begin{align*}
+    0 &amp;= 12x^2 - 12y \\
+    y &amp;= x^2 \\
+    0 &amp;= -12x + 2x^2 + 10 \\
+    0 &amp;= (x - 5)(x - 1)
+    \end{align*}$$</span>
+    and so the stationary points are <span class="inline-math">$(1,1)$</span> and <span class="inline-math">$(5,25)$</span>.
+</p>
+<p>
+    Now we compute the second derivatives
+    <span class="display-math">$$\begin{align*}
+    f_{xx} &amp;= 24x \\
+    f_{xy} &amp;= -12 \\
+    f_{yy} &amp;= 2.
+    \end{align*}$$</span>
+</p>
+<ul>
+<li>
+    <p>
+        For <span class="inline-math">$(1,1)$</span>, the Hessian is
+        <span class="display-math">$$ H = \pmat{24 &amp; -12 \\ -12 &amp; 2}. $$</span>
+        Using <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Proposition-Sylvester-s-criterion.html">Sylvester's criterion</a>, we compute
+        <span class="display-math">$$\begin{align*}
+        |H_1| &amp;= 24 \\
+        |H_2| &amp;= 24\cdot2 - (-12)(-12) = -96
+        \end{align*}$$</span>
+        so the signature is <span class="inline-math">$+,-$</span> and the criterion does not work.
+    </p>
+    <p>
+        But notice that <span class="inline-math">$\lambda_1\lambda_2 = |H| = -96 &lt; 0$</span> so <span class="inline-math">$\lambda_1, \lambda_2\neq 0$</span> and have opposite signs. Thus <span class="inline-math">$(1,1)$</span> is a saddle point.
+    </p>
+    <p>
+        The contours locally satisfy
+        <span class="display-math">$$\begin{align*}
+        \delta\v xH\delta\v x^T &amp;= \text{const.} \\
+        24\delta x^2 + 2(-12)\delta x\delta y +2\delta y^2 &amp;= \text{const.}
+        \end{align*}$$</span>
+        which is a hyperbola.
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$(5,25)$</span>, the Hessian is
+        <span class="display-math">$$ H = \pmat{120 &amp; -12 \\ -12 &amp; 2}. $$</span>
+        Computing,
+        <span class="display-math">$$\begin{align*}
+        |H_1| &amp;= 120 \\
+        |H_2| &amp;= 120\cdot2 - (-12)(-12) = 96
+        \end{align*}$$</span>
+        so the signature is <span class="inline-math">$+,+$</span> and hence <span class="inline-math">$H$</span> is positive definite. Therefore, <span class="inline-math">$(5,25)$</span> is a local minimum.
+    </p>
+    
+</li>
+</ul>

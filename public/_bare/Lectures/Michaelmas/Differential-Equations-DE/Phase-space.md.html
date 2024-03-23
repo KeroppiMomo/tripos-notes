@@ -1,0 +1,143 @@
+<!-- BEGIN BLOCK ID 752aa7 -->
+<p id="^752aa7">
+    For an <span class="inline-math">$n$</span>-th order linear ODE
+    <span class="display-math">$$ y^{(n)} + p(x) y^{(n-1)} + \ldots + q(x) y = f(x), $$</span>
+    <span class="inline-math">$y^{(n)}(x_0)$</span> is determined by <span class="inline-math">$y(x_0), y&#x27;(x_0), y&#x27;&#x27;(x_0), \ldots, y^{(n-1)}(x_0)$</span>. Similarly by differentiating the ODE, we can determine higher derivatives.
+</p>
+
+<!-- END BLOCK ID 752aa7 -->
+<p>
+    Therefore we can construct a Taylor series of <span class="inline-math">$y(x)$</span> about <span class="inline-math">$x_0$</span> if <span class="inline-math">$y(x_0), y&#x27;(x_0), y&#x27;&#x27;(x_0), \ldots, y^{(n-1)}(x_0)$</span> are specified. By some theorem, a solution <span class="inline-math">$y(x)$</span> is determined by these initial conditions.
+</p>
+<!-- BEGIN BLOCK ID 0e6c00 -->
+<p id="^0e6c00">
+    The state of system is fully specified at any <span class="inline-math">$x$</span> by the solution vector
+    <span class="display-math">$$ \vec Y(x) = \begin{pmatrix} y(x) \\ y&#x27;(x) \\ y&#x27;&#x27;(x) \\ \vdots \\ y^{(n-1)}(x) \end{pmatrix}. $$</span>
+    This means at any <span class="inline-math">$x=x_0$</span>, <span class="inline-math">$\vec Y(x_0)$</span>, a point in the <span class="inline-math">$n$</span> dimensional phase space, determines the full solution <span class="inline-math">$y(x)$</span>.
+</p>
+
+<!-- END BLOCK ID 0e6c00 -->
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Wronskian)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Definition-Wronskian.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The Wronskian of <span class="inline-math">$n$</span> functions <span class="inline-math">$y_i(x)$</span> for <span class="inline-math">$i=1,2,\ldots, n$</span> is the determinant of the fundamental matrix, defined by
+                <span class="display-math">$$
+                W(x) = \begin{vmatrix}
+                y_1 &amp; y_2 &amp; \ldots &amp; y_n \\
+                y_1&#x27; &amp; y_2&#x27; &amp; \ldots &amp; y_n&#x27; \\
+                y_1&#x27;&#x27; &amp; y_2&#x27;&#x27; &amp; \ldots &amp; y_n&#x27;&#x27; \\
+                \vdots &amp; \vdots &amp; &amp; \vdots \\
+                y_1^{(n-1)} &amp; y_2^{(n-1)} &amp; \ldots &amp; y_n^{(n-1)}
+                \end{vmatrix}.
+                $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (linear dependence and zero Wronskian)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Proposition-linear-dependence-and-zero-Wronskian.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$n$</span> functions <span class="inline-math">$\{y_i(x)\}$</span> are linearly dependent, then their Wronskian <span class="inline-math">$W(x) = 0$</span> for all <span class="inline-math">$x$</span>.
+            </p>
+            <p>
+                Its contraposition is that if <span class="inline-math">$W(x) \neq 0$</span>, then <span class="inline-math">$\{y_i(x)\}$</span> are linearly independent.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Proof-linear-dependence-and-zero-Wronskian.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Abel's theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Theorem-Abel-s-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <!-- BEGIN BLOCK ID 715941 -->
+            <p id="^715941">
+                Given any two solutions of a linear homogenous second-order ODE
+                <span class="display-math">$$ y&#x27;&#x27; + p(x) y&#x27; + q(x) y = 0, $$</span>
+                if <span class="inline-math">$p(x),q(x)$</span> are continuous on an interval <span class="inline-math">$I$</span>, then Abel's identity states that the Wronskian satisfies <em>Abel's identity</em>
+                <span class="display-math">$$ W(x) = W(x_0) \exp\Big(-\int_{x_0}^x p(u) \,du\Big). $$</span>
+            </p>
+            
+            <!-- END BLOCK ID 715941 -->
+            <p>
+                In particular either
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$W(x) = 0$</span> for all <span class="inline-math">$x\in I$</span>; or
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$W(x) \neq 0$</span> for all <span class="inline-math">$x\in I$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Proof-Abel-s-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    This tells us that two solution vectors <span class="inline-math">$\vec Y_1(x), \vec Y_2(x)$</span> are either always collinear in the phase space or never as <span class="inline-math">$x$</span> varies.
+    Therefore, if <span class="inline-math">$\vec Y_1(x_0), \vec Y_2(x_0)$</span> form a basis, then <span class="inline-math">$\vec Y_1(x), \vec Y_2(x)$</span> also form a basis at any <span class="inline-math">$x$</span>.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (Wronskian and missing y' term)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Corollary-Wronskian-and-missing-y-term.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a homogenous linear second-order ODE with missing <span class="inline-math">$y&#x27;$</span> term
+                <span class="display-math">$$ y&#x27;&#x27; + q(x) y = 0, $$</span>
+                the Wronskian <span class="inline-math">$W(x)$</span> is a constant function.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Proof-Wronskian-and-missing-y-term.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Reduction of order using Abel's theorem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Reduction-of-order-using-Abel-s-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                By <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Theorem-Abel-s-theorem.html#^715941">Abel's identity</a>,
+                <span class="display-math">$$ y_1 y_2&#x27; - y_1&#x27; y_2 = W(x_0) \exp\Big(-\int_{x_0}^x p(u)\,du\Big), $$</span>
+                which, if <span class="inline-math">$y_1$</span> is known, gives a first-order linear ODE of <span class="inline-math">$y_2$</span>. Using quotient rule,
+                <span class="display-math">$$ \frac{d}{dx}\frac{y_2}{y_1} = \frac{W(x_0)}{y_1^2}\exp\Big(-\int_{x_0}^x p(u)\,du\Big) $$</span>
+                <span class="display-math">$$ y_2(x) = y_1(x) \int^x \frac{\exp\Big(-\int^\xi p(u)\,du\Big)}{y_1(\xi)^2}\,d\xi, $$</span>
+                which is equivalent to the <a href="/tripos-notes/Lectures/Michaelmas/Differential-Equations-DE/Reduction-of-order-of-linear-second-order-ODEs.html">reduction of order formula</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>

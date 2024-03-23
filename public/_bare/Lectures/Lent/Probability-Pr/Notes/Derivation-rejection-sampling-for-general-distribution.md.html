@@ -1,0 +1,13 @@
+<p>
+    <span class="display-math">$$ \begin{align*}
+        \prob(X\in B|N=n) &amp;= \frac{\prob(V_k &gt; f(U_k)/\lambda \text{ for } k =1,\ldots,n-1 \text{ and } V_n \leq f(U_n)/\lambda \text{ and } U_n \in B)}{\prob(V_k &gt; f(U_k)/\lambda \text{ for } k =1,\ldots,n-1 \text{ and } V_n \leq f(U_n)/\lambda)} \\
+        &amp;= \frac{\prob(V_n \leq f(U_n)/\lambda \text{ and } U_n \in B)}{\prob(V_n\leq f(U_n)/\lambda)} &amp;&amp;\text{by independence} \\
+        &amp;= \frac{\int_{[0,1]^d} 1_{\set{u\in B}} \int_{0}^{1} 1_{\set{v\leq f(u)/\lambda}} \, dv \, du}{\int_{[0,1]^d} \int_{0}^{1} 1_{\set{v\leq f(u)/\lambda}} \, dv \, du} \\
+        &amp;= \frac{\int_{B} \frac{f(u)}{\lambda} du}{\int_{[0,1]^d} \frac{f(u)}{\lambda} du} \\
+        &amp;= \int_{B} f(u)\, du
+    \end{align*} $$</span>
+    so by the law of total probability,
+    <span class="display-math">$$ \begin{align*}
+        \prob(X\in B) &amp;= \sum_{n=1}^{\infty} \int_{B} f(u)\, du \prob(N=n) = \int_{B} f(u)\,du.
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,31 @@
+<p>
+    First if <span class="inline-math">$T\sim E(\lambda)$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        \prob(T &gt; t) = \int_{t}^{\infty} \lambda e^{-\lambda s} \, ds = e^{\lambda t}
+    \end{align*} $$</span>
+    so for <span class="inline-math">$s,t &gt; 0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \prob(T&gt;s+t | T&gt;s) = \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = e^{-\lambda t} = \prob(T &gt; t).
+    \end{align*} $$</span>
+</p>
+<p>
+    Now suppose a random variable <span class="inline-math">$T$</span> satisfies <span class="inline-math">$\prob(T&gt;s+t) = \prob(T&gt;s) \prob(T&gt;t)$</span> and is not trivially identically to <span class="inline-math">$0$</span> or <span class="inline-math">$\infty$</span>.
+    For <span class="inline-math">$t\geq 0$</span> and <span class="inline-math">$m\in\N$</span>, by induction,
+    <span class="display-math">$$ \begin{align*}
+        \prob(T &gt; mt) = \prob(T &gt; t)^{m},
+    \end{align*} $$</span>
+    and for all <span class="inline-math">$n\in\N$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \prob(T &gt; \frac{m}{n})^{n} = \prob(T &gt; m) = \prob(T &gt; 1)^{m} \implies \prob(T &gt; \frac{m}{n}) = \prob(T &gt; 1)^{m/n}.
+    \end{align*} $$</span>
+    Now by the assumption that <span class="inline-math">$T$</span> is not trivial we have <span class="inline-math">$\prob(T &gt; 1) \in (0, 1)$</span>, so let
+    <span class="display-math">$$ \begin{align*}
+        \lambda = - \log \prob(T&gt;1) \in (0,\infty).
+    \end{align*} $$</span>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \prob(T&gt;t) = e^{-\lambda t} \quad \forall t\in\Q.
+    \end{align*} $$</span>
+    But both sides are non-increasing in <span class="inline-math">$t$</span>, so
+    this extends to all <span class="inline-math">$t\geq 0$</span> so <span class="inline-math">$T\sim E(\lambda)$</span>.
+</p>

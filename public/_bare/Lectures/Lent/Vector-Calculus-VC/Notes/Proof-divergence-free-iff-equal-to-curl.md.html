@@ -1,0 +1,30 @@
+<p>
+    If <span class="inline-math">$\v F = \nabla\times\v A$</span>, then
+    <span class="display-math">$$ \v F = \epsilon_{ijk}\v e_i \pdfd{A_k}{x^j} $$</span>
+    so
+    <span class="display-math">$$ \nabla\cdot\v F = \epsilon_{ijk}\frac{\partial^2 A_k}{\partial x^i\partial x^j} = 0$$</span>
+    by anti-symmetry.
+</p>
+<p>
+    Conversely, suppose <span class="inline-math">$\nabla\cdot\v F=0$</span>. We'll construct the field <span class="inline-math">$\v A$</span>. Set <span class="inline-math">$A_z = 0$</span>, then
+    <span class="display-math">$$ \nabla\times\v A = \pmat{-\pdfd{A_y}{z} \\
+    \pdfd{A_x}{z} \\
+    \pdfd{A_y}{x} - \pdfd{A_x}{y}}.$$</span>
+    With reference to this, we set <span class="inline-math">$\v A$</span> as
+    <span class="display-math">$$ \v A = \pmat{ \int_0^z F_y(x,y,z&#x27;)\,dz&#x27; \\
+    \int_0^x F_z(x,y,0)\,dx&#x27;-\int_0^z F_x(x,y,z&#x27;)\,dz&#x27; \\
+    0}.$$</span>
+</p>
+<p>
+    This way we have
+    <span class="display-math">$$\begin{align*}
+    (\nabla\times\v A)_x &amp;= F_x(x,y,z) \\
+    (\nabla\times\v A)_y &amp;= F_y(x,y,z) \\
+    (\nabla\times\v A)_z
+    &amp;= F_z(x,y,0) - \int_0^z \pdfd{F_x}x(x,y,z&#x27;)\,dz - \int_0^z \pdfd{F_y}y (x,y,z&#x27;)\,dz&#x27; \\
+    &amp;= F_z(x,y,0) + \int_0^z \pdfd{F_z}{z}(x,y,z&#x27;)\,dz&#x27; &amp;\text{since }\nabla\cdot\v F=0 \\
+    &amp;= F_z(x,y,0) + \big[F_z(x,y,z&#x27;)\big]_0^z \\
+    &amp;= F_z(x,y,z)
+    \end{align*}$$</span>
+    as required.
+</p>

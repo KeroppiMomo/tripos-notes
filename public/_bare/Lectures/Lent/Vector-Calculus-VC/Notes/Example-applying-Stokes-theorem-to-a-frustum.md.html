@@ -1,0 +1,28 @@
+<p>
+    We will integrate <span class="inline-math">$\v F=(0,xz,0)$</span> along the surface <span class="inline-math">$S$</span>
+    <span class="display-math">$$ z^2 = x^2+y^2,\qquad a\leq z\leq b.$$</span>
+</p>
+<p>
+    For the surface integral,
+    use cylindrical polars to parametrise the surface:
+    <span class="display-math">$$ \v x(\rho, \phi) = (\rho\cos\phi, \rho\sin\phi, \rho), \qquad a\leq\rho\leq b, 0\leq \phi\leq 2\pi. $$</span>
+    Tangent vectors
+    <span class="display-math">$$ \pdvd x\rho = (\cos\phi, \sin\phi, 1),\quad \pdvd x\phi=\rho(-\sin\phi,\cos\phi,0)$$</span>
+    so
+    <span class="display-math">$$ d\v S = \pdvd x\rho\times\pdvd x\phi\,d\rho\,d\phi = \rho(-\cos\phi, -\sin\phi, 1)\,d\rho\,d\phi. $$</span>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+    \int_S (\nabla\times\v F)\cdot d\v S &amp;= \int_0^{2\pi}\int_a^b \,(-x,0,z)\cdot(-\cos\phi,-\sin\phi,1)\rho\,d\rho\,d\phi \\
+    &amp;= \int_0^{2\pi} \int_a^b\rho^2(1+\cos^2\phi)\,d\rho\,d\phi \\
+    &amp;= \pi(b^3-a^3).
+    \end{align*} $$</span>
+</p>
+<p>
+    The boundary of <span class="inline-math">$S$</span> consists of two circles, <span class="inline-math">$C_a:\rho=z=a$</span> and <span class="inline-math">$C_b:\rho=z=b$</span>. Integrating anti-clockwise around circle <span class="inline-math">$\rho=z=R$</span> gives
+    <span class="display-math">$$\v x(\phi) = R(\cos\phi, \sin\phi, 1) \implies d\v x = R(-\sin\phi, \cos\phi,0)\,d\phi$$</span>
+    <span class="display-math">$$\oint_{C_R} \v F\cdot d\v x = \int_0^{2\pi} (0,R^2\cos\phi,0)\cdot R(-\sin\phi,\cos\phi,0)\,d\phi = \pi R^3.$$</span>
+</p>
+<p>
+    To use consistent orientation, since <span class="inline-math">$d\v S$</span> points inwards, <span class="inline-math">$C_b$</span> should go anti-clockwise and <span class="inline-math">$C_a$</span> should go clockwise, so
+    <span class="display-math">$$ \int_{\partial S} \v F\cdot d\v x = \pi(b^3-a^3). $$</span>
+</p>

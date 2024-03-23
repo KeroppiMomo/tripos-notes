@@ -1,0 +1,49 @@
+<p>
+    Question: drop a needle with length <span class="inline-math">$l$</span> on a floor ruled with parallel lines with distance <span class="inline-math">$L\geq l$</span> apart.
+    What is the probability <span class="inline-math">$p$</span> that the needle crosses one of the lines?
+</p>
+<p>
+    Model a needle by the distance <span class="inline-math">$Y$</span> from the lowest point to the closest line above, and the angle <span class="inline-math">$\Theta$</span> that the needle makes with a parallel line.
+    Then it's reasonable to assume <span class="inline-math">$Y\sim U[0,L]$</span> and <span class="inline-math">$\Theta \sim U[0, \pi]$</span> are independent.
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/axemfhmajt?embed" width="400" height="400"></iframe>
+</p>
+<p>
+    The needle cuts the line above iff <span class="inline-math">$l\sin\Theta\geq Y$</span>.
+    <span class="display-math">$$ \begin{align*}
+        p &amp;= \int_{0}^{\pi} \int_{0}^{L} \frac{1}{\pi L} 1_{\set{l\sin \theta \geq y}}\, dy \, d\theta \\
+        &amp;= \frac{1}{\pi L} \int_{0}^{\pi} l\sin\theta\, d\theta \\
+        &amp;= \frac{2l}{\pi L}
+    \end{align*} $$</span>
+    This gives us a way to determine empiraclly <span class="inline-math">$\pi = 2l/pL \equiv f(p)$</span>.
+</p>
+
+<h3>Sample error</h3>
+
+<p>
+    We acquire the proportion of <span class="inline-math">$N$</span> needles that hits lines <span class="inline-math">$\hat p_N \sim (1/N)B(N, p)$</span> to get <span class="inline-math">$\hat \pi_N = f(\hat p_N)$</span>.
+</p>
+<p>
+    For large <span class="inline-math">$N$</span> we expect <span class="inline-math">$\hat p_N$</span> to be close to <span class="inline-math">$p$</span>, so we approximate
+    <span class="display-math">$$ \begin{align*}
+        \hat \pi_N = f(\hat p_N) \approx f(p) + (\hat p_N - p)f&#x27;(p).
+    \end{align*} $$</span>
+    Then we get
+    <span class="display-math">$$ \begin{align*}
+        \var(\hat \pi_N) &amp;\approx (f&#x27;(p))^2 \var(\hat p_N) \\
+        &amp;= \left(-\frac{2l}{p^2 L}\right)^2 \frac{1}{N^2}Np(1-p) \\
+        &amp;= \frac{\pi^2}{p^2}\frac{p(1-p)}{N} \\
+        &amp;= \frac{\pi^2}{N} \frac{1-p}{p}.
+    \end{align*} $$</span>
+    To minimise the error, we want to minimise <span class="inline-math">$\var(\hat \pi_N)$</span>, so take <span class="inline-math">$l$</span> to be maximum <span class="inline-math">$l=L$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        \var(\hat \pi_N) =\frac{\pi^2}{N}\left(\frac{\pi}{2} - 1\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    Using <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Sample-error-via-central-limit-theorem.html">Sample error via central limit theorem</a>, to have 1/1000 accuracy of <span class="inline-math">$\pi$</span> with probability 99%,
+    <span class="display-math">$$ \begin{align*}
+        N = \Phi\inv(0.995)(1000)^2 \pi^2\left(\frac{\pi}{2}-1\right) = 3.75\times 10^7.
+    \end{align*} $$</span>
+</p>

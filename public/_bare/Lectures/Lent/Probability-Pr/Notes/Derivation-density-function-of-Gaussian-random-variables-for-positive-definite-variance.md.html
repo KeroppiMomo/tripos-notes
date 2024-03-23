@@ -1,0 +1,28 @@
+<p>
+    The density function of <span class="inline-math">$Z$</span> is, due to independence of <span class="inline-math">$Z_1, \ldots, Z_n$</span>,
+    <span class="display-math">$$ \begin{align*}
+        f_Z(z) = \prod_{i=1}^{n} f_{Z_i}(z_i) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi}} e^{-z_i^2/2} = \frac{1}{\sqrt{(2\pi)^n}} e^{-|z|^2/2}.
+    \end{align*} $$</span>
+</p>
+<p>
+    When <span class="inline-math">$V$</span> is positive definite, its eigenvalues are all positive.
+    Then <span class="inline-math">$\sigma$</span> is invertible. So we can invert
+    <span class="display-math">$$ \begin{align*}
+        x = \sigma z + \mu \iff z = \sigma\inv(x-\mu).
+    \end{align*} $$</span>
+    The Jacobian is
+    <span class="display-math">$$ \begin{align*}
+        J = \pdfd{z}{x} = \det \sigma\inv = \frac{1}{\sqrt{\det V}}.
+    \end{align*} $$</span>
+    By a change of variable,
+    <span class="display-math">$$ \begin{align*}
+        f_X(x) = f_Z(z) |J| = \frac{1}{\sqrt{(2\pi)^n \det V}} \exp\left(-\frac{1}{2} |z|^2\right).
+    \end{align*} $$</span>
+    We further find <span class="inline-math">$|z|^2$</span> in terms of <span class="inline-math">$x$</span> as
+    <span class="display-math">$$ \begin{align*}
+        |z|^2 &amp;= z^T z \\
+        &amp;= (x-\mu)^T (\sigma\inv)^T \sigma\inv (x-\mu) \\
+        &amp;= (x-\mu)^T V\inv (x-\mu) &amp;&amp;\text{by }V=\sigma\sigma^T.
+    \end{align*} $$</span>
+    Substituting gives the result.
+</p>

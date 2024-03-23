@@ -1,0 +1,30 @@
+<p>
+    Note that <span class="inline-math">$fg = \frac{1}{4}\left((f+g)^2 - (f-g)^2\right)$</span> so it suffices to show that <span class="inline-math">$f^2$</span> is integrable.
+</p>
+<p>
+    Firstly
+    <span class="display-math">$$ \begin{align*}
+        f(x)^2 - f(y)^2 &amp;= \left(f(x) + f(y)\right)\left(f(x) - f(y)\right) \\
+        &amp;\leq \left(|f(x)| + |f(y)|\right)\left(f(x) - f(y)\right) \\
+        &amp;\leq 2\sup_I |f| \left(\sup_I f - \inf_I f\right)
+    \end{align*} $$</span>
+    and taking supremum over <span class="inline-math">$x$</span> and <span class="inline-math">$y$</span> gives
+    <span class="display-math">$$ \begin{align*}
+        \sup_I f^2 - \inf_I f^2 \leq 2\sup_I|f|\left(\sup_I f - \inf_I f\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$|f(x)| \leq K$</span> for all <span class="inline-math">$x\in[a,b]$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        U(f^2, \mathcal{D}) - L(f^2, \mathcal{D}) &amp;\leq \sum_{j=1}^{n} 2(x_j - x_{j-1}) \sup_{[x_{j-1}, x_j]} |f|\left(\sup_{[x_{j-1}, x_j]} f - \inf_{[x_{j-1}, x_j]} f\right) \\
+        &amp;\leq 2\sup_{[a,b]} |f| \left(U(f,\mathcal{D}) - L(f,\mathcal{D})\right) \\
+        &amp;\leq 2K \left(U(f,\mathcal{D}) - L(f,\mathcal{D})\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore using Cauchy criterion, given <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$\mathcal{D}$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        &amp; U(f,\mathcal{D}) - L(f,\mathcal{D}) &lt; \frac{\epsilon}{2K} \implies U(f^2,\mathcal{D}) - L(f^2,\mathcal{D}) &lt; \epsilon.
+    \end{align*} $$</span>
+    Hence <span class="inline-math">$f^2$</span> is integrable.
+</p>

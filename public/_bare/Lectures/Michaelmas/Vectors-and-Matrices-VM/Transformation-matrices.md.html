@@ -1,0 +1,118 @@
+<p>
+    Suppose we want to change the basis from <span class="inline-math">$\set{\v e_1, \v e_2, \ldots, \v e_n}$</span> to <span class="inline-math">$\set{\v e_1&#x27;, \v e_2&#x27;, \ldots, \v e_n&#x27;}$</span>.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Change-of-basis matrix
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Change-of-basis-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Define the change-of-basis matrix <span class="inline-math">$P$</span> by (using summation notation)
+                <span class="display-math">$$ \v e_j&#x27; = P_{ij} \v e_i. $$</span>
+                To change it back, use the inverse matrix <span class="inline-math">$P\inv$</span>
+                <span class="display-math">$$ \v e_i = (P\inv)_{ij} \v e_j&#x27;. $$</span>
+                (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-of-change-of-basis-matrix.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Transformation law for vectors
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Transformation-law-for-vectors.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                To transform a vector <span class="inline-math">$\v u$</span> from <span class="inline-math">$\v e_i$</span> to <span class="inline-math">$\v e_j&#x27;$</span> basis, multiply by <span class="inline-math">$P\inv$</span>:
+                <span class="display-math">$$ u_j&#x27; = (P\inv)_{jk} u_k, \qquad \v u&#x27; = P\inv \v u. $$</span>
+                To transform it back, multiply by <span class="inline-math">$P$</span>:
+                <span class="display-math">$$ u_i = P_{ij} u_j&#x27;, \qquad \v u = P\v u&#x27;. $$</span>
+                (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-of-transformation-law-for-vectors.html">Derivation and notes</a>)
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Example-of-transformation-law-for-vectors.html">Example</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Transformation law for matrices
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Transformation-law-for-matrices.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider linear map <span class="inline-math">$\alpha: \C^m \to \C^n$</span> with associated <span class="inline-math">$n\times m$</span> matrix <span class="inline-math">$A$</span>.
+            </p>
+            <p>
+                To transform to a matrix that takes the input in the new basis and output a vector in the new basis, if <span class="inline-math">$P$</span> is the change-of-basis matrix of <span class="inline-math">$\C^m$</span> and <span class="inline-math">$Q$</span> is that of <span class="inline-math">$\C^n$</span>, use
+                <span class="display-math">$$ A&#x27; = Q\inv A P. $$</span>
+                (<a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Derivation-of-transformation-law-for-square-matrices.html">Derivation</a>)
+            </p>
+            <p>
+                For <span class="inline-math">$\alpha: \C^n\to\C^n$</span>, we usually transform to the same basis in domain and codomain, so
+                <span class="display-math">$$ A&#x27; = P\inv AP. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (similar matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-similar-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Two <span class="inline-math">$n\times n$</span> matrices <span class="inline-math">$A,B$</span> are similar if there exists an invertible matrix <span class="inline-math">$P$</span> such that
+                <span class="display-math">$$ B = P\inv A P. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (similar matrices have the same characteristic polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-similar-matrices-have-the-same-characteristic-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$A,B$</span> are similar matrices, then their characteristic polynomials equal:
+                <span class="display-math">$$ p_A(\lambda) = p_B(\lambda). $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-similar-matrices-have-the-same-characteristic-polynomials.html">Proof</a>
+            </p>
+            <p>
+                It <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Properties-of-the-characteristic-polynomial.html">follows that</a> <span class="inline-math">$\det A = \det B$</span> and <span class="inline-math">$\mrm{tr}\, A = \mrm{tr}\, B$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (transformation matrix between orthonormal bases is unitary)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-transformation-matrix-between-orthonormal-bases-is-unitary.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$U$</span> is the change-of-basis matrix between one <em><strong>orthonormal</strong></em> basis and a new <em><strong>orthonormal</strong></em> basis. Then <span class="inline-math">$U$</span> is unitary.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-transformation-matrix-between-orthonormal-bases-is-unitary.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

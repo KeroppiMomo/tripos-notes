@@ -1,0 +1,476 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (permutation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Definition-permutation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A permutation is a bijective function <span class="inline-math">$f: X\to X$</span>. This means that <span class="inline-math">$f$</span> has an inverse <span class="inline-math">$f^{-1}:X\to X$</span> where
+                <span class="display-math">$$ f\circ f^{-1} = Id_X = f^{-1}\circ f. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (symmetric groups)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Definition-symmetric-groups.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="inline-math">$\mathrm{Sym}(X)$</span> is defined to be the set of all permutations of <span class="inline-math">$X$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Notation (permutation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Notation-permutation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For <span class="inline-math">$\rho\in S_n$</span>, we use the notation
+                <span class="display-math">$$
+                \rho = \begin{pmatrix}
+                1 &amp; 2 &amp; 3 &amp; \ldots &amp; n \\
+                \rho(1) &amp; \rho(2) &amp; \rho(3) &amp; \ldots &amp; \rho(n)
+                \end{pmatrix}.
+                $$</span>
+            </p>
+            <p>
+                We often omit fixed points, i.e. <span class="inline-math">$k$</span> such that <span class="inline-math">$\rho(k) = k$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Disjoint cycles
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Disjoint-cycles.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (q-cycle)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-q-cycle.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A permutation <span class="inline-math">$\mu\in S_n$</span> is a <span class="inline-math">$q$</span>-cycle if for some distinct <span class="inline-math">$a_1,\ldots,a_q = 1,2,\ldots, n$</span>,
+                            <span class="display-math">$$ \mu = \begin{pmatrix}
+                            a_1 &amp; a_2 &amp; \ldots &amp; a_{q-1} &amp; a_q \\
+                            a_2 &amp; a_3 &amp; \ldots &amp; a_q &amp; a_1
+                            \end{pmatrix}.$$</span>
+                            We denote this as 
+                            <span class="display-math">$$ \mu = \begin{pmatrix} a_1 &amp; a_2 &amp; \ldots &amp; a_q \end{pmatrix}. $$</span>
+                            A 2-cycle is called a transposition.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (disjoint cycles)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Definition-disjoint-cycles.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Two cycles <span class="inline-math">$\pmat{a_1 &amp; \ldots &amp; a_k}$</span> and <span class="inline-math">$\pmat{b_1 &amp; \ldots &amp; b_l}$</span> are called disjoint if <span class="inline-math">$a_i \neq b_j$</span> for all <span class="inline-math">$i,j$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (disjoint permutation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-disjoint-permutation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Two permutations <span class="inline-math">$\mu,\nu\in S_n$</span> are disjoint when for all <span class="inline-math">$x=1,2,\ldots,n$</span>, if <span class="inline-math">$\mu(x) \neq x$</span>, then <span class="inline-math">$\nu(x) = x$</span>, and similarly if <span class="inline-math">$\nu(x) \neq x$</span>, then <span class="inline-math">$\mu(x) = x$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (disjoint permutations commute)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proposition-disjoint-permutations-commute.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For two permutations <span class="inline-math">$\mu,\nu\in S_n$</span>, if they are disjoint, then
+                            <span class="display-math">$$ \mu\circ\nu = \nu\circ\mu. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-disjoint-permutations-commute.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (disjoint cycles)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Theorem-disjoint-cycles.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Every <span class="inline-math">$\sigma\in S_n$</span> can be written as a product of disjoint cycles.
+                        </p>
+                        <p>
+                            The expression is unique up to
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                switching the elements of each cycle; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                permuting the cycles.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proof-disjoint-cycles.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (cycle type)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Definition-cycle-type.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$\sigma = \pmat{a_1^1 &amp; a_2^1 &amp; \ldots &amp; a_{k_1}^1} \ldots \pmat{a_1^l &amp; a_2^l &amp; \ldots &amp; a_{k_l}^l}$</span> are disjoint cycles,
+                            then <span class="inline-math">$\sigma$</span> is called a <span class="inline-math">$(k_1, k_2, \ldots, k_l)$</span>-cycle. The set of numbers <span class="inline-math">$\set{k_1, \ldots, k_l}$</span> is the cycle type of <span class="inline-math">$\sigma$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (order of disjoint cycles)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proposition-order-of-disjoint-cycles.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$\sigma$</span> is a <span class="inline-math">$(k_1, k_2, \ldots, k_l)$</span>-cycle, then <span class="display-math">$$o(\sigma) = \mrm{lcm}\set{k_1, k_2, \ldots, k_l}.$$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Sign of permutation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Sign-of-permutation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (transpositions generate)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Theorem-transpositions-generate.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The set of transpositions in <span class="inline-math">$S_n$</span> generate <span class="inline-math">$S_n$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proof-transpositions-generate.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (adjacent transposition)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Definition-adjacent-transposition.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A transposition <span class="inline-math">$\sigma\in S_n$</span> in the form
+                            <span class="display-math">$$ \sigma = \pmat{i &amp; i+1} $$</span>
+                            for some <span class="inline-math">$i = 1,2,\ldots, n-1$</span> is called adjacent.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (odd adjacent transpositions)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Lemma-odd-adjacent-transpositions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Any transposition is a product of an odd number of adjacent transposition.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proof-odd-adjacent-transpositions.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (adjacent transpositions generate)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Corollary-adjacent-transpositions-generate.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The set of all adjacent transpositions in <span class="inline-math">$S_n$</span> generate <span class="inline-math">$S_n$</span>.
+                        </p>
+                        <p>
+                            Proof: <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Theorem-transpositions-generate.html">transpositions generate</a>, and <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Lemma-odd-adjacent-transpositions.html">transpositions can be written as adjacent transpositions</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (inversion)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Definition-inversion.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a permutation <span class="inline-math">$\sigma\in S_n$</span>, a pair <span class="inline-math">$\set{i, j} \subseteq \set{1,2,\ldots,n}$</span> is called an inversion if
+                            <span class="display-math">$$ i&lt;j \quad\text{but}\quad \sigma(i)&gt;\sigma(j). $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (products of even transpositions make identity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Lemma-products-of-even-transpositions-make-identity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose
+                            <span class="display-math">$$\sigma = \tau_1\tau_2\ldots\tau_k$$</span>
+                            where <span class="inline-math">$\tau_1, \tau_2, \ldots, \tau_k$</span> are all transpositions. If <span class="inline-math">$\sigma = e$</span>,
+                            then <span class="inline-math">$k$</span> is even.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proof-products-of-even-transpositions-make-identity.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (sign homomorphism)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Theorem-sign-homomorphism.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The map
+                            <span class="display-math">$$\begin{align*}
+                            \sign : &amp;&amp; S_n &amp;\to C_2 = \set{-1, 1} \\
+                            &amp;&amp;\tau_1\tau_2\ldots\tau_k &amp;\mapsto (-1)^k
+                            \end{align*}$$</span>
+                            where <span class="inline-math">$\tau_1,\ldots,\tau_k$</span> are transpositions, is a well defined homomorphism.
+                        </p>
+                        <p>
+                            (Vectors and Matrices use the notation <span class="inline-math">$\epsilon(\sigma)$</span> instead.)
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proof-sign-homomorphism.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Properties of sign of permutation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Properties-of-sign-of-permutation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\sign(\rho\sigma) = \sign(\rho)\sign(\sigma)$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\sign(\rho\inv) = \sign(\rho)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (even and odd permutation, alternating group)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-even-and-odd-permutation-alternating-group.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A permutation <span class="inline-math">$\sigma\in S_n$</span> is even if <span class="inline-math">$\sign(\sigma) = +1$</span>, and it is odd if <span class="inline-math">$\sign(\sigma) = -1$</span>.
+                        </p>
+                        <p>
+                            The subgroup of all even permutations
+                            <span class="display-math">$$A_n \equiv \ker(\sign) \lhd S_n$$</span> is the <em>alternating group</em> on <span class="inline-math">$n$</span> elements.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (sign of cycle type)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proposition-sign-of-cycle-type.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <span class="inline-math">$(k_1, k_2, \ldots, k_l)$</span>-cycle is even iff the number of even <span class="inline-math">$k_i$</span> is even.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proof-sign-of-cycle-of-type.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (uniqueness of $A_n$)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Lemma-uniqueness-of-A_n.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$H\leq S_n$</span> and <span class="inline-math">$|S_n: H| = 2$</span>, then <span class="inline-math">$H=A_n$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proof-uniqueness-of-A_n.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (conjugates in S_n iff same cycle type)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Theorem-conjugates-in-S_n-iff-same-cycle-type.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Two permutations <span class="inline-math">$\sigma_1, \sigma_2\in S_n$</span> are conjugates iff their cycle types are the same.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proof-conjugates-in-S_n-iff-same-cycle-type.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (conjugacy classes in A_n)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Lemma-conjugacy-classes-in-A_n.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\gamma\in A_n\subseteq S_n$</span>
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    If some odd element of <span class="inline-math">$S_n$</span> commutes with <span class="inline-math">$\gamma$</span>, then
+                    <span class="display-math">$$\mrm{ccl}_{A_n}(\gamma) = \mrm{ccl}_{S_n}(\gamma).$$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Otherwise i.e. if all elements of <span class="inline-math">$S_n$</span> that commute with <span class="inline-math">$\gamma$</span> are even, then the conjugacy class splits into two,
+                    <span class="display-math">$$\mrm{ccl}_{S_n}(\gamma) = \mrm{ccl}_{A_n}(\gamma) \union \mrm{ccl}_{S_n}(\tau\gamma\tau)$$</span>
+                    where <span class="inline-math">$\tau$</span> is any transposition.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proof-conjugacy-classes-in-A_n.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Examples-all-conjugacy-classes-in-small-symmetry-and-alternating-groups.html">Examples (all conjugacy classes in small symmetry and alternating groups)</a>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem ($A_5$ is simple)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Theorem-A_5-is-simple.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="inline-math">$A_5$</span> is simple.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Proof-A_5-is-simple.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,75 @@
+
+<h1>Part 1: Defining an action</h1>
+
+<p>
+    The clever bit is to consider this set
+    <span class="display-math">$$ X = \sb{(g_1,g_2,\ldots, g_p)}{g_i\in G\ \forall i, \ g_1g_2\ldots g_p = e}. $$</span>
+</p>
+<p>
+    Define an action <span class="inline-math">$C_p = \langle t\rangle$</span> on <span class="inline-math">$X$</span>,
+    <span class="display-math">$$ t^k (g_1, g_2, \ldots, g_p) = (g_{k+1}, g_{k+2},\ldots, g_p, g_1, g_2, \ldots, g_k) $$</span>
+    which is to shift the tuple by <span class="inline-math">$k$</span> spots.
+    We need to check whether this is an action.
+</p>
+<p>
+    Firstly it's easy to see that <span class="inline-math">$e=t^0$</span> acts trivially and that <span class="inline-math">$t^k t^l (g_1,\ldots, g_p) = t^{k+l} (g_1,\ldots, g_p)$</span>.
+</p>
+<p>
+    Next we have to check <span class="inline-math">$t^k (g_1,\ldots,g_p)\in X$</span>.
+    Suppose <span class="inline-math">$g_1g_2\ldots g_p = e$</span>. This means
+    <span class="display-math">$$ (g_1g_2\ldots g_k)(g_{k+1}g_{k+2}\ldots g_p) = e, $$</span>
+    so
+    <span class="display-math">$$ t^k(g_1\ldots g_p) = (g_{k+1}g_{k+2}\ldots g_p)(g_1g_2\ldots g_k) = e. $$</span>
+</p>
+<p>
+    Hence we have an action of <span class="inline-math">$C_p$</span> on <span class="inline-math">$X$</span>.
+</p>
+
+<h1>Part 2: Computing <span class="inline-math">$|X|$</span></h1>
+
+<p>
+    For every <span class="inline-math">$(g_1,g_2,\ldots,g_p) \in X$</span>, notice the restriction
+    <span class="display-math">$$ g_1 g_2\ldots g_p = e \iff g_p = (g_1g_2\ldots g_{p-1})^{-1}. $$</span>
+    Therefore you can pick any element of <span class="inline-math">$G$</span> for <span class="inline-math">$g_1, g_2, \ldots g_{p-1}$</span> and then <span class="inline-math">$g_p$</span> is fixed. Hence,
+    <span class="display-math">$$ |X| = |G|^{p-1}. $$</span>
+</p>
+<p>
+    Another method to approach this is to note that the action of <span class="inline-math">$C_p$</span> partitions <span class="inline-math">$X$</span> into <span class="inline-math">$m$</span> orbits for some <span class="inline-math">$m$</span>,
+    <span class="display-math">$$ X = C_p x_1 \cup C_p x_2 \cup \ldots \cup C_p x_m. $$</span>
+    By <a href="/tripos-notes/Lectures/Michaelmas/Groups-Gp/Corollary-orbit-stabiliser.html">orbit-stabiliser</a>, for all <span class="inline-math">$j$</span>,
+    <span class="display-math">$$ |C_p x_j|\ \big|\ |C_p|=p $$</span>
+    so
+    <span class="display-math">$$|C_p x_j| = 1 \text{ or } p.$$</span>
+</p>
+<p>
+    Let <span class="inline-math">$l$</span> be the number of orbits of size 1. Then <span class="inline-math">$m-l$</span> orbits have size <span class="inline-math">$p$</span>. Then
+    <span class="display-math">$$ |X| = l(1) + (m-l)(p) = l + (m-l)p. $$</span>
+</p>
+<p>
+    Combining two results abut <span class="inline-math">$|X|$</span>,
+    <span class="display-math">$$ |G|^{p-1} = l + (m-l)p. $$</span>
+</p>
+<p>
+    Using the hypothesis that <span class="inline-math">$p\ \big|\ |G|$</span>, we have <span class="inline-math">$p\ | \ l$</span> and therefore
+    <span class="display-math">$$ l = 0 \text{ or } l\geq p. $$</span>
+</p>
+
+<h1>Part 3: Orbits of <span class="inline-math">$C_p$</span></h1>
+
+<p>
+    If <span class="inline-math">$|C_p x| = 1$</span>, it means that if <span class="inline-math">$x = (g_1, g_2,\ldots, g_p)$</span>,
+    <span class="display-math">$$ t^k x = x \quad\forall k $$</span>
+    so
+    <span class="display-math">$$ x = (g, g, \ldots, g)\quad\text{for some } g\in G.$$</span>
+</p>
+<p>
+    Since <span class="inline-math">$\underbrace{e\cdot e\cdot\ldots\cdot e}_{p\text{ times}} = e$</span>,
+    <span class="display-math">$$ (e, e, \ldots, e) \in X $$</span>
+    provides an orbit of size 1.
+</p>
+<p>
+    Therefore <span class="inline-math">$l\neq 0$</span>, and by above, we have <span class="inline-math">$l\geq p\geq 2$</span> such orbits.
+</p>
+<p>
+    Thus there exists <span class="inline-math">$g\neq e$</span> such that <span class="inline-math">$(g,g,\ldots,g)\in X$</span> with <span class="inline-math">$g^p = e$</span>, as required.
+</p>

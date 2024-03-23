@@ -1,0 +1,400 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (non-negative random variable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-non-negative-random-variable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a probability space <span class="inline-math">$(\Omega, \mathcal F, \prob)$</span>, a function
+                <span class="display-math">$$ X: \Omega \to [0, \infty] $$</span>
+                is a <em>non-negative random variable</em> if
+                <span class="display-math">$$ \set{X\leq x}\in\mathcal F \quad\forall x\geq 0. $$</span>
+            </p>
+            <p>
+                Denote <span class="inline-math">$\mathcal F^+$</span> for the set of all non-negative random variables.
+            </p>
+            
+        </div>
+    </div>
+    <span class="inline-math">$X(\omega)$</span> can be <span class="inline-math">$\infty$</span> for non-negative random variable but not for random variable.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (uniqueness of expectation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-uniqueness-of-expectation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                There is a unique map, called the <em>expectation</em>,
+                <span class="display-math">$$ \expect: \mathcal F^+ \to [0,\infty] $$</span>
+                satisfying
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$\expect(1_A) = \prob(A)$</span> for all <span class="inline-math">$A\in\mathcal F$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\expect(\lambda X) = \lambda\expect(X)$</span> for all <span class="inline-math">$\lambda\in[0,\infty)$</span> and <span class="inline-math">$X\in\mathcal F^+$</span>;
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID 86c59a -->
+            <li id="^86c59a">
+                <p>
+                    <span class="inline-math">$\expect(\sum_n X_n) = \sum_n \expect(X_n)$</span> for all sequences <span class="inline-math">$(X_n)_{n\in\N}$</span> in <span class="inline-math">$\mathcal F^+$</span>.
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID 86c59a -->
+            
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-uniqueness-of-expectation-for-Omega-countable.html">Proof for <span class="inline-math">$\Omega$</span> countable</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (integrable, square-integrable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-integrable-square-integrable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A random variable <span class="inline-math">$X$</span> is
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <em>integrable</em> if <span class="inline-math">$\expect|X| &lt; \infty$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <em>square-integrable</em> if <span class="inline-math">$\expect(X^2) &lt; \infty$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Denote <span class="inline-math">$L&#x27;(\prob)$</span> be the set of integrable random variables.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (expectation of integrable random variable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-integrable-random-variable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an integrable random variable <span class="inline-math">$X\in L&#x27;(\prob)$</span>, define
+                <span class="display-math">$$ \expect(X) = \expect(X^+) - \expect(X^-) $$</span>
+                where <span class="inline-math">$X^+ = \max\set{X,0}$</span> and <span class="inline-math">$X^- = \max\set{-X, 0}$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Properties of expectation:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\expect(X+Y) = \expect(X) + \expect(Y)$</span> holds for <span class="inline-math">$X,Y\in\mathcal F^+$</span> (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-of-sums-of-two-non-negative-random-variables.html">derivation</a>) and also for <span class="inline-math">$X,Y\in L&#x27;(\prob)$</span> (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-of-sums-of-two-integrable-random-variables.html">derivation</a>).
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$X(\omega)\leq Y(\omega)$</span> for all <span class="inline-math">$\omega\in\Omega$</span>, then <span class="inline-math">$\expect(X)\leq\expect(Y)$</span> for both <span class="inline-math">$X,Y\in\mathcal F^+$</span> and <span class="inline-math">$L&#x27;(\prob)$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-inequality-of-random-variables-carries-over-to-expectation.html">Derivation</a>)
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\expect(\lambda X) = \lambda \expect(X)$</span> for all <span class="inline-math">$\lambda\in\R$</span> and <span class="inline-math">$X,Y\in L&#x27;(\prob)$</span> (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-of-multiple-of-integrable-random-variable.html">derivation</a>).
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$X\in\mathcal F^+$</span> (not <span class="inline-math">$L&#x27;(\prob)$</span>), <span class="inline-math">$\expect(X)=0 \iff \prob(X=0)=1$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-vanishes-iff-non-negative-random-variable-almost-certainly-vanishes.html">Derivation</a>)
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (expectation for discrete random variable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-expectation-for-discrete-random-variable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a discrete random variable <span class="inline-math">$X$</span> taking values <span class="inline-math">$(x_n:n\in\N)$</span> and a function <span class="inline-math">$f$</span>,
+                <span class="display-math">$$ \expect\big(f(X)\big) = \sum_n f(x_n)\,\prob(X=x_n) $$</span>
+                provided that <span class="inline-math">$f$</span> is non-negative, or <span class="inline-math">$f(X)$</span> is integrable.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-expectation-for-discrete-random-variable.html">Proof</a>
+            </p>
+            <p>
+                In particular, if <span class="inline-math">$X$</span> is non-negative or integrable,
+                <span class="display-math">$$ \expect(X) = \sum_n x_n\, \prob(X=x_n). $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (expectation of product of independent random variables)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-expectation-of-product-of-independent-random-variables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For independent random variables <span class="inline-math">$X,Y$</span> and functions <span class="inline-math">$f,g$</span>,
+                <span class="display-math">$$ \expect\big(f(X) g(Y)\big) = \expect\big(f(X)\big)  \expect\big(g(Y)\big) $$</span>
+                provided that <span class="inline-math">$f,g$</span> are non-negative, or <span class="inline-math">$f(X),g(Y)$</span> are integrable.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-expectation-of-product-of-independent-discrete-random-variables.html">Proof for X,Y discrete</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (expectation as sum of probabilities)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-expectation-as-sum-of-probabilities.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For non-negative integer-valued random variable <span class="inline-math">$X$</span>,
+                <span class="display-math">$$ \expect(X) = \fsum n1\infty \prob(X\geq n). $$</span>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-expectation-as-sum-of-probabilities-for-integer-valued-case.html">Proof</a>
+            </p>
+            <p>
+                For a general non-negative random variable <span class="inline-math">$X$</span>,
+                <span class="display-math">$$\expect(X) = \int_0^\infty \prob(X\geq x)\,dx. $$</span>
+                <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-expectation-as-sum-of-probabilities-for-general-case.html">Proof requiring Fubini's theorem</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (expectation of multivariate random variable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-multivariate-random-variable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The expectation of a random variable <span class="inline-math">$X=(X_1, X_2, \ldots, X_n)$</span> in <span class="inline-math">$\R^n$</span> is obtained by taking expectation of each of the components:
+                <span class="display-math">$$ \begin{align*}
+                    \expect(X) = \left(\expect(X_1), \expect(X_2), \ldots, \expect(X_n)\right).
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Variance and covariance
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Variance-and-covariance.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (variance)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an integrable random variable <span class="inline-math">$X$</span> having mean <span class="inline-math">$\mu\in\R$</span>,
+                            the variance of <span class="inline-math">$X$</span> is
+                            <span class="display-math">$$ \operatorname{var}(X) = \expect\big((X-\mu)^2\big). $$</span>
+                        </p>
+                        <p>
+                            Equivalently (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-of-equivalence-of-definitions-of-variance.html">derivation</a>),
+                            <span class="display-math">$$ \operatorname{var}(X) = \expect(X^2) - \expect(X)^2. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                We see that <span class="inline-math">$\expect(X)^2 \leq \expect(X^2)$</span>, so square-integrable implies integrable.
+            </p>
+            <p>
+                For <span class="inline-math">$X$</span> integrable discrete with mean <span class="inline-math">$\mu$</span>,
+                <span class="display-math">$$\operatorname{var}(X) = \sum_n (x_n-\mu)^2\,\prob(X=x_n).$$</span>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (standard deviation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-standard-deviation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>standard deviation</em> of an integrable random variable <span class="inline-math">$X$</span> is <span class="inline-math">$\sqrt{\operatorname{var}(X)}$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (covariance)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-covariance.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For square-integrable random variables <span class="inline-math">$X$</span>, <span class="inline-math">$Y$</span> with means <span class="inline-math">$\mu$</span>, <span class="inline-math">$\nu$</span>, the <em>covariance</em> is defined by
+                            <span class="display-math">$$ \operatorname{cov}(X,Y) = \expect\big((X-\mu)(Y-\nu)\big). $$</span>
+                            (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-X-mu-Y-nu-is-integrable-in-covariance.html">Derivation that <span class="inline-math">$(X-\mu)(Y-\nu)$</span> is integrable</a>)
+                        </p>
+                        <p>
+                            Equivalently (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-equivalence-of-definition-of-covariance.html">derivation</a>),
+                            <span class="display-math">$$ \op{cov}(X,Y) = \expect(XY) - \expect(X)\expect(Y). $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (variance of sum)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-variance-of-sum.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For square-integrable random variables <span class="inline-math">$X,Y$</span>,
+                            <span class="display-math">$$ \op{var}(X+Y) = \op{var}(X) + 2\op{cov}(X,Y) + \op{var}(Y). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-variance-of-sum.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (independent implies zero covariance)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-independent-implies-zero-covariance.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$X,Y$</span> are independent, then <span class="inline-math">$\op{cov}(X,Y)=0$</span>.
+                        </p>
+                        <p>
+                            Proof: <span class="inline-math">$\expect(XY) = \expect(X) \expect(Y)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                Converse not true: <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-of-zero-covariance-but-not-independent.html">example</a>.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Variance of indicator function
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Variance-of-indicator-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For all <span class="inline-math">$A\in\mathcal F$</span>, if <span class="inline-math">$\prob(A) = p$</span>, then
+                            <span class="display-math">$$ \begin{align*}
+                            \op{var}(1_A) &amp;= \expect({1_A}^2) - \expect(1_A)^2 \\
+                            &amp;= p - p^2.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (variance of multivariate random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance-of-multivariate-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The variance of a random variable <span class="inline-math">$X=(X_1, X_2, \ldots, X_n)$</span> in <span class="inline-math">$\R^n$</span> is its covariance matrix
+                            <span class="display-math">$$ \begin{align*}
+                                \op{var}(X) = (\op{cov}(X_i, X_j))_{i,j=1}^n = \expect\big[ (X-\expect(X))(X-\expect(X))^T \big].
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Conditional expectation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Conditional-expectation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (conditional expectation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-expectation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a non-negative of integrable random variable <span class="inline-math">$X$</span> and an event <span class="inline-math">$B$</span> of positive probability, define the <em>condition expectation of <span class="inline-math">$X$</span> given <span class="inline-math">$B$</span></em> by
+                            <span class="display-math">$$ \expect(X|B) = \frac{\expect(X1_B)}{\prob(B)}. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Law of total expectation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-expectation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given disjoint events <span class="inline-math">$(B_n: n\in\N)$</span> of positive probabilities such that <span class="inline-math">$\bigcup_n B_n = \Omega$</span>, we have
+                            <span class="display-math">$$ \expect(X) = \sum_n \expect(X|B_n) \prob(B_n). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-law-of-total-expectation.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

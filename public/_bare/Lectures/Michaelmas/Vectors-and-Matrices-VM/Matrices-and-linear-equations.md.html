@@ -1,0 +1,271 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (inverse of matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-inverse-of-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, if <span class="inline-math">$\det A\neq 0$</span>, then <span class="inline-math">$A\inv$</span> exists and is
+                <span class="display-math">$$ (A\inv)_{ij} = \frac{\Delta_{ij}}{\det A}. $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-inverse-of-matrix.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Calculating inverse of matrix is time-consuming.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            System of linear equations with unique solution
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/System-of-linear-equations-with-unique-solution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$A\v x = \v b$</span>, where <span class="inline-math">$A$</span> is an <span class="inline-math">$n\times n$</span> matrix, and <span class="inline-math">$\v x,\v b$</span> are <span class="inline-math">$n\times 1$</span> column vectors.
+            </p>
+            <p>
+                We call the system <em>homogenous</em> if <span class="inline-math">$\v b=\v 0$</span>, otherwise <em>inhomogenous</em>.
+            </p>
+            <p>
+                If <span class="inline-math">$\det A\neq 0$</span>, then <span class="inline-math">$A\inv$</span> <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-inverse-of-matrix.html">exists</a>, and
+                <span class="display-math">$$\v x=A\inv\v b$$</span>
+                is the unique solution.
+            </p>
+            <p>
+                Another perspective is that for the standard basis <span class="inline-math">$\v e_i$</span>, <span class="inline-math">$\det A\neq 0$</span> implies that the columns i.e. images of the basis <span class="inline-math">$\v e_i&#x27; = A\v e_i$</span> are linearly independent. Since there are <span class="inline-math">$n$</span> such vectors, <span class="inline-math">$\v e_i&#x27;$</span> form a basis of <span class="inline-math">$\R^n$</span> or <span class="inline-math">$\C^n$</span>. Therefore,
+                <span class="display-math">$$ \text{rank } r(A) = n,\quad \text{nullity } n(A) = 0. $$</span>
+                This agrees with the fact that the kernel is <span class="inline-math">$\set \v0$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Gaussian elimination
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Gaussian-elimination.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Process of Gaussian elimination
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Process-of-Gaussian-elimination.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a system of <span class="inline-math">$m$</span> linear equations in <span class="inline-math">$n$</span> unknowns,
+                            <span class="display-math">$$\pmat{A_{11} &amp; A_{12} &amp; A_{13} &amp; \ldots &amp; A_{1n} \\
+                            A_{21} &amp; A_{22} &amp; A_{23} &amp; \ldots &amp; A_{2n} \\
+                            \vdots &amp; &amp; &amp; \ddots &amp; \vdots \\
+                            A_{m1} &amp; A_{m2} &amp; A_{m3} &amp; \ldots &amp; A_{mn}}
+                            \pmat{x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n}
+                            =
+                            \pmat{d_1 \\ d_2 \\ \vdots \\ d_m}
+                            
+                            \qquad
+                            \qquad
+                            
+                            \begin{cases}
+                            A_{11} x_1 + A_{12} x_2 + \ldots + A_{1n} x_n &amp;= d_1 \\
+                            A_{21} x_1 + A_{22} x_2 + \ldots + A_{2n} x_n &amp;= d_2 \\
+                            \vdots \\
+                            A_{m1} x_1 + A_{m2} x_2 + \ldots + A_{mn} x_n &amp;= d_m \\
+                            \end{cases}$$</span>
+                        </p>
+                        <p>
+                            By assuming <span class="inline-math">$A_{11}\neq 0$</span> etc by reordering the equations or variables if needed, we write <span class="inline-math">$x_1$</span> in terms of the other variables, and then substitute into the other equations. Repeat and terminate when we have no equations with non-zero coefficients left. We will get
+                            <span class="display-math">$$\pmat{A_{11} &amp; A_{12} &amp; A_{13} &amp; \ldots &amp; \ldots &amp; \ldots &amp; A_{1n} \\
+                            0 &amp; A_{22}^{(2)} &amp; A_{23}^{(2)} &amp; \ldots &amp; \ldots &amp; \ldots &amp; A_{2n}^{(2)} \\
+                            \vdots &amp; &amp; \ddots &amp;&amp;&amp; &amp;\vdots \\
+                            0 &amp; \ldots &amp; 0 &amp; A_{rr}^{(r)} &amp; A_{r(r+1)}^{(r)} &amp; \ldots &amp; A_{rn}^{(n)} \\
+                            0 &amp; \ldots &amp; 0 &amp; 0 &amp; 0 &amp; \ldots  &amp; 0 \\
+                            \vdots &amp;&amp;&amp;&amp;&amp;&amp; \vdots \\
+                            0 &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; 0}
+                            \pmat{x_1 \\ x_2 \\ x_3 \\ \vdots \\ x_n}
+                            =
+                            \pmat{d_1 \\ d_2 \\ \vdots \\ d_m}
+                            
+                            \quad
+                            \quad
+                            
+                            \begin{cases}
+                            A_{11} x_1 &amp;+&amp; A_{12} x_2 &amp;+&amp; \ldots &amp;+&amp;\ldots&amp;+&amp;A_{1n} x_n &amp;=&amp; d_1 \\
+                            &amp; &amp;A_{22}^{(2)} x_2 &amp;+&amp;\ldots &amp;+&amp; \ldots &amp;+&amp; A_{2n}^{(2)} x_n &amp;=&amp; d_2^{(2)} \\
+                            &amp;&amp;&amp;\ddots &amp;&amp;&amp;&amp;&amp;&amp;&amp;\vdots \\
+                            &amp;&amp;&amp;&amp;A_{rr}^{(r)} x_r &amp;+&amp; \ldots &amp;+&amp; A_{rn}^{(r)} x_n &amp;=&amp; d_r^{(r)} \\
+                            &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;0 &amp;=&amp; d_{r+1}^{(r)} \\
+                            &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;\vdots &amp;=&amp; \vdots \\
+                            &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;0 &amp;=&amp; d_{n}^{(r)} \\
+                            \end{cases}$$</span>
+                            with <span class="inline-math">$A_{ii}^{(n)} \neq 0$</span> for all <span class="inline-math">$i=1,2,\ldots,r$</span>, where the superfix refers to the version number.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Overdetermined, determined and underdetermined system
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Overdetermined-determined-and-underdetermined-system.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ul>
+                        <li>
+                            <p>
+                                If <span class="inline-math">$r&lt;m$</span> and <span class="inline-math">$d_i^{(r)} \neq 0$</span> for some <span class="inline-math">$i=r+1,r+2,\ldots,m$</span>, then the system is <em>inconsistent</em>, so there is no solution. <br>
+                                We say the system is <em>overdetermined</em>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$r=n\leq m$</span> and all <span class="inline-math">$d_i^{(r)} = 0$</span> for some <span class="inline-math">$i=r+1,r+2,\ldots,m$</span>, then last non-zero equation
+                                <span class="display-math">$$ A_{nn}^{(n)} x_n = d_n^{(n)} $$</span>
+                                can be solved, then performing back substitution gives a unique solution. <br>
+                                We say the system is <em>determined</em>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$r&lt;n$</span> and all <span class="inline-math">$d_i^{(r)} = 0$</span> for some <span class="inline-math">$i=r+1,r+2,\ldots,m$</span>, then the last non-zero equation is
+                                <span class="display-math">$$A_{rr}^{(r)} x_r + A_{r(r+1)}^{(r)} x_{r+1} + \ldots + A_{rn}^{(r)} x_{n} = d_{r}^{(r)}, $$</span>
+                                so <span class="inline-math">$x_{r+1}, \ldots, x_n$</span> can be chosen freely, and back substitution gives a valid solution. <br>
+                                Therefore we have infinitely many solution. <br>
+                                We say the system is <em>underdetermined</em>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Upper triangular matrix of Gaussian elimination
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Upper-triangular-matrix-of-Gaussian-elimination.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            When <span class="inline-math">$m=n$</span>,
+                            <span class="inline-math">$\det A = (-1)^R \det$</span> (the <em>upper triangular matrix</em>), where <span class="inline-math">$R$</span> is the number of rearrangements of rows and columns.
+                        </p>
+                        <p>
+                            Note that since the only <span class="inline-math">$\sigma\in S_n$</span> such that <span class="inline-math">$\sigma(i)\geq i$</span> for all <span class="inline-math">$i=1,\ldots,n$</span> is the identity,
+                            <span class="display-math">$$ \det A = (-1)^R A_{11} A_{22}^{(2)} A_{33}^{(3)} \ldots A_{nn}^{(n)}. $$</span>
+                            Therefore <span class="inline-math">$\det A=0$</span> iff <span class="inline-math">$r&lt;n$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Matrix rank
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Matrix-rank.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (matrix rank)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Definition-matrix-rank.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an <span class="inline-math">$m\times n$</span> matrix <span class="inline-math">$A$</span>, its rank is defined as <span class="inline-math">$r(A) = r(\alpha)$</span>, where <span class="inline-math">$\alpha$</span> is the associated linear map <span class="inline-math">$\alpha: \R^n \to \R^m$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (row rank equals column rank)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Theorem-row-rank-equals-column-rank.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an <span class="inline-math">$m\times n$</span> matrix <span class="inline-math">$A$</span>, define the column rank of <span class="inline-math">$A$</span> as the dimension of the spanning set of columns of <span class="inline-math">$A$</span>, and similarly for row rank.
+                            Then
+                            <span class="display-math">$$ \text{row rank} = \text{column rank} = r(A). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/Proof-row-rank-equals-column-rank.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            General solution of linear equations
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Michaelmas/Vectors-and-Matrices-VM/General-solution-of-linear-equations.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For the equation
+                <span class="display-math">$$ A\v x = \v d $$</span>
+                where <span class="inline-math">$A$</span> is an <span class="inline-math">$m\times n$</span> matrix.
+            </p>
+            <p>
+                Let <span class="inline-math">$\set{\v u_i}_{i=1,2,\ldots,n(A)}$</span> be the basis of the kernel.
+                Extend the basis to <span class="inline-math">$\set{\v u_i}_{i=1,2,\ldots,n}$</span>. 
+                Then
+                <span class="display-math">$$ \im A = \mrm{span}\{A\v u_{n(A)+1}, \ldots A\v u_n\}.$$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$\v d \not\in \im A$</span>, then there is no solution.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$\v d \in \im A$</span>, then at least one solution exists.
+                    Let <span class="inline-math">$\v x_0$</span> be a particular solution.
+                    The general can be written as
+                    <span class="display-math">$$ \v x = \v x_0 + \v y $$</span>
+                    where <span class="inline-math">$\v y \in \ker A$</span>.
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        If <span class="inline-math">$n(A) = 0$</span>, then <span class="inline-math">$\v y = \v 0$</span> gives the only solution.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        If <span class="inline-math">$n(A) &gt; 0$</span>, then
+                        <span class="display-math">$$\v x = \v x_0 + \sum_{j=1}^{n(A)} \mu_j \v u_j.$$</span>
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

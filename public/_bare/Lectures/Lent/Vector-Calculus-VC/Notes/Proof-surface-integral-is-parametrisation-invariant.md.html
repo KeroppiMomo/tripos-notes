@@ -1,0 +1,22 @@
+<p>
+    Let <span class="inline-math">$\v x(u, v)$</span> and <span class="inline-math">$\v x(\tilde u(u, v), \tilde v(u,v))$</span> be two parametrisations. Then by chain rule,
+    <span class="display-math">$$ \begin{align*}
+    \pdvd x{\tilde u} &amp;= \pdfd u{\tilde u} \pdvd x u + \pdfd v{\tilde u} \pdvd x v, \\
+    \pdvd x{\tilde v} &amp;= \pdfd u{\tilde v} \pdvd x u + \pdfd v{\tilde v} \pdvd x v. \\
+    \end{align*} $$</span>
+    So
+    <span class="display-math">$$ \pdvd x{\tilde u}\times \pdvd x{\tilde v} = \bigg(\pdfd u {\tilde u}\pdfd v {\tilde v} - \pdfd v{\tilde u} \pdfd u{\tilde v}\bigg) \pdvd xu\times \pdvd xv = \pdfd{(u, v)}{(\tilde u, \tilde v)}\ \pdvd xu\times\pdvd xv.$$</span>
+    Hence for scalar field, using <a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Proposition-change-of-variable-of-area-integral.html">change of variable</a>,
+    <span class="display-math">$$ \begin{align*}
+    \int_S \phi\, dS &amp;= \int_D \phi(\v x(u, v))\, \bigg|\pdvd x u\times\pdvd x v\bigg| \,du\,dv \\
+    &amp;= \int_{\tilde D} \phi(\v x(\tilde u, \tilde v))\, \bigg|\pdvd x u\times\pdvd x v\bigg|\,\bigg|\pdfd{(u,v)}{(\tilde u,\tilde v)}\bigg| \,d\tilde u\,d\tilde v \\
+    &amp;= \int_{\tilde D} \phi(\v x(\tilde u, \tilde v))\,\bigg|\pdvd x{\tilde u}\times \pdvd x{\tilde v}\bigg|\, d\tilde u\, d\tilde v
+    \end{align*} $$</span>
+    as required.
+    For a vector field,
+    <span class="display-math">$$\begin{align*}
+    \int_S \v F\cdot d\v S &amp;= \int_D \v F\big(\v x(u,v)\big) \cdot \Big(\pdvd xu \times \pdvd xv\Big)\,du\,dv \\
+    &amp;= \int_{\tilde D} \v F(\v x(\tilde u,\tilde v)\big)\cdot\Big(\pdvd xu \times \pdvd xv\Big)\bigg|\pdfd{(u,v)}{(\tilde u,\tilde v)}\bigg|\,d\tilde u\, d\tilde v \\
+    &amp;= \pm\int_{\tilde D} \v F\big(\v x(\tilde u,\tilde v)\big) \cdot \Big(\pdvd x{\tilde u} \times \pdvd x{\tilde v}\Big)\,d\tilde u\,d\tilde v \\
+    \end{align*}$$</span>
+</p>

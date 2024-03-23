@@ -1,0 +1,25 @@
+<p>
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        D = \sb{x\in[a,b]}{\omega_f(x) &gt; 0}.
+    \end{align*} $$</span>
+    Let <span class="inline-math">$N(\alpha) = \sb{x\in[a,b]}{\omega_f(x) \geq  \alpha}$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        D = \bigcup_{k=1}^\infty N\left(\frac{1}{k}\right)
+    \end{align*} $$</span>
+    so it is sufficient to show that <span class="inline-math">$N(\alpha)$</span> has measure zero.
+</p>
+<p>
+    Suppose <span class="inline-math">$f:[a,b]\to\R$</span> is integrable. Fix <span class="inline-math">$\epsilon&gt;0$</span>, then there is a dissection <span class="inline-math">$\mathcal{D}$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        U(f,\mathcal{D}) - L(f,\mathcal{D}) = \sum_{j=1}^{\infty} (x_j - x_{j-1}) \omega_f([x_{j-1}, x_j]) &lt; \frac{\alpha\epsilon}{2}.
+    \end{align*} $$</span>
+    Let <span class="inline-math">$F = \sb{j}{(x_{j-1}, x_j)\cap N(\alpha) \neq \emptyset}$</span>. For each <span class="inline-math">$j\in F$</span>, <span class="inline-math">$\omega_f([x_{j-1}, x_j]) \geq \alpha$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \frac{\alpha\epsilon}{2} &gt; \sum_{j\in F}  (x_j-x_{j-1})\omega_f([x_{j-1}, x_j]) \geq \alpha \sum_{j\in F} (x_j - x_{j-1}) \implies \sum_{j\in F} (x_j - x_{j-1}) &gt; \frac{\epsilon}{2}.
+    \end{align*} $$</span>
+</p>
+<p>
+    So these cover <span class="inline-math">$N(\alpha)$</span> except for possibly <span class="inline-math">$x_0, \ldots, x_n$</span>, which can be convered by a finite number of intervals of total length <span class="inline-math">$\epsilon/2$</span>.
+    Hence <span class="inline-math">$N(\alpha)$</span> has measure zero, so <span class="inline-math">$D$</span> has measure zero.
+</p>

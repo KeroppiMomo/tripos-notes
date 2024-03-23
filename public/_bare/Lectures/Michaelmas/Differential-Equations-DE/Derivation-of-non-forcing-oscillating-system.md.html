@@ -1,0 +1,60 @@
+<p>
+    <span class="display-math">$$ m\ddot y + b\dot y + ky = 0 $$</span>
+    When <span class="inline-math">$b=0$</span>, the system oscillates at frequency <span class="inline-math">$\omega_0 = \sqrt{k/m}$</span>. Define dimensionless time <span class="inline-math">$\tau = \omega_0 t$</span>. Then
+    <span class="display-math">$$ \dot y = \frac{dy}{d\tau}\frac{d\tau}{dt} = \omega_0 y&#x27; $$</span>
+    <span class="display-math">$$ \dot y = \frac{dy&#x27;}{d\tau}\frac{d\tau}{dt} = \omega_0^2 y&#x27;&#x27; $$</span>
+    so the equation becomes
+    <span class="display-math">$$\begin{align*}
+    m\omega_0^2y&#x27;&#x27; + b\omega_0 y&#x27; + \ub{k}_{m\omega_0^2}\ y &amp;= 0 \\
+    y&#x27;&#x27; + \frac{b}{m\omega_0}y&#x27; + y &amp;= 0 \\
+    y&#x27;&#x27; + 2\kappa y&#x27; + y &amp;= 0 \\
+    \end{align*}$$</span>
+    where <span class="inline-math">$\kappa = b/2m\omega_0$</span>.
+</p>
+<p>
+    Then a solution is <span class="inline-math">$e^{\lambda y}$</span> where <span class="inline-math">$\lambda$</span> satsifies the characteristic equation
+    <span class="display-math">$$ \lambda^2 + 2\kappa \lambda + 1 = 0 $$</span>
+    so
+    <span class="display-math">$$ \lambda_1, \lambda_2 = -\kappa \pm \sqrt{\kappa^2 - 1}. $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$\kappa &lt; 1$</span>, we have <span class="inline-math">$\lambda_1,\lambda_2$</span> complex
+        <span class="display-math">$$ \lambda_1,\lambda_2 = -\kappa \pm i\sqrt{1 - \kappa^2} $$</span>
+        so the solution is
+         <span class="display-math">$$\begin{align*}
+        y(\tau) &amp;= e^{-\kappa\tau} (A\sin(\sqrt{1-\kappa^2}\ \tau) + B\cos(\sqrt{1-\kappa^2}\ \tau) \\
+        y(t) &amp;= e^{-\kappa\omega_0 t} (A\sin\omega_{free} t + B\cos\omega_{free} t)
+        \end{align*}$$</span>
+         where <span class="inline-math">$\omega_{free} = \sqrt{1-\kappa^2}\ \omega_0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$\kappa = 1$</span>, we have degenerate roots <span class="inline-math">$\lambda_1,\lambda_2 = -1$</span>. Then the solution is
+        <span class="display-math">$$\begin{align*}
+        y(\tau) &amp;= e^{-\tau}(A+B\tau) \\
+        y(t) &amp;= e^{-\omega_0 t}(A+B&#x27;t).
+        \end{align*}$$</span>
+    </p>
+    <ul>
+    <li>
+        <p>
+            If <span class="inline-math">$\kappa &gt; 1$</span>, we have real and negative roots
+            <span class="display-math">$$\begin{align*}
+            \lambda_1 &amp;= -\kappa + \sqrt{\kappa^2 - 1} \\
+            \lambda_2 &amp;= -\kappa - \sqrt{\kappa^2 - 1} \\
+            \end{align*}$$</span>
+            so the solution is
+            <span class="display-math">$$\begin{align*}
+            y(\tau) &amp;= Ae^{-(\kappa - \sqrt{\kappa^2 - 1})\tau} + Be^{-(\kappa + \sqrt{\kappa^2 - 1})\tau} \\
+            y(t) &amp;= \underbrace{Ae^{-(\kappa - \sqrt{\kappa^2 - 1})\omega_0 t)}}_\text{dominates long-term} + Be^{-(\kappa + \sqrt{\kappa^2 - 1})\omega_0 t}.
+            \end{align*}$$</span>
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ul>

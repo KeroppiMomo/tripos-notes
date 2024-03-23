@@ -1,0 +1,33 @@
+<p>
+    <img src="/tripos-notes/media/Lectures/Michaelmas/Vectors-and-Matrices-VM/Pasted-image-20231028225745.png">
+</p>
+<p>
+    We find <span class="inline-math">$\vec x&#x27;$</span> by <span class="inline-math">$\vec{OA&#x27;} = \vec{OB} + \vec{BC} + \vec{CA&#x27;}$</span>.
+</p>
+<p>
+    <span class="inline-math">$\vec{OB}$</span> is found by projecting <span class="inline-math">$\vec x$</span> onto <span class="inline-math">$\hat n$</span>,
+    <span class="display-math">$$ \vec{OB} = (\vec x\cdot\hat n)\hat n. $$</span>
+    <span class="inline-math">$\vec{BC}$</span> has direction along <span class="inline-math">$\vec{BA}$</span> and magnitude <span class="inline-math">$|\vec{BA&#x27;}|\cos\theta = |\vec{BA}|\cos\theta$</span>, so
+    <span class="display-math">$$\begin{align*}
+    \vec{BC} &amp;= \vec{BA}\cos\theta \\
+    &amp;= (\vec{OA} - \vec{OB})\cos\theta \\
+    &amp;= (\vec x - (\vec x\cdot\hat n)\hat n)\cos\theta.
+    \end{align*}$$</span>
+</p>
+<p>
+    For <span class="inline-math">$\vec{CA&#x27;}$</span>, its magnitude is
+    <span class="display-math">$$ |\vec{CA&#x27;}| = |\vec{BA&#x27;}|\sin\theta = |\vec{BA}|\sin\theta = |\hat n\times\vec x|\sin\theta, $$</span>
+    and its direction is perpendicular to both <span class="inline-math">$\vec x$</span> and <span class="inline-math">$\hat n$</span> so it is along <span class="inline-math">$\hat n\times\vec x$</span>. Therefore
+    <span class="display-math">$$ \vec{CA&#x27;} = (\hat n\times\vec x)\sin\theta. $$</span>
+</p>
+<p>
+    Combining,
+    <span class="display-math">$$\begin{align*}
+    \vec x&#x27; &amp;= (\vec x\cdot\hat n)\hat n + (\vec x-(\vec x\cdot\hat n)\hat n)\cos\theta + (\hat n\times\vec x)\sin\theta \\
+    &amp;= \vec x\cos\theta + (1-\cos\theta)(\hat n\cdot\vec x)\hat n + (\hat n\times\vec x)\sin\theta \\
+    x&#x27;_i &amp;= x_i\cos\theta + (1-\cos\theta)n_jx_jn_i - \epsilon_{ijk}x_jn_k\sin\theta \\
+    &amp;= (\delta_{ij}\cos\theta + (1-\cos\theta)n_in_j - \epsilon_{ijk}n_k\sin\theta)x_j.
+    \end{align*}$$</span>
+    Therefore letting <span class="inline-math">$x_i&#x27; = R_{ij} x_j$</span>, we have the matrix
+    <span class="display-math">$$ R_{ij} = \delta_{ij}\cos\theta + (1-\cos\theta)n_in_j - \epsilon_{ijk}n_k\sin\theta. $$</span>
+</p>

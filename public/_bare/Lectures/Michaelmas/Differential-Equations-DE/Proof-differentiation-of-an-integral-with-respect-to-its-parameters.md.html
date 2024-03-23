@@ -1,0 +1,21 @@
+<p>
+    Notice
+    <span class="display-math">$$\begin{align*}
+    \frac{dI}{d\lambda} = \lim_{\delta\lambda\to0}\frac{1}{\delta\lambda}\Big(&amp;\int_{a(\lambda+\delta\lambda)}^{b(\lambda+\delta\lambda)} f(x;\lambda+\delta\lambda)\,dx - \int_{a(\lambda)}^{b(\lambda)} f(x;\lambda)\,dx\Big) \\
+    = \lim_{\delta\lambda\to0}\frac{1}{\delta\lambda}\Big(&amp;\int_{a(\lambda)}^{b(\lambda)} f(x;\lambda+\delta\lambda) - f(x;\lambda)\,dx \\
+    &amp;+ \int_{b(\lambda)}^{b(\lambda+\delta\lambda)}f(x;\lambda +\delta\lambda)\,dx \\
+    &amp;- \int_{a(\lambda)}^{a(\lambda+\delta\lambda)}f(x;\lambda+\delta\lambda)\,dx \Big)
+    \end{align*}$$</span>
+</p>
+<p>
+    <span class="display-math">$$\begin{align*}
+    \text{First term} &amp;= \int_{a(\lambda)}^{b(\lambda)}\lim_{\delta\lambda\to0}\frac{f(x;\lambda+\delta\lambda)-f(x;\lambda)}{\delta\lambda}\,dx \\
+    &amp;= \int_{a(\lambda)}^{b(\lambda)}\frac{\partial f}{\partial\lambda}(x,\lambda)\,dx \\
+    \text{Second term} &amp;= \lim_{\delta\lambda\to0}\frac1{\delta\lambda} f(\bar x;\lambda+\delta\lambda)\cdot\big(b(\lambda+\delta\lambda)-b(\lambda)\big) \\
+    &amp;= f(x;\lambda)\cdot\frac{db}{d\lambda}
+    \end{align*}$$</span>
+    where <span class="inline-math">$\bar x$</span> is between <span class="inline-math">$b(\lambda)$</span> and <span class="inline-math">$b(\lambda+\delta\lambda)$</span> (inclusively), given by the mean value theorem.
+</p>
+<p>
+    The third term is handled similarly.
+</p>

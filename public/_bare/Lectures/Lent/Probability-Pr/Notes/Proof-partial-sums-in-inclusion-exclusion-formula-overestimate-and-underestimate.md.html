@@ -1,0 +1,26 @@
+<p>
+    (non-examinable)
+</p>
+<p>
+    We take <span class="inline-math">$f(t) = (1-t)^N$</span> and use Taylor's theorem
+    <span class="display-math">$$ f(t) = \fsum j0k \frac{f^{(j)}(0)}{j!} t^j + \int_0^t \frac{f^{(k+1)}(s)}{k!} (t-s)^k\, ds. $$</span>
+    We can compute
+    <span class="display-math">$$f^{(j)}(s) = \frac{N!}{(N-j)!}(-1)^j (1-s)^{N-j}.$$</span>
+    Then for <span class="inline-math">$N\geq 1$</span> and <span class="inline-math">$t=1$</span>,
+    <span class="display-math">$$\begin{align*}
+    0 &amp;= \fsum j0k (-1)^j\pmat{N\\j} + (-1)^{k+1} \frac{N!}{k!\,(N-k-1)!}\int_0^1 (1-s)^{N-k-1}(1-s)^k\, ds \\
+    &amp;= \fsum j0k (-1)^j\pmat{N\\j} + (-1)^{k+1} \frac{N!}{k!\,(N-k-1)!}\int_0^1 (1-s)^{N-1}\, ds \\
+    &amp;= \fsum j0k (-1)^j\pmat{N\\j} + (-1)^{k+1} \frac{N!}{k!\,(N-k-1)!}\frac1N \\
+    &amp;= \fsum j0k (-1)^j\pmat{N\\j} + (-1)^{k+1} \pmat{N-1\\k}.
+    \end{align*}$$</span>
+</p>
+<p>
+    Consider the case when <span class="inline-math">$k$</span> is odd. Then by noting the above equality and also checking the value when <span class="inline-math">$N=0$</span>,
+    <span class="display-math">$$ 1_{\set{N=0}} \geq \fsum j0k(-1)^j \pmat{N\\j}. $$</span>
+    Proceed as in the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-inclusion-exclusion-formula-for-probability.html">proof for the inclusion-exclusion formula</a> to get
+    <span class="display-math">$$ 1-\prob(A_1\cup\ldots\cup A_n) \geq \sum_{j=0}^k (-1)^j \sum_{1\leq i_1&lt;\ldots&lt; i_j\leq n} \prob(A_{i_1}\cap\ldots\cap A_{i_j})$$</span>
+    and rearrange to get the result.
+</p>
+<p>
+    For <span class="inline-math">$k$</span> even, replace <span class="inline-math">$\geq$</span> by <span class="inline-math">$\leq$</span>.
+</p>
