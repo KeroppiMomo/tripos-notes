@@ -23,6 +23,7 @@ INITIAL_FILES = ["~/Documents/obsidian-main/Lectures/Moses's Maths Notes.md"]
 
 # Path to a HTML template file for the convertion from a markdown file.
 # Include the following placeholers in the template file:
+# - {{web_root_url}}    path on a web URL that corresponds to the output folder (see WEB_URL_ROOT);
 # - {{title}}           title of this markdown file;
 # - {{bare_html}}       main body of the markdown content;
 # - {{backlinks}}       links of other markdown files pointing to this markdown file;
@@ -40,6 +41,13 @@ MATHJAX_CONFIG_FORMAT = "./res/mathjax-config-format.js"
 # Path to a folder containing static resources.
 # Contents in this folder will be copied to the output folder.
 STATIC_FOLDER = "./res/static/"
+
+# URL path to the root of the output folder.
+# It must end with /.
+# For files on the same domain, start with /.
+# If an output file is at [OUTPUT_ROOT]/abc/def.png,
+# the absolute URL path should be [WEB_URL_ROOT]abc/def.png.
+WEB_URL_ROOT = "/tripos-notes/"
 
 #  ------------------------------------------
 # Ignore the following if you don't want to touch

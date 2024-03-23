@@ -142,7 +142,7 @@ def getNavigationFileListHTML(paths: set[Path]):
     return "\n".join(
         map(
             lambda path:
-            f'<li class="nav-file"><a href="/{vaultToOutputPath(path, bareMarkdown=False).relative_to(OUTPUT_ROOT_PATH)}">{path.stem}</a></li>',
+            f'<li class="nav-file"><a href="{config.WEB_URL_ROOT}{vaultToOutputPath(path, bareMarkdown=False).relative_to(OUTPUT_ROOT_PATH)}">{path.stem}</a></li>',
             paths
         )
     )
@@ -240,6 +240,7 @@ def generateFormatted(vaultPath: Path):
     fileTreeHTML = getFileTreeHTML()
 
     output = pageFormatCached \
+        .replace("{{web_url_root}}", config.WEB_URL_ROOT) \
         .replace("{{title}}", vaultPath.stem) \
         .replace("{{backlinks}}", utils.indent(backlinksHTML, levels=2)) \
         .replace("{{outgoing_links}}", utils.indent(outgoingLinksHTML, levels=2)) \

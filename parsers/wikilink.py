@@ -18,7 +18,7 @@ class WikilinkNode(Node):
         self.fragment = fragment
         self.displayContent = displayContent
     def html(self, **kargs: dict) -> str:
-        absolutePath = "/" / (file_manager.vaultToOutputPath(self.fullPath, bareMarkdown=False).relative_to(file_manager.OUTPUT_ROOT_PATH))
+        absolutePath = config.WEB_URL_ROOT + str(file_manager.vaultToOutputPath(self.fullPath, bareMarkdown=False).relative_to(file_manager.OUTPUT_ROOT_PATH))
         url = str(absolutePath) + ("#" + self.fragment if self.fragment is not None else "")
         return f'<a href="{url}">{utils.list2html(self.displayContent, **kargs)}</a>'
     def __repr__(self) -> str:
@@ -52,7 +52,7 @@ class MarkdownEmbedNode(Node):
             return html
 
     def html(self, **kargs) -> str:
-        absolutePath = "/" / (file_manager.vaultToOutputPath(self.fullPath, bareMarkdown=False).relative_to(file_manager.OUTPUT_ROOT_PATH))
+        absolutePath = config.WEB_URL_ROOT + str(file_manager.vaultToOutputPath(self.fullPath, bareMarkdown=False).relative_to(file_manager.OUTPUT_ROOT_PATH))
         url = str(absolutePath) + ("#" + self.fragment if self.fragment is not None else "")
         contentHTML = file_manager.requestBareOutputAtPath(self.fullPath)
         if self.fragment is not None:
@@ -82,7 +82,7 @@ class ImageNode(Node):
         self.width = width
         self.height = height
     def html(self, sourcePath: Path=None, **kargs) -> str:
-        absolutePath = "/" / (file_manager.vaultToOutputPath(self.fullPath).relative_to(file_manager.OUTPUT_ROOT_PATH))
+        absolutePath = config.WEB_URL_ROOT + str(file_manager.vaultToOutputPath(self.fullPath).relative_to(file_manager.OUTPUT_ROOT_PATH))
         width_attribute = f' width="{self.width}"' if self.width is not None else ""
         height_attribute = f' height="{self.height}"' if self.height is not None else ""
         return f'<img src="{absolutePath}"{width_attribute}{height_attribute}>'
