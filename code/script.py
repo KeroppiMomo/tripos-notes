@@ -22,3 +22,4 @@ if __name__ == "__main__":
     initialFilePaths = [Path(pathName).expanduser() for pathName in config.INITIAL_FILES]
     file_manager.generateAllBare(initialFilePaths)
     file_manager.generateAllFormatted()
+    file_manager.generate404()

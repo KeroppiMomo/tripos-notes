@@ -227,11 +227,14 @@ def getFileTreeHTML(tree: Optional[FileTreeNode] = None) -> str:
 </ul>'''
 
 pageFormatCached: Optional[str] = None
-def generateFormatted(vaultPath: Path):
+def getPageFormat() -> str:
     global pageFormatCached
     if pageFormatCached is None:
         pageFormatCached = Path(config.MARKDOWN_PAGE_FORMAT).read_text()
+    return pageFormatCached
 
+def generateFormatted(vaultPath: Path):
+    pageFormat = getPageFormat()
     barePath = vaultToOutputPath(vaultPath, bareMarkdown=True)
     bareHtml = barePath.read_text()
 
@@ -239,7 +242,7 @@ def generateFormatted(vaultPath: Path):
     outgoingLinksHTML = getOutgoingLinksHTML(vaultPath)
     fileTreeHTML = getFileTreeHTML()
 
-    output = pageFormatCached \
+    output = pageFormat \
         .replace("{{web_url_root}}", config.WEB_URL_ROOT) \
         .replace("{{title}}", vaultPath.stem) \
         .replace("{{backlinks}}", utils.indent(backlinksHTML, levels=2)) \
@@ -258,3 +261,23 @@ def generateAllFormatted():
         print(f"Formatted {len(processed_files) - len(remainingFiles)}/{len(processed_files)}: {path.parts[-1]}")
         if path.suffix == ".md":
             generateFormatted(path)
+
+def generate404():
+    pageFormat = getPageFormat()
+    fileTreeHTML = getFileTreeHTML()
+    output = pageFormat \
+        .replace("{{web_url_root}}", config.WEB_URL_ROOT) \
+        .replace("{{title}}", "File not found") \
+        .replace("{{backlinks}}", "") \
+        .replace("{{outgoing_links}}", "") \
+        .replace("{{file_tree}}", utils.indent(fileTreeHTML, levels=2)) \
+        .replace("{{bare_html}}", utils.indent(
+            f'''<p>Uh oh, the file you're looking for is <em>imaginary</em>.</p>
+<p>Go back to <a href="{config.WEB_URL_ROOT}">home page</a>, or look for a file on the left.</p>''',
+            levels=3
+        ))
+
+    outputPath = Path(config.PAGE_404).expanduser()
+    outputPath.parent.mkdir(parents=True, exist_ok=True)
+    outputPath.write_text(output, encoding=ENCODING)
+
