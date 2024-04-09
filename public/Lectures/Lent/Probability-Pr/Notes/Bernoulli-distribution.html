@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Models for randomness</title>
+    <title>Bernoulli distribution</title>
 
     <link rel="stylesheet" href="/tripos-notes/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,156 +58,34 @@
 
     <div class="main-content">
         <div class="main">
-            <h1>Models for randomness</h1>
+            <h1>Bernoulli distribution</h1>
 
             <p>
-                <div class="markdown-embed embed-definition">
-                    <div class="markdown-embed-title">
-                        Definition (sigma-algebra)
-                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-sigma-algebra.html">open_in_new</a>
-                    </div>
-                    <div class="markdown-embed-content">
-                        <p>
-                            For a set <span class="inline-math">$\Omega$</span>, a set <span class="inline-math">$\mathcal F\subseteq\mathcal P(\Omega)$</span> of subsets of <span class="inline-math">$\Omega$</span> is a <em><span class="inline-math">$\sigma$</span>-algebra</em> on <span class="inline-math">$\Omega$</span> satisfying
-                        </p>
-                        <ul>
-                        <li>
-                            <p>
-                                <span class="inline-math">$\Omega \in \mathcal F$</span>;
-                            </p>
-                            
-                        </li><li>
-                            <p>
-                                closure under complementation: <span class="inline-math">$A^\complement\in\mathcal F$</span> for all <span class="inline-math">$A\in\mathcal F$</span>; and
-                            </p>
-                            
-                        </li><li>
-                            <p>
-                                closure under countable unions: if <span class="inline-math">$(A_n)_{n\in\N}$</span> is a sequence in <span class="inline-math">$\mathcal F$</span>, then <span class="inline-math">$\bigcup_{n\in\N} A_n \in \mathcal F$</span>.
-                            </p>
-                            
-                        </li>
-                        </ul>
-                        <p>
-                            Equivalently:
-                        </p>
-                        <ul>
-                        <li>
-                            <p>
-                                <span class="inline-math">$\mathcal F$</span> is non-empty;
-                            </p>
-                            
-                        </li><li>
-                            <p>
-                                <span class="inline-math">$\mathcal F$</span> is closed under countable set operations (complement, union, intersections). (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-sigma-algebra-is-closed-under-countable-intersections.html">Derivation of closure under countable intersections</a>)
-                            </p>
-                            
-                        </li>
-                        </ul>
-                        
-                    </div>
-                </div>
+                A <em>Bernoulli</em> random variable <span class="inline-math">$X$</span> of parameter <span class="inline-math">$p\in[0,1]$</span>, denoted as <span class="inline-math">$X\sim B(1,p)$</span>, has a distribution on <span class="inline-math">$\set{0,1}$</span> given by
+                <span class="display-math">$$ p_0 = 1-p, \quad p_1 = p. $$</span>
             </p>
             <p>
-                <div class="markdown-embed embed-definition">
-                    <div class="markdown-embed-title">
-                        Definition (probability measure)
-                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-measure.html">open_in_new</a>
-                    </div>
-                    <div class="markdown-embed-content">
-                        <p>
-                            Let <span class="inline-math">$\mathcal F$</span> be a <span class="inline-math">$\sigma$</span>-algebra on <span class="inline-math">$\Omega$</span>.
-                            A function <span class="inline-math">$\mathbb P: \mathcal F \to [0,1]$</span> is a <em>probability measure</em> on <span class="inline-math">$\mathcal F$</span> if it satsifies
-                        </p>
-                        <ul>
-                        <li>
-                            <p>
-                                <span class="inline-math">$P(\Omega) = 1$</span>; and
-                            </p>
-                            
-                        </li><li>
-                            <p>
-                                countable additivity: for any sequences <span class="inline-math">$(A_n)_{n\in\N}$</span> of disjoint elements in <span class="inline-math">$\mathcal F$</span>,
-                                <span class="display-math">$$ \mathbb P\Big(\bigcup_n A_n\Big) = \sum_n \mathbb P(A_n). $$</span>
-                            </p>
-                            
-                        </li>
-                        </ul>
-                        
-                    </div>
-                </div>
-            </p>
-            <p>
-                <div class="markdown-embed embed-definition">
-                    <div class="markdown-embed-title">
-                        Definition (probability space)
-                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-space.html">open_in_new</a>
-                    </div>
-                    <div class="markdown-embed-content">
-                        <p>
-                            A triple <span class="inline-math">$(\Omega, \mathcal F, \mathbb P)$</span> is a <em>probability space</em> when <span class="inline-math">$\mathcal F$</span> is a <span class="inline-math">$\sigma$</span>-algebra of <span class="inline-math">$\Omega$</span> and <span class="inline-math">$\mathbb P$</span> is a probability measure on <span class="inline-math">$\mathcal F$</span>.
-                        </p>
-                        
-                    </div>
-                </div>
-            </p>
-            <p>
-                We interpret:
+                This is used to model the outcome of one biased coin toss.
             </p>
             <ul>
             <li>
                 <p>
-                    elements in <span class="inline-math">$\Omega$</span> as outcomes;
+                    Mean <span class="inline-math">$\expect(X)=p$</span>.
                 </p>
                 
             </li><li>
                 <p>
-                    elements in <span class="inline-math">$\mathcal F$</span> as events;
+                    Variance <span class="inline-math">$\var(X) = p-p^2$</span>.
                 </p>
                 
             </li><li>
                 <p>
-                    <span class="inline-math">$\mathbb P(A)$</span> as the probability of the event <span class="inline-math">$A\in\mathcal F$</span>.
+                    Generating function
+                    <span class="display-math">$$ G_X(t) = 1-p+pt, \qquad R=\infty. $$</span>
                 </p>
                 
             </li>
             </ul>
-            <p>
-                <div class="markdown-embed">
-                    <div class="markdown-embed-title">
-                        Classical probability
-                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Classical-probability.html">open_in_new</a>
-                    </div>
-                    <div class="markdown-embed-content">
-                        <p>
-                            In classical probability,
-                        </p>
-                        <ul>
-                        <li>
-                            <p>
-                                <span class="inline-math">$\Omega$</span> is a finite set.
-                            </p>
-                            
-                        </li><li>
-                            <p>
-                                <span class="inline-math">$\mathcal F = \mathcal P(\Omega)$</span>.
-                            </p>
-                            
-                        </li><li>
-                            <p>
-                                We model all outcomes as equally likely, so
-                                <span class="display-math">$$\mathbb P(A) = \frac{|A|}{|\Omega|}.$$</span>
-                            </p>
-                            
-                        </li>
-                        </ul>
-                        <p>
-                            Examples: throwing a dice, balls from a bag, well-shuffled pack of card, distribution of the largest digit, birthdays
-                        </p>
-                        
-                    </div>
-                </div>
-            </p>
             
         </div>
     </div>
@@ -215,16 +93,10 @@
     <div class="nav">
         <h1 class="nav-heading">Backlinks</h1>
         <ul>
-            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Notes.html">Notes</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-probability-distributions.html">Discrete probability distributions</a></li>
         </ul>
         
-        <h1 class="nav-heading">Outgoing Links</h1>
-        <ul>
-            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-sigma-algebra.html">Definition (sigma-algebra)</a></li>
-            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-measure.html">Definition (probability measure)</a></li>
-            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-space.html">Definition (probability space)</a></li>
-            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Classical-probability.html">Classical probability</a></li>
-        </ul>
+        
 
         <h1 class="nav-heading">All Files</h1>
         <ul>
@@ -451,6 +323,8 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Adding-Bernoulli-random-variables-on-a-product-space.html">Adding Bernoulli random variables on a product space</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Basic-properties-of-probability-measures.html">Basic properties of probability measures</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bayes-formula.html">Bayes' formula</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bernoulli-distribution.html">Bernoulli distribution</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Binomial-distribution.html">Binomial distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bivariate-normal.html">Bivariate normal</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Box-Muller-transform.html">Box-Muller transform</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Branching-process.html">Branching process</a></li>
@@ -469,13 +343,13 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-subsets.html">Counting subsets</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-surjections.html">Counting surjections</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Gaussian-random-variables.html">Definition (Gaussian random variables)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Poisson-distribution.html">Definition (Poisson distribution)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-binomial-distribution.html">Definition (binomial distribution)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-absolutely-continuous-random-variable.html">Definition (absolutely continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-branching-process.html">Definition (branching process)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-expectation.html">Definition (conditional expectation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-probability.html">Definition (conditional probability)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-continuous-random-variable.html">Definition (continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-convergence-of-random-variables.html">Definition (convergence of random variables)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-correlation.html">Definition (correlation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-covariance.html">Definition (covariance)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-probability-measure.html">Definition (discrete probability measure)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-random-variable.html">Definition (discrete random variable)</a></li>
@@ -484,14 +358,12 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-integrable-random-variable.html">Definition (expectation of integrable random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-multivariate-random-variable.html">Definition (expectation of multivariate random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-finite-set-cardinality.html">Definition (finite set, cardinality)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-geometric-distribution.html">Definition (geometric distribution)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-discrete-random-variables.html">Definition (independent discrete random variables)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-random-variables.html">Definition (independent random variables)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-sequence-of-events.html">Definition (independent sequence of events)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-integrable-square-integrable.html">Definition (integrable, square-integrable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-joint-probability-density-function.html">Definition (joint probability density function)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-marginal-density-function.html">Definition (marginal density function)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-moment-generating-function.html">Definition (moment generating function)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-multinomial-distribution.html">Definition (multinomial distribution)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-n-th-moment-of-random-variable.html">Definition (n-th moment of random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-non-negative-random-variable.html">Definition (non-negative random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-density-function.html">Definition (probability density function)</a></li>
@@ -504,8 +376,6 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-standard-deviation.html">Definition (standard deviation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance-of-multivariate-random-variable.html">Definition (variance of multivariate random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance.html">Definition (variance)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintiion-absolutely-continuous-random-variable.html">Defintiion (absolutely continuous random variable)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintion-Bernoulli-distribution.html">Defintion (Bernoulli distribution)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-Box-Muller-transform.html">Derivation (Box-Muller transform)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-analysis-of-extinction-probability-of-branching-process.html">Derivation (analysis of extinction probability of branching process)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-bivariate-normal-as-sums-of-independent-Gaussians.html">Derivation (bivariate normal as sums of independent Gaussians)</a></li>
@@ -548,6 +418,7 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-X-mu-Y-nu-is-integrable-in-covariance.html">Derivation that (X-mu)(Y-nu) is integrable in covariance</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-distribution-function-is-non-decreasing.html">Derivation that distribution function is non-decreasing</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-probability-distributions.html">Discrete probability distributions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-random-variables.html">Discrete random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Bertrand-s-paradox.html">Example (Bertrand's paradox)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Buffon-s-needle.html">Example (Buffon's needle)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Catalan-number.html">Example (Catalan number)</a></li>
@@ -565,10 +436,10 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gaussian-random-variables.html">Gaussian random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-function-of-branching-process.html">Generating function of branching process</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-and-moments.html">Generating functions and moments</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-of-some-distributions.html">Generating functions of some distributions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Geometric-distribution.html">Geometric distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Geometric-probability.html">Geometric probability</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Independence.html">Independence</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Inequalities.html">Inequalities</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Inequalities-on-random-variables.html">Inequalities on random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-expectation.html">Law of total expectation</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-probability.html">Law of total probability</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-Poisson-distribution-as-a-limit-of-binomial-distribution.html">Lemma (Poisson distribution as a limit of binomial distribution)</a></li>
@@ -588,16 +459,20 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-union-bound-of-probability.html">Lemma (union bound of probability)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-variance-of-sum.html">Lemma (variance of sum)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-population-of-branching-process.html">Mean population of branching process</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Models-for-randomness.html">Models for randomness</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-time-to-absorption-in-gambler-s-ruin.html">Mean time to absorption in gambler's ruin</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function-of-Gaussian-random-variable.html">Moment generating function of Gaussian random variable</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function.html">Moment generating function</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multinomial-distribution.html">Multinomial distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multivariate-density-functions.html">Multivariate density functions</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Normal-distribution.html">Normal distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Notes.html">Notes</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240131124544.png">Pasted image 20240131124544</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240223173401.png">Pasted image 20240223173401</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240304150408.png">Pasted image 20240304150408</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Poisson-distribution.html">Poisson distribution</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Prbability-of-success-in-gambler-s-ruin.html">Prbability of success in gambler's ruin</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-generating-functions.html">Probability generating functions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-space.html">Probability space</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-AM-GM-inequality.html">Proof (AM-GM inequality)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Borel-Cantelli-lemma.html">Proof (Borel-Cantelli lemma)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Cauchy-Schwarz-inequality-for-expectation.html">Proof (Cauchy-Schwarz inequality for expectation)</a></li>
@@ -645,11 +520,12 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-affine-functions-of-Gaussian-are-Gaussian.html">Proposition (affine functions of Gaussian are Gaussian)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-applying-function-to-continuous-random-variable.html">Proposition (applying function to continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-expectation-of-continuous-random-variable.html">Proposition (expectation of continuous random variable)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-gambler-s-ruin-almost-always-terminates.html">Proposition (gambler's ruin almost always terminates)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-moment-generating-function-of-sum-of-random-variables.html">Proposition (moment generating function of sum of random variables)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-probability-distribution-given-pdf.html">Proposition (probability distribution given pdf)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-processes.html">Random processes</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-variables.html">Random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walk-from-branching-process.html">Random walk from branching process</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walks.html">Random walks</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Rejection-sampling.html">Rejection sampling</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Sample-error-via-central-limit-theorem.html">Sample error via central limit theorem</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simpson-s-paradox.html">Simpson's paradox</a></li>
@@ -745,12 +621,9 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Differentiating-a-curve.html">Differentiating a curve</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Divergence-theorem.html">Divergence theorem</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Elasticity-tensor.html">Elasticity tensor</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-2D-polar-integral.html">Example (2D polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-applying-Stokes-theorem-to-a-frustum.html">Example (applying Stokes' theorem to a frustum)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-coordinates.html">Example (cylindrical polar coordinates)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-integral.html">Example (cylindrical polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-coordinates.html">Example (spherical polar coordinates)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-integral.html">Example (spherical polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-of-solving-isotropic-Poisson-equation-with-boundary-conditions.html">Example of solving isotropic Poisson equation with boundary conditions</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Examples-of-invariant-integrals.html">Examples of invariant integrals</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Gauss-law.html">Gauss' law</a></li>

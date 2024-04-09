@@ -6,18 +6,18 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                We say a random variable <span class="inline-math">$X = (X_1, \ldots, X_n)$</span> in <span class="inline-math">$\R^n$</span> has probability density function <span class="inline-math">$f_X$</span>
+                We say a random variable <span class="inline-math">$\v X = (X_1, \ldots, X_n)$</span> in <span class="inline-math">$\R^n$</span> has probability density function <span class="inline-math">$f_{\v X}$</span>
                 if for all <span class="inline-math">$x_1, \ldots, x_n\in\R$</span>,
                 <span class="display-math">$$ \begin{align*}
-                    F_X(x_1, \ldots, x_n) \equiv \prob(X_1\leq x_1, \ldots, X_n\leq x_n) = \int_{-\infty}^{x_1} \ldots \int_{-\infty}^{x_n} f_X(x) \, dx
+                    F_{\v X}(x_1, \ldots, x_n) \equiv \prob(X_1\leq x_1, \ldots, X_n\leq x_n) = \int_{-\infty}^{x_1} \ldots \int_{-\infty}^{x_n} f_{\v X}(\v x) \, dx
                 \end{align*} $$</span>
                 Equivalently for all Borel set <span class="inline-math">$B$</span>,
                 <span class="display-math">$$ \begin{align*}
-                    \prob(X\in B) = \int_{B} f_X(x) \, dx.
+                    \prob(\v X\in B) = \int_{B} f_{\v X}(\v x) \, dx.
                 \end{align*} $$</span>
                 Also equivalently for all non-negative Borel function <span class="inline-math">$g$</span>,
                 <span class="display-math">$$ \begin{align*}
-                    \expect(g(X)) = \int_{\R^n} g(x) f_X(x) \, dx.
+                    \expect(g(\v X)) = \int_{\R^n} g(\v x) f_{\v X}(\v x) \, dx.
                 \end{align*} $$</span>
             </p>
             
@@ -30,7 +30,7 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                Suppose <span class="inline-math">$X=(X_1, X_2, \ldots, X_n)$</span> is a random variable in <span class="inline-math">$\R^n$</span> having density function <span class="inline-math">$f_X$</span>.
+                Suppose <span class="inline-math">$\v X=(X_1, X_2, \ldots, X_n)$</span> is a random variable in <span class="inline-math">$\R^n$</span> having density function <span class="inline-math">$f_{\v X}$</span>.
                 Then each <span class="inline-math">$X_i$</span> has a density function <span class="inline-math">$f_{X_i}$</span> called <em>marginal density function</em> given by
                 <span class="display-math">$$ \begin{align*}
                     f_{X_i}(x_i) = \int_{\R^{n-1}} f_X(x_1, x_2, \ldots, x_n) \, \prod_{j\neq i} dx_j.
@@ -48,14 +48,14 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                Let <span class="inline-math">$X=(X_1, \ldots, X_n)$</span> be a random variable in <span class="inline-math">$\R^n$</span>,
-                and density functions <span class="inline-math">$f_1, \ldots, f_n$</span>.
+                Let <span class="inline-math">$\v X=(X_1, \ldots, X_n)$</span> be a random variable in <span class="inline-math">$\R^n$</span>,
+                and <span class="inline-math">$f_1, \ldots, f_n$</span> be density functions.
             </p>
             <p>
                 <span class="inline-math">$X_1, \ldots X_n$</span> are independent and have marginal density functions <span class="inline-math">$f_1, \ldots, f_n$</span>
                 iff <span class="inline-math">$X$</span> has density function <span class="inline-math">$f_X$</span> given by
                 <span class="display-math">$$ \begin{align*}
-                    f_X(x) = \prod_{i=1}^{n} f_i(x_i).
+                    f_{\v X}(x) = \prod_{i=1}^{n} f_i(x_i).
                 \end{align*} $$</span>
             </p>
             <p>
@@ -78,7 +78,7 @@
             <p>
                 Then <span class="inline-math">$Z=X+Y$</span> has a density function given by the convolution
                 <span class="display-math">$$ \begin{align*}
-                    f_Z(x) = f_X * f_Y(x) \equiv \int_{\R} f(x-y) g(y) \, dy.
+                    f_Z(z) = f_X * f_Y(z) \equiv \int_{\R} f_X(z-y) f_Y(y) \, dy.
                 \end{align*} $$</span>
             </p>
             <p>
@@ -96,15 +96,15 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                Let <span class="inline-math">$X$</span> be a random variable in <span class="inline-math">$\R^n$</span> taking values and having a density function <span class="inline-math">$f_X$</span> in an open set <span class="inline-math">$D$</span>.
-                Let <span class="inline-math">$\phi$</span> maps <span class="inline-math">$D$</span> bijectively to <span class="inline-math">$\phi(D) \subseteq \R^n$</span> and
-                suppose <span class="inline-math">$\phi$</span> has a continuous derivative (Jacobian matrix <span class="inline-math">$\phi&#x27;$</span>) with <span class="inline-math">$\phi&#x27;(x) \neq 0$</span>.
+                Let <span class="inline-math">$\v X$</span> be a random variable in <span class="inline-math">$\R^n$</span> taking values and having a density function <span class="inline-math">$f_{\v X}$</span> in an open set <span class="inline-math">$D$</span>.
+                Let <span class="inline-math">$\v\phi$</span> maps <span class="inline-math">$D$</span> bijectively to <span class="inline-math">$\v\phi(D) \subseteq \R^n$</span> and
+                suppose <span class="inline-math">$\v\phi$</span> has a continuous derivative (Jacobian matrix <span class="inline-math">$\v\phi&#x27;$</span>) with <span class="inline-math">$\v\phi&#x27;(x) \neq 0$</span>.
             </p>
             <p>
-                Set <span class="inline-math">$y=\phi(x)$</span> and define a new random variable <span class="inline-math">$Y=\phi(X)$</span>.
-                Then <span class="inline-math">$Y$</span> has a density function in <span class="inline-math">$\phi(D)$</span> given by
+                Set <span class="inline-math">$\v y=\v \phi(x)$</span> and define a new random variable <span class="inline-math">$\v Y=\v \phi(X)$</span>.
+                Then <span class="inline-math">$\v Y$</span> has a density function in <span class="inline-math">$\v \phi(D)$</span> given by
                 <span class="display-math">$$ \begin{align*}
-                    f_Y(y) = f_X(x)\,|J|
+                    f_{\v Y}(\v y) = f_{\v X}(\v x)\,|J|
                 \end{align*} $$</span>
                 where <span class="inline-math">$J$</span> is the Jacobian
                 <span class="display-math">$$ \begin{align*}

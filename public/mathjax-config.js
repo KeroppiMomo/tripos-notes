@@ -22,10 +22,11 @@ const preamble = `
 \\newcommand{\\pmat}[1]{\\begin{pmatrix}#1\\end{pmatrix}}
 \\newcommand{\\gen}[1]{\\left\\langle #1 \\right\\rangle}
 \\newcommand{\\isom}{\\cong}
-\\newcommand{\\v}[1]{\\mathbf{#1}}
+\\newcommand{\\v}[1]{\\boldsymbol{\\mathbf{#1}}}
 \\newcommand{\\vhat}[1]{\\hat{\\v{#1}}}
 \\newcommand{\\dv}[1]{\\dot{\\v{#1}}}
 \\newcommand{\\ddv}[1]{\\ddot{\\v{#1}}}
+\\newcommand{\\matr}[1]{\\mathsf{#1}}
 \\newcommand{\\ub}{\\underbrace}
 \\newcommand{\\union}{\\cup}
 \\newcommand{\\inter}{\\cap}

@@ -1,20 +1,20 @@
 <p>
-    For any <span class="inline-math">$u\in\R^n$</span>. Then <span class="inline-math">$u^T Z = \sum_{i=1}^{n} u_i Z_i$</span> so the moment generating function
+    Let <span class="inline-math">$\v u\in\R^n$</span>. Then <span class="inline-math">$\v u^T \v Z = \sum_{i=1}^{n} u_i Z_i$</span> so the moment generating function
     <span class="display-math">$$ \begin{align*}
-        \expect(e^{\lambda u^T Z}) &amp;= \expect\left(\prod_{i=1}^n e^{\lambda u_i Z_i}\right) \\
+        \expect(e^{\lambda \v u^T \v Z}) &amp;= \expect\left(\prod_{i=1}^n e^{\lambda u_i Z_i}\right) \\
         &amp;= \prod_{i=1}^{n} \expect(e^{\lambda u_i Z_i}) &amp;&amp;\text{independence} \\
         &amp;= \prod_{i=1}^{n} e^{\lambda^2 u_i^2/2} \\
-        &amp;= e^{\lambda^2|u|^2/2}
+        &amp;= e^{\lambda^2|\v u|^2/2}
     \end{align*} $$</span>
-    so <span class="inline-math">$u^T Z \sim N(0, |u|^2)$</span> by uniqueness of moment generating functions.
-    Hence <span class="inline-math">$Z$</span> is Gaussian.
+    so <span class="inline-math">$\v u^T \v Z \sim N(0, |\v u|^2)$</span> by uniqueness of moment generating functions.
+    Hence <span class="inline-math">$\v Z$</span> is Gaussian.
 </p>
 <p>
-    Clearly <span class="inline-math">$\expect(Z) = (\expect(Z_1), \ldots, \expect(Z_n)) = 0$</span>, and
+    Clearly <span class="inline-math">$\expect(\v Z) = (\expect(Z_1), \ldots, \expect(Z_n)) = \v 0$</span>, and
     <span class="display-math">$$ \begin{align*}
         \op{cov}(Z_i, Z_j) = \begin{cases}
             0, &amp;i\neq j &amp;\text{ by independence} \\
             1, &amp;i=j &amp;\text{ since }\op{var}(Z_i) = 1.
-        \end{cases} \implies \op{var}(Z) = I_n.
+        \end{cases} \implies \op{var}(\v Z) = I_n.
     \end{align*} $$</span>
 </p>

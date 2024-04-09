@@ -1,28 +1,28 @@
 <p>
-    The density function of <span class="inline-math">$Z$</span> is, due to independence of <span class="inline-math">$Z_1, \ldots, Z_n$</span>,
+    The density function of <span class="inline-math">$\v Z$</span> is, due to independence of <span class="inline-math">$Z_1, \ldots, Z_n$</span>,
     <span class="display-math">$$ \begin{align*}
-        f_Z(z) = \prod_{i=1}^{n} f_{Z_i}(z_i) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi}} e^{-z_i^2/2} = \frac{1}{\sqrt{(2\pi)^n}} e^{-|z|^2/2}.
+        f_\v Z(\v z) = \prod_{i=1}^{n} f_{Z_i}(z_i) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi}} e^{-z_i^2/2} = \frac{1}{\sqrt{(2\pi)^n}} e^{-|\v z|^2/2}.
     \end{align*} $$</span>
 </p>
 <p>
-    When <span class="inline-math">$V$</span> is positive definite, its eigenvalues are all positive.
-    Then <span class="inline-math">$\sigma$</span> is invertible. So we can invert
+    When <span class="inline-math">$\matr V$</span> is positive definite, its eigenvalues are all positive.
+    Then <span class="inline-math">$\matr \sigma$</span> is invertible. So we can invert
     <span class="display-math">$$ \begin{align*}
-        x = \sigma z + \mu \iff z = \sigma\inv(x-\mu).
+        \v x = \matr\sigma \v z + \v \mu \iff \v z = \matr\sigma\inv(\v x-\v \mu).
     \end{align*} $$</span>
     The Jacobian is
     <span class="display-math">$$ \begin{align*}
-        J = \pdfd{z}{x} = \det \sigma\inv = \frac{1}{\sqrt{\det V}}.
+        J = \pdfd{\v z}{\v x} = \det \matr\sigma\inv = \frac{1}{\sqrt{\det \matr V}}.
     \end{align*} $$</span>
     By a change of variable,
     <span class="display-math">$$ \begin{align*}
-        f_X(x) = f_Z(z) |J| = \frac{1}{\sqrt{(2\pi)^n \det V}} \exp\left(-\frac{1}{2} |z|^2\right).
+        f_\v X(\v x) = f_\v Z(\v z) |J| = \frac{1}{\sqrt{(2\pi)^n \det \matr V}} \exp\left(-\frac{1}{2} |\v z|^2\right).
     \end{align*} $$</span>
-    We further find <span class="inline-math">$|z|^2$</span> in terms of <span class="inline-math">$x$</span> as
+    We further find <span class="inline-math">$|\v z|^2$</span> in terms of <span class="inline-math">$\v x$</span> as
     <span class="display-math">$$ \begin{align*}
-        |z|^2 &amp;= z^T z \\
-        &amp;= (x-\mu)^T (\sigma\inv)^T \sigma\inv (x-\mu) \\
-        &amp;= (x-\mu)^T V\inv (x-\mu) &amp;&amp;\text{by }V=\sigma\sigma^T.
+        |\v z|^2 &amp;= \v z^T \v z \\
+        &amp;= (\v x-\v \mu)^T (\matr\sigma\inv)^T \matr\sigma\inv (\v x-\v \mu) \\
+        &amp;= (\v x-\v \mu)^T \matr V\inv (\v x-\v \mu) &amp;&amp;\text{by }\matr V=\matr \sigma\matr \sigma^T.
     \end{align*} $$</span>
     Substituting gives the result.
 </p>

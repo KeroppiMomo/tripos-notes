@@ -74,12 +74,41 @@
                         
                     </div>
                 </div>
+                Recall that <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-variables.html#^5cc4c9">the distribution function of any random variable is right-continuous</a>.
             </p>
             <p>
-                <div class="markdown-embed">
+                <div class="markdown-embed embed-definition">
                     <div class="markdown-embed-title">
-                        Defintiion (absolutely continuous random variable)
-                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintiion-absolutely-continuous-random-variable.html">open_in_new</a>
+                        Definition (probability density function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-density-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A function <span class="inline-math">$f$</span> on <span class="inline-math">$\R$</span> is a <em>probability density function</em> if <span class="inline-math">$f$</span> is non-negative, sufficiently regular (Borel measurable), and
+                            <span class="display-math">$$ \int_\R f(x)\, dx = 1. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (probability distribution given pdf)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-probability-distribution-given-pdf.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given a probability density function <span class="inline-math">$f$</span>, there is a unique probability measure <span class="inline-math">$\mu$</span> on <span class="inline-math">$\R$</span> (defined on the Borel <span class="inline-math">$\sigma$</span>-algebra <span class="inline-math">$\mathcal B$</span> which is the smallest <span class="inline-math">$\sigma$</span>-algebra containing all intervals in <span class="inline-math">$\R$</span>) such that
+                            <span class="display-math">$$ \mu\big((-\infty, x]\big) = \int_{-\infty}^x f(y) \, dy,\qquad \mu(B)=\int_B f(x)\,dx = \int_\R 1_B(x)\,f(x)\,dx.$$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (absolutely continuous random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-absolutely-continuous-random-variable.html">open_in_new</a>
                     </div>
                     <div class="markdown-embed-content">
                         <p>
@@ -170,7 +199,897 @@
                             <span class="display-math">$$ \begin{align*}
                                 \expect(g(X)) = \int_{\R} g(x) f_X(x)\, dx.
                             \end{align*} $$</span>
-                            This remains valid without assuming <span class="inline-math">$g$</span> integrable provided that <span class="inline-math">$\expect|g(x)|&lt;\infty$</span>.
+                            This remains valid without assuming <span class="inline-math">$g$</span> is non-negative provided that <span class="inline-math">$\expect|g(x)|&lt;\infty$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Moment generating function
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (moment generating function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-moment-generating-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$X$</span> be a random variable on <span class="inline-math">$\R$</span>. 
+                                        The <em>moment generating function</em> of <span class="inline-math">$X$</span> is the function <span class="inline-math">$M_X: \R\to[0,\infty]$</span> given by
+                                        <span class="display-math">$$ \begin{align*}
+                                            M_X(\lambda) = \expect(e^{\lambda X}).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        For a random variable on <span class="inline-math">$\R^n$</span>, the moment generating function <span class="inline-math">$M_{\v X}: \R^n \to [0,\infty]$</span> given by
+                                        <span class="display-math">$$ \begin{align*}
+                                            M_{\v X}(\v \lambda) = \expect(e^{\v \lambda^T \v X}), \quad \v \lambda\in\R^n.
+                                        \end{align*} $$</span>
+                                        (<span class="inline-math">$\v \lambda^T \v X$</span> is the dot product)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            If <span class="inline-math">$X$</span> takes values in <span class="inline-math">$\Z^+$</span>, then the probability generating function is related by <span class="inline-math">$M_X(\lambda) = G_X(e^{\lambda})$</span>.
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (moment generating function of sum of random variables)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-moment-generating-function-of-sum-of-random-variables.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For independent random variables <span class="inline-math">$X,Y$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            M_{X+Y}(\lambda) = \expect(e^{\lambda X} e^{\lambda Y}) = \expect(e^{\lambda X}) \expect(e^{\lambda Y}) = M_X(\lambda) M_Y(\lambda).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (uniqueness of moment generating function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-uniqueness-of-moment-generating-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$X,Y$</span> be random variables having the same moment generating function <span class="inline-math">$M$</span>.
+                                    </p>
+                                    <p>
+                                        For <span class="inline-math">$X,Y$</span> in <span class="inline-math">$\R$</span>, if <span class="inline-math">$M(\lambda) &lt; \infty$</span> for some <span class="inline-math">$\lambda&gt;0$</span>, then <span class="inline-math">$X,Y$</span> have the same distribution <span class="inline-math">$F_X = F_Y$</span>.
+                                    </p>
+                                    <p>
+                                        For <span class="inline-math">$\v X,\v Y$</span> in <span class="inline-math">$\R^n$</span>, if <span class="inline-math">$M(\v \lambda) &lt; \infty$</span> on some open set of <span class="inline-math">$\v \lambda$</span>, then <span class="inline-math">$\v X,\v Y$</span> have the same distribution.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            The condition of finiteness is required: <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-scaling-Cauchy-distribution-has-the-same-moment-generating-function.html">Example (scaling Cauchy distribution has the same moment generating function)</a>.
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (convergence of random variables)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-convergence-of-random-variables.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A sequence of random variables <span class="inline-math">$(X_n)$</span> <em>converges in distribution</em> to a random variable <span class="inline-math">$X$</span> if
+                                        <span class="display-math">$$ \begin{align*}
+                                            F_{X_n}(x) \to F_X(x)
+                                        \end{align*} $$</span>
+                                        for all <span class="inline-math">$x\in\R$</span> where <span class="inline-math">$F_X$</span> is continuous at <span class="inline-math">$x$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-converging-random-variables-with-distribution-fails-to-converge-at-discontinuity.html">Why we exclude discontinuity</a>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (continuity of moment generating function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-continuity-of-moment-generating-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$X,(X_n)$</span> be random variables.
+                                        Suppose that as <span class="inline-math">$n\to\R$</span>, <span class="inline-math">$M_{X_n} (\lambda) \to M_X(\lambda)$</span> for all <span class="inline-math">$\lambda\in\R$</span> and <span class="inline-math">$M_X(\lambda) &lt; \infty$</span> for some <span class="inline-math">$\lambda\neq 0$</span>.
+                                    </p>
+                                    <p>
+                                        Then <span class="inline-math">$X_n \to X$</span> in distribution.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Continuous probability distributions
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Continuous-probability-distributions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <table>
+                            <tr>
+                                <th class="table-cell-left"><p>
+                                    Distribution <span class="inline-math">$X\sim$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Parameters
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Values <span class="inline-math">$x\in$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    PDF <span class="inline-math">$f(x)$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Mean <span class="inline-math">$\expect(X)$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Variance <span class="inline-math">$\var(X)$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    MGF <span class="inline-math">$M_X(t)$</span>
+                                </p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Uniform <span class="inline-math">$U[a,b]$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$[a,b]$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$[a,b]$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1}{b-a}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1}{2}(a+b)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1}{12}(b-a)^2$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\begin{cases} \frac{e^{bx}-e^{ax}}{t(b-a)}, &amp;t\neq 0 \\ 1, &amp;t=0\end{cases}$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Exponential <span class="inline-math">$E(\lambda)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\lambda\in(0,\infty)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$[0,\infty)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\lambda e^{-\lambda x}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1}{\lambda}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1}{\lambda^2}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\begin{cases} \frac{\lambda}{\lambda-t},&amp; t&lt;\lambda \\ \infty, &amp;t\geq \lambda \end{cases}$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Gamma <span class="inline-math">$\Gamma(\alpha,\lambda)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\alpha\in(0,\infty)$</span><br><span class="inline-math">$\lambda\in(0,\infty)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$[0,\infty]$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{\alpha}{\lambda}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{\alpha}{\lambda^2}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\begin{cases} \left(\frac{\lambda}{\lambda-t}\right)^\alpha,&amp; t&lt;\lambda \\ \infty, &amp;t\geq \lambda \end{cases}$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Normal <span class="inline-math">$N(\mu,\sigma^2)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\mu\in\R$</span><br><span class="inline-math">$\sigma&gt;0$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\R$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\mu$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\sigma^2$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\exp(\mu t + \frac{1}{2}\sigma^2 t^2)$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Cauchy
+                                </p>
+                                </td>
+                                <td class="table-cell-left"></td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\R$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1}{\pi(1+x^2)}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\expect\textbar X\textbar = \infty$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\infty$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\begin{cases} \infty, &amp;t\neq 0 \\ 1, &amp;t=0 \end{cases}$</span>
+                                </p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Uniform distribution
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Uniform-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <span class="inline-math">$U[a,b]$</span>, the uniform distribution on <span class="inline-math">$[a,b]$</span>, has probability density function
+                                        <span class="display-math">$$ f(x) = \frac{1}{b-a}1_{[a,b]}(x). $$</span>
+                                    </p>
+                                    <p>
+                                        Analogue to equally likely outcomes.
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Mean <span class="inline-math">$= (a+b)/2$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-mean-of-uniform-distribution.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Moment generating function (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-moment-generating-function-of-uniform-function.html">Derivation</a>)
+                                            <span class="display-math">$$ \begin{align*}
+                                            M_X(t) = \begin{cases}
+                                                \dfrac{e^{bx} - e^{ax}}{t(b-a)}, &amp;t\neq 0 \\
+                                                1, &amp;t=0.
+                                            \end{cases}
+                                            \end{align*} $$</span>
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Exponential distribution
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Exponential-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <span class="inline-math">$E(\lambda)$</span>, the exponential distribution of parameter <span class="inline-math">$\lambda\in(0,\infty)$</span>, has probability density function
+                                        <span class="display-math">$$ f(x) = \lambda {\color{yellow}e^{-\lambda x}},\qquad x\in[0,\infty).$$</span>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Mean <span class="inline-math">$= 1/\lambda$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-mean-of-exponential-distribution.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Exponential distribution is the limit of geometric distributions. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Exponential-distribution-as-a-limit-of-geometric-distributions.html">How?</a>)
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Exponential distribution is unique non-trivial distribution satisfying the <em>memoryless property</em>
+                                            <span class="display-math">$$ \begin{align*}
+                                                \prob(T &gt; s+t | T&gt;s) = \prob(T&gt;t).
+                                            \end{align*} $$</span>
+                                            (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-memoryless-property-characterises-exponential-distribution.html">Proof</a>)
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Moment generating function (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-moment-generating-function-of-exponential-distribution.html">Derivation</a>)
+                                            <span class="display-math">$$ \begin{align*}
+                                                M_X(t) = \begin{cases}
+                                                    \dfrac{\lambda}{\lambda-t}, &amp;t&lt;\lambda, \\
+                                                    \infty, &amp;t\geq \lambda.
+                                                \end{cases}
+                                            \end{align*} $$</span>
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Gamma distribution
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gamma-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <span class="inline-math">$\Gamma(\alpha,\lambda)$</span>, the gamma distribution of parameter <span class="inline-math">$\alpha,\lambda\in(0,\infty)$</span>, has probability density function
+                                        <span class="display-math">$$ f(x) = \frac{\lambda^\alpha}{\Gamma(\alpha)} {\color{yellow}x^{\alpha-1} e^{-\lambda x}},\qquad x\in[0,\infty) $$</span>
+                                        where <span class="inline-math">$\Gamma(\alpha) = \int_0^\infty x^{\alpha-1} e^{-x}\,dx$</span>.
+                                    </p>
+                                    <p>
+                                        <span class="inline-math">$\Gamma(1, \lambda)$</span> is identical to <span class="inline-math">$E(\lambda)$</span>.
+                                    </p>
+                                    <p>
+                                        <iframe src="https://www.desmos.com/calculator/usudwn5weq?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Moment generating function (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-moment-generating-function-of-gamma-distribution.html">Derivation</a>)
+                                            <span class="display-math">$$ \begin{align*}
+                                                M_X(t) = \begin{cases}
+                                                    \left(\dfrac{\lambda}{\lambda-t}\right)^\alpha, &amp; t&lt;\lambda, \\
+                                                    \infty, &amp; t\geq \lambda.
+                                                \end{cases}
+                                            \end{align*} $$</span>
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Normal distribution
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Normal-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <span class="inline-math">$N(\mu,\sigma^2)$</span>, the normal distribution of mean <span class="inline-math">$\mu$</span> and variance <span class="inline-math">$\sigma^2$</span>, has probability density function
+                                        <span class="display-math">$$ f(x) = \frac{1}{\sigma\sqrt{2\pi}} \color{yellow}e^{-\frac{(x-\mu)^2}{2\sigma^2}}. $$</span>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            If <span class="inline-math">$X\sim N(0,1)$</span>, then <span class="inline-math">$\sigma X + \mu \sim N(\mu, \sigma^2)$</span>.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Mean <span class="inline-math">$= \mu$</span>, variance <span class="inline-math">$= \sigma^2$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-mean-and-variance-of-normal-distribution.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Moment generating function (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-moment-generating-function-of-normal-distribution.html">Derivation</a>)
+                                        </p>
+                                        <ul>
+                                        <li>
+                                            <p>
+                                                For <span class="inline-math">$X\sim N(0,1)$</span>,
+                                                <span class="display-math">$$ \begin{align*}
+                                                    M_X(t) = e^{t^2/2}.
+                                                \end{align*} $$</span>
+                                            </p>
+                                            
+                                        </li><li>
+                                            <p>
+                                                For <span class="inline-math">$X\sim N(\mu, \sigma^2)$</span>,
+                                                <span class="display-math">$$ \begin{align*}
+                                                    M_X(t) = e^{\mu t + (\sigma t)^2/2}.
+                                                \end{align*} $$</span>
+                                            </p>
+                                            
+                                        </li>
+                                        </ul>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Cauchy distribution
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Cauchy-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The Cauchy distribution has probability density function
+                                        <span class="display-math">$$ \begin{align*}
+                                            f(x) = \frac{1}{\pi(1+x^2)}
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Mean <span class="inline-math">$= \infty$</span>.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Moment generating function <span class="inline-math">$M_X(0) = 1$</span> and <span class="inline-math">$\infty$</span> elsewhere.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Multivariate density functions
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multivariate-density-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (joint probability density function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-joint-probability-density-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        We say a random variable <span class="inline-math">$\v X = (X_1, \ldots, X_n)$</span> in <span class="inline-math">$\R^n$</span> has probability density function <span class="inline-math">$f_{\v X}$</span>
+                                        if for all <span class="inline-math">$x_1, \ldots, x_n\in\R$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            F_{\v X}(x_1, \ldots, x_n) \equiv \prob(X_1\leq x_1, \ldots, X_n\leq x_n) = \int_{-\infty}^{x_1} \ldots \int_{-\infty}^{x_n} f_{\v X}(\v x) \, dx
+                                        \end{align*} $$</span>
+                                        Equivalently for all Borel set <span class="inline-math">$B$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \prob(\v X\in B) = \int_{B} f_{\v X}(\v x) \, dx.
+                                        \end{align*} $$</span>
+                                        Also equivalently for all non-negative Borel function <span class="inline-math">$g$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \expect(g(\v X)) = \int_{\R^n} g(\v x) f_{\v X}(\v x) \, dx.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (marginal density function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-marginal-density-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Suppose <span class="inline-math">$\v X=(X_1, X_2, \ldots, X_n)$</span> is a random variable in <span class="inline-math">$\R^n$</span> having density function <span class="inline-math">$f_{\v X}$</span>.
+                                        Then each <span class="inline-math">$X_i$</span> has a density function <span class="inline-math">$f_{X_i}$</span> called <em>marginal density function</em> given by
+                                        <span class="display-math">$$ \begin{align*}
+                                            f_{X_i}(x_i) = \int_{\R^{n-1}} f_X(x_1, x_2, \ldots, x_n) \, \prod_{j\neq i} dx_j.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (independence iff joint pdf factorises)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-independence-iff-joint-pdf-factorises.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\v X=(X_1, \ldots, X_n)$</span> be a random variable in <span class="inline-math">$\R^n$</span>,
+                                        and <span class="inline-math">$f_1, \ldots, f_n$</span> be density functions.
+                                    </p>
+                                    <p>
+                                        <span class="inline-math">$X_1, \ldots X_n$</span> are independent and have marginal density functions <span class="inline-math">$f_1, \ldots, f_n$</span>
+                                        iff <span class="inline-math">$X$</span> has density function <span class="inline-math">$f_X$</span> given by
+                                        <span class="display-math">$$ \begin{align*}
+                                            f_{\v X}(x) = \prod_{i=1}^{n} f_i(x_i).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-independence-iff-joint-pdf-factorises.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (convolution of densities for sum of independent random variables)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-convolution-of-densities-for-sum-of-independent-random-variables.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$X,Y$</span> be independent random variables in <span class="inline-math">$\R$</span> with density functions <span class="inline-math">$f_X, f_Y$</span>.
+                                    </p>
+                                    <p>
+                                        Then <span class="inline-math">$Z=X+Y$</span> has a density function given by the convolution
+                                        <span class="display-math">$$ \begin{align*}
+                                            f_Z(z) = f_X * f_Y(z) \equiv \int_{\R} f_X(z-y) f_Y(y) \, dy.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-convolution-of-densities-for-sum-of-independent-random-variables.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (transformation of multi-dimensional random variable)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-transformation-of-multi-dimensional-random-variable.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\v X$</span> be a random variable in <span class="inline-math">$\R^n$</span> taking values and having a density function <span class="inline-math">$f_{\v X}$</span> in an open set <span class="inline-math">$D$</span>.
+                                        Let <span class="inline-math">$\v\phi$</span> maps <span class="inline-math">$D$</span> bijectively to <span class="inline-math">$\v\phi(D) \subseteq \R^n$</span> and
+                                        suppose <span class="inline-math">$\v\phi$</span> has a continuous derivative (Jacobian matrix <span class="inline-math">$\v\phi&#x27;$</span>) with <span class="inline-math">$\v\phi&#x27;(x) \neq 0$</span>.
+                                    </p>
+                                    <p>
+                                        Set <span class="inline-math">$\v y=\v \phi(x)$</span> and define a new random variable <span class="inline-math">$\v Y=\v \phi(X)$</span>.
+                                        Then <span class="inline-math">$\v Y$</span> has a density function in <span class="inline-math">$\v \phi(D)$</span> given by
+                                        <span class="display-math">$$ \begin{align*}
+                                            f_{\v Y}(\v y) = f_{\v X}(\v x)\,|J|
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$J$</span> is the Jacobian
+                                        <span class="display-math">$$ \begin{align*}
+                                            J = \det\left(\pdfd{x_i}{y_j}\right) = \left(\det\left(\pdfd{y_i}{x_j}\right)\right)\inv.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Gaussian random variables
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gaussian-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (Gaussian random variables)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Gaussian-random-variables.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A random variable <span class="inline-math">$X$</span> in <span class="inline-math">$\R$</span> is Gaussian
+                                        if <span class="inline-math">$X=\sigma Z+\mu$</span> for some <span class="inline-math">$\mu\in\R, \sigma\in[0,\infty)$</span> and <span class="inline-math">$Z\sim N(0,1)$</span>, i.e. the probability distribution function is
+                                        <span class="display-math">$$ \begin{align*}
+                                            f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}.
+                                        \end{align*} $$</span>
+                                        Then we write <span class="inline-math">$X\sim N(\mu, \sigma^2)$</span>.
+                                    </p>
+                                    <p>
+                                        For <span class="inline-math">$n\geq 2$</span>, a random variable <span class="inline-math">$\v X$</span> in <span class="inline-math">$\R^n$</span> is Gaussian if <span class="inline-math">$\v u^T \v X \equiv \sum_{i=1}^{n} u_i X_i$</span> is Gaussian for all <span class="inline-math">$\v u\in\R^n$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (affine functions of Gaussian are Gaussian)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-affine-functions-of-Gaussian-are-Gaussian.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For a Guassian random variable <span class="inline-math">$\v X$</span> in <span class="inline-math">$\R^n$</span>, for any <span class="inline-math">$m\times n$</span> matrix <span class="inline-math">$\matr a$</span> and vector <span class="inline-math">$\v b\in\R^m$</span>,
+                                        the random variable <span class="inline-math">$\v Y = \matr a\v X + \v b$</span> is also Gaussian. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-affine-functions-of-Gaussian-are-Gaussian.html">Proof</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Moment generating function of Gaussian random variable
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function-of-Gaussian-random-variable.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For a Gaussian random variable <span class="inline-math">$\v X$</span> in <span class="inline-math">$\R^n$</span>,
+                                        suppose it has mean <span class="inline-math">$\v \mu = \expect(\v X)$</span> and variance <span class="inline-math">$\matr V = \op{var}(\v X) = \left(\op{cov}(X_i, X_j)\right)_{i,j=1}^n$</span>.
+                                    </p>
+                                    <p>
+                                        For all <span class="inline-math">$\v u\in\R^n$</span>, the random variable <span class="inline-math">$\v u^T \v X \sim N(\v u^T \v \mu, \v u^T V \v u)$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-mean-and-variance-of-projection-of-multivariate-random-variable.html">Derivation</a>)
+                                        Note that <span class="inline-math">$\v u^T \matr V \v u \geq 0$</span> so <span class="inline-math">$\matr V$</span> is non-negative definite.
+                                    </p>
+                                    <p>
+                                        Therefore the  generating function is
+                                        <span class="display-math">$$ \begin{align*}
+                                            M_{\v X}(\v\lambda) = \expect(e^{\v\lambda^T \v X}) = e^{\v \lambda^T \v \mu + \frac{1}{2}\v \lambda^T \matr V\v \lambda}.
+                                        \end{align*} $$</span>
+                                        <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-uniqueness-of-moment-generating-function.html">Hence</a> the distribution of <span class="inline-math">$\v X$</span> is uniquely determined by <span class="inline-math">$\v \mu$</span> and <span class="inline-math">$\matr V$</span>.
+                                        So we write <span class="inline-math">$\v X\sim N(\v \mu, \matr V)$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Constructing Guassian random variables
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Constructing-Guassian-random-variables.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        To construct <span class="inline-math">$\v Z\sim N(0, I_n)$</span> where <span class="inline-math">$I_n$</span> is the <span class="inline-math">$n\times n$</span> identity matrix,
+                                        take <span class="inline-math">$Z_1, \ldots, Z_n$</span> independent <span class="inline-math">$N(0,1)$</span> random varibales and set <span class="inline-math">$\v Z = (Z_1, \ldots, Z_n)$</span>.
+                                        (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-constructing-Gaussian-random-variables.html">Proof</a>)
+                                    </p>
+                                    <p>
+                                        Generally to construct <span class="inline-math">$\v X\sim N(\v \mu, \matr V)$</span>, we define <span class="inline-math">$\v X=\matr \sigma \v Z + \v \mu$</span> where <span class="inline-math">$\matr \sigma = \sqrt{\matr V}$</span>.
+                                        <span class="inline-math">$\v X$</span> is then Gaussian, <span class="inline-math">$\expect(\v X) = \v \mu$</span>, and
+                                        <span class="display-math">$$\op{var}(\v X) = \expect((\matr \sigma \v Z)(\matr \sigma \v Z)^T) = \matr \sigma\op{var}(\v Z)\matr \sigma^T = \matr \sigma I_n \matr \sigma^T = \matr V.$$</span>
+                                        Hence <span class="inline-math">$\v X \sim N(\v\mu,\matr V)$</span>.
+                                    </p>
+                                    <p>
+                                        (What is <span class="inline-math">$\sqrt{\matr V}$</span>: since <span class="inline-math">$\matr V$</span> is symmetric, <span class="inline-math">$\matr V$</span> is diagonalisable by an orthogonal matrix <span class="inline-math">$\matr U$</span>.
+                                        Also since <span class="inline-math">$\matr V$</span> is non-negative definite, <span class="inline-math">$\matr V$</span> has eigenvalues <span class="inline-math">$\lambda_1, \ldots, \lambda_n \geq 0$</span>.
+                                        <span class="display-math">$$ \begin{align*}
+                                            \matr V &amp;= \matr U\matr \Lambda \matr U^T, &amp; \quad \matr \Lambda &amp;= \op{diag}(\lambda_1, \ldots, \lambda_n). \\
+                                            \text{Set } \matr \sigma &amp;= \matr U\sqrt{\matr \Lambda} \matr U^T, &amp;\sqrt{\matr \Lambda} &amp;= \op{diag}(\sqrt{\lambda_1}, \ldots, \sqrt{\lambda_n})
+                                        \end{align*} $$</span>
+                                        so we have <span class="inline-math">$\matr \sigma\matr \sigma^T = \matr V$</span>.)
+                                    </p>
+                                    <p>
+                                        For positive definite variance <span class="inline-math">$\matr V$</span> (equivalently <span class="inline-math">$\matr V$</span> is invertible), the density function of <span class="inline-math">$\v X\sim N(\v \mu, \matr V)$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            f_\v X(\v x) = \frac{\exp\left(-\frac{1}{2} (\v x-\v \mu)^T \matr V\inv (\v x-\v \mu)\right)}{\sqrt{(2\pi)^n \det \matr V}}.
+                                        \end{align*} $$</span>
+                                        (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-density-function-of-Gaussian-random-variables-for-positive-definite-variance.html">Derivation</a>)
+                                    </p>
+                                    <p>
+                                        If <span class="inline-math">$\matr V$</span> is not invertible, then <span class="inline-math">$\matr U$</span> can be choosen so that <span class="inline-math">$\matr U\v X \sim N(\matr U\v\mu, \matr U\matr V\matr U^T)$</span> with
+                                        <span class="display-math">$$ \begin{align*}
+                                            \matr U\matr V\matr U^T = \op{diag}(\lambda_1, \lambda_2, \ldots, \lambda_k, 0, \ldots, 0) \equiv \pmat{\matr V_0 &amp; \matr 0 \\ \matr 0 &amp; \matr 0}.
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$\matr V_0$</span> is positive definite.
+                                        Then we can construct
+                                        <span class="display-math">$$ \begin{align*}
+                                            \v X = \v \mu + \matr U^T \pmat{\v Y\\\v 0}, \quad \v Y = \sqrt{\matr V_0}\pmat{z_1 \\ z_2 \\ \vdots \\ z_k}
+                                        \end{align*} $$</span>
+                                        and <span class="inline-math">$\v Y$</span> has density
+                                        <span class="display-math">$$ \begin{align*}
+                                            f_\v Y(\v y) = \frac{\exp\left(-\frac{1}{2} \v y^T \matr V_0\inv \v y\right)}{\sqrt{(2\pi)^n\det \matr V_0}}
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Bivariate normal
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bivariate-normal.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\v X$</span> be a non-degenerate normal random variable in <span class="inline-math">$\R^2$</span>, i.e. <span class="inline-math">$\matr V=\var(\v X)$</span> is invertible.
+                                        <span class="inline-math">$\v X$</span> is uniquely determined by each <span class="inline-math">$(\mu_1, \mu_2, \sigma_1^2, \sigma_2^2, \rho) \in \R^2\times (0,\infty)^2 \times (-1, 1)$</span>, where <span class="inline-math">$\mu_i = \expect(X_i), \sigma_i^2 = \expect(X_i), \rho = \op{corr}(X_1,X_2)$</span>.
+                                        (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-bivariate-normal-determined-by-5-parameters.html">Proof</a>)
+                                    </p>
+                                    <p>
+                                        If <span class="inline-math">$\op{corr}(X_1, X_2)=0$</span>, then <span class="inline-math">$X_1, X_2$</span> are independent. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Zero-correlation-implies-independence-for-bivariate-normal.html">Proof</a>)
+                                        For a general <span class="inline-math">$\rho$</span>, we can write
+                                        <span class="display-math">$$ \begin{align*}
+                                            X_2 = aX_1 + Y
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$Y$</span> is normal and independent of <span class="inline-math">$X_1$</span>, and <span class="inline-math">$a = \rho\sigma_2/\sigma_1$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-bivariate-normal-as-sums-of-independent-Gaussians.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Simulation of random variables
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simulation-of-random-variables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We have access to a sequence of independent <span class="inline-math">$U[0,1]$</span> random variables <span class="inline-math">$U_1, U_2, \ldots, U_n$</span>,
+                            and we want to simulate independent random variables <span class="inline-math">$(X_1, X_2, \ldots, X_n)$</span> having a given distribution.
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Simulation using inverse function
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simulation-using-inverse-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Suppose our desired density function is <span class="inline-math">$f$</span> in an open interval <span class="inline-math">$I$</span>.
+                                        Then the distribution function <span class="inline-math">$F(x) = \int_{-\infty}^{x} f(y) dy$</span> is an increasing map from <span class="inline-math">$I$</span> to <span class="inline-math">$(0,1)$</span>.
+                                        Let
+                                        <span class="display-math">$$ \begin{align*}
+                                            G(u) = \inf\sb{x\in\R}{u\leq F(x)}.
+                                        \end{align*} $$</span>
+                                        (When <span class="inline-math">$f$</span> is positive everywhere, <span class="inline-math">$G=F\inv$</span>.)
+                                        Note that for all <span class="inline-math">$x\in\R, u\in(0,1)$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            G(u) \leq x \iff u \leq F(x).
+                                        \end{align*} $$</span>
+                                        Then when we have <span class="inline-math">$U\sim U[0,1]$</span> and let <span class="inline-math">$X=G(U)$</span>, we have
+                                        <span class="display-math">$$ \begin{align*}
+                                            \prob(X\leq x) = \prob(G(U)\leq x) = \prob(U\leq F(x)) = F(x)
+                                        \end{align*} $$</span>
+                                        so <span class="inline-math">$X$</span> has a distribution function <span class="inline-math">$F_X$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Box-Muller transform
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Box-Muller-transform.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        To simulate <span class="inline-math">$X\sim N(0,1)$</span>, we take <span class="inline-math">$U,V\sim U[0,1]$</span> and set
+                                        <span class="display-math">$$ \begin{align*}
+                                            \Theta = 2\pi U, \quad R = \sqrt{-2\log V} \implies V = e^{-R^2/2}, \quad \Theta\sim U[0,2\pi].
+                                        \end{align*} $$</span>
+                                        Then <span class="inline-math">$X=R\cos\Theta$</span> and <span class="inline-math">$Y=R\sin\Theta$</span> are independent <span class="inline-math">$N(0,1)$</span> random variables.
+                                        (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-Box-Muller-transform.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Rejection sampling
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Rejection-sampling.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        To simulate <span class="inline-math">$\v U\sim U([0,1]^d)$</span>, we take <span class="inline-math">$\v U = (\bar U_1, \bar U_2, \ldots, \bar U_d)$</span> where <span class="inline-math">$\bar U_i \sim U[0,1]$</span> are independent.
+                                    </p>
+                                    <p>
+                                        For some <span class="inline-math">$A\subseteq [0,1]^d$</span>, to simulate a random variable <span class="inline-math">$\v X$</span> in <span class="inline-math">$[0,1]^d$</span> having density
+                                        <span class="display-math">$$ \begin{align*}
+                                            f(\v x) = \frac{1_A(\v x)}{|A|},
+                                        \end{align*} $$</span>
+                                        take <span class="inline-math">$\v U_1,\v U_2,\ldots$</span> independent <span class="inline-math">$U([0,1]^d)$</span> random variables and
+                                        <span class="inline-math">$\v X$</span> to be the first of those which land in <span class="inline-math">$A$</span>, i.e. reject the others:
+                                        <span class="display-math">$$ \begin{align*}
+                                            \v X = \v U_N, \quad N=\min\sb{n\geq 1}{\v U_n \in A}.
+                                        \end{align*} $$</span>
+                                        (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-rejection-sampling-for-uniform-distribution.html">Derivation</a>)
+                                    </p>
+                                    <p>
+                                        In general to simulate <span class="inline-math">$\v X$</span> having a bounded density <span class="inline-math">$f$</span> in <span class="inline-math">$[0,1]^d$</span>, let <span class="inline-math">$f(\v x)\leq \lambda$</span> for all <span class="inline-math">$\v x$</span>.
+                                        We'll apply the same technique as above to <span class="inline-math">$[0,1]^{d+1}$</span>:
+                                    </p>
+                                    <p>
+                                        Take <span class="inline-math">$\v U_1, \v U_2, \ldots \sim U([0,1]^d)$</span> and <span class="inline-math">$V_1,V_2,\ldots\sim U[0,1]$</span> all independent random variables,
+                                        and <span class="inline-math">$\v X$</span> to be the the first <span class="inline-math">$\v U_n$</span> such that <span class="inline-math">$V_n\leq f(\v U_n)/\lambda$</span>:
+                                        <span class="display-math">$$ \begin{align*}
+                                            \v X = \v U_n, \quad N = \min\sb{n\geq 1}{V_n \leq f(\v U_n)/\lambda}.
+                                        \end{align*} $$</span>
+                                        (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-rejection-sampling-for-general-distribution.html">Derivation</a>)
+                                    </p>
+                                    <p>
+                                        <img src="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240304150408.png">
+                                        https://www.geogebra.org/calculator/gtjdw2kc
+                                    </p>
+                                    
+                                </div>
+                            </div>
                         </p>
                         
                     </div>
@@ -189,11 +1108,19 @@
         <h1 class="nav-heading">Outgoing Links</h1>
         <ul>
             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-continuous-random-variable.html">Definition (continuous random variable)</a></li>
-            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintiion-absolutely-continuous-random-variable.html">Defintiion (absolutely continuous random variable)</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-variables.html">Random variables</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-density-function.html">Definition (probability density function)</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-probability-distribution-given-pdf.html">Proposition (probability distribution given pdf)</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-absolutely-continuous-random-variable.html">Definition (absolutely continuous random variable)</a></li>
             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-continuous-random-variable-iff-zero-proabbility-at-each-value.html">Proof (continuous random variable iff zero proabbility at each value)</a></li>
             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-good-hypothesis-for-continuous-random-variable.html">Derivation (good hypothesis for continuous random variable)</a></li>
             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-applying-function-to-continuous-random-variable.html">Proposition (applying function to continuous random variable)</a></li>
             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-expectation-of-continuous-random-variable.html">Proposition (expectation of continuous random variable)</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function.html">Moment generating function</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Continuous-probability-distributions.html">Continuous probability distributions</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multivariate-density-functions.html">Multivariate density functions</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gaussian-random-variables.html">Gaussian random variables</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simulation-of-random-variables.html">Simulation of random variables</a></li>
         </ul>
 
         <h1 class="nav-heading">All Files</h1>
@@ -421,6 +1348,8 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Adding-Bernoulli-random-variables-on-a-product-space.html">Adding Bernoulli random variables on a product space</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Basic-properties-of-probability-measures.html">Basic properties of probability measures</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bayes-formula.html">Bayes' formula</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bernoulli-distribution.html">Bernoulli distribution</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Binomial-distribution.html">Binomial distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bivariate-normal.html">Bivariate normal</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Box-Muller-transform.html">Box-Muller transform</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Branching-process.html">Branching process</a></li>
@@ -439,13 +1368,13 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-subsets.html">Counting subsets</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-surjections.html">Counting surjections</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Gaussian-random-variables.html">Definition (Gaussian random variables)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Poisson-distribution.html">Definition (Poisson distribution)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-binomial-distribution.html">Definition (binomial distribution)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-absolutely-continuous-random-variable.html">Definition (absolutely continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-branching-process.html">Definition (branching process)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-expectation.html">Definition (conditional expectation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-probability.html">Definition (conditional probability)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-continuous-random-variable.html">Definition (continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-convergence-of-random-variables.html">Definition (convergence of random variables)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-correlation.html">Definition (correlation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-covariance.html">Definition (covariance)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-probability-measure.html">Definition (discrete probability measure)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-random-variable.html">Definition (discrete random variable)</a></li>
@@ -454,14 +1383,12 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-integrable-random-variable.html">Definition (expectation of integrable random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-multivariate-random-variable.html">Definition (expectation of multivariate random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-finite-set-cardinality.html">Definition (finite set, cardinality)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-geometric-distribution.html">Definition (geometric distribution)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-discrete-random-variables.html">Definition (independent discrete random variables)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-random-variables.html">Definition (independent random variables)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-sequence-of-events.html">Definition (independent sequence of events)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-integrable-square-integrable.html">Definition (integrable, square-integrable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-joint-probability-density-function.html">Definition (joint probability density function)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-marginal-density-function.html">Definition (marginal density function)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-moment-generating-function.html">Definition (moment generating function)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-multinomial-distribution.html">Definition (multinomial distribution)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-n-th-moment-of-random-variable.html">Definition (n-th moment of random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-non-negative-random-variable.html">Definition (non-negative random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-density-function.html">Definition (probability density function)</a></li>
@@ -474,8 +1401,6 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-standard-deviation.html">Definition (standard deviation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance-of-multivariate-random-variable.html">Definition (variance of multivariate random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance.html">Definition (variance)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintiion-absolutely-continuous-random-variable.html">Defintiion (absolutely continuous random variable)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintion-Bernoulli-distribution.html">Defintion (Bernoulli distribution)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-Box-Muller-transform.html">Derivation (Box-Muller transform)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-analysis-of-extinction-probability-of-branching-process.html">Derivation (analysis of extinction probability of branching process)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-bivariate-normal-as-sums-of-independent-Gaussians.html">Derivation (bivariate normal as sums of independent Gaussians)</a></li>
@@ -518,6 +1443,7 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-X-mu-Y-nu-is-integrable-in-covariance.html">Derivation that (X-mu)(Y-nu) is integrable in covariance</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-distribution-function-is-non-decreasing.html">Derivation that distribution function is non-decreasing</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-probability-distributions.html">Discrete probability distributions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-random-variables.html">Discrete random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Bertrand-s-paradox.html">Example (Bertrand's paradox)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Buffon-s-needle.html">Example (Buffon's needle)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Catalan-number.html">Example (Catalan number)</a></li>
@@ -535,10 +1461,10 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gaussian-random-variables.html">Gaussian random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-function-of-branching-process.html">Generating function of branching process</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-and-moments.html">Generating functions and moments</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-of-some-distributions.html">Generating functions of some distributions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Geometric-distribution.html">Geometric distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Geometric-probability.html">Geometric probability</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Independence.html">Independence</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Inequalities.html">Inequalities</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Inequalities-on-random-variables.html">Inequalities on random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-expectation.html">Law of total expectation</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-probability.html">Law of total probability</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-Poisson-distribution-as-a-limit-of-binomial-distribution.html">Lemma (Poisson distribution as a limit of binomial distribution)</a></li>
@@ -558,16 +1484,20 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-union-bound-of-probability.html">Lemma (union bound of probability)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-variance-of-sum.html">Lemma (variance of sum)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-population-of-branching-process.html">Mean population of branching process</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Models-for-randomness.html">Models for randomness</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-time-to-absorption-in-gambler-s-ruin.html">Mean time to absorption in gambler's ruin</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function-of-Gaussian-random-variable.html">Moment generating function of Gaussian random variable</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function.html">Moment generating function</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multinomial-distribution.html">Multinomial distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multivariate-density-functions.html">Multivariate density functions</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Normal-distribution.html">Normal distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Notes.html">Notes</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240131124544.png">Pasted image 20240131124544</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240223173401.png">Pasted image 20240223173401</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240304150408.png">Pasted image 20240304150408</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Poisson-distribution.html">Poisson distribution</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Prbability-of-success-in-gambler-s-ruin.html">Prbability of success in gambler's ruin</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-generating-functions.html">Probability generating functions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-space.html">Probability space</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-AM-GM-inequality.html">Proof (AM-GM inequality)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Borel-Cantelli-lemma.html">Proof (Borel-Cantelli lemma)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Cauchy-Schwarz-inequality-for-expectation.html">Proof (Cauchy-Schwarz inequality for expectation)</a></li>
@@ -615,11 +1545,12 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-affine-functions-of-Gaussian-are-Gaussian.html">Proposition (affine functions of Gaussian are Gaussian)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-applying-function-to-continuous-random-variable.html">Proposition (applying function to continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-expectation-of-continuous-random-variable.html">Proposition (expectation of continuous random variable)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-gambler-s-ruin-almost-always-terminates.html">Proposition (gambler's ruin almost always terminates)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-moment-generating-function-of-sum-of-random-variables.html">Proposition (moment generating function of sum of random variables)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-probability-distribution-given-pdf.html">Proposition (probability distribution given pdf)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-processes.html">Random processes</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-variables.html">Random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walk-from-branching-process.html">Random walk from branching process</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walks.html">Random walks</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Rejection-sampling.html">Rejection sampling</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Sample-error-via-central-limit-theorem.html">Sample error via central limit theorem</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simpson-s-paradox.html">Simpson's paradox</a></li>
@@ -715,12 +1646,9 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Differentiating-a-curve.html">Differentiating a curve</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Divergence-theorem.html">Divergence theorem</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Elasticity-tensor.html">Elasticity tensor</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-2D-polar-integral.html">Example (2D polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-applying-Stokes-theorem-to-a-frustum.html">Example (applying Stokes' theorem to a frustum)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-coordinates.html">Example (cylindrical polar coordinates)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-integral.html">Example (cylindrical polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-coordinates.html">Example (spherical polar coordinates)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-integral.html">Example (spherical polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-of-solving-isotropic-Poisson-equation-with-boundary-conditions.html">Example of solving isotropic Poisson equation with boundary conditions</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Examples-of-invariant-integrals.html">Examples of invariant integrals</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Gauss-law.html">Gauss' law</a></li>
