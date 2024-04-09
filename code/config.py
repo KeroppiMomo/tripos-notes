@@ -32,7 +32,7 @@ INITIAL_FILES = ["~/Documents/obsidian-main/Lectures/Moses's Maths Notes.md"]
 MARKDOWN_PAGE_FORMAT = "./res/markdown_page_format.html"
 
 # Path to the LaTeX preamble used for MathJax.
-MATHJAX_PREAMBLE = "./res/preamble.sty"
+MATHJAX_PREAMBLE = "~/Documents/obsidian-main/preamble.sty"
 
 # Path to the MathJax config JavaScript file.
 # Include the placeholder {{preamble}} for a JavaScript escaped string of the preamble.
