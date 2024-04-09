@@ -668,76 +668,7 @@
                             </div>
                         </p>
                         <p>
-                            <div class="markdown-embed embed-example">
-                                <div class="markdown-embed-title">
-                                    Example (2D polar integral)
-                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-2D-polar-integral.html">open_in_new</a>
-                                </div>
-                                <div class="markdown-embed-content">
-                                    <p>
-                                        Polar coordinates are defined by
-                                        <span class="display-math">$$ x=\rho\cos\phi, \quad y=\rho\sin\phi $$</span>
-                                        with <span class="inline-math">$\rho\in[0,\infty)$</span> and <span class="inline-math">$\phi\in[0,2\pi)$</span>.
-                                    </p>
-                                    <p>
-                                        The Jacobian is
-                                        <span class="display-math">$$ J = \begin{vmatrix} \cos\phi &amp; -\rho\sin\phi \\ \sin\phi &amp; \rho\cos\phi \end{vmatrix} = \rho $$</span>
-                                        so the area element is <span class="inline-math">$dA = \rho\, d\rho\, d\phi$</span>.
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                        </p>
-                        <p>
                             Same thing for a volume integral.
-                        </p>
-                        <p>
-                            <div class="markdown-embed embed-example">
-                                <div class="markdown-embed-title">
-                                    Example (spherical polar integral)
-                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-integral.html">open_in_new</a>
-                                </div>
-                                <div class="markdown-embed-content">
-                                    <p>
-                                        Spherical polar coordinates are defined as
-                                        <span class="display-math">$$\begin{align*}
-                                        x &amp;= r\sin\theta\cos\phi  &amp; &amp; &amp; r &amp;\in [0,\infty) \\
-                                        y &amp;= r\sin\theta\sin\phi &amp; &amp;\text{with} &amp; \theta &amp;\in [0,\pi] \\
-                                        z &amp;= r\cos\theta &amp; &amp; &amp; \phi &amp;\in [0,2\pi).
-                                        \end{align*}$$</span>
-                                    </p>
-                                    <p>
-                                        The Jacobian is
-                                        <span class="display-math">$$ J = \begin{vmatrix}\sin\theta\cos\phi &amp; r\cos\theta\cos\phi &amp; -r\sin\theta\sin\phi \\
-                                        \sin\theta\sin\phi &amp; r\cos\theta\sin\phi &amp; r\sin\theta\cos\phi \\
-                                        \cos\theta &amp; -r\sin\theta &amp; 0 \end{vmatrix} = r^2 \sin\theta. $$</span>
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                        </p>
-                        <p>
-                            <div class="markdown-embed embed-example">
-                                <div class="markdown-embed-title">
-                                    Example (cylindrical polar integral)
-                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-integral.html">open_in_new</a>
-                                </div>
-                                <div class="markdown-embed-content">
-                                    <p>
-                                        Cylindrical polar coordinates are given by
-                                        <span class="display-math">$$\begin{align*}
-                                        x &amp;= \rho \cos \phi &amp; &amp; &amp; \rho&amp;\in[0,\infty) \\
-                                        y &amp;= \rho \sin \phi &amp; &amp;\text{with} &amp; \phi&amp;\in[0, 2\pi) \\
-                                        z &amp;= z &amp;&amp;&amp; z&amp;\in(-\infty, \infty).
-                                        \end{align*}$$</span>
-                                    </p>
-                                    <p>
-                                        The Jacobian is
-                                        <span class="display-math">$$ J = \rho. $$</span>
-                                    </p>
-                                    
-                                </div>
-                            </div>
                         </p>
                         
                     </div>
@@ -1294,6 +1225,10 @@
                                         \end{align*}$$</span>
                                     </p>
                                     <p>
+                                        Jacobian
+                                        <span class="display-math">$$ \frac{\partial(x,y,z)}{\partial(r,\theta,\phi)} = r^2 \sin\theta. $$</span>
+                                    </p>
+                                    <p>
                                         The derivative stuff are
                                         <span class="display-math">$$\begin{align*}
                                         \nabla &amp;= \vhat r \pdd r +\frac1r\vhat\theta \pdd\theta + \frac1{r\sin\theta}\vhat \phi\pdd \phi, \\
@@ -1433,7 +1368,7 @@
                                     <p>
                                         Let <span class="inline-math">$S$</span> be a smooth surface in <span class="inline-math">$\R^3$</span> with boundary <span class="inline-math">$C=\partial S$</span>. For a smooth vector field <span class="inline-math">$\v F(\v x)$</span>,
                                         <span class="display-math">$$ \int_S (\nabla\times\v F)\cdot d\v S = \oint_C \v F\cdot d\v x. $$</span>
-                                        The orientation is that <span class="inline-math">$d\v S\times d\v x$</span> should point outward of <span class="inline-math">$S$</span> (the orientation should be along how you curl your right hand figures around the normal vector).
+                                        The orientation is that <span class="inline-math">$d\v x\times d\v S$</span> should point outward of <span class="inline-math">$S$</span> (the orientation should be along how you curl your right hand figures around the normal vector).
                                     </p>
                                     <p>
                                         (Green's theorem is obtained by taking <span class="inline-math">$\v F=(P,Q,0)$</span> and <span class="inline-math">$S$</span> be on the <span class="inline-math">$z=0$</span> plane.)
@@ -1567,7 +1502,7 @@
                 
             </li><li>
                 <p>
-                    Newmann condition: fix <span class="inline-math">$\v n\cdot\nabla(\v x)$</span> on <span class="inline-math">$\partial V$</span>, where <span class="inline-math">$\v n$</span> is the outward pointing normal of <span class="inline-math">$\partial V$</span>.
+                    Newmann condition: fix <span class="inline-math">$\v n\cdot\nabla \psi(\v x)$</span> on <span class="inline-math">$\partial V$</span>, where <span class="inline-math">$\v n$</span> is the outward pointing normal of <span class="inline-math">$\partial V$</span>.
                 </p>
                 
             </li>
@@ -2042,12 +1977,12 @@
                                     <ul>
                                     <li>
                                         <p>
-                                            in 2D, <span class="inline-math">$\sigma_{ij} = \sigma\delta_{ij}$</span> where <span class="inline-math">$\sigma$</span> is the <em>conductivity</em>;
+                                            in 3D, <span class="inline-math">$\sigma_{ij} = \sigma\delta_{ij}$</span> where <span class="inline-math">$\sigma$</span> is the <em>conductivity</em>;
                                         </p>
                                         
                                     </li><li>
                                         <p>
-                                            in 3D, <span class="inline-math">$\sigma_{ij} = \sigma_{xx} \delta_{ij} + \sigma_{xy} \epsilon_{ij}$</span> where <span class="inline-math">$\sigma_{xy}$</span> is the <em>Hall conductivity</em>.
+                                            in 2D, <span class="inline-math">$\sigma_{ij} = \sigma_{xx} \delta_{ij} + \sigma_{xy} \epsilon_{ij}$</span> where <span class="inline-math">$\sigma_{xy}$</span> is the <em>Hall conductivity</em>.
                                         </p>
                                         
                                     </li>

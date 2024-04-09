@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Definition (multinomial distribution)</title>
+    <title>Discrete random variables</title>
 
     <link rel="stylesheet" href="/tripos-notes/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,11 +58,849 @@
 
     <div class="main-content">
         <div class="main">
-            <h1>Definition (multinomial distribution)</h1>
+            <h1>Discrete random variables</h1>
 
             <p>
-                A <em>multinomial</em> random variable <span class="inline-math">$X$</span> of parameters <span class="inline-math">$n\in\N$</span> and <span class="inline-math">$(p_1, p_2, \ldots, p_k)$</span> where <span class="inline-math">$p_i\geq 0$</span> and <span class="inline-math">$p_1+p_2+\ldots+p_k = 1$</span> has a distribution on the set of ordered partitions <span class="inline-math">$(n_1, n_2, \ldots, n_k)$</span> of <span class="inline-math">$n$</span>, i.e. <span class="inline-math">$n_1+n_2+\ldots+n_k = n$</span>, given by
-                <span class="display-math">$$ p_{(n_1,n_2,\ldots, n_k)} = \pmat{n \\ n_1, n_2, \ldots, n_k} p_1^{n_1}\times p_2^{n_2}\times \ldots \times p_k^{n_k}. $$</span>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (discrete probability measure)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-probability-measure.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A probability measure <span class="inline-math">$\mathbb P$</span> on <span class="inline-math">$(\Omega, \mathcal F)$</span> is <em>discrete</em> if there exists a countable set <span class="inline-math">$S\subseteq\Omega$</span> and function <span class="inline-math">$(p_x: x\in S)$</span> such that
+                            <span class="display-math">$$ \mathbb P(A) = \sum_{x\in S\cap A} p_x $$</span>
+                            for all <span class="inline-math">$A\in\mathcal F$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (discrete random variable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-random-variable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A random variable <span class="inline-math">$X$</span> is discrete if there is a countable set <span class="inline-math">$S\subseteq \R$</span> such that
+                            <span class="display-math">$$ \prob(X\in S) = 1. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Probability generating functions
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-generating-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (probability generating function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-generating-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$X$</span> be a random variable with values in <span class="inline-math">$\Z^+ = \set{0,1,2,\ldots}$</span>.
+                                    </p>
+                                    <p>
+                                        The <em>probability generating function</em> of <span class="inline-math">$X$</span> is given by the power series
+                                        <span class="display-math">$$ G_X(t) = \expect(t^X) = \fsum n0\infty \prob(X=n)\, t^n. $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                The radius of convergence <span class="inline-math">$R\geq 1$</span> since <span class="inline-math">$G_X(1) = \fsum n0\infty\prob(X=n) = 1$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$G_X(t)$</span> is unique to the distribution of <span class="inline-math">$X$</span> since we can recover the coefficients in <span class="inline-math">$G_X(t)$</span> by
+                                <span class="display-math">$$ \prob(X=n)=\frac1{n!} G_X^{(n)}(0). $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Lemma (generating function of sum of independent random variables)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-generating-function-of-sum-of-independent-random-variables.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$X,Y$</span> be independent random variables with values in <span class="inline-math">$\Z^+$</span>. Then "generating functions turn convolutions into products":
+                                        <span class="display-math">$$ G_{X+Y}(t) = G_X(t)\, G_Y(t). $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-generating-function-of-sum-of-independent-random-variables.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Lemma (generating function of random sums)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-generating-function-of-random-sums.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$N, X, X_1, X_2, X_3,\ldots$</span> be non-negative integer-valued independent random variables, and suppose <span class="inline-math">$X,X_1,X_2,X_3,\ldots$</span> are identically distributed.
+                                        Define the random sum
+                                        <span class="display-math">$$ S_N = \fsum n1N X_n. $$</span>
+                                    </p>
+                                    <p>
+                                        Then
+                                        <span class="display-math">$$ G_{S_N} = G_N \circ G_X. $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-generating-function-of-random-sums.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Generating functions and moments
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-and-moments.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <div class="markdown-embed embed-definition">
+                                            <div class="markdown-embed-title">
+                                                Definition (n-th moment of random variable)
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-n-th-moment-of-random-variable.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    The <span class="inline-math">$n$</span>-th moment of <span class="inline-math">$X$</span> is <span class="inline-math">$\expect(X^n)$</span>.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        If <span class="inline-math">$R&gt;1$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                        G_X&#x27;(1) &amp;= \fsum n1\infty \prob(X=n)\,n = \expect(X) \\
+                                        G_X&#x27;&#x27;(1) &amp;= \fsum n1\infty \prob(X=n)\,n(n-1) = \expect(X(X-1)) \\
+                                        \end{align*} $$</span>
+                                        and so on.
+                                    </p>
+                                    <p>
+                                        If <span class="inline-math">$R=1$</span>, we can take the limit instead:
+                                        <span class="display-math">$$ G_X&#x27;(t) = \fsum n1\infty \prob(X=n) nt^{n-1} \to \fsum n1\infty \prob(X=n) n = \expect(X). $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            In counting, generating functions help convert convolutions into products. <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Catalan-number.html">Example (Catalan number)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Discrete probability distributions
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-probability-distributions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            "Distributions" just mean probability measure.
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (distribution and mass function of discrete random variable)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-distribution-and-mass-function-of-discrete-random-variable.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Given a discrete random variable <span class="inline-math">$X$</span> with values in a countable set <span class="inline-math">$S$</span>, the <em>distribution</em> of <span class="inline-math">$X$</span> is a discrete distribution <span class="inline-math">$\mu_X$</span> on <span class="inline-math">$\R$</span> by
+                                        <span class="display-math">$$ \mu_X(B) = \prob(X\in B). $$</span>
+                                    </p>
+                                    <p>
+                                        The <em>mass function</em> of <span class="inline-math">$X$</span> is
+                                        <span class="display-math">$$ p_x = \mu_X(\set{x}) = \prob(X=x). $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            We only consider the case when <span class="inline-math">$\set{x}\in\mathcal F$</span> for all <span class="inline-math">$x\in S$</span>. Then <span class="inline-math">$p_x = \mathbb P(\set{x})$</span>.
+                            <span class="inline-math">$p_x$</span> is called the <em>mass function</em>.
+                        </p>
+                        <table>
+                            <tr>
+                                <th class="table-cell-left"><p>
+                                    Distribution <span class="inline-math">$X\sim$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Parameters
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Values
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Mass function <span class="inline-math">$p_k$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Mean <span class="inline-math">$\expect(X)$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Variance <span class="inline-math">$\var(X)$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    PGF <span class="inline-math">$G_X(t)$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Radius of convergence <span class="inline-math">$R$</span>
+                                </p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Bernoulli <span class="inline-math">$B(1,p)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$p\in[0,1]$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\set{0,1}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$p_0=1-p$</span><br><span class="inline-math">$p_1=p$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$p$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$p(1-p)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$1-p+pt$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\infty$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Binomial <span class="inline-math">$B(n,p)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$n\in\N$</span><br><span class="inline-math">$p\in[0,1]$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\set{0,1,\ldots,n}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\pmat{n \\ k}p^k(1-p)^{n-k}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$np$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$np(1-p)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$(1-p+pt)^n$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\infty$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Geometric <span class="inline-math">$G(p)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$p\in(0,1)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\Z^+$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$p(1-p)^k$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1-p}{p}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1-p}{p^2}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{p}{1-(1-p)t}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1}{1-p}$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"></td>
+                                <td class="table-cell-left"></td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\N$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$p(1-p)^{k-1}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"></td>
+                                <td class="table-cell-left"></td>
+                                <td class="table-cell-left"></td>
+                                <td class="table-cell-left"></td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Poisson <span class="inline-math">$P(\lambda)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\lambda\in(0,\infty)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\Z^+$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$e^{-\lambda}\frac{\lambda^k}{k!}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\lambda$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\lambda$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$e^{-\lambda+\lambda t}$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\infty$</span>
+                                </p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Bernoulli distribution
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bernoulli-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A <em>Bernoulli</em> random variable <span class="inline-math">$X$</span> of parameter <span class="inline-math">$p\in[0,1]$</span>, denoted as <span class="inline-math">$X\sim B(1,p)$</span>, has a distribution on <span class="inline-math">$\set{0,1}$</span> given by
+                                        <span class="display-math">$$ p_0 = 1-p, \quad p_1 = p. $$</span>
+                                    </p>
+                                    <p>
+                                        This is used to model the outcome of one biased coin toss.
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Mean <span class="inline-math">$\expect(X)=p$</span>.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Variance <span class="inline-math">$\var(X) = p-p^2$</span>.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Generating function
+                                            <span class="display-math">$$ G_X(t) = 1-p+pt, \qquad R=\infty. $$</span>
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Binomial distribution
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Binomial-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A <em>binomial</em> random variable <span class="inline-math">$X\sim B(n,p)$</span> of parameters <span class="inline-math">$n\in\N$</span> and <span class="inline-math">$p\in[0,1]$</span> has a distribution on <span class="inline-math">$\set{0,1,2,\ldots,n}$</span> given by
+                                        <span class="display-math">$$ p_k = \pmat{n\\k} p^k (1-p)^{n-k}, \quad k=0,1,\dots,n.$$</span>
+                                    </p>
+                                    <p>
+                                        Use this to model the number of heads obtained on tossing a biased coin <span class="inline-math">$n$</span> times.
+                                    </p>
+                                    <p>
+                                        <div class="markdown-embed embed-result">
+                                            <div class="markdown-embed-title">
+                                                Lemma (adding binomial random variables)
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-adding-binomial-random-variables.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    If random variables <span class="inline-math">$X\sim B(n,p)$</span> and <span class="inline-math">$Y\sim B(m, p)$</span> are independent,
+                                                    then <span class="inline-math">$X+Y\sim B(n+m, p)$</span>.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Adding-Bernoulli-random-variables-on-a-product-space.html">Adding Bernoulli random variables on a product space</a>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Expectation <span class="inline-math">$=np$</span>;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Variance <span class="inline-math">$=np(1-p)$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-and-variance-of-binomial-distribution.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Generating function: either using binomial theorem or adding up <span class="inline-math">$n$</span> independent Bernoulli variables,
+                                            <span class="display-math">$$ G_X(t) = (1-p+pt)^n, \qquad R=\infty. $$</span>
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Multinomial distribution
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multinomial-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A <em>multinomial</em> random variable <span class="inline-math">$X$</span> of parameters <span class="inline-math">$n\in\N$</span> and <span class="inline-math">$(p_1, p_2, \ldots, p_k)$</span> where <span class="inline-math">$p_i\geq 0$</span> and <span class="inline-math">$p_1+p_2+\ldots+p_k = 1$</span> has a distribution on the set of ordered partitions <span class="inline-math">$(n_1, n_2, \ldots, n_k)$</span> of <span class="inline-math">$n$</span>, i.e. <span class="inline-math">$n_1+n_2+\ldots+n_k = n$</span>, given by
+                                        <span class="display-math">$$ p_{(n_1,n_2,\ldots, n_k)} = \pmat{n \\ n_1, n_2, \ldots, n_k} p_1^{n_1}\times p_2^{n_2}\times \ldots \times p_k^{n_k}. $$</span>
+                                    </p>
+                                    <p>
+                                        Use this to model the number of balls in each of <span class="inline-math">$k$</span> boxes when we assign <span class="inline-math">$n$</span> balls independently to box <span class="inline-math">$i$</span> with probability <span class="inline-math">$p_i$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Geometric distribution
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Geometric-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A <em>geometric</em> random variable <span class="inline-math">$X\sim G(p)$</span> of parameter <span class="inline-math">$p\in(0,1)$</span> has a distribution on <span class="inline-math">$\N_0=\set{0,1,2,\ldots}$</span> given by
+                                        <span class="display-math">$$ p_k = p(1-p)^k, \quad k=0,1,2,\ldots. $$</span>
+                                    </p>
+                                    <p>
+                                        Alternatively some define it as the probability measure on <span class="inline-math">$\N=\set{1,2,\dots}$</span> given by
+                                        <span class="display-math">$$ p_k = p(1-p)^{k-1}, \quad k=1,2,\ldots. $$</span>
+                                    </p>
+                                    <p>
+                                        Be clear with the definition. This is to model the number of tosses of a biased coin up to (or including) the first head.
+                                    </p>
+                                    <p>
+                                        Using the first definition,
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Expectation <span class="inline-math">$= (1-p)/p$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-of-geometric-distribution.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Variance <span class="inline-math">$= (1-p)/p^2$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-variance-of-geometric-distribution.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li><!-- BEGIN BLOCK ID 539529 -->
+                                    <li id="^539529">
+                                        <p>
+                                            Generating function
+                                            <span class="display-math">$$ G_X(t) = \fsum n0\infty (1-p)^n pt^n = \frac{p}{1-(1-p)t}, \qquad  R=\frac{1}{1-p}.$$</span>
+                                        </p>
+                                        
+                                    </li>
+                                    <!-- END BLOCK ID 539529 -->
+                                    
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Poisson distribution
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Poisson-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A <em>Poisson</em> random variable <span class="inline-math">$X\sim P(\lambda)$</span> of parameter <span class="inline-math">$\lambda\in(0,\infty)$</span> has a distribution on <span class="inline-math">$\N_0 = \set{0,1,2,\dots}$</span> given by
+                                        <span class="display-math">$$ p_k = e^{-\lambda}\frac{\lambda^k}{k!},\quad k=0,1,2,\ldots. $$</span>
+                                    </p>
+                                    <p>
+                                        <div class="markdown-embed embed-result">
+                                            <div class="markdown-embed-title">
+                                                Lemma (adding Poisson random variables)
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-adding-Poisson-random-variables.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    If random variables <span class="inline-math">$X\sim P(\lambda)$</span> and <span class="inline-math">$Y\sim P(\mu)$</span> are independent,
+                                                    then <span class="inline-math">$X+Y\sim P(\lambda+\mu)$</span>.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Expectation <span class="inline-math">$=\lambda$</span>;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Variance <span class="inline-math">$=\lambda$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-expectation-and-variance-of-Poisson-distribution.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Generating function
+                                            <span class="display-math">$$ G_X(t) = \fsum n0\infty e^{-\lambda} \frac{\lambda^n}{n!} t^n = e^{-\lambda + \lambda t}, \qquad R=\infty. $$</span>
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <div class="markdown-embed embed-result">
+                                            <div class="markdown-embed-title">
+                                                Lemma (Poisson distribution as a limit of binomial distribution)
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-Poisson-distribution-as-a-limit-of-binomial-distribution.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    The Poisson distribution <span class="inline-math">$P(\lambda)$</span> is the limit of the binomial distribution <span class="inline-math">$B(n, \lambda/n)$</span> as <span class="inline-math">$n\to\infty$</span>.
+                                                </p>
+                                                <p>
+                                                    <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Poisson-distribution-as-a-limit-of-binomial-distribution.html">Proof</a>
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Random processes
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-processes.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (random process, random walk)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-random-process-random-walk.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A <em>random process</em> is a sequence <span class="inline-math">$(X_n:n\geq 0)$</span> of random variables.
+                                    </p>
+                                    <p>
+                                        A <em>random walk</em> is a random process <span class="inline-math">$(X_n: n\geq0)$</span> that has the form
+                                        <span class="display-math">$$ X_n = x+Y_1 + \ldots + Y_n $$</span>
+                                        where constant <span class="inline-math">$x$</span> is the <em>initial value</em> and <span class="inline-math">$(Y_n: n\geq 1)$</span> are a sequence of independent identically distributed random variables.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Gambler's ruin
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gambler-s-ruin.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Consider a random walk where at each step <span class="inline-math">$k$</span>,
+                                        <span class="display-math">$$ \prob(Y_k = +1) = p, \quad \prob(Y_k = -1) = 1-p \equiv q. $$</span>
+                                        The gambler will walk away either when <span class="inline-math">$X_n = a$</span> or 0.
+                                    </p>
+                                    <p>
+                                        The key is to see that if we condition on the first step, say <span class="inline-math">$Y_1=1$</span>, then <span class="inline-math">$(X_{n+1})_{n\geq 0}$</span> is again a simple random walk with the same step distribution.
+                                    </p>
+                                    <p>
+                                        Denote <span class="inline-math">$\prob_x$</span> and <span class="inline-math">$\expect_x$</span> for probability and expectation regarding initial value <span class="inline-math">$x$</span>, and
+                                        <span class="display-math">$$ T = \min\sb{n\geq 0}{X_n=0\text{ or } a}. $$</span>
+                                    </p>
+                                    <p>
+                                        <div class="markdown-embed embed-result">
+                                            <div class="markdown-embed-title">
+                                                Proposition (gambler's ruin almost always terminates)
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-gambler-s-ruin-almost-always-terminates.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    The process almost always terminates, i.e. <span class="inline-math">$\prob(T&lt;\infty) = 1$</span>.
+                                                    (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-gambling-almost-always-terminates.html">Derivation</a>)
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        <div class="markdown-embed">
+                                            <div class="markdown-embed-title">
+                                                Prbability of success in gambler's ruin
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Prbability-of-success-in-gambler-s-ruin.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    Let the probability of success be <span class="inline-math">$h_x = \prob(X_T=a)$</span>.
+                                                </p>
+                                                <p>
+                                                    For <span class="inline-math">$x=1,2,\ldots,a-1$</span>, using the law of total probability
+                                                    <span class="display-math">$$ \begin{align*}
+                                                    h_x &amp;= \prob(Y_1=1)\prob(X_T=a|Y_1=1)+\prob(Y_1=-1)\prob(X_T=a|Y_1=-1) \\
+                                                    &amp;= ph_{x+1} + qh_{x-1}
+                                                    \end{align*} $$</span>
+                                                    and boundary condition is
+                                                    <span class="display-math">$$ h_0 = 0, \quad h_a=1. $$</span>
+                                                    Solving (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-gambling-success-recurrence-relation.html">derivation</a>),
+                                                    <span class="display-math">$$ h_x = \begin{cases}
+                                                        \dfrac ax, &amp;p=\dfrac12, \\
+                                                        \dfrac{1-(p/q)^x}{1-(p/q)^a}, &amp;p\neq\dfrac12.
+                                                    \end{cases} $$</span>
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        <div class="markdown-embed">
+                                            <div class="markdown-embed-title">
+                                                Mean time to absorption in gambler's ruin
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-time-to-absorption-in-gambler-s-ruin.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    Let the mean time to absorption be <span class="inline-math">$\tau_x = \expect_x(T)$</span>.
+                                                </p>
+                                                <p>
+                                                    For <span class="inline-math">$x=1,2,\ldots,a-1$</span>, using the law of total expectation,
+                                                    <span class="display-math">$$ \begin{align*}
+                                                    \tau_x &amp;= \prob(Y_1=1)\expect(X_T=a|Y_1=1)+\prob(Y_1=-1)\expect(X_T=a|Y_1=-1) \\
+                                                    &amp;= p(1+\tau_{x+1}) + q(1+\tau_{x-1}) \\
+                                                    &amp;= 1+p\tau_{x+1} + q\tau_{x-1}.
+                                                    \end{align*} $$</span>
+                                                    and boundary condition is
+                                                    <span class="display-math">$$ \tau_0 = 0,\quad \tau_a = 0. $$</span>
+                                                    Solving (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-gambling-mean-time-recurrence-relation.html">Derivation</a>),
+                                                    <span class="display-math">$$ \tau_x = \begin{cases}
+                                                    x(a-x),&amp; p=\dfrac12,\\
+                                                    \dfrac{x}{q-p}-\dfrac{a}{q-p}\dfrac{(q/p)^x - 1}{(q/p)^a-1},&amp; p\neq\dfrac12.
+                                                    \end{cases} $$</span>
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Branching process
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Branching-process.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        This is to model a population, with <span class="inline-math">$X_n$</span> being the size of the population in generation <span class="inline-math">$n$</span>, and <span class="inline-math">$Y_{k,n}$</span> is the number of offspring of the <span class="inline-math">$k$</span>-th individual in generation <span class="inline-math">$n$</span>.
+                                        <div class="markdown-embed embed-definition">
+                                            <div class="markdown-embed-title">
+                                                Definition (branching process)
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-branching-process.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    A random process <span class="inline-math">$(X_n: n\geq 0)$</span> is a <em>branching process</em> (<em>Galton-Watson process</em>) if it is in the form
+                                                    <span class="display-math">$$ X_0 = 1, \quad X_{n+1} = \fsum n1{X_n} Y_{k,n} $$</span>
+                                                    for some array array <span class="inline-math">$(Y_{k,n}: k\geq1, n\geq0)$</span> of independent and identically distributed non-negative integer-valued random variables. (The distribution is called the <em>offspring distribution</em>.)
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        <div class="markdown-embed">
+                                            <div class="markdown-embed-title">
+                                                Mean population of branching process
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-population-of-branching-process.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    Set <span class="inline-math">$\mu=\expect(X_1)$</span>.
+                                                    Conditioning on <span class="inline-math">$X_n$</span>,
+                                                    <span class="display-math">$$ \expect(X_{n+1}|X_n=m) = \expect(Y_{1,n}+\ldots+Y_{m,n}) = m\mu $$</span>
+                                                    so using the law of total expectation,
+                                                    <span class="display-math">$$ \begin{align*}
+                                                    \expect(X_{n+1}) &amp;= \fsum m0\infty \expect(X_{n+1}|X_n=m)\,\prob(X_n=m) \\
+                                                    &amp;= \mu\fsum m0\infty m\prob(X_n=m) \\
+                                                    &amp;= \mu\expect(X_n).
+                                                    \end{align*} $$</span>
+                                                    Applying the boundary condition of <span class="inline-math">$\expect(X_0)=1$</span>, we have <span class="inline-math">$\expect(X_n)=\mu^n$</span>.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        <div class="markdown-embed">
+                                            <div class="markdown-embed-title">
+                                                Generating function of branching process
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-function-of-branching-process.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    Generating function: let <span class="inline-math">$F(t) = \expect(t^{X_1})$</span> and <span class="inline-math">$F_n(t)=\expect(t^{X_n})$</span>. Then using the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-generating-function-of-random-sums.html">result about random sums</a>,
+                                                    <span class="display-math">$$ F_n(t) = F_{n-1}\big(F(t)\big) = \ub{F\circ F\circ\ldots\circ F}_\text{$n$-fold composition}(t). $$</span>
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        A feature to exploit is that if we condition on <span class="inline-math">$\set{X_1=m}$</span>, the descendants of any individuals in generation 1 is another branching process.
+                                    </p>
+                                    <p>
+                                        <div class="markdown-embed">
+                                            <div class="markdown-embed-title">
+                                                Extinction probability of branching process
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Extinction-probability-of-branching-process.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    Let <span class="inline-math">$q_n = \prob(X_n=0)$</span> and the <em>extinction probability</em> <span class="inline-math">$q=\prob(X_n=0\text{ for some } n\geq0)$</span>. Since <span class="inline-math">$\set{X_1=0}\subseteq\set{X_2=0}\subseteq\ldots$</span> and <span class="inline-math">$\bigcap_n \set{X_n=0} = \set{X_n=0\text{ for some } n\geq 0}$</span>, by continuity of probability, <span class="inline-math">$q_n\to q$</span>.
+                                                </p>
+                                                <p>
+                                                    Note that
+                                                    <span class="display-math">$$ q_n = \prob(X_n=0) = F_n(0)=\ub{F\circ F\circ\ldots\circ F}_\text{$n$-fold composition}(0).$$</span>
+                                                    Alternatively we can condition on the first generation
+                                                    <span class="display-math">$$ \begin{align*}
+                                                    q_n &amp;= \fsum m0\infty \prob(X_1=m)\prob(X_n=0|X_1=m) \\
+                                                    &amp;= \fsum m0\infty \prob(X_1=m) q_{n-1}^m = F(q_{n-1})
+                                                    \end{align*} $$</span>
+                                                    since <span class="inline-math">$\set{X_n=0|X_1=m}$</span> means that each of the descendants of the <span class="inline-math">$m$</span> individuals in generation 1 go extinct, which are independent events.
+                                                </p>
+                                                <p>
+                                                    And using analysis (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-analysis-of-extinction-probability-of-branching-process.html">Derivation</a>), <span class="inline-math">$q$</span> is the smallest non-negative solution of <span class="inline-math">$q=F(q)$</span>. Also if <span class="inline-math">$\prob(X_1=1)&lt;1$</span>, then <span class="inline-math">$q&lt;1$</span> iff <span class="inline-math">$\mu=\expect(X_1)&gt;1$</span>.
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        <div class="markdown-embed">
+                                            <div class="markdown-embed-title">
+                                                Random walk from branching process
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walk-from-branching-process.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    List the individuals in increasing order. Set <span class="inline-math">$S_0=1$</span>, and for <span class="inline-math">$n\geq 1$</span> let <span class="inline-math">$S_n$</span> for the number of offspring of all visited individuals who have not yet been visited (think about breadth-first search).
+                                                </p>
+                                                <p>
+                                                    Then the jumps of <span class="inline-math">$(S_n:n\geq0)$</span> are independent with the same distribution as <span class="inline-math">$X_1-1$</span>.
+                                                    <img src="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240223173401.png">
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
             </p>
             
         </div>
@@ -71,10 +909,17 @@
     <div class="nav">
         <h1 class="nav-heading">Backlinks</h1>
         <ul>
-            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-probability-distributions.html">Discrete probability distributions</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Notes.html">Notes</a></li>
         </ul>
         
-        
+        <h1 class="nav-heading">Outgoing Links</h1>
+        <ul>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-probability-measure.html">Definition (discrete probability measure)</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-random-variable.html">Definition (discrete random variable)</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-generating-functions.html">Probability generating functions</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-probability-distributions.html">Discrete probability distributions</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-processes.html">Random processes</a></li>
+        </ul>
 
         <h1 class="nav-heading">All Files</h1>
         <ul>
@@ -301,6 +1146,8 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Adding-Bernoulli-random-variables-on-a-product-space.html">Adding Bernoulli random variables on a product space</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Basic-properties-of-probability-measures.html">Basic properties of probability measures</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bayes-formula.html">Bayes' formula</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bernoulli-distribution.html">Bernoulli distribution</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Binomial-distribution.html">Binomial distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bivariate-normal.html">Bivariate normal</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Box-Muller-transform.html">Box-Muller transform</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Branching-process.html">Branching process</a></li>
@@ -319,13 +1166,13 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-subsets.html">Counting subsets</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-surjections.html">Counting surjections</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Gaussian-random-variables.html">Definition (Gaussian random variables)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Poisson-distribution.html">Definition (Poisson distribution)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-binomial-distribution.html">Definition (binomial distribution)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-absolutely-continuous-random-variable.html">Definition (absolutely continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-branching-process.html">Definition (branching process)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-expectation.html">Definition (conditional expectation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-probability.html">Definition (conditional probability)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-continuous-random-variable.html">Definition (continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-convergence-of-random-variables.html">Definition (convergence of random variables)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-correlation.html">Definition (correlation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-covariance.html">Definition (covariance)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-probability-measure.html">Definition (discrete probability measure)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-random-variable.html">Definition (discrete random variable)</a></li>
@@ -334,14 +1181,12 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-integrable-random-variable.html">Definition (expectation of integrable random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-multivariate-random-variable.html">Definition (expectation of multivariate random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-finite-set-cardinality.html">Definition (finite set, cardinality)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-geometric-distribution.html">Definition (geometric distribution)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-discrete-random-variables.html">Definition (independent discrete random variables)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-random-variables.html">Definition (independent random variables)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-sequence-of-events.html">Definition (independent sequence of events)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-integrable-square-integrable.html">Definition (integrable, square-integrable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-joint-probability-density-function.html">Definition (joint probability density function)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-marginal-density-function.html">Definition (marginal density function)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-moment-generating-function.html">Definition (moment generating function)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-multinomial-distribution.html">Definition (multinomial distribution)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-n-th-moment-of-random-variable.html">Definition (n-th moment of random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-non-negative-random-variable.html">Definition (non-negative random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-density-function.html">Definition (probability density function)</a></li>
@@ -354,8 +1199,6 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-standard-deviation.html">Definition (standard deviation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance-of-multivariate-random-variable.html">Definition (variance of multivariate random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance.html">Definition (variance)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintiion-absolutely-continuous-random-variable.html">Defintiion (absolutely continuous random variable)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintion-Bernoulli-distribution.html">Defintion (Bernoulli distribution)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-Box-Muller-transform.html">Derivation (Box-Muller transform)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-analysis-of-extinction-probability-of-branching-process.html">Derivation (analysis of extinction probability of branching process)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-bivariate-normal-as-sums-of-independent-Gaussians.html">Derivation (bivariate normal as sums of independent Gaussians)</a></li>
@@ -398,6 +1241,7 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-X-mu-Y-nu-is-integrable-in-covariance.html">Derivation that (X-mu)(Y-nu) is integrable in covariance</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-distribution-function-is-non-decreasing.html">Derivation that distribution function is non-decreasing</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-probability-distributions.html">Discrete probability distributions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-random-variables.html">Discrete random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Bertrand-s-paradox.html">Example (Bertrand's paradox)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Buffon-s-needle.html">Example (Buffon's needle)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Catalan-number.html">Example (Catalan number)</a></li>
@@ -415,10 +1259,10 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gaussian-random-variables.html">Gaussian random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-function-of-branching-process.html">Generating function of branching process</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-and-moments.html">Generating functions and moments</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-of-some-distributions.html">Generating functions of some distributions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Geometric-distribution.html">Geometric distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Geometric-probability.html">Geometric probability</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Independence.html">Independence</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Inequalities.html">Inequalities</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Inequalities-on-random-variables.html">Inequalities on random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-expectation.html">Law of total expectation</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-probability.html">Law of total probability</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-Poisson-distribution-as-a-limit-of-binomial-distribution.html">Lemma (Poisson distribution as a limit of binomial distribution)</a></li>
@@ -438,16 +1282,20 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-union-bound-of-probability.html">Lemma (union bound of probability)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-variance-of-sum.html">Lemma (variance of sum)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-population-of-branching-process.html">Mean population of branching process</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Models-for-randomness.html">Models for randomness</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-time-to-absorption-in-gambler-s-ruin.html">Mean time to absorption in gambler's ruin</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function-of-Gaussian-random-variable.html">Moment generating function of Gaussian random variable</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function.html">Moment generating function</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multinomial-distribution.html">Multinomial distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multivariate-density-functions.html">Multivariate density functions</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Normal-distribution.html">Normal distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Notes.html">Notes</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240131124544.png">Pasted image 20240131124544</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240223173401.png">Pasted image 20240223173401</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240304150408.png">Pasted image 20240304150408</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Poisson-distribution.html">Poisson distribution</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Prbability-of-success-in-gambler-s-ruin.html">Prbability of success in gambler's ruin</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-generating-functions.html">Probability generating functions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-space.html">Probability space</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-AM-GM-inequality.html">Proof (AM-GM inequality)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Borel-Cantelli-lemma.html">Proof (Borel-Cantelli lemma)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Cauchy-Schwarz-inequality-for-expectation.html">Proof (Cauchy-Schwarz inequality for expectation)</a></li>
@@ -495,11 +1343,12 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-affine-functions-of-Gaussian-are-Gaussian.html">Proposition (affine functions of Gaussian are Gaussian)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-applying-function-to-continuous-random-variable.html">Proposition (applying function to continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-expectation-of-continuous-random-variable.html">Proposition (expectation of continuous random variable)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-gambler-s-ruin-almost-always-terminates.html">Proposition (gambler's ruin almost always terminates)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-moment-generating-function-of-sum-of-random-variables.html">Proposition (moment generating function of sum of random variables)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-probability-distribution-given-pdf.html">Proposition (probability distribution given pdf)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-processes.html">Random processes</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-variables.html">Random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walk-from-branching-process.html">Random walk from branching process</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walks.html">Random walks</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Rejection-sampling.html">Rejection sampling</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Sample-error-via-central-limit-theorem.html">Sample error via central limit theorem</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simpson-s-paradox.html">Simpson's paradox</a></li>
@@ -595,12 +1444,9 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Differentiating-a-curve.html">Differentiating a curve</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Divergence-theorem.html">Divergence theorem</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Elasticity-tensor.html">Elasticity tensor</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-2D-polar-integral.html">Example (2D polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-applying-Stokes-theorem-to-a-frustum.html">Example (applying Stokes' theorem to a frustum)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-coordinates.html">Example (cylindrical polar coordinates)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-integral.html">Example (cylindrical polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-coordinates.html">Example (spherical polar coordinates)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-integral.html">Example (spherical polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-of-solving-isotropic-Poisson-equation-with-boundary-conditions.html">Example of solving isotropic Poisson equation with boundary conditions</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Examples-of-invariant-integrals.html">Examples of invariant integrals</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Gauss-law.html">Gauss' law</a></li>

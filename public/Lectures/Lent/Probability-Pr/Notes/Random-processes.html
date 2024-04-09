@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Example (cylindrical polar integral)</title>
+    <title>Random processes</title>
 
     <link rel="stylesheet" href="/tripos-notes/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,19 +58,235 @@
 
     <div class="main-content">
         <div class="main">
-            <h1>Example (cylindrical polar integral)</h1>
+            <h1>Random processes</h1>
 
             <p>
-                Cylindrical polar coordinates are given by
-                <span class="display-math">$$\begin{align*}
-                x &amp;= \rho \cos \phi &amp; &amp; &amp; \rho&amp;\in[0,\infty) \\
-                y &amp;= \rho \sin \phi &amp; &amp;\text{with} &amp; \phi&amp;\in[0, 2\pi) \\
-                z &amp;= z &amp;&amp;&amp; z&amp;\in(-\infty, \infty).
-                \end{align*}$$</span>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (random process, random walk)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-random-process-random-walk.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>random process</em> is a sequence <span class="inline-math">$(X_n:n\geq 0)$</span> of random variables.
+                        </p>
+                        <p>
+                            A <em>random walk</em> is a random process <span class="inline-math">$(X_n: n\geq0)$</span> that has the form
+                            <span class="display-math">$$ X_n = x+Y_1 + \ldots + Y_n $$</span>
+                            where constant <span class="inline-math">$x$</span> is the <em>initial value</em> and <span class="inline-math">$(Y_n: n\geq 1)$</span> are a sequence of independent identically distributed random variables.
+                        </p>
+                        
+                    </div>
+                </div>
             </p>
             <p>
-                The Jacobian is
-                <span class="display-math">$$ J = \rho. $$</span>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Gambler's ruin
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gambler-s-ruin.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider a random walk where at each step <span class="inline-math">$k$</span>,
+                            <span class="display-math">$$ \prob(Y_k = +1) = p, \quad \prob(Y_k = -1) = 1-p \equiv q. $$</span>
+                            The gambler will walk away either when <span class="inline-math">$X_n = a$</span> or 0.
+                        </p>
+                        <p>
+                            The key is to see that if we condition on the first step, say <span class="inline-math">$Y_1=1$</span>, then <span class="inline-math">$(X_{n+1})_{n\geq 0}$</span> is again a simple random walk with the same step distribution.
+                        </p>
+                        <p>
+                            Denote <span class="inline-math">$\prob_x$</span> and <span class="inline-math">$\expect_x$</span> for probability and expectation regarding initial value <span class="inline-math">$x$</span>, and
+                            <span class="display-math">$$ T = \min\sb{n\geq 0}{X_n=0\text{ or } a}. $$</span>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (gambler's ruin almost always terminates)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-gambler-s-ruin-almost-always-terminates.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The process almost always terminates, i.e. <span class="inline-math">$\prob(T&lt;\infty) = 1$</span>.
+                                        (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-gambling-almost-always-terminates.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Prbability of success in gambler's ruin
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Prbability-of-success-in-gambler-s-ruin.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let the probability of success be <span class="inline-math">$h_x = \prob(X_T=a)$</span>.
+                                    </p>
+                                    <p>
+                                        For <span class="inline-math">$x=1,2,\ldots,a-1$</span>, using the law of total probability
+                                        <span class="display-math">$$ \begin{align*}
+                                        h_x &amp;= \prob(Y_1=1)\prob(X_T=a|Y_1=1)+\prob(Y_1=-1)\prob(X_T=a|Y_1=-1) \\
+                                        &amp;= ph_{x+1} + qh_{x-1}
+                                        \end{align*} $$</span>
+                                        and boundary condition is
+                                        <span class="display-math">$$ h_0 = 0, \quad h_a=1. $$</span>
+                                        Solving (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-gambling-success-recurrence-relation.html">derivation</a>),
+                                        <span class="display-math">$$ h_x = \begin{cases}
+                                            \dfrac ax, &amp;p=\dfrac12, \\
+                                            \dfrac{1-(p/q)^x}{1-(p/q)^a}, &amp;p\neq\dfrac12.
+                                        \end{cases} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Mean time to absorption in gambler's ruin
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-time-to-absorption-in-gambler-s-ruin.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let the mean time to absorption be <span class="inline-math">$\tau_x = \expect_x(T)$</span>.
+                                    </p>
+                                    <p>
+                                        For <span class="inline-math">$x=1,2,\ldots,a-1$</span>, using the law of total expectation,
+                                        <span class="display-math">$$ \begin{align*}
+                                        \tau_x &amp;= \prob(Y_1=1)\expect(X_T=a|Y_1=1)+\prob(Y_1=-1)\expect(X_T=a|Y_1=-1) \\
+                                        &amp;= p(1+\tau_{x+1}) + q(1+\tau_{x-1}) \\
+                                        &amp;= 1+p\tau_{x+1} + q\tau_{x-1}.
+                                        \end{align*} $$</span>
+                                        and boundary condition is
+                                        <span class="display-math">$$ \tau_0 = 0,\quad \tau_a = 0. $$</span>
+                                        Solving (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-gambling-mean-time-recurrence-relation.html">Derivation</a>),
+                                        <span class="display-math">$$ \tau_x = \begin{cases}
+                                        x(a-x),&amp; p=\dfrac12,\\
+                                        \dfrac{x}{q-p}-\dfrac{a}{q-p}\dfrac{(q/p)^x - 1}{(q/p)^a-1},&amp; p\neq\dfrac12.
+                                        \end{cases} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Branching process
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Branching-process.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            This is to model a population, with <span class="inline-math">$X_n$</span> being the size of the population in generation <span class="inline-math">$n$</span>, and <span class="inline-math">$Y_{k,n}$</span> is the number of offspring of the <span class="inline-math">$k$</span>-th individual in generation <span class="inline-math">$n$</span>.
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (branching process)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-branching-process.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A random process <span class="inline-math">$(X_n: n\geq 0)$</span> is a <em>branching process</em> (<em>Galton-Watson process</em>) if it is in the form
+                                        <span class="display-math">$$ X_0 = 1, \quad X_{n+1} = \fsum n1{X_n} Y_{k,n} $$</span>
+                                        for some array array <span class="inline-math">$(Y_{k,n}: k\geq1, n\geq0)$</span> of independent and identically distributed non-negative integer-valued random variables. (The distribution is called the <em>offspring distribution</em>.)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Mean population of branching process
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-population-of-branching-process.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Set <span class="inline-math">$\mu=\expect(X_1)$</span>.
+                                        Conditioning on <span class="inline-math">$X_n$</span>,
+                                        <span class="display-math">$$ \expect(X_{n+1}|X_n=m) = \expect(Y_{1,n}+\ldots+Y_{m,n}) = m\mu $$</span>
+                                        so using the law of total expectation,
+                                        <span class="display-math">$$ \begin{align*}
+                                        \expect(X_{n+1}) &amp;= \fsum m0\infty \expect(X_{n+1}|X_n=m)\,\prob(X_n=m) \\
+                                        &amp;= \mu\fsum m0\infty m\prob(X_n=m) \\
+                                        &amp;= \mu\expect(X_n).
+                                        \end{align*} $$</span>
+                                        Applying the boundary condition of <span class="inline-math">$\expect(X_0)=1$</span>, we have <span class="inline-math">$\expect(X_n)=\mu^n$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Generating function of branching process
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-function-of-branching-process.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Generating function: let <span class="inline-math">$F(t) = \expect(t^{X_1})$</span> and <span class="inline-math">$F_n(t)=\expect(t^{X_n})$</span>. Then using the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-generating-function-of-random-sums.html">result about random sums</a>,
+                                        <span class="display-math">$$ F_n(t) = F_{n-1}\big(F(t)\big) = \ub{F\circ F\circ\ldots\circ F}_\text{$n$-fold composition}(t). $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            A feature to exploit is that if we condition on <span class="inline-math">$\set{X_1=m}$</span>, the descendants of any individuals in generation 1 is another branching process.
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Extinction probability of branching process
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Extinction-probability-of-branching-process.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$q_n = \prob(X_n=0)$</span> and the <em>extinction probability</em> <span class="inline-math">$q=\prob(X_n=0\text{ for some } n\geq0)$</span>. Since <span class="inline-math">$\set{X_1=0}\subseteq\set{X_2=0}\subseteq\ldots$</span> and <span class="inline-math">$\bigcap_n \set{X_n=0} = \set{X_n=0\text{ for some } n\geq 0}$</span>, by continuity of probability, <span class="inline-math">$q_n\to q$</span>.
+                                    </p>
+                                    <p>
+                                        Note that
+                                        <span class="display-math">$$ q_n = \prob(X_n=0) = F_n(0)=\ub{F\circ F\circ\ldots\circ F}_\text{$n$-fold composition}(0).$$</span>
+                                        Alternatively we can condition on the first generation
+                                        <span class="display-math">$$ \begin{align*}
+                                        q_n &amp;= \fsum m0\infty \prob(X_1=m)\prob(X_n=0|X_1=m) \\
+                                        &amp;= \fsum m0\infty \prob(X_1=m) q_{n-1}^m = F(q_{n-1})
+                                        \end{align*} $$</span>
+                                        since <span class="inline-math">$\set{X_n=0|X_1=m}$</span> means that each of the descendants of the <span class="inline-math">$m$</span> individuals in generation 1 go extinct, which are independent events.
+                                    </p>
+                                    <p>
+                                        And using analysis (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-analysis-of-extinction-probability-of-branching-process.html">Derivation</a>), <span class="inline-math">$q$</span> is the smallest non-negative solution of <span class="inline-math">$q=F(q)$</span>. Also if <span class="inline-math">$\prob(X_1=1)&lt;1$</span>, then <span class="inline-math">$q&lt;1$</span> iff <span class="inline-math">$\mu=\expect(X_1)&gt;1$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Random walk from branching process
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walk-from-branching-process.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        List the individuals in increasing order. Set <span class="inline-math">$S_0=1$</span>, and for <span class="inline-math">$n\geq 1$</span> let <span class="inline-math">$S_n$</span> for the number of offspring of all visited individuals who have not yet been visited (think about breadth-first search).
+                                    </p>
+                                    <p>
+                                        Then the jumps of <span class="inline-math">$(S_n:n\geq0)$</span> are independent with the same distribution as <span class="inline-math">$X_1-1$</span>.
+                                        <img src="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240223173401.png">
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
             </p>
             
         </div>
@@ -79,10 +295,15 @@
     <div class="nav">
         <h1 class="nav-heading">Backlinks</h1>
         <ul>
-            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Multiple-integrals.html">Multiple integrals</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-random-variables.html">Discrete random variables</a></li>
         </ul>
         
-        
+        <h1 class="nav-heading">Outgoing Links</h1>
+        <ul>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-random-process-random-walk.html">Definition (random process, random walk)</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gambler-s-ruin.html">Gambler's ruin</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Branching-process.html">Branching process</a></li>
+        </ul>
 
         <h1 class="nav-heading">All Files</h1>
         <ul>
@@ -309,6 +530,8 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Adding-Bernoulli-random-variables-on-a-product-space.html">Adding Bernoulli random variables on a product space</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Basic-properties-of-probability-measures.html">Basic properties of probability measures</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bayes-formula.html">Bayes' formula</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bernoulli-distribution.html">Bernoulli distribution</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Binomial-distribution.html">Binomial distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bivariate-normal.html">Bivariate normal</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Box-Muller-transform.html">Box-Muller transform</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Branching-process.html">Branching process</a></li>
@@ -327,13 +550,13 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-subsets.html">Counting subsets</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Counting-surjections.html">Counting surjections</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Gaussian-random-variables.html">Definition (Gaussian random variables)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-Poisson-distribution.html">Definition (Poisson distribution)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-binomial-distribution.html">Definition (binomial distribution)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-absolutely-continuous-random-variable.html">Definition (absolutely continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-branching-process.html">Definition (branching process)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-expectation.html">Definition (conditional expectation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-probability.html">Definition (conditional probability)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-continuous-random-variable.html">Definition (continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-convergence-of-random-variables.html">Definition (convergence of random variables)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-correlation.html">Definition (correlation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-covariance.html">Definition (covariance)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-probability-measure.html">Definition (discrete probability measure)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-discrete-random-variable.html">Definition (discrete random variable)</a></li>
@@ -342,14 +565,12 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-integrable-random-variable.html">Definition (expectation of integrable random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-expectation-of-multivariate-random-variable.html">Definition (expectation of multivariate random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-finite-set-cardinality.html">Definition (finite set, cardinality)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-geometric-distribution.html">Definition (geometric distribution)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-discrete-random-variables.html">Definition (independent discrete random variables)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-random-variables.html">Definition (independent random variables)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-sequence-of-events.html">Definition (independent sequence of events)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-integrable-square-integrable.html">Definition (integrable, square-integrable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-joint-probability-density-function.html">Definition (joint probability density function)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-marginal-density-function.html">Definition (marginal density function)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-moment-generating-function.html">Definition (moment generating function)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-multinomial-distribution.html">Definition (multinomial distribution)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-n-th-moment-of-random-variable.html">Definition (n-th moment of random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-non-negative-random-variable.html">Definition (non-negative random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-density-function.html">Definition (probability density function)</a></li>
@@ -362,8 +583,6 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-standard-deviation.html">Definition (standard deviation)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance-of-multivariate-random-variable.html">Definition (variance of multivariate random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-variance.html">Definition (variance)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintiion-absolutely-continuous-random-variable.html">Defintiion (absolutely continuous random variable)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Defintion-Bernoulli-distribution.html">Defintion (Bernoulli distribution)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-Box-Muller-transform.html">Derivation (Box-Muller transform)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-analysis-of-extinction-probability-of-branching-process.html">Derivation (analysis of extinction probability of branching process)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-bivariate-normal-as-sums-of-independent-Gaussians.html">Derivation (bivariate normal as sums of independent Gaussians)</a></li>
@@ -406,6 +625,7 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-X-mu-Y-nu-is-integrable-in-covariance.html">Derivation that (X-mu)(Y-nu) is integrable in covariance</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-that-distribution-function-is-non-decreasing.html">Derivation that distribution function is non-decreasing</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-probability-distributions.html">Discrete probability distributions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Discrete-random-variables.html">Discrete random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Bertrand-s-paradox.html">Example (Bertrand's paradox)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Buffon-s-needle.html">Example (Buffon's needle)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-Catalan-number.html">Example (Catalan number)</a></li>
@@ -423,10 +643,10 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Gaussian-random-variables.html">Gaussian random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-function-of-branching-process.html">Generating function of branching process</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-and-moments.html">Generating functions and moments</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Generating-functions-of-some-distributions.html">Generating functions of some distributions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Geometric-distribution.html">Geometric distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Geometric-probability.html">Geometric probability</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Independence.html">Independence</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Inequalities.html">Inequalities</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Inequalities-on-random-variables.html">Inequalities on random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-expectation.html">Law of total expectation</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-probability.html">Law of total probability</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-Poisson-distribution-as-a-limit-of-binomial-distribution.html">Lemma (Poisson distribution as a limit of binomial distribution)</a></li>
@@ -446,16 +666,20 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-union-bound-of-probability.html">Lemma (union bound of probability)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-variance-of-sum.html">Lemma (variance of sum)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-population-of-branching-process.html">Mean population of branching process</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Models-for-randomness.html">Models for randomness</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Mean-time-to-absorption-in-gambler-s-ruin.html">Mean time to absorption in gambler's ruin</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function-of-Gaussian-random-variable.html">Moment generating function of Gaussian random variable</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Moment-generating-function.html">Moment generating function</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multinomial-distribution.html">Multinomial distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Multivariate-density-functions.html">Multivariate density functions</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Normal-distribution.html">Normal distribution</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Notes.html">Notes</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240131124544.png">Pasted image 20240131124544</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240223173401.png">Pasted image 20240223173401</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/media/Lectures/Lent/Probability-Pr/Notes/Pasted-image-20240304150408.png">Pasted image 20240304150408</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Poisson-distribution.html">Poisson distribution</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Prbability-of-success-in-gambler-s-ruin.html">Prbability of success in gambler's ruin</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-generating-functions.html">Probability generating functions</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Probability-space.html">Probability space</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-AM-GM-inequality.html">Proof (AM-GM inequality)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Borel-Cantelli-lemma.html">Proof (Borel-Cantelli lemma)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Cauchy-Schwarz-inequality-for-expectation.html">Proof (Cauchy-Schwarz inequality for expectation)</a></li>
@@ -503,11 +727,12 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-affine-functions-of-Gaussian-are-Gaussian.html">Proposition (affine functions of Gaussian are Gaussian)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-applying-function-to-continuous-random-variable.html">Proposition (applying function to continuous random variable)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-expectation-of-continuous-random-variable.html">Proposition (expectation of continuous random variable)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-gambler-s-ruin-almost-always-terminates.html">Proposition (gambler's ruin almost always terminates)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-moment-generating-function-of-sum-of-random-variables.html">Proposition (moment generating function of sum of random variables)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-probability-distribution-given-pdf.html">Proposition (probability distribution given pdf)</a></li>
+                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-processes.html">Random processes</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-variables.html">Random variables</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walk-from-branching-process.html">Random walk from branching process</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Random-walks.html">Random walks</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Rejection-sampling.html">Rejection sampling</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Sample-error-via-central-limit-theorem.html">Sample error via central limit theorem</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simpson-s-paradox.html">Simpson's paradox</a></li>
@@ -603,12 +828,9 @@
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Differentiating-a-curve.html">Differentiating a curve</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Divergence-theorem.html">Divergence theorem</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Elasticity-tensor.html">Elasticity tensor</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-2D-polar-integral.html">Example (2D polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-applying-Stokes-theorem-to-a-frustum.html">Example (applying Stokes' theorem to a frustum)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-coordinates.html">Example (cylindrical polar coordinates)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-integral.html">Example (cylindrical polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-coordinates.html">Example (spherical polar coordinates)</a></li>
-                                            <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-integral.html">Example (spherical polar integral)</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Example-of-solving-isotropic-Poisson-equation-with-boundary-conditions.html">Example of solving isotropic Poisson equation with boundary conditions</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Examples-of-invariant-integrals.html">Examples of invariant integrals</a></li>
                                             <li class="nav-file"><a href="/tripos-notes/Lectures/Lent/Vector-Calculus-VC/Notes/Gauss-law.html">Gauss' law</a></li>

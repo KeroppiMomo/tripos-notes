@@ -1,31 +1,182 @@
-<p>
-    <div class="markdown-embed embed-definition">
-        <div class="markdown-embed-title">
-            Definition (probability density function)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-density-function.html">open_in_new</a>
-        </div>
-        <div class="markdown-embed-content">
-            <p>
-                A function <span class="inline-math">$f$</span> on <span class="inline-math">$\R$</span> is a <em>probability density function</em> if <span class="inline-math">$f$</span> is non-negative, sufficiently regular (Borel measurable), and
-                <span class="display-math">$$ \int_\R f(x)\, dx = 1. $$</span>
-            </p>
-            
-        </div>
-    </div>
-    <div class="markdown-embed embed-result">
-        <div class="markdown-embed-title">
-            Proposition (probability distribution given pdf)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proposition-probability-distribution-given-pdf.html">open_in_new</a>
-        </div>
-        <div class="markdown-embed-content">
-            <p>
-                Given a probability density function <span class="inline-math">$f$</span>, there is a unique probability measure <span class="inline-math">$\mu$</span> on <span class="inline-math">$\R$</span> (defined on the Borel <span class="inline-math">$\sigma$</span>-algebra <span class="inline-math">$\mathcal B$</span> which is the smallest <span class="inline-math">$\sigma$</span>-algebra containing all intervals in <span class="inline-math">$\R$</span>) such that
-                <span class="display-math">$$ \mu\big((-\infty, x]\big) = \int_{-\infty}^x f(y) \, dy,\qquad \mu(B)=\int_B f(x)\,dx = \int_\R 1_B(x)\,f(x)\,dx.$$</span>
-            </p>
-            
-        </div>
-    </div>
-</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            Distribution <span class="inline-math">$X\sim$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Parameters
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Values <span class="inline-math">$x\in$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            PDF <span class="inline-math">$f(x)$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Mean <span class="inline-math">$\expect(X)$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Variance <span class="inline-math">$\var(X)$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            MGF <span class="inline-math">$M_X(t)$</span>
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Uniform <span class="inline-math">$U[a,b]$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$[a,b]$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$[a,b]$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{b-a}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{2}(a+b)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{12}(b-a)^2$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\begin{cases} \frac{e^{bx}-e^{ax}}{t(b-a)}, &amp;t\neq 0 \\ 1, &amp;t=0\end{cases}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Exponential <span class="inline-math">$E(\lambda)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\lambda\in(0,\infty)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$[0,\infty)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\lambda e^{-\lambda x}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{\lambda}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{\lambda^2}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\begin{cases} \frac{\lambda}{\lambda-t},&amp; t&lt;\lambda \\ \infty, &amp;t\geq \lambda \end{cases}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Gamma <span class="inline-math">$\Gamma(\alpha,\lambda)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\alpha\in(0,\infty)$</span><br><span class="inline-math">$\lambda\in(0,\infty)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$[0,\infty]$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{\alpha}{\lambda}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{\alpha}{\lambda^2}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\begin{cases} \left(\frac{\lambda}{\lambda-t}\right)^\alpha,&amp; t&lt;\lambda \\ \infty, &amp;t\geq \lambda \end{cases}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Normal <span class="inline-math">$N(\mu,\sigma^2)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mu\in\R$</span><br><span class="inline-math">$\sigma&gt;0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\R$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mu$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\sigma^2$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\exp(\mu t + \frac{1}{2}\sigma^2 t^2)$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Cauchy
+        </p>
+        </td>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\R$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{\pi(1+x^2)}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\expect\textbar X\textbar = \infty$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\infty$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\begin{cases} \infty, &amp;t\neq 0 \\ 1, &amp;t=0 \end{cases}$</span>
+        </p>
+        </td>
+    </tr>
+</table>
 <p>
     <div class="markdown-embed">
         <div class="markdown-embed-title">
@@ -52,7 +203,7 @@
                     <span class="display-math">$$ \begin{align*}
                     M_X(t) = \begin{cases}
                         \dfrac{e^{bx} - e^{ax}}{t(b-a)}, &amp;t\neq 0 \\
-                        0, &amp;t=0.
+                        1, &amp;t=0.
                     \end{cases}
                     \end{align*} $$</span>
                 </p>
@@ -127,7 +278,7 @@
                 <span class="inline-math">$\Gamma(1, \lambda)$</span> is identical to <span class="inline-math">$E(\lambda)$</span>.
             </p>
             <p>
-                <iframe src="https://www.desmos.com/calculator/qqn9f2n0ud?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+                <iframe src="https://www.desmos.com/calculator/usudwn5weq?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
             </p>
             <ul>
             <li>

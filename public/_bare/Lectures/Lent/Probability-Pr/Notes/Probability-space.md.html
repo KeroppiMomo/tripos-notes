@@ -1,0 +1,450 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (sigma-algebra)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-sigma-algebra.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a set <span class="inline-math">$\Omega$</span>, a set <span class="inline-math">$\mathcal F\subseteq\mathcal P(\Omega)$</span> of subsets of <span class="inline-math">$\Omega$</span> is a <em><span class="inline-math">$\sigma$</span>-algebra</em> on <span class="inline-math">$\Omega$</span> satisfying
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\Omega \in \mathcal F$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    closure under complementation: <span class="inline-math">$A^\complement\in\mathcal F$</span> for all <span class="inline-math">$A\in\mathcal F$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    closure under countable unions: if <span class="inline-math">$(A_n)_{n\in\N}$</span> is a sequence in <span class="inline-math">$\mathcal F$</span>, then <span class="inline-math">$\bigcup_{n\in\N} A_n \in \mathcal F$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Equivalently:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\mathcal F$</span> is non-empty;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mathcal F$</span> is closed under countable set operations (complement, union, intersections). (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Derivation-sigma-algebra-is-closed-under-countable-intersections.html">Derivation of closure under countable intersections</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (probability measure)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-measure.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathcal F$</span> be a <span class="inline-math">$\sigma$</span>-algebra on <span class="inline-math">$\Omega$</span>.
+                A function <span class="inline-math">$\mathbb P: \mathcal F \to [0,1]$</span> is a <em>probability measure</em> on <span class="inline-math">$\mathcal F$</span> if it satsifies
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$P(\Omega) = 1$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    countable additivity: for any sequences <span class="inline-math">$(A_n)_{n\in\N}$</span> of disjoint elements in <span class="inline-math">$\mathcal F$</span>,
+                    <span class="display-math">$$ \mathbb P\Big(\bigcup_n A_n\Big) = \sum_n \mathbb P(A_n). $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (probability space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-probability-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A triple <span class="inline-math">$(\Omega, \mathcal F, \mathbb P)$</span> is a <em>probability space</em> when <span class="inline-math">$\mathcal F$</span> is a <span class="inline-math">$\sigma$</span>-algebra of <span class="inline-math">$\Omega$</span> and <span class="inline-math">$\mathbb P$</span> is a probability measure on <span class="inline-math">$\mathcal F$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    We interpret:
+</p>
+<ul>
+<li>
+    <p>
+        elements in <span class="inline-math">$\Omega$</span> as outcomes;
+    </p>
+    
+</li><li>
+    <p>
+        elements in <span class="inline-math">$\mathcal F$</span> as events;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathbb P(A)$</span> as the probability of the event <span class="inline-math">$A\in\mathcal F$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Classical probability
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Classical-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In classical probability,
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\Omega$</span> is a finite set.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mathcal F = \mathcal P(\Omega)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    We model all outcomes as equally likely, so
+                    <span class="display-math">$$\mathbb P(A) = \frac{|A|}{|\Omega|}.$$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Examples: throwing a dice, balls from a bag, well-shuffled pack of card, distribution of the largest digit, birthdays
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Basic properties of probability measures
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Basic-properties-of-probability-measures.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(\Omega, \mathcal F, \mathbb P)$</span> be a probability space.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (union bound of probability)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-union-bound-of-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For every sequence <span class="inline-math">$(A_n)_{n\in\N}$</span> in <span class="inline-math">$\mathcal F$</span>,
+                            <span class="display-math">$$ \mathbb P\Big(\bigcup_{n\in\N} A_n\Big) \leq \sum_{n\in\N} \mathbb P(A_n). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-union-bound-of-probability.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                This is useful for showing <span class="inline-math">$\prob=0$</span> or <span class="inline-math">$1$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (continuity of probability)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-continuity-of-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(A_n)_{n\in\N}$</span> be a sequence of <span class="inline-math">$\mathcal F$</span> and suppose <span class="inline-math">$A_n\subseteq A_{n+1}$</span> for all <span class="inline-math">$n$</span>. Then
+                            <span class="display-math">$$ \mathbb P(A_n) \to \mathbb P\Big(\bigcup_n A_n\Big) \quad\text{as } n\to\infty. $$</span>
+                        </p>
+                        <p>
+                            Equivalently, let <span class="inline-math">$(C_n)_{n\in\N}$</span> be a sequence of <span class="inline-math">$\mathcal F$</span> and suppose <span class="inline-math">$C_n \supseteq C_{n+1}$</span> for all <span class="inline-math">$n$</span>. Then
+                            <span class="display-math">$$ \prob(C_n) \to \prob\Big(\bigcap_n C_n\Big) \quad\text{as } n\to\infty. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-continuity-of-probability.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Borel-Cantelli lemma)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Theorem-Borel-Cantelli-lemma.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a sequence of events <span class="inline-math">$(A_n: n\in\N)$</span>, let <span class="inline-math">$A$</span> be the event where <span class="inline-math">$A_n$</span> happens infinitely often:
+                            <span class="display-math">$$ A = \sb{\omega\in \Omega}{\omega\in A_n \text{ infintiely often}}. $$</span>
+                        </p>
+                        <p>
+                            Then
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                if <span class="inline-math">$\sum\prob(A_n)$</span> converges, then <span class="inline-math">$\prob(A) = 0$</span>;
+                                (Example sheet 1 Q6)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                provided that <span class="inline-math">$(A_n)$</span> are independent, if <span class="inline-math">$\sum\prob(A_n)=\infty$</span>, then <span class="inline-math">$\prob(A)=1$</span>. (Non-examinable)
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-Borel-Cantelli-lemma.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                Dropping the condition that <span class="inline-math">$(A_n)$</span> are independent allows <span class="inline-math">$\prob(A)$</span>  to be anything: set <span class="inline-math">$A_1=A_2=\ldots=C$</span> to get <span class="inline-math">$\prob(A)=\prob(C)\neq0$</span>, and set <span class="inline-math">$A_1\supset A_2\supset A_3\supset\ldots$</span> with <span class="inline-math">$\prob(A_n) = 1/n$</span> to get <span class="inline-math">$\prob(A)=0$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (inclusion-exclusion formula for probability)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-inclusion-exclusion-formula-for-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A_1, A_2, \ldots, A_n\in\mathcal F$</span>. Then
+                            <span class="display-math">$$ \mathbb P(A_1\union A_2\union\ldots\union A_n) = \sum_{k=1}^n(-1)^{k+1} \sum_{1\leq i_1&lt;i_2&lt;\ldots&lt;i_k\leq n} \mathbb P(A_{i_1}\cap A_{i_2}\cap\ldots\cap A_{i_k}). $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-inclusion-exclusion-formula-for-probability.html">Proof using expectation</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (partial sums in inclusion-exclusion formula overestimate and underestimate)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-partial-sums-in-inclusion-exclusion-formula-overestimate-and-underestimate.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Referring to the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-inclusion-exclusion-formula-for-probability.html">inclusion-exclusion formula</a>, let <span class="inline-math">$S_k$</span> be the partial sums
+                            <span class="display-math">$$ S_k = \fsum j1k (-1)^{j+1} \sum_{1\leq i_1&lt;\ldots&lt;i_j\leq n} \prob(A_{i_1}\cap \ldots\cap A_{i_j}). $$</span>
+                        </p>
+                        <p>
+                            Then sum of odd terms overestimates and sum of even terms underestimate:
+                            <span class="display-math">$$ S_{2k} \leq \prob(A_1\cup\ldots\cup A_n) \leq S_{2k+1}. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-partial-sums-in-inclusion-exclusion-formula-overestimate-and-underestimate.html">Proof (non-examinable)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Independence
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Independence.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (independent sequence of events)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-independent-sequence-of-events.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a finite or infinite sequence of events <span class="inline-math">$(A_1, A_2, \ldots, A_n)$</span> or <span class="inline-math">$(A_n)_{n\in\N}$</span>,
+                            we say that the sequence is <em>independent</em> if
+                            <span class="display-math">$$ \mathbb P(A_{i_1} \cap A_{i_2} \cap\ldots\cap A_{i_k}) = \mathbb P(A_{i_1}) \times \mathbb P(A_{i_2}) \times \ldots\times \mathbb P(A_{i_k}) $$</span>
+                            for all <em>finite</em> subsequence <span class="inline-math">$i_1 &lt; \ldots &lt; i_k$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Note that pairwise independent events may not be an independent sequence. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-pairwise-independent-events-but-not-independent.html">Example</a>)
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID 8d72f4 -->
+            <li id="^8d72f4">
+                <p>
+                    If <span class="inline-math">$\prob(A)=0$</span> or <span class="inline-math">$1$</span>, then <span class="inline-math">$A$</span> is independent of any event. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-event-with-0-or-1-probability-is-independent-of-any-event.html">Proof</a>)
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID 8d72f4 -->
+            <!-- BEGIN BLOCK ID 120151 -->
+            <li id="^120151">
+                <p>
+                    If <span class="inline-math">$A$</span> and <span class="inline-math">$B$</span> are independent events, then <span class="inline-math">$A^\complement$</span> and <span class="inline-math">$B$</span> are also independent.
+                    Generally for an independent sequence of events, replacing any subset of them with their complements still gives an independent sequence. (Sheet 2 Q2, <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-independence-replacing-with-complements.html">Proof</a>)
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID 120151 -->
+            <li>
+                <p>
+                    Independence is a natural property of the product of probability spaces.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Conditional probability
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Conditional-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (conditional probability)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Definition-conditional-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a probability space, for any two events <span class="inline-math">$A,B$</span> with <span class="inline-math">$\mathbb P(B) &gt; 0$</span>, the conditional probability of <span class="inline-math">$A$</span> given <span class="inline-math">$B$</span> is
+                            <span class="display-math">$$ \mathbb P(A|B) = \frac{\mathbb P(A\cap B)}{\mathbb P(B)}. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (conditional probability measure)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Lemma-conditional-probability-measure.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given a probability space <span class="inline-math">$(\Omega, \mathcal F, \mathbb P)$</span>, for any event <span class="inline-math">$B$</span> with <span class="inline-math">$\mathbb P(B) &gt; 0$</span>, the function
+                            <span class="display-math">$$ \begin{align*}
+                            \mathbb P_B: \mathcal F &amp;\to [0,1] \\
+                            A &amp;\mapsto \mathbb P(A|B)
+                            \end{align*} $$</span>
+                            is a probability measure called the <em>conditional probability measure given <span class="inline-math">$B$</span></em>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-conditional-probability-measure.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Law of total probability
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-probability.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(B_n)_{n\in\N}$</span> be a partition of <span class="inline-math">$\Omega$</span> (sequence of disjoint events with <span class="inline-math">$\bigcup_n B_n = \Omega$</span>) with <span class="inline-math">$\prob(B_n)&gt;0$</span>.
+                            Then for all event <span class="inline-math">$A$</span>,
+                            <span class="display-math">$$ \prob(A) = \sum_n \prob(A|B_n)\, \prob(B_n). $$</span>
+                            The condition of positive probabilities can be dropped if we agree that <span class="inline-math">$\prob(A|B_n) \prob(B_n) = 0$</span> when <span class="inline-math">$\prob(B_n) = 0$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Proof-law-of-total-probability.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Bayes' formula
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Bayes-formula.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(B_n)_{n\in\N}$</span> be a partition of <span class="inline-math">$\Omega$</span> with positive probability and let <span class="inline-math">$A$</span> be an event of positive probability.
+                            Then
+                            <span class="display-math">$$ \prob(B_n | A) = \frac{\prob(A|B_n) \prob(B_n)}{\fsum k1\infty \prob(A|B_k) \prob(B_k) }. $$</span>
+                        </p>
+                        <p>
+                            We hold a prior belief of the probabilities <span class="inline-math">$\prob(B_n)$</span>. Should we observe the event <span class="inline-math">$A$</span>, this formula gives the posterior probabilities <span class="inline-math">$\prob(B_n|A)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Simpson's paradox
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Simpson-s-paradox.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(\Omega_n)_{n\in\N}$</span> be a partition of <span class="inline-math">$\Omega$</span>. Let <span class="inline-math">$A,B$</span> be events with <span class="inline-math">$\prob(B) &gt; 0$</span>.
+                        </p>
+                        <p>
+                            It can be that <span class="inline-math">$B$</span> makes <span class="inline-math">$A$</span> more likely on all <span class="inline-math">$\Omega_n$</span>, i.e. <span class="inline-math">$\prob(A|B\cap\Omega_n) &gt; \prob(A|\Omega_n)$</span>, but <span class="inline-math">$B$</span> makes <span class="inline-math">$A$</span> less likely on <span class="inline-math">$\Omega$</span>, i.e. <span class="inline-math">$\prob(A|B) &lt; \prob(A)$</span>. (<a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Example-of-Simpson-s-paradox.html">Example</a>)
+                        </p>
+                        <p>
+                            Using the <a href="/tripos-notes/Lectures/Lent/Probability-Pr/Notes/Law-of-total-probability.html">law of total probability</a>,
+                            <span class="display-math">$$ \begin{matrix}
+                            \prob(A) &amp; = &amp; \sum_n &amp; \prob(A|\Omega_n) &amp; \prob(\Omega_n) \\
+                            \bigvee &amp; &amp; &amp; \bigwedge \\
+                            \prob(A|B) &amp; = &amp; \sum_n &amp; \prob(A|B\cap\Omega_n) &amp; \prob(\Omega_n|B) \\
+                            \end{matrix} $$</span>
+                            and the weights <span class="inline-math">$\prob(\Omega_n)$</span> can change when conditioning on <span class="inline-math">$B$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

@@ -4,8 +4,8 @@ import file_manager
 import config
 
 def generate():
-    preamble = Path(config.MATHJAX_PREAMBLE).read_text()
-    mathjax_config = Path(config.MATHJAX_CONFIG_FORMAT).read_text()
+    preamble = Path(config.MATHJAX_PREAMBLE).expanduser().read_text()
+    mathjax_config = Path(config.MATHJAX_CONFIG_FORMAT).expanduser().read_text()
     escaped_preamble = preamble \
         .replace("\\", "\\\\") \
         .replace("`", "\\`") \
