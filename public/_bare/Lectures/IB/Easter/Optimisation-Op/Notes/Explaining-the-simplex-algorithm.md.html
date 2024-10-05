@@ -1,0 +1,150 @@
+<p>
+    (non-examinable)
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Interpretation of reduced costs
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Interpretation-of-reduced-costs.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\v x$</span> be a basic feasible solution with basic variables <span class="inline-math">$B(1), B(2), \ldots, B(m)$</span>.
+                The idea is that when <span class="inline-math">$A\v y=\v b$</span>, <span class="inline-math">$m$</span> of the variables <span class="inline-math">$\v y$</span> can be expressed in terms of the other <span class="inline-math">$(n-m)$</span> variables,
+                so there are multiple ways to write <span class="inline-math">$\v c^T \v y$</span>.
+            </p>
+            <p>
+                Let <span class="inline-math">$\set{N(1), N(2), \ldots, N(n-m)} = \set{1,2,\ldots,n} \setminus \set{B(1), B(2), \ldots, B(m)}$</span>.
+                For a vector <span class="inline-math">$\v u$</span>, denote <span class="inline-math">$\v u_B = (u_{B(1)}, u_{B(2)}, \ldots, u_{B(m)})$</span> and <span class="inline-math">$\v u_N=(u_{N(1)}, u_{N(2)}, \ldots, u_{N(n-m)})$</span>.
+                Similarly for matrices, use this notation to extract the corresponding columns, e.g. <span class="inline-math">$B = A_B$</span>.
+            </p>
+            <p>
+                For any feasible <span class="inline-math">$\v y$</span>, we express <span class="inline-math">$\v y_B$</span> in terms of <span class="inline-math">$\v y_N$</span>:
+                <span class="display-math">$$ \begin{align*}
+                    \v b &amp;= A\v y \\
+                    &amp;= A_{B} \v y_B + A_N \v y_N \\
+                    \v y_B &amp;= B\inv(\v b - A_N\v y_N).
+                \end{align*} $$</span>
+                Then the objective function is
+                <span class="display-math">$$ \begin{align*}
+                    \v c^T \v y &amp;= \v c_B^T \v y_B + \v c_N^T \v y_N  \\
+                    &amp;= \v c_B^T B\inv (\v b - A_N \v y_N) + \v c_N^T \v y_N \\
+                    &amp;= \v c_B^T B\inv \v b + (\v c_N^T - \v c_B^T B\inv A_N) \v y_N \tag{*}\\
+                    &amp;= \v c_B^T B\inv \v b + (\v c^T - \v c_B^T B\inv A) \v y \tag{\dagger}\\
+                    &amp;= \v c_B^T B\inv \v b + \bar{\v c}^T \v y.
+                \end{align*} $$</span>
+                <span class="inline-math">$(\dagger)$</span> follows from <span class="inline-math">$(\v c^T - \v c_B^T B\inv A)_B = \v c_B^T - \v c_B^T B\inv A_b = \v c_B^T - \v c_B^T B\inv B = \v 0^T$</span>.
+            </p>
+            <p>
+                Substituting <span class="inline-math">$\v y = \v x$</span> into <span class="inline-math">$(*)$</span>, since <span class="inline-math">$\v x_N = \v 0$</span>, we get <span class="inline-math">$\v c^T \v x = \v c_B^T B\inv \v b$</span>, so
+                <span class="display-math">$$ \begin{align*}
+                    \v c^T \v y = \v c^T \v x + \bar{\v c}^T \v y.
+                \end{align*} $$</span>
+                This gives an interpretation of the reduced costs:
+                deviating from a basic feasible solution <span class="inline-math">$\v x$</span> to some feasible solution <span class="inline-math">$\v y$</span> takes an additional cost of <span class="inline-math">$\bar{\v c}^T \v y$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Entering and exiting the basis
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Entering-and-exiting-the-basis.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (feasible direction)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-feasible-direction.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program.html">linear program</a>, call the feasible set <span class="inline-math">$P$</span>.
+                        </p>
+                        <p>
+                            At some point <span class="inline-math">$\v x\in P$</span>, a vector <span class="inline-math">$\v d\in\R^n$</span> is called a <em>feasible direction</em> if there exists some <span class="inline-math">$\theta&gt;0$</span> such that <span class="inline-math">$\v x+\theta \v d\in P$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Let <span class="inline-math">$\v x$</span> be a basic feasible solution with basic indices <span class="inline-math">$B(1), B(2), \ldots, B(m)$</span>.
+                We want to move from <span class="inline-math">$\v x$</span> to a feasible solution <span class="inline-math">$\v x&#x27; =\v x + \theta\v d$</span> (where <span class="inline-math">$\theta&gt;0$</span>)
+                by making some non-basic variable <span class="inline-math">$x&#x27;_j$</span> positive while keeping all other non-basic variables fixed at 0.
+                We describe this by saying <span class="inline-math">$x_j$</span> <em>enters the basis</em>.
+            </p>
+            <p>
+                We insist <span class="inline-math">$d_j = 1$</span> and <span class="inline-math">$d_i=0$</span> for all other non-basic indices <span class="inline-math">$i\neq j$</span>.
+                In order for <span class="inline-math">$A\v x&#x27; = A(\v x + \theta\v d) = \v b$</span> to hold, since <span class="inline-math">$A\v x = \v b$</span>, we need
+                <span class="display-math">$$ \begin{align*}
+                    \v 0 = A\v d = \v A_jd_j + A_B \v d_B \implies \v d_B = -B\inv \v A_j.
+                \end{align*} $$</span>
+                This <span class="inline-math">$\v d$</span> is called the <em><span class="inline-math">$j$</span>-th basic direction</em>.
+            </p>
+            <p>
+                To ensure <span class="inline-math">$\v x&#x27;\geq \v 0$</span>, we need <span class="inline-math">$-\theta d_i\leq x_i$</span> for all <span class="inline-math">$i$</span>.
+                This is automatically satisfied when <span class="inline-math">$d_i \geq 0$</span>.
+                So the range of <span class="inline-math">$\theta$</span> for a feasible <span class="inline-math">$\v x&#x27;$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    0 &lt; \theta \leq \min_{i:\ d_i&lt;0}\left(\frac{x_i}{-d_i}\right) = \min_{i=1,2,\ldots,m:\ d_{B(i)}&lt;0} \left(\frac{x_{B(i)}}{-d_{B(i)}}\right).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                If we require <span class="inline-math">$\v x&#x27;$</span> to be a basic feasible solution, then take <span class="inline-math">$\theta$</span> to be its upper bound.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Simplex method
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Simplex-method.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We are given some basic feasible solution <span class="inline-math">$\v x$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    If the corresponding reduced costs <span class="inline-math">$\bar{\v c}\geq \v 0$</span>, then <span class="inline-math">$\v x$</span> is optimal.
+                </p>
+                
+            </li><li>
+                <p>
+                    Otherwise let <span class="inline-math">$j$</span> such that <span class="inline-math">$\bar c_j &lt; 0$</span>. Moving in the <span class="inline-math">$j$</span>-th basic direction <span class="inline-math">$\v d$</span> will reduce cost, since using reduced costs,
+                    <span class="display-math">$$ \begin{align*}
+                    \v c^T(\v x+\theta\v d) &amp;= \v c^T\v x + \theta\bar{\v c}^T\v d &amp;&amp;\text{reduced costs} \\
+                    &amp;= \v c^T \v x + \theta \bar c_j d_j &amp;&amp;\bar{\v c}_B = \v 0\\
+                    &amp;&lt; \v c^T \v x &amp;&amp;d_j = 1\text{ and } \bar c_j&lt;0.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Compute <span class="inline-math">$\v u :=-\v d_B = B\inv \v A_j$</span>.
+                    If <span class="inline-math">$\v u\leq 0$</span>, we can get get an optimal cost of <span class="inline-math">$-\infty$</span> by moving along <span class="inline-math">$\v d$</span> indefinitely, and so the algorithm terminates.
+                </p>
+                
+            </li><li>
+                <p>
+                    Otherwise let <span class="inline-math">$l = 1,2,\ldots,m$</span> such that <span class="inline-math">$u_l &gt; 0$</span> and <span class="inline-math">$x_{B(l)}/u_l$</span> is minimum. Let the minimum value be <span class="inline-math">$\theta^\ast$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Move to the new basic feasible solution <span class="inline-math">$\v y = \v x + \theta^\ast \v d$</span> where <span class="inline-math">$y_l = \theta^\ast$</span>, <span class="inline-math">$y_{B(i)} = x_{B(i)} - \theta^\ast u_i$</span> for <span class="inline-math">$i\neq l$</span> and other entries are zero.
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>

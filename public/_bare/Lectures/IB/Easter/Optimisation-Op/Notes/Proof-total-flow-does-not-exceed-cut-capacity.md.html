@@ -1,0 +1,17 @@
+<p>
+    For any sets <span class="inline-math">$X,Y\subseteq V$</span> (not necessarily disjoint), define
+    <span class="display-math">$$ \begin{align*}
+        f_x(X,Y) = \sum_{(i,j)\in E:\ i\in X,\ j\in Y} x_{ij}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$S\subseteq V$</span> satisfy <span class="inline-math">$1\in S$</span> and <span class="inline-math">$n\in V\setminus S$</span>.
+    <span class="display-math">$$ \begin{align*}
+        \delta &amp;= \sum_{i\in S} \left(\sum_{j:\ (i,j)\in E} x_{ij} - \sum_{j:\ (j,i)\in E} x_{ji}\right) &amp;&amp;\text{$x$ is feasible}\\
+        &amp;= f_x(S,V) - f_x(V,S) \\
+        &amp;= \left(f_x(S,V\setminus S) + f_x(S,S)\right) - \left(f_x(S,S) + f_x(V\setminus S, S)\right) \\
+        &amp;= f_x(S, V\setminus S) - f_x(V\setminus S, S)\\
+        &amp;\leq f_x(S,V\setminus S) &amp;&amp;x\geq 0\\
+        &amp;\leq c(S) &amp;&amp;x_{ij} \leq c_{ij}.
+    \end{align*} $$</span>
+</p>

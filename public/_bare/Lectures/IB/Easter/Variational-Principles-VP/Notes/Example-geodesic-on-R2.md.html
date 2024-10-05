@@ -1,0 +1,28 @@
+<p>
+    We want to find the shortest path between two points <span class="inline-math">$(x_1,y_1),(x_2,y_2)$</span> on <span class="inline-math">$\R^2$</span>.
+    Parametrise the curve by <span class="inline-math">$(x,y(x))$</span> and fix <span class="inline-math">$y(x_1) = y_1$</span> and <span class="inline-math">$y(x_2) = y_2$</span>.
+    We seek to minimise
+    <span class="display-math">$$ \begin{align*}
+        D[y] = \int_{x_1}^{x_2} \underbrace{ \sqrt{1+(y&#x27;)^2}}_{f(y&#x27;)}\, dx.
+    \end{align*} $$</span>
+</p>
+<p>
+    We use the <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/First-integrals-of-Euler-Lagrange.html#^no-y">first integral</a> when <span class="inline-math">$f$</span> does not depend on <span class="inline-math">$y$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \text{const.} = \pdfd{f}{y&#x27;} = \frac{y&#x27;}{\sqrt{1+(y&#x27;)^2}} \implies y&#x27;=\text{const.}
+    \end{align*} $$</span>
+    so we get a straight line.
+</p>
+<hr>
+<p>
+    We use the <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Lemma-second-variation-of-functional.html">second variation</a> to determine whether this is a minimum.
+    We compute
+    <span class="display-math">$$ \begin{align*}
+        P &amp;= \pdfd[2]{f}{y&#x27;} \\
+        &amp;= \pdd{y&#x27;}\left(\frac{y&#x27;}{\sqrt{1+(y&#x27;)^2}}\right) \\
+        &amp;= \frac{1+(y&#x27;)^2 - (y&#x27;)^2}{(1+(y&#x27;)^2)^{3/2}} \\
+        &amp;=(1+(y&#x27;)^2)^{3/2} &gt; 0, \\
+        Q &amp;= \pdfd[2]{f}{y} - \dd{x}\left(\frac{\partial^2 f}{\partial y\partial y&#x27;}\right) = 0.
+    \end{align*} $$</span>
+    <span class="inline-math">$P,Q\geq 0$</span> is sufficient to conclude this is a minimum.
+</p>

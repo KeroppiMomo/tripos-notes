@@ -1,0 +1,31 @@
+<p>
+    Lagrange method "works"
+    when we can find <span class="inline-math">$\v \lambda^\ast\in\R^m$</span> and <span class="inline-math">$\v x^\ast\in\mathcal{X}$</span> such that <span class="inline-math">$\v x^\ast$</span> minimises <span class="inline-math">$L(\v x,\v \lambda^\ast)$</span> and <span class="inline-math">$\v x^\ast$</span> is feasible, i.e. <span class="inline-math">$\v x^\ast\in\mathcal{X}(\v \lambda)$</span>.
+    Then we can apply <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-Lagrange-sufficiency.html">Lagrange sufficiency theorem</a> to insist that <span class="inline-math">$\v x$</span> is optimal.
+</p>
+<p>
+    If Lagrange method works, we can observe using weak duality that
+    <span class="display-math">$$ \begin{align*}
+        f(\v x^\ast) &amp;\geq \min_{\v x\in\mathcal{X}(\v b)} f(\v x) &amp;&amp;\text{since }\v x^\ast\in\mathcal{X}(\v b) \\
+        &amp;\geq \max_{\v \lambda\in\Lambda} g(\v \lambda) &amp;&amp;\text{by weak duality} \\
+        &amp;\geq g(\v \lambda^\ast) &amp;&amp;\text{since }\v \lambda^\ast\in \Lambda \\
+        &amp;= f(\v x^\ast) - {\v\lambda^\ast}^T(h(\v x^\ast) - \v b) &amp;&amp;\text{since $\v x^\ast$ minimises $L(\v x,\v \lambda^\ast)$} \\
+        &amp;= f(\v x^\ast) &amp;&amp;\text{since } \v x^\ast \in \mathcal{X}(\v b)
+    \end{align*} $$</span>
+    so strong duality holds:
+    <span class="display-math">$$ \begin{align*}
+        \min_{\v x\in\mathcal{X}(\v b)} f(\v x) = \max_{\v\lambda\in\Lambda} g(\v \lambda) = f(\v x^\ast).
+    \end{align*} $$</span>
+</p>
+<p>
+    If strong duality holds, it means
+    <span class="display-math">$$ \begin{align*}
+        \min_{\v x\in\mathcal{X}(\v b)} f(\v x) = \max_{\v \lambda\in\Lambda} g(\v \lambda)
+    \end{align*} $$</span>
+    so there exists <span class="inline-math">$\v x^\ast\in\mathcal{X}(\v b)$</span> and <span class="inline-math">$\v \lambda^\ast\in\Lambda$</span> such that <span class="inline-math">$f(\v x^\ast) = g(\v \lambda^\ast)$</span>.
+    Then Lagrange method will succeed using this choice of <span class="inline-math">$\v \lambda^\ast$</span>.
+</p>
+<p>
+    The "almost" caveat corresponds to when we define strong duality as <span class="inline-math">$\inf_{\v x\in\mathcal{X}(\v b)} f(\v x) = \sup_{\v \lambda\in\Lambda}g(\v \lambda)$</span>.
+    In this case the extrema may not be attained, but we don't care about this here.
+</p>

@@ -1,0 +1,16 @@
+<p>
+    Perturb <span class="inline-math">$\phi(x_1, x_2 ,\ldots, x_n) \to \phi(x_1, x_2, \ldots, x_n) + \epsilon \eta(x_1, x_2, \ldots, x_n)$</span> with <span class="inline-math">$\eta = 0$</span> on <span class="inline-math">$\partial V$</span>.
+</p>
+<p>
+    <span class="display-math">$$ \begin{align*}
+        F[\phi + \epsilon\eta] &amp;= \iiint_V f(x_1,\ldots,x_n, \phi+\epsilon\eta, \phi_{x_1} + \epsilon\eta_{x_1}, \ldots, \phi_{x_n} + \epsilon\eta_{x_n})\,dV \\
+        &amp;= F[\phi] + \epsilon\iiint_V \eta \pdfd{f}{\phi} + \sum_{i=1}^{n} \eta_{x_i} \pdfd{f}{\phi_{x_i}}\, dV + O(\epsilon^2) \\
+        &amp;= F[\phi] + \epsilon\iiint_V \eta \pdfd{f}{\phi} + \sum_{i=1}^{n} \pdd{x_i}\left(\eta \pdfd{f}{\phi_{x_i}}\right) - \sum_{i=1}^{n} \eta\pdd{x_i}\left(\pdfd{f}{\phi_{x_i}}\right)\, dV + O(\epsilon^2) \\
+        &amp;= F[\phi] + \epsilon\iint_{\partial V} \underbrace{\eta}_{0}  \pdfd{f}{\phi_{x_i}}\, dS + \epsilon\iiint_V \left(\pdfd{f}{\phi} - \sum_{i=1}^{n} \pdd{x_i}\left(\pdfd{f}{\phi_{x_i}}\right)\right)\eta\, dV + O(\epsilon^2) &amp;&amp;\text{divergence theorem} \\
+        &amp;= F[\phi] + \epsilon\iiint_V \left(\pdfd{f}{\phi} - \sum_{i=1}^{n} \pdd{x_i}\left(\pdfd{f}{\phi_{x_i}}\right)\right)\eta\, dV + O(\epsilon^2)
+    \end{align*} $$</span>
+    so we require
+    <span class="display-math">$$ \begin{align*}
+        \left(\sum_{i=1}^{n} \pdd{x_i}\left(\pdfd{f}{\phi_{x_i}}\right)\right) - \pdfd{f}{\phi} = 0.
+    \end{align*} $$</span>
+</p>

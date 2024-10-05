@@ -1,0 +1,136 @@
+<p>
+    Consider a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program-in-standard-form.html">standard form</a> linear program, with <span class="inline-math">$A$</span> being an <span class="inline-math">$m\times n$</span> matrix.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Notation (rows and columns of a matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-rows-and-columns-of-a-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an <span class="inline-math">$m\times n$</span> matrix <span class="inline-math">$A$</span>, denote
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\v a_1^T, a_2^T, \ldots, \v a_m^T$</span> the rows of <span class="inline-math">$A$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\v A_1, \v A_2, \ldots, \v A_n^T$</span> the columns of <span class="inline-math">$A$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<!-- BEGIN BLOCK ID assumption-a -->
+<li id="^assumption-a">
+    <p>
+        <strong>Assumption A</strong>: the rows <span class="inline-math">$\v a_i$</span> of <span class="inline-math">$A$</span> are linearly independent.
+    </p>
+    <p>
+        This is WLOG: if rows are linearly independent, we can remove some redundant equality constraints.
+    </p>
+    <p>
+        Then the rank of <span class="inline-math">$A$</span> is <span class="inline-math">$m$</span>. Also the row vectors <span class="inline-math">$\v a_i$</span> are in <span class="inline-math">$\R^n$</span> so <span class="inline-math">$m\leq n$</span>.
+    </p>
+    
+</li>
+<!-- END BLOCK ID assumption-a -->
+<!-- BEGIN BLOCK ID assumption-b -->
+<li id="^assumption-b">
+    <p>
+        <strong>Assumption B</strong>: every set of <span class="inline-math">$m$</span> columns of <span class="inline-math">$A$</span> are linearly independent (and therefore forms a basis).
+    </p>
+    
+</li>
+<!-- END BLOCK ID assumption-b -->
+
+</ul>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (basic solution, basic feasible solution)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A point <span class="inline-math">$\v x\in\R^n$</span> is called a <em>basic solution</em>
+                if <span class="inline-math">$A\v x = \v b$</span>
+                and <span class="inline-math">$\v x$</span> has at most <span class="inline-math">$m$</span> non-zero entries.
+            </p>
+            <p>
+                <span class="inline-math">$\v x$</span> is called a <em>basic feasible solution</em> if <span class="inline-math">$\v x$</span> is a basic solution and <span class="inline-math">$\v x\geq 0$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Constructing basic solutions
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Constructing-basic-solutions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Exhaust all possible sets of <span class="inline-math">$m$</span> indices (all <span class="inline-math">$\pmat{n \\ m}$</span> subsets of <span class="inline-math">$\set{1,2,\ldots,n}$</span>).
+            </p>
+            <p>
+                For a particular choice of indices <span class="inline-math">$B(1), B(2), \ldots, B(m) = 1, 2,\ldots,n$</span>,
+                we allow <span class="inline-math">$x_{B(1)}, x_{B(2)}, \ldots, x_{B(m)}$</span> (the <em>basic variables</em>) to be non-zero (or zero) and insist the rest of <span class="inline-math">$x_i$</span>'s (<em>non-basic variables</em>) to be zero.
+            </p>
+            <p>
+                We get rid of the zero entrices in <span class="inline-math">$A\v x = \v b$</span>: let
+                <span class="display-math">$$ \begin{align*}
+                    \text{basis matrix } B &amp;= \underbrace{ \pmat{A_{1\,B(1)} &amp; A_{1\,B(2)} &amp; \ldots &amp; A_{1\,B(m)} \\ A_{2\,B(1)} &amp; A_{2\,B(2)} &amp; \ldots &amp; A_{2\,B(m)} \\ \vdots &amp; \vdots &amp;  &amp; \vdots \\ A_{m\, B(1)} &amp; A_{m\,B(2)} &amp; \ldots &amp; A_{m\,B(m)}}}_{\text{basic columns}}, \\
+                    \v x_B &amp;= \pmat{x_{B(1)} \\ x_{B(2)} \\ \vdots \\ x_{B(m)}}.
+                \end{align*} $$</span>
+                Then we get
+                <span class="display-math">$$ \begin{align*}
+                    \v A_{B(1)} x_{B(1)} + \ldots + \v A_{B(m)} x_{B(m)} = B\v x_B = \v b
+                \end{align*} $$</span>
+            </p>
+            <p>
+                By <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Basic-solutions-and-basic-feasible-solutions.html#^assumption-b">assumption B</a>, <span class="inline-math">$B$</span> has rank <span class="inline-math">$m$</span>, so <span class="inline-math">$\v x_B = B\inv \v b$</span> is the unique solution.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<!-- BEGIN BLOCK ID assumption-c -->
+<li id="^assumption-c">
+    <p>
+        <strong>Assumption C</strong>: all <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">basic feasible solutions</a> have exactly <span class="inline-math">$m$</span> non-zero entrices,
+        i.e. if <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Constructing-basic-solutions.html"><span class="inline-math">$B$</span></a><span class="inline-math">$\inv \v b \geq \v 0$</span>, then <span class="inline-math">$B\inv \v b &gt; \v 0$</span>.
+    </p>
+    
+</li>
+<!-- END BLOCK ID assumption-c -->
+
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (basic feasible solution iff extreme point)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-basic-feasible-solution-iff-extreme-point.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A vector <span class="inline-math">$\v x$</span> is a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">basic feasible solution</a> of <span class="inline-math">$A\v x = \v b$</span>
+                iff it is an <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-extreme-point-of-a-convex-set.html">extreme point</a> of the set <span class="inline-math">$\mathcal{X}(\v b) = \sb{\v x}{A\v x = \v b, \v x\geq\v 0}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-basic-feasible-solution-iff-extreme-point.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

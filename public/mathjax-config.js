@@ -35,13 +35,17 @@ const preamble = `
 \\newcommand{\\gl}[2]{\\mathrm{GL}_{#1}(#2)}
 \\newcommand{\\prob}{\\operatorname{\\mathbb{P}}}
 \\newcommand{\\expect}{\\operatorname{\\mathbb{E}}}
+\\newcommand{\\d}{\\operatorname{d\\!}{}}
 \\newcommand{\\dfd}[3][]{\\frac{\\mathrm{d}^{#1}{#2}}{\\mathrm{d}{#3}^{#1}}}
 \\newcommand{\\dvd}[3][]{\\frac{\\mathrm{d}^{#1}\\v{#2}}{\\mathrm{d}{#3}^{#1}}}
 \\newcommand{\\pdfd}[3][]{\\frac{\\partial^{#1}{#2}}{\\partial{#3}^{#1}}}
 \\newcommand{\\pdvd}[3][]{\\frac{\\partial^{#1}\\v{#2}}{\\partial{#3}^{#1}}}
 \\newcommand{\\dd}[2][]{\\frac{\\mathrm{d}^{#1}}{\\mathrm{d}{#2}^{#1}}}
 \\newcommand{\\pdd}[2][]{\\frac{\\partial^{#1}}{\\partial{#2}^{#1}}}
+\\newcommand{\\pdxd}[2]{\\frac{\\partial}{\\partial{#1}\\partial{#2}}}
+\\newcommand{\\pdfxd}[3]{\\frac{\\partial{#1}}{\\partial{#2}\\partial{#3}}}
 \\newcommand{\\vnabla}{\\v\\nabla}
+\\newcommand{\\mathbsf}[1]{\\boldsymbol{\\mathsf{#1}}}
 
 \\newcommand{\\for}[5][=]{#2_{{#3}{#1}{#4}}^{#5}}
 \\newcommand{\\fsum}[4][=]{\\for[#1]{\\sum}{#2}{#3}{#4}}

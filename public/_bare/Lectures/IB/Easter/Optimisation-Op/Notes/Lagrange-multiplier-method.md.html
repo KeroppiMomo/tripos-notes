@@ -1,0 +1,201 @@
+<p>
+    Let <span class="inline-math">$\mathcal{X}\subseteq \R^n$</span>, <span class="inline-math">$f: \mathcal{X}\to\R$</span>, and <span class="inline-math">$h: \R^n \to\R^m$</span>.
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp; f(\v x) \\
+                \text{over } &amp; \v x\in\mathcal{X} \\
+                \text{subject to } &amp; h(\v x) = \v b.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    We can transform this constrained optimisation problem to an unconstrained one:
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <!-- BEGIN BLOCK ID ba92e6 -->
+        <p id="^ba92e6">
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp; L(\v x, \lambda) = f(\v x) - \v \lambda^T(h(\v x) - \v b), \quad \text{the ``Lagrangian&quot;}, \\
+                \text{over } &amp;\v x\in\mathcal{X}. \\
+            \end{align*} $$</span>
+        </p>
+        
+        <!-- END BLOCK ID ba92e6 -->
+        
+    </div>
+</div><p>
+    This gives a penalty of <span class="inline-math">$-\v \lambda^T$</span> per unit of constraint violation.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Lagrange sufficiency)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-Lagrange-sufficiency.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\v x^\ast \in \mathcal{X}$</span> and <span class="inline-math">$\v \lambda^\ast \in\R^m$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\v x^\ast$</span> is a minimiser of <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Lagrange-multiplier-method.html#^ba92e6"><span class="inline-math">$L(\v x,\v \lambda^\ast)$</span></a> and <span class="inline-math">$h(\v x^\ast) = \v b$</span>, then <span class="inline-math">$\v x^\ast$</span> is a minimiser of <span class="inline-math">$f(\v x)$</span> subject to <span class="inline-math">$h(\v x) = \v b$</span>.
+            </p>
+            <p>
+                More precisely, let <span class="inline-math">$\mathcal{X}(\v b) = \sb{\v x\in\mathcal{X}}{h(\v x) = \v b}$</span>.
+                If
+                <span class="display-math">$$ \begin{align*}
+                    L(\v x^\ast, \v \lambda^\ast) = \min_{\v x\in\mathcal{X}} L(\v x, \v \lambda^\ast)\quad \text{and}\quad h(\v x^\ast) = \v b,
+                \end{align*} $$</span>
+                then
+                <span class="display-math">$$ \begin{align*}
+                    f(\v x^\ast) = \min_{\v x\in\mathcal{X}(\v b)} f(\v x).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-Lagrange-sufficiency.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    Note that this is just a sufficient condition, not a necessary one.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Strategy using Lagrange sufficiency theorem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Strategy-using-Lagrange-sufficiency-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                To solve
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp;f(\v x) \\
+                            \text{over } &amp;\v x\in\mathcal{X} \\
+                            \text{subject to } &amp;h(\v x) \leq \v b,
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><ol start="1">
+            <li>
+                <p>
+                    Add a slack variable to change the inequality constraint to an equality:
+                </p>
+                
+            </li>
+            </ol>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp;f(\v x) \\
+                            \text{over } &amp;\v x\in\mathcal{X}, \\
+                            &amp;\v s\in\R^m, \v s\geq 0 \\
+                            \text{subject to } &amp;h(\v x) + \v s = \v b.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><ol start="2">
+            <li>
+                <p>
+                    Set the Lagrangian
+                    <span class="display-math">$$ \begin{align*}
+                    L(\v x,\v s,\v \lambda) = f(\v x) - \v \lambda^T (h(\v x) + \v s - \v b).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Find
+                    <span class="display-math">$$ \begin{align*}
+                    \Lambda = \sb{\v \lambda\in\R^m}{\inf_{\v x\in\mathcal{X},\ \v s\geq 0} L(\v x,\v s,\v \lambda) &gt; -\infty}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    For each <span class="inline-math">$\v \lambda\in\Lambda$</span>, find the minimiser <span class="inline-math">$\v x^\ast(\v \lambda), \v s^\ast(\v \lambda)$</span>, i.e.
+                    <span class="display-math">$$ \begin{align*}
+                    L(\v x^\ast(\v \lambda), \v s^\ast(\v \lambda), \v \lambda) = \inf_{x\in\mathcal{X},\ \v s\geq 0} L(\v x,\v s,\v \lambda).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Find <span class="inline-math">$\v \lambda^\ast$</span> such that <span class="inline-math">$(\v x^\ast(\v \lambda^\ast), \v s^\ast(\v \lambda^\ast))$</span> is feasible, i.e. <span class="inline-math">$\v x^\ast(\v \lambda^\ast)\in\mathcal{X}$</span>, <span class="inline-math">$\v s^\ast(\v \lambda^\ast)\geq 0$</span>, and <span class="inline-math">$h(\v x^\ast(\v \lambda)) + \v s^\ast(\v \lambda^\ast) = \v b$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    By <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-Lagrange-sufficiency.html">Lagrange sufficiency theorem</a>, <span class="inline-math">$\v x^\ast(\v \lambda^{\ast})$</span> is optimal for the original constrained problem.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-problem-using-Lagrange-sufficiency.html">Example</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (complementary slackness)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-complementary-slackness.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Using the notation <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Strategy-using-Lagrange-sufficiency-theorem.html">here</a>, let <span class="inline-math">$\v \lambda\in\Lambda$</span> and <span class="inline-math">$\v x^\ast, \v s^\ast$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    L(\v x^\ast, \v s^\ast, \v \lambda) = \inf_{\v x\in\mathcal{X},\ \v s\geq 0} L(\v x,\v s,\v \lambda).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Then for any <span class="inline-math">$i=1,2,\ldots,m$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        \lambda_i = 0, \\
+                        (h(\v x^\ast))_i \leq b_i,
+                    \end{cases}
+                    \quad \text{or}
+                    \quad \begin{cases}
+                        \lambda_i &lt; 0, \\
+                        (h(\v x^\ast))_i = b_i.
+                    \end{cases}
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-complementary-slackness.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-problem-using-complementary-slackness.html">Example</a>
+</p>

@@ -1,0 +1,141 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (linear programs satisfy strong duality)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-linear-programs-satisfy-strong-duality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program.html">linear program</a> that is bounded and feasible satisfies <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-strong-duality.html">strong duality</a>.
+            </p>
+            <p>
+                Proof: linear functions are <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a>, and <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-strong-duality-holds-for-convex-problems.html">convex optimisation problems satsify strong duality</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (dual problem of a linear program)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-dual-problem-of-a-linear-program.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$A$</span> be a matrix. See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-rows-and-columns-of-a-matrix.html">here</a> for notation.
+            </p>
+            <p>
+                For the primal problem
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp; \v c^T \v x \\
+                            \text{subject to } &amp; \v a_i^T \v x \geq b_i, &amp;&amp;i\in M_1, \\
+                            &amp; \v a_i^T \v x \leq b_i, &amp;&amp; i\in M_2, \\
+                            &amp; \v a_i^T \v x = b_i, &amp;&amp; i\in M_3, \\
+                            &amp; x_j \geq 0, &amp;&amp; j\in N_1, \\
+                            &amp; x_j \leq 0, &amp;&amp; j\in N_2, \\
+                            &amp; x_j \text{ free}, &amp;&amp; j\in N_3,
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                the dual problem is
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Maximise } &amp; \v b^T \v \lambda \\
+                            \text{subject to } &amp; \lambda_i \geq 0, &amp;&amp;i\in M_1, \\
+                            &amp; \lambda_i \leq 0, &amp;&amp; i\in M_2, \\
+                            &amp; \lambda_i = 0, &amp;&amp; i\in M_3, \\
+                            &amp;\v A_j^T \v \lambda \leq c_j, &amp;&amp;j\in N_1, \\
+                            &amp;\v A_j^T \v \lambda \geq c_j, &amp;&amp;j\in N_2, \\
+                            &amp;\v A_j^T \v \lambda = c_j, &amp;&amp;j\in N_3.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-dual-problem-of-a-linear-program.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (optimality iff complementary slackness for a linear program)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-optimality-iff-complementary-slackness-for-a-linear-program.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a linear program defined <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-dual-problem-of-a-linear-program.html">here</a>,
+                let <span class="inline-math">$\v x$</span> be primal feasible and <span class="inline-math">$\v \lambda$</span> be dual feasible (i.e. feasible solutions of the primal and feasible problems).
+            </p>
+            <p>
+                <span class="inline-math">$\v x$</span> and <span class="inline-math">$\v \lambda$</span> are optimal for the two respective problems iff complementary slackness holds, i.e.
+                <span class="display-math">$$ \begin{align*}
+                    \lambda_i(\v a_i^T \v x - b_i) &amp;= 0 &amp;&amp;\forall i\in M_1\cup M_2\cup M_3, \\
+                    (c_j - \v A_j^T \v \lambda) x_j &amp;= 0 &amp;&amp;\forall j\in N_1\cup N_2\cup N_3.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-optimality-iff-complementary-slackness-for-a-linear-program.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (reduced cost)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-reduced-cost.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a linear program in <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program-in-standard-form.html">standard form</a>. Let <span class="inline-math">$\v x$</span> be a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">basic solution</a>. See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Constructing-basic-solutions.html">here</a> for notation.
+            </p>
+            <p>
+                the corresponding vector of <em>reduced costs</em> <span class="inline-math">$\bar{\v c}$</span> is defined as
+                <span class="display-math">$$ \begin{align*}
+                    \bar{\v c}^T = \v c^T - \v c_B^T B\inv A
+                \end{align*} $$</span>
+                where <span class="inline-math">$\v c_B^T = (c_{B(1)}, c_{B(2)}, \ldots, c_{B(m)})$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (optimality and reduced cost)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-optimality-and-reduced-cost.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program-in-standard-form.html">standard form</a> linear program,
+                a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">basic feasible solution</a> <span class="inline-math">$\v x$</span> is optimal
+                iff the corresponding <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-reduced-cost.html">reduced costs</a> <span class="inline-math">$\bar{\v c} \geq \v 0$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-optimality-and-reduced-cost.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

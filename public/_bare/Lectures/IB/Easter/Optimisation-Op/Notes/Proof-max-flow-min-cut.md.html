@@ -1,0 +1,36 @@
+<p>
+    By the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-total-flow-does-not-exceed-cut-capacity.html">previous theorem</a>, <span class="inline-math">$\delta^\ast \leq c(S)$</span> for all <span class="inline-math">$S\subseteq V$</span>.
+    It suffices to find <span class="inline-math">$S$</span> such that <span class="inline-math">$c(S) = \delta^\ast$</span>.
+</p>
+<!-- BEGIN BLOCK ID cut-construction -->
+<p id="^cut-construction">
+    Let <span class="inline-math">$x$</span> be optimal with flow <span class="inline-math">$\delta^\ast$</span>.
+    Let
+    <span class="display-math">$$ \begin{align*}
+        S = \sb{i\in V}{\text{there exists an augmenting path for $x$ from $1$ to $i$}} \cup \set{1}.
+    \end{align*} $$</span>
+</p>
+
+<!-- END BLOCK ID cut-construction -->
+<p>
+    Note that <span class="inline-math">$n\not\in S$</span> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Cuts.html#^augmenting-path-remark">since</a> <span class="inline-math">$x$</span> is optimal, so <span class="inline-math">$(S, V\setminus S)$</span> is a valid cut.
+</p>
+<p>
+    From <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-total-flow-does-not-exceed-cut-capacity.html">before</a>,
+    <span class="display-math">$$ \begin{align*}
+        \delta^\ast = f_x(S, V\setminus S) - f_x(V\setminus S, S).
+    \end{align*} $$</span>
+    If a flow from <span class="inline-math">$u\in S$</span> to <span class="inline-math">$v\in V\setminus S$</span> is not full,
+    then since there is an <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-augmenting-path.html">augmenting path</a> from <span class="inline-math">$1$</span> to <span class="inline-math">$u$</span>,
+    we can extend it to construct an augmenting path from <span class="inline-math">$1$</span> to <span class="inline-math">$v$</span>,
+    which contradicts with <span class="inline-math">$v\not\in S$</span>.
+    Hence every flow from vertices in <span class="inline-math">$S$</span> to <span class="inline-math">$V\setminus S$</span> is full, so <span class="inline-math">$f_x(S, V\setminus S) = c(S)$</span>.
+</p>
+<p>
+    Similarly, if a flow from <span class="inline-math">$v\in V\setminus S$</span> to <span class="inline-math">$u\in S$</span> is not zero,
+    then we can extend the augmenting path from <span class="inline-math">$1$</span> to <span class="inline-math">$u$</span> further to <span class="inline-math">$v$</span> and get a contradiction.
+    Hence <span class="inline-math">$f_x(V\setminus S, S) = 0$</span>.
+</p>
+<p>
+    Therefore <span class="inline-math">$\delta^\ast = c(S) - 0 = c(S)$</span> as required.
+</p>

@@ -1,0 +1,22 @@
+<p>
+    Let <span class="inline-math">$u_i = \lambda_i(\v a_i^T \v x - b_i)$</span> and <span class="inline-math">$v_j = (c_j - \v \lambda^T \v A_j) x_j$</span>.
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        \sum_i u_i &amp;= \v \lambda^T A\v x - \v \lambda^T \v b, \\
+        \sum_j v_j &amp;= \v c^T \v x - \v \lambda^T A\v x \\
+        \implies \sum_i u_i + \sum_j v_j &amp;= \v c^T \v x - \v \lambda^T \v b.
+    \end{align*} $$</span>
+</p>
+<p>
+    If <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-complementary-slackness.html">complementary slackness</a> holds, i.e. <span class="inline-math">$u_i = 0 = v_j$</span> for all <span class="inline-math">$i$</span> and <span class="inline-math">$j$</span>, then <span class="inline-math">$\v c^T \v x = \v \lambda^T \v b$</span>.
+    Hence by <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-weak-duality.html">weak duality</a>, <span class="inline-math">$\v x$</span> and <span class="inline-math">$\v \lambda$</span> are optimal.
+</p>
+<p>
+    Now conversely suppose <span class="inline-math">$\v x$</span> and <span class="inline-math">$\v \lambda$</span> are optimal.
+    <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-linear-programs-satisfy-strong-duality.html">Linear programs satisfy strong duality</a>, so <span class="inline-math">$\v c^T \v x = \v \lambda^T \v b$</span>
+    and therefore <span class="inline-math">$\sum_i u_i + \sum_j v_j = 0$</span>.
+</p>
+<p>
+    But note from the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-dual-problem-of-a-linear-program.html">conditions of the primal and dual problems</a> that <span class="inline-math">$u_i \geq 0$</span> and <span class="inline-math">$v_i\geq 0$</span> for all <span class="inline-math">$i,j$</span>.
+    Hence <span class="inline-math">$u_i = 0 = v_j$</span> for all <span class="inline-math">$i,j$</span>.
+</p>

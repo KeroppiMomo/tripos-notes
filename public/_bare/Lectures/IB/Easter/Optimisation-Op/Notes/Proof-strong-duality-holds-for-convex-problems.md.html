@@ -1,0 +1,33 @@
+<p>
+    Denote <span class="inline-math">$\mathcal{X}(\v c)$</span> as <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-value-function.html">here</a>.
+    It suffices to show that the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-value-function.html">value function</a> <span class="inline-math">$\phi(\v c) = \min_{\v x\in\mathcal{X}(\v c)} f(\v c)$</span> is convex.
+    <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Condition-for-strong-duality.html#^ecc1b4">Then</a> there exists a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-supporting-hyperplane.html">supporting hyperplane</a> at <span class="inline-math">$\v b$</span>, <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-supporting-hyperplane-and-strong-duality.html">so</a> strong duality holds.
+</p>
+<p>
+    Let <span class="inline-math">$t\in[0,1]$</span> and <span class="inline-math">$\v c,\v d$</span> be such that <span class="inline-math">$\mathcal{X}(\v c),\mathcal{X}(\v d)\neq\emptyset$</span>.
+    To show that <span class="inline-math">$\phi$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a>, we need to show that <span class="inline-math">$\phi(t\v c + (1-t)\v d) \leq t\phi(\v c) + (1-t)\phi(\v d)$</span>, i.e.
+    <span class="display-math">$$ \begin{align*}
+        \min_{\v x\in\mathcal{X}(t\v c + (1-t)\v d)} f(\v x) \leq t \left(\min_{\v x\in\mathcal{X}(\v c)} f(\v x)\right) + (1-t)\left(\min_{\v x\in\mathcal{X}(\v d)} f(\v x)\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    For any <span class="inline-math">$\v y\in\mathcal{X}(\v c)$</span> and <span class="inline-math">$\v z\in\mathcal{X}(\v d)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        &amp;&amp;h_j(t\v y + (1-t)\v z) &amp;\leq t\, h_j(\v y) + (1-t)h_j(\v z) &amp;&amp;\text{convexity of $h_j$} \\
+        &amp;&amp; &amp;\leq tc_j + (1-t) d_j &amp;&amp;\v y\in\mathcal{X}(\v c), \v z\in\mathcal{X}(\v d) \\
+    \end{align*} $$</span>
+    so <span class="inline-math">$h(t\v y + (1-t)\v z) \leq t\v c + (1-t)\v d$</span>.
+    Hence <span class="inline-math">$t\v y + (1-t)\v z \in \mathcal{X}(t\v c + (1-t)\v d)$</span>.
+</p>
+<p>
+    Therefore we have
+    <span class="display-math">$$ \begin{align*}
+        \min_{\v x\in\mathcal{X}(t\v c + (1-t)\v d)} f(\v x)&amp;\leq f(t\v y + (1-t)\v z) \\
+        &amp;\leq tf(\v y) + (1-t)f(\v z) &amp;&amp;\text{convexity of $f$}.
+    \end{align*} $$</span>
+    Taking the minimum over <span class="inline-math">$\v y$</span> and <span class="inline-math">$\v z$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \min_{\v x\in\mathcal{X}(t\v c + (1-t)\v d)} f(\v x) &amp;\leq t\left(\min_{\v y\in\mathcal{X}(\v c)} f(\v y)\right) + (1-t)\left(\min_{\v z\in\mathcal{X}(\v d)} f(\v z)\right)
+    \end{align*} $$</span>
+    as required.
+</p>

@@ -1,0 +1,238 @@
+<p>
+    Player 1 (P1) has <span class="inline-math">$m$</span> choices of actions labelled <span class="inline-math">$1,2,\ldots,m$</span>, and player 2 (P2) has <span class="inline-math">$n$</span> choices labelled <span class="inline-math">$1,2,\ldots,n$</span>.
+</p>
+<p>
+    Let an <span class="inline-math">$m\times n$</span> matrix <span class="inline-math">$A = (a_{ij})$</span> be the <em>payoff matrix</em>.
+    If P1 plays <span class="inline-math">$i$</span> and P2 plays <span class="inline-math">$j$</span>, P1 wins <span class="inline-math">$a_{ij}$</span> and P2 loses <span class="inline-math">$a_{ij}$</span>.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Pure strategy
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Pure-strategy.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose P1 plays first. If P1 plays <span class="inline-math">$i$</span>, P2 will make the optimal choice to let P1 win <span class="inline-math">$\min_{j\in\set{1,2,\ldots,n}} a_{ij}$</span>.
+                P1's problem is
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Maximise } &amp;\min_{j\in\set{1,2,\ldots,n}} a_{ij} \\
+                            \text{over } &amp;i\in\set{1,2,\ldots,m}.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                Similarly if P2 plays first, P2's problem is
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp;\max_{i\in\set{1,2,\ldots,m}} a_{ij} \\
+                            \text{over } &amp;j\in\set{1,2,\ldots,n}.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (saddle point of zero sum games)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-saddle-point-of-zero-sum-games.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            An outcome <span class="inline-math">$(i^\ast, j^\ast)$</span> of a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Two-person-zero-sum-games.html">two-person zero sum game</a> is called a <em>saddle point</em> if
+                            <span class="display-math">$$ \begin{align*}
+                                \max_i \min_j a_{ij} = \min_j \max_i a_{ij}
+                            \end{align*} $$</span>
+                            and the extrema are attained at <span class="inline-math">$(i^\ast, j^\ast)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                If the payoff matrix has a saddle point, the players' decisions are the same regardless of who plays first.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-payoff-matrices-with-and-without-saddle-points.html">Example (payoff matrices with and without saddle points)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Mixed strategy
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Mixed-strategy.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We now allow P1 to randomly choose action <span class="inline-math">$i$</span> with probability <span class="inline-math">$p_i$</span>.
+                P1 picks the distribution <span class="inline-math">$\v p=(p_1,p_2,\ldots,p_m)$</span> and P2 picks <span class="inline-math">$\v q=(q_1, q_2, \ldots, q_n)$</span>.
+            </p>
+            <p>
+                If P1 plays <span class="inline-math">$\v p$</span>, P2 will make the optimal choice <span class="inline-math">$j$</span> to let P1 win <span class="inline-math">$\min_j \sum_i p_i a_{ij}$</span>.
+                P1's problem is
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Maximise } &amp; \min_j \sum_i  p_i a_{ij} \\
+                            \text{over } &amp; \v p \in\R^m \\
+                            \text{subject to } &amp; \sum_i p_i = 1, \\
+                            &amp; \v p\geq \v 0,
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                which is equivalent to
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Maximise } &amp; v \\
+                            \text{over } &amp; v\in\R,\ \v p\in\R^m \\
+                            \text{subject to } &amp; A^T \v p \geq v \v e, \\
+                            &amp; \v e^T \v p = 1, \\
+                            &amp; \v p\geq \v 0
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                where <span class="inline-math">$\v e = (1,1,\ldots,1)^T$</span>.
+            </p>
+            <p>
+                Similarly P2's problem is
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp; \max_i \sum_j q_j a_{ij} \\
+                            \text{over } &amp; \v q\in\R^n \\
+                            \text{subject to } &amp; \sum_j q_j = 1, \\
+                            &amp; \v q \geq \v 0,
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                which is equivalent to
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp; w \\
+                            \text{over } &amp; w\in\R, \ \v q\in\R^n \\
+                            \text{subject to } &amp; A\v q \leq w\v e, \\
+                            &amp; \v e^T \v q = 1, \\
+                            &amp; \v q \geq 0.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><!-- BEGIN BLOCK ID duality -->
+            <p id="^duality">
+                These two problems are <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">dual</a> of each other. (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Derivation-duality-of-mixed-strategy-in-two-person-zero-sum-games.html">Derivation</a>)
+            </p>
+            
+            <!-- END BLOCK ID duality -->
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (optimality of mixed strategy in two-person zero sum games)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-optimality-of-mixed-strategy-in-two-person-zero-sum-games.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Mixed-strategy.html">mixed strategy two-person zero sum game</a>,
+                            a strategy <span class="inline-math">$\v p\in\R^m$</span> is optimal for P1
+                            iff there exists <span class="inline-math">$\v q\in\R^n$</span> and <span class="inline-math">$v\in\R$</span> such that the following holds:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                primal feasibility: <span class="inline-math">$A^T \v p \geq v \v e$</span>, <span class="inline-math">$\v e^T \v p=1$</span> and <span class="inline-math">$\v p\geq \v 0$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                dual feasibility: <span class="inline-math">$A\v q\leq v \v e$</span>, <span class="inline-math">$\v e^T \v q = 1$</span> and <span class="inline-math">$\v q\geq \v 0$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                complementary slackness: <span class="inline-math">$v = \v p^T A \v q$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-optimality-of-mixed-strategy-in-two-person-zero-sum-games.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Tips for finding optimal strategies:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    Look for a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-saddle-point-of-zero-sum-games.html">saddle point</a> of the payoff matrix.
+                </p>
+                
+            </li><li>
+                <p>
+                    Look for dominating actions: if we have rows <span class="inline-math">$i$</span> and <span class="inline-math">$i&#x27;$</span> with <span class="inline-math">$a_{ij}\geq a_{i&#x27;j}$</span> for all <span class="inline-math">$j$</span>, then P1 will never play <span class="inline-math">$i&#x27;$</span>. Similar for columns.
+                </p>
+                
+            </li><li>
+                <p>
+                    Solve the linear program graphically or using the simplex method.
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>

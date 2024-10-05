@@ -1,0 +1,66 @@
+
+<h1>Reducing to general form</h1>
+
+<p>
+    For a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program.html">general linear program</a>,
+    we can write all constraints in the form <span class="inline-math">$\v a_i^T \v x \leq b_i$</span>:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\v a_i^T \v x \leq b_i\iff (-\v a_i^T)\v x\geq -b_i$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\v a_i^T \v x = b_i \iff \v a_i^T \v x \leq b_i$</span> and <span class="inline-math">$(-\v a_i^T)\v x \leq -b_i$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$x_j = \v e_j^T \v x$</span> where <span class="inline-math">$\v e_j$</span> is the <span class="inline-math">$j$</span>-th standard basis vector.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Then we can construct a matrix
+    <span class="display-math">$$ \begin{align*}
+        A = \pmat{\textemdash &amp; \v a_1^T &amp; \textemdash \\ \textemdash &amp; \v a_2^T &amp; \textemdash \\ &amp; \vdots &amp; \\ \textemdash &amp; \v a_m^T &amp; \textemdash}
+    \end{align*} $$</span>
+    to write the constraints as
+    <span class="display-math">$$ \begin{align*}
+        A\v x\leq \v b \iff \v a_i^T\v x\leq \v b_i \quad \forall i=1,2,\ldots,m.
+    \end{align*} $$</span>
+</p>
+<p>
+    So any linear program can be written in the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program-in-general-form.html">general form</a>.
+</p>
+
+<h1>General form = standard form</h1>
+
+<p>
+    Clearly we can turn any <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program-in-standard-form.html">standard form</a> linear programs into the general form using the method above.
+</p>
+<p>
+    To write a general form linear program in standard form, note that we can always write <span class="inline-math">$\v x=\v x_+ - \v x_-$</span> where <span class="inline-math">$\v x_+, \v x_-\geq \v 0$</span>.
+    So the linear program can be written as
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp;\v c^T (\v x_+ - \v x_-) \\
+                \text{subject to } &amp;A(\v x_+ - \v x_-) + \v s = \v b, \\
+                &amp; \v x_+ \geq \v 0, \\
+                &amp; \v x_- \geq \v 0, \\
+                &amp; \v s \geq \v 0.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div>

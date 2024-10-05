@@ -1,0 +1,21 @@
+<p>
+    Exhaust all possible sets of <span class="inline-math">$m$</span> indices (all <span class="inline-math">$\pmat{n \\ m}$</span> subsets of <span class="inline-math">$\set{1,2,\ldots,n}$</span>).
+</p>
+<p>
+    For a particular choice of indices <span class="inline-math">$B(1), B(2), \ldots, B(m) = 1, 2,\ldots,n$</span>,
+    we allow <span class="inline-math">$x_{B(1)}, x_{B(2)}, \ldots, x_{B(m)}$</span> (the <em>basic variables</em>) to be non-zero (or zero) and insist the rest of <span class="inline-math">$x_i$</span>'s (<em>non-basic variables</em>) to be zero.
+</p>
+<p>
+    We get rid of the zero entrices in <span class="inline-math">$A\v x = \v b$</span>: let
+    <span class="display-math">$$ \begin{align*}
+        \text{basis matrix } B &amp;= \underbrace{ \pmat{A_{1\,B(1)} &amp; A_{1\,B(2)} &amp; \ldots &amp; A_{1\,B(m)} \\ A_{2\,B(1)} &amp; A_{2\,B(2)} &amp; \ldots &amp; A_{2\,B(m)} \\ \vdots &amp; \vdots &amp;  &amp; \vdots \\ A_{m\, B(1)} &amp; A_{m\,B(2)} &amp; \ldots &amp; A_{m\,B(m)}}}_{\text{basic columns}}, \\
+        \v x_B &amp;= \pmat{x_{B(1)} \\ x_{B(2)} \\ \vdots \\ x_{B(m)}}.
+    \end{align*} $$</span>
+    Then we get
+    <span class="display-math">$$ \begin{align*}
+        \v A_{B(1)} x_{B(1)} + \ldots + \v A_{B(m)} x_{B(m)} = B\v x_B = \v b
+    \end{align*} $$</span>
+</p>
+<p>
+    By <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Basic-solutions-and-basic-feasible-solutions.html#^assumption-b">assumption B</a>, <span class="inline-math">$B$</span> has rank <span class="inline-math">$m$</span>, so <span class="inline-math">$\v x_B = B\inv \v b$</span> is the unique solution.
+</p>

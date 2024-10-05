@@ -1,0 +1,107 @@
+<blockquote>
+    <p>
+        This is also example sheet 1 Q4.
+    </p>
+    
+</blockquote>
+<p>
+    We want to find geodesics on a sphere with radius 1.
+    In spherical polars,
+    <span class="display-math">$$ \begin{align*}
+        (x,y,z) &amp;= (\sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta), \\
+        ds^2 &amp;= dx^2 + dy^2 + dz^2 = d\theta^2 + \sin^2\theta\, d\phi^2.
+    \end{align*} $$</span>
+</p>
+<p>
+    We parametrise using spherical polars <span class="inline-math">$\phi=\phi(\theta)$</span>.
+    The length of a curve is
+    <span class="display-math">$$ \begin{align*}
+        F(\phi) = \int_{\alpha}^{\beta} \underbrace{ \sqrt{1+\sin^2\theta (\phi&#x27;)^2}}_{f(\theta,\phi&#x27;)}\, d\theta.
+    \end{align*} $$</span>
+    <span class="inline-math">$f$</span> does not depend on <span class="inline-math">$\phi$</span>, so using the <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/First-integrals-of-Euler-Lagrange.html#^no-y">first integral</a>,
+    <span class="display-math">$$ \begin{align*}
+        \kappa &amp;= \pdfd{f}{\phi&#x27;} \\
+        \kappa &amp;= \frac{\phi&#x27; \sin^2\theta}{\sqrt{1+\sin^2\theta (\phi&#x27;)^2}} \\
+        1 + \sin^2\theta(\phi&#x27;)^2 &amp;= \frac{\sin^{4}\theta}{\kappa^2}(\phi&#x27;)^2 \\
+        1 &amp;= \frac{\sin^2\theta(\sin^2\theta - \kappa^2)}{\kappa^2}(\phi&#x27;)^2 \\
+        \phi&#x27; &amp;= \pm \frac{\kappa}{\sin\theta\sqrt{\sin^2\theta - \kappa^2}} \\
+        \phi &amp;= \pm \int \frac{\kappa}{\sin\theta\sqrt{\sin^2\theta - \kappa^2}}\, d\theta \\
+    \end{align*} $$</span>
+    Substituting <span class="inline-math">$t=\cot\theta$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        \phi &amp;= \pm \int\frac{\kappa}{\sin\theta\sqrt{\sin^2\theta-\kappa^2}}(\sin^2\theta\,dt) \\
+        &amp;= \pm \int \frac{\kappa}{\sqrt{1-\kappa^2/\sin^2\theta}}\,dt \\
+        &amp;= \pm \int \frac{\kappa}{\sqrt{1-\kappa^2(1+t^2)}}\,dt \\
+        &amp;= \pm \int \frac{1}{\sqrt{\frac{1-\kappa^2}{\kappa^2} - t^2}} \,dt \\
+        &amp;= \pm \sin\inv \frac{\kappa}{\sqrt{1-\kappa^2}}t + \phi_0 \\
+        \cot\theta &amp;= \pm \frac{\sqrt{1-\kappa^2}}{\kappa}\sin(\phi-\phi_0).
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$\kappa=\sin\gamma$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        \tan\theta\sin(\phi-\phi_0) = \pm\tan\kappa.
+    \end{align*} $$</span>
+</p>
+<p>
+    This is a great circle. The <span class="inline-math">$\pm$</span> sign means there are two solutions for the short and long way around the sphere.
+</p>
+<hr>
+<p>
+    Let's determine when is the stationary point a minimiser using <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/The-second-variations.html">second variation</a>.
+</p>
+<p>
+    Here, we parametrise paths as <span class="inline-math">$\theta=\theta(\phi)$</span>.
+    The length of the curve is
+    <span class="display-math">$$ \begin{align*}
+        F[\theta] = \int_{\phi_1}^{\phi_2} \sqrt{\sin^2\theta + (\theta&#x27;)^2}\, d\phi.
+    \end{align*} $$</span>
+    Let <span class="inline-math">$f(\phi,\theta,\theta&#x27;) = \sqrt{\sin^2\theta + (\theta&#x27;)^2}$</span>.
+</p>
+<p>
+    <span class="inline-math">$\theta(\phi)=\pi/2$</span> with <span class="inline-math">$\phi\in[0,L]$</span> is a stationary point.
+    We compute the second variation by expanding
+    <span class="display-math">$$ \begin{align*}
+        F[\pi/2 + \epsilon\eta(\phi)] &amp;= \int_{0}^{L} \sqrt{\sin^2(\pi/2 + \epsilon\eta) + \epsilon^2(\eta&#x27;)^2}\, d\phi \\
+        &amp;= \int_{0}^{L} \sqrt{(1 - \tfrac{1}{2}\epsilon^2\eta^2 + O(\epsilon^4))^2 + \epsilon^2(\eta&#x27;)^2}\, d\phi \\
+        &amp;= \int_{0}^{L} \sqrt{1 - \epsilon^2\eta^2 + \epsilon^2(\eta&#x27;)^2 + O(\epsilon^4)}\, d\phi \\
+        &amp;= \int_{0}^{L} 1 + \frac{1}{2}\epsilon^2((\eta&#x27;)^2 - \eta^2) + O(\epsilon^4) \, d\phi.
+    \end{align*} $$</span>
+    Or alternatively,
+    <span class="display-math">$$ \begin{align*}
+        P &amp;= \pdfd[2]{f}{\theta&#x27;} \\
+        &amp;= \pdd{\theta&#x27;}\bigg(\frac{\theta&#x27;}{\sqrt{\sin^2\theta + (\theta&#x27;)^2}}\bigg) \\
+        &amp;= \frac{\sin^2 \theta + (\theta&#x27;)^2 - (\theta&#x27;)^2}{(\sin^2\theta + (\theta&#x27;)^2)^{3/2}} \\
+        &amp;= \frac{\sin^2\theta}{(\sin^2\theta + (\theta&#x27;)^2)^{3/2}} \\
+        &amp;= \frac{\sin^2(\pi/2)}{(\sin^2(\pi/2) + 0^2)^{3/2}} \\
+        &amp;= 1, \\
+        Q &amp;= \pdfd[2]{f}{\theta} - \dd{\phi}\left(\frac{\partial^2 f}{\partial \theta\ \partial\theta&#x27;}\right) \\
+        &amp;= \pdd{\theta}\frac{\sin\theta\cos\theta}{\sqrt{\sin^2\theta + (\theta&#x27;)^2}} - 0 \\
+        &amp;= \frac{(\cos^2\theta-\sin^2\theta)(\sin^2\theta + (\theta&#x27;)^2) - \sin^2\theta\cos^2\theta}{(\sin^2\theta + (\theta&#x27;)^2)^{3/2}} \\
+        &amp;= -1.
+    \end{align*} $$</span>
+</p>
+<p>
+    We try to solve the <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/The-second-variations.html">Sturm-Liouville</a> equation
+    <span class="display-math">$$ \begin{align*}
+        \eta&#x27;&#x27; + \eta = \lambda \eta \iff \eta&#x27;&#x27; = (\lambda-1)\eta
+    \end{align*} $$</span>
+    with boundary conditions <span class="inline-math">$\eta(0) = \eta(L) = 0$</span>.
+    This gives solution
+    <span class="display-math">$$ \begin{align*}
+        \eta(\phi) = A \sin \frac{n\pi\phi}{L}, \quad \lambda-1 = -\left(\frac{n\pi}{L}\right)^2, \quad n\in\N.
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$L&gt;\pi$</span>, we have a solution with <span class="inline-math">$\lambda&gt;0$</span>.
+    Therefore in this case, the stationary point is not a minimum (which makes sense).
+</p>
+<p>
+    Now we solve the Sturm-Liouville equation with <span class="inline-math">$\lambda=0$</span>
+    <span class="display-math">$$ \begin{align*}
+        u&#x27;&#x27; = -u.
+    \end{align*} $$</span>
+    This has solution <span class="inline-math">$u(\phi) = \sin(\phi+\epsilon)$</span>, where <span class="inline-math">$\epsilon&gt;0$</span> can be made arbitrarily small.
+    <span class="inline-math">$\epsilon$</span> can be set to allow <span class="inline-math">$u=0$</span> nowhere in <span class="inline-math">$[0,L]$</span> if <span class="inline-math">$L&lt;\pi$</span>.
+    Hence in this case the stationary point is a minimum (which also makes sense).
+</p>

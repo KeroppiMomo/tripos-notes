@@ -1,0 +1,81 @@
+<p>
+    We want to test whether a stationary point <span class="inline-math">$y(x)$</span> of the functional <span class="inline-math">$F[y] = \int_{\alpha}^{\beta} f(x,y,y&#x27;)\, dx$</span> is a local minimum.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (second variation of functional)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Lemma-second-variation-of-functional.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The expansion of the functional <span class="inline-math">$F[y] = \int_{\alpha}^{\beta} f(x,y,y&#x27;)\, dx$</span> about a stationary point <span class="inline-math">$y$</span> is, given that <span class="inline-math">$\eta=0$</span> at endpoints,
+                <span class="display-math">$$ \begin{align*}
+                    F[y+\epsilon\eta] = F[y] + \frac{1}{2}\epsilon^2\underbrace{\int_{\alpha}^{\beta} \left(P(x) (\eta&#x27;)^2 + Q(x)\eta^2\right)\, dx}_\text{second variation $\delta^2 F$}
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    P(x) &amp;= \pdfd[2]{f}{y&#x27;}, &amp; Q(x) &amp;= \pdfd[2]{f}{y} - \dd{x}\left(\frac{\partial^2 f}{\partial y\partial y&#x27;}\right).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Proof-second-variation-of-functional.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Under what conditions for <span class="inline-math">$P$</span> and <span class="inline-math">$Q$</span> is <span class="inline-math">$y$</span> a local minimum, i.e. <span class="inline-math">$\delta^2 F &gt; 0$</span> for all non-zero pertubation <span class="inline-math">$\eta$</span>?
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$P \geq 0, Q\geq 0$</span> is sufficient.
+    </p>
+    
+</li><li>
+    <p>
+        The <em>Legendre condition</em> <span class="inline-math">$P = \partial^2 f/\partial y&#x27;^2 \geq 0$</span> is necessary (<a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Proof-necessity-of-Legendre-condition.html">proof idea</a>) but not sufficient.
+    </p>
+    
+</li><li>
+    <p>
+        Suppose <span class="inline-math">$P\geq 0$</span>. Consider the related eigenvalue problem (Sturm-Liouville equation)
+        <span class="display-math">$$ \begin{align*}
+            -(Pu&#x27;)&#x27; + Qu = -\lambda u.
+        \end{align*} $$</span>
+    </p>
+    <ul>
+    <li>
+        <p>
+            For some <span class="inline-math">$\lambda&gt;0$</span>, if there is a solution <span class="inline-math">$\eta$</span> that satisfies <span class="inline-math">$\eta(\alpha) = \eta(\beta) = 0$</span> but is not identically zero, then it is not a minimum. (<a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Proof-necessity-of-no-negative-eigenvalue-of-Sturm-Liouville-operator.html">Proof</a>)
+        </p>
+        
+    </li><li>
+        <p>
+            Jacobi accessory condition: for <span class="inline-math">$\lambda=0$</span>, if there is a solution <span class="inline-math">$u$</span> that is not zero anywhere in <span class="inline-math">$[\alpha,\beta]$</span>, then it is a minimum. (<a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Proof-sufficiency-of-Jacobi-accessory-condition.html">Proof</a>)
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ul>
+<p>
+    The Sturm-Liouville equation is a linear second order ODE,
+    so it always has solutions given some initial conditions.
+    Hence we can choose an initial condition away from <span class="inline-math">$u=0$</span> at <span class="inline-math">$\alpha$</span>,
+    and the solution will not hit zero if <span class="inline-math">$\beta$</span> is close enough to <span class="inline-math">$\alpha$</span>.
+</p>
+<p>
+    Intuitively, it makes sense that <span class="inline-math">$P\geq 0$</span> is sufficient when the domain <span class="inline-math">$[\alpha,\beta]$</span> is not too long.
+    Suppose <span class="inline-math">$Q\leq 0$</span> and we want to find a perturbation <span class="inline-math">$\eta$</span> to make <span class="inline-math">$\delta^2 F&lt;0$</span>.
+    We would like a large value of <span class="inline-math">$\eta$</span> but a small value of <span class="inline-math">$\eta&#x27;$</span>.
+    If <span class="inline-math">$\beta$</span> is far enough from <span class="inline-math">$\alpha$</span>, we can slowly increase <span class="inline-math">$\eta$</span> from <span class="inline-math">$0$</span> at <span class="inline-math">$\alpha$</span> to a large value and back to <span class="inline-math">$0$</span> at <span class="inline-math">$\beta$</span>.
+    But if <span class="inline-math">$\beta$</span> is close to <span class="inline-math">$\alpha$</span>, <span class="inline-math">$\eta$</span> cannot rise to a large value without making <span class="inline-math">$\eta&#x27;$</span> big as well.
+    So when <span class="inline-math">$\beta-\alpha$</span> is small enough, it is impossible to make <span class="inline-math">$\delta^2 F&lt;0$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Example-geodesic-on-R2.html">Example (geodesic on R2)</a>, <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Example-geodesic-on-a-sphere.html">Example (geodesic on a sphere)</a>
+</p>

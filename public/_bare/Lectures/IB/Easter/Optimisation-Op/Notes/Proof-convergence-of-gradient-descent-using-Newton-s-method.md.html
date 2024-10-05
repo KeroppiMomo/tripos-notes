@@ -1,0 +1,35 @@
+<p>
+    Let <span class="inline-math">$\v \Delta_k = \v x_{k+1} - \v x_k$</span>.
+    Using Newton's update rule,
+    <span class="display-math">$$ \begin{align*}
+        \nabla f(\v x_k) = -[\nabla^2 f(\v x_k)](\v x_{k+1} - \v x_{k}) = -[\nabla^2 f(\v x_k)] \v \Delta_k.
+    \end{align*} $$</span>
+    We have
+    <span class="display-math">$$ \begin{align*}
+        \nabla f(\v x_{k+1}) &amp;= \nabla f(\v x_{k+1}) - \nabla f(\v x_k) + \nabla f(\v x_k) \\
+        &amp;= \nabla f(\v x_{k+1}) - \nabla f(\v x_k) - \nabla^2 f(\v x_k) \v \Delta_k \\
+        &amp;= \int_{0}^{1} \big(\nabla^2 f(\v x_k + t\v \Delta_k) - \nabla^2 f(\v x_k)\big) \v \Delta_k\, dt.
+    \end{align*} $$</span>
+    Taking norm on both sides,
+    <span class="display-math">$$ \begin{align*}
+        |\nabla f(\v x_{k+1})| &amp;\leq \int_{0}^{1} |\big(\nabla^2 f(\v x_k + t\v \Delta_k) - \nabla^2 f(\v x_k)\big) \v \Delta_k|\, dt &amp;&amp;\text{triangle inequality} \\
+        &amp;\leq \int_{0}^{1} \|\nabla^2 f(\v x_k + t\Delta_k) - \nabla^2 f(\v x_k)\|\, |\v \Delta_k|\, dt &amp;&amp;\text{definition of $\|\cdot\|$}\\
+        &amp;\leq \int_{0}^{1} lt|\v \Delta_k|^2\, dt &amp;&amp;\text{$\nabla^2 f$ is $l$-Lipschitz} \\
+        &amp;= \frac{l}{2} |\v \Delta_k|^2 \\
+        &amp;= \frac{l}{2} \big|(\nabla^2 f(\v x_k))\inv \nabla f(\v x_k)\big|^2 \\
+        &amp;\leq \frac{l}{2} \|(\nabla^2 f(\v x_k))\inv\|^2 \,|\nabla f(\v x_k)|^2 &amp;&amp;\text{definition of $\|\cdot\|$} \\
+        &amp;= \frac{l}{2\alpha^2} |\nabla f(\v x_k)|^2 &amp;&amp;\text{$f$ is $\alpha$-strongly convex}.
+    \end{align*} $$</span>
+</p>
+<p>
+    By induction
+    <span class="display-math">$$ \begin{align*}
+        |\nabla f(\v x_k)| \leq \frac{2\alpha^2}{l}\left(\frac{l}{2\alpha^2}|\nabla f(\v x_0)|\right)^{2^k}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Then using <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-lower-bound-for-minimum-value-in-strongly-convex-functions.html">bound on minimum value</a>,
+    <span class="display-math">$$ \begin{align*}
+        f(\v x_k) - f(\v x^\ast) \leq \frac{1}{2\alpha}|\nabla f(\v x_k)|^2 \leq \frac{2\alpha^3}{l^2}\left(\frac{l}{2\alpha^2}|\nabla f(\v x_0)|\right)^{2^{k+1}}.
+    \end{align*} $$</span>
+</p>

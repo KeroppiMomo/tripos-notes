@@ -1,0 +1,21 @@
+<p>
+    We approximate using the second-order Taylor expansion
+    <span class="display-math">$$ \begin{align*}
+        f(\v y) \approx f(\v x_t) + \nabla f(\v x_t)^T (\v y - \v x_t) + \frac{1}{2} (\v y - \v x_t)^T \nabla^2 f(\v x_t) (\v y - \v x_t)
+    \end{align*} $$</span>
+    and set <span class="inline-math">$\v x_{t+1}$</span> to minimise the right hand side
+    <span class="display-math">$$ \begin{align*}
+        \v x_{t+1} = \arg\min_{\v y} \left[f(\v x_t) + \nabla f(\v x_t)^T (\v y - \v x_t) + \frac{1}{2} (\v y - \v x_t)^T \nabla^2 f(\v x_t) (\v y - \v x_t)\right].
+    \end{align*} $$</span>
+    Since the second-order approximation is convex, we set the derivative to zero:
+    <span class="display-math">$$ \begin{align*}
+        0 &amp;= \nabla f(\v x_t) + \nabla^2 f(\v x_t) (\v y - \v x_t) \\
+        \v y &amp;= \v x_t - (\nabla^2 f(\v x_t))\inv \nabla f(\v x_t).
+    \end{align*} $$</span>
+</p>
+<p>
+    For <span class="inline-math">$f: \R^n \to \R$</span>, this is the same as trying to find the root of <span class="inline-math">$f&#x27;$</span> using a linear approximation:
+    <span class="display-math">$$ \begin{align*}
+        x_{t+1} = x_t - \frac{f&#x27;(x_t)}{f&#x27;&#x27;(x_t)}.
+    \end{align*} $$</span>
+</p>

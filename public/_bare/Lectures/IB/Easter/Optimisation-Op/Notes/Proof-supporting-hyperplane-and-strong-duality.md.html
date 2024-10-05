@@ -1,0 +1,43 @@
+<p>
+    The crucial observation is to split up <span class="inline-math">$\mathcal{X}$</span> into <span class="inline-math">$\mathcal{X}(\v c)$</span>:
+    <span class="display-math">$$ \begin{align*}
+        g(\v \lambda) &amp;= \min_{\v x\in\mathcal{X}} \left[f(\v x) - \v \lambda^T(h(\v x) - \v b)\right] &amp;&amp;\text{definition of $g$}\\
+        &amp;= \min_{\v c} \min_{\v x\in \mathcal{X}(\v c)} \left[f(\v x) - \v \lambda^T(h(\v x) - \v b)\right] &amp;&amp;\mathcal{X} = \bigcup_{\v c} \mathcal{X}(\v c)\\
+        &amp;= \min_{\v c} \min_{\v x\in \mathcal{X}(\v c)} \left[f(\v x) - \v \lambda^T(\v c-\v b)\right] &amp;&amp;\v x\in\mathcal{X}(\v c)\\
+        &amp;= \min_{\v c}\left[\left(\min_{\v x\in\mathcal{X}(\v c)} f(\v x)\right) -\v \lambda^T(\v c - \v b)\right] \\
+        &amp;= \min_{\v c}\left[\phi(\v c) - \v \lambda^T(\v c - \v b)\right] &amp;&amp;\text{definition of $\phi$}. \tag{*}
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that when <span class="inline-math">$\v c = \v b$</span>, we have <span class="inline-math">$\phi(\v c) - \v \lambda^T(\v c - \v b) = \phi(\v b)$</span>.
+</p>
+
+<h1>Supporting hyperplane exists <span class="inline-math">$\implies$</span> strong duality</h1>
+
+<p>
+    Suppose <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-value-function.html"><span class="inline-math">$\phi$</span></a> has a supporting hyperplane <span class="inline-math">$\v \lambda$</span> at <span class="inline-math">$\v b$</span>.
+    By definition
+    <span class="display-math">$$ \begin{align*}
+        \phi(\v c) \geq \phi(\v b) + \v \lambda^T (\v c - \v b).
+    \end{align*} $$</span>
+    Note that
+    <span class="display-math">$$\phi(\v c) - \v \lambda^T(\v c - \v b) \geq \phi(\v b)$$</span>
+    so by (*),
+    <span class="display-math">$$ \begin{align*}
+        g(\v \lambda) = \min_{\v c} \left[\phi(\v c) - \v \lambda^T (\v c - \v b)\right] = \phi(\v b)
+    \end{align*} $$</span>
+    so strong duality holds.
+</p>
+
+<h1>Strong duality <span class="inline-math">$\implies$</span> supporting hyperplane exists</h1>
+
+<p>
+    Suppose strong duality holds for some <span class="inline-math">$\v \lambda$</span>, i.e. <span class="inline-math">$g(\v \lambda) = \phi(\v b)$</span>.
+</p>
+<p>
+    (*) implies for any <span class="inline-math">$\v c$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \phi(\v b) = g(\v \lambda) \leq \phi(\v c) - \v \lambda^T(\v c - \v b)
+    \end{align*} $$</span>
+    so <span class="inline-math">$\phi$</span> has a supporting hyperplane <span class="inline-math">$\v \lambda$</span> at <span class="inline-math">$\v b$</span>.
+</p>

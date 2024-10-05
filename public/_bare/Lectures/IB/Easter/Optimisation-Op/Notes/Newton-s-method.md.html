@@ -1,0 +1,198 @@
+<p>
+    The update rule in Newton's method is
+    <span class="display-math">$$ \begin{align*}
+        \v x_{t+1} = \v x_t - (\nabla^2 f(\v x_t))\inv \nabla f(\v x_t)
+    \end{align*} $$</span>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Motivation for Newton's method
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Motivation-for-Newton-s-method.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We approximate using the second-order Taylor expansion
+                <span class="display-math">$$ \begin{align*}
+                    f(\v y) \approx f(\v x_t) + \nabla f(\v x_t)^T (\v y - \v x_t) + \frac{1}{2} (\v y - \v x_t)^T \nabla^2 f(\v x_t) (\v y - \v x_t)
+                \end{align*} $$</span>
+                and set <span class="inline-math">$\v x_{t+1}$</span> to minimise the right hand side
+                <span class="display-math">$$ \begin{align*}
+                    \v x_{t+1} = \arg\min_{\v y} \left[f(\v x_t) + \nabla f(\v x_t)^T (\v y - \v x_t) + \frac{1}{2} (\v y - \v x_t)^T \nabla^2 f(\v x_t) (\v y - \v x_t)\right].
+                \end{align*} $$</span>
+                Since the second-order approximation is convex, we set the derivative to zero:
+                <span class="display-math">$$ \begin{align*}
+                    0 &amp;= \nabla f(\v x_t) + \nabla^2 f(\v x_t) (\v y - \v x_t) \\
+                    \v y &amp;= \v x_t - (\nabla^2 f(\v x_t))\inv \nabla f(\v x_t).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                For <span class="inline-math">$f: \R^n \to \R$</span>, this is the same as trying to find the root of <span class="inline-math">$f&#x27;$</span> using a linear approximation:
+                <span class="display-math">$$ \begin{align*}
+                    x_{t+1} = x_t - \frac{f&#x27;(x_t)}{f&#x27;&#x27;(x_t)}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (matrix norm)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-matrix-norm.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For some <span class="inline-math">$n\times n$</span> real matrix <span class="inline-math">$A$</span>, denote <span class="inline-math">$\|A\|$</span> as the smallest <span class="inline-math">$a\geq 0$</span> such that <span class="inline-math">$|A\v z| \leq a|\v z|$</span> for all <span class="inline-math">$\v z\in\R^n$</span>.
+            </p>
+            
+        </div>
+    </div>
+    For <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html">positive semidefinite matrix</a>, <span class="inline-math">$\|A\|$</span> is the largest eigenvalue.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (convergence of gradient descent using Newton's method)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-convergence-of-gradient-descent-using-Newton-s-method.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$f$</span> is a twice-differentiable <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\alpha$</span>-strongly convex</a> function for <span class="inline-math">$\alpha&gt;0$</span>, minimised at <span class="inline-math">$x^\ast$</span>.
+            </p>
+            <p>
+                Suppose further that the Hessian of <span class="inline-math">$f$</span> is <span class="inline-math">$l$</span>-Lipschitz, i.e. for all <span class="inline-math">$\v x,\v y\in\R^n$</span>,
+                <span class="inline-math">$\|\nabla^2 f(\v x) - \nabla^2 f(\v y)\| \leq l|\v x - \v y|$</span>.
+            </p>
+            <p>
+                Then <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Newton-s-method.html">Newton's method</a> satisfies
+                <span class="display-math">$$ \begin{align*}
+                    f(x_t) - f(x^\ast) \leq \frac{2\alpha^3}{l^2}\left(\frac{l}{2\alpha^2}|\nabla f(\v x_0)|\right)^{2^{k+1}}
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-convergence-of-gradient-descent-using-Newton-s-method.html">Proof (non-examinable)</a>
+            </p>
+            
+        </div>
+    </div>
+    If <span class="inline-math">$\v x_0$</span> is close to optimal (<span class="inline-math">$|\nabla f(\v x_0)| &lt; 2\alpha^2/l$</span>), then Newton's method is guaranteed to converge faster than exponentially fast.
+    Otherwise it may fail to converge.
+</p>
+<p>
+    You can first do normal gradient descent, and then Newton's method when it is close enough.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Barrier method
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Barrier-method.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: \R^n\to\R$</span> be a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> objective function and <span class="inline-math">$f_i: \R^n \to \R$</span> be linear for <span class="inline-math">$1\leq i\leq m$</span>, i.e. <span class="inline-math">$f_i(\v x) = \v a_i^T \v x - b_i$</span>.
+            </p>
+            <!-- BEGIN BLOCK ID 16aec4 -->
+            <div id="^16aec4" class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp; f(\v x) \\
+                            \text{over } &amp; \v x\in\R^n \\
+                            \text{subject to } &amp; f_i(\v x) \leq 0 \quad\text{for } 1\leq i\leq m.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div>
+            <!-- END BLOCK ID 16aec4 -->
+            <p>
+                We convert this to an unconstrained problem
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp; f(\v x) + \sum_{i=1}^{m} \phi(f_i(\v x)) \\
+                            \text{over } &amp; \v x\in\R^n.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                Often we pick <span class="inline-math">$\phi(x) = -\log(-x)$</span>, the logarithmic barrier function, leading to
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp; t f(\v x) + \Phi(\v x) \\
+                            \text{over } &amp; \v x\in\R^n \\
+                            \text{where } &amp;\Phi(\v x) = -\sum_{i=1}^{m} \log(-f_i(\v x)).
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                <span class="inline-math">$t&gt;0$</span> is a parameter to trade-off the relative importance of <span class="inline-math">$f$</span> and <span class="inline-math">$\Phi$</span>.
+            </p>
+            <p>
+                This is a convex optimisation problem (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Derivation-barrier-method-gives-convex-optimisation-problem.html">Derivation</a>).
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Algorithm of the barrier method
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Algorithm-of-the-barrier-method.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Find a feasible solution <span class="inline-math">$\v x$</span> (i.e. satisfying <span class="inline-math">$f_i(\v x)\leq 0$</span>for all <span class="inline-math">$i$</span>) and choose some <span class="inline-math">$t&gt;0$</span> and <span class="inline-math">$\alpha&gt;1$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Repeat until <span class="inline-math">$t$</span> is large enough:
+                            </p>
+                            <ol start="1">
+                            <li>
+                                <p>
+                                    Compute the minimiser <span class="inline-math">$x^\ast(t)$</span> of <span class="inline-math">$tf(\v x) + \Phi(\v x)$</span> using Newton's method with initial point <span class="inline-math">$\v x$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Update <span class="inline-math">$x := x^\ast(t)$</span> and <span class="inline-math">$t:=\alpha t$</span>.
+                                </p>
+                                
+                            </li>
+                            </ol>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                At each <span class="inline-math">$t$</span> update, the problem is not changed too much, so Newton's method is expected to converge quickly.
+            </p>
+            
+        </div>
+    </div>
+</p>

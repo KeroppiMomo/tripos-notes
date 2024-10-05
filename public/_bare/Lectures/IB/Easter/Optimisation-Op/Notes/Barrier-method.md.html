@@ -1,0 +1,102 @@
+<p>
+    Let <span class="inline-math">$f: \R^n\to\R$</span> be a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> objective function and <span class="inline-math">$f_i: \R^n \to \R$</span> be linear for <span class="inline-math">$1\leq i\leq m$</span>, i.e. <span class="inline-math">$f_i(\v x) = \v a_i^T \v x - b_i$</span>.
+</p>
+<!-- BEGIN BLOCK ID 16aec4 -->
+<div id="^16aec4" class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp; f(\v x) \\
+                \text{over } &amp; \v x\in\R^n \\
+                \text{subject to } &amp; f_i(\v x) \leq 0 \quad\text{for } 1\leq i\leq m.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div>
+<!-- END BLOCK ID 16aec4 -->
+<p>
+    We convert this to an unconstrained problem
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp; f(\v x) + \sum_{i=1}^{m} \phi(f_i(\v x)) \\
+                \text{over } &amp; \v x\in\R^n.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    Often we pick <span class="inline-math">$\phi(x) = -\log(-x)$</span>, the logarithmic barrier function, leading to
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp; t f(\v x) + \Phi(\v x) \\
+                \text{over } &amp; \v x\in\R^n \\
+                \text{where } &amp;\Phi(\v x) = -\sum_{i=1}^{m} \log(-f_i(\v x)).
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    <span class="inline-math">$t&gt;0$</span> is a parameter to trade-off the relative importance of <span class="inline-math">$f$</span> and <span class="inline-math">$\Phi$</span>.
+</p>
+<p>
+    This is a convex optimisation problem (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Derivation-barrier-method-gives-convex-optimisation-problem.html">Derivation</a>).
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Algorithm of the barrier method
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Algorithm-of-the-barrier-method.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ol start="1">
+            <li>
+                <p>
+                    Find a feasible solution <span class="inline-math">$\v x$</span> (i.e. satisfying <span class="inline-math">$f_i(\v x)\leq 0$</span>for all <span class="inline-math">$i$</span>) and choose some <span class="inline-math">$t&gt;0$</span> and <span class="inline-math">$\alpha&gt;1$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Repeat until <span class="inline-math">$t$</span> is large enough:
+                </p>
+                <ol start="1">
+                <li>
+                    <p>
+                        Compute the minimiser <span class="inline-math">$x^\ast(t)$</span> of <span class="inline-math">$tf(\v x) + \Phi(\v x)$</span> using Newton's method with initial point <span class="inline-math">$\v x$</span>.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        Update <span class="inline-math">$x := x^\ast(t)$</span> and <span class="inline-math">$t:=\alpha t$</span>.
+                    </p>
+                    
+                </li>
+                </ol>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>
+<p>
+    At each <span class="inline-math">$t$</span> update, the problem is not changed too much, so Newton's method is expected to converge quickly.
+</p>

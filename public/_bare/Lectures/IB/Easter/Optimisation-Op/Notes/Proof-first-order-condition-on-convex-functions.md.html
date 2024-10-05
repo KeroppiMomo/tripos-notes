@@ -1,0 +1,63 @@
+
+<h1>Convexity implies first-order condition</h1>
+
+<p>
+    Suppose <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a>.
+</p>
+<p>
+    First consider <span class="inline-math">$n=1$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        f\big(x+t(y-x)\big) &amp;\leq (1-t)f(x) + tf(y) \\
+        f(y) &amp;\geq f(x) + \frac{f(x+t(y-x)) - f(x)}{t}.
+    \end{align*} $$</span>
+    Taking limit as <span class="inline-math">$t\to 0$</span>, we obtain
+    <span class="display-math">$$ \begin{align*}
+        f(y) &amp;\geq f(x) + f&#x27;(x)(y-x)
+    \end{align*} $$</span>
+    as required.
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/jl8hh3sxde?embed" width="100%" height="400"></iframe>
+</p>
+<p>
+    Now consider any <span class="inline-math">$n$</span>.
+    Define, for <span class="inline-math">$t\in[0,1]$</span>,
+    <span class="display-math">$$ \begin{align*}
+        g(t) = f((1-t)\v x + t\v y).
+    \end{align*} $$</span>
+    <span class="inline-math">$g$</span> is convex since
+    <span class="display-math">$$ \begin{align*}
+        g(\lambda t_1 + (1-\lambda)t_2) &amp;= f\big((1-\lambda t_1 -(1-\lambda)t_2)\v x + (\lambda t_1 + (1-\lambda)t_2)\v y\big) \\
+        &amp;= f\Big(\lambda\big((1-t_1)\v x + t_1\v y)\big) + (1-\lambda)\big((1-t_2)\v x + t_2\v y\big)\Big)\\
+        &amp;\geq \lambda f((1-t_1)\v x + t_1 \v y) + (1-\lambda) f((1-t_2)\v x + t_2\v y) &amp;&amp;\text{convexity of $f$}\\
+        &amp;= \lambda g(t_1) + (1-\lambda) g(t_2).
+    \end{align*} $$</span>
+    Using the <span class="inline-math">$n=1$</span> result,
+    <span class="display-math">$$ \begin{align*}
+        f(\v y) &amp;= g(1) \\
+        &amp;\geq g(0) + g&#x27;(0) \\
+        &amp;= f(\v x) + \nabla f(\v x)^T (\v y - \v x) &amp;&amp;\text{chain rule}
+    \end{align*} $$</span>
+    as required.
+</p>
+
+<h1>First-order condition implies convexity</h1>
+
+<p>
+    Assume the first-order condition holds for <span class="inline-math">$f$</span>. Let <span class="inline-math">$\v z = \lambda \v x + (1-\lambda) \v y$</span>.
+    We have
+    <span class="display-math">$$ \begin{align*}
+        f(\v x) &amp;\geq f(\v z) + \nabla f(\v z)^T (\v x-\v z), \tag{1} \\
+        f(\v y) &amp;\geq f(\v z) + \nabla f(\v z)^T (\v y-\v z). \tag{2}\\
+    \end{align*} $$</span>
+    Multiplying (1) by <span class="inline-math">$\lambda$</span> and (2) by <span class="inline-math">$(1-\lambda)$</span> and add them,
+    <span class="display-math">$$ \begin{align*}
+        \lambda f(\v x) + (1-\lambda) f(\v y) &amp;\leq f(\v z) + \nabla f(\v z)^T \underbrace{(\lambda\v x + (1-\lambda)\v y - \v z)}_{0} \\
+        &amp;= f(\lambda \v x + (1-\lambda)\v y)
+    \end{align*} $$</span>
+    which shows that <span class="inline-math">$f$</span> is convex.
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/nmjsejwvjn?embed" width="100%" height="400"></iframe>
+</p>

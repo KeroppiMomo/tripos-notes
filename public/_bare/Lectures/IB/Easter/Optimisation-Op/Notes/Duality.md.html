@@ -1,0 +1,242 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (dual problem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathcal{X}\subseteq \R^n$</span>, <span class="inline-math">$f: \mathcal{X}\to\R$</span>, <span class="inline-math">$h: \R^n \to \R^m$</span>, and <span class="inline-math">$\v b\in\R^m$</span>.
+            </p>
+            <p>
+                For a <em>primal problem</em>
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp;f(\v x) \\
+                            \text{over } &amp;\v x\in \mathcal{X} \\
+                            \text{subject to } &amp;h(\v x) = \v b,
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                let the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Lagrange-multiplier-method.html">Lagrangian</a> <span class="inline-math">$L(\v x, \v \lambda) = f(\v x) - \lambda^T (h(\v x) - \v b)$</span> and <span class="inline-math">$\Lambda = \sb{\lambda\in\R^m}{ \min_{x\in\mathcal{X}} L(\v x,\v \lambda)&gt;-\infty}$</span>.
+            </p>
+            <p>
+                The <em>dual objective function</em> is defined as
+                <span class="display-math">$$ \begin{align*}
+                    g(\v \lambda) = \min_{x\in\mathcal{X}} L(\v x,\v \lambda)
+                \end{align*} $$</span>
+                and the <em>dual problem</em> is defined as
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Maximise }&amp; g(\v \lambda) \\
+                            \text{over }&amp; \v \lambda\in\Lambda.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html"><span class="inline-math">$g$</span></a> is concave, i.e. <span class="inline-math">$-g$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a>. (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Derivation-dual-objective-function-is-concave.html">Why?</a>)
+    Therefore it is generally easier to solve.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (weak duality)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-weak-duality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-Lagrange-sufficiency.html">this</a> and <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">this</a> for notation.
+            </p>
+            <p>
+                If <span class="inline-math">$\v x \in \mathcal{X}(\v b)$</span> and <span class="inline-math">$\v \lambda\in\Lambda$</span>, then
+                <span class="display-math">$$ \begin{align*}
+                    f(\v x) \geq g(\v \lambda).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                In particular,
+                <span class="display-math">$$ \begin{align*}
+                    \min_{\v x\in\mathcal{X}(\v b)} f(\v x) \geq \max_{\v \lambda\in\Lambda} g(\v \lambda).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-weak-duality.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    This means for any <span class="inline-math">$\v x,\v \lambda$</span>,
+    <span class="display-math">$$ \begin{align*}
+        f(\v x) \geq \text{Objective value } \min_{\v x\in\mathcal{X}(\v b)} f(\v x) \geq g(\v \lambda).
+    \end{align*} $$</span>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (strong duality)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-strong-duality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">here</a> for notation.
+            </p>
+            <p>
+                We say <em>strong duality holds</em> for a problem if
+                <span class="display-math">$$ \begin{align*}
+                    \min_{\v x\in\mathcal{X}(\v b)} f(\v x) = \max_{\v \lambda\in\Lambda} g(\v \lambda).
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Strategy-using-Lagrange-sufficiency-theorem.html">Lagrange method</a> works (almost) corresponds to when strong duality holds. (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Derivation-Lagrange-method-works-iff-strong-duality.html">Why?</a>)
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Condition for strong duality
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Condition-for-strong-duality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (supporting hyperplane)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-supporting-hyperplane.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A function <span class="inline-math">$\phi: \R^m \to \R$</span> is said to <em>have a supporting hyperplane at</em> <span class="inline-math">$\v b\in\R^m$</span>
+                            if there exists some <span class="inline-math">$\v \lambda\in\R^m$</span> such that for all <span class="inline-math">$\v c\in\R^m$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \phi(\v c) \geq \phi(\v b) + \lambda^T(\v c - \v b).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$\phi: \R^m \to\R$</span> is differentiable at <span class="inline-math">$\v b$</span> and has a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-supporting-hyperplane.html">supporting plane</a> <span class="inline-math">$\v \lambda$</span> at <span class="inline-math">$\v b$</span>, then <span class="inline-math">$\v \lambda = \nabla\phi(\v b)$</span>. (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-gradient-equals-supporting-hyperplane-slope.html">Proof</a>)
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID ecc1b4 -->
+            <li id="^ecc1b4">
+                <p>
+                    <span class="inline-math">$\phi$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> iff there exists a supporting hyperplane at every point <span class="inline-math">$\v b\in\R^m$</span>.
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID ecc1b4 -->
+            
+            </ul>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (value function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-value-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">here</a> for notation.
+                        </p>
+                        <p>
+                            Define the <em>value function</em> <span class="inline-math">$\phi: \R^m \to \R$</span> as
+                            <span class="display-math">$$ \begin{align*}
+                                \phi(\v c) = \min_{\v x\in \mathcal{X}(\v c)} f(\v x)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\mathcal{X}(\v c) = \sb{\v x\in\mathcal{X}}{h(\v x) = \v c}$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                We want to find <span class="inline-math">$\phi(\v b)$</span>, but it is helpful to consider all possible values of <span class="inline-math">$h(\v x)$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (supporting hyperplane and strong duality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-supporting-hyperplane-and-strong-duality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">here</a> for notation.
+                            Let <span class="inline-math">$\v \lambda\in\Lambda$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-strong-duality.html">Strong duality</a> holds for <span class="inline-math">$\v \lambda$</span> iff the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-value-function.html">value function</a> <span class="inline-math">$\phi$</span> has a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-supporting-hyperplane.html">supporting hyperplane</a> at <span class="inline-math">$\v b$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-supporting-hyperplane-and-strong-duality.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (strong duality holds for convex problems)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-strong-duality-holds-for-convex-problems.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\mathcal{X}\subseteq \R^n$</span> be a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-set.html">convex set</a> and <span class="inline-math">$f: \R^n \to\R$</span> and <span class="inline-math">$h_j: \R^n\to\R$</span> be <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex functions</a> for all <span class="inline-math">$j=1,2,\ldots,m$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-strong-duality.html">Strong duality</a> holds for the optimisation problem
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise }&amp;f(\v x) \\
+                                        \text{over } &amp;\v x\in\mathcal{X} \\
+                                        \text{subject to }&amp; h_j(\v x) \leq b_j, \quad \forall j = 1,2,\ldots,m
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-strong-duality-holds-for-convex-problems.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Economic-interpretation.html">Economic interpretation</a>
+</p>

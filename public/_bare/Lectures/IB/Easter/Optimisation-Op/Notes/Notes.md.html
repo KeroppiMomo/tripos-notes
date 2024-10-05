@@ -1,0 +1,2319 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Convexity
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Convexity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (convex set)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-set.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A set <span class="inline-math">$S\subseteq \R^n$</span> is said to be <em>convex</em> if for every <span class="inline-math">$\v x,\v y\in S$</span> and <span class="inline-math">$\lambda\in[0,1]$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \lambda \v x + (1-\lambda) \v y \in S.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            This means <span class="inline-math">$S$</span> contains all points on the line segment joined by two points in <span class="inline-math">$S$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (convex function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A function <span class="inline-math">$f: S\to\R$</span> is said to be <em>convex</em> if
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$S$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-set.html">convex</a>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for all <span class="inline-math">$\v x,\v y\in S$</span> and <span class="inline-math">$\lambda\in(0,1)$</span>,
+                                <span class="display-math">$$ \begin{align*}
+                                f\big(\lambda \v x + (1-\lambda)\v y\big) \leq \lambda f(\v x) + (1-\lambda) f(\v y). \tag{*}
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            This means the graph is always under the secant line between two points.
+                        </p>
+                        <p>
+                            <span class="inline-math">$f$</span> said to be <em>strictly convex</em> if strict inequality holds in (*).
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Notation (definite matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            An <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span> is said to be <em>positive semidefinite</em>, denoted as <span class="inline-math">$A\succeq 0$</span>,
+                            if <span class="inline-math">$\v x^T A\v x \geq 0$</span> for all <span class="inline-math">$x\in\R^n$</span>.
+                        </p>
+                        <p>
+                            We write <span class="inline-math">$A\succeq B$</span> to mean <span class="inline-math">$A-B\succeq 0$</span>, and <span class="inline-math">$A\preceq B$</span> to mean <span class="inline-math">$B-A\succeq 0$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Hessian)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-Hessian.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a twice differentiable function <span class="inline-math">$f:\R^n \to \R$</span>,
+                            the <em>Hessian</em> <span class="inline-math">$\nabla^2 f(x)$</span> is defined to be an <span class="inline-math">$n\times n$</span> matrix with entrices
+                            <span class="display-math">$$ \begin{align*}
+                                \big[\nabla^2 f(x)\big]_{ij} = \frac{\partial^2 f(x)}{\partial x_i x_j}.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <!-- BEGIN BLOCK ID 3e73f6 -->
+            <p id="^3e73f6">
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (first-order condition of convex functions)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-first-order-condition-of-convex-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A differentiable function <span class="inline-math">$f: \R^n \to \R$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> iff for all <span class="inline-math">$\v x,\v y\in\R^n$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                f(\v y) \geq f(\v x) + \nabla f(x)^T (\v y-\v x)
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-first-order-condition-on-convex-functions.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                Note that if <span class="inline-math">$\nabla f(x_0) = \v 0$</span> for some <span class="inline-math">$\v x_0$</span>, then <span class="inline-math">$f(\v y) \geq  f(\v x_0)$</span> for all <span class="inline-math">$\v y$</span> so <span class="inline-math">$\v  x_0$</span> is a local minimum.
+            </p>
+            
+            <!-- END BLOCK ID 3e73f6 -->
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (convex function iff increasing directional gradient)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-convex-function-iff-increasing-directional-gradient.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A differentiable function <span class="inline-math">$f: \R^n \to \R$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> iff for all <span class="inline-math">$\v x,\v y\in\R^n$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                (\v y-\v x) \cdot (\nabla f(\v y) - \nabla f(\v x)) \geq 0.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-convex-function-iff-increasing-directional-gradient.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (second-order condition of convex functions)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-second-order-condition-of-convex-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A twice differentiable function <span class="inline-math">$f: \R^n \to \R$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> iff <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-Hessian.html"><span class="inline-math">$\nabla^2 f(\v x)$</span></a> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html"><span class="inline-math">$\succeq 0$</span></a> for all <span class="inline-math">$\v x\in\R^n$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-second-order-condition-of-convex-functions-is-sufficient.html">Proof for sufficiency</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Gradient descent
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Gradient-descent.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: \R^n \to \R$</span> be <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a>.
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                        \text{Minimise } &amp; f(\v x) \\
+                        \text{over } &amp; \v x\in\R^n.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Convexity.html#^3e73f6">A local minimum is a global minimum.</a>
+                The idea is to take steps along <span class="inline-math">$-\nabla f(x)$</span> direction. Then roughly
+                <span class="display-math">$$ \begin{align*}
+                    f(x - \epsilon\nabla f(x)) \approx f(x) - \epsilon |\nabla f(x)|^2 &lt; f(x).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Gradient descent algorithm
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Gradient-descent-algorithm.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ol start="1">
+                        <li>
+                            <p>
+                                For <span class="inline-math">$t=0$</span>, start from an initial point <span class="inline-math">$x_0$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Repeat until some criterion is satisfied: at some <span class="inline-math">$t$</span>,
+                            </p>
+                            <ol start="1">
+                            <li>
+                                <p>
+                                    Choose a descent direction <span class="inline-math">$\v v_t$</span> such that <span class="inline-math">$\nabla f(x_t)^T \v v_t &lt; 0$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Choose a step size <span class="inline-math">$\eta_t$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Update <span class="inline-math">$x_{t+1} = x_t + \epsilon_t v_t$</span>.
+                                </p>
+                                
+                            </li>
+                            </ol>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Smoothness and strong convexity in gradient descent
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Smoothness-and-strong-convexity-in-gradient-descent.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (smoothness, strongly convexity)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$f: \R^n \to \R$</span> be twice differentiable and <span class="inline-math">$\alpha,\beta&gt;0$</span>.
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$f$</span> is said to be <em><span class="inline-math">$\alpha$</span>-strongly convex</em> if <span class="inline-math">$\nabla^2 f(x)$</span> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html"><span class="inline-math">$\succeq$</span></a> <span class="inline-math">$\alpha I$</span> for all <span class="inline-math">$x\in\R^n$</span>.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$f$</span> is said to be <em><span class="inline-math">$\beta$</span>-smooth</em> if <span class="inline-math">$\nabla^2 f(x)$</span> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html"><span class="inline-math">$\preceq$</span></a> <span class="inline-math">$\beta I$</span> for all <span class="inline-math">$x\in\R^n$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            A <span class="inline-math">$\alpha$</span>-strongly convex function cannot change too slowly, and a <span class="inline-math">$\beta$</span>-smooth function cannot change too quickly.
+                            This is illustrated in the following theorem:
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (bounds on smooth and strongly convex functions)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-bounds-on-smooth-and-strongly-convex-functions.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\v x,\v y\in\R^n$</span>.
+                                        If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\beta$</span>-smooth</a>, then
+                                        <span class="display-math">$$ \begin{align*}
+                                            f(\v y) \leq f(\v x) + \nabla f(\v x)^T (\v y - \v x) + \frac{\beta}{2}|\v x-\v y|^2.
+                                        \end{align*} $$</span>
+                                        If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\alpha$</span>-strongly convex</a>, then
+                                        <span class="display-math">$$ \begin{align*}
+                                            f(\v y) \geq f(\v x) + \nabla f(\v x)^T (\v y - \v x) + \frac{\alpha}{2}|\v x - \v y|^2.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-upper-bound-on-smooth-and-strongly-convex-functions.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Corollary (gradient descent step of smooth function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Corollary-gradient-descent-step-of-smooth-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\beta$</span>-smooth</a>, then
+                                        <span class="display-math">$$ \begin{align*}
+                                            f\Big(\v x - \frac{1}{\beta}\nabla f(\v x)\Big) \leq f(\v x) - \frac{\beta}{2}|\nabla f(\v x)|^2
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        Proof: plug in <span class="inline-math">$\v y = \v x - \frac{1}{\beta}\nabla f(\v x)$</span> to the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-bounds-on-smooth-and-strongly-convex-functions.html">previous theorem</a>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            This shows that we are guaranteed to reduce the objective function value going from <span class="inline-math">$\v x$</span> to <span class="inline-math">$\v x - \frac{1}{\beta} \nabla f(\v x)$</span>, e.g. we do not overshoot.
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (lower bound for minimum value in strongly convex functions)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-lower-bound-for-minimum-value-in-strongly-convex-functions.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$f$</span> be <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\alpha$</span>-strongly convex</a>. Let <span class="inline-math">$p^\ast = \inf_\v x f(\v x)$</span> be the optimal value.
+                                    </p>
+                                    <p>
+                                        For any <span class="inline-math">$\v x\in\R^n$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            p^\ast \geq f(\v x) - \frac{1}{2\alpha} |\nabla f(\v x)|^2.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-lower-bound-for-minimum-value-in-strongly-convex-functions.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            This shows that if <span class="inline-math">$\nabla f(\v x)$</span> is close to zero (say <span class="inline-math">$|\nabla f(\v x)| &lt; \sqrt{2\alpha\epsilon}$</span>),
+                            then <span class="inline-math">$f(\v x)$</span> is close to optimal (<span class="inline-math">$f(\v x) \leq p^\ast + \epsilon$</span>).
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (convergence of gradient descent for strongly convex and smooth functions)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-convergence-of-gradient-descent-for-strongly-convex-and-smooth-functions.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\alpha$</span>-strongly convex and <span class="inline-math">$\beta$</span>-smooth</a> that is minimised at <span class="inline-math">$x^\ast$</span>,
+                                        then the gradient descent with constant step size <span class="inline-math">$1/\beta$</span>, i.e.
+                                        <span class="display-math">$$ \begin{align*}
+                                            \v x_{t+1} = \v x_t - \frac{1}{\beta}\nabla f(\v x)
+                                        \end{align*} $$</span>
+                                        satisfies
+                                        <span class="display-math">$$ \begin{align*}
+                                            f(\v x_t) - f(x^\ast) \leq \left(1-\frac{\alpha}{\beta}\right)^t (f(\v x_0) - f(\v x^\ast)).
+                                        \end{align*} $$</span>
+                                        A more common but looser bound is
+                                        <span class="display-math">$$ \begin{align*}
+                                            f(\v x_t) - f(x^\ast) \leq e^{-(\alpha/\beta)t}(f(\v x_0) - f(\v x^\ast)).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-convergence-of-gradient-descent-for-strongly-convex-and-smooth-functions.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            To ensure <span class="inline-math">$f(\v x_t) - f(\v x^\ast) \leq \epsilon$</span>, we need <span class="inline-math">$t = (\beta/\alpha)\log((f(\v x_0) - f(\v x^\ast))/\epsilon)$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                The relation <span class="inline-math">$t\sim \log (1/\epsilon)$</span> is called <em>linear convergence</em>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The ratio <span class="inline-math">$\beta/\alpha &gt; 1$</span> is called the <em>condition number</em>. The closer it is to 1, the faster the convergence.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Newton's method
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Newton-s-method.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The update rule in Newton's method is
+                            <span class="display-math">$$ \begin{align*}
+                                \v x_{t+1} = \v x_t - (\nabla^2 f(\v x_t))\inv \nabla f(\v x_t)
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Motivation for Newton's method
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Motivation-for-Newton-s-method.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        We approximate using the second-order Taylor expansion
+                                        <span class="display-math">$$ \begin{align*}
+                                            f(\v y) \approx f(\v x_t) + \nabla f(\v x_t)^T (\v y - \v x_t) + \frac{1}{2} (\v y - \v x_t)^T \nabla^2 f(\v x_t) (\v y - \v x_t)
+                                        \end{align*} $$</span>
+                                        and set <span class="inline-math">$\v x_{t+1}$</span> to minimise the right hand side
+                                        <span class="display-math">$$ \begin{align*}
+                                            \v x_{t+1} = \arg\min_{\v y} \left[f(\v x_t) + \nabla f(\v x_t)^T (\v y - \v x_t) + \frac{1}{2} (\v y - \v x_t)^T \nabla^2 f(\v x_t) (\v y - \v x_t)\right].
+                                        \end{align*} $$</span>
+                                        Since the second-order approximation is convex, we set the derivative to zero:
+                                        <span class="display-math">$$ \begin{align*}
+                                            0 &amp;= \nabla f(\v x_t) + \nabla^2 f(\v x_t) (\v y - \v x_t) \\
+                                            \v y &amp;= \v x_t - (\nabla^2 f(\v x_t))\inv \nabla f(\v x_t).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        For <span class="inline-math">$f: \R^n \to \R$</span>, this is the same as trying to find the root of <span class="inline-math">$f&#x27;$</span> using a linear approximation:
+                                        <span class="display-math">$$ \begin{align*}
+                                            x_{t+1} = x_t - \frac{f&#x27;(x_t)}{f&#x27;&#x27;(x_t)}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (matrix norm)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-matrix-norm.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For some <span class="inline-math">$n\times n$</span> real matrix <span class="inline-math">$A$</span>, denote <span class="inline-math">$\|A\|$</span> as the smallest <span class="inline-math">$a\geq 0$</span> such that <span class="inline-math">$|A\v z| \leq a|\v z|$</span> for all <span class="inline-math">$\v z\in\R^n$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            For <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html">positive semidefinite matrix</a>, <span class="inline-math">$\|A\|$</span> is the largest eigenvalue.
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (convergence of gradient descent using Newton's method)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-convergence-of-gradient-descent-using-Newton-s-method.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Suppose <span class="inline-math">$f$</span> is a twice-differentiable <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\alpha$</span>-strongly convex</a> function for <span class="inline-math">$\alpha&gt;0$</span>, minimised at <span class="inline-math">$x^\ast$</span>.
+                                    </p>
+                                    <p>
+                                        Suppose further that the Hessian of <span class="inline-math">$f$</span> is <span class="inline-math">$l$</span>-Lipschitz, i.e. for all <span class="inline-math">$\v x,\v y\in\R^n$</span>,
+                                        <span class="inline-math">$\|\nabla^2 f(\v x) - \nabla^2 f(\v y)\| \leq l|\v x - \v y|$</span>.
+                                    </p>
+                                    <p>
+                                        Then <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Newton-s-method.html">Newton's method</a> satisfies
+                                        <span class="display-math">$$ \begin{align*}
+                                            f(x_t) - f(x^\ast) \leq \frac{2\alpha^3}{l^2}\left(\frac{l}{2\alpha^2}|\nabla f(\v x_0)|\right)^{2^{k+1}}
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-convergence-of-gradient-descent-using-Newton-s-method.html">Proof (non-examinable)</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            If <span class="inline-math">$\v x_0$</span> is close to optimal (<span class="inline-math">$|\nabla f(\v x_0)| &lt; 2\alpha^2/l$</span>), then Newton's method is guaranteed to converge faster than exponentially fast.
+                            Otherwise it may fail to converge.
+                        </p>
+                        <p>
+                            You can first do normal gradient descent, and then Newton's method when it is close enough.
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Barrier method
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Barrier-method.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$f: \R^n\to\R$</span> be a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> objective function and <span class="inline-math">$f_i: \R^n \to \R$</span> be linear for <span class="inline-math">$1\leq i\leq m$</span>, i.e. <span class="inline-math">$f_i(\v x) = \v a_i^T \v x - b_i$</span>.
+                                    </p>
+                                    <!-- BEGIN BLOCK ID 16aec4 -->
+                                    <div id="^16aec4" class="markdown-callout" data-callout="problem">
+                                        <div class="markdown-callout-title">
+                                            <i data-lucide="file-text"></i>
+                                            <div class="markdown-callout-title-inner">Problem</div>
+                                        </div>
+                                        <div class="markdown-callout-content">
+                                            <p>
+                                                <span class="display-math">$$ \begin{align*}
+                                                    \text{Minimise } &amp; f(\v x) \\
+                                                    \text{over } &amp; \v x\in\R^n \\
+                                                    \text{subject to } &amp; f_i(\v x) \leq 0 \quad\text{for } 1\leq i\leq m.
+                                                \end{align*} $$</span>
+                                            </p>
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- END BLOCK ID 16aec4 -->
+                                    <p>
+                                        We convert this to an unconstrained problem
+                                    </p>
+                                    <div class="markdown-callout" data-callout="problem">
+                                        <div class="markdown-callout-title">
+                                            <i data-lucide="file-text"></i>
+                                            <div class="markdown-callout-title-inner">Problem</div>
+                                        </div>
+                                        <div class="markdown-callout-content">
+                                            <p>
+                                                <span class="display-math">$$ \begin{align*}
+                                                    \text{Minimise } &amp; f(\v x) + \sum_{i=1}^{m} \phi(f_i(\v x)) \\
+                                                    \text{over } &amp; \v x\in\R^n.
+                                                \end{align*} $$</span>
+                                            </p>
+                                            
+                                        </div>
+                                    </div><p>
+                                        Often we pick <span class="inline-math">$\phi(x) = -\log(-x)$</span>, the logarithmic barrier function, leading to
+                                    </p>
+                                    <div class="markdown-callout" data-callout="problem">
+                                        <div class="markdown-callout-title">
+                                            <i data-lucide="file-text"></i>
+                                            <div class="markdown-callout-title-inner">Problem</div>
+                                        </div>
+                                        <div class="markdown-callout-content">
+                                            <p>
+                                                <span class="display-math">$$ \begin{align*}
+                                                    \text{Minimise } &amp; t f(\v x) + \Phi(\v x) \\
+                                                    \text{over } &amp; \v x\in\R^n \\
+                                                    \text{where } &amp;\Phi(\v x) = -\sum_{i=1}^{m} \log(-f_i(\v x)).
+                                                \end{align*} $$</span>
+                                            </p>
+                                            
+                                        </div>
+                                    </div><p>
+                                        <span class="inline-math">$t&gt;0$</span> is a parameter to trade-off the relative importance of <span class="inline-math">$f$</span> and <span class="inline-math">$\Phi$</span>.
+                                    </p>
+                                    <p>
+                                        This is a convex optimisation problem (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Derivation-barrier-method-gives-convex-optimisation-problem.html">Derivation</a>).
+                                    </p>
+                                    <p>
+                                        <div class="markdown-embed">
+                                            <div class="markdown-embed-title">
+                                                Algorithm of the barrier method
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Algorithm-of-the-barrier-method.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <ol start="1">
+                                                <li>
+                                                    <p>
+                                                        Find a feasible solution <span class="inline-math">$\v x$</span> (i.e. satisfying <span class="inline-math">$f_i(\v x)\leq 0$</span>for all <span class="inline-math">$i$</span>) and choose some <span class="inline-math">$t&gt;0$</span> and <span class="inline-math">$\alpha&gt;1$</span>.
+                                                    </p>
+                                                    
+                                                </li><li>
+                                                    <p>
+                                                        Repeat until <span class="inline-math">$t$</span> is large enough:
+                                                    </p>
+                                                    <ol start="1">
+                                                    <li>
+                                                        <p>
+                                                            Compute the minimiser <span class="inline-math">$x^\ast(t)$</span> of <span class="inline-math">$tf(\v x) + \Phi(\v x)$</span> using Newton's method with initial point <span class="inline-math">$\v x$</span>.
+                                                        </p>
+                                                        
+                                                    </li><li>
+                                                        <p>
+                                                            Update <span class="inline-math">$x := x^\ast(t)$</span> and <span class="inline-math">$t:=\alpha t$</span>.
+                                                        </p>
+                                                        
+                                                    </li>
+                                                    </ol>
+                                                    
+                                                </li>
+                                                </ol>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        At each <span class="inline-math">$t$</span> update, the problem is not changed too much, so Newton's method is expected to converge quickly.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Lagrange multiplier method
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Lagrange-multiplier-method.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathcal{X}\subseteq \R^n$</span>, <span class="inline-math">$f: \mathcal{X}\to\R$</span>, and <span class="inline-math">$h: \R^n \to\R^m$</span>.
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp; f(\v x) \\
+                            \text{over } &amp; \v x\in\mathcal{X} \\
+                            \text{subject to } &amp; h(\v x) = \v b.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                We can transform this constrained optimisation problem to an unconstrained one:
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <!-- BEGIN BLOCK ID ba92e6 -->
+                    <p id="^ba92e6">
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp; L(\v x, \lambda) = f(\v x) - \v \lambda^T(h(\v x) - \v b), \quad \text{the ``Lagrangian&quot;}, \\
+                            \text{over } &amp;\v x\in\mathcal{X}. \\
+                        \end{align*} $$</span>
+                    </p>
+                    
+                    <!-- END BLOCK ID ba92e6 -->
+                    
+                </div>
+            </div><p>
+                This gives a penalty of <span class="inline-math">$-\v \lambda^T$</span> per unit of constraint violation.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Lagrange sufficiency)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-Lagrange-sufficiency.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\v x^\ast \in \mathcal{X}$</span> and <span class="inline-math">$\v \lambda^\ast \in\R^m$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$\v x^\ast$</span> is a minimiser of <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Lagrange-multiplier-method.html#^ba92e6"><span class="inline-math">$L(\v x,\v \lambda^\ast)$</span></a> and <span class="inline-math">$h(\v x^\ast) = \v b$</span>, then <span class="inline-math">$\v x^\ast$</span> is a minimiser of <span class="inline-math">$f(\v x)$</span> subject to <span class="inline-math">$h(\v x) = \v b$</span>.
+                        </p>
+                        <p>
+                            More precisely, let <span class="inline-math">$\mathcal{X}(\v b) = \sb{\v x\in\mathcal{X}}{h(\v x) = \v b}$</span>.
+                            If
+                            <span class="display-math">$$ \begin{align*}
+                                L(\v x^\ast, \v \lambda^\ast) = \min_{\v x\in\mathcal{X}} L(\v x, \v \lambda^\ast)\quad \text{and}\quad h(\v x^\ast) = \v b,
+                            \end{align*} $$</span>
+                            then
+                            <span class="display-math">$$ \begin{align*}
+                                f(\v x^\ast) = \min_{\v x\in\mathcal{X}(\v b)} f(\v x).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-Lagrange-sufficiency.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                Note that this is just a sufficient condition, not a necessary one.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Strategy using Lagrange sufficiency theorem
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Strategy-using-Lagrange-sufficiency-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            To solve
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp;f(\v x) \\
+                                        \text{over } &amp;\v x\in\mathcal{X} \\
+                                        \text{subject to } &amp;h(\v x) \leq \v b,
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><ol start="1">
+                        <li>
+                            <p>
+                                Add a slack variable to change the inequality constraint to an equality:
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp;f(\v x) \\
+                                        \text{over } &amp;\v x\in\mathcal{X}, \\
+                                        &amp;\v s\in\R^m, \v s\geq 0 \\
+                                        \text{subject to } &amp;h(\v x) + \v s = \v b.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><ol start="2">
+                        <li>
+                            <p>
+                                Set the Lagrangian
+                                <span class="display-math">$$ \begin{align*}
+                                L(\v x,\v s,\v \lambda) = f(\v x) - \v \lambda^T (h(\v x) + \v s - \v b).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Find
+                                <span class="display-math">$$ \begin{align*}
+                                \Lambda = \sb{\v \lambda\in\R^m}{\inf_{\v x\in\mathcal{X},\ \v s\geq 0} L(\v x,\v s,\v \lambda) &gt; -\infty}.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For each <span class="inline-math">$\v \lambda\in\Lambda$</span>, find the minimiser <span class="inline-math">$\v x^\ast(\v \lambda), \v s^\ast(\v \lambda)$</span>, i.e.
+                                <span class="display-math">$$ \begin{align*}
+                                L(\v x^\ast(\v \lambda), \v s^\ast(\v \lambda), \v \lambda) = \inf_{x\in\mathcal{X},\ \v s\geq 0} L(\v x,\v s,\v \lambda).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Find <span class="inline-math">$\v \lambda^\ast$</span> such that <span class="inline-math">$(\v x^\ast(\v \lambda^\ast), \v s^\ast(\v \lambda^\ast))$</span> is feasible, i.e. <span class="inline-math">$\v x^\ast(\v \lambda^\ast)\in\mathcal{X}$</span>, <span class="inline-math">$\v s^\ast(\v \lambda^\ast)\geq 0$</span>, and <span class="inline-math">$h(\v x^\ast(\v \lambda)) + \v s^\ast(\v \lambda^\ast) = \v b$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                By <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-Lagrange-sufficiency.html">Lagrange sufficiency theorem</a>, <span class="inline-math">$\v x^\ast(\v \lambda^{\ast})$</span> is optimal for the original constrained problem.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-problem-using-Lagrange-sufficiency.html">Example</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (complementary slackness)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-complementary-slackness.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Using the notation <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Strategy-using-Lagrange-sufficiency-theorem.html">here</a>, let <span class="inline-math">$\v \lambda\in\Lambda$</span> and <span class="inline-math">$\v x^\ast, \v s^\ast$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                L(\v x^\ast, \v s^\ast, \v \lambda) = \inf_{\v x\in\mathcal{X},\ \v s\geq 0} L(\v x,\v s,\v \lambda).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Then for any <span class="inline-math">$i=1,2,\ldots,m$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \begin{cases}
+                                    \lambda_i = 0, \\
+                                    (h(\v x^\ast))_i \leq b_i,
+                                \end{cases}
+                                \quad \text{or}
+                                \quad \begin{cases}
+                                    \lambda_i &lt; 0, \\
+                                    (h(\v x^\ast))_i = b_i.
+                                \end{cases}
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-complementary-slackness.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-problem-using-complementary-slackness.html">Example</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Duality
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Duality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (dual problem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\mathcal{X}\subseteq \R^n$</span>, <span class="inline-math">$f: \mathcal{X}\to\R$</span>, <span class="inline-math">$h: \R^n \to \R^m$</span>, and <span class="inline-math">$\v b\in\R^m$</span>.
+                        </p>
+                        <p>
+                            For a <em>primal problem</em>
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp;f(\v x) \\
+                                        \text{over } &amp;\v x\in \mathcal{X} \\
+                                        \text{subject to } &amp;h(\v x) = \v b,
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            let the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Lagrange-multiplier-method.html">Lagrangian</a> <span class="inline-math">$L(\v x, \v \lambda) = f(\v x) - \lambda^T (h(\v x) - \v b)$</span> and <span class="inline-math">$\Lambda = \sb{\lambda\in\R^m}{ \min_{x\in\mathcal{X}} L(\v x,\v \lambda)&gt;-\infty}$</span>.
+                        </p>
+                        <p>
+                            The <em>dual objective function</em> is defined as
+                            <span class="display-math">$$ \begin{align*}
+                                g(\v \lambda) = \min_{x\in\mathcal{X}} L(\v x,\v \lambda)
+                            \end{align*} $$</span>
+                            and the <em>dual problem</em> is defined as
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Maximise }&amp; g(\v \lambda) \\
+                                        \text{over }&amp; \v \lambda\in\Lambda.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html"><span class="inline-math">$g$</span></a> is concave, i.e. <span class="inline-math">$-g$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a>. (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Derivation-dual-objective-function-is-concave.html">Why?</a>)
+                Therefore it is generally easier to solve.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (weak duality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-weak-duality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-Lagrange-sufficiency.html">this</a> and <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">this</a> for notation.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$\v x \in \mathcal{X}(\v b)$</span> and <span class="inline-math">$\v \lambda\in\Lambda$</span>, then
+                            <span class="display-math">$$ \begin{align*}
+                                f(\v x) \geq g(\v \lambda).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            In particular,
+                            <span class="display-math">$$ \begin{align*}
+                                \min_{\v x\in\mathcal{X}(\v b)} f(\v x) \geq \max_{\v \lambda\in\Lambda} g(\v \lambda).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-weak-duality.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                This means for any <span class="inline-math">$\v x,\v \lambda$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    f(\v x) \geq \text{Objective value } \min_{\v x\in\mathcal{X}(\v b)} f(\v x) \geq g(\v \lambda).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (strong duality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-strong-duality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">here</a> for notation.
+                        </p>
+                        <p>
+                            We say <em>strong duality holds</em> for a problem if
+                            <span class="display-math">$$ \begin{align*}
+                                \min_{\v x\in\mathcal{X}(\v b)} f(\v x) = \max_{\v \lambda\in\Lambda} g(\v \lambda).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Strategy-using-Lagrange-sufficiency-theorem.html">Lagrange method</a> works (almost) corresponds to when strong duality holds. (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Derivation-Lagrange-method-works-iff-strong-duality.html">Why?</a>)
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Condition for strong duality
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Condition-for-strong-duality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (supporting hyperplane)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-supporting-hyperplane.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A function <span class="inline-math">$\phi: \R^m \to \R$</span> is said to <em>have a supporting hyperplane at</em> <span class="inline-math">$\v b\in\R^m$</span>
+                                        if there exists some <span class="inline-math">$\v \lambda\in\R^m$</span> such that for all <span class="inline-math">$\v c\in\R^m$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \phi(\v c) \geq \phi(\v b) + \lambda^T(\v c - \v b).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                If <span class="inline-math">$\phi: \R^m \to\R$</span> is differentiable at <span class="inline-math">$\v b$</span> and has a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-supporting-hyperplane.html">supporting plane</a> <span class="inline-math">$\v \lambda$</span> at <span class="inline-math">$\v b$</span>, then <span class="inline-math">$\v \lambda = \nabla\phi(\v b)$</span>. (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-gradient-equals-supporting-hyperplane-slope.html">Proof</a>)
+                            </p>
+                            
+                        </li><!-- BEGIN BLOCK ID ecc1b4 -->
+                        <li id="^ecc1b4">
+                            <p>
+                                <span class="inline-math">$\phi$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> iff there exists a supporting hyperplane at every point <span class="inline-math">$\v b\in\R^m$</span>.
+                            </p>
+                            
+                        </li>
+                        <!-- END BLOCK ID ecc1b4 -->
+                        
+                        </ul>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (value function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-value-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">here</a> for notation.
+                                    </p>
+                                    <p>
+                                        Define the <em>value function</em> <span class="inline-math">$\phi: \R^m \to \R$</span> as
+                                        <span class="display-math">$$ \begin{align*}
+                                            \phi(\v c) = \min_{\v x\in \mathcal{X}(\v c)} f(\v x)
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$\mathcal{X}(\v c) = \sb{\v x\in\mathcal{X}}{h(\v x) = \v c}$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            We want to find <span class="inline-math">$\phi(\v b)$</span>, but it is helpful to consider all possible values of <span class="inline-math">$h(\v x)$</span>.
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (supporting hyperplane and strong duality)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-supporting-hyperplane-and-strong-duality.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">here</a> for notation.
+                                        Let <span class="inline-math">$\v \lambda\in\Lambda$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-strong-duality.html">Strong duality</a> holds for <span class="inline-math">$\v \lambda$</span> iff the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-value-function.html">value function</a> <span class="inline-math">$\phi$</span> has a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-supporting-hyperplane.html">supporting hyperplane</a> at <span class="inline-math">$\v b$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-supporting-hyperplane-and-strong-duality.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (strong duality holds for convex problems)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-strong-duality-holds-for-convex-problems.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\mathcal{X}\subseteq \R^n$</span> be a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-set.html">convex set</a> and <span class="inline-math">$f: \R^n \to\R$</span> and <span class="inline-math">$h_j: \R^n\to\R$</span> be <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex functions</a> for all <span class="inline-math">$j=1,2,\ldots,m$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-strong-duality.html">Strong duality</a> holds for the optimisation problem
+                                    </p>
+                                    <div class="markdown-callout" data-callout="problem">
+                                        <div class="markdown-callout-title">
+                                            <i data-lucide="file-text"></i>
+                                            <div class="markdown-callout-title-inner">Problem</div>
+                                        </div>
+                                        <div class="markdown-callout-content">
+                                            <p>
+                                                <span class="display-math">$$ \begin{align*}
+                                                    \text{Minimise }&amp;f(\v x) \\
+                                                    \text{over } &amp;\v x\in\mathcal{X} \\
+                                                    \text{subject to }&amp; h_j(\v x) \leq b_j, \quad \forall j = 1,2,\ldots,m
+                                                \end{align*} $$</span>
+                                            </p>
+                                            
+                                        </div>
+                                    </div><p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-strong-duality-holds-for-convex-problems.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Economic-interpretation.html">Economic interpretation</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Linear programs
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Linear-programs.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (linear program)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>linear program</em> is an optimisation problem where the objective function and constraints are all linear, i.e. one in the form
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp;\v c^T \v x \\
+                                        \text{subject to } &amp; \v a_i^T \v x \geq \v b_i, &amp;&amp;i\in M_1, \\
+                                        &amp;\v a_i^T \v x \leq \v b_i, &amp;&amp;i\in M_2, \\
+                                        &amp;\v a_i^T \v x = \v b_i, &amp;&amp;i\in M_3, \\
+                                        &amp;x_j \geq 0, &amp;&amp;j\in N_1, \\
+                                        &amp;x_j \leq 0, &amp;&amp;j\in N_2.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (linear program in general form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program-in-general-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>general form</em> of a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program.html">linear program</a> is
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp; \v c^T \v x \\
+                                        \text{subject to } &amp; A\v x \leq \v b.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (linear program in standard form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program-in-standard-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>standard form</em> of a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program.html">linear program</a> is
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp; \v c^T \v x \\
+                                        \text{subject to } &amp;A\v x = \v b, \\
+                                        &amp;\v x\geq \v 0.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+            <p>
+                Any linear programs can be written in the general form or the standard form. (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Derivation-forms-of-linear-programs.html">Derivation</a>)
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Maxima of convex functions
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maxima-of-convex-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (extreme point of a convex set)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-extreme-point-of-a-convex-set.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$C$</span> be a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-set.html">convex set</a>.
+                                    </p>
+                                    <p>
+                                        A point <span class="inline-math">$\v x\in C$</span> is said to be an <em>extreme point</em> of <span class="inline-math">$C$</span>
+                                        if it cannot be written as a convex combination of two distinct point in <span class="inline-math">$C$</span>,
+                                        i.e. for <span class="inline-math">$\v y,\v z\in C$</span> and <span class="inline-math">$t\in(0,1)$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \v x = t\v y + (1-t)\v z\implies \v y=\v z=\v x.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (maximum of a convex function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-maximum-of-a-convex-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$f$</span> be a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex function</a> on a bounded <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-set.html">convex set</a> <span class="inline-math">$C$</span>.
+                                    </p>
+                                    <p>
+                                        <span class="inline-math">$f$</span> attains its maximum at an <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-extreme-point-of-a-convex-set.html">extreme point</a> of <span class="inline-math">$C$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-maximum-of-a-convex-function.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            Since linear programs are convex maximisation problems,
+                            if we find all the extreme points of the feasible set,
+                            then we can solve any linear programs.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Basic solutions and basic feasible solutions
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Basic-solutions-and-basic-feasible-solutions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program-in-standard-form.html">standard form</a> linear program, with <span class="inline-math">$A$</span> being an <span class="inline-math">$m\times n$</span> matrix.
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Notation (rows and columns of a matrix)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-rows-and-columns-of-a-matrix.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For an <span class="inline-math">$m\times n$</span> matrix <span class="inline-math">$A$</span>, denote
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$\v a_1^T, a_2^T, \ldots, \v a_m^T$</span> the rows of <span class="inline-math">$A$</span>;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$\v A_1, \v A_2, \ldots, \v A_n^T$</span> the columns of <span class="inline-math">$A$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <ul>
+                        <!-- BEGIN BLOCK ID assumption-a -->
+                        <li id="^assumption-a">
+                            <p>
+                                <strong>Assumption A</strong>: the rows <span class="inline-math">$\v a_i$</span> of <span class="inline-math">$A$</span> are linearly independent.
+                            </p>
+                            <p>
+                                This is WLOG: if rows are linearly independent, we can remove some redundant equality constraints.
+                            </p>
+                            <p>
+                                Then the rank of <span class="inline-math">$A$</span> is <span class="inline-math">$m$</span>. Also the row vectors <span class="inline-math">$\v a_i$</span> are in <span class="inline-math">$\R^n$</span> so <span class="inline-math">$m\leq n$</span>.
+                            </p>
+                            
+                        </li>
+                        <!-- END BLOCK ID assumption-a -->
+                        <!-- BEGIN BLOCK ID assumption-b -->
+                        <li id="^assumption-b">
+                            <p>
+                                <strong>Assumption B</strong>: every set of <span class="inline-math">$m$</span> columns of <span class="inline-math">$A$</span> are linearly independent (and therefore forms a basis).
+                            </p>
+                            
+                        </li>
+                        <!-- END BLOCK ID assumption-b -->
+                        
+                        </ul>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (basic solution, basic feasible solution)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A point <span class="inline-math">$\v x\in\R^n$</span> is called a <em>basic solution</em>
+                                        if <span class="inline-math">$A\v x = \v b$</span>
+                                        and <span class="inline-math">$\v x$</span> has at most <span class="inline-math">$m$</span> non-zero entries.
+                                    </p>
+                                    <p>
+                                        <span class="inline-math">$\v x$</span> is called a <em>basic feasible solution</em> if <span class="inline-math">$\v x$</span> is a basic solution and <span class="inline-math">$\v x\geq 0$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Constructing basic solutions
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Constructing-basic-solutions.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Exhaust all possible sets of <span class="inline-math">$m$</span> indices (all <span class="inline-math">$\pmat{n \\ m}$</span> subsets of <span class="inline-math">$\set{1,2,\ldots,n}$</span>).
+                                    </p>
+                                    <p>
+                                        For a particular choice of indices <span class="inline-math">$B(1), B(2), \ldots, B(m) = 1, 2,\ldots,n$</span>,
+                                        we allow <span class="inline-math">$x_{B(1)}, x_{B(2)}, \ldots, x_{B(m)}$</span> (the <em>basic variables</em>) to be non-zero (or zero) and insist the rest of <span class="inline-math">$x_i$</span>'s (<em>non-basic variables</em>) to be zero.
+                                    </p>
+                                    <p>
+                                        We get rid of the zero entrices in <span class="inline-math">$A\v x = \v b$</span>: let
+                                        <span class="display-math">$$ \begin{align*}
+                                            \text{basis matrix } B &amp;= \underbrace{ \pmat{A_{1\,B(1)} &amp; A_{1\,B(2)} &amp; \ldots &amp; A_{1\,B(m)} \\ A_{2\,B(1)} &amp; A_{2\,B(2)} &amp; \ldots &amp; A_{2\,B(m)} \\ \vdots &amp; \vdots &amp;  &amp; \vdots \\ A_{m\, B(1)} &amp; A_{m\,B(2)} &amp; \ldots &amp; A_{m\,B(m)}}}_{\text{basic columns}}, \\
+                                            \v x_B &amp;= \pmat{x_{B(1)} \\ x_{B(2)} \\ \vdots \\ x_{B(m)}}.
+                                        \end{align*} $$</span>
+                                        Then we get
+                                        <span class="display-math">$$ \begin{align*}
+                                            \v A_{B(1)} x_{B(1)} + \ldots + \v A_{B(m)} x_{B(m)} = B\v x_B = \v b
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        By <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Basic-solutions-and-basic-feasible-solutions.html#^assumption-b">assumption B</a>, <span class="inline-math">$B$</span> has rank <span class="inline-math">$m$</span>, so <span class="inline-math">$\v x_B = B\inv \v b$</span> is the unique solution.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <ul>
+                        <!-- BEGIN BLOCK ID assumption-c -->
+                        <li id="^assumption-c">
+                            <p>
+                                <strong>Assumption C</strong>: all <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">basic feasible solutions</a> have exactly <span class="inline-math">$m$</span> non-zero entrices,
+                                i.e. if <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Constructing-basic-solutions.html"><span class="inline-math">$B$</span></a><span class="inline-math">$\inv \v b \geq \v 0$</span>, then <span class="inline-math">$B\inv \v b &gt; \v 0$</span>.
+                            </p>
+                            
+                        </li>
+                        <!-- END BLOCK ID assumption-c -->
+                        
+                        </ul>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (basic feasible solution iff extreme point)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-basic-feasible-solution-iff-extreme-point.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A vector <span class="inline-math">$\v x$</span> is a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">basic feasible solution</a> of <span class="inline-math">$A\v x = \v b$</span>
+                                        iff it is an <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-extreme-point-of-a-convex-set.html">extreme point</a> of the set <span class="inline-math">$\mathcal{X}(\v b) = \sb{\v x}{A\v x = \v b, \v x\geq\v 0}$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-basic-feasible-solution-iff-extreme-point.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Duality in linear programming
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Duality-in-linear-programming.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (linear programs satisfy strong duality)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-linear-programs-satisfy-strong-duality.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program.html">linear program</a> that is bounded and feasible satisfies <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-strong-duality.html">strong duality</a>.
+                                    </p>
+                                    <p>
+                                        Proof: linear functions are <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a>, and <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-strong-duality-holds-for-convex-problems.html">convex optimisation problems satsify strong duality</a>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (dual problem of a linear program)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-dual-problem-of-a-linear-program.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$A$</span> be a matrix. See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-rows-and-columns-of-a-matrix.html">here</a> for notation.
+                                    </p>
+                                    <p>
+                                        For the primal problem
+                                    </p>
+                                    <div class="markdown-callout" data-callout="problem">
+                                        <div class="markdown-callout-title">
+                                            <i data-lucide="file-text"></i>
+                                            <div class="markdown-callout-title-inner">Problem</div>
+                                        </div>
+                                        <div class="markdown-callout-content">
+                                            <p>
+                                                <span class="display-math">$$ \begin{align*}
+                                                    \text{Minimise } &amp; \v c^T \v x \\
+                                                    \text{subject to } &amp; \v a_i^T \v x \geq b_i, &amp;&amp;i\in M_1, \\
+                                                    &amp; \v a_i^T \v x \leq b_i, &amp;&amp; i\in M_2, \\
+                                                    &amp; \v a_i^T \v x = b_i, &amp;&amp; i\in M_3, \\
+                                                    &amp; x_j \geq 0, &amp;&amp; j\in N_1, \\
+                                                    &amp; x_j \leq 0, &amp;&amp; j\in N_2, \\
+                                                    &amp; x_j \text{ free}, &amp;&amp; j\in N_3,
+                                                \end{align*} $$</span>
+                                            </p>
+                                            
+                                        </div>
+                                    </div><p>
+                                        the dual problem is
+                                    </p>
+                                    <div class="markdown-callout" data-callout="problem">
+                                        <div class="markdown-callout-title">
+                                            <i data-lucide="file-text"></i>
+                                            <div class="markdown-callout-title-inner">Problem</div>
+                                        </div>
+                                        <div class="markdown-callout-content">
+                                            <p>
+                                                <span class="display-math">$$ \begin{align*}
+                                                    \text{Maximise } &amp; \v b^T \v \lambda \\
+                                                    \text{subject to } &amp; \lambda_i \geq 0, &amp;&amp;i\in M_1, \\
+                                                    &amp; \lambda_i \leq 0, &amp;&amp; i\in M_2, \\
+                                                    &amp; \lambda_i = 0, &amp;&amp; i\in M_3, \\
+                                                    &amp;\v A_j^T \v \lambda \leq c_j, &amp;&amp;j\in N_1, \\
+                                                    &amp;\v A_j^T \v \lambda \geq c_j, &amp;&amp;j\in N_2, \\
+                                                    &amp;\v A_j^T \v \lambda = c_j, &amp;&amp;j\in N_3.
+                                                \end{align*} $$</span>
+                                            </p>
+                                            
+                                        </div>
+                                    </div><p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-dual-problem-of-a-linear-program.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (optimality iff complementary slackness for a linear program)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-optimality-iff-complementary-slackness-for-a-linear-program.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For a linear program defined <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-dual-problem-of-a-linear-program.html">here</a>,
+                                        let <span class="inline-math">$\v x$</span> be primal feasible and <span class="inline-math">$\v \lambda$</span> be dual feasible (i.e. feasible solutions of the primal and feasible problems).
+                                    </p>
+                                    <p>
+                                        <span class="inline-math">$\v x$</span> and <span class="inline-math">$\v \lambda$</span> are optimal for the two respective problems iff complementary slackness holds, i.e.
+                                        <span class="display-math">$$ \begin{align*}
+                                            \lambda_i(\v a_i^T \v x - b_i) &amp;= 0 &amp;&amp;\forall i\in M_1\cup M_2\cup M_3, \\
+                                            (c_j - \v A_j^T \v \lambda) x_j &amp;= 0 &amp;&amp;\forall j\in N_1\cup N_2\cup N_3.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-optimality-iff-complementary-slackness-for-a-linear-program.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (reduced cost)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-reduced-cost.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Consider a linear program in <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program-in-standard-form.html">standard form</a>. Let <span class="inline-math">$\v x$</span> be a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">basic solution</a>. See <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Constructing-basic-solutions.html">here</a> for notation.
+                                    </p>
+                                    <p>
+                                        the corresponding vector of <em>reduced costs</em> <span class="inline-math">$\bar{\v c}$</span> is defined as
+                                        <span class="display-math">$$ \begin{align*}
+                                            \bar{\v c}^T = \v c^T - \v c_B^T B\inv A
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$\v c_B^T = (c_{B(1)}, c_{B(2)}, \ldots, c_{B(m)})$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (optimality and reduced cost)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-optimality-and-reduced-cost.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program-in-standard-form.html">standard form</a> linear program,
+                                        a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">basic feasible solution</a> <span class="inline-math">$\v x$</span> is optimal
+                                        iff the corresponding <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-reduced-cost.html">reduced costs</a> <span class="inline-math">$\bar{\v c} \geq \v 0$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-optimality-and-reduced-cost.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Simplex algorithm
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Simplex-algorithm.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Full tableau implementation
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Full-tableau-implementation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The simplex tableau is given by
+                                        <span class="display-math">$$ \begin{align*}
+                                            &amp; \begin{array}{|rl|rl|} \hline
+                                            \text{current costs} &amp; -\v c^T \v x =-\v c_B^T \v x_B &amp; \text{reduced costs vector} &amp; \bar{\v c} \\\hline
+                                            \text{current BFS} &amp; \v x_B = B\inv \v b &amp; \text{basic directions} &amp;B\inv A \\\hline
+                                            \end{array} \\ \\
+                                            \equiv \quad &amp;
+                                            \begin{array}{|c|cccc|} \hline
+                                            -\v c_B^T \v x_B &amp; \bar c_1 &amp; \bar c_2 &amp; \ldots &amp; \bar c_n \\\hline
+                                            x_{B(1)} &amp; | &amp; | &amp; &amp; | \\
+                                            \vdots &amp; B\inv \v A_1 &amp; B\inv \v A_2 &amp; \ldots &amp; B\inv \v A_n \\
+                                            x_{B(m)} &amp; | &amp; | &amp; &amp; | \\\hline
+                                            \end{array}
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <ol start="1">
+                                    <li>
+                                        <p>
+                                            Choose a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">basic feasible solution</a> <span class="inline-math">$\v x$</span>
+                                            and compute the full simplex tableau for <span class="inline-math">$\v x$</span>.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Repeat until <span class="inline-math">$\bar{\v c} \geq \v 0$</span> (then <span class="inline-math">$\v x$</span> is optimal):
+                                        </p>
+                                        <ol start="1">
+                                        <li>
+                                            <p>
+                                                Choose some <span class="inline-math">$j$</span> such that <span class="inline-math">$\bar c_j &lt; 0$</span>.
+                                            </p>
+                                            
+                                        </li><li>
+                                            <p>
+                                                Consider the <span class="inline-math">$j$</span>-th column <span class="inline-math">$u = B\inv A_j$</span> (<em>pivot column</em>).
+                                                If no entry of <span class="inline-math">$u$</span> is positive, then the optimal cost is <span class="inline-math">$-\infty$</span> and we are done.
+                                            </p>
+                                            
+                                        </li><li>
+                                            <p>
+                                                For each <span class="inline-math">$i$</span> such that <span class="inline-math">$u_i &gt; 0$</span>, compute <span class="inline-math">$x_B(i)/u_i$</span>.
+                                                Let <span class="inline-math">$l$</span> be the row index such that this ratio is minimised.
+                                            </p>
+                                            
+                                        </li><li>
+                                            <p>
+                                                To make column <span class="inline-math">$A_{B(l)}$</span> exist the basis and <span class="inline-math">$A_j$</span> enter the basis,
+                                                add to each row of the tableau a multiple of the <span class="inline-math">$l$</span>-th row (<em>pivot row</em>) so that <span class="inline-math">$u_l$</span> (<em>pivot element</em>) becomes 1 and all other entries of the pivot column are 0.
+                                            </p>
+                                            
+                                        </li>
+                                        </ol>
+                                        
+                                    </li>
+                                    </ol>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-executing-the-simplex-algorithm.html">Example</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Explaining-the-simplex-algorithm.html">Explaining the simplex algorithm (non-examinable)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Two-person zero sum games
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Two-person-zero-sum-games.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Player 1 (P1) has <span class="inline-math">$m$</span> choices of actions labelled <span class="inline-math">$1,2,\ldots,m$</span>, and player 2 (P2) has <span class="inline-math">$n$</span> choices labelled <span class="inline-math">$1,2,\ldots,n$</span>.
+            </p>
+            <p>
+                Let an <span class="inline-math">$m\times n$</span> matrix <span class="inline-math">$A = (a_{ij})$</span> be the <em>payoff matrix</em>.
+                If P1 plays <span class="inline-math">$i$</span> and P2 plays <span class="inline-math">$j$</span>, P1 wins <span class="inline-math">$a_{ij}$</span> and P2 loses <span class="inline-math">$a_{ij}$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Pure strategy
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Pure-strategy.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose P1 plays first. If P1 plays <span class="inline-math">$i$</span>, P2 will make the optimal choice to let P1 win <span class="inline-math">$\min_{j\in\set{1,2,\ldots,n}} a_{ij}$</span>.
+                            P1's problem is
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Maximise } &amp;\min_{j\in\set{1,2,\ldots,n}} a_{ij} \\
+                                        \text{over } &amp;i\in\set{1,2,\ldots,m}.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            Similarly if P2 plays first, P2's problem is
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp;\max_{i\in\set{1,2,\ldots,m}} a_{ij} \\
+                                        \text{over } &amp;j\in\set{1,2,\ldots,n}.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (saddle point of zero sum games)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-saddle-point-of-zero-sum-games.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        An outcome <span class="inline-math">$(i^\ast, j^\ast)$</span> of a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Two-person-zero-sum-games.html">two-person zero sum game</a> is called a <em>saddle point</em> if
+                                        <span class="display-math">$$ \begin{align*}
+                                            \max_i \min_j a_{ij} = \min_j \max_i a_{ij}
+                                        \end{align*} $$</span>
+                                        and the extrema are attained at <span class="inline-math">$(i^\ast, j^\ast)$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            If the payoff matrix has a saddle point, the players' decisions are the same regardless of who plays first.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-payoff-matrices-with-and-without-saddle-points.html">Example (payoff matrices with and without saddle points)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Mixed strategy
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Mixed-strategy.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We now allow P1 to randomly choose action <span class="inline-math">$i$</span> with probability <span class="inline-math">$p_i$</span>.
+                            P1 picks the distribution <span class="inline-math">$\v p=(p_1,p_2,\ldots,p_m)$</span> and P2 picks <span class="inline-math">$\v q=(q_1, q_2, \ldots, q_n)$</span>.
+                        </p>
+                        <p>
+                            If P1 plays <span class="inline-math">$\v p$</span>, P2 will make the optimal choice <span class="inline-math">$j$</span> to let P1 win <span class="inline-math">$\min_j \sum_i p_i a_{ij}$</span>.
+                            P1's problem is
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Maximise } &amp; \min_j \sum_i  p_i a_{ij} \\
+                                        \text{over } &amp; \v p \in\R^m \\
+                                        \text{subject to } &amp; \sum_i p_i = 1, \\
+                                        &amp; \v p\geq \v 0,
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            which is equivalent to
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Maximise } &amp; v \\
+                                        \text{over } &amp; v\in\R,\ \v p\in\R^m \\
+                                        \text{subject to } &amp; A^T \v p \geq v \v e, \\
+                                        &amp; \v e^T \v p = 1, \\
+                                        &amp; \v p\geq \v 0
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            where <span class="inline-math">$\v e = (1,1,\ldots,1)^T$</span>.
+                        </p>
+                        <p>
+                            Similarly P2's problem is
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp; \max_i \sum_j q_j a_{ij} \\
+                                        \text{over } &amp; \v q\in\R^n \\
+                                        \text{subject to } &amp; \sum_j q_j = 1, \\
+                                        &amp; \v q \geq \v 0,
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            which is equivalent to
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp; w \\
+                                        \text{over } &amp; w\in\R, \ \v q\in\R^n \\
+                                        \text{subject to } &amp; A\v q \leq w\v e, \\
+                                        &amp; \v e^T \v q = 1, \\
+                                        &amp; \v q \geq 0.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><!-- BEGIN BLOCK ID duality -->
+                        <p id="^duality">
+                            These two problems are <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">dual</a> of each other. (<a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Derivation-duality-of-mixed-strategy-in-two-person-zero-sum-games.html">Derivation</a>)
+                        </p>
+                        
+                        <!-- END BLOCK ID duality -->
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (optimality of mixed strategy in two-person zero sum games)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-optimality-of-mixed-strategy-in-two-person-zero-sum-games.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Mixed-strategy.html">mixed strategy two-person zero sum game</a>,
+                                        a strategy <span class="inline-math">$\v p\in\R^m$</span> is optimal for P1
+                                        iff there exists <span class="inline-math">$\v q\in\R^n$</span> and <span class="inline-math">$v\in\R$</span> such that the following holds:
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            primal feasibility: <span class="inline-math">$A^T \v p \geq v \v e$</span>, <span class="inline-math">$\v e^T \v p=1$</span> and <span class="inline-math">$\v p\geq \v 0$</span>;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            dual feasibility: <span class="inline-math">$A\v q\leq v \v e$</span>, <span class="inline-math">$\v e^T \v q = 1$</span> and <span class="inline-math">$\v q\geq \v 0$</span>; and
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            complementary slackness: <span class="inline-math">$v = \v p^T A \v q$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-optimality-of-mixed-strategy-in-two-person-zero-sum-games.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            Tips for finding optimal strategies:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Look for a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-saddle-point-of-zero-sum-games.html">saddle point</a> of the payoff matrix.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Look for dominating actions: if we have rows <span class="inline-math">$i$</span> and <span class="inline-math">$i&#x27;$</span> with <span class="inline-math">$a_{ij}\geq a_{i&#x27;j}$</span> for all <span class="inline-math">$j$</span>, then P1 will never play <span class="inline-math">$i&#x27;$</span>. Similar for columns.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Solve the linear program graphically or using the simplex method.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Network flow
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Network-flow.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (graph)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-graph.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>directed graph</em> is a tuple <span class="inline-math">$G=(V,E)$</span>
+                            where <span class="inline-math">$V$</span> is the set of <em>vertices</em> and
+                            <span class="inline-math">$E\subseteq V\times V$</span> is a set of ordered <em>edges</em>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$G$</span> is called an <em>undirected graph</em> if <span class="inline-math">$E$</span> is symmetric, i.e. for all <span class="inline-math">$(v,v&#x27;)\in E$</span>, we have <span class="inline-math">$(v&#x27;,v)\in E$</span> as well.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Minimum cost flow problem
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Minimum-cost-flow-problem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let a graph <span class="inline-math">$G = (V, E)$</span> where <span class="inline-math">$V=\set{1,2,\ldots,n}$</span>.
+                        </p>
+                        <p>
+                            For each edge <span class="inline-math">$(i,j)\in E$</span>, an amount <span class="inline-math">$x_{ij}$</span> flows from vertex <span class="inline-math">$i$</span> to vertex <span class="inline-math">$j$</span>.
+                            We impose the following constraints:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Flow is conserved at each vertex. We fix a vector <span class="inline-math">$\v b\in\R^n$</span> which indicates the amount of flow <span class="inline-math">$b_i$</span> that enters a vertex <span class="inline-math">$i$</span>.
+                                A vertex with <span class="inline-math">$b_i&gt;0$</span> is called a <em>source</em> and a vertex with <span class="inline-math">$b_i&lt;0$</span> is called a sink.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$n\times n$</span> matrices <span class="inline-math">$\underline{M} = (\underline{m}_{ij})$</span> and <span class="inline-math">$\overline{M} = (\overline{m}_{ij})$</span> give the lower and upper bounds for the flow <span class="inline-math">$x_{ij}$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$n\times n$</span> matrices <span class="inline-math">$C = (c_{ij})$</span> gives the cost per unit flow on the edge <span class="inline-math">$(i,j)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Minimal cost flow problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp; \sum_{(i,j)\in E} c_{ij} x_{ij} \\
+                                        \text{subject to } &amp; b_i + \sum_{(j,i)\in E} x_{ji} = \sum_{(i,j)\in E} x_{ij} \quad \forall i\in V, \\
+                                        &amp; \underline{m}_{ij} \leq x_{ij} \leq \overline{m}_{ij}.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            For the problem to be feasible, we require <span class="inline-math">$\sum_{i\in V} b_i = 0$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Transport problem
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Transport-problem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We have <span class="inline-math">$n$</span> suppliers labelled <span class="inline-math">$i=1,2,\ldots,n$</span>, each supplying <span class="inline-math">$s_i$</span> units of products.
+                            There are also <span class="inline-math">$m$</span> consumers labelled <span class="inline-math">$j=1,2,\ldots,m$</span>, each demanding <span class="inline-math">$d_i$</span> units of products.
+                            Transporting one unit of product from <span class="inline-math">$i$</span> to <span class="inline-math">$j$</span> costs <span class="inline-math">$c_{ij}$</span>.
+                        </p>
+                        <p>
+                            This is a special case of the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Minimum-cost-flow-problem.html">minimum cost flow problem</a>, with <span class="inline-math">$G$</span> being a <em>bipartite graph</em>
+                            and <span class="inline-math">$E$</span> only consists of edges from a supplier to a consumer.
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Transport problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp;\sum_{(i,j)\in E} c_{ij} x_{ij} \\
+                                        \text{subject to } &amp;\sum_{j=1}^{m} x_{ij} = s_i &amp;&amp; \forall i=1,2,\ldots,n, \\
+                                        &amp;\sum_{i=1}^{n} x_{ij} = d_j &amp;&amp; \forall j=1,2,\ldots,m, \\
+                                        &amp;x_{ij} \geq 0 &amp;&amp;\forall (i,j)\in E.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            We can let <span class="inline-math">$E = V\times V$</span> and set the cost of the non-existent edges to be infinity.
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Transport problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <!-- BEGIN BLOCK ID complete -->
+                                <p id="^complete">
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Minimise } &amp;\sum_{i=1}^{n} \sum_{j=1}^{m} c_{ij} x_{ij} \\
+                                        \text{subject to } &amp;\sum_{j=1}^{m} x_{ij} = s_i &amp;&amp; \forall i=1,2,\ldots,n, \\
+                                        &amp;\sum_{i=1}^{n} x_{ij} = d_j &amp;&amp; \forall j=1,2,\ldots,m, \\
+                                        &amp;x_{ij} \geq 0 &amp;&amp;\forall (i,j)\in E.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                                <!-- END BLOCK ID complete -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (equivalence of minimum cost flow and transport problem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-equivalence-of-minimum-cost-flow-and-transport-problem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Every <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Minimum-cost-flow-problem.html">minimum cost flow problem</a> with finite capacities or non-negative capacities can be recast as an equivalent <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Transport-problem.html">transport problem</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-equivalence-of-minimum-cost-flow-and-transport-problem.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (optimality in the transport problem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-optimality-in-the-transport-problem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Transport-problem.html#^complete">transport problem</a>.
+                            If for some feasible <span class="inline-math">$x$</span>, we have dual variables <span class="inline-math">$\v \lambda\in\R^n$</span> (for suppliers) and <span class="inline-math">$\v\mu\in\R^m$</span> (for consumers)
+                            such that the following holds:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                dual feasibility: <span class="inline-math">$c_{ij}\geq \lambda_i + \mu_j$</span> for all <span class="inline-math">$i,j$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                complementary slackness: <span class="inline-math">$(c_{ij} - \lambda_i - \mu_j)x_{ij} = 0$</span>,
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            then <span class="inline-math">$x$</span> is optimal.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-optimality-in-the-transport-problem.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <!-- BEGIN BLOCK ID lambda1-assumption -->
+            <p id="^lambda1-assumption">
+                Note that optimality only depends on <span class="inline-math">$\lambda_i + \mu_j$</span>,
+                so WLOG we can assume <span class="inline-math">$\lambda_1 = 0$</span> by subtracting all <span class="inline-math">$\lambda$</span> and adding all <span class="inline-math">$\mu$</span> by <span class="inline-math">$\lambda_1$</span>.
+            </p>
+            
+            <!-- END BLOCK ID lambda1-assumption -->
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Transport algorithm
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Transport-algorithm.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The transport tableau is as follow:
+                        </p>
+                        <p>
+                            <img src="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Pasted-image-20240704232639.png">
+                        </p>
+                        <p>
+                            To construct an initial basic feasible solution, we use the <em>northwest corner rule</em>:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Start with any edge variable, and increase it until the supply or demand is satisfied.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If supply is satisfied, move to the next supplier and repeat step 1.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If demand is satisfied, move to the next consumer and repeat step 1.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            In a non-degenerate problem, we assume we arrive at a <em>spanning tree</em> <span class="inline-math">$T$</span>, i.e. a connected graph with no cycles.
+                            So there are exactly <span class="inline-math">$n+m-1$</span> edges with positive flow.
+                        </p>
+                        <p>
+                            We keep updating the current solution:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                If <span class="inline-math">$c_{ij} \geq \lambda_i + \mu_j$</span> for all <span class="inline-math">$i,j$</span>, then the current solution is optimal and the algorithm is terminated.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Otherwise let <span class="inline-math">$(i,j)$</span> be such that <span class="inline-math">$c_{ij} &lt; \lambda_i + \mu_j$</span>. By complementary slackness, <span class="inline-math">$x_{ij} = 0$</span>, so <span class="inline-math">$(i,j)\not\in T$</span>.
+                                Then <span class="inline-math">$(i,j)$</span> and those edges in <span class="inline-math">$T$</span> form a cycle.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Along this cycle, increase the flow <span class="inline-math">$x_{ij}$</span> until some flow in the flow decreases to zero.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Update the dual variables.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-transport-algorithm.html">Example (transport algorithm)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Maximum flow problem
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given a graph with a single source (vertex 1) and a single sink (vertex <span class="inline-math">$n$</span>),
+                            find the maximum possible flow <span class="inline-math">$\delta$</span> between the source and the sink subject to capacity constraints.
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Maximum flow problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \text{Maximise } &amp;\delta \\
+                                        \text{subject to } &amp; \sum_{j:\ (i,j)\in E} x_{ij} - \sum_{j:\ (j,i)\in E} x_{ji} = 0 &amp;&amp;\forall i\neq 1,n, \\
+                                        &amp; \sum_{j:\ (1,j)\in E} x_{1j} - \sum_{j:\ (j,1)\in E} x_{j1} = \delta, \\
+                                        &amp; \sum_{j:\ (n,j)\in E} x_{nj} - \sum_{j:\ (j,n)\in E} x_{jn} = -\delta, \\
+                                        &amp; 0 \leq x_{ij} \leq c_{ij} &amp;&amp;\forall (i,j)\in E.
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Cuts
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Cuts.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (cut of a graph)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-cut-of-a-graph.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A <em>cut</em> of a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-graph.html">graph</a> <span class="inline-math">$G = (V,E)$</span> is a partition of <span class="inline-math">$V$</span> into <span class="inline-math">$(S, V\setminus S)$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (capacity of a cut)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-capacity-of-a-cut.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The capacity of a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-cut-of-a-graph.html">cut</a> <span class="inline-math">$(S,V\setminus S)$</span> of a graph <span class="inline-math">$G=(V,E)$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            c(S) = \sum_{(i,j)\in E: \ i\in S, \ j\in V\setminus S} c_{ij}
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$c_{ij}$</span> is the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">capacity</a> of edge <span class="inline-math">$(i,j)$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (total flow does not exceed cut capacity)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-total-flow-does-not-exceed-cut-capacity.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$x$</span> be a feasible flow of the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">maximum flow problem</a> with flow <span class="inline-math">$\delta$</span>.
+                                    </p>
+                                    <p>
+                                        Then for any <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-cut-of-a-graph.html">cut</a> <span class="inline-math">$(S,V\setminus S)$</span> such that <span class="inline-math">$1\in S$</span> and <span class="inline-math">$n\in V\setminus S$</span>, we have <span class="inline-math">$\delta\leq c(S)$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-total-flow-does-not-exceed-cut-capacity.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <!-- BEGIN BLOCK ID augmenting-path-remark -->
+                        <p id="^augmenting-path-remark">
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (augmenting path)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-augmenting-path.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-graph.html">graph</a> <span class="inline-math">$G=(V,E)$</span>, a <em>path</em> is defined as a sequence of vertices <span class="inline-math">$(v_1,v_2, \ldots, v_k)$</span> where each pair of adjacent vertices is connected, i.e. <span class="inline-math">$(v_i, v_{i+1})$</span> or <span class="inline-math">$(v_{i+1}, v_i) \in E$</span> for all <span class="inline-math">$i=1,2,\ldots,k-1$</span>.
+                                    </p>
+                                    <p>
+                                        Let <span class="inline-math">$c_{ij}$</span> be the capacity of edge <span class="inline-math">$(i,j)\in E$</span>.
+                                        For a flow <span class="inline-math">$x$</span>, a path is called an <em>augmenting path</em> if a forward edge is not full yet and a backward edge is not zero, i.e. <span class="inline-math">$x_{v_i v_{i+1}} &lt; c_{v_iv_{i+1}}$</span> when <span class="inline-math">$(v_i, v_{i+1})\in E$</span> and <span class="inline-math">$x_{v_{i+1} v_i} &gt; 0$</span> when <span class="inline-math">$(v_{i+1}, v_i)\in E$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            Observe that we can "push" a sufficiently small value <span class="inline-math">$\epsilon$</span> along an <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-augmenting-path.html">augmenting path</a> by adding a flow of <span class="inline-math">$\epsilon$</span> along forward edges and subtracting <span class="inline-math">$\epsilon$</span> along backward edges.
+                            So if there is an augmenting path from <span class="inline-math">$1$</span> to <span class="inline-math">$n$</span>, then the flow is not optimal.
+                            (<a href="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Pasted-image-20240522103725.png">Example</a>)
+                        </p>
+                        
+                        <!-- END BLOCK ID augmenting-path-remark -->
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (max-flow min-cut)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-max-flow-min-cut.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">maximum flow problem</a>, let <span class="inline-math">$\delta^\ast$</span> be the optimal value.
+                                        Then
+                                        <span class="display-math">$$ \begin{align*}
+                                            \delta^\ast = \min\sb{c(S)}{S\subset V,\ 1\in S,\ n\in V\setminus S}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-max-flow-min-cut.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Ford-Fulkerson algorithm
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Ford-Fulkerson-algorithm.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Start with a feasible flow, say the zero flow <span class="inline-math">$x=0$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                While there exists an augmenting path from <span class="inline-math">$1$</span> to <span class="inline-math">$n$</span>:
+                            </p>
+                            <ol start="1">
+                            <li>
+                                <p>
+                                    Push as much as possible through the path.
+                                </p>
+                                
+                            </li>
+                            </ol>
+                            
+                        </li><li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-max-flow-min-cut.html"><span class="inline-math">$x$</span> is now optimal</a>. We can find a cut with capacity equal to the amount of flow.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-Ford-Fulkerson-algorithm.html">Example</a>
+                        </p>
+                        <p>
+                            If the capacity is an integer, the algorithm is guaranteed to terminate. Otherwise it may have infinite steps.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

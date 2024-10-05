@@ -1,0 +1,61 @@
+<p>
+    The transport tableau is as follow:
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Pasted-image-20240704232639.png">
+</p>
+<p>
+    To construct an initial basic feasible solution, we use the <em>northwest corner rule</em>:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Start with any edge variable, and increase it until the supply or demand is satisfied.
+    </p>
+    
+</li><li>
+    <p>
+        If supply is satisfied, move to the next supplier and repeat step 1.
+    </p>
+    
+</li><li>
+    <p>
+        If demand is satisfied, move to the next consumer and repeat step 1.
+    </p>
+    
+</li>
+</ol>
+<p>
+    In a non-degenerate problem, we assume we arrive at a <em>spanning tree</em> <span class="inline-math">$T$</span>, i.e. a connected graph with no cycles.
+    So there are exactly <span class="inline-math">$n+m-1$</span> edges with positive flow.
+</p>
+<p>
+    We keep updating the current solution:
+</p>
+<ol start="1">
+<li>
+    <p>
+        If <span class="inline-math">$c_{ij} \geq \lambda_i + \mu_j$</span> for all <span class="inline-math">$i,j$</span>, then the current solution is optimal and the algorithm is terminated.
+    </p>
+    
+</li><li>
+    <p>
+        Otherwise let <span class="inline-math">$(i,j)$</span> be such that <span class="inline-math">$c_{ij} &lt; \lambda_i + \mu_j$</span>. By complementary slackness, <span class="inline-math">$x_{ij} = 0$</span>, so <span class="inline-math">$(i,j)\not\in T$</span>.
+        Then <span class="inline-math">$(i,j)$</span> and those edges in <span class="inline-math">$T$</span> form a cycle.
+    </p>
+    
+</li><li>
+    <p>
+        Along this cycle, increase the flow <span class="inline-math">$x_{ij}$</span> until some flow in the flow decreases to zero.
+    </p>
+    
+</li><li>
+    <p>
+        Update the dual variables.
+    </p>
+    
+</li>
+</ol>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-transport-algorithm.html">Example (transport algorithm)</a>
+</p>

@@ -1,0 +1,56 @@
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp; x_1 - 3x_2 \\
+                \text{suject to } &amp; x_1^2 + x_2^2 \leq 4, \\
+                &amp; x_1 + x_2 \leq 2.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    Let the Lagrangian
+    <span class="display-math">$$ \begin{align*}
+        L(\v x, \v s, \v \lambda) &amp;=x_1 - 3x_2 - \lambda_1(x_1^2 + x_2^2 + s_1 - 4) - \lambda_2(x_1 + x_2 + s_2 - 2) \\
+        &amp;= \left[(1-\lambda_2)x_1 -\lambda_1 x_1^2\right] + \left[(-3 - \lambda_2)x_2 - \lambda_1 x_2^2\right] - \lambda_1 s_1 - \lambda_2 s_2 + 4\lambda_1 + 2\lambda_2.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$\lambda_1,\lambda_2\leq 0$</span>, setting the derivatives of the quadratic terms to zero minimises them:
+    <span class="display-math">$$ \begin{align*}
+            1 - \lambda_2 - 2\lambda_1 x_1 &amp;= 0, \tag{1} \\
+            -3 - \lambda_2 - 2\lambda_1 x_2 &amp;= 0. \tag{2}
+    \end{align*} $$</span>
+</p>
+<p>
+    Now we make use of complementary slackness.
+    (1) and (2) are inconsistent if <span class="inline-math">$\lambda_1 = 0$</span>, so we must have <span class="inline-math">$\lambda_1 &lt; 0, s_1 = 0$</span> and so
+    <span class="display-math">$$x_1^2 + x_2^2 = 4. \tag{3}$$</span>
+</p>
+<p>
+    We know have two cases for <span class="inline-math">$\lambda_2 s_2 = 0$</span>:
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$\lambda_2 &lt; 0$</span>, then <span class="inline-math">$s_2 = 0$</span>. So we also have
+        <span class="display-math">$$ \begin{align*}
+        x_1 + x_2 = 2. \tag{4}
+        \end{align*} $$</span>
+        (3) and (4) give <span class="inline-math">$(x_1,x_2) = (0,2)$</span> or <span class="inline-math">$(2,0)$</span>, and using (1) and (2) we get <span class="inline-math">$(\lambda_1, \lambda_2) = (-1, 1)$</span> or <span class="inline-math">$(1, -3)$</span> respectively, both of which are inconsistent with <span class="inline-math">$\lambda_1\leq 0$</span> and <span class="inline-math">$\lambda_2\leq 0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$\lambda_2 = 0$</span>, then (1) gives <span class="inline-math">$x_1 = 1/2\lambda_1$</span> and (2) gives <span class="inline-math">$x_2 = -3/2\lambda_1$</span>. Substituting into (3), we have <span class="inline-math">$\lambda_1^2 = 5/8$</span>. Since <span class="inline-math">$\lambda_1\leq 0$</span>, we get <span class="inline-math">$\lambda_1 = -\sqrt{5/8}$</span>.
+        Substituting gives the optimal solution
+        <span class="display-math">$$ \begin{align*}
+        (x_1, x_2) = \left(-\sqrt{\frac{2}{5}}, 3\sqrt{\frac{2}{5}}\right).
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>

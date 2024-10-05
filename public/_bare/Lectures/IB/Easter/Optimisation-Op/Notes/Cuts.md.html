@@ -1,0 +1,95 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (cut of a graph)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-cut-of-a-graph.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>cut</em> of a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-graph.html">graph</a> <span class="inline-math">$G = (V,E)$</span> is a partition of <span class="inline-math">$V$</span> into <span class="inline-math">$(S, V\setminus S)$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (capacity of a cut)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-capacity-of-a-cut.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The capacity of a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-cut-of-a-graph.html">cut</a> <span class="inline-math">$(S,V\setminus S)$</span> of a graph <span class="inline-math">$G=(V,E)$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    c(S) = \sum_{(i,j)\in E: \ i\in S, \ j\in V\setminus S} c_{ij}
+                \end{align*} $$</span>
+                where <span class="inline-math">$c_{ij}$</span> is the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">capacity</a> of edge <span class="inline-math">$(i,j)$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (total flow does not exceed cut capacity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-total-flow-does-not-exceed-cut-capacity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$x$</span> be a feasible flow of the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">maximum flow problem</a> with flow <span class="inline-math">$\delta$</span>.
+            </p>
+            <p>
+                Then for any <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-cut-of-a-graph.html">cut</a> <span class="inline-math">$(S,V\setminus S)$</span> such that <span class="inline-math">$1\in S$</span> and <span class="inline-math">$n\in V\setminus S$</span>, we have <span class="inline-math">$\delta\leq c(S)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-total-flow-does-not-exceed-cut-capacity.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<!-- BEGIN BLOCK ID augmenting-path-remark -->
+<p id="^augmenting-path-remark">
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (augmenting path)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-augmenting-path.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-graph.html">graph</a> <span class="inline-math">$G=(V,E)$</span>, a <em>path</em> is defined as a sequence of vertices <span class="inline-math">$(v_1,v_2, \ldots, v_k)$</span> where each pair of adjacent vertices is connected, i.e. <span class="inline-math">$(v_i, v_{i+1})$</span> or <span class="inline-math">$(v_{i+1}, v_i) \in E$</span> for all <span class="inline-math">$i=1,2,\ldots,k-1$</span>.
+            </p>
+            <p>
+                Let <span class="inline-math">$c_{ij}$</span> be the capacity of edge <span class="inline-math">$(i,j)\in E$</span>.
+                For a flow <span class="inline-math">$x$</span>, a path is called an <em>augmenting path</em> if a forward edge is not full yet and a backward edge is not zero, i.e. <span class="inline-math">$x_{v_i v_{i+1}} &lt; c_{v_iv_{i+1}}$</span> when <span class="inline-math">$(v_i, v_{i+1})\in E$</span> and <span class="inline-math">$x_{v_{i+1} v_i} &gt; 0$</span> when <span class="inline-math">$(v_{i+1}, v_i)\in E$</span>.
+            </p>
+            
+        </div>
+    </div>
+    Observe that we can "push" a sufficiently small value <span class="inline-math">$\epsilon$</span> along an <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-augmenting-path.html">augmenting path</a> by adding a flow of <span class="inline-math">$\epsilon$</span> along forward edges and subtracting <span class="inline-math">$\epsilon$</span> along backward edges.
+    So if there is an augmenting path from <span class="inline-math">$1$</span> to <span class="inline-math">$n$</span>, then the flow is not optimal.
+    (<a href="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Pasted-image-20240522103725.png">Example</a>)
+</p>
+
+<!-- END BLOCK ID augmenting-path-remark -->
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (max-flow min-cut)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-max-flow-min-cut.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">maximum flow problem</a>, let <span class="inline-math">$\delta^\ast$</span> be the optimal value.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \delta^\ast = \min\sb{c(S)}{S\subset V,\ 1\in S,\ n\in V\setminus S}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-max-flow-min-cut.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

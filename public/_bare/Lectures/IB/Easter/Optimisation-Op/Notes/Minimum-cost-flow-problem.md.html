@@ -1,0 +1,44 @@
+<p>
+    Let a graph <span class="inline-math">$G = (V, E)$</span> where <span class="inline-math">$V=\set{1,2,\ldots,n}$</span>.
+</p>
+<p>
+    For each edge <span class="inline-math">$(i,j)\in E$</span>, an amount <span class="inline-math">$x_{ij}$</span> flows from vertex <span class="inline-math">$i$</span> to vertex <span class="inline-math">$j$</span>.
+    We impose the following constraints:
+</p>
+<ul>
+<li>
+    <p>
+        Flow is conserved at each vertex. We fix a vector <span class="inline-math">$\v b\in\R^n$</span> which indicates the amount of flow <span class="inline-math">$b_i$</span> that enters a vertex <span class="inline-math">$i$</span>.
+        A vertex with <span class="inline-math">$b_i&gt;0$</span> is called a <em>source</em> and a vertex with <span class="inline-math">$b_i&lt;0$</span> is called a sink.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$n\times n$</span> matrices <span class="inline-math">$\underline{M} = (\underline{m}_{ij})$</span> and <span class="inline-math">$\overline{M} = (\overline{m}_{ij})$</span> give the lower and upper bounds for the flow <span class="inline-math">$x_{ij}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$n\times n$</span> matrices <span class="inline-math">$C = (c_{ij})$</span> gives the cost per unit flow on the edge <span class="inline-math">$(i,j)$</span>.
+    </p>
+    
+</li>
+</ul>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Minimal cost flow problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp; \sum_{(i,j)\in E} c_{ij} x_{ij} \\
+                \text{subject to } &amp; b_i + \sum_{(j,i)\in E} x_{ji} = \sum_{(i,j)\in E} x_{ij} \quad \forall i\in V, \\
+                &amp; \underline{m}_{ij} \leq x_{ij} \leq \overline{m}_{ij}.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    For the problem to be feasible, we require <span class="inline-math">$\sum_{i\in V} b_i = 0$</span>.
+</p>

@@ -104,6 +104,7 @@ PARSER_MODULE_NAMES = [
     "parsers.newline",
     "parsers.math",
     "parsers.heading",
+    "parsers.callout", # higher priority than quote
     "parsers.quote",
     "parsers.rule",
     "parsers.formatting",

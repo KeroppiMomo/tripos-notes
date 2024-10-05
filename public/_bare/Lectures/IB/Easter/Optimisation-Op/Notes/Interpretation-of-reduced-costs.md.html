@@ -1,0 +1,35 @@
+<p>
+    Let <span class="inline-math">$\v x$</span> be a basic feasible solution with basic variables <span class="inline-math">$B(1), B(2), \ldots, B(m)$</span>.
+    The idea is that when <span class="inline-math">$A\v y=\v b$</span>, <span class="inline-math">$m$</span> of the variables <span class="inline-math">$\v y$</span> can be expressed in terms of the other <span class="inline-math">$(n-m)$</span> variables,
+    so there are multiple ways to write <span class="inline-math">$\v c^T \v y$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$\set{N(1), N(2), \ldots, N(n-m)} = \set{1,2,\ldots,n} \setminus \set{B(1), B(2), \ldots, B(m)}$</span>.
+    For a vector <span class="inline-math">$\v u$</span>, denote <span class="inline-math">$\v u_B = (u_{B(1)}, u_{B(2)}, \ldots, u_{B(m)})$</span> and <span class="inline-math">$\v u_N=(u_{N(1)}, u_{N(2)}, \ldots, u_{N(n-m)})$</span>.
+    Similarly for matrices, use this notation to extract the corresponding columns, e.g. <span class="inline-math">$B = A_B$</span>.
+</p>
+<p>
+    For any feasible <span class="inline-math">$\v y$</span>, we express <span class="inline-math">$\v y_B$</span> in terms of <span class="inline-math">$\v y_N$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \v b &amp;= A\v y \\
+        &amp;= A_{B} \v y_B + A_N \v y_N \\
+        \v y_B &amp;= B\inv(\v b - A_N\v y_N).
+    \end{align*} $$</span>
+    Then the objective function is
+    <span class="display-math">$$ \begin{align*}
+        \v c^T \v y &amp;= \v c_B^T \v y_B + \v c_N^T \v y_N  \\
+        &amp;= \v c_B^T B\inv (\v b - A_N \v y_N) + \v c_N^T \v y_N \\
+        &amp;= \v c_B^T B\inv \v b + (\v c_N^T - \v c_B^T B\inv A_N) \v y_N \tag{*}\\
+        &amp;= \v c_B^T B\inv \v b + (\v c^T - \v c_B^T B\inv A) \v y \tag{\dagger}\\
+        &amp;= \v c_B^T B\inv \v b + \bar{\v c}^T \v y.
+    \end{align*} $$</span>
+    <span class="inline-math">$(\dagger)$</span> follows from <span class="inline-math">$(\v c^T - \v c_B^T B\inv A)_B = \v c_B^T - \v c_B^T B\inv A_b = \v c_B^T - \v c_B^T B\inv B = \v 0^T$</span>.
+</p>
+<p>
+    Substituting <span class="inline-math">$\v y = \v x$</span> into <span class="inline-math">$(*)$</span>, since <span class="inline-math">$\v x_N = \v 0$</span>, we get <span class="inline-math">$\v c^T \v x = \v c_B^T B\inv \v b$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \v c^T \v y = \v c^T \v x + \bar{\v c}^T \v y.
+    \end{align*} $$</span>
+    This gives an interpretation of the reduced costs:
+    deviating from a basic feasible solution <span class="inline-math">$\v x$</span> to some feasible solution <span class="inline-math">$\v y$</span> takes an additional cost of <span class="inline-math">$\bar{\v c}^T \v y$</span>.
+</p>

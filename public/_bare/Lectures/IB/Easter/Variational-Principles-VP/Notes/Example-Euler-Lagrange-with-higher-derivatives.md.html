@@ -1,0 +1,46 @@
+<p>
+    Extremise
+    <span class="display-math">$$ \begin{align*}
+        F[y] = \int_{0}^{1} \underbrace{ (y&#x27;&#x27;)^2}_{f(x,y,y&#x27;,y&#x27;&#x27;)}\, dx
+    \end{align*} $$</span>
+    subject to <span class="inline-math">$y(0) = y&#x27;(0) = y(1) = 0$</span> and <span class="inline-math">$y&#x27;(1)=1$</span>.
+</p>
+<p>
+    We apply <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Euler-Lagrange-with-higher-derivatives.html">Euler-Lagrange</a>:
+    <span class="display-math">$$ \begin{align*}
+        0 &amp;= \pdfd{f}{y} - \dd{x}\left(\pdfd{f}{y&#x27;}\right) + \dd[2]{x}\left(\pdfd{f}{y&#x27;&#x27;}\right) \\
+        &amp;= \dd[2]{x}(2y&#x27;&#x27;) \\
+        0 &amp;= y^{(4)}
+    \end{align*} $$</span>
+    so the solution is a general cubic <span class="inline-math">$y(x) = Ax^3 + Bx^2 + Cx + D$</span>.
+</p>
+<p>
+    The boundary conditions determine the constants and we get
+    <span class="display-math">$$ \begin{align*}
+        y(x) = x^2(x-1).
+    \end{align*} $$</span>
+</p>
+<hr>
+<p>
+    This is in fact a global minimum.
+    Let <span class="inline-math">$y_0 = x^3 - x^2$</span>
+    and perturb <span class="inline-math">$y = y_0 + \eta$</span> with <span class="inline-math">$\eta=\eta&#x27;=0$</span> at ends.
+    This time <span class="inline-math">$\eta$</span> is not necessarily small.
+</p>
+<p>
+    <span class="display-math">$$ \begin{align*}
+        F[y] &amp;= \int_{0}^{1} ((y_0 + \eta)&#x27;&#x27;)^2 \, dx \\
+        &amp;= \int_{0}^{1} (y_0&#x27;&#x27;)^2 + 2y_0&#x27;&#x27; \eta&#x27;&#x27; + \underbrace{ (\eta&#x27;&#x27;)^2}_{\geq 0} \, dx \\
+        &amp;\geq F[y_0] + \int_{0}^{1} 2\eta&#x27;&#x27;(6x-2)\, dx \\
+        &amp;= F[y_0] + [2\eta&#x27;(6x-2)]_0^1 - \int_{0}^{1} 12\eta&#x27;\, dx \\
+        &amp;= F[y_0] + 8\eta&#x27;(1) + 4\eta&#x27;(0) - 12\eta(1) + 12\eta(0) \\
+        &amp;= F[y_0].
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$y_0(x)$</span> is an absolute minimiser of <span class="inline-math">$F$</span>.
+</p>
+<blockquote>
+    <p>
+        Further example on sheet 1 Q11.
+    </p>
+    
+</blockquote>

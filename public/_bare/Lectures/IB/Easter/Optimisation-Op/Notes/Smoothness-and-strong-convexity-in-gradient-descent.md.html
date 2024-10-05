@@ -1,0 +1,147 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (smoothness, strongly convexity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: \R^n \to \R$</span> be twice differentiable and <span class="inline-math">$\alpha,\beta&gt;0$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$f$</span> is said to be <em><span class="inline-math">$\alpha$</span>-strongly convex</em> if <span class="inline-math">$\nabla^2 f(x)$</span> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html"><span class="inline-math">$\succeq$</span></a> <span class="inline-math">$\alpha I$</span> for all <span class="inline-math">$x\in\R^n$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$f$</span> is said to be <em><span class="inline-math">$\beta$</span>-smooth</em> if <span class="inline-math">$\nabla^2 f(x)$</span> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html"><span class="inline-math">$\preceq$</span></a> <span class="inline-math">$\beta I$</span> for all <span class="inline-math">$x\in\R^n$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    A <span class="inline-math">$\alpha$</span>-strongly convex function cannot change too slowly, and a <span class="inline-math">$\beta$</span>-smooth function cannot change too quickly.
+    This is illustrated in the following theorem:
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (bounds on smooth and strongly convex functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-bounds-on-smooth-and-strongly-convex-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\v x,\v y\in\R^n$</span>.
+                If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\beta$</span>-smooth</a>, then
+                <span class="display-math">$$ \begin{align*}
+                    f(\v y) \leq f(\v x) + \nabla f(\v x)^T (\v y - \v x) + \frac{\beta}{2}|\v x-\v y|^2.
+                \end{align*} $$</span>
+                If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\alpha$</span>-strongly convex</a>, then
+                <span class="display-math">$$ \begin{align*}
+                    f(\v y) \geq f(\v x) + \nabla f(\v x)^T (\v y - \v x) + \frac{\alpha}{2}|\v x - \v y|^2.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-upper-bound-on-smooth-and-strongly-convex-functions.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (gradient descent step of smooth function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Corollary-gradient-descent-step-of-smooth-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\beta$</span>-smooth</a>, then
+                <span class="display-math">$$ \begin{align*}
+                    f\Big(\v x - \frac{1}{\beta}\nabla f(\v x)\Big) \leq f(\v x) - \frac{\beta}{2}|\nabla f(\v x)|^2
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Proof: plug in <span class="inline-math">$\v y = \v x - \frac{1}{\beta}\nabla f(\v x)$</span> to the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-bounds-on-smooth-and-strongly-convex-functions.html">previous theorem</a>.
+            </p>
+            
+        </div>
+    </div>
+    This shows that we are guaranteed to reduce the objective function value going from <span class="inline-math">$\v x$</span> to <span class="inline-math">$\v x - \frac{1}{\beta} \nabla f(\v x)$</span>, e.g. we do not overshoot.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (lower bound for minimum value in strongly convex functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-lower-bound-for-minimum-value-in-strongly-convex-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f$</span> be <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\alpha$</span>-strongly convex</a>. Let <span class="inline-math">$p^\ast = \inf_\v x f(\v x)$</span> be the optimal value.
+            </p>
+            <p>
+                For any <span class="inline-math">$\v x\in\R^n$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    p^\ast \geq f(\v x) - \frac{1}{2\alpha} |\nabla f(\v x)|^2.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-lower-bound-for-minimum-value-in-strongly-convex-functions.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    This shows that if <span class="inline-math">$\nabla f(\v x)$</span> is close to zero (say <span class="inline-math">$|\nabla f(\v x)| &lt; \sqrt{2\alpha\epsilon}$</span>),
+    then <span class="inline-math">$f(\v x)$</span> is close to optimal (<span class="inline-math">$f(\v x) \leq p^\ast + \epsilon$</span>).
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (convergence of gradient descent for strongly convex and smooth functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-convergence-of-gradient-descent-for-strongly-convex-and-smooth-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\alpha$</span>-strongly convex and <span class="inline-math">$\beta$</span>-smooth</a> that is minimised at <span class="inline-math">$x^\ast$</span>,
+                then the gradient descent with constant step size <span class="inline-math">$1/\beta$</span>, i.e.
+                <span class="display-math">$$ \begin{align*}
+                    \v x_{t+1} = \v x_t - \frac{1}{\beta}\nabla f(\v x)
+                \end{align*} $$</span>
+                satisfies
+                <span class="display-math">$$ \begin{align*}
+                    f(\v x_t) - f(x^\ast) \leq \left(1-\frac{\alpha}{\beta}\right)^t (f(\v x_0) - f(\v x^\ast)).
+                \end{align*} $$</span>
+                A more common but looser bound is
+                <span class="display-math">$$ \begin{align*}
+                    f(\v x_t) - f(x^\ast) \leq e^{-(\alpha/\beta)t}(f(\v x_0) - f(\v x^\ast)).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-convergence-of-gradient-descent-for-strongly-convex-and-smooth-functions.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    To ensure <span class="inline-math">$f(\v x_t) - f(\v x^\ast) \leq \epsilon$</span>, we need <span class="inline-math">$t = (\beta/\alpha)\log((f(\v x_0) - f(\v x^\ast))/\epsilon)$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        The relation <span class="inline-math">$t\sim \log (1/\epsilon)$</span> is called <em>linear convergence</em>.
+    </p>
+    
+</li><li>
+    <p>
+        The ratio <span class="inline-math">$\beta/\alpha &gt; 1$</span> is called the <em>condition number</em>. The closer it is to 1, the faster the convergence.
+    </p>
+    
+</li>
+</ul>

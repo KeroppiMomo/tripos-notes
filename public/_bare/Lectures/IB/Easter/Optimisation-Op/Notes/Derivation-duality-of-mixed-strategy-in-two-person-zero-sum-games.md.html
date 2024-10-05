@@ -1,0 +1,29 @@
+<p>
+    Consider the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Lagrange-multiplier-method.html">Lagrangian</a> of P2's problem
+    <span class="display-math">$$ \begin{align*}
+        L(w,\v q,\v s,\v \lambda_1,\lambda_2) &amp;= w + \v\lambda_1^T(A\v q + \v s - w\v e) - \lambda_2(\v e^T \v q - 1) \\
+        &amp;=(1-\v \lambda_1^T \v e) w + (A^T \v \lambda_1 - \lambda_2 \v e)^T \v q + \v \lambda_1^T \v s + \lambda_2.
+    \end{align*} $$</span>
+    For <span class="inline-math">$L$</span> to have a finite minimum over <span class="inline-math">$w\in\R$</span>, <span class="inline-math">$\v q\in\R^n$</span> and <span class="inline-math">$\v s\in\R^m$</span> with <span class="inline-math">$\v s\geq \v 0$</span> and <span class="inline-math">$\v q\geq \v 0$</span>, we need <span class="inline-math">$\v \lambda_1^T \v e = 1$</span>, <span class="inline-math">$A^T \v \lambda_1 - \lambda_2 \v e \geq \v 0$</span> and <span class="inline-math">$\v \lambda_1\geq \v 0$</span>.
+    When these conditions are satisfied, the minimum of <span class="inline-math">$L$</span> is <span class="inline-math">$\lambda_2$</span> when <span class="inline-math">$w,\v q,\v s$</span> are all zero.
+    So the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-dual-problem.html">dual problem</a> is
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Maximise }&amp; \lambda_2 \\
+                \text{subject to }&amp; A^T \v \lambda_1 \geq \lambda_2\v e, \\
+                &amp; \v \lambda_1^T \v e = 1, \\
+                &amp; \v \lambda_1 \geq \v 0,
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    which is P1's problem.
+</p>

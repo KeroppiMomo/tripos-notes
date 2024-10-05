@@ -1,0 +1,71 @@
+
+<h1>Proof in lecture</h1>
+
+<p>
+    To see that <span class="inline-math">$\sign$</span> is well-defined, suppose <span class="inline-math">$\tau_1,\ldots,\tau_k$</span> and <span class="inline-math">$\tau&#x27;_1,\ldots,\tau&#x27;_l$</span> are transpositions such that
+    <span class="display-math">$$ \tau_1\tau_2\ldots\tau_k = \tau&#x27;_1\tau&#x27;_2\ldots\tau&#x27;_l. $$</span>
+    Then by <span class="inline-math">$\tau_i\inv = \tau_i$</span>,
+    <span class="display-math">$$ \tau_k\tau_{k-1}\ldots\tau_2\tau_1\ \tau&#x27;_1\tau&#x27;_2\ldots\tau&#x27;_l = e $$</span>
+    so by <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Lemma-products-of-even-transpositions-make-identity.html">the previous lemma</a>,
+    <span class="display-math">$$\begin{align*}
+    k+l&amp;\equiv 0\mod 2\\
+    k&amp;\equiv l\mod 2 \\
+    (-1)^k&amp;=(-1)^l
+    \end{align*}$$</span>
+    so <span class="inline-math">$\sign(\tau_1\ldots\tau_k) = \sign(\tau&#x27;_1\ldots\tau&#x27;_l)$</span> as required.
+</p>
+<p>
+    To see that <span class="inline-math">$\sign$</span> is a homomorphism, note that
+    <span class="display-math">$$\begin{align*}
+    \sign(\tau_1\ldots\tau_k \tau&#x27;_1\ldots\tau&#x27;_l) &amp;= (-1)^{k+l} \\
+    &amp;= (-1)^k (-1)^l \\
+    &amp;= \sign(\tau_1\ldots\tau_k)\sign(\tau&#x27;_1\ldots\tau&#x27;_l).
+    \end{align*}$$</span>
+</p>
+
+<h1>(Shorter) proof in supervision</h1>
+
+<p>
+    For <span class="inline-math">$\sigma\in S_n$</span>, let <span class="inline-math">$\nu(\sigma)$</span> be the number of cycles (including singletons)
+    in the disjoint cycle notation of <span class="inline-math">$\sigma$</span>.
+</p>
+<p>
+    We will show by induction that if <span class="inline-math">$\sigma = \tau_1 \tau_2 \ldots \tau_k$</span> where <span class="inline-math">$\tau_i$</span> are transpositions, then
+    <span class="display-math">$$ \begin{align*}
+        \nu(\sigma) + n \equiv k \mod 2
+    \end{align*} $$</span>
+    For <span class="inline-math">$k=0$</span>, <span class="inline-math">$\sigma=\mathrm{Id}$</span> so <span class="inline-math">$\nu(\sigma) = n$</span> so <span class="inline-math">$\nu(\sigma) + n \equiv 0$</span>.
+</p>
+<p>
+    For a general <span class="inline-math">$k$</span>, let <span class="inline-math">$\sigma = \tau \sigma&#x27;$</span> where <span class="inline-math">$\tau = \tau_1 = \pmat{a &amp; b}$</span> and <span class="inline-math">$\sigma&#x27; = \tau_2 \ldots \tau_k$</span>.
+    We have two cases:
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$a,b$</span> are in the same cycle in <span class="inline-math">$\sigma&#x27;$</span>, then letting
+        <span class="display-math">$$ \begin{align*}
+        \sigma&#x27; = \pmat{a &amp; x_1 &amp; \ldots &amp; x_p &amp; b &amp; y_1 &amp; \ldots &amp; y_q}\sigma&#x27;&#x27;
+        \end{align*} $$</span>
+        in disjoint cycle notation where <span class="inline-math">$\sigma&#x27;&#x27;$</span> is disjoint from the first cycle gives
+        <span class="display-math">$$ \begin{align*}
+        \sigma = \pmat{a &amp; b}\sigma&#x27; = \pmat{a &amp; x_1 &amp; \ldots &amp; x_p} \pmat{b &amp; y_1 &amp; \ldots &amp; y_q} \sigma&#x27;&#x27;
+        \end{align*} $$</span>
+        so <span class="inline-math">$\nu(\sigma) = \nu(\sigma&#x27;) + 1$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$a,b$</span> are in different cycles in <span class="inline-math">$\sigma&#x27;$</span>, then letting
+        <span class="display-math">$$ \begin{align*}
+        \sigma&#x27; = \pmat{a &amp; b}\sigma&#x27; = \pmat{a &amp; x_1 &amp; \ldots &amp; x_p} \pmat{b &amp; y_1 &amp; \ldots &amp; y_q} \sigma&#x27;&#x27;
+        \end{align*} $$</span>
+        in disjoint cycle notation gives
+        <span class="display-math">$$ \begin{align*}
+        \sigma = \pmat{a &amp; b}\sigma&#x27; = \pmat{a &amp; x_1 &amp; \ldots &amp; x_p &amp; b &amp; y_1 &amp; \ldots &amp; y_q}\sigma&#x27;&#x27;
+        \end{align*} $$</span>
+        so <span class="inline-math">$\nu(\sigma) = \nu(\sigma&#x27;) - 1$</span>.
+    </p>
+    
+</li>
+</ul>

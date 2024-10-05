@@ -1,0 +1,46 @@
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp; -x_1 - x_2 + x_3 \\
+                \text{subject to } &amp; x_1^2 + x_2^2 = 4, \\
+                &amp; x_1 + x_2 + x_3 = 1.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    The Lagrangian is
+    <span class="display-math">$$ \begin{align*}
+        L(x_1,x_2,x_3,\lambda_1,\lambda_2) &amp;= (-x_1-x_2+x_3) - \lambda_1(x_1^2 + x_2^2 - 4) - \lambda_2(x_1+x_2+x_3 - 1) \\
+        &amp;= \left[(-1-\lambda_2)x_1 - \lambda_1x_1^2\right] + \left[(-1-\lambda_2)x_2 - \lambda_1 x_2^2\right] + \left[(1-\lambda_2)x_3\right] + 4\lambda_1 + \lambda_2.
+    \end{align*} $$</span>
+</p>
+<p>
+    We want to fix some <span class="inline-math">$\v \lambda$</span> and minimise <span class="inline-math">$L(\v x, \v \lambda)$</span>.
+    For minimum to exist, we need <span class="inline-math">$\lambda_2=1$</span> since otherwise we can set <span class="inline-math">$x_3\to\pm\infty$</span> to drive <span class="inline-math">$L\to-\infty$</span>.
+    Similarly we need <span class="inline-math">$\lambda_1 &lt; 0$</span> since otherwise we can set <span class="inline-math">$x_1$</span> or <span class="inline-math">$x_2\to\pm\infty$</span> to drive <span class="inline-math">$L\to-\infty$</span>.
+</p>
+<p>
+    Now to minimise
+    <span class="display-math">$$ \begin{align*}
+        L(x_1,x_2,x_3,\lambda_1,-1) = [-2x_1-\lambda_1x_1^2] + [-2x_2 - \lambda_1 x_2^2] + 4\lambda_1 + \lambda_2,
+    \end{align*} $$</span>
+    we minimise the quadratics to get <span class="inline-math">$x_1=x_2=-1/\lambda_1$</span>.
+</p>
+<p>
+    To construct a feasible solution, we set
+    <span class="display-math">$$ \begin{align*}
+        4 &amp;= x_1^2 + x_2^2 = \frac{2}{\lambda_1^2} &amp;&amp;\implies &amp;\lambda_1 &amp;= -\frac{1}{\sqrt{2}}, \\
+        1 &amp;= x_1+x_2+x_3 = 2\sqrt{2}+x_3 &amp;&amp;\implies &amp;x_3 &amp;= 1-2\sqrt{2}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now we apply the Lagrange sufficiency theorem:
+    since <span class="inline-math">$\v x^\ast = (x_1,x_2,x_3) = (\sqrt{2}, \sqrt{2}, 1-2\sqrt{2})$</span> is feasible and is a minimiser of the unconstrained problem with <span class="inline-math">$(\lambda_1,\lambda_2) = (-1/\sqrt{2}, 1)$</span>,
+    we can conclude that <span class="inline-math">$\v x^\ast$</span> is a minimiser of the original constrained problem.
+</p>

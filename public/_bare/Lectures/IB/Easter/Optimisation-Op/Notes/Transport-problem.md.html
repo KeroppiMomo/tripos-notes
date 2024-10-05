@@ -1,0 +1,48 @@
+<p>
+    We have <span class="inline-math">$n$</span> suppliers labelled <span class="inline-math">$i=1,2,\ldots,n$</span>, each supplying <span class="inline-math">$s_i$</span> units of products.
+    There are also <span class="inline-math">$m$</span> consumers labelled <span class="inline-math">$j=1,2,\ldots,m$</span>, each demanding <span class="inline-math">$d_i$</span> units of products.
+    Transporting one unit of product from <span class="inline-math">$i$</span> to <span class="inline-math">$j$</span> costs <span class="inline-math">$c_{ij}$</span>.
+</p>
+<p>
+    This is a special case of the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Minimum-cost-flow-problem.html">minimum cost flow problem</a>, with <span class="inline-math">$G$</span> being a <em>bipartite graph</em>
+    and <span class="inline-math">$E$</span> only consists of edges from a supplier to a consumer.
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Transport problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp;\sum_{(i,j)\in E} c_{ij} x_{ij} \\
+                \text{subject to } &amp;\sum_{j=1}^{m} x_{ij} = s_i &amp;&amp; \forall i=1,2,\ldots,n, \\
+                &amp;\sum_{i=1}^{n} x_{ij} = d_j &amp;&amp; \forall j=1,2,\ldots,m, \\
+                &amp;x_{ij} \geq 0 &amp;&amp;\forall (i,j)\in E.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    We can let <span class="inline-math">$E = V\times V$</span> and set the cost of the non-existent edges to be infinity.
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Transport problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <!-- BEGIN BLOCK ID complete -->
+        <p id="^complete">
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp;\sum_{i=1}^{n} \sum_{j=1}^{m} c_{ij} x_{ij} \\
+                \text{subject to } &amp;\sum_{j=1}^{m} x_{ij} = s_i &amp;&amp; \forall i=1,2,\ldots,n, \\
+                &amp;\sum_{i=1}^{n} x_{ij} = d_j &amp;&amp; \forall j=1,2,\ldots,m, \\
+                &amp;x_{ij} \geq 0 &amp;&amp;\forall (i,j)\in E.
+            \end{align*} $$</span>
+        </p>
+        
+        <!-- END BLOCK ID complete -->
+        
+    </div>
+</div>

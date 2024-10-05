@@ -1,0 +1,21 @@
+<p>
+    Let <span class="inline-math">$\v x^\ast$</span> be a minimiser of <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Lagrange-multiplier-method.html#^ba92e6">the Lagrangian <span class="inline-math">$L(\v x, \v \lambda^\ast)$</span></a> for some <span class="inline-math">$\v \lambda^\ast$</span> and is feasible i.e. <span class="inline-math">$h(\v x) = \v b$</span>.
+</p>
+<p>
+    By the definition of <span class="inline-math">$\min$</span>
+    <span class="display-math">$$ \begin{align*}
+        f(\v x^\ast) \geq \min_{\v x\in\mathcal{X}(b)} f(\v x).
+    \end{align*} $$</span>
+</p>
+<p>
+    But also,
+    <span class="display-math">$$ \begin{align*}
+        \min_{x\in\mathcal{X}(\v b)} f(\v x) &amp;= \min_{x\in\mathcal{X}(\v b)} \left(f(\v x) - (\lambda^\ast)^T(h(\v x) - \v b)\right) &amp;&amp;\text{since } h(\v x) - \v b = \v 0\quad\forall \v x\in\mathcal{X}(\v b) \\
+        &amp;\geq \min_{x\in\mathcal{X}} \left(f(\v x) - (\v \lambda^\ast)^T(h(\v x) - \v b)\right) &amp;&amp;\text{since } \mathcal{X}(\v b) \subseteq \mathcal{X}\\
+        &amp;= \min_{x\in\mathcal{X}} L(\v x,\v \lambda^\ast) \\
+        &amp;= L(\v x^\ast,\lambda^\ast) \\
+        &amp;= f(\v x) - (\v \lambda^\ast)^T \underbrace{(h(\v x^\ast) - \v b)}_{\v 0} \\
+        &amp;=f(\v x)
+    \end{align*} $$</span>
+    so <span class="inline-math">$f(\v x^\ast) = \min_{x\in\mathcal{X}(\v b)} f(\v x)$</span>.
+</p>

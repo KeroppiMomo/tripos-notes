@@ -1,0 +1,153 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (convex set)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-set.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A set <span class="inline-math">$S\subseteq \R^n$</span> is said to be <em>convex</em> if for every <span class="inline-math">$\v x,\v y\in S$</span> and <span class="inline-math">$\lambda\in[0,1]$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \lambda \v x + (1-\lambda) \v y \in S.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                This means <span class="inline-math">$S$</span> contains all points on the line segment joined by two points in <span class="inline-math">$S$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (convex function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A function <span class="inline-math">$f: S\to\R$</span> is said to be <em>convex</em> if
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$S$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-set.html">convex</a>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    for all <span class="inline-math">$\v x,\v y\in S$</span> and <span class="inline-math">$\lambda\in(0,1)$</span>,
+                    <span class="display-math">$$ \begin{align*}
+                    f\big(\lambda \v x + (1-\lambda)\v y\big) \leq \lambda f(\v x) + (1-\lambda) f(\v y). \tag{*}
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                This means the graph is always under the secant line between two points.
+            </p>
+            <p>
+                <span class="inline-math">$f$</span> said to be <em>strictly convex</em> if strict inequality holds in (*).
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Notation (definite matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                An <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span> is said to be <em>positive semidefinite</em>, denoted as <span class="inline-math">$A\succeq 0$</span>,
+                if <span class="inline-math">$\v x^T A\v x \geq 0$</span> for all <span class="inline-math">$x\in\R^n$</span>.
+            </p>
+            <p>
+                We write <span class="inline-math">$A\succeq B$</span> to mean <span class="inline-math">$A-B\succeq 0$</span>, and <span class="inline-math">$A\preceq B$</span> to mean <span class="inline-math">$B-A\succeq 0$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Hessian)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-Hessian.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a twice differentiable function <span class="inline-math">$f:\R^n \to \R$</span>,
+                the <em>Hessian</em> <span class="inline-math">$\nabla^2 f(x)$</span> is defined to be an <span class="inline-math">$n\times n$</span> matrix with entrices
+                <span class="display-math">$$ \begin{align*}
+                    \big[\nabla^2 f(x)\big]_{ij} = \frac{\partial^2 f(x)}{\partial x_i x_j}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<!-- BEGIN BLOCK ID 3e73f6 -->
+<p id="^3e73f6">
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (first-order condition of convex functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-first-order-condition-of-convex-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A differentiable function <span class="inline-math">$f: \R^n \to \R$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> iff for all <span class="inline-math">$\v x,\v y\in\R^n$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    f(\v y) \geq f(\v x) + \nabla f(x)^T (\v y-\v x)
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-first-order-condition-on-convex-functions.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    Note that if <span class="inline-math">$\nabla f(x_0) = \v 0$</span> for some <span class="inline-math">$\v x_0$</span>, then <span class="inline-math">$f(\v y) \geq  f(\v x_0)$</span> for all <span class="inline-math">$\v y$</span> so <span class="inline-math">$\v  x_0$</span> is a local minimum.
+</p>
+
+<!-- END BLOCK ID 3e73f6 -->
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (convex function iff increasing directional gradient)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-convex-function-iff-increasing-directional-gradient.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A differentiable function <span class="inline-math">$f: \R^n \to \R$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> iff for all <span class="inline-math">$\v x,\v y\in\R^n$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    (\v y-\v x) \cdot (\nabla f(\v y) - \nabla f(\v x)) \geq 0.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-convex-function-iff-increasing-directional-gradient.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (second-order condition of convex functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-second-order-condition-of-convex-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A twice differentiable function <span class="inline-math">$f: \R^n \to \R$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> iff <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-Hessian.html"><span class="inline-math">$\nabla^2 f(\v x)$</span></a> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html"><span class="inline-math">$\succeq 0$</span></a> for all <span class="inline-math">$\v x\in\R^n$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-second-order-condition-of-convex-functions-is-sufficient.html">Proof for sufficiency</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

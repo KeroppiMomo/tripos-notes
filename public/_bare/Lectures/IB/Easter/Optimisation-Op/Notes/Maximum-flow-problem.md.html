@@ -1,0 +1,22 @@
+<p>
+    Given a graph with a single source (vertex 1) and a single sink (vertex <span class="inline-math">$n$</span>),
+    find the maximum possible flow <span class="inline-math">$\delta$</span> between the source and the sink subject to capacity constraints.
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Maximum flow problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Maximise } &amp;\delta \\
+                \text{subject to } &amp; \sum_{j:\ (i,j)\in E} x_{ij} - \sum_{j:\ (j,i)\in E} x_{ji} = 0 &amp;&amp;\forall i\neq 1,n, \\
+                &amp; \sum_{j:\ (1,j)\in E} x_{1j} - \sum_{j:\ (j,1)\in E} x_{j1} = \delta, \\
+                &amp; \sum_{j:\ (n,j)\in E} x_{nj} - \sum_{j:\ (j,n)\in E} x_{jn} = -\delta, \\
+                &amp; 0 \leq x_{ij} \leq c_{ij} &amp;&amp;\forall (i,j)\in E.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div>

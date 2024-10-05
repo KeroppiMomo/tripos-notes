@@ -1,0 +1,48 @@
+<p>
+    An example of isoperimetric problems.
+</p>
+<blockquote>
+    <p>
+        See also example sheet 1 Q9 and Q12.
+    </p>
+    
+</blockquote>
+<p>
+    What curve of fixed length in <span class="inline-math">$\R^2$</span> maximises the enclosed area?
+</p>
+<p>
+    We will exclude self-intersecting curves and not convex curves.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Easter/Variational-Principles-VP/Pasted-image-20240503115647.png">
+</p>
+<p>
+    The area is
+    <span class="display-math">$$ \begin{align*}
+        A[y] = \int_{x_1}^{x_2} (y_2(x) - y_1(x)) \,dx \equiv \oint_C y(x)\,dx.
+    \end{align*} $$</span>
+    The length is
+    <span class="display-math">$$ \begin{align*}
+        L[y] = \oint_C \sqrt{1+(y&#x27;)^2}\,dx.
+    \end{align*} $$</span>
+</p>
+<p>
+    We will use <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Euler-Lagrange-with-constraints.html">Euler-Lagrange</a> with <span class="inline-math">$f(x,y,y&#x27;) = y - \lambda\sqrt{1+(y&#x27;)^2}$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$f$</span> does not depend on <span class="inline-math">$x$</span>, we will use the <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/First-integrals-of-Euler-Lagrange.html#^no-x">first integral</a>
+    <span class="display-math">$$ \begin{align*}
+        k &amp;= f - y&#x27; \pdfd{f}{y&#x27;} \\
+        &amp;= y - \lambda \sqrt{1+(y&#x27;)^2} + \lambda y&#x27; \frac{y&#x27;}{\sqrt{1+(y&#x27;)^2}} \\
+        y-k &amp;= \lambda\left(\frac{1}{\sqrt{1+(y&#x27;)^2}}\right) \\
+        1 + (y&#x27;)^2 &amp;= \frac{\lambda^2}{(y-k)^2} \\
+        y&#x27; &amp;= \pm \frac{\sqrt{\lambda^2 - (y-k)^2}}{y-k} \\
+        x &amp;= \pm\int \frac{y-k}{\sqrt{\lambda^2 - (y-k)^2}} dy \\
+        &amp;= \mp \sqrt{\lambda^2 - (y-k)^2} + h \\
+        (x-h)^2 + (y-k)^2 &amp;= \lambda^2
+    \end{align*} $$</span>
+    so the solutions are circles with radius <span class="inline-math">$\lambda$</span>.
+</p>
+<p>
+    Finally choose <span class="inline-math">$\lambda$</span> to satisfy constraint: <span class="inline-math">$\lambda = L/2\pi$</span>.
+</p>

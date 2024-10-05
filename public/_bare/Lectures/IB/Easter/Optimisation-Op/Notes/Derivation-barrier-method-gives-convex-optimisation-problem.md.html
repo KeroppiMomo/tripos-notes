@@ -1,0 +1,20 @@
+<p>
+    Since <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Barrier-method.html#^16aec4"><span class="inline-math">$f_i$</span> are linear</a>, let
+    <span class="display-math">$$ \begin{align*}
+        f_i(\v x) = \v a_i^T \v x + b.
+    \end{align*} $$</span>
+</p>
+<p>
+    We compute the Hessian of <span class="inline-math">$\Phi(\v x)$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \nabla \Phi(\v x) &amp;= -\sum_{i=1}^{m} \frac{-\nabla f_i(\v x)}{-f_i(\v x)} \\
+        &amp;= -\sum_{i=1}^{m} \frac{\nabla f_i(\v x)}{f_i(\v x)}, \\
+        \nabla^2 \Phi(\v x) &amp;= -\sum_{i=1}^{m} \frac{f_i(\v x) \nabla^2 f_i(\v x) - \nabla f_i(\v x)\, \nabla f_i(\v x)^T}{f_i(\v x)^2} \\
+        &amp;= -\sum_{i=1}^{m} \frac{f_i(\v x)\, 0 - \v a_i \v a_i^T}{f_i(\v x)^2} \\
+        &amp;= \sum_{i=1}^{m} \frac{\v a_i \v a_i^T}{f_i(\v x)^2}
+    \end{align*} $$</span>
+    which is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html">positive semidefinite</a> as <span class="inline-math">$\v v^T \v a_i \v a_i^T \v v = |\v a_i^T \v v|^2 \geq 0$</span>.
+</p>
+<p>
+    As <span class="inline-math">$f$</span> is convex and <span class="inline-math">$t&gt;0$</span>, we have <span class="inline-math">$t f(\v x) + \Phi(\v x)$</span> being convex.
+</p>

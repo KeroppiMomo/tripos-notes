@@ -1,0 +1,94 @@
+<p>
+    Minimise the area of a surface <span class="inline-math">$\Sigma\subset \R^3$</span> subject to boundary conditions, e.g. soap film between two loops of wire.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Easter/Variational-Principles-VP/Pasted-image-20240508113352.png">
+</p>
+<p>
+    Suppose <span class="inline-math">$\Sigma$</span> can be written as <span class="inline-math">$(x,y,z)$</span> where <span class="inline-math">$z=\phi(x,y)$</span>.
+    (This might be possible locally on most of the surface, so restrict to some region <span class="inline-math">$\mathcal{D}$</span> of <span class="inline-math">$(x,y)$</span> where this is true.)
+</p>
+<p>
+    The area is
+    <span class="display-math">$$ \begin{align*}
+        A[\phi] = \iint_\mathcal{D} \left|\pdfd{\v x}{x}\times \pdfd{\v x}{y} \right| \,dx\,dy = \iint_D \underbrace{ \sqrt{1 + \phi_x^2 + \phi_y^2}}_{h(x,y,\phi,\phi_x, \phi_y)}\,dx\,dy.
+    \end{align*} $$</span>
+    Apply <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Euler-Lagrange-with-several-independent-variables.html">Euler-Lagrange</a> to <span class="inline-math">$h$</span>:
+    <span class="display-math">$$ \begin{align*}
+        0 &amp;= \pdd{x}\left(\pdfd{h}{\phi_x}\right) + \pdd{y}\left(\pdfd{h}{\phi_y}\right) - \pdfd{h}{\phi} \\
+        &amp;= \pdd{x}\left(\frac{\phi_x}{\sqrt{1+\phi_x^2 + \phi_y^2}}\right) + \pdd{y}\left(\frac{\phi_y}{\sqrt{1+\phi_x^2+\phi_y^2}}\right) - 0 \\
+        &amp;= \frac{\phi_{xx}}{\sqrt{1+\phi_x^2+\phi_y^2}} - \frac{\phi_x(\phi_x\phi_{xx} + \phi_y \phi_{xy})}{(1+\phi_x^2 + \phi_y^2)^{3/2}} + \frac{\phi_{yy}}{\sqrt{1+\phi_x^2+\phi_y^2}} - \frac{\phi_y(\phi_x\phi_{xy} + \phi_y \phi_{yy})}{(1+\phi_x^2 + \phi_y^2)^{3/2}} \\
+        0 &amp;= \phi_{xx}(1+\phi_x^2 + \phi_y^2) - \phi_x^2 \phi_{xx} - \phi_x \phi_y \phi_{xy} + \phi_{yy}(1+\phi_x^2 + \phi_y^2) - \phi_x\phi_y\phi_{xy} - \phi_y^2\phi_{yy} \\
+    \end{align*} $$</span>
+    and we get the minimal surface equation
+    <span class="display-math">$$ \begin{align*}
+        0 = (1+\phi_y^2)\phi_{xx} + (1+\phi_x^2) \phi_{yy} - 2\phi_x\phi_y\phi_{xy}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Let us assume rotational symmetry, i.e. <span class="inline-math">$\phi=\phi(r)$</span> where <span class="inline-math">$r=\sqrt{x^2+y^2}$</span>.
+    Using
+    <span class="display-math">$$\phi_x = \phi&#x27; \pdfd{r}{x} = \frac{x}{r}\phi&#x27;, \qquad \phi_y = \frac{y}{r}\phi&#x27;,$$</span>
+    <span class="display-math">$$\phi_{xx} = \frac{1}{r}\phi&#x27; + \frac{x^2}{r^2}\phi&#x27;&#x27; - \frac{x^2}{r^3}\phi&#x27; = \frac{y^2}{r^3}\phi&#x27; + \frac{x^2}{r^2}\phi&#x27;&#x27;, \qquad \phi_{yy} =\frac{x^2}{r^3}\phi&#x27; + \frac{y^2}{r^2}\phi&#x27;&#x27;,$$</span>
+    <span class="display-math">$$\phi_{xy} = \frac{xy}{r^2}\phi&#x27;&#x27; - \frac{xy}{r^3}\phi&#x27;,$$</span>
+    the equation becomes
+    <span class="display-math">$$ \begin{align*}
+        0 &amp;= \left(1+\frac{y^2}{r^2}(\phi&#x27;)^2\right)\left(\frac{y^2}{r^3}\phi&#x27; + \frac{x^2}{r^2}\phi&#x27;&#x27;\right) + \left(1+\frac{x^2}{r^2}(\phi&#x27;)^2\right)\left(\frac{x^2}{r^3}\phi&#x27; + \frac{y^2}{r^2}\phi&#x27;&#x27;\right) - 2\frac{xy}{r^2}(\phi&#x27;)^2\left(\frac{xy}{r^2}\phi&#x27;&#x27; - \frac{xy}{r^3}\phi&#x27;\right) \\
+        &amp;= \frac{x^2+y^2}{r^2}\phi&#x27;&#x27; + \frac{x^2+y^2}{r^3} \phi&#x27; + \frac{y^4 + x^4 + 2x^2y^2}{r^5}(\phi&#x27;)^3 \\
+        &amp;= \phi&#x27;&#x27; + \frac{1}{r}\phi&#x27; + \frac{1}{r}(\phi&#x27;)^3
+    \end{align*} $$</span>
+    and finally we get
+    <span class="display-math">$$ \begin{align*}
+        r\phi&#x27;&#x27; + \phi&#x27; + (\phi&#x27;)^3 = 0.
+    \end{align*} $$</span>
+</p>
+<hr>
+<blockquote>
+    <p>
+        This is also example sheet 1 Q5.
+    </p>
+    
+</blockquote>
+<p>
+    An easier method is that we can just assume rotational symmetry from the start: set <span class="inline-math">$r=r(z)$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        A[r] = 2\pi\int \underbrace{ r\sqrt{1+(r&#x27;)^2}}_{f(z,r,r&#x27;)}\,dz.
+    \end{align*} $$</span>
+    <span class="inline-math">$f$</span> does not depend on <span class="inline-math">$z$</span>, so using the <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/First-integrals-of-Euler-Lagrange.html#^no-x">first integral</a>,
+    <span class="display-math">$$ \begin{align*}
+        A &amp;= f - r&#x27;\pdfd{f}{r&#x27;} \\
+        &amp;= r\sqrt{1+(r&#x27;)^2} - \frac{r(r&#x27;)^2}{\sqrt{1+(r&#x27;)^2}} \\
+        &amp;= \frac{r}{\sqrt{1+(r&#x27;)^2}} \\
+        1+(r&#x27;)^2 &amp;= \frac{r^2}{A^2} \\
+        r&#x27; &amp;= \pm\sqrt{\frac{r^2}{A^2} - 1} \\
+        z &amp;= \pm\int \frac{dr}{\sqrt{\frac{r^2}{A^2} - 1}} \\
+        &amp;= A\cosh\inv\left(\frac{r}{A}\right) + z_0 \\
+        r(z) &amp;= A\cosh\left(\frac{z-z_0}{A}\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    Suppose the boundary is two circles with radius <span class="inline-math">$R$</span> at <span class="inline-math">$z=\pm 1$</span>.
+    By symmetry <span class="inline-math">$z_0 = 0$</span>, and we need to set <span class="inline-math">$A$</span> so that
+    <span class="display-math">$$ \begin{align*}
+        R = A\cosh \frac{1}{A}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/6btz4bapa8?embed" width="100%" height="500"></iframe>
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$R&lt;R^\ast\approx 1.509$</span>, there are no solutions.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$R&gt;R^\ast$</span>, there are two solutions. It turns out the solution with a smaller <span class="inline-math">$A$</span> is not stable.
+    </p>
+    
+</li>
+</ul>
+<p>
+    If we slowly let <span class="inline-math">$R$</span> shrink (or equivalently pull the rings further apart), the solutions becomes less and less stable, and around <span class="inline-math">$R=R^\ast$</span> it will collapse.
+</p>

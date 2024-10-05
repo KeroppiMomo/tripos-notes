@@ -1,0 +1,17 @@
+<p>
+    Consider a small pertubation <span class="inline-math">$y\to y+\epsilon\eta(x)$</span>, where <span class="inline-math">$\eta(x_1) = \eta(x_2) = 0$</span>.
+    Computing <span class="inline-math">$F[y+\epsilon\eta]$</span>:
+    <span class="display-math">$$ \begin{align*}
+        F[y+\epsilon\eta] &amp;= \int_{x_1}^{x_2} f(x,y+\epsilon\eta, y&#x27;+\epsilon\eta&#x27;)\, dx \\
+        &amp;= \int_{x_1}^{x_2} \left(f(x,y,y&#x27;) + \pdfd{f}{y}\epsilon\eta + \pdfd{f}{y&#x27;} \epsilon\eta&#x27; + O(\epsilon^2)\right) \, dx &amp;&amp;\text{Taylor expansion}\\
+        &amp;= F[y] + \epsilon \left(\int_{x_1}^{x_2} \pdfd{f}{y}\eta\, dx + \int_{x_1}^{x_2} \pdfd{f}{y&#x27;}\eta&#x27;\, dx\right) + O(\epsilon^2) \\
+        &amp;= F[y] + \epsilon \bigg(\int_{x_1}^{x_2} \pdfd{f}{y}\eta\, dx + \left[\pdfd{f}{y&#x27;} \eta\right]_{x_1}^{x_2} - \int_{x_1}^{x_2} \dd{x}\left(\pdfd{f}{y&#x27;}\right)\eta\, dx\bigg) + O(\epsilon^2) &amp;&amp; \text{by parts} \\
+        &amp;= F[y] + \epsilon\int_{x_1}^{x_2}\underbrace{ \left(\pdfd{f}{y} + \dd{x}\left(\pdfd{f}{y&#x27;}\right)\right)}_{(*)}\eta \, dx + O(\epsilon^2) &amp;&amp;\eta(x_1) = \eta(x_2) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    For <span class="inline-math">$y$</span> to extremise <span class="inline-math">$F[y]$</span>, the coefficient of <span class="inline-math">$\epsilon$</span> must be zero for any pertubation <span class="inline-math">$\eta$</span>.
+</p>
+<p>
+    Therefore we must have <span class="inline-math">$(*) = 0$</span>.
+</p>

@@ -1,0 +1,50 @@
+<p>
+    Conider a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Minimum-cost-flow-problem.html">minimum cost flow problem</a>.
+</p>
+<p>
+    WLOG we can set <span class="inline-math">$\underline{m}_{ij} = 0$</span> by setting <span class="inline-math">$x_{ij} = \underline{m}_{ij} + \tilde x_{ij}$</span> and expressing the problem in terms of <span class="inline-math">$\tilde x_{ij}$</span>:
+    <span class="display-math">$$ \begin{align*}
+        b_i + \sum_{(j,i)\in E} x_{ji} = \sum_{(i,j)\in E} x_{ij} &amp;&amp;&amp;\iff &amp;&amp; \left(b_i + \sum_{(j,i)\in E}\underline{m}_{ji} - \sum_{(i,j)\in E}\underline{m}_{ij}\right) + \sum_{(j,i)\in E} \tilde{x}_{ji} = \sum_{(i,j)\in E} \tilde x_{ij}, \\ \\
+        \underline{m}_{ij} \leq x_{ij} \leq \overline{m}_{ij} &amp;&amp;&amp;\iff &amp;&amp; 0 \leq \tilde x_{ij} \leq \overline{m}_{ij} - \underline{m}_{ij}.
+    \end{align*} $$</span>
+</p>
+<p>
+    We construct the following transport graph:
+</p>
+<ul>
+<li>
+    <p>
+        For each edge <span class="inline-math">$(i,j)\in E$</span>, create a supplier labelled <span class="inline-math">$ij$</span> with supply <span class="inline-math">$\overline{m}_{ij}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        For each vertex <span class="inline-math">$i\in V$</span>, create a consumer labelled <span class="inline-math">$i$</span> with demand <span class="inline-math">$\sum_{k:\ (i,k)\in E} \overline{m}_{ik} - b_i$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Each supplier <span class="inline-math">$ij$</span> is connected to exactly two consumers: consumer <span class="inline-math">$i$</span>, with cost <span class="inline-math">$0$</span>, and consumer <span class="inline-math">$j$</span>, with cost <span class="inline-math">$c_{ij}$</span>.
+        Let the flow on <span class="inline-math">$(ij,j)$</span> be <span class="inline-math">$x_{ij}$</span> and the flow on <span class="inline-math">$(ij,i)$</span> be <span class="inline-math">$\overline{m}_{ij} - x_{ij}$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Notes/Pasted-image-20240705145439.png">
+</p>
+<p>
+    Every feasible solution to the transport problem has a corresponding feasible solution and vice versa:
+</p>
+<p>
+    <span class="display-math">$$ \begin{align*}
+        \text{Conditions in transport problem} \quad &amp; \qquad \quad \text{Conditions in network flow problem} \\ \\
+        \begin{cases}
+            x_{ij} \geq 0, \\
+            \overline{m}_{ij} - x_{ij} \geq 0
+        \end{cases} \quad &amp; \iff \quad 0 \leq x_{ij} \leq \overline{m}_{ij} \\ \\
+        \sum_{k:\ (i,k)\in E}(\overline{m}_{ik} - x_{ik}) + \sum_{k:\ (k,i)\in E} x_{ki} = \sum_{k:\ (i,k)\in E} \overline{m}_{ik} - b_{i}
+        \quad &amp;\iff \quad b_i + \sum_{k:\ (k,i)\in E} x_{ki} = \sum_{k:\ (i,k)\in E} x_{ik}
+    \end{align*} $$</span>
+    Both problems have the same cost <span class="inline-math">$\sum_{(i,j)\in E} c_{ij} x_{ij}$</span>.
+</p>

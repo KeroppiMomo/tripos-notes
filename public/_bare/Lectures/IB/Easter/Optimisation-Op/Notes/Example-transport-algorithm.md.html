@@ -1,0 +1,343 @@
+<p>
+    Let there be three suppliers with supplies <span class="inline-math">$\v s=(14,10,9)$</span> and four consumers with demand <span class="inline-math">$\v d = (12,5,8,8)$</span>. The cost matrix is
+    <span class="display-math">$$ \begin{align*}
+        C = \pmat{5 &amp; 3 &amp; 4 &amp; 6 \\ 2 &amp; 7 &amp; 4 &amp; 1 \\ 5 &amp; 6 &amp; 2 &amp; 4}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <table class="transport_tableau">
+        <tr>
+            <td></td>
+            <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan=2>...</td>
+            <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td>
+            <td rowspan=2>14</td>
+        </tr>
+        <tr>
+            <td>...</td> <td>5</td> <td>...</td> <td>3</td> <td>...</td> <td>4</td> <td>...</td> <td>6</td>
+        </tr>
+        <tr>
+            <td rowspan=2>...</td>
+            <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td>
+            <td rowspan=2>10</td>
+        </tr>
+        <tr>
+            <td>...</td> <td>2</td> <td>...</td> <td>7</td> <td>...</td> <td>4</td> <td>...</td> <td>1</td>
+        </tr>
+        <tr>
+            <td rowspan=2>...</td>
+            <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td>
+            <td rowspan=2>9</td>
+        </tr>
+        <tr>
+            <td>...</td> <td>5</td> <td>...</td> <td>6</td> <td>...</td> <td>2</td> <td>...</td> <td>4</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan=2>12</td> <td colspan=2>5</td> <td colspan=2>8</td> <td colspan=2>8</td>
+            <td></td>
+        </tr>
+    </table>
+</p>
+<p>
+    We find an initial basic feasible solution:
+</p>
+<ol start="1">
+<li>
+    <p>
+        We start with <span class="inline-math">$x_{11}$</span>. Set <span class="inline-math">$x_{11}=12$</span> since this satisfies the demand <span class="inline-math">$d_1=12$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Move to consumer 2. Set <span class="inline-math">$x_{12} = 2$</span> since this satisfies the supply <span class="inline-math">$s_1 = 14$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Move to supplier 2. Set <span class="inline-math">$x_{22} = 3$</span> since this satisfies the demand <span class="inline-math">$d_2 = 5$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Move to consumer 3. Set <span class="inline-math">$x_{23} = 7$</span> since this satisfies the supply <span class="inline-math">$s_2 = 10$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Move to supplier 3. Set <span class="inline-math">$x_{33} = 1$</span> since this satsifies the demand <span class="inline-math">$d_3 = 8$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Move to consumer 4. Set <span class="inline-math">$x_{34} = 8$</span>. This satisfies everyone.
+    </p>
+    
+</li>
+</ol>
+<p>
+    <table class="transport_tableau">
+        <tr>
+            <td></td>
+            <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan=2>...</td>
+            <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td>
+            <td rowspan=2>14</td>
+        </tr>
+        <tr>
+            <td>12</td> <td>5</td> <td>2</td> <td>3</td> <td>0</td> <td>4</td> <td>0</td> <td>6</td>
+        </tr>
+        <tr>
+            <td rowspan=2>...</td>
+            <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td>
+            <td rowspan=2>10</td>
+        </tr>
+        <tr>
+            <td>0</td> <td>2</td> <td>3</td> <td>7</td> <td>7</td> <td>4</td> <td>0</td> <td>1</td>
+        </tr>
+        <tr>
+            <td rowspan=2>...</td>
+            <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td> <td colspan=2>...</td>
+            <td rowspan=2>9</td>
+        </tr>
+        <tr>
+            <td>0</td> <td>5</td> <td>0</td> <td>6</td> <td>1</td> <td>2</td> <td>8</td> <td>4</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan=2>12</td> <td colspan=2>5</td> <td colspan=2>8</td> <td colspan=2>8</td>
+            <td></td>
+        </tr>
+    </table>
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Notes/Pasted-image-20240705165743.png">
+</p>
+<p>
+    To find the dual variables, we <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Network-flow.html#^lambda1-assumption">WLOG assume <span class="inline-math">$\lambda_1=0$</span></a>.
+    Using <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-optimality-in-the-transport-problem.html">complementary slackness</a>, for <span class="inline-math">$x_{ij}&gt;0$</span>, we require <span class="inline-math">$c_{ij} = \lambda_i + \mu_j$</span>.
+    So we obtain the following equations:
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \lambda_1 + \mu_1 = 5, \\
+            \lambda_1 + \mu_2 = 3, \\
+            \lambda_2 + \mu_2 = 7, \\
+            \lambda_2 + \mu_3 = 4, \\
+            \lambda_3 + \mu_3 = 2, \\
+            \lambda_3 + \mu_4 = 4
+        \end{cases} \implies \begin{cases}
+            \lambda_1 = 0, \\
+            \lambda_2 = 4, \\
+            \lambda_3 = 2, \\
+            \mu_1 = 5, \\
+            \mu_2 = 3, \\
+            \mu_3 = 0, \\
+            \mu_4 = 2.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    <table class="transport_tableau">
+        <tr>
+            <td></td>
+            <td colspan=2>5</td> <td colspan=2>3</td> <td colspan=2>0</td> <td colspan=2>2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan=2>0</td>
+            <td colspan=2>5</td> <td colspan=2>3</td> <td colspan=2>0</td> <td colspan=2>2</td>
+            <td rowspan=2>14</td>
+        </tr>
+        <tr>
+            <td>12</td> <td>5</td> <td>2</td> <td>3</td> <td>0</td> <td>4</td> <td>0</td> <td>6</td>
+        </tr>
+        <tr>
+            <td rowspan=2>4</td>
+            <td style="color:red" colspan=2>9</td> <td colspan=2>7</td> <td colspan=2>4</td> <td colspan=2>6</td>
+            <td rowspan=2>10</td>
+        </tr>
+        <tr>
+            <td>0</td> <td>2</td> <td>3</td> <td>7</td> <td>7</td> <td>4</td> <td>0</td> <td>1</td>
+        </tr>
+        <tr>
+            <td rowspan=2>2</td>
+            <td colspan=2>7</td> <td colspan=2>5</td> <td colspan=2>2</td> <td colspan=2>4</td>
+            <td rowspan=2>9</td>
+        </tr>
+        <tr>
+            <td>0</td> <td>5</td> <td>0</td> <td>6</td> <td>1</td> <td>2</td> <td>8</td> <td>4</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan=2>12</td> <td colspan=2>5</td> <td colspan=2>8</td> <td colspan=2>8</td>
+            <td></td>
+        </tr>
+    </table>
+</p>
+<p>
+    We now perform a solution update:
+</p>
+<ol start="1">
+<li>
+    <p>
+        We have <span class="inline-math">$c_{21} = 2 &lt; 9 = \lambda_2 + \mu_1$</span>, so the solution is not optimal.
+    </p>
+    
+</li><li>
+    <p>
+        Introducing the edge <span class="inline-math">$(2,1)$</span> creates a cycle consisting supplier 2, consumer 1, supplier 1, and consumer 2.
+    </p>
+    <p>
+        <img src="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Notes/Pasted-image-20240705170013.png">
+    </p>
+    
+</li><li>
+    <p>
+        We can increase the flow <span class="inline-math">$x_{21}$</span> to <span class="inline-math">$\theta$</span> as long as all the adjusted flows are non-negative.
+        In this case the maximum <span class="inline-math">$\theta$</span> is <span class="inline-math">$3$</span>.
+        <img src="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Notes/Pasted-image-20240705170821.png">
+    </p>
+    
+</li><li>
+    <p>
+        Using complementary slackness,
+        <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \lambda_1 + \mu_1 = 5, \\
+            \lambda_1 + \mu_2 = 3, \\
+            \lambda_2 + \mu_1 = 2, \\
+            \lambda_2 + \mu_3 = 4, \\
+            \lambda_3 + \mu_3 = 2, \\
+            \lambda_3 + \mu_4 = 4
+        \end{cases} \implies \begin{cases}
+            \lambda_1 = 0, \\
+            \lambda_2 = -3, \\
+            \lambda_3 = -5, \\
+            \mu_1 = 5, \\
+            \mu_2 = 3, \\
+            \mu_3 = 7, \\
+            \mu_4 = 9.
+        \end{cases}
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ol>
+<p>
+    <table class="transport_tableau">
+        <tr>
+            <td></td>
+            <td colspan=2>5</td> <td colspan=2>3</td> <td colspan=2>7</td> <td colspan=2>9</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan=2>0</td>
+            <td colspan=2>5</td> <td colspan=2>3</td> <td colspan=2>7</td> <td colspan=2>9</td>
+            <td rowspan=2>14</td>
+        </tr>
+        <tr>
+            <td>9</td> <td>5</td> <td>5</td> <td>3</td> <td>0</td> <td>4</td> <td>0</td> <td>6</td>
+        </tr>
+        <tr>
+            <td rowspan=2>-3</td>
+            <td colspan=2>2</td> <td colspan=2>0</td> <td colspan=2>4</td> <td style="color:red" colspan=2>6</td>
+            <td rowspan=2>10</td>
+        </tr>
+        <tr>
+            <td>3</td> <td>2</td> <td>0</td> <td>7</td> <td>7</td> <td>4</td> <td>0</td> <td>1</td>
+        </tr>
+        <tr>
+            <td rowspan=2>-5</td>
+            <td colspan=2>0</td> <td colspan=2>-2</td> <td colspan=2>2</td> <td colspan=2>4</td>
+            <td rowspan=2>9</td>
+        </tr>
+        <tr>
+            <td>0</td> <td>5</td> <td>0</td> <td>6</td> <td>1</td> <td>2</td> <td>8</td> <td>4</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan=2>12</td> <td colspan=2>5</td> <td colspan=2>8</td> <td colspan=2>8</td>
+            <td></td>
+        </tr>
+    </table>
+</p>
+<p>
+    Repeat the update:
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$1 = c_{24} &lt; \lambda_2 + \mu_4 = 6$</span> so the solution is not optimal.
+    </p>
+    
+</li><li>
+    <p>
+        We identify the cycle:
+        <img src="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Notes/Pasted-image-20240705172154.png">
+    </p>
+    
+</li><li>
+    <p>
+        Set <span class="inline-math">$\theta=7$</span>.
+        <img src="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Notes/Pasted-image-20240705172339.png">
+    </p>
+    
+</li><li>
+    <p>
+        Compute the dual variables.
+    </p>
+    
+</li>
+</ol>
+<p>
+    <table class="transport_tableau">
+        <tr>
+            <td></td>
+            <td colspan=2>5</td> <td colspan=2>3</td> <td colspan=2>2</td> <td colspan=2>4</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan=2>0</td>
+            <td colspan=2>5</td> <td colspan=2>3</td> <td colspan=2>2</td> <td colspan=2>4</td>
+            <td rowspan=2>14</td>
+        </tr>
+        <tr>
+            <td>9</td> <td>5</td> <td>5</td> <td>3</td> <td>0</td> <td>4</td> <td>0</td> <td>6</td>
+        </tr>
+        <tr>
+            <td rowspan=2>-3</td>
+            <td colspan=2>2</td> <td colspan=2>0</td> <td colspan=2>-1</td> <td colspan=2>1</td>
+            <td rowspan=2>10</td>
+        </tr>
+        <tr>
+            <td>3</td> <td>2</td> <td>0</td> <td>7</td> <td>0</td> <td>4</td> <td>7</td> <td>1</td>
+        </tr>
+        <tr>
+            <td rowspan=2>0</td>
+            <td colspan=2>5</td> <td colspan=2>3</td> <td colspan=2>2</td> <td colspan=2>4</td>
+            <td rowspan=2>9</td>
+        </tr>
+        <tr>
+            <td>0</td> <td>5</td> <td>0</td> <td>6</td> <td>8</td> <td>2</td> <td>1</td> <td>4</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan=2>12</td> <td colspan=2>5</td> <td colspan=2>8</td> <td colspan=2>8</td>
+            <td></td>
+        </tr>
+    </table>
+</p>
+<ol start="1">
+<li>
+    <p>
+        Now all <span class="inline-math">$c_{ij} \geq \lambda_i + \mu_j$</span>. Hence this is the optimal solution.
+    </p>
+    
+</li>
+</ol>

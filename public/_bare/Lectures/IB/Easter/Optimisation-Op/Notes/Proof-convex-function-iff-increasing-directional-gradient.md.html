@@ -1,0 +1,37 @@
+<p>
+    We will show this is equivalent to the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-first-order-condition-of-convex-functions.html">first-order condition</a>.
+</p>
+
+<h1>First-order condition implies increasing directional gradient</h1>
+
+<p>
+    Apply the first-order condition with <span class="inline-math">$(\v x,\v y)$</span> and <span class="inline-math">$(\v y,\v x)$</span>:
+    <span class="display-math">$$ \begin{align*}
+        f(\v y) &amp;\geq f(\v x) + (\v y - \v x)\cdot \nabla f(\v x), \\
+        f(\v x) &amp;\geq f(\v y) + (\v x - \v y)\cdot \nabla f(\v y).
+    \end{align*} $$</span>
+    Adding yields
+    <span class="display-math">$$ \begin{align*}
+        0 \geq (\v y-\v x) \cdot (\nabla f(\v x) - \nabla f(\v y))
+    \end{align*} $$</span>
+    as required.
+</p>
+
+<h1>Increasing directional gradient implies first-order condition</h1>
+
+<p>
+    Let <span class="inline-math">$\v z(t) = (1-t)\v x + t \v y$</span>.
+    Since <span class="inline-math">$f$</span> has increasing directional gradient,
+    <span class="display-math">$$ \begin{align*}
+        (\v z - \v x) \cdot (\nabla f(\v z) - \nabla f(\v x)) \geq 0 \implies (\v z-\v x)\cdot \nabla f(\v z) \geq (\v z-\v x)\cdot \nabla f(\v x).
+    \end{align*} $$</span>
+    We then use the fundamental theorem of calculus
+    <span class="display-math">$$ \begin{align*}
+        f(\v y) - f(\v x) &amp;= \int_0^1 \dfd{f(\v z(t))}{t}\, dt \\
+        &amp;= \int_{0}^{1} \v z&#x27;(t)\cdot \nabla f(\v z(t))\, dt \\
+        &amp;= \int_{0}^{1} (\v y-\v x)\cdot \nabla f(\v z)\, dt \\
+        &amp;\geq \int_{0}^{1} (\v y-\v x)\cdot \nabla f(\v x)\, dt &amp;&amp;\v z - \v x = t(\v y-\v x) \\
+        &amp;= (\v y-\v x)\cdot \nabla f(\v x),
+    \end{align*} $$</span>
+    which is the first-order condition.
+</p>

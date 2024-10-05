@@ -1,0 +1,49 @@
+<p>
+    We will just show it for the standard form
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Minimise } &amp; \v c^T \v x \\
+                \text{subject to } &amp; A\v x = \v b, \\
+                &amp;\v x \geq \v 0.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    The Lagrangian is
+    <span class="display-math">$$ \begin{align*}
+        L(\v x, \v s, \v \lambda) &amp;= \v c^T\v x - \v \lambda^T(A\v x - \v b) \\
+        &amp;= (\v c - A^T \v \lambda)^T \v x + \v \lambda^T \v b.
+    \end{align*} $$</span>
+    If <span class="inline-math">$(A^T \v \lambda)_i &lt; c_i$</span>, then we can set <span class="inline-math">$x_i \to\infty$</span> to drive <span class="inline-math">$L\to-\infty$</span>. Hence
+    <span class="display-math">$$ \begin{align*}
+        \Lambda \equiv \sb{\v \lambda}{\min_{\v x\geq \v 0} L(\v x,\v \lambda) &gt; -\infty} = \sb{\v \lambda}{A^T \v \lambda \leq  \v c}.
+    \end{align*} $$</span>
+    If <span class="inline-math">$\v \lambda\in\Lambda$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        g(\v \lambda) = \min_{\v x\geq 0} L(\v x,\v \lambda) = \v \lambda^T\v b.
+    \end{align*} $$</span>
+    Therefore the dual problem is
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \text{Maximise } &amp; \v b^T \v \lambda \\
+                \text{subject to } &amp; A^T \v \lambda \leq  \v c.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div>

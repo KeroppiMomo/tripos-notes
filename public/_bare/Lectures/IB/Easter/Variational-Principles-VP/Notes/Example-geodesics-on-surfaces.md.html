@@ -1,0 +1,24 @@
+<p>
+    A geodesic is the shortest path on a surface <span class="inline-math">$\Sigma$</span> between two points <span class="inline-math">$\v A$</span> and <span class="inline-math">$\v B$</span>.
+    Suppose <span class="inline-math">$\Sigma \subset \R^3$</span> is given by <span class="inline-math">$g(x,y,z)=0$</span>.
+</p>
+<p>
+    Parametrise the curve by <span class="inline-math">$s\in[0,1]$</span> with <span class="inline-math">$\v x(s) = (x(s),y(s),z(s))$</span>.
+</p>
+<p>
+    We want to minimise <span class="inline-math">$\int_{0}^{1} \sqrt{(x&#x27;(s))^2 + (y&#x27;(s))^2 + (z&#x27;(s))^2}\, ds$</span> subject to <span class="inline-math">$g(\v x(s)) = 0$</span>.
+</p>
+<p>
+    We introduce the Lagrange multiplier <span class="inline-math">$\lambda(s)$</span> as a function of <span class="inline-math">$s$</span>, since we want <span class="inline-math">$g(\v x(s)) = 0$</span> to hold for all <span class="inline-math">$s$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \Phi[\v x; \lambda] = \int_{0}^{1} \underbrace{ \sqrt{(x&#x27;)^2 + (y&#x27;)^2 + (z&#x27;)^2} - \lambda(s) g(x,y,z)}_{f(s,x,y,z,x&#x27;,y&#x27;,z&#x27;)}\, ds.
+    \end{align*} $$</span>
+</p>
+<p>
+    Apply <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Euler-Lagrange-with-several-dependent-variables.html">Euler-Lagrange</a>:
+    <span class="display-math">$$ \begin{align*}
+        \dd{s}\left(\pdfd{f}{x&#x27;}\right) - \pdfd{f}{x} &amp;= 0 &amp;&amp;\iff &amp; \dd{s}\left(\frac{x&#x27;}{\sqrt{(x&#x27;)^2 + (y&#x27;)^2 + (z&#x27;)^2}}\right) - \lambda \pdfd{g}{x} &amp;= 0 \\
+        \dd{s}\left(\pdfd{f}{y&#x27;}\right) - \pdfd{f}{y} &amp;= 0 &amp;&amp;\iff &amp; \dd{s}\left(\frac{y&#x27;}{\sqrt{(x&#x27;)^2 + (y&#x27;)^2 + (z&#x27;)^2}}\right) - \lambda \pdfd{g}{y} &amp;= 0 \\
+        \dd{s}\left(\pdfd{f}{z&#x27;}\right) - \pdfd{f}{z} &amp;= 0 &amp;&amp;\iff &amp; \dd{s}\left(\frac{z&#x27;}{\sqrt{(x&#x27;)^2 + (y&#x27;)^2 + (z&#x27;)^2}}\right) - \lambda \pdfd{g}{z} &amp;= 0 \\
+    \end{align*} $$</span>
+</p>

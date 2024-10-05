@@ -1,0 +1,73 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Full tableau implementation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Full-tableau-implementation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The simplex tableau is given by
+                <span class="display-math">$$ \begin{align*}
+                    &amp; \begin{array}{|rl|rl|} \hline
+                    \text{current costs} &amp; -\v c^T \v x =-\v c_B^T \v x_B &amp; \text{reduced costs vector} &amp; \bar{\v c} \\\hline
+                    \text{current BFS} &amp; \v x_B = B\inv \v b &amp; \text{basic directions} &amp;B\inv A \\\hline
+                    \end{array} \\ \\
+                    \equiv \quad &amp;
+                    \begin{array}{|c|cccc|} \hline
+                    -\v c_B^T \v x_B &amp; \bar c_1 &amp; \bar c_2 &amp; \ldots &amp; \bar c_n \\\hline
+                    x_{B(1)} &amp; | &amp; | &amp; &amp; | \\
+                    \vdots &amp; B\inv \v A_1 &amp; B\inv \v A_2 &amp; \ldots &amp; B\inv \v A_n \\
+                    x_{B(m)} &amp; | &amp; | &amp; &amp; | \\\hline
+                    \end{array}
+                \end{align*} $$</span>
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    Choose a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-basic-solution-basic-feasible-solution.html">basic feasible solution</a> <span class="inline-math">$\v x$</span>
+                    and compute the full simplex tableau for <span class="inline-math">$\v x$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Repeat until <span class="inline-math">$\bar{\v c} \geq \v 0$</span> (then <span class="inline-math">$\v x$</span> is optimal):
+                </p>
+                <ol start="1">
+                <li>
+                    <p>
+                        Choose some <span class="inline-math">$j$</span> such that <span class="inline-math">$\bar c_j &lt; 0$</span>.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        Consider the <span class="inline-math">$j$</span>-th column <span class="inline-math">$u = B\inv A_j$</span> (<em>pivot column</em>).
+                        If no entry of <span class="inline-math">$u$</span> is positive, then the optimal cost is <span class="inline-math">$-\infty$</span> and we are done.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        For each <span class="inline-math">$i$</span> such that <span class="inline-math">$u_i &gt; 0$</span>, compute <span class="inline-math">$x_B(i)/u_i$</span>.
+                        Let <span class="inline-math">$l$</span> be the row index such that this ratio is minimised.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        To make column <span class="inline-math">$A_{B(l)}$</span> exist the basis and <span class="inline-math">$A_j$</span> enter the basis,
+                        add to each row of the tableau a multiple of the <span class="inline-math">$l$</span>-th row (<em>pivot row</em>) so that <span class="inline-math">$u_l$</span> (<em>pivot element</em>) becomes 1 and all other entries of the pivot column are 0.
+                    </p>
+                    
+                </li>
+                </ol>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-executing-the-simplex-algorithm.html">Example</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Explaining-the-simplex-algorithm.html">Explaining the simplex algorithm (non-examinable)</a>
+</p>

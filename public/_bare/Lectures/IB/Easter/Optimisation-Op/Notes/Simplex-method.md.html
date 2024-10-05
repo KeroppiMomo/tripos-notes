@@ -1,0 +1,37 @@
+<p>
+    We are given some basic feasible solution <span class="inline-math">$\v x$</span>.
+</p>
+<ol start="1">
+<li>
+    <p>
+        If the corresponding reduced costs <span class="inline-math">$\bar{\v c}\geq \v 0$</span>, then <span class="inline-math">$\v x$</span> is optimal.
+    </p>
+    
+</li><li>
+    <p>
+        Otherwise let <span class="inline-math">$j$</span> such that <span class="inline-math">$\bar c_j &lt; 0$</span>. Moving in the <span class="inline-math">$j$</span>-th basic direction <span class="inline-math">$\v d$</span> will reduce cost, since using reduced costs,
+        <span class="display-math">$$ \begin{align*}
+        \v c^T(\v x+\theta\v d) &amp;= \v c^T\v x + \theta\bar{\v c}^T\v d &amp;&amp;\text{reduced costs} \\
+        &amp;= \v c^T \v x + \theta \bar c_j d_j &amp;&amp;\bar{\v c}_B = \v 0\\
+        &amp;&lt; \v c^T \v x &amp;&amp;d_j = 1\text{ and } \bar c_j&lt;0.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        Compute <span class="inline-math">$\v u :=-\v d_B = B\inv \v A_j$</span>.
+        If <span class="inline-math">$\v u\leq 0$</span>, we can get get an optimal cost of <span class="inline-math">$-\infty$</span> by moving along <span class="inline-math">$\v d$</span> indefinitely, and so the algorithm terminates.
+    </p>
+    
+</li><li>
+    <p>
+        Otherwise let <span class="inline-math">$l = 1,2,\ldots,m$</span> such that <span class="inline-math">$u_l &gt; 0$</span> and <span class="inline-math">$x_{B(l)}/u_l$</span> is minimum. Let the minimum value be <span class="inline-math">$\theta^\ast$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Move to the new basic feasible solution <span class="inline-math">$\v y = \v x + \theta^\ast \v d$</span> where <span class="inline-math">$y_l = \theta^\ast$</span>, <span class="inline-math">$y_{B(i)} = x_{B(i)} - \theta^\ast u_i$</span> for <span class="inline-math">$i\neq l$</span> and other entries are zero.
+    </p>
+    
+</li>
+</ol>

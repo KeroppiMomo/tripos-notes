@@ -1,0 +1,56 @@
+<blockquote>
+    <p>
+        See also example sheet 1 Q6.
+    </p>
+    
+</blockquote>
+<p>
+    A bead slides on a wire under the influence of gravity between points <span class="inline-math">$A$</span> and <span class="inline-math">$B$</span>, starting from rest.
+    What shape of wire takes the shortest time?
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Easter/Variational-Principles-VP/Pasted-image-20240426111143.png">
+</p>
+<p>
+    Fix <span class="inline-math">$A$</span> at the origin and let <span class="inline-math">$B$</span> be <span class="inline-math">$(x_B,y_B)$</span>. Parametrise the curve by <span class="inline-math">$(x,y(x))$</span>.
+</p>
+<p>
+    By conservation of energy, the speed <span class="inline-math">$v$</span> at <span class="inline-math">$(x,y)$</span> is
+    <span class="display-math">$$ \begin{align*}
+        0 = \frac{1}{2}mv^2 + mgy \implies v = \sqrt{-2gy}.
+    \end{align*} $$</span>
+</p>
+<p>
+    We want to minimise
+    <span class="display-math">$$ \begin{align*}
+        T[y] = \int_{A}^{B} \frac{dl}{v} = \frac{1}{\sqrt{2g}} \int_{0}^{x_B} \underbrace{ \frac{\sqrt{1+(y&#x27;)^2}}{\sqrt{-y}}}_{f(y,y&#x27;)} \,dx
+    \end{align*} $$</span>
+    subject to <span class="inline-math">$y(0) = 0$</span> and <span class="inline-math">$y(x_B) = y_B$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$f$</span> does not depend on <span class="inline-math">$x$</span>, we use the <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/First-integrals-of-Euler-Lagrange.html#^no-x">first integral</a>:
+    <span class="display-math">$$ \begin{align*}
+        \kappa &amp;= f - y&#x27; \pdfd{f}{y&#x27;} \\
+        &amp;= \frac{\sqrt{1+(y&#x27;)^2}}{\sqrt{-y}}- y&#x27;\frac{y&#x27;}{\sqrt{1+(y&#x27;)^2}\sqrt{-y}} \\
+        &amp;= \frac{1}{\sqrt{1+(y&#x27;)^2}\sqrt{-y}} \\
+        1+(y&#x27;)^2 &amp;= \frac{1}{-\kappa^2 y} \\
+        y&#x27; &amp;= \pm \frac{\sqrt{1+\kappa^2 y}}{\kappa\sqrt{-y}} \\
+        x &amp;= \pm \kappa\int \frac{\sqrt{-y}}{\sqrt{1+\kappa^2 y}}\, dy.
+    \end{align*} $$</span>
+    Substituting <span class="inline-math">$y=-(1/\kappa^2) \sin^2 \theta/2$</span>,
+    <span class="display-math">$$ \begin{align*}
+        x &amp;= \pm \kappa\int \frac{(1/\kappa)\sin\theta/2}{\cos \theta/2} \left(-\frac{1}{\kappa^2} \sin(\theta/2)\cos(\theta/2)\right)\,d\theta \\
+        &amp;= \mp \int \sin^2 (\theta/2)\, d\theta \\
+        &amp;= \mp \frac{1}{2\kappa^2}(\theta-\sin\theta) + c.
+    \end{align*} $$</span>
+</p>
+<p>
+    Taking <span class="inline-math">$x=0$</span> when <span class="inline-math">$\theta=0$</span>, we have <span class="inline-math">$c=0$</span>. Also assume <span class="inline-math">$x$</span> is increasing. Then
+    <span class="display-math">$$ \begin{align*}
+        (x,y) = \left(\frac{1}{2\kappa^2}(\theta-\sin\theta), -\frac{1}{2\kappa^2} (1-\cos\theta\right).
+    \end{align*} $$</span>
+    This is a <a href="https://en.wikipedia.org/wiki/Cycloid">cycloid</a>.
+</p>
+<p>
+    We choose a <span class="inline-math">$\kappa$</span> for the curve to pass through <span class="inline-math">$(x_B, y_B)$</span>.
+</p>

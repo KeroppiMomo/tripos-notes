@@ -1,0 +1,42 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (feasible direction)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-feasible-direction.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-linear-program.html">linear program</a>, call the feasible set <span class="inline-math">$P$</span>.
+            </p>
+            <p>
+                At some point <span class="inline-math">$\v x\in P$</span>, a vector <span class="inline-math">$\v d\in\R^n$</span> is called a <em>feasible direction</em> if there exists some <span class="inline-math">$\theta&gt;0$</span> such that <span class="inline-math">$\v x+\theta \v d\in P$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Let <span class="inline-math">$\v x$</span> be a basic feasible solution with basic indices <span class="inline-math">$B(1), B(2), \ldots, B(m)$</span>.
+    We want to move from <span class="inline-math">$\v x$</span> to a feasible solution <span class="inline-math">$\v x&#x27; =\v x + \theta\v d$</span> (where <span class="inline-math">$\theta&gt;0$</span>)
+    by making some non-basic variable <span class="inline-math">$x&#x27;_j$</span> positive while keeping all other non-basic variables fixed at 0.
+    We describe this by saying <span class="inline-math">$x_j$</span> <em>enters the basis</em>.
+</p>
+<p>
+    We insist <span class="inline-math">$d_j = 1$</span> and <span class="inline-math">$d_i=0$</span> for all other non-basic indices <span class="inline-math">$i\neq j$</span>.
+    In order for <span class="inline-math">$A\v x&#x27; = A(\v x + \theta\v d) = \v b$</span> to hold, since <span class="inline-math">$A\v x = \v b$</span>, we need
+    <span class="display-math">$$ \begin{align*}
+        \v 0 = A\v d = \v A_jd_j + A_B \v d_B \implies \v d_B = -B\inv \v A_j.
+    \end{align*} $$</span>
+    This <span class="inline-math">$\v d$</span> is called the <em><span class="inline-math">$j$</span>-th basic direction</em>.
+</p>
+<p>
+    To ensure <span class="inline-math">$\v x&#x27;\geq \v 0$</span>, we need <span class="inline-math">$-\theta d_i\leq x_i$</span> for all <span class="inline-math">$i$</span>.
+    This is automatically satisfied when <span class="inline-math">$d_i \geq 0$</span>.
+    So the range of <span class="inline-math">$\theta$</span> for a feasible <span class="inline-math">$\v x&#x27;$</span> is
+    <span class="display-math">$$ \begin{align*}
+        0 &lt; \theta \leq \min_{i:\ d_i&lt;0}\left(\frac{x_i}{-d_i}\right) = \min_{i=1,2,\ldots,m:\ d_{B(i)}&lt;0} \left(\frac{x_{B(i)}}{-d_{B(i)}}\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    If we require <span class="inline-math">$\v x&#x27;$</span> to be a basic feasible solution, then take <span class="inline-math">$\theta$</span> to be its upper bound.
+</p>

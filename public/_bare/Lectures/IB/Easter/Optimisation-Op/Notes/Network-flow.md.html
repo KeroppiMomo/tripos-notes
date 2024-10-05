@@ -1,0 +1,444 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (graph)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-graph.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>directed graph</em> is a tuple <span class="inline-math">$G=(V,E)$</span>
+                where <span class="inline-math">$V$</span> is the set of <em>vertices</em> and
+                <span class="inline-math">$E\subseteq V\times V$</span> is a set of ordered <em>edges</em>.
+            </p>
+            <p>
+                <span class="inline-math">$G$</span> is called an <em>undirected graph</em> if <span class="inline-math">$E$</span> is symmetric, i.e. for all <span class="inline-math">$(v,v&#x27;)\in E$</span>, we have <span class="inline-math">$(v&#x27;,v)\in E$</span> as well.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Minimum cost flow problem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Minimum-cost-flow-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let a graph <span class="inline-math">$G = (V, E)$</span> where <span class="inline-math">$V=\set{1,2,\ldots,n}$</span>.
+            </p>
+            <p>
+                For each edge <span class="inline-math">$(i,j)\in E$</span>, an amount <span class="inline-math">$x_{ij}$</span> flows from vertex <span class="inline-math">$i$</span> to vertex <span class="inline-math">$j$</span>.
+                We impose the following constraints:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Flow is conserved at each vertex. We fix a vector <span class="inline-math">$\v b\in\R^n$</span> which indicates the amount of flow <span class="inline-math">$b_i$</span> that enters a vertex <span class="inline-math">$i$</span>.
+                    A vertex with <span class="inline-math">$b_i&gt;0$</span> is called a <em>source</em> and a vertex with <span class="inline-math">$b_i&lt;0$</span> is called a sink.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$n\times n$</span> matrices <span class="inline-math">$\underline{M} = (\underline{m}_{ij})$</span> and <span class="inline-math">$\overline{M} = (\overline{m}_{ij})$</span> give the lower and upper bounds for the flow <span class="inline-math">$x_{ij}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$n\times n$</span> matrices <span class="inline-math">$C = (c_{ij})$</span> gives the cost per unit flow on the edge <span class="inline-math">$(i,j)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Minimal cost flow problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp; \sum_{(i,j)\in E} c_{ij} x_{ij} \\
+                            \text{subject to } &amp; b_i + \sum_{(j,i)\in E} x_{ji} = \sum_{(i,j)\in E} x_{ij} \quad \forall i\in V, \\
+                            &amp; \underline{m}_{ij} \leq x_{ij} \leq \overline{m}_{ij}.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                For the problem to be feasible, we require <span class="inline-math">$\sum_{i\in V} b_i = 0$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Transport problem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Transport-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We have <span class="inline-math">$n$</span> suppliers labelled <span class="inline-math">$i=1,2,\ldots,n$</span>, each supplying <span class="inline-math">$s_i$</span> units of products.
+                There are also <span class="inline-math">$m$</span> consumers labelled <span class="inline-math">$j=1,2,\ldots,m$</span>, each demanding <span class="inline-math">$d_i$</span> units of products.
+                Transporting one unit of product from <span class="inline-math">$i$</span> to <span class="inline-math">$j$</span> costs <span class="inline-math">$c_{ij}$</span>.
+            </p>
+            <p>
+                This is a special case of the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Minimum-cost-flow-problem.html">minimum cost flow problem</a>, with <span class="inline-math">$G$</span> being a <em>bipartite graph</em>
+                and <span class="inline-math">$E$</span> only consists of edges from a supplier to a consumer.
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Transport problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp;\sum_{(i,j)\in E} c_{ij} x_{ij} \\
+                            \text{subject to } &amp;\sum_{j=1}^{m} x_{ij} = s_i &amp;&amp; \forall i=1,2,\ldots,n, \\
+                            &amp;\sum_{i=1}^{n} x_{ij} = d_j &amp;&amp; \forall j=1,2,\ldots,m, \\
+                            &amp;x_{ij} \geq 0 &amp;&amp;\forall (i,j)\in E.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                We can let <span class="inline-math">$E = V\times V$</span> and set the cost of the non-existent edges to be infinity.
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Transport problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <!-- BEGIN BLOCK ID complete -->
+                    <p id="^complete">
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Minimise } &amp;\sum_{i=1}^{n} \sum_{j=1}^{m} c_{ij} x_{ij} \\
+                            \text{subject to } &amp;\sum_{j=1}^{m} x_{ij} = s_i &amp;&amp; \forall i=1,2,\ldots,n, \\
+                            &amp;\sum_{i=1}^{n} x_{ij} = d_j &amp;&amp; \forall j=1,2,\ldots,m, \\
+                            &amp;x_{ij} \geq 0 &amp;&amp;\forall (i,j)\in E.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                    <!-- END BLOCK ID complete -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (equivalence of minimum cost flow and transport problem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-equivalence-of-minimum-cost-flow-and-transport-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Every <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Minimum-cost-flow-problem.html">minimum cost flow problem</a> with finite capacities or non-negative capacities can be recast as an equivalent <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Transport-problem.html">transport problem</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-equivalence-of-minimum-cost-flow-and-transport-problem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (optimality in the transport problem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-optimality-in-the-transport-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Transport-problem.html#^complete">transport problem</a>.
+                If for some feasible <span class="inline-math">$x$</span>, we have dual variables <span class="inline-math">$\v \lambda\in\R^n$</span> (for suppliers) and <span class="inline-math">$\v\mu\in\R^m$</span> (for consumers)
+                such that the following holds:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    dual feasibility: <span class="inline-math">$c_{ij}\geq \lambda_i + \mu_j$</span> for all <span class="inline-math">$i,j$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    complementary slackness: <span class="inline-math">$(c_{ij} - \lambda_i - \mu_j)x_{ij} = 0$</span>,
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                then <span class="inline-math">$x$</span> is optimal.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-optimality-in-the-transport-problem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<!-- BEGIN BLOCK ID lambda1-assumption -->
+<p id="^lambda1-assumption">
+    Note that optimality only depends on <span class="inline-math">$\lambda_i + \mu_j$</span>,
+    so WLOG we can assume <span class="inline-math">$\lambda_1 = 0$</span> by subtracting all <span class="inline-math">$\lambda$</span> and adding all <span class="inline-math">$\mu$</span> by <span class="inline-math">$\lambda_1$</span>.
+</p>
+
+<!-- END BLOCK ID lambda1-assumption -->
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Transport algorithm
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Transport-algorithm.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The transport tableau is as follow:
+            </p>
+            <p>
+                <img src="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Pasted-image-20240704232639.png">
+            </p>
+            <p>
+                To construct an initial basic feasible solution, we use the <em>northwest corner rule</em>:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    Start with any edge variable, and increase it until the supply or demand is satisfied.
+                </p>
+                
+            </li><li>
+                <p>
+                    If supply is satisfied, move to the next supplier and repeat step 1.
+                </p>
+                
+            </li><li>
+                <p>
+                    If demand is satisfied, move to the next consumer and repeat step 1.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                In a non-degenerate problem, we assume we arrive at a <em>spanning tree</em> <span class="inline-math">$T$</span>, i.e. a connected graph with no cycles.
+                So there are exactly <span class="inline-math">$n+m-1$</span> edges with positive flow.
+            </p>
+            <p>
+                We keep updating the current solution:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    If <span class="inline-math">$c_{ij} \geq \lambda_i + \mu_j$</span> for all <span class="inline-math">$i,j$</span>, then the current solution is optimal and the algorithm is terminated.
+                </p>
+                
+            </li><li>
+                <p>
+                    Otherwise let <span class="inline-math">$(i,j)$</span> be such that <span class="inline-math">$c_{ij} &lt; \lambda_i + \mu_j$</span>. By complementary slackness, <span class="inline-math">$x_{ij} = 0$</span>, so <span class="inline-math">$(i,j)\not\in T$</span>.
+                    Then <span class="inline-math">$(i,j)$</span> and those edges in <span class="inline-math">$T$</span> form a cycle.
+                </p>
+                
+            </li><li>
+                <p>
+                    Along this cycle, increase the flow <span class="inline-math">$x_{ij}$</span> until some flow in the flow decreases to zero.
+                </p>
+                
+            </li><li>
+                <p>
+                    Update the dual variables.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-transport-algorithm.html">Example (transport algorithm)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Maximum flow problem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Given a graph with a single source (vertex 1) and a single sink (vertex <span class="inline-math">$n$</span>),
+                find the maximum possible flow <span class="inline-math">$\delta$</span> between the source and the sink subject to capacity constraints.
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Maximum flow problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \text{Maximise } &amp;\delta \\
+                            \text{subject to } &amp; \sum_{j:\ (i,j)\in E} x_{ij} - \sum_{j:\ (j,i)\in E} x_{ji} = 0 &amp;&amp;\forall i\neq 1,n, \\
+                            &amp; \sum_{j:\ (1,j)\in E} x_{1j} - \sum_{j:\ (j,1)\in E} x_{j1} = \delta, \\
+                            &amp; \sum_{j:\ (n,j)\in E} x_{nj} - \sum_{j:\ (j,n)\in E} x_{jn} = -\delta, \\
+                            &amp; 0 \leq x_{ij} \leq c_{ij} &amp;&amp;\forall (i,j)\in E.
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Cuts
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Cuts.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (cut of a graph)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-cut-of-a-graph.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>cut</em> of a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-graph.html">graph</a> <span class="inline-math">$G = (V,E)$</span> is a partition of <span class="inline-math">$V$</span> into <span class="inline-math">$(S, V\setminus S)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (capacity of a cut)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-capacity-of-a-cut.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The capacity of a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-cut-of-a-graph.html">cut</a> <span class="inline-math">$(S,V\setminus S)$</span> of a graph <span class="inline-math">$G=(V,E)$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                c(S) = \sum_{(i,j)\in E: \ i\in S, \ j\in V\setminus S} c_{ij}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$c_{ij}$</span> is the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">capacity</a> of edge <span class="inline-math">$(i,j)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (total flow does not exceed cut capacity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-total-flow-does-not-exceed-cut-capacity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$x$</span> be a feasible flow of the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">maximum flow problem</a> with flow <span class="inline-math">$\delta$</span>.
+                        </p>
+                        <p>
+                            Then for any <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-cut-of-a-graph.html">cut</a> <span class="inline-math">$(S,V\setminus S)$</span> such that <span class="inline-math">$1\in S$</span> and <span class="inline-math">$n\in V\setminus S$</span>, we have <span class="inline-math">$\delta\leq c(S)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-total-flow-does-not-exceed-cut-capacity.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <!-- BEGIN BLOCK ID augmenting-path-remark -->
+            <p id="^augmenting-path-remark">
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (augmenting path)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-augmenting-path.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-graph.html">graph</a> <span class="inline-math">$G=(V,E)$</span>, a <em>path</em> is defined as a sequence of vertices <span class="inline-math">$(v_1,v_2, \ldots, v_k)$</span> where each pair of adjacent vertices is connected, i.e. <span class="inline-math">$(v_i, v_{i+1})$</span> or <span class="inline-math">$(v_{i+1}, v_i) \in E$</span> for all <span class="inline-math">$i=1,2,\ldots,k-1$</span>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$c_{ij}$</span> be the capacity of edge <span class="inline-math">$(i,j)\in E$</span>.
+                            For a flow <span class="inline-math">$x$</span>, a path is called an <em>augmenting path</em> if a forward edge is not full yet and a backward edge is not zero, i.e. <span class="inline-math">$x_{v_i v_{i+1}} &lt; c_{v_iv_{i+1}}$</span> when <span class="inline-math">$(v_i, v_{i+1})\in E$</span> and <span class="inline-math">$x_{v_{i+1} v_i} &gt; 0$</span> when <span class="inline-math">$(v_{i+1}, v_i)\in E$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                Observe that we can "push" a sufficiently small value <span class="inline-math">$\epsilon$</span> along an <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-augmenting-path.html">augmenting path</a> by adding a flow of <span class="inline-math">$\epsilon$</span> along forward edges and subtracting <span class="inline-math">$\epsilon$</span> along backward edges.
+                So if there is an augmenting path from <span class="inline-math">$1$</span> to <span class="inline-math">$n$</span>, then the flow is not optimal.
+                (<a href="/tripos-notes/media/Lectures/IB/Easter/Optimisation-Op/Pasted-image-20240522103725.png">Example</a>)
+            </p>
+            
+            <!-- END BLOCK ID augmenting-path-remark -->
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (max-flow min-cut)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-max-flow-min-cut.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In a <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Maximum-flow-problem.html">maximum flow problem</a>, let <span class="inline-math">$\delta^\ast$</span> be the optimal value.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \delta^\ast = \min\sb{c(S)}{S\subset V,\ 1\in S,\ n\in V\setminus S}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Proof-max-flow-min-cut.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Ford-Fulkerson algorithm
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Ford-Fulkerson-algorithm.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ol start="1">
+            <li>
+                <p>
+                    Start with a feasible flow, say the zero flow <span class="inline-math">$x=0$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    While there exists an augmenting path from <span class="inline-math">$1$</span> to <span class="inline-math">$n$</span>:
+                </p>
+                <ol start="1">
+                <li>
+                    <p>
+                        Push as much as possible through the path.
+                    </p>
+                    
+                </li>
+                </ol>
+                
+            </li><li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-max-flow-min-cut.html"><span class="inline-math">$x$</span> is now optimal</a>. We can find a cut with capacity equal to the amount of flow.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Example-Ford-Fulkerson-algorithm.html">Example</a>
+            </p>
+            <p>
+                If the capacity is an integer, the algorithm is guaranteed to terminate. Otherwise it may have infinite steps.
+            </p>
+            
+        </div>
+    </div>
+</p>
