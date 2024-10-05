@@ -22,8 +22,8 @@ class QuoteNode(Node):
 
 def parseQuote(input: str) -> list[Node]:
     emptyLineMatch = re.search(r"\n[\ \t]*\n", input)
-    beforeMatch = input[:emptyLineMatch.start()]
-    afterMatch = input[emptyLineMatch.end():]
+    beforeMatch = input[:emptyLineMatch.start()] if emptyLineMatch is not None else input
+    afterMatch = input[emptyLineMatch.end():] if emptyLineMatch is not None else ""
 
     removedAngle = "\n".join([
         line[2:] if line.startswith("> ") else line
