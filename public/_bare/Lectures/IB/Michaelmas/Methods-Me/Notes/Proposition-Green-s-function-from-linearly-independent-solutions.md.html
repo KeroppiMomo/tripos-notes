@@ -1,0 +1,50 @@
+<p>
+    Let <span class="inline-math">$L = \alpha \dd[2]{x} + \beta \dd{x} + \gamma$</span> be a second-order linear differential operator with <span class="inline-math">$\alpha(x)\neq 0$</span> on <span class="inline-math">$(a,b)$</span>.
+    Suppose <span class="inline-math">$y_1$</span> and <span class="inline-math">$y_2$</span> be linearly independent solutions to <span class="inline-math">$Ly=0$</span> such that <span class="inline-math">$y_1(a) = 0$</span> and <span class="inline-math">$y_2(b)=0$</span>.
+</p>
+<p>
+    Then the Dirichlet Green's function for <span class="inline-math">$L$</span> on <span class="inline-math">$(a,b)$</span> is
+    <span class="display-math">$$ \begin{align*}
+        G(x;\xi) = \frac{1}{\alpha(\xi) W(y_1,y_2)(\xi)} \begin{cases}
+            y_1(x)y_2(\xi), &amp;a&lt;x&lt;\xi, \\
+            y_1(\xi) y_2(x), &amp;\xi&lt;x&lt;b
+        \end{cases}
+    \end{align*} $$</span>
+    where <span class="inline-math">$W(y_1,y_2)=y_1y_2&#x27; - y_1&#x27;y_2$</span> is the <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-Wronskian.html">Wronskain</a>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Green-s-function-from-linearly-independent-solutions.html">Proof</a>
+</p>
+<ul>
+<li>
+    <p>
+        Therefore <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Using-Green-s-functions-to-solve-inhomogenous-problems.html">we can solve an inhomogenous problem</a>
+        <span class="display-math">$$ \begin{align*}
+        y(x) = \int_{a}^{x} \frac{y_1(\xi) y_2(x) f(\xi)}{\alpha(\xi) W(y_1,y_2)(\xi)} \d \xi + \int_{x}^{b} \frac{y_1(x)y_2(\xi)f(\xi)}{\alpha(\xi) W(y_1,y_2)(\xi)} \d \xi.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$L$</span> being <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville</a>:
+    </p>
+    <ul>
+    <li>
+        <p>
+            We can absorb <span class="inline-math">$w$</span> into <span class="inline-math">$f$</span> so WLOG assume <span class="inline-math">$w=1$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            We use the identity <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Lemma-Sturm-Liouville-operator-and-Wronskian.html"><span class="inline-math">$(pW(y_1,y_2))&#x27; = y_2 L y_1 - y_1 L y_2$</span></a> and <span class="inline-math">$Ly_1 = 0 = Ly_2$</span> to see
+            <span class="display-math">$$ \begin{align*}
+            y(x) = -\frac{1}{p(c) W(y_1,y_2)(c)} \left(y_2(x) \int_{a}^{x} y_2(\xi)f(\xi) \d \xi + y_1(x) \int_{x}^{b} y_1(\xi) f(\xi) \d \xi\right)
+            \end{align*} $$</span>
+            for any <span class="inline-math">$c\in (a,b)$</span>.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ul>

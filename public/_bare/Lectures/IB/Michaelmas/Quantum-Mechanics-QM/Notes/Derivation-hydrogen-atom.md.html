@@ -1,0 +1,74 @@
+<p>
+    The Hamiltonian can be written as
+    <span class="display-math">$$ \begin{align*}
+        \hat H\psi = -\frac{e^2}{4\pi\epsilon_0 r}\psi - \frac{\hbar^2}{2m_er} \pdd[2]{r}(r\psi) + \frac{\hat L^2\psi}{2m_er^2}.
+    \end{align*} $$</span>
+    Substituting <span class="inline-math">$\psi = \chi(r)\, Y_{m,l}(\theta, \phi)$</span> gives
+    <span class="display-math">$$ \begin{align*}
+        E\chi = -\frac{e^2}{4\pi\epsilon_0 r} \chi - \frac{\hbar^2}{2m_e}\left(\dfd[2]{\chi}{r} + \frac{2}{r} \dfd{\chi}{r}\right) + \frac{\hbar^2 l(l+1)}{2m_er^2} \chi.
+    \end{align*} $$</span>
+    Defining constants
+    <span class="display-math">$$ \begin{align*}
+        \nu^2 = \frac{-2m_eE}{\hbar^2} &gt; 0, \qquad \beta = \frac{e^2 m_e}{2\pi\epsilon_0 \hbar^2},
+    \end{align*} $$</span>
+    we have
+    <span class="display-math">$$ \begin{align*}
+        \chi&#x27;&#x27; + \frac{2}{r}\chi&#x27; - \frac{l(l+1)}{r^2}\chi + \frac{\beta}{r}\chi - \nu^2 \chi = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Make the substitution
+    <span class="display-math">$$ \begin{align*}
+        \chi(r) = f(r) \,\exp(-\nu r)
+    \end{align*} $$</span>
+    which gives
+    <span class="display-math">$$ \begin{align*}
+        \chi&#x27;(r) ={}&amp; (f&#x27;(r) - \nu f(r))\exp(-\nu r), \\
+        \chi&#x27;&#x27;(r) ={}&amp; (f&#x27;&#x27;(r) - 2\nu f&#x27;(r) + \nu^2 f(r)) \exp(-\nu r)
+    \end{align*} $$</span>
+    and we get
+    <span class="display-math">$$ \begin{align*}
+        f&#x27;&#x27; + \frac{2}{r}(1 - \nu r)f&#x27; - \frac{l(l+1)}{r^2}f + \frac{1}{r}(\beta - 2\nu)f = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Since this has a <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-regular-and-irregular-singular-point.html">regular singular point</a> at <span class="inline-math">$r=0$</span>,
+    we look for a Frobenius series solution
+    <span class="display-math">$$ \begin{align*}
+        f(r) = r^\sigma \sum_{n=0}^{\infty} a_nr^n.
+    \end{align*} $$</span>
+</p>
+<p>
+    Setting the coefficient of <span class="inline-math">$r^{\sigma-2}$</span> to zero,
+    <span class="display-math">$$ \begin{align*}
+        a_0 \big(\sigma(\sigma-1) + 2\sigma - l(l+1) \big) = 0 \implies \sigma = l, \,-l-1.
+    \end{align*} $$</span>
+    For the root <span class="inline-math">$\sigma=-l-1$</span>, <span class="inline-math">$\chi(r) \sim 1/r^{l+1}$</span> near <span class="inline-math">$r=0$</span>, which leads to a singular wavefunction.
+    Hence <span class="inline-math">$\sigma = l$</span>.
+</p>
+<p>
+    Now compare the coefficient of <span class="inline-math">$r^{l+n-2}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        &amp; (n+l)(n+l-1)a_{n} + 2(n+l)a_n - 2\nu(n+l-1)a_{n-1} - l(l+1)a_{n} + (\beta - 2\nu) a_{n-1} = 0 \\
+        \implies &amp; a_n = \frac{2\nu(n+l) - \beta}{n(n+2l+1)} a_{n-1}.
+    \end{align*} $$</span>
+</p>
+<p>
+    If the series does not terminate, then <span class="inline-math">$a_n/a_{n-1} \sim 2\nu/n$</span> as <span class="inline-math">$n\to \infty$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        &amp;f(r) \sim a_0 r^l \sum_{n=0}^{\infty} \frac{(2\nu)^n}{n!} r^n = a_0 r^l \exp(2\nu r) \\
+        \implies&amp; \chi(r) \sim a_0 r^l \exp(\nu r) \to \infty
+    \end{align*} $$</span>
+    which results in a non-normalisable wavefunction.
+</p>
+<p>
+    Hence we need the series to terminate, i.e.
+    <span class="display-math">$$ \begin{align*}
+        \nu = \frac{\beta}{2N}
+    \end{align*} $$</span>
+    for some integer <span class="inline-math">$N &gt; l$</span>.
+    Substituting the definition of <span class="inline-math">$\nu$</span> and <span class="inline-math">$\beta$</span>,
+    <span class="display-math">$$ \begin{align*}
+        E = E_N = -\frac{e^4 m_e}{32\pi^2 \epsilon_0^2 \hbar^2} \frac{1}{N^2}.
+    \end{align*} $$</span>
+</p>

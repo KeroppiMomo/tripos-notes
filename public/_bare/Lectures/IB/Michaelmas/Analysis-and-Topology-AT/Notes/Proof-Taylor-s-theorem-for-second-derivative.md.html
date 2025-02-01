@@ -1,0 +1,31 @@
+<p>
+    Define <span class="inline-math">$ϕ^i:[0,1]\to \R$</span> by
+    <span class="display-math">$$ \begin{align*}
+        ϕ^i(t) = f^i(x_0 + th).
+    \end{align*} $$</span>
+    We can compute the derivatives:
+    <span class="display-math">$$ \begin{align*}
+        &amp; {ϕ^{i}}&#x27;(t) k = Dϕ^i(t)(k) = Df^i(x_0+th) \circ h\,\id(k) = k\,Df^i(x_0 + th)(h) \\
+        \implies &amp; {ϕ^i}&#x27;(t) = Df^i(x_0+th)(h),
+    \end{align*} $$</span>
+    and
+    <span class="display-math">$$ \begin{align*}
+        &amp;{ϕ^{i}}&#x27;&#x27;(0) k = D\bigl(Df^i(x_0+th)(h)\bigr)(0)(k) = D^2 f^i(x_0)(h) \cdot h\,\id(k) = k\, D^2f^i(x_0)(h)(h) \\
+        \implies&amp; {ϕ^i}&#x27;&#x27;(0) = D^2 f^i(x_0)(h,h).
+    \end{align*} $$</span>
+</p>
+<p>
+    We have
+    <span class="display-math">$$ \begin{align*}
+        \lim_{t\to 0} \frac{ϕ^i(t) - ϕ^i(0) - t\,{ϕ^i}&#x27;(0) - \frac{1}{2}t^2 \, {ϕ^{i}}&#x27;&#x27;(0)}{t^2} ={}&amp; \lim_{t\to 0} \frac{{ϕ^i}&#x27;(t) - {ϕ^i}&#x27;(0) - t{ϕ^i}&#x27;&#x27;(0)}{t} &amp;&amp;\text{L&#x27;Hopital} \\
+        ={}&amp; 0 &amp;&amp;\text{definition of derivative}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        0 ={}&amp; \|h\|^2 \lim_{t\to 0} \frac{f^i(x_0+th) - f^i(x_0) - Df^i(x_0)(th) - \frac{1}{2}D^2 f^i(x_0)(th,th)}{\|th\|^2} \\
+        \implies 0 ={}&amp; \lim_{h\to 0} \frac{f^i(x_0+h) - f^i(x_0) - Df^i(x_0)(h) - \frac{1}{2}D^2 f^i(x_0)(h,h)}{\|h\|^2} \\
+    \end{align*} $$</span>
+    as required.
+</p>

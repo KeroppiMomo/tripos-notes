@@ -1,0 +1,38 @@
+
+<h1><span class="inline-math">$n=1$</span></h1>
+
+<p>
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        H(x + ct) - H(x - ct) = \begin{cases}
+            0, &amp; x&lt;-ct, \\
+            1, &amp;-ct&lt;x&lt;ct, \\
+            0, &amp;x&gt;ct.
+        \end{cases}
+    \end{align*} $$</span>
+    So
+    <span class="display-math">$$ \begin{align*}
+        \hat \Phi_t(\lambda) ={}&amp; \frac{1}{2c} \int_{-ct}^{ct} e^{-i\lambda x} \d x \\
+        ={}&amp; \frac{1}{-2ic\lambda} (e^{-ict\lambda} - e^{ict\lambda}) \\
+        ={}&amp;\frac{\sin(ct\lambda)}{c\lambda} \\
+        ={}&amp; \frac{\sin(ct|\lambda|)}{c|\lambda|}.
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$n=3$</span></h1>
+
+<p>
+    Adopt spherical polars <span class="inline-math">$(r,\theta,\phi)$</span> to compute the inverse Fourier transform.
+    WLOG, align the <span class="inline-math">$\lambda_3$</span> axis in the same direction as <span class="inline-math">$\v x$</span> such that <span class="inline-math">$\v x\cdot \v \lambda = |\v x||\v \lambda| \cos\theta$</span>.
+    <span class="display-math">$$ \begin{align*}
+        \Phi_t(\v x) ={}&amp; \frac{1}{(2\pi)^3} \lim_{R\to \infty} \int_{|\v \lambda|&lt;R} e^{i\v \lambda\cdot \v x} \frac{\sin(ct|\v \lambda|)}{c|\v \lambda|} \d^3 \v \lambda \\
+        ={}&amp; \frac{1}{8\pi^3} \lim_{R\to \infty} \int_{0}^{2\pi} \int_{0}^{R} \int_{0}^{\pi} e^{ir|\v x|\cos \theta} \frac{\sin(ctr)}{cr} r^2 \sin \theta \d \theta \d r \d \phi \\
+        ={}&amp; \frac{1}{4\pi^2} \lim_{R\to \infty} \int_{0}^{R} \frac{\sin(ctr)}{-ic|\v x|} \left[e^{ir|\v x|\cos\theta}\right]_0^\pi \d r \\
+        ={}&amp; \frac{1}{2\pi^2 c|\v x|} \lim_{R\to \infty} \int_{0}^{R} \sin(ctr) \sin(r|\v x|) \d r \\
+        ={}&amp; \frac{1}{4\pi^2 c|\v x|} \lim_{R\to \infty} \int_{-R}^{R} \sin(ctr) \sin(r|\v x|) \d r &amp;&amp;\text{even integrand} \\
+        ={}&amp; \frac{1}{8\pi^2 c|\v x|} \lim_{R\to \infty} \int_{-R}^{R} \cos(r(|\v x| - ct)) - \cos(r(|\v x| + ct)) \d r \\
+        ={}&amp; \frac{1}{8\pi^2 c|\v x|} \int e^{ir(|\v x|-ct)} - e^{ir(|\v x|+ct)} \d r &amp;&amp;\text{$\sin$ is odd} \\
+        ={}&amp; \frac{1}{4\pi c|\v x|} \big(\delta(|\v x| - ct) - \delta(|\v x| + ct)\big)
+    \end{align*} $$</span>
+    where the last step uses the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-inverse-discrete-Fourier-transform.html">oscillatory integral</a> <span class="inline-math">$\delta(\lambda) = \frac{1}{2\pi} \int e^{i\lambda x} \d x$</span>.
+</p>

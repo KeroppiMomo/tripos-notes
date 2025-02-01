@@ -1,0 +1,49 @@
+
+<h1>Linear independence</h1>
+
+<p>
+    Suppose for some <span class="inline-math">$\lambda_b \in \mathbb{F}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \v 0 = \sum_{b\in B} &#x27; \lambda_b b^\star.
+    \end{align*} $$</span>
+    Then for any <span class="inline-math">$c\in B$</span>, evaluating the functions on both sides at <span class="inline-math">$c$</span> yields
+    <span class="display-math">$$ \begin{align*}
+        0 ={}&amp; \left(\sum_{b\in B} &#x27;\lambda_b b^\star\right)(c) \\
+        ={}&amp; \sum_{b\in B} &#x27; \lambda_b b^\star(c) \\
+        ={}&amp; \sum_{b\in B} &#x27;\lambda_b \delta_{b,c} \\
+        ={}&amp; \lambda_c
+    \end{align*} $$</span>
+</p>
+
+<h1>Spanning in finite-dimensional vector space</h1>
+
+
+<h2>Non-constructive proof</h2>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-dimension-of-the-space-of-linear-maps.html">We know</a> that <span class="inline-math">$\dim(\mathcal{L}(V,\mathbb{F})) = \dim(V)$</span>.
+    And <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-size-of-linearly-independent-set-basis-and-spanning-set.html">since</a> <span class="inline-math">$B^\star \subseteq V^\star$</span> is a linearly independent set with size <span class="inline-math">$|B^\star| = |B| = \dim(V)$</span>,
+    <span class="inline-math">$B^\star$</span> is a basis for <span class="inline-math">$V^\star$</span>.
+</p>
+
+<h2>Constructive proof</h2>
+
+<p>
+    For any <span class="inline-math">$\theta\in V^\star$</span>, let <span class="inline-math">$\mu_b = \theta(b) \in \mathbb{F}$</span> for each <span class="inline-math">$b\in B$</span>.
+    <span class="display-math">$$ \begin{align*}
+        \bar\theta = \sum_{b\in B} &#x27; \mu_b \,b^\star \in \langle B^\star\rangle.
+    \end{align*} $$</span>
+    Then for any <span class="inline-math">$c\in B$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \bar\theta(c) = \sum_{b\in B} \mu_b\,b^\star(c) = \sum_{b\in B} \mu_b \, \delta_{b,c} = \mu_c = \theta(c)
+    \end{align*} $$</span>
+    so <span class="inline-math">$\theta$</span> and <span class="inline-math">$\bar \theta$</span> are linear maps that agree on the basis <span class="inline-math">$B$</span>.
+    By <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-linear-map-is-uniquely-determined-by-action-on-basis.html">uniqueness of linear extensions</a>,
+    <span class="inline-math">$\theta = \bar\theta$</span>.
+</p>
+
+<h2><span class="inline-math">$V \isom V^\star$</span></h2>
+
+<p>
+    This <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-vector-spaces-of-equal-dimension-are-isomorphic.html">follows</a> from <span class="inline-math">$\dim(V) = |B| = |B^\star| = \dim(V^\star)$</span>
+</p>

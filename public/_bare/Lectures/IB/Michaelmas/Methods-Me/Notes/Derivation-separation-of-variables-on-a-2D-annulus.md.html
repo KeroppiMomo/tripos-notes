@@ -1,0 +1,51 @@
+<p>
+    In <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Example-cylindrical-polar-coordinates.html">polar coordinates</a> <span class="inline-math">$(r,\theta)$</span>, Laplace's equation is
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{r}\pdd{r}\left(r \pdfd{\phi}{r}\right) + \frac{1}{r^2} \pdfd[2]{\phi}{\theta} = 0.
+    \end{align*} $$</span>
+    Substituting <span class="inline-math">$\phi = R(r) \Theta(\theta)$</span> and multiplying by <span class="inline-math">$r^2/\phi$</span>, we get
+    <span class="display-math">$$ \begin{align*}
+    \frac{r(r R&#x27;)&#x27;}{R} + \frac{\Theta&#x27;&#x27;}{\Theta} = 0.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$r$</span> and <span class="inline-math">$\theta$</span> are independent, each term must be a constant, so
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            r(rR&#x27;)&#x27; = \lambda R,\\
+            \Theta&#x27;&#x27; + \lambda \Theta = 0.
+        \end{cases}
+    \end{align*} $$</span>
+    For the equation for <span class="inline-math">$\Theta$</span>, the general solution is
+    <span class="display-math">$$ \begin{align*}
+        \Theta(\theta) = C\cos(\sqrt{\lambda}\, \theta) + D\sin(\sqrt{\lambda}\, \theta).
+    \end{align*} $$</span>
+    Since <span class="inline-math">$\theta$</span> is angular, we require <span class="inline-math">$\Theta(\theta+2\pi) = \Theta(\theta)$</span> for all <span class="inline-math">$\theta$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        2\pi\sqrt{\lambda} \in 2\pi\Z \implies \lambda=\lambda_n := n^2, \qquad n=0,1,2,\ldots.
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \Theta_n(\theta) = C_n \cos(n\theta) + D_n\sin(n\theta).
+    \end{align*} $$</span>
+</p>
+<p>
+    Now the equation for <span class="inline-math">$R$</span> becomes
+    <span class="display-math">$$ \begin{align*}
+        r(rR&#x27;)&#x27; = n^2 R.
+    \end{align*} $$</span>
+    For <span class="inline-math">$n\neq 0$</span>, since this is <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Linear-equidimensional-ODE.html">equidimensional</a>, guess <span class="inline-math">$R \propto r^\beta$</span>, and we get
+    <span class="display-math">$$ \begin{align*}
+        \beta^2 = n^2 \implies \beta = \pm n
+    \end{align*} $$</span>
+    so the solution is
+    <span class="display-math">$$ \begin{align*}
+        R_n = A_n r^n + \frac{B_n}{r^n}.
+    \end{align*} $$</span>
+    And if <span class="inline-math">$n=0$</span>, the solution is
+    <span class="display-math">$$ \begin{align*}
+        R_0 = A + B\log r.
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$R_n(r) \Theta_n(\theta)$</span> all solve Laplace's equation, so by superposition, so does
+    <span class="display-math">$$ \begin{align*}
+        \phi(r,\theta) = A + B\log r + \sum_{n=1}^{\infty} \left[\left(A_n r^n + \frac{B_n}{r^n}\right)\left(C_n \cos(n\theta) + D_n \sin(n\theta)\right)\right].
+    \end{align*} $$</span>
+</p>

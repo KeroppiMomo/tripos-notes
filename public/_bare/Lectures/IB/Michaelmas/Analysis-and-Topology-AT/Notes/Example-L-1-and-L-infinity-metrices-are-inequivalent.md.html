@@ -1,0 +1,45 @@
+<p>
+    On <span class="inline-math">$X = C([0,1])$</span>,
+    the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Examples-of-metric-spaces.html"><span class="inline-math">$L^1$</span> metric</a> <span class="inline-math">$d_1(f,g) = \int_{0}^{1} |f(x)-g(x)| \d x$</span>
+    and the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Examples-of-metric-spaces.html"><span class="inline-math">$L^\infty$</span> metric</a> <span class="inline-math">$d_\infty(f,g) = \sup_{[0,1]}|f-g|$</span>
+    are not <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-equivalence.html">equivalent</a>.
+    In particular the topologies <span class="inline-math">$\tau_1 \subset \tau_\infty$</span>.
+</p>
+
+<h1><span class="inline-math">$\tau_1\subseteq \tau_\infty$</span></h1>
+
+<p>
+    Let <span class="inline-math">$U\in\tau_1$</span>. For all <span class="inline-math">$f\in U$</span>, there exists an <span class="inline-math">$\epsilon&gt;0$</span> such that <span class="inline-math">$B_\epsilon^1(f) \subseteq U$</span>.
+    Then for all <span class="inline-math">$g \in B_\epsilon^\infty(f)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        d_1(f,g) = \int_{0}^{1} |f - g| \d x \leq (1-0) \sup_{[0,1]} |f-g| = d_\infty(f,g) &lt; \epsilon
+    \end{align*} $$</span>
+    so <span class="inline-math">$g\in B_\epsilon^1(f)$</span>. Hence <span class="inline-math">$B_\epsilon^\infty(f) \subseteq B_\epsilon^1(f) \subseteq U$</span> and so <span class="inline-math">$U\in \tau_\infty$</span>.
+</p>
+
+<h1><span class="inline-math">$\tau_\infty \not\subseteq \tau_1$</span></h1>
+
+<p>
+    We want to find some <span class="inline-math">$U\in \tau_\infty \setminus \tau_1$</span>.
+    Consider <span class="inline-math">$U = B_1^\infty(0)$</span> and this function for each <span class="inline-math">$\epsilon&gt;0$</span>:
+    <span class="display-math">$$ \begin{align*}
+        f_\epsilon(x) = \begin{cases}
+            1 - \frac{x}{\epsilon}, &amp;0\leq x\leq \epsilon, \\
+            0, &amp;\epsilon&lt;x\leq 1.
+        \end{cases}
+    \end{align*} $$</span>
+    <img src="/tripos-notes/media/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Pasted-image-20241014170457.png">
+</p>
+<p>
+    Note that <span class="inline-math">$f_\epsilon \in B_\epsilon^1(0)$</span> since <span class="inline-math">$\int_{0}^{1} |f(x) - 0| \d x = \epsilon/2 &lt; \epsilon$</span>, but <span class="inline-math">$f_\epsilon\not\in B_1^\infty(0)$</span> since <span class="inline-math">$\sup_{[0,1]}|f - 0| = 1 \nless 1$</span>.
+</p>
+<p>
+    Therefore <span class="inline-math">$B_{\epsilon}^1(0) \not\subseteq B_1^\infty(0)$</span> for any <span class="inline-math">$\epsilon&gt;0$</span>, and so <span class="inline-math">$B_1^\infty(0) \not\in \tau_1$</span>.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Pasted-image-20241014164429.png">
+</p>
+<p>
+    You can fit an <span class="inline-math">$L^\infty$</span> ball (white curves) inside an <span class="inline-math">$L^1$</span> ball (blue curves),
+    but you can't fit an <span class="inline-math">$L^1$</span> ball inside an <span class="inline-math">$L^\infty$</span> ball.
+</p>

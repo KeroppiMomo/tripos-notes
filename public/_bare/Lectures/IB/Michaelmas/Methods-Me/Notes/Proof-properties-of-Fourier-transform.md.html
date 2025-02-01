@@ -1,0 +1,32 @@
+<ol start="1">
+<li>
+    <p>
+        Integrate by parts. Boundary terms vanish, as <span class="inline-math">$f$</span> is assumed to decay sufficiently quickly.
+        <span class="display-math">$$ \begin{align*}
+        \mathcal{F}_{x\mapsto \lambda}\left[\Big(\dd{x}\Big)^k f(x)\right] ={}&amp; \int f^{(k)}(x)\, e^{-i\lambda x} \d x \\
+        ={}&amp; -(-i\lambda)\int f^{(k-1)}(x)\, e^{-i\lambda x} \d x \\
+        ={}&amp; \ldots \\
+        ={}&amp; (i\lambda)^k \int f(x)\, e^{-i\lambda x} \d x \\
+        ={}&amp; (i\lambda)^k \hat f(\lambda). \\
+        \left(i \dd{\lambda}\right)^k \hat f(\lambda) ={}&amp; \left(i \dd{\lambda}\right)^k  \int f(x) \, e^{-i\lambda x} \d x \\
+        ={}&amp; \int x^kf(x)\, e^{-i\lambda x} \d x  \\
+        ={}&amp; \mathcal{F}_{x\mapsto \lambda}\left[x^k f(x)\right].
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        Integrate by substitution.
+        <span class="display-math">$$ \begin{align*}
+        \mathcal{F}_{x\mapsto \lambda}\left[f(x-a)\right] ={}&amp; \int f(x-a)\,e^{-i\lambda x} \d x \\
+        ={}&amp; \int f(y) \, e^{-i\lambda(y+a)} \d y &amp;y=x-a \\
+        ={}&amp; e^{-i\lambda a} \int f(y) \, e^{-i\lambda y} \d y \\
+        ={}&amp; e^{-i\lambda a} \hat f(\lambda). \\
+        \mathcal{F}_{x\mapsto \lambda}[e^{-iax} f(x)] ={}&amp; \int f(x)\, e^{-iax} e^{-i\lambda x} \d x \\
+        ={}&amp; \int f(x) \,e^{-i(\lambda+a)x} \d x \\
+        ={}&amp; \hat f(\lambda + a).
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ol>

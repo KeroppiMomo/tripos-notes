@@ -1,0 +1,34 @@
+<p>
+    For <span class="inline-math">$\mathbb{F} = \C$</span>,
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-triangularisable-map-and-roots-of-characteristic-polynomial.html">every linear map <span class="inline-math">$\alpha$</span> is triangularisable</a>,
+    so there exists a basis <span class="inline-math">$B = \set{v_1, v_2, \ldots, v_n}$</span> for <span class="inline-math">$V$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        [\alpha]^B_B = \pmat{\lambda_1 &amp; * &amp; \ldots &amp; * \\
+        0 &amp; \lambda_2 &amp; \ldots &amp; * \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; 0 &amp; \ldots &amp; \lambda_n}
+    \end{align*} $$</span>
+    is upper-triangular.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \chi_\alpha(t) = \prod_{i=1}^{n} (t-\lambda_i).
+    \end{align*} $$</span>
+</p>
+<p>
+    Define <span class="inline-math">$U_i = \langle v_1, \ldots, v_i\rangle \leq V$</span>.
+    Note that <span class="inline-math">$U_n = V$</span>,
+    <span class="display-math">$$ \begin{align*}
+        (\alpha - \lambda_1\, \id_V)(U_1) = \set{\v 0},
+    \end{align*} $$</span>
+    and for <span class="inline-math">$i\geq 2$</span>,
+    <span class="display-math">$$ \begin{align*}
+        (\alpha - \lambda_i\, \id_V)(U_i) \leq U_{i-1}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \chi_\alpha(\alpha)(V) = (\alpha-\lambda_1\,\id_V) \circ (\alpha - \lambda_2\,\id_V) \circ \ldots \circ (\alpha - \lambda_n\,\id_V) (U_n) = \set{\v 0}.
+    \end{align*} $$</span>
+    Hence <span class="inline-math">$\chi_\alpha(\alpha) = 0$</span>.
+</p>

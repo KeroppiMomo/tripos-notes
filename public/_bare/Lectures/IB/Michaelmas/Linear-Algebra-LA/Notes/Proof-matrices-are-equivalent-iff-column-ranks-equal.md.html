@@ -1,0 +1,36 @@
+
+<h1>Equivalence with <span class="inline-math">$\pmat{I_r &amp; 0 \\ 0 &amp; 0}$</span></h1>
+
+<p>
+    Define the linear map
+    <span class="display-math">$$ \begin{align*}
+        \alpha: \mathbb{F}^n &amp;\to \mathbb{F}^m \\
+        v &amp;\mapsto A v.
+    \end{align*} $$</span>
+    Note that <span class="inline-math">$[\alpha]^{E_n}_{E_m} = A$</span> where <span class="inline-math">$E_n$</span> is the standard basis of <span class="inline-math">$\mathbb{F}^n$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-matrix-of-linear-map-can-be-I_rank-0-0-0.html">There exists</a> bases <span class="inline-math">$B$</span> for <span class="inline-math">$\mathbb{F}^n$</span> and <span class="inline-math">$C$</span> for <span class="inline-math">$\mathbb{F}^m$</span> such that <span class="inline-math">$[\alpha]^B_C = \pmat{I_r &amp; 0 \\ 0 &amp; 0}$</span>
+    where <span class="inline-math">$r = \op{rk}(\alpha) = \op{c-rk}(A)$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        A = [\alpha]^{E_n}_{E_m} = [\mathrm{id}_{\mathbb{F}^m}]^C_{E_m} \, [\alpha]^B_C \, [\mathrm{id}_{\mathbb{F}^n}]^{E_n}_{B} = P \pmat{I_r &amp; 0 \\ 0 &amp; 0} Q
+    \end{align*} $$</span>
+    where <span class="inline-math">$P \in \mathrm{GL}_m(\mathbb{F})$</span> and <span class="inline-math">$Q \in \mathrm{GL}_n(\mathbb{F})$</span>.
+</p>
+
+<h1>Column rank equals <span class="inline-math">$\implies$</span> matrix equivalence</h1>
+
+<p>
+    If <span class="inline-math">$\op{c-rk}(A) = \op{c-rk}(A&#x27;) = r$</span>, then by the above, both are equivalent to <span class="inline-math">$\pmat{I_r &amp; 0 \\ 0 &amp; 0}$</span>.
+    Therefore <span class="inline-math">$A$</span> and <span class="inline-math">$A&#x27;$</span> are equivalent by transitivity of matrix equivalence.
+</p>
+
+<h1>Matrix equivalence <span class="inline-math">$\implies$</span> column rank equals.</h1>
+
+<p>
+    Suppose <span class="inline-math">$A&#x27; = PAQ$</span>.
+    Since <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-column-rank-of-matrix-product-is-at-most-column-rank-of-each-matrix.html">column rank of matrix products is at most the column rank of each matrix</a>,
+    we have <span class="inline-math">$\op{c-rk}(A&#x27;) \leq \op{c-rk}(A)$</span>.
+    But then <span class="inline-math">$A = P\inv A&#x27; Q\inv$</span>, so <span class="inline-math">$\op{c-rk}(A) \leq \op{c-rk}(A&#x27;)$</span>.
+</p>

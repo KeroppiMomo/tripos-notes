@@ -1,0 +1,57 @@
+<p>
+    Assume <span class="inline-math">$x_n\to x$</span> and <span class="inline-math">$x_n\to y$</span> but <span class="inline-math">$x\neq y$</span>.
+</p>
+
+<h1>Hausdorff topological space</h1>
+
+<p>
+    By the Hausdorff property, there exists open sets <span class="inline-math">$U, V$</span> such that <span class="inline-math">$x\in U$</span>, <span class="inline-math">$y\in V$</span> but <span class="inline-math">$U\cap V = \emptyset$</span>.
+    By the definition of <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequence-convergence.html">convergence</a>,
+</p>
+<ul>
+<li>
+    <p>
+        since <span class="inline-math">$x_n\to x$</span>, there exists <span class="inline-math">$N_x$</span> such that <span class="inline-math">$x_n \in U$</span> for all <span class="inline-math">$n\geq N_x$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        since <span class="inline-math">$x_n \to y$</span>, there exists <span class="inline-math">$N_y$</span> such that <span class="inline-math">$x_n \in V$</span> for all <span class="inline-math">$n\geq N_y$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore setting <span class="inline-math">$n=\max\set{N_x, N_y}$</span>, we have <span class="inline-math">$x_n\in U\cap V$</span>, contradicting with <span class="inline-math">$U\cap V = \emptyset$</span>.
+</p>
+
+<h1>Metric space</h1>
+
+<p>
+    Let <span class="inline-math">$\epsilon = d(x,y)$</span> and note that <span class="inline-math">$\epsilon&gt;0$</span>.
+</p>
+<p>
+    Take <span class="inline-math">$U = B_{\epsilon/2}(x)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-neighbourhood.html">neighbourhood</a> of <span class="inline-math">$x$</span> and <span class="inline-math">$V = B_{\epsilon/2}(y)$</span> be a neighbourhood of <span class="inline-math">$y$</span>.
+    By the definition of <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequence-convergence.html">convergence</a>,
+</p>
+<ul>
+<li>
+    <p>
+        since <span class="inline-math">$x_n \to x$</span>, there exists <span class="inline-math">$N_x$</span> such that <span class="inline-math">$x_n \in U$</span> for all <span class="inline-math">$n\geq N_x$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        since <span class="inline-math">$x_n \to y$</span>, there exists <span class="inline-math">$N_y$</span> such that <span class="inline-math">$x_n \in V$</span> for all <span class="inline-math">$n\geq N_y$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore setting <span class="inline-math">$n=\max\set{N_x, N_y}$</span>, we have <span class="inline-math">$x_n\in U\cap V$</span>.
+    But then
+    <span class="display-math">$$ \begin{align*}
+        \epsilon \leq d(x,y)\leq d(x,x_n) + d(x_n,y) &lt; \epsilon/2 + \epsilon/2 = \epsilon,
+    \end{align*} $$</span>
+    which is a contradiction.
+</p>

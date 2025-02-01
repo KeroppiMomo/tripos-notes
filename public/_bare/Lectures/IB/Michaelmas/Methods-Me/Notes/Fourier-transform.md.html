@@ -1,0 +1,411 @@
+<p>
+    Throughout this section, write <span class="inline-math">$\int \equiv \int_{-\infty}^{\infty}$</span>.
+    Assume all functions are sufficiently nice.
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Fourier transform)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Fourier-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: \R\to\C$</span> be an integrable function.
+            </p>
+            <p>
+                Define its <em>Fourier transform</em> <span class="inline-math">$\hat f: \R\to\C$</span> by
+                <span class="display-math">$$ \begin{align*}
+                    \hat f(\lambda) = \int_{\infty}^{\infty} e^{-i\lambda x} f(x) \d x.
+                \end{align*} $$</span>
+                We write <span class="inline-math">$\mathcal{F}[f] = \hat f$</span>, or <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}[f(x)] = \hat f(\lambda)$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (properties of Fourier transform)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-properties-of-Fourier-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f:\R\to\C$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    Derivatives and powers:
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Fourier-transform.html"><span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}$</span></a><span class="inline-math">$\left[\left(\dd{x}\right)^k f(x)\right] = (i\lambda)^k \hat f(\lambda)$</span>;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}\left[x^k f(x)\right] = \left(i \dd{\lambda}\right)^k \hat f(\lambda)$</span>.
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    Translation and exponentials:
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}\left[f(x-a)\right] = e^{-i\lambda a} \hat f(\lambda)$</span>;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}\left[e^{-iax}f(x)\right] = \hat f(x+a)$</span>.
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-properties-of-Fourier-transform.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Fourier inversion formula)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-inversion-formula.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f:\R\to\C$</span>. We can recover <span class="inline-math">$f$</span> from <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Fourier-transform.html"><span class="inline-math">$\hat f$</span></a> via the <em>inversion formula</em>
+                <span class="display-math">$$ \begin{align*}
+                    f(x) = \frac{1}{2\pi} \int e^{i\lambda x}\hat f(\lambda) \d \lambda.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Fourier-inversion-formula.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Applying this to <span class="inline-math">$f(x)=\delta(x-y)$</span> gives
+                    <span class="display-math">$$ \begin{align*}
+                    \delta(x-y) = \frac{1}{2\pi} \int e^{i\lambda(x-y)} \d x.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Parseval's theorem for Fourier transform)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Parseval-s-theorem-for-Fourier-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f,g:\R\to\C$</span>.
+                <span class="display-math">$$ \begin{align*}
+                    \int f(x) \,\overline{g(x)} \d x = \frac{1}{2\pi} \int \hat f(\lambda)\, \overline{\hat g(\lambda)} \d \lambda.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                In particular,
+                <span class="display-math">$$ \begin{align*}
+                    \int |f(x)|^2 \d x = \frac{1}{2\pi} \int |\hat f(\lambda)|^2 \d \lambda
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Parseval-s-theorem-for-Fourier-transform.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (convolution)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-convolution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f,g:\R\to\C$</span>. The <em>convolution</em> of <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> is defined as
+                <span class="display-math">$$ \begin{align*}
+                    (f*g)(x) = \int f(x-y)\,g(y) \d y.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Fourier transform of convolution)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-transform-of-convolution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For <span class="inline-math">$f,g:\R\to\C$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{F}_{x\mapsto \lambda}\left[f* g(x)\right] = \hat f(\lambda) \,\hat g(\lambda).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Fourier-transform-of-convolution.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-example">
+        <div class="markdown-embed-title">
+            Examples of Fourier transform
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Examples-of-Fourier-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    Exponential: <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}[H(x) \, e^{-\sigma x}] = \dfrac{1}{\sigma + i\lambda}$</span> where <span class="inline-math">$H$</span> is the Heaviside function and <span class="inline-math">$\sigma\in \C$</span> where <span class="inline-math">$\Re(\sigma) &gt; 0$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-transform-of-exponential.html">Derivation</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    Gaussian: <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}\left[\frac{1}{\sqrt{2\pi}} e^{-x^2/2}\right] = e^{-\lambda^2/2}$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-transform-of-Gaussian.html">Derivation</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    Dirac delta: <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}[\delta(x)] = 1$</span>. By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-inversion-formula.html">inversion formula</a>, <span class="inline-math">$\delta(x) = \frac{1}{2\pi} \int e^{i\lambda x} \d \lambda$</span>(!) (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-transform-of-Dirac-delta.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-solving-forced-damping-initial-value-problem-with-Fourier-transform.html">Example (solving forced damping initial value problem with Fourier transform)</a>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Poisson summation formula)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Poisson-summation-formula.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For <span class="inline-math">$f: \R\to\C$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{n\in \Z} f(x+n) = \sum_{n\in \Z} \hat f(2\pi n) e^{2\pi i n x}.
+                \end{align*} $$</span>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Poisson-summation-formula.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    In particular, we get the identity
+                    <span class="display-math">$$ \begin{align*}
+                    \sum_{n} f(n) = \sum_{n} \hat f(2\pi n).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Heisenberg uncertainty principle)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Heisenberg-uncertainty-principle.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$\int |\psi(x)|^2 \d x = 1$</span>, then
+                <span class="display-math">$$ \begin{align*}
+                    \left(\int x^2 |\psi(x)|^2 \d x\right)\left(\int \lambda^2 |\hat \psi(\lambda)|^2 \d \lambda\right) \geq \frac{\pi}{2}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Heisenberg-uncertainty-principle.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Connection-between-Fourier-series-and-Fourier-transform.html">Connection between Fourier series and Fourier transform</a>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Discrete Fourier transform
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Discrete-Fourier-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (discrete Fourier transform)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-discrete-Fourier-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For some <span class="inline-math">$N\in \N$</span> and a sequence <span class="inline-math">$\set{X_n}_{n=0}^{N-1}$</span>,
+                            define its <em>discrete Fourier transform</em> <span class="inline-math">$\set{\hat X_k}_{k=0}^{N-1}$</span> by
+                            <span class="display-math">$$ \begin{align*}
+                                \hat X_k = \sum_{n=0}^{N-1} X_n e^{-2\pi i nk/N}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Equivalently, writing <span class="inline-math">$\v X = (X_0, \ldots, X_{N-1})^T$</span> and <span class="inline-math">$\vhat X = (\hat X_0, \ldots, \hat X_{N-1})^T$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \vhat X = \mathcal{F}\, \v X \quad \text{ where } \mathcal{F}_{kn} = e^{-2\pi ink/N}.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Connection-between-discrete-and-continuous-Fourier-transform.html">Connection between discrete and continuous Fourier transform</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (inverse discrete Fourier transform)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-inverse-discrete-Fourier-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We can recover a sequence <span class="inline-math">$\set{X_n}_{n=0}^{N-1}$</span> from its <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-discrete-Fourier-transform.html">discrete Fourier transform</a> <span class="inline-math">$\set{\hat X_k}_{k=0}^{N-1}$</span> via
+                            <span class="display-math">$$ \begin{align*}
+                                X_n = \frac{1}{N} \sum_{k=0}^{N-1} \hat X_k \, e^{2\pi ink/N}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-inverse-discrete-Fourier-transform.html">Proof</a>
+                        </p>
+                        <p>
+                            This implies
+                            <span class="display-math">$$ \begin{align*}
+                                \mathcal{F}^\dagger \mathcal{F} = \mathcal{F} \mathcal{F}^\dagger = NI_N.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Parseval's theorem for discrete Fourier transform)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Parseval-s-theorem-for-discrete-Fourier-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For two sequences <span class="inline-math">$\set{X_n}_{n=0}^{N-1}$</span> and <span class="inline-math">$\set{Y_n}_{n=0}^{N-1}$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \sum_{n=0}^{N-1} X_n \, \overline{Y_n} = \frac{1}{N} \sum_{k=0}^{N-1} \hat X_k \, \overline{\hat Y_k}.
+                            \end{align*} $$</span>
+                            In particular,
+                            <span class="display-math">$$ \begin{align*}
+                                \sum_{n=0}^{N-1} |X_n|^2 = \frac{1}{N} \sum_{k=0}^{N-1} |\hat X_k|^2.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Parseval-s-theorem-for-discrete-Fourier-transform.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Higher dimensional Fourier transform
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Higher-dimensional-Fourier-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Here, we write <span class="inline-math">$\int \equiv \int_{\R^n}$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (higher dimensional Fourier transform)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-higher-dimensional-Fourier-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a function <span class="inline-math">$f: \R^n \to \C$</span>, define its <em>Fourier transform</em> <span class="inline-math">$\hat f: \R^n \to \C$</span> by
+                            <span class="display-math">$$ \begin{align*}
+                                \hat f(\v \lambda) = \int e^{-i\v \lambda \cdot \v x} f(\v x) \d ^n \v x.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                We have analogous results from one dimensional Fourier transform:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Convolution theorem
+                    <span class="display-math">$$ \begin{align*}
+                    \mathcal{F}_{\v x\mapsto \v \lambda}\left[f*g(\v x)\right] = \hat f(\v \lambda) \hat g(\v \lambda), \qquad \text{where } f*g(\v x) = \int f(\v x-\v y) g(\v y) \d ^n \v y.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Inverse Fourier transform
+                    <span class="display-math">$$ \begin{align*}
+                    f(\v x) ={}&amp; \frac{1}{(2\pi)^n} \int e^{i\v \lambda\cdot \v x} \hat f(\v \lambda) \d^n \v \lambda.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Delta functions
+                    <span class="display-math">$$ \begin{align*}
+                    \hat \delta(\v \lambda) = 1, \qquad \delta(\v x) = \frac{1}{(2\pi)^n} \int e^{i\v \lambda\cdot \v x} \d \v \lambda.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Laplacian
+                    <span class="display-math">$$ \begin{align*}
+                    \mathcal{F}_{\v x\mapsto \v \lambda}[\Delta f(\v x)] ={}&amp; ((i\lambda_1)^2 + \ldots + (i\lambda_n)^2 ) \hat f(\v \lambda) \\
+                    ={}&amp; - |\v \lambda|^2 \hat f(\v \lambda).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

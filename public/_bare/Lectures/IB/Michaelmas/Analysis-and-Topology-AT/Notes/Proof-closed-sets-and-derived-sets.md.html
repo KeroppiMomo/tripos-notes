@@ -1,0 +1,52 @@
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Pasted-image-20241128123508.png">
+</p>
+
+<h1>Closed set contains its accumulation points</h1>
+
+<p>
+    Suppose <span class="inline-math">$A$</span> is closed and let <span class="inline-math">$x\in X\setminus A$</span>.
+    <span class="inline-math">$X\setminus A$</span> is open and contains <span class="inline-math">$x$</span>, so it is
+    a neighbourhood of <span class="inline-math">$x$</span>.
+    Then <span class="inline-math">$A\cap (X\setminus A) = \emptyset$</span> and so <span class="inline-math">$(A\setminus \set{x})\cap(X\setminus A) = \emptyset$</span>,
+    which shows that <span class="inline-math">$x$</span> cannot be an accumulation point.
+</p>
+
+<h1>Containing accumulation points implies closure</h1>
+
+<p>
+    Suppose <span class="inline-math">$A&#x27;\subseteq A$</span> and consider <span class="inline-math">$x\in X\setminus A$</span>.
+    Since <span class="inline-math">$x\not\in A$</span>, <span class="inline-math">$x\not\in A&#x27;$</span>, so there exists
+    a neighbourhood <span class="inline-math">$N_x$</span> of <span class="inline-math">$x$</span> such that <span class="inline-math">$\emptyset = (A\setminus \set{x})\cap N_x$</span>, and so <span class="inline-math">$N\subseteq X\setminus A$</span>.
+    Take an open set <span class="inline-math">$U_x$</span> such that <span class="inline-math">$x\in U_x\subseteq N_x\subseteq X\setminus A$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        X\setminus A = \bigcup_{x\in X\setminus A} U_x
+    \end{align*} $$</span>
+    is a union of open sets and is thus open.
+</p>
+
+<h1><span class="inline-math">$A\cup A&#x27;$</span> is closed</h1>
+
+<p>
+    Let <span class="inline-math">$x\in X\setminus (A\cup A&#x27;)$</span>.
+    Since <span class="inline-math">$x\not\in A&#x27;$</span>, there exists a neighbourhood <span class="inline-math">$N$</span> of <span class="inline-math">$x$</span>
+    such that <span class="inline-math">$\emptyset = (A\setminus \set{x})\cap N = A\cap N$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$U$</span> be an open set such that <span class="inline-math">$x\in U\subseteq N$</span>.
+    If there exists <span class="inline-math">$y\in A&#x27;\cap U$</span>,
+    then since <span class="inline-math">$U$</span> is an open neighbourhood of <span class="inline-math">$y$</span>,
+    we have <span class="inline-math">$\emptyset \neq (A\setminus \set{y})\cap U \subseteq A\cap U \subseteq A\cap N = \emptyset$</span>,
+    which is a contradiction.
+</p>
+<p>
+    Therefore we have found an open set <span class="inline-math">$U\subseteq X\setminus (A\cup A&#x27;)$</span> that contains <span class="inline-math">$x$</span> and so <span class="inline-math">$A\cup A&#x27;$</span> is open.
+</p>
+
+<h1>Closed set containing <span class="inline-math">$A$</span> also contains <span class="inline-math">$A&#x27;$</span></h1>
+
+<p>
+    Let <span class="inline-math">$B\supseteq A$</span> be closed. From the above, <span class="inline-math">$B&#x27;\subseteq B$</span>.
+    But from the definition of accumulation points, <span class="inline-math">$B&#x27; \supseteq A&#x27;$</span>. Therefore <span class="inline-math">$A&#x27;\subseteq B$</span>.
+</p>

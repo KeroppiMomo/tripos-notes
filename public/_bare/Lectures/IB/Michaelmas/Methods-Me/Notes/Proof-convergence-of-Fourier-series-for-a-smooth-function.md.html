@@ -1,0 +1,60 @@
+<p>
+    For simplicity, take <span class="inline-math">$L = 2\pi$</span>. Assume <span class="inline-math">$f$</span> is smooth. Fix <span class="inline-math">$\theta_0 \in [-\pi, \pi)$</span>.
+</p>
+<p>
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        (S_N f)(\theta_0) &amp;= \sum_{|n|\leq N} \hat f_n e^{in\theta_0} \\
+        &amp;= \sum_{|n|\leq N} \frac{1}{2\pi} \int_{-\pi}^{\pi} f(\theta) e^{in(\theta_0 - \theta)} \d \theta \\
+        &amp;= \frac{1}{2\pi}\int_{-\pi}^{\pi} \underbrace{\Big(\sum_{n=-N}^{N} e^{in(\theta_0-\theta)}\Big)}_{D_N(\theta-\theta_0)} f(\theta) \d \theta \\
+    \end{align*} $$</span>
+    where <span class="inline-math">$D_N(\theta)$</span> is called the <em>Dirichlet kernel</em>.
+    To compute it, note that it is a geometric sum:
+    if <span class="inline-math">$\theta \in 2\pi\Z$</span>, then we have <span class="inline-math">$d_N(\theta) = 2N+1$</span>,
+    and if otherwise,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n=-N}^{N} e^{in\theta} &amp;= e^{-iN\theta} \frac{1 - e^{i(2N+1)\theta}}{1-e^{i\theta}} \\
+        &amp;= \frac{e^{-i(N+\frac{1}{2})\theta} - e^{i(N+\frac{1}{2})\theta}}{e^{-\frac{1}{2}i\theta} - e^{\frac{1}{2}i\theta}} \\
+        &amp;= \frac{\sin (N+\frac{1}{2})\theta}{\sin \frac{1}{2}\theta}.
+    \end{align*} $$</span>
+    So the Dirichlet kernel is defined as
+    <span class="display-math">$$ \begin{align*}
+        D_N(\theta) = \begin{cases}
+            \dfrac{\sin(N+\frac{1}{2})\theta}{\sin \frac{1}{2}\theta}, &amp;\theta\in\R\setminus 2\pi\Z, \\
+            2N + 1, &amp;\theta\in 2\pi\Z.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        \int_{-\pi}^{\pi} D_N(\theta) \d \theta = \int_{-\pi}^{\pi} \sum_{n=-N}^{N} e^{in\theta} \d \theta = 2\pi.
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        (S_N f)(\theta_0) - f(\theta_0) &amp;= \frac{1}{2\pi} \int_{-\pi}^{\pi} D_N(\theta-\theta_0) f(\theta) \d \theta - \frac{1}{2\pi}\int_{-\pi}^{\pi} D_N(\theta - \theta_0) f(\theta_0) \d \theta \\
+        &amp;= \frac{1}{2\pi} \int_{-\pi}^{\pi} D_N(\theta - \theta_0) \,(f(\theta) - f(\theta_0)) \d \theta \\
+        &amp;= \frac{1}{2\pi} \int_{-\pi+\theta_0}^{\pi+\theta_0} D_N(\theta) \,(f(\theta + \theta_0) - f(\theta_0)) \d \theta \\
+        &amp;= \frac{1}{2\pi} \int_{-\pi}^{\pi} D_N(\theta) \,(f(\theta + \theta_0) - f(\theta_0)) \d \theta \\
+        &amp;= \frac{1}{2\pi} \int_{-\pi}^{\pi} (\sin(N+\tfrac{1}{2}) \theta) F(\theta; \theta_0)\d \theta
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        F(\theta; \theta_0) = \frac{\theta}{\sin \frac{1}{2}\theta} \frac{f(\theta + \theta_0) - f(\theta_0)}{\theta}.
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$f$</span> is smooth, then <span class="inline-math">$\theta\mapsto F(\theta;\theta_0)$</span> is smooth for any <span class="inline-math">$\theta\in[-\pi, \pi)$</span>.
+</p>
+<p>
+    So we can perform integration by parts to get
+    <span class="display-math">$$ \begin{align*}
+        &amp;(S_N f)(\theta_0) - f(\theta_0) \\
+        ={}&amp; \frac{1}{2\pi}\frac{1}{N+\frac{1}{2}}\left(\big[(-\cos(N+\tfrac{1}{2})\theta)\, F(\theta;\theta_0)\big]_{-\pi}^\pi + \int_{-\pi}^{\pi} (\cos(N+\tfrac{1}{2})\theta) \, F&#x27;(\theta;\theta_0)\d \theta\right) \\
+        ={}&amp; \frac{1}{\pi(2N+1)} \int_{-\pi}^{\pi} (\cos(N+\tfrac{1}{2})\theta) F&#x27;(\theta;\theta_0) \d \theta \\
+        \to{}&amp; 0 \text{ as } N\to\infty.
+    \end{align*} $$</span>
+</p>
+<p>
+    (In fact we get uniform convergence.)
+</p>

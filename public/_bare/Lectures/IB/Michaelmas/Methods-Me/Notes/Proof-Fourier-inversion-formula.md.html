@@ -1,0 +1,29 @@
+<p>
+    Let <span class="inline-math">$n&gt;0$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        &amp; \frac{1}{2\pi} \int_{-n}^{+n} e^{i\lambda x} \, \hat f(\lambda) \d \lambda \\
+        ={}&amp;\frac{1}{2\pi} \int_{-n}^{+n} e^{i\lambda x} \left[\int e^{-i\lambda y} f(y) \d y\right] \d \lambda \\
+        ={}&amp; \int f(y) \left[\frac{1}{2\pi} \int_{-n}^{+n} e^{i\lambda (x-y)} \d \lambda\right] \d y &amp;\text{Fubini&#x27;s theorem} \\
+        ={}&amp; \int f(y) \times \frac{\sin n(x-y)}{\pi(x-y)} \d y  \\
+        ={}&amp; \int \frac{\sin(ny)}{\pi y} f(x+y) \d y.
+    \end{align*} $$</span>
+    We use the identity
+    <span class="display-math">$$ \begin{align*}
+        \int \frac{\sin(ny)}{\pi y} \d y = 1
+    \end{align*} $$</span>
+    to see
+    <span class="display-math">$$ \begin{align*}
+        \left(\frac{1}{2\pi} \int_{-n}^{+n} e^{i\lambda x} \hat f(\lambda) \d \lambda\right) - f(x) ={}&amp; \int \frac{\sin(n y)}{\pi y}\big(f(x+y) - f(x)\big) \d y \\
+        ={}&amp; \int \sin(ny) \, F(y; x) \d y
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        F(y; x) = \frac{f(x+y) - f(x)}{\pi y}.
+    \end{align*} $$</span>
+    If <span class="inline-math">$f$</span> is smooth, <span class="inline-math">$F$</span> is also smooth. Hence integrating by parts
+    <span class="display-math">$$ \begin{align*}
+        \left(\frac{1}{2\pi} \int_{-n}^{+n} e^{i\lambda x} \hat f(\lambda) \d \lambda\right) - f(x) ={}&amp; \frac{1}{n} \int \cos(ny) \, \dfd{F}{y}(y; x) \d y \\
+        \to{}&amp; 0
+    \end{align*} $$</span>
+    as <span class="inline-math">$n\to\infty$</span>.
+</p>

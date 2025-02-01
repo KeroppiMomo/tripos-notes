@@ -1,0 +1,51 @@
+<p>
+    <span class="inline-math">$G(x;\xi)$</span> satisfies
+    <span class="display-math">$$ \begin{align*}
+        \alpha(x) \dfd[2]{G}{x} + \beta(x) \dfd{G}{x} + \gamma(x) G(x) = \delta(x-\xi). \tag{*}
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$x&lt;\xi$</span> or <span class="inline-math">$x&gt;\xi$</span>, then <span class="inline-math">$LG = 0$</span>, so we expect <span class="inline-math">$x \mapsto G(x;\xi)$</span> to be nice.
+</p>
+<p>
+    For <span class="inline-math">$x=\xi$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        \alpha(x) \dd{x}\left(\dfd{G}{x}\right) \sim \delta(x-\xi).
+    \end{align*} $$</span>
+    We <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Interpretation-of-the-Dirac-delta-function.html">interpret</a> statements involving <span class="inline-math">$\delta(x)$</span>
+    as limits of smooth function <span class="inline-math">$x\mapsto \delta_n(x)$</span>.
+    We look at the sequence
+    <span class="display-math">$$ \begin{align*}
+        H_n&#x27; = \delta_n \iff H_n(x) = \int_{-\infty}^{x} \delta_n(t) \d t.
+    \end{align*} $$</span>
+    We see that
+    <span class="display-math">$$ \begin{align*}
+        H_n(x) \to H(x) = \begin{cases}
+            1, &amp;x&gt;0, \\
+            0, &amp;x&lt;0.
+        \end{cases}
+    \end{align*} $$</span>
+    So we expect <span class="inline-math">$\dfd{G}{x}(x;\xi)$</span> to look like <span class="inline-math">$H(x-\xi)$</span> near <span class="inline-math">$x=\xi$</span>, i.e. <span class="inline-math">$\dfd{G}{x}$</span> should have a jump discontinuity at <span class="inline-math">$x=\xi$</span>.
+</p>
+<p>
+    And
+    <span class="display-math">$$ \begin{align*}
+        G(x;\xi) \sim \int_{a}^{x} H(t-\xi) \d t = \begin{cases}
+            x-\xi, &amp;x&gt;\xi, \\
+            0, &amp;x&lt;\xi
+        \end{cases}
+    \end{align*} $$</span>
+    so we expect <span class="inline-math">$x\mapsto G(x;\xi)$</span> to be continuous at <span class="inline-math">$x=\xi$</span>.
+</p>
+<p>
+    To calculate the jump, divide <span class="inline-math">$(*)$</span> by <span class="inline-math">$\alpha(x)$</span> and integrate over <span class="inline-math">$(\xi-\epsilon, \xi+\epsilon)$</span> for some <span class="inline-math">$\epsilon&gt;0$</span> to get
+    <span class="display-math">$$ \begin{align*}
+        \left[\dfd{G}{x}\right]_{\xi-\epsilon}^{\xi+\epsilon} + \int_{\xi-\epsilon}^{\xi+\epsilon} \frac{\beta}{\alpha} \dfd{G}{x} + \frac{\gamma}{\alpha}G \d x ={}&amp; \int_{x-\epsilon}^{x+\epsilon} \frac{1}{\alpha(x)}\delta(x-\xi) \d x \\
+        ={}&amp; \frac{1}{\alpha(\xi)}
+    \end{align*} $$</span>
+    By the regularity of <span class="inline-math">$G(x;\xi)$</span>, the integral tends to zero as <span class="inline-math">$\epsilon\searrow 0$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \dfd{G}{x}(\xi^+; \xi) - \dfd{G}{x}(\xi^-; \xi) = \frac{1}{\alpha(\xi)}.
+    \end{align*} $$</span>
+</p>

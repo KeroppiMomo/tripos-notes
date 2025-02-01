@@ -1,0 +1,40 @@
+<p>
+    Consider the initial value problem of the heat equation
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            u_t - \kappa \Delta u = F(\v x, t), &amp;\R^n \times (0,\infty), \\
+            u(\v x, 0) = f(\v x), &amp;\R^n.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        For zero forcing <span class="inline-math">$F=0$</span>, the solution is
+        <span class="display-math">$$ \begin{align*}
+        u(\v x,t) = (K_t * f)(\v x) = \int K_t(\v x - \v y) \,f(\v y) \d ^n \v y.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        For zero initial condition <span class="inline-math">$f=0$</span>, the solution is
+        <span class="display-math">$$ \begin{align*}
+        u(\v x,t) = \int_{0}^{t} \int K_{t-s}(\v x-\v y) \, F(\v y,s) \d ^n \v y \d s \\
+        \end{align*} $$</span>
+        Equivalently, if we set <span class="inline-math">$F(\v x,t) = 0$</span> for <span class="inline-math">$t&lt;0$</span>, then
+        <span class="display-math">$$ \begin{align*}
+        u(\v x, t) ={}&amp; \iint G(\v x,t; \v y, s) \, F(\v y, s) \d^n \v y \d s
+        \end{align*} $$</span>
+        where
+        <span class="display-math">$$ \begin{align*}
+        G(\v x, t; \v y, s) = H(t-s) \, K_{t-s}(\v x-\v y)
+        \end{align*} $$</span>
+        is the <em>Green's function for heat equation on <span class="inline-math">$\R^n$</span> with zero initial conditions</em>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-solution-to-heat-equation.html">Proof</a>
+</p>

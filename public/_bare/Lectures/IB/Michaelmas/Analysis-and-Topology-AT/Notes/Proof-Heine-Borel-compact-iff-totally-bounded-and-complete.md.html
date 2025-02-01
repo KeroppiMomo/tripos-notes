@@ -1,0 +1,49 @@
+<p>
+    We use the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-sequentially-compact-and-compact.html">equivalence</a> of compactness and sequential compactness.
+</p>
+
+<h1>Sequentially compact <span class="inline-math">$\implies$</span> totally bounded</h1>
+
+<p>
+    See <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-sequentially-compact-space-is-totally-bounded.html">here</a>.
+</p>
+
+<h1>Sequentially compact <span class="inline-math">$\implies$</span> complete</h1>
+
+<p>
+    Let <span class="inline-math">$\set{x_n}$</span> be a Cauchy sequence in <span class="inline-math">$X$</span>.
+</p>
+<p>
+    By sequential compactness, there exists a subsequence <span class="inline-math">$\set{x_{n_k}}$</span> which converges to say <span class="inline-math">$x\in X$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        d(x_k, x) \leq \underbrace{d(x_k, x_{n_k})}_{\to 0\text{ by Cauchy}} + \underbrace{d(x_{n_k}, x)}_{\to 0\text{ by convergence}}
+    \end{align*} $$</span>
+    so <span class="inline-math">$x_k\to x$</span> as <span class="inline-math">$k\to \infty$</span>.
+</p>
+
+<h1>Totally bounded and complete <span class="inline-math">$\implies$</span> sequentially compact</h1>
+
+<p>
+    Let <span class="inline-math">$\set{x_n}_{n=1}^\infty$</span> be a sequence in <span class="inline-math">$X$</span>.
+    It suffices to show that <span class="inline-math">$\set{x_n}$</span> has a Cauchy subsequence, which converges by completeness.
+</p>
+<p>
+    Since <span class="inline-math">$X$</span> is totally bounded, let <span class="inline-math">$F_1\subseteq X$</span> be a finite set of points
+    such that <span class="inline-math">$X = \bigcup_{y\in F_1} B_1(y)$</span>.
+    There exists <span class="inline-math">$y_1\in F_1$</span> such that <span class="inline-math">$B_1(y_1)$</span> contains infinitely many <span class="inline-math">$x_n$</span>'s
+    (since <span class="inline-math">$\set{x_n}$</span> is infinite and <span class="inline-math">$F_1$</span> is finite).
+    Then pick <span class="inline-math">$n_1\in \N$</span> such that <span class="inline-math">$x_{n_1} \in B_1(y_1)$</span>.
+</p>
+<p>
+    Inductively assume there are infinitely many <span class="inline-math">$x_n$</span>'s contained within <span class="inline-math">$B_1(y_1) \cap B_{1/2}(y_2) \cap \ldots \cap B_{1/(k-1)}(y_{k-1})$</span> for some <span class="inline-math">$k\geq 2$</span>.
+    Let <span class="inline-math">$F_k\subseteq X$</span> be a finite set such that <span class="inline-math">$X = \bigcup_{y\in F_k} B_{1/k}(y)$</span>.
+    There exists <span class="inline-math">$y_k\in F_k$</span> such that <span class="inline-math">$B_1(y_1) \cap \ldots \cap B_{1/(k-1)}(y_{k-1}) \cap B_{1/k}(y_k)$</span> contains infinitely many <span class="inline-math">$x_n$</span>'s.
+    Pick <span class="inline-math">$n_k &gt; n_{k-1}$</span> such that <span class="inline-math">$x_{n_k} \in B_1(y_1) \cap \ldots \cap B_{1/k}(y_k)$</span>.
+</p>
+<p>
+    The sequence <span class="inline-math">$\set{x_{n_k}}_{k=1}^\infty$</span> is Cauchy since for <span class="inline-math">$l\geq k$</span>,
+    <span class="display-math">$$ \begin{align*}
+        x_{n_k}, x_{n_l} \in B_{1/k}(y_k) \implies d(x_{n_k}, x_{n_l}) &lt; \frac{2}{k} \xrightarrow{k\to\infty} 0.
+    \end{align*} $$</span>
+</p>

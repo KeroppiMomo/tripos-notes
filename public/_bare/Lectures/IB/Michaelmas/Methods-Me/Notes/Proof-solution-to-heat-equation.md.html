@@ -1,0 +1,49 @@
+<p>
+    Take the Fourier transform of the heat equation in <span class="inline-math">$\v x$</span> to get
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \hat u_t + \kappa |\v \lambda|^2 \hat u = \hat F(\v \lambda, t), \\
+            \hat u(\v \lambda, 0) = \hat f(\v \lambda)
+        \end{cases}
+    \end{align*} $$</span>
+    where <span class="inline-math">$\hat u(\v \lambda, t) = \int e^{-i\v \lambda\cdot \v x} u(\v x,t) \d ^n \v x$</span>.
+</p>
+
+<h1>Zero forcing</h1>
+
+<p>
+    Now we have
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \hat u_t + \kappa |\v \lambda|^2 \hat u = 0, \\
+            \hat u(\v \lambda, 0) = \hat f(\v \lambda),
+        \end{cases}
+    \end{align*} $$</span>
+    which can be solved as
+    <span class="display-math">$$ \begin{align*}
+        \hat u(\v \lambda, t) = \hat f(\v \lambda) \,e^{-\kappa |\v \lambda|^2 t} = \hat f(\v \lambda) \, \hat K_t(\v \lambda).
+    \end{align*} $$</span>
+    By the convolution theorem,
+    <span class="display-math">$$ \begin{align*}
+        u(\v x,t) = (K_t * f)(\v x).
+    \end{align*} $$</span>
+</p>
+
+<h1>Zero initial condition</h1>
+
+<p>
+    We use integrating factor to write
+    <span class="display-math">$$ \begin{align*}
+        \pdd{t}\left(e^{\kappa |\v \lambda|^2 t} \hat u\right) = e^{\kappa |\v \lambda|^2 t} \, \hat F(\v \lambda, t)
+    \end{align*} $$</span>
+    and with the initial condition <span class="inline-math">$\hat u(\v \lambda,0) = 0$</span>, the solution is
+    <span class="display-math">$$ \begin{align*}
+        e^{\kappa |\v \lambda|^2 t} \, \hat u(\v \lambda, t) ={}&amp; \int_{0}^{t} e^{\kappa |\v \lambda|^2 s} \hat F(\v \lambda, s) \d s \\
+        \hat u(\v \lambda, t) ={}&amp; \int_{0}^{t} e^{-\kappa |\v \lambda|^2 (t-s)} \, \hat F(\v \lambda, s) \d s \\
+        ={}&amp; \int_{0}^{t} \hat K_{t-s}(\v \lambda) \, \hat F(\v \lambda, s) \d s
+    \end{align*} $$</span>
+    Using the convolution theorem,
+    <span class="display-math">$$ \begin{align*}
+        u(\v x, t) ={}&amp; \int_{0}^{t} \int K_{t-s}(\v x - \v y) \, F(\v y, s) \d^n \v y \d s.
+    \end{align*} $$</span>
+</p>

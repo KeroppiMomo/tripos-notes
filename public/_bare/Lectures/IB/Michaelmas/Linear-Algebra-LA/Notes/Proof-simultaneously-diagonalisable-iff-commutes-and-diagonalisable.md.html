@@ -1,0 +1,49 @@
+
+<h1>Simultaneously diagonalisable <span class="inline-math">$\implies$</span> diagonalisable and commutes</h1>
+
+<p>
+    Let <span class="inline-math">$B$</span> be a basis for <span class="inline-math">$V$</span> such that <span class="inline-math">$[\alpha]^B_B$</span> and <span class="inline-math">$[\beta]^B_B$</span>.
+    Clearly <span class="inline-math">$\alpha$</span> and <span class="inline-math">$\beta$</span> are then diagonalisable.
+    Also since diagonal matrices commute,
+    <span class="display-math">$$ \begin{align*}
+        [\alpha\circ\beta]^B_B = [\alpha]^B_B [\beta]^B_B = [\beta]^B_B [\alpha]^B_B = [\beta\circ \alpha]^B_B
+    \end{align*} $$</span>
+    and so <span class="inline-math">$\alpha\circ \beta = \beta\circ\alpha$</span>.
+</p>
+
+<h1>Diagonalisable and commutes <span class="inline-math">$\implies$</span> simultaneously diagonalisable</h1>
+
+<p>
+    Suppose <span class="inline-math">$\alpha$</span> and <span class="inline-math">$\beta$</span> are diagonalisable and <span class="inline-math">$\alpha\circ\beta=\beta\circ\alpha$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-direct-sum-of-eigenspaces.html">Since</a> <span class="inline-math">$\alpha$</span> is diagonalisable,
+    <span class="inline-math">$V = V_{\lambda_1} \oplus \ldots \oplus V_{\lambda_k}$</span> where
+    <span class="inline-math">$\lambda_i$</span> are the eigenvalues of <span class="inline-math">$\alpha$</span> and <span class="inline-math">$V_{\lambda_i}$</span> is the corresponding <span class="inline-math">$\lambda_i$</span>-eigenspace of <span class="inline-math">$\alpha$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-diagonalisable-iff-minimal-polynomial-is-a-product-of-distinct-linear-factors.html">Since</a> <span class="inline-math">$\beta$</span> is diagonalisable,
+    there exists <span class="inline-math">$p\in \mathbb{F}[t]\setminus \set{0}$</span> such that <span class="inline-math">$p(\beta) = 0$</span>
+    and <span class="inline-math">$\beta$</span> is a product of distinct linear factors.
+</p>
+<p>
+    Note that the restriction <span class="inline-math">$\beta|_{V_{\lambda_i}} : V_{\lambda_i} \to V_{\lambda_i}$</span> is well-defined, since for each <span class="inline-math">$v\in V_{\lambda_i}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \alpha(\beta(v)) ={}&amp; \beta(\alpha(v)) \\
+        ={}&amp; \beta(\lambda_i v) \\
+        ={}&amp; \lambda_i \beta(v)
+    \end{align*} $$</span>
+    so <span class="inline-math">$\beta(v)\in V_{\lambda_{i}}$</span>.
+</p>
+<p>
+    Then since <span class="inline-math">$p(\beta|_{V_{\lambda_i}}) = p(\beta)|_{V_{\lambda_i}} = 0$</span> and <span class="inline-math">$p\neq 0$</span> is a product of distinct linear factors,
+    <span class="inline-math">$\beta|_{V_{\lambda_i}}$</span> is diagonalisable.
+</p>
+<p>
+    Therefore we can let <span class="inline-math">$B_i$</span> be a basis for each <span class="inline-math">$V_{\lambda_i}$</span> consisting of eigenvectors of <span class="inline-math">$B$</span>.
+    Then <span class="inline-math">$B = \bigcup_{i=1}^{k} B_i$</span> is a basis for <span class="inline-math">$V$</span>,
+    and each element of <span class="inline-math">$B$</span> is an eigenvector in both <span class="inline-math">$\alpha$</span> and <span class="inline-math">$\beta$</span>.
+</p>
+<p>
+    Hence <span class="inline-math">$[\alpha]^B_B$</span> and <span class="inline-math">$[\beta]^B_B$</span>.
+</p>

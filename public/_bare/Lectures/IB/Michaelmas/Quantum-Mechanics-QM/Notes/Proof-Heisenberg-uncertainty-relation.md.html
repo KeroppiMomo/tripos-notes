@@ -1,0 +1,49 @@
+<p>
+    The position-momentum uncertainty follows from the general case and <a href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Proposition-commutation-relations.html"><span class="inline-math">$[\hat x, \hat p] = i\hbar$</span></a>.
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        \hat P ={}&amp; \hat A - \langle A\rangle, \\
+        \hat Q ={}&amp; \hat B - \langle B\rangle.
+    \end{align*} $$</span>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \langle P^2\rangle ={}&amp; \big\langle (A - \langle A\rangle)^2\big\rangle = (\Delta A)^2, \\
+        \langle Q^2\rangle ={}&amp; \big\langle (B - \langle B\rangle)^2\big\rangle = (\Delta B)^2, \\
+        [\hat P, \hat Q] ={}&amp; [\hat A, \hat B] - [\langle A\rangle, \hat B] - [\hat A, \langle B\rangle] + [\langle A\rangle, \langle B\rangle] = [\hat A, \hat B]. \\
+    \end{align*} $$</span>
+    Hence it suffices to prove that <span class="inline-math">$\langle P^2\rangle\langle Q^2\rangle \geq \frac{1}{4}|\langle [\hat P, \hat Q]\rangle|^2$</span>.
+</p>
+
+<h1>Proof 1</h1>
+
+<p>
+    The inequality
+    <span class="display-math">$$ \begin{align*}
+        0 \leq{}&amp; \int_{-\infty}^{\infty} ((\hat P + i\lambda \hat Q)\psi)^\ast \, ((\hat P + i\lambda \hat Q)\psi) \d x \\
+        ={}&amp; \int_{-\infty}^{\infty} \psi^\ast (\hat P - i\lambda \hat Q)(\hat P + i\lambda\hat Q) \psi \d x &amp;\text{$\hat P$, $\hat Q$ Hermitian}\\
+        ={}&amp; \int_{-\infty}^{\infty} \psi^\ast (\hat P^2 + i\lambda[\hat P, \hat Q] + \lambda^2 \hat Q) \psi\d x \\
+        ={}&amp; \langle \hat P^2\rangle + i\lambda \langle [\hat P, \hat Q]\rangle + \lambda^2 \langle \hat Q^2\rangle
+    \end{align*} $$</span>
+    holds for all real <span class="inline-math">$\lambda$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        (i\langle [\hat P, \hat Q]\rangle)^2 - 4\langle \hat P^2\rangle\langle \hat Q^2\rangle \leq{} &amp;0 \\
+        \langle P^2\rangle\langle Q^2\rangle \geq{} &amp;\frac{1}{4}\big|\langle [\hat P, \hat Q]\rangle\big|.
+    \end{align*} $$</span>
+</p>
+
+<h1>Proof 2</h1>
+
+<p>
+    Using Cauchy-Schwarz inequality,
+    <span class="display-math">$$ \begin{align*}
+        \langle P^2\rangle \langle Q^2\rangle ={}&amp; \left(\int_{-\infty}^{\infty} \psi^\ast \hat P^2 \psi \d x\right)\left(\int_{-\infty}^{\infty} \psi^\ast \hat Q^2 \psi \d x\right) \\
+        ={}&amp; \left(\int_{-\infty}^{\infty} (\hat P\psi)^\ast (\hat P\psi) \d x\right)\left(\int_{-\infty}^{\infty} (\hat Q\psi)^\ast(\hat Q\psi) \d x\right) \\
+        \geq{} &amp; \left|\int_{-\infty}^{\infty} (\hat P\psi)^\ast (\hat Q\psi) \d x\right|^2 \\
+        \geq{} &amp; \left(\Im\int_{-\infty}^{\infty} (\hat P\psi)^\ast (\hat Q\psi) \d x\right)^2 \\
+        ={} &amp; \frac{1}{4}\left|\int_{-\infty}^{\infty} (\hat P\psi)^\ast (\hat Q\psi) \d x - \int_{-\infty}^{\infty} (\hat Q\psi)^\ast (\hat P\psi) \d x\right|^2 \\
+        ={} &amp; \frac{1}{4}\left|\int_{-\infty}^{\infty} \psi^\ast (\hat P\hat Q - \hat Q\hat P)\psi\right|^2 \\
+        ={}&amp; \frac{1}{4} \big|\langle [\hat P, \hat Q]\rangle\big|^2.
+    \end{align*} $$</span>
+</p>

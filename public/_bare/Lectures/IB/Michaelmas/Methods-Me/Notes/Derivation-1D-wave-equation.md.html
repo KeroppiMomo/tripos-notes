@@ -1,0 +1,50 @@
+<p>
+    Try separation of variables
+    <span class="display-math">$$ \begin{align*}
+        y(x,t) = X(x) \, T(t)
+    \end{align*} $$</span>
+    and the wave equation becomes
+    <span class="display-math">$$ \begin{align*}
+        \frac{\ddot T}{c^2 T} = \frac{X&#x27;&#x27;}{X}.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$x$</span> and <span class="inline-math">$t$</span> are independent, both sides have to be constant.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \ddot T + \lambda c^2 T = 0, \qquad  X&#x27;&#x27; + \lambda X = 0.
+    \end{align*} $$</span>
+    The equation for <span class="inline-math">$X$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Sturm-Liouville-theory.html">Sturm-Liouville problem</a>.
+    Using the boundary conditions <span class="inline-math">$X(0) = X(L) = 0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        X_n(x) = \sin \frac{n\pi x}{L}, \qquad \lambda_n = \left(\frac{n\pi}{L}\right)^2, \qquad n=1,2,3,\ldots.
+    \end{align*} $$</span>
+</p>
+<p>
+    The equation for <span class="inline-math">$T$</span> becomes
+    <span class="display-math">$$ \begin{align*}
+        \ddot T + \left(\frac{n\pi c}{L}\right)^2 T = 0
+    \end{align*} $$</span>
+    which has solutions
+    <span class="display-math">$$ \begin{align*}
+        T_n(t) = A_n  \cos \frac{n\pi c t}{L} + B_n \sin \frac{n\pi c t}{L}.
+    \end{align*} $$</span>
+</p>
+<p>
+    By superposition,
+    <span class="display-math">$$ \begin{align*}
+        y(x,t) = \sum_{n=1}^{\infty} \left(\sin \frac{n\pi x}{L}\right) \left(A_n \cos \frac{n\pi ct}{L} + B_n \sin \frac{n\pi c t}{L}\right)
+    \end{align*} $$</span>
+    solves the wave equation and the boundary conditions.
+</p>
+<p>
+    The initial conditions become
+    <span class="display-math">$$ \begin{align*}
+        f(x) = y(x,0) ={}&amp; \sum_{n=1}^{\infty} A_n \sin \frac{n\pi x}{L}, \\
+        g(x) = y_x(x,0) ={}&amp; \sum_{n=1}^{\infty} \frac{n\pi c}{L} B_n \sin \frac{n\pi x}{L}.
+    \end{align*} $$</span>
+    This is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-cosine-and-sine-series.html">Fourier sine series</a>!
+    Therefore we obtain
+    <span class="display-math">$$ \begin{align*}
+        A_n ={}&amp; \frac{2}{L} \int_{0}^{L} f(x) \sin \frac{n\pi x}{L} \d x \\
+        B_n ={}&amp; \frac{2}{n\pi c} \int_{0}^{L} g(x) \sin \frac{n\pi x}{L} \d x.
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,420 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (continuity on topological space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological spaces</a>.
+            </p>
+            <p>
+                We say a function <span class="inline-math">$f: X\to Y$</span> is <em>continuous</em> at <span class="inline-math">$x_0\in X$</span>
+                if for all <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-neighbourhood.html">neighbourhood</a> <span class="inline-math">$V$</span> of <span class="inline-math">$f(x_0)$</span>, we have <span class="inline-math">$f\inv(V)$</span> being a neighbourhood of <span class="inline-math">$x$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(Y,d&#x27;)$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric spaces</a>,
+                this is equivalent to any of the following:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$\delta=\delta(\epsilon)&gt;0$</span> such that for all <span class="inline-math">$x\in X$</span>, if <span class="inline-math">$d(x,x_0) &lt; \delta$</span>, then <span class="inline-math">$d&#x27;(f(x), f(x_0)) &lt; \epsilon$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$\delta=\delta(\epsilon)&gt;0$</span> such that for all <span class="inline-math">$x\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-and-closed-balls.html"><span class="inline-math">$B_\delta(x_0)$</span></a>, we have <span class="inline-math">$f(x) \in B&#x27;_{\epsilon}(f(x_0))$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$\delta = \delta(\epsilon)&gt;0$</span> such that <span class="inline-math">$B_{\delta}(x_0) \subseteq f\inv(B&#x27;_\epsilon(f(x_0)))$</span>;
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                We say <span class="inline-math">$f$</span> is <em>continuous</em> if this holds for all <span class="inline-math">$x_0\in X$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\mathrm{id}_X : (X,d) \to (X,d&#x27;)$</span> is not necessarily continuous. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Example-identity-is-not-continuous-under-different-metrics.html">Example</a>)
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(\R,|\cdot|)$</span>, for any fixed <span class="inline-math">$x_0\in X$</span>, <span class="inline-math">$x\mapsto d(x_0,x)$</span> is continuous.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (continuous iff taking preimage preserves open or closed sets)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuous-iff-taking-preimage-preserves-open-or-closed-sets.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces, and <span class="inline-math">$f: X\to Y$</span>. The following are equivalent:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a>;
+                </p>
+                
+            </li><li>
+                <p>
+                    for all <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-set-in-metric-space.html">open set</a> <span class="inline-math">$V$</span> in <span class="inline-math">$(Y,\rho)$</span>, the preimage <span class="inline-math">$f\inv(V)$</span> is open in <span class="inline-math">$(X,\tau)$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    for all <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closed-set.html">closed set</a> <span class="inline-math">$V$</span> in <span class="inline-math">$(Y,\rho)$</span>, the preimage <span class="inline-math">$f\inv(V)$</span> is closed in <span class="inline-math">$(X,\tau)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-preimage-of-open-or-closed-set-under-continuous-function-is-open-or-closed.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (composition preserves continuity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-composition-preserves-continuity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: (X,\tau)\to (Y,\rho)$</span> and <span class="inline-math">$g: (Y,\rho)\to (Z,\sigma)$</span> be functions between topological spaces.
+            </p>
+            <p>
+                If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> at <span class="inline-math">$x_0\in X$</span> and <span class="inline-math">$g$</span> is continuous at <span class="inline-math">$f(x_0)\in Y$</span>,
+                then <span class="inline-math">$g\circ f$</span> is continuous at <span class="inline-math">$x_0$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-composition-preserves-continuity.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (sequential continuity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequential-continuity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(Y,d&#x27;)$</span> be metric spaces.
+            </p>
+            <p>
+                We say <span class="inline-math">$f$</span> is <em>sequentially continuous</em> at <span class="inline-math">$x\in (X,d)$</span>
+                if for all sequences <span class="inline-math">$\set{x_n}_{n=1}^\infty$</span> on <span class="inline-math">$X$</span> where <span class="inline-math">$x_n\to x$</span>,
+                we have <span class="inline-math">$f(x_n) \to f(x_0)$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (continuous and sequentially continuous)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-continuous-and-sequentially-continuous.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces, and <span class="inline-math">$f: X\to Y$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    For <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(Y,\rho)$</span> metric spaces, <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> at <span class="inline-math">$x\in X$</span> iff <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequential-continuity.html">sequentially continuous</a> at <span class="inline-math">$x$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    TODO
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuous-iff-sequentially-continuous.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Homeomorphisms and isometries
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Homeomorphisms-and-isometries.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (homeomorphism)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-homeomorphism.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces.
+                        </p>
+                        <p>
+                            A function <span class="inline-math">$f: (X,\tau)\to(Y,\rho)$</span> is said to be a <em>homeomorphism</em> if
+                            <span class="inline-math">$f$</span> is bijective, and <span class="inline-math">$f$</span> and <span class="inline-math">$f\inv$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> are <em>homeomorphic</em> if such a function exists.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (isometry)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-isometry.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(Y,d&#x27;)$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric spaces</a>.
+                        </p>
+                        <p>
+                            A function <span class="inline-math">$f: (X,d) \to (Y,d&#x27;)$</span> is said to be an <em>isometry</em> if it is bijective and
+                            <span class="display-math">$$ \begin{align*}
+                                d&#x27;(f(x), f(y)) = d(x,y) \qquad \text{for all }x,y\in X.
+                            \end{align*} $$</span>
+                            We say <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(Y,d&#x27;)$</span> are isometric if such a function exists.
+                        </p>
+                        
+                    </div>
+                </div>
+                Isometries are homeomoprhisms. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Derivation-isometries-are-homeomorphisms.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Uniform continuity
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Uniform-continuity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (uniform continuity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-continuity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(Y,d&#x27;)$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric spaces</a>.
+                        </p>
+                        <p>
+                            We say a function <span class="inline-math">$f:(X,d)\to (Y,d&#x27;)$</span> is <em>uniformly continuous</em> if, equivalently,
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$\delta=\delta(\epsilon)&gt;0$</span> such that
+                                for all <span class="inline-math">$x,x_0\in X$</span>, if <span class="inline-math">$d(x,x_0) &lt; \delta$</span>, then <span class="inline-math">$d&#x27;(f(x), f(x_0)) &lt; \epsilon$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$\delta=\delta(\epsilon)&gt;0$</span> such that
+                                for all <span class="inline-math">$x,x_0\in X$</span>, if <span class="inline-math">$x\in B_\delta(x_0)$</span>, then <span class="inline-math">$f(x) \in B&#x27;_\epsilon(f(x_0))$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Examples-of-uniform-continuity.html">Examples of uniform continuity</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (composition preserves uniform continuity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-composition-preserves-uniform-continuity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: (X,d)\to (Y,d&#x27;)$</span> and <span class="inline-math">$g: (Y,d&#x27;)\to (Z,d&#x27;&#x27;)$</span> be functions between metric spaces.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-continuity.html">uniformly continuous</a>,
+                            then <span class="inline-math">$g\circ f$</span> is also uniformly continuous.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-composition-preserves-uniform-continuity.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (uniform equivalence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-equivalence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a set, and <span class="inline-math">$d$</span> and <span class="inline-math">$d&#x27;$</span> be metrics on <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(X,d&#x27;)$</span> are <em>uniformly equivalent</em>
+                            if <span class="inline-math">$\mathrm{id}: (X,d)\to(X,d&#x27;)$</span> and <span class="inline-math">$\mathrm{id}&#x27;: (X,d&#x27;) \to (X,d)$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-continuity.html">uniformly continuous</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Lipschitz continuity
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lipschitz-continuity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Lipschitz continuity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Lipschitz-continuity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(Y,d&#x27;)$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric spaces</a>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$f: (X,d)\to (Y,d&#x27;)$</span> is <em>Lipschitz continuous</em> if
+                            there exists <span class="inline-math">$L&gt;0$</span> such that for all <span class="inline-math">$x,y\in X$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                d&#x27;(f(x), f(y))\leq Ld(x,y)
+                            \end{align*} $$</span>
+                            and we say that <span class="inline-math">$f$</span> is <em><span class="inline-math">$L$</span>-Lipschitz.</em>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (Lipschitz continuity implies uniform continuity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-Lipschitz-continuity-implies-uniform-continuity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: (X,d)\to(Y,d&#x27;)$</span> be a function between metric spaces.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Lipschitz-continuity.html">Lipschitz continuous</a>, then <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-continuity.html">uniform continuity</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-Lipschitz-continuity-implies-uniform-continuity.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (composition preserves Lipschitz continuity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-composition-preserves-Lipschitz-continuity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: (X,d)\to (Y,d&#x27;)$</span> and <span class="inline-math">$g: (Y,d&#x27;)\to (Z,d&#x27;&#x27;)$</span> be functions between metric spaces.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f$</span> is <span class="inline-math">$L_f$</span>-<a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Lipschitz-continuity.html">Lipschitz</a> and <span class="inline-math">$g$</span> is <span class="inline-math">$L_g$</span>-Lipschitz,
+                            then <span class="inline-math">$g\circ f$</span> is <span class="inline-math">$(L_f\cdot L_g)$</span>-Lipschitz.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-composition-preserves-Lipschitz-continuity.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Lipschitz equivalence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Lipschitz-equivalence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a set, and <span class="inline-math">$d$</span> and <span class="inline-math">$d&#x27;$</span> be metrics on <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(X,d&#x27;)$</span> are <em>Lipschitz equivalent</em>
+                            if <span class="inline-math">$\mathrm{id}: (X,d)\to(X,d&#x27;)$</span> and <span class="inline-math">$\mathrm{id}\inv: (X,d&#x27;)\to(X,d)$</span>
+                            are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Lipschitz-continuity.html">Lipschitz continuous</a>.
+                        </p>
+                        <p>
+                            Or equivalently, if there exists <span class="inline-math">$\alpha, \beta&gt;0$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                \alpha d(x,y) \leq d&#x27;(x,y) \leq  \beta d(x,y)\qquad \text{for all } x,y\in X.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Example-l-p-metrics-are-equivalent.html">Example (l-p metrics are Lipschitz equivalent)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (continuity with respect to equivalent metrics)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuity-with-respect-to-equivalent-metrics.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$(X,d)$</span>, <span class="inline-math">$(X,d&#x27;)$</span> and <span class="inline-math">$(Y,d&#x27;&#x27;)$</span> are metric spaces, and <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(X,d&#x27;)$</span> are (\*)-equivalent.
+            </p>
+            <p>
+                If <span class="inline-math">$f: (X,d)\to (Y,d&#x27;&#x27;)$</span> is (\*)-continuous,
+                then <span class="inline-math">$f: (X,d&#x27;)\to(Y,d&#x27;&#x27;)$</span> is also (\*)-continuous.
+            </p>
+            <p>
+                (\*) can be <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">not</a><a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-equivalence.html">hing</a>, <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-continuity.html">"unif</a><a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-equivalence.html">ormly"</a>, or <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Lipschitz-continuity.html">"Lips</a><a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Lipschitz-equivalence.html">chitz"</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuity-with-respect-to-equivalent-metrics.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

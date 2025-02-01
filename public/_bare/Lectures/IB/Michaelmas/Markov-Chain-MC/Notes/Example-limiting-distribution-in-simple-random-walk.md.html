@@ -1,0 +1,22 @@
+<p>
+    Consider the limit of <span class="inline-math">$p_{0x}(n)$</span> as <span class="inline-math">$n\to \infty$</span> for all <span class="inline-math">$x$</span> in a simple symmetric random walk on <span class="inline-math">$\Z$</span>.
+</p>
+<p>
+    To get from 0 to <span class="inline-math">$x$</span> after <span class="inline-math">$n$</span> steps, we need to take <span class="inline-math">$(n+x)/2$</span> steps to the right and <span class="inline-math">$(n-x)/2$</span> steps to the left.
+    So, assuming <span class="inline-math">$n\equiv x\mod 2$</span>,
+    <span class="display-math">$$ \begin{align*}
+        p_{0x}(n) ={}&amp; \pmat{n \\ (n-x)/2} \left(\frac{1}{2}\right)^n \\
+        ={}&amp; \frac{n!}{(\frac{n-x}{2})! (\frac{n+x}{2})!} \frac{1}{2^n} \\
+        \sim{}&amp; \frac{\sqrt{2\pi n}\, n^n e^{-n}}{2^n\sqrt{\pi(n-x)}\, (\frac{n-x}{2})^{(n-x)/2} e^{-(n-x)/2} \sqrt{\pi(n+x)} (\frac{n+x}{2})^{(n+x)/2} e^{-(n+x)/2}} \\
+        ={}&amp; \frac{1}{\sqrt{\pi}} \frac{\sqrt{n}}{\sqrt{(n-x)(n+x)}} \frac{n^n}{(n-x)^{(n-x)/2} (n+x)^{(n+x)/2}} \\
+        \sim{}&amp; \frac{1}{\sqrt{\pi n}} \\
+        \to{}&amp; 0
+    \end{align*} $$</span>
+    where we have used <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-Stirling-s-formula-for-n.html">Stirling's formula</a>.
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        1 = \lim_{n\to \infty} \sum_{x\in I} p_{0x}(n) \neq \sum_{x\in I} \lim_{n\to \infty} p_{0x}(n) = 0
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,47 @@
+<p>
+    Let <span class="inline-math">$A = \pmat{\v c_1 &amp; \ldots &amp; \v c_n}$</span>, and for <span class="inline-math">$1\leq i\leq n$</span>,
+    <span class="display-math">$$ \begin{align*}
+        f_i : \mathbb{F}^n &amp;\to \mathbb{F} \\
+        \v v &amp;\mapsto F\big(\pmat{\v c_1 &amp; \ldots &amp; \v c_{i-1} &amp; \v v &amp; \v c_{i+1} &amp; \ldots &amp; \v c_n}\big).
+    \end{align*} $$</span>
+    By <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-volume-form.html">definition</a>, <span class="inline-math">$f_i$</span> is linear and
+    <span class="display-math">$$ \begin{align*}
+        f_i(\v c_j) = \delta_{ij} F(A)
+    \end{align*} $$</span>
+    (since if <span class="inline-math">$j\neq i$</span>, then two columns are equal and so <span class="inline-math">$f_i(\v c_j) = 0$</span>, and if <span class="inline-math">$j=i$</span>, then that is simply <span class="inline-math">$F(A)$</span>).
+</p>
+<ol start="1">
+<li>
+    <p>
+        If <span class="inline-math">$\v c_i=\v 0$</span>, then <span class="inline-math">$F(A) = f_i (\v c_i) = f_i(\v 0) = \v 0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        WLOG assume <span class="inline-math">$i&lt;j$</span>. Note that
+        <span class="display-math">$$ \begin{align*}
+        &amp;F(A) + f_j(\v c_i) + F(A \cdot T_{i,j}) + f_i(\v c_j) \\
+        ={}&amp; F(\pmat{\v c_1 &amp; \ldots &amp; \v c_i &amp; \ldots &amp; \v c_j &amp; \ldots &amp; \v c_n}) \\
+        &amp;+ F(\pmat{\v c_1 &amp; \ldots &amp; \v c_i &amp; \ldots &amp; \v c_i &amp; \ldots &amp; \v c_n}) \\
+        &amp;+ F(\pmat{\v c_1 &amp; \ldots &amp; \v c_j &amp; \ldots &amp; \v c_i &amp; \ldots &amp; \v c_n}) \\
+        &amp;+ F(\pmat{\v c_1 &amp; \ldots &amp; \v c_j &amp; \ldots &amp; \v c_j &amp; \ldots &amp; \v c_n}) \\
+        ={}&amp; F(\pmat{\v c_1 &amp; \ldots &amp; \v c_i &amp; \ldots &amp; \v c_i + \v c_j &amp; \ldots &amp; \v c_n}) \\
+        &amp;+ F(\pmat{\v c_1 &amp; \ldots &amp; \v c_j &amp; \ldots &amp; \v c_i + \v c_j &amp; \ldots &amp; \v c_n}) \\
+        ={}&amp; F(\pmat{\v c_1 &amp; \ldots &amp; \v c_i + \v c_j &amp; \ldots &amp; \v c_i + \v c_j &amp; \ldots &amp; \v c_n}) \\
+        ={}&amp; 0
+        \end{align*} $$</span>
+        but <span class="inline-math">$f_j(\v c_i) = f_i(\v c_j) = 0$</span>, so we obtain <span class="inline-math">$F(AT_{i,j}) = -F(A)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$F(A\cdot M_{i,\lambda}) = f_i(\lambda \v c_i) = \lambda f_i(\v c_i) = \lambda F(A)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$F(A\cdot C_{i,j,\lambda}) = f_j(\v c_j + \lambda \v c_i) = f_j(\v c_j) + \lambda f_j(\v c_i) = F(A) + 0 = F(A)$</span>.
+    </p>
+    
+</li>
+</ol>

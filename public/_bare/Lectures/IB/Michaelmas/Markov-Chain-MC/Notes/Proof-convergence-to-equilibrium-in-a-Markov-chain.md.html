@@ -1,0 +1,132 @@
+<p>
+    We will use the technique of <em>coupling</em>: fix some <span class="inline-math">$a\in I$</span>, and let
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\ouline{X}\sim \mathrm{Markov}(\lambda, P)$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\ouline{Y}\sim \mathrm{Markov}(\pi, P)$</span>, independent of <span class="inline-math">$\ouline{X}$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$T = \inf\sb{n\geq 1}{X_n = a, Y_n=a}$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\ouline{Z} = (Z_n)_{n\geq 0}$</span> given by
+        <span class="display-math">$$ \begin{align*}
+        Z_n = \begin{cases}
+            X_n, &amp;\text{if }n &lt; T, \\
+            Y_n, &amp;\text{if }n &gt; T.
+        \end{cases}
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>
+
+<h1><span class="inline-math">$\prob(T&lt;\infty) = 1$</span></h1>
+
+<p>
+    To show <span class="inline-math">$\prob(T&lt;\infty) = 1$</span>, we define <span class="inline-math">$\ouline{W} = (W_n)_{n\geq 0}$</span> by
+    <span class="display-math">$$ \begin{align*}
+        W_n = (X_n, Y_n).
+    \end{align*} $$</span>
+    Then <span class="inline-math">$T$</span> can be expressed as
+    <span class="display-math">$$ \begin{align*}
+        T = \inf\sb{n\geq 1}{W_n=(a,a)}.
+    \end{align*} $$</span>
+</p>
+
+<h2><span class="inline-math">$\ouline{W}$</span> is a Markov chain</h2>
+
+<p>
+    For any <span class="inline-math">$x_0, \ldots, x_n, y_0, \ldots, y_n\in I$</span>, using the independence of <span class="inline-math">$\ouline{X}$</span> and <span class="inline-math">$\ouline{Y}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        &amp;\prob(W_n=(x_n,y_n)\, |\,W_{n-1}=(x_{n-1}, y_{n-1}), \ldots, W_0 = (x_0, y_0)) \\
+        ={}&amp; \prob(X_n = x_n, Y_n = y_n \, | \, X_{n-1} = x_{n-1}, Y_{n-1} = y_{n-1}, \ldots, X_0 = x_0, Y_0 = y_0) \\
+        ={}&amp; \prob(X_n = x_n \,|\, X_{n-1} = x_{n-1}, \ldots, X_{0} = x_0) \times \prob(Y_n = y_n \, | \, Y_{n-1} = y_{n-1}, \ldots, Y_0 = y_0) \\
+        ={}&amp; P(x_{n-1}, x_n) \times P(y_{n-1}, y_n)
+    \end{align*} $$</span>
+    so <span class="inline-math">$\ouline{W}$</span> has the transition matrix <span class="inline-math">$\tilde P$</span> given by
+    <span class="display-math">$$ \begin{align*}
+        \tilde P\big((x,y), (x&#x27;,y&#x27;)\big) = P(x,x&#x27;) \, P(y,y&#x27;).
+    \end{align*} $$</span>
+</p>
+
+<h2><span class="inline-math">$\ouline{W}$</span> is irreducible</h2>
+
+<p>
+    Since <span class="inline-math">$\ouline{X}$</span> is irreducible, there exists <span class="inline-math">$m$</span> and <span class="inline-math">$n$</span> such that <span class="inline-math">$p_{xx&#x27;}(m) &gt; 0$</span> and <span class="inline-math">$p_{yy&#x27;}(n) &gt; 0$</span>.
+    Using the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Lemma-aperiodic-iff-returning-probability-all-positive-eventually.html">aperiodicity</a> of <span class="inline-math">$\ouline{X}$</span>,
+    <span class="inline-math">$p_{xx}(l) &gt; 0$</span> and <span class="inline-math">$p_{yy}(l)&gt;0$</span> for sufficiently large <span class="inline-math">$l$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \tilde p_{(x,y),(x&#x27;,y&#x27;)}(l) ={}&amp; p_{xx&#x27;}(l) \, p_{yy&#x27;}(l) \\
+        ={}&amp; p_{xx}(l-n) \, p_{xx&#x27;}(n) \, p_{yy}(l-m) \, p_{yy&#x27;}(m) \\
+        &gt;{}&amp; 0
+    \end{align*} $$</span>
+    for sufficiently large <span class="inline-math">$l$</span>.
+</p>
+
+<h2><span class="inline-math">$\ouline{W}$</span> is positive recurrent</h2>
+
+<p>
+    Note that <span class="inline-math">$\ouline{W}$</span> has an invariant distribution <span class="inline-math">$\tilde \pi(x,y) = \pi(x)\, \pi(y)$</span>: <span class="inline-math">$\tilde \pi$</span> is a distribution since <span class="inline-math">$\sum_{x,y} \tilde p(x,y) = \sum_{x} \pi(x) \times \sum_{y} \pi(y) = 1$</span>,
+    and it is invariant since
+    <span class="display-math">$$ \begin{align*}
+        \sum_{x,y} \tilde \pi(x,y)\, \tilde P((x,y), (x&#x27;,y&#x27;)) ={}&amp; \sum_{x} \pi(x) P(x,x&#x27;) \times \sum_{y} \pi(y) P(y,y&#x27;) \\
+        ={}&amp; \pi(x&#x27;)\pi(y&#x27;) \\
+        ={}&amp; \tilde \pi(x&#x27;,y&#x27;).
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-existence-of-an-invariant-distribution.html">Therefore</a> <span class="inline-math">$\ouline{W}$</span> is positive recurrent.
+</p>
+<p>
+    Hence, <span class="inline-math">$\ouline{W}$</span> is recurrent, and <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-visit-everywhere-in-irreducible-and-recurrent-chain.html">thus</a> <span class="inline-math">$\prob(T&lt;\infty) = 1$</span>.
+</p>
+
+<h1><span class="inline-math">$\ouline{Z} \sim \mathrm{Markov}(\lambda, P)$</span></h1>
+
+<p>
+    Since <span class="inline-math">$T\geq 1$</span>, <span class="inline-math">$Z_0 = X_0 \sim \lambda$</span>.
+</p>
+<p>
+    To show that <span class="inline-math">$\ouline{Z}$</span> is a Markov chain with transition matrix <span class="inline-math">$P$</span>,
+    let <span class="inline-math">$z_0, \ldots, z_{n-1}, x, y\in I$</span>, and write <span class="inline-math">$A = \set{Z_0 = z_0, \ldots, Z_{n-1} = z_{n-1}}$</span>.
+    We want to show <span class="inline-math">$\prob(Z_{n+1} = y | Z_n = x, A) = P(x,y)$</span>.
+</p>
+<p>
+    We split into time before <span class="inline-math">$T$</span> and after <span class="inline-math">$T$</span>:
+    <span class="display-math">$$ \begin{align*}
+        &amp;\prob(Z_{n+1} = y | Z_n = x, A) \\
+        ={}&amp; \prob(Z_{n+1} = y, T &gt; n|Z_n = x, A) + \prob(Z_{n+1} = y, T\leq n | Z_n = x, A) \\
+        ={}&amp; \prob(X_{n+1} = y | T&gt;n, Z_n = x, A) \times \prob(T&gt;n | Z_n = x, A) \\
+        &amp;+\prob(Y_{n+1} = y | T\leq n, Z_n = x, A) \times \prob(T\leq n|Z_n = x, A).
+    \end{align*} $$</span>
+    TODO
+</p>
+
+<h1><span class="inline-math">$\prob(X_n = y) \to \pi(y)$</span></h1>
+
+<p>
+    Finally for all <span class="inline-math">$y\in I$</span>,
+    <span class="display-math">$$ \begin{align*}
+        &amp;|\prob(X_n = y) - \pi(y)| \\
+        ={}&amp; |\prob(Z_n = y) - \prob(Y_n = y)| &amp;X_n\sim Z_n, Y_n\sim\pi \\
+        ={}&amp; |\prob(Z_n = y, n&lt;T) - \prob(Z_n=y, n\geq T) \\
+        &amp;- \prob(Y_n = y, n&lt;T) + \prob(Y_n = y, n\geq T)| \\
+        ={}&amp; |\prob(X_n = y, n&lt;T) - \prob(Y_n=y, n\geq T) \\
+        &amp;- \prob(Y_n = y, n&lt;T) + \prob(Y_n = y, n\geq T)| \\
+        ={}&amp; |\prob(X_n = y, n&lt;T) - \prob(Y_n = y, n&lt;T)| \\
+        ={}&amp; \big|\prob(n&lt;T) \cdot \big(\prob(X_n = y|n&lt;T) - \prob(Y_n=y | n&lt;T)\big)\big| \\
+        \leq {}&amp; \prob(n&lt;T) \\
+        \to {}&amp; 0
+    \end{align*} $$</span>
+    as <span class="inline-math">$n\to \infty$</span>, since <span class="inline-math">$\prob(T&lt;\infty)= 1$</span>.
+</p>

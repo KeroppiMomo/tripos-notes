@@ -1,0 +1,1507 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (topology, topological space, open set)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>topology</em> <span class="inline-math">$\tau$</span> on set <span class="inline-math">$X$</span> is a set of subsets of <span class="inline-math">$X$</span> satisfying
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$\emptyset, X\in \tau$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    for any family <span class="inline-math">$\set{U_i}_{i\in I}$</span> with <span class="inline-math">$U_i\in \tau$</span>, the union <span class="inline-math">$\bigcup_{i\in I} U_i \in I$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    for any finite family  <span class="inline-math">$\set{U_i}_{i\in I}$</span> with <span class="inline-math">$U_i \in \tau$</span>, the intersection <span class="inline-math">$\bigcap_{i\in I} U_i \in I$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                We call <span class="inline-math">$(X,\tau)$</span> a <em>topological space</em>.
+            </p>
+            <p>
+                A subset <span class="inline-math">$U\subseteq X$</span> is said to be <em>open</em> if <span class="inline-math">$U\in \tau$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Compare <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-metric-space-topology.html">properties of metric topology</a>.
+                    We define open sets directly here.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (coarser and finer topology)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-coarser-and-finer-topology.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be any set, and <span class="inline-math">$\tau_1$</span> and <span class="inline-math">$\tau_2$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topologies</a> on <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\tau_1\subseteq \tau_2$</span>, then we say <span class="inline-math">$\tau_1$</span> is <em>coarser</em> and <span class="inline-math">$\tau_2$</span> is <em>finer</em>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (base for topology)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-base-for-topology.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X,\tau)$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a>.
+            </p>
+            <p>
+                We say <span class="inline-math">$\mathcal{B} \subseteq \tau$</span> is a <em>base</em> for <span class="inline-math">$\tau$</span>
+                if for all open set <span class="inline-math">$U\in \tau$</span>,
+                there exists a subfamily <span class="inline-math">$\mathcal{C}\subseteq \mathcal{B}$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    U = \bigcup_{B\in \mathcal{C}} B.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (defining properties of bases for topology)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-defining-properties-of-bases-for-topology.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a set and <span class="inline-math">$\mathcal{B}\subseteq \mathcal{P}(X) = \set{\text{all subsets of }X}$</span>.
+            </p>
+            <p>
+                There exists a topology which admits <span class="inline-math">$\mathcal{B}$</span> as a base iff <span class="inline-math">$\mathcal{B}$</span> satisfies:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    Covering property: <span class="inline-math">$\mathcal{B}$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-cover.html">(open) cover</a> of <span class="inline-math">$X$</span>, i.e. <span class="inline-math">$X = \bigcup_{B\in \mathcal{B}} B$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Intersection property: for all <span class="inline-math">$B_1, B_2 \in \mathcal{B}$</span> and <span class="inline-math">$x\in B_1\cap B_2$</span>,
+                    there exists some <span class="inline-math">$B_3\in \mathcal{B}$</span> such that <span class="inline-math">$x\in B_3$</span> and <span class="inline-math">$B_3 \subseteq U_1\cap B_2$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-defining-properties-of-bases-for-topology.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (second countable topological space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-countable-topological-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X,\tau)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a>.
+            </p>
+            <p>
+                <span class="inline-math">$(X,\tau)$</span> is said to be <em>second countable</em>
+                if it has a countable <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-base-for-topology.html">base</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Hausdorff topological space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Hausdorff-topological-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X,\tau)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a>.
+            </p>
+            <p>
+                <span class="inline-math">$(X,\tau)$</span> is said to be <em>Hausdorff</em> if for all <span class="inline-math">$x,y\in X$</span> and <span class="inline-math">$x\neq y$</span>,
+                there exists <span class="inline-math">$U, V\in \tau$</span> such that <span class="inline-math">$x\in U$</span>, <span class="inline-math">$y\in V$</span> and <span class="inline-math">$U\cap V\neq\emptyset$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This means <span class="inline-math">$\tau$</span> can separate different points in <span class="inline-math">$X$</span>. (<a href="/tripos-notes/media/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Pasted-image-20241111164025.png">Illustration</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (metrizable topological space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metrizable-topological-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X,\tau)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a>.
+            </p>
+            <p>
+                <span class="inline-math">$(X,\tau)$</span> is said to be <em>metrizable</em> if <span class="inline-math">$\tau$</span> can be induced by some <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric</a>,
+                i.e. if we can define a metric on <span class="inline-math">$X$</span> such that the metric topology equals <span class="inline-math">$\tau$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (metrizable implies Hausdorff)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-metrizable-implies-Hausdorff.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X,\tau)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a>.
+            </p>
+            <p>
+                If <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metrizable-topological-space.html">metrizable</a>, then <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Hausdorff-topological-space.html">Hausdorff</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-metrizable-implies-Hausdorff.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Examples-of-topological-spaces.html">Examples of topological spaces</a>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Closed sets in topological spaces
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Closed-sets-in-topological-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We define <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closed-set.html">closed sets</a>, <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closure.html">closure</a> and <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-neighbourhood.html">neighbourhood</a>
+                in the same way as in metric spaces.
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (accumulation point, derived set)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-accumulation-point-derived-set.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a> and <span class="inline-math">$A\subseteq X$</span>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$x\in X$</span> is an <em>accumulation point</em> (or <em>limit point</em>) of <span class="inline-math">$A$</span>
+                            if for all <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-neighbourhood.html">neighbourhood</a> <span class="inline-math">$N$</span> of <span class="inline-math">$x$</span>,
+                            <span class="inline-math">$(A\setminus \set{x}) \cap N\neq \emptyset$</span>, i.e. every neighbourhood of <span class="inline-math">$x$</span> contains a point in <span class="inline-math">$A$</span> other than <span class="inline-math">$x$</span> itself.
+                        </p>
+                        <p>
+                            We define the <em>derived set</em> of <span class="inline-math">$A$</span> (denoted <span class="inline-math">$A&#x27;$</span>) as the set of all accumulation points of <span class="inline-math">$A$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (closed sets and derived sets)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-closed-sets-and-derived-sets.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$A\subseteq X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closed-set.html">closed</a> iff <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-accumulation-point-derived-set.html"><span class="inline-math">$A&#x27;$</span></a> <span class="inline-math">$\subseteq A$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closure.html"><span class="inline-math">$\cl A$</span></a> <span class="inline-math">$= A \cup A&#x27;.$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-closed-sets-and-derived-sets.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Convergent sequences in topological space
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Convergent-sequences-in-topological-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (sequence convergence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequence-convergence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a> and 
+                            <span class="inline-math">$\set{x_n}_{n\geq 1}^{\infty}$</span> be a sequence in <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$\set{x_n}$</span> is a <em>convergent sequence</em> and <em>converges</em> to <span class="inline-math">$x\in X$</span> (denoted as <span class="inline-math">$x_n\to x$</span>)
+                            if for all <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-neighbourhood.html">neighbourhood</a> <span class="inline-math">$V$</span> of <span class="inline-math">$x$</span>, there exists <span class="inline-math">$N\in\N$</span> such that for all <span class="inline-math">$n\geq N$</span>, we have <span class="inline-math">$x_n \in V$</span>.
+                        </p>
+                        <p>
+                            In particular, if <span class="inline-math">$(X,d)$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric space</a>, this is equivalent to any of the following:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists some <span class="inline-math">$N\in\N$</span> such that for all <span class="inline-math">$n\geq N$</span>, we have <span class="inline-math">$d(x_n, x) &lt; \epsilon$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists some <span class="inline-math">$N\in\N$</span> such that for all <span class="inline-math">$n\geq N$</span>, we have <span class="inline-math">$x_n \in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-and-closed-balls.html"><span class="inline-math">$B_\epsilon(x)$</span></a>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (uniqueness of limits)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-uniqueness-of-limits.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If a sequence <span class="inline-math">$\set{x_n}_{n=1}^\infty$</span> in a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Hausdorff-topological-space.html">Hausdorff</a> topological space <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequence-convergence.html">converges</a>,
+                            then it has a unique limit.
+                        </p>
+                        <p>
+                            This applies to metric spaces.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-uniqueness-of-limits.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (closed and sequentially closed)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-closed-and-sequentially-closed.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> be a topological space and <span class="inline-math">$A\subseteq X$</span> be a subset.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\scl(A) \subseteq \cl(A)$</span>. This implies if <span class="inline-math">$A$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closed-set.html">closed</a>, then <span class="inline-math">$A$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequentially-closed.html">sequentially closed</a>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-countable-topological-space.html">second countable</a>, then <span class="inline-math">$\scl(A) = \cl(A)$</span>. This implies closed iff sequentially closed.
+                                This applies to metric spaces.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-closed-and-sequentially-closed.html">Proof</a>
+                            TODO
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                There exists a counterexample where <span class="inline-math">$\cl(A) \not\subseteq \scl(A)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (second countable space with unique limit is Hausdorff)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-second-countable-space-with-unique-limit-is-Hausdorff.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If a topological space is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-countable-topological-space.html">second countable</a> and every <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequence-convergence.html">convergent sequence</a> in it has a unique limit,
+                            then it is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Hausdorff-topological-space.html">Hausdorff</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-second-countable-space-with-unique-limit-is-Hausdorff.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Continuity on topological spaces
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Continuity-on-topological-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (continuity on topological space)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological spaces</a>.
+                        </p>
+                        <p>
+                            We say a function <span class="inline-math">$f: X\to Y$</span> is <em>continuous</em> at <span class="inline-math">$x_0\in X$</span>
+                            if for all <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-neighbourhood.html">neighbourhood</a> <span class="inline-math">$V$</span> of <span class="inline-math">$f(x_0)$</span>, we have <span class="inline-math">$f\inv(V)$</span> being a neighbourhood of <span class="inline-math">$x$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(Y,d&#x27;)$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric spaces</a>,
+                            this is equivalent to any of the following:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$\delta=\delta(\epsilon)&gt;0$</span> such that for all <span class="inline-math">$x\in X$</span>, if <span class="inline-math">$d(x,x_0) &lt; \delta$</span>, then <span class="inline-math">$d&#x27;(f(x), f(x_0)) &lt; \epsilon$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$\delta=\delta(\epsilon)&gt;0$</span> such that for all <span class="inline-math">$x\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-and-closed-balls.html"><span class="inline-math">$B_\delta(x_0)$</span></a>, we have <span class="inline-math">$f(x) \in B&#x27;_{\epsilon}(f(x_0))$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$\delta = \delta(\epsilon)&gt;0$</span> such that <span class="inline-math">$B_{\delta}(x_0) \subseteq f\inv(B&#x27;_\epsilon(f(x_0)))$</span>;
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            We say <span class="inline-math">$f$</span> is <em>continuous</em> if this holds for all <span class="inline-math">$x_0\in X$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (continuous iff taking preimage preserves open or closed sets)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuous-iff-taking-preimage-preserves-open-or-closed-sets.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces, and <span class="inline-math">$f: X\to Y$</span>. The following are equivalent:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for all <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-set-in-metric-space.html">open set</a> <span class="inline-math">$V$</span> in <span class="inline-math">$(Y,\rho)$</span>, the preimage <span class="inline-math">$f\inv(V)$</span> is open in <span class="inline-math">$(X,\tau)$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for all <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closed-set.html">closed set</a> <span class="inline-math">$V$</span> in <span class="inline-math">$(Y,\rho)$</span>, the preimage <span class="inline-math">$f\inv(V)$</span> is closed in <span class="inline-math">$(X,\tau)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-preimage-of-open-or-closed-set-under-continuous-function-is-open-or-closed.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (continuous iff preimage of base elements is open)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuous-iff-preimage-of-base-elements-is-open.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces, and <span class="inline-math">$\mathcal{B}$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-base-for-topology.html">base</a> for <span class="inline-math">$\rho$</span>.
+                        </p>
+                        <p>
+                            A function <span class="inline-math">$f:X\to Y$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> iff <span class="inline-math">$f\inv(B)$</span> is open for all <span class="inline-math">$B\in \mathcal{B}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuous-iff-preimage-of-base-elements-is-open.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (composition preserves continuity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-composition-preserves-continuity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: (X,\tau)\to (Y,\rho)$</span> and <span class="inline-math">$g: (Y,\rho)\to (Z,\sigma)$</span> be functions between topological spaces.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> at <span class="inline-math">$x_0\in X$</span> and <span class="inline-math">$g$</span> is continuous at <span class="inline-math">$f(x_0)\in Y$</span>,
+                            then <span class="inline-math">$g\circ f$</span> is continuous at <span class="inline-math">$x_0$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-composition-preserves-continuity.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (continuous and sequentially continuous)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-continuous-and-sequentially-continuous.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces, and <span class="inline-math">$f: X\to Y$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                For <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(Y,\rho)$</span> metric spaces, <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> at <span class="inline-math">$x\in X$</span> iff <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequential-continuity.html">sequentially continuous</a> at <span class="inline-math">$x$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                TODO
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuous-iff-sequentially-continuous.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (homeomorphism)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-homeomorphism.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces.
+                        </p>
+                        <p>
+                            A function <span class="inline-math">$f: (X,\tau)\to(Y,\rho)$</span> is said to be a <em>homeomorphism</em> if
+                            <span class="inline-math">$f$</span> is bijective, and <span class="inline-math">$f$</span> and <span class="inline-math">$f\inv$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> are <em>homeomorphic</em> if such a function exists.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (topological invariant)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topological-invariant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A property of topological spaces is said to be <em>topologically invariant</em>
+                            if it is preserved by <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-homeomorphism.html">homeomorphisms</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (metrizability is topologically invariant)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-metrizability-is-topologically-invariant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metrizable-topological-space.html">Metrizability</a> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topological-invariant.html">topologically invariant</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-metrizability-is-topologically-invariant.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Inherited topologies
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Inherited-topologies.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Subspace topology
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Subspace-topology.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (subspace topology)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-subspace-topology.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$(X,\tau)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a> and <span class="inline-math">$Y\subseteq X$</span>.
+                                    </p>
+                                    <p>
+                                        The <em>subspace topology</em> on <span class="inline-math">$Y$</span> is defined as
+                                        <span class="display-math">$$ \begin{align*}
+                                            \sb{U\cap Y}{U\in \tau}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-subspace-topology.html">Proof that this is a topology</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Lemma (continuity relative to subspace topology)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuity-relative-to-subspace-topology.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces, and <span class="inline-math">$A\subseteq X$</span> with the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-subspace-topology.html">subspace topology</a>.
+                                    </p>
+                                    <p>
+                                        If <span class="inline-math">$f:X\to Y$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a>, then so is <span class="inline-math">$f|_A$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuity-relative-to-subspace-topology.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Product topology
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Product-topology.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (product topology)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-product-topology.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces.
+                                    </p>
+                                    <p>
+                                        The <em>product topology</em> is the topology on <span class="inline-math">$X\times Y$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-defining-properties-of-bases-for-topology.html">which admits</a> <span class="inline-math">$\mathcal{B} = \sb{U\times V}{U\in \tau, V\in \rho}$</span> as a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-base-for-topology.html">base</a>.
+                                    </p>
+                                    <p>
+                                        This can be extended to finite products.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Lemma (projection map is continuous)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-projection-map-is-continuous.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces.
+                                    </p>
+                                    <p>
+                                        The projection maps
+                                        <span class="display-math">$$ \begin{align*}
+                                            \pi_X: X\times Y&amp;\to X &amp;\pi_Y: X\times Y&amp;\to Y \\
+                                            (x,y) &amp;\mapsto x &amp; (x,y) &amp;\mapsto y
+                                        \end{align*} $$</span>
+                                        are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> relative to the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-product-topology.html">product topology</a>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-projection-map-is-continuous.html">Proof</a>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            The definition of the product topology is the coarsest possible topology such that this lemma is true.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (continuity in product spaces)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-continuity-in-product-spaces.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$(X,\tau)$</span>, <span class="inline-math">$(Y,\rho)$</span> and <span class="inline-math">$(Z,\sigma)$</span> be topological spaces.
+                                    </p>
+                                    <p>
+                                        A function <span class="inline-math">$f: Z\to X\times Y$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> iff both <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-projection-map-is-continuous.html"><span class="inline-math">$\pi_X$</span></a><span class="inline-math">${}\circ f$</span> and <span class="inline-math">$\pi_Y \circ f$</span> are continuous.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuity-in-product-spaces.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Quotient topology
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Quotient-topology.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (quotient space, quotient map, quotient topology)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-quotient-space-quotient-map-quotient-topology.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$(X,\tau)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a>, and <span class="inline-math">$\sim$</span> be an equivalence relation on <span class="inline-math">$X$</span>.
+                                        Define
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            the <em>quotient space</em> <span class="inline-math">$Q=X/{\sim} = \sb{[x]}{x\in X}$</span>, where <span class="inline-math">$[x] = \sb{y\in X}{y\sim x}$</span>, as the set of all equivalence classes;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            the <em>quotient map</em> <span class="inline-math">$q: X\to Q$</span> by <span class="inline-math">$x\mapsto [x]$</span>;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            the <em>quotient topology</em>
+                                            <span class="display-math">$$ \begin{align*}
+                                            \tau_\sim = \sb{V\subseteq Q}{q\inv(V) \in \tau}.
+                                            \end{align*} $$</span>
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-quotient-topology.html">Proof that the quotient topology is a topology</a>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$\tau_\sim$</span> is defined this way so that <span class="inline-math">$q: (X,\tau) \to (Q,\tau_\sim)$</span> is continuous: <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuous-iff-taking-preimage-preserves-open-or-closed-sets.html">the preimage of an open set (in <span class="inline-math">$\tau_\sim$</span>) is open (in <span class="inline-math">$\tau$</span>)</a>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (continuity on quotient space)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-continuity-on-quotient-space.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces, <span class="inline-math">$\sim$</span> be an equivalence relation on <span class="inline-math">$X$</span>, <span class="inline-math">$Q = X/{\sim}$</span> be the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-quotient-space-quotient-map-quotient-topology.html">quotient space</a> and <span class="inline-math">$q: X\to Q$</span> be the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-quotient-space-quotient-map-quotient-topology.html">quotient map</a>.
+                                    </p>
+                                    <p>
+                                        A function <span class="inline-math">$f: Q\to Y$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> iff <span class="inline-math">$f\circ q$</span> is continuous.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuity-on-quotient-space.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (continuity of functions agreeing on equivalence class)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-continuity-of-functions-agreeing-on-equivalence-class.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces, <span class="inline-math">$\sim$</span> be an equivalence relation on <span class="inline-math">$X$</span>, <span class="inline-math">$Q = X/{\sim}$</span> be the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-quotient-space-quotient-map-quotient-topology.html">quotient space</a> and <span class="inline-math">$q: X\to Q$</span> be the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-quotient-space-quotient-map-quotient-topology.html">quotient map</a>.
+                                    </p>
+                                    <p>
+                                        If <span class="inline-math">$f:X\to Y$</span> is such that <span class="inline-math">$x\sim y\implies f(x) = f(y)$</span>,
+                                        then there exists a unique <span class="inline-math">$\tilde f: Q\to Y$</span> such that <span class="inline-math">$f = \tilde f \circ q$</span>.
+                                    </p>
+                                    <p>
+                                        In this case,
+                                    </p>
+                                    <ol start="1">
+                                    <li>
+                                        <p>
+                                            if <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a>, then so is <span class="inline-math">$\tilde f$</span>;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            if for all <span class="inline-math">$U\subseteq Y$</span>, we know <span class="inline-math">$f\inv(U)\in \tau\implies U\in \rho$</span>,
+                                            then <span class="inline-math">$\tilde f(U) \in \tau_\sim \implies U\in \rho$</span>;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            if both <span class="inline-math">$f$</span> and <span class="inline-math">$f\inv$</span> are continuous, <span class="inline-math">$f$</span> is surjective, and <span class="inline-math">$f(x) = f(y) \iff x\sim y$</span>,
+                                            then <span class="inline-math">$\tilde f$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-homeomorphism.html">homeomorphism</a>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ol>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuity-of-functions-agreeing-on-equivalence-class.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Examples-of-quotient-spaces.html">Examples of quotient spaces</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Compactness in topological spaces
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Compactness-in-topological-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (open cover)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-cover.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            An <em>open cover</em> of a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a> <span class="inline-math">$(X,d)$</span>
+                            is a family of open sets <span class="inline-math">$\mathcal{U} = \set{U_i}_{i\in I}$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                X = \bigcup_{i\in I} U_i.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (compact)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A topological space <span class="inline-math">$(X,\tau)$</span> is said to be <em>compact</em>
+                            if every <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-cover.html">open cover</a> of <span class="inline-math">$(X,\tau)$</span> has a finite <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-subcover.html">subcover</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (closed set in compact space is compact)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-closed-set-in-compact-space-is-compact.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a> topological space.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$Y\subseteq X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closed-set.html">closed</a>, then <span class="inline-math">$Y$</span> is also compact.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-closed-set-in-compact-space-is-compact.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (sequential compactness)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequential-compactness.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We say a topological space <span class="inline-math">$(X,\tau)$</span> is <em>sequentially compact</em>
+                            if every sequence in <span class="inline-math">$X$</span> has a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequence-convergence.html">convergent</a> subsequence.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (sequentially compact and compact)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-sequentially-compact-and-compact.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A metric space is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequential-compactness.html">sequentially compact</a> iff it is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-sequentially-compact-iff-compact.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                For a general topological space, both implications are not true: counterexamples exist.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                In <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-countable-topological-space.html">second countable</a> topological spaces, they are equivalent.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (compact subset in Hausdorff space is closed)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-compact-subset-in-Hausdorff-space-is-closed.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a topological space.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Hausdorff-topological-space.html">Hausdorff</a> and a subset <span class="inline-math">$Y\subseteq X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a>, then <span class="inline-math">$Y$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closed-set.html">closed</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-compact-subset-in-Hausdorff-space-is-closed.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Tychonoff, product of compact space is compact)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-Tychonoff-product-of-compact-space-is-compact.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A finite <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-product-topology.html">product</a> of <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">comapct space</a> is compact.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-Tychonoff-product-of-compact-space-is-compact.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (topological inverse function theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-topological-inverse-function-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> and <span class="inline-math">$(Y,\rho)$</span> be topological spaces.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f: X\to Y$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> bijection,
+                            <span class="inline-math">$(X,\tau)$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a>, and <span class="inline-math">$(Y,\rho)$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Hausdorff-topological-space.html">Hausdorff</a>,
+                            then <span class="inline-math">$f\inv$</span> is also continuous, and hence <span class="inline-math">$f$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-homeomorphism.html">homeomorphism</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-topological-inverse-function-theorem.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                This also applies to metric spaces, in which case the Hausdorff condition can be dropped.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (continuous function on compact set attains its bounds)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-continuous-function-on-compact-set-attains-its-bounds.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> be a topological space
+                            and <span class="inline-math">$X\neq\emptyset$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f: X\to\R$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> and <span class="inline-math">$(X,\tau)$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a>,
+                            then <span class="inline-math">$f$</span> is bounded and there exists <span class="inline-math">$p,q\in X$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                f(p) &amp;= \sup_{x\in X} f(x) &amp;\text{and}&amp;&amp; f(q) = \inf_{x\in X} f(x).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuous-function-on-compact-set-attains-its-bounds.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (continuous function on compact set is complete)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-continuous-function-on-compact-set-is-complete.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,\tau)$</span> be a topological space and <span class="inline-math">$C(X) = (\set{\text{continuous functions } X\to\R}, \text{sup metric})$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$(X,\tau)$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a>, then <span class="inline-math">$C(X)$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-completeness.html">complete</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuous-function-on-compact-set-is-complete.html">Proof</a>
+                            TODO
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Connectedness
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Connectedness.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (disconnected, connected, separation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topology-topological-space-open-set.html">topological space</a> <span class="inline-math">$(X,τ)$</span>
+                            is said to be <em>disconnected</em> if there exists
+                            open, non-empty, disjoint sets <span class="inline-math">$U,V$</span> such that <span class="inline-math">$X = U\cup V$</span>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$U,V$</span> are a <em>separation</em> of <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$(X,τ)$</span> is said to be <em>connected</em> if there does not exist a separation.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Equivalently, <span class="inline-math">$(X,τ)$</span> is connected iff the only subsets of <span class="inline-math">$X$</span> which are both open and closed are <span class="inline-math">$X$</span> and <span class="inline-math">$\emptyset$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (separation in subspace topology)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-separation-in-subspace-topology.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> be a topological space, and <span class="inline-math">$Y,U,V\subseteq X$</span> be subsets.
+                        </p>
+                        <p>
+                            <span class="inline-math">$U,V$</span> are a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">separation</a> of <span class="inline-math">$Y$</span> with respect to the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-subspace-topology.html">subspace topology</a>
+                            iff <span class="inline-math">$U,V$</span> are non-empty, <span class="inline-math">$U\cap{}$</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closure.html"><span class="inline-math">$\overline{V}$</span></a> <span class="inline-math">$= \emptyset = \overline{U} \cap V$</span>, and <span class="inline-math">$Y = U\cup V$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-separation-in-subspace-topology.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (connected set in R)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Corollary-connected-set-in-R.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            With the Euclidean metric,
+                            a subset <span class="inline-math">$Y \subseteq \R$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a>
+                            iff <span class="inline-math">$Y$</span> is an interval, i.e.
+                            if <span class="inline-math">$x,y\in Y$</span> and <span class="inline-math">$x&lt;z&lt;y$</span>, then <span class="inline-math">$z\in Y$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-connected-set-in-R.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (connected subset of a disconnected space)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-connected-subset-of-a-disconnected-space.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">disconnected</a> topological space and <span class="inline-math">$X=U\cup V$</span> is a separation.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$Y\subseteq X$</span> is connected, then <span class="inline-math">$Y\subseteq U$</span> or <span class="inline-math">$Y\subseteq V$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-connected-subset-of-a-disconnected-space.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (closure of connected set is connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-closure-of-connected-set-is-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> be a topological space.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$Y\subseteq X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a>, then <span class="inline-math">$\overline{Y}$</span> is also connected.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-closure-of-connected-set-is-connected.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (union of connected subspaces sharing a point is connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-union-of-connected-subspaces-sharing-a-point-is-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> be a topological space,
+                            and <span class="inline-math">$\set{A_α}$</span> be a collection of <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a> subspaces of <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$\bigcap_{α} A_α\neq \emptyset$</span> (i.e. there exists a point in common),
+                            then <span class="inline-math">$\bigcup_{α} A_α$</span> is connected.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-union-of-connected-subspaces-sharing-a-point-is-connected.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (connected components)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-connected-components.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> be a topological space.
+                        </p>
+                        <p>
+                            Define an equivalence relation on <span class="inline-math">$X$</span> by <span class="inline-math">$x\sim y$</span> if
+                            there exists <span class="inline-math">$Y\subseteq X$</span> which is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a>
+                            such that <span class="inline-math">$x,y\in Y$</span>.
+                            The equivalence classes are called <em>connected components</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (properties of connected components)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-properties-of-connected-components.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> be a topological space and <span class="inline-math">$Y\subseteq X$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-connected-components.html">connected component</a>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$Y$</span> is connected. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-connected-components-are-connected.html">Proof</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$Z$</span> is a connected set where <span class="inline-math">$Y\subseteq Z\subseteq X$</span>, then <span class="inline-math">$Z = Y$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$Y$</span> is closed. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-connected-components-are-closed.html">Proof</a>)
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (continuous image of connected set is connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-continuous-image-of-connected-set-is-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> and <span class="inline-math">$(Y,ρ)$</span> be topological spaces.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f:X\to Y$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a>
+                            and <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a>,
+                            then <span class="inline-math">$f(X)\subseteq Y$</span> is connected.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuous-image-of-connected-set-is-connected.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                This shows that connectedness is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topological-invariant.html">topological invariant</a>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For <span class="inline-math">$Y=\R$</span>, since <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Corollary-connected-set-in-R.html">connected sets in <span class="inline-math">$\R$</span> are precisely intervals</a>, we have the intermediate value theorem:
+                                if <span class="inline-math">$f(x_0) &lt; 0$</span> and <span class="inline-math">$f(x_1)&gt;0$</span> for some <span class="inline-math">$x_0,x_1\in X$</span>, then there exists <span class="inline-math">$x\in X$</span> such that <span class="inline-math">$f(x) = 0$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (locally constant function on connected domain is globally constant)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-locally-constant-function-on-connected-domain-is-globally-constant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> be a topological space, <span class="inline-math">$Y$</span> be a set, and <span class="inline-math">$f: X\to Y$</span> be a function.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a> and <span class="inline-math">$f$</span> is locally constant
+                            (i.e. for all <span class="inline-math">$x\in X$</span>, there exists an open neighbourhood <span class="inline-math">$U\subseteq X$</span> of <span class="inline-math">$x$</span> such that <span class="inline-math">$f(y) = f(x)$</span> for all <span class="inline-math">$y\in U$</span>),
+                            then <span class="inline-math">$f$</span> is (globally) constant.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-locally-constant-function-on-connected-domain-is-globally-constant.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                A consequence is that <span class="inline-math">$X$</span> is connected iff all continuous functions <span class="inline-math">$f: X\to\Z$</span> are constant.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (quotient of connected space is connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-quotient-of-connected-space-is-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> be a topological space
+                            and <span class="inline-math">$\sim$</span> be an equivalence relation on <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a>,
+                            then the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-quotient-space-quotient-map-quotient-topology.html">quotient space</a> <span class="inline-math">$X/{\sim}$</span> is also connected with respect to the quotient topology.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-quotient-of-connected-space-is-connected.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (product of connected spaces is connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-product-of-connected-spaces-is-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> and <span class="inline-math">$(Y,ρ)$</span> be topological spaces.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a>,
+                            then the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-product-topology.html">product space</a> <span class="inline-math">$X\times Y$</span> is also connected with respect to the product topology.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-product-of-connected-spaces-is-connected.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (path-connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A topological space <span class="inline-math">$(X,τ)$</span>
+                            is said to be <em>path-connected</em> if for all <span class="inline-math">$x,y\in X$</span>,
+                            there exists a path <span class="inline-math">$γ$</span> connecting <span class="inline-math">$x$</span> to <span class="inline-math">$y$</span>,
+                            i.e. a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> function <span class="inline-math">$γ: [0,1]\to X$</span>
+                            with <span class="inline-math">$γ(0) = x$</span> and <span class="inline-math">$γ(1) = y$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (continuous image of path-connected set is path-connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuous-image-of-path-connected-set-is-path-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> and <span class="inline-math">$(Y,ρ)$</span> be topological spaces.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f: X\to Y$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a> and <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">path-connected</a>,
+                            then <span class="inline-math">$f(X) \subseteq Y$</span> is path-connected.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuous-image-of-path-connected-set-is-path-connected.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                This shows that path-connectedness is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-topological-invariant.html">topological invariant</a>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (path-connected implies connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-path-connected-implies-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If a topological space is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">path-connected</a>,
+                            then it is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-path-connected-implies-connected.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (path-connected component)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected-component.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X,τ)$</span> be a topological space.
+                        </p>
+                        <p>
+                            Define an equivalence relation on <span class="inline-math">$X$</span> by <span class="inline-math">$x\sim y$</span>
+                            if there exists a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">path</a> connecting <span class="inline-math">$x$</span> to <span class="inline-math">$y$</span>.
+                            The equivalence classes are called the <em>path-connected components</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (open set in Rn path-connected iff connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-open-set-in-Rn-path-connected-iff-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U\subseteq \R^n$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-set-in-metric-space.html">open</a> set.
+                            Then <span class="inline-math">$U$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a> iff it is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">path-connected</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-open-set-in-Rn-path-connected-iff-connected.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                This is false for closed sets: the topologist's sine wave
+                                <span class="display-math">$$ \begin{align*}
+                                X = \Big\{\big(x, \sin \frac{1}{x}\big)\;\Big|\; x&gt;0 \Big\} \cup \bigl(\set{0} \times [-1,1]\bigr) \subseteq \R^2.
+                                \end{align*} $$</span>
+                                is connected but not path-connected. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-topologist-s-sine-wave-is-connected-but-not-path-connected.html">Proof</a>)
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

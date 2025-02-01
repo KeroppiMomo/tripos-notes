@@ -1,0 +1,2623 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Fourier series
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Fourier-series.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Motivation-for-the-Fourier-series.html">Motivation for the Fourier series</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (complex Fourier series)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an <span class="inline-math">$L$</span>-periodic function <span class="inline-math">$f: \R\to\C$</span>, define the <em>complex Fourier series</em>
+                            <span class="display-math">$$ \begin{align*}
+                                \sum_{n\in\Z} \hat f_n e^{2\pi i\theta/L}
+                            \end{align*} $$</span>
+                            where
+                            <span class="display-math">$$ \begin{align*}
+                                \hat f_n = \frac{1}{L} \int_{0}^{L} f(\theta) e^{-2\pi i\theta/L} \d \theta
+                            \end{align*} $$</span>
+                            and we call <span class="inline-math">$\set{\hat f_n}$</span> the <em>complex Fourier coefficients</em> of <span class="inline-math">$f$</span>.
+                        </p>
+                        <p>
+                            We write
+                            <span class="display-math">$$ \begin{align*}
+                                f(\theta) \sim \sum_{n\in\Z} \hat f_n e^{2\pi in\theta/L}
+                            \end{align*} $$</span>
+                            to mean the series on the right is the complex Fourier series of the <span class="inline-math">$L$</span>-periodic function on the left.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Fourier series)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Fourier-series.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an <span class="inline-math">$L$</span>-periodic function <span class="inline-math">$f: \R\to\C$</span>, define the <em>Fourier series</em>
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{1}{2} a_0 + \sum_{n=1}^\infty \left(a_n\cos \frac{2\pi n \theta}{L} + b_n \sin\frac{2\pi n\theta}{L}\right)
+                            \end{align*} $$</span>
+                            where, for each <span class="inline-math">$n\in\N$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                a_n &amp;= \frac{2}{L}\int_{0}^{L} f(\theta) \cos \frac{2\pi n \theta}{L} \d \theta \\
+                                b_n &amp;= \frac{2}{L}\int_{0}^{L} f(\theta) \sin \frac{2\pi n \theta}{L} \d \theta
+                            \end{align*} $$</span>
+                            and we call <span class="inline-math">$\set{a_n, b_n}_{n=1}^\infty$</span> the <em>Fourier coefficients</em> of <span class="inline-math">$f$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-series-from-complex-Fourier-series.html">Derivation (Fourier series from complex Fourier series)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$f$</span> is even, then all <span class="inline-math">$b_n = 0$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$f$</span> is odd, then all <span class="inline-math">$a_n = 0$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-coefficients-for-odd-or-even-function.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Examples:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-Fourier-series-of-t-1-t.html">Example (Fourier series of t(1-t))</a>
+                </p>
+                
+            </li><li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-Fourier-series-of-a-step-function.html">Example (Fourier series of a step function)</a>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Convergence of Fourier series
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Convergence-of-Fourier-series.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (partial Fourier series)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-partial-Fourier-series.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For an <span class="inline-math">$L$</span>-periodic function <span class="inline-math">$f: \R\to\C$</span>, we define the <em>partial Fourier series</em> <span class="inline-math">$S_N f$</span> by
+                                        <span class="display-math">$$ \begin{align*}
+                                            (S_N f)(\theta) = \sum_{|n|\leq N} \hat f_n e^{2\pi i n\theta/L} = \frac{1}{2} a_0 + \sum_{n=1}^{N} \left(a_n \cos \frac{2\pi n\theta}{L} + b_n \sin \frac{2\pi n \theta}{L}\right).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (convergence of Fourier series)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-convergence-of-Fourier-series.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If an <span class="inline-math">$L$</span>-periodic function <span class="inline-math">$f: \R\to\C$</span> is of bounded variation, i.e.
+                                    </p>
+                                    <ol start="1">
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$f$</span> is continuous on <span class="inline-math">$[0,L)$</span> away from a finite number of jump discontinuities, and
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$f$</span> has finitely many maxima/minima on <span class="inline-math">$[0,L)$</span>,
+                                        </p>
+                                        
+                                    </li>
+                                    </ol>
+                                    <p>
+                                        then for each <span class="inline-math">$\theta\in[0,L)$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \frac{f(\theta_+) + f(\theta_-)}{2} = \lim_{N\to\infty} (S_N f)(\theta) = \sum_n \hat f_n e^{2\pi i n\theta/L}
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$f(\theta_{\pm}) = \lim_{\epsilon\searrow 0} f(\theta\pm\epsilon)$</span>.
+                                    </p>
+                                    <p>
+                                        This means the Fourier series converges to the value of <span class="inline-math">$f$</span> at points of continuity, and converges to the average value of <span class="inline-math">$f$</span> at points of discontinuity.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-convergence-of-Fourier-series-for-a-smooth-function.html">Proof for a smooth function</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (cosine and sine series)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-cosine-and-sine-series.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given a function <span class="inline-math">$f: [0,L) \to \C$</span>,
+                            define its <em>cosine series</em> as
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{1}{2} A_0 + \sum_{n=1}^{\infty} A_n \cos \frac{n\pi\theta}{L}
+                            \end{align*} $$</span>
+                            and <em>sine series</em> as
+                            <span class="display-math">$$ \begin{align*}
+                                \sum_{n=1}^{\infty} B_n \sin \frac{n\pi\theta}{L}
+                            \end{align*} $$</span>
+                            where the coefficients <span class="inline-math">$\set{A_n}, \set{B_n}$</span> are given by
+                            <span class="display-math">$$ \begin{align*}
+                                A_n &amp;= \frac{2}{L} \int_{0}^{L} f(\theta) \cos \frac{n\pi\theta}{L} \d \theta, \\
+                                B_n &amp;= \frac{2}{L} \int_{0}^{L} f(\theta) \sin \frac{n\pi\theta}{L} \d \theta.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                The cosine/sine series is the Fourier series of the <span class="inline-math">$2L$</span>-periodic even/odd extension of <span class="inline-math">$f$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-cosine-and-sine-series-as-Fourier-series-of-periodic-extensions.html">Derivation</a>)
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (decay of Fourier coefficients)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-decay-of-Fourier-coefficients.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f:\R\to\C$</span> be <span class="inline-math">$L$</span>-periodic.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Definition-Riemann-integrable.html">integrable</a> on <span class="inline-math">$[0,L]$</span>, then <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html"><span class="inline-math">$\hat f_n$</span></a> <span class="inline-math">$\to 0$</span> as <span class="inline-math">$|n|\to\infty$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$f$</span> is <span class="inline-math">$C^k$</span> (i.e. the <span class="inline-math">$l$</span>-derivative <span class="inline-math">$f^{(l)}: \R\to\C$</span> are continuous for <span class="inline-math">$l=0,1,\ldots,k$</span>),
+                                then <span class="inline-math">$|\hat f_n| =$</span> <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-little-o.html"><span class="inline-math">$o$</span></a><span class="inline-math">$(1/n^k)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-decay-of-Fourier-coefficients.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                The more regular a function is, the more quickly the Fourier coefficients decay.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Fourier coefficients of the derivative)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-coefficients-of-the-derivative.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f\in \R\to\C$</span> be <span class="inline-math">$L$</span>-periodic.
+                            Suppose <span class="inline-math">$f$</span> restricted to <span class="inline-math">$(0,L)$</span> is continuously differentiable and the derivative is bounded.
+                        </p>
+                        <p>
+                            Then the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">complex Fourier coefficients</a> of <span class="inline-math">$g:=f&#x27;$</span> are
+                            <span class="display-math">$$ \begin{align*}
+                                \hat g_n = \frac{f(L_-) - f(0_+)}{L} + \frac{2\pi i n}{L} \hat f_n.
+                            \end{align*} $$</span>
+                            In particular, if <span class="inline-math">$f$</span> is continuous, then <span class="inline-math">$\hat g_n = (2\pi i n/L) \hat f_n$</span>,
+                            which is what you obtain from term-wise differentiation of the Fourier series.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Fourier-coefficients-of-the-derivative.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Parseval's theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Theorem-Parseval-s-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$f,g: \R\to\C$</span> are <span class="inline-math">$L$</span>-periodic and square integrable with <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">Fourier series</a>
+                            <span class="display-math">$$ \begin{align*}
+                                f(\theta) = \sum_n \hat f_n e^{2\pi in\theta/L}, \qquad g(\theta) = \sum_n \hat g_m e^{2\pi im\theta/L}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{1}{L}\int_{0}^{L} f(\theta) \,\overline{g(\theta)} \d \theta = \sum_n \hat f_n \, \overline{\hat g_n}.
+                            \end{align*} $$</span>
+                            And in particular,
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{1}{L} \int_{0}^{L} |f|^2 \d \theta = \sum_n |\hat f_n|^2.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Parseval-s-theorem.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Sturm-Liouville theory
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Sturm-Liouville-theory.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (weighted inner product)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-weighted-inner-product.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In the vector space <span class="inline-math">$V$</span> of functions <span class="inline-math">$f: [a,b]\to \C$</span>,
+                            we can equip <span class="inline-math">$V$</span> with an inner product
+                            <span class="display-math">$$ \begin{align*}
+                                \langle f,g\rangle_w = \int_{a}^{b} f(x)\overline{g(x)} w(x) \d x
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$w: (a,b)\to \R_{&gt;0}$</span> is called the <em>weight function</em>.
+                        </p>
+                        <p>
+                            We can also define the norm
+                            <span class="display-math">$$ \begin{align*}
+                                \|f\|_w = \sqrt{\langle f,f\rangle_w}.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (self-adjoint differential operator)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-self-adjoint-differential-operator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A differential operator <span class="inline-math">$L$</span> is said to be <em>self-adjoint</em> on <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-weighted-inner-product.html"><span class="inline-math">$(V, \langle \cdot,\cdot\rangle_w)$</span></a>
+                            if
+                            <span class="display-math">$$ \begin{align*}
+                                \langle Ly_1, y_2\rangle_w &amp;= \langle y_1, Ly_2\rangle_w &amp;&amp;\text{for all }y_1,y_2\in V.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (properties of self-adjoint differential operator)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-properties-of-self-adjoint-differential-operator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$L$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-self-adjoint-differential-operator.html">self-adjoint</a> differential operator in <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-weighted-inner-product.html"><span class="inline-math">$(V, \langle\cdot,\cdot\rangle_w)$</span></a>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                The eigenvalues of <span class="inline-math">$L$</span> are real.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The eigenfunctions with different eigenvalues are orthogonal (<span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> are orthogonal iff <span class="inline-math">$\langle f,g\rangle_w = 0$</span>).
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The set of eigenfucntions is countable and complete, i.e. the eigenfunctions form a list <span class="inline-math">$\set{y_n}_{n=1}^\infty$</span>, and for each <span class="inline-math">$f\in V$</span>,
+                                we can write
+                                <span class="display-math">$$ \begin{align*}
+                                f(x) &amp;= \sum_{n=1}^{\infty} \hat f_n y_n(x) &amp;&amp;\text{where} &amp; \hat f_n = \frac{\langle f, y_n\rangle_w}{\langle y_n, y_n\rangle_w}.
+                                \end{align*} $$</span>
+                                We call <span class="inline-math">$\set{\hat f_n}$</span> the <em>generalised Fourier coefficients</em>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-properties-of-self-adjoint-differential-operator.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                This is analogous to a Hermitian matrix.
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Sturm-Liouville operator)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>Sturm-Liouville operator</em> on <span class="inline-math">$(a,b)$</span> has the form
+                            <span class="display-math">$$ \begin{align*}
+                                L = \frac{1}{w} \left(-\dd{x}\left(p \dd{x}\right) + q\right)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$p,q,w$</span> are real-valued functions and <span class="inline-math">$p,w &gt; 0$</span> on <span class="inline-math">$(a,b)$</span>.
+                            <span class="inline-math">$w$</span> is called the <em>weight function</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (Sturm-Liouville operator and Wronskian)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Lemma-Sturm-Liouville-operator-and-Wronskian.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$L$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville operator</a> on <span class="inline-math">$(a,b)$</span> defined by functions <span class="inline-math">$p,q,w$</span>, and <span class="inline-math">$y_1,y_2\in C^2[a,b]$</span>.
+                            We have the identity
+                            <span class="display-math">$$ \begin{align*}
+                                y_2 Ly_1 - y_1 L y_2 = \frac{1}{w}\dd{x}\big(p W(y_1,y_2)\big)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$W(y_1,y_2) = y_1 y_2&#x27; - y_1&#x27; y_2$</span> is the <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-Wronskian.html">Wronskian</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Sturm-Liouville-operator-and-Wronskian.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (singular endpoint of Sturm-Liouville operator)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-singular-endpoint-of-Sturm-Liouville-operator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$L$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville</a> operator on <span class="inline-math">$(a,b)$</span> defined by functions <span class="inline-math">$p,q,w$</span>.
+                        </p>
+                        <p>
+                            An endpoint <span class="inline-math">$c\in\set{a,b}$</span> is said to be <em>singular</em> if <span class="inline-math">$p(c) = 0$</span>, or <em>non-singular</em> if otherwise.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (real and homogenous boundary condition)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-real-and-homogenous-boundary-condition.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A boundary condition at an endpoint <span class="inline-math">$c\in\set{a,b}$</span> is said to be <em>real and homogenous</em>
+                            if it is of the form
+                            <span class="display-math">$$ \begin{align*}
+                                \alpha_c y(c) + \beta_cy&#x27;(c) = 0
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\alpha_c, \beta_c \in \R$</span> and <span class="inline-math">$\alpha_c^2 + \beta_c^2 \neq 0$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (condition where Sturm-Liouville operator is self-adjoint)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-condition-where-Sturm-Liouville-operator-is-self-adjoint.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$L$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville</a> operator on <span class="inline-math">$(a,b)$</span> defined by functions <span class="inline-math">$p,q,w$</span>, and <span class="inline-math">$y_1,y_2\in C^2[a,b]$</span>.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \langle Ly_1, y_2\rangle_w - \langle y_1, Ly_2\rangle_w = \big[p(x) W(y_1, \overline{y_2})(x)\big]_{x=a}^{x=b}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$W(y_1,\overline{y_2})$</span> is the <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-Wronskian.html">Wronskian</a>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$V=\{ y\in C^2[a,b]\ |\  y$</span> satisfies <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-real-and-homogenous-boundary-condition.html">real and homogenous boundary conditions</a> at each <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-singular-endpoint-of-Sturm-Liouville-operator.html">non-singular</a> endpoint<span class="inline-math">$\}$</span>.
+                            Then <span class="inline-math">$L$</span> is self-adjoint with respect to <span class="inline-math">$(V,$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-weighted-inner-product.html"><span class="inline-math">$\langle\cdot,\cdot\rangle_w$</span></a><span class="inline-math">$)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-condition-where-Sturm-Liouville-operator-is-self-adjoint.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (real and imaginary parts of eigenfunctions of Sturm-Liouville operator)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-real-and-imaginary-parts-of-eigenfunctions-of-Sturm-Liouville-operator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$y\in V$</span> be an eigenfunction of a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville operator</a> <span class="inline-math">$L$</span> with eigenvalue <span class="inline-math">$\lambda$</span>,
+                            where <span class="inline-math">$V$</span> is defined <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-condition-where-Sturm-Liouville-operator-is-self-adjoint.html">here</a>.
+                            Then <span class="inline-math">$\Re(y)$</span> and <span class="inline-math">$\Im(y)$</span> are also eigenfunctions of <span class="inline-math">$L$</span> with eigenvalue <span class="inline-math">$\lambda$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-real-and-imaginary-parts-of-eigenfunctions-of-Sturm-Liouville-operator.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (reduction to Sturm-Liouville form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-reduction-to-Sturm-Liouville-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given real functions <span class="inline-math">$\alpha,\beta,\gamma$</span> where <span class="inline-math">$\alpha(x) &gt; 0$</span> on <span class="inline-math">$(a,b)$</span>, the eigenvalue problem
+                            <span class="display-math">$$ \begin{align*}
+                                \alpha(x) y&#x27;&#x27;(x) + \beta(x) y&#x27;(x) + \gamma(x) y(x) + \lambda y(x) = 0
+                            \end{align*} $$</span>
+                            is equivalent to the Sturm-Liouville problem
+                            <span class="display-math">$$ \begin{align*}
+                                -\dd{x}\left(p \dfd{y}{x}\right) + qy = \lambda wy
+                            \end{align*} $$</span>
+                            where
+                            <span class="display-math">$$ \begin{align*}
+                                p(x) = I(x), \quad q(x) = -\frac{I(x)\gamma(x)}{\alpha(x)}, \quad w(x) = \frac{I(x)}{\alpha(x)}, \quad I(x) = \exp \int^x \frac{\beta}{\alpha}\d x
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-reduction-to-Sturm-Liouville-form.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-of-using-a-differential-equation-to-find-basis.html">Example of using a differential equation to find basis</a>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Legendre equation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Legendre-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The eigenvalue problem
+                            <span class="display-math">$$ \begin{align*}
+                                -\dd{x}\left((1-x^2) \dfd{y}{x}\right) = \lambda y, \qquad -1&lt;x&lt;1
+                            \end{align*} $$</span>
+                            has eigenvalues and eigenfunctions and eigenfunctions (<span class="inline-math">$n=0,1,2,\ldots$</span>)
+                            <span class="display-math">$$ \begin{align*}
+                                \lambda_n &amp;= n(n+1) \\
+                                y_n &amp;= \begin{cases}
+                                    a_0 + a_2 x^2 + a_4 x^4 + \ldots + a_{2N} x^{2N}, &amp;n = 2N \text{ is even},\\
+                                    a_1x + a_3 x^3 + a_5 x^5 + \ldots + a_{2N+1} x^{2N+1}, &amp;n=2N + 1 \text{ is odd},
+                                \end{cases} \\
+                            \end{align*} $$</span>
+                            where
+                            <span class="display-math">$$ \begin{align*}
+                                a_{k+2} = \frac{k(k+1) - \lambda}{(k+1)(k+2)} a_k.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The <em>Legendre polynomials</em> <span class="inline-math">$P_n$</span> are the eigenfunctions normalised so that <span class="inline-math">$y(1)=1$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$P_n$</span> are orthogonal:
+                                <span class="display-math">$$ \begin{align*}
+                                \int_{-1}^{+1} P_n(x) P_m(x) \d x = \frac{2}{2n+1} \delta_{nm}.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$P_n$</span> are complete.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Legendre-equation.html">Derivation</a>)
+                        </p>
+                        <p>
+                            The first few Legendre polynomials are as follows:
+                        </p>
+                        <table>
+                            <tr>
+                                <th class="table-cell-left"><p>
+                                    <span class="inline-math">$n$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    <span class="inline-math">$\lambda_n = n(n+1)$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    <span class="inline-math">$P_n$</span>
+                                </p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$0$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$0$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$1$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$1$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$2$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$x$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$2$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$6$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1}{2}(3x^2 - 1)$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$3$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$12$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\frac{1}{2}(5x^3 - 3x)$</span>
+                                </p>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Bessel's equation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Bessel-s-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The eigenvalue problem for some fixed <span class="inline-math">$m = 0,1,2,\ldots$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                -\dd{r}\left(r \dfd{y}{r}\right) + \frac{m^2}{r} y &amp;= \lambda r y, &amp;&amp;0&lt;r&lt;1, \\
+                                y(1) &amp;= 0
+                            \end{align*} $$</span>
+                            gives rise under the change of variable <span class="inline-math">$z=r\sqrt{\lambda}$</span> to <em>Bessel's equation</em> of order <span class="inline-math">$m$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                z^2 R&#x27;&#x27; + zR&#x27; + (z^2 - m^2) R &amp;= 0, &amp;&amp;0 &lt; z &lt; \sqrt{\lambda}, \\
+                                R(\sqrt{\lambda}) &amp;= 0.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The only solution which does not blow up as <span class="inline-math">$z\to 0$</span> is the <em><span class="inline-math">$m$</span>-th order Bessel function</em>
+                            <span class="display-math">$$ \begin{align*}
+                                J_m(z) = \left(\frac{z}{2}\right)^m \sum_{n=0}^{\infty} \frac{(-1)^n}{n!(n+m)!} \left(\frac{z}{2}\right)^{2n}
+                            \end{align*} $$</span>
+                            which has an asymptotic approximation
+                            <span class="display-math">$$ \begin{align*}
+                                J_m(z) = \sqrt{\frac{2}{\pi z}} \cos\left(z - \frac{m\pi}{2} - \frac{\pi}{4}\right) + O\left(\frac{1}{z^{3/2}}\right) \qquad \text{as }z\to\infty.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <span class="inline-math">$J_m(z)$</span> has infinitely many zeros for <span class="inline-math">$z\in [0,\infty)$</span>,
+                            say <span class="inline-math">$j_{m1}, j_{m2}, j_{m3}, \ldots$</span>.
+                        </p>
+                        <p>
+                            The eigenfunction-eigenvalue pairs are
+                            <span class="display-math">$$ \begin{align*}
+                                y_k(r) = J_m(j_{mk} r), \quad \lambda_k = j_{mk}^2
+                            \end{align*} $$</span>
+                            and they are orthogonal:
+                            <span class="display-math">$$ \begin{align*}
+                                \int_{0}^{1} J_m(j_{mk} r) J_m(j_{ml} r) r \d r = \frac{\big(J&#x27;_m(j_{mk})\big)^2}{2} \delta_{kl}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Bessel-s-equation.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Inhomogenous eigenvalue problem
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Inhomogenous-eigenvalue-problem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider an inhomogenous problem
+                            <span class="display-math">$$ \begin{align*}
+                                Ly = f, \qquad a&lt;x&lt;b
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$L$</span> is a Sturm-Liouville operator and <span class="inline-math">$y,f\in V$</span> defined <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-condition-where-Sturm-Liouville-operator-is-self-adjoint.html">here</a>.
+                            Since we can absorb the weight function into <span class="inline-math">$f$</span>, take <span class="inline-math">$w=1$</span> WLOG.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$\set{Y_k}$</span> be the normalised eigenfunctions of <span class="inline-math">$L$</span>, with <span class="inline-math">$LY_k = \lambda_k Y_k$</span> and <span class="inline-math">$\|Y_k\| = 1$</span>.
+                            Assume all <span class="inline-math">$\lambda_k\neq 0$</span>.
+                            Then by completeness, let
+                            <span class="display-math">$$ \begin{align*}
+                                f = \sum_k \hat f_k Y_k, \qquad y = \sum_k \hat y_k Y_k
+                            \end{align*} $$</span>
+                            and then
+                            <span class="display-math">$$ \begin{align*}
+                                Ly = f \implies \sum_k (\lambda_k \hat y_k - \hat f_k) Y_k = 0 \implies \hat y_k = \frac{\hat f_k}{\lambda_k}
+                            \end{align*} $$</span>
+                            so
+                            <span class="display-math">$$ \begin{align*}
+                                y(x) = \sum_{k} \frac{\langle f,Y_k\rangle}{\lambda_k} Y_k(x) = \int_{a}^{b} \left(\sum_{k} \frac{Y_k(x) Y_k(y)}{\lambda_k}\right) f(y) \d y := \int_{a}^{b} G(x,y) f(y) \d y
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$G(x,y)$</span> is called Green's function.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Linear PDEs and separation of variables
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Linear-PDEs-and-separation-of-variables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We are interested in
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Boundary value problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \begin{cases}
+                                P\psi(\v x) = 0, &amp; \v x\in\Omega, \\
+                                \text{boundary conditions}, &amp;\v x\in \partial \Omega
+                            \end{cases}
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                and
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Initial boundary value problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \begin{cases}
+                                Q\psi(\v x,t) = 0, &amp; (\v x,t)\in\Omega\times (0,\infty), \\
+                                \text{initial conditions}, &amp;(\v x,t)\in \Omega\times\set{0}, \\
+                                \text{boundary conditions}, &amp;(\v x,t)\in \partial \Omega\times(0,\infty)
+                            \end{cases}
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                where <span class="inline-math">$P$</span> and <span class="inline-math">$Q$</span> are (partial) linear differential operators, and <span class="inline-math">$\Omega$</span> is an open bounded subset of <span class="inline-math">$\R^n$</span>, <span class="inline-math">$n=1,2,3$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Using superposition to solve boundary value problems
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Using-superposition-to-solve-boundary-value-problems.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ol start="1">
+                        <li>
+                            <p>
+                                For boundary value problems, we can assume all boundary conditions = 0 on all but one endpoint/edge/face,
+                                and superpose solutions together to satsify all boundary conditions.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For initial boundary value problems, we can first assume all boundary conditions = 0, then assume instead all initial conditions = 0, and then superpose solutions.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Laplace's equation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Laplace-s-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We are interested in
+                        </p>
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Laplace's equation</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \begin{cases}
+                                            \Delta\phi(\v x) = 0, &amp;\v x\in \Omega, \\
+                                            B\phi(\v x) = f(\v x), &amp;\v x\in\partial\Omega
+                                        \end{cases}
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            where <span class="inline-math">$\Delta = \nabla\cdot\nabla = \nabla^2$</span> is the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-Laplacian.html">Laplacian</a>,
+                            and either <span class="inline-math">$B\phi = \phi$</span> (Dirichlet boundary condition) or <span class="inline-math">$B\phi = \pdfd{\phi}{\v n}$</span> (Neumann boundary condition).
+                        </p>
+                        <p>
+                            Recall results from <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Vector-calculus-equations.html">IA Vector Calculus</a>.
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Separation of variables on a rectangle
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Separation-of-variables-on-a-rectangle.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <div class="markdown-callout" data-callout="problem">
+                                        <div class="markdown-callout-title">
+                                            <i data-lucide="file-text"></i>
+                                            <div class="markdown-callout-title-inner">Problem</div>
+                                        </div>
+                                        <div class="markdown-callout-content">
+                                            <p>
+                                                <span class="display-math">$$ \begin{align*}
+                                                    \begin{cases}
+                                                        \phi_{xx} + \phi_{yy} = 0, &amp;(x,y)\in(0,1)\times(0,1), \\
+                                                        \phi=0, &amp;x=0,\ x=1,\ y=0, \\
+                                                        \phi = f, &amp;y=1
+                                                    \end{cases}
+                                                \end{align*} $$</span>
+                                            </p>
+                                            
+                                        </div>
+                                    </div><p>
+                                        can be solved using separation of variables to get, for each <span class="inline-math">$n=1,2,3,\ldots$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \phi(x,y) &amp;= \sum_{n=1}^{\infty} A_n \sin(n\pi x) \sinh(n\pi y)
+                                        \end{align*} $$</span>
+                                        where
+                                        <span class="display-math">$$ \begin{align*}
+                                            A_n = \frac{2}{\sinh(n\pi)}\int_{0}^{1} f(x)\sin(n\pi x) \d x.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-rectangle.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Separation of variables on a 2D annulus
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Separation-of-variables-on-a-2D-annulus.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For <span class="inline-math">$\v x\in\R^2$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \Delta \phi = 0, \qquad r_1 &lt; |\v x| &lt; r_2, \\
+                                        \end{align*} $$</span>
+                                        has separation of variables solutions in polar coordinates
+                                        <span class="display-math">$$ \begin{align*}
+                                            \phi(r,\theta) = A + B\log r + \sum_{n=1}^{\infty} \left[\left(A_n r^n + \frac{B_n}{r^n}\right)\left(C_n \cos(n\theta) + D_n \sin(n\theta)\right)\right].
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-2D-annulus.html">Derivation</a>)
+                                    </p>
+                                    <p>
+                                        Find the Fourier series to satisfy boundary conditions. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-Laplace-s-equation-with-Dirichlet-boundary-conditions-on-2D-annulus.html">Example</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Separation of variables on a 3D annulus
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Separation-of-variables-on-a-3D-annulus.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For <span class="inline-math">$\v x\in\R^3$</span>, assuming <span class="inline-math">$\phi$</span> is symmetric about the <span class="inline-math">$z$</span>-axis, i.e. <span class="inline-math">$\phi=\phi(r,\theta)$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \Delta \phi = 0, \qquad r_1 &lt; |\v x| &lt; r_2
+                                        \end{align*} $$</span>
+                                        has separation of variables solutions in spherical polar coordinates
+                                        <span class="display-math">$$ \begin{align*}
+                                            \phi(r,\theta) = \sum_{n=0}^{\infty} \left(a_n r^n + \frac{\beta_n}{r^{n+1}}\right) P_n(\cos\theta)
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$P_n$</span> is the <span class="inline-math">$n$</span>-th <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Legendre-equation.html">Legendre polynomial</a>.
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-3D-annulus.html">Derivation</a>)
+                                    </p>
+                                    <p>
+                                        Use the completeness of the Legendre polynomials to satisfy boudnary conditions.
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-Laplace-s-equation-with-Dirichlet-boundary-conditions-on-3D-annulus.html">Example</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Wave equation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Wave-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-wave-equation-on-stretched-string.html">Derivation (wave equation on stretched string)</a>
+                        </p>
+                        <p>
+                            We want to solve
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{1}{c^2} \pdfd[2]{y}{t} = \pdfd[2]{y}{x}
+                            \end{align*} $$</span>
+                            or in general, in higher spatial dimensions,
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{1}{c^2} \pdfd[2]{y}{t} = \Delta y.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    1D wave equation
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/1D-wave-equation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                y_{tt} = c^2 y_{xx}, &amp; 0 &lt; x &lt; L, \, t&gt;0, \\
+                                                y(0,t) = y(L,t) = 0, &amp; t&gt;0, \\
+                                                y(x,0) = f(x), &amp;0&lt;x&lt;L, \\
+                                                y_t(x,0) = g(x), &amp;0&lt;x&lt;L
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        has a separation of variables solution
+                                        <span class="display-math">$$ \begin{align*}
+                                            y(x,t) = \sum_{n=1}^{\infty} \sin \frac{n\pi x}{L} \left(A_n \cos \frac{n\pi ct}{L} + B_n \sin \frac{n\pi c t}{L}\right)
+                                        \end{align*} $$</span>
+                                        where
+                                        <span class="display-math">$$ \begin{align*}
+                                            A_n ={}&amp; \frac{2}{L} \int_{0}^{L} f(x) \sin \frac{n\pi x}{L} \d x, \\
+                                            B_n ={}&amp; \frac{2}{n\pi c} \int_{0}^{L} g(x) \sin \frac{n\pi x}{L} \d x.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-1D-wave-equation.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Wave equation on a 2D drum
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Wave-equation-on-a-2D-drum.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For a 2D drum <span class="inline-math">$\Omega = \sb{(r,\theta)}{0\leq r&lt;1, \, 0\leq \theta&lt;2\pi}$</span>,
+                                        the initial value problem
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                \phi_{tt} = c^2 \Delta \phi, &amp;(\v x,t)\in \Omega\times (0,\infty), \\
+                                                \phi = 0, &amp;(\v x,t) \in \partial \Omega\times(0,\infty), \\
+                                                \phi(r) = f(r), &amp;(\v x,t)\in \Omega\times\set{0}, \\
+                                                \phi_t(r) = g(r), &amp;(\v x,t)\in \Omega\times\set{0}
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        has a separation of variables solution
+                                        <span class="display-math">$$ \begin{align*}
+                                            \phi(r,t) = \sum_{k=1}^{\infty} J_0(j_{0k}\, r)\big(A_k \cos (j_{0k} \, ct) + B_k \sin(j_{0k}\, ct)\big)
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$J_0$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Bessel-s-equation.html">0-th order Bessel function</a>, <span class="inline-math">$j_{0k}$</span> is its <span class="inline-math">$k$</span>-th positive root, and
+                                        <span class="display-math">$$ \begin{align*}
+                                            A_k ={}&amp; \frac{2}{J_0&#x27;(j_{0k})^2}\int_{0}^{1} f(r) J_0 (j_{0k}\, r) r \d r, \\
+                                            B_k ={}&amp; \frac{2}{c\, j_{0k}\, J_0&#x27;(j_{0k})^2} \int_{0}^{1} g(r) J_0(j_{0k}\ r)r \d r.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-wave-equation-on-a-2D-drum.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (energy conservation of wave equation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-energy-conservation-of-wave-equation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\phi(\v x,t)$</span> be a solution to the initial value problem
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                \phi_{tt} = c^2 \Delta\phi, &amp;\Omega\times(0,\infty), \\
+                                                \phi = f, &amp;\Omega\times\set{0}, \\
+                                                \phi_t = g, &amp;\Omega\times\set{0}, \\
+                                                \phi = 0, &amp;\partial\Omega\times(0,\infty).
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        The <em>energy</em>, defined as
+                                        <span class="display-math">$$ \begin{align*}
+                                            E(t) = \frac{1}{2}\int_{\Omega} \phi_t^2 + c^2|\nabla\phi|^2 \d V,
+                                        \end{align*} $$</span>
+                                        is constant, i.e.
+                                        <span class="display-math">$$ \begin{align*}
+                                            E(t) = E(0) = \frac{1}{2}\int_{\Omega} |g|^2 + c^2|\nabla f|^2 \d V.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-energy-conservation-of-wave-equation.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (unique solution to wave equation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-unique-solution-to-wave-equation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Solution to the initial value problem
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                \phi_{tt} = c^2 \Delta\phi, &amp;\Omega\times(0,\infty), \\
+                                                \phi = f, &amp;\Omega\times\set{0}, \\
+                                                \phi_t = g, &amp;\Omega\times\set{0}, \\
+                                                \phi = 0, &amp;\partial\Omega\times(0,\infty).
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        is unique.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-unique-solution-to-wave-equation.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Wave reflection and transmission
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Wave-reflection-and-transmission.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For an infinite-long string with tension <span class="inline-math">$\tau$</span> and densities <span class="inline-math">$\mu_\pm$</span> on <span class="inline-math">$\pm x&gt;0$</span>,
+                                        the wave equations for both regions are
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                y_{tt} - c_-^2 y_{xx} = 0, &amp;x&lt;0, \\
+                                                y_{tt} - c_+^2 y_{xx} = 0, &amp;x&gt;0 \\
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$c_\pm^2 = \tau/\mu_{\pm}$</span>.
+                                    </p>
+                                    <p>
+                                        Assume
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            the string does not break, i.e. <span class="inline-math">$y$</span> is continuous at <span class="inline-math">$x=0$</span>; and
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            no mass at <span class="inline-math">$x=0$</span>, i.e. <span class="inline-math">$y_x$</span> is continuous at <span class="inline-math">$x=0$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        For an incident wave from <span class="inline-math">$x\to-\infty$</span>
+                                        <span class="display-math">$$ \begin{align*}
+                                            \cos\Big(\omega \big(t - \frac{x}{c_-}\big)\Big), \qquad x&lt;0,
+                                        \end{align*} $$</span>
+                                        we obtain a reflected wave
+                                        <span class="display-math">$$ \begin{align*}
+                                            R \cos\Big(\omega \big(t + \frac{x}{c_-}\big)\Big) \quad \text{where } R= \frac{\mu_- - \mu_+}{\mu_- + \mu_+}, \qquad x&lt;0
+                                        \end{align*} $$</span>
+                                        and a transmitted wave
+                                        <span class="display-math">$$ \begin{align*}
+                                            T \cos\Big(\omega \big(t - \frac{x}{c_+}\big)\Big) \quad \text{where } T = \frac{2\mu_-}{\mu_- + \mu_+}, \qquad x&gt;0.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Heat equation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Heat-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We want to solve
+                            <span class="display-math">$$ \begin{align*}
+                                \pdfd{\phi}{t} = \kappa \Delta\phi
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\kappa&gt;0$</span> is a constant called the <em>thermal diffusivity</em>.
+                            This models the transfer of heat in conductive bodies.
+                        </p>
+                        <p>
+                            Using separation of variables <span class="inline-math">$\phi = T(t) \psi(\v x)$</span>, we can turn the initial boundary value problem
+                            <span class="display-math">$$ \begin{align*}
+                                \begin{cases}
+                                    \phi_t = \kappa \Delta\phi, &amp;\Omega \times (0,\infty), \\
+                                    \phi = f, &amp;\Omega\times\set{0}, \\
+                                    \phi = 0, &amp;\partial\Omega\times (0,\infty)
+                                \end{cases}
+                            \end{align*} $$</span>
+                            into
+                            <span class="display-math">$$ \begin{align*}
+                                T(t) = Ae^{-\mu \kappa t}, \quad \begin{cases}
+                                    \Delta\psi + \mu\psi = 0, &amp;\Omega, \\
+                                    \psi = 0, &amp;\partial \Omega.
+                                \end{cases}
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Heat conduction in a square
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Heat-conduction-in-a-square.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For a square <span class="inline-math">$(0,L)\times(0,L)$</span>,
+                                        we have a separation of variables solution
+                                        <span class="display-math">$$ \begin{align*}
+                                            \phi(x,y,t) = \sum_{n,m=1}^{\infty} A_{m,n} e^{-\kappa \mu_{m,n}t} \sin \frac{n\pi x}{L} \sin \frac{m\pi y}{L}
+                                        \end{align*} $$</span>
+                                        where
+                                        <span class="display-math">$$ \begin{align*}
+                                            \mu_{m,n} ={}&amp; \left(\frac{n\pi}{L}\right)^2 + \left(\frac{m\pi}{L}\right)^2, \\
+                                            A_{m,n} ={}&amp; \frac{4}{L^2} \int_{0}^{L} \int_{0}^{L} f(x,y) \sin \frac{n\pi x}{L} \sin \frac{m\pi y}{L} \d x \d y.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-heat-conduction-in-a-square.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Heat conduction on a cylindrical rod
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Heat-conduction-on-a-cylindrical-rod.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For a cylindrical rod of radius 1 and length <span class="inline-math">$L$</span>, the domain is <span class="inline-math">$\Omega=[0,1) \times [0,2\pi) \times (0,L)$</span> in cylindrical polars <span class="inline-math">$(\rho,\varphi,z)$</span>.
+                                        Assuming <span class="inline-math">$f=f(\rho,z)$</span> is independent of <span class="inline-math">$\varphi$</span>, we can assume <span class="inline-math">$\phi = \phi(\rho,z,t)$</span> is independent of <span class="inline-math">$\varphi$</span> as well.
+                                    </p>
+                                    <p>
+                                        We have a separation of variables solution
+                                        <span class="display-math">$$ \begin{align*}
+                                            \phi(\rho, z, t) = \sum_{k,n=1}^{\infty} A_{k,n} e^{-\kappa\mu_{k,n} t} J_0(j_{0k}\, \rho) \sin \frac{n\pi z}{L}
+                                        \end{align*} $$</span>
+                                        where
+                                        <span class="display-math">$$ \begin{align*}
+                                            \mu_{kn} ={}&amp; \left(\frac{n\pi}{L}\right)^2 + {j_{0k}}^2, \\
+                                            A_{kn} ={}&amp; \frac{4}{L\,J_0&#x27;(j_{0k})^2} \int_{0}^{1} \left(\int_{0}^{L} f(\rho,z) \sin \frac{n\pi z}{L} \d z\right) J_0(j_{0k}\, \rho)\,\rho \d \rho.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-heat-conduction-on-a-cylindrical-rod.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (energy dissipation in heat equation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-energy-dissipation-in-heat-equation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\phi(\v x,t)$</span> be a solution to the initial value problem
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                \phi_t = \kappa \Delta\phi, &amp;\Omega \times (0,\infty), \\
+                                                \phi = f, &amp;\Omega\times\set{0}, \\
+                                                \phi = 0, &amp;\partial\Omega\times (0,\infty).
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        The <em>energy</em>, defined as
+                                        <span class="display-math">$$ \begin{align*}
+                                            Q(t) = \frac{1}{2} \int_{\Omega} \phi^2 \d V,
+                                        \end{align*} $$</span>
+                                        is decreasing with time, i.e. <span class="inline-math">$Q&#x27;(t) \leq 0$</span>. In particular
+                                        <span class="display-math">$$ \begin{align*}
+                                            Q(t) \leq Q(0) = \frac{1}{2}\int_{\Omega} f^2 \d V.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-energy-dissipation-in-heat-equation.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (unique solution to heat equation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-unique-solution-to-heat-equation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Solutions to the initial value problem
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                \phi_t = \kappa \Delta\phi, &amp;\Omega \times (0,\infty), \\
+                                                \phi = f, &amp;\Omega\times\set{0}, \\
+                                                \phi = 0, &amp;\partial\Omega\times (0,\infty)
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        is unique.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-unique-solution-to-heat-equation.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            (But there are solutions to the heat equation with infinite energy...)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Inhomogenous problems and Green's functions
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Inhomogenous-problems-and-Green-s-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Dirac delta function
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Dirac-delta-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Interpretation-of-the-Dirac-delta-function.html">Interpretation of the Dirac delta function</a>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Fourier series of the Dirac delta function
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Fourier-series-of-the-Dirac-delta-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">Fourier series</a> of the <span class="inline-math">$L$</span>-periodic extension of <span class="inline-math">$\delta(x)$</span> (<span class="inline-math">$\delta^L(x) = \delta(x)$</span> on <span class="inline-math">$[-\frac{L}{2}, \frac{L}{2}]$</span>) is
+                                        <span class="display-math">$$ \begin{align*}
+                                            \delta^L(x) \sim \frac{1}{L} \sum_{n} e^{2\pi inx/L}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-series-of-the-Dirac-delta-function.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Eigenfunction expansion of the Dirac delta function
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Eigenfunction-expansion-of-the-Dirac-delta-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$L$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Sturm-Liouville-theory.html">Sturm-Liouville operator</a> on <span class="inline-math">$V = \sb{y\in C^2[a,b]}{y \text{ satisfies real and homogenous boundary conditions at non-singular endpoints}}$</span>.
+                                        Further let <span class="inline-math">$\set{Y_k}_{k=1}^\infty$</span> be the normalised eigenfunctions of <span class="inline-math">$L$</span>.
+                                    </p>
+                                    <p>
+                                        For <span class="inline-math">$\xi\in (a,b)$</span>, <span class="inline-math">$V$</span> contains <span class="inline-math">$\delta(x-\xi)$</span>, so we can write it as a sum of eigenfunctions:
+                                        <span class="display-math">$$ \begin{align*}
+                                            \delta(x-\xi) = w(\xi) \sum_{k=1}^{\infty} Y_k(\xi) Y_k(x).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Eigenfunction-expansion-of-the-Dirac-delta-function.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Green's functions
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Green-s-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (Green's function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Green-s-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The <em>Green's function</em> <span class="inline-math">$G(x;\xi)$</span> for a linear operator <span class="inline-math">$L$</span> on <span class="inline-math">$a&lt;x&lt;b$</span> is the solution, for each fixed <span class="inline-math">$\xi\in (a,b)$</span>, to
+                                        <span class="display-math">$$ \begin{align*}
+                                            L[G(x;\xi)] = \delta(x-\xi), \quad a&lt;x&lt;b
+                                        \end{align*} $$</span>
+                                        under some appropriate boundary conditions.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Using Green's functions to solve inhomogenous problems
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Using-Green-s-functions-to-solve-inhomogenous-problems.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For some linear differential operator <span class="inline-math">$L$</span>, the problem
+                                        <span class="display-math">$$ \begin{gather*}
+                                            \begin{cases}
+                                                Ly = f, &amp;a&lt;x&lt;b, \\
+                                                y(a) = 0, \\
+                                                y(b) = 0,
+                                            \end{cases}
+                                        \end{gather*} $$</span>
+                                        has a solution
+                                        <span class="display-math">$$ \begin{align*}
+                                            y(x) = \int_{a}^{b} G(x;\xi) f(\xi) \d \xi
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$G(x;\xi)$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Green-s-function.html">Green's function</a> for <span class="inline-math">$L$</span> on <span class="inline-math">$a&lt;x&lt;b$</span> with the Dirichlet boundary conditions.
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-using-Green-s-functions-to-solve-inhomogenous-problems.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Jump conditions of Green's functions for second order linear operators
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Jump-conditions-of-Green-s-functions-for-second-order-linear-operators.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Consider the Green's function <span class="inline-math">$G(x;\xi)$</span> for a second order linear differential operator
+                                        <span class="display-math">$$ \begin{align*}
+                                            L = \alpha \dd[2]{x} + \beta \dd{x} + \gamma
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$\alpha,\beta,\gamma$</span> are smooth and <span class="inline-math">$\alpha(x)\neq 0$</span> on <span class="inline-math">$a&lt;x&lt;b$</span>.
+                                    </p>
+                                    <p>
+                                        <span class="inline-math">$\dfd{G}{x}$</span> looks like the Heaviside function <span class="inline-math">$H(x-\xi)$</span> and has a jump discontinuity
+                                        <span class="display-math">$$ \begin{align*}
+                                            \dfd{G}{x}(\xi^+ ; \xi) - \dfd{G}{x}(\xi^-; \xi) = \frac{1}{\alpha(\xi)}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-jump-conditions-of-Green-s-functions-for-second-order-linear-operators.html">Derivation</a>)
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (Green's function from linearly independent solutions)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Green-s-function-from-linearly-independent-solutions.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$L = \alpha \dd[2]{x} + \beta \dd{x} + \gamma$</span> be a second-order linear differential operator with <span class="inline-math">$\alpha(x)\neq 0$</span> on <span class="inline-math">$(a,b)$</span>.
+                                        Suppose <span class="inline-math">$y_1$</span> and <span class="inline-math">$y_2$</span> be linearly independent solutions to <span class="inline-math">$Ly=0$</span> such that <span class="inline-math">$y_1(a) = 0$</span> and <span class="inline-math">$y_2(b)=0$</span>.
+                                    </p>
+                                    <p>
+                                        Then the Dirichlet Green's function for <span class="inline-math">$L$</span> on <span class="inline-math">$(a,b)$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            G(x;\xi) = \frac{1}{\alpha(\xi) W(y_1,y_2)(\xi)} \begin{cases}
+                                                y_1(x)y_2(\xi), &amp;a&lt;x&lt;\xi, \\
+                                                y_1(\xi) y_2(x), &amp;\xi&lt;x&lt;b
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$W(y_1,y_2)=y_1y_2&#x27; - y_1&#x27;y_2$</span> is the <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-Wronskian.html">Wronskain</a>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Green-s-function-from-linearly-independent-solutions.html">Proof</a>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Therefore <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Using-Green-s-functions-to-solve-inhomogenous-problems.html">we can solve an inhomogenous problem</a>
+                                            <span class="display-math">$$ \begin{align*}
+                                            y(x) = \int_{a}^{x} \frac{y_1(\xi) y_2(x) f(\xi)}{\alpha(\xi) W(y_1,y_2)(\xi)} \d \xi + \int_{x}^{b} \frac{y_1(x)y_2(\xi)f(\xi)}{\alpha(\xi) W(y_1,y_2)(\xi)} \d \xi.
+                                            \end{align*} $$</span>
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            For <span class="inline-math">$L$</span> being <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville</a>:
+                                        </p>
+                                        <ul>
+                                        <li>
+                                            <p>
+                                                We can absorb <span class="inline-math">$w$</span> into <span class="inline-math">$f$</span> so WLOG assume <span class="inline-math">$w=1$</span>.
+                                            </p>
+                                            
+                                        </li><li>
+                                            <p>
+                                                We use the identity <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Lemma-Sturm-Liouville-operator-and-Wronskian.html"><span class="inline-math">$(pW(y_1,y_2))&#x27; = y_2 L y_1 - y_1 L y_2$</span></a> and <span class="inline-math">$Ly_1 = 0 = Ly_2$</span> to see
+                                                <span class="display-math">$$ \begin{align*}
+                                                y(x) = -\frac{1}{p(c) W(y_1,y_2)(c)} \left(y_2(x) \int_{a}^{x} y_2(\xi)f(\xi) \d \xi + y_1(x) \int_{x}^{b} y_1(\xi) f(\xi) \d \xi\right)
+                                                \end{align*} $$</span>
+                                                for any <span class="inline-math">$c\in (a,b)$</span>.
+                                            </p>
+                                            
+                                        </li>
+                                        </ul>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-computing-Green-s-function.html">Example (computing Green's function)</a>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (eigenfunction expansion of Green's function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-eigenfunction-expansion-of-Green-s-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If <span class="inline-math">$L$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville</a> operator and <span class="inline-math">$\set{Y_k}$</span> are the normalised eigenfunctions
+                                        with eigenvalues <span class="inline-math">$\set{\lambda_k}$</span>,
+                                        then the Dirichlet Green's function is
+                                        <span class="display-math">$$ \begin{align*}
+                                            G(x;\xi) = w(\xi) \sum_{k=1}^{\infty} \frac{Y_k(\xi) Y_k(x)}{\lambda_k}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-eigenfunction-expansion-of-Green-s-function.html">Proof</a>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            From this we can also see the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Eigenfunction-expansion-of-the-Dirac-delta-function.html">eigenfunction expansion of the Dirac delta function</a>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-eigenfunction-expansion-of-Dirac-delta-from-Green-s-function.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-computing-eigenfunction-expansion-of-Green-s-function.html">Example (computing eigenfunction expansion of Green's function)</a>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Green's function for initial value problems
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Green-s-function-for-initial-value-problems.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For the initial value problem
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                Ly = f, &amp;t&gt;0, \\
+                                                y(0) = y&#x27;(0) = 0
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$L = \alpha(t) \dd[2]{t} + \beta(t) \dd{t} + \gamma(t)$</span> and <span class="inline-math">$\alpha(t) \neq 0$</span>,
+                                        the Green's function <span class="inline-math">$G(t;\tau)$</span> satisfies
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                L[G(t;\tau)] = \delta(t-\tau),\\
+                                                G(0; \tau) = \dfd{G}{t}(0;\tau) = 0
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        for each <span class="inline-math">$\tau\in (0,\infty)$</span>.
+                                    </p>
+                                    <p>
+                                        The Green's function is determined by
+                                    </p>
+                                    <ol start="1">
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$G(t;\tau) = 0$</span> for <span class="inline-math">$t&lt;\tau$</span>;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$L[G(t;\tau)] = 0$</span> on <span class="inline-math">$t&gt;\tau$</span>; and
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Jump-conditions-of-Green-s-functions-for-second-order-linear-operators.html">jump condition</a> <span class="inline-math">$G(\tau^+; \tau) = 0$</span> and <span class="inline-math">$\dfd{G}{t}(\tau^+, \tau) = 1/\alpha(\tau)$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ol>
+                                    <p>
+                                        Therefore the solution <span class="inline-math">$y$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            y(t) = \int_{0}^{t} G(t;\tau) f(\tau) \d \tau
+                                        \end{align*} $$</span>
+                                        which preserves causality: <span class="inline-math">$y(t)$</span> only depends on the values <span class="inline-math">$f(\tau)$</span> before <span class="inline-math">$\tau&lt;t$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Fourier transform
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Fourier-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Throughout this section, write <span class="inline-math">$\int \equiv \int_{-\infty}^{\infty}$</span>.
+                Assume all functions are sufficiently nice.
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Fourier transform)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Fourier-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: \R\to\C$</span> be an integrable function.
+                        </p>
+                        <p>
+                            Define its <em>Fourier transform</em> <span class="inline-math">$\hat f: \R\to\C$</span> by
+                            <span class="display-math">$$ \begin{align*}
+                                \hat f(\lambda) = \int_{\infty}^{\infty} e^{-i\lambda x} f(x) \d x.
+                            \end{align*} $$</span>
+                            We write <span class="inline-math">$\mathcal{F}[f] = \hat f$</span>, or <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}[f(x)] = \hat f(\lambda)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (properties of Fourier transform)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-properties-of-Fourier-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f:\R\to\C$</span>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Derivatives and powers:
+                            </p>
+                            <ul>
+                            <li>
+                                <p>
+                                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Fourier-transform.html"><span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}$</span></a><span class="inline-math">$\left[\left(\dd{x}\right)^k f(x)\right] = (i\lambda)^k \hat f(\lambda)$</span>;
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}\left[x^k f(x)\right] = \left(i \dd{\lambda}\right)^k \hat f(\lambda)$</span>.
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            
+                        </li><li>
+                            <p>
+                                Translation and exponentials:
+                            </p>
+                            <ul>
+                            <li>
+                                <p>
+                                    <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}\left[f(x-a)\right] = e^{-i\lambda a} \hat f(\lambda)$</span>;
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}\left[e^{-iax}f(x)\right] = \hat f(x+a)$</span>.
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-properties-of-Fourier-transform.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Fourier inversion formula)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-inversion-formula.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f:\R\to\C$</span>. We can recover <span class="inline-math">$f$</span> from <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Fourier-transform.html"><span class="inline-math">$\hat f$</span></a> via the <em>inversion formula</em>
+                            <span class="display-math">$$ \begin{align*}
+                                f(x) = \frac{1}{2\pi} \int e^{i\lambda x}\hat f(\lambda) \d \lambda.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Fourier-inversion-formula.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Applying this to <span class="inline-math">$f(x)=\delta(x-y)$</span> gives
+                                <span class="display-math">$$ \begin{align*}
+                                \delta(x-y) = \frac{1}{2\pi} \int e^{i\lambda(x-y)} \d x.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Parseval's theorem for Fourier transform)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Parseval-s-theorem-for-Fourier-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f,g:\R\to\C$</span>.
+                            <span class="display-math">$$ \begin{align*}
+                                \int f(x) \,\overline{g(x)} \d x = \frac{1}{2\pi} \int \hat f(\lambda)\, \overline{\hat g(\lambda)} \d \lambda.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            In particular,
+                            <span class="display-math">$$ \begin{align*}
+                                \int |f(x)|^2 \d x = \frac{1}{2\pi} \int |\hat f(\lambda)|^2 \d \lambda
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Parseval-s-theorem-for-Fourier-transform.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (convolution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-convolution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f,g:\R\to\C$</span>. The <em>convolution</em> of <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> is defined as
+                            <span class="display-math">$$ \begin{align*}
+                                (f*g)(x) = \int f(x-y)\,g(y) \d y.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Fourier transform of convolution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-transform-of-convolution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For <span class="inline-math">$f,g:\R\to\C$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \mathcal{F}_{x\mapsto \lambda}\left[f* g(x)\right] = \hat f(\lambda) \,\hat g(\lambda).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Fourier-transform-of-convolution.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-example">
+                    <div class="markdown-embed-title">
+                        Examples of Fourier transform
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Examples-of-Fourier-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ul>
+                        <li>
+                            <p>
+                                Exponential: <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}[H(x) \, e^{-\sigma x}] = \dfrac{1}{\sigma + i\lambda}$</span> where <span class="inline-math">$H$</span> is the Heaviside function and <span class="inline-math">$\sigma\in \C$</span> where <span class="inline-math">$\Re(\sigma) &gt; 0$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-transform-of-exponential.html">Derivation</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Gaussian: <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}\left[\frac{1}{\sqrt{2\pi}} e^{-x^2/2}\right] = e^{-\lambda^2/2}$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-transform-of-Gaussian.html">Derivation</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Dirac delta: <span class="inline-math">$\mathcal{F}_{x\mapsto \lambda}[\delta(x)] = 1$</span>. By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-inversion-formula.html">inversion formula</a>, <span class="inline-math">$\delta(x) = \frac{1}{2\pi} \int e^{i\lambda x} \d \lambda$</span>(!) (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-transform-of-Dirac-delta.html">Derivation</a>)
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-solving-forced-damping-initial-value-problem-with-Fourier-transform.html">Example (solving forced damping initial value problem with Fourier transform)</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Poisson summation formula)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Poisson-summation-formula.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For <span class="inline-math">$f: \R\to\C$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \sum_{n\in \Z} f(x+n) = \sum_{n\in \Z} \hat f(2\pi n) e^{2\pi i n x}.
+                            \end{align*} $$</span>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Poisson-summation-formula.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                In particular, we get the identity
+                                <span class="display-math">$$ \begin{align*}
+                                \sum_{n} f(n) = \sum_{n} \hat f(2\pi n).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Heisenberg uncertainty principle)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Heisenberg-uncertainty-principle.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$\int |\psi(x)|^2 \d x = 1$</span>, then
+                            <span class="display-math">$$ \begin{align*}
+                                \left(\int x^2 |\psi(x)|^2 \d x\right)\left(\int \lambda^2 |\hat \psi(\lambda)|^2 \d \lambda\right) \geq \frac{\pi}{2}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Heisenberg-uncertainty-principle.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Connection-between-Fourier-series-and-Fourier-transform.html">Connection between Fourier series and Fourier transform</a>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Discrete Fourier transform
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Discrete-Fourier-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (discrete Fourier transform)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-discrete-Fourier-transform.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For some <span class="inline-math">$N\in \N$</span> and a sequence <span class="inline-math">$\set{X_n}_{n=0}^{N-1}$</span>,
+                                        define its <em>discrete Fourier transform</em> <span class="inline-math">$\set{\hat X_k}_{k=0}^{N-1}$</span> by
+                                        <span class="display-math">$$ \begin{align*}
+                                            \hat X_k = \sum_{n=0}^{N-1} X_n e^{-2\pi i nk/N}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        Equivalently, writing <span class="inline-math">$\v X = (X_0, \ldots, X_{N-1})^T$</span> and <span class="inline-math">$\vhat X = (\hat X_0, \ldots, \hat X_{N-1})^T$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \vhat X = \mathcal{F}\, \v X \quad \text{ where } \mathcal{F}_{kn} = e^{-2\pi ink/N}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Connection-between-discrete-and-continuous-Fourier-transform.html">Connection between discrete and continuous Fourier transform</a>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (inverse discrete Fourier transform)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-inverse-discrete-Fourier-transform.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        We can recover a sequence <span class="inline-math">$\set{X_n}_{n=0}^{N-1}$</span> from its <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-discrete-Fourier-transform.html">discrete Fourier transform</a> <span class="inline-math">$\set{\hat X_k}_{k=0}^{N-1}$</span> via
+                                        <span class="display-math">$$ \begin{align*}
+                                            X_n = \frac{1}{N} \sum_{k=0}^{N-1} \hat X_k \, e^{2\pi ink/N}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-inverse-discrete-Fourier-transform.html">Proof</a>
+                                    </p>
+                                    <p>
+                                        This implies
+                                        <span class="display-math">$$ \begin{align*}
+                                            \mathcal{F}^\dagger \mathcal{F} = \mathcal{F} \mathcal{F}^\dagger = NI_N.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (Parseval's theorem for discrete Fourier transform)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Parseval-s-theorem-for-discrete-Fourier-transform.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For two sequences <span class="inline-math">$\set{X_n}_{n=0}^{N-1}$</span> and <span class="inline-math">$\set{Y_n}_{n=0}^{N-1}$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \sum_{n=0}^{N-1} X_n \, \overline{Y_n} = \frac{1}{N} \sum_{k=0}^{N-1} \hat X_k \, \overline{\hat Y_k}.
+                                        \end{align*} $$</span>
+                                        In particular,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \sum_{n=0}^{N-1} |X_n|^2 = \frac{1}{N} \sum_{k=0}^{N-1} |\hat X_k|^2.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Parseval-s-theorem-for-discrete-Fourier-transform.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Higher dimensional Fourier transform
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Higher-dimensional-Fourier-transform.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Here, we write <span class="inline-math">$\int \equiv \int_{\R^n}$</span>.
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (higher dimensional Fourier transform)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-higher-dimensional-Fourier-transform.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For a function <span class="inline-math">$f: \R^n \to \C$</span>, define its <em>Fourier transform</em> <span class="inline-math">$\hat f: \R^n \to \C$</span> by
+                                        <span class="display-math">$$ \begin{align*}
+                                            \hat f(\v \lambda) = \int e^{-i\v \lambda \cdot \v x} f(\v x) \d ^n \v x.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            We have analogous results from one dimensional Fourier transform:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Convolution theorem
+                                <span class="display-math">$$ \begin{align*}
+                                \mathcal{F}_{\v x\mapsto \v \lambda}\left[f*g(\v x)\right] = \hat f(\v \lambda) \hat g(\v \lambda), \qquad \text{where } f*g(\v x) = \int f(\v x-\v y) g(\v y) \d ^n \v y.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Inverse Fourier transform
+                                <span class="display-math">$$ \begin{align*}
+                                f(\v x) ={}&amp; \frac{1}{(2\pi)^n} \int e^{i\v \lambda\cdot \v x} \hat f(\v \lambda) \d^n \v \lambda.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Delta functions
+                                <span class="display-math">$$ \begin{align*}
+                                \hat \delta(\v \lambda) = 1, \qquad \delta(\v x) = \frac{1}{(2\pi)^n} \int e^{i\v \lambda\cdot \v x} \d \v \lambda.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Laplacian
+                                <span class="display-math">$$ \begin{align*}
+                                \mathcal{F}_{\v x\mapsto \v \lambda}[\Delta f(\v x)] ={}&amp; ((i\lambda_1)^2 + \ldots + (i\lambda_n)^2 ) \hat f(\v \lambda) \\
+                                ={}&amp; - |\v \lambda|^2 \hat f(\v \lambda).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            PDEs on unbounded domains
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/PDEs-on-unbounded-domains.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Well-posedness
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Well-posedness.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Hadamard famously declared that for a problem to be <em>well-posed</em>, we require
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                solution to exist;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                solution to be unique;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                solution to depend continuously on given data.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            An example that fails 3. is the backwards heat equation <span class="inline-math">$\phi_t + \kappa\phi_{x x} = 0$</span> on <span class="inline-math">$\Omega = (0,\pi)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Method of characteristics
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Method-of-characteristics.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider problems of the form
+                            <span class="display-math">$$ \begin{align*}
+                                \begin{cases}
+                                    a(x,y) \dfrac{\partial u}{\partial x} + 
+                                    b(x,y) \dfrac{\partial u}{\partial y}
+                                    = c(x,y,u), \\
+                                    u = f \qquad \text{on } C\subset \R^2.
+                                \end{cases}
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            We will change variables <span class="inline-math">$(x,y) \mapsto (t,s)$</span>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Parametrise <span class="inline-math">$C$</span> as <span class="inline-math">$(x_0(s), y_0(s))$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Solve the <em>characteristic curves</em>
+                                <span class="display-math">$$ \begin{align*}
+                                \pdfd{x}{t} ={}&amp; a(x,y), \\
+                                \pdfd{y}{t} ={}&amp; b(x,y), \\
+                                (x(0,s), y(0,s)) ={}&amp; (x_0(s), y_0(s)).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Let <span class="inline-math">$z(t, s) = u(x(t, s), y(t, s))$</span>.
+                                By the chain rule, <span class="inline-math">$z$</span> satisfies
+                                <span class="display-math">$$ \begin{align*}
+                                \pdfd{z}{t} ={}&amp; c(x,y,z), \\
+                                z(0, s) ={}&amp; f(x_0(s), y_0(s)).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Invert the map <span class="inline-math">$(t,s) \mapsto (x,y)$</span> to get <span class="inline-math">$u(x,y) = z(t(x,y), s(x,y))$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            The <em>non-characteristic condition</em> requires <span class="inline-math">$(a, b)$</span> not to be tangent to <span class="inline-math">$C$</span> at any point,
+                            i.e. if <span class="inline-math">$\v n$</span> is the normal to <span class="inline-math">$C$</span>, we want <span class="inline-math">$\v v\cdot \v n|_C \neq 0$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-method-of-characteristics.html">Example (method of characteristics)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Classification of second order PDEs
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Classification-of-second-order-PDEs.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A general second order linear PDE in two dimensions has the form
+                            <span class="inline-math">$Lu = g$</span> where
+                            <span class="display-math">$$ \begin{align*}
+                                Lu ={}&amp; a(x,y) \pdfd[2]{u}{x} + 2b(x,y) \pdfxd{u}{x}{y} + c(x,y) \pdfd[2]{u}{y} \\
+                                &amp; + \underbrace{d(x,y) \pdfd{u}{x} + e(x,y) \pdfd{u}{y} + f(x,y) u}_{\text{lower order terms}}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Under a change of variables <span class="inline-math">$(x,y) \mapsto (\xi, \eta)$</span>, letting <span class="inline-math">$U(\xi,\eta) = u(x,y)$</span>, <span class="inline-math">$L$</span> becomes
+                            <span class="display-math">$$ \begin{align*}
+                                Lu ={}&amp; A(\xi, \eta) \pdfd[2]{U}{\xi} + 2B(\xi, \eta) \pdfxd{U}{\xi}{\eta} + C(\xi,\eta) \pdfd[2]{U}{\eta} + \text{lower order terms}
+                            \end{align*} $$</span>
+                            where
+                            <span class="display-math">$$ \begin{align*}
+                                A ={}&amp; a\, \xi_x ^2 + 2b\,\xi_x \xi_y + c \, \xi_y^2, \\
+                                B ={}&amp; a\, \xi_x \eta_x + b\,(\xi_x \eta_y + \xi_y \eta_x) + c\, \xi_y \eta_y, \\
+                                C ={}&amp; a\, \eta_x ^2 + 2b\,\eta_x \eta_y + c \, \eta_y^2.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-change-of-variable-for-a-second-order-linear-operator.html">Derivation</a>)
+                        </p>
+                        <p>
+                            We can make <span class="inline-math">$A = C = 0$</span> if we can get <span class="inline-math">$\xi_x/\xi_y$</span> and <span class="inline-math">$\eta_x/\eta_y$</span> to solve the equation
+                            <span class="inline-math">$az^2 + 2bz + c = 0$</span>.
+                        </p>
+                        <p>
+                            Consider a curve <span class="inline-math">$\xi(x,y) = \text{const.}$</span>.
+                            Taking derivative, we have
+                            <span class="display-math">$$ \begin{align*}
+                                0 = \xi_x + \dfd{y}{x} \xi_y \implies \dfd{y}{x} = -\left(\frac{-b\pm \sqrt{b^2 - ac}}{a}\right).
+                            \end{align*} $$</span>
+                            These are the <em>characteristic curves</em>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$L$</span> is
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <em>elliptic</em> if <span class="inline-math">$b^2 &lt; ac$</span> (no real characteristic curves);
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <em>parabolic</em> if <span class="inline-math">$b^2 = ac$</span> (one family of characteristic curve); or
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <em>hyperbolic</em> if <span class="inline-math">$b^2 &gt; ac$</span> (two families of characteristic curves).
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            If we have a hyperbolic problem, we can introduce coordinates <span class="inline-math">$(\xi,\eta)$</span>
+                            so that the problem is in <em>canonical form</em>
+                            <span class="display-math">$$ \begin{align*}
+                                \pdfxd{U}{\xi}{\eta} + \text{lower order terms} = G(\xi,\eta).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-putting-a-hyperbolic-problem-into-canonical-form.html">Example (putting a hyperbolic problem into canonical form)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Green's function for heat equation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Green-s-function-for-heat-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (heat kernel)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-heat-kernel.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For the heat equation <span class="inline-math">$u_t - \kappa\Delta u = F(\v x, t)$</span> in <span class="inline-math">$\R^n$</span>,
+                                        define the <em>heat kernel</em>
+                                        <span class="display-math">$$ \begin{align*}
+                                            K_t(\v x) = \frac{1}{(4\pi \kappa t)^{n/2}} e^{-|\v x|^2 /4\kappa t}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Its <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-higher-dimensional-Fourier-transform.html">Fourier transform</a> is
+                                            <span class="display-math">$$ \begin{align*}
+                                            \hat K_t(\v \lambda) = e^{-\kappa t|\v \lambda|^2}.
+                                            \end{align*} $$</span>
+                                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-transform-of-heat-kernel.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (solution to heat equation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-solution-to-heat-equation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Consider the initial value problem of the heat equation
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                u_t - \kappa \Delta u = F(\v x, t), &amp;\R^n \times (0,\infty), \\
+                                                u(\v x, 0) = f(\v x), &amp;\R^n.
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            For zero forcing <span class="inline-math">$F=0$</span>, the solution is
+                                            <span class="display-math">$$ \begin{align*}
+                                            u(\v x,t) = (K_t * f)(\v x) = \int K_t(\v x - \v y) \,f(\v y) \d ^n \v y.
+                                            \end{align*} $$</span>
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            For zero initial condition <span class="inline-math">$f=0$</span>, the solution is
+                                            <span class="display-math">$$ \begin{align*}
+                                            u(\v x,t) = \int_{0}^{t} \int K_{t-s}(\v x-\v y) \, F(\v y,s) \d ^n \v y \d s \\
+                                            \end{align*} $$</span>
+                                            Equivalently, if we set <span class="inline-math">$F(\v x,t) = 0$</span> for <span class="inline-math">$t&lt;0$</span>, then
+                                            <span class="display-math">$$ \begin{align*}
+                                            u(\v x, t) ={}&amp; \iint G(\v x,t; \v y, s) \, F(\v y, s) \d^n \v y \d s
+                                            \end{align*} $$</span>
+                                            where
+                                            <span class="display-math">$$ \begin{align*}
+                                            G(\v x, t; \v y, s) = H(t-s) \, K_{t-s}(\v x-\v y)
+                                            \end{align*} $$</span>
+                                            is the <em>Green's function for heat equation on <span class="inline-math">$\R^n$</span> with zero initial conditions</em>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-solution-to-heat-equation.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (Green's function solves heat equation with impulse forcing)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Green-s-function-solves-heat-equation-with-impulse-forcing.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The Green's function <span class="inline-math">$G(\v x, t; \v y, s)$</span> for heat equation with zero initial conditions
+                                        satisfies
+                                        <span class="display-math">$$ \begin{align*}
+                                            \pdfd{G}{t} - \kappa \Delta G = \delta(\v x- \v y)\, \delta(t-s).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Green-s-function-solves-heat-equation-with-impulse-forcing.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Green's function for Laplacian
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Green-s-function-for-Laplacian.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (Fourier transform of powers of radius)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-transform-of-powers-of-radius.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        In <span class="inline-math">$\R^n$</span>, for <span class="inline-math">$\alpha&gt;0$</span>, we have
+                                        <span class="display-math">$$ \begin{align*}
+                                            \mathcal{F}_{\v x\mapsto \v \lambda}\big[|\v x|^{-\alpha}\big] = C_{n,\alpha} |\v \lambda|^{\alpha-n}
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$C_{n,\alpha}$</span> is a constant.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Fourier-transform-of-powers-of-radius.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (free space Green's function for the Laplacian)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-free-space-Green-s-function-for-the-Laplacian.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Define the <em>free space Green's function</em> for the Laplacian on <span class="inline-math">$\R^n$</span> as
+                                        <span class="display-math">$$ \begin{align*}
+                                            G(\v x; \v y) = \begin{cases}
+                                                -\dfrac{1}{(n-2) |S^{n-1}|} \cdot \dfrac{1}{|\v x-\v y|^{n-2}}, &amp;n&gt;2, \\
+                                                \dfrac{1}{2\pi} \log |\v x-\v y|, &amp;n=2.
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        Then <span class="inline-math">$G$</span> satisfies
+                                        <span class="display-math">$$ \begin{align*}
+                                            \Delta G(\v x; \v y) = \delta(\v x-\v y).
+                                        \end{align*} $$</span>
+                                        Moreover for <span class="inline-math">$n&gt;2$</span>, <span class="inline-math">$G$</span> is the unique solution where <span class="inline-math">$|G(\v x;\v y)| \to 0$</span> as <span class="inline-math">$|\v x|\to \infty$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-free-space-Green-s-function-for-the-Laplacian.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Dirichlet Green's function for the Laplacian
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Dirichlet-Green-s-function-for-the-Laplacian.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The <em>Dirichlet Green's function</em> <span class="inline-math">$\mathcal{G}(\v x; \v y)$</span> for the Laplacian on <span class="inline-math">$\Omega$</span>
+                                        satisfies
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                \Delta \mathcal{G}(\v x; \v y) = \delta(\v x - \v y), &amp;\v x \in \Omega \\
+                                                \mathcal{G}(\v x; \v y) = 0, &amp;\v x \in  \partial \Omega.
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        The solution to
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                \Delta u = F, &amp; \v x\in \Omega, \\
+                                                u = 0,&amp; \v x \in \partial \Omega
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        is then
+                                        <span class="display-math">$$ \begin{align*}
+                                            u(\v x) = \int_{\Omega} \mathcal{G}(\v x;\v y) F(\v y) \d^n \v y.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        To construct <span class="inline-math">$\mathcal{G}$</span>, we need to add on
+                                        suitable harmonic function to the
+                                        free space Green's function <span class="inline-math">$G(\v x; \v y)$</span>
+                                        to get the correct boundary conditions.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-method-of-images.html">Example (method of images)</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Green's function for wave equation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Green-s-function-for-wave-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (kernel for wave equation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-kernel-for-wave-equation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For the wave equation <span class="inline-math">$u_{tt} - c^2 \Delta u = F(\v x,t)$</span> in <span class="inline-math">$\R^n$</span>,
+                                        define <span class="inline-math">$\Phi_t(\v x)$</span> to have the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-higher-dimensional-Fourier-transform.html">Fourier transform</a>
+                                        <span class="display-math">$$ \begin{align*}
+                                            \hat \Phi_t(\v \lambda) = \frac{\sin(ct|\v \lambda|)}{c|\v \lambda|}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (kernel for wave equation in different dimensions)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-kernel-for-wave-equation-in-different-dimensions.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Consider <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-kernel-for-wave-equation.html"><span class="inline-math">$\Phi_t(\v x)$</span></a> in <span class="inline-math">$\R^n$</span>.
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            If <span class="inline-math">$n=1$</span>, then
+                                            <span class="display-math">$$ \begin{align*}
+                                            \Phi_t(x) = \frac{1}{2c}\big(H(x + ct) - h(x - ct)\big).
+                                            \end{align*} $$</span>
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            If <span class="inline-math">$n=3$</span>, then
+                                            <span class="display-math">$$ \begin{align*}
+                                            \Phi_t(x) = \frac{1}{4\pi c|\v x|}\big(\delta(|\v x|-ct) - \delta(|\v x| + ct)\big).
+                                            \end{align*} $$</span>
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-kernel-for-wave-equation-in-different-dimensions.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (solution to wave equation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-solution-to-wave-equation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Consider the initial value problem of the wave equation
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                u_{tt} - c^2 \Delta u = F(\v x, t), &amp;\R^n \times (0,\infty), \\
+                                                u(\v x, 0) = f(\v x), &amp;\R^n, \\
+                                                u_t(\v x, 0) = g(\v x), &amp;\R^n.
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            For zero forcing <span class="inline-math">$F=0$</span>, the solution is
+                                            <span class="display-math">$$ \begin{align*}
+                                            u(\v x,t) = \pdd{t}(\Phi_t * f)(\v x) + (\Phi_t * g)(\v x).
+                                            \end{align*} $$</span>
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            For zero initial conditions <span class="inline-math">$f=g=0$</span>, the solution is
+                                            <span class="display-math">$$ \begin{align*}
+                                            u(\v x, t) = \int_{0}^{t} \int \Phi_{t-s}(\v x-\v y) \, F(\v y,s) \d^n \v y \d s.
+                                            \end{align*} $$</span>
+                                            Equivalently, if we set <span class="inline-math">$F(\v x,t) = 0$</span> for <span class="inline-math">$t&lt;0$</span>, then
+                                            <span class="display-math">$$ \begin{align*}
+                                            u(\v x,t) = \iint G(\v x, t; \v y, s) \, F(\v y, s) \d^n \v y \d s
+                                            \end{align*} $$</span>
+                                            where
+                                            <span class="display-math">$$ \begin{align*}
+                                            G(\v x,t; \v y, s) = H(t-s)\, \Phi_{t-s}(\v x-\v y)
+                                            \end{align*} $$</span>
+                                            is the <em>Green's function for the wave equation</em> on <span class="inline-math">$\R^n$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-solution-to-wave-equation.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (reduction of wave equation problem on the half line)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-reduction-of-wave-equation-problem-on-the-half-line.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Consider the initial value problem
+                                        <span class="display-math">$$ \begin{align*}
+                                            (*)\begin{cases}
+                                                v_{tt} - c^2 v_{x x} = P(x, t), &amp;x&gt;0,\, t&gt;0 , \\
+                                                v(0, t) = p(t), &amp;t&gt;0, \\
+                                                v(x,0) = q(x), &amp;x&gt;0, \\
+                                                v_t(x,0) = r(x), &amp;x&gt;0
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        where the initial and boundary conditions are compatible at <span class="inline-math">$(x,t)=(0,0)$</span>,
+                                        i.e. <span class="inline-math">$p(0) = q(0)$</span> and <span class="inline-math">$p&#x27;(0) = r(0)$</span>.
+                                    </p>
+                                    <p>
+                                        This is equivalent to
+                                        <span class="display-math">$$ \begin{align*}
+                                            (\dagger)\begin{cases}
+                                                u_{tt} - c^2 u_{x x} = F(x,t), &amp;x&gt;0, t&gt;0, \\
+                                                u(0,t) = 0, &amp;t&gt;0, \\
+                                                u(x,0) = f(x), &amp;x&gt;0, \\
+                                                u_t(x,0) = g(x), &amp;x&gt;0
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        with <span class="inline-math">$F(0,t) = 0$</span> and <span class="inline-math">$f(0) = g(0) = 0$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-reduction-of-wave-equation-problem-on-the-half-line.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (solution to wave equation on the half line)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-solution-to-wave-equation-on-the-half-line.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The solution to <span class="inline-math">$(\dagger)$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-reduction-of-wave-equation-problem-on-the-half-line.html">here</a> on the half line is
+                                        the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-solution-to-wave-equation.html">solution on the full line</a>
+                                        <span class="display-math">$$ \begin{align*}
+                                            \begin{cases}
+                                                w_{tt} - c^2 w_{x x} = F_\text{odd}(x,t), &amp;\R\times(0,\infty), \\
+                                                w(x,0) = f_\text{odd}(x), &amp;\R, \\
+                                                w_t(x,0) = g_\text{odd}(x), &amp;\R
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        restricted to the half line,
+                                        where
+                                        <span class="display-math">$$ \begin{align*}
+                                            f_\text{odd}(x) = \begin{cases}
+                                                f(x), &amp;x\geq 0, \\
+                                                -f(-x), &amp;x&lt;0
+                                            \end{cases}
+                                        \end{align*} $$</span>
+                                        is the odd extension of <span class="inline-math">$f$</span> and
+                                        similarly for <span class="inline-math">$F_{\text{odd}}$</span> and <span class="inline-math">$g_{\text{odd}}$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-solution-to-wave-equation-on-the-half-line.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

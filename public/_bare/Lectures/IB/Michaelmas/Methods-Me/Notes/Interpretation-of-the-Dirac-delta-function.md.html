@@ -1,0 +1,56 @@
+<p>
+    Define, for <span class="inline-math">$n=1,2,3,\ldots$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \delta_n(x) = \begin{cases}
+            \frac{n}{\alpha} \exp\left(-\frac{1}{1-n^2x^2}\right), &amp;|x|&lt;\frac{1}{n}, \\
+            0, &amp;|x| \geq \frac{1}{n}.
+        \end{cases}
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        \alpha = \int_{-1}^{1} \exp\left(-\frac{1}{1-y^2}\right) \d y.
+    \end{align*} $$</span>
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/snxue0flgs?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</p>
+<p>
+    The family of functions <span class="inline-math">$\set{f_n}$</span> satisfies the following:
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$\delta_n(x)$</span> is smooth.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\lim_{n\to \infty} \delta_n(x) = 0$</span> for <span class="inline-math">$x\neq 0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\lim_{n\to \infty} \int_{-\epsilon}^{\epsilon} \delta_n(x) \d x = 1$</span> for <span class="inline-math">$\epsilon&gt;0$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    We cannot say <span class="inline-math">$\delta(x) = \lim_{n\to \infty} \delta_n(x)$</span> because the limit does not exist at <span class="inline-math">$x=0$</span>,
+    but the limit does exist in a weaker sense.
+</p>
+<p>
+    When we see a Dirac delta function, we interpret it as sequences of statements involving <span class="inline-math">$\delta_n(x)$</span>, which we will eventually take the limit of.
+    For example,
+    <span class="display-math">$$ \begin{align*}
+        \int_{-\infty}^{\infty} \delta(x-a)f(x) \d x := \lim_{n\to \infty} \int_{-\infty}^{\infty} \delta_n(x-a) f(x)\d x
+    \end{align*} $$</span>
+    or
+    <span class="display-math">$$ \begin{align*}
+        \ddot y + \omega^2 y = \delta(t) \iff \ddot y_n + \omega^2 y_n = \delta_n(t), \quad y(t) = \lim_{n\to \infty} y_n(t).
+    \end{align*} $$</span>
+</p>
+<p>
+    We manipulate <span class="inline-math">$\delta(x)$</span> as if it is an ordinary function, on the understanding that
+    we are manipulating sequences of statements and then taking limits.
+</p>

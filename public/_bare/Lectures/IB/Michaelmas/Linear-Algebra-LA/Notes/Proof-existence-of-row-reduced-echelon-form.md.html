@@ -1,0 +1,57 @@
+<p>
+    Let the columns of <span class="inline-math">$A \in M_{m\times n}(\mathbb{F})$</span> be <span class="inline-math">$\v c_1, \v c_2, \ldots, \v c_n$</span>.
+    Proceed by induction on <span class="inline-math">$n$</span>.
+</p>
+<p>
+    If <span class="inline-math">$\v c_1=\v 0$</span>, then put <span class="inline-math">$\pmat{\v c_2 &amp; \ldots &amp; \v c_n}$</span> into row-reduced echelon form using elementary row operations.
+</p>
+<p>
+    Otherwise, suppose <span class="inline-math">$a_{i1} \neq 0$</span>. Then apply elementary row operations:
+</p>
+<ul>
+<li>
+    <p>
+        swap row <span class="inline-math">$i$</span> and row <span class="inline-math">$1$</span> so that the <span class="inline-math">$(1,1)$</span> entry is non-zero;
+    </p>
+    
+</li><li>
+    <p>
+        multiply the first row by a scalar so that the <span class="inline-math">$(1,1)$</span> entry is 1; and then
+    </p>
+    
+</li><li>
+    <p>
+        use elementary row operation of type 3 to purge the remaining non-zero entries in <span class="inline-math">$\v c_1$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    We get
+    <span class="display-math">$$ \begin{align*}
+        \left(\begin{array}{c|ccccc}
+        1 &amp; * &amp; * &amp; \ldots &amp; * &amp; * \\\hline
+        0 \\
+        0 \\
+        \vdots &amp;&amp;&amp; A&#x27; \\
+        0 \\
+        0
+        \end{array}\right)
+    \end{align*} $$</span>
+</p>
+<p>
+    Put <span class="inline-math">$A&#x27;$</span> into row-reduced echelon form using elementary row operations on rows <span class="inline-math">$2$</span> to <span class="inline-math">$m$</span>,
+    leaving row 1 unchanged.
+    We obtain 
+    <span class="display-math">$$ \begin{align*}
+        \left(\begin{array}{c|ccccc}
+        1 &amp; * &amp; * &amp; \ldots &amp; * &amp; * \\\hline
+        0 \\
+        0 \\
+        \vdots &amp;&amp;&amp;\op{RRE}(A&#x27;)\\
+        0 \\
+        0
+        \end{array}\right)
+    \end{align*} $$</span>
+    Apply type 3 operations to purge non-zero entries in row 1 in pivot columns <span class="inline-math">$\geq 2$</span>.
+</p>

@@ -1,0 +1,92 @@
+<p>
+    Consider the initial value problem
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            Ly = f(t), &amp; t&gt;0, \\
+            y(0) = \dot y(0) = 0
+        \end{cases}
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        L = \alpha \dd[2]{t} + \beta \dd{t} + \gamma
+    \end{align*} $$</span>
+    and <span class="inline-math">$\alpha,\beta,\gamma$</span> are constant and <span class="inline-math">$\alpha\neq 0$</span>.
+    WLOG take <span class="inline-math">$\alpha=1$</span>.
+</p>
+<p>
+    Extend <span class="inline-math">$y(t)$</span> and <span class="inline-math">$f(t)$</span> into the negative <span class="inline-math">$t$</span>-axis by setting <span class="inline-math">$y(t) = 0 = f(t)$</span> for <span class="inline-math">$t&lt;0$</span>.
+    <span class="inline-math">$y$</span> and <span class="inline-math">$\dot y$</span> are continuous at <span class="inline-math">$t=0$</span> by the initial conditions, so taking the Fourier transform,
+    <span class="display-math">$$ \begin{align*}
+        \left((i\omega)^2 + \beta (i\omega) + \gamma\right) \hat y(\omega) = \hat f(\omega).
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \hat y(\omega) ={}&amp; \frac{\hat f(\omega)}{(i\omega)^2 + \beta(i\omega) + \gamma} \\
+        ={}&amp; \frac{\hat f(\omega)}{(i\omega + \sigma_1) (i\omega + \sigma_2)}.
+    \end{align*} $$</span>
+    Assume <span class="inline-math">$\sigma_1\neq \sigma_2$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{(i\omega + \sigma_1) (i\omega + \sigma_2)} ={}&amp; \frac{1}{\sigma_2 - \sigma_1}\left(\frac{1}{i\omega+\sigma_1} - \frac{1}{i\omega + \sigma_2}\right) \\
+        ={}&amp; \mathcal{F}_{t\mapsto \omega}\underbrace{\left[\frac{H(t) \, e^{-\sigma_1 t} - H(t)\, e^{-\sigma_2 t}}{\sigma_2 - \sigma_1}\right]}_{R(t)}
+    \end{align*} $$</span>
+    where we have used the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Examples-of-Fourier-transform.html">Fourier transform of the exponential</a>.
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \hat y(\omega) ={}&amp; \hat R(\omega) \hat f(\omega).
+    \end{align*} $$</span>
+    Using the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-inversion-formula.html">inversion formula</a>,
+    <span class="display-math">$$ \begin{align*}
+        y(t) ={}&amp; R*f(t) \\
+        ={}&amp; \int R(t-\tau) \, f(\tau) \d \tau.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$f(\tau) = 0$</span> for <span class="inline-math">$\tau&lt;0$</span> and <span class="inline-math">$R(t) = 0$</span> for <span class="inline-math">$t&lt;0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        y(t) ={}&amp; \int_{0}^{t} R(t-\tau)\, f(\tau) \d \tau.
+    \end{align*} $$</span>
+    We call <span class="inline-math">$R$</span> the <em>response function</em> for <span class="inline-math">$L$</span>: it is the response from an impulse force <span class="inline-math">$f(t) = \delta(t)$</span>.
+</p>
+<p>
+    Note that <span class="inline-math">$R(t-\tau) \equiv G(t;\tau)$</span>, the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Green-s-function-for-initial-value-problems.html">Green's function</a>.
+</p>
+<p>
+    Let's investigate the case for
+    <span class="display-math">$$ \begin{align*}
+        L = \dd[2]{t} + 2\gamma \dd{t} + 1
+    \end{align*} $$</span>
+    where <span class="inline-math">$\gamma&gt;0$</span>.
+    The solutions for <span class="inline-math">$\sigma_1$</span> and <span class="inline-math">$\sigma_2$</span> are
+    <span class="display-math">$$ \begin{align*}
+        \sigma_1, \sigma_2 = \gamma\pm \sqrt{\gamma^2 - 1}.
+    \end{align*} $$</span>
+    Note that <span class="inline-math">$\Re(\sigma_i) &gt; 0$</span>.
+</p>
+<p>
+    We have three cases:
+</p>
+<ol start="1">
+<li>
+    <p>
+        If <span class="inline-math">$\gamma&gt;1$</span>, then we have over-damping: the response function is
+        <span class="display-math">$$ \begin{align*}
+        R(t) = H(t) \, e^{-\gamma t} \, \frac{\sinh (t \sqrt{\gamma^2 - 1})}{\sqrt{\gamma^2 - 1}}.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$0&lt;\gamma&lt;1$</span>, then we have under-damping:
+        <span class="display-math">$$ \begin{align*}
+        R(t) = H(t) \, e^{-\gamma t} \, \frac{\sin(t \sqrt{1-\gamma^2})}{\sqrt{1-\gamma^2}}.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$\gamma=1$</span>, take <span class="inline-math">$\gamma=1+\epsilon$</span> and set <span class="inline-math">$\epsilon\to 0$</span>. Then we get the critically damped case:
+        <span class="display-math">$$ \begin{align*}
+        R(t) = H(t) \, t\,e^{-\gamma t}.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ol>

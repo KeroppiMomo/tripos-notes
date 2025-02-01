@@ -1,0 +1,32 @@
+<p>
+    Let <span class="inline-math">$f_\alpha(\v x) = |\v x|^{-\alpha}$</span>.
+    Its Fourier transform is
+    <span class="display-math">$$ \begin{align*}
+        \hat f_{\alpha}(\v \lambda) = \int e^{-i\v \lambda\cdot \v x} |\v x|^{-\alpha} \d ^n \v x.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that <span class="inline-math">$\hat f_\alpha$</span> is rotation invariant:
+    for any <span class="inline-math">$R\in \mathrm{SO}(n)$</span>,
+    we use the substitution <span class="inline-math">$\v x = R^T \v x&#x27;$</span> to see
+    <span class="display-math">$$ \begin{align*}
+        \hat f_\alpha(\v \lambda) ={}&amp; \int e^{-i\v \lambda\cdot (R^T \v x&#x27;)} |R^T \v x&#x27;|^{-\alpha} \, (\det R) \d ^n \v x&#x27; \\
+        ={}&amp; \int e^{-i(R \v \lambda)\cdot \v x&#x27;} |\v x&#x27;|^{-\alpha} \d ^n \v x&#x27; \\
+        ={}&amp; \hat f_\alpha(R\v \lambda).
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$\v \lambda = |\v \lambda| \v m$</span> where <span class="inline-math">$|\v m|=1$</span>.
+    We know <span class="inline-math">$\hat f_\alpha(\v \lambda)$</span> will not depend on <span class="inline-math">$\v m$</span>.
+    Now
+    <span class="display-math">$$ \begin{align*}
+        \hat f_\alpha(\v \lambda) = \int e^{-i\v m\cdot |\v \lambda| \v x} |\v x|^{-\alpha} \d ^n \v x.
+    \end{align*} $$</span>
+</p>
+<p>
+    Substitute <span class="inline-math">$\v x&#x27; = |\v \lambda|\v x$</span> to get
+    <span class="display-math">$$ \begin{align*}
+        \hat f_\alpha(\v \lambda) ={}&amp; \int e^{-i\v m\cdot \v x&#x27;} \left(\frac{|\v x&#x27;|}{|\v \lambda|}\right)^{-\alpha} |\v \lambda|^{-n} \d ^n \v x&#x27; \\
+        ={}&amp; |\v \lambda|^{\alpha-n} \underbrace{\int e^{-i\v m\cdot \v x} |\v x|^{-\alpha} \d ^n \v x}_{C_{n,\alpha}}.
+    \end{align*} $$</span>
+</p>

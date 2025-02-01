@@ -1,0 +1,39 @@
+<p>
+    For <span class="inline-math">$L&gt;0$</span>, we define the vector space <span class="inline-math">$V$</span> be the set of "nice" functions <span class="inline-math">$f: \R\to\C$</span> that are <span class="inline-math">$L$</span>-periodic, i.e. <span class="inline-math">$f(\theta + L) = f(\theta)$</span> for all <span class="inline-math">$\theta$</span>.
+</p>
+<p>
+    Equip <span class="inline-math">$V$</span> with an inner product
+    <span class="display-math">$$ \begin{align*}
+        \langle f,g\rangle = \int_{0}^{L} f(\theta)\overline{g(\theta)} \d \theta.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that if we define for each <span class="inline-math">$n\in\Z$</span>,
+    <span class="display-math">$$ \begin{align*}
+        e_n(\theta) = e^{2\pi in\theta/L},
+    \end{align*} $$</span>
+    then we have <span class="inline-math">$e_n\in V$</span> and
+    <span class="display-math">$$ \begin{align*}
+        \langle e_n, e_m\rangle = \int_{0}^{L} e^{2\pi i(n-m)\theta/L} \d \theta = L\delta_{nm}.
+    \end{align*} $$</span>
+    So <span class="inline-math">$\set{e_n}$</span> is an orthogonal set in <span class="inline-math">$V$</span> and <span class="inline-math">$\|e_n\|^2 = L$</span>.
+    Is this a basis?
+</p>
+<p>
+    If we can write some <span class="inline-math">$f\in V$</span> in the form
+    <span class="display-math">$$ \begin{align*}
+        f(\theta) = \sum_{n\in\Z} \hat f_n e_n(\theta),
+    \end{align*} $$</span>
+    then taking inner products of <span class="inline-math">$f$</span> with <span class="inline-math">$e_m$</span> gives
+    <span class="display-math">$$ \begin{align*}
+        \int_{0}^{L} f(\theta) e^{-2\pi im\theta/L} \d \theta &amp;= \langle f,e_m\rangle \\
+        &amp;= \sum_{n\in\Z} \hat f_n \langle e_n, e_m\rangle \\
+        &amp;= \sum_{n\in\Z} \hat f_n L \delta_{nm} \\
+        &amp;= L \hat f_m.
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \hat f_n = \frac{1}{L} \int_{0}^{L} f(\theta) e^{-2\pi i n \theta/L} \d \theta
+    \end{align*} $$</span>
+    which is the Fourier coefficients.
+</p>

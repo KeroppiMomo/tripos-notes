@@ -1,0 +1,228 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Green's function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Green-s-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>Green's function</em> <span class="inline-math">$G(x;\xi)$</span> for a linear operator <span class="inline-math">$L$</span> on <span class="inline-math">$a&lt;x&lt;b$</span> is the solution, for each fixed <span class="inline-math">$\xi\in (a,b)$</span>, to
+                <span class="display-math">$$ \begin{align*}
+                    L[G(x;\xi)] = \delta(x-\xi), \quad a&lt;x&lt;b
+                \end{align*} $$</span>
+                under some appropriate boundary conditions.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Using Green's functions to solve inhomogenous problems
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Using-Green-s-functions-to-solve-inhomogenous-problems.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For some linear differential operator <span class="inline-math">$L$</span>, the problem
+                <span class="display-math">$$ \begin{gather*}
+                    \begin{cases}
+                        Ly = f, &amp;a&lt;x&lt;b, \\
+                        y(a) = 0, \\
+                        y(b) = 0,
+                    \end{cases}
+                \end{gather*} $$</span>
+                has a solution
+                <span class="display-math">$$ \begin{align*}
+                    y(x) = \int_{a}^{b} G(x;\xi) f(\xi) \d \xi
+                \end{align*} $$</span>
+                where <span class="inline-math">$G(x;\xi)$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Green-s-function.html">Green's function</a> for <span class="inline-math">$L$</span> on <span class="inline-math">$a&lt;x&lt;b$</span> with the Dirichlet boundary conditions.
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-using-Green-s-functions-to-solve-inhomogenous-problems.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Jump conditions of Green's functions for second order linear operators
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Jump-conditions-of-Green-s-functions-for-second-order-linear-operators.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider the Green's function <span class="inline-math">$G(x;\xi)$</span> for a second order linear differential operator
+                <span class="display-math">$$ \begin{align*}
+                    L = \alpha \dd[2]{x} + \beta \dd{x} + \gamma
+                \end{align*} $$</span>
+                where <span class="inline-math">$\alpha,\beta,\gamma$</span> are smooth and <span class="inline-math">$\alpha(x)\neq 0$</span> on <span class="inline-math">$a&lt;x&lt;b$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\dfd{G}{x}$</span> looks like the Heaviside function <span class="inline-math">$H(x-\xi)$</span> and has a jump discontinuity
+                <span class="display-math">$$ \begin{align*}
+                    \dfd{G}{x}(\xi^+ ; \xi) - \dfd{G}{x}(\xi^-; \xi) = \frac{1}{\alpha(\xi)}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-jump-conditions-of-Green-s-functions-for-second-order-linear-operators.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Green's function from linearly independent solutions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Green-s-function-from-linearly-independent-solutions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$L = \alpha \dd[2]{x} + \beta \dd{x} + \gamma$</span> be a second-order linear differential operator with <span class="inline-math">$\alpha(x)\neq 0$</span> on <span class="inline-math">$(a,b)$</span>.
+                Suppose <span class="inline-math">$y_1$</span> and <span class="inline-math">$y_2$</span> be linearly independent solutions to <span class="inline-math">$Ly=0$</span> such that <span class="inline-math">$y_1(a) = 0$</span> and <span class="inline-math">$y_2(b)=0$</span>.
+            </p>
+            <p>
+                Then the Dirichlet Green's function for <span class="inline-math">$L$</span> on <span class="inline-math">$(a,b)$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    G(x;\xi) = \frac{1}{\alpha(\xi) W(y_1,y_2)(\xi)} \begin{cases}
+                        y_1(x)y_2(\xi), &amp;a&lt;x&lt;\xi, \\
+                        y_1(\xi) y_2(x), &amp;\xi&lt;x&lt;b
+                    \end{cases}
+                \end{align*} $$</span>
+                where <span class="inline-math">$W(y_1,y_2)=y_1y_2&#x27; - y_1&#x27;y_2$</span> is the <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-Wronskian.html">Wronskain</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Green-s-function-from-linearly-independent-solutions.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Therefore <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Using-Green-s-functions-to-solve-inhomogenous-problems.html">we can solve an inhomogenous problem</a>
+                    <span class="display-math">$$ \begin{align*}
+                    y(x) = \int_{a}^{x} \frac{y_1(\xi) y_2(x) f(\xi)}{\alpha(\xi) W(y_1,y_2)(\xi)} \d \xi + \int_{x}^{b} \frac{y_1(x)y_2(\xi)f(\xi)}{\alpha(\xi) W(y_1,y_2)(\xi)} \d \xi.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    For <span class="inline-math">$L$</span> being <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville</a>:
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        We can absorb <span class="inline-math">$w$</span> into <span class="inline-math">$f$</span> so WLOG assume <span class="inline-math">$w=1$</span>.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        We use the identity <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Lemma-Sturm-Liouville-operator-and-Wronskian.html"><span class="inline-math">$(pW(y_1,y_2))&#x27; = y_2 L y_1 - y_1 L y_2$</span></a> and <span class="inline-math">$Ly_1 = 0 = Ly_2$</span> to see
+                        <span class="display-math">$$ \begin{align*}
+                        y(x) = -\frac{1}{p(c) W(y_1,y_2)(c)} \left(y_2(x) \int_{a}^{x} y_2(\xi)f(\xi) \d \xi + y_1(x) \int_{x}^{b} y_1(\xi) f(\xi) \d \xi\right)
+                        \end{align*} $$</span>
+                        for any <span class="inline-math">$c\in (a,b)$</span>.
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-computing-Green-s-function.html">Example (computing Green's function)</a>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (eigenfunction expansion of Green's function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-eigenfunction-expansion-of-Green-s-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$L$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville</a> operator and <span class="inline-math">$\set{Y_k}$</span> are the normalised eigenfunctions
+                with eigenvalues <span class="inline-math">$\set{\lambda_k}$</span>,
+                then the Dirichlet Green's function is
+                <span class="display-math">$$ \begin{align*}
+                    G(x;\xi) = w(\xi) \sum_{k=1}^{\infty} \frac{Y_k(\xi) Y_k(x)}{\lambda_k}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-eigenfunction-expansion-of-Green-s-function.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    From this we can also see the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Eigenfunction-expansion-of-the-Dirac-delta-function.html">eigenfunction expansion of the Dirac delta function</a>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-eigenfunction-expansion-of-Dirac-delta-from-Green-s-function.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-computing-eigenfunction-expansion-of-Green-s-function.html">Example (computing eigenfunction expansion of Green's function)</a>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Green's function for initial value problems
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Green-s-function-for-initial-value-problems.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For the initial value problem
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        Ly = f, &amp;t&gt;0, \\
+                        y(0) = y&#x27;(0) = 0
+                    \end{cases}
+                \end{align*} $$</span>
+                where <span class="inline-math">$L = \alpha(t) \dd[2]{t} + \beta(t) \dd{t} + \gamma(t)$</span> and <span class="inline-math">$\alpha(t) \neq 0$</span>,
+                the Green's function <span class="inline-math">$G(t;\tau)$</span> satisfies
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        L[G(t;\tau)] = \delta(t-\tau),\\
+                        G(0; \tau) = \dfd{G}{t}(0;\tau) = 0
+                    \end{cases}
+                \end{align*} $$</span>
+                for each <span class="inline-math">$\tau\in (0,\infty)$</span>.
+            </p>
+            <p>
+                The Green's function is determined by
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$G(t;\tau) = 0$</span> for <span class="inline-math">$t&lt;\tau$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$L[G(t;\tau)] = 0$</span> on <span class="inline-math">$t&gt;\tau$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Jump-conditions-of-Green-s-functions-for-second-order-linear-operators.html">jump condition</a> <span class="inline-math">$G(\tau^+; \tau) = 0$</span> and <span class="inline-math">$\dfd{G}{t}(\tau^+, \tau) = 1/\alpha(\tau)$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Therefore the solution <span class="inline-math">$y$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    y(t) = \int_{0}^{t} G(t;\tau) f(\tau) \d \tau
+                \end{align*} $$</span>
+                which preserves causality: <span class="inline-math">$y(t)$</span> only depends on the values <span class="inline-math">$f(\tau)$</span> before <span class="inline-math">$\tau&lt;t$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>

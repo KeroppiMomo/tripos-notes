@@ -1,0 +1,45 @@
+
+<h1><span class="inline-math">$f_n$</span> converges uniformly</h1>
+
+<p>
+    We will show that <span class="inline-math">$f_n$</span> is uniformly Cauchy.
+    Using the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-mean-value-inequality.html">mean value inequality</a>,
+    <span class="display-math">$$ \begin{align*}
+        \sup_{x\in (a,b)^d} \|(f_n-f_m)(x)\| \leq {}&amp; \sup_{x\in (a,b)^d} \left\|(f_n-f_m)(x_0) + \|x-x_0\| \sup_{(a,b)^d} \|Df_n - Df_m\|\right\| \\
+        \leq{} &amp; \|f_n(x_0)-f_m(x_0)\| + \sqrt{n}\,|b-a| \sup_{(a,b)^d} \|Df_n - Df_m\|.
+    \end{align*} $$</span>
+    Fix some <span class="inline-math">$ε&gt;0$</span>.
+    Since <span class="inline-math">$f_n(x_0)$</span> converges and <span class="inline-math">$Df_n$</span> converges uniformly,
+    they are Cauchy, so
+    there exists <span class="inline-math">$N_1, N_2\in \N$</span>
+    such that <span class="inline-math">$\|f_n(x_0) - f_m(x_0)\| &lt; ε$</span> for all <span class="inline-math">$n,m&gt;N_1$</span>
+    and <span class="inline-math">$\sup_{(a,b)^d} \|Df_n - Df_m\| &lt; ε$</span> for all <span class="inline-math">$n,m&gt;N_2$</span>.
+    Thus for <span class="inline-math">$n,m&gt;\max\set{N_1,N_2}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \sup_{(a,b)^d} \|f_n-f_m\| \leq (1+\sqrt{n} \, |b-a|) ε
+    \end{align*} $$</span>
+    so <span class="inline-math">$f_n$</span> is uniformly Cauchy and therefore uniformly converges.
+</p>
+
+<h1><span class="inline-math">$Df_n \tto Df$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$f_n \tto f$</span> and <span class="inline-math">$Df_n \tto g$</span>.
+    Fix any <span class="inline-math">$x_1\in (a,b)^d$</span>.
+    We want to show that <span class="inline-math">$g(x_1) = Df(x_1)$</span>.
+</p>
+<p>
+    By the fundamental theorem of calculus, for any <span class="inline-math">$j=1,2,\ldots,d$</span>,
+    <span class="display-math">$$ \begin{align*}
+        f(x_1 + he_j) ={}&amp; \lim_{n\to \infty} f_n(x_1 + he_j) \\
+        ={}&amp; \lim_{n\to \infty} \left(f_n(x_1) + \int_{x_1^j}^{x_1^j + h} \partial_j f_n(x^1, \ldots, \tilde x^j, \ldots, x^n) \d \tilde x^j \right) \\
+        ={}&amp; f(x_1) + \int_{x_1^j}^{x_1^j + h} g^j(x^1, \ldots, \tilde x^j, \ldots, x^n) \d \tilde x^j.
+    \end{align*} $$</span>
+    This first term is given by <span class="inline-math">$f_n\to f$</span>,
+    and the second term is due to <span class="inline-math">$Df_n \tto g$</span> and the fact that <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-convergence-preserves-Riemann-integrability.html">uniform convergence preserves Riemann integration</a>.
+    Applying the fundamental theorem of calculus again, this shows that <span class="inline-math">$\partial_j f(x_1) = g^j(x_1)$</span>.
+</p>
+<p>
+    <span class="inline-math">$Df_n$</span> is continuous, <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-limit.html">so</a> <span class="inline-math">$g$</span> is continuous.
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuously-differentiable-iff-partial-derivatives-are-continuous.html">Thus</a> <span class="inline-math">$f$</span> is (continuously) differentiable with <span class="inline-math">$Df(x_1) = g(x_1)$</span>.
+</p>

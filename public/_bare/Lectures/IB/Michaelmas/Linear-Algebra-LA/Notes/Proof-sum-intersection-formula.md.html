@@ -1,0 +1,70 @@
+
+<h1>Proof 1: using external direct sums</h1>
+
+<p>
+    Define a map from the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-external-direct-sum.html">external direct sum</a> of <span class="inline-math">$U$</span> and <span class="inline-math">$W$</span> to <span class="inline-math">$U+W$</span>
+    <span class="display-math">$$ \begin{align*}
+        \phi: U\oplus W &amp;\to U+W \\
+        (u+w) &amp;\mapsto u+w.
+    \end{align*} $$</span>
+    <span class="inline-math">$\phi$</span> is clearly surjective and linear.
+    For the kernel of <span class="inline-math">$\phi$</span>,
+    <span class="display-math">$$ \begin{align*}
+        (u,w)\in\ker(\phi) \iff u+w = \v 0 \iff u=-w \in U\cap W
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \ker(\phi) = \sb{(x,-x)}{x\in U\cap W}.
+    \end{align*} $$</span>
+    We have <span class="inline-math">$\ker(\phi) \isom U\cap W$</span> since
+    <span class="display-math">$$ \begin{align*}
+        \psi: U\cap W &amp;\to \ker(\phi) \\
+        x &amp;\mapsto (x,-x)
+    \end{align*} $$</span>
+    is a linear isomorphism.
+</p>
+<p>
+    Hence applying the <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-rank-nullity.html">rank-nullity theorem</a> to <span class="inline-math">$\phi$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \dim(U\oplus W) &amp;= \dim(\ker(\phi)) + \dim(\im(\phi)) \\
+        \dim(U) + \dim(W) &amp;= \dim(U\cap W) + \dim(V+W)
+    \end{align*} $$</span>
+    which follows from the dimension of <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-dimension-of-external-direct-sum.html">external direct sums</a> and <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-vector-spaces-of-equal-dimension-are-isomorphic.html">isomorphic vector spaces</a>.
+</p>
+
+<h1>Proof 2: using bases</h1>
+
+<p>
+    <span class="inline-math">$U\cap W$</span> is finite-dimensional, so <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-basis-of-finite-dimensional-vector-space-is-finite.html">let</a> <span class="inline-math">$B=\set{v_1, \ldots, v_n}$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-basis.html">basis</a> of <span class="inline-math">$U\cap W$</span>.
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-extending-a-basis.html">Extend</a> <span class="inline-math">$B$</span> to a basis <span class="inline-math">$B_U = \set{v_1, \ldots, v_n, u_{n+1}, \ldots, u_m}$</span> for <span class="inline-math">$U$</span>,
+    and extend <span class="inline-math">$B$</span> to a basis <span class="inline-math">$B_W = \set{v_1, \ldots, v_n, w_{n+1}, \ldots, w_p}$</span> for <span class="inline-math">$W$</span>.
+</p>
+<p>
+    To see <span class="inline-math">$B_U\cup B_W$</span> spans <span class="inline-math">$U+W$</span>, for each element <span class="inline-math">$u+w\in U+W$</span> where <span class="inline-math">$u\in U$</span> and <span class="inline-math">$w\in W$</span>,
+    write
+    <span class="display-math">$$ \begin{align*}
+        u = \sum_{b\in B_U} \lambda_b b, \quad w = \sum_{b&#x27;\in B_W} \mu_{b&#x27;} b&#x27; \implies u + w = \sum_{b\in B_U}\lambda_b b + \sum_{b&#x27;\in B_W} \mu_{b&#x27;}b&#x27;.
+    \end{align*} $$</span>
+</p>
+<p>
+    To see <span class="inline-math">$B_U\cup B_W$</span> is linearly independent, let
+    <span class="display-math">$$ \begin{align*}
+        \v 0 &amp;= \sum_{i=1}^{n} \lambda_i v_i + \sum_{i=n+1}^m \mu_i u_i + \sum_{i=n+1}^{p} \kappa_i w_i \\
+        \implies W\ni -\sum_{i=n+1}^p \kappa_i w_i &amp;= \sum_{i=1}^{n} \lambda_i v_i + \sum_{i=n+1}^{m} \mu_i u_i \in U.
+    \end{align*} $$</span>
+    So this quantity is in <span class="inline-math">$U\cap W$</span>. Thus we can write, for some <span class="inline-math">$\set{c_i}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        &amp;-\sum_{i=n+1}^p \kappa_i w_i = \sum_{i=1}^{n} \lambda_i v_i + \sum_{i=n+1}^{m} \mu_i u_i = \sum_{i=1}^{n} c_iv_i
+    \end{align*} $$</span>
+    so by linear independence,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=1}^{n} c_i v_i + \sum_{i=n+1}^{p} \kappa_i w_i = \v 0 &amp;\implies \kappa_i = 0, c_i=0, \\
+        \sum_{i=1}^{n} (\lambda_i - c_i) v_i + \sum_{i=n+1}^{m} \mu_i u_i = \v 0 &amp;\implies \mu_i = 0, \lambda_i = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Hence <span class="inline-math">$B_U \cup B_W$</span> is a basis of <span class="inline-math">$U+W$</span>. Therefore
+    <span class="display-math">$$ \begin{align*}
+      \dim(U+W) = |B_U \cup B_W| = m + p - n = \dim(U) + \dim(W) - \dim(U\cap W).
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,109 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (hitting time, hitting probability)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-hitting-time-hitting-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\ouline{X}$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-Markov-chain.html">Markov chain</a> on <span class="inline-math">$I$</span>, and <span class="inline-math">$A\subseteq I$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The <em>first hitting time</em> of <span class="inline-math">$A$</span> is the random variable
+                    <span class="display-math">$$ \begin{align*}
+                    T_A = \inf\sb{n\geq 0}{X_n \in A} \in \set{0,1,2,\ldots,\infty}.
+                    \end{align*} $$</span>
+                    We use the convention that if <span class="inline-math">$X_n\not\in A$</span> for all <span class="inline-math">$n\geq 0$</span>, then <span class="inline-math">$T_A = \infty$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The <em>hitting probability</em> of <span class="inline-math">$A$</span> is the function <span class="inline-math">$h^A: I \to [0,1]$</span> given by
+                    <span class="display-math">$$ \begin{align*}
+                    h^A_i = \prob(T_A &lt; \infty | X_0 = i).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    The <em>mean hitting time</em> of <span class="inline-math">$A$</span> is the function <span class="inline-math">$k^A: I\to[0,\infty]$</span> given by
+                    <span class="display-math">$$ \begin{align*}
+                    k^A_i = \expect(T_A | X_0 = i) = \sum_{n=0}^{\infty} n\cdot\prob(T_A = n | X_0 = i) + \infty \cdot \prob_i(T_A = \infty).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (linear equations for hitting probability)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-linear-equations-for-hitting-probability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a Markov chain on <span class="inline-math">$I$</span> with a transition matrix <span class="inline-math">$P$</span>, and let <span class="inline-math">$A\subseteq I$</span>.
+            </p>
+            <p>
+                The <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-hitting-time-hitting-probability.html">hitting probability</a> <span class="inline-math">$(h_i^A)_{i\in I}$</span>
+                is the minimal non-negative solution to the system of linear equations
+                <span class="display-math">$$ \begin{align*}
+                    h_i^A = \begin{cases}
+                        1, &amp;\text{if }i\in A,\\
+                        \sum_{j\in I} P(i,j) h_j^A = (Ph^A)_i, &amp;\text{if } i\not\in A,
+                    \end{cases}
+                \end{align*} $$</span>
+                i.e. if <span class="inline-math">$(h_i)_{i\in A}$</span> is another non-negative solution, then <span class="inline-math">$h_i^A \leq h_i$</span> for all <span class="inline-math">$i\in I$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-linear-equations-for-hitting-probability.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Example-hitting-probability-in-simple-random-walk-on-non-negative-integers.html">Example (hitting probability in simple random walk on non-negative integers)</a>
+    </p>
+    
+</li><li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Example-birth-and-death-chain.html">Example (birth and death chain)</a>
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (linear equations for mean hitting time)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-linear-equations-for-mean-hitting-time.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a Markov chain on <span class="inline-math">$I$</span> with a transition matrix <span class="inline-math">$P$</span>, and <span class="inline-math">$A\subseteq I$</span>.
+            </p>
+            <p>
+                The <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-hitting-time-hitting-probability.html">mean hitting time</a> <span class="inline-math">$(k_i^A)_{i\in I}$</span> is the minimal non-negative solution to the system of linear equations
+                <span class="display-math">$$ \begin{align*}
+                    k_i^A = \begin{cases}
+                        0, &amp;\text{if } i \in A, \\
+                        1 + \sum_{j\not\in A} P(i,j) \,k_j^A, &amp;\text{if }i\not\in A.
+                    \end{cases}
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-linear-equations-for-mean-hitting-time.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

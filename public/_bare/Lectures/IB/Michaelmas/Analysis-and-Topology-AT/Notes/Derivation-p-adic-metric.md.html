@@ -1,0 +1,35 @@
+<p>
+    Let <span class="inline-math">$\nu_p(z) = \max\sb{n\in\Z_{\geq 0}}{p^n \text{ divides } z}$</span>.
+    To show
+    <span class="display-math">$$ \begin{align*}
+        d_p(x,y) = \begin{cases}
+            0, &amp;\text{if } x=y, \\
+            p^{-\nu_p(x-y)}, &amp;\text{otherwise}
+        \end{cases}
+    \end{align*} $$</span>
+    is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric</a> on <span class="inline-math">$\N$</span>,
+    first note that <span class="inline-math">$d(x,y)\geq 0$</span> for all <span class="inline-math">$x,y\in\N$</span>, and <span class="inline-math">$d(x,y) = 0$</span> iff <span class="inline-math">$x=y$</span>.
+    Also <span class="inline-math">$d_p(x,y) = d_p(y,x)$</span> clearly.
+</p>
+<p>
+    Let <span class="inline-math">$x,y,z\in\N$</span>. We want to show that <span class="inline-math">$d_p(x,z) \leq d_p(x,y) + d_p(y,z)$</span>.
+    We can assume <span class="inline-math">$x,y,z$</span> are distinct since otherwise the result is clear.
+</p>
+<p>
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        p^{\nu_p(y-x)} &amp;\mid y-x, \\
+        p^{\nu_p(z-y)} &amp;\mid z-y,
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        p^{\min\set{\nu_p(y-x), \nu_p(z-y)}} &amp;\mid (y-x) + (z-y) = z - x.
+    \end{align*} $$</span>
+    Then we have <span class="inline-math">$v_p(z-x) \geq \min\set{\nu_p(y-x), \nu_p(z-y)}$</span>, and therefore
+    <span class="display-math">$$ \begin{align*}
+        d_{p}(x,z) &amp;= p^{-v_p(z-x)} \\
+        &amp;\leq p^{-\min\set{\nu_p(y-x), \nu_p(z-y)}} \\
+        &amp;\leq p^{-\nu_p(y-x)} + p^{-\nu_p(z-y)} \\
+        &amp;= d_p(x,y) + d_p(y,z).
+    \end{align*} $$</span>
+</p>

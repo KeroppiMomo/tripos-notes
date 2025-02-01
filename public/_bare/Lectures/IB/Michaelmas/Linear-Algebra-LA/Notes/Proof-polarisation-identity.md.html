@@ -1,0 +1,40 @@
+
+<h1>Bilinear form</h1>
+
+
+<h2>Existence</h2>
+
+<p>
+    By <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-quadratic-form.html">definition</a>, there exists <span class="inline-math">$\phi:V\times V\to \mathbb{F}$</span> such that <span class="inline-math">$Q(v) = \phi(v,v)$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \psi(u,v) = \frac{1}{2}\big(\phi(u,v) + \phi(v,u)\big)
+    \end{align*} $$</span>
+    is a symmetric bilinear map also satisfying <span class="inline-math">$Q(v) = \psi(v,v)$</span>.
+</p>
+
+<h2>Uniqueness</h2>
+
+<p>
+    If <span class="inline-math">$\psi: V\times V\to \mathbb{F}$</span> is a symmetric bilinear map satisfying <span class="inline-math">$Q(v) = \psi(v,v)$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        Q(u+v) ={}&amp; \psi(u+v, u+v) \\
+        ={}&amp; \psi(u,u) + \psi(u,v) + \psi(v,u) + \psi(v,v) \\
+        ={}&amp; Q(u) + Q(v) + 2\psi(u,v)
+    \end{align*} $$</span>
+    so <span class="inline-math">$\psi$</span> satisfies the polarisation identity.
+</p>
+
+<h1>Sesquilinear form</h1>
+
+<p>
+    Just expand:
+    <span class="display-math">$$ \begin{align*}
+        &amp; Q(u+v) - Q(u-v) + iQ(u+iv) - iQ(u-iv) \\
+        ={}&amp; \|u\|^2 + \langle u,v\rangle + \overline{\langle u,v\rangle} + \|v\|^2 \\
+        &amp;- \big(\|u\|^2 - \langle u,v\rangle - \overline{\langle u,v\rangle} + \|v\|^2\big) \\
+        &amp;+ i\big(\|u\|^2 - i\langle u,v\rangle + i\overline{\langle u,v\rangle} + \|v\|^2\big) \\
+        &amp;- i\big(\|u\|^2 + i\langle u,v\rangle - i\overline{\langle u,v\rangle} + \|v\|^2\big) \\
+        ={}&amp; 4\langle u,v\rangle.
+    \end{align*} $$</span>
+</p>

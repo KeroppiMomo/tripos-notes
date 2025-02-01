@@ -1,0 +1,1046 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (vector space of linear maps)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-space-of-linear-maps.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span> be <span class="inline-math">$\mathbb{F}$</span>-vector spaces.
+            </p>
+            <p>
+                Define <span class="inline-math">$\mathcal{L}(V,W)$</span> be the set of <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-linear-map.html">linear maps</a> <span class="inline-math">$V\to W$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\mathcal{L}(V,W)$</span> is an <span class="inline-math">$\mathbb{F}$</span>-vector space under the operations
+                <span class="display-math">$$ \begin{align*}
+                    (\alpha + \beta) (v) &amp;= \alpha(v) + \beta(v), \\
+                    (\lambda \alpha)(v) &amp;= \lambda \alpha(v).
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (matrix of a linear map)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-matrix-of-a-linear-map.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> <span class="inline-math">$\mathbb{F}$</span>-vector spaces,
+                and <span class="inline-math">$B=\set{v_1, v_2, \ldots, v_n}$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-basis.html">basis</a> for <span class="inline-math">$V$</span> and <span class="inline-math">$C=\set{w_1, w_2, \ldots, w_m}$</span> be a basis for <span class="inline-math">$W$</span>.
+                Further let <span class="inline-math">$\alpha\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-space-of-linear-maps.html"><span class="inline-math">$\mathcal{L}(V,W)$</span></a>.
+            </p>
+            <p>
+                Define <span class="inline-math">$[\alpha]^B_C = (a_{ij}) \in M_{m\times n}(\mathbb{F})$</span> be the <em>matrix of <span class="inline-math">$\alpha$</span> with respect to <span class="inline-math">$B$</span> and <span class="inline-math">$C$</span></em>,
+                where <span class="inline-math">$a_{ij}$</span> are given by
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                   \alpha(v_1) &amp;= a_{11}w_1 + a_{21}w_2 + \ldots + a_{m1}w_m, \\
+                        \alpha(v_2) &amp;= a_{12}w_1 + a_{22}w_2 + \ldots + a_{m2}w_m, \\
+                        \vdots \\
+                        \alpha(v_n) &amp;= a_{1n}w_1 + a_{2n}w_2 + \ldots + a_{mn}w_m.
+                    \end{cases}
+                \end{align*} $$</span>
+                (This means <span class="inline-math">$[\alpha(v_j)]_C$</span> is the <span class="inline-math">$j$</span>-th column of <span class="inline-math">$[\alpha]^B_C$</span>.)
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (matrices and linear maps)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-matrices-and-linear-maps.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Define <span class="inline-math">$V, W, B, C$</span> as in <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-matrix-of-a-linear-map.html">here</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-matrix-of-a-linear-map.html"><span class="inline-math">$[\alpha]_C^B$</span></a> is the only matrix in <span class="inline-math">$M_{m\times n}(\mathbb{F})$</span> satisfying
+                <span class="display-math">$$ \begin{align*}
+                    [\alpha]^B_C [v]_B = [\alpha(v)]_C \quad \text{for all }v\in V
+                \end{align*} $$</span>
+                where <span class="inline-math">$[v]_B$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-coordinate-vector.html">coordinate vector</a> of <span class="inline-math">$v$</span> with respect to <span class="inline-math">$B$</span>.
+                Furthermore,
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{E}_C^B: \mathcal{L}(V,W) &amp;\to M_{m\times n}(\mathbb{F}) \\
+                    \alpha &amp;\mapsto [\alpha]^B_C
+                \end{align*} $$</span>
+                is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isomorphism-of-vector-spaces.html">isomorphism</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-matrices-and-linear-maps.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (dimension of the space of linear maps)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-dimension-of-the-space-of-linear-maps.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> vector spaces. Then
+                <span class="display-math">$$ \begin{align*}
+                    \dim(\mathcal{L}(V,W)) = \dim(V) \cdot \dim(W).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-dimension-of-the-space-of-linear-maps.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (matrix multiplication and linear map composition)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-matrix-multiplication-and-linear-map-composition.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$U,V,W$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> <span class="inline-math">$\mathbb{F}$</span>-vector space
+                having bases <span class="inline-math">$B,C,D$</span> respectively. Further let <span class="inline-math">$\alpha\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-space-of-linear-maps.html"><span class="inline-math">$\mathcal{L}(U,V)$</span></a> and <span class="inline-math">$\beta\in\mathcal{L}(V,W)$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    [\beta\circ\alpha]^B_D = [\beta]_D^C \, [\alpha]_C^B.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-matrix-multiplication-and-linear-map-composition.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (base change matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-base-change-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$B$</span> and <span class="inline-math">$B&#x27;$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-basis.html">bases</a> for a vector space <span class="inline-math">$V$</span> where <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-dimension-of-a-finite-dimensional-vector-space.html"><span class="inline-math">$\dim$</span></a><span class="inline-math">$(V) = n$</span>.
+            </p>
+            <p>
+                The <em>base change matrix</em> from <span class="inline-math">$B$</span> to <span class="inline-math">$B&#x27;$</span> is <span class="inline-math">$[\mathrm{id}_V]^B_{B&#x27;} \in M_{n\times n}(\mathbb{F})$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$[\mathrm{id}_V]^B_B = I_n$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$[\mathrm{id}_V]^B_{B&#x27;}$</span> has an inverse <span class="inline-math">$[\mathrm{id}_V]^{B&#x27;}_B$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        To change bases: <span class="inline-math">$[\alpha]^{B&#x27;}_{C&#x27;} = [\mathrm{id}_W]_{C&#x27;}^C \,[\alpha]_{C}^B\, [\mathrm{id}_V]^{B&#x27;}_{B}$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (equivalent matrices)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-equivalent-matrices.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="inline-math">$A, A&#x27;\in M_{m\times n}(\mathbb{F})$</span> are said to be <em>equivalent</em>
+                if there exists <span class="inline-math">$P\in$</span> <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-general-linear-group.html"><span class="inline-math">$\mathrm{GL}_m(\mathbb{F})$</span></a>
+                and <span class="inline-math">$Q\in \mathrm{GL}_n(\mathbb{F})$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    A&#x27; = PAQ.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    This is an equivalence relation on <span class="inline-math">$M_{m\times n}(\mathbb{F})$</span>.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (matrix of linear map can be (I_rank 0; 0 0))
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-matrix-of-linear-map-can-be-I_rank-0-0-0.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span> be finite-dimensional vector spaces and <span class="inline-math">$\alpha: V\to W$</span> be a linear map.
+            </p>
+            <p>
+                There exists bases <span class="inline-math">$B$</span> for <span class="inline-math">$V$</span> and <span class="inline-math">$C$</span> for <span class="inline-math">$W$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    [\alpha]_C^B = \pmat{I_r &amp; 0 \\ 0 &amp; 0} \equiv \pmat{1 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
+                    0 &amp; 1 &amp; \ldots &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
+                    \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+                    0 &amp; 0 &amp; \ldots &amp; 1 &amp; 0 &amp; \ldots &amp; 0 \\
+                    0 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
+                    \vdots &amp; \vdots &amp; &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+                    0 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 &amp; \ldots &amp; 0}.
+                \end{align*} $$</span>
+                where <span class="inline-math">$r =$</span> <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-rank-nullity.html"><span class="inline-math">$\op{rk}$</span></a><span class="inline-math">$(\alpha)$</span>.
+            </p>
+            <p>
+                Conversely, if for some <span class="inline-math">$r&#x27;$</span> and bases <span class="inline-math">$B&#x27;, C&#x27;$</span> for <span class="inline-math">$V, W$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    [\alpha]^{B&#x27;}_{C&#x27;} = \pmat{I_{r&#x27;} &amp; 0 \\ 0 &amp; 0},
+                \end{align*} $$</span>
+                then <span class="inline-math">$r&#x27; = \op{rk}(\alpha)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-matrix-of-linear-map-can-be-I_rank-0-0-0.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (column space, column rank, row space, row rank)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-column-space-column-rank-row-space-row-rank.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$A \in M_{m\times n}(\mathbb{F})$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The <em>column space</em> <span class="inline-math">$\op{Col}(A)$</span> of <span class="inline-math">$A$</span> is the subspace of <span class="inline-math">$\mathbb{F}^m$</span> spanned by the columns of <span class="inline-math">$A$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The <em>column rank</em> of <span class="inline-math">$A$</span> is <span class="inline-math">$\op{c-rk}(A) = \dim(\op{Col}(A))$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Similarly for row space <span class="inline-math">$\op{Row}(\alpha) \leq \mathbb{F}^n$</span> and row rank <span class="inline-math">$\op{r-rk}(A)$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        For <span class="inline-math">$\alpha: v\mapsto Av$</span>, we have <span class="inline-math">$\im(\alpha) = \op{Col}(A)$</span> and <span class="inline-math">$\op{rk}(\alpha) = \op{c-rk}(A)$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (column rank of matrix product is at most column rank of each matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-column-rank-of-matrix-product-is-at-most-column-rank-of-each-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$A\in M_{n\times k}(\mathbb{F})$</span> and <span class="inline-math">$B\in M_{k\times m}(\mathbb{F})$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \op{c-rk}(AB) \leq \min\set{\op{c-rk}(A), \op{c-rk}(B)}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-column-rank-of-matrix-product-is-at-most-column-rank-of-each-matrix.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (matrices are equivalent iff column ranks equal)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-matrices-are-equivalent-iff-column-ranks-equal.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$A, A&#x27;\in M_{m\times n}(\mathbb{F})$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$A$</span> is equivalent to
+                <span class="display-math">$$ \begin{align*}
+                    \pmat{I_r &amp; 0 \\ 0 &amp; 0} \qquad \text{where } r = \op{c-rk}(A).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                As a consequence, <span class="inline-math">$A$</span> and <span class="inline-math">$A&#x27;$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-equivalent-matrices.html">equivalent</a> iff <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-column-space-column-rank-row-space-row-rank.html"><span class="inline-math">$\op{c-rk}$</span></a><span class="inline-math">$(A) = \op{c-rk}(A&#x27;)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-matrices-are-equivalent-iff-column-ranks-equal.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (row rank equals column rank)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-row-rank-equals-column-rank.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For any <span class="inline-math">$A \in M_{m\times n}(\mathbb{F})$</span>, we have <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-column-space-column-rank-row-space-row-rank.html"><span class="inline-math">$\op{r-rk}$</span></a><span class="inline-math">$(A) =$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-column-space-column-rank-row-space-row-rank.html"><span class="inline-math">$\op{c-rk}$</span></a><span class="inline-math">$(A).$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-row-rank-equals-column-rank.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (similar matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-similar-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$A, A&#x27; \in M_{n\times n}(\mathbb{F})$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$A$</span> and <span class="inline-math">$A&#x27;$</span> are said to be <em>similar</em> if
+                there exists <span class="inline-math">$P\in \mathrm{GL}_n(\mathbb{F})$</span> such that <span class="inline-math">$A&#x27; = PAP\inv$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Elementary operations on matrices
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Elementary-operations-on-matrices.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (elementary matrices)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-matrices.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            There are three types of <em>elementary matrices</em>:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                identity with row <span class="inline-math">$i$</span> and <span class="inline-math">$j$</span> swapped
+                                <span class="display-math">$$ \begin{align*}
+                                T_{i,j} = \pmat{1 \\
+                                &amp;\ddots \\
+                                &amp;&amp; 0 &amp;&amp; 1 \\
+                                &amp;&amp;&amp; \ddots \\
+                                &amp;&amp; 1 &amp;&amp; 0 \\
+                                &amp;&amp;&amp;&amp;&amp;\ddots \\
+                                &amp;&amp;&amp;&amp;&amp;&amp;1},
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                identity with the <span class="inline-math">$i$</span>-th diagonal entry replaced with <span class="inline-math">$\lambda\neq 0$</span>
+                                <span class="display-math">$$ \begin{align*}
+                                E_{i,\lambda} = \pmat{1 \\
+                                &amp;\ddots \\
+                                &amp;&amp;1 \\
+                                &amp;&amp;&amp;\lambda \\
+                                &amp;&amp;&amp;&amp; 1 \\
+                                &amp;&amp;&amp;&amp;&amp; \ddots \\
+                                &amp;&amp;&amp;&amp;&amp;&amp; 1},
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                ideneity with <span class="inline-math">$\lambda$</span> in an off-diagonal entry <span class="inline-math">$(i,j)$</span>
+                                <span class="display-math">$$ \begin{align*}
+                                C_{i,j,\lambda} = \pmat{1 \\
+                                &amp;\ddots \\
+                                &amp;&amp;1 \\
+                                &amp;&amp;&amp; \ddots \\
+                                &amp;&amp;\lambda &amp;&amp;1 \\
+                                &amp;&amp;&amp;&amp;&amp; \ddots \\
+                                &amp;&amp;&amp;&amp;&amp;&amp; 1}.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (elementary operations)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-operations.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A\in M_{m\times n}(\mathbb{F})$</span>. Write <span class="inline-math">$\v c_i$</span> and <span class="inline-math">$\v r_i$</span> to denote the <span class="inline-math">$i$</span>-th column and row.
+                        </p>
+                        <p>
+                            There are three types of <em>elementary column operations</em> on <span class="inline-math">$A$</span>:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Right multiply <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-matrices.html"><span class="inline-math">$T_{i,j}$</span></a>, which swaps <span class="inline-math">$\v c_i$</span> and <span class="inline-math">$\v c_j$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Right multiply <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-matrices.html"><span class="inline-math">$E_{i,\lambda}$</span></a>, which replaces <span class="inline-math">$\v c_i$</span> by <span class="inline-math">$\lambda \v c_i$</span> (where <span class="inline-math">$0\neq \lambda\in \mathbb{F}$</span>);
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Right multiply <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-matrices.html"><span class="inline-math">$C_{i,j,\lambda}$</span></a>, which replaces <span class="inline-math">$\v c_j$</span> by <span class="inline-math">$\v c_j + \lambda\v c_i$</span> (where <span class="inline-math">$i\neq j$</span>).
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            There are three types of <em>elementary row operations</em> on <span class="inline-math">$A$</span>:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Left multiply <span class="inline-math">$T_{i,j}$</span>, which swaps <span class="inline-math">$\v r_i$</span> and <span class="inline-math">$\v r_j$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Left multiply <span class="inline-math">$E_{i,\lambda}$</span>, which replaces <span class="inline-math">$\v r_i$</span> by <span class="inline-math">$\lambda \v r_i$</span> (where <span class="inline-math">$0\neq \lambda\in \mathbb{F}$</span>);
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Left multiply <span class="inline-math">$C_{i,j,\lambda}$</span>, which replaces <span class="inline-math">$\v r_i$</span> by <span class="inline-math">$\v r_i + \lambda\v r_j$</span> (where <span class="inline-math">$i\neq j$</span>).
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+                (Note the different indices when left and right multiplying <span class="inline-math">$C_{i,j,\lambda}$</span>.)
+            </p>
+            <ul>
+            <!-- BEGIN BLOCK ID elementary-inverse -->
+            <li id="^elementary-inverse">
+                <p>
+                    Elementary matrices are invertible with elementary inverses.
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID elementary-inverse -->
+            <!-- BEGIN BLOCK ID preserve-space-rank -->
+            <li id="^preserve-space-rank">
+                <p>
+                    Elementary row/column operations preserve the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-column-space-column-rank-row-space-row-rank.html">row/column space</a>, and therefore the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-column-space-column-rank-row-space-row-rank.html">row/column ranks</a>.
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID preserve-space-rank -->
+            
+            </ul>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (row and column-reduced echelon form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-row-and-column-reduced-echelon-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A matrix <span class="inline-math">$A\in M_{m\times n}(\mathbb{F})$</span> is said to be in <em>row-reduced echelon form</em> if
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                every non-zero row of <span class="inline-math">$A$</span> appears above every zero row;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                in a non-zero row, the leftmost non-zero entry (the <em>pivot entry</em>) is 1;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for two non-zero rows <span class="inline-math">$\v r_i$</span> and <span class="inline-math">$\v r_j$</span> where <span class="inline-math">$i&lt;j$</span>, the pivot entry in <span class="inline-math">$\v r_j$</span> is strictly to the right of that of <span class="inline-math">$\v r_i$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                each pivot entry is the only non-zero entry in its column.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <span class="inline-math">$A$</span> is said to be in <em>column-reduced echelon form</em> if <span class="inline-math">$A^T$</span> is in row-reduced echelon form.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (rank of matrices in row-reduced echelon form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-rank-of-matrices-in-row-reduced-echelon-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If a matrix <span class="inline-math">$A$</span> is in <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-row-and-column-reduced-echelon-form.html">row-reduced echelon form</a>,
+                            then the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-column-space-column-rank-row-space-row-rank.html">row rank</a> of <span class="inline-math">$A$</span> is the number of non-zero rows.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-rank-of-matrices-in-row-reduced-echelon-form.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (unique row-reduced echelon form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-unique-row-reduced-echelon-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Every matrix can be put uniquely into <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-row-and-column-reduced-echelon-form.html">row-reduced echelon form</a> via <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-operations.html">elementary row operations</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-existence-of-row-reduced-echelon-form.html">Proof of existence</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (equivalent conditions for invertible matrices)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-equivalent-conditions-for-invertible-matrices.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span>,
+                            the following are equivalent:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-column-space-column-rank-row-space-row-rank.html"><span class="inline-math">$\op{rk}$</span></a><span class="inline-math">$(A) = n$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$A$</span> is a product of <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-matrices.html">elementary matrices</a>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$A$</span> is invertible.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$A$</span> is non-singular, i.e. <span class="inline-math">$\det(A)\neq 0$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-equivalent-conditions-for-invertible-matrices.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Gaussian elimination and elementary row operations
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Gaussian-elimination-and-elementary-row-operations.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For some <span class="inline-math">$A\in M_{m\times n}(\mathbb{F})$</span> and <span class="inline-math">$\v b\in \mathbb{F}^m$</span>, to solve
+                            <span class="display-math">$$ \begin{align*}
+                                A\v x = \v b,\qquad \v x\in \mathbb{F}^n,
+                            \end{align*} $$</span>
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                form the augmented matrix <span class="inline-math">$\big(\begin{array}{c|c}A &amp; \v b\end{array}\big)$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                put into row-reduced echelon form <span class="inline-math">$\big(\begin{array}{c|c}A&#x27; &amp; \v b&#x27;\end{array}\big)$</span> (and <span class="inline-math">$A&#x27;$</span> is in row-reduced echelon form as well);
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                then solve <span class="inline-math">$A&#x27;\v x = \v b&#x27;$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Derivation-Gaussian-elimination-and-elementary-row-operations.html">Derivation</a>)
+                        </p>
+                        <p>
+                            Solution exists iff
+                            <span class="display-math">$$ \begin{align*}
+                                \v b \in \im(A) = \op{Col}(A) &amp;\iff \op{rk}(A) = \op{rk}(\big(\begin{array}{c|c}A &amp; \v b\end{array}\big)) \\
+                                &amp;\iff \op{rk}(A&#x27;) = \op{rk}(\big(\begin{array}{c|c}A&#x27; &amp; \v b&#x27;\end{array}\big)).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            If <span class="inline-math">$\v x_0$</span> is a solution, then the solution set is <span class="inline-math">$\v x_0 + \ker(A)$</span>.
+                            The solution is unique iff
+                            <span class="display-math">$$ \begin{align*}
+                                \ker(A) = \set{\v 0} &amp;\iff \op{rk}(A) = n \\
+                                &amp;\iff A&#x27; = \pmat{I_n \\ 0}.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Determinant
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Determinant.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (volume form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-volume-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            An <em><span class="inline-math">$n$</span>-dimensional volume form</em> is a function <span class="inline-math">$F: M_{n\times n}(\mathbb{F}) \to \mathbb{F}$</span> satisfying:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                multilinear in columns: for any <span class="inline-math">$\v v_1, \ldots, \v v_n \in \mathbb{F}$</span>, the function
+                                <span class="display-math">$$ \begin{align*}
+                                \mathbb{F}^n &amp;\to \mathbb{F} \\
+                                {\color{yellow}\v v} &amp;\mapsto F\big(\pmat{\v v_1 &amp; \ldots &amp; \v v_{i-1} &amp; {\color{yellow}\v v} &amp; \v v_{i+1} &amp; \ldots \v v_n}\big)
+                                \end{align*} $$</span>
+                                is a linear map for all <span class="inline-math">$1\leq i\leq n$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                alternating: if <span class="inline-math">$A$</span> has two columns that are the same, then <span class="inline-math">$F(A) = 0$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (properties of volume forms)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-properties-of-volume-forms.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span> and <span class="inline-math">$F$</span> be an <span class="inline-math">$n$</span>-dimensional <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-volume-form.html">volume form</a> on <span class="inline-math">$M_{n\times n}(\mathbb{F})$</span>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                If <span class="inline-math">$A$</span> has a zero column, then <span class="inline-math">$F(A) = 0$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$F(A\cdot$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-matrices.html"><span class="inline-math">$T_{ij}$</span></a><span class="inline-math">$) = -F(A)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$F(A\cdot$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-matrices.html"><span class="inline-math">$M_{i,\lambda}$</span></a><span class="inline-math">$) = \lambda F(A)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$F(A\cdot$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-matrices.html"><span class="inline-math">$C_{i,j,\lambda}$</span></a><span class="inline-math">$) = F(A)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-properties-of-volume-forms.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (determinant as unique volume form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-determinant-as-unique-volume-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For each <span class="inline-math">$n\in \N$</span>,
+                            there is a unique <span class="inline-math">$n$</span>-dimensional <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-volume-form.html">volume form</a> <span class="inline-math">$\det$</span> on <span class="inline-math">$M_{n\times n(\mathbb{F})}$</span> satisfying <span class="inline-math">$F(I_n) = 1$</span>,
+                            given by
+                            <span class="display-math">$$ \begin{align*}
+                                \det(A) = \sum_{\sigma\in S_n} \sign(\sigma) \prod_{i=1}^n a_{\sigma(i), i}
+                            \end{align*} $$</span>
+                            called the <em><span class="inline-math">$n$</span>-dimensional determinant</em>.
+                            Here <span class="inline-math">$S_n$</span> is the <span class="inline-math">$n$</span>-th <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Permutations.html">symmetric group</a> and <span class="inline-math">$\sign: S_n \to (\set{\pm 1}, \cdot)$</span> is the <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Theorem-sign-homomorphism.html">sign homomorphism</a>.
+                        </p>
+                        <p>
+                            This is called <em>Leibniz formula</em> for determinants.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-determinant-as-unique-volume-form.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (determinant of transpose)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-determinant-of-transpose.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For all <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span>, <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-determinant-as-unique-volume-form.html"><span class="inline-math">$\det$</span></a><span class="inline-math">$(A^T) = \det(A)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-determinant-of-transpose.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (determinant of products)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-determinant-of-products.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For all <span class="inline-math">$A,B\in M_{n\times n}(\mathbb{F})$</span>, <span class="inline-math">$\det(AB) = \det(A) \det(B)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-determinant-of-products.html">Proof</a>
+                        </p>
+                        <p>
+                            This shows that <span class="inline-math">$\det(A\inv) = \det(A)\inv$</span> and similar matrices have equal determinants.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (determinant of linear maps)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-determinant-of-linear-maps.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$V$</span> be finite-dimensional vector space and <span class="inline-math">$\alpha: V\to V$</span> be a linear map.
+                        </p>
+                        <p>
+                            Define the <em>determinant</em> of <span class="inline-math">$\alpha$</span> as <span class="inline-math">$\det(\alpha) =$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-determinant-as-unique-volume-form.html"><span class="inline-math">$\det$</span></a><span class="inline-math">$($</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-matrix-of-a-linear-map.html"><span class="inline-math">$[A]^B_B$</span></a><span class="inline-math">$)$</span>,
+                            where <span class="inline-math">$B$</span> is a basis for <span class="inline-math">$V$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$\det(\alpha)$</span> does not depend on the basis chosen. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Derivation-determinant-of-linear-maps-independent-of-basis.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (equivalent conditions for invertible linear maps)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-equivalent-conditions-for-invertible-linear-maps.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$V$</span> be a finite-dimensional vector space and <span class="inline-math">$\alpha: V\to V$</span> be a linear map.
+                            The following are equivalent:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-rank-nullity.html"><span class="inline-math">$\op{rk}$</span></a><span class="inline-math">$(\alpha) = \dim(V)$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\alpha$</span> is invertible;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\alpha$</span> is non-singular, i.e. <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-determinant-of-linear-maps.html"><span class="inline-math">$\det$</span></a><span class="inline-math">$(\alpha) \neq 0$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-equivalent-conditions-for-invertible-linear-maps.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (determinant of block-triangular matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-determinant-of-block-triangular-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A\in M_{k\times k}(\mathbb{F})$</span> and <span class="inline-math">$B\in M_{l\times l}(\mathbb{F})$</span>.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \det\pmat{A &amp; * \\ 0 &amp; B} = \det(A) \det(B).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-determinant-of-block-triangular-matrix.html">Proof</a>
+                        </p>
+                        <p>
+                            By extension, for square matrices <span class="inline-math">$A_1, \ldots, A_k$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \det\pmat{A_1 &amp; * &amp; \ldots &amp; * \\
+                                0 &amp; A_2 &amp; \ldots &amp; * \\
+                                \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+                                0 &amp; 0 &amp; \ldots &amp; A_k} = \det(A_1) \det(A_2) \ldots \det(A_k).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Here <span class="inline-math">$*$</span> means any block matrices of the right size.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (minor)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-minor.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A\in M_{m\times n}(\mathbb{F})$</span>, <span class="inline-math">$1\leq i\leq m$</span> and <span class="inline-math">$1\leq j\leq n$</span>.
+                        </p>
+                        <p>
+                            The <span class="inline-math">$(i,j)$</span>-<em>minor matrix</em> <span class="inline-math">$A_{\hat{ij}}\in M_{(m-1)\times(n-1)}(\mathbb{F})$</span>
+                            of <span class="inline-math">$A$</span> is obtained from <span class="inline-math">$A$</span> by deleting <span class="inline-math">$i$</span> and column <span class="inline-math">$j$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (Laplace expansion)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Laplace-expansion.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                For any fixed column <span class="inline-math">$j$</span>,
+                                <span class="display-math">$$ \begin{align*}
+                                \det(A) = \sum_{i=1}^{n} a_{ij} (-1)^{i+j} \det(A_{\hat{ij}}).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For any fixed row <span class="inline-math">$i$</span>,
+                                <span class="display-math">$$ \begin{align*}
+                                \det(A) = \sum_{j=1}^{n} a_{ij} (-1)^{i+j} \det(A_{\hat{ij}}).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Laplace-expansion.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (adjugate matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-adjugate-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span>.
+                        </p>
+                        <p>
+                            The <em>adjugate matrix</em> <span class="inline-math">$\op{adj}(A) \in M_{n\times n}(\mathbb{F})$</span> is defined by
+                            <span class="display-math">$$ \begin{align*}
+                                \op{adj}(A)_{i,j} = (-1)^{i+j} \det(A_{\hat{ji}}).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (adjugate and inverses)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-adjugate-and-inverses.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A \in M_{n\times n}(\mathbb{F})$</span>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$A \op{adj}(A) = \op{adj}(A)\, A = \det(A) \, I_n$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$A$</span> is invertible, the <span class="inline-math">$A\inv = \frac{1}{\det(A)} \op{adj}(A)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-adjugate-and-inverses.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Trace
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Trace.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (trace of a matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-trace-of-a-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span>.
+                            The <em>trace</em> of <span class="inline-math">$A$</span> is defined as
+                            <span class="display-math">$$ \begin{align*}
+                                \op{tr}(A) = \sum_{i=1}^{n} A_{i,i}.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\op{tr} : M_{n\times n}(\mathbb{F}) \to \mathbb{F}$</span> is a linear map.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\op{tr}(AB) = \op{tr}(BA)$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-trace-of-products.html">Proof</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    Similar matrices have equal trace. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-similar-matrices-have-equal-trace.html">Proof</a>)
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (trace of a linear map)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-trace-of-a-linear-map.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> vector space and <span class="inline-math">$\alpha: V\to V$</span> be a <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-map.html">linear map</a>.
+                        </p>
+                        <p>
+                            Define the trace of <span class="inline-math">$\alpha$</span> as <span class="inline-math">$\op{tr}(\alpha) =$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-trace-of-a-matrix.html"><span class="inline-math">$\op{tr}$</span></a><span class="inline-math">$($</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-matrix-of-a-linear-map.html"><span class="inline-math">$[\alpha]^B_B$</span></a><span class="inline-math">$)$</span>.
+                        </p>
+                        <p>
+                            This is independent of the choice of basis, since <span class="inline-math">$[\alpha]^B_B$</span> and <span class="inline-math">$[\alpha]^{B&#x27;}_{B&#x27;}$</span> are similar.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

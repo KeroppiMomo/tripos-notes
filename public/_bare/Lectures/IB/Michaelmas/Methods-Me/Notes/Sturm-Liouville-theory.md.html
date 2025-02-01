@@ -1,0 +1,445 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (weighted inner product)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-weighted-inner-product.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In the vector space <span class="inline-math">$V$</span> of functions <span class="inline-math">$f: [a,b]\to \C$</span>,
+                we can equip <span class="inline-math">$V$</span> with an inner product
+                <span class="display-math">$$ \begin{align*}
+                    \langle f,g\rangle_w = \int_{a}^{b} f(x)\overline{g(x)} w(x) \d x
+                \end{align*} $$</span>
+                where <span class="inline-math">$w: (a,b)\to \R_{&gt;0}$</span> is called the <em>weight function</em>.
+            </p>
+            <p>
+                We can also define the norm
+                <span class="display-math">$$ \begin{align*}
+                    \|f\|_w = \sqrt{\langle f,f\rangle_w}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (self-adjoint differential operator)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-self-adjoint-differential-operator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A differential operator <span class="inline-math">$L$</span> is said to be <em>self-adjoint</em> on <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-weighted-inner-product.html"><span class="inline-math">$(V, \langle \cdot,\cdot\rangle_w)$</span></a>
+                if
+                <span class="display-math">$$ \begin{align*}
+                    \langle Ly_1, y_2\rangle_w &amp;= \langle y_1, Ly_2\rangle_w &amp;&amp;\text{for all }y_1,y_2\in V.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (properties of self-adjoint differential operator)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-properties-of-self-adjoint-differential-operator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$L$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-self-adjoint-differential-operator.html">self-adjoint</a> differential operator in <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-weighted-inner-product.html"><span class="inline-math">$(V, \langle\cdot,\cdot\rangle_w)$</span></a>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    The eigenvalues of <span class="inline-math">$L$</span> are real.
+                </p>
+                
+            </li><li>
+                <p>
+                    The eigenfunctions with different eigenvalues are orthogonal (<span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> are orthogonal iff <span class="inline-math">$\langle f,g\rangle_w = 0$</span>).
+                </p>
+                
+            </li><li>
+                <p>
+                    The set of eigenfucntions is countable and complete, i.e. the eigenfunctions form a list <span class="inline-math">$\set{y_n}_{n=1}^\infty$</span>, and for each <span class="inline-math">$f\in V$</span>,
+                    we can write
+                    <span class="display-math">$$ \begin{align*}
+                    f(x) &amp;= \sum_{n=1}^{\infty} \hat f_n y_n(x) &amp;&amp;\text{where} &amp; \hat f_n = \frac{\langle f, y_n\rangle_w}{\langle y_n, y_n\rangle_w}.
+                    \end{align*} $$</span>
+                    We call <span class="inline-math">$\set{\hat f_n}$</span> the <em>generalised Fourier coefficients</em>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-properties-of-self-adjoint-differential-operator.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    This is analogous to a Hermitian matrix.
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Sturm-Liouville operator)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>Sturm-Liouville operator</em> on <span class="inline-math">$(a,b)$</span> has the form
+                <span class="display-math">$$ \begin{align*}
+                    L = \frac{1}{w} \left(-\dd{x}\left(p \dd{x}\right) + q\right)
+                \end{align*} $$</span>
+                where <span class="inline-math">$p,q,w$</span> are real-valued functions and <span class="inline-math">$p,w &gt; 0$</span> on <span class="inline-math">$(a,b)$</span>.
+                <span class="inline-math">$w$</span> is called the <em>weight function</em>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Sturm-Liouville operator and Wronskian)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Lemma-Sturm-Liouville-operator-and-Wronskian.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$L$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville operator</a> on <span class="inline-math">$(a,b)$</span> defined by functions <span class="inline-math">$p,q,w$</span>, and <span class="inline-math">$y_1,y_2\in C^2[a,b]$</span>.
+                We have the identity
+                <span class="display-math">$$ \begin{align*}
+                    y_2 Ly_1 - y_1 L y_2 = \frac{1}{w}\dd{x}\big(p W(y_1,y_2)\big)
+                \end{align*} $$</span>
+                where <span class="inline-math">$W(y_1,y_2) = y_1 y_2&#x27; - y_1&#x27; y_2$</span> is the <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-Wronskian.html">Wronskian</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Sturm-Liouville-operator-and-Wronskian.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (singular endpoint of Sturm-Liouville operator)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-singular-endpoint-of-Sturm-Liouville-operator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$L$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville</a> operator on <span class="inline-math">$(a,b)$</span> defined by functions <span class="inline-math">$p,q,w$</span>.
+            </p>
+            <p>
+                An endpoint <span class="inline-math">$c\in\set{a,b}$</span> is said to be <em>singular</em> if <span class="inline-math">$p(c) = 0$</span>, or <em>non-singular</em> if otherwise.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (real and homogenous boundary condition)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-real-and-homogenous-boundary-condition.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A boundary condition at an endpoint <span class="inline-math">$c\in\set{a,b}$</span> is said to be <em>real and homogenous</em>
+                if it is of the form
+                <span class="display-math">$$ \begin{align*}
+                    \alpha_c y(c) + \beta_cy&#x27;(c) = 0
+                \end{align*} $$</span>
+                where <span class="inline-math">$\alpha_c, \beta_c \in \R$</span> and <span class="inline-math">$\alpha_c^2 + \beta_c^2 \neq 0$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (condition where Sturm-Liouville operator is self-adjoint)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-condition-where-Sturm-Liouville-operator-is-self-adjoint.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$L$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville</a> operator on <span class="inline-math">$(a,b)$</span> defined by functions <span class="inline-math">$p,q,w$</span>, and <span class="inline-math">$y_1,y_2\in C^2[a,b]$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \langle Ly_1, y_2\rangle_w - \langle y_1, Ly_2\rangle_w = \big[p(x) W(y_1, \overline{y_2})(x)\big]_{x=a}^{x=b}
+                \end{align*} $$</span>
+                where <span class="inline-math">$W(y_1,\overline{y_2})$</span> is the <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-Wronskian.html">Wronskian</a>.
+            </p>
+            <p>
+                Let <span class="inline-math">$V=\{ y\in C^2[a,b]\ |\  y$</span> satisfies <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-real-and-homogenous-boundary-condition.html">real and homogenous boundary conditions</a> at each <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-singular-endpoint-of-Sturm-Liouville-operator.html">non-singular</a> endpoint<span class="inline-math">$\}$</span>.
+                Then <span class="inline-math">$L$</span> is self-adjoint with respect to <span class="inline-math">$(V,$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-weighted-inner-product.html"><span class="inline-math">$\langle\cdot,\cdot\rangle_w$</span></a><span class="inline-math">$)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-condition-where-Sturm-Liouville-operator-is-self-adjoint.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (real and imaginary parts of eigenfunctions of Sturm-Liouville operator)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-real-and-imaginary-parts-of-eigenfunctions-of-Sturm-Liouville-operator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$y\in V$</span> be an eigenfunction of a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville operator</a> <span class="inline-math">$L$</span> with eigenvalue <span class="inline-math">$\lambda$</span>,
+                where <span class="inline-math">$V$</span> is defined <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-condition-where-Sturm-Liouville-operator-is-self-adjoint.html">here</a>.
+                Then <span class="inline-math">$\Re(y)$</span> and <span class="inline-math">$\Im(y)$</span> are also eigenfunctions of <span class="inline-math">$L$</span> with eigenvalue <span class="inline-math">$\lambda$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-real-and-imaginary-parts-of-eigenfunctions-of-Sturm-Liouville-operator.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (reduction to Sturm-Liouville form)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-reduction-to-Sturm-Liouville-form.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Given real functions <span class="inline-math">$\alpha,\beta,\gamma$</span> where <span class="inline-math">$\alpha(x) &gt; 0$</span> on <span class="inline-math">$(a,b)$</span>, the eigenvalue problem
+                <span class="display-math">$$ \begin{align*}
+                    \alpha(x) y&#x27;&#x27;(x) + \beta(x) y&#x27;(x) + \gamma(x) y(x) + \lambda y(x) = 0
+                \end{align*} $$</span>
+                is equivalent to the Sturm-Liouville problem
+                <span class="display-math">$$ \begin{align*}
+                    -\dd{x}\left(p \dfd{y}{x}\right) + qy = \lambda wy
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    p(x) = I(x), \quad q(x) = -\frac{I(x)\gamma(x)}{\alpha(x)}, \quad w(x) = \frac{I(x)}{\alpha(x)}, \quad I(x) = \exp \int^x \frac{\beta}{\alpha}\d x
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-reduction-to-Sturm-Liouville-form.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-of-using-a-differential-equation-to-find-basis.html">Example of using a differential equation to find basis</a>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Legendre equation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Legendre-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The eigenvalue problem
+                <span class="display-math">$$ \begin{align*}
+                    -\dd{x}\left((1-x^2) \dfd{y}{x}\right) = \lambda y, \qquad -1&lt;x&lt;1
+                \end{align*} $$</span>
+                has eigenvalues and eigenfunctions and eigenfunctions (<span class="inline-math">$n=0,1,2,\ldots$</span>)
+                <span class="display-math">$$ \begin{align*}
+                    \lambda_n &amp;= n(n+1) \\
+                    y_n &amp;= \begin{cases}
+                        a_0 + a_2 x^2 + a_4 x^4 + \ldots + a_{2N} x^{2N}, &amp;n = 2N \text{ is even},\\
+                        a_1x + a_3 x^3 + a_5 x^5 + \ldots + a_{2N+1} x^{2N+1}, &amp;n=2N + 1 \text{ is odd},
+                    \end{cases} \\
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    a_{k+2} = \frac{k(k+1) - \lambda}{(k+1)(k+2)} a_k.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The <em>Legendre polynomials</em> <span class="inline-math">$P_n$</span> are the eigenfunctions normalised so that <span class="inline-math">$y(1)=1$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$P_n$</span> are orthogonal:
+                    <span class="display-math">$$ \begin{align*}
+                    \int_{-1}^{+1} P_n(x) P_m(x) \d x = \frac{2}{2n+1} \delta_{nm}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$P_n$</span> are complete.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Legendre-equation.html">Derivation</a>)
+            </p>
+            <p>
+                The first few Legendre polynomials are as follows:
+            </p>
+            <table>
+                <tr>
+                    <th class="table-cell-left"><p>
+                        <span class="inline-math">$n$</span>
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        <span class="inline-math">$\lambda_n = n(n+1)$</span>
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        <span class="inline-math">$P_n$</span>
+                    </p>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$0$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$0$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$1$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$1$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$2$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$x$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$2$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$6$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\frac{1}{2}(3x^2 - 1)$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$3$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$12$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\frac{1}{2}(5x^3 - 3x)$</span>
+                    </p>
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Bessel's equation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Bessel-s-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The eigenvalue problem for some fixed <span class="inline-math">$m = 0,1,2,\ldots$</span>
+                <span class="display-math">$$ \begin{align*}
+                    -\dd{r}\left(r \dfd{y}{r}\right) + \frac{m^2}{r} y &amp;= \lambda r y, &amp;&amp;0&lt;r&lt;1, \\
+                    y(1) &amp;= 0
+                \end{align*} $$</span>
+                gives rise under the change of variable <span class="inline-math">$z=r\sqrt{\lambda}$</span> to <em>Bessel's equation</em> of order <span class="inline-math">$m$</span>
+                <span class="display-math">$$ \begin{align*}
+                    z^2 R&#x27;&#x27; + zR&#x27; + (z^2 - m^2) R &amp;= 0, &amp;&amp;0 &lt; z &lt; \sqrt{\lambda}, \\
+                    R(\sqrt{\lambda}) &amp;= 0.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The only solution which does not blow up as <span class="inline-math">$z\to 0$</span> is the <em><span class="inline-math">$m$</span>-th order Bessel function</em>
+                <span class="display-math">$$ \begin{align*}
+                    J_m(z) = \left(\frac{z}{2}\right)^m \sum_{n=0}^{\infty} \frac{(-1)^n}{n!(n+m)!} \left(\frac{z}{2}\right)^{2n}
+                \end{align*} $$</span>
+                which has an asymptotic approximation
+                <span class="display-math">$$ \begin{align*}
+                    J_m(z) = \sqrt{\frac{2}{\pi z}} \cos\left(z - \frac{m\pi}{2} - \frac{\pi}{4}\right) + O\left(\frac{1}{z^{3/2}}\right) \qquad \text{as }z\to\infty.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <span class="inline-math">$J_m(z)$</span> has infinitely many zeros for <span class="inline-math">$z\in [0,\infty)$</span>,
+                say <span class="inline-math">$j_{m1}, j_{m2}, j_{m3}, \ldots$</span>.
+            </p>
+            <p>
+                The eigenfunction-eigenvalue pairs are
+                <span class="display-math">$$ \begin{align*}
+                    y_k(r) = J_m(j_{mk} r), \quad \lambda_k = j_{mk}^2
+                \end{align*} $$</span>
+                and they are orthogonal:
+                <span class="display-math">$$ \begin{align*}
+                    \int_{0}^{1} J_m(j_{mk} r) J_m(j_{ml} r) r \d r = \frac{\big(J&#x27;_m(j_{mk})\big)^2}{2} \delta_{kl}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Bessel-s-equation.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Inhomogenous eigenvalue problem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Inhomogenous-eigenvalue-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider an inhomogenous problem
+                <span class="display-math">$$ \begin{align*}
+                    Ly = f, \qquad a&lt;x&lt;b
+                \end{align*} $$</span>
+                where <span class="inline-math">$L$</span> is a Sturm-Liouville operator and <span class="inline-math">$y,f\in V$</span> defined <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-condition-where-Sturm-Liouville-operator-is-self-adjoint.html">here</a>.
+                Since we can absorb the weight function into <span class="inline-math">$f$</span>, take <span class="inline-math">$w=1$</span> WLOG.
+            </p>
+            <p>
+                Let <span class="inline-math">$\set{Y_k}$</span> be the normalised eigenfunctions of <span class="inline-math">$L$</span>, with <span class="inline-math">$LY_k = \lambda_k Y_k$</span> and <span class="inline-math">$\|Y_k\| = 1$</span>.
+                Assume all <span class="inline-math">$\lambda_k\neq 0$</span>.
+                Then by completeness, let
+                <span class="display-math">$$ \begin{align*}
+                    f = \sum_k \hat f_k Y_k, \qquad y = \sum_k \hat y_k Y_k
+                \end{align*} $$</span>
+                and then
+                <span class="display-math">$$ \begin{align*}
+                    Ly = f \implies \sum_k (\lambda_k \hat y_k - \hat f_k) Y_k = 0 \implies \hat y_k = \frac{\hat f_k}{\lambda_k}
+                \end{align*} $$</span>
+                so
+                <span class="display-math">$$ \begin{align*}
+                    y(x) = \sum_{k} \frac{\langle f,Y_k\rangle}{\lambda_k} Y_k(x) = \int_{a}^{b} \left(\sum_{k} \frac{Y_k(x) Y_k(y)}{\lambda_k}\right) f(y) \d y := \int_{a}^{b} G(x,y) f(y) \d y
+                \end{align*} $$</span>
+                where <span class="inline-math">$G(x,y)$</span> is called Green's function.
+            </p>
+            
+        </div>
+    </div>
+</p>

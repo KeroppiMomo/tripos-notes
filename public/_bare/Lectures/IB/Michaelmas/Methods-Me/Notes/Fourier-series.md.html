@@ -1,0 +1,269 @@
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Motivation-for-the-Fourier-series.html">Motivation for the Fourier series</a>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (complex Fourier series)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an <span class="inline-math">$L$</span>-periodic function <span class="inline-math">$f: \R\to\C$</span>, define the <em>complex Fourier series</em>
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{n\in\Z} \hat f_n e^{2\pi i\theta/L}
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    \hat f_n = \frac{1}{L} \int_{0}^{L} f(\theta) e^{-2\pi i\theta/L} \d \theta
+                \end{align*} $$</span>
+                and we call <span class="inline-math">$\set{\hat f_n}$</span> the <em>complex Fourier coefficients</em> of <span class="inline-math">$f$</span>.
+            </p>
+            <p>
+                We write
+                <span class="display-math">$$ \begin{align*}
+                    f(\theta) \sim \sum_{n\in\Z} \hat f_n e^{2\pi in\theta/L}
+                \end{align*} $$</span>
+                to mean the series on the right is the complex Fourier series of the <span class="inline-math">$L$</span>-periodic function on the left.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Fourier series)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Fourier-series.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an <span class="inline-math">$L$</span>-periodic function <span class="inline-math">$f: \R\to\C$</span>, define the <em>Fourier series</em>
+                <span class="display-math">$$ \begin{align*}
+                    \frac{1}{2} a_0 + \sum_{n=1}^\infty \left(a_n\cos \frac{2\pi n \theta}{L} + b_n \sin\frac{2\pi n\theta}{L}\right)
+                \end{align*} $$</span>
+                where, for each <span class="inline-math">$n\in\N$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    a_n &amp;= \frac{2}{L}\int_{0}^{L} f(\theta) \cos \frac{2\pi n \theta}{L} \d \theta \\
+                    b_n &amp;= \frac{2}{L}\int_{0}^{L} f(\theta) \sin \frac{2\pi n \theta}{L} \d \theta
+                \end{align*} $$</span>
+                and we call <span class="inline-math">$\set{a_n, b_n}_{n=1}^\infty$</span> the <em>Fourier coefficients</em> of <span class="inline-math">$f$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-series-from-complex-Fourier-series.html">Derivation (Fourier series from complex Fourier series)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$f$</span> is even, then all <span class="inline-math">$b_n = 0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$f$</span> is odd, then all <span class="inline-math">$a_n = 0$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-coefficients-for-odd-or-even-function.html">Derivation</a>)
+    </p>
+    
+</li>
+</ul>
+<p>
+    Examples:
+</p>
+<ul>
+<li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-Fourier-series-of-t-1-t.html">Example (Fourier series of t(1-t))</a>
+    </p>
+    
+</li><li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-Fourier-series-of-a-step-function.html">Example (Fourier series of a step function)</a>
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Convergence of Fourier series
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Convergence-of-Fourier-series.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (partial Fourier series)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-partial-Fourier-series.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an <span class="inline-math">$L$</span>-periodic function <span class="inline-math">$f: \R\to\C$</span>, we define the <em>partial Fourier series</em> <span class="inline-math">$S_N f$</span> by
+                            <span class="display-math">$$ \begin{align*}
+                                (S_N f)(\theta) = \sum_{|n|\leq N} \hat f_n e^{2\pi i n\theta/L} = \frac{1}{2} a_0 + \sum_{n=1}^{N} \left(a_n \cos \frac{2\pi n\theta}{L} + b_n \sin \frac{2\pi n \theta}{L}\right).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (convergence of Fourier series)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-convergence-of-Fourier-series.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If an <span class="inline-math">$L$</span>-periodic function <span class="inline-math">$f: \R\to\C$</span> is of bounded variation, i.e.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$f$</span> is continuous on <span class="inline-math">$[0,L)$</span> away from a finite number of jump discontinuities, and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$f$</span> has finitely many maxima/minima on <span class="inline-math">$[0,L)$</span>,
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            then for each <span class="inline-math">$\theta\in[0,L)$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{f(\theta_+) + f(\theta_-)}{2} = \lim_{N\to\infty} (S_N f)(\theta) = \sum_n \hat f_n e^{2\pi i n\theta/L}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$f(\theta_{\pm}) = \lim_{\epsilon\searrow 0} f(\theta\pm\epsilon)$</span>.
+                        </p>
+                        <p>
+                            This means the Fourier series converges to the value of <span class="inline-math">$f$</span> at points of continuity, and converges to the average value of <span class="inline-math">$f$</span> at points of discontinuity.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-convergence-of-Fourier-series-for-a-smooth-function.html">Proof for a smooth function</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (cosine and sine series)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-cosine-and-sine-series.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Given a function <span class="inline-math">$f: [0,L) \to \C$</span>,
+                define its <em>cosine series</em> as
+                <span class="display-math">$$ \begin{align*}
+                    \frac{1}{2} A_0 + \sum_{n=1}^{\infty} A_n \cos \frac{n\pi\theta}{L}
+                \end{align*} $$</span>
+                and <em>sine series</em> as
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{n=1}^{\infty} B_n \sin \frac{n\pi\theta}{L}
+                \end{align*} $$</span>
+                where the coefficients <span class="inline-math">$\set{A_n}, \set{B_n}$</span> are given by
+                <span class="display-math">$$ \begin{align*}
+                    A_n &amp;= \frac{2}{L} \int_{0}^{L} f(\theta) \cos \frac{n\pi\theta}{L} \d \theta, \\
+                    B_n &amp;= \frac{2}{L} \int_{0}^{L} f(\theta) \sin \frac{n\pi\theta}{L} \d \theta.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    The cosine/sine series is the Fourier series of the <span class="inline-math">$2L$</span>-periodic even/odd extension of <span class="inline-math">$f$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-cosine-and-sine-series-as-Fourier-series-of-periodic-extensions.html">Derivation</a>)
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (decay of Fourier coefficients)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-decay-of-Fourier-coefficients.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f:\R\to\C$</span> be <span class="inline-math">$L$</span>-periodic.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Definition-Riemann-integrable.html">integrable</a> on <span class="inline-math">$[0,L]$</span>, then <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html"><span class="inline-math">$\hat f_n$</span></a> <span class="inline-math">$\to 0$</span> as <span class="inline-math">$|n|\to\infty$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$f$</span> is <span class="inline-math">$C^k$</span> (i.e. the <span class="inline-math">$l$</span>-derivative <span class="inline-math">$f^{(l)}: \R\to\C$</span> are continuous for <span class="inline-math">$l=0,1,\ldots,k$</span>),
+                    then <span class="inline-math">$|\hat f_n| =$</span> <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-little-o.html"><span class="inline-math">$o$</span></a><span class="inline-math">$(1/n^k)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-decay-of-Fourier-coefficients.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    The more regular a function is, the more quickly the Fourier coefficients decay.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Fourier coefficients of the derivative)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-coefficients-of-the-derivative.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f\in \R\to\C$</span> be <span class="inline-math">$L$</span>-periodic.
+                Suppose <span class="inline-math">$f$</span> restricted to <span class="inline-math">$(0,L)$</span> is continuously differentiable and the derivative is bounded.
+            </p>
+            <p>
+                Then the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">complex Fourier coefficients</a> of <span class="inline-math">$g:=f&#x27;$</span> are
+                <span class="display-math">$$ \begin{align*}
+                    \hat g_n = \frac{f(L_-) - f(0_+)}{L} + \frac{2\pi i n}{L} \hat f_n.
+                \end{align*} $$</span>
+                In particular, if <span class="inline-math">$f$</span> is continuous, then <span class="inline-math">$\hat g_n = (2\pi i n/L) \hat f_n$</span>,
+                which is what you obtain from term-wise differentiation of the Fourier series.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Fourier-coefficients-of-the-derivative.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Parseval's theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Theorem-Parseval-s-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$f,g: \R\to\C$</span> are <span class="inline-math">$L$</span>-periodic and square integrable with <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">Fourier series</a>
+                <span class="display-math">$$ \begin{align*}
+                    f(\theta) = \sum_n \hat f_n e^{2\pi in\theta/L}, \qquad g(\theta) = \sum_n \hat g_m e^{2\pi im\theta/L}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \frac{1}{L}\int_{0}^{L} f(\theta) \,\overline{g(\theta)} \d \theta = \sum_n \hat f_n \, \overline{\hat g_n}.
+                \end{align*} $$</span>
+                And in particular,
+                <span class="display-math">$$ \begin{align*}
+                    \frac{1}{L} \int_{0}^{L} |f|^2 \d \theta = \sum_n |\hat f_n|^2.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Parseval-s-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

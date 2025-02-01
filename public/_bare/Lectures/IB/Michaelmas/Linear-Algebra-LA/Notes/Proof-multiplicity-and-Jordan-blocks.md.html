@@ -1,0 +1,69 @@
+<p>
+    By similarity, WLOG assume <span class="inline-math">$A$</span> is in its Jordan normal form, and write
+    <span class="display-math">$$ \begin{align*}
+        A = \pmat{J_{n_1}(\lambda_1) \\
+        &amp; J_{n_2}(\lambda_2) \\
+        &amp;&amp; \ddots \\
+        &amp;&amp;&amp; J_{n_k}(\lambda_k)}.
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$a_\lambda(A)$</span></h1>
+
+<p>
+    Note that by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-determinant-of-block-triangular-matrix.html">determinant of block-triangular matrix</a>,
+    <span class="display-math">$$ \begin{align*}
+        \chi_A(t) ={}&amp; \det(t I_n - A) \\
+        ={}&amp; \det\pmat{tI_{n_1} - J_{n_1}(\lambda_1) \\
+        &amp; \ddots \\
+        &amp;&amp; tI_{n_k} - J_{n_k}(\lambda_k)} \\
+        ={}&amp; \prod_{i=1}^{k} \det(t I_{n_i} - J_{n_i}(\lambda_i)) \\
+        ={}&amp; \prod_{i=1}^{k} (t-\lambda_i)^{n_i}.
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        a_\lambda(A) = \sum_{i=1}^{k} a_\lambda\big(J_{n_k}(\lambda_k)\big)
+    \end{align*} $$</span>
+    equals the sum of sizes of the <span class="inline-math">$\lambda$</span>-Jordan blocks.
+</p>
+
+<h1><span class="inline-math">$g_\lambda(A)$</span></h1>
+
+<p>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        A - \lambda I_n = \pmat{J_{n_1}(\lambda_1) - \lambda I_{n_1} \\
+        &amp; \ddots \\
+        &amp;&amp; J_{n_k}(\lambda_k) - \lambda I_{n_k}}.
+    \end{align*} $$</span>
+    By the <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-rank-nullity.html">rank-nullity theorem</a>,
+    <span class="display-math">$$ \begin{align*}
+        g_\lambda(A) ={}&amp; \ker(A - \lambda I_n) \\
+        ={}&amp; n - \op{rk}(A - \lambda I_n) \\
+        ={}&amp; \left(\sum_{i=1}^{k} n_i\right) - \left(\sum_{i=1}^{k} \op{rk}(J_{n_k}(\lambda_k) - \lambda I_{n_k})\right) \\
+        ={}&amp; \sum_{i=1}^{k} \Big(n_i - \op{rk}\big(J_{n_k}(\lambda_k) - \lambda I_{n_k}\big)\Big) \\
+        ={}&amp; \sum_{i=1}^{k} g_\lambda\big(J_{n_k}(\lambda_k)\big).
+    \end{align*} $$</span>
+    <span class="inline-math">$g_\lambda(J_{n_k}(\lambda_k)) = 1$</span> if <span class="inline-math">$\lambda_k = \lambda$</span> and 0 otherwise, so <span class="inline-math">$g_\lambda(A)$</span> is the number of <span class="inline-math">$\lambda$</span>-Jordan blocks for <span class="inline-math">$A$</span>.
+</p>
+
+<h1><span class="inline-math">$c_\lambda(A)$</span></h1>
+
+<p>
+    For any <span class="inline-math">$p\in \mathbb{F}[t]$</span>,
+    <span class="display-math">$$ \begin{align*}
+        p(A) = \pmat{p\big(J_{n_1}(\lambda_1)\big) \\
+        &amp; \ddots\\
+        &amp; &amp; p\big(J_{n_k}(\lambda_k)\big)},
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        p(A) = 0 &amp;\iff p\big(J_{n_i}(\lambda_i)\big) = 0 &amp;\text{for all } i=1,2,\ldots,k \\
+        &amp;\iff m_{J_{n_i}(\lambda_i)} \mid p &amp;\text{for all } i=1,2,\ldots,k.
+    \end{align*} $$</span>
+    Therefore the minimal polynomial <span class="inline-math">$m_A = \op{lcm}(m_{J_{n_1}(\lambda_1)}, \ldots, m_{J_{n_1}(\lambda_1)})$</span>, and thus
+    <span class="inline-math">$c_\lambda(A) = \max_i\big(c_\lambda(J_{n_i}(\lambda_i))\big)$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$c_\lambda(J_{n}(\lambda)) = n$</span>, <span class="inline-math">$c_\lambda(A)$</span> is the maximum size of any <span class="inline-math">$\lambda$</span>-Jordan block of <span class="inline-math">$A$</span>.
+</p>

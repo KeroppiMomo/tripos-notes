@@ -1,0 +1,36 @@
+
+<h1>Recurrent <span class="inline-math">$\implies$</span> closed</h1>
+
+<p>
+    Suppose <span class="inline-math">$x\in C$</span>, <span class="inline-math">$y\not\in C$</span> and <span class="inline-math">$x\to y$</span>.
+    Then there exists <span class="inline-math">$m$</span> such that <span class="inline-math">$p_{xy}(m) &gt; 0$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \prob(V_x &lt; \infty | X_0 = x) \geq \prob(X_m = y|X_0 = x) &gt; 0
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-state-is-either-recurrent-or-transient.html">so</a> <span class="inline-math">$x$</span> is transient.
+</p>
+
+<h1>Closed and finite <span class="inline-math">$\implies$</span> recurrent</h1>
+
+<p>
+    Suppose <span class="inline-math">$C$</span> is closed and finite.
+    Let <span class="inline-math">$x\in C$</span>.
+    There exists some <span class="inline-math">$y\in C$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \prob(X_n = y \text{ infinitely often} | X_0 = x) &gt; 0.
+    \end{align*} $$</span>
+    This is because it is impossible to have <span class="inline-math">$X_n = y$</span> finitely often for all <span class="inline-math">$y\in C$</span> as <span class="inline-math">$C$</span> is finite.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-equivalent-conditions-for-x-leading-to-y.html">Since</a> <span class="inline-math">$x\leftrightarrow y$</span>, there exists <span class="inline-math">$m$</span> such that <span class="inline-math">$p_{yx}(m) &gt; 0$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        &amp;\prob(X_n = y \text{ infinitely often} | X_0 = y) \\
+        \geq{}&amp; \prob(X_m = x, X_n = y \text{ infinitely often for } n\geq m| X_0 = y) \\
+        ={}&amp; \prob(X_m = x|X_0 = y) \prob(X_n = y\text{ infinitely often for } n\geq m| X_0= y, X_m = x) \\
+        ={}&amp; p_{yx}(m)  \prob(X_n = y \text{ infinitely often} | X_0 = x) \qquad \qquad \text{by simple Markov}\\
+        &gt;{}&amp; 0.
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-state-is-either-recurrent-or-transient.html">So</a> <span class="inline-math">$y$</span> is recurrent, and <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-both-recurrent-or-transient-if-communicates.html">therefore</a> <span class="inline-math">$C$</span> is recurrent.
+</p>

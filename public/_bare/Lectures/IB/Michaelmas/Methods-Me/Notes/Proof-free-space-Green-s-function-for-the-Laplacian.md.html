@@ -1,0 +1,61 @@
+
+<h1><span class="inline-math">$n&gt;2$</span></h1>
+
+<p>
+    (The boundary condition means we can take Fourier transforms.)
+</p>
+<p>
+    Let <span class="inline-math">$F(\v x) = c_n |\v x|^{2-n}$</span> where <span class="inline-math">$c_n = 1/C_{n,n-2}$</span> defined <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-transform-of-powers-of-radius.html">here</a> such that
+    <span class="display-math">$$ \begin{align*}
+        \hat F(\v \lambda) = \frac{1}{|\v \lambda|^2}.
+    \end{align*} $$</span>
+    Taking the Fourier transform of <span class="inline-math">$\Delta G = \delta(\v x-\v y)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        -|\v \lambda|^2 \hat G(\v \lambda; \v y) &amp;= e^{-i\v \lambda\cdot \v y} \\
+        \hat G(\v \lambda; \v y) &amp;= -\frac{e^{-i\v \lambda\cdot \v y}}{|\v \lambda|^2} \\
+        &amp;= -\mathcal{F}_{\v x\mapsto \v \lambda}(F(\v x-\v y))
+    \end{align*} $$</span>
+    so taking inverse,
+    <span class="display-math">$$ \begin{align*}
+        G(\v \lambda; \v y) = -F(\v x-\v y) = -\frac{c_n}{|\v x-\v y|^{n-2}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    To determine <span class="inline-math">$c_n$</span>, set <span class="inline-math">$\v y=0$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \delta(\v x) = -\Delta(c_n|\v x|^{2-n})
+    \end{align*} $$</span>
+    and integrate over <span class="inline-math">$|\v x|\leq 1$</span>:
+    <span class="display-math">$$ \begin{align*}
+        1 &amp;= -c_n \int_{|\v x|\leq 1} \Delta(|\v x|^{2-n}) \d ^n \v x \\
+        &amp;= -c_n \int_{|\v x|=1} \nabla(|\v x|^{2-n}) \cdot \d \v S &amp;&amp;\text{divergence theorem} \\
+        &amp;= -c_n \int_{|\v x|=1} (2-n) |\v x|^{1-n} \d S \\
+        &amp;= (n-2) c_n \int_{|\v x|=1}  \d S \\
+        &amp;= (n-2) |S^{n-1}|\, c_n.
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$n=2$</span></h1>
+
+<p>
+    Take <span class="inline-math">$\v y=\v 0$</span> WLOG since Laplacian is translation invariant, i.e. <span class="inline-math">$\Delta(G(\v x-\v y)) = (\Delta G)(\v x-\v y)$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$r = |\v x|$</span>.
+    On <span class="inline-math">$r\neq 0$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        \Delta(\log r) = \frac{1}{r} \pdd{r}\left(r \pdd{r}(\log r)\right) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Around <span class="inline-math">$r=0$</span>, consider an integral of <span class="inline-math">$\Delta(\log r)$</span> over <span class="inline-math">$|\v x|&lt;\epsilon$</span>.
+    <span class="display-math">$$ \begin{align*}
+        \int_{|\v x|&lt;\epsilon} \Delta(\log r) \d^2 \v x ={}&amp; \int_{|\v x|=\epsilon} \nabla(\log r)\cdot \d \v S &amp;&amp;\text{divergence theorem} \\
+        ={}&amp; \int_{0}^{2\pi} \frac{1}{\epsilon}\v e_r \cdot \v e_r \epsilon \d \theta \\
+        ={}&amp; 2\pi.
+    \end{align*} $$</span>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \nabla\left(\frac{1}{2\pi} \log|\v x|\right) = \delta(\v x).
+    \end{align*} $$</span>
+</p>

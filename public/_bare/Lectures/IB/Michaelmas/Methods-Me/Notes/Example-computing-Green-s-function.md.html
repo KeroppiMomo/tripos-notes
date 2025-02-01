@@ -1,0 +1,87 @@
+<p>
+    Consider the operator
+    <span class="display-math">$$ \begin{align*}
+        L = \dd[2]{x} + \omega^2.
+    \end{align*} $$</span>
+    We want to solve, for some fixed <span class="inline-math">$\xi\in (0,1)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            G&#x27;&#x27; + \omega^2 G = \delta(x-\xi), &amp;0&lt;x&lt;1, \\
+            G(0,\xi) = 0, \\
+            G(1,\xi) = 0.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+
+<h1>Solving directly</h1>
+
+<p>
+    On <span class="inline-math">$x\neq \xi$</span>,
+    <span class="display-math">$$ \begin{align*}
+        G&#x27;&#x27; + \omega^2 G = 0,
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        G(x;\xi) = \begin{cases}
+            A(\xi) \sin\omega x + B(\xi) \cos\omega x, &amp;0&lt;x&lt;\xi, \\
+            C(\xi) \sin\omega(x-1) + D(\xi) \cos\omega (x-1), &amp;\xi&lt;x&lt;1.
+        \end{cases}
+    \end{align*} $$</span>
+    Boundary conditions gives <span class="inline-math">$B(\xi) = D(\xi) = 0$</span>.
+</p>
+<p>
+    Imposing continuity at <span class="inline-math">$x=\xi$</span>,
+    <span class="display-math">$$ \begin{align*}
+        A(\xi) = C(\xi) \frac{\sin\omega(\xi-1)}{\sin\omega\xi}.
+    \end{align*} $$</span>
+    The <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Jump-conditions-of-Green-s-functions-for-second-order-linear-operators.html">jump condition</a> is
+    <span class="display-math">$$ \begin{align*}
+        1 ={}&amp; C(\xi)\, \omega\cos\omega(\xi-1) - A(\xi)\,\omega\cos\omega\xi \\
+        ={}&amp; \frac{C(\xi)\,\omega}{\sin\omega\xi}\big(\sin\omega\xi \cos\omega(\xi-1) - \cos\omega\xi \sin \omega(\xi-1)\big) \\
+        ={}&amp;\frac{C(\xi)\,\omega}{\sin\omega\xi} \sin \omega \\
+        C(\xi) ={}&amp; \frac{\sin\omega\xi}{\omega\sin\omega} \\
+        A(\xi) ={}&amp; \frac{\sin\omega(\xi-1)}{\omega\sin\omega}.
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        G(x;\xi) = \frac{1}{\omega\sin\omega\xi} \times \begin{cases}
+            \sin\omega x \sin \omega(\xi-1), &amp;0&lt;x&lt;\xi, \\
+            \sin\omega\xi \sin\omega(x-1), &amp;\xi&lt;x&lt;1.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+
+<h1>Using linearly independent solutions</h1>
+
+<p>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        \dfd[2]{y}{x} + \omega^2 y = 0, \qquad 0&lt;x&lt;1.
+    \end{align*} $$</span>
+    Under the boundary condition <span class="inline-math">$y(0) = 0$</span>, we have a solution
+    <span class="display-math">$$ \begin{align*}
+        y_1(x) = \sin\omega x
+    \end{align*} $$</span>
+    and under <span class="inline-math">$y(1) = 0$</span> instead, we have a solution
+    <span class="display-math">$$ \begin{align*}
+        y_2(x) = \sin \omega(x-1).
+    \end{align*} $$</span>
+    Compute
+    <span class="display-math">$$ \begin{align*}
+        W(y_1,y_2)(\xi) ={}&amp; y_1(\xi) y_2&#x27;(\xi) - y_1&#x27;(\xi) y_2(\xi) \\
+        ={}&amp; \omega \sin \omega x \cos \omega(\xi-1) - \omega\cos \omega x \sin \omega(\xi-1) \\
+        ={}&amp; \omega\sin\omega.
+    \end{align*} $$</span>
+</p>
+<p>
+    This is independent of <span class="inline-math">$\xi$</span>, which is expected <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Lemma-Sturm-Liouville-operator-and-Wronskian.html">since</a> <span class="inline-math">$L$</span> is a Sturm-Liouville operator with <span class="inline-math">$p(x) = -1$</span>.
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        G(x;\xi) = \frac{1}{\omega\sin\omega} \begin{cases}
+            \sin\omega x \sin \omega(\xi-1), &amp;0&lt;x&lt;\xi, \\
+            \sin\omega\xi \sin \omega(x-1), &amp;\xi&lt;x&lt;1.
+        \end{cases}
+    \end{align*} $$</span>
+</p>

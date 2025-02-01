@@ -1,0 +1,39 @@
+<p>
+    Consider the 1-periodic function <span class="inline-math">$f:\R\to\R$</span> defined by
+    <span class="display-math">$$ \begin{align*}
+        f(\theta) = \theta(1-\theta), \quad \theta\in[0,1).
+    \end{align*} $$</span>
+    <iframe src="https://www.desmos.com/calculator/xnyhrppdih?embed" width="100%" height="300"></iframe>
+</p>
+<p>
+    First we compute
+    <span class="display-math">$$ \begin{align*}
+        \hat f_0 &amp;= \int_{0}^{1} \theta(1-\theta) \d \theta \\
+        &amp;= \frac{1}{2} - \frac{1}{3} = \frac{1}{6}.
+    \end{align*} $$</span>
+    Then for <span class="inline-math">$n\neq 0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \hat f_n &amp;= \int_{0}^{1} \theta(1-\theta) e^{-2\pi i n \theta} \d \theta \\
+        &amp;= -\frac{1}{2\pi in}\Big(\underbrace{\left[\theta(1-\theta) e^{-2\pi in\theta}\right]_{\theta=0}^1}_{0 \text{ by continuity}} - \int_{0}^{1} (1-2\theta) e^{-2\pi i n\theta} \d \theta\Big) \\
+        &amp;= -\frac{1}{4(n\pi)^2} \Big([(1-2\theta) e^{-2\pi i n\theta}]_{\theta = 0}^1 + 2\int_{0}^{1} e^{-2\pi i n\theta} \d \theta\Big) \\
+        &amp;= -\frac{1}{2(n\pi)^2}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        f(\theta) \sim \frac{1}{6} - \frac{1}{2} \sum_{n\neq 0} \frac{1}{(n\pi)^2} e^{2\pi i n\theta}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Or we can find the real Fourier series: since <span class="inline-math">$f$</span> is even, <span class="inline-math">$b_n = 0$</span>.
+    And for <span class="inline-math">$n\geq 1$</span>,
+    <span class="display-math">$$ \begin{align*}
+        a_n &amp;= 2\int_{0}^{1} \theta(1-\theta) \cos (2\pi n\theta) \d \theta \\
+        &amp;= \frac{1}{n \pi} \left([\theta(1-\theta)\sin(2\pi n \theta)]_{\theta = 0}^1 - \int_{0}^{1} (1-2\theta) \sin(2\pi n \theta) \d \theta\right) \\
+        &amp;= -\frac{1}{2(n\pi)^2} \left([-(1-2\theta)\cos(2\pi n \theta)]_{\theta = 0}^1 - \int_{0}^{1} 2\cos(2\pi n\theta)\d \theta\right) \\
+        &amp;= -\frac{1}{(n\pi)^2}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        f(\theta) \sim \frac{1}{6} - \sum_{n=1}^\infty \frac{1}{(n\pi)^2} \cos(2\pi n \theta).
+    \end{align*} $$</span>
+</p>

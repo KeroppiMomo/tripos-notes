@@ -1,0 +1,46 @@
+<p>
+    For the initial value problem
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            Ly = f, &amp;t&gt;0, \\
+            y(0) = y&#x27;(0) = 0
+        \end{cases}
+    \end{align*} $$</span>
+    where <span class="inline-math">$L = \alpha(t) \dd[2]{t} + \beta(t) \dd{t} + \gamma(t)$</span> and <span class="inline-math">$\alpha(t) \neq 0$</span>,
+    the Green's function <span class="inline-math">$G(t;\tau)$</span> satisfies
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            L[G(t;\tau)] = \delta(t-\tau),\\
+            G(0; \tau) = \dfd{G}{t}(0;\tau) = 0
+        \end{cases}
+    \end{align*} $$</span>
+    for each <span class="inline-math">$\tau\in (0,\infty)$</span>.
+</p>
+<p>
+    The Green's function is determined by
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$G(t;\tau) = 0$</span> for <span class="inline-math">$t&lt;\tau$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$L[G(t;\tau)] = 0$</span> on <span class="inline-math">$t&gt;\tau$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Jump-conditions-of-Green-s-functions-for-second-order-linear-operators.html">jump condition</a> <span class="inline-math">$G(\tau^+; \tau) = 0$</span> and <span class="inline-math">$\dfd{G}{t}(\tau^+, \tau) = 1/\alpha(\tau)$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    Therefore the solution <span class="inline-math">$y$</span> is
+    <span class="display-math">$$ \begin{align*}
+        y(t) = \int_{0}^{t} G(t;\tau) f(\tau) \d \tau
+    \end{align*} $$</span>
+    which preserves causality: <span class="inline-math">$y(t)$</span> only depends on the values <span class="inline-math">$f(\tau)$</span> before <span class="inline-math">$\tau&lt;t$</span>.
+</p>

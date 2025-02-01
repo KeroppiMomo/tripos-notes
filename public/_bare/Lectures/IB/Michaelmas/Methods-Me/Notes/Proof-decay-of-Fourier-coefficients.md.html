@@ -1,0 +1,32 @@
+
+<h1><span class="inline-math">$f$</span> is integrable</h1>
+
+<p>
+    (non-examinable)
+</p>
+<p>
+    This follows directly from the <a href="https://en.wikipedia.org/wiki/Riemann%E2%80%93Lebesgue_lemma">Riemann-Lebesgue lemma</a>:
+    if <span class="inline-math">$g$</span> is integrable on <span class="inline-math">$[a,b]$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} g(\theta) e^{-i\lambda\theta} \d \theta \to 0 \quad \text{as }|\lambda|\to\infty.
+    \end{align*} $$</span>
+    Take <span class="inline-math">$\lambda = 2\pi n/L$</span> to get <span class="inline-math">$\hat f_n \to 0$</span> as <span class="inline-math">$|n|\to \infty$</span>.
+</p>
+
+<h1><span class="inline-math">$f$</span> is <span class="inline-math">$C^k$</span></h1>
+
+<p>
+    We apply integration by parts:
+    <span class="display-math">$$ \begin{align*}
+        \hat f_n &amp;= \frac{1}{L} \int_{0}^{L} f(\theta) e^{-2\pi in\theta/L} \d \theta \\
+        &amp;= -\frac{L}{2\pi in} \frac{1}{L} \underbrace{\left[ f(\theta) e^{-2\pi in\theta/L}\right]_{0^-}^{L^+}}_{\text{$0$ since $f$ is continuous}}
+        + \frac{L}{2\pi i n} \frac{1}{L} \int_{0}^{L} f&#x27;(\theta) e^{-2\pi i n\theta/L} \d \theta \\
+        &amp;= -\left(\frac{L}{2\pi i n}\right)^2 \frac{1}{L} \underbrace{\left[f&#x27;(\theta) e^{-2\pi in\theta/L}\right]_{0^-}^{L^+}}_{\text{$0$ since $f&#x27;$ is continuous}} + \left(\frac{L}{2\pi i n}\right)^2 \frac{1}{L} \int_{0}^{L} f&#x27;&#x27;(\theta) e^{-2\pi i n\theta/L} \d \theta \\
+        &amp;= \ldots \\
+        &amp;= \left(\frac{L}{2\pi i n}\right)^k \frac{1}{L} \underbrace{\int_{0}^{L} f^{(k)}(\theta) e^{-2\pi i n\theta/L} \d \theta}_{\to 0 \text{ as } |n|\to\infty \text{ by Riemann-Lebesgue}}
+    \end{align*} $$</span>
+    and therefore
+    <span class="display-math">$$ \begin{align*}
+        \hat f_n = o\left(\frac{1}{n^k}\right).
+    \end{align*} $$</span>
+</p>

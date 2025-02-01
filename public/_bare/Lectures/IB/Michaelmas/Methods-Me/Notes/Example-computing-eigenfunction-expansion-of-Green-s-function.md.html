@@ -1,0 +1,45 @@
+<p>
+    Take
+    <span class="display-math">$$ \begin{align*}
+        L = -\dd[2]{x}, \qquad (a,b)=(0,1)
+    \end{align*} $$</span>
+    and impose Dirichlet boundary conditions <span class="inline-math">$y(0) = 0 = y(1)$</span>.
+</p>
+<p>
+    <span class="inline-math">$L$</span> has normalised eigenfunction-eigenvalue pairs
+    <span class="display-math">$$ \begin{align*}
+        Y_k(x) = \sqrt{2} \sin(k\pi x), \qquad \lambda_k = (k\pi)^2.
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-eigenfunction-expansion-of-Green-s-function.html">Therefore</a> the Dirichlet Green's function for <span class="inline-math">$L$</span> on <span class="inline-math">$(0, 1)$</span> is
+    <span class="display-math">$$ \begin{align*}
+        G(x;\xi) = \sum_{k=1}^{\infty} \frac{2\sin(k\pi\xi) \sin(k\pi x)}{(k\pi)^2}.
+    \end{align*} $$</span>
+</p>
+<p>
+    What does this converge to?
+    For the equation
+    <span class="display-math">$$ \begin{align*}
+        Ly = 0 \iff y&#x27;&#x27;=0,
+    \end{align*} $$</span>
+    under the boundary condition <span class="inline-math">$y(0) = 0$</span>, we have a solution <span class="inline-math">$y_1(x) = x$</span>,
+    and under the boundary condition <span class="inline-math">$y(1) = 0$</span> instead, we have a solution <span class="inline-math">$y_2(x) = 1-x$</span>.
+    The Wronskian is
+    <span class="display-math">$$ \begin{align*}
+        W(y_1, y_2)(\xi) = (\xi)(-1) - (1)(1-\xi) = -1.
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Green-s-function-from-linearly-independent-solutions.html">Therefore</a>
+    <span class="display-math">$$ \begin{align*}
+        G(x;\xi) = \begin{cases}
+            x(1-\xi), &amp; 0&lt;x&lt;\xi, \\
+            \xi(1-x), &amp;\xi&lt;x&lt;1.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    They do converge!
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/dtsxb3ihzx?embed" width="100%" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+</p>

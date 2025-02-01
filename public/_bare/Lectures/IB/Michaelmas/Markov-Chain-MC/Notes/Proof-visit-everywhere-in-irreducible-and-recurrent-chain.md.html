@@ -1,0 +1,20 @@
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-equivalent-conditions-for-x-leading-to-y.html">Since</a> <span class="inline-math">$x\leftrightarrow y$</span>, there exists <span class="inline-math">$m$</span> such that <span class="inline-math">$p_{yx}(m) &gt; 0$</span>.
+    Since <span class="inline-math">$y$</span> in recurrent,
+    <span class="display-math">$$ \begin{align*}
+        1 ={}&amp; \prob(X_n = y \text{ infinitely often} | X_0 = y) \\
+        ={}&amp; \sum_{z\in I} \prob(X_n = y \text{ infinitely often}, X_m = z | X_0 = y) \\
+        ={}&amp; \sum_{z\in I} p_{yz}(m) \prob(X_n = y \text{ infinitely often}|X_m = z, X_0 = y) \\
+        ={}&amp; \sum_{z\in I} p_{yz}(m) \prob(X_n = y \text{ infinitely often}|X_0 = z) &amp;&amp;\text{simple Markov}\\
+        ={}&amp; \sum_{z\in I} p_{yz}(m) \prob(T_y &lt; \infty, X_n = y\text{ infinitely often} | X_0 = z) \\
+        ={}&amp; \sum_{z\in I} p_{yz}(m) \prob(T_y &lt; \infty|X_0 = z) \\
+        &amp;\qquad \qquad \times\prob(X_n = y\text{ infinitely often}|T_y &lt; \infty,X_0 = z) \\
+        ={}&amp; \sum_{z\in I} p_{yz}(m) \prob(T_y &lt; \infty|X_0 = z) \\
+        &amp;\qquad \qquad \times\prob(X_n = y \text{ infinitely often} | X_0 = y) &amp;&amp;\text{strong Markov} \\
+        ={}&amp; \sum_{z\in I} p_{yz}(m) \prob(T_y &lt; \infty|X_0 = z).
+    \end{align*} $$</span>
+</p>
+<p>
+    Since <span class="inline-math">$\sum_{z\in I} p_{yz}(m) = 1$</span> and all quantities are non-negative,
+    we must have <span class="inline-math">$\prob(T_y &lt; \infty|X_0 = x)$</span>.
+</p>

@@ -1,0 +1,28 @@
+<p>
+    Suppose we have the transition matrix
+    <span class="display-math">$$ \begin{align*}
+        P = \pmat{0 &amp; 1 &amp; 0 \\ 0 &amp; \frac{1}{2} &amp; \frac{1}{2} \\ \frac{1}{2} &amp; 0 &amp; \frac{1}{2}}.
+    \end{align*} $$</span>
+    The eigenvalues are <span class="inline-math">$1, i/2, -i/2$</span>, so we have
+    <span class="display-math">$$ \begin{align*}
+        p_{11}(n) = a_1 + a_2\left(\frac{1}{2}\right)^n \cos \frac{n\pi}{2} + a_3 \left(\frac{1}{2}\right)^n \sin \frac{n\pi}{2}.
+    \end{align*} $$</span>
+</p>
+<p>
+    From how the Markov chain behaves, we know <span class="inline-math">$p_{11}(0) = 1$</span>, <span class="inline-math">$p_{11}(1) = 0$</span>, <span class="inline-math">$p_{11}(2) = 0$</span>,
+    so solving
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            1 &amp;= a_1 + a_2, \\
+            0 &amp;= a_1 + \frac{1}{2}a_3, \\
+            0 &amp;= a_1 - \frac{1}{4}a_2
+        \end{cases}
+    \end{align*} $$</span>
+    yields <span class="inline-math">$a_1 = \frac{1}{5}, a_2 = \frac{4}{5}, a_3 = -\frac{2}{5}$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        p_{11}(n) &amp;= \frac{1}{5} + \left(\frac{1}{2}\right)^n\left(\frac{4}{5}\cos \frac{n\pi}{2} - \frac{2}{5}\sin \frac{n\pi}{2}\right) \\
+        &amp;\to \frac{1}{5} \text{ as } n\to \infty
+    \end{align*} $$</span>
+    which makes sense since we expect we spend less than a third of the time at state 1.
+</p>

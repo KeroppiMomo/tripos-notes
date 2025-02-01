@@ -1,0 +1,45 @@
+<p>
+    Solve
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \Delta\phi = 0, &amp;r_1 &lt; r &lt; r_2, \\
+            \phi = 0, &amp;r=r_1, \\
+            \phi = f, &amp;r=r_2.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    After <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-2D-annulus.html">separation of variables</a>,
+    we obtain
+    <span class="display-math">$$ \begin{align*}
+        \Theta_n(\theta) &amp;= C_n \cos(n\theta) + D_n \sin(n\theta) \\
+        R_n(r) &amp;= A_n r^n + \frac{B_n}{r^n}, \quad n\geq 1, \\
+        R_0(r) &amp;= A + B\log r.
+    \end{align*} $$</span>
+    Applying <span class="inline-math">$\phi=0$</span> on <span class="inline-math">$r=r_1$</span> to <span class="inline-math">$R_n$</span>, we have, up to a constant factor,
+    <span class="display-math">$$ \begin{align*}
+        R_n(r) &amp;\propto \left(\frac{r}{r_1}\right)^n - \left(\frac{r_1}{r}\right)^n, \\
+        R_0(r) &amp;\propto \log \left(\frac{r}{r_1}\right).
+    \end{align*} $$</span>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \phi(r,\theta) = C_0 \log\left(\frac{r}{r_1}\right) + \sum_{n=1}^{\infty} \left[\left(\left(\frac{r}{r_1}\right)^n - \left(\frac{r_1}{r}\right)^n\right)\left(C_n\cos(n\theta) + D_n \sin(n\theta)\right)\right].
+    \end{align*} $$</span>
+</p>
+<p>
+    To have <span class="inline-math">$\phi=f$</span> when <span class="inline-math">$r=r_2$</span>, set the constants to be
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{2}a_0 &amp;= C_0 \log \left(\frac{r_2}{r_1}\right) \\
+        a_n &amp;= \left(\left(\frac{r_2}{r_1}\right)^n - \left(\frac{r_1}{r_2}\right)^n\right) C_n \\
+        b_n &amp;= \left(\left(\frac{r_2}{r_1}\right)^n - \left(\frac{r_1}{r_2}\right)^n\right) D_n \\
+    \end{align*} $$</span>
+    and then
+    <span class="display-math">$$ \begin{align*}
+        f(\theta) = \frac{1}{2}a_0 + \sum_{n=1}^{\infty} (a_n\cos(n\theta) + b_n\sin(n\theta)).
+    \end{align*} $$</span>
+    Given that <span class="inline-math">$f$</span> is nice enough, we have
+    <span class="display-math">$$ \begin{align*}
+        a_n &amp;= \frac{1}{\pi}\int_{0}^{2\pi} f(\theta) \cos(n\theta) \d \theta, \\
+        b_n &amp;= \frac{1}{\pi}\int_{0}^{2\pi} f(\theta) \sin(n\theta) \d \theta.
+    \end{align*} $$</span>
+</p>

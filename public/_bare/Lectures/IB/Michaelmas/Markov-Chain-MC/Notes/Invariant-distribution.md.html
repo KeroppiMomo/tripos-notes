@@ -1,0 +1,302 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (measure on state space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-measure-on-state-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>measure</em> on a state space <span class="inline-math">$I$</span> is a vector <span class="inline-math">$\lambda = (\lambda_i: i\in I)$</span> where all <span class="inline-math">$\lambda_i\geq 0$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    A distribution <span class="inline-math">$\pi$</span> is a measure with the additional condition that <span class="inline-math">$\sum_{i\in I} \pi_i = 1$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (invariant measure)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-time-homogenous-Markov-chain.html">Markov chain</a> on <span class="inline-math">$I$</span> with a transition matrix <span class="inline-math">$P$</span>.
+            </p>
+            <p>
+                A <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-measure-on-state-space.html">measure</a> <span class="inline-math">$\lambda$</span> on <span class="inline-math">$I$</span> is said to be <em>invariant</em> with respect to <span class="inline-math">$P$</span> if
+                <span class="display-math">$$ \begin{align*}
+                    \lambda &amp;= \lambda P &amp;&amp;\text{or equivalently} &amp; \lambda_j = \sum_{i\in I} \lambda_i P(i,j).
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <em>Invariant distribution</em> can be defined the same way.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (initial invariant distribution)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proposition-initial-invariant-distribution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\ouline{X} = (X_n)_{n=1}^\infty$</span> be a Markov chain with a transition matrix <span class="inline-math">$P$</span>, and <span class="inline-math">$\pi$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant distribution</a> for <span class="inline-math">$P$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$X_0\sim \pi$</span>, then <span class="inline-math">$X_n \sim \pi$</span> for all <span class="inline-math">$n$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-initial-invariant-distribution.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (limiting distribution is invariant)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proposition-limiting-distribution-is-invariant.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\ouline{X}$</span> be a Markov chain with a transition matrix <span class="inline-math">$P$</span> on a state space <span class="inline-math">$I$</span>, and <span class="inline-math">$(\pi_j)_{j\in I}$</span> be a vector.
+            </p>
+            <p>
+                If <span class="inline-math">$I$</span> is finite and there exists <span class="inline-math">$i\in I$</span> such that <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-power-of-transition-matrix.html"><span class="inline-math">$p_{ij}(n)$</span></a> <span class="inline-math">$\to \pi_j$</span> as <span class="inline-math">$n\to \infty$</span> for all <span class="inline-math">$j\in I$</span>,
+                then <span class="inline-math">$\pi$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant distribution</a> for <span class="inline-math">$\ouline{X}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-limiting-distribution-is-invariant.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\pi$</span> may not be a probability distribution if <span class="inline-math">$I$</span> is infinite. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Example-limiting-distribution-in-simple-random-walk.html">Example</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (expected number of visits during an excursion)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-expected-number-of-visits-during-an-excursion.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a Markov chain <span class="inline-math">$\ouline{X} = (X_n)_{n\geq 0}$</span> on <span class="inline-math">$I$</span> with transition matrix <span class="inline-math">$P$</span>, and let <span class="inline-math">$k\in I$</span> be a state.
+            </p>
+            <p>
+                Define <span class="inline-math">$\nu_k(i)$</span> to be the expected number of visits to <span class="inline-math">$i$</span> during an excursion from <span class="inline-math">$k$</span>, i.e.
+                <span class="display-math">$$ \begin{align*}
+                    \nu_k(i) = \expect\Big(\sum_{t=0}^{T_k-1} \mathbb{1}(X_t = i) \,\Big|\, X_0 = k\Big).
+                \end{align*} $$</span>
+                where <span class="inline-math">$T_k = \inf\sb{n\geq 1}{X_n=k}$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-return-times.html">first return time</a> of <span class="inline-math">$k$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (properties of expected number of visits during excursion)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proposition-properties-of-expected-number-of-visits-during-excursion.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a Markov chain on <span class="inline-math">$I$</span> with transition matrix <span class="inline-math">$P$</span>, and let <span class="inline-math">$k\in I$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$P$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-communicating-classes-closed-class-irreducible-chain-absorbing-state.html">irreducible</a> and <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-transience-and-recurrence.html">recurrent</a>,
+                then
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-expected-number-of-visits-during-an-excursion.html"><span class="inline-math">$\nu_k$</span></a> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant measure</a> for <span class="inline-math">$P$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\nu_k(k) = 1$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$0 &lt; v_k(i) &lt; \infty$</span> for all <span class="inline-math">$i\in I$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-properties-of-expected-number-of-visits-during-excursion.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (invariant measure and expected number of visits during excursion)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proposition-invariant-measure-and-expected-number-of-visits-during-excursion.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a Markov chain on <span class="inline-math">$I$</span> with transition matrix <span class="inline-math">$P$</span>, and let <span class="inline-math">$k\in I$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$P$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-communicating-classes-closed-class-irreducible-chain-absorbing-state.html">irreducible</a>, <span class="inline-math">$\lambda$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant measure</a> for <span class="inline-math">$P$</span> and <span class="inline-math">$\lambda_k=1$</span>,
+                then <span class="inline-math">$\lambda\geq$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-expected-number-of-visits-during-an-excursion.html"><span class="inline-math">$\nu_k$</span></a>.
+            </p>
+            <p>
+                If moreover <span class="inline-math">$P$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-transience-and-recurrence.html">recurrent</a>, then <span class="inline-math">$\lambda=\nu_k$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-invariant-measure-and-expected-number-of-visits-during-excursion.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This shows that if <span class="inline-math">$P$</span> is irreducible and recurrent, then all invariant measures are multiples of one another.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (positive recurrent, null recurrent)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-positive-recurrent-null-recurrent.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a Markov chain <span class="inline-math">$\ouline{X} = (X_n)_{n\geq 0}$</span> on <span class="inline-math">$I$</span>, and let <span class="inline-math">$i\in I$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-transience-and-recurrence.html">recurrent</a> state.
+                We say <span class="inline-math">$i$</span> is
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <em>positive recurrent</em> if <span class="inline-math">$\expect($</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-return-times.html"><span class="inline-math">$T_i$</span></a><span class="inline-math">$|X_0 = i) &lt; \infty$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <em>null recurrent</em> if <span class="inline-math">$\expect(T_i|X_0 = i) = \infty$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <p>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-state-is-either-recurrent-or-transient.html">We have seen that</a> <span class="inline-math">$\prob(T_i &lt; \infty|X_0 = i) = 1$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (existence of an invariant distribution)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-existence-of-an-invariant-distribution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a Markov chain on <span class="inline-math">$I$</span> with a transition matrix <span class="inline-math">$P$</span>.
+            </p>
+            <p>
+                Suppose <span class="inline-math">$P$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-communicating-classes-closed-class-irreducible-chain-absorbing-state.html">irreducible</a>.
+                Then the following are equivalent:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    every state is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-positive-recurrent-null-recurrent.html">positive recurrent</a>;
+                </p>
+                
+            </li><li>
+                <p>
+                    there exists a state which is positive recurrent;
+                </p>
+                
+            </li><li>
+                <p>
+                    there exists an <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant distribution</a> <span class="inline-math">$\pi = (\pi_i)_{i\in I}$</span> for <span class="inline-math">$P$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                If any of the above holds, then for all <span class="inline-math">$i,k\in I$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \pi_i ={}&amp; \frac{1}{\expect(T_i|X_0 = i)}, \\
+                    \nu_k(i) ={}&amp; \frac{\pi_i}{\pi_k}.
+                \end{align*} $$</span>
+                where <span class="inline-math">$T_i$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-return-times.html">first return time</a> and <span class="inline-math">$\nu_k$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-expected-number-of-visits-during-an-excursion.html">expected number of visits during an excursion</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-existence-of-an-invariant-distribution.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This shows that if <span class="inline-math">$P$</span> is irreducible, invariant distributions are unique.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Examples:
+</p>
+<ul>
+<li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Example-null-recurrence-of-simple-symmetric-random-walk.html">Example (null recurrence of simple symmetric random walk)</a>
+    </p>
+    
+</li><li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-asymmetric-random-walk-on-Z-is-transient-using-invariance-equations.html">Proof (asymmetric random walk on Z is transient, using invariance equations)</a>
+    </p>
+    
+</li><li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Example-invariant-distribution-in-random-walk-with-retaining-barrier.html">Example (invariant distribution in random walk with retaining barrier)</a>
+    </p>
+    
+</li>
+</ul>

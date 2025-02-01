@@ -1,0 +1,76 @@
+<p>
+    Solve the eigenvalue problem
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            y&#x27;&#x27; - 2y&#x27; + \lambda y = 0, &amp;0&lt;x&lt;1, \\
+            y(0) = 0, \\
+            y&#x27;(1) = 0.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    The integrating factor <span class="inline-math">$I(x) = \exp\int (-2)/1 \d x = e^{-2x}$</span>.
+    Multiplying <span class="inline-math">$I(x)$</span>, we can identify the Sturm-Liouville operator
+    <span class="display-math">$$ \begin{align*}
+        e^{-2x}(y&#x27;&#x27; - 2y&#x27; + \lambda y) = \dd{x}(e^{-2x}y&#x27;) + \lambda e^{-2x}y
+    \end{align*} $$</span>
+    with <span class="inline-math">$p = -e^{2x}, q=0, w=e^{-2x}$</span>.
+    Now that we have found the weight function, we know what inner product to use.
+</p>
+<p>
+    Now we solve the original equation. Taking <span class="inline-math">$y = e^{\alpha x}$</span>, we get
+    <span class="display-math">$$ \begin{align*}
+        \alpha^2 - 2\alpha + \lambda = 0 \iff \alpha = 1\pm \sqrt{1-\lambda}.
+    \end{align*} $$</span>
+    The general solution is
+    <span class="display-math">$$ \begin{align*}
+        y = e^x\left(A e^{x\sqrt{1-\lambda}} + Be^{-x\sqrt{1-\lambda}}\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    Applying the boundary conditions,
+    <span class="display-math">$$ \begin{align*}
+        0 &amp;= y(0) = A + B \implies y = Ae^x \sinh(x\sqrt{1-\lambda})
+    \end{align*} $$</span>
+    and
+    <span class="display-math">$$ \begin{align*}
+        0 &amp;= y&#x27;(1) = Ae\left(\sqrt{1-\lambda}\cosh \sqrt{1-\lambda} + \sinh \sqrt{1-\lambda}\right). \tag{*}
+    \end{align*} $$</span>
+    To have non-trivial solutions (<span class="inline-math">$y\not\equiv 0$</span>), take <span class="inline-math">$A\neq 0$</span>.
+    If <span class="inline-math">$\lambda = 1$</span>, then <span class="inline-math">$y=e^x(A+B) = 0$</span> which is trivial.
+    If <span class="inline-math">$\lambda&lt;1$</span>, (*) implies <span class="inline-math">$A = 0$</span> which gives a trivial solution.
+    Therefore we take <span class="inline-math">$\lambda&gt;1$</span> and let
+    <span class="display-math">$$ \begin{align*}
+        \lambda = 1 + \mu^2, \quad \mu&gt;0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Substituting into <span class="inline-math">$(*)$</span>
+    <span class="display-math">$$ \begin{align*}
+        0 = \mu \cos \mu + \sin\mu \iff \tan \mu = -\mu.
+    \end{align*} $$</span>
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/mjqbs3ptb3?embed" width="100%" height="300"></iframe>
+</p>
+<p>
+    Graphically, we see that as <span class="inline-math">$n\to \infty$</span>, we have <span class="inline-math">$\mu_n \sim (n-\frac{1}{2})\pi$</span>.
+    The eigenfunctions and eigenvalues are
+    <span class="display-math">$$ \begin{align*}
+        y_n(x) = e^x \sin(\mu_n x), \quad \lambda_n = 1+\mu_n^2, \quad n=1,2,3,\ldots.
+    \end{align*} $$</span>
+</p>
+<p>
+    We expect the eigenfunctions to be orthogonal. Let's see... for <span class="inline-math">$n\neq m$</span>,
+    <span class="display-math">$$ \begin{align*}
+        &amp;\langle y_n, y_m\rangle_w \\
+        ={}&amp; \int_{0}^{1} e^x \sin(\mu_n x) e^x \sin(\mu_m x) \underbrace{e^{-2x}}_{w(x)} \d x \\
+        ={}&amp; \frac{1}{2}\int_{0}^{1} \cos (\mu_n - \mu_m)x -\cos(\mu_n + \mu_m)x \d x \\
+        ={}&amp; \frac{1}{2} \left(\frac{\sin(\mu_n - \mu_m)}{\mu_n - \mu_m} - \frac{\sin(\mu_n + \mu_m)}{\mu_n + \mu_m}\right) \\
+        ={}&amp; \frac{1}{2(\mu_n - \mu_m)(\mu_n + \mu_m)} \Big((\mu_n +\mu_m)(\sin\mu_n \cos \mu_m - \cos \mu_n \sin\mu_m) \\
+        &amp;- (\mu_n - \mu_m)(\sin \mu_n \cos \mu_m + \cos\mu_n \sin \mu_m)\Big) \\
+        ={}&amp; \frac{1}{\mu_n^2 - \mu_m^2} \Big(-\mu_n \cos \mu_n \sin \mu_m + \mu_m \sin \mu_n \cos \mu_m\Big) \\
+        ={}&amp; \frac{1}{(\mu_n^2 - \mu_m^2)\sin\mu_n \sin \mu_m}\left(\underbrace{-\frac{\mu_n}{\tan\mu_n}}_{1} + \underbrace{\frac{\mu_m}{\tan \mu_m}}_{-1}\right) \\
+        ={}&amp; 0.
+    \end{align*} $$</span>
+</p>

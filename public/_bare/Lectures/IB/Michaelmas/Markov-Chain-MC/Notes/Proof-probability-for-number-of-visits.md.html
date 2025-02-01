@@ -1,0 +1,14 @@
+<p>
+    Let <span class="inline-math">$f_i = \prob($</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-return-times.html"><span class="inline-math">$T_i$</span></a> <span class="inline-math">$&lt; \infty|X_0 = i)$</span>.
+    For <span class="inline-math">$r=0$</span>, from definition <span class="inline-math">$\prob(V_i &gt; 0|X_0 = i) = 1 = f_i^0$</span>.
+    Suppose this equation holds for <span class="inline-math">$r\leq k$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \prob(V_i&gt;k+1|X_0 = i) &amp;= \prob(T_i^{(k+1)} &lt; \infty | X_0 = i) \\
+        &amp;= \prob(T_i^{(k+1)} &lt; \infty, T_i^{(k)} &lt; \infty | X_0 = i) \\
+        &amp;= \prob(T_i^{(k+1)} &lt; \infty|T_i^{(k)} &lt; \infty, X_0 = i) \times \prob(T_i^{(k)}&lt; \infty | X_0=i) \\
+        &amp;= \prob(T_i^{(1)} &lt; \infty|X_0 = i) \times \prob(V_i &gt; k|X_0 = i) \tag{*} \\
+        &amp;= f_i \times f_i^k = f_i^{k+1}.
+    \end{align*} $$</span>
+    (*) uses the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-strong-Markov-property.html">strong Markov property</a>.
+</p>

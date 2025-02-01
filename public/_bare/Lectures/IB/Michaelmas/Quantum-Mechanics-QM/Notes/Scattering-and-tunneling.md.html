@@ -1,0 +1,127 @@
+<p>
+    Consider a potential barrier <span class="inline-math">$U(x)$</span> that is localised near <span class="inline-math">$x=0$</span> (i.e. <span class="inline-math">$U(x)\to 0$</span> rapidly as <span class="inline-math">$x\to \pm\infty$</span>)
+    with maximum barrier height <span class="inline-math">$U_\text{max}$</span>.
+    A particle of mass <span class="inline-math">$m$</span> and energy <span class="inline-math">$E$</span> is incident on the barrier from the left.
+</p>
+<p>
+    In classical mechanics,
+</p>
+<ul>
+<li>
+    <p>
+        if <span class="inline-math">$E&gt;U_\text{max}$</span>, the particle gets over the barrier and proceed to <span class="inline-math">$x\to \infty$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        if <span class="inline-math">$E&lt;U_\text{max}$</span>, the particle gets reflected back towards <span class="inline-math">$x\to -\infty$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    In quantum mechanics, a wave packet centred at <span class="inline-math">$x=x_0(t)\ll 0$</span> at initial time <span class="inline-math">$t\ll 0$</span> with average momentum <span class="inline-math">$\langle p\rangle&gt;0$</span>
+    evolves with the Scrodinger's equation to achieve a final state at <span class="inline-math">$t\gg 0$</span>.
+    Define the <em>reflection</em> and <em>transmission coefficients</em>
+    <span class="display-math">$$ \begin{align*}
+        R = \lim_{t\to \infty} \int_{-\infty}^{0} |\psi(x,t)|^2 \d x, \qquad T = \lim_{t\to \infty} \int_{0}^{\infty} |\psi(x,t)|^2 \d x,
+    \end{align*} $$</span>
+    which should satisfy <span class="inline-math">$R+T = 1$</span>.
+</p>
+<p>
+    We will use non-normalisable stationary states and the <a href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Beam-interpretation-of-free-particle-wave-function.html">beam interpretation</a> to simplify calculations.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Scattering by a potential step
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Scattering-by-a-potential-step.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a plane wave with energy <span class="inline-math">$E$</span> incident on a potential step
+                <span class="display-math">$$ \begin{align*}
+                    U(x) = \begin{cases}
+                        0, &amp;x&lt;0, \\
+                        U_0, &amp;x&gt;0.
+                    \end{cases}
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    For <span class="inline-math">$E&gt;U_0$</span>, letting <span class="inline-math">$k=\sqrt{2m E}/\hbar$</span> and <span class="inline-math">$k&#x27; = \sqrt{2m(E-U_0)}/\hbar$</span>, the waves are
+                    <span class="display-math">$$ \begin{align*}
+                    \text{incidence }\chi_i(x) &amp;= A\exp(ikx), \\
+                    \text{reflection }\chi_r(x) &amp;= \frac{k-k&#x27;}{k+k&#x27;}A \exp(-ikx), \\
+                    \text{transmission }\chi_t(x) &amp;= \frac{2k}{k+k&#x27;}A \exp(ik&#x27;x).
+                    \end{align*} $$</span>
+                    We obtain the reflection and transmission coefficients
+                    <span class="display-math">$$ \begin{align*}
+                    R = \left(\frac{k-k&#x27;}{k+k&#x27;}\right)^2, \qquad T = \frac{4kk&#x27;}{(k+k&#x27;)^2}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    For <span class="inline-math">$E&lt;U_0$</span>, letting <span class="inline-math">$k=\sqrt{2mE}/\hbar$</span> and <span class="inline-math">$\kappa = \sqrt{2m(U_0-E)}/\hbar$</span>, the waves are
+                    <span class="display-math">$$ \begin{align*}
+                    \text{incidence } \chi_i(x) ={}&amp; A\exp(ikx), \\
+                    \text{reflection } \chi_r(x) ={}&amp; \frac{k-i\kappa}{k+i\kappa} A\exp(-ikx), \\
+                    \text{transmission } \chi_t(x) ={}&amp; \frac{2k}{k+i\kappa} A\exp(-\kappa x).
+                    \end{align*} $$</span>
+                    And we get
+                    <span class="display-math">$$ \begin{align*}
+                    R = 1, \qquad T = 0.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <iframe src="https://www.desmos.com/calculator/aguwqxckea?embed" width="100%" height="300"></iframe>
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Derivation-scattering-by-a-potential-step.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Tunneling through a square barrier
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Tunneling-through-a-square-barrier.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a particle <span class="inline-math">$E&lt;U_0$</span> incident from <span class="inline-math">$x\to -\infty$</span> on a square barrier
+                <span class="display-math">$$ \begin{align*}
+                    U(x) = \begin{cases}
+                        0, &amp;x&lt;0, \\
+                        U_0, &amp;0&lt;x&lt;a, \\
+                        0, &amp;x&gt;a.
+                    \end{cases}
+                \end{align*} $$</span>
+                Letting <span class="inline-math">$k=\sqrt{2mE}/\hbar$</span> and <span class="inline-math">$\kappa = \sqrt{2m(U_0-E)}/\hbar$</span>, the transmission coefficient is
+                <span class="display-math">$$ \begin{align*}
+                    T = \frac{4k^2\kappa^2}{(k^2+\kappa^2)^2\sinh^2(\kappa a) + 4k^2\kappa^2}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <iframe src="https://www.desmos.com/calculator/rs2l6zzvle?embed" width="100%" height="300"></iframe>
+            </p>
+            <p>
+                Generally we can approximate the transmission coefficient of a barrier of maximum height <span class="inline-math">$U_0\gg E$</span> and width <span class="inline-math">$a$</span> using
+                <span class="display-math">$$ \begin{align*}
+                    T \approx \exp\left(-\frac{2a}{\hbar} \sqrt{2m \Delta U}\right).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Derivation-tunneling-through-a-square-barrier.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>

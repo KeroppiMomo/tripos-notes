@@ -1,0 +1,28 @@
+
+<h1>Proof for <span class="inline-math">$n=1$</span></h1>
+
+<p>
+    Suppose there exists an open cover <span class="inline-math">$\mathcal{U}$</span>
+    with no finite subcover for <span class="inline-math">$[a,b]$</span>.
+    Construct sequences <span class="inline-math">$(a_n)$</span> and <span class="inline-math">$(b_n)$</span> iteratively:
+</p>
+<p>
+    Let <span class="inline-math">$a_0 = a, b_0 = b$</span>. By definition, <span class="inline-math">$\mathcal{U}$</span> has no finite subcover for <span class="inline-math">$[a_0, b_0]$</span>.
+</p>
+<p>
+    Assume inductively that <span class="inline-math">$\mathcal{U}$</span> has no finite subcover for <span class="inline-math">$[a_n, b_n]$</span>.
+    Let <span class="inline-math">$c_n = (a_n + b_n)/2$</span>.
+    Therefore pick <span class="inline-math">$[a_{n+1}, b_{n+1}]$</span> be either <span class="inline-math">$[a_n, c_n]$</span> or <span class="inline-math">$[c_n,b_n]$</span> such that <span class="inline-math">$\mathcal{U}$</span> has no finite subcover for <span class="inline-math">$[a_{n+1}, b_{n+1}]$</span>.
+    It cannot be the case that <span class="inline-math">$\mathcal{U}$</span> has a finite subcover for both
+    since otherwise the union would be a finite subcover for <span class="inline-math">$[a_n, b_n]$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$a_n$</span> and <span class="inline-math">$b_n$</span> are monotonic and bounded in <span class="inline-math">$[a,b]$</span>, they have limits,
+    and since <span class="inline-math">$b_{n+1} - a_{n+1} = (b_n - a_n) / 2$</span>, they have a common limit say <span class="inline-math">$x\in [a,b]$</span>.
+</p>
+<p>
+    But <span class="inline-math">$\mathcal{U}$</span> is a cover for <span class="inline-math">$[a,b]$</span>, so <span class="inline-math">$x\in U$</span> for some open set <span class="inline-math">$U\in \mathcal{U}$</span>.
+    Let <span class="inline-math">$(x-\epsilon, x+\epsilon) \subseteq U$</span>.
+    For sufficiently large <span class="inline-math">$m$</span>, we have <span class="inline-math">$x-\epsilon &lt; a_m \leq b_m &lt; x+\epsilon$</span>, so
+    <span class="inline-math">$[a_m,b_m] \cap U$</span> is an open cover for <span class="inline-math">$[a_m,b_m]$</span>, contradicting with the construction.
+</p>

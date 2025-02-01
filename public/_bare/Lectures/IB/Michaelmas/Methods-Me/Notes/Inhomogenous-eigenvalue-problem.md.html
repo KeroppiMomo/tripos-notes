@@ -1,0 +1,25 @@
+<p>
+    Consider an inhomogenous problem
+    <span class="display-math">$$ \begin{align*}
+        Ly = f, \qquad a&lt;x&lt;b
+    \end{align*} $$</span>
+    where <span class="inline-math">$L$</span> is a Sturm-Liouville operator and <span class="inline-math">$y,f\in V$</span> defined <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-condition-where-Sturm-Liouville-operator-is-self-adjoint.html">here</a>.
+    Since we can absorb the weight function into <span class="inline-math">$f$</span>, take <span class="inline-math">$w=1$</span> WLOG.
+</p>
+<p>
+    Let <span class="inline-math">$\set{Y_k}$</span> be the normalised eigenfunctions of <span class="inline-math">$L$</span>, with <span class="inline-math">$LY_k = \lambda_k Y_k$</span> and <span class="inline-math">$\|Y_k\| = 1$</span>.
+    Assume all <span class="inline-math">$\lambda_k\neq 0$</span>.
+    Then by completeness, let
+    <span class="display-math">$$ \begin{align*}
+        f = \sum_k \hat f_k Y_k, \qquad y = \sum_k \hat y_k Y_k
+    \end{align*} $$</span>
+    and then
+    <span class="display-math">$$ \begin{align*}
+        Ly = f \implies \sum_k (\lambda_k \hat y_k - \hat f_k) Y_k = 0 \implies \hat y_k = \frac{\hat f_k}{\lambda_k}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        y(x) = \sum_{k} \frac{\langle f,Y_k\rangle}{\lambda_k} Y_k(x) = \int_{a}^{b} \left(\sum_{k} \frac{Y_k(x) Y_k(y)}{\lambda_k}\right) f(y) \d y := \int_{a}^{b} G(x,y) f(y) \d y
+    \end{align*} $$</span>
+    where <span class="inline-math">$G(x,y)$</span> is called Green's function.
+</p>

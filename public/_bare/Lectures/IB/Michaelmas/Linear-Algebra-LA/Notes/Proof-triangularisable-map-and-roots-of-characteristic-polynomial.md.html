@@ -1,0 +1,69 @@
+
+<h1>Triangularisable <span class="inline-math">$\implies$</span> <span class="inline-math">$\chi_A$</span> is a product of linear factors</h1>
+
+<p>
+    Let <span class="inline-math">$B$</span> be a basis of <span class="inline-math">$V$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        [\alpha]^B_B = \pmat{a_1 &amp; * &amp; * &amp; \ldots &amp; * \\
+        0 &amp; a_2 &amp; * &amp; \ldots &amp; * \\
+        0 &amp; 0 &amp; a_3 &amp; \ldots &amp; * \\
+        \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; 0 &amp; 0 &amp; \ldots &amp; a_n}.
+    \end{align*} $$</span>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \xi_\alpha(t) = \det \pmat{t-a_1 &amp; * &amp; \ldots &amp; * \\
+        0 &amp; t-a_2 &amp; \ldots &amp; * \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; 0 &amp; \ldots &amp; t-a_n} = \prod_{i=1}^{n} (t-a_i)
+    \end{align*} $$</span>
+    where we have used <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-determinant-of-block-triangular-matrix.html">the determinant of triangular matrix</a>.
+</p>
+
+<h1><span class="inline-math">$\chi_A$</span> is a product of linear factors <span class="inline-math">$\implies$</span> triangularisable</h1>
+
+<p>
+    We will show by induction on <span class="inline-math">$n$</span>. True for <span class="inline-math">$n=1$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$\lambda$</span> be a root of <span class="inline-math">$\chi_\alpha$</span>.
+    <span class="inline-math">$\lambda$</span> is an eigenvalue of <span class="inline-math">$\alpha$</span>, so there exists <span class="inline-math">$v_1\in V\setminus \set{\v 0}$</span>
+    such that <span class="inline-math">$\alpha(v_1) = \lambda v_1$</span>.
+    Extend <span class="inline-math">$\set{v_1}$</span> to a basis <span class="inline-math">$B = \set{v_1, v_2, \ldots, v_n}$</span> for <span class="inline-math">$V$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        [\alpha]^B_B = \left(\begin{array}{c|ccc}
+            \lambda &amp; * &amp; \ldots &amp; * \\\hline
+            0 \\
+            \vdots &amp; &amp; C \\
+            0
+        \end{array}\right)
+    \end{align*} $$</span>
+    Note that <span class="inline-math">$\chi_A(t) = (t-\lambda) \chi_C(t)$</span> by expanding along the first column.
+    So <span class="inline-math">$\chi_C$</span> is a product of linear factors.
+</p>
+<p>
+    By induction hypothesis, <span class="inline-math">$C$</span> is triangularisable, i.e. there exists <span class="inline-math">$P\in \mathrm{GL}_{n-1}(\mathbb{F})$</span>
+    such that <span class="inline-math">$PCP\inv$</span> is upper-triangular.
+</p>
+<p>
+    Set
+    <span class="display-math">$$ \begin{align*}
+        \tilde P = \left(\begin{array}{c|ccc}
+            1 &amp; 0 &amp; \ldots &amp; 0 \\\hline
+            0 \\
+            \vdots &amp; &amp; P \\
+            0
+        \end{array}\right) \in \mathrm{GL}_n(\mathbb{F}).
+    \end{align*} $$</span>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \tilde P [\alpha]^B_B \tilde P\inv = \left(\begin{array}{c|ccc}
+            \lambda &amp; * &amp; \ldots &amp; * \\\hline
+            0 \\
+            \vdots &amp;&amp; PCP\inv \\
+            0
+        \end{array}\right)
+    \end{align*} $$</span>
+    is upper-triangular.
+</p>

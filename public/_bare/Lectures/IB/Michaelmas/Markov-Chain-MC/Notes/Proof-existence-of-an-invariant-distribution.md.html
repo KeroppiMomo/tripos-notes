@@ -1,0 +1,66 @@
+
+<h1>Exists positive recurrent state <span class="inline-math">$\implies$</span> exists invariant distribution</h1>
+
+<p>
+    Let <span class="inline-math">$k\in I$</span> be a positive recurrent state.
+    Using the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proposition-properties-of-expected-number-of-visits-during-excursion.html">invariant measure</a> <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-expected-number-of-visits-during-an-excursion.html"><span class="inline-math">$\nu_k$</span></a>,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i\in I} \nu_k(i) ={}&amp; \sum_{i\in I} \expect\Big(\sum_{n=0}^{T_k-1} \mathbb{1}(X_n = i) \Big| X_0 = k\Big) \\
+        ={}&amp; \expect\Big(\sum_{n=0}^{T_k-1} \underbrace{\sum_{i\in I} \mathbb{1}(X_n = i)}_{1} \Big| X_0 = k\Big) \\
+        ={}&amp; \expect(T_k | X_0 = k) \tag{*}\\
+        &lt;{}&amp; \infty.
+    \end{align*} $$</span>
+    Therefore the measure <span class="inline-math">$\pi$</span> defined by
+    <span class="display-math">$$ \begin{align*}
+        \pi_i = \frac{\nu_i}{\expect(T_k | X_0 = k)}
+    \end{align*} $$</span>
+    is a probability distribution and is invariant by the invariance of <span class="inline-math">$\nu_k$</span>.
+</p>
+
+<h1>Exists invariant distribution <span class="inline-math">$\implies$</span> every state is positive recurrent</h1>
+
+<p>
+    Let <span class="inline-math">$k\in I$</span> be any state.
+</p>
+<p>
+    First we will show that <span class="inline-math">$\pi_k &gt; 0$</span>.
+    Let <span class="inline-math">$i\in I$</span> such that <span class="inline-math">$\pi_i&gt;0$</span>.
+    By irreducibility of <span class="inline-math">$P$</span>,
+    there exists <span class="inline-math">$n$</span> such that <span class="inline-math">$p_{ik}(n) &gt; 0$</span>.
+    Then by invariance of <span class="inline-math">$\pi$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \pi_k ={}&amp; (\pi P^n)_k \\
+        ={}&amp; \sum_{j\in I} \pi_j p_{jk}(n) \\
+        \geq{} &amp; \pi_i p_{ik}(n) \\
+        &gt;{}&amp; 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Then we can define an invariant measure <span class="inline-math">$\lambda^{(k)}$</span> by
+    <span class="display-math">$$ \begin{align*}
+        \lambda_i^{(k)} = \frac{\pi_i}{\pi_k}, \quad i\in I.
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proposition-invariant-measure-and-expected-number-of-visits-during-excursion.html">Since</a> <span class="inline-math">$\lambda_k^{(k)} = 1$</span>,
+    we have <span class="inline-math">$\lambda^{(k)} \geq \nu_k$</span>.
+    Therefore from <span class="inline-math">$(*)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \expect(T_k|X_0 = k) ={}&amp; \sum_{i\in I} \nu_k(i) \\
+        \leq{} &amp; \sum_{i\in I} \lambda_i^{(k)} \tag{\dagger}\\
+        ={}&amp; \frac{\sum_{i\in I} \pi_i}{\pi_k} \\
+        ={}&amp; \frac{1}{\pi_k} &lt; \infty.
+    \end{align*} $$</span>
+</p>
+<p>
+    Hence <span class="inline-math">$k$</span> is positive recurrent.
+</p>
+
+<h1>Invariant distribution</h1>
+
+<p>
+    For each <span class="inline-math">$k\in I$</span>, <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proposition-invariant-measure-and-expected-number-of-visits-during-excursion.html">since</a> now we know <span class="inline-math">$k$</span> is (positive) recurrent,
+    <span class="inline-math">$(\dagger)$</span> is now an equality.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        \pi_k = \frac{1}{\expect(T_k | X_0 = k)}.
+    \end{align*} $$</span>
+</p>

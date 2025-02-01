@@ -1,0 +1,64 @@
+<p>
+    Since <span class="inline-math">$f=f(r)$</span> and <span class="inline-math">$g=g(r)$</span>, we have <span class="inline-math">$\phi = \phi(r,t)$</span>.
+    The wave equation becomes
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{r} \pdd{r}\left(r \pdfd{\phi}{r}\right) = \frac{1}{c^2} \pdfd[2]{\phi}{t}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Try separation of variables
+    <span class="display-math">$$ \begin{align*}
+        \phi(r,t) = R(r)\, T(t)
+    \end{align*} $$</span>
+    and we obtain
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{rR} \pdd{r}\left(r R&#x27;\right) = \frac{\ddot T}{c^2 T}.
+    \end{align*} $$</span>
+    <span class="inline-math">$r$</span> and <span class="inline-math">$t$</span> are independent, so
+    <span class="display-math">$$ \begin{align*}
+        -(rR&#x27;)&#x27; = \lambda r R, \qquad \ddot T + c^2 \lambda T = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$R$</span> satisfies
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            -(rR&#x27;)&#x27; = \lambda r R, \qquad 0\leq r &lt; 1, \\
+            R(1) = 0
+        \end{cases}
+    \end{align*} $$</span>
+    which is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Bessel-s-equation.html">Bessel's equation</a>!
+    <span class="inline-math">$R$</span> has solutions
+    <span class="display-math">$$ \begin{align*}
+        R_k(r) = J_0(j_{0k}\, r), \qquad \lambda_k = {j_{0k}}^2, \qquad k=1,2,3,\ldots.
+    \end{align*} $$</span>
+</p>
+<p>
+    The equation for <span class="inline-math">$T$</span> becomes
+    <span class="display-math">$$ \begin{align*}
+        \ddot T + c^2 {j_{0k}}^2 T = 0
+    \end{align*} $$</span>
+    which has solutions
+    <span class="display-math">$$ \begin{align*}
+        T_{k}(t) = A_k \cos(j_{0k}\, ct) + B_k \sin(j_{0k}\, ct).
+    \end{align*} $$</span>
+</p>
+<p>
+    By superposition
+    <span class="display-math">$$ \begin{align*}
+        \phi(r,t) = \sum_{k=1}^{\infty} J_0(j_{0k}\, r) \big(A_k \cos(j_{0k}\, ct) + B_k \sin(j_{0k}\, ct)\big)
+    \end{align*} $$</span>
+    solves the wave equation and the boundary conditions.
+</p>
+<p>
+    The initial conditions are
+    <span class="display-math">$$ \begin{align*}
+        f(r) = \phi(r,0) ={}&amp; \sum_{k=1}^{\infty} A_k J_0(j_{0k}\, r) \\
+        g(r) = \phi_t(r,0) ={}&amp; \sum_{k=1}^{\infty} j_{0k}\, cB_k J_0(j_{0k}\, r)
+    \end{align*} $$</span>
+    and using the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Bessel-s-equation.html">orthogonality relation</a> of Bessel's functions, we obtain
+    <span class="display-math">$$ \begin{align*}
+        A_k ={}&amp; \frac{2}{J_0&#x27;(j_{0k})^2} \int_{0}^{1} f(r)\, J_0(j_{0k}\, r)\, r \d r, \\
+        B_k ={}&amp; \frac{2}{c\,j_{0k}\,J_0&#x27;(j_{0k})^2} \int_{0}^{1} g(r)\, J_0(j_{0k}\, r)\, r \d r. \\
+    \end{align*} $$</span>
+</p>

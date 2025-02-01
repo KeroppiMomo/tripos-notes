@@ -1,0 +1,22 @@
+<p>
+    (Although <span class="inline-math">$\dfd{G}{x}$</span> is discontinuous, if we <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Interpretation-of-the-Dirac-delta-function.html">interpret</a> the delta function <span class="inline-math">$\delta(x)$</span>
+    as the limit of smooth functions <span class="inline-math">$\delta_n(x)$</span> and define <span class="inline-math">$G_n(x)$</span> as the solution to <span class="inline-math">$L[G_n(x;\xi)] = \delta_n(x-\xi)$</span>,
+    then <span class="inline-math">$G_n\in C^2[a,b]$</span> and by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-properties-of-self-adjoint-differential-operator.html">completeness</a> of <span class="inline-math">$\set{Y_k}$</span>,
+    we can write <span class="inline-math">$G_n$</span> as an expansion of eigenfunctions.
+    So it makes sense to pretend <span class="inline-math">$G$</span> to be in <span class="inline-math">$C^2[a,b]$</span>.)
+</p>
+<p>
+    By completeness,
+    <span class="display-math">$$ \begin{align*}
+        G(x;\xi) = \sum_{k=1}^{\infty} \hat G_k(\xi) Y_k(\xi),
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        \hat G_k(\xi) ={}&amp; \langle G(\,\cdot\,;\xi), Y_k\rangle_w \\
+        ={}&amp; \frac{1}{\lambda_k} \langle G(\,\cdot\,;\xi), LY_k\rangle_w \\
+        ={}&amp; \frac{1}{\lambda_k} \langle LG(\,\cdot\,;\xi), Y_k\rangle_w \\
+        ={}&amp; \frac{1}{\lambda_k} \langle \delta(\cdot-\xi), Y_K\rangle_w \\
+        ={}&amp; \frac{1}{\lambda_k} \int_{a}^{b} \delta(x-\xi) Y_k(x) w(x) \d x \\
+        ={}&amp; \frac{1}{\lambda_k} Y_k(\xi) w(\xi).
+    \end{align*} $$</span>
+</p>

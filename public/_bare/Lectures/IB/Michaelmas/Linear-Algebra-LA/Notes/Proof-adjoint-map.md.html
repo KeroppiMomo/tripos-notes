@@ -1,0 +1,42 @@
+<p>
+    Let <span class="inline-math">$B=\set{b_1, \ldots, b_n},C = \set{c_1, \ldots, c_m}$</span> be orthonormal bases for <span class="inline-math">$V,W$</span>.
+</p>
+
+<h1>Existence</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-linear-map-is-uniquely-determined-by-action-on-basis.html">Define</a> <span class="inline-math">$\alpha^\star: W\to V$</span> by
+    <span class="display-math">$$ \begin{align*}
+        \alpha^\star(c_j) = \sum_{i=1}^{n} \overline{([\alpha]^B_C)_{ji}}\, b_i
+    \end{align*} $$</span>
+    so that <span class="inline-math">$[\alpha^\star]^C_B = \overline{[\alpha]^B_C}^T$</span>.
+</p>
+<p>
+    Note that <span class="inline-math">$[\langle \cdot,\cdot\rangle_V]_B = I_n$</span> and <span class="inline-math">$[\langle \cdot,\cdot\rangle_W]_C = I_m$</span>.
+    Then for <span class="inline-math">$v\in V$</span> and <span class="inline-math">$w\in W$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \langle \alpha(v), w\rangle_W ={}&amp; ([\alpha(v)]_C)^T \, \overline{[w]_C} \\
+        ={}&amp; ([\alpha]^B_C \, [v]_B)^T \, \overline{[w]_C} \\
+        ={}&amp; ([v]_B)^T \, ([\alpha]^B_C)^T \, \overline{[w]_C} \\
+        ={}&amp; ([v]_B)^T \, \overline{\overline{[\alpha]^B_C}^T \, [w]_C} \\
+        ={}&amp; ([v]_B)^T \, \overline{[\alpha^\star]^C_B\, [w]_C} \\
+        ={}&amp; ([v]_B)^T \, \overline{[\alpha^\star(w)]_B} \\
+        ={}&amp; \langle v, \alpha^\star(w)\rangle_V.
+    \end{align*} $$</span>
+</p>
+
+<h1>Uniqueness</h1>
+
+<p>
+    Suppose <span class="inline-math">$\alpha&#x27;: W\to V$</span> also satisfies <span class="inline-math">$\langle \alpha(v),w\rangle_W = \langle v, \alpha&#x27;(w)\rangle_V$</span> for all <span class="inline-math">$v\in V$</span>, <span class="inline-math">$w\in W$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        ([\alpha]^B_C)_{ji} ={}&amp; ([\alpha]^B_C \,\v e_i)^T \v e_j \\
+        ={}&amp; ([\alpha]^B_C \, [b_i]_B)^T [c_j]_C \\
+        ={}&amp; \langle \alpha(b_i), c_j\rangle_W \\
+        ={}&amp; \langle b_i, a&#x27;(c_j)\rangle_V \\
+        ={}&amp; \v e_i^T \, \overline{[\alpha&#x27;]^C_B\, \v e_j} \\
+        ={}&amp; \overline{([\alpha&#x27;]^C_B)_{ij}}
+    \end{align*} $$</span>
+    so <span class="inline-math">$[\alpha&#x27;]^C_B = [\alpha^\star]^C_B$</span> and hence <span class="inline-math">$\alpha&#x27; = \alpha^\star$</span>.
+</p>

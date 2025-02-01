@@ -1,0 +1,499 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (linear combination, span)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-linear-combination-span.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an <span class="inline-math">$\mathbb{F}$</span>-<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-space.html">vector space</a> and <span class="inline-math">$S\subseteq V$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    A <em>linear combination</em> of <span class="inline-math">$S$</span> is an expression of the form
+                    <span class="display-math">$$ \begin{align*}
+                    \sum_{s\in S}&#x27; \lambda_s s.
+                    \end{align*} $$</span>
+                    We assume <span class="inline-math">$\lambda_s = 0$</span> for all but finitely many <span class="inline-math">$s\in S$</span> (<span class="inline-math">$\sum&#x27;$</span> denotes finite sum).
+                </p>
+                
+            </li><li>
+                <p>
+                    Define the <em>span</em> of <span class="inline-math">$S$</span> in <span class="inline-math">$V$</span> be the set of all linear combinations of <span class="inline-math">$S$</span>
+                    <span class="display-math">$$ \begin{align*}
+                    \langle S\rangle = \Big\{\sum_{s\in S}&#x27; \lambda_s s \ \Big|\ \lambda_s \in \mathbb{F}\Big\}.
+                    \end{align*} $$</span>
+                    We define <span class="inline-math">$\langle \emptyset\rangle = \set{\v 0_V}$</span> by convention.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$\langle S\rangle = V$</span>, then we say <span class="inline-math">$S$</span> <em>spans</em> <span class="inline-math">$V$</span>, or <span class="inline-math">$S$</span> is a <em>spanning set</em> for <span class="inline-math">$V$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (finite-dimensional vector space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A vector space <span class="inline-math">$V$</span> is said to be <em>finite-dimensional</em>
+                if <span class="inline-math">$V$</span> has a finite <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-linear-combination-span.html">spanning set</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\langle S\rangle$</span> is the smallest subspace of <span class="inline-math">$V$</span> that contains <span class="inline-math">$V$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Derivation-span-is-smallest-subspace-containing-set.html">Derivation</a>)
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\langle S\cup T\rangle = \langle S\rangle + \langle T\rangle$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (linear independence)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-linear-independence.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <span class="inline-math">$\mathbb{F}$</span>-<a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-vector-space.html">vector space</a> and <span class="inline-math">$S\subseteq V$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$S$</span> is said to be <em>linearly independent</em>
+                if for all <span class="inline-math">$\lambda_s \in \mathbb{F}$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{s\in S}&#x27; \lambda_s s = \v 0 \quad \implies \quad \lambda_s = 0 \text{ for all } s\in S.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <span class="inline-math">$S$</span> is said to be <em>linearly dependent</em> if it is not linearly independent.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$\v 0\in S$</span>, then <span class="inline-math">$S$</span> is linearly dependent.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$S$</span> is linearly independent, then any subset of <span class="inline-math">$S$</span> is linearly independent.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$S$</span> is infinite, <span class="inline-math">$S$</span> is linearly independent iff every finite subset of <span class="inline-math">$S$</span> is linearly independent.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (basis)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-basis.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a vector space and <span class="inline-math">$S\subseteq V$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$S$</span> is said to be a <em>basis</em> for <span class="inline-math">$V$</span> if
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$S$</span> is <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-independence.html">linearly independent</a>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$S$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-linear-combination-span.html">spans</a> <span class="inline-math">$V$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Steinitz exchange lemma)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Steinitz-exchange-lemma.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$S, T \subseteq V$</span> be finite subsets in a vector space <span class="inline-math">$V$</span>.
+                Suppose <span class="inline-math">$S$</span> is <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-independence.html">linearly independent</a> and <span class="inline-math">$T$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-linear-combination-span.html">spans</a> <span class="inline-math">$V$</span>.
+                Then
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$|S| \leq |T|$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    there exists a subset <span class="inline-math">$T&#x27;\subseteq T$</span> such that <span class="inline-math">$|T&#x27;| = |T| - |S|$</span> and <span class="inline-math">$S\cup T&#x27;$</span> spans <span class="inline-math">$V$</span>.
+                    (This means you can remove <span class="inline-math">$|S|$</span> elements from <span class="inline-math">$T$</span>, replace them with <span class="inline-math">$S$</span>, and obtain a set that still spans <span class="inline-math">$V$</span>.)
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Steinitz-exchange-lemma.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    The picture is
+    <span class="display-math">$$ \begin{align*}
+        \text{linearly independent set} \quad \subseteq \quad \text{basis} \quad \subseteq \quad \text{spanning set}.
+    \end{align*} $$</span>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (finite spanning set contains basis)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-finite-spanning-set-contains-basis.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a vector space, <span class="inline-math">$S\subseteq V$</span> and <span class="inline-math">$S$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-linear-combination-span.html">spans</a> <span class="inline-math">$V$</span>.
+            </p>
+            <p>
+                Then there exists a subset <span class="inline-math">$S&#x27; \subseteq S$</span> such that <span class="inline-math">$S&#x27;$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-basis.html">basis</a> of <span class="inline-math">$V$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-finite-spanning-set-contains-basis.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (dimension of a finite-dimensional vector space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-dimension-of-a-finite-dimensional-vector-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>dimension</em> <span class="inline-math">$\dim(V)$</span> of a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional vector space</a> <span class="inline-math">$V$</span>
+                is defined as the size of a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-basis.html">basis</a> for <span class="inline-math">$V$</span>.
+            </p>
+            <p>
+                For this to be well-defined, we rely on the fact that
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$V$</span> has a finite basis (<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-finite-dimensional-vector-space-has-a-finite-basis.html">Proof</a>);
+                </p>
+                
+            </li><li>
+                <p>
+                    every basis for <span class="inline-math">$V$</span> is finite (<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-basis-of-finite-dimensional-vector-space-is-finite.html">Proof</a>); and
+                </p>
+                
+            </li><li>
+                <p>
+                    if <span class="inline-math">$B_1, B_2 \subseteq V$</span> are bases, then <span class="inline-math">$|B_1| = |B_2|$</span> (<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-finite-bases-have-equal-size.html">Proof</a>).
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (size of linearly independent set, basis and spanning set)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-size-of-linearly-independent-set-basis-and-spanning-set.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$S, T \subseteq V$</span> be finite subsets in a vector space <span class="inline-math">$V$</span>.
+                Suppose <span class="inline-math">$S$</span> is <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-independence.html">linearly independent</a> and <span class="inline-math">$T$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-linear-combination-span.html">spans</a> <span class="inline-math">$V$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    |S| \leq \dim(V) \leq |T|
+                \end{align*} $$</span>
+                with <span class="inline-math">$|S| = \dim(V)$</span> iff <span class="inline-math">$S$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-basis.html">basis</a>, and <span class="inline-math">$|T| = \dim(V)$</span> iff <span class="inline-math">$T$</span> is a basis.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-size-of-linearly-independent-set-basis-and-spanning-set.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (dimension of subspace)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-dimension-of-subspace.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional vector space</a>
+                and <span class="inline-math">$U$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-subspace.html"><span class="inline-math">$\leq$</span></a> <span class="inline-math">$V$</span>.
+            </p>
+            <p>
+                Then <span class="inline-math">$U$</span> is also finite-dimensional and <span class="inline-math">$\dim(U) \leq \dim(V)$</span> with equality iff <span class="inline-math">$U=V$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-dimension-of-subspace.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (extending a basis)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-extending-a-basis.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional vector space</a>
+                and <span class="inline-math">$U$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-subspace.html"><span class="inline-math">$\leq$</span></a> <span class="inline-math">$V$</span>.
+            </p>
+            <p>
+                For any basis <span class="inline-math">$B_U$</span> of <span class="inline-math">$U$</span>, there exists a basis <span class="inline-math">$B_V$</span> for <span class="inline-math">$V$</span> with <span class="inline-math">$B_U \subseteq B_V$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-extending-a-basis.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (dimension of quotient spaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-dimension-of-quotient-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional vector space</a> and <span class="inline-math">$U$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-subspace.html"><span class="inline-math">$\leq$</span></a> <span class="inline-math">$V$</span>.
+            </p>
+            <p>
+                Then <span class="inline-math">$V/U$</span> is finite-dimensional and
+                <span class="display-math">$$ \begin{align*}
+                    \dim(V/U) = \dim(V) - \dim(U).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-dimension-of-quotient-spaces.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Bases and linear maps
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Bases-and-linear-maps.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (rank, nullity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-rank-nullity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span> be <span class="inline-math">$\mathbb{F}$</span>-vector spaces and <span class="inline-math">$\alpha: V\to W$</span> is a <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-map.html">linear map</a>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\op{rk}(\alpha) := \dim($</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-kernel-and-image-of-a-linear-map.html"><span class="inline-math">$\im(\alpha)$</span></a><span class="inline-math">$)$</span> is the <em>rank</em> of <span class="inline-math">$\alpha$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\op{n}(\alpha) := \dim($</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-kernel-and-image-of-a-linear-map.html"><span class="inline-math">$\ker(\alpha)$</span></a><span class="inline-math">$)$</span> is the <em>kernel</em> of <span class="inline-math">$\alpha$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (rank-nullity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-rank-nullity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span> be <span class="inline-math">$\mathbb{F}$</span>-vector spaces
+                            and <span class="inline-math">$\alpha: V\to W$</span> be a <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-map.html">linear map</a>.
+                            Suppose <span class="inline-math">$V$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a>.
+                        </p>
+                        <p>
+                            Then <span class="inline-math">$\ker(\alpha)$</span> and <span class="inline-math">$\im(\alpha)$</span> are also finite-dimensional and
+                            <span class="display-math">$$ \begin{align*}
+                                \dim(V) = \dim(\ker(\alpha)) + \dim(\im(\alpha)).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-rank-nullity.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (linear pigeonhole)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-linear-pigeonhole.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span> be <span class="inline-math">$\mathbb{F}$</span>-vector spaces and <span class="inline-math">$\alpha: V\to W$</span> be a <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-map.html">linear map</a>.
+                        </p>
+                        <p>
+                            If <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-dimension-of-a-finite-dimensional-vector-space.html"><span class="inline-math">$\dim$</span></a><span class="inline-math">$(V) = \dim(W)$</span>, then the following are equivalent:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$\alpha$</span> is injective;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\alpha$</span> is surjective;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\alpha$</span> is bjective.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-linear-pigeonhole.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (linear map is uniquely determined by action on basis)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-linear-map-is-uniquely-determined-by-action-on-basis.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$V,W$</span> be <span class="inline-math">$\mathbb{F}$</span>-vector spaces and <span class="inline-math">$B$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-basis.html">basis</a> of <span class="inline-math">$V$</span>.
+                        </p>
+                        <p>
+                            For any function <span class="inline-math">$f: B\to W$</span>, there exists a unique <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-map.html">linear map</a> <span class="inline-math">$F: V\to W$</span> extending <span class="inline-math">$f$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-linear-map-is-uniquely-determined-by-action-on-basis.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (isomorphism between Fn and n-dimensional vector space)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-isomorphism-between-Fn-and-n-dimensional-vector-space.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$V$</span> be an <span class="inline-math">$\mathbb{F}$</span>-vector space and <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-dimension-of-a-finite-dimensional-vector-space.html"><span class="inline-math">$\dim$</span></a><span class="inline-math">$(V) = n$</span>.
+                        </p>
+                        <p>
+                            For any <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-basis.html">basis</a> <span class="inline-math">$B = \set{v_1, v_2, \ldots, v_n}$</span> for <span class="inline-math">$V$</span>,
+                            there exists an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isomorphism-of-vector-spaces.html">isomorphism</a> <span class="inline-math">$F_B : \mathbb{F}^n \to V$</span> given by
+                            <span class="display-math">$$ \begin{align*}
+                                \pmat{\lambda_1 \\ \lambda_2 \\ \vdots \\ \lambda_n} \mapsto \sum_{i=1}^{n} \lambda_i v_i.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-isomorphism-between-Fn-and-n-dimensional-vector-space.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (coordinate vector)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-coordinate-vector.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Following the notation <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-isomorphism-between-Fn-and-n-dimensional-vector-space.html">here</a>,
+                            for <span class="inline-math">$v\in V$</span>, if <span class="inline-math">$v = \sum_{i=1}^{n} \lambda_i v_i$</span>, then we write
+                            <span class="display-math">$$ \begin{align*}
+                                [v]_B \equiv \mathcal{E}_B(v) \equiv  F_B\inv(v) = \pmat{\lambda_1 \\ \lambda_2 \\ \vdots \\ \lambda_n}
+                            \end{align*} $$</span>
+                            called the <em>coordinate vector</em> of <span class="inline-math">$v$</span> with respect to <span class="inline-math">$B$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (vector spaces of equal dimension are isomorphic)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-vector-spaces-of-equal-dimension-are-isomorphic.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$V, W$</span> be finite-dimenisonal <span class="inline-math">$\mathbb{F}$</span>-vector spaces.
+                        </p>
+                        <p>
+                            <span class="inline-math">$V$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isomorphism-of-vector-spaces.html"><span class="inline-math">$\isom$</span></a> <span class="inline-math">$W$</span> iff <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-dimension-of-a-finite-dimensional-vector-space.html"><span class="inline-math">$\dim$</span></a><span class="inline-math">$(V) = \dim(W)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-vector-spaces-of-equal-dimension-are-isomorphic.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

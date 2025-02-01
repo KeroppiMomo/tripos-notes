@@ -1,0 +1,20 @@
+<p>
+    Fix <span class="inline-math">$x\in Y$</span> and <span class="inline-math">$\epsilon&gt;0$</span>.
+    By <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-convergence.html">uniform convergence</a>,
+    there exists some <span class="inline-math">$N\in\N$</span> such that for all <span class="inline-math">$n\geq N$</span> and <span class="inline-math">$y\in Y$</span>,
+    we have <span class="inline-math">$|f_n - f|(y) &lt; \epsilon$</span>.
+    Thus <span class="inline-math">$|f_N - f|(y) &lt; \epsilon$</span> for all <span class="inline-math">$y\in Y$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$f_N$</span> is <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Definition-continuity.html">continuous</a> at <span class="inline-math">$x$</span>, there exists some <span class="inline-math">$\delta&gt;0$</span> such that
+    for all <span class="inline-math">$y\in Y$</span>, if <span class="inline-math">$|y-x|&lt;\delta$</span>, then we have <span class="inline-math">$|f_N(y) - f_N(x)| &lt; \epsilon$</span>.
+</p>
+<p>
+    Therefore, for all <span class="inline-math">$y\in Y$</span>, if <span class="inline-math">$|y-x|&lt;\delta$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        |f(y) - f(x)| &amp;= |f(y) - f_N(y) + f_N(y) - f_N(x) + f_N(x) - f(x)| \\
+        &amp;\leq \underbrace{|f(y) - f_N(y)|}_{\text{uniform convergence}} + \underbrace{|f_N(y) - f_N(x)|}_{\text{continuity}} + \underbrace{|f_N(x) - f(x)|}_{\text{uniform convergence}} \\
+        &amp;&lt; \epsilon + \epsilon + \epsilon = 3\epsilon
+    \end{align*} $$</span>
+    so <span class="inline-math">$f$</span> is continuous.
+</p>

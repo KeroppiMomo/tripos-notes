@@ -1,0 +1,79 @@
+<p>
+    <span class="display-math">$$ \begin{align*}
+        -\dd{r}\left(r\dfd{y}{r}\right) + \frac{m^2}{r} y &amp;= \lambda r y, \quad 0&lt;r&lt;1, \tag{*}\\
+        \quad y(1)&amp;=0
+    \end{align*} $$</span>
+    is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville</a> problem with <span class="inline-math">$p = r$</span>, <span class="inline-math">$q=m^2/r$</span>, and <span class="inline-math">$w=r$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-properties-of-self-adjoint-differential-operator.html">Therefore</a> the eigenfunctions are orthogonal on <span class="inline-math">$V = \sb{y\in C^2[0,1]}{y(1)=0}$</span>
+    with respsect to
+    <span class="display-math">$$ \begin{align*}
+        \langle f,g\rangle_w = \int_{0}^{1} f(r)\,g(r)\, r \d r.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that <span class="inline-math">$\lambda\geq 0$</span>: multiply by <span class="inline-math">$y$</span> on both sides in <span class="inline-math">$(*)$</span>, and then integrate,
+    <span class="display-math">$$ \begin{align*}
+        \int_{0}^{1} \Big(\lambda r - \frac{m^2}{r}\Big) y^2 \d r &amp;= -\int_{0}^{1} y \dd{r}(ry&#x27;) \d r \\
+        &amp;= -\big[ryy&#x27;\big]_0^1 + \int_{0}^{1} r(y&#x27;)^2 \d r \\
+        &amp;= \int_{0}^{1} r(y&#x27;)^2 \d r &amp;y(1)=0 \\
+        &amp;\geq 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$\lambda$</span> cannot be negative.
+</p>
+<p>
+    Expanding the equation,
+    <span class="display-math">$$ \begin{align*}
+        -r y&#x27;&#x27; - y&#x27; + \frac{m^2}{r} y - \lambda r y &amp;= 0 \\
+        r^2 y&#x27;&#x27; + ry&#x27; + (\lambda r^2 - m^2) y &amp;= 0
+    \end{align*} $$</span>
+    Taking <span class="inline-math">$z=r\sqrt{\lambda}$</span> and <span class="inline-math">$R(z) = y(r)$</span>,
+    we obtain
+    <span class="display-math">$$ \begin{align*}
+        r^2 \frac{R&#x27;&#x27;}{\lambda} + r \frac{R&#x27;}{\sqrt{\lambda}} + (z^2-m^2) R &amp;= 0 \\
+        z^2 R&#x27;&#x27; + z R&#x27; + (z^2 - m^2) R &amp;= 0, \qquad 0&lt;z&lt;\sqrt{\lambda}, \qquad R(\sqrt{\lambda}) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that <span class="inline-math">$z=0$</span> is a <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-regular-and-irregular-singular-point.html">regular singular point</a>, so by <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Theorem-Fuchs-theorem.html">Fuchs' theorem</a>,
+    we seek for solutions of the form
+    <span class="display-math">$$ \begin{align*}
+        z\mapsto z^\sigma \sum_{n=0}^{\infty} a_n z^n.
+    \end{align*} $$</span>
+</p>
+<p>
+    Substituting,
+    <span class="display-math">$$ \begin{align*}
+        0 &amp;= \sum_{n=0}^{\infty} \left((n+\sigma)(n+\sigma-1)a_n z^{n+\sigma} + (n+\sigma)a_n z^{n+\sigma} + a_n z^{n+\sigma+2} - m^2 a_n z^{n+\sigma}\right) \\
+        &amp;= \sum_{n=0}^{\infty} \left(\big((n+\sigma)^2 - m^2\big) a_n z^{n+\sigma} + a_n z^{n+\sigma+2}\right) \\
+        &amp;= (\sigma^2 - m^2) a_0 z^\sigma + ((1+\sigma)^2 - m^2) a_1 z^{\sigma+1} + \sum_{n=2}^{\infty} \left(\big((n+\sigma)^2 - m^2\big) a_n  + a_{n-2}\right) z^{n+\sigma}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        0 &amp;= (\sigma^2 - m^2) a_0 &amp;&amp;\implies \sigma=\pm m \\
+        0 &amp;= (\sigma+1-m)(\sigma+1+m) a_1 &amp;&amp;\implies a_1 = 0 \\
+        a_{n-2} &amp;= -((n+\sigma)^2 - m^2) a_n \\
+        &amp;= -(n+\sigma-m)(n+\sigma+m) a_n.
+    \end{align*} $$</span>
+    For <span class="inline-math">$\sigma=-m$</span>, setting <span class="inline-math">$n=2m$</span> gives <span class="inline-math">$a_{2m-2} = 0$</span>,
+    so <span class="inline-math">$a_0=0$</span> and the whole series vanishes.
+</p>
+<p>
+    Therefore <span class="inline-math">$\sigma=m$</span>, and
+    <span class="display-math">$$ \begin{align*}
+        a_n &amp;= \frac{(-1)a_{n-2}}{n(n+2m)} \\
+        &amp;= \frac{(-1)^2 a_{n-4}}{n(n-2)(n+2m)(n-2+2m)} \\
+        &amp;= \ldots\\
+        &amp;= \begin{cases}
+            \dfrac{(-1)^{n/2} (m!) a_0}{2^{n} (n/2)! (n/2 + m)!}, &amp; n\text{ even} \\
+            0, &amp; n\text{ odd}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    Hence the solution is
+    <span class="display-math">$$ \begin{align*}
+        R(z) = \tilde a_0 \left(\frac{z}{2}\right)^m \sum_{k=0}^{\infty} \frac{(-1)^k}{k!(k+m)!} \left(\frac{z}{2}\right)^{2k}
+    \end{align*} $$</span>
+</p>

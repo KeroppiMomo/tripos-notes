@@ -1,0 +1,63 @@
+
+<h1>Uniqueness</h1>
+
+<p>
+    Let <span class="inline-math">$F$</span> be an <span class="inline-math">$n$</span>-dimensional volume form and suppose <span class="inline-math">$F(I_n) = 1$</span>.
+    By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-properties-of-volume-forms.html">properties of volume form</a>,
+    <span class="display-math">$$
+        \left.\begin{align*}
+            F(T_{ij}) &amp;= F(I_n T_{ij}) = -1, \\
+            F(M_{i,\lambda}) &amp;= F(I_n M_{i,\lambda}) = \lambda, \\
+            F(C_{i,j,\lambda}) &amp;= F(I_n C_{i,j,\lambda}) = 1,
+        \end{align*}\qquad \right\} (*)
+    $$</span>
+    and this shows that <span class="inline-math">$F(AE) = F(A)F(E)$</span> for an elementary matrix <span class="inline-math">$E$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span> and <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-unique-row-reduced-echelon-form.html">let</a> <span class="inline-math">$E_1, \ldots, E_l$</span> be elementary matrices
+    such that <span class="inline-math">$A&#x27; = A E_1 E_2 \ldots E_l$</span> is in column-reduced echelon form.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        F(A&#x27;) = F(A) F(E_1) \ldots F(E_l).
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$\op{rk}(A) = n$</span>, then <span class="inline-math">$\op{rk}(A&#x27;) = n$</span> also and so <span class="inline-math">$A&#x27; = I_n$</span>.
+    Therefore <span class="inline-math">$F(A) = F(E_1)\inv \ldots F(E_l)\inv$</span> uniquely determines <span class="inline-math">$F(A)$</span> as the values of <span class="inline-math">$F$</span> of elementary matrices are fixed by <span class="inline-math">$(*)$</span>.
+</p>
+<p>
+    If <span class="inline-math">$\op{rk}(A) &lt; n$</span>, then <span class="inline-math">$\op{rk}(A&#x27;) &lt; n$</span> and so <span class="inline-math">$A&#x27;$</span> has a zero column. Hence <span class="inline-math">$F(A&#x27;) = 0$</span> and thus <span class="inline-math">$F(A) = 0$</span>, which is uniquely determined.
+</p>
+
+<h1>Existence</h1>
+
+<p>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        \det(A) = \sum_{\sigma\in S_n} \sign(\sigma) \prod_{i=1}^n a_{\sigma(i),i}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$\det(I_n) = 1$</span> since only <span class="inline-math">$\sigma = \mathrm{id}$</span> contributes to the sum.
+</p>
+<p>
+    To show multilinearity, let <span class="inline-math">$\v c_1, \ldots, \v c_n \in \mathbb{F}^n$</span> and <span class="inline-math">$\v c_j, \v c_j&#x27; \in \mathbb{F}$</span> with <span class="inline-math">$\lambda\in \mathbb{F}$</span> for some <span class="inline-math">$j$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        &amp;\sum_{\sigma\in S_n} \sign(\sigma) (\v c_1)_{\sigma(1)} (\v c_2)_{\sigma(2)} \ldots (\v c_j + \lambda \v c_j&#x27;)_{\sigma(j)} \ldots (\v c_n)_{\sigma(n)} \\
+        ={}&amp; \sum_{\sigma\in S_n} \sign(\sigma) (\v c_1)_{\sigma(1)} \ldots (\v c_j)_{\sigma(j)} \ldots (\v c_n)_{\sigma(n)} \\
+        &amp;+\lambda \sum_{\sigma\in S_n} \sign(\sigma) (\v c_1)_{\sigma(1)} \ldots (\v c_j&#x27;)_{\sigma(j)} \ldots (\v c_n)_{\sigma(n)}
+    \end{align*} $$</span>
+</p>
+<p>
+    Suppose <span class="inline-math">$\v c_k = \v c_l$</span> where <span class="inline-math">$k\neq l$</span>.
+    Let <span class="inline-math">$\tau = \pmat{k&amp;l}\in S_n \setminus$</span> <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-even-and-odd-permutation-alternating-group.html"><span class="inline-math">$A_n$</span></a>.
+    We have <span class="inline-math">$a_{i,j} = a_{i,\tau(j)}$</span> (because <span class="inline-math">$\tau(j) = j$</span> when <span class="inline-math">$j\neq k,l$</span>, and when <span class="inline-math">$j=k$</span>, the columns are the same).
+    Therefore splitting <span class="inline-math">$S_n = A_n \sqcup A_n \tau$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \det(A) ={}&amp; \sum_{\sigma\in A_n} \underbrace{\sign(\sigma)}_{1} \prod_{i=1}^{n} a_{\sigma(i),i} + \sum_{\sigma\in A_n} \underbrace{\sign(\sigma\tau)}_{-1} \prod_{i=1}^{n} a_{\sigma\tau(i),i} \\
+        ={}&amp; \sum_{\sigma\in A_n} \prod_{i=1}^{n} a_{\sigma(i),i} - \sum_{\sigma\in A_n} \prod_{i=1}^{n} a_{\sigma\tau(i),\tau(i)} &amp;&amp;a_{i,j}=a_{i,\tau(j)} \\
+        ={}&amp; \sum_{\sigma\in A_n} \prod_{i=1}^{n} a_{\sigma(i),i} - \sum_{\sigma\in A_n} \prod_{i=1}^{n} a_{\sigma(i),i} &amp;&amp;\text{rearranging order} \\
+        ={}&amp; 0.
+    \end{align*} $$</span>
+</p>

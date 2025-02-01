@@ -1,0 +1,64 @@
+<p>
+    We will use:
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (properties of eigenvectors of isometries)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-properties-of-eigenvectors-of-isometries.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an inner product space and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isometry-in-inner-product-spaces.html">isometry</a>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    Every <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-eigenvector-eigenvalue-eigenspace.html">eigenvalue</a> of <span class="inline-math">$\alpha$</span> has modulus 1.
+                </p>
+                
+            </li><li>
+                <p>
+                    Eigenvectors of distinct eigenvalues are orthogonal.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-properties-of-eigenvectors-of-isometries.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Induct on <span class="inline-math">$\dim(V)$</span>.
+    The cases for 0 and 1 are clear.
+</p>
+<p>
+    By the fundamental theorem of algebra,
+    the characteristic polynomial of <span class="inline-math">$\alpha$</span> in any basis has a root <span class="inline-math">$\lambda$</span>,
+    which is an eigenvalue of <span class="inline-math">$\alpha$</span>.
+    From 1, <span class="inline-math">$|\lambda|=1$</span>.
+    Let <span class="inline-math">$v_1\in V\setminus \set{\v 0}$</span> be a <span class="inline-math">$\lambda$</span>-eigenvector.
+    By replacing <span class="inline-math">$v_1$</span> by <span class="inline-math">$v_1/\|v_1\|$</span>, we can assume <span class="inline-math">$\set{v_1}$</span> is orthonormal.
+</p>
+<p>
+    For all <span class="inline-math">$w\in \langle v_1\rangle^\perp$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \langle \alpha(w), v_1\rangle ={}&amp; \langle \alpha(w), \lambda\inv \alpha(v_1)\rangle \\
+        ={}&amp; \overline{\lambda}\inv \langle w, v_1\rangle \\
+        ={}&amp; 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$\alpha(\langle v_1\rangle^\perp) \leq \langle v_1\rangle^\perp$</span>.
+    Therefore we can define the restriction
+    <span class="display-math">$$ \begin{align*}
+        \alpha&#x27;: \langle v_1\rangle^\perp &amp;\to \langle v_1\rangle^\perp \\
+        v &amp;\mapsto \alpha(v)
+    \end{align*} $$</span>
+    which is still an isometry.
+    Hence by induction hypothesis,
+    there is an orthonormal basis <span class="inline-math">$B&#x27;$</span> for <span class="inline-math">$\langle v_1\rangle^\perp$</span>
+    consisting of eigenvectors of <span class="inline-math">$\alpha&#x27;$</span> and therefore <span class="inline-math">$\alpha$</span>.
+    Since <span class="inline-math">$V = \langle v_1\rangle \operp \langle v_1\rangle^\perp$</span>, <span class="inline-math">$\set{v_1} \cup B&#x27;$</span> is our desired basis.
+</p>

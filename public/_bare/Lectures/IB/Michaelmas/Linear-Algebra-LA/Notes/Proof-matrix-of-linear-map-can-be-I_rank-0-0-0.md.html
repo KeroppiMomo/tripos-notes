@@ -1,0 +1,74 @@
+<p>
+    Let <span class="inline-math">$\dim(V) = n$</span> and <span class="inline-math">$\dim(W) = m$</span>.
+</p>
+
+<h1>Existence of bases</h1>
+
+
+<h2>Non-constructive proof</h2>
+
+<p>
+    By the <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-rank-nullity.html">rank-nullity theorem</a>, <span class="inline-math">$\dim(\ker(\alpha)) = n-r$</span>.
+    Let <span class="inline-math">$\set{v_{r+1}, v_{r+2}, \ldots, v_n}$</span> be a basis for <span class="inline-math">$\ker(\alpha)$</span>.
+    Extend it to a basis <span class="inline-math">$B = \set{v_1, \ldots, v_r, v_{r+1}, \ldots, v_n}$</span>.
+    Then <span class="inline-math">$\set{\alpha(v_1), \ldots, \alpha(v_r)}$</span> spans <span class="inline-math">$\im(\alpha)$</span> and has size <span class="inline-math">$\leq r = \op{rk}(\alpha)$</span>,
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-size-of-linearly-independent-set-basis-and-spanning-set.html">so</a> it is a basis of <span class="inline-math">$\im(\alpha)$</span>.
+</p>
+
+<h2>Constructive proof</h2>
+
+<p>
+    Let <span class="inline-math">$A\in M_{m\times n}(\mathbb{F})$</span> be a matrix.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-unique-row-reduced-echelon-form.html">Let</a> <span class="inline-math">$E_1, \ldots, E_l$</span> be elementary matrices such that
+    <span class="inline-math">$E_1 \ldots E_l A$</span> is in row-reduced echleon form.
+</p>
+<p>
+    Apply elementary column operations <span class="inline-math">$E_1&#x27;,\ldots,E_k&#x27;$</span> of type 1
+    to move all pivot columns to the left:
+    <span class="display-math">$$ \begin{align*}
+        (E_1\ldots E_l) A (E_1&#x27; \ldots E_k&#x27;) = \pmat{I_r &amp; * \\ 0 &amp; 0}
+    \end{align*} $$</span>
+    where <span class="inline-math">$r$</span> is the rank of <span class="inline-math">$A$</span>.
+</p>
+<p>
+    Use elementary column operations <span class="inline-math">$E_1&#x27;&#x27;, \ldots, E_j&#x27;&#x27;$</span> of type 3
+    to purge the top-right block:
+    <span class="display-math">$$ \begin{align*}
+        \underbrace{(E_1\ldots E_l)}_{P} A \underbrace{(E_1&#x27; \ldots E_k&#x27;) (E_1&#x27;&#x27; \ldots E_j&#x27;&#x27;)}_{Q} = \pmat{I_r &amp; 0 \\ 0 &amp; 0}
+    \end{align*} $$</span>
+    where <span class="inline-math">$P, Q$</span> are invertible.
+</p>
+<p>
+    Extend this to a basis <span class="inline-math">$\set{w_1 = \alpha(v_1), \ldots, w_r = \alpha(v_r), w_{r+1}, \ldots, w_n}$</span> for <span class="inline-math">$W$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \alpha(v_j) = \begin{cases}
+            w_j, &amp;j\leq r, \\
+            \v 0, &amp;j &gt; r,
+        \end{cases}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        [\alpha]^B_C = \pmat{I_r &amp; 0 \\ 0 &amp; 0}.
+    \end{align*} $$</span>
+</p>
+
+<h1>Size of identity matrix equals rank</h1>
+
+<p>
+    Let <span class="inline-math">$B&#x27; = \set{v_1&#x27;, \ldots, v_n&#x27;}$</span> and <span class="inline-math">$C&#x27; = \set{w_1&#x27;, \ldots, w_m&#x27;}$</span>, and suppose
+    <span class="display-math">$$ \begin{align*}
+        [\alpha]^{B&#x27;}_{C&#x27;} = \pmat{I_{r&#x27;} &amp; 0 \\ 0 &amp; 0},
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \alpha(v_j&#x27;) = \begin{cases}
+            w_j&#x27;, &amp; j\leq r&#x27;, \\
+            \v 0, &amp; j &gt; r&#x27;.
+        \end{cases}
+    \end{align*} $$</span>
+    Since <span class="inline-math">$\alpha(v_1&#x27;) = w_1&#x27;, \ldots, \alpha(v_{r&#x27;}&#x27;) = w_{r&#x27;}&#x27;$</span> spans <span class="inline-math">$\im(\alpha)$</span> and is linearly independent (as it is a subset of <span class="inline-math">$C&#x27;$</span>),
+    it is a basis of <span class="inline-math">$\im(\alpha)$</span>, and therefore <span class="inline-math">$\op{rk}(\alpha) = r&#x27;$</span>.
+</p>

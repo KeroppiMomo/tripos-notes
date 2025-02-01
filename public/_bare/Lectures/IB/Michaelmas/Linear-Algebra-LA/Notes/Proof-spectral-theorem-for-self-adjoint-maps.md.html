@@ -1,0 +1,65 @@
+<p>
+    We will use the following properties:
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (properties of eigenvectors of self-adjoint maps)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-properties-of-eigenvectors-of-self-adjoint-maps.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> inner product space,
+                and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-self-adjoint.html">self-adjoint</a>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    All <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-eigenvector-eigenvalue-eigenspace.html">eigenvalues</a> of <span class="inline-math">$\alpha$</span> are real.
+                </p>
+                
+            </li><li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-eigenvector-eigenvalue-eigenspace.html">Eigenvectors</a> of distinct eigenvalues are <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-orthonormal-set.html">orthogonal</a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\alpha$</span> has an eigenvector.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-properties-of-eigenvectors-of-self-adjoint-maps.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Induct on <span class="inline-math">$n=\dim(V)$</span>.
+    It is clear for <span class="inline-math">$n=0$</span> or <span class="inline-math">$1$</span>.
+</p>
+<p>
+    Using 2, let <span class="inline-math">$v_1\in V\setminus \set{\v 0}$</span> be an eigenvector of <span class="inline-math">$\alpha$</span>
+    with eigenvalue <span class="inline-math">$\lambda$</span>, which is real.
+    By replacing <span class="inline-math">$v_1$</span> by <span class="inline-math">$v_1/\|v_1\|$</span>, we can assume <span class="inline-math">$\set{v_1}$</span> is orthonormal.
+</p>
+<p>
+    <span class="inline-math">$\alpha(\langle v_1\rangle) \leq \langle v_1\rangle$</span>,
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-adjoint-of-subspace-preserving-map-preserves-orthogonal-complement.html">so</a>
+    <span class="inline-math">$\alpha(\langle v_1\rangle^\perp) \leq \langle v_1\rangle^\perp$</span> since <span class="inline-math">$\alpha$</span> is self-adjoint.
+    Consider the restriction
+    <span class="display-math">$$ \begin{align*}
+        \alpha&#x27;: \langle v_1\rangle^\perp &amp;\to \langle v_1\rangle^\perp \\
+        u &amp;\mapsto \alpha(u).
+    \end{align*} $$</span>
+    <span class="inline-math">$\alpha&#x27;$</span> is still self-adjoint, and <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-orthogonal-complement.html"><span class="inline-math">$\dim(\langle v_1\rangle^\perp) = n-1$</span></a>,
+    so by induction hypothesis,
+    there exists an orthonormal basis <span class="inline-math">$B&#x27;$</span> for <span class="inline-math">$\langle v_1\rangle^\perp$</span>
+    consisting of eigenvectors of <span class="inline-math">$\alpha&#x27;$</span> and therefore <span class="inline-math">$\alpha$</span> with real eigenvalues.
+</p>
+<p>
+    Finally, set <span class="inline-math">$B = \set{v_1} \cup B&#x27;$</span>. This is a basis for <span class="inline-math">$V = \langle v_1\rangle \operp \langle v_1\rangle^\perp$</span>.
+</p>

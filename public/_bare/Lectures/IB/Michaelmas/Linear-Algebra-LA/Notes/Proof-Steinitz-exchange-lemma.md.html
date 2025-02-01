@@ -1,0 +1,40 @@
+<p>
+    Let <span class="inline-math">$T = \set{t_1, \ldots, t_n}$</span> and <span class="inline-math">$S = \set{s_1, \ldots, s_m}$</span>, and define
+    <span class="display-math">$$ \begin{align*}
+        T_k = \set{s_1, \ldots, s_k, t_{k+1}, \ldots, t_n}.
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$S\neq\emptyset$</span>, then we are done.
+</p>
+<p>
+    <span class="inline-math">$T_0 = T$</span> spans <span class="inline-math">$V$</span> by hypothesis.
+</p>
+<p>
+    Suppose <span class="inline-math">$T_k$</span> spans <span class="inline-math">$V$</span> for some <span class="inline-math">$0\leq k&lt;m$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        s_{k+1} = \sum_{i=1}^{k} \lambda_i s_i + \sum_{j=k+1}^{n} \mu_j t_j
+    \end{align*} $$</span>
+    for some <span class="inline-math">$\lambda_1, \ldots, \lambda_{k}, \mu_{k+1}, \ldots, \mu_{n} \in \mathbb{F}$</span>.
+</p>
+<p>
+    If all <span class="inline-math">$\mu_i = 0$</span> or if <span class="inline-math">$n = k &lt; m$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        s_{k+1} - \sum_{i=1}^{k} \lambda_i s_i = \v 0
+    \end{align*} $$</span>
+    but this contradicts with <span class="inline-math">$S$</span> being linearly independent.
+</p>
+<p>
+    Thus <span class="inline-math">$n&lt;k$</span> and WLOG assume <span class="inline-math">$\mu_{k+1} \neq 0$</span>.
+    Then we have
+    <span class="display-math">$$ \begin{align*}
+        t_{k+1} &amp;= \frac{1}{\mu_{k+1}}\left(s_{k+1} - \sum_{i=1}^{k} \lambda_i s_i - \sum_{j=k+2}^{n} \mu_j t_j\right) \\
+        &amp;\in \langle T_{k+1}\rangle
+    \end{align*} $$</span>
+    so <span class="inline-math">$T_{k+1}$</span> spans <span class="inline-math">$V$</span> as <span class="inline-math">$T_k$</span> spans <span class="inline-math">$V$</span>.
+</p>
+<p>
+    By induction, <span class="inline-math">$m\leq n$</span>, and <span class="inline-math">$T_m = S \cup \set{t_{m+1}, \ldots, t_n}$</span> spans <span class="inline-math">$V$</span>.
+    Set <span class="inline-math">$T&#x27; = \set{t_{m+1}, \ldots, t_n}$</span> and we are done.
+</p>

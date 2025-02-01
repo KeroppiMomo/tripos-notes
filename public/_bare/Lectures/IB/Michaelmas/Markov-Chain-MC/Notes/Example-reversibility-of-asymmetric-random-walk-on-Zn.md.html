@@ -1,0 +1,21 @@
+<p>
+    Consider the random walk on <span class="inline-math">$\Z_n = \set{0,1,\ldots,n-1}$</span> with transition probabilities
+    <span class="display-math">$$ \begin{align*}
+        P(i,\ (i+1)\bmod n) &amp;= p, \\
+        P(i,\ (i-1)\bmod n) &amp;= q \equiv 1-p.
+    \end{align*} $$</span>
+    for each <span class="inline-math">$i\in \Z_n$</span>, where <span class="inline-math">$p\in (0,1)$</span> and <span class="inline-math">$p\neq \frac{1}{2}$</span>.
+</p>
+<p>
+    The chain is irreducible, and the uniform distribution <span class="inline-math">$\pi_i = 1/n$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-existence-of-an-invariant-distribution.html">unique</a> <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant</a> distribution.
+    But the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-time-reversible-transition-matrix.html">detailed balance equations</a> are not satisfied:
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{n} \times p \neq \frac{1}{n} \times q
+    \end{align*} $$</span>
+    so the chain is not reversible.
+</p>
+<p>
+    This makes sense since if we start the chain from <span class="inline-math">$\pi$</span> and run the chain forward in time,
+    we observe a rightward (or leftward) drift, but if we run it backward in time,
+    we observe a leftward (or rightward) drift.
+</p>

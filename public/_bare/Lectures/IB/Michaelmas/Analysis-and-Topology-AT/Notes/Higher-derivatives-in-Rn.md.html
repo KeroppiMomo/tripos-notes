@@ -1,0 +1,181 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (second derivative)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-derivative.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: U\to\R^m$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-differentiation-in-Rn.html">differentiable</a> function on <span class="inline-math">$U\subseteq \R^n$</span> open.
+            </p>
+            <p>
+                <span class="inline-math">$f$</span> is said to be <em>twice differentiable</em> at <span class="inline-math">$x_0\in U$</span>
+                if <span class="inline-math">$Df|_x: U\to \mathcal{L}(\R^n, \R^m) \isom \R^{m\times n}$</span>
+                is differentiable at <span class="inline-math">$x_0$</span>.
+            </p>
+            <p>
+                Then <span class="inline-math">$D^2 f(x_0) \in \mathcal{L}(\R^n, \mathcal{L}(\R^n, \R^m)) \isom$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-bilinear-form.html"><span class="inline-math">$\mathrm{Bil}$</span></a><span class="inline-math">$(\R^{n}\times \R^n, \R^m)$</span>.
+                This can be identified as a vector
+                <span class="inline-math">$(D^2 f^1(x_0), \ldots, D^2 f^m(x_0))$</span>
+                of matrices <span class="inline-math">$D^2 f^k(x_0) \in \mathrm{Bil}(\R^n\times \R^n, \R) \isom \R^{n\times n}$</span>,
+                which are called the <em>Hessian</em> of <span class="inline-math">$f$</span> at <span class="inline-math">$x_0$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$D^2 f(x)$</span> exists and is continuous at all <span class="inline-math">$x\in V\subseteq U$</span>,
+                then we say <span class="inline-math">$f\in C^2(V)$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (second partial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-partial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: U\to\R^m$</span> with <span class="inline-math">$U\subseteq \R^n$</span>
+                have <span class="inline-math">$j$</span>-th <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-partial-derivative.html">partial derivative</a> functions <span class="inline-math">$\partial_j f:U \to \R^m$</span>.
+            </p>
+            <p>
+                We say <span class="inline-math">$f$</span> has <em><span class="inline-math">$(i,j)$</span>-th partial</em> at <span class="inline-math">$x_0$</span> if <span class="inline-math">$\partial_{ij}^2 f(x_0) = \partial_i (\partial_j f)(x_0)$</span> exists.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Taylor's theorem for second derivative)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-Taylor-s-theorem-for-second-derivative.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: U\to\R^m$</span> with <span class="inline-math">$U\subseteq \R^n$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$f$</span> is twice differentiable at <span class="inline-math">$x_0$</span>,
+                then
+                <span class="display-math">$$ \begin{align*}
+                    f(x_0 + h) = f(x_0) + Df(x_0)(h) + \frac{1}{2} D^2f(x_0)(h,h) + ε_2(h)\, \|h\|^2
+                \end{align*} $$</span>
+                for all <span class="inline-math">$h\in B_{\mathrm{dist}(x_0, \partial U)}(x_0)$</span>, where <span class="inline-math">$ε_2(h) \to 0$</span> as <span class="inline-math">$h\to 0$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-Taylor-s-theorem-for-second-derivative.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (second order partials exist if twice differentiable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-second-order-partials-exist-if-twice-differentiable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: U\to\R^m$</span> with <span class="inline-math">$U\subseteq \R^n$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-derivative.html">twice differentiable</a> at <span class="inline-math">$x_0$</span>,
+                then all its <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-partial.html">second order partials</a> exist at <span class="inline-math">$x_0$</span>.
+            </p>
+            <p>
+                Identifying <span class="inline-math">$\mathcal{L}(\R^n, \mathcal{L}(\R^n, \R^m))\isom \mathrm{Bil}(\R^n\times \R^n, \R^m) \isom (\R^{n\times n})^m$</span>,
+                the Hessians are
+                <span class="display-math">$$ \begin{align*}
+                    D^2 f^k(x_0) = \left.\pmat{\partial^2_{11} f^k &amp; \ldots &amp; \partial^2_{1n}f^k \\
+                    \vdots &amp; \ddots &amp; \vdots \\
+                    \partial^2_{n_1}f^k &amp; \ldots&amp; \partial^2_{nn}f^k}\right|_{x_0}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Proof: see the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-partial-derivatives-exist-if-differentiable.html">first derivative case</a>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (C2 iff second order partials are continuous)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-C2-iff-second-order-partials-are-continuous.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: U\to\R^m$</span> with <span class="inline-math">$U\subseteq \R^n$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-derivative.html"><span class="inline-math">$f\in C^2(U)$</span></a> iff all first and <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-partial.html">second order partials</a> of <span class="inline-math">$f$</span> exist and are continuous in <span class="inline-math">$U$</span>.
+            </p>
+            <p>
+                Proof: see the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuously-differentiable-iff-partial-derivatives-are-continuous.html">first derivative case</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (mixed partials commute)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-mixed-partials-commute.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: U\to\R^m$</span> with <span class="inline-math">$U\subseteq \R^n$</span>
+                and <span class="inline-math">$x_0\in U$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\partial_i f, \partial_j f,$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-partial.html"><span class="inline-math">$\partial_{ij}^2$</span></a><span class="inline-math">$f$</span> exist on <span class="inline-math">$U$</span> and <span class="inline-math">$\partial_{ij}^2 f$</span> is continuous at <span class="inline-math">$x_0$</span>,
+                then <span class="inline-math">$\partial_{ji} f(x_0)$</span> exists and <span class="inline-math">$\partial_{ji} f(x_0) = \partial_{ij} f(x_0)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-mixed-partials-commute.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Example-of-asymmetric-second-order-partials.html">Example of asymmetric second order partials</a>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Hessian and local extrema)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-Hessian-and-local-extrema.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: U\to\R$</span> with <span class="inline-math">$U\subseteq \R^n$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-derivative.html"><span class="inline-math">$C^2(U)$</span></a> function.
+                Suppose <span class="inline-math">$Df(x_0) = 0$</span> at some <span class="inline-math">$x_0\in U$</span>.
+                Then
+            </p>
+            <ul>
+            <li>
+                <p>
+                    if <span class="inline-math">$D^2 f(x_0)$</span> is positive definite, then <span class="inline-math">$f(x_0)$</span> is a local minimum, i.e. <span class="inline-math">$f(x_0+h) \geq f(x_0)$</span> for all sufficiently small <span class="inline-math">$h$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    if <span class="inline-math">$D^2 f(x_0)$</span> is negative definite, then <span class="inline-math">$f(x_0)$</span> is a local maximum, i.e. <span class="inline-math">$f(x_0+h) \leq f(x_0)$</span> for all sufficiently small <span class="inline-math">$h$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-Hessian-and-local-extrema.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

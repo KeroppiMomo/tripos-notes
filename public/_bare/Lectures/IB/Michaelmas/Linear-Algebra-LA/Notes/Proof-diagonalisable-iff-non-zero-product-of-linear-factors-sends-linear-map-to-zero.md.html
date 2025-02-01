@@ -1,0 +1,97 @@
+
+<h1>Existence of <span class="inline-math">$p$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$m_\alpha$</span> is a product of distinct linear factors</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-minimal-polynomial-divides-polynomials-that-send-linear-map-to-zero.html">We have</a> <span class="inline-math">$m_\alpha\mid p$</span>,
+    so if <span class="inline-math">$p$</span> is a product of distinct linear factors, then so is <span class="inline-math">$m_\alpha$</span>.
+</p>
+
+<h1><span class="inline-math">$m_\alpha$</span> is a product of distinct linear factors <span class="inline-math">$\implies$</span> existence of <span class="inline-math">$p$</span></h1>
+
+<p>
+    Set <span class="inline-math">$p=m_\alpha$</span>.
+</p>
+
+<h1>Diagonalisable <span class="inline-math">$\implies$</span> existence of <span class="inline-math">$p$</span></h1>
+
+<p>
+    Let <span class="inline-math">$n=\dim(V)$</span>.
+    Let <span class="inline-math">$B$</span> be basis for <span class="inline-math">$V$</span> such that <span class="inline-math">$[\alpha]^B_B$</span> is diagonalisable.
+    By reordering <span class="inline-math">$B$</span>, we can assume
+    <span class="display-math">$$ \begin{align*}
+        A = [\alpha]^B_B = \pmat{\lambda_1 I_{n_1} &amp;\\
+        &amp;\lambda_2 I_{n_2} \\
+        &amp;&amp; \ddots \\
+        &amp;&amp;&amp; \lambda_k I_{n_k}}
+    \end{align*} $$</span>
+    where all <span class="inline-math">$\lambda_i$</span> are distinct and <span class="inline-math">$\sum_{i=1}^{k} n_i = n$</span>.
+</p>
+<p>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \prod_{i=1}^{k} (A - \lambda_i I_n) = 0
+    \end{align*} $$</span>
+    because for each <span class="inline-math">$j=1,2,\ldots,n$</span>, the entry <span class="inline-math">$(A-\lambda_i I_n)_{j,j} = 0$</span> for some <span class="inline-math">$i=1,2,\ldots,k$</span>.
+</p>
+<p>
+    Setting
+    <span class="display-math">$$ \begin{align*}
+        p(t) = \prod_{i=1}^{k} (t-\lambda_i)
+    \end{align*} $$</span>
+    works since <span class="inline-math">$(t-\lambda_i)$</span> are distinct linear factors.
+</p>
+
+<h1>Existence of <span class="inline-math">$p$</span> <span class="inline-math">$\implies$</span> diagonalisable</h1>
+
+<p>
+    We can assume <span class="inline-math">$p$</span> is monic. Write
+    <span class="display-math">$$ \begin{align*}
+        p(t) = \prod_{i=1}^{k} (t-\mu_i)
+    \end{align*} $$</span>
+    where <span class="inline-math">$\mu_1, \mu_2, \ldots, \mu_k\in \mathbb{F}$</span> are distinct.
+    We know that <span class="inline-math">$p(\alpha) = 0$</span>.
+</p>
+<blockquote>
+    <p>
+        Our goal is to show
+        <span class="display-math">$$ \begin{align*}
+            V \leq V_{\mu_1} \oplus V_{\mu_2} \oplus \ldots \oplus V_{\mu_k} \leq V.
+        \end{align*} $$</span>
+    </p>
+    
+</blockquote>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        p_j(t) = \prod_{\substack{i=1 \\ i\neq j}}^{k} (t-\mu_j), \qquad j=1,2,\ldots,k.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$p_1, \ldots, p_k$</span> have no common factor of degree at least 1,
+    by <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-Bezout-identity-for-polynomials.html">Bézout's identity</a>, there exists polynomials <span class="inline-math">$q_j\in \mathbb{F}[t]$</span>
+    such that
+    <span class="display-math">$$ \begin{align*}
+        1 = \sum_{j=1}^{k} p_j(t) q_j(t).
+    \end{align*} $$</span>
+</p>
+<p>
+    Define <span class="inline-math">$\pi_j = p_j(\alpha)\circ q_j(\alpha)\in \mathcal{L}(V,V)$</span>. The above equation becomes
+    <span class="display-math">$$ \begin{align*}
+        \id_V = \pi_1 + \pi_2 + \ldots + \pi_k.
+    \end{align*} $$</span>
+    For all <span class="inline-math">$v\in V$</span>, we have <span class="inline-math">$v = \id_V(v) = \pi_1(v) + \ldots + \pi_k(v)$</span>, so <span class="inline-math">$V = \im(\pi_1) + \ldots + \im(\pi_k)$</span>.
+</p>
+<p>
+    But note that since <span class="inline-math">$p(t) = (t-\mu_j) p_j(t)$</span>, we know
+    <span class="display-math">$$ \begin{align*}
+        (\alpha - \mu_j\id_V) \circ\pi_j ={}&amp; (\alpha-\mu_j\id_V) \circ p_j(\alpha) \circ q_j(\alpha) \\
+        ={}&amp; \underbrace{p(\alpha)}_{0} \circ q_j(\alpha) \\
+        ={}&amp; 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$\im(\pi_j) \leq \ker(\alpha - \mu_j \id_V) = V_{\lambda_j}$</span>.
+</p>
+<p>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        V = \im(\pi_1) + \ldots + \im(\pi_k) \leq V_{\mu_1} + \ldots + V_{\mu_k} \leq V.
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-direct-sum-of-eigenspaces.html">Therefore</a> <span class="inline-math">$V = V_{\mu_1} \oplus \ldots \oplus V_{\mu_k}$</span> and <span class="inline-math">$\alpha$</span> is diagonalisable.
+</p>

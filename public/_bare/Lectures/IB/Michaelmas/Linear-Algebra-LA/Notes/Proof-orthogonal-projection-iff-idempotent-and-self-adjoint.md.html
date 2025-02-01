@@ -1,0 +1,52 @@
+
+<h1>Orthogonal projection is idempotent and self-adjoint</h1>
+
+<p>
+    Let
+    <span class="display-math">$$ \begin{align*}
+        \alpha: \qquad V &amp;\to V \\
+        w + u &amp;\mapsto w, &amp;&amp;w\in W, u\in W^\perp
+    \end{align*} $$</span>
+    where <span class="inline-math">$W\leq V$</span> is a subspace.
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-orthogonal-complement.html">Recall</a> <span class="inline-math">$V = W\operp W^\perp$</span>.
+</p>
+<p>
+    For all <span class="inline-math">$w,w&#x27;\in W$</span> and <span class="inline-math">$u,u&#x27;\in W^\perp$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \langle \alpha(w+u), w&#x27;+u&#x27;\rangle ={}&amp; \langle w, w&#x27;+u&#x27;\rangle \\
+        ={}&amp; \langle w,w&#x27;\rangle \\
+        ={}&amp; \langle w+u, w&#x27;\rangle \\
+        ={}&amp; \langle w+u, \alpha(w&#x27; + u&#x27;)\rangle
+    \end{align*} $$</span>
+    so <span class="inline-math">$\alpha$</span> is self-adjoint.
+</p>
+<p>
+    Also clearly <span class="inline-math">$\alpha^2 = \alpha$</span>.
+</p>
+
+<h1>Idempotent self-adjoint linear map is orthogonal projection</h1>
+
+<p>
+    For all <span class="inline-math">$v\in V$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \alpha(\alpha(v)) = \alpha(v) \implies \alpha(v - \alpha(v)) = 0 \implies v - \underbrace{\alpha(v)}_{\in \im(\alpha)} \in \ker(\alpha)
+    \end{align*} $$</span>
+    so <span class="inline-math">$V = \ker(\alpha) + \im(\alpha)$</span>.
+</p>
+<p>
+    Moreover, for all <span class="inline-math">$w=\alpha(v) \in \im(\alpha)$</span> and <span class="inline-math">$u\in \ker(\alpha)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \langle w,u\rangle ={}&amp; \langle \alpha(v), u\rangle \\
+        ={}&amp; \langle v, \alpha(u)\rangle &amp;&amp;\text{self-adjoint} \\
+        ={}&amp; \langle v, \v 0\rangle \\
+        ={}&amp; 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$V = \ker(\alpha) \operp \im(\alpha)$</span>.
+</p>
+<p>
+    Finally for <span class="inline-math">$w=\alpha(v) \in \im(\alpha)$</span> and <span class="inline-math">$u\in \ker(\alpha)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \alpha(w + u) = \alpha^2(v) + \alpha(u) = \alpha(v) = w
+    \end{align*} $$</span>
+    so <span class="inline-math">$\alpha = \pi_{\im(\alpha)}$</span>.
+</p>

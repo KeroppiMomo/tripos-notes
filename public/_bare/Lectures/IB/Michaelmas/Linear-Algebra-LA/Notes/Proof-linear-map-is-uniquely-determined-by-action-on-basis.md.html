@@ -1,0 +1,45 @@
+
+<h1>Existence</h1>
+
+<p>
+    Since <span class="inline-math">$B$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-basis.html">basis</a>,
+    every <span class="inline-math">$v\in V$</span> can be written as
+    <span class="display-math">$$ \begin{align*}
+        v = \sum_{b\in B}&#x27; \lambda_b b, \qquad \lambda_b\in \mathbb{F},
+    \end{align*} $$</span>
+    so define
+    <span class="display-math">$$ \begin{align*}
+        F(v) = \sum_{b\in B}&#x27; \lambda_b f(b).
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$F$</span> is well-defined, since if <span class="inline-math">$v = \sum_{b\in B}&#x27; \lambda_b b = \sum_{b\in B}&#x27; \mu_b b$</span>,
+    then
+    <span class="display-math">$$ \begin{align*}
+        \sum_{b\in B} (\lambda_b - \mu_b) b = \v 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$\lambda_b = \mu_b$</span> for all <span class="inline-math">$b\in B$</span> as <span class="inline-math">$B$</span> is linearly independent.
+</p>
+<p>
+    <span class="inline-math">$f$</span> is linear, since for all <span class="inline-math">$v, u\in V$</span> and <span class="inline-math">$\lambda\in\mathbb{F}$</span>, write <span class="inline-math">$v = \sum_{b\in B}&#x27; \lambda_b b$</span> and <span class="inline-math">$u = \sum_{b\in B}&#x27; \mu_b b$</span>, and then
+    <span class="display-math">$$ \begin{align*}
+        F(u + \lambda v) &amp;= F\left(\sum_{b\in B} (\mu_b + \lambda \lambda_b) b\right) \\
+        &amp;= \sum_{b\in B}(\mu_b + \lambda \lambda_b) f(b) \\
+        &amp;= \sum_{b\in B}\mu_b f(b) + \lambda\sum_{b\in B}\lambda_b f(b) \\
+        &amp;= F(u) + \lambda F(v).
+    \end{align*} $$</span>
+</p>
+
+<h1>Uniqueness</h1>
+
+<p>
+    If <span class="inline-math">$\bar F$</span> is another linear extension of <span class="inline-math">$f$</span> on <span class="inline-math">$V$</span>,
+    then for every <span class="inline-math">$v\in V$</span>, writing <span class="inline-math">$v = \sum_{b\in B}&#x27; \lambda_b b$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \bar F(v) &amp;= \bar F\left(\sum_{b\in B} \lambda_b b\right) \\
+        &amp;= \sum_{b\in B} \lambda_b \bar F(b) \\
+        &amp;= \sum_{b\in B} \lambda_b f(b) \\
+        &amp;= F(v)
+    \end{align*} $$</span>
+    so <span class="inline-math">$\bar F = F$</span>.
+</p>

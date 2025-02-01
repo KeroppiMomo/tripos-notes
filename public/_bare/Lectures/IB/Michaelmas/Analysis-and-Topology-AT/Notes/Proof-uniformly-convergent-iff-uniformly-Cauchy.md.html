@@ -1,0 +1,46 @@
+
+<h1>Uniformly convergent <span class="inline-math">$\implies$</span> uniformly Cauchy</h1>
+
+<p>
+    Let <span class="inline-math">$f: Y\to\R$</span> such that <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-convergence.html"><span class="inline-math">$f_n \tto f$</span></a> as <span class="inline-math">$n\to\infty$</span>.
+    Fix <span class="inline-math">$\epsilon&gt;0$</span>. There exists <span class="inline-math">$N\in\N$</span> such that <span class="inline-math">$\sup_{x\in Y}|f_n - f|(x) &lt; \epsilon$</span> for all <span class="inline-math">$n\geq N$</span>.
+</p>
+<p>
+    Therefore for <span class="inline-math">$n, m\geq N$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \sup_{x\in Y} |f_n - f_m|(x) &amp;= \sup_{x\in Y} |f_n - f + f - f_m|(x) \\
+        &amp;\leq \sup_{x\in Y} \Big(|f_n - f|(x) + |f_m - f|(x)\Big) \\
+        &amp;\leq \sup_{x\in Y} |f_n - f|(x) + \sup_{x\in Y} |f_m - f|(x) \\
+        &amp;&lt; \epsilon + \epsilon = 2\epsilon.
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$\set{f_n}$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniformly-Cauchy.html">uniformly Cauchy</a>.
+</p>
+
+<h1>Uniformly Cauchy <span class="inline-math">$\implies$</span> uniformly convergent</h1>
+
+<p>
+    Suppose <span class="inline-math">$\set{f_n}$</span> is uniformly Cauchy.
+    For any <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$N = N(\epsilon)\in\N$</span> such that <span class="inline-math">$\sup_{x\in Y} |f_n - f_m|(x) &lt; \epsilon$</span> for all <span class="inline-math">$n,m\geq N(\epsilon)$</span>.
+</p>
+<p>
+    Then for any <span class="inline-math">$x\in Y$</span>, the real sequence <span class="inline-math">$\set{f_n(x)}_{n\geq 1}^\infty$</span> satisfies that for any <span class="inline-math">$\epsilon&gt;0$</span>,
+    we have <span class="inline-math">$|f_n(x) - f_n(x)|$</span> for all <span class="inline-math">$n,m\geq N(\epsilon)$</span>.
+    Hence <span class="inline-math">$\set{f_n(x)}$</span> is <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Definition-Cauchy-sequence.html">Cauchy</a>
+    and <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Proof-Cauchy-sequences-converge.html">therefore converges</a>.
+    Let <span class="inline-math">$f(x)$</span> be the limit of the sequence <span class="inline-math">$\set{f_n(x)}$</span>.
+</p>
+<p>
+    Fix <span class="inline-math">$\epsilon&gt;0$</span>.
+    Since <span class="inline-math">$\set{f_n}$</span> is uniformly Cauchy,
+    for <span class="inline-math">$m,n\geq N(\epsilon)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        |f_m(x) - f_n(x)| &lt; \epsilon.
+    \end{align*} $$</span>
+    Taking the limit as <span class="inline-math">$n\to\infty$</span>, we obtain for any <span class="inline-math">$m\geq N(\epsilon)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        |f_m(x) - f(x)| \leq \epsilon &lt; 2\epsilon.
+    \end{align*} $$</span>
+</p>
+<p>
+    Hence <span class="inline-math">$\set{f_n}$</span> converges uniformly to <span class="inline-math">$f$</span>.
+</p>

@@ -1,0 +1,50 @@
+
+<h1>Closed <span class="inline-math">$\implies$</span> sequentially closed</h1>
+
+<p>
+    Use the below fact, or alternatively:
+</p>
+<p>
+    Suppose <span class="inline-math">$A$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closed-set.html">closed</a> but not <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequentially-closed.html">sequentially closed</a>.
+    Since <span class="inline-math">$A$</span> is not sequentially closed, there exists a sequence <span class="inline-math">$\set{a_n}_{n=1}^\infty$</span> where <span class="inline-math">$a_n\in A$</span> but <span class="inline-math">$a_n \to x\in X\setminus A$</span>.
+</p>
+<p>
+    And since <span class="inline-math">$A$</span> is closed, <span class="inline-math">$X\setminus A$</span> is open,
+    so <span class="inline-math">$X\setminus A$</span> is an open neighbourhood of <span class="inline-math">$x$</span>.
+</p>
+<p>
+    By <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequence-convergence.html">convergence</a>, <span class="inline-math">$a_n\in X\setminus A$</span> for sufficiently large <span class="inline-math">$n$</span>,
+    but this contradicts with all <span class="inline-math">$a_n \in A$</span>.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Pasted-image-20241021200721.png">
+</p>
+
+<h1><span class="inline-math">$\scl(A) \subseteq \cl(A)$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$x\in \scl(A) \setminus \cl(A)$</span>.
+    Then there exists <span class="inline-math">$\set{a_n}$</span> in <span class="inline-math">$A$</span> such that <span class="inline-math">$a_n\to x\in X\setminus A$</span>.
+    Hence for all neighbourhood <span class="inline-math">$N$</span> of <span class="inline-math">$x$</span>, we have <span class="inline-math">$x_n\in N$</span> for sufficiently large <span class="inline-math">$n$</span>.
+    Therefore <span class="inline-math">$N\cap (A\setminus \set{x})\neq \emptyset$</span>.
+    But then <span class="inline-math">$x$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-accumulation-point-derived-set.html">accumulation point</a> and
+    this contradicts with <span class="inline-math">$x\not\in \cl(A)$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-closed-sets-and-derived-sets.html"><span class="inline-math">$=$</span></a> <span class="inline-math">$A \cup A&#x27;$</span>.
+</p>
+
+<h1>In metric space: sequentially closed <span class="inline-math">$\implies$</span> closed</h1>
+
+<p>
+    Suppose <span class="inline-math">$A$</span> is sequentially closed but not closed.
+    Since <span class="inline-math">$A$</span> is not closed, <span class="inline-math">$X\setminus A$</span> is not open,
+    so there exists a point <span class="inline-math">$x\in X\setminus A$</span> such that
+    for any <span class="inline-math">$r&gt;0$</span>, the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-and-closed-balls.html">open ball</a> <span class="inline-math">$B_r(x) \not\subseteq X\setminus A$</span>,
+    which means <span class="inline-math">$B_r(x) \cap A \neq \emptyset$</span>.
+</p>
+<p>
+    Take <span class="inline-math">$r=1/n$</span> and choose <span class="inline-math">$a_n \in B_r(x) \cap A$</span>.
+    Then <span class="inline-math">$a_n\in A$</span> and <span class="inline-math">$a_n\to x\in X\setminus A$</span>,
+    which contradicts with sequential closure.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Pasted-image-20241021201035.png">
+</p>

@@ -1,0 +1,179 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (transience and recurrence)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-transience-and-recurrence.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$\ouline{X} = (X_n)_{n\geq 0}$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-Markov-chain.html">Markov chain</a> on <span class="inline-math">$I$</span> with transition matrix <span class="inline-math">$P$</span>.
+            </p>
+            <p>
+                We say a state <span class="inline-math">$i\in I$</span> is
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <em>recurrent</em> if <span class="inline-math">$\prob(X_n = i \text{ for infinitely many } n | X_0 = i) = 1$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <em>transient</em> if <span class="inline-math">$\prob(X_n = i \text{ for infinitely many } n | X_0 = i) = 0$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                We say <span class="inline-math">$P$</span> is <em>recurrent</em>/<em>transient</em> if all states are recurrent/transient.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (return times)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-return-times.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$\ouline{X} = (X_n)_{n\geq 0}$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-Markov-chain.html">Markov chain</a> on <span class="inline-math">$I$</span>.
+            </p>
+            <p>
+                The <em>return times</em> <span class="inline-math">$T_i^{(k)}$</span> for <span class="inline-math">$i\in I$</span> are defined inductively as
+                <span class="display-math">$$ \begin{align*}
+                    T_i^{(0)} = 0, \qquad T_i^{(k+1)} = \inf \sb{n&gt;T_i^{(k)}}{X_n = i}.
+                \end{align*} $$</span>
+                and write <span class="inline-math">$T_i = T_i^{(1)}$</span> as the <em>first return time</em>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (probability for number of visits)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Lemma-probability-for-number-of-visits.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Define, for <span class="inline-math">$i\in I$</span>, the total number of visits
+                <span class="display-math">$$ \begin{align*}
+                    V_i = \sum_{n=0}^{\infty} \mathbb{1}(X_n = i).
+                \end{align*} $$</span>
+                For all <span class="inline-math">$r\geq 0$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \prob(V_i &gt; r | X_0 = i) = \big(\prob(T_i &lt; \infty| X_0 = i)\big)^r.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-probability-for-number-of-visits.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (state is either recurrent or transient)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-state-is-either-recurrent-or-transient.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a Markov chain  on <span class="inline-math">$I$</span> with transition matrix <span class="inline-math">$P$</span>, and let <span class="inline-math">$i\in I$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    If <span class="inline-math">$\prob(T_i &lt; \infty | X_0 = i) = 1$</span>, then <span class="inline-math">$i$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-transience-and-recurrence.html">recurrent</a> and <span class="inline-math">$\sum_{n=0}^{\infty}$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-power-of-transition-matrix.html"><span class="inline-math">$p_{ii}(n)$</span></a> <span class="inline-math">$=\infty$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Otherwise, <span class="inline-math">$i$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-transience-and-recurrence.html">transient</a> and <span class="inline-math">$\sum_{n=0}^{\infty}$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-power-of-transition-matrix.html"><span class="inline-math">$p_{ii}(n)$</span></a> <span class="inline-math">$&lt;\infty$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-state-is-either-recurrent-or-transient.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (both recurrent or transient if communicates)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-both-recurrent-or-transient-if-communicates.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a Markov chain on <span class="inline-math">$I$</span>, and let <span class="inline-math">$x, y\in I$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$x$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-leads-to-communicate.html"><span class="inline-math">$\leftrightarrow$</span></a> <span class="inline-math">$y$</span>,
+                then they are either both <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-transience-and-recurrence.html">recurrent</a> or both <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-transience-and-recurrence.html">transient</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-both-recurrent-or-transient-if-communicates.html">Proof</a>
+            </p>
+            <p>
+                As a result, a <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-communicating-classes-closed-class-irreducible-chain-absorbing-state.html">communicating class</a> consists of either all recurrent states or all transient states.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (recurrent and closed communicating class)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-recurrent-and-closed-communicating-class.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$C$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-communicating-classes-closed-class-irreducible-chain-absorbing-state.html">communicating class</a> of a Markov chain.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$C$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-transience-and-recurrence.html">recurrent</a>, then <span class="inline-math">$C$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-communicating-classes-closed-class-irreducible-chain-absorbing-state.html">closed</a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$C$</span> is closed and finite, then <span class="inline-math">$C$</span> is recurrent.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-recurrent-and-closed-communicating-class.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (visit everywhere in irreducible and recurrent chain)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-visit-everywhere-in-irreducible-and-recurrent-chain.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose a Markov chain on <span class="inline-math">$I$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-communicating-classes-closed-class-irreducible-chain-absorbing-state.html">irreducible</a> and <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-recurrent-and-closed-communicating-class.html">recurrent</a>.
+                Then for all <span class="inline-math">$x,y\in I$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \prob(T_y &lt; \infty | X_0 = x) = 1.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-visit-everywhere-in-irreducible-and-recurrent-chain.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

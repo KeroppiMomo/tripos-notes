@@ -1,0 +1,39 @@
+<p>
+    For a symmetric bilinear form <span class="inline-math">$\phi$</span>,
+    if <span class="inline-math">$[\phi]_B$</span> is diagonal, then it is symmetric, <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-matrix-of-symmetric-bilinear-and-Hermitian-sesquilinear-form.html">so</a> <span class="inline-math">$\phi$</span> is symmetric.
+    For a Hermitian sesquilinear form <span class="inline-math">$\phi$</span>, <span class="inline-math">$\phi(v,v)$</span> is real,
+    so if <span class="inline-math">$[\phi]_B$</span> is diagonal, then it is Hermitian.
+</p>
+<p>
+    We prove the converse by induction on <span class="inline-math">$n=\dim(V)$</span>.
+    It is clear for <span class="inline-math">$n=0$</span> or <span class="inline-math">$n=1$</span>.
+</p>
+<p>
+    Suppose the theorem is true for any <span class="inline-math">$\mathbb{F}$</span>-vector space of dimension <span class="inline-math">$n-1$</span>.
+    If <span class="inline-math">$\phi(v,v) = 0$</span> for all <span class="inline-math">$v\in V$</span>,
+    then by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-polarisation-identity.html">polarisation identity</a>,
+    <span class="inline-math">$\phi\equiv 0$</span>, so <span class="inline-math">$[\phi]_B = 0$</span>.
+</p>
+<p>
+    Otherwise, let <span class="inline-math">$v_1 \in V$</span> such that <span class="inline-math">$\phi(v_1, v_1)\neq 0$</span>.
+    Let <span class="inline-math">$U = {^\perp\set{v_1}} = \ker(\phi_R(v_1))$</span>.
+    By <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-rank-nullity.html">rank-nullity</a>, <span class="inline-math">$\dim(U) + \rk(\phi_R(v_1): V\to\mathbb{F}) = n$</span>,
+    and since <span class="inline-math">$\phi_R(v_1)(v_1) \neq 0$</span>, <span class="inline-math">$\rk(\phi_R) = 1$</span>, so <span class="inline-math">$\dim(U) = n-1$</span>.
+</p>
+<p>
+    The restriction <span class="inline-math">$\phi|_{U}: U\times U\to \mathbb{F}$</span> is still a symmetric bilinear form/Hermitian sesquilinear form,
+    so by induction hypothesis,
+    there exists a basis <span class="inline-math">$B_U = \set{v_2, \ldots, v_n}$</span> for <span class="inline-math">$U$</span> such that
+    <span class="inline-math">$[\phi|_U]_{B_U}$</span> is diagonal.
+</p>
+<p>
+    Since <span class="inline-math">$\phi(v_1, v_i) = \phi(v_i, v_1) = 0$</span> for <span class="inline-math">$i=2,\ldots,n$</span> and <span class="inline-math">$\phi(v_1, v_1) = 0$</span>,
+    the set <span class="inline-math">$B = \set{v_1, \ldots, v_n}$</span> is a basis for <span class="inline-math">$V$</span>, and
+    <span class="display-math">$$ \begin{align*}
+        [\phi]_B = \pmat{\phi(v_1, v_1) &amp; 0 &amp; \ldots &amp; 0 \\
+        0 \\
+        \vdots &amp; &amp; [\phi|_U]_{B_U} \\
+        0}
+    \end{align*} $$</span>
+    is diagonal.
+</p>

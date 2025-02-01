@@ -1,0 +1,59 @@
+<p>
+    The chain is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-communicating-classes-closed-class-irreducible-chain-absorbing-state.html">irreducible</a>, so <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-both-recurrent-or-transient-if-communicates.html">it suffices to show</a>
+    that 0 is transient <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-state-is-either-recurrent-or-transient.html">by showing</a>
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n\geq 0} p_{00}(n) &lt; \infty.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that <span class="inline-math">$p_{00}(n)$</span> is only non-zero for even <span class="inline-math">$n$</span>,
+    and to return to 0 after <span class="inline-math">$2n$</span> steps, we need to take <span class="inline-math">$i$</span> steps left, <span class="inline-math">$i$</span> steps right,
+    <span class="inline-math">$j$</span> steps forward, <span class="inline-math">$j$</span> steps backward, <span class="inline-math">$k$</span> stpes up, and <span class="inline-math">$k$</span> steps down,
+    such that <span class="inline-math">$i+j+k=n$</span>.
+</p>
+<p>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        p_{00}(2n) ={}&amp; \sum_{\substack{i,j,k\geq 0, \\i+j+k=n}} \pmat{2n \\ i,i,j,j,k,k} \left(\frac{1}{6}\right)^{2n} \\
+        ={}&amp; \pmat{2n \\ n} \left(\frac{1}{6}\right)^{2n} \sum_{\substack{i,j,k\geq 0, \\i+j+k=n}} \pmat{n \\ i,j,k}^2.
+    \end{align*} $$</span>
+    If <span class="inline-math">$n=3m$</span>, we can bound
+    <span class="display-math">$$ \begin{align*}
+        \pmat{n\\i,j,k} \leq  \pmat{n\\m,m,m}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        p_{00}(2n) = \pmat{2n\\n} \pmat{n\\m,m,m}\left(\frac{1}{2}\right)^{2n} \left(\frac{1}{3}\right)^{n}\sum_{\substack{i,j,k\geq 0, \\i+j+k=n}} \pmat{n\\i,j,k} \left(\frac{1}{3}\right)^n.
+    \end{align*} $$</span>
+    The sum equals 1, because that is the probability of putting <span class="inline-math">$n$</span> items in 3 boxes at random.
+    <span class="display-math">$$ \begin{align*}
+        p_{00}(2n) ={}&amp; \frac{(2n)!}{(n!)^2} \frac{n!}{(m!)^3} \frac{1}{2^{2n} 3^n} \\
+        ={}&amp; \frac{(2n)!}{n!(\frac{n}{3}!)^3} \frac{1}{2^{2n} 3^{n}} \\
+        \sim{}&amp; \frac{\sqrt{4\pi n} \, (2n)^{2n} e^{-2n}}{\sqrt{2\pi n} \, n^{n} e^{-n} \big(\sqrt{2\pi \frac{n}{3}} (\frac{n}{3})^{n/3} e^{-n/3}\big)^3} \frac{1}{2^{2n} 3^{n}} \\
+        ={}&amp; \frac{1}{2\pi^{3/2}} \frac{1}{n^{3/2}}
+    \end{align*} $$</span>
+    so there exists some constant <span class="inline-math">$C$</span> (say <span class="inline-math">$C = 1/\pi^{3/2}$</span>) such that for sufficiently large <span class="inline-math">$n\geq N$</span>,
+    <span class="display-math">$$ \begin{align*}
+        p_{00}(2n) \leq \frac{C}{n^{3/2}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    For <span class="inline-math">$n\neq 3m$</span>, we can bound <span class="inline-math">$p_{00}(n)$</span> by
+    <span class="display-math">$$ \begin{align*}
+        p_{00}(6m) &amp;\geq p_{00}(2) p_{00}(6m-2) \geq \left(\frac{1}{6}\right)^{2} p_{00}(6m-2), \\
+        p_{00}(6m) &amp;\geq p_{00}(4) p_{00}(6m-4) \geq \left(\frac{1}{6}\right)^{4} p_{00}(6m-4), \\
+    \end{align*} $$</span>
+    so for sufficiently large <span class="inline-math">$n\geq N$</span>,
+    <span class="display-math">$$ \begin{align*}
+        p_{00}(2n) \leq \frac{C&#x27;}{n^{3/2}}
+    \end{align*} $$</span>
+    for some constant <span class="inline-math">$C&#x27; = 6^4\cdot C$</span>.
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n\geq 0} p_{00} ={}&amp; \sum_{n\geq 0} p_{00}(2n) \\
+        \leq{} &amp; \sum_{n&lt;N} p_{00}(2n) + \sum_{n\geq N} \frac{C&#x27;}{n^{3/2}} \\
+        &lt;{}&amp;\infty.
+    \end{align*} $$</span>
+</p>

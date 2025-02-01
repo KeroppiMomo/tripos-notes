@@ -1,0 +1,47 @@
+<p>
+    If <span class="inline-math">$U = \set{\v 0}$</span>, then we are done.
+</p>
+<blockquote>
+    <p>
+        <strong>Step 1.</strong> Let <span class="inline-math">$u_1 \in U\setminus \set{\v 0}$</span>. Then <span class="inline-math">$\set{u_1}$</span> is linearly independent.
+    </p>
+    
+</blockquote>
+<p>
+    Suppose after step <span class="inline-math">$k$</span>, we have constructed a linearly independent set <span class="inline-math">$\set{u_1, \ldots, u_k} \subseteq U$</span> with size <span class="inline-math">$k$</span>.
+    If it spans <span class="inline-math">$U$</span>, then <span class="inline-math">$\dim(U) = k \leq \dim(V)$</span> since <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-size-of-linearly-independent-set-basis-and-spanning-set.html">a linearly independent set in <span class="inline-math">$V$</span> has a size of at most <span class="inline-math">$\dim(V)$</span></a>.
+    Otherwise:
+</p>
+<blockquote>
+    <p>
+        <strong>Step <span class="inline-math">$k+1$</span>.</strong> Let <span class="inline-math">$u_{k+1} \in U\setminus \langle u_1, \ldots, u_k\rangle$</span>.
+        Suppose for some <span class="inline-math">$\lambda_1, \ldots, \lambda_{k+1}\in \mathbb{F}$</span>,
+        <span class="display-math">$$ \begin{align*}
+            \sum_{i=1}^{k+1} \lambda_i u_i = \v 0.
+        \end{align*} $$</span>
+        If <span class="inline-math">$\lambda_{k+1}\neq0$</span>, then 
+        <span class="display-math">$$ \begin{align*}
+            u_{k+1} = -\frac{1}{\lambda_{k+1}}\sum_{i=1}^{k} \lambda_i u_i \in \langle u_1, \ldots, u_k\rangle
+        \end{align*} $$</span>
+        which is a contradiction.
+        So <span class="inline-math">$\lambda_{k+1} = 0$</span>.
+        Then since <span class="inline-math">$\set{u_1, \ldots, u_k}$</span> are linearly independent, <span class="inline-math">$\lambda_1 = \lambda_2 = \ldots = \lambda_{k} = 0$</span>.
+        Hence <span class="inline-math">$\set{u_1, \ldots, u_k, u_{k+1}}$</span> is linearly independent.
+    </p>
+    
+</blockquote>
+<p>
+    This terminates in at most <span class="inline-math">$\dim(V)$</span> steps,
+    since after step <span class="inline-math">$\dim(V)$</span>,
+    <span class="inline-math">$\set{u_1, \ldots, u_{\dim(V)}}\subseteq U\subseteq V$</span> is a linearly independent set of size <span class="inline-math">$\dim(V)$</span>,
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-size-of-linearly-independent-set-basis-and-spanning-set.html">so</a> it is a basis of <span class="inline-math">$V$</span>.
+    It spans <span class="inline-math">$V$</span> and therefore <span class="inline-math">$U$</span>.
+</p>
+<p>
+    If <span class="inline-math">$U=V$</span>, then trivially <span class="inline-math">$\dim(U) = \dim(V)$</span>.
+</p>
+<p>
+    If <span class="inline-math">$\dim(U) = \dim(V)$</span>, then <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-finite-dimensional-vector-space-has-a-finite-basis.html">let</a> <span class="inline-math">$B\subseteq U$</span> be a basis of <span class="inline-math">$U$</span>.
+    <span class="inline-math">$B$</span> is linearly independent and <span class="inline-math">$|B| = \dim(U) = \dim(V)$</span>, <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-size-of-linearly-independent-set-basis-and-spanning-set.html">so</a> <span class="inline-math">$B$</span> is also a basis of <span class="inline-math">$V$</span>.
+    Therefore <span class="inline-math">$V = \langle B\rangle = U$</span>.
+</p>

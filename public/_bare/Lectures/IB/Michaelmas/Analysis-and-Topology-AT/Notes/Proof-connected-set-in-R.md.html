@@ -1,0 +1,51 @@
+
+<h1>Disconnected <span class="inline-math">$\implies$</span> not an interval</h1>
+
+<p>
+    Suppose <span class="inline-math">$Y$</span> is disconnected.
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-separation-in-subspace-topology.html">Then</a>
+    <span class="inline-math">$Y = U \cup V$</span> for some <span class="inline-math">$U,V\subseteq \R$</span> that are non-empty
+    and satisfies <span class="inline-math">$\overline{U} \cup V = \emptyset = U \cap \overline{V}$</span>.
+</p>
+<p>
+    Pick some <span class="inline-math">$x\in U$</span>, <span class="inline-math">$y\in V$</span>, and WLOG assume <span class="inline-math">$x&lt;y$</span>.
+    Set
+    <span class="display-math">$$ \begin{align*}
+        z = \sup(U\cap [x,y]).
+    \end{align*} $$</span>
+    Note that <span class="inline-math">$z\in \overline{U}$</span>, and so <span class="inline-math">$z\not\in V$</span>.
+    Also <span class="inline-math">$x\leq z\leq y$</span>.
+    We have two cases:
+</p>
+<ol start="1">
+<li>
+    <p>
+        If <span class="inline-math">$z\not\in U$</span>, then <span class="inline-math">$z\not\in U\cup V = Y$</span>.
+        <img src="/tripos-notes/media/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Pasted-image-20250127142255.png">
+    </p>
+    
+</li><li>
+    <p>
+        Otherwise if <span class="inline-math">$z\in U$</span>, then <span class="inline-math">$z\not\in \overline{V}$</span>,
+        so there exists a ball <span class="inline-math">$(z-r, z+r)$</span> which is disjoint from <span class="inline-math">$V$</span>.
+        Pick some <span class="inline-math">$w\in (z,z+r)\subseteq (x,y)$</span>.
+        Then <span class="inline-math">$w\not\in V$</span> since the ball is disjoint from <span class="inline-math">$V$</span>,
+        and <span class="inline-math">$w\not\in U$</span> since <span class="inline-math">$w&gt;z$</span>.
+        Thus <span class="inline-math">$w\not\in U\cup V = Y$</span>.
+        <img src="/tripos-notes/media/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Pasted-image-20250127142311.png">
+    </p>
+    
+</li>
+</ol>
+
+<h1>Not an interval <span class="inline-math">$\implies$</span> disconnected</h1>
+
+<p>
+    Suppose <span class="inline-math">$x,y\in Y$</span> and <span class="inline-math">$x&lt;z&lt;y$</span> but <span class="inline-math">$z\not\in Y$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$U = Y\cap (-\infty, z)$</span> and <span class="inline-math">$V = Y\cap (z, \infty)$</span>.
+    They are disjoint, non-empty (since <span class="inline-math">$x\in U$</span> and <span class="inline-math">$y\in V$</span>), open,
+    and <span class="inline-math">$Y = U \cup V$</span> (since <span class="inline-math">$z\not\in Y$</span>).
+    Therefore <span class="inline-math">$Y$</span> is disconnected.
+</p>

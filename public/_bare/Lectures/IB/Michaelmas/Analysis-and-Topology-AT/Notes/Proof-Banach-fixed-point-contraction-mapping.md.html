@@ -1,0 +1,42 @@
+<p>
+    Since <span class="inline-math">$X$</span> is non-empty, pick some <span class="inline-math">$x_0\in X$</span>.
+    Construct a sequence <span class="inline-math">$\set{x_n}$</span> given by
+    <span class="display-math">$$ \begin{align*}
+        x_n = f(x_{n-1}).
+    \end{align*} $$</span>
+    Then for all <span class="inline-math">$n\geq 0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        d(x_{n}, x_{n-1}) &amp;= d(f(x_{n-1}), f(x_{n-2})) \\
+        &amp;\leq L\, d(x_{n-1}, x_{n-2}) \\
+        &amp;= L\, d(f(x_{n-2}), f(x_{n-3})) \\
+        &amp;\leq L^2 \, d(x_{n-2}, x_{n-3}) \\
+        &amp;\leq \ldots \\
+        &amp;\leq L^{n-1}\, d(x_1, x_0).
+    \end{align*} $$</span>
+    If <span class="inline-math">$m\geq n$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        d(x_m, x_n) &amp;\leq d(x_{n+1}, x_n) + d(x_{n+2}, x_{n+1}) + \ldots + d(x_{m-1}, x_m) \\
+        &amp;\leq (L^n + L^{n+1} + \ldots + L^{m-1}) \, d(x_1, x_0) \\
+        &amp;\leq L^n \left(\sum_{k=0}^{\infty} L^k\right) \, d(x_1, x_0) \\
+        &amp;= \frac{L^n}{1-L}d(x_1, x_0) \\
+        &amp;\to 0 \qquad \text{as }n\to \infty
+    \end{align*} $$</span>
+    so <span class="inline-math">$\set{x_n}$</span> is Cauchy.
+    Since <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-completeness.html">complete</a>,
+    <span class="inline-math">$x_n$</span> converges to some <span class="inline-math">$x\in X$</span>.
+    Finally since <span class="inline-math">$f$</span> is Lipschitz continuous
+    <span class="display-math">$$ \begin{align*}
+        x = \lim_{n\to \infty} x_{n+1} = \lim_{n\to \infty} f(x_n) = f(x)
+    \end{align*} $$</span>
+    so <span class="inline-math">$x$</span> is a fixed point.
+</p>
+
+<h1>Uniqueness</h1>
+
+<p>
+    If <span class="inline-math">$x=f(x)$</span> and <span class="inline-math">$y=f(y)$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        d(x,y) = d(f(x), f(y)) \leq L\, d(x,y)
+    \end{align*} $$</span>
+    and since <span class="inline-math">$L&lt;1$</span>, we have <span class="inline-math">$d(x,y) = 0$</span> so <span class="inline-math">$x=y$</span>.
+</p>

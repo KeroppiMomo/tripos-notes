@@ -1,0 +1,204 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (polynomial, degree, monic, polynomial function, root)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathbb{F}$</span> be a field.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    A <em>polynomial</em> over <span class="inline-math">$\mathbb{F}$</span> is a formal expression <span class="inline-math">$a_nt^n + \ldots + a_1 t + a_0$</span> for some <span class="inline-math">$n=0,1,2,\ldots$</span> and <em>coefficients</em> <span class="inline-math">$a_i\in \mathbb{F}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The <em>degree</em> of <span class="inline-math">$f$</span> (denoted <span class="inline-math">$\deg(f)$</span>) is the maximal integer <span class="inline-math">$m$</span> such that <span class="inline-math">$a_m\neq 0$</span>.
+                    By convention, <span class="inline-math">$\deg(0) = -\infty$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$a_m$</span> is called the <em>leading coefficient</em>. <span class="inline-math">$f$</span> is called <em>monic</em> if <span class="inline-math">$a_m = 1$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Let <span class="inline-math">$\mathbb{F}[t]$</span> be the set of all polynomials of <span class="inline-math">$\mathbb{F}$</span>, equipped with addition and multiplication:
+                    for <span class="inline-math">$f(t) = \sum_{i} &#x27; a_i t^i$</span> and <span class="inline-math">$g(t) = \sum_{j} &#x27; b_j t^j$</span>,
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        the coefficient of <span class="inline-math">$t^k$</span> in <span class="inline-math">$(f+g)$</span> is <span class="inline-math">$a_k+b_k$</span>;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        the coefficient of <span class="inline-math">$t^k$</span> in <span class="inline-math">$(f\cdot g)$</span> is <span class="inline-math">$\sum_{i=0}^{k} a_i b_{k-i}$</span>.
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    The <em>polynomial function</em> <span class="inline-math">$\mathbb{F}\to \mathbb{F}$</span> is defined by<span class="inline-math">$f(\lambda) = \sum_{i} &#x27; a_i \lambda^i$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\lambda\in \mathbb{F}$</span> is a <em>root</em> of <span class="inline-math">$f\in \mathbb{F}[t]$</span> if <span class="inline-math">$f(\lambda) = 0$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    We write <span class="inline-math">$g\mid f$</span> if there exists <span class="inline-math">$q\in \mathbb{F}[t]$</span> such that <span class="inline-math">$f(t) = q(t) g(t)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Euclidean algorithm for polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Euclidean-algorithm-for-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For all <span class="inline-math">$f,g\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a> with <span class="inline-math">$g\neq 0$</span>,
+                there exists <span class="inline-math">$q,r\in \mathbb{F}[t]$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    f(t) = q(t) g(t) + r(t) \quad \text{and} \quad \deg(r) &lt; \deg(g).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Euclidean-algorithm-for-polynomials.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (Bézout identity for polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-Bezout-identity-for-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$f_1, \ldots, f_k\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a> have no common factor of degree at least 1,
+                then there exists polynomials <span class="inline-math">$p_1, \ldots, p_k\in \mathbb{F}[t]$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    1 = \sum_{i=1}^{k} p_i(t) f_i(t).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Bezout-identity-for-polynomials.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (factor theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-factor-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a>.
+            </p>
+            <p>
+                <span class="inline-math">$\lambda\in \mathbb{F}$</span> is a root of <span class="inline-math">$f$</span> iff <span class="inline-math">$(t-\lambda) \mid f(t)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-factor-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (multiplicity of root)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-multiplicity-of-root.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a root <span class="inline-math">$\lambda$</span> of <span class="inline-math">$f\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a>,
+                the <em>multiplicity</em> of <span class="inline-math">$\lambda$</span> is the largest integer <span class="inline-math">$e$</span> such that <span class="inline-math">$(t-\lambda)^e\mid f(t)$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (most number of roots of polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-most-number-of-roots-of-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a>.
+                If <span class="inline-math">$\deg(f) = n\geq 0$</span>, then <span class="inline-math">$f$</span> has at most <span class="inline-math">$n$</span> roots counted with <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-multiplicity-of-root.html">multiplicity</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-most-number-of-roots-of-polynomials.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (uniqueness of polynomials agreeing on points)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-uniqueness-of-polynomials-agreeing-on-points.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f_1, f_2\in \mathbb{F}[t]$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\deg(f_1), \deg(f_2) &lt; n$</span> and <span class="inline-math">$f_1(\lambda_i) = f_2(\lambda_i)$</span> for some distinct <span class="inline-math">$\lambda_1, \lambda_2, \ldots, \lambda_n\in \mathbb{F}$</span>,
+                then <span class="inline-math">$f_1 = f_2$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-uniqueness-of-polynomials-agreeing-on-points.html">Proof</a>
+            </p>
+            <p>
+                Consequently, if <span class="inline-math">$\mathbb{F}$</span> is infinite, then <span class="inline-math">$f\in \mathbb{F}[t]$</span> is uniquely determined by its polynomial function <span class="inline-math">$\lambda\mapsto f(\lambda)$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$\mathbb{F}$</span> is finite, then this fails, e.g. if <span class="inline-math">$\mathbb{F}=\set{\lambda_1, \ldots, \lambda_n}$</span>,
+                    then <span class="inline-math">$f(t) = \prod_{i=1}^{n} (t-\lambda_i)$</span> has degree <span class="inline-math">$n$</span> but <span class="inline-math">$f(\lambda) = 0$</span> for all <span class="inline-math">$\lambda\in \mathbb{F}$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (fundamental theorem of algebra)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-fundamental-theorem-of-algebra.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Any <span class="inline-math">$f\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\C[t]$</span></a> of degree <span class="inline-math">$n\geq 1$</span>
+                has exactly <span class="inline-math">$n$</span> roots, accounting <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-multiplicity-of-root.html">multiplicity</a>, i.e. <span class="inline-math">$f(t)$</span> is a product of linear factors.
+            </p>
+            
+        </div>
+    </div>
+</p>

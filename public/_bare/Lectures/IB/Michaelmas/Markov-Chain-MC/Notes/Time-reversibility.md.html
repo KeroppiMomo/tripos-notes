@@ -1,0 +1,111 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (time-reversed transition matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proposition-time-reversed-transition-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\ouline{X}\sim \mathrm{Markov}(\pi, P)$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-communicating-classes-closed-class-irreducible-chain-absorbing-state.html">irreducible</a> and <span class="inline-math">$\pi$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant distribution</a> for <span class="inline-math">$P$</span>.
+                For some fixed <span class="inline-math">$N$</span>, let <span class="inline-math">$\ouline{Y} = (Y_n)_{0\leq n\leq N}$</span> be a random process given by <span class="inline-math">$Y_n = X_{N-n}$</span> for <span class="inline-math">$0\leq n\leq N$</span>.
+            </p>
+            <p>
+                Then <span class="inline-math">$\ouline{Y}\sim \mathrm{Markov}(\pi, \hat P)$</span>, <span class="inline-math">$\ouline{Y}$</span> is irreducible, and <span class="inline-math">$\pi$</span> is an invariant distribution for <span class="inline-math">$\hat P$</span>, where
+                <span class="display-math">$$ \begin{align*}
+                    \hat P(x,y) = \frac{\pi(y)}{\pi(x)}P(y,x).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-time-reversed-transition-matrix.html">Proof</a>
+            </p>
+            <p>
+                (Note that <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-existence-of-an-invariant-distribution.html"><span class="inline-math">$\pi&gt;0$</span></a>.)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (time-reversible transition matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-time-reversible-transition-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A transition matrix <span class="inline-math">$P$</span> is said to be <em>time-reversible</em> with respect to an <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant distribution</a> <span class="inline-math">$\pi$</span>
+                if, equivalently,
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$P=$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proposition-time-reversed-transition-matrix.html"><span class="inline-math">$\hat P$</span></a>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$P$</span> satisfies the <em>detailed balance equations</em>
+                    <span class="display-math">$$ \begin{align*}
+                    \pi(x) \, P(x,y) = \pi(y) \, P(y,x) \qquad \text{for all }x,y\in I;
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    if <span class="inline-math">$\ouline{X}\sim\mathrm{Markov}(\pi, P)$</span>, then <span class="inline-math">$(X_n, X_{n+1})$</span> and <span class="inline-math">$(X_{n+1}, X_n)$</span> have the same (joint) distribution.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (measure satisfying detailed balance equations is invariant)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Lemma-measure-satisfying-detailed-balance-equations-is-invariant.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$P$</span> be a transition matrix on <span class="inline-math">$I$</span>, and <span class="inline-math">$\lambda$</span> be a measure on <span class="inline-math">$I$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\lambda$</span> satisfies the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-time-reversible-transition-matrix.html">detailed balance equations</a>, i.e. <span class="inline-math">$\lambda(x)\, P(x,y) = \lambda(y) \, P(y,x)$</span>,
+                then <span class="inline-math">$\lambda$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant</a> for <span class="inline-math">$P$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-measure-satisfying-detailed-balance-equations-is-invariant.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This means if we can solve the detailed balance equation to find a distribution <span class="inline-math">$\pi$</span> for an irreducible <span class="inline-math">$P$</span> (which is easier than solving <span class="inline-math">$\pi = \pi P$</span>),
+                    then <span class="inline-math">$P$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-existence-of-an-invariant-distribution.html">positive recurrent</a> and time-reversible, and <span class="inline-math">$\pi$</span> is its unique invariant distribution.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Example-reversibility-of-asymmetric-random-walk-on-Zn.html">Example (reversibility of asymmetric random walk on Zn)</a>
+    </p>
+    
+</li><li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Example-reversibility-of-asymmetric-random-walk-on-Z-with-two-retaining-barriers.html">Example (reversibility of asymmetric random walk on Z with two retaining barriers)</a>
+    </p>
+    
+</li><li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Example-reversibility-of-random-walk-on-a-graph.html">Example (reversibility of random walk on a graph)</a>
+    </p>
+    
+</li>
+</ul>

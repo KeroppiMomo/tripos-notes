@@ -1,0 +1,49 @@
+<p>
+    From <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Heat-equation.html">here</a>, we want to solve
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \Delta \psi + \mu \psi = 0, &amp;\Omega, \\
+            \psi = 0, &amp;\partial \Omega.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$\psi(x,y) = X(x) Y(y)$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \frac{X&#x27;&#x27;}{X} + \frac{Y&#x27;&#x27;}{Y} + \mu = 0.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$x$</span> and <span class="inline-math">$y$</span> are independent, there exists a constant <span class="inline-math">$\lambda$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        X&#x27;&#x27; + \lambda X = 0, \qquad Y&#x27;&#x27; + (\mu - \lambda) Y = 0.
+    \end{align*} $$</span>
+    Using the boundary conditions <span class="inline-math">$X(0) = X(L) = 0 = Y(0) = Y(L)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        X = X_n(x) ={}&amp; \sin \frac{n\pi x}{L}, &amp;\lambda = \lambda_n ={}&amp; \left(\frac{n\pi}{L}\right)^2, &amp;n={}&amp; 1,2,3,\ldots \\
+        Y = Y_m(x) ={}&amp; \sin \frac{m\pi y}{L}, &amp;\mu - \lambda ={}&amp; \left(\frac{m\pi}{L}\right)^2, &amp;m={}&amp;1,2,3,\ldots
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \mu_{m,n} = \left(\frac{n\pi}{L}\right)^2 + \left(\frac{m\pi}{L}\right)^2.
+    \end{align*} $$</span>
+</p>
+<p>
+    By linearity,
+    <span class="display-math">$$ \begin{align*}
+        \phi(x,y,t) = \sum_{n,m=1}^{\infty} A_{m,n} e^{-\kappa\mu_{m,n} t} \sin \frac{n\pi x}{L} \sin \frac{m\pi y}{L}
+    \end{align*} $$</span>
+    solves the heat equation and satisfies the boundary conditions <span class="inline-math">$\phi=0$</span> on <span class="inline-math">$\partial \Omega$</span>.
+</p>
+<p>
+    To satisfy the initial condition
+    <span class="display-math">$$ \begin{align*}
+        f(x,y) = \sum_{n,m=1}^{\infty} A_{m,n} \sin \frac{n\pi x}{L} \sin \frac{m\pi y}{L},
+    \end{align*} $$</span>
+    we make use of orthogonality relations
+    <span class="display-math">$$ \begin{align*}
+        &amp;\int_{0}^{L} \int_{0}^{L} f(x,y) \sin \frac{k\pi x}{L} \sin  \frac{l\pi y}{L}\d x \d y \\
+        ={}&amp; \sum_{n,m=1}^{\infty}A_{m,n} \left(\int_{0}^{L} \sin \frac{n\pi x}{L} \sin \frac{k\pi x}{L} \d x\right) \left(\int_{0}^{L} \sin \frac{m\pi y}{L} \sin \frac{l\pi y}{L} \d y\right) \\
+        ={}&amp; \sum_{n,m=1}^{\infty} A_{m,n} \left(\frac{L}{2} \delta_{nk}\right) \left(\frac{L}{2} \delta_{ml}\right) \\
+        ={}&amp; \frac{L^2}{4} A_{k,l}.
+    \end{align*} $$</span>
+</p>

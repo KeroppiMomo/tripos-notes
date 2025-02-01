@@ -1,0 +1,65 @@
+<p>
+    Fix <span class="inline-math">$x\in I$</span>.
+</p>
+<p>
+    Let
+    <span class="display-math">$$ \begin{align*}
+        V_n(x) = \sum_{i=0}^{n-1} \mathbb{1}(X_i = x)
+    \end{align*} $$</span>
+    be the number of times the chain visits <span class="inline-math">$x$</span> in the first <span class="inline-math">$n$</span> steps.
+    We want to show <span class="inline-math">$V_n(x)/n \to \pi(x)$</span> as <span class="inline-math">$n\to \infty$</span> with probability 1.
+</p>
+<p>
+    Define the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-return-times.html">return times</a> <span class="inline-math">$T_x^{(n)}$</span> and <span class="inline-math">$T_x = T_{x}^{(1)}$</span>, and
+    <span class="display-math">$$ \begin{align*}
+        S_x^{(k)} = \begin{cases}
+            T_{x}^{(k)} - T_{x}^{(k-1)}, &amp;\text{if }T_x^{(n-1)}&lt;\infty, \\
+            0, &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$P$</span> is recurrent, <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-visit-everywhere-in-irreducible-and-recurrent-chain.html">so</a> <span class="inline-math">$T_x&lt;\infty$</span> with probability 1.
+    By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-strong-Markov-property.html">strong Markov property</a>,
+    <span class="inline-math">$(X_{T_x + n})_{n\geq 0} \sim \mathrm{Markov}(\delta_x, P)$</span> independent of <span class="inline-math">$(X_0, \ldots, X_{T_x})$</span>,
+    and the limit of <span class="inline-math">$V_n(x)/n$</span> is the same there.
+    Hence WLOG we can assume <span class="inline-math">$\lambda=\delta_x$</span>.
+</p>
+<p>
+    From the definitions, <span class="inline-math">$T_x^{(V_n(x) - 1)}$</span> is the last time the chain is at <span class="inline-math">$x$</span> before time <span class="inline-math">$n$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        n-1 \geq T_x^{(V_n(x) - 1)} = \sum_{k=1}^{V_n(x) - 1} S_x^{(k)}.
+    \end{align*} $$</span>
+    Similarly, <span class="inline-math">$T_x^{(V_n(x))}$</span> is the next time the chain is at <span class="inline-math">$x$</span> at or after time <span class="inline-math">$n$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        n \leq T_{x}^{(V_n(x))} = \sum_{k=1}^{V_n(x)} S_x^{(k)}.
+    \end{align*} $$</span>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \sum_{k=1}^{V_n(x)-1} S_x^{(k)} \leq n \leq \sum_{k=1}^{V_n(x)} S_x^{(k)}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Using the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-strong-Markov-property.html">strong Markov property</a>,
+    <span class="inline-math">$S_x^{(1)}, S_x^{(2)}, \ldots$</span> are independent and identically distributed, so
+    <span class="display-math">$$ \begin{align*}
+        \expect(S_x^{(k)}) = \expect(S_x^{(1)}) = \expect(T_x) = \frac{1}{\pi(x)}
+    \end{align*} $$</span>
+    where we have used the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-existence-of-an-invariant-distribution.html">relation between <span class="inline-math">$\pi(x)$</span> and <span class="inline-math">$\expect(T_x)$</span></a> in a positive recurrent chain.
+    And by the <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-strong-law-of-large-numbers.html">strong law of large numbers</a>,
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{N}\sum_{k=1}^{N} S_x^{(k)} \to \frac{1}{\pi(x)}
+    \end{align*} $$</span>
+    with probability 1.
+</p>
+<p>
+    Therefore by squeezing
+    <span class="display-math">$$ \begin{align*}
+        \frac{\sum_{k=1}^{V_n(x)-1} S_x^{(k)}}{V_n(x)} \leq \frac{n}{V_n(x)} \leq \frac{\sum_{k=1}^{V_n(x)} S_x^{(k)}}{V_n(x)},
+    \end{align*} $$</span>
+    we obtain
+    <span class="display-math">$$ \begin{align*}
+        \lim_{n\to \infty} \frac{n}{V_n(x)} = \frac{1}{\pi(x)}
+    \end{align*} $$</span>
+    with probability 1, as required.
+</p>

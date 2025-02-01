@@ -1,0 +1,55 @@
+<p>
+    In machine learning, a Markov decision process is a model for decision making.
+</p>
+<p>
+    At each time step, the process is in state <span class="inline-math">$s\in S$</span> (<span class="inline-math">$S$</span> is a discrete finite set).
+    It can choose an action <span class="inline-math">$a\in A$</span> (<span class="inline-math">$A$</span> is also discrete finite).
+    This will result in a reward <span class="inline-math">$R(a,s)$</span>, and the action will move you from <span class="inline-math">$s$</span> to <span class="inline-math">$s&#x27;$</span> with probability <span class="inline-math">$P(s,s&#x27;,a)$</span> (satisfying <span class="inline-math">$\sum_{s&#x27;\in S} P(s,s&#x27;,a) = 1$</span>).
+    The future rewards come with a discount factor of <span class="inline-math">$\gamma\in (0,1)$</span>.
+</p>
+<p>
+    The optimal value curve is the solution to the <em>Bellman equation</em>
+    <span class="display-math">$$ \begin{align*}
+        V_\star(s) = \max_{a\in A}\left(R(s,a) + \gamma\sum_{s&#x27;\in S} P(s,s&#x27;,a) V_\star(s&#x27;)\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    We will prove the Bellman equation has a unique solution <span class="inline-math">$V_\star : S\to \R$</span> using the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-Banach-fixed-point-contraction-mapping.html">contraction mapping theorem</a>.
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$C(S) = \big(\set{\text{continuous functions } S\to\R} = \set{\text{all functions }S\to \R}, \text{sup metric})$</span> is a complete metric space
+        by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-limit.html">uniform limit theorem</a>.
+    </p>
+    
+</li><li>
+    <p>
+        Consider the Bellman operator <span class="inline-math">$B$</span> on <span class="inline-math">$C(S)$</span> given by
+        <span class="display-math">$$ \begin{align*}
+        B\ V(s) = \max_{a\in A} \left(R(s,a) + \gamma\sum_{s&#x27;\in S} P(s,s&#x27;,a) V(s&#x27;)\right).
+        \end{align*} $$</span>
+        Fixed points of <span class="inline-math">$B$</span> are solutions to the Bellman equation.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$B$</span> is <span class="inline-math">$C(S) \to C(S)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$B$</span> is a contraction since
+        <span class="display-math">$$ \begin{align*}
+        \|BV_1 - BV_2\|_\infty ={}&amp; \sup_{s\in S}|BV_1(s) - BV_2(s)| \\
+        ={}&amp; \sup_{s\in S} \Bigg|\max_{a\in A}\Big(R(s,a) + \gamma \sum_{s&#x27;\in S} P(s,s&#x27;,a) V_1(s&#x27;)\Big) \\
+        &amp;- \max_{a\in A}\Big(R(s,a) + \gamma\sum_{s&#x27;\in S} P(s,s&#x27;,a)V_2(s&#x27;)\Big)\Bigg| \\
+        \leq{}&amp; \sup_{s\in S} \Bigg|\max_{a\in A} \gamma \sum_{s&#x27;\in S} P(s,s&#x27;,a)\big(V_1(s&#x27;) - V_2(s&#x27;)\big)\Bigg| \\
+        \leq{}&amp; \gamma\Big(\sup_{s&#x27;\in \in S} |V_1(s&#x27;) - V_2(s&#x27;)| \Big) \Big(\sup_{s\in S} \max_{a\in A} \underbrace{\sum_{s&#x27;\in S} P(s,s&#x27;,a)}_{1}\Big) \\
+        \leq {}&amp; \gamma \|V_1 - V_2\|_\infty
+        \end{align*} $$</span>
+        so <span class="inline-math">$B$</span> is <span class="inline-math">$\gamma$</span>-Lipschitz, where <span class="inline-math">$\gamma&lt;1$</span>.
+    </p>
+    
+</li>
+</ul>

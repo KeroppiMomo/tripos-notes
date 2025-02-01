@@ -1,0 +1,104 @@
+<p>
+    The Legendre equation
+    <span class="display-math">$$ \begin{align*}
+        -\dd{x}\left((1-x^2) \dfd{y}{x}\right) = \lambda y, \qquad -1&lt;x&lt;1
+    \end{align*} $$</span>
+    is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-Sturm-Liouville-operator.html">Sturm-Liouville problem</a> with <span class="inline-math">$p = 1-x^2$</span>, <span class="inline-math">$q=0$</span> and <span class="inline-math">$w=1$</span>.
+    No boundary conditions are required since the endpoints are <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-singular-endpoint-of-Sturm-Liouville-operator.html">singular</a>.
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-properties-of-self-adjoint-differential-operator.html">Therefore</a> the eigenfunctions are orthogonal and complete in the vector space <span class="inline-math">$V = C^2[-1,1]$</span> equipped with
+    <span class="display-math">$$ \begin{align*}
+        \langle f,g\rangle = \int_{-1}^{+1} f(x) g(x) \d x.
+    \end{align*} $$</span>
+</p>
+<p>
+    Expanding the equation,
+    <span class="display-math">$$ \begin{align*}
+        -(1-x^2)y&#x27;&#x27; + 2x y&#x27; - \lambda y &amp;= 0
+    \end{align*} $$</span>
+    Since <span class="inline-math">$x=0$</span> is an <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Definition-ordinary-and-singular-point.html">ordinary point</a> of the equation,
+    we seek for <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Series-solution.html">series solution</a> of the form
+    <span class="display-math">$$ \begin{align*}
+        y(x) = \sum_{n=0}^{\infty} a_n x^n.
+    \end{align*} $$</span>
+</p>
+<p>
+    Substituting,
+    <span class="display-math">$$ \begin{align*}
+        -\sum_{n=0}^{\infty} \lambda a_n x^n &amp;= \dd{x}\left((1-x^2) \sum_{n=0}^{\infty} (n+1)a_{n+1} x^{n}\right) \\
+        &amp;= \dd{x}\left(a_1 + 2a_2 x + \sum_{n=2}^{\infty} \big((n+1)a_{n+1} - (n-1)a_{n-1}\big)x^n\right) \\
+        &amp;= 2a_2 + \sum_{n=1}^{\infty} \big((n+1)(n+2) a_{n+2} - n(n+1) a_{n}\big) x^n \\
+        &amp;= \sum_{n=0}^{\infty} \big((n+1)(n+2) a_{n+2} - n(n+1)a_n\big) x^n \\
+        \implies -\lambda a_n &amp;= (n+1)(n+2) a_{n+2} - n(n+1)a_n \\
+        a_{n+2} &amp;= \frac{n(n+1)-\lambda}{(n+1)(n+2)} a_n.
+    \end{align*} $$</span>
+    Therefore we obtain two linearly independent solutions
+    <span class="display-math">$$ \begin{align*}
+        y_0 &amp;= a_0 \left(1 + (-\lambda) \frac{x^2}{2!} + (-\lambda)(6-\lambda) \frac{x^4}{4!} + \ldots\right), \\
+        y_1 &amp;= a_1 \left(x + (2 - \lambda) \frac{x^3}{3!} + (2-\lambda)(12-\lambda) \frac{x^5}{5!} + \ldots\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    We would like the series to be well-defined at the endpoints <span class="inline-math">$x\to \pm 1$</span>.
+    <strong>Unless the series terminate</strong>, since
+    <span class="display-math">$$ \begin{align*}
+        \frac{a_{n+2}}{a_n} = \frac{n(n+1)-\lambda}{(n+1)(n+2)} \to 1,
+    \end{align*} $$</span>
+    the <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-ratio-test.html">ratio test</a> implies that the radius of convergence is <span class="inline-math">$1$</span>.
+    And in fact both solutions blow up as <span class="inline-math">$x\to \pm 1$</span> as shown below.
+</p>
+<p>
+    Therefore we must have
+    <span class="display-math">$$ \begin{align*}
+        \lambda = \lambda_n := n(n+1), \quad n=0,1,2, \ldots.
+    \end{align*} $$</span>
+</p>
+
+<h1>Series blow up if it does not terminate</h1>
+
+<p>
+    (Non-examinable)
+</p>
+<p>
+    Let <span class="inline-math">$A_n = a_{2n}$</span>. Suppose <span class="inline-math">$\lambda\neq n(n+1)$</span> for <span class="inline-math">$n=0,1,2,\ldots$</span>. Our goal is to find a lower bound for <span class="inline-math">$A_{n}$</span>.
+</p>
+<p>
+    Now
+    <span class="display-math">$$ \begin{align*}
+        \frac{A_n}{A_{n+1}} &amp;= \frac{(2n+1)(2n+2)}{2n(2n+1)-\lambda} \\
+        &amp;= \frac{4n^2 + 6n + 2}{4n^2 + 2n - \lambda} \\
+        &amp;= 1 + \frac{1}{n} + \frac{\lambda(1 + \frac{1}{n})}{4n^2 + 2n - \lambda}.
+    \end{align*} $$</span>
+    For <span class="inline-math">$n\geq N$</span> sufficiently large, the RHS is positive
+    <span class="display-math">$$ \begin{align*}
+        \frac{|A_n|}{|A_{n+1}|} = 1+\frac{1}{n} + \epsilon_n
+    \end{align*} $$</span>
+    and <span class="inline-math">$|\epsilon_n| \leq M/n^2$</span> for some constant <span class="inline-math">$M$</span>.
+</p>
+<p>
+    Using the inequality <span class="inline-math">$e^x \geq 1+x$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \frac{|A_n|}{|A_{n+1}|} &amp;\leq e^{1/n} + \epsilon_n \\
+        \frac{|A_{n+1}|}{|A_n|} &amp; \geq \frac{e^{-1/n}}{1 + e^{-1/n} \epsilon_n} \\
+        &amp;\geq \frac{e^{-1/n}}{1+|\epsilon_n|} \\
+        &amp;\geq e^{-1/n} e^{-|\epsilon_n|} \\
+        &amp;\geq e^{-1/n} e^{-M/n^2}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        |A_{n+1}| &amp;\geq |A_N| \prod_{k=N}^n e^{-1/k} e^{-M/k^2} \\
+        &amp;= |A_N| \exp\left(-\sum_{k=N}^n \frac{1}{k}\right) \exp\left(-M \sum_{k=N}^{n} \frac{1}{k^2}\right) \\
+        &amp;\geq |A_N| \exp\big(-(1+\log n)\big) \exp\left(-\frac{M\pi^2}{6}\right) \\
+        &amp;= \underbrace{|A_N| \exp\left(-\frac{M\pi^2}{6} - 1\right)}_{C} \frac{1}{n} \\
+        &amp;\geq \frac{C}{n+1}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \left|\sum_{n&gt;N} A_n x^{2n}\right| &amp;= \sum_{n&gt;N} |A_n| x^{2n} \\
+        &amp;\geq C \sum_{n&gt;N} \frac{x^{2n}}{n} \\
+        &amp;= C \sum_{n=0}^{\infty} \frac{x^{2n}}{n} + \text{polynomial} \\
+        &amp;= C \log \frac{1}{1-x^2} + \text{polynomial} \\
+        &amp;\to \infty \quad \text{as } x\to\pm 1.
+    \end{align*} $$</span>
+</p>

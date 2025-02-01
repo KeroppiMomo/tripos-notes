@@ -1,0 +1,61 @@
+<p>
+    2 follows from 1 using <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-determinant-of-transpose.html"><span class="inline-math">$\det(A^T) = \det(A)$</span></a>.
+</p>
+<p>
+    To show 1, fix <span class="inline-math">$j$</span>. Write
+    <span class="display-math">$$ \begin{align*}
+        A = \pmat{\v c_1 &amp; \ldots &amp; \v c_{j-1} &amp; \v c_j &amp; \v c_{j+1} &amp; \v c_n}.
+    \end{align*} $$</span>
+    Let
+    <span class="display-math">$$ \begin{align*}
+        A^{(i)} = \pmat{\v c_1 &amp; \ldots &amp; \v c_{j-1} &amp; \v e_i &amp; \v c_{j+1} &amp; \ldots &amp; \v c_n}.
+    \end{align*} $$</span>
+    By <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-volume-form.html">linearity</a> of <span class="inline-math">$\det(A)$</span> in the <span class="inline-math">$j$</span>-th column,
+    <span class="display-math">$$ \begin{align*}
+        \det(A) = \sum_{i=1}^{n} a_{ij} \det(A^{(i)}).
+    \end{align*} $$</span>
+</p>
+<p>
+    It suffices to show that <span class="inline-math">$\det(A^{(i)}) = (-1)^{i+j} \det(A_{\hat{ij}})$</span>.
+    We apply <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-elementary-operations.html">elementary operations</a> to <span class="inline-math">$A^{(i)}$</span>:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Apply elementary column operations <span class="inline-math">$T_{kl}$</span>'s to move <span class="inline-math">$\v e_i$</span> to the left and preserve the order the other <span class="inline-math">$\v c_k$</span>. This takes <span class="inline-math">$j-1$</span> swaps, so
+        <span class="display-math">$$ \begin{align*}
+        \bar A^{(i)} ={}&amp; \pmat{\v e_i &amp; \v c_1 &amp; \ldots &amp; \v c_{j-1} &amp; \v c_{j+1} &amp; \ldots &amp; \v c_n}, \\
+        \det(A^{(i)}) ={}&amp; (-1)^{j-1} \det\bar A^{(i)}
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        Apply elementary column operations <span class="inline-math">$C_{k,l,\lambda}$</span> to purge all non-zero entries in row <span class="inline-math">$i$</span> and column <span class="inline-math">$2$</span> to <span class="inline-math">$n$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Apply elementary row operations <span class="inline-math">$T_{kj}$</span> to move row <span class="inline-math">$i$</span> to row <span class="inline-math">$1$</span>. This takes <span class="inline-math">$i-1$</span> swaps, so we obtain
+        <span class="display-math">$$ \begin{align*}
+        \det(\bar A^{(i)}) = (-1)^{i-1} \det\left(\begin{array}{c|ccc}
+            1 &amp; 0 &amp; \ldots &amp; 0 \\\hline
+            0 \\
+            \vdots &amp; &amp; A_{\hat{ij}} \\
+            0
+        \end{array}\right)
+        \end{align*} $$</span>
+        By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-determinant-of-block-triangular-matrix.html">determinant of block-triangular matrices</a>,
+        <span class="display-math">$$ \begin{align*}
+        \det(\bar A^{(i)}) = (-1)^{i-1} \det(A_{\hat{ij}}).
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ol>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \det(A^{(i)}) = (-1)^{i+j-2} \det(A_{\hat{ij}}) = (-1)^{i+j} \det(A_{\hat{ij}}) .
+    \end{align*} $$</span>
+</p>

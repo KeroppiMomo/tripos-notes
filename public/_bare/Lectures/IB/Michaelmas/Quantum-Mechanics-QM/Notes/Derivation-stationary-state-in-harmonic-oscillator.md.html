@@ -1,0 +1,88 @@
+<p>
+    The stationary state satisfies the time-independent Schrodinger's equation
+    <span class="display-math">$$ \begin{align*}
+        -\frac{\hbar^2}{2m} \dfd[2]{\chi}{x} + \frac{1}{2}m\omega^2 x^2 \chi = E\chi.
+    \end{align*} $$</span>
+</p>
+<blockquote>
+    <p>
+        The wavefunctions we obtain in the end will be in terms of <em>Hermite polynomials</em>, which are series solutions of
+        <span class="display-math">$$ \begin{align*}
+            y&#x27;&#x27; - 2xy&#x27; + nf = 0.
+        \end{align*} $$</span>
+    </p>
+    
+</blockquote>
+<p>
+    Rescale the variables as
+    <span class="display-math">$$ \begin{align*}
+        \xi = \sqrt{\frac{m\omega}{\hbar}}x, \qquad \epsilon = \frac{2E}{\hbar\omega}
+    \end{align*} $$</span>
+    to get
+    <span class="display-math">$$ \begin{align*}
+        -\dfd[2]{\chi}{\xi} + \xi^2\chi = \epsilon \chi.
+    \end{align*} $$</span>
+</p>
+<blockquote>
+    <p>
+        Try a substitution <span class="inline-math">$\chi(x) = u(x) v(x)$</span>:
+        <span class="display-math">$$ \begin{align*}
+            -v&#x27;&#x27; - \frac{2u&#x27;}{u}v&#x27; + \left(-\frac{u&#x27;&#x27;}{u} + \xi^2 - \epsilon\right)v = 0.
+        \end{align*} $$</span>
+        Set
+        <span class="display-math">$$ \begin{align*}
+            -\frac{u&#x27;}{u} = x \implies u(x) = e^{-x^2/2}, \quad \frac{u&#x27;&#x27;}{u} = \xi^2 - 1.
+        \end{align*} $$</span>
+    </p>
+    
+</blockquote>
+<p>
+    Set
+    <span class="display-math">$$ \begin{align*}
+        \chi(\xi) = f(\xi) \exp\left(-\frac{1}{2}\xi^2\right).
+    \end{align*} $$</span>
+    Then we obtain
+    <span class="display-math">$$ \begin{align*}
+        \dfd[2]{f}{\xi} - 2\xi \dfd{f}{\xi} + (\epsilon-1)f = 0
+    \end{align*} $$</span>
+</p>
+<p>
+    The solutions are Hermite polynomials
+    <span class="display-math">$$ \begin{align*}
+        f(\xi) = H_n(\xi), \quad \epsilon = 2n + 1, \qquad n=0,1,2,\ldots.
+    \end{align*} $$</span>
+    <span class="inline-math">$\xi=0$</span> is a regular point, so we have series solutions
+    <span class="display-math">$$ \begin{align*}
+        f(\xi) = \sum_{n=0}^{\infty} a_n \xi^n.
+    \end{align*} $$</span>
+    Substituting,
+    <span class="display-math">$$ \begin{align*}
+        0 = \sum_{n=0}^{\infty} \left((n+1)(n+2)a_{n+2} + \big(-2n + \epsilon-1\big)a_n\right) \xi^n
+    \end{align*} $$</span>
+    so we have the recurrence relation
+    <span class="display-math">$$ \begin{align*}
+        a_{n+2} = \frac{2n - \epsilon + 1}{(n+1)(n+2)}a_n.
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$\epsilon = 2n+1$</span> where <span class="inline-math">$n=0,1,2,\ldots$</span>, then the series terminates and we obtain solutions
+    <span class="display-math">$$ \begin{align*}
+        \chi_n(\xi) = \exp\left(-\frac{1}{2}\xi^2\right) H_n(\xi), \quad  \epsilon = 2n+1, \qquad n=0,1,2,\ldots
+    \end{align*} $$</span>
+    which are normalisable because exponentials beat polynomials.
+</p>
+<p>
+    Otherwise, the coefficients decay as
+    <span class="display-math">$$ \begin{align*}
+        \frac{a_{n+2}}{a_n} \sim \frac{2}{n}
+    \end{align*} $$</span>
+    which is similar to those in <span class="inline-math">$\exp(\xi^2) = \sum_{n} b_n\xi^n$</span> since for <span class="inline-math">$n$</span> even,
+    <span class="display-math">$$ \begin{align*}
+        \frac{b_{n+2}}{b_n} = \frac{(n/2)!}{(n/2 + 1)!} = \frac{1}{n/2 + 1} \sim \frac{2}{n}.
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \chi_n(\xi) \sim \exp\left(-\frac{1}{2}\xi^2\right) \exp\left(\xi^2\right) = \exp\left(\frac{1}{2}\xi^2\right)
+    \end{align*} $$</span>
+    so this leads to a non-normalisable solution.
+</p>

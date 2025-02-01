@@ -1,0 +1,84 @@
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-triangularisable-map-and-roots-of-characteristic-polynomial.html">Since</a> <span class="inline-math">$V$</span> is over <span class="inline-math">$\C$</span>, <span class="inline-math">$\chi_\alpha$</span> is a product of linear factors,
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Cayley-Hamilton.html">so</a> the minimal polynomial <span class="inline-math">$m_\alpha$</span> is also a product of linear factors.
+    Let
+    <span class="display-math">$$ \begin{align*}
+        m_\alpha(t) = \sum_{i=1}^{n} (t-\lambda_i)^{c_i}
+    \end{align*} $$</span>
+    where <span class="inline-math">$\lambda_i$</span> are distinct.
+</p>
+<p>
+    Define for each <span class="inline-math">$i=1,2,\ldots,n$</span>,
+    <span class="display-math">$$ \begin{align*}
+        p_i(t) = \sum_{\substack{i=1 \\ i\neq j}}^n (t-\lambda_i)^{c_i}.
+    \end{align*} $$</span>
+    Since the <span class="inline-math">$p_i$</span>'s have no common factor of degree at least 1,
+    by <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-Bezout-identity-for-polynomials.html">polynomial Bézout</a>, there exists <span class="inline-math">$q_i$</span>'s such that
+    <span class="display-math">$$ \begin{align*}
+        1 = \sum_{i=1}^{n} p_i(t) q_i(t). \tag{*}
+    \end{align*} $$</span>
+</p>
+<p>
+    Set
+    <span class="display-math">$$ \begin{align*}
+        \pi_i = p_i(\alpha) \circ q_i(\alpha) \in \mathcal{L}(V,V).
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$V = \im(\pi_1) \oplus \im(\pi_2) \oplus \ldots \oplus \im(\pi_n)$</span></h1>
+
+<p>
+    Firstly, evaluating <span class="inline-math">$(*)$</span> at <span class="inline-math">$\alpha$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \id_V = \pi_1 + \pi_2 + \ldots + \pi_n
+    \end{align*} $$</span>
+    so for all <span class="inline-math">$v\in V$</span>,
+    <span class="display-math">$$ \begin{align*}
+        v = \pi_1(v) + \ldots + \pi_n(v) \in \im(\pi_1) + \ldots + \im(\pi_n)
+    \end{align*} $$</span>
+    and therefore <span class="inline-math">$V = \im(\pi_1) + \ldots + \im(\pi_n)$</span>.
+</p>
+<p>
+    Next, to show <span class="inline-math">$\pi_i\circ\pi_j = 0$</span> for <span class="inline-math">$i\neq j$</span>, note that <span class="inline-math">$(t-\lambda_j)^{c_j} \mid p_i(t)$</span>. Let <span class="inline-math">$p_i(t) = r(t) \, (t-\lambda_j)^{c_j}$</span>.
+    So <span class="inline-math">$p_i(t) p_j(t) = r(t) \,(t-\lambda_j)^{c_j} p_j(t) = r(t) m_\alpha(t)$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \pi_i\circ\pi_j = r(\alpha)\circ q_i(\alpha)\circ q_j(\alpha) \circ m_\alpha(\alpha) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    This gives us the identity <span class="inline-math">$\pi_i = \pi_i\circ\pi_i$</span>, since
+    <span class="display-math">$$ \begin{align*}
+        \pi_i ={}&amp; \pi_i\circ\id_V \\
+        ={}&amp; \pi_i \circ (\pi_1 + \ldots + \pi_n) \\
+        ={}&amp; \pi_i \circ \pi_i.
+    \end{align*} $$</span>
+</p>
+<p>
+    Finally to show the direct sum, suppose for some <span class="inline-math">$u_1, \ldots, u_n, v_1, \ldots, v_n \in V$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \pi_1(u_1) + \ldots + \pi_n(u_n) = \pi_1(v_1) + \ldots + \pi_n(v_n).
+    \end{align*} $$</span>
+    For each <span class="inline-math">$i$</span>, apply <span class="inline-math">$\pi_i$</span> on both sides to get
+    <span class="display-math">$$ \begin{align*}
+        \pi_i\circ\pi_i(u_i) = \pi_i\circ\pi_i(v_i) \implies \pi_i(u_i) = \pi_i(v_i).
+    \end{align*} $$</span>
+    Hence <span class="inline-math">$V = \im(\pi_1) \oplus \ldots \oplus \im(\pi_n)$</span>.
+</p>
+
+<h1><span class="inline-math">$\im(\pi_i) = V_i$</span></h1>
+
+<p>
+    To show <span class="inline-math">$\im(\pi_i) \leq V_i$</span>, note that for all <span class="inline-math">$v\in V$</span>, since <span class="inline-math">$m_\alpha = (t - \lambda_i)^{c_i} p_i(t)$</span>,
+    <span class="display-math">$$ \begin{align*}
+    0 = m_\alpha(\alpha) \circ q_i(\alpha) = (\alpha-\lambda_i\, \id_V)^{c_i} \circ p_i(\alpha) \circ q_i(\alpha) = (\alpha - \lambda_i \, \id_V)^{c_i} \circ \pi_i(\alpha)
+    \end{align*} $$</span>
+    so <span class="inline-math">$\im(\pi_i) \leq \ker((\alpha - \lambda_i \, \id_V)^{c_i}) = V_i$</span>.
+</p>
+<p>
+    Finally to show <span class="inline-math">$V_i \leq \im(\pi_i)$</span>, for <span class="inline-math">$j\neq i$</span>, since <span class="inline-math">$(t-\lambda_i)^{c_i} \mid p_j(t) q_j(t)$</span>, let <span class="inline-math">$p_j(t) q_j(t) = s(t) \,(t-\lambda_i)^{c_i}$</span>.
+    For <span class="inline-math">$v\in V_i = \ker((\alpha - \lambda_i \, \id_V)^{c_i})$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \pi_j (v) = s(\alpha) \circ (\alpha-\lambda_i \, \id_V)^{c_i} (v) = 0.
+    \end{align*} $$</span>
+</p>

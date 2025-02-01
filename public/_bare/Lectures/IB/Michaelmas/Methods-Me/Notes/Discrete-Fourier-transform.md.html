@@ -1,0 +1,77 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (discrete Fourier transform)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-discrete-Fourier-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For some <span class="inline-math">$N\in \N$</span> and a sequence <span class="inline-math">$\set{X_n}_{n=0}^{N-1}$</span>,
+                define its <em>discrete Fourier transform</em> <span class="inline-math">$\set{\hat X_k}_{k=0}^{N-1}$</span> by
+                <span class="display-math">$$ \begin{align*}
+                    \hat X_k = \sum_{n=0}^{N-1} X_n e^{-2\pi i nk/N}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Equivalently, writing <span class="inline-math">$\v X = (X_0, \ldots, X_{N-1})^T$</span> and <span class="inline-math">$\vhat X = (\hat X_0, \ldots, \hat X_{N-1})^T$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \vhat X = \mathcal{F}\, \v X \quad \text{ where } \mathcal{F}_{kn} = e^{-2\pi ink/N}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Connection-between-discrete-and-continuous-Fourier-transform.html">Connection between discrete and continuous Fourier transform</a>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (inverse discrete Fourier transform)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-inverse-discrete-Fourier-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We can recover a sequence <span class="inline-math">$\set{X_n}_{n=0}^{N-1}$</span> from its <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-discrete-Fourier-transform.html">discrete Fourier transform</a> <span class="inline-math">$\set{\hat X_k}_{k=0}^{N-1}$</span> via
+                <span class="display-math">$$ \begin{align*}
+                    X_n = \frac{1}{N} \sum_{k=0}^{N-1} \hat X_k \, e^{2\pi ink/N}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-inverse-discrete-Fourier-transform.html">Proof</a>
+            </p>
+            <p>
+                This implies
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{F}^\dagger \mathcal{F} = \mathcal{F} \mathcal{F}^\dagger = NI_N.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Parseval's theorem for discrete Fourier transform)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Parseval-s-theorem-for-discrete-Fourier-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For two sequences <span class="inline-math">$\set{X_n}_{n=0}^{N-1}$</span> and <span class="inline-math">$\set{Y_n}_{n=0}^{N-1}$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{n=0}^{N-1} X_n \, \overline{Y_n} = \frac{1}{N} \sum_{k=0}^{N-1} \hat X_k \, \overline{\hat Y_k}.
+                \end{align*} $$</span>
+                In particular,
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{n=0}^{N-1} |X_n|^2 = \frac{1}{N} \sum_{k=0}^{N-1} |\hat X_k|^2.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Parseval-s-theorem-for-discrete-Fourier-transform.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

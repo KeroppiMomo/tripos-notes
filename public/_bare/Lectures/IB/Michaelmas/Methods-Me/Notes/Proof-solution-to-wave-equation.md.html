@@ -1,0 +1,58 @@
+<p>
+    Taking the Fourier transform,
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \hat u_{tt} + c^2|\v \lambda|^2 \hat u = \hat F(\v \lambda, t), &amp;\R^n\times (0,\infty), \\
+            \hat u(\v \lambda, 0) = \hat f(\v \lambda), &amp; \R^n, \\
+            \hat u_t(\v \lambda, 0) = \hat g(\v \lambda), &amp; \R^n.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+
+<h1>Zero forcing</h1>
+
+<p>
+    Solving the ODE <span class="inline-math">$\hat u_{tt} + c^2|\v \lambda|^2 \hat u = 0$</span> in <span class="inline-math">$t$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \hat u(\v \lambda, t) = A(\v \lambda) \sin(c|\v \lambda|t) + B(\v \lambda) \cos(c|\v \lambda|t).
+    \end{align*} $$</span>
+    Initial conditions give <span class="inline-math">$B(\v \lambda) = \hat f(\v \lambda)$</span> and <span class="inline-math">$A(\v \lambda) = \hat g(\v \lambda)/c|\v \lambda|$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \hat u(\v \lambda, t) ={}&amp; \hat g(\v \lambda) \frac{\sin(c|\v \lambda|t)}{c|\v \lambda|} + \hat f(\v \lambda) \pdd{t} \bigg(\frac{\sin(c|\v \lambda|t)}{c|\v \lambda|}\bigg) \\
+        ={}&amp; \hat g(\v \lambda) \hat \Phi_t(\v \lambda) + \pdd{t}(\hat f(\v \lambda) \hat \Phi_t(\v \lambda)).
+    \end{align*} $$</span>
+    By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-transform-of-convolution.html">convolution theorem</a>,
+    <span class="display-math">$$ \begin{align*}
+        u(\v x,t) = (\Phi_t*g)(\v x) + \pdd{t}((\Phi_t*f)(\v x)).
+    \end{align*} $$</span>
+</p>
+
+<h1>Zero initial conditions</h1>
+
+<p>
+    First we construct the Green's function <span class="inline-math">$G(t; s)$</span> satisfying
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            G_{tt} + c^2 |\v \lambda|^2 G = \delta(t-s), \\
+            G(0; s) = 0, \\
+            G_t(0; s) = 0,
+        \end{cases}
+    \end{align*} $$</span>
+    where <span class="inline-math">$s&gt;0$</span>.
+    It is
+    <span class="display-math">$$ \begin{align*}
+        G(t; s) = \begin{cases}
+            0, &amp;0&lt;t&lt;s, \\
+            \dfrac{\sin\big(c|\v \lambda|(t-s)\big)}{c|\v \lambda|}, &amp;t&gt;s.
+        \end{cases}
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \hat u(\v \lambda, t) ={}&amp; \int_{0}^{t} \frac{\sin \big(c|\v \lambda|(t-s)\big)}{c|\v \lambda|} \, \hat F(\v \lambda, s) \d s \\
+        ={}&amp; \int_{0}^{t} \hat \Phi_{t-s}(\v \lambda) \, \hat F(\v \lambda, s) \d s
+    \end{align*} $$</span>
+    so by the convolution theorem,
+    <span class="display-math">$$ \begin{align*}
+        u(\v \lambda, t) = \int_{0}^{t} \int \Phi_{t-s}(\v x-\v y)\, F(\v y, s) \d^n \v y \d s.
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,55 @@
+
+<h1>Satisfies system</h1>
+
+<p>
+    If <span class="inline-math">$i\in A$</span>, then <span class="inline-math">$h_i^A = 1$</span> by definition.
+</p>
+<p>
+    Otherwise suppose <span class="inline-math">$i\not\in A$</span>.
+    We can write
+    <span class="display-math">$$ \begin{align*}
+        h_i^A
+        &amp;= \prob(T_A &lt; \infty | X_0 = i) \\
+        &amp;= \sum_{n=0}^{\infty} \prob(T_A = n | X_0 = i) \\
+        &amp;= \sum_{n=1}^{\infty} \prob(T_A = n | X_0 = i) &amp;&amp;i\not\in A \\
+        &amp;= \sum_{n=1}^{\infty} \prob(X_0, X_1, \ldots, X_{n-1}\not\in A \text{ but } X_n \in A|X_0 = i) \tag{*}\\
+        &amp;= \sum_{n=1}^{\infty} \prob(X_1, \ldots, X_{n-1}\not\in A \text{ but } X_n \in A|X_0 = i) &amp;&amp; i\not\in A.\\
+    \end{align*} $$</span>
+</p>
+<p>
+    Now we split into cases for <span class="inline-math">$X_1$</span>, and use the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-condition-for-process-to-be-Markov.html">probabilities in a Markov chain</a> (1)
+    and the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-simple-Markov-property.html">simple Markov property</a> (2):
+    <span class="display-math">$$ \begin{align*}
+        &amp;h_i^A \\
+        ={}&amp; \sum_{n=1}^{\infty} \sum_{j\in I} \prob(X_1=j,\  X_1, \ldots, X_{n-1}\not\in A \text{ but } X_n\in A|X_0 = i) \\
+        ={}&amp; \sum_{n=1}^\infty \sum_{j\in I} P(i,j) \prob(X_1, \ldots, X_{n-1}\not\in A \text{ but }X_n\in A | X_0 = i, X_1 = j) &amp;&amp;\text{using (1)}\\
+        ={}&amp; \sum_{n=1}^\infty \sum_{j\in I} P(i,j) \prob(X_1, \ldots, X_{n-1}\not\in A \text{ but }X_n\in A | X_1 = j) &amp;&amp;\text{using (2)}\\
+        ={}&amp; \sum_{n=1}^\infty \sum_{j\in I} P(i,j) \prob(X_0, \ldots, X_{n-2}\not\in A \text{ but }X_{n-1}\in A | X_0 = j) &amp;&amp;\text{using (2)}\\
+        ={}&amp; \sum_{j\in I} P(i,j) h_j^A &amp;&amp;\text{using (*)}.
+    \end{align*} $$</span>
+</p>
+
+<h1>Minimality</h1>
+
+<p>
+    Suppose <span class="inline-math">$(h_i)_{i\in I}$</span> also satisfy the given system of equations and <span class="inline-math">$h_i\geq 0$</span> for all <span class="inline-math">$i\in I$</span>.
+    For <span class="inline-math">$i\in A$</span>, we have <span class="inline-math">$1=h_i \geq h_i^A = 1$</span>.
+</p>
+<p>
+    If <span class="inline-math">$i\not\in A$</span>, then using the equations it satisfies,
+    <span class="display-math">$$ \begin{align*}
+        h_i ={}&amp; \sum_{j_1\in I} P(i,j_1) h_{j_1} \\
+        ={}&amp; \sum_{j_1 \in A} P(i,j_1)\underbrace{h_{j_1}}_{1} + \sum_{j_1\not\in A} P(i,j_1) h_{j_1} \\
+        ={}&amp; \prob(T_A = 1|X_0 = i) + \sum_{j_1 \not \in A,\ j_2 \in I} P(i,j_1) P(j_1, j_2) h_{j_2} \\
+        ={}&amp; \prob(T_A = 1|X_0 = i) + \sum_{j_1\not\in A,\ j_2\in A} P(i,j_1) P(j_1, j_2) h_{j_2} + \sum_{j_1, j_2\not\in A} P(i,j_1) P(j_1,j_2) h_{j_2} \\
+        ={}&amp; \prob(T_A = 1|X_0 = i) + \prob(T_A = 2|X_0 = i) + \sum_{j_1, j_2\not\in A, j_3 \in I} P(i,j_1) P(j_1,j_2) P(j_2, j_3)h_{j_3} \\
+        ={}&amp; \ldots \\
+        ={}&amp; \prob(T_A = 1|X_0 = i) + \prob(T_A = 2|X_0 = i) + \ldots + \prob(T_A = n|X_0 = i) \\
+        &amp;+ \sum_{j_1,\ldots,j_n \not\in A} P(i,j_1) P(j_1, j_2) \ldots P(j_{n-1}, j_n) \underbrace{h_{j_n}}_{\geq 0} \\
+        \geq {}&amp; \prob(T_A \leq n|X_0 = i).
+    \end{align*} $$</span>
+    And taking <span class="inline-math">$n\to \infty$</span>,
+    <span class="display-math">$$ \begin{align*}
+        h_i \geq \prob(T_A &lt; \infty|X_0 = i) = h_i^A.
+    \end{align*} $$</span>
+</p>

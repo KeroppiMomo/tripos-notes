@@ -1,0 +1,180 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (kernel for wave equation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-kernel-for-wave-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For the wave equation <span class="inline-math">$u_{tt} - c^2 \Delta u = F(\v x,t)$</span> in <span class="inline-math">$\R^n$</span>,
+                define <span class="inline-math">$\Phi_t(\v x)$</span> to have the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-higher-dimensional-Fourier-transform.html">Fourier transform</a>
+                <span class="display-math">$$ \begin{align*}
+                    \hat \Phi_t(\v \lambda) = \frac{\sin(ct|\v \lambda|)}{c|\v \lambda|}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (kernel for wave equation in different dimensions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-kernel-for-wave-equation-in-different-dimensions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-kernel-for-wave-equation.html"><span class="inline-math">$\Phi_t(\v x)$</span></a> in <span class="inline-math">$\R^n$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$n=1$</span>, then
+                    <span class="display-math">$$ \begin{align*}
+                    \Phi_t(x) = \frac{1}{2c}\big(H(x + ct) - h(x - ct)\big).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$n=3$</span>, then
+                    <span class="display-math">$$ \begin{align*}
+                    \Phi_t(x) = \frac{1}{4\pi c|\v x|}\big(\delta(|\v x|-ct) - \delta(|\v x| + ct)\big).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-kernel-for-wave-equation-in-different-dimensions.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (solution to wave equation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-solution-to-wave-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider the initial value problem of the wave equation
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        u_{tt} - c^2 \Delta u = F(\v x, t), &amp;\R^n \times (0,\infty), \\
+                        u(\v x, 0) = f(\v x), &amp;\R^n, \\
+                        u_t(\v x, 0) = g(\v x), &amp;\R^n.
+                    \end{cases}
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    For zero forcing <span class="inline-math">$F=0$</span>, the solution is
+                    <span class="display-math">$$ \begin{align*}
+                    u(\v x,t) = \pdd{t}(\Phi_t * f)(\v x) + (\Phi_t * g)(\v x).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    For zero initial conditions <span class="inline-math">$f=g=0$</span>, the solution is
+                    <span class="display-math">$$ \begin{align*}
+                    u(\v x, t) = \int_{0}^{t} \int \Phi_{t-s}(\v x-\v y) \, F(\v y,s) \d^n \v y \d s.
+                    \end{align*} $$</span>
+                    Equivalently, if we set <span class="inline-math">$F(\v x,t) = 0$</span> for <span class="inline-math">$t&lt;0$</span>, then
+                    <span class="display-math">$$ \begin{align*}
+                    u(\v x,t) = \iint G(\v x, t; \v y, s) \, F(\v y, s) \d^n \v y \d s
+                    \end{align*} $$</span>
+                    where
+                    <span class="display-math">$$ \begin{align*}
+                    G(\v x,t; \v y, s) = H(t-s)\, \Phi_{t-s}(\v x-\v y)
+                    \end{align*} $$</span>
+                    is the <em>Green's function for the wave equation</em> on <span class="inline-math">$\R^n$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-solution-to-wave-equation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (reduction of wave equation problem on the half line)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-reduction-of-wave-equation-problem-on-the-half-line.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider the initial value problem
+                <span class="display-math">$$ \begin{align*}
+                    (*)\begin{cases}
+                        v_{tt} - c^2 v_{x x} = P(x, t), &amp;x&gt;0,\, t&gt;0 , \\
+                        v(0, t) = p(t), &amp;t&gt;0, \\
+                        v(x,0) = q(x), &amp;x&gt;0, \\
+                        v_t(x,0) = r(x), &amp;x&gt;0
+                    \end{cases}
+                \end{align*} $$</span>
+                where the initial and boundary conditions are compatible at <span class="inline-math">$(x,t)=(0,0)$</span>,
+                i.e. <span class="inline-math">$p(0) = q(0)$</span> and <span class="inline-math">$p&#x27;(0) = r(0)$</span>.
+            </p>
+            <p>
+                This is equivalent to
+                <span class="display-math">$$ \begin{align*}
+                    (\dagger)\begin{cases}
+                        u_{tt} - c^2 u_{x x} = F(x,t), &amp;x&gt;0, t&gt;0, \\
+                        u(0,t) = 0, &amp;t&gt;0, \\
+                        u(x,0) = f(x), &amp;x&gt;0, \\
+                        u_t(x,0) = g(x), &amp;x&gt;0
+                    \end{cases}
+                \end{align*} $$</span>
+                with <span class="inline-math">$F(0,t) = 0$</span> and <span class="inline-math">$f(0) = g(0) = 0$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-reduction-of-wave-equation-problem-on-the-half-line.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (solution to wave equation on the half line)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-solution-to-wave-equation-on-the-half-line.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The solution to <span class="inline-math">$(\dagger)$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-reduction-of-wave-equation-problem-on-the-half-line.html">here</a> on the half line is
+                the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-solution-to-wave-equation.html">solution on the full line</a>
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        w_{tt} - c^2 w_{x x} = F_\text{odd}(x,t), &amp;\R\times(0,\infty), \\
+                        w(x,0) = f_\text{odd}(x), &amp;\R, \\
+                        w_t(x,0) = g_\text{odd}(x), &amp;\R
+                    \end{cases}
+                \end{align*} $$</span>
+                restricted to the half line,
+                where
+                <span class="display-math">$$ \begin{align*}
+                    f_\text{odd}(x) = \begin{cases}
+                        f(x), &amp;x\geq 0, \\
+                        -f(-x), &amp;x&lt;0
+                    \end{cases}
+                \end{align*} $$</span>
+                is the odd extension of <span class="inline-math">$f$</span> and
+                similarly for <span class="inline-math">$F_{\text{odd}}$</span> and <span class="inline-math">$g_{\text{odd}}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-solution-to-wave-equation-on-the-half-line.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,31 @@
+<p>
+    Consider the random walk on <span class="inline-math">$\Z_+$</span> with a drift towards the origin and a retaining barrier at 0:
+    <span class="display-math">$$ \begin{cases}
+        P(x,x+1) = p, &amp;x\geq 1, \\
+        P(x,x-1) = q \equiv 1-p, &amp;x\geq 1, \\
+        P(0,1) = p, \\
+        P(0,0) = q,
+    \end{cases} $$</span>
+    with <span class="inline-math">$p&lt;q$</span>.
+</p>
+<p>
+    The invariance equations are
+    <span class="display-math">$$ \begin{cases}
+        \pi_i = p\pi_{i-1} + q\pi_{i+1}, &amp;i\geq 1 \\
+        \pi_0 = q\pi_0 + q\pi_1.
+    \end{cases} $$</span>
+    Solving, the first equation gives a general solution
+    <span class="display-math">$$ \begin{align*}
+        \pi_i = A + B\left(\frac{p}{q}\right)^i, \quad i\geq 0
+    \end{align*} $$</span>
+    and the second equation yields <span class="inline-math">$A=0$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \pi_i = B\left(\frac{p}{q}\right)^i, \quad i\geq 0
+    \end{align*} $$</span>
+    We then normalise this to get
+    <span class="display-math">$$ \begin{align*}
+        \pi_i = \left(1-\frac{p}{q}\right)\left(\frac{p}{q}\right)^i, \quad i\geq 0
+    \end{align*} $$</span>
+    which is an invariant distribution.
+    The chain is therefore positive recurrent.
+</p>

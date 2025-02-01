@@ -1,0 +1,138 @@
+<p>
+    We want to solve
+    <span class="display-math">$$ \begin{align*}
+        \pdfd{\phi}{t} = \kappa \Delta\phi
+    \end{align*} $$</span>
+    where <span class="inline-math">$\kappa&gt;0$</span> is a constant called the <em>thermal diffusivity</em>.
+    This models the transfer of heat in conductive bodies.
+</p>
+<p>
+    Using separation of variables <span class="inline-math">$\phi = T(t) \psi(\v x)$</span>, we can turn the initial boundary value problem
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \phi_t = \kappa \Delta\phi, &amp;\Omega \times (0,\infty), \\
+            \phi = f, &amp;\Omega\times\set{0}, \\
+            \phi = 0, &amp;\partial\Omega\times (0,\infty)
+        \end{cases}
+    \end{align*} $$</span>
+    into
+    <span class="display-math">$$ \begin{align*}
+        T(t) = Ae^{-\mu \kappa t}, \quad \begin{cases}
+            \Delta\psi + \mu\psi = 0, &amp;\Omega, \\
+            \psi = 0, &amp;\partial \Omega.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Heat conduction in a square
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Heat-conduction-in-a-square.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a square <span class="inline-math">$(0,L)\times(0,L)$</span>,
+                we have a separation of variables solution
+                <span class="display-math">$$ \begin{align*}
+                    \phi(x,y,t) = \sum_{n,m=1}^{\infty} A_{m,n} e^{-\kappa \mu_{m,n}t} \sin \frac{n\pi x}{L} \sin \frac{m\pi y}{L}
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    \mu_{m,n} ={}&amp; \left(\frac{n\pi}{L}\right)^2 + \left(\frac{m\pi}{L}\right)^2, \\
+                    A_{m,n} ={}&amp; \frac{4}{L^2} \int_{0}^{L} \int_{0}^{L} f(x,y) \sin \frac{n\pi x}{L} \sin \frac{m\pi y}{L} \d x \d y.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-heat-conduction-in-a-square.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Heat conduction on a cylindrical rod
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Heat-conduction-on-a-cylindrical-rod.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a cylindrical rod of radius 1 and length <span class="inline-math">$L$</span>, the domain is <span class="inline-math">$\Omega=[0,1) \times [0,2\pi) \times (0,L)$</span> in cylindrical polars <span class="inline-math">$(\rho,\varphi,z)$</span>.
+                Assuming <span class="inline-math">$f=f(\rho,z)$</span> is independent of <span class="inline-math">$\varphi$</span>, we can assume <span class="inline-math">$\phi = \phi(\rho,z,t)$</span> is independent of <span class="inline-math">$\varphi$</span> as well.
+            </p>
+            <p>
+                We have a separation of variables solution
+                <span class="display-math">$$ \begin{align*}
+                    \phi(\rho, z, t) = \sum_{k,n=1}^{\infty} A_{k,n} e^{-\kappa\mu_{k,n} t} J_0(j_{0k}\, \rho) \sin \frac{n\pi z}{L}
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    \mu_{kn} ={}&amp; \left(\frac{n\pi}{L}\right)^2 + {j_{0k}}^2, \\
+                    A_{kn} ={}&amp; \frac{4}{L\,J_0&#x27;(j_{0k})^2} \int_{0}^{1} \left(\int_{0}^{L} f(\rho,z) \sin \frac{n\pi z}{L} \d z\right) J_0(j_{0k}\, \rho)\,\rho \d \rho.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-heat-conduction-on-a-cylindrical-rod.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (energy dissipation in heat equation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-energy-dissipation-in-heat-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\phi(\v x,t)$</span> be a solution to the initial value problem
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        \phi_t = \kappa \Delta\phi, &amp;\Omega \times (0,\infty), \\
+                        \phi = f, &amp;\Omega\times\set{0}, \\
+                        \phi = 0, &amp;\partial\Omega\times (0,\infty).
+                    \end{cases}
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The <em>energy</em>, defined as
+                <span class="display-math">$$ \begin{align*}
+                    Q(t) = \frac{1}{2} \int_{\Omega} \phi^2 \d V,
+                \end{align*} $$</span>
+                is decreasing with time, i.e. <span class="inline-math">$Q&#x27;(t) \leq 0$</span>. In particular
+                <span class="display-math">$$ \begin{align*}
+                    Q(t) \leq Q(0) = \frac{1}{2}\int_{\Omega} f^2 \d V.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-energy-dissipation-in-heat-equation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (unique solution to heat equation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-unique-solution-to-heat-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Solutions to the initial value problem
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        \phi_t = \kappa \Delta\phi, &amp;\Omega \times (0,\infty), \\
+                        \phi = f, &amp;\Omega\times\set{0}, \\
+                        \phi = 0, &amp;\partial\Omega\times (0,\infty)
+                    \end{cases}
+                \end{align*} $$</span>
+                is unique.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-unique-solution-to-heat-equation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    (But there are solutions to the heat equation with infinite energy...)
+</p>

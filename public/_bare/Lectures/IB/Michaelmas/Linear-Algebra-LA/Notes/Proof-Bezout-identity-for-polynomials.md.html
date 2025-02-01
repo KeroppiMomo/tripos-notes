@@ -1,0 +1,22 @@
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        S = \Big\{\deg\Big(\sum_{i=1}^{k} g_i(t) f_i(t)\Big) \,\Big|\, g_i \in \mathbb{F}[t]\Big\} \setminus \set{-\infty}.
+    \end{align*} $$</span>
+    <span class="inline-math">$S\subseteq \N$</span> and is non-empty, <a href="/tripos-notes/Lectures/IA/Michaelmas/Numbers-and-Sets-NS/Axiom-well-ordering-principle-WOP.html">so</a> there exists a minimum element <span class="inline-math">$d$</span>, and let <span class="inline-math">$p_i\in \mathbb{F}[t]$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \deg (F) = d \quad \text{ where } F(x) = \sum_{i=1}^{k} p_i(t) f_i(t).
+    \end{align*} $$</span>
+</p>
+<p>
+    Using <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Euclidean-algorithm-for-polynomials.html">Euclidean algorithm</a>, dividing <span class="inline-math">$f_i$</span> by <span class="inline-math">$F$</span> gives <span class="inline-math">$q,r\in \mathbb{F}[t]$</span> with <span class="inline-math">$\deg(r) &lt; d$</span> satisfying
+    <span class="display-math">$$ \begin{align*}
+        f_i = q\cdot F + r \implies r = f_i - \sum_{j=1}^{k} p_j q f_j
+    \end{align*} $$</span>
+    so <span class="inline-math">$\deg(r) \in S\cup \set{-\infty}$</span>. But <span class="inline-math">$\deg(r) &lt; d = \min S$</span>, so <span class="inline-math">$r=0$</span>.
+    Therefore <span class="inline-math">$F \mid f_i$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$F$</span> is a common factor of all <span class="inline-math">$f_i$</span>, <span class="inline-math">$F$</span> cannot have a degree at least 1, so <span class="inline-math">$F$</span> is a constant.
+    Divide <span class="inline-math">$p_i$</span> by <span class="inline-math">$F$</span> to get the result.
+</p>

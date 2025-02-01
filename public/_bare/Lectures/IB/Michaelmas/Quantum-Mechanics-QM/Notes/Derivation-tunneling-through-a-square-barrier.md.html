@@ -1,0 +1,57 @@
+<p>
+    We look for stationary state wave function obeying
+    <span class="display-math">$$ \begin{align*}
+        -\frac{\hbar^2}{2m} \dfd[2]{\chi}{x} + U(x) \chi = E\chi.
+    \end{align*} $$</span>
+    Defining
+    <span class="display-math">$$ \begin{align*}
+        k = \frac{\sqrt{2mE}}{\hbar}, \qquad \kappa = \frac{\sqrt{2m(U_0-E)}}{\hbar},
+    \end{align*} $$</span>
+    we have the solution
+    <span class="display-math">$$ \begin{align*}
+        \chi(x) = \begin{cases}
+            \exp(ikx) + A\exp(-ikx), &amp;x&lt;0, \\
+            B\exp(-\kappa x) + C\exp(\kappa x), &amp;0&lt;x&lt;a, \\
+            D\exp(ik x), &amp;x&gt;a
+        \end{cases}
+    \end{align*} $$</span>
+    where we have normalised the incident way to have amplitude 1.
+</p>
+<p>
+    Enforcing that <span class="inline-math">$\chi$</span> and <span class="inline-math">$\chi&#x27;$</span> are continuous at <span class="inline-math">$x=0$</span> and <span class="inline-math">$x=a$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            1 + A = B + C, \\
+            ik - ikA = -\kappa B + \kappa C, \\
+            B\exp(-\kappa a) + C\exp(\kappa a) = D\exp(ika), \\
+            -\kappa B\exp(-\kappa a) + \kappa C\exp(\kappa a) = ikD\exp(ika).
+        \end{cases}
+    \end{align*} $$</span>
+    We can solve this (or use a computer since it's horrible):
+    <span class="display-math">$$ \begin{align*}
+        A ={}&amp; B + C - 1, \\
+        B ={}&amp; \frac{(ik + \kappa)C - 2ik}{\kappa - ik}, \\
+        C ={}&amp; \frac{2ik\exp(-\kappa a) + (\kappa - ik)\exp(ika) D}{(ik+\kappa)\exp(-\kappa a) + (\kappa - ik)\exp(\kappa a)}, \\
+        D ={}&amp; \frac{4ik\kappa}{\exp(ika) \,\big((\kappa+ik)^2 \exp(-\kappa a) - (\kappa-ik)^2 \exp(\kappa a)\big)}.
+    \end{align*} $$</span>
+</p>
+<p>
+    The transmission probability is
+    <span class="display-math">$$ \begin{align*}
+        T ={}&amp; \frac{j_t}{j_i} \\
+        ={}&amp; \frac{(\hbar k/m) |D|^2}{(\hbar k/m)} \\
+        ={}&amp; |D|^2 \\
+        ={}&amp; \frac{16k^2\kappa^2}{\Big|(\kappa^2-k^2)\big(\exp(-\kappa a) - \exp(\kappa a)\big) + 2ik\kappa\big(\exp(-\kappa a) + \exp(\kappa a)\big)\Big|^2} \\
+        ={}&amp; \frac{4k^2\kappa^2}{\big|(k^2-\kappa^2)\sinh(\kappa a) + 2ik\kappa\cosh(\kappa a)\big|^2} \\
+        ={}&amp; \frac{4k^2\kappa^2}{(k^4 - 2k^2\kappa^2 + \kappa^4) \sinh^2(\kappa a) + 4k^2\kappa^2\cosh^2(\kappa a)} \\
+        ={}&amp; \frac{4k^2\kappa^2}{(k^4 - 2k^2\kappa^2 + \kappa^4) \sinh^2(\kappa a) + 4k^2\kappa^2(1+\sinh^2(\kappa a))} \\
+        ={}&amp; \frac{4k^2\kappa^2}{(k^2+\kappa^2)^2 \sinh^2(\kappa a) + 4k^2\kappa^2}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Consider a low energy particle scattering on a very tall barrier (<span class="inline-math">$U_0 - E \gg \hbar^2/2ma^2$</span>) so that <span class="inline-math">$\kappa a\gg 1$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        T \approx \frac{8k^2\kappa^2}{(k^2+\kappa^2)^2} \exp(-2\kappa a) = f\left(\frac{E}{U_0 - E}\right) \exp\left(-\frac{2a}{\hbar}\sqrt{2m(U_0 - E)}\right).
+    \end{align*} $$</span>
+</p>

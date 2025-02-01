@@ -1,0 +1,60 @@
+
+<h1>Real eigenvalues and orthogonal eigenvectors</h1>
+
+<p>
+    Let <span class="inline-math">$v\neq \v 0$</span> be a <span class="inline-math">$\lambda$</span>-eigenvector and <span class="inline-math">$w\neq \v 0$</span> be a <span class="inline-math">$\mu$</span>-eigenvector.
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        \lambda\langle v,w\rangle ={}&amp; \langle \lambda v, w \rangle \\
+        ={}&amp; \langle \alpha(v), w\rangle \\
+        ={}&amp; \langle v, \alpha(w)\rangle &amp;&amp;\text{self-adjoint} \\
+        ={}&amp; \langle v, \mu w\rangle \\
+        ={}&amp; \overline{\mu} \langle v, w\rangle.
+    \end{align*} $$</span>
+</p>
+<ol start="1">
+<li>
+    <p>
+        Take <span class="inline-math">$v=w$</span> and <span class="inline-math">$\lambda=\mu$</span> to see that
+        since <span class="inline-math">$\langle v,v\rangle\neq 0$</span>, <span class="inline-math">$\lambda = \overline{\lambda}$</span> so <span class="inline-math">$\lambda$</span> is real.
+    </p>
+    
+</li><li>
+    <p>
+        Take <span class="inline-math">$\lambda\neq \mu = \overline{\mu}$</span> to see that <span class="inline-math">$\langle v,w\rangle = 0$</span>.
+    </p>
+    
+</li>
+</ol>
+
+<h1>Existence of an eigenvector</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Gram-Schmidt-process.html">Let</a> <span class="inline-math">$B$</span> be an orthonormal basis for <span class="inline-math">$V$</span>, and <span class="inline-math">$A = [\alpha]_B$</span>.
+    We treat <span class="inline-math">$A$</span> as a complex matrix.
+</p>
+<p>
+    Consider the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-characteristic-polynomial.html">characteristic polynomial</a> <span class="inline-math">$\chi_A$</span> as a complex polynomial.
+    Then by the fundamental theorem of algebra,
+    it has a root <span class="inline-math">$\lambda\in \C$</span>, which is an eigenvalue of <span class="inline-math">$A$</span>.
+</p>
+<p>
+    <span class="inline-math">$\alpha$</span> is self-adjoint, <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-matrix-of-self-adjoint-map.html">so</a> <span class="inline-math">$A$</span> is Hermitian.
+    By 1, <span class="inline-math">$\lambda$</span> is real.
+</p>
+<p>
+    Let <span class="inline-math">$\v c\in \C^n$</span> be an <span class="inline-math">$\lambda$</span>-eigenvector of <span class="inline-math">$A$</span>.
+    If <span class="inline-math">$V$</span> is over <span class="inline-math">$\C$</span>, let <span class="inline-math">$v\in V$</span> such that <span class="inline-math">$[v]_B = \v c$</span>.
+    Then <span class="inline-math">$v$</span> is an <span class="inline-math">$\lambda$</span>-eigenvector of <span class="inline-math">$\alpha$</span>, and we are done.
+</p>
+<p>
+    For <span class="inline-math">$V$</span> being over <span class="inline-math">$\R$</span>, write <span class="inline-math">$\v c = \v a + i \v b$</span> where <span class="inline-math">$\v a,\v b\in \R^n$</span>.
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        A\v a + iA \v b = A\v c = \lambda \v c = \lambda \v a + i\lambda \v b.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$A$</span> is real and <span class="inline-math">$\lambda$</span> is real, we have <span class="inline-math">$A\v a = \lambda \v a$</span> and <span class="inline-math">$A\v b = \lambda\v b$</span>.
+    Moreover <span class="inline-math">$\v c\neq \v 0$</span>, so either <span class="inline-math">$\v a$</span> or <span class="inline-math">$\v b$</span> is non-zero.
+    Take <span class="inline-math">$v\in V$</span> such that <span class="inline-math">$[v]_B = \v a$</span> or <span class="inline-math">$\v b$</span> whichever is non-zero,
+    and then <span class="inline-math">$v$</span> is an <span class="inline-math">$\lambda$</span>-eigenvector of <span class="inline-math">$\alpha$</span>.
+</p>

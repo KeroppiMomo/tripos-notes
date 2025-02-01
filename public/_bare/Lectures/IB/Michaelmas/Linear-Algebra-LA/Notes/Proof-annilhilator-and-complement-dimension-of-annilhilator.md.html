@@ -1,0 +1,82 @@
+
+<h1><span class="inline-math">$U^0 \isom W^\star$</span></h1>
+
+<p>
+    Note that <span class="inline-math">$U^0 \subseteq V^\star$</span>. Consider the function
+    <span class="display-math">$$ \begin{align*}
+        \phi : U^0 &amp;\to W^\star \\
+        \theta &amp;\mapsto \theta|_W
+    \end{align*} $$</span>
+    which restricts <span class="inline-math">$\theta$</span> to the domain <span class="inline-math">$W$</span>.
+</p>
+<p>
+    Clearly <span class="inline-math">$\phi$</span> is linear. It has an inverse
+    <span class="display-math">$$ \begin{align*}
+        \phi\inv: W^\star &amp;\to U^0 \\
+        \bar\theta &amp;\mapsto ((u+w) \mapsto \bar\theta(w)), \quad u\in U, w\in W.
+    \end{align*} $$</span>
+    Since every element in <span class="inline-math">$V$</span> can be written uniquely as a sum of an element in <span class="inline-math">$U$</span> and an element in <span class="inline-math">$W$</span>, <span class="inline-math">$\phi\inv(\bar\theta): V\to\mathbb{F}$</span> is well-defined.
+    Also <span class="inline-math">$\phi\inv(\bar\theta)\in U^0$</span> since <span class="inline-math">$\phi\inv(\bar\theta)(u) = \phi\inv(\bar\theta)(u+\v 0) = \bar\theta(\v 0) = 0$</span> for any <span class="inline-math">$u\in U$</span>.
+</p>
+<p>
+    Therefore <span class="inline-math">$\phi$</span> is bijective.
+</p>
+
+<h1><span class="inline-math">$\dim(V) = \dim(U) + \dim(U^0)$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$V$</span> is finite-dimensional.
+</p>
+
+<h2>Non-constructive proof</h2>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-every-subspace-of-a-finite-dimensional-vector-space-has-a-direct-complement.html">There exists</a> a direct complement <span class="inline-math">$W$</span> of <span class="inline-math">$U$</span> in <span class="inline-math">$V$</span>.
+    Then by the above, <span class="inline-math">$U^0 \isom W^\star$</span>.
+    Then by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-sum-intersection-formula.html">sum-intersection formula</a> and <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-dual-basis.html"><span class="inline-math">$W\isom W^\star$</span></a>, <span class="inline-math">$\dim(V) = \dim(U) + \dim(W) = \dim(U) + \dim(W^\star) = \dim(U) + \dim(U^0)$</span>.
+</p>
+
+<h2>Constructive proof</h2>
+
+<p>
+    Let <span class="inline-math">$n=\dim(V)$</span> and <span class="inline-math">$k=\dim(U)$</span>.
+    Let <span class="inline-math">$B_U = \set{v_1, \ldots, v_k}$</span> be a basis for <span class="inline-math">$U$</span>.
+    Extend to <span class="inline-math">$B_V = \set{v_1, \ldots, v_k, v_{k+1}, \ldots, v_n}$</span> a basis for <span class="inline-math">$V$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$B_{V^\star} = \set{v_1^\star, \ldots, v_k^\star, v_{k+1}^\star, \ldots, v_n^\star}$</span> be the basis for <span class="inline-math">$V^\star$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-dual-basis.html">dual</a> to <span class="inline-math">$B_V$</span>.
+    We claim that <span class="inline-math">$\set{v_{k+1}^\star, \ldots, v_n^\star}$</span> is a basis for <span class="inline-math">$U^0$</span>.
+</p>
+
+<h3>Subset of <span class="inline-math">$U^0$</span></h3>
+
+<p>
+    For each <span class="inline-math">$i\leq k$</span> and <span class="inline-math">$j\geq k+1$</span>,
+    <span class="display-math">$$ \begin{align*}
+        v_j^\star (v_i) = \delta_{ij} = 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$v_j^\star\in B_U^0$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-properties-of-annihilators.html"><span class="inline-math">$=$</span></a> <span class="inline-math">$\langle B_U\rangle^0 = U^0.$</span>
+</p>
+
+<h3>Linear independence</h3>
+
+<p>
+    <span class="inline-math">$\set{v_{k+1}^\star, \ldots, v_n^\star} \subseteq B_{V^\star}$</span> which is linearly independent.
+</p>
+
+<h3>Spanning set</h3>
+
+<p>
+    Let <span class="inline-math">$\theta\in U^0$</span>. Using the basis, write
+    <span class="display-math">$$ \begin{align*}
+        \theta = \sum_{j=1}^{n} \mu_j v_j^\star.
+    \end{align*} $$</span>
+    Then for each <span class="inline-math">$i=1,2,\ldots,k$</span>,
+    <span class="display-math">$$ \begin{align*}
+        0 = \theta(v_i) = \sum_{j=1}^{n} \mu_j v_j^\star(v_i) = \mu_i
+    \end{align*} $$</span>
+    and hence
+    <span class="display-math">$$ \begin{align*}
+        \theta = \sum_{j=k+1}^{n} \mu_j v_j^\star \in \langle v_{k+1}^\star, \ldots, v_n^\star\rangle.
+    \end{align*} $$</span>
+</p>

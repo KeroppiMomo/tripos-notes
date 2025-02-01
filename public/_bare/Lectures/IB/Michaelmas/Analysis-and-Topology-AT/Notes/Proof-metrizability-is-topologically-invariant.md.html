@@ -1,0 +1,72 @@
+<p>
+    Suppose <span class="inline-math">$(X,\tau)$</span> is metrizable.
+    This means there exists a metric <span class="inline-math">$d: X\times X \to \R$</span> such that <span class="inline-math">$\tau$</span> is induced by <span class="inline-math">$d$</span>.
+    Let <span class="inline-math">$(Y,\rho)$</span> be homeomorphic to <span class="inline-math">$(X,\tau)$</span> via <span class="inline-math">$h: X\to Y$</span>.
+    We want to show <span class="inline-math">$\rho$</span> is also induced by a metric.
+</p>
+<p>
+    Construct a function <span class="inline-math">$d&#x27;: Y \times Y \to \R$</span> by
+    <span class="display-math">$$ \begin{align*}
+        d&#x27;(y_1, y_2) = d\big(h\inv(y_1), h\inv(y_2)\big).
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$d&#x27;$</span> is a metric</h1>
+
+<ul>
+<li>
+    <p>
+        Symmetry: <span class="inline-math">$d&#x27;(y_1, y_2) = d&#x27;(y_2, y_1)$</span> follows from <span class="inline-math">$d(x_1, x_2) = d(x_2, x_1)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Positive definite:
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$d&#x27;(y_1, y_2) = d(h\inv(y_1), h\inv(y_2)) \geq 0$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$d&#x27;(y_1,y_2) = 0$</span> <span class="inline-math">$\iff$</span> <span class="inline-math">$d(h\inv(y_1), h\inv(y_2)) = 0$</span> <span class="inline-math">$\iff$</span> <span class="inline-math">$h\inv(y_1)=h\inv(y_2)$</span> <span class="inline-math">$\iff$</span> <span class="inline-math">$y_1 = y_2$</span> by bijectivity of <span class="inline-math">$h$</span>.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        Triangle inequality: <span class="inline-math">$d&#x27;(y_1,y_2) + d&#x27;(y_2, y_3)$</span> <span class="inline-math">$=$</span> <span class="inline-math">$d(h\inv(y_1), h\inv(y_2)) + d(h\inv(y_2), h\inv(y_3))$</span> <span class="inline-math">$\geq$</span> <span class="inline-math">$d(h\inv(y_1), h\inv(y_3))$</span> <span class="inline-math">$=$</span> <span class="inline-math">$d&#x27;(y_1,y_3)$</span>.
+    </p>
+    
+</li>
+</ul>
+
+<h1><span class="inline-math">$d&#x27;$</span> induces <span class="inline-math">$\rho$</span></h1>
+
+<p>
+    Let <span class="inline-math">$\sigma$</span> be the topology induced by <span class="inline-math">$d&#x27;$</span>. We want to show <span class="inline-math">$\rho = \sigma$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\sigma\subseteq \rho$</span>: for any ball <span class="inline-math">$B_r&#x27;(y_0)$</span> of <span class="inline-math">$\sigma$</span>,
+        <span class="display-math">$$ \begin{align*}
+        B_r&#x27;(y_0) = h(B_r(h\inv(y_0))).
+        \end{align*} $$</span>
+        <span class="inline-math">$B_r(h\inv(y_0))$</span> is open in <span class="inline-math">$\tau$</span>, so <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuous-iff-taking-preimage-preserves-open-or-closed-sets.html">by the continuity</a> of <span class="inline-math">$h\inv: (Y,\rho)\to (X,\tau)$</span>, <span class="inline-math">$B_r&#x27;(y_0)$</span> is open in <span class="inline-math">$\rho$</span>.
+        Balls of <span class="inline-math">$\sigma$</span> form a base, so <span class="inline-math">$\sigma\subseteq \rho$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\rho\subseteq \sigma$</span>: let <span class="inline-math">$V\in \rho$</span> be open. <span class="inline-math">$h\inv(V)$</span> is open in <span class="inline-math">$\tau$</span> by continuity of <span class="inline-math">$h$</span> and contains <span class="inline-math">$h\inv(y_0)$</span>,
+        so let <span class="inline-math">$\epsilon&gt;0$</span> such that <span class="inline-math">$B_\epsilon(h\inv(y_0)) \subseteq h\inv(V)$</span>.
+        Then <span class="inline-math">$B_\epsilon&#x27;(y_0) = h(B_\epsilon(h\inv(y_0))) \subseteq V$</span>. Therefore <span class="inline-math">$V$</span> is open in <span class="inline-math">$\sigma$</span>.
+    </p>
+    
+</li>
+</ul>

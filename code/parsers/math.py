@@ -28,7 +28,7 @@ def parseInlineMath(input: str) -> list[Node]:
     match = re.match(r"\$.*?(\$|\n)", input)
     if match == None:
         print(f"Warning: could not find matching $ near \"{input[:15]}\"; proceeding without treating as inline math")
-        return [ParagraphNode([TextNode(input)])]
+        return [parsing.ParagraphNode([TextNode(input)])]
     if match.group(0) == "\n":
         print(f"Warning: could not find matching $ on the same line near \"{input[:15]}\"; proceeding without treating as inline math")
         return utils.combineParagraph(

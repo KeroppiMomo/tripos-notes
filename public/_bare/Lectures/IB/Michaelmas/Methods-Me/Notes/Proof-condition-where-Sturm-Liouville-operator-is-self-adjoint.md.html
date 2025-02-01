@@ -1,0 +1,41 @@
+<p>
+    We use <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Lemma-Sturm-Liouville-operator-and-Wronskian.html">this identity</a> and compute
+    <span class="display-math">$$ \begin{align*}
+        &amp;\langle Ly_1, y_2\rangle_w - \langle y_1, Ly_2\rangle \\
+        ={}&amp; \int_{a}^{b} w\left(\overline{y_2} Ly_1 - y_1 L\overline{y_2}\right) \d x \\
+        ={}&amp; \int_{a}^{b} \dd{x}\big(p W(y_1,\overline{y_2})\big) \d x \\
+        ={}&amp; \big[p(x) W(y_1, \overline{y_2})(x)\big]_{x=a}^{x=b} \tag{*}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$y\in V$</span>.
+    If an endpoint <span class="inline-math">$c\in\set{a,b}$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-singular-endpoint-of-Sturm-Liouville-operator.html">singular</a>, then <span class="inline-math">$p(c) = 0$</span> and so the term on the right hand side of <span class="inline-math">$(*)$</span> vanishes.
+</p>
+<p>
+    If otherwise <span class="inline-math">$c\in\set{a,b}$</span> is non-singular, then by hypothesis, we have, for some <span class="inline-math">$\alpha_c, \beta_c\in\R$</span> and <span class="inline-math">$\alpha_c^2 + \beta_c^2 \neq 0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \alpha_c y(c) + \beta_c y&#x27;(c) &amp;= 0
+    \end{align*} $$</span>
+    and taking complex conjugate gives
+    <span class="display-math">$$ \begin{align*}
+        \alpha_c \overline{y}(c) + \beta_c \overline{y}&#x27;(c) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore for <span class="inline-math">$y_1, y_2\in V$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \pmat{y_1(c) &amp; y_1&#x27;(c) \\ \overline{y_2}(c) &amp; \overline{y_2}&#x27;(c)} \pmat{\alpha_c \\ \beta_c} = 0.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$(\alpha_c,\beta_c)\neq 0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        W(y_1, \overline{y_2})(c) = \det\pmat{y_1(c) &amp; y_1&#x27;(c) \\ \overline{y_2}(c) &amp; \overline{y_2}&#x27;(c)} = 0
+    \end{align*} $$</span>
+    so the term on the right hand side of <span class="inline-math">$(*)$</span> vanishes.
+</p>
+<p>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \langle Ly_1, y_2\rangle_w - \langle y_1, Ly_2\rangle_w = 0
+    \end{align*} $$</span>
+    and so <span class="inline-math">$L$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-self-adjoint-differential-operator.html">self-adjoint</a>.
+</p>

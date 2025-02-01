@@ -1,0 +1,60 @@
+<p>
+    From <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Heat-equation.html">here</a>, we want to solve
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \Delta \psi + \mu \psi = 0, &amp;\Omega, \\
+            \psi = 0, &amp;\partial \Omega.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    We use <span class="inline-math">$\psi(\rho, z) = P(\rho) Z(z)$</span>, and in spherical polars,
+    the heat equation becomes
+    <span class="display-math">$$ \begin{align*}
+        \frac{(\rho P&#x27;)&#x27;}{\rho P} + \frac{Z&#x27;&#x27;}{Z} + \mu = 0
+    \end{align*} $$</span>
+    and since <span class="inline-math">$\rho$</span> and <span class="inline-math">$z$</span> are independent, there is a constant <span class="inline-math">$\lambda$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        -\dd{\rho}(\rho P&#x27;) &amp;= \lambda \rho P, &amp; Z&#x27;&#x27; + (\mu - \lambda) Z ={}&amp; 0.
+    \end{align*} $$</span>
+    With the boundary condition <span class="inline-math">$P(1) = 0$</span>, the equation for <span class="inline-math">$P$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Bessel-s-equation.html">Bessel's equation</a> with <span class="inline-math">$m=0$</span>,
+    so we have
+    <span class="display-math">$$ \begin{align*}
+        P(\rho) = P_k(\rho) &amp;= J_0(j_{0k} \, \rho), &amp; \lambda = \lambda_k &amp;= {j_{0k}}^2, &amp; k&amp;=1,2,3,\ldots
+    \end{align*} $$</span>
+    where <span class="inline-math">$J_0$</span> is the 0-th order Bessel's function and <span class="inline-math">$j_{0k}$</span> is the <span class="inline-math">$k$</span>-th positive root of <span class="inline-math">$J_0$</span>.
+</p>
+<p>
+    The equation for <span class="inline-math">$Z$</span> has the solution
+    <span class="display-math">$$ \begin{align*}
+        Z(z) = Z_n(z) &amp;= \sin \frac{n\pi z}{L}, &amp; \mu - \lambda_k = \left(\frac{n\pi}{L}\right)^2.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore we have eigenvalues
+    <span class="display-math">$$ \begin{align*}
+        \mu_{k,n} = \left(\frac{n\pi}{L}\right)^2 + {j_{0k}}^2.
+    \end{align*} $$</span>
+</p>
+<p>
+    By superposition,
+    <span class="display-math">$$ \begin{align*}
+        \phi(\rho,z,t) = \sum_{k,n=1}^{\infty} A_{k,n} e^{-\kappa\mu_{k,n} t} J_0(j_{0k}\, \rho) \sin \frac{n\pi x}{L}
+    \end{align*} $$</span>
+    is a solution to the heat equation satisfying <span class="inline-math">$\phi=0$</span> on <span class="inline-math">$\partial \Omega$</span>.
+</p>
+<p>
+    The initial condition is
+    <span class="display-math">$$ \begin{align*}
+        f(\rho, z) = \sum_{k,n=1}^{\infty} A_{k,n} J_0(j_{0k}\, \rho) \sin \frac{n\pi x}{L}.
+    \end{align*} $$</span>
+</p>
+<p>
+    We use the orthogonality relations to obtain
+    <span class="display-math">$$ \begin{align*}
+        &amp;\int_{0}^{1} \left(\int_{0}^{L} f(\rho,z) \sin \frac{m\pi x}{L}\d x\right) J_0(j_{0l}\, \rho) \, \rho \d \rho \\
+        ={}&amp; \sum_{k,n=1}^{\infty} A_{k,n} \left(\int_{0}^{1} J_{0}(j_{0k}\, \rho) J_0(j_{0l}\,\rho)\, \rho \d \rho\right) \left(\int_{0}^{L} \sin \frac{n\pi x}{L} \sin \frac{m\pi x}{L} \d x\right) \\
+        ={}&amp; \sum_{k,n=1}^{\infty} A_{k,n} \frac{J_0&#x27;(j_{0k})^2}{2} \delta_{kl} \frac{L}{2} \delta_{nm} \\
+        ={}&amp; \frac{L\,J_0&#x27;(j_{0l})^2}{4} A_{l,m}.
+    \end{align*} $$</span>
+</p>

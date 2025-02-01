@@ -1,0 +1,89 @@
+
+<h1>Homeomorphism</h1>
+
+<p>
+    Let <span class="inline-math">$α = Df(x_0)$</span>.
+    Fix some <span class="inline-math">$y\in B_s(f(x_0))$</span> for some <span class="inline-math">$s&gt;0$</span> to be determined.
+    We will apply the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-Banach-fixed-point-contraction-mapping.html">Banach fixed-point theorem</a>
+    to seek solution to <span class="inline-math">$y=f(x)$</span> in <span class="inline-math">$x\in B_r[x_0]$</span> for some <span class="inline-math">$r&gt;0$</span> to be determined.
+</p>
+<p>
+    Convert this to finding a fixed point of
+    <span class="display-math">$$ \begin{align*}
+        ϕ_y(x) = α\inv(y - f(x)) + x.
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        To have <span class="inline-math">$ϕ_y$</span> Lipschitz with <span class="inline-math">$L&lt;1$</span>, we compute its derivative
+        <span class="display-math">$$ \begin{align*}
+        \|Dϕ_y(x)\| ={}&amp; \|\mathrm{Id} - α\inv \circ Df|_{x}\| \\
+        ={}&amp; \|α\inv\| \|α - Df|_x\|.
+        \end{align*} $$</span>
+        Since <span class="inline-math">$Df|_x$</span> is continuous, <span class="inline-math">$\|α - Df(x)\| \to 0$</span> as <span class="inline-math">$x\to x_0$</span>,
+        so we can find <span class="inline-math">$r&gt;0$</span> sufficiently small such that <span class="inline-math">$\|Dϕ_y(x)\| &lt; 1/2$</span>.
+        Then by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-mean-value-inequality.html">mean value inequality</a>,
+        <span class="display-math">$$ \begin{align*}
+        \|ϕ_y(x_1) - ϕ_y(x_0)\| \leq \sup_{B_r[x_0]}\|Dϕ_y\| \|x_1 - x_0\| &lt; \frac{1}{2}\|x_1 - x_0\|
+        \end{align*} $$</span>
+        so <span class="inline-math">$ϕ_y: B_r[x_0] \to \R^n$</span> is <span class="inline-math">$1/2$</span>-Lipschitz.
+    </p>
+    
+</li><li>
+    <p>
+        To have <span class="inline-math">$ϕ_y: B_r[x_0] \to B_r[x_0]$</span>, compute
+        <span class="display-math">$$ \begin{align*}
+        \|ϕ_y(x) - x_0\| ={}&amp; \|ϕ_y(x) - ϕ_y(x_0) + α\inv(y- f(x_0))\| \\
+        \leq{} &amp; \|ϕ_y(x) - ϕ_y(x_0)\| + \|α\inv\|\, \|y-f(x_0)\| \\
+        &lt;{}&amp; \frac{1}{2}\|x-x_0\| + \|α\inv\|\, \|y-f(x_0)\| \\
+        &lt;{}&amp; \frac{r}{2} + \|α\inv\| s.
+        \end{align*} $$</span>
+        Pick <span class="inline-math">$s &lt; r/(2\|α\inv\|)$</span> so that <span class="inline-math">$\|ϕ_y(x) - x_0\| &lt; r$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Since <span class="inline-math">$B_r[x_0]\subseteq \R^n$</span> is closed, it is complete.
+    Thus there exists a unique solution to <span class="inline-math">$x=ϕ_y(x)$</span> i.e. <span class="inline-math">$y=f(x)$</span> on <span class="inline-math">$x\in B_r[x_0]$</span>
+    as long as <span class="inline-math">$y\in W = B_s(f(x_0))$</span>.
+    Existence implies <span class="inline-math">$f\inv|_W: W \to f\inv(W)$</span> is well-defined,
+    uniqueness implies it is injective, and the codomain implies it is surjective.
+</p>
+
+<h1>Derivative</h1>
+
+<p>
+    First we check that <span class="inline-math">$Df(x)$</span> is invertible on <span class="inline-math">$x\in f\inv(W)$</span>.
+    Note that <span class="inline-math">$\|Dϕ_y(x)\| &lt; 1/2$</span>, so for any <span class="inline-math">$v\in \R^n$</span>,
+    if <span class="inline-math">$Df(x)(v) = 0$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        \|v\| = \|v - α\inv\circ Df(x)(v)\| \leq \|\mathrm{Id} - α\inv\circ Df(x)\|\,\|v\| &lt; \frac{1}{2} \|v\|
+    \end{align*} $$</span>
+    so <span class="inline-math">$v=0$</span>.
+    Hence <span class="inline-math">$Df(x)$</span> is invertible.
+</p>
+<p>
+    Let <span class="inline-math">$g=f\inv|_W$</span>, <span class="inline-math">$y=f(x)$</span> and <span class="inline-math">$y+k = f(x+h)$</span>.
+    <span class="display-math">$$ \begin{align*}
+        k = f(x+h) - f(x) = Df(x)(h) + ε_f(h)\, \|h\| \tag{*}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        g(y+k) - g(y) = h
+        = Df(x)\inv k - \underbrace{\left(Df(x)\inv \frac{ε_f(h)\,\|h\|}{\|k\|}\right)}_{ε_g(k)} \|k\|.
+    \end{align*} $$</span>
+    To show <span class="inline-math">$ε_g(k)\to 0$</span> as <span class="inline-math">$k\to 0$</span>, rewrite <span class="inline-math">$(*)$</span> as
+    <span class="display-math">$$ \begin{align*}
+        h ={}&amp; Df(x)\inv(k - ε_f(h)\, \|h\|) \\
+        \|h\| \leq{} &amp; \|Df(x)\inv\| \bigl(\|k\| + \|ε_f(h)\|\, \|h\|\bigr) \\
+        (\|Df(x)\| - \|ε_f(h)\|)\, \|h\| \leq{} &amp; \|k\|.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$ε_f(h)\to 0$</span> as <span class="inline-math">$h\to 0$</span>, <span class="inline-math">$\|ε_f(h)\| &lt; \|Df(x)\|/2$</span> for sufficiently small <span class="inline-math">$h$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \|ε_g\|(k) \leq \|Df(x)\inv\|\, \|ε_f(h)\|\, (2\|Df(x)\inv\|) \to 0
+    \end{align*} $$</span>
+    as <span class="inline-math">$k\to 0$</span>.
+</p>

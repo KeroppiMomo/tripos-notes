@@ -1,0 +1,939 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Polynomials
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (polynomial, degree, monic, polynomial function, root)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\mathbb{F}$</span> be a field.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                A <em>polynomial</em> over <span class="inline-math">$\mathbb{F}$</span> is a formal expression <span class="inline-math">$a_nt^n + \ldots + a_1 t + a_0$</span> for some <span class="inline-math">$n=0,1,2,\ldots$</span> and <em>coefficients</em> <span class="inline-math">$a_i\in \mathbb{F}$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The <em>degree</em> of <span class="inline-math">$f$</span> (denoted <span class="inline-math">$\deg(f)$</span>) is the maximal integer <span class="inline-math">$m$</span> such that <span class="inline-math">$a_m\neq 0$</span>.
+                                By convention, <span class="inline-math">$\deg(0) = -\infty$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$a_m$</span> is called the <em>leading coefficient</em>. <span class="inline-math">$f$</span> is called <em>monic</em> if <span class="inline-math">$a_m = 1$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Let <span class="inline-math">$\mathbb{F}[t]$</span> be the set of all polynomials of <span class="inline-math">$\mathbb{F}$</span>, equipped with addition and multiplication:
+                                for <span class="inline-math">$f(t) = \sum_{i} &#x27; a_i t^i$</span> and <span class="inline-math">$g(t) = \sum_{j} &#x27; b_j t^j$</span>,
+                            </p>
+                            <ul>
+                            <li>
+                                <p>
+                                    the coefficient of <span class="inline-math">$t^k$</span> in <span class="inline-math">$(f+g)$</span> is <span class="inline-math">$a_k+b_k$</span>;
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    the coefficient of <span class="inline-math">$t^k$</span> in <span class="inline-math">$(f\cdot g)$</span> is <span class="inline-math">$\sum_{i=0}^{k} a_i b_{k-i}$</span>.
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            
+                        </li><li>
+                            <p>
+                                The <em>polynomial function</em> <span class="inline-math">$\mathbb{F}\to \mathbb{F}$</span> is defined by<span class="inline-math">$f(\lambda) = \sum_{i} &#x27; a_i \lambda^i$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\lambda\in \mathbb{F}$</span> is a <em>root</em> of <span class="inline-math">$f\in \mathbb{F}[t]$</span> if <span class="inline-math">$f(\lambda) = 0$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                We write <span class="inline-math">$g\mid f$</span> if there exists <span class="inline-math">$q\in \mathbb{F}[t]$</span> such that <span class="inline-math">$f(t) = q(t) g(t)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (Euclidean algorithm for polynomials)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Euclidean-algorithm-for-polynomials.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For all <span class="inline-math">$f,g\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a> with <span class="inline-math">$g\neq 0$</span>,
+                            there exists <span class="inline-math">$q,r\in \mathbb{F}[t]$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                f(t) = q(t) g(t) + r(t) \quad \text{and} \quad \deg(r) &lt; \deg(g).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Euclidean-algorithm-for-polynomials.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (Bézout identity for polynomials)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-Bezout-identity-for-polynomials.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$f_1, \ldots, f_k\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a> have no common factor of degree at least 1,
+                            then there exists polynomials <span class="inline-math">$p_1, \ldots, p_k\in \mathbb{F}[t]$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                1 = \sum_{i=1}^{k} p_i(t) f_i(t).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Bezout-identity-for-polynomials.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (factor theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-factor-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$\lambda\in \mathbb{F}$</span> is a root of <span class="inline-math">$f$</span> iff <span class="inline-math">$(t-\lambda) \mid f(t)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-factor-theorem.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (multiplicity of root)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-multiplicity-of-root.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a root <span class="inline-math">$\lambda$</span> of <span class="inline-math">$f\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a>,
+                            the <em>multiplicity</em> of <span class="inline-math">$\lambda$</span> is the largest integer <span class="inline-math">$e$</span> such that <span class="inline-math">$(t-\lambda)^e\mid f(t)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (most number of roots of polynomials)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-most-number-of-roots-of-polynomials.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a>.
+                            If <span class="inline-math">$\deg(f) = n\geq 0$</span>, then <span class="inline-math">$f$</span> has at most <span class="inline-math">$n$</span> roots counted with <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-multiplicity-of-root.html">multiplicity</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-most-number-of-roots-of-polynomials.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (uniqueness of polynomials agreeing on points)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-uniqueness-of-polynomials-agreeing-on-points.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f_1, f_2\in \mathbb{F}[t]$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$\deg(f_1), \deg(f_2) &lt; n$</span> and <span class="inline-math">$f_1(\lambda_i) = f_2(\lambda_i)$</span> for some distinct <span class="inline-math">$\lambda_1, \lambda_2, \ldots, \lambda_n\in \mathbb{F}$</span>,
+                            then <span class="inline-math">$f_1 = f_2$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-uniqueness-of-polynomials-agreeing-on-points.html">Proof</a>
+                        </p>
+                        <p>
+                            Consequently, if <span class="inline-math">$\mathbb{F}$</span> is infinite, then <span class="inline-math">$f\in \mathbb{F}[t]$</span> is uniquely determined by its polynomial function <span class="inline-math">$\lambda\mapsto f(\lambda)$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                If <span class="inline-math">$\mathbb{F}$</span> is finite, then this fails, e.g. if <span class="inline-math">$\mathbb{F}=\set{\lambda_1, \ldots, \lambda_n}$</span>,
+                                then <span class="inline-math">$f(t) = \prod_{i=1}^{n} (t-\lambda_i)$</span> has degree <span class="inline-math">$n$</span> but <span class="inline-math">$f(\lambda) = 0$</span> for all <span class="inline-math">$\lambda\in \mathbb{F}$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (fundamental theorem of algebra)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-fundamental-theorem-of-algebra.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Any <span class="inline-math">$f\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\C[t]$</span></a> of degree <span class="inline-math">$n\geq 1$</span>
+                            has exactly <span class="inline-math">$n$</span> roots, accounting <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-multiplicity-of-root.html">multiplicity</a>, i.e. <span class="inline-math">$f(t)$</span> is a product of linear factors.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (eigenvector, eigenvalue, eigenspace)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-eigenvector-eigenvalue-eigenspace.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be any <span class="inline-math">$\mathbb{F}$</span>-vector space, and <span class="inline-math">$\alpha\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-space-of-linear-maps.html"><span class="inline-math">$\mathcal{L}(V,V)$</span></a>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\lambda\in \mathbb{F}$</span> is said to be an <em>eigenvalue</em> of <span class="inline-math">$\alpha$</span>
+                    if there exists <span class="inline-math">$v\in V\setminus \set{\v 0}$</span> such that <span class="inline-math">$\alpha(v) = \lambda v$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Such <span class="inline-math">$v$</span> is called a <span class="inline-math">$\lambda$</span>-<em>eigenvector</em> of <span class="inline-math">$\alpha$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The <span class="inline-math">$\lambda$</span>-<em>eigenspace</em> of <span class="inline-math">$\alpha$</span> is defined as <span class="inline-math">$V_\lambda = \sb{v\in V}{\alpha(v) = \lambda v}$</span>.
+                    Equivalently, <span class="inline-math">$V_\lambda = \ker(\alpha - \lambda\,\id_V) \leq V$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (diagonalisable and triangularisable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-diagonalisable-and-triangularisable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> vector space on <span class="inline-math">$\mathbb{F}$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\alpha\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-space-of-linear-maps.html"><span class="inline-math">$\mathcal{L}(V,V)$</span></a> is <em>diagonalisable</em> if there exists <span class="inline-math">$B$</span> for <span class="inline-math">$V$</span> such that <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-matrix-of-a-linear-map.html"><span class="inline-math">$[\alpha]^B_B$</span></a> is diagonal.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\alpha\in\mathcal{L}(V,V)$</span> is <em>triangularisable</em> if there exists <span class="inline-math">$B$</span> for <span class="inline-math">$V$</span> such that <span class="inline-math">$[\alpha]^B_B$</span> is upper triangular.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span> is <em>diagonalisable</em> if <span class="inline-math">$A$</span> is similar to a diagonal matrix.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span> is <em>triangularisable</em> if <span class="inline-math">$A$</span> is similar to an upper triangular matrix.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (distinct eigenvalues imply linearly independent eigenvectors)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-distinct-eigenvalues-imply-linearly-independent-eigenvectors.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <span class="inline-math">$\mathbb{F}$</span>-vector space and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\lambda_1, \ldots, \lambda_n \in \mathbb{F}$</span> are distinct, and <span class="inline-math">$v_i \in$</span> <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-eigenspace.html"><span class="inline-math">$V_{\lambda_i}$</span></a> <span class="inline-math">$\setminus \set{\v 0}$</span>,
+                then <span class="inline-math">$\set{v_1,\ldots,v_n}$</span> is linearly independent.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-distinct-eigenvalues-imply-linearly-independent-eigenvectors.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$V$</span> is finite-dimensional, then <span class="inline-math">$\alpha$</span> has at most finitely many eigenvalues.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (direct sum of eigenspaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-direct-sum-of-eigenspaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be finite-dimensional and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+                Let <span class="inline-math">$V_{\lambda_1}, \ldots, V_{\lambda_k}$</span> be all the non-zero <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-eigenvector-eigenvalue-eigenspace.html">eigenspaces</a> for <span class="inline-math">$\alpha$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$\langle V_{\lambda_1} \cup \ldots \cup V_{\lambda_k}\rangle = V_{\lambda_1} \oplus \ldots \oplus V_{\lambda_k} \leq V$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\alpha$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-diagonalisable-and-triangularisable.html">diagonalisable</a> iff <span class="inline-math">$V = V_{\lambda_1} \oplus \ldots \oplus V_{\lambda_k}$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-direct-sum-of-eigenspaces.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (characteristic polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-characteristic-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    For <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span>, the <em>characteristic polynomial</em> of <span class="inline-math">$A$</span> is <span class="inline-math">$\chi_A(t) = \det(t\, I_n - A) \in \mathbb{F}[t]$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Let <span class="inline-math">$V$</span> be a finite-dimensional vector space. For <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>, the characteristic polynomial of <span class="inline-math">$\alpha$</span> is <span class="inline-math">$\chi_\alpha(t) = \det(t\,\id_V - \alpha)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (triangularisable map and roots of characteristic polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-triangularisable-map-and-roots-of-characteristic-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional vector space over <span class="inline-math">$\mathbb{F}$</span>, and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-diagonalisable-and-triangularisable.html">triangularisable</a> iff
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-characteristic-polynomial.html"><span class="inline-math">$\chi_\alpha(t)$</span></a> is a product of linear factors.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-triangularisable-map-and-roots-of-characteristic-polynomial.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$\chi_\alpha$</span> is degree <span class="inline-math">$n$</span> but does not have <span class="inline-math">$n$</span> roots, <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-factor-theorem.html">then</a> <span class="inline-math">$\chi_\alpha$</span> is not a product of linear factors and so <span class="inline-math">$\alpha$</span> is not triangularisable.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$\mathbb{F}$</span> is <span class="inline-math">$\mathbb{C}$</span>, <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-fundamental-theorem-of-algebra.html">then</a> <span class="inline-math">$\chi_\alpha(t)$</span> is a product of linear factors so all <span class="inline-math">$\alpha\in \mathcal{L}(\C, \C)$</span> are triangularisable.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (linear map polynomial, matrix polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-linear-map-polynomial-matrix-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$p(t) = \sum_{i=1}^{n} a_i t^i \in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html"><span class="inline-math">$\mathbb{F}[t]$</span></a>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Let <span class="inline-math">$V$</span> be any <span class="inline-math">$\mathbb{F}$</span>-vector space, and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>. Define <span class="inline-math">$p(\alpha) = \sum_{i=1}^{n} a_i \alpha^i \in \mathcal{L}(V,V)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Let <span class="inline-math">$A\in M_{n\times n}(\mathbb{F})$</span>. Define <span class="inline-math">$p(A) = \sum_{i=1}^{n} a_i A^i \in M_{n\times n}(\mathbb{F})$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (applying linear map polynomial to eigenvector)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-applying-linear-map-polynomial-to-eigenvector.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a vector space, <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+                For any <span class="inline-math">$v\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-eigenvector-eigenvalue-eigenspace.html"><span class="inline-math">$V_\lambda$</span></a> and <span class="inline-math">$p\in \mathbb{F}[t]$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    p(\alpha)(v) = p(\lambda)\cdot v.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-applying-matrix-polynomial-to-eigenvector.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (minimal polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-minimal-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an <span class="inline-math">$\mathbb{F}$</span>-vector space and <span class="inline-math">$\alpha\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-space-of-linear-maps.html"><span class="inline-math">$\mathcal{L}(V,V)$</span></a>.
+            </p>
+            <p>
+                Let <span class="inline-math">$I_\alpha = \sb{f\in \mathbb{F}[t]}{f(\alpha) = 0}$</span>.
+            </p>
+            <p>
+                Define the <em>minimal polynomial</em> of <span class="inline-math">$\alpha$</span>
+                as the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-polynomial-degree-monic-polynomial-function-root.html">monic</a> non-zero polynomial <span class="inline-math">$m_a\in I_\alpha\setminus \set{0}$</span>
+                of minimal degree.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (minimal polynomial divides polynomials that send linear map to zero)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-minimal-polynomial-divides-polynomials-that-send-linear-map-to-zero.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an <span class="inline-math">$\mathbb{F}$</span>-vector space and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+            </p>
+            <p>
+                For any <span class="inline-math">$f\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-minimal-polynomial.html"><span class="inline-math">$I_\alpha$</span></a>, we have <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-minimal-polynomial.html"><span class="inline-math">$m_\alpha$</span></a> <span class="inline-math">$\mid f$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-minimal-polynomial-divides-polynomials-that-send-linear-map-to-zero.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (existence and uniqueness of minimal polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-existence-and-uniqueness-of-minimal-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an <span class="inline-math">$\mathbb{F}$</span>-vector space and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    The <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-minimal-polynomial.html">minimal polynomial</a> of <span class="inline-math">$\alpha$</span> is unique.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$V$</span> is finite-dimensional, then the minimal polynomial exists.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-existence-and-uniqueness-of-minimal-polynomials.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Cayley-Hamilton)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Cayley-Hamilton.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional vector space.
+            </p>
+            <p>
+                For any <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>, we have <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-characteristic-polynomial.html"><span class="inline-math">$\chi_\alpha$</span></a><a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-linear-map-polynomial-matrix-polynomial.html"><span class="inline-math">$(\alpha)$</span></a> <span class="inline-math">$=0$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Cayley-Hamilton-for-complex-numbers.html">Proof for <span class="inline-math">$\C$</span></a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-minimal-polynomial-divides-polynomials-that-send-linear-map-to-zero.html">Therefore</a> the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-minimal-polynomial.html">minimal polynomial <span class="inline-math">$m_\alpha$</span></a> divides <span class="inline-math">$\chi_\alpha$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (algebraic and geometric multiplicity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-algebraic-and-geometric-multiplicity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\lambda\in \mathbb{F}$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-eigenvector-eigenvalue-eigenspace.html">eigenvalue</a> of <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> where <span class="inline-math">$V$</span> is a finite-dimensional vector space.
+                Define
+            </p>
+            <ul>
+            <li>
+                <p>
+                    the <em>algebraic multiplicity</em> <span class="inline-math">$a_\lambda$</span> of <span class="inline-math">$\lambda$</span> as the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-multiplicity-of-root.html">multipliicty</a> of <span class="inline-math">$\lambda$</span> as a root of <span class="inline-math">$\chi_\alpha(t)$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    the <em>geometric multiplicity</em> <span class="inline-math">$g_\lambda$</span> of <span class="inline-math">$\lambda$</span> as <span class="inline-math">$g_\lambda = \dim($</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-eigenvector-eigenvalue-eigenspace.html"><span class="inline-math">$V_\lambda$</span></a><span class="inline-math">$)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                It is common to define <span class="inline-math">$a_\lambda = 0 = g_{\lambda}$</span> if <span class="inline-math">$\lambda$</span> is not an eigenvalue of <span class="inline-math">$\alpha$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (geometric multiplicity at most algebraic multiplicity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-geometric-multiplicity-at-most-algebraic-multiplicity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\lambda\in \mathbb{F}$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-eigenvector-eigenvalue-eigenspace.html">eigenvalue</a> of <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> where <span class="inline-math">$V$</span> is a finite-dimensional vector space.
+            </p>
+            <p>
+                Then the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-algebraic-and-geometric-multiplicity.html">geometric multiplicity</a> <span class="inline-math">$g_\lambda \leq a_{\lambda}$</span> the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-algebraic-and-geometric-multiplicity.html">algebraic multiplicity</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-geometric-multiplicity-at-most-algebraic-multiplicity.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (sum of multiplicities, triangularisability and diagonalisability)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-sum-of-multiplicities-triangularisability-and-diagonalisability.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional vector space, and let the eigenvalues of <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> be <span class="inline-math">$\lambda_1, \lambda_2,\ldots,\lambda_k$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$\sum_{i=1}^{k}$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-algebraic-and-geometric-multiplicity.html"><span class="inline-math">$g_{\lambda_i}$</span></a> <span class="inline-math">$\leq V$</span>, with equality iff <span class="inline-math">$\alpha$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-diagonalisable-and-triangularisable.html">diagonalisable</a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\sum_{i=1}^{k}$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-algebraic-and-geometric-multiplicity.html"><span class="inline-math">$a_{\lambda_i}$</span></a> <span class="inline-math">$\leq V$</span>, with equality iff <span class="inline-math">$\alpha$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-diagonalisable-and-triangularisable.html">triangularisable</a>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-sum-of-multiplicities-triangularisability-and-diagonalisability.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (diagonalisable in C iff algebraic multiplicity equals geometric multiplicity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-diagonalisable-in-C-iff-algebraic-multiplicity-equals-geometric-multiplicity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional vector space over <span class="inline-math">$\C$</span>, and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-diagonalisable-and-triangularisable.html">diagonalisable</a> iff <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-algebraic-and-geometric-multiplicity.html"><span class="inline-math">$a_\lambda$</span></a> <span class="inline-math">$=$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-algebraic-and-geometric-multiplicity.html"><span class="inline-math">$g_\lambda$</span></a> for all <span class="inline-math">$\lambda\in \C$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-diagonalisable-in-C-iff-algebraic-multiplicity-equals-geometric-multiplicity.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (characteristic polynomial and minimal polynomial have the same roots)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-characteristic-polynomial-and-minimal-polynomial-have-the-same-roots.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> where <span class="inline-math">$V$</span> is a finite-dimensional <span class="inline-math">$\mathbb{F}$</span>-vector space, and let <span class="inline-math">$\lambda\in \mathbb{F}$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\lambda$</span> is a root of the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-minimal-polynomial.html">minimal polynomial <span class="inline-math">$m_\alpha$</span></a> iff <span class="inline-math">$\lambda$</span> is a root of the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-characteristic-polynomial.html">characteristic polynomial <span class="inline-math">$\chi_\alpha$</span></a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-characteristic-polynomial-and-minimal-polynomial-have-the-same-roots.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Notation (multiplicity of root in minimal polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Notation-multiplicity-of-root-in-minimal-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> where <span class="inline-math">$V$</span> is a finite-dimensional <span class="inline-math">$\mathbb{F}$</span>-vector space, and let <span class="inline-math">$\lambda\in \mathbb{F}$</span>.
+            </p>
+            <p>
+                Define <span class="inline-math">$c_\lambda$</span> as the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-multiplicity-of-root.html">multiplicity</a> of <span class="inline-math">$\lambda$</span> as a root of the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-minimal-polynomial.html">minimal polynomial <span class="inline-math">$m_\alpha$</span></a>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$\lambda$</span> is an eigenvalue of <span class="inline-math">$\alpha$</span>, then <span class="inline-math">$1\leq c_\lambda \leq a_\lambda$</span>. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-characteristic-polynomial-and-minimal-polynomial-have-the-same-roots.html">First inequality</a>, <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Cayley-Hamilton.html">second inequality</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Example-multiplicity-in-a-Jordan-matrix.html">Example (multiplicity in a Jordan matrix)</a>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (diagonalisable iff minimal polynomial is a product of distinct linear factors)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-diagonalisable-iff-minimal-polynomial-is-a-product-of-distinct-linear-factors.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> where <span class="inline-math">$V$</span> is a finite-dimensional <span class="inline-math">$\mathbb{F}$</span>-vector space.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-diagonalisable-and-triangularisable.html">diagonalisable</a> iff
+            </p>
+            <ul>
+            <li>
+                <p>
+                    the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-minimal-polynomial.html">minimal polynomial <span class="inline-math">$m_\alpha$</span></a> is a product of distinct linear factors; or equivalently
+                </p>
+                
+            </li><li>
+                <p>
+                    there exists a polynomial <span class="inline-math">$p\in F[t]$</span> such that <span class="inline-math">$p\neq 0$</span>, <span class="inline-math">$p(\alpha) = 0$</span>, and <span class="inline-math">$p$</span> is a product of distinct linear factors.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-diagonalisable-iff-non-zero-product-of-linear-factors-sends-linear-map-to-zero.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (simultaneously diagonalisable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-simultaneously-diagonalisable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> vector space, and let <span class="inline-math">$\alpha,\beta\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-space-of-linear-maps.html"><span class="inline-math">$\mathcal{L}(V,V)$</span></a>.
+            </p>
+            <p>
+                We say <span class="inline-math">$\alpha$</span> and <span class="inline-math">$\beta$</span> are <em>simultaneously diagonalisable</em>
+                if there exists a basis <span class="inline-math">$B$</span> for <span class="inline-math">$V$</span> such that <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-matrix-of-a-linear-map.html"><span class="inline-math">$[\alpha]^B_B$</span></a> and <span class="inline-math">$[\beta]^B_B$</span> are diagonal.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (simultaneously diagonalisable iff commutes and diagonalisable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-simultaneously-diagonalisable-iff-commutes-and-diagonalisable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> vector space, and let <span class="inline-math">$\alpha,\beta\in$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-vector-space-of-linear-maps.html"><span class="inline-math">$\mathcal{L}(V,V)$</span></a>.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha$</span> and <span class="inline-math">$\beta$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-simultaneously-diagonalisable.html">simultaneously diagonalisable</a> iff <span class="inline-math">$\alpha$</span> and <span class="inline-math">$\beta$</span> are diagonalisable and <span class="inline-math">$\alpha\circ\beta = \beta\circ\alpha$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-simultaneously-diagonalisable-iff-commutes-and-diagonalisable.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Jordan normal form
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Jordan-normal-form.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Jordan matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-Jordan-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\lambda\in \C$</span> and <span class="inline-math">$n\in \N$</span>. The <em><span class="inline-math">$n\times n$</span> <span class="inline-math">$\lambda$</span>-Jordan matrix</em> is defined as
+                            <span class="display-math">$$ \begin{align*}
+                                \pmat{\lambda &amp; 1 \\
+                                &amp; \lambda &amp; 1 \\
+                                &amp; &amp; \ddots &amp; \ddots \\
+                                &amp; &amp; &amp; \lambda &amp; 1 \\
+                                &amp;&amp;&amp;&amp;\lambda} \in M_{n\times n}(\mathbb{C}).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Example-multiplicity-in-a-Jordan-matrix.html">Example (multiplicity in a Jordan matrix)</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Jordan normal form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-Jordan-normal-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A matrix <span class="inline-math">$A \in M_{n\times n}(\C)$</span> is said to be in <em>Jordan normal form</em> if
+                            <span class="display-math">$$ \begin{align*}
+                                A = \pmat{J_{n_1}(\lambda_1) \\
+                                &amp; J_{n_2}(\lambda_2) \\
+                                &amp; &amp; \ddots \\
+                                &amp;&amp;&amp; J_{n_{k}}(\lambda_k)}
+                            \end{align*} $$</span>
+                            for some <span class="inline-math">$\lambda_i\in \C$</span> (not necessarily distinct) and <span class="inline-math">$n_i\in \N$</span> with <span class="inline-math">$n=\sum_{i=1}^{k} n_i$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Jordan normal form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Jordan-normal-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For any <span class="inline-math">$A\in M_{n\times n}(\C)$</span>,
+                            there exists a matrix in <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-Jordan-normal-form.html">Jordan normal form</a> which is <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-similar-matrix.html">similar</a> to <span class="inline-math">$A$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Example-possible-Jordan-normal-forms.html">Example (possible Jordan normal forms)</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (multiplicity and Jordan blocks)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-multiplicity-and-Jordan-blocks.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A\in M_{n\times n}(\mathbb{C})$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-algebraic-and-geometric-multiplicity.html"><span class="inline-math">$a_\lambda(A)$</span></a> <span class="inline-math">$=$</span> sum of sizes of <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Jordan-normal-form.html"><span class="inline-math">$\lambda$</span>-Jordan blocks</a> for <span class="inline-math">$A$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-algebraic-and-geometric-multiplicity.html"><span class="inline-math">$g_\lambda(A)$</span></a> <span class="inline-math">$=$</span> number of <span class="inline-math">$\lambda$</span>-Jordan blocks for <span class="inline-math">$A$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Notation-multiplicity-of-root-in-minimal-polynomial.html"><span class="inline-math">$c_\lambda(A)$</span></a> <span class="inline-math">$=$</span> maximum size of a <span class="inline-math">$\lambda$</span>-Jordan block for <span class="inline-math">$A$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-multiplicity-and-Jordan-blocks.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (uniqueness of Jordan normal form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-uniqueness-of-Jordan-normal-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A\in M_{n\times n}(\C)$</span> with a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Jordan-normal-form.html">Jordan normal form</a> <span class="inline-math">$\mathrm{JNF}(A)$</span>.
+                        </p>
+                        <p>
+                            For <span class="inline-math">$r\in \N$</span> and <span class="inline-math">$\lambda\in \C$</span>, define
+                            <span class="display-math">$$ \begin{align*}
+                                R_{\lambda,r}(A) := \op{rk}\big((A-\lambda I_n)^{r-1}\big) - \op{rk}\big((A - \lambda I_n)^{r}\big).
+                            \end{align*} $$</span>
+                            Then <span class="inline-math">$R_{\lambda,r}(A)$</span> equals the number of <span class="inline-math">$\lambda$</span>-Jordan blocks <span class="inline-math">$J_l(\lambda)$</span> of <span class="inline-math">$\mathrm{JNF}(A)$</span> with <span class="inline-math">$l\geq r$</span>.
+                        </p>
+                        <p>
+                            Therefore <span class="inline-math">$\mathrm{JNF}(A)$</span> is unique up to reordering the Jordan blocks.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-uniqueness-of-Jordan-normal-form.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (generalised eigenspace)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-generalised-eigenspace.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional vector space over <span class="inline-math">$\C$</span> and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+            </p>
+            <p>
+                For an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-eigenvector-eigenvalue-eigenspace.html">eigenvalue</a> <span class="inline-math">$\lambda_i$</span>, define the <em>generalised <span class="inline-math">$\lambda_i$</span>-eigenspace of <span class="inline-math">$\alpha$</span></em> as
+                <span class="display-math">$$ \begin{align*}
+                    V_i = \ker\big((\alpha - \lambda_i\,\id_V)^{c_i}) \leq V
+                \end{align*} $$</span>
+                where <span class="inline-math">$c_i$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Notation-multiplicity-of-root-in-minimal-polynomial.html">multiplicity</a> of <span class="inline-math">$\lambda_i$</span> as a root of the minimal polynomial <span class="inline-math">$m_\alpha$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (generalised eigenspace decomposition)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-generalised-eigenspace-decomposition.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional vector space over <span class="inline-math">$\C$</span>.
+            </p>
+            <p>
+                For any <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    V = V_1 \oplus V_2 \oplus \ldots \oplus V_k
+                \end{align*} $$</span>
+                where <span class="inline-math">$V_1, \ldots, V_k$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-generalised-eigenspace.html">generalised eigenspaces</a> of <span class="inline-math">$\alpha$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-generalised-eigenspace-decomposition.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

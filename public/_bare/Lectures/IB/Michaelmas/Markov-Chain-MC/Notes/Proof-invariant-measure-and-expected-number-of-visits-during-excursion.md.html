@@ -1,0 +1,43 @@
+
+<h1><span class="inline-math">$\lambda\geq \nu_k$</span></h1>
+
+<p>
+    Iterate the invariance property of <span class="inline-math">$\lambda$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \lambda_i ={}&amp; \sum_{j_1\in I} \lambda_{j_1} P(j_1, i) \\
+        ={}&amp; P(k,i) + \sum_{j_1\neq k} \lambda_{j_1} P(j_1, i) \\
+        ={}&amp; P(k,i) + \sum_{j_1\neq k} P(k,j_1) P(j_1,i) + \sum_{j_1, j_2\neq k} \lambda_{j_2} P(j_2, j_1) P(j_1,i) \\
+        ={}&amp; \ldots \\
+        ={}&amp; P(k,i) + \sum_{j_1 \neq k} P(k,j_1) P(j_1,i) + \ldots + \sum_{j_1,j_2,\ldots,j_{n-1}\neq k} P(k,j_{n-1}) \ldots P(j_2, j_1) P(j_1,i) \\
+        &amp;+ \underbrace{\sum_{j_1,j_2,\ldots,j_n\neq k} \lambda_{j_n} P(j_n, j_{n-1}) \ldots P(j_2, j_1) P(j_1, i)}_{\geq 0} \\
+        \geq{} &amp; \prob(X_1 = i, T_k\geq 1|X_0 = k) + \prob(X_2 = i, T_k\geq 2|X_0 = k) + \ldots + \prob(X_{n} = i, T_k\geq n|X_0 = k) \\
+        ={}&amp; \sum_{t=1}^{n} \prob(X_t = i, T_k \geq t|X_0 = k).
+    \end{align*} $$</span>
+    Since this is true for all <span class="inline-math">$n$</span>, take <span class="inline-math">$n\to \infty$</span> to get
+    <span class="display-math">$$ \begin{align*}
+        \lambda_i &amp;\geq \sum_{t=1}^{\infty} \prob(X_t = i, T_k \geq t|X_0 = k) \\
+        &amp;= \expect\Big(\sum_{t=1}^{\infty} \mathbb{1}(X_t = i, T_k \geq t) \,\Big|\, X_0 = k\Big) \\
+        &amp;= \expect\Big(\sum_{t=1}^{T_k} \mathbb{1}(X_t = i) \Big| X_0 = k\Big) \\
+        &amp;= \nu_k(i).
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$\lambda=\nu_k$</span> if <span class="inline-math">$P$</span> is recurrent</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proposition-properties-of-expected-number-of-visits-during-excursion.html">Since</a> <span class="inline-math">$P$</span> is irreducible and recurrent, <span class="inline-math">$\nu_k$</span> is an invariant measure.
+    Therefore <span class="inline-math">$\rho \equiv \lambda - \nu_k$</span> is also an invariant measure (since <span class="inline-math">$\lambda\geq \nu_k$</span>).
+</p>
+<p>
+    For each <span class="inline-math">$i\in I$</span>, by irreducibility,
+    there exists <span class="inline-math">$m$</span> such that <span class="inline-math">$p_{ik}(m)&gt;0$</span>.
+    So
+    <span class="display-math">$$ \begin{align*}
+        0 ={}&amp; \underbrace{\lambda_k}_{1} - \underbrace{\nu_k}_{1} \\
+        ={}&amp; \rho_k \\
+        ={}&amp; (\rho P^m)_k \\
+        ={}&amp; \sum_{j\in I} \rho_j\, p_{jk}(m) \\
+        \geq{} &amp;\rho_i\, p_{ik}(m)
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$\lambda_i - \nu_k(i) = \rho_i = 0$</span> as required.
+</p>

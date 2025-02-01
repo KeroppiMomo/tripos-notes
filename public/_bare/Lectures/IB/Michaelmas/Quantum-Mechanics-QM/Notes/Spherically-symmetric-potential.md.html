@@ -1,0 +1,137 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Spherically symmetric stationary state
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Spherically-symmetric-stationary-state.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-coordinates.html">spherical polars</a>, the <a href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Time-independent-Schrodinger-s-equation.html">time-independent Schrodinger's equation</a> is
+                <span class="display-math">$$ \begin{align*}
+                    E\psi = U(\v x) \psi - \frac{\hbar^2}{2m}\Big(\frac{1}{r} \pdd[2]{r}\big(r\psi\big) + \frac{1}{r^2\sin\theta} \pdd{\theta}\big(\sin\theta \pdfd{\psi}{\theta}\big) + \frac{1}{r^2 \sin^2\theta} \pdfd[2]{\psi}{\phi}\Big).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                For a spherically symmetric potential <span class="inline-math">$U(\v x) = U(r)$</span>,
+                we look for a spherically symmetric stationary state <span class="inline-math">$\psi(\v x) = \psi(r)$</span>.
+                Then
+                <span class="display-math">$$ \begin{cases}
+                    Er\psi = U(r) r\psi - \frac{\hbar^2}{2m}\dd[2]{r}(r\psi), \\
+                    \int_{\R^3} |\psi(\v x)|^2 \d V &lt; \infty \iff \int_{0}^{\infty} |\psi(r)|^2 r^2  \d r &lt; \infty.
+                \end{cases} $$</span>
+            </p>
+            <p>
+                Using <span class="inline-math">$\sigma(r) = r\psi(r)$</span>, this is equivalent to solving
+                <span class="display-math">$$ \begin{cases}
+                     E\sigma = U(r) \sigma - \frac{\hbar^2}{2m} \dfd[2]{\sigma}{r}, \\
+                     \sigma(0) = 0, \\
+                     \int_{0}^{\infty} |\sigma(r)|^2 \d r &lt;\infty,
+                \end{cases} $$</span>
+                which is the Schrodinger equation on the half line <span class="inline-math">$r&gt;0$</span>.
+                Equivalently, this is the odd-parity solution of the Schrodinger equation
+                with the symmetric potential <span class="inline-math">$U(-r) = U(r)$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Maximal set of commuting observables
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Maximal-set-of-commuting-observables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If the potential is spherically symmetric (<span class="inline-math">$U(\v x) = U(r)$</span>), then
+                <span class="display-math">$$ \begin{align*}
+                    \set{\hat H, \hat L^2, \hat L_3}
+                \end{align*} $$</span>
+                form a set of mutually commuting operators. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Derivation-Hamiltonian-total-angular-momentum-and-z-component-angular-momentum-mutually-commute.html">Derivation</a>)
+            </p>
+            <p>
+                In fact this set is <em>maximal</em>, meaning we cannot construct another independent operator (other than the unit operator)
+                that commutes with <span class="inline-math">$\hat H$</span>, <span class="inline-math">$\hat L^2$</span> and <span class="inline-math">$\hat L_3$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Spherical harmonics
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Spherical-harmonics.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Example-spherical-polar-coordinates.html">spherical polars</a>,
+                <span class="display-math">$$ \begin{align*}
+                    \hat L^2 ={}&amp; -\frac{\hbar^2}{\sin^2 \theta} \left(\sin\theta \pdd{\theta}\left(\sin\theta \pdd{\theta}\right) + \pdd[2]{\phi}\right), \\
+                    \hat L_1 ={}&amp; i\hbar\left(\sin\phi \pdd{\theta} + \cos\phi \cot\theta \pdd{\phi}\right), \\
+                    \hat L_2 ={}&amp; i\hbar\left(-\cos\phi \pdd{\theta} + \sin\phi \cot\theta \pdd{\phi}\right), \\
+                    \hat L_3 ={}&amp; -i\hbar \pdd{\phi}.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Derivation-angular-momentum-operators-in-spherical-polars.html">Derivation</a>)
+            </p>
+            <p>
+                We look for a simultaneous eigenfunction of <span class="inline-math">$\hat L^2$</span> and <span class="inline-math">$\hat L_3$</span> of the form <span class="inline-math">$\psi(\theta, \phi) = Y(\theta) Z(\phi)$</span>.
+                The solutions are
+                <span class="display-math">$$ \begin{align*}
+                    Y_{l,m}(\theta, \phi) ={}&amp; P_{l,m}(\cos\theta) \exp(im\phi), \\
+                    ={}&amp; \sin^{|m|}(\theta) \left(\dd[|m|]{(\cos\theta)} P_l(\cos\theta)\right) \exp(im\phi),&amp; l,m\in \Z, \quad -l\leq m\leq l
+                \end{align*} $$</span>
+                where <span class="inline-math">$P_{l,m}$</span> are the <em>associated Legendre functions</em> and <span class="inline-math">$P_l$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Legendre-equation.html">Legendre polynomial</a>,
+                and the eigenvalues are
+                <span class="display-math">$$ \begin{align*}
+                    \hat L^2 Y_{l,m} ={}&amp; l(l+1) \hbar^2 Y_{l,m}, &amp;&amp;l=0,1,2,\ldots\\
+                    \hat L_3 Y_{l,m} ={}&amp; m\hbar Y_{l,m}, &amp;&amp; m=-l,-l+1,\ldots,l.
+                \end{align*} $$</span>
+                <span class="inline-math">$l$</span> is called the <em>total angular momentum quantum number</em> and <span class="inline-math">$m$</span> is called the <em>azimuthal quantum number</em>.
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Derivation-spherical-harmonics.html">Derivation</a>)
+            </p>
+            <p>
+                https://www.desmos.com/3d/uoxewidmpz
+                https://en.wikipedia.org/wiki/Spherical<em>harmonics#/media/File:Spherical</em>Harmonics.png
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Hydrogen atom
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Hydrogen-atom.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For the hydrogen atom, we have the Coulomb potential
+                <span class="display-math">$$ \begin{align*}
+                    U(\v x) = -\frac{e^2}{4\pi\epsilon_0 r}.
+                \end{align*} $$</span>
+                We seek for a simultaneous eigenstate of <span class="inline-math">$\set{\hat H, \hat L^2, \hat L_3}$</span> in the form <span class="inline-math">$\psi(\v x) = \chi(r)\, Y_{l,m}(\theta,\phi)$</span>,
+                The solutions are
+                <span class="display-math">$$ \begin{align*}
+                    \psi_{N,l,m}(r,\theta,\phi) = \xi^l L_{N,l}(\xi) \exp(-\xi) \, Y_{l,m}(\theta, \phi)
+                \end{align*} $$</span>
+                where <span class="inline-math">$L_{N,l}$</span> is the <em>generalised Laguerre polynomial</em> and <span class="inline-math">$\xi = (e^2 m_e r)/(4N\pi\epsilon_0 \hbar^2)$</span>,
+                and the eigenvalues are
+                <span class="display-math">$$ \begin{align*}
+                    E ={}&amp; -\frac{e^4 m_e}{32\pi^2 \epsilon_0^2 \hbar^2} \frac{1}{N^2}, &amp;&amp;N=1,2,3,\ldots, \\
+                    L^2 ={}&amp; l(l+1)\hbar^2, &amp;&amp;l = 0,1,,\ldots,N-1, \\
+                    L_3 ={}&amp; m\hbar, &amp;&amp;m=-l, -l+1, \ldots, l.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Derivation-hydrogen-atom.html">Derivation</a>)
+            </p>
+            <p>
+                In particular, the ground state wavefunction <span class="inline-math">$N=1, l=m=0$</span> are given by
+                <span class="display-math">$$ \begin{align*}
+                    \psi(r) = \sqrt{\frac{1}{\pi r_B^3}} e^{-r/r_B}, \qquad  \text{ where } r_B = \frac{4\pi\epsilon_0 \hbar^2}{e^2m_e}.
+                \end{align*} $$</span>
+                <span class="inline-math">$r_B$</span> is the <em>Bohr radius</em>, the radius of the lowest orbit in a Bohr atom.
+            </p>
+            
+        </div>
+    </div>
+</p>

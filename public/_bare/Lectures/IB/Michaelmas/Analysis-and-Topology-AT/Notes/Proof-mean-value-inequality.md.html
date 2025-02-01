@@ -1,0 +1,43 @@
+
+<h1>Proof 1: using integration</h1>
+
+<p>
+    Using the fundamental theorem of calculus,
+    <span class="display-math">$$ \begin{align*}
+        \|f(b) - f(a)\| ={}&amp; \left\|\int_{0}^{1} \dd{t} f((1-t)a + tb) \d t\right\| \\
+        ={}&amp; \left\|\int_{0}^{1} Df((1-t)a + tb)(b-a) \d t\right\| \\
+        \leq{} &amp; \int_{0}^{1} \|Df((1-t)a + tb) (b-a)\| \d t \\
+        \leq{} &amp; \int_{0}^{1} \|Df((1-t)a + tb)\|\, \|b-a\| \d t &amp;\text{operator norm}\\
+        \leq{} &amp; \int_{0}^{1} \sup_U \|Df\| \, \|b-a\| \d t \\
+        ={}&amp; \sup_U \|Df\| \,\|b-a\|.
+    \end{align*} $$</span>
+</p>
+
+<h1>Proof 2: using mean value theorem</h1>
+
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        ϕ(t) = f\bigl((1-t)a + tb\bigr) \cdot \bigl(f(b) - f(a)\bigr).
+    \end{align*} $$</span>
+    Then <span class="inline-math">$ϕ = α\circ f\circ β$</span> where <span class="inline-math">$α: \R^n \to \R$</span> and <span class="inline-math">$β: [0,1]\to \R^n$</span>
+    given by <span class="inline-math">$α(x) = x\cdot(f(b) - f(a))$</span> and <span class="inline-math">$β(t) = (1-t)a + tb$</span>.
+    By the <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Lemma-chain-rule.html">chain rule</a>,
+    <span class="display-math">$$ \begin{align*}
+        Dϕ|_t(h) ={}&amp; Dα\bigl(f((1-t)a + tb)\bigr) \circ Df\bigl((1-t)a + tb\bigr) \circ Dβ(t)(h) \\
+        ={}&amp; \bigl(f(b) - f(a)\bigr) \cdot Df\bigl((1-t)a + tb\bigr) (b-a)h \\
+        \implies ϕ&#x27;(t) ={}&amp; \bigl(f(b) - f(a)\bigr) \cdot Df\bigl((1-t)a + tb\bigr)(b-a).
+    \end{align*} $$</span>
+</p>
+<p>
+    By the mean value theorem, there exists some <span class="inline-math">$ξ\in (0,1)$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \|f(b) - f(a)\|^2 ={}&amp; f(b) \cdot \bigl(f(b) - f(a)\bigr) - f(a) \cdot \bigl(f(b) - f(a)\bigr) \\
+        ={}&amp; ϕ(1) - ϕ(0) \\
+        ={}&amp; ϕ&#x27;(t) \\
+        ={}&amp; \bigl(f(b)-f(a)\bigr) \cdot Df\bigl((1-t)a + tb\bigr) (b-a) \\
+        \leq{} &amp; \|f(b) - f(a)\| \,\|Df\bigl((1-t)a + tb\bigr) (b-a)\|\| &amp;&amp;\text{Cauchy-Schwarz} \\
+        \leq{} &amp; \|f(b) - f(a)\| \, \|Df\bigl((1-t)a + tb\bigr)\| \, \|b-a\| \\
+        \implies \|f(b) - f(a)\| \leq{} &amp; \sup_γ \|Df\|\, \|b-a\|.
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,26 @@
+<p>
+    Let <span class="inline-math">$f(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}$</span>.
+    <span class="display-math">$$ \begin{align*}
+        \hat f(\lambda) ={}&amp; \frac{1}{\sqrt{2\pi}}\int e^{-i\lambda x} e^{-x^2/2} \d x.
+    \end{align*} $$</span>
+    But this is hard to compute. Instead, notice
+    <span class="display-math">$$ \begin{align*}
+        \dfd{f}{x} = -xf
+    \end{align*} $$</span>
+    so taking the Fourier transform on both sides, and applying the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-properties-of-Fourier-transform.html">identities</a>,
+    <span class="display-math">$$ \begin{align*}
+        i\lambda \hat f(\lambda) = -i \dfd{\hat f}{\lambda} \implies \dfd{\hat f}{\lambda} = -\lambda \hat f.
+    \end{align*} $$</span>
+    Solving,
+    <span class="display-math">$$ \begin{align*}
+        \hat f(\lambda) = \hat f(0) \, e^{-\lambda^2/2}.
+    \end{align*} $$</span>
+    Evaluating
+    <span class="display-math">$$ \begin{align*}
+        \hat f(0) = \int f(x) \d x = 1,
+    \end{align*} $$</span>
+    we have
+    <span class="display-math">$$ \begin{align*}
+        \hat f(\lambda) = e^{-\lambda^2/2}.
+    \end{align*} $$</span>
+</p>

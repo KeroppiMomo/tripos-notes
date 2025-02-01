@@ -1,0 +1,41 @@
+<p>
+    Consider the initial value problem of the wave equation
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            u_{tt} - c^2 \Delta u = F(\v x, t), &amp;\R^n \times (0,\infty), \\
+            u(\v x, 0) = f(\v x), &amp;\R^n, \\
+            u_t(\v x, 0) = g(\v x), &amp;\R^n.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        For zero forcing <span class="inline-math">$F=0$</span>, the solution is
+        <span class="display-math">$$ \begin{align*}
+        u(\v x,t) = \pdd{t}(\Phi_t * f)(\v x) + (\Phi_t * g)(\v x).
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        For zero initial conditions <span class="inline-math">$f=g=0$</span>, the solution is
+        <span class="display-math">$$ \begin{align*}
+        u(\v x, t) = \int_{0}^{t} \int \Phi_{t-s}(\v x-\v y) \, F(\v y,s) \d^n \v y \d s.
+        \end{align*} $$</span>
+        Equivalently, if we set <span class="inline-math">$F(\v x,t) = 0$</span> for <span class="inline-math">$t&lt;0$</span>, then
+        <span class="display-math">$$ \begin{align*}
+        u(\v x,t) = \iint G(\v x, t; \v y, s) \, F(\v y, s) \d^n \v y \d s
+        \end{align*} $$</span>
+        where
+        <span class="display-math">$$ \begin{align*}
+        G(\v x,t; \v y, s) = H(t-s)\, \Phi_{t-s}(\v x-\v y)
+        \end{align*} $$</span>
+        is the <em>Green's function for the wave equation</em> on <span class="inline-math">$\R^n$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-solution-to-wave-equation.html">Proof</a>
+</p>

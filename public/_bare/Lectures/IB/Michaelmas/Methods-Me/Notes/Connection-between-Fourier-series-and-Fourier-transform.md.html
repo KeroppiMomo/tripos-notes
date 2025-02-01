@@ -1,0 +1,42 @@
+<p>
+    Consider a smooth function <span class="inline-math">$f: \R\to\C$</span> where <span class="inline-math">$f(x) = 0$</span> outside <span class="inline-math">$|x|&lt;L$</span>.
+</p>
+<p>
+    For <span class="inline-math">$|x|&lt;L$</span>,
+    <span class="display-math">$$ \begin{align*}
+        f(x) = \sum_{n\in \Z} \hat f_n e^{i\pi n x/L}
+    \end{align*} $$</span>
+    where the Fourier coefficients <span class="inline-math">$\hat f_n$</span> are given by
+    <span class="display-math">$$ \begin{align*}
+        \hat f_n ={}&amp; \frac{1}{2L} \int_{-L}^{L} e^{-i\pi nx/L} f(x) \d x \\
+        ={}&amp; \frac{1}{2L} \int_{-\infty}^{\infty} e^{-i\pi nx/L} f(x) \d x \\
+        ={}&amp; \frac{1}{2L} \hat f\left(\frac{\pi n}{L}\right)
+    \end{align*} $$</span>
+    and <span class="inline-math">$\hat f$</span> is the Fourier transform of <span class="inline-math">$f$</span>.
+</p>
+
+<h1>Inverse Fourier transform</h1>
+
+<p>
+    Set <span class="inline-math">$\lambda_n = \pi n/L$</span> and <span class="inline-math">$\delta\lambda = \lambda_{n+1} - \lambda_n = \pi/L$</span>.
+    Then on <span class="inline-math">$|x|&lt;L$</span>,
+    <span class="display-math">$$ \begin{align*}
+        f(x) ={}&amp; \sum_{n} \frac{1}{2L} \hat f\left(\frac{\pi n}{L}\right) e^{i\pi nx/L} \\
+        ={}&amp; \frac{1}{2\pi} \sum_{n} e^{i\lambda_n x} \,\hat f(\lambda_n)\, \delta\lambda \\
+        \simeq{}&amp; \frac{1}{2\pi} \int e^{i\lambda x} \hat f(\lambda) \d \lambda &amp;(L\to\infty)
+    \end{align*} $$</span>
+    which looks like the inverse Fourier transform.
+</p>
+
+<h1>Parseval's theorem</h1>
+
+<p>
+    We start from <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Theorem-Parseval-s-theorem.html">Parseval's theorem</a> for Fourier series
+    <span class="display-math">$$ \begin{align*}
+        \int_{-L}^{L} |f(x)|^2 \d x ={}&amp; 2L \sum_{n} |\hat f_n|^2 \\
+        ={}&amp; \frac{1}{2L} \sum_{n} \left|\hat f\left(\frac{\pi n}{L}\right)\right|^2 \\
+        ={}&amp; \frac{1}{2\pi} \sum_{n} |\hat f(\lambda_n)|^2 \delta\lambda \\
+        \simeq{}&amp; \frac{1}{2\pi} \int |\hat f(\lambda)|^2 \d \lambda&amp;(L\to\infty)
+    \end{align*} $$</span>
+    to get Parseval for Fourier transform.
+</p>

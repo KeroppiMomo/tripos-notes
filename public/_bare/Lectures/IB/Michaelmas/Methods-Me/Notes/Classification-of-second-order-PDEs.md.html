@@ -1,0 +1,66 @@
+<p>
+    A general second order linear PDE in two dimensions has the form
+    <span class="inline-math">$Lu = g$</span> where
+    <span class="display-math">$$ \begin{align*}
+        Lu ={}&amp; a(x,y) \pdfd[2]{u}{x} + 2b(x,y) \pdfxd{u}{x}{y} + c(x,y) \pdfd[2]{u}{y} \\
+        &amp; + \underbrace{d(x,y) \pdfd{u}{x} + e(x,y) \pdfd{u}{y} + f(x,y) u}_{\text{lower order terms}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Under a change of variables <span class="inline-math">$(x,y) \mapsto (\xi, \eta)$</span>, letting <span class="inline-math">$U(\xi,\eta) = u(x,y)$</span>, <span class="inline-math">$L$</span> becomes
+    <span class="display-math">$$ \begin{align*}
+        Lu ={}&amp; A(\xi, \eta) \pdfd[2]{U}{\xi} + 2B(\xi, \eta) \pdfxd{U}{\xi}{\eta} + C(\xi,\eta) \pdfd[2]{U}{\eta} + \text{lower order terms}
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        A ={}&amp; a\, \xi_x ^2 + 2b\,\xi_x \xi_y + c \, \xi_y^2, \\
+        B ={}&amp; a\, \xi_x \eta_x + b\,(\xi_x \eta_y + \xi_y \eta_x) + c\, \xi_y \eta_y, \\
+        C ={}&amp; a\, \eta_x ^2 + 2b\,\eta_x \eta_y + c \, \eta_y^2.
+    \end{align*} $$</span>
+</p>
+<p>
+    (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-change-of-variable-for-a-second-order-linear-operator.html">Derivation</a>)
+</p>
+<p>
+    We can make <span class="inline-math">$A = C = 0$</span> if we can get <span class="inline-math">$\xi_x/\xi_y$</span> and <span class="inline-math">$\eta_x/\eta_y$</span> to solve the equation
+    <span class="inline-math">$az^2 + 2bz + c = 0$</span>.
+</p>
+<p>
+    Consider a curve <span class="inline-math">$\xi(x,y) = \text{const.}$</span>.
+    Taking derivative, we have
+    <span class="display-math">$$ \begin{align*}
+        0 = \xi_x + \dfd{y}{x} \xi_y \implies \dfd{y}{x} = -\left(\frac{-b\pm \sqrt{b^2 - ac}}{a}\right).
+    \end{align*} $$</span>
+    These are the <em>characteristic curves</em>.
+</p>
+<p>
+    We say <span class="inline-math">$L$</span> is
+</p>
+<ul>
+<li>
+    <p>
+        <em>elliptic</em> if <span class="inline-math">$b^2 &lt; ac$</span> (no real characteristic curves);
+    </p>
+    
+</li><li>
+    <p>
+        <em>parabolic</em> if <span class="inline-math">$b^2 = ac$</span> (one family of characteristic curve); or
+    </p>
+    
+</li><li>
+    <p>
+        <em>hyperbolic</em> if <span class="inline-math">$b^2 &gt; ac$</span> (two families of characteristic curves).
+    </p>
+    
+</li>
+</ul>
+<p>
+    If we have a hyperbolic problem, we can introduce coordinates <span class="inline-math">$(\xi,\eta)$</span>
+    so that the problem is in <em>canonical form</em>
+    <span class="display-math">$$ \begin{align*}
+        \pdfxd{U}{\xi}{\eta} + \text{lower order terms} = G(\xi,\eta).
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-putting-a-hyperbolic-problem-into-canonical-form.html">Example (putting a hyperbolic problem into canonical form)</a>
+</p>

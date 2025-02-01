@@ -1,0 +1,101 @@
+<p>
+    Schrodinger's equation is
+    <span class="display-math">$$ \begin{align*}
+        -\frac{\hbar^2}{2m} \dfd[2]{\chi}{x} + U(x) \chi = E\chi.
+    \end{align*} $$</span>
+</p>
+<p>
+    Inside the well (<span class="inline-math">$-a\leq x\leq a$</span>), since <span class="inline-math">$U(x) = 0$</span>, we have solutions
+    <span class="display-math">$$ \begin{align*}
+        \chi(x) = A\cos(kx) + B\sin kx, \qquad k=\frac{\sqrt{2mE}}{\hbar}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Outside the well (<span class="inline-math">$x&lt;-a$</span> or <span class="inline-math">$x&gt;a$</span>), we have <span class="inline-math">$U(x) = U_0 &gt; E$</span> so
+    <span class="display-math">$$ \begin{align*}
+        \chi(x) = C \exp(\kappa x) + D\exp(-\kappa x), \qquad \kappa = \frac{\sqrt{2m(U_0 - E)}}{\hbar}.
+    \end{align*} $$</span>
+    To have a normalisable solution, require
+    <span class="display-math">$$ \begin{align*}
+        \chi(x) &amp;= C\exp(\kappa x), &amp;&amp; x&lt;-a, \\
+        \chi(x) &amp;= D\exp(-\kappa x), &amp;&amp; x&gt;a.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now we require continuity of <span class="inline-math">$\chi$</span> and <span class="inline-math">$\chi&#x27;$</span> at <span class="inline-math">$x=a$</span> and <span class="inline-math">$x=-a$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            A\cos(ka) + B\sin(ka) &amp;= D\exp(-\kappa a), \\
+            -Ak\sin(ka) + Bk\cos(ka) &amp;= -\kappa D\exp(-\kappa a), \\
+            A\cos(ka) - B\sin(ka) &amp;= C\exp(-\kappa a), \\
+            Ak\sin(ka) + Bk\cos(ka) &amp;= \kappa C\exp(-\kappa a).
+        \end{cases}
+    \end{align*} $$</span>
+    which is equivalent to
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            A\cos(ka) &amp;= \frac{C+D}{2} \exp(-\kappa a), \\
+            Ak\sin(ka) &amp;= \frac{C+D}{2} \kappa \exp(-\kappa a),
+        \end{cases} \quad \begin{cases}
+            B\sin(ka) &amp;= \frac{D-C}{2} \exp(-\kappa a), \\
+            Bk\cos(ka) &amp;= -\frac{D-C}{2} \kappa\exp(-\kappa a).
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$k$</span> and <span class="inline-math">$\kappa$</span> depend on <span class="inline-math">$E$</span>, and they satisfy
+    <span class="display-math">$$ \begin{align*}
+        k^2 + \kappa^2 = \frac{2mU_0}{\hbar^2}.
+    \end{align*} $$</span>
+</p>
+<p>
+    For <span class="inline-math">$A$</span> and <span class="inline-math">$(C+D)/2$</span> non-zero, we can divide the two equations to obtain
+    <span class="display-math">$$ \begin{align*}
+        k \tan(ka) = \kappa.
+    \end{align*} $$</span>
+    This means <span class="inline-math">$B = \frac{D-C}{2} = 0$</span> since otherwise we obtain <span class="inline-math">$k\cot(ka) = -\kappa &lt; 0$</span>.
+    Changing variables to <span class="inline-math">$\xi = ka$</span> and <span class="inline-math">$\eta = \kappa a$</span>, we obtain
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \xi^2 + \eta^2 = 2mU_0a^2/\hbar^2, \\
+            \xi \tan \xi = \eta.
+        \end{cases}
+    \end{align*} $$</span>
+    This is a transcendental equation. Let <span class="inline-math">$\xi_n$</span> be the solutions.
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/lfzewuauxi?embed" width="100%" height="400"></iframe>
+</p>
+<p>
+    For any <span class="inline-math">$U_0&gt;0$</span>, there is at least one solutions. And as <span class="inline-math">$U_0\to \infty$</span>, <span class="inline-math">$\xi_n \to (n-\frac{1}{2})\pi$</span>.
+    In this limit, the energy levels are
+    <span class="display-math">$$ \begin{align*}
+        E_n = \frac{\hbar^2\xi_n^2}{2ma^2} \to \frac{\hbar^2(2n-1)^2 \pi^2}{8ma^2}
+    \end{align*} $$</span>
+    which agrees with the result for the <a href="/tripos-notes/Lectures/IB/Michaelmas/Quantum-Mechanics-QM/Notes/Stationary-state-in-1D-infinite-potential-well.html">infinite potential well</a>.
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/7qya2o8vyq?embed" width="100%" height="300"></iframe>
+</p>
+<p>
+    Now for odd solutions i.e. <span class="inline-math">$B$</span> and <span class="inline-math">$(C-D)/2$</span> non-zero, we obtain
+    <span class="display-math">$$ \begin{align*}
+        k \cot(ka) = -\kappa
+    \end{align*} $$</span>
+    and so as before
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \xi^2 + \eta^2 = 2mU_0 a^2/\hbar^2, \\
+            -\xi \cot \xi = \eta.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/ocabe5s1wt?embed" width="100%" height="400"></iframe>
+</p>
+<p>
+    For small <span class="inline-math">$U_0$</span>, there is no solution.
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/ec8eef2hod?embed" width="100%" height="300"></iframe>
+</p>

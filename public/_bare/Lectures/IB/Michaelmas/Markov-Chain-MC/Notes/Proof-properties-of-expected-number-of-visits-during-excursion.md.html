@@ -1,0 +1,61 @@
+
+<h1><span class="inline-math">$\nu_k$</span> is an invariant measure</h1>
+
+<p>
+    The idea is to sum over the previous step and use the strong Markov property.
+</p>
+<p>
+    Using the definition of <span class="inline-math">$\nu_k$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \nu_k(i) ={}&amp; \expect\Big(\sum_{n=0}^{T_k-1} \mathbb{1}(X_n = i) \Big| X_0 = k\Big) \\
+        ={}&amp; \expect\Big(\sum_{n=1}^{T_k} \mathbb{1}(X_n = i)\Big| X_0 = k\Big) &amp;&amp;X_{T_k} = k \\
+        ={}&amp; \expect\Big(\sum_{n=1}^{\infty} \mathbb{1}(X_n = i, T_k \geq n) \Big| X_0 = k\Big) \\
+        ={}&amp; \sum_{n=1}^{\infty} \prob(X_n=i, T_k\geq n| X_0 = k).
+    \end{align*} $$</span>
+    From this, we sum over the possible states for <span class="inline-math">$X_{n-1}$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \nu_k(i) ={}&amp; \sum_{n=1}^{\infty} \sum_{j\in I} \prob(X_n=i, X_{n-1}=j, T_k\geq n | X_0 = k) \\
+        ={}&amp; \sum_{n=1}^{\infty} \sum_{j\in I} \prob(X_{n} = i|X_{n-1}=j, T_k\geq n,X_0=k) \times \prob(X_{n-1}=j, T_k\geq n|X_0=k).
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        \set{T_k\geq n} ={}&amp; \set{T_{k}\leq n-1}^C \\
+        ={}&amp; \left(\bigcup_{l\leq n-1} \set{T_k=l}\right)^C \\
+    \end{align*} $$</span>
+    which only depends on <span class="inline-math">$X_0, X_1, \ldots, X_{n-1}$</span> and so <span class="inline-math">$T_k$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-stopping-time.html">stopping time</a>.
+</p>
+<p>
+    Therefore by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-strong-Markov-property.html">strong Markov property</a>,
+    <span class="display-math">$$ \begin{align*}
+        \nu_k(i) ={}&amp;\sum_{n=1}^{\infty} \sum_{j\in I} P(j,i) \prob(X_{n-1}=j, T_k\geq n|X_0 = k) \\
+        ={}&amp; \sum_{j\in I} P(j,i)\sum_{n=1}^{\infty} \prob(X_{n-1}=j,T_k\geq n|X_0=k) \\
+        ={}&amp; \sum_{j\in I} P(j,i)\nu_k(j)
+    \end{align*} $$</span>
+    as required.
+</p>
+
+<h1><span class="inline-math">$\nu_k(k)=1$</span></h1>
+
+<p>
+    This follows of the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-expected-number-of-visits-during-an-excursion.html">definition</a>:
+    <span class="inline-math">$X_0=k$</span>, and <span class="inline-math">$X_1, X_2, \ldots, X_{T_k-1} \neq k$</span> by the definition of <span class="inline-math">$T_k$</span>.
+</p>
+
+<h1><span class="inline-math">$0&lt;\nu_k(i) &lt;\infty$</span></h1>
+
+<p>
+    Let <span class="inline-math">$i\in I$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$P$</span> is irreducible, there exists <span class="inline-math">$m$</span> and <span class="inline-math">$n$</span> such that <span class="inline-math">$p_{ki}(n)&gt;0$</span> and <span class="inline-math">$p_{ik}(m)&gt;0$</span>.
+    Then by invariance, <span class="inline-math">$v_k = v_kP = \ldots = v_k P^n$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        v_k(i) = \sum_{j} \nu_k(j) p_{ji}(n) \geq \underbrace{\nu_k(k)}_{1} \cdot p_{ki}(n) &gt; 0.
+    \end{align*} $$</span>
+    Also
+    <span class="display-math">$$ \begin{align*}
+        1 = \nu_k(k) = \sum_{j} \nu_k(j) p_{jk}(m) \geq \nu_k(i) \cdot p_{ik}(m) \implies \nu_k(i) \leq \frac{1}{p_{ik}(m)} &lt; \infty.
+    \end{align*} $$</span>
+</p>

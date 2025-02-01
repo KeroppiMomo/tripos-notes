@@ -1,0 +1,85 @@
+
+<h1>Compact <span class="inline-math">$\implies$</span> sequentially compact</h1>
+
+<p>
+    We will prove the contrapositive.
+    Suppose <span class="inline-math">$(X,d)$</span> is not sequentially compact.
+    Then there exists a sequence <span class="inline-math">$\set{x_n}_{n=1}^\infty$</span>
+    that does not have a convergent subsequence.
+    Denote <span class="inline-math">$\tilde X = \sb{x_n}{n\in \N}$</span>.
+</p>
+<p>
+    Firstly <span class="inline-math">$\tilde X$</span> is infinite, since otherwise
+    it has a constant subsequence, which converges.
+</p>
+<p>
+    Now for each <span class="inline-math">$x\in X$</span>, there exists <span class="inline-math">$\epsilon(x)&gt;0$</span> such that <span class="inline-math">$B_{\epsilon(x)}(x) \cap \tilde X$</span> is finite.
+    Otherwise, pick <span class="inline-math">$n_1$</span> such that <span class="inline-math">$x_{n_1}\in B_1(x)$</span>, and for <span class="inline-math">$k\geq 2$</span>,
+    pick <span class="inline-math">$n_k&gt;n_{k-1}$</span> such that <span class="inline-math">$x_{n_k} \in B_{1/k}(x)$</span> (which exists since <span class="inline-math">$B_{1/k}(x)$</span> contains infinitely many points in <span class="inline-math">$x_n$</span>).
+    Then the subsequence <span class="inline-math">$x_{n_k}\to x$</span>.
+</p>
+<p>
+    Let
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{U} = \sb{B_{\epsilon(x)}(x)}{x\in X}.
+    \end{align*} $$</span>
+    For any finite subset <span class="inline-math">$\mathcal{U}&#x27; \subseteq \mathcal{U}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \left(\bigcup\mathcal{U}&#x27;\right) \cap \tilde X ={}&amp; \bigcup_{x:\, B_{\epsilon(x)}(x) \in \mathcal{U}&#x27;} (B_{\epsilon(x)}(x) \cap \tilde X) &amp;&amp;\text{finite} \\
+        \subset{}&amp; \tilde X &amp;&amp;\text{infinite}
+    \end{align*} $$</span>
+    so <span class="inline-math">$\mathcal{U}&#x27;$</span> is not a cover of <span class="inline-math">$X$</span>.
+</p>
+<p>
+    Hence <span class="inline-math">$X$</span> is not compact.
+</p>
+
+<h1>Sequentially compact <span class="inline-math">$\implies$</span> compact</h1>
+
+<p>
+    Suppose <span class="inline-math">$(X,d)$</span> is sequentially compact, and let <span class="inline-math">$\mathcal{U}$</span> be an open cover of <span class="inline-math">$X$</span>.
+    We use two facts:
+</p>
+<p>
+    <strong>Claim 1:</strong> there exists some <span class="inline-math">$\epsilon&gt;0$</span> such that for all <span class="inline-math">$x\in X$</span>, there exists some <span class="inline-math">$U\in \mathcal{U}$</span> such that <span class="inline-math">$B_\epsilon(x) \subseteq U$</span>.
+</p>
+<blockquote>
+    <p>
+        <em>Proof</em>. Suppose not.
+        Then for all <span class="inline-math">$n\in \N$</span>, setting <span class="inline-math">$\epsilon=1/n$</span> gives some <span class="inline-math">$x_n\in X$</span>
+        such that <span class="inline-math">$B_\epsilon(x) \not\subseteq U$</span> for all <span class="inline-math">$U\in \mathcal{U}$</span>.
+    </p>
+    <p>
+        By sequential compactness, there exists a subsequence <span class="inline-math">$\set{x_{n_k}}$</span> that
+        converges to say <span class="inline-math">$x\in X$</span>.
+    </p>
+    <p>
+        Since <span class="inline-math">$\mathcal{U}$</span> is an open cover of <span class="inline-math">$X$</span>, let <span class="inline-math">$U\in \mathcal{U}$</span> such that <span class="inline-math">$x\in U$</span>, and
+        using the fact <span class="inline-math">$U$</span> is open, let <span class="inline-math">$\delta&gt;0$</span> be such that <span class="inline-math">$B_\delta(x)\subseteq U$</span>.
+    </p>
+    <p>
+        Then since <span class="inline-math">$x_{n_k} \to x$</span>, for sufficiently large <span class="inline-math">$k$</span> (<span class="inline-math">$k&gt;2/\delta$</span>), <span class="inline-math">$x_{n_k} \in B_{\delta/2}(x)$</span>, so
+        <span class="display-math">$$ \begin{align*}
+            B_{1/n_k}(x_{n_k}) \subseteq B_{\delta/2}(x_{n_k}) \subseteq B_\delta(x),
+        \end{align*} $$</span>
+        which is a contradiction.
+    </p>
+    
+</blockquote>
+<p>
+    <strong>Claim 2:</strong> there exists a finite set <span class="inline-math">$F\subseteq X$</span> such that <span class="inline-math">$X = \bigcup_{y\in F} B_\epsilon(y)$</span>.
+</p>
+<blockquote>
+    <p>
+        See <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-sequentially-compact-space-is-totally-bounded.html">here</a> for proof.
+    </p>
+    
+</blockquote>
+<p>
+    Now for each <span class="inline-math">$y\in F$</span>, pick <span class="inline-math">$U_y\subseteq \mathcal{U}$</span> so that <span class="inline-math">$B_\epsilon(y) \subseteq U_y$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{U}&#x27; = \sb{U_y}{y\in F}
+    \end{align*} $$</span>
+    is a finite subcover of <span class="inline-math">$X$</span>.
+</p>

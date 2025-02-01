@@ -1,0 +1,30 @@
+<p>
+    Given some <span class="inline-math">$f: [0,L)\to\C$</span>,
+    we can define a <span class="inline-math">$2L$</span>-periodic even or odd extensions
+    <span class="display-math">$$ \begin{align*}
+        f_\text{even}(\theta) &amp;= \begin{cases}
+            f(\theta), &amp;\theta\in [0, L), \\
+            f(-\theta), &amp;\theta\in [-L, 0),
+        \end{cases}, \\
+        f_\text{odd}(\theta) &amp;= \begin{cases}
+            f(\theta), &amp;\theta\in [0, L), \\
+            -f(-\theta), &amp;\theta\in [-L, 0).
+        \end{cases}
+    \end{align*} $$</span>
+    <iframe src="https://www.desmos.com/calculator/djtpic6une?embed" width="100%" height="300"></iframe>
+</p>
+<p>
+    Since <span class="inline-math">$f_\text{even}$</span> is even, its Fourier series is
+    <span class="display-math">$$ \begin{align*}
+        f_\text{even}(\theta) &amp;\sim \frac{1}{2}A_0 + \sum_{n=1}^{\infty} A_n \cos \frac{2\pi n\theta}{2 L} \\
+        A_n &amp;= \frac{2}{2L} \int_{-L}^{L} f_{\text{even}}(\theta) \cos \frac{2\pi n\theta}{2L} \d \theta \\
+        &amp;= \frac{2}{L}\int_{0}^{L} f(\theta) \cos \frac{\pi n \theta}{L} \d \theta
+    \end{align*} $$</span>
+    and since <span class="inline-math">$f_\text{odd}$</span> is odd, its Fourier series is
+    <span class="display-math">$$ \begin{align*}
+        f_{\text{odd}}(\theta) &amp;\sim \sum_{n=1}^{\infty} B_n \sin \frac{2\pi n \theta}{2L} \\
+        B_n &amp;= \frac{2}{2L} \int_{-L}^{L} f_\text{odd}(\theta) \sin \frac{2\pi n \theta}{2L} \d \theta \\
+        &amp;= \frac{2}{L}\int_{0}^{L} f(\theta) \sin \frac{\pi n\theta}{L} \d \theta
+    \end{align*} $$</span>
+    which are the cosine and sine series.
+</p>

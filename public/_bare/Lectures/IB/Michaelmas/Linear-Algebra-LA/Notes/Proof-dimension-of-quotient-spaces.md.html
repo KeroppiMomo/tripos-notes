@@ -1,0 +1,35 @@
+<p>
+    Let <span class="inline-math">$B_U = \set{u_1, u_2, \ldots, u_m}$</span> be a basis for <span class="inline-math">$U$</span> where <span class="inline-math">$m=\dim(U)$</span>.
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-extending-a-basis.html">Extend</a> to a basis for <span class="inline-math">$V$</span>: <span class="inline-math">$B_V = \set{u_1, \ldots, u_m, v_{m+1}, \ldots, v_n}$</span> where <span class="inline-math">$n=\dim(V)$</span>.
+    We claim that <span class="inline-math">$B_{V/U} = \set{v_{m+1} + U, \ldots, v_n + U}$</span> is a basis for <span class="inline-math">$V/U$</span> of size <span class="inline-math">$n-m$</span>.
+</p>
+<p>
+    To show <span class="inline-math">$B_{V/U}$</span> is linearly independent, suppose
+    <span class="display-math">$$ \begin{align*}
+        \v 0 + U = \sum_{i=m+1}^{n} \lambda_i (v_{i} + U).
+    \end{align*} $$</span>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \v 0 + U = \Big(\sum_{i=m+1}^{n} \lambda_i v_i\Big) + U \implies \sum_{i=m+1}^{n} \lambda_i v_i \in U.
+    \end{align*} $$</span>
+    Using the basis <span class="inline-math">$B_U$</span>, let <span class="inline-math">$\mu_1, \ldots, \mu_m\in\mathbb{F}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=m+1}^{n} \lambda_i v_i &amp;= \sum_{j=1}^{n} \mu_j u_j \\
+        \implies \sum_{j=1}^{n} \mu_j u_j - \sum_{i=m+1}^{n} \lambda_i v_i &amp;= \v 0.
+    \end{align*} $$</span>
+    Therefore since <span class="inline-math">$B_V$</span> is linearly independent, all <span class="inline-math">$\lambda_i = \mu_j = 0$</span>.
+</p>
+<p>
+    This also shows that <span class="inline-math">$v_{m+1} + U, \ldots, v_n + U$</span> are distinct.
+</p>
+<p>
+    To show <span class="inline-math">$B_{V/U}$</span> spans <span class="inline-math">$V/U$</span>,
+    let <span class="inline-math">$v + U \in V/U$</span> for some <span class="inline-math">$v\in V$</span>.
+    As <span class="inline-math">$B_V$</span> spans <span class="inline-math">$V$</span>, there exists <span class="inline-math">$\mu_1, \ldots, \mu_m, \lambda_{m+1}, \ldots, \lambda_n\in\mathbb{F}$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        v &amp;= \sum_{j=1}^{m} \mu_j u_j + \sum_{i=m+1}^{n} \lambda_i v_i \\
+        v+U &amp;= \underbrace{\sum_{j=1}^{m} \mu_j u_j}_{\in U} + \sum_{i=m+1}^{n} \lambda_i v_i + U \\
+        &amp;= \sum_{i=m+1}^{n} \lambda_i v_i + U \\
+        &amp;= \sum_{i=m+1}^{n} \lambda_i (v_i + U).
+    \end{align*} $$</span>
+</p>

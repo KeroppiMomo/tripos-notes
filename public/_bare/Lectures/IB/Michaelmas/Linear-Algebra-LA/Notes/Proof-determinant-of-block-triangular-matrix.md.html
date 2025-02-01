@@ -1,0 +1,30 @@
+<p>
+    Let <span class="inline-math">$n=k+l$</span>, and
+    <span class="display-math">$$ \begin{align*}
+        C = (c_{ij}) = \pmat{A &amp; * \\ 0 &amp; B}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Recall <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-determinant-as-unique-volume-form.html">Leibniz formula</a>
+    <span class="display-math">$$ \begin{align*}
+        \det(C) = \sum_{\sigma\in S_n} \sign(\sigma) \prod_{i=1}^{n} c_{\sigma(i),i}.
+    \end{align*} $$</span>
+    The zero block on the bottom-left corner means that <span class="inline-math">$c_{ij} = 0$</span> for <span class="inline-math">$i\geq k+1$</span> and <span class="inline-math">$j\leq k$</span>.
+    Therefore the product <span class="inline-math">$\prod_{i=1}^{n} c_{\sigma(i),i}\neq 0$</span> only when <span class="inline-math">$\sigma(X) = X$</span> where <span class="inline-math">$X = \set{1,2,\ldots,k}$</span>.
+    By bijectivity, <span class="inline-math">$\sigma(Y) = Y$</span> where <span class="inline-math">$Y=\set{k+1, k+2, \ldots, n}$</span>.
+    Therefore we can write <span class="inline-math">$\sigma = \tau\theta$</span> where <span class="inline-math">$\tau\in \mathrm{Sym}(X)$</span> and <span class="inline-math">$\theta \in \mathrm{Sym}(Y)$</span>.
+</p>
+<p>
+    And conversely, given <span class="inline-math">$\tau \in \mathrm{Sym}(X)$</span> and <span class="inline-math">$\theta \in \mathrm{Sym}(Y)$</span>,
+    we can obtain <span class="inline-math">$\sigma = \tau\theta \in S_n$</span> preserving <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span>.
+</p>
+<p>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \det(C) ={}&amp; \sum_{\tau\in \mathrm{Sym}(X)} \sum_{\theta\in \mathrm{Sym}(Y)} \sign(\tau \theta) \prod_{i=1}^{n} c_{\tau\theta(i),i} \\
+        ={}&amp; \sum_{\tau\in \mathrm{Sym}(X)} \sum_{\theta\in \mathrm{Sym}(Y)} \sign(\tau)\sign(\theta) \left(\prod_{i=1}^{k} c_{\tau\theta(i),i}\right) \left(\prod_{i=k+1}^{n} c_{\tau\theta(i),i}\right) \\
+        ={}&amp;\sum_{\tau\in \mathrm{Sym}(X)} \sum_{\theta\in \mathrm{Sym}(Y)} \sign(\tau)\sign(\theta) \left(\prod_{i=1}^{k} c_{\tau(i),i}\right) \left(\prod_{i=k+1}^{n} c_{\theta(i),i}\right) \\
+        ={}&amp;\left(\sum_{\tau\in \mathrm{Sym}(X)} \sign(\tau) \prod_{i\in X} c_{\tau(i),i}\right) \left(\sum_{\theta\in \mathrm{Sym}(Y)} \sign(\theta) \prod_{i\in Y} c_{\theta(i),i}\right) \\
+        ={}&amp; \det(A) \det(B).
+    \end{align*} $$</span>
+</p>

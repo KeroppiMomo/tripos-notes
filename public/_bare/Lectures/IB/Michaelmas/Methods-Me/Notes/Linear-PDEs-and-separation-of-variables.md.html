@@ -1,0 +1,551 @@
+<p>
+    We are interested in
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Boundary value problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \begin{cases}
+                    P\psi(\v x) = 0, &amp; \v x\in\Omega, \\
+                    \text{boundary conditions}, &amp;\v x\in \partial \Omega
+                \end{cases}
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    and
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Initial boundary value problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \begin{cases}
+                    Q\psi(\v x,t) = 0, &amp; (\v x,t)\in\Omega\times (0,\infty), \\
+                    \text{initial conditions}, &amp;(\v x,t)\in \Omega\times\set{0}, \\
+                    \text{boundary conditions}, &amp;(\v x,t)\in \partial \Omega\times(0,\infty)
+                \end{cases}
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    where <span class="inline-math">$P$</span> and <span class="inline-math">$Q$</span> are (partial) linear differential operators, and <span class="inline-math">$\Omega$</span> is an open bounded subset of <span class="inline-math">$\R^n$</span>, <span class="inline-math">$n=1,2,3$</span>.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Using superposition to solve boundary value problems
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Using-superposition-to-solve-boundary-value-problems.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ol start="1">
+            <li>
+                <p>
+                    For boundary value problems, we can assume all boundary conditions = 0 on all but one endpoint/edge/face,
+                    and superpose solutions together to satsify all boundary conditions.
+                </p>
+                
+            </li><li>
+                <p>
+                    For initial boundary value problems, we can first assume all boundary conditions = 0, then assume instead all initial conditions = 0, and then superpose solutions.
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Laplace's equation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Laplace-s-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We are interested in
+            </p>
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Laplace's equation</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \begin{cases}
+                                \Delta\phi(\v x) = 0, &amp;\v x\in \Omega, \\
+                                B\phi(\v x) = f(\v x), &amp;\v x\in\partial\Omega
+                            \end{cases}
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                where <span class="inline-math">$\Delta = \nabla\cdot\nabla = \nabla^2$</span> is the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-Laplacian.html">Laplacian</a>,
+                and either <span class="inline-math">$B\phi = \phi$</span> (Dirichlet boundary condition) or <span class="inline-math">$B\phi = \pdfd{\phi}{\v n}$</span> (Neumann boundary condition).
+            </p>
+            <p>
+                Recall results from <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Vector-calculus-equations.html">IA Vector Calculus</a>.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Separation of variables on a rectangle
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Separation-of-variables-on-a-rectangle.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <div class="markdown-callout" data-callout="problem">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Problem</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    <span class="display-math">$$ \begin{align*}
+                                        \begin{cases}
+                                            \phi_{xx} + \phi_{yy} = 0, &amp;(x,y)\in(0,1)\times(0,1), \\
+                                            \phi=0, &amp;x=0,\ x=1,\ y=0, \\
+                                            \phi = f, &amp;y=1
+                                        \end{cases}
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            can be solved using separation of variables to get, for each <span class="inline-math">$n=1,2,3,\ldots$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \phi(x,y) &amp;= \sum_{n=1}^{\infty} A_n \sin(n\pi x) \sinh(n\pi y)
+                            \end{align*} $$</span>
+                            where
+                            <span class="display-math">$$ \begin{align*}
+                                A_n = \frac{2}{\sinh(n\pi)}\int_{0}^{1} f(x)\sin(n\pi x) \d x.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-rectangle.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Separation of variables on a 2D annulus
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Separation-of-variables-on-a-2D-annulus.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For <span class="inline-math">$\v x\in\R^2$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \Delta \phi = 0, \qquad r_1 &lt; |\v x| &lt; r_2, \\
+                            \end{align*} $$</span>
+                            has separation of variables solutions in polar coordinates
+                            <span class="display-math">$$ \begin{align*}
+                                \phi(r,\theta) = A + B\log r + \sum_{n=1}^{\infty} \left[\left(A_n r^n + \frac{B_n}{r^n}\right)\left(C_n \cos(n\theta) + D_n \sin(n\theta)\right)\right].
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-2D-annulus.html">Derivation</a>)
+                        </p>
+                        <p>
+                            Find the Fourier series to satisfy boundary conditions. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-Laplace-s-equation-with-Dirichlet-boundary-conditions-on-2D-annulus.html">Example</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Separation of variables on a 3D annulus
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Separation-of-variables-on-a-3D-annulus.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For <span class="inline-math">$\v x\in\R^3$</span>, assuming <span class="inline-math">$\phi$</span> is symmetric about the <span class="inline-math">$z$</span>-axis, i.e. <span class="inline-math">$\phi=\phi(r,\theta)$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \Delta \phi = 0, \qquad r_1 &lt; |\v x| &lt; r_2
+                            \end{align*} $$</span>
+                            has separation of variables solutions in spherical polar coordinates
+                            <span class="display-math">$$ \begin{align*}
+                                \phi(r,\theta) = \sum_{n=0}^{\infty} \left(a_n r^n + \frac{\beta_n}{r^{n+1}}\right) P_n(\cos\theta)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$P_n$</span> is the <span class="inline-math">$n$</span>-th <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Legendre-equation.html">Legendre polynomial</a>.
+                        </p>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-3D-annulus.html">Derivation</a>)
+                        </p>
+                        <p>
+                            Use the completeness of the Legendre polynomials to satisfy boudnary conditions.
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-Laplace-s-equation-with-Dirichlet-boundary-conditions-on-3D-annulus.html">Example</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Wave equation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Wave-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-wave-equation-on-stretched-string.html">Derivation (wave equation on stretched string)</a>
+            </p>
+            <p>
+                We want to solve
+                <span class="display-math">$$ \begin{align*}
+                    \frac{1}{c^2} \pdfd[2]{y}{t} = \pdfd[2]{y}{x}
+                \end{align*} $$</span>
+                or in general, in higher spatial dimensions,
+                <span class="display-math">$$ \begin{align*}
+                    \frac{1}{c^2} \pdfd[2]{y}{t} = \Delta y.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        1D wave equation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/1D-wave-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="display-math">$$ \begin{align*}
+                                \begin{cases}
+                                    y_{tt} = c^2 y_{xx}, &amp; 0 &lt; x &lt; L, \, t&gt;0, \\
+                                    y(0,t) = y(L,t) = 0, &amp; t&gt;0, \\
+                                    y(x,0) = f(x), &amp;0&lt;x&lt;L, \\
+                                    y_t(x,0) = g(x), &amp;0&lt;x&lt;L
+                                \end{cases}
+                            \end{align*} $$</span>
+                            has a separation of variables solution
+                            <span class="display-math">$$ \begin{align*}
+                                y(x,t) = \sum_{n=1}^{\infty} \sin \frac{n\pi x}{L} \left(A_n \cos \frac{n\pi ct}{L} + B_n \sin \frac{n\pi c t}{L}\right)
+                            \end{align*} $$</span>
+                            where
+                            <span class="display-math">$$ \begin{align*}
+                                A_n ={}&amp; \frac{2}{L} \int_{0}^{L} f(x) \sin \frac{n\pi x}{L} \d x, \\
+                                B_n ={}&amp; \frac{2}{n\pi c} \int_{0}^{L} g(x) \sin \frac{n\pi x}{L} \d x.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-1D-wave-equation.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Wave equation on a 2D drum
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Wave-equation-on-a-2D-drum.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a 2D drum <span class="inline-math">$\Omega = \sb{(r,\theta)}{0\leq r&lt;1, \, 0\leq \theta&lt;2\pi}$</span>,
+                            the initial value problem
+                            <span class="display-math">$$ \begin{align*}
+                                \begin{cases}
+                                    \phi_{tt} = c^2 \Delta \phi, &amp;(\v x,t)\in \Omega\times (0,\infty), \\
+                                    \phi = 0, &amp;(\v x,t) \in \partial \Omega\times(0,\infty), \\
+                                    \phi(r) = f(r), &amp;(\v x,t)\in \Omega\times\set{0}, \\
+                                    \phi_t(r) = g(r), &amp;(\v x,t)\in \Omega\times\set{0}
+                                \end{cases}
+                            \end{align*} $$</span>
+                            has a separation of variables solution
+                            <span class="display-math">$$ \begin{align*}
+                                \phi(r,t) = \sum_{k=1}^{\infty} J_0(j_{0k}\, r)\big(A_k \cos (j_{0k} \, ct) + B_k \sin(j_{0k}\, ct)\big)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$J_0$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Bessel-s-equation.html">0-th order Bessel function</a>, <span class="inline-math">$j_{0k}$</span> is its <span class="inline-math">$k$</span>-th positive root, and
+                            <span class="display-math">$$ \begin{align*}
+                                A_k ={}&amp; \frac{2}{J_0&#x27;(j_{0k})^2}\int_{0}^{1} f(r) J_0 (j_{0k}\, r) r \d r, \\
+                                B_k ={}&amp; \frac{2}{c\, j_{0k}\, J_0&#x27;(j_{0k})^2} \int_{0}^{1} g(r) J_0(j_{0k}\ r)r \d r.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-wave-equation-on-a-2D-drum.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (energy conservation of wave equation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-energy-conservation-of-wave-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\phi(\v x,t)$</span> be a solution to the initial value problem
+                            <span class="display-math">$$ \begin{align*}
+                                \begin{cases}
+                                    \phi_{tt} = c^2 \Delta\phi, &amp;\Omega\times(0,\infty), \\
+                                    \phi = f, &amp;\Omega\times\set{0}, \\
+                                    \phi_t = g, &amp;\Omega\times\set{0}, \\
+                                    \phi = 0, &amp;\partial\Omega\times(0,\infty).
+                                \end{cases}
+                            \end{align*} $$</span>
+                            The <em>energy</em>, defined as
+                            <span class="display-math">$$ \begin{align*}
+                                E(t) = \frac{1}{2}\int_{\Omega} \phi_t^2 + c^2|\nabla\phi|^2 \d V,
+                            \end{align*} $$</span>
+                            is constant, i.e.
+                            <span class="display-math">$$ \begin{align*}
+                                E(t) = E(0) = \frac{1}{2}\int_{\Omega} |g|^2 + c^2|\nabla f|^2 \d V.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-energy-conservation-of-wave-equation.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (unique solution to wave equation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-unique-solution-to-wave-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Solution to the initial value problem
+                            <span class="display-math">$$ \begin{align*}
+                                \begin{cases}
+                                    \phi_{tt} = c^2 \Delta\phi, &amp;\Omega\times(0,\infty), \\
+                                    \phi = f, &amp;\Omega\times\set{0}, \\
+                                    \phi_t = g, &amp;\Omega\times\set{0}, \\
+                                    \phi = 0, &amp;\partial\Omega\times(0,\infty).
+                                \end{cases}
+                            \end{align*} $$</span>
+                            is unique.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-unique-solution-to-wave-equation.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Wave reflection and transmission
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Wave-reflection-and-transmission.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For an infinite-long string with tension <span class="inline-math">$\tau$</span> and densities <span class="inline-math">$\mu_\pm$</span> on <span class="inline-math">$\pm x&gt;0$</span>,
+                            the wave equations for both regions are
+                            <span class="display-math">$$ \begin{align*}
+                                \begin{cases}
+                                    y_{tt} - c_-^2 y_{xx} = 0, &amp;x&lt;0, \\
+                                    y_{tt} - c_+^2 y_{xx} = 0, &amp;x&gt;0 \\
+                                \end{cases}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$c_\pm^2 = \tau/\mu_{\pm}$</span>.
+                        </p>
+                        <p>
+                            Assume
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                the string does not break, i.e. <span class="inline-math">$y$</span> is continuous at <span class="inline-math">$x=0$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                no mass at <span class="inline-math">$x=0$</span>, i.e. <span class="inline-math">$y_x$</span> is continuous at <span class="inline-math">$x=0$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            For an incident wave from <span class="inline-math">$x\to-\infty$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                \cos\Big(\omega \big(t - \frac{x}{c_-}\big)\Big), \qquad x&lt;0,
+                            \end{align*} $$</span>
+                            we obtain a reflected wave
+                            <span class="display-math">$$ \begin{align*}
+                                R \cos\Big(\omega \big(t + \frac{x}{c_-}\big)\Big) \quad \text{where } R= \frac{\mu_- - \mu_+}{\mu_- + \mu_+}, \qquad x&lt;0
+                            \end{align*} $$</span>
+                            and a transmitted wave
+                            <span class="display-math">$$ \begin{align*}
+                                T \cos\Big(\omega \big(t - \frac{x}{c_+}\big)\Big) \quad \text{where } T = \frac{2\mu_-}{\mu_- + \mu_+}, \qquad x&gt;0.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Heat equation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Heat-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We want to solve
+                <span class="display-math">$$ \begin{align*}
+                    \pdfd{\phi}{t} = \kappa \Delta\phi
+                \end{align*} $$</span>
+                where <span class="inline-math">$\kappa&gt;0$</span> is a constant called the <em>thermal diffusivity</em>.
+                This models the transfer of heat in conductive bodies.
+            </p>
+            <p>
+                Using separation of variables <span class="inline-math">$\phi = T(t) \psi(\v x)$</span>, we can turn the initial boundary value problem
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        \phi_t = \kappa \Delta\phi, &amp;\Omega \times (0,\infty), \\
+                        \phi = f, &amp;\Omega\times\set{0}, \\
+                        \phi = 0, &amp;\partial\Omega\times (0,\infty)
+                    \end{cases}
+                \end{align*} $$</span>
+                into
+                <span class="display-math">$$ \begin{align*}
+                    T(t) = Ae^{-\mu \kappa t}, \quad \begin{cases}
+                        \Delta\psi + \mu\psi = 0, &amp;\Omega, \\
+                        \psi = 0, &amp;\partial \Omega.
+                    \end{cases}
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Heat conduction in a square
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Heat-conduction-in-a-square.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a square <span class="inline-math">$(0,L)\times(0,L)$</span>,
+                            we have a separation of variables solution
+                            <span class="display-math">$$ \begin{align*}
+                                \phi(x,y,t) = \sum_{n,m=1}^{\infty} A_{m,n} e^{-\kappa \mu_{m,n}t} \sin \frac{n\pi x}{L} \sin \frac{m\pi y}{L}
+                            \end{align*} $$</span>
+                            where
+                            <span class="display-math">$$ \begin{align*}
+                                \mu_{m,n} ={}&amp; \left(\frac{n\pi}{L}\right)^2 + \left(\frac{m\pi}{L}\right)^2, \\
+                                A_{m,n} ={}&amp; \frac{4}{L^2} \int_{0}^{L} \int_{0}^{L} f(x,y) \sin \frac{n\pi x}{L} \sin \frac{m\pi y}{L} \d x \d y.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-heat-conduction-in-a-square.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Heat conduction on a cylindrical rod
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Heat-conduction-on-a-cylindrical-rod.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a cylindrical rod of radius 1 and length <span class="inline-math">$L$</span>, the domain is <span class="inline-math">$\Omega=[0,1) \times [0,2\pi) \times (0,L)$</span> in cylindrical polars <span class="inline-math">$(\rho,\varphi,z)$</span>.
+                            Assuming <span class="inline-math">$f=f(\rho,z)$</span> is independent of <span class="inline-math">$\varphi$</span>, we can assume <span class="inline-math">$\phi = \phi(\rho,z,t)$</span> is independent of <span class="inline-math">$\varphi$</span> as well.
+                        </p>
+                        <p>
+                            We have a separation of variables solution
+                            <span class="display-math">$$ \begin{align*}
+                                \phi(\rho, z, t) = \sum_{k,n=1}^{\infty} A_{k,n} e^{-\kappa\mu_{k,n} t} J_0(j_{0k}\, \rho) \sin \frac{n\pi z}{L}
+                            \end{align*} $$</span>
+                            where
+                            <span class="display-math">$$ \begin{align*}
+                                \mu_{kn} ={}&amp; \left(\frac{n\pi}{L}\right)^2 + {j_{0k}}^2, \\
+                                A_{kn} ={}&amp; \frac{4}{L\,J_0&#x27;(j_{0k})^2} \int_{0}^{1} \left(\int_{0}^{L} f(\rho,z) \sin \frac{n\pi z}{L} \d z\right) J_0(j_{0k}\, \rho)\,\rho \d \rho.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-heat-conduction-on-a-cylindrical-rod.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (energy dissipation in heat equation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-energy-dissipation-in-heat-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\phi(\v x,t)$</span> be a solution to the initial value problem
+                            <span class="display-math">$$ \begin{align*}
+                                \begin{cases}
+                                    \phi_t = \kappa \Delta\phi, &amp;\Omega \times (0,\infty), \\
+                                    \phi = f, &amp;\Omega\times\set{0}, \\
+                                    \phi = 0, &amp;\partial\Omega\times (0,\infty).
+                                \end{cases}
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The <em>energy</em>, defined as
+                            <span class="display-math">$$ \begin{align*}
+                                Q(t) = \frac{1}{2} \int_{\Omega} \phi^2 \d V,
+                            \end{align*} $$</span>
+                            is decreasing with time, i.e. <span class="inline-math">$Q&#x27;(t) \leq 0$</span>. In particular
+                            <span class="display-math">$$ \begin{align*}
+                                Q(t) \leq Q(0) = \frac{1}{2}\int_{\Omega} f^2 \d V.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-energy-dissipation-in-heat-equation.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (unique solution to heat equation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-unique-solution-to-heat-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Solutions to the initial value problem
+                            <span class="display-math">$$ \begin{align*}
+                                \begin{cases}
+                                    \phi_t = \kappa \Delta\phi, &amp;\Omega \times (0,\infty), \\
+                                    \phi = f, &amp;\Omega\times\set{0}, \\
+                                    \phi = 0, &amp;\partial\Omega\times (0,\infty)
+                                \end{cases}
+                            \end{align*} $$</span>
+                            is unique.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-unique-solution-to-heat-equation.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                (But there are solutions to the heat equation with infinite energy...)
+            </p>
+            
+        </div>
+    </div>
+</p>

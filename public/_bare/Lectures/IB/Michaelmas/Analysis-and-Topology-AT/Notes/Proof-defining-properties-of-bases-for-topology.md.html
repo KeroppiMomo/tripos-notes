@@ -1,0 +1,73 @@
+
+<h1>Bases exhibit properties</h1>
+
+<p>
+    Suppose <span class="inline-math">$\mathcal{B}$</span> is a base for a topology <span class="inline-math">$\tau$</span>.
+</p>
+
+<h2>Covering</h2>
+
+<p>
+    <span class="inline-math">$X\in \tau$</span> by the definition of a topology.
+    Since <span class="inline-math">$\mathcal{B}$</span> is a base,
+    there exists a subfamily <span class="inline-math">$\mathcal{C}\subseteq \mathcal{B}$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        X = \bigcup_{B\in \mathcal{C}} B \subseteq \bigcup_{B\in \mathcal{B}} B.
+    \end{align*} $$</span>
+</p>
+
+<h2>Intersection</h2>
+
+<p>
+    Let <span class="inline-math">$B_1, B_2 \in \mathcal{B}\subseteq \tau$</span>.
+    Since <span class="inline-math">$B_1,B_2\in \tau$</span>, we have <span class="inline-math">$B_1\cap B_2\in \tau$</span>,
+    so there exists a <span class="inline-math">$\mathcal{C}\subseteq \mathcal{B}$</span> such that <span class="inline-math">$B_1\cap B_2 = \bigcup_{B\in \mathcal{C}} B$</span>.
+</p>
+<p>
+    Now for any <span class="inline-math">$x\in B_1\cap B_2$</span>, there exists <span class="inline-math">$B_3 \in \mathcal{C}$</span> such that <span class="inline-math">$x\in B_3$</span>.
+    And <span class="inline-math">$B_1\cap B_2 = \bigcup_{B\in \mathcal{C}} B \supseteq B_3$</span>.
+</p>
+
+<h1>Existence of topology given a base</h1>
+
+<p>
+    Suppose <span class="inline-math">$\mathcal{B}$</span> satisfies the covering and intersection properties.
+</p>
+<p>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        \tau = \Big\{\bigcup_{B\in \mathcal{C}} B\ \Big|\ \mathcal{C}\subseteq \mathcal{B}\Big\}.
+    \end{align*} $$</span>
+    We will show that <span class="inline-math">$\tau$</span> is a topology. Then <span class="inline-math">$\mathcal{B}$</span> is a base for <span class="inline-math">$\tau$</span>.
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$\emptyset\in \tau$</span> by taking <span class="inline-math">$\mathcal{C} = \emptyset$</span>. Moreover, <span class="inline-math">$X\in \tau$</span> by taking <span class="inline-math">$\mathcal{C} = \mathcal{B}$</span> and noting the covering property.
+    </p>
+    
+</li><li>
+    <p>
+        Unions of sets <span class="inline-math">$\tau$</span> are in <span class="inline-math">$\tau$</span>, since <span class="inline-math">$\left(\bigcup_{B\in \mathcal{C}_1} B\right)\cup \left(\bigcup_{B\in \mathcal{C}_2} B\right) = \bigcup_{B\in \mathcal{C}_1 \cup \mathcal{C}_2} B$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        We will show the case for intersection of two sets, and the finite case will then follow.
+    </p>
+    <p>
+        Let <span class="inline-math">$U_1 = \bigcup_{B\in \mathcal{C}_1} B \in \tau$</span> and <span class="inline-math">$U_2 = \bigcup_{B\in \mathcal{C}_2} B \in \tau$</span>.
+        For each <span class="inline-math">$x\in U_1\cap U_2$</span>, there exists some <span class="inline-math">$B_1\in \mathcal{C}_1$</span> and <span class="inline-math">$B_2\in \mathcal{C}_2$</span> such that <span class="inline-math">$x\in B_1$</span> and <span class="inline-math">$x\in B_2$</span>,
+        so by the intersection property,
+        there exists <span class="inline-math">$B_x \in \mathcal{B}$</span> satisfying <span class="inline-math">$x\in B_x \subseteq B_1\cap B_2$</span>.
+    </p>
+    <p>
+        Then
+        <span class="display-math">$$ \begin{align*}
+            U_1 \cap U_2 \subseteq \bigcup_{x\in U_1\cap B_2} B_x \in \tau.
+        \end{align*} $$</span>
+        And since <span class="inline-math">$B_x\subseteq B_1\cap B_2$</span>, this is an equality.
+    </p>
+    
+</li>
+</ol>

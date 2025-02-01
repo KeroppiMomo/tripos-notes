@@ -1,0 +1,38 @@
+
+<h1>Connected</h1>
+
+<p>
+    The set
+    <span class="display-math">$$ \begin{align*}
+        Y = \Big\{\big(x, \sin \frac{1}{x}\big)\;\Big|\; x&gt;0 \Big\}
+    \end{align*} $$</span>
+    is path-connected and thus connected, so <span class="inline-math">$X = \overline{Y}$</span> is connected.
+</p>
+
+<h1>Not path-connected</h1>
+
+<p>
+    Let <span class="inline-math">$f: [0,1] \to X$</span> be a continuous function with <span class="inline-math">$f(0) = (0,0)$</span>.
+    Denote <span class="inline-math">$f(t) = (f_1(t), f_2(t))$</span>.
+    We will show that <span class="inline-math">$f_1\equiv 0$</span>.
+</p>
+<p>
+    Suppose not.
+    Let <span class="inline-math">$t_0 = \sup\sb{t\in [0,1]}{f_1(t&#x27;) = 0\, \forall t&#x27;\leq t}$</span>.
+    By continuity, <span class="inline-math">$f_1(t_0) = 0$</span>,
+    and there exists some <span class="inline-math">$δ&gt;0$</span> such that <span class="inline-math">$|f_2(t) - f_2(t_0)| &lt; 1/2$</span>
+    for all <span class="inline-math">$|t-t_0| &lt; δ$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$t_1\in (t_0, t_0+δ)$</span> such that <span class="inline-math">$f_1(t_1) &gt; 0$</span>.
+    We can find <span class="inline-math">$n,n&#x27;\in \N$</span> sufficiently large such that
+    <span class="display-math">$$ \begin{align*}
+        x = \frac{1}{2πn + π/2}, \quad x&#x27; = \frac{1}{2πn&#x27; + 3π/2}
+    \end{align*} $$</span>
+    are within <span class="inline-math">$(0,f_1(t_1))$</span>.
+    By the intermediate value theorem,
+    there exists <span class="inline-math">$T,T&#x27;\in (t_0, t_1) \subseteq (t_0, t_0 + δ)$</span> such that
+    <span class="inline-math">$f_1(T) = x$</span> and <span class="inline-math">$f_1(T&#x27;) = x&#x27;$</span>.
+    Then <span class="inline-math">$f_2(T) = \sin(1/f_1(T)) = 1$</span> and <span class="inline-math">$f_2(T&#x27;) = \sin(1/f_1(T&#x27;)) = -1$</span>,
+    which contradicts with the definition of <span class="inline-math">$δ$</span>.
+</p>

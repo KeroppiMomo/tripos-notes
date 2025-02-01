@@ -1,0 +1,23 @@
+<p>
+    Compute
+    <span class="display-math">$$ \begin{align*}
+        \sum_{k=0}^{N-1} \hat X_k e^{2\pi ink/N} ={}&amp; \sum_{k=0}^{N-1} \sum_{m=0}^{N-1} \left[X_m e^{-2\pi imk/N}\right] e^{2\pi ink/N} \\
+        ={}&amp; \sum_{m=0}^{N-1} \left(\sum_{k=0}^{N-1} e^{2\pi i(n-m)k/N}\right) X_m.
+    \end{align*} $$</span>
+</p>
+<p>
+    By geometric sum,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{k=0}^{N-1} e^{2\pi i(n-m)k/N} ={}&amp; \begin{cases}
+            \dfrac{1 - e^{2\pi i(n-m)k}}{1-e^{2\pi i(n-m)k/N}}, &amp;n\neq m \\
+            N, &amp; n=m
+        \end{cases} \\
+        ={}&amp; N\, \delta_{nm}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{N} \sum_{k=0}^{N-1} \hat X_k e^{2\pi ink/N} = \frac{1}{N} \sum_{m=0}^{N-1} N\,X_m \,\delta_{nm} = X_n.
+    \end{align*} $$</span>
+</p>

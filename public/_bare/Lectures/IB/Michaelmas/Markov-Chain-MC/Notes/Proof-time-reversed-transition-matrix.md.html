@@ -1,0 +1,53 @@
+<p>
+    Let <span class="inline-math">$\ouline{X}$</span> be a Markov chain on <span class="inline-math">$I$</span>.
+</p>
+
+<h1>Transition matrix</h1>
+
+<p>
+    <span class="inline-math">$\hat P$</span> is a transition matrix, since for any <span class="inline-math">$x\in I$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{y\in I} \hat P(x,y) = \frac{1}{\pi(x)} \underbrace{\sum_{y\in I} \pi(y) P(y,x)}_{\pi(x)} = 1
+    \end{align*} $$</span>
+    by the invariance of <span class="inline-math">$\pi$</span>.
+</p>
+
+<h1>Markov</h1>
+
+<p>
+    For any path <span class="inline-math">$y_0,y_1,\ldots, y_N\in I$</span>,
+    <span class="display-math">$$ \begin{align*}
+        &amp;\prob(Y_0 = y_0, \ldots, Y_N = y_N) \\
+        ={}&amp; \prob(X_0 = y_N, X_1 = y_{N-1}, \ldots, X_N = y_0) \\
+        ={}&amp; \pi(y_N) \, P(y_N,y_{N-1}) \, P(y_{N-1}, y_{N-2}) \ldots P(y_1, y_0) \\
+        ={}&amp; \pi(y_N) \left(\frac{\pi(y_{N-1})}{\pi(y_N)} \hat P(y_{N-1}, y_{N})\right) \left(\frac{\pi(y_{N-2})}{\pi(y_{N-1})} \hat P(y_{N-2}, y_{N-1})\right) \ldots \left(\frac{\pi(y_0)}{\pi(y_1)} \hat P(y_0, y_1)\right) \\
+        ={}&amp; \pi(y_0) \, \hat P(y_{0}, y_1) \ldots \hat P(y_{N-2}, y_{N-1}) \, \hat P(y_{N-1}, y_{N}).
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$\ouline{Y} \sim \mathrm{Markov}(\pi, \hat P)$</span>.
+</p>
+
+<h1>Invariance</h1>
+
+<p>
+    <span class="inline-math">$\pi$</span> is invariant for <span class="inline-math">$\hat P$</span>, since
+    <span class="display-math">$$ \begin{align*}
+        \sum_{x\in I} \pi(x) \hat P(x,y) ={}&amp; \sum_{x\in I} \pi(x) \,\frac{\pi(y)}{\pi(x)} P(y,x) \\
+        ={}&amp; \pi(y) \underbrace{\sum_{x\in I} P(y,x)}_{1} \\
+        ={}&amp; \pi(y).
+    \end{align*} $$</span>
+</p>
+
+<h1>Irreducibility</h1>
+
+<p>
+    For any <span class="inline-math">$x,y\in I$</span>, since <span class="inline-math">$\ouline{X}$</span> is irreducible,
+    there exists a path <span class="inline-math">$x=x_0, x_1, \ldots, x_{k-1}, x_k=y$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        P(x_0, x_1) \, P(x_1, x_2) \ldots P(x_{k-1}, x_k) &gt; 0.
+    \end{align*} $$</span>
+    Multiplying <span class="inline-math">$(\pi(x_0)/\pi(x_1))\times (\pi(x_1)/\pi(x_2)) \times \ldots \times (\pi(x_{k-1})/\pi(x_k))$</span> (which is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-existence-of-an-invariant-distribution.html">non-zero</a>) on both sides to get
+    <span class="display-math">$$ \begin{align*}
+        \hat P(x_k,x_{k-1}) \, \hat P(x_{k-1}, x_{k-2}) \ldots \hat P(x_{1}, x_0) &gt; 0.
+    \end{align*} $$</span>
+    Hence <span class="inline-math">$\ouline{Y}$</span> is irreducible.
+</p>

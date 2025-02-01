@@ -1,0 +1,24 @@
+<p>
+    Start by integrating the normalisation condition by parts,
+    <span class="display-math">$$ \begin{align*}
+        1 ={}&amp; \int \psi(x) \, \overline{\psi(x)} \d x \\
+        ={}&amp; -\int x\big(\psi(x) \, \overline{\psi&#x27;(x)} + \psi&#x27;(x) \, \overline{\psi(x)}\big) \d x \\
+        1 ={}&amp; \left|\int x\big(\psi(x) \, \overline{\psi&#x27;(x)} + \psi&#x27;(x) \, \overline{\psi(x)}\big) \d x\right| \\
+        \leq{} &amp; 2 \int |x|\, |\psi(x)|\, |\psi&#x27;(x)| \d x \\
+        \leq{} &amp; 2 \left(\int x^2 |\psi(x)|^2 \d x\right)^{1/2} \left(\int |\psi&#x27;(x)|^2 \d x\right)^{1/2}
+    \end{align*} $$</span>
+    by Cauchy-Schwartz inequality.
+</p>
+<p>
+    Now by <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Parseval-s-theorem-for-Fourier-transform.html">Parseval's theorem</a>,
+    <span class="display-math">$$ \begin{align*}
+        \int |\psi&#x27;(x)|^2 \d x ={}&amp; \frac{1}{2\pi} \int |\mathcal{F}_{x\mapsto \lambda}(\psi&#x27;(x))|^2 \d \lambda \\
+        ={}&amp; \frac{1}{2\pi} \int |i \lambda \hat \psi(\lambda)|^2 \d \lambda \\
+        ={}&amp; \frac{1}{2\pi} \int \lambda^2 |\hat \psi(\lambda)|^2 \d \lambda
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        1 \leq 2\left(\int x^2|\psi(x)|^2 \d x\right)^{1/2} \left(\frac{1}{2\pi} \int \lambda^2 |\hat \psi(\lambda)|^2 \d \lambda\right)^{1/2}
+    \end{align*} $$</span>
+    which gives the result.
+</p>

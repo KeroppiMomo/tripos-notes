@@ -1,0 +1,102 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (heat kernel)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-heat-kernel.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For the heat equation <span class="inline-math">$u_t - \kappa\Delta u = F(\v x, t)$</span> in <span class="inline-math">$\R^n$</span>,
+                define the <em>heat kernel</em>
+                <span class="display-math">$$ \begin{align*}
+                    K_t(\v x) = \frac{1}{(4\pi \kappa t)^{n/2}} e^{-|\v x|^2 /4\kappa t}.
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Its <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-higher-dimensional-Fourier-transform.html">Fourier transform</a> is
+                    <span class="display-math">$$ \begin{align*}
+                    \hat K_t(\v \lambda) = e^{-\kappa t|\v \lambda|^2}.
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-Fourier-transform-of-heat-kernel.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (solution to heat equation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-solution-to-heat-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider the initial value problem of the heat equation
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        u_t - \kappa \Delta u = F(\v x, t), &amp;\R^n \times (0,\infty), \\
+                        u(\v x, 0) = f(\v x), &amp;\R^n.
+                    \end{cases}
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    For zero forcing <span class="inline-math">$F=0$</span>, the solution is
+                    <span class="display-math">$$ \begin{align*}
+                    u(\v x,t) = (K_t * f)(\v x) = \int K_t(\v x - \v y) \,f(\v y) \d ^n \v y.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    For zero initial condition <span class="inline-math">$f=0$</span>, the solution is
+                    <span class="display-math">$$ \begin{align*}
+                    u(\v x,t) = \int_{0}^{t} \int K_{t-s}(\v x-\v y) \, F(\v y,s) \d ^n \v y \d s \\
+                    \end{align*} $$</span>
+                    Equivalently, if we set <span class="inline-math">$F(\v x,t) = 0$</span> for <span class="inline-math">$t&lt;0$</span>, then
+                    <span class="display-math">$$ \begin{align*}
+                    u(\v x, t) ={}&amp; \iint G(\v x,t; \v y, s) \, F(\v y, s) \d^n \v y \d s
+                    \end{align*} $$</span>
+                    where
+                    <span class="display-math">$$ \begin{align*}
+                    G(\v x, t; \v y, s) = H(t-s) \, K_{t-s}(\v x-\v y)
+                    \end{align*} $$</span>
+                    is the <em>Green's function for heat equation on <span class="inline-math">$\R^n$</span> with zero initial conditions</em>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-solution-to-heat-equation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Green's function solves heat equation with impulse forcing)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Green-s-function-solves-heat-equation-with-impulse-forcing.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The Green's function <span class="inline-math">$G(\v x, t; \v y, s)$</span> for heat equation with zero initial conditions
+                satisfies
+                <span class="display-math">$$ \begin{align*}
+                    \pdfd{G}{t} - \kappa \Delta G = \delta(\v x- \v y)\, \delta(t-s).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Green-s-function-solves-heat-equation-with-impulse-forcing.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,77 @@
+<p>
+    We try a solution of the form
+    <span class="display-math">$$ \begin{align*}
+        \phi(x,y) = X(x) Y(y).
+    \end{align*} $$</span>
+    Then <span class="inline-math">$\Delta \phi = 0$</span> becomes
+    <span class="display-math">$$ \begin{align*}
+        X&#x27;&#x27;(x) Y(y) + X(x) Y&#x27;&#x27;(y) = 0
+        \implies \frac{X&#x27;&#x27;(x)}{X(x)} + \frac{Y&#x27;&#x27;(y)}{Y(y)} = 0.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$x$</span> and <span class="inline-math">$y$</span> are independent,
+    both terms must be constant, i.e.
+    <span class="display-math">$$ \begin{align*}
+        \frac{X&#x27;&#x27;}{X} = -\lambda, \qquad \frac{Y&#x27;&#x27;}{Y} = \lambda \\
+    \end{align*} $$</span>
+    for some constant <span class="inline-math">$\lambda$</span>.
+</p>
+<p>
+    Therefore we require
+    <span class="display-math">$$ \begin{align*}
+        &amp;\begin{cases}
+            X&#x27;&#x27; + \lambda X = 0, &amp; 0&lt;x&lt;1, \\
+            X(0) = 0, \\
+            X(1) = 0, \\
+        \end{cases} \\
+        &amp;\begin{cases}
+            Y&#x27;&#x27; - \lambda X = 0, &amp; 0&lt;y&lt;1, \\
+            Y(0) = 0.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    The general solution to <span class="inline-math">$X$</span> is
+    <span class="display-math">$$ \begin{align*}
+        X(x) = A \sin (\sqrt{\lambda}\ x) + B\sin(\sqrt{\lambda}\ x)
+    \end{align*} $$</span>
+    and applying the conditions gives
+    <span class="display-math">$$ \begin{align*}
+        \lambda = \lambda_n = (n\pi)^2, \qquad X_n(x) = \sin(n\pi x), \qquad n=1,2,3,\ldots.
+    \end{align*} $$</span>
+    The solutions are orthogonal:
+    <span class="display-math">$$ \begin{align*}
+        \langle X_n, X_m\rangle = \int_{0}^{1} \sin(n\pi x)\sin(m\pi x) \d x = \frac{1}{2}\delta_{nm}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Solving the system for <span class="inline-math">$Y$</span> gives
+    <span class="display-math">$$ \begin{align*}
+        Y_n(y) = A_n \sinh(n\pi y).
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \phi_n(x,y) = A_n \sin(n\pi x) \sinh(n\pi y)
+    \end{align*} $$</span>
+    satisfies <span class="inline-math">$\nabla\phi_n = 0$</span> and <span class="inline-math">$\phi_n = 0$</span> on <span class="inline-math">$x=0$</span>, <span class="inline-math">$x=1$</span> and <span class="inline-math">$y=0$</span>.
+</p>
+<p>
+    We can superpose solutions together to get
+    <span class="display-math">$$ \begin{align*}
+        \phi(x,y) = \sum_{n=1}^{\infty} A_n \underbrace{\sin(n\pi x)}_{X_n(x)} \sinh(n\pi y)
+    \end{align*} $$</span>
+    and to satisfy the boundary condition on <span class="inline-math">$y=1$</span>,
+    <span class="display-math">$$ \begin{align*}
+        f(x) = \phi(x,1) = \sum_{n=1}^{\infty} A_n \sinh(n\pi) X_n(x).
+    \end{align*} $$</span>
+</p>
+<p>
+    By orthogonality,
+    <span class="display-math">$$ \begin{align*}
+        \langle f,X_m\rangle = \sum_{n=1}^{\infty} A_n\sinh(n\pi)\langle X_n, X_m\rangle = \frac{1}{2}A_m \sinh(m\pi).
+    \end{align*} $$</span>
+    so we have the solution
+    <span class="display-math">$$ \begin{align*}
+        \phi(x,y) &amp;= \sum_{n=1}^{\infty} A_n\sin(n\pi x)\sinh(n\pi y), \\
+        A_n &amp;= \frac{2}{\sinh(n\pi)} \int_{0}^{1} f(x)\sin(n\pi x) \d x.
+    \end{align*} $$</span>
+</p>

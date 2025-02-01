@@ -1,0 +1,17 @@
+<p>
+    Both sides are periodic with period 1, so we can take the Fourier series.
+    Let <span class="inline-math">$F(x) = \sum_{n\in \Z} f(x+n)$</span>.
+    The Fourier coefficients are
+    <span class="display-math">$$ \begin{align*}
+        \hat F_n ={}&amp; \int_{0}^{1} e^{-2\pi inx} F(x) \d x \\
+        ={}&amp; \sum_{m\in \Z} \int_{0}^{1} e^{-2\pi in x} f(x+m) \d x \\
+        ={}&amp; \sum_{m\in \Z} \int_{m}^{m+1} e^{-2\pi i n(y-m)} f(y) \d y &amp;y=x+m \\
+        ={}&amp; \sum_{m\in \Z} \int_{m}^{m+1} e^{-2\pi in y} f(y) \d y \\
+        ={}&amp; \int_{-\infty}^{\infty} e^{-2\pi iny} f(y) \d y \\
+        ={}&amp; \hat f(2\pi n).
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n\in \Z} f(x+n) = F(x) = \sum_{n\in \Z} \hat f(2\pi n) e^{2\pi inx}.
+    \end{align*} $$</span>
+</p>

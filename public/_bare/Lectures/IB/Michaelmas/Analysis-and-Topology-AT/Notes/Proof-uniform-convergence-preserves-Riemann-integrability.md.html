@@ -1,0 +1,52 @@
+<p>
+    Denote <span class="inline-math">$I^\star$</span> and <span class="inline-math">$I_\star$</span> as the <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Definition-lower-and-upper-integrals.html">upper and lower integrals</a>.
+    Let
+    <span class="display-math">$$ \begin{align*}
+        \Delta_n = \sup_{[a,b]} |f_n - f|.
+    \end{align*} $$</span>
+    By <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-convergence.html">uniform convergence</a>, <span class="inline-math">$\Delta_n \to 0$</span> as <span class="inline-math">$n\to \infty$</span>.
+</p>
+
+<h1>Integrability</h1>
+
+<p>
+    For any <span class="inline-math">$x\in Y$</span>, we have <span class="inline-math">$|f_n(x) - f(x)| \leq \Delta_n$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        f_n(x) - \Delta_n \leq f(x) \leq f_n(x) + \Delta_n.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$\Delta_n\to 0$</span>, there exists an <span class="inline-math">$N\in\N$</span> such that <span class="inline-math">$\Delta_N &lt; 1$</span>.
+    Then <span class="inline-math">$f_N - 1 \leq f(x) \leq f_N+1$</span> shows that <span class="inline-math">$f$</span> is bounded and so <span class="inline-math">$I_\star(f)$</span> and <span class="inline-math">$I^\star(f)$</span> exist.
+</p>
+<p>
+    Taking the lower integrals on the first inequality and the upper integrals on the second inequality,
+    <span class="display-math">$$ \begin{align*}
+        I_\star(f_n - \Delta_n) \leq I_{\star}(f) \leq I^\star(f) \leq I^{\star}(f_n + \Delta_n)
+    \end{align*} $$</span>
+    but since <span class="inline-math">$f_n \pm \Delta_n$</span> is Riemann integrable,
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} (f_n-\Delta_n) \d x \leq I_\star(f) \leq I^\star(f) \leq \int_{a}^{b} (f_n + \Delta_n) \d x
+    \end{align*} $$</span>
+    and so
+    <span class="display-math">$$ \begin{align*}
+        0 \leq I^\star(f) - I_\star(f) &amp;\leq \int_{a}^{b} (f_n + \Delta_n) \d x - \int_{a}^{b} (f_n-\Delta_n) \d x \\
+        &amp;= 2(b-a)\Delta_n \\
+        &amp;\to 0 \qquad \text{as }n\to \infty.
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$I^\star(f) = I_\star(f)$</span> and so <span class="inline-math">$f$</span> is Riemann integrable.
+</p>
+
+<h1>Integral of limit equals limit of integral</h1>
+
+<p>
+    We compute
+    <span class="display-math">$$ \begin{align*}
+        \left|\int_{a}^{b} f(x) \d x - \int_{a}^{b} f_n(x) \d x\right| &amp;\leq \int_{a}^{b} |f(x) - f_n(x)| \d x \\
+        &amp;\leq \int_{a}^{b} \Delta_n \d x \\
+        &amp;= (b-a)\Delta_n \\
+        &amp;\to 0 \qquad \text{as }n\to \infty.
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} f_n(x) \d x \to \int_{a}^{b} f(x) \d x.
+    \end{align*} $$</span>
+</p>

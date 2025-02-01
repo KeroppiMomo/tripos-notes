@@ -1,0 +1,26 @@
+<p>
+    Given <span class="inline-math">$X_0 = 0$</span>, since <span class="inline-math">$X_n = 0$</span> if <span class="inline-math">$n$</span> is even and there are <span class="inline-math">$n/2$</span> steps to the right and <span class="inline-math">$n/2$</span> steps to the left,
+    we obtain
+    <span class="display-math">$$ \begin{align*}
+        p_{00}(2n) ={}&amp; \pmat{2n \\ n} p^{n} (1-p)^n \\
+        ={}&amp; \frac{(2n)!}{(n!)^2} p^n (1-p)^n \\
+        \sim{}&amp; \frac{\sqrt{4\pi n}\, (2n)^{2n} e^{-2n}}{\big(\sqrt{2\pi n}\, n^n e^{-n}\big)} p^n(1-p)^n \\
+        ={}&amp; \frac{(4p(1-p))^n}{\sqrt{\pi n}}.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$p\neq 1/2$</span>, we have <span class="inline-math">$4p(1-p) &lt; 1$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        \lim_{n\to \infty} \frac{p_{00}(2(n+1))}{p_{00}(2n)} ={}&amp; \lim_{n\to \infty} \frac{(4p(1-p))^{n+1} / \sqrt{\pi(n+1)}}{(4p(1-p))^n \sqrt{\pi n}} \\
+        ={}&amp; 4p(1-p) \\
+        &lt;{}&amp; 1
+    \end{align*} $$</span>
+    so by the <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-ratio-test.html">ratio test</a>,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n\geq 0} p_{00}(n) = \sum_{n\geq 0} p_{00}(2n) &lt; \infty.
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-state-is-either-recurrent-or-transient.html">Therefore</a> <span class="inline-math">$0$</span> is transient.
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-both-recurrent-or-transient-if-communicates.html">Since</a> the chain is irreducible,
+    the chain is transient.
+</p>

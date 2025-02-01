@@ -1,0 +1,80 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Markov chain)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-Markov-chain.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A sequence <span class="inline-math">$\ouline{X} = (X_n)_{n\geq 0}$</span> of random variables
+                taking values in a discrete (finite or countably finite) set <span class="inline-math">$I$</span>
+                is called a <em>Markov chain</em> with <em>state space</em> <span class="inline-math">$I$</span>
+                if for all <span class="inline-math">$x_0, x_1, \ldots, x_n, x_{n+1}\in I$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \prob(X_{n+1} = x_{n+1} | X_n = x_n, \ldots, X_0 = x_0) = \prob(X_{n+1} = x_{n+1} | X_n = x_n).
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    The future <span class="inline-math">$X_{n + 1}$</span> only depends on the present state <span class="inline-math">$X_n$</span>, not the past <span class="inline-math">$X_{n - 1}, \ldots, X_{0}$</span>.
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (time-homogenous Markov chain)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-time-homogenous-Markov-chain.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-Markov-chain.html">Markov chain</a> <span class="inline-math">$\ouline{X} = (X_n)_{n\geq 0}$</span> with state space <span class="inline-math">$I$</span> is <em>time-homogenous</em> if
+                <span class="display-math">$$ \begin{align*}
+                    \prob(X_{n+1} = y | X_n = x) = p_{xy}
+                \end{align*} $$</span>
+                for some <span class="inline-math">$P = (p_{xy})_{x,y\in I}$</span> called the <em>transition matrix</em>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$P$</span> is called a stochastic matrix because each row is a probability distribution on <span class="inline-math">$I$</span>, i.e. <span class="inline-math">$p_{xy} \geq 0$</span> and <span class="inline-math">$\sum_{y\in I} p_{xy} = 1$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    We will consider only time-homogenous Markov chains in this course.
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Markov(lambda, P))
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-Markov-lambda-P.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We say a <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-random-process-random-walk.html">random process</a> (sequence of random variables) <span class="inline-math">$\ouline{X} = (X_n)_{n\geq 0}$</span> with values in <span class="inline-math">$I$</span>
+                is <span class="inline-math">$\mathrm{Markov}(\lambda, P)$</span>
+                if it has initial distribution <span class="inline-math">$\lambda$</span> and transition matrix <span class="inline-math">$P$</span>,
+                i.e. if
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\prob(X_0 = x_0) = \lambda_{x_0}$</span> for all <span class="inline-math">$x_0 \in I$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\prob(X_{n+1} = x_{n+1} | X_n = x_n, \ldots, X_0 = x_0) = P(x_n, x_{n+1})$</span> for all <span class="inline-math">$n\geq 0$</span> and <span class="inline-math">$x_0, \ldots, x_n, x_{n+1}\in I$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,64 @@
+<p>
+    We can assume <span class="inline-math">$A$</span> is in Jordan normal form, since for each <span class="inline-math">$P\in \mathrm{GL}_n(\C)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        P(A - \lambda I_n)^k P\inv = \big(P(A-\lambda I_n) P\inv\big)^k = (PAP\inv - \lambda I_n)^k
+    \end{align*} $$</span>
+    so <span class="inline-math">$R_{\lambda,r}(A) = R_{\lambda,r}(PAP\inv)$</span>.
+</p>
+<p>
+    Notice
+    <span class="display-math">$$ \begin{align*}
+        J_l(\lambda) - \lambda I_l = \pmat{0 &amp; 1 \\
+        &amp; 0 &amp; 1 \\
+        &amp;&amp;\ddots &amp; \ddots \\
+        &amp;&amp;&amp;0 &amp; 1 \\
+        &amp;&amp;&amp;&amp;0}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        (J_l(\lambda) - \lambda I_l)^2 = \pmat{0 &amp; 0 &amp; 1 \\
+        &amp; 0 &amp; 0 &amp; 1 \\
+        &amp;&amp;\ddots &amp; \ddots &amp; \ddots \\
+        &amp;&amp;&amp;0 &amp; 0 &amp; 1 \\
+        &amp;&amp;&amp;&amp;0 &amp; 0 \\
+        &amp;&amp;&amp;&amp;&amp;0}
+    \end{align*} $$</span>
+    and so on.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \op{rk}\big((J_l(\lambda) - \lambda I_l)^k\big) = \begin{cases}
+            l-k, &amp;k\leq l, \\
+            0, &amp;k\geq l.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    Moreover for <span class="inline-math">$\mu\neq \lambda$</span>,
+    <span class="display-math">$$ \begin{align*}
+        J_l(\mu) - \lambda I_l = J_l(\mu - \lambda) = \pmat{\mu - \lambda &amp; 1 \\
+        &amp; \mu - \lambda &amp; 1 \\
+        &amp;&amp;\ddots &amp; \ddots \\
+        &amp;&amp;&amp;\mu - \lambda &amp; 1 \\
+        &amp;&amp;&amp;&amp;\mu - \lambda}
+    \end{align*} $$</span>
+    which is non-singular since the determinant is <span class="inline-math">$(\mu-\lambda)^l\neq 0$</span>, and thus so is <span class="inline-math">$(J_l(\mu) - \lambda I_l)^k$</span> for all <span class="inline-math">$k$</span>.
+</p>
+<p>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \op{rk}\left((A - \lambda I_n)^p\right) ={}&amp; \op{rk}\left(\pmat{J_{n_1}(\lambda_1) - \lambda I_{n_1} \\
+        &amp; \ddots \\
+        &amp;&amp; J_{n_1}(\lambda_k) - \lambda I_{n_k}}^p\right) \\
+        ={}&amp; \op{rk}\pmat{(J_{n_1}(\lambda_1) - \lambda I_{n_1})^p \\
+        &amp; \ddots \\
+        &amp;&amp; (J_{n_1}(\lambda_k) - \lambda I_{n_k})^p} \\
+        ={}&amp; \sum_{i=1}^{k} \op{rk}\big((J_{n_i}(\lambda_i) - \lambda I_{n_i})^p\big) \\
+        ={}&amp; n - p \times \#\set{\text{$\lambda$-Jordan blocks of size $\geq p$}} \\
+        &amp; -\sum \text{sizes of $\lambda$-Jordan blocks of size at most $p-1$}
+    \end{align*} $$</span>
+    which yields the result.
+</p>
+<p>
+    Since <span class="inline-math">$R_{\lambda,r}(A) - R_{\lambda,r+1}(A)=$</span> the number of <span class="inline-math">$\lambda$</span>-Jordan blocks of size <span class="inline-math">$r$</span> in any Jordan normal form of <span class="inline-math">$A$</span>,
+    all Jordan normal forms of <span class="inline-math">$A$</span> are the same up to rearrangement of the Jordan blocks.
+</p>

@@ -1,0 +1,39 @@
+<p>
+    Consider a simple symmetric random walk on <span class="inline-math">$\Z_+ = \set{0,1,2,\ldots}$</span> with
+    <span class="display-math">$$ \begin{align*}
+        P(0,1) = 1, \qquad P(i,i+1) = P(i,i-1) = \frac{1}{2} \quad \text{for }i\geq 1.
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$T_0 = \inf\sb{n\geq 0}{X_n = 0}$</span> and <span class="inline-math">$T_1 = \inf\sb{n\geq 0}{X_n=1}$</span>.
+    Write <span class="inline-math">$h_i = \prob(T_0&lt; \infty | X_0 = i)$</span>.
+    We want to find <span class="inline-math">$h_1$</span>.
+    We have the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-linear-equations-for-hitting-probability.html">linear equations</a>
+    <span class="display-math">$$ \begin{align*}
+        h_0 = 1, \qquad h_1 = \frac{1}{2} + \frac{1}{2}h_2.
+    \end{align*} $$</span>
+</p>
+<p>
+    Write <span class="inline-math">$T_0 = T_1+\tilde T_0$</span>.
+    By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-strong-Markov-property.html">strong Markov property</a>,
+    <span class="inline-math">$\tilde T_0$</span> given <span class="inline-math">$X_0=2$</span> is identically distributed as <span class="inline-math">$T_0$</span> given <span class="inline-math">$X_0 = 1$</span> and is independent of <span class="inline-math">$T_1$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        h_2 &amp;= \prob(T_0 &lt; \infty | X_0 = 2) \\
+        &amp;= \prob(T_0 &lt; \infty, T_1 &lt; \infty | X_0 = 2) \\
+        &amp;= \prob(T_1 &lt; \infty, \tilde T_0 &lt; \infty | X_0 = 2) \\
+        &amp;= \prob(T_1 &lt; \infty | X_0 = 2) \times \prob(\tilde T_0 &lt; \infty | T_1 &lt; \infty, X_0 = 2) \\
+        &amp;= \prob(T_0 &lt; \infty | X_0 = 1) \times \prob(T_0&lt;\infty|X_0 = 1) \\
+        &amp;= h_1^2
+    \end{align*} $$</span>
+</p>
+<p>
+    Solving
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            h_1 = \frac{1}{2} + \frac{1}{2}h_2 \\
+            h_2 = h_1^2
+        \end{cases}
+    \end{align*} $$</span>
+    gives <span class="inline-math">$h_1 = 1$</span>.
+</p>

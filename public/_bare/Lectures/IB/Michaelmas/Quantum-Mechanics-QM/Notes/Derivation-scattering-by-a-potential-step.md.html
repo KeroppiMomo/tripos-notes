@@ -1,0 +1,138 @@
+<p>
+    Stationary states <span class="inline-math">$\psi(x,t) = \chi(x) \exp(-i\frac{E}{\hbar}t)$</span> satisfy the Schrodinger's equation
+    <span class="display-math">$$ \begin{align*}
+        -\frac{\hbar^2}{2m} \dfd[2]{\chi}{x} + U(x) \chi = E\chi.
+    \end{align*} $$</span>
+</p>
+<p>
+    Before the step (<span class="inline-math">$x&lt;0$</span>), <span class="inline-math">$U(x) = 0$</span>, and we have solutions
+    <span class="display-math">$$ \begin{align*}
+        \chi(x) = A \exp(ikx) + B\exp(-ikx), \qquad k = \frac{\sqrt{2mE}}{\hbar}.
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$A\exp(ikx)$</span> moves to the right and corresponds to the incident beam, which has momentum <span class="inline-math">$p=\hbar k$</span> and probability current <span class="inline-math">$j_i = |A|^2 \hbar k/m$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$B\exp(-ikx)$</span> moves to the left and corresponds to the reflected beam, which has momentum <span class="inline-math">$p=-\hbar k$</span> and probability current <span class="inline-math">$j_r = -|B|^2 \hbar k/m$</span>.
+    </p>
+    
+</li>
+</ul>
+<blockquote>
+    <p>
+        We can see that the total probability current density is
+        <span class="display-math">$$ \begin{align*}
+            j ={}&amp; -\frac{i\hbar}{2m}\left(\chi^\star \dfd{\chi}{x} - \chi \dfd{\chi^\star}{x}\right) \\
+            ={}&amp; -\frac{i\hbar}{2m}\Big((A^\star e^{-ikx} + B^\star e^{ikx})(ikAe^{ikx} - ikBe^{-ikx}) \\
+            &amp;- (Ae^{ikx} + Be^{-ikx})(-ikA^\star e^{-ikx} + ikB^\star e^{ikx})\Big) \\
+            ={}&amp; \frac{\hbar k}{m}(AA^\star - BB^\star) \\
+            ={}&amp; j_i + j_r.
+        \end{align*} $$</span>
+    </p>
+    
+</blockquote>
+<p>
+    Now consider after the step (<span class="inline-math">$x&gt;0$</span>).
+</p>
+
+<h1><span class="inline-math">$U_0&lt;E$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$U(x) = U_0 &lt; E$</span>.
+    Then we have solutions
+    <span class="display-math">$$ \begin{align*}
+        \chi(x) = C\exp(ik&#x27;x) + D\exp(-ik&#x27;x), \qquad k&#x27; = \frac{\sqrt{2m(E-U_0)}}{\hbar}.
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$C\exp(ik&#x27;x)$</span> moves to the right and corresponds to the transmitted beam, which has momentum <span class="inline-math">$p=\hbar k&#x27;$</span> and probability current <span class="inline-math">$j_t = |C|^2 \hbar k&#x27;/m$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$D\exp(-ik&#x27;x)$</span> moves to the left, which is not relevant.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \chi(x) = \begin{cases}
+            A\exp(ikx) + B\exp(-ikx), &amp; x&lt;0, \\
+            C\exp(ik&#x27;x), &amp;x&gt;0.
+        \end{cases}
+    \end{align*} $$</span>
+    Require <span class="inline-math">$\chi$</span> and <span class="inline-math">$\chi&#x27;$</span> to be continuous at <span class="inline-math">$x=0$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            A+B = C, \\
+            ikA - ikB = ik&#x27;C.
+        \end{cases}
+    \end{align*} $$</span>
+    Solving
+    <span class="display-math">$$ \begin{align*}
+        B = \frac{k-k&#x27;}{k+k&#x27;}A, \qquad C = \frac{2k}{k+k&#x27;}A.
+    \end{align*} $$</span>
+    Therefore the flux are
+    <span class="display-math">$$ \begin{align*}
+        j_i ={}&amp; \frac{\hbar k}{m}|A|^2, \\
+        -j_r ={}&amp; \frac{\hbar k}{m}|B|^2 = \frac{\hbar k}{m} \left(\frac{k-k&#x27;}{k+k&#x27;}\right)^2 |A|^2, \\
+        j_t ={}&amp; \frac{\hbar k&#x27;}{m}|C|^2 = \frac{\hbar k}{m} \frac{4kk&#x27;}{(k+k&#x27;)^2} |A|^2
+    \end{align*} $$</span>
+    and hence the reflection and transmission coefficients are
+    <span class="display-math">$$ \begin{align*}
+        R ={}&amp; \frac{-j_r}{j_i} = \left(\frac{k-k&#x27;}{k+k&#x27;}\right)^2 = \left(\frac{\sqrt{E} - \sqrt{E-U_0}}{\sqrt{E} + \sqrt{E-U_0}}\right)^2, \\
+        T ={}&amp; \frac{j_t}{j_i} = \frac{4kk&#x27;}{(k+k&#x27;)^2} = \frac{4\sqrt{E}\sqrt{E-U_0}}{(\sqrt{E} + \sqrt{E-U_0})^2}.
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$U_0 &gt; E$</span></h1>
+
+<p>
+    Now suppose <span class="inline-math">$U(x) = U_0 &gt; E$</span>.
+    We have solutions
+    <span class="display-math">$$ \begin{align*}
+        \chi(x) = C\exp(-\kappa x) + D\exp(\kappa x), \qquad \kappa = \frac{\sqrt{2m(U_0 - E)}}{\hbar}.
+    \end{align*} $$</span>
+    <span class="inline-math">$D\exp(\kappa x)$</span> is not physical, so the transmitted wave is
+    <span class="display-math">$$ \begin{align*}
+        \chi(x) = C\exp(-\kappa x).
+    \end{align*} $$</span>
+    This has probability current
+    <span class="display-math">$$ \begin{align*}
+        j_t = -\frac{i\hbar}{2m}\left(\chi^\star \dfd{\chi}{x} - \chi \dfd{\chi^\star}{x}\right) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Requiring <span class="inline-math">$\chi$</span> and <span class="inline-math">$\chi&#x27;$</span> to be continuous at <span class="inline-math">$x=0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            A+B = C, \\
+            ikA - ikB = -\kappa C.
+        \end{cases}
+    \end{align*} $$</span>
+    Solving,
+    <span class="display-math">$$ \begin{align*}
+        B = \frac{k-\kappa i}{k+\kappa i}A, \qquad C = \frac{2k}{k+\kappa i}A.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore the flux are
+    <span class="display-math">$$ \begin{align*}
+        j_i ={}&amp; \frac{\hbar k}{m}|A|^2, \\
+        -j_r ={}&amp; \frac{\hbar k}{m}|B|^2 = \frac{\hbar k}{m}|A|^2, \\
+        j_t ={}&amp; 0
+    \end{align*} $$</span>
+    and hence
+    <span class="display-math">$$ \begin{align*}
+        R = \frac{-j_r}{j_i} = 1, \qquad T = \frac{j_t}{j_i} = 0.
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,32 @@
+<p>
+    <span class="inline-math">$(V,\phi)$</span> is an inner product space,
+    so <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Gram-Schmidt-process.html">there exists</a> a basis <span class="inline-math">$C = \set{c_1, \ldots, c_n}$</span>
+    which is orthonormal with respect to <span class="inline-math">$\phi$</span>.
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-matrix-of-symmetric-bilinear-and-Hermitian-sesquilinear-form.html">Recall</a> that <span class="inline-math">$[\psi]_{C}$</span> is real symmetric (resp. Hermitian).
+</p>
+<p>
+    By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-spectral-theorem-for-real-symmetric-and-Hermitian-matrices.html">spectral theorem</a>,
+    there exists <span class="inline-math">$P\in O(n)$</span> (resp. <span class="inline-math">$P\in U(n)$</span>)
+    such that <span class="inline-math">$D = P[\psi]_C \overline{P}^T$</span> is real and diagonal.
+    Define <span class="inline-math">$b_i\in V$</span> via <span class="inline-math">$[b_i]_C = P^T \v e_i$</span>.
+</p>
+<p>
+    <span class="inline-math">$B = \set{b_1, \ldots, b_n}$</span> is orthonormal because
+    <span class="display-math">$$ \begin{align*}
+        \phi(b_i, b_j) ={}&amp; ([b_i]_C)^T \overline{[b_j]_C} &amp;&amp;\text{orthonormality of } C \\
+        ={}&amp; \v e_i^T P \, \overline{P}^T \v e_j \\
+        ={}&amp; \v e_i^T I_n \v e_j &amp;&amp;P\in U(n) \\
+        ={}&amp; \delta_{ij}
+    \end{align*} $$</span>
+    and since <span class="inline-math">$B$</span> has size <span class="inline-math">$n=\dim(V)$</span>, it is a basis for <span class="inline-math">$V$</span>.
+</p>
+<p>
+    Moreover,
+    <span class="display-math">$$ \begin{align*}
+        \psi(b_i, b_j) ={}&amp; ([b_i]_C)^T \,[\psi]_C \, \overline{[b_j]_C} \\
+        ={}&amp; \v e_i^T P [\psi]_C \overline{P}^T \v e_j \\
+        ={}&amp; \v e_i^T D \v e_j \\
+        ={}&amp; D_{ij}
+    \end{align*} $$</span>
+    so <span class="inline-math">$[\psi]_B = D$</span>.
+</p>

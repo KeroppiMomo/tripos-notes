@@ -1,0 +1,28 @@
+<p>
+    The chain is <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-communicating-classes-closed-class-irreducible-chain-absorbing-state.html">irreducible</a>, so <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-both-recurrent-or-transient-if-communicates.html">it suffices to show</a>
+    that 0 is recurrent <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-state-is-either-recurrent-or-transient.html">by showing</a>
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n\geq 0} p_{00}(n) = \infty.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that <span class="inline-math">$X_n=0$</span> if <span class="inline-math">$n$</span> is even and we take <span class="inline-math">$n/2$</span> steps to the right and <span class="inline-math">$n/2$</span> steps to the left.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        p_{00}(2n) ={}&amp; \pmat{2n \\ n} \left(\frac{1}{2}\right)^{2n} \\
+        ={}&amp; \frac{(2n)!}{(n!)^2} \frac{1}{2^{2n}} \\
+        \sim{}&amp; \frac{\sqrt{4\pi n}\, (2n)^{2n} e^{-2n}}{\big(\sqrt{2\pi n}\, n^{-n} e^{-n}\big)^2} \frac{1}{2^{2n}} \\
+        ={}&amp; \frac{1}{\sqrt{\pi n}}
+    \end{align*} $$</span>
+    where we have used <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-Stirling-s-formula-for-n.html">Stirling's formula</a>.
+</p>
+<p>
+    So for <span class="inline-math">$n\geq n_0$</span> sufficiently large, we can put a lower bound <span class="inline-math">$p_{00}(2n) \geq 1/2\sqrt{\pi n}$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n\geq 0} p_{00}(n) ={}&amp; \sum_{n\geq 0} p_{00}(2n) \\
+        \geq {}&amp;\sum_{n\geq n_0} p_{00}(2n) \\
+        \geq {}&amp; \sum_{n\geq n_0} \frac{1}{2\sqrt{\pi n}} \\
+        ={}&amp; \infty.
+    \end{align*} $$</span>
+</p>

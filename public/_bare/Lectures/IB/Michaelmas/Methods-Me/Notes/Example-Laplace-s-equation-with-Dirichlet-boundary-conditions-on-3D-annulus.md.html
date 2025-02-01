@@ -1,0 +1,40 @@
+<p>
+    Solve
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            \Delta\phi = 0, &amp; r&lt; 1, \\
+            \phi = f(\theta), &amp;r=1.
+        \end{cases}
+    \end{align*} $$</span>
+    Since <span class="inline-math">$f$</span> has no <span class="inline-math">$\varphi$</span>-dependence, <span class="inline-math">$\phi$</span> is axis-symmetric.
+</p>
+<p>
+    We use <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-2D-annulus.html">separation of variables</a>
+    and obtain
+    <span class="display-math">$$ \begin{align*}
+        \phi(r,\theta) = \sum_{n=0}^{\infty} \left(a_n r^n + \frac{\beta_n}{r^{n+1}}\right) P_n(\cos\theta).
+    \end{align*} $$</span>
+    Since 0 is in the domain, we have <span class="inline-math">$\beta_n = 0$</span>.
+</p>
+<p>
+    To satisfy <span class="inline-math">$\phi = f(\theta)$</span> at <span class="inline-math">$r=1$</span>, we require
+    <span class="display-math">$$ \begin{align*}
+        f(\theta) = \sum_{n=0}^{\infty} a_n P_n(\cos\theta).
+    \end{align*} $$</span>
+</p>
+<p>
+    Recall that <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Legendre-equation.html">Legendre polynomials</a> satisfy
+    <span class="display-math">$$ \begin{align*}
+        \int_{-1}^{+1} P_n(x) P_m(x) \d x = \frac{2}{2n+1} \delta_{nm}.
+    \end{align*} $$</span>
+    Making a substitution <span class="inline-math">$x=\cos\theta$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \int_{0}^{\pi} P_n(\cos\theta) P_m(\cos\theta)\sin\theta \d \theta = \frac{2}{2n+1} \delta_{nm}.
+    \end{align*} $$</span>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \int_{0}^{\pi} f(\theta) P_m(\cos\theta)\sin\theta \d \theta &amp;= \sum_{n=0}^{\infty} a_n \int_{0}^{\pi} P_n \cos(\theta) P_m(\cos\theta) \sin\theta \d \theta \\
+        &amp;= \frac{2}{2m+1} \alpha_m \\
+        \alpha_m &amp;= \frac{2n+1}{2}\int_{0}^{\pi} f(\theta) P_n(\cos\theta)\sin\theta \d \theta
+    \end{align*} $$</span>
+</p>

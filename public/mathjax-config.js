@@ -7,6 +7,15 @@ const preamble = `
 \\DeclareMathOperator{\\Im}{Im}
 \\DeclareMathOperator{\\var}{var}
 \\DeclareMathOperator{\\cov}{cov}
+\\DeclareMathOperator{\\cl}{cl}
+\\DeclareMathOperator{\\scl}{scl}
+\\DeclareMathOperator{\\tr}{tr}
+\\DeclareMathOperator{\\rk}{rk}
+\\DeclareMathOperator{\\Sym}{Sym}
+\\DeclareMathOperator{\\GL}{GL}
+\\DeclareMathOperator{\\SL}{SL}
+\\DeclareMathOperator{\\ord}{ord}
+\\newcommand{\\id}{\\mathrm{id}}
 \\newcommand{\\op}{\\operatorname}
 \\newcommand{\\R}{\\mathbb{R}}
 \\newcommand{\\C}{\\mathbb{C}}
@@ -42,13 +51,17 @@ const preamble = `
 \\newcommand{\\pdvd}[3][]{\\frac{\\partial^{#1}\\v{#2}}{\\partial{#3}^{#1}}}
 \\newcommand{\\dd}[2][]{\\frac{\\mathrm{d}^{#1}}{\\mathrm{d}{#2}^{#1}}}
 \\newcommand{\\pdd}[2][]{\\frac{\\partial^{#1}}{\\partial{#2}^{#1}}}
-\\newcommand{\\pdxd}[2]{\\frac{\\partial}{\\partial{#1}\\partial{#2}}}
-\\newcommand{\\pdfxd}[3]{\\frac{\\partial{#1}}{\\partial{#2}\\partial{#3}}}
+\\newcommand{\\pdxd}[2]{\\frac{\\partial^2}{\\partial{#1}\\partial{#2}}}
+\\newcommand{\\pdfxd}[3]{\\frac{\\partial^2{#1}}{\\partial{#2}\\partial{#3}}}
 \\newcommand{\\vnabla}{\\v\\nabla}
 \\newcommand{\\mathbsf}[1]{\\boldsymbol{\\mathsf{#1}}}
+\\newcommand{\\ouline}[1]{\\overline{\\underline{#1}}}
+\\newcommand{\\tto}{\\rightrightarrows}
 
 \\newcommand{\\for}[5][=]{#2_{{#3}{#1}{#4}}^{#5}}
 \\newcommand{\\fsum}[4][=]{\\for[#1]{\\sum}{#2}{#3}{#4}}
+
+\\newcommand{\\operp}{⦹}
 `
 
 MathJax = {
@@ -60,6 +73,10 @@ MathJax = {
         ready: () => {
             MathJax.startup.defaultReady();
             MathJax.tex2chtml(preamble);
+
+            const unicodeRanges = MathJax._.core.MmlTree.OperatorDictionary.RANGES;
+            unicodeRanges[4][0] = 0x03AC;
+            unicodeRanges.splice(4, 0, [880, 940, 0, "mo"]);
         },
     },
 };

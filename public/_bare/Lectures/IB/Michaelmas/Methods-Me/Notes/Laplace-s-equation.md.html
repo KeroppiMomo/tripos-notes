@@ -1,0 +1,123 @@
+<p>
+    We are interested in
+</p>
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Laplace's equation</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            <span class="display-math">$$ \begin{align*}
+                \begin{cases}
+                    \Delta\phi(\v x) = 0, &amp;\v x\in \Omega, \\
+                    B\phi(\v x) = f(\v x), &amp;\v x\in\partial\Omega
+                \end{cases}
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    where <span class="inline-math">$\Delta = \nabla\cdot\nabla = \nabla^2$</span> is the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-Laplacian.html">Laplacian</a>,
+    and either <span class="inline-math">$B\phi = \phi$</span> (Dirichlet boundary condition) or <span class="inline-math">$B\phi = \pdfd{\phi}{\v n}$</span> (Neumann boundary condition).
+</p>
+<p>
+    Recall results from <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Vector-calculus-equations.html">IA Vector Calculus</a>.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Separation of variables on a rectangle
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Separation-of-variables-on-a-rectangle.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        <span class="display-math">$$ \begin{align*}
+                            \begin{cases}
+                                \phi_{xx} + \phi_{yy} = 0, &amp;(x,y)\in(0,1)\times(0,1), \\
+                                \phi=0, &amp;x=0,\ x=1,\ y=0, \\
+                                \phi = f, &amp;y=1
+                            \end{cases}
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                can be solved using separation of variables to get, for each <span class="inline-math">$n=1,2,3,\ldots$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \phi(x,y) &amp;= \sum_{n=1}^{\infty} A_n \sin(n\pi x) \sinh(n\pi y)
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    A_n = \frac{2}{\sinh(n\pi)}\int_{0}^{1} f(x)\sin(n\pi x) \d x.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-rectangle.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Separation of variables on a 2D annulus
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Separation-of-variables-on-a-2D-annulus.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For <span class="inline-math">$\v x\in\R^2$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \Delta \phi = 0, \qquad r_1 &lt; |\v x| &lt; r_2, \\
+                \end{align*} $$</span>
+                has separation of variables solutions in polar coordinates
+                <span class="display-math">$$ \begin{align*}
+                    \phi(r,\theta) = A + B\log r + \sum_{n=1}^{\infty} \left[\left(A_n r^n + \frac{B_n}{r^n}\right)\left(C_n \cos(n\theta) + D_n \sin(n\theta)\right)\right].
+                \end{align*} $$</span>
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-2D-annulus.html">Derivation</a>)
+            </p>
+            <p>
+                Find the Fourier series to satisfy boundary conditions. (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-Laplace-s-equation-with-Dirichlet-boundary-conditions-on-2D-annulus.html">Example</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Separation of variables on a 3D annulus
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Separation-of-variables-on-a-3D-annulus.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For <span class="inline-math">$\v x\in\R^3$</span>, assuming <span class="inline-math">$\phi$</span> is symmetric about the <span class="inline-math">$z$</span>-axis, i.e. <span class="inline-math">$\phi=\phi(r,\theta)$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \Delta \phi = 0, \qquad r_1 &lt; |\v x| &lt; r_2
+                \end{align*} $$</span>
+                has separation of variables solutions in spherical polar coordinates
+                <span class="display-math">$$ \begin{align*}
+                    \phi(r,\theta) = \sum_{n=0}^{\infty} \left(a_n r^n + \frac{\beta_n}{r^{n+1}}\right) P_n(\cos\theta)
+                \end{align*} $$</span>
+                where <span class="inline-math">$P_n$</span> is the <span class="inline-math">$n$</span>-th <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Legendre-equation.html">Legendre polynomial</a>.
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-separation-of-variables-on-a-3D-annulus.html">Derivation</a>)
+            </p>
+            <p>
+                Use the completeness of the Legendre polynomials to satisfy boudnary conditions.
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Example-Laplace-s-equation-with-Dirichlet-boundary-conditions-on-3D-annulus.html">Example</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>

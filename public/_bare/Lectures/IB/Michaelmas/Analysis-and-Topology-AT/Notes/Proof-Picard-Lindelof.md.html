@@ -1,0 +1,66 @@
+<p>
+    We will apply the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-Banach-fixed-point-contraction-mapping.html">contraction mapping theorem</a>.
+</p>
+<ul>
+<li>
+    <p>
+        The solution <span class="inline-math">$y$</span> that we seek for is in <span class="inline-math">$X=C(I; B_R[y_0])$</span>,
+        which is a complete metric space by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-limit.html">uniform limit theorem</a>.
+    </p>
+    
+</li><li>
+    <p>
+        The initial value problem is equivalent to finding a fixed point of the operator <span class="inline-math">$T$</span> on <span class="inline-math">$X$</span> given by
+        <span class="display-math">$$ \begin{align*}
+        Ty(x) = y_0 + \int_{x_0}^{x} f(t,y(t)) \d t.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        To show that <span class="inline-math">$T$</span> is <span class="inline-math">$X\to X$</span>,
+    </p>
+    <ul>
+    <li>
+        <p>
+            first <span class="inline-math">$Ty(x)$</span> is continuous by the fundamental theorem of calculus.
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$Ty(x)$</span> is <span class="inline-math">$I \to B_R[y_0]$</span> because
+            <span class="display-math">$$ \begin{align*}
+            \|Ty - y_0\|_\infty ={}&amp; \sup_{x\in I} |Ty(x) - y_0| \\
+            ={}&amp; \sup_{x\in I} \left|\int_{x_0}^{x} f(t,y(t)) \d t\right| \\
+            \leq {}&amp; \Big(\sup_{x\in I} |x-x_0|\Big) \left(\sup_{x\in I} \sup_{y\in B_R[y_0]} f(x,y)\right) \\
+            = {}&amp; \epsilon \|f\|_\infty \\
+            &lt;{}&amp; R
+            \end{align*} $$</span>
+            if we pick <span class="inline-math">$\epsilon$</span> to be sufficiently small (<span class="inline-math">$\epsilon &lt; R/\|f\|_\infty$</span>).
+            To see that <span class="inline-math">$\|f\|_\infty$</span> is finite, recall that <span class="inline-math">$f(x, y_0)$</span> is continuous in <span class="inline-math">$x\in [a,b]$</span> and is therefore bounded,
+            and then <span class="inline-math">$f(x,y)$</span> is <span class="inline-math">$\tilde L$</span>-Lipschitz in <span class="inline-math">$y\in B_R(y_0)$</span> and is therefore bounded.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        To show that <span class="inline-math">$T$</span> is a contraction, note for any <span class="inline-math">$y,z\in C(I;B_R[y_0])$</span>,
+        <span class="display-math">$$ \begin{align*}
+        \|Ty - Tz\|_\infty ={}&amp; \sup_{x\in I} |Ty(x) - Tz(x)| \\
+        ={}&amp; \sup_{x\in I} \left|\int_{x_0}^{x} f(t,y(t)) - f(t,z(t)) \d t\right| \\
+        \leq {}&amp; \Big(\sup_{x\in I} |x-x_0|\Big)\Big(\sup_{x\in I} \big|f(x,y(x)) - f(x,z(x))\big|\Big) \\
+        \leq {}&amp; \epsilon \tilde L \sup_{x\in I}\left|y(x) - z(x)\right| \\
+        ={}&amp; \epsilon \tilde L \|y - z\|_\infty \\
+        ={}&amp; L\|y-z\|_\infty
+        \end{align*} $$</span>
+        where <span class="inline-math">$L=\epsilon \tilde L&lt;1$</span> if <span class="inline-math">$\epsilon$</span> is sufficiently small (<span class="inline-math">$\epsilon &lt; 1/\tilde L$</span>).
+        Hence <span class="inline-math">$T$</span> is <span class="inline-math">$L$</span>-Lipschitz with <span class="inline-math">$L&lt;1$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore we have a unique solution <span class="inline-math">$y\in C(I; B_R[y_0])$</span>.
+</p>

@@ -1,0 +1,18 @@
+<p>
+    For all <span class="inline-math">$x_0, x_1, \ldots, x_m\in I$</span> and finite-length paths <span class="inline-math">$\omega \in \bigcup_{k=0}^\infty I^k$</span>,
+    <span class="display-math">$$ \begin{align*}
+        &amp;\prob(X_T = x_0,\ldots X_{T+m} = x_m, (X_0,\ldots,X_T) = \omega, X_T = i, T&lt;\infty) \\
+        ={}&amp; \sum_{k=0}^{\infty} \prob(X_k = x_0,\ldots X_{k+m} = x_m, (X_0,\ldots,X_k) = \omega, X_k = i) \\
+        ={}&amp; \sum_{k=0}^{\infty} \prob(X_k=x_0,\ldots,X_{k+m} = x_m | (X_0, \ldots, X_k) = \omega, X_k = i) \\
+        &amp;\qquad \qquad \times \prob((X_0, \ldots, X_k) = \omega, X_k = i) \\
+        ={}&amp; \sum_{k=0}^{\infty} \prob(X_k = x_0, \ldots, X_{k+m}=x_m | X_k = i) \times \prob((X_0, \ldots, X_k) = \omega, X_k = i) \\
+        ={}&amp; \sum_{k=0}^{\infty} \delta_{ix_0} P(x_0, x_1) \ldots P(x_{m-1}, x_m) \times \prob((X_0, \ldots, X_k) = \omega, X_k = i) \\
+        ={}&amp; \delta_{ix_0} P(x_0, x_1) \ldots P(x_{m-1}, x_m) \prob((X_0, \ldots, X_T) = \omega, X_T = i, T&lt;\infty).
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{multline*}
+        \prob(X_T = x_0, \ldots, X_{T+m} = x_m, (X_0, \ldots, X_T) = \omega|X_T = i, T&lt;\infty) \\
+        = \delta_{ix_0} P(x_0, x_1) \ldots P(x_{m-1}, x_m) \prob((X_0, \ldots, X_T)=\omega|X_T = i, T&lt;\infty)
+    \end{multline*} $$</span>
+    and so <span class="inline-math">$(X_{T+n})_{n\geq 0} \sim \mathrm{Markov}(\delta_i, P)$</span> and is independent of <span class="inline-math">$(X_0, X_1, \ldots, X_T)$</span>.
+</p>

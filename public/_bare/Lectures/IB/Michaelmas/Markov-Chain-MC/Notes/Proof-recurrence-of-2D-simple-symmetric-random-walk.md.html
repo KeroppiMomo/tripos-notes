@@ -1,0 +1,64 @@
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-recurrence-of-1D-simple-symmetric-random-walk.html">As with <span class="inline-math">$d=1$</span></a>, it suffices to show that
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n\geq 0} p_{00}(n) = \infty.
+    \end{align*} $$</span>
+</p>
+<p>
+    Create a map
+    <span class="display-math">$$ \begin{align*}
+        f: \Z^2 &amp;\to \R^2 \\
+        (x,y) &amp;\mapsto \left(\frac{x+y}{\sqrt{2}}, \frac{x-y}{\sqrt{2}}\right)
+    \end{align*} $$</span>
+    and write <span class="inline-math">$(X_n^+, X_n^-) = f(X_n)$</span>.
+</p>
+<p>
+    <strong>Claim:</strong> both <span class="inline-math">$(X_n^+)$</span> and <span class="inline-math">$(X_n^-)$</span> are simple random walks on <span class="inline-math">$\Z/\sqrt{2}$</span> and they are independent.
+</p>
+<blockquote>
+    <p>
+        <em>Proof</em>.
+        We can write <span class="inline-math">$X_n = \sum_{i=1}^{n} \xi_i$</span> where <span class="inline-math">$\xi_i$</span> are independent and identically distributed
+        random variables, with
+        <span class="display-math">$$ \begin{align*}
+            \prob(\xi_1 = (1,0)) = \prob(\xi_1 = (-1,0)) = \prob(\xi_1 = (0,1)) = \prob(\xi_1 = (0,-1)) = \frac{1}{4}.
+        \end{align*} $$</span>
+        Then writing <span class="inline-math">$\xi_i = (\xi_i^1, \xi_i^2)$</span>, we have
+        <span class="display-math">$$ \begin{align*}
+            X_n^+ = \sum_{i=1}^{n} \frac{\xi_i^1 + \xi_i^2}{\sqrt{2}}, \qquad X_n^- = \sum_{n=1}^{n} \frac{\xi_i^1 - \xi_i^2}{\sqrt{2}}.
+        \end{align*} $$</span>
+        Then both <span class="inline-math">$(X_n^+)$</span> and <span class="inline-math">$(X_n^-)$</span> are simple random walks in <span class="inline-math">$\Z/\sqrt{2}$</span>.
+    </p>
+    <p>
+        To show that they are independent,
+        it suffices to show that for each <span class="inline-math">$i$</span>, <span class="inline-math">$\xi_i^1 + \xi_i^2$</span> is independent of <span class="inline-math">$\xi_1^1 - \xi_1^2$</span>.
+        This follows from, for each <span class="inline-math">$a,b\in\set{-1,1}$</span>,
+        <span class="display-math">$$ \begin{align*}
+            \prob(\xi_i^1 + \xi_i^2 = a, \xi_i^1 - \xi_i^2 = b) ={}&amp; \prob\Big(\xi_i = \big(\frac{a+b}{2}, \frac{a-b}{2}\big)\Big) \\
+            ={}&amp; \frac{1}{4} \\
+            ={}&amp; \frac{1}{2} \times \frac{1}{2} \\
+            ={}&amp; \prob(\xi_i^1 + \xi_i^2 = a) \times \prob(\xi_{i}^1 + \xi_i^2 = b).
+        \end{align*} $$</span>
+    </p>
+    
+</blockquote>
+<p>
+    Now observe that <span class="inline-math">$X_n = 0$</span> iff <span class="inline-math">$X_n^+ = X_n^- = 0$</span>.
+    So
+    <span class="display-math">$$ \begin{align*}
+        &amp;\prob(X_{2n} = 0|X_0 = 0) \\
+        ={}&amp; \prob(X_{2n}^{+} = X_{2n}^- = 0 | X_0^+ = X_0^- = 0) \\
+        ={}&amp; \prob(X_{2n}^+ = 0|X_0^+ = 0) \times \prob(X_{2n}^- = 0 | X_0^- = 0) &amp;&amp;\text{independence} \\
+        \sim{}&amp; \frac{1}{\sqrt{\pi n}} \frac{1}{\sqrt{\pi n}} \\
+        ={}&amp; \frac{1}{\pi n}
+    \end{align*} $$</span>
+    where we have used the asymptotic relation found in <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Proof-recurrence-of-1D-simple-symmetric-random-walk.html">the <span class="inline-math">$d=1$</span> case</a>.
+</p>
+<p>
+    Therefore, for <span class="inline-math">$n\geq n_0$</span> sufficiently large, we have <span class="inline-math">$\prob(X_{2n} = 0|X_0 = 0) \geq 1/2\pi n$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n\geq 0} p_{00}(n) ={}&amp; \sum_{n\geq 0} p_{00}(2n) \\
+        \geq {}&amp; \sum_{n\geq n_0} \frac{1}{2\pi n} \\
+        ={}&amp; \infty.
+    \end{align*} $$</span>
+</p>

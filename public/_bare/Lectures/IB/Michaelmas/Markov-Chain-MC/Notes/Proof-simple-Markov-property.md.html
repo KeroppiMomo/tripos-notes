@@ -1,0 +1,32 @@
+<p>
+    To show the new process is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-Markov-chain.html">Markov chain</a>,
+    for all <span class="inline-math">$x_m, x_{m+1}, \ldots, x_{m+n}\in I$</span>,
+    using the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-condition-for-process-to-be-Markov.html">probabilities</a> in a Markov chain,
+    <span class="display-math">$$ \begin{align*}
+        &amp;\prob(X_m = x_m, X_{m+1} = x_{m+1}, \ldots, X_{m+n}) \\
+        ={}&amp; \sum_{x_0, \ldots, x_{m-1}\in I} \prob(X_0 = x_0, \ldots, X_{m+n}) \\
+        ={}&amp; \sum_{x_0, \ldots, x_{m-1}\in I} \lambda_{x_0} P(x_0, x_1) \ldots P(x_{m-1}, x_m) P(x_m, x_{m+1}) \ldots P(x_{m+n-1}, x_{m+n}) \\
+        ={}&amp; \prob(X_m = x_m) P(x_m, x_{m+1}) \ldots P(x_{m+n-1}, x_{m+n}).
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        &amp;\prob(X_m=x_m, \ldots, X_{m+n} = x_{m+n} | X_m = i) \\
+        ={}&amp; \frac{\prob(X_m = x_m, \ldots, X_{m+n} = x_{m+n})}{\prob(X_m = x_m)} \mathbb{1}(X_m = i) \\
+        ={}&amp; \mathbb{1}(X_m = i) P(x_m, x_{m+1}) \ldots P(x_{m+n-1}, x_{m+n}).
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-condition-for-process-to-be-Markov.html">Therefore</a>, <span class="inline-math">$(X_{m+n})_{n\geq 0} \sim \mathrm{Markov}(\delta_{i}, P)$</span> conditional on <span class="inline-math">$X_m = i$</span>.
+</p>
+<p>
+    Now to show <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-independent-processes.html">independence</a>,
+    suppose <span class="inline-math">$k\geq 1$</span> and <span class="inline-math">$m\leq t_1 &lt; t_2 &lt; \ldots &lt; t_k$</span>.
+    We want to show that <span class="inline-math">$(X_{t_1}, \ldots, X_{t_k})$</span> and <span class="inline-math">$(X_0, X_1, \ldots, X_m)$</span> are independent conditional on <span class="inline-math">$X_m = i$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$x_0, x_1, \ldots, x_m, y_1, y_2, \ldots, y_k \in I$</span> and <span class="inline-math">$x_m = i$</span>.
+    Now
+    <span class="display-math">$$ \begin{align*}
+        &amp; \prob(X_0 = x_0, \ldots, X_m = x_m, X_{t_1} = y_1, \ldots, X_{t_k} = y_k | X_m = i) \\
+        ={}&amp; \frac{\prob(X_0 = x_0, \ldots, X_m = x_m, X_{t_1} = y_1, \ldots, X_{t_k} = y_k)}{\prob(X_m = i)} \\
+        ={}&amp;
+    \end{align*} $$</span>
+</p>

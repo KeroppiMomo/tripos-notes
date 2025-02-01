@@ -1,0 +1,68 @@
+<p>
+    Consider a Markov chain on <span class="inline-math">$I = \set{0,1,2,\ldots}$</span> with transition probabilities
+    <span class="display-math">$$ \begin{align*}
+        \begin{cases}
+            P(i,i+1) = p, &amp;i\geq 1, \\
+            P(i,i-1) = q \equiv 1-p, &amp;i\geq 1, \\
+            P(0,1) = 1.
+        \end{cases}
+    \end{align*} $$</span>
+    Let <span class="inline-math">$A = \set{0}$</span>. We want to find <span class="inline-math">$h_i^A$</span>.
+</p>
+<p>
+    From the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-linear-equations-for-hitting-probability.html">previous theorem</a>,
+    <span class="inline-math">$h_0^A = 1$</span> and <span class="inline-math">$h_i^A$</span> is the minimal non-negative solution to the recurrence relation
+    <span class="display-math">$$ \begin{align*}
+        h_i^A = p\,h_{i+1}^A + q\,h_{i-1}^A, \qquad i\geq 1.
+    \end{align*} $$</span>
+    There are several cases:
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$p\neq q$</span>, then <span class="inline-math">$h_i^A$</span> is in the form <span class="inline-math">$a\lambda^i$</span> where <span class="inline-math">$\lambda$</span> satisfies <span class="inline-math">$\lambda = p\lambda^2 + q \iff \lambda=1, \tfrac{q}{p}$</span>,
+        so <span class="inline-math">$h_i^A$</span> has the general solution
+        <span class="display-math">$$ \begin{align*}
+            h_i^A = a + b\big(\tfrac{q}{p}\big)^i.
+        \end{align*} $$</span>
+    </p>
+    <p>
+        Since <span class="inline-math">$h_0^A = 1$</span>, we have <span class="inline-math">$a+b = 1$</span>:
+        <span class="display-math">$$ \begin{align*}
+            h_i^A = a + (1-a)\big(\tfrac{q}{p}\big)^i.
+        \end{align*} $$</span>
+    </p>
+    <ul>
+    <li>
+        <p>
+            If <span class="inline-math">$p&gt;q$</span>, then by minimality, we take <span class="inline-math">$a=0$</span> and so
+            <span class="display-math">$$ \begin{align*}
+            h_i^A = \big(\tfrac{q}{p}\big)^i.
+            \end{align*} $$</span>
+        </p>
+        
+    </li><li>
+        <p>
+            If <span class="inline-math">$p&lt;q$</span>, then by minimality (and to have probability <span class="inline-math">$\leq 1$</span>), take <span class="inline-math">$a=1$</span> and so
+            <span class="display-math">$$ \begin{align*}
+            h_i^A = 1.
+            \end{align*} $$</span>
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$p=q$</span>, then the general solution is of the form
+        <span class="display-math">$$ \begin{align*}
+            h_i^A = a + bi.
+        \end{align*} $$</span>
+        To have a minimal solution (and probability <span class="inline-math">$\leq 1$</span>), we need <span class="inline-math">$a=1$</span> and <span class="inline-math">$b=0$</span> to get
+        <span class="display-math">$$ \begin{align*}
+            h_i^A = 1.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>

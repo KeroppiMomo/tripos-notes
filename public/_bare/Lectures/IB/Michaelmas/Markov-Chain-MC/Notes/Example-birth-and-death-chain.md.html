@@ -1,0 +1,68 @@
+<p>
+    Let <span class="inline-math">$\ouline{X} = (X_n)_{n\geq 0}$</span> be a Markov chain on <span class="inline-math">$I = \set{0,1,2,\ldots}$</span> where <span class="inline-math">$X_n$</span> represents the size of the population at time <span class="inline-math">$n$</span>.
+    Assume for <span class="inline-math">$i\geq 1$</span>,
+    <span class="display-math">$$ \begin{align*}
+        P(i, i+1) &amp;= p_i, \\
+        P(i,i-1) &amp;= q_i = 1 - p_i, \\
+        P(0, 0) &amp;= 1.
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$A = \set{0}$</span> and consider the probability of extinction <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-hitting-time-hitting-probability.html"><span class="inline-math">$h_i^A$</span></a> <span class="inline-math">$= \prob(T_A &lt; \infty|X_0 = i) = \prob(\text{eventual extinction}|X_0 = i)$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Theorem-linear-equations-for-hitting-probability.html">Hitting probabilities are the minimal non-negative solution to</a>
+    <span class="display-math">$$ \begin{align*}
+        h_0^A &amp;= 1, \\
+        h_i^A &amp;= p_i \, h_{i+1}^A + q_i \, h_{i-1}^A, \qquad i\geq 1.
+    \end{align*} $$</span>
+    Rearranging,
+    <span class="display-math">$$ \begin{align*}
+        p_i(h_{i+1}^A - h_i^A) = q_i(h_i^A - h_{i-1}^A).
+    \end{align*} $$</span>
+</p>
+<p>
+    By letting <span class="inline-math">$u_i = h_i^A - h_{i-1}^A$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        u_{i+1} = \frac{q_i}{p_i} u_i = \ldots = \underbrace{\bigg(\prod_{j=1}^i \frac{q_j}{p_j}\bigg)}_{\gamma_i} u_1.
+    \end{align*} $$</span>
+    Define <span class="inline-math">$\gamma_0 = 1$</span> and <span class="inline-math">$\gamma_i = \prod_{j=1}^i \frac{q_j}{p_j}$</span>.
+</p>
+<p>
+    Combining,
+    <span class="display-math">$$ \begin{align*}
+        h_i^A &amp;= h_0^A + \sum_{j=1}^{i} u_i \\
+        &amp;= 1 + u_1 \sum_{j=1}^{i} \gamma_{j-1} \\
+        &amp;= 1 + (h_1^A - 1) \sum_{j=0}^{i-1} \gamma_j.
+    \end{align*} $$</span>
+    To have <span class="inline-math">$h_i^A\geq 0$</span>, we require
+    <span class="display-math">$$ \begin{align*}
+        h_1^A \geq 1 - \frac{1}{\sum_{j=0}^{i-1} \gamma_j}
+    \end{align*} $$</span>
+    and by taking <span class="inline-math">$i\to \infty$</span>,
+    <span class="display-math">$$ \begin{align*}
+        h_1^A \geq 1 - \frac{1}{\sum_{j=0}^{\infty} \gamma_j}
+    \end{align*} $$</span>
+</p>
+<p>
+    For the minimal solution, take
+    <span class="display-math">$$ \begin{align*}
+        h_1^A = 1-\frac{1}{\sum_{j=0}^{\infty} \gamma_j}.
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$\sum_{j=0}^{\infty} \gamma_j &lt; \infty$</span>, then
+        <span class="display-math">$$ \begin{align*}
+        h_0^A = 1, \qquad h_i^A = 1 - \frac{\sum_{j=0}^{i-1} \gamma_j}{\sum_{j=0}^{\infty} \gamma_j} = \frac{\sum_{j=i}^{\infty} \gamma_j}{\sum_{j=0}^{\infty} \gamma_j}.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$\sum_{j=0}^{\infty} \gamma_j = \infty$</span>, then <span class="inline-math">$h_i^A = 1$</span> for all <span class="inline-math">$i$</span>.
+    </p>
+    
+</li>
+</ul>

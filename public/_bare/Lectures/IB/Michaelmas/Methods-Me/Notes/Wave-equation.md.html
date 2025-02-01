@@ -1,0 +1,190 @@
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-wave-equation-on-stretched-string.html">Derivation (wave equation on stretched string)</a>
+</p>
+<p>
+    We want to solve
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{c^2} \pdfd[2]{y}{t} = \pdfd[2]{y}{x}
+    \end{align*} $$</span>
+    or in general, in higher spatial dimensions,
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{c^2} \pdfd[2]{y}{t} = \Delta y.
+    \end{align*} $$</span>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            1D wave equation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/1D-wave-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        y_{tt} = c^2 y_{xx}, &amp; 0 &lt; x &lt; L, \, t&gt;0, \\
+                        y(0,t) = y(L,t) = 0, &amp; t&gt;0, \\
+                        y(x,0) = f(x), &amp;0&lt;x&lt;L, \\
+                        y_t(x,0) = g(x), &amp;0&lt;x&lt;L
+                    \end{cases}
+                \end{align*} $$</span>
+                has a separation of variables solution
+                <span class="display-math">$$ \begin{align*}
+                    y(x,t) = \sum_{n=1}^{\infty} \sin \frac{n\pi x}{L} \left(A_n \cos \frac{n\pi ct}{L} + B_n \sin \frac{n\pi c t}{L}\right)
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    A_n ={}&amp; \frac{2}{L} \int_{0}^{L} f(x) \sin \frac{n\pi x}{L} \d x, \\
+                    B_n ={}&amp; \frac{2}{n\pi c} \int_{0}^{L} g(x) \sin \frac{n\pi x}{L} \d x.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-1D-wave-equation.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Wave equation on a 2D drum
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Wave-equation-on-a-2D-drum.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a 2D drum <span class="inline-math">$\Omega = \sb{(r,\theta)}{0\leq r&lt;1, \, 0\leq \theta&lt;2\pi}$</span>,
+                the initial value problem
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        \phi_{tt} = c^2 \Delta \phi, &amp;(\v x,t)\in \Omega\times (0,\infty), \\
+                        \phi = 0, &amp;(\v x,t) \in \partial \Omega\times(0,\infty), \\
+                        \phi(r) = f(r), &amp;(\v x,t)\in \Omega\times\set{0}, \\
+                        \phi_t(r) = g(r), &amp;(\v x,t)\in \Omega\times\set{0}
+                    \end{cases}
+                \end{align*} $$</span>
+                has a separation of variables solution
+                <span class="display-math">$$ \begin{align*}
+                    \phi(r,t) = \sum_{k=1}^{\infty} J_0(j_{0k}\, r)\big(A_k \cos (j_{0k} \, ct) + B_k \sin(j_{0k}\, ct)\big)
+                \end{align*} $$</span>
+                where <span class="inline-math">$J_0$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Bessel-s-equation.html">0-th order Bessel function</a>, <span class="inline-math">$j_{0k}$</span> is its <span class="inline-math">$k$</span>-th positive root, and
+                <span class="display-math">$$ \begin{align*}
+                    A_k ={}&amp; \frac{2}{J_0&#x27;(j_{0k})^2}\int_{0}^{1} f(r) J_0 (j_{0k}\, r) r \d r, \\
+                    B_k ={}&amp; \frac{2}{c\, j_{0k}\, J_0&#x27;(j_{0k})^2} \int_{0}^{1} g(r) J_0(j_{0k}\ r)r \d r.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Derivation-wave-equation-on-a-2D-drum.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (energy conservation of wave equation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-energy-conservation-of-wave-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\phi(\v x,t)$</span> be a solution to the initial value problem
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        \phi_{tt} = c^2 \Delta\phi, &amp;\Omega\times(0,\infty), \\
+                        \phi = f, &amp;\Omega\times\set{0}, \\
+                        \phi_t = g, &amp;\Omega\times\set{0}, \\
+                        \phi = 0, &amp;\partial\Omega\times(0,\infty).
+                    \end{cases}
+                \end{align*} $$</span>
+                The <em>energy</em>, defined as
+                <span class="display-math">$$ \begin{align*}
+                    E(t) = \frac{1}{2}\int_{\Omega} \phi_t^2 + c^2|\nabla\phi|^2 \d V,
+                \end{align*} $$</span>
+                is constant, i.e.
+                <span class="display-math">$$ \begin{align*}
+                    E(t) = E(0) = \frac{1}{2}\int_{\Omega} |g|^2 + c^2|\nabla f|^2 \d V.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-energy-conservation-of-wave-equation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (unique solution to wave equation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-unique-solution-to-wave-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Solution to the initial value problem
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        \phi_{tt} = c^2 \Delta\phi, &amp;\Omega\times(0,\infty), \\
+                        \phi = f, &amp;\Omega\times\set{0}, \\
+                        \phi_t = g, &amp;\Omega\times\set{0}, \\
+                        \phi = 0, &amp;\partial\Omega\times(0,\infty).
+                    \end{cases}
+                \end{align*} $$</span>
+                is unique.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-unique-solution-to-wave-equation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Wave reflection and transmission
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Wave-reflection-and-transmission.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an infinite-long string with tension <span class="inline-math">$\tau$</span> and densities <span class="inline-math">$\mu_\pm$</span> on <span class="inline-math">$\pm x&gt;0$</span>,
+                the wave equations for both regions are
+                <span class="display-math">$$ \begin{align*}
+                    \begin{cases}
+                        y_{tt} - c_-^2 y_{xx} = 0, &amp;x&lt;0, \\
+                        y_{tt} - c_+^2 y_{xx} = 0, &amp;x&gt;0 \\
+                    \end{cases}
+                \end{align*} $$</span>
+                where <span class="inline-math">$c_\pm^2 = \tau/\mu_{\pm}$</span>.
+            </p>
+            <p>
+                Assume
+            </p>
+            <ul>
+            <li>
+                <p>
+                    the string does not break, i.e. <span class="inline-math">$y$</span> is continuous at <span class="inline-math">$x=0$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    no mass at <span class="inline-math">$x=0$</span>, i.e. <span class="inline-math">$y_x$</span> is continuous at <span class="inline-math">$x=0$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                For an incident wave from <span class="inline-math">$x\to-\infty$</span>
+                <span class="display-math">$$ \begin{align*}
+                    \cos\Big(\omega \big(t - \frac{x}{c_-}\big)\Big), \qquad x&lt;0,
+                \end{align*} $$</span>
+                we obtain a reflected wave
+                <span class="display-math">$$ \begin{align*}
+                    R \cos\Big(\omega \big(t + \frac{x}{c_-}\big)\Big) \quad \text{where } R= \frac{\mu_- - \mu_+}{\mu_- + \mu_+}, \qquad x&lt;0
+                \end{align*} $$</span>
+                and a transmitted wave
+                <span class="display-math">$$ \begin{align*}
+                    T \cos\Big(\omega \big(t - \frac{x}{c_+}\big)\Big) \quad \text{where } T = \frac{2\mu_-}{\mu_- + \mu_+}, \qquad x&gt;0.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>

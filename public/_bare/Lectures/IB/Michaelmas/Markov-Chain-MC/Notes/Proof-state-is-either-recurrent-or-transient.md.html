@@ -1,0 +1,22 @@
+<p>
+    Let <span class="inline-math">$f_i = \prob(T_i &lt; \infty | X_0 = i)$</span>.
+</p>
+<p>
+    If <span class="inline-math">$f_i = 1$</span>, then from the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Lemma-probability-for-number-of-visits.html">probabilities for the number of visits</a>,
+    <span class="display-math">$$ \begin{align*}
+        \prob(V_i &gt; r|X_0 = i) = 1 \text{ for all } r &amp;\implies \prob(V_i = \infty | X_0 = i) = 1 \\
+        &amp;\implies \prob(X_n = i \text{ for infinitely many } i) = 1
+    \end{align*} $$</span>
+    so <span class="inline-math">$i$</span> is recurrent.
+    Also
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n=0}^{\infty} p_{ii}(n) ={}&amp; \sum_{n=0}^\infty \expect\big(\mathbb{1}(X_n = i)\big| X_0 = i\big) \\
+        ={}&amp; \expect\left(\sum_{n=0}^{\infty} \mathbb{1}(X_n=i)\Big|X_0 = i\right) \\
+        ={}&amp; \expect(V_i|X_0 = i) \\
+        ={}&amp; \infty.
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$f_i &lt; 1$</span> instead, then conditioned on <span class="inline-math">$X_0=0$</span>, <span class="inline-math">$V_i$</span> is geometrically distributed with mean <span class="inline-math">$1/(1-f_i)$</span>.
+    Hence <span class="inline-math">$\prob(V_i &lt; \infty | X_0 = 0) = 1$</span> and <span class="inline-math">$\sum_{n=0}^{\infty} p_{ii}(n) = \expect(V_i|X_0 = i)$</span>.
+</p>
