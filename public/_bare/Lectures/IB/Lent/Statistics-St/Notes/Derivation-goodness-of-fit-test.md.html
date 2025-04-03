@@ -1,0 +1,45 @@
+<p>
+    Likelihood function
+    <span class="display-math">$$ \begin{align*}
+        L_N(p) \propto \prod_{i=1}^{k} p_i^{N_i}
+    \end{align*} $$</span>
+    (where <span class="inline-math">$\propto$</span> hides factors constant to <span class="inline-math">$p$</span>).
+    Log-likelihood function
+    <span class="display-math">$$ \begin{align*}
+        l_N(p) = \log L_N(p) = \sum_{i=1}^{k} N_i \log p_i + \text{const.}.
+    \end{align*} $$</span>
+    Compute
+    <span class="display-math">$$ \begin{align*}
+        2\log Λ = 2\left(\log \sup_{p_i\geq 0, \sum_{i} p_i=1} L_N(p) - \log \sup_{θ} L_N(p_0(θ))\right) = 2(l(\hat p^{(1)}_{\text{MLE}}) - l(p_0(\hat θ_{\text{MLE}}))).
+    \end{align*} $$</span>
+</p>
+<p>
+    To find the maximum likelihood estimator for <span class="inline-math">$p$</span> under <span class="inline-math">$H_1$</span>,
+    we maximise <span class="inline-math">$l_N(p)$</span> subject to <span class="inline-math">$p_i\geq 0$</span> and <span class="inline-math">$\sum_{i} p_i=1$</span> using <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Lagrange-multiplier-method.html">Lagrange multiplier</a>:
+    <span class="display-math">$$ \begin{align*}
+        &amp;0 = \pdd{p_i}\left(\sum_{i=1}^{k} N_i \log p_i + λ\Bigl(\sum_{i=1}^{k} p_i - 1\Bigr)\right) = \frac{N_i}{p_i} - λ \\
+        \implies &amp; N_i = λp_i.
+    \end{align*} $$</span>
+    Applying the constraint <span class="inline-math">$\sum_{i} p_i = 1$</span>, we solve <span class="inline-math">$λ = \sum_{i=1}^{k} N_i = n$</span> so
+    <span class="display-math">$$ \begin{align*}
+        p_i = \frac{N_i}{n}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Thus substituting
+    <span class="display-math">$$ \begin{align*}
+        2\log Λ = 2 \sum_{i=1}^{k} N_i \log \frac{N_i/n}{p_{0i}(\hat θ_\text{MLE})} = 2\sum_{i=1}^{k} N_i \log \frac{N_i}{np_{0i}(\hat θ_{\text{MLE}})}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Apply Pearson's approximation,
+    <span class="display-math">$$ \begin{align*}
+        2\log Λ \approx \sum_{i=1}^{k} \frac{(N_i - np_{0i}(\hat θ_{\text{MLE}}))^2}{N_i}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$H_1$</span> has <span class="inline-math">$k$</span> variables (<span class="inline-math">$p_1, \ldots, p_k$</span>) and <span class="inline-math">$1$</span> constraint (<span class="inline-math">$\sum_{i=1}^{k} p_i = 1$</span>)
+    so <span class="inline-math">$k-1$</span> degrees of freedom.
+    <span class="inline-math">$H_0$</span> has no free variables so <span class="inline-math">$0$</span> degrees of freedom.
+    Thus by Wilks' theorem, <span class="inline-math">$2\log Λ\xrightarrow{d} χ_{k-1}^2$</span>.
+</p>

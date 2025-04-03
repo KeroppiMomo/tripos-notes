@@ -1,0 +1,68 @@
+<div class="markdown-callout" data-callout="method">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Runge-Kutta methods</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            For an <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">initial value problem</a>,
+            an <em><span class="inline-math">$s$</span>-stage explicit Runge-Kutta method</em> has the form
+            <span class="display-math">$$ \begin{align*}
+                \v k_1 ={}&amp; \v f(t_n, \v y_n), &amp;&amp; c_1 = 0\\
+                \v k_2 ={}&amp; \v f(t_n + c_2 h, \v y_n + h(a_{21} \v k_1)), &amp;&amp;c_2 = a_{21} \\
+                \v k_3 ={}&amp; \v f(t_n + c_3 h, \v y_n + h(a_{31} \v k_1 + a_{32} \v k_2)), &amp;&amp;c_3 = a_{31} + a_{32} \\
+                \vdots \\
+                \v k_s ={}&amp; \v f\Bigl(t_n + c_s h, \v y_n + h \sum_{j=1}^{s-1} a_{sj} \v k_j\Bigr), &amp;&amp; c_s = \sum_{j=1}^{s-1} a_{sj} \\
+                \v y_{n+1} ={}&amp; \v y_n + h \sum_{i=1}^{s} b_i \v k_i, &amp;&amp; 1 = \sum_{i=1}^{s} b_i.
+            \end{align*} $$</span>
+            >
+            A general Runge-Kutta method is
+            <span class="display-math">$$ \begin{align*}
+                \v k_i ={}&amp; \v f(t_n + c_ih, \v y_n + h\sum_{j=1}^{s} a_{ij} \v k_j), &amp;&amp;c_i = \sum_{j=1}^{s} a_{ij}, &amp;&amp;i=1,2,\ldots,s, \\
+                \v y_{n+1} ={}&amp; \v y_n + h \sum_{i=1}^{s} b_i \v k_i, &amp;&amp;1 = \sum_{i=1}^{s} b_i k_i.
+            \end{align*} $$</span>
+            which is explicit if <span class="inline-math">$a_{ij} \leq 0$</span> for all <span class="inline-math">$i\leq j$</span> and implicit otherwise.
+        </p>
+        
+    </div>
+</div><p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Motivation-of-Runge-Kutta-methods.html">Motivation of Runge-Kutta methods</a>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-order-of-explicit-two-stage-Runge-Kutta.html">Example (order of explicit two-stage Runge-Kutta)</a>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-order-of-implicit-two-stage-Runge-Kutta.html">Example (order of implicit two-stage Runge-Kutta)</a>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (collocation at zeros of orthogonal polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-collocation-at-zeros-of-orthogonal-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$\prod_{i=1}^{s} (t-c_i)$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-orthogonal-polynomial.html">orthogonal</a> on the interval <span class="inline-math">$[0,1]$</span>
+                to all polynomials of degree <span class="inline-math">$r-1\leq s-1$</span>.
+                Let <span class="inline-math">$l_i$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lagrange-interpolating-polynomial.html">fundamental Lagrange polynomials</a> of degree <span class="inline-math">$s-1$</span> for the knots <span class="inline-math">$c_i$</span>,
+                and
+                <span class="display-math">$$ \begin{align*}
+                    a_{ij} = \int_{0}^{c_i} l_j(t) \d t, \qquad b_i = \int_{0}^{1} l_i(t) \d t.
+                \end{align*} $$</span>
+                Then the (highly implicit) <span class="inline-math">$s$</span>-stage <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Runge-Kutta-methods.html">Runge-Kutta method</a>
+                with these parameters is of order <span class="inline-math">$s+r$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The highest order of an <span class="inline-math">$s$</span>-stage implicit Runge-Kutta method
+                    (known as the <em>Guass-Legendre Runge-Kutta method</em>) is <span class="inline-math">$2s$</span>,
+                    corresponding to the collocation at zeros of the Legendre polynomial.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,36 @@
+<p>
+    Likelihood function
+    <span class="display-math">$$ \begin{align*}
+        L_X(μ, θ) = (2πσ^2)^{-n/2} \exp\left(-\frac{1}{2σ^2}\sum_{i=1}^{n} (X_i - μ)^2\right).
+    \end{align*} $$</span>
+    Log-likelihood
+    <span class="display-math">$$ \begin{align*}
+        l_X(μ, θ) = \log L_X(μ, θ) = -\frac{n}{2}\log σ^2 - \frac{1}{2σ^2}\sum_{i=1}^{n} (X_i - μ)^2 + \text{const.}.
+    \end{align*} $$</span>
+</p>
+<p>
+    The maximum likelihood estimator <span class="inline-math">$\hat μ_{\text{MLE}}$</span> satisfies
+    <span class="display-math">$$ \begin{align*}
+        0 = \pdfd{l_X}{μ}\bigg|_{\hat μ_{\text{MLE}}} = \frac{1}{σ^2}\Bigl(\sum_{i=1}^{n} X_i - n \hat μ_{\text{MLE}}\Bigr)
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \hat μ_{\text{MLE}} = \frac{1}{n}\sum_{i=1}^{n} X_i = \overline{X}.
+    \end{align*} $$</span>
+</p>
+<p>
+    The maximum likelihood estimator <span class="inline-math">$\hat σ^2_{\text{MLE}}$</span> satisfies
+    <span class="display-math">$$ \begin{align*}
+        0 = \pdfd{l_X}{σ^2}\bigg|_{\hat σ^2_{\text{MLE}}} = -\frac{n}{2\hat σ^2_{\text{MLE}}} + \frac{1}{2(\hat σ^2_{\text{MLE}})^2} \sum_{i=1}^{n} (X_i - \hat μ^2_{\text{MLE}})^2
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \hat σ^2_{\text{MLE}} = \frac{1}{n}\sum_{i=1}^{n} (X_i - \overline{X})^2 = \frac{S_{XX}}{n}.
+    \end{align*} $$</span>
+</p>
+<p>
+    From <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-sample-mean-and-sample-variance-for-iid-normals.html">here</a>,
+    <span class="inline-math">$\hat μ_{\text{MLE}} \sim N(μ, σ^2/n)$</span> is unbiased since <span class="inline-math">$\expect(\hat μ_{\text{MLE}}) = μ$</span>.
+    Moreover <span class="inline-math">$S_{XX}/σ^2 \sim χ_{n-1}^2$</span>,
+    so <span class="inline-math">$\expect(\hat σ^2_{\text{MLE}}) = \frac{n-1}{n}σ^2$</span>.
+</p>

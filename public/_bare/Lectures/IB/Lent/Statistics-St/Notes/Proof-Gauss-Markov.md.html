@@ -1,0 +1,47 @@
+<p>
+    The least square estimator is given by
+    <span class="display-math">$$ \begin{align*}
+        \hat β = (X^T X)\inv X^TY,
+    \end{align*} $$</span>
+    which is linear in <span class="inline-math">$Y$</span>.
+</p>
+<p>
+    <span class="inline-math">$\hat β$</span> is unbiased, since
+    <span class="display-math">$$ \begin{align*}
+        \expect(\hat β\mid X) ={}&amp; (X^T X)\inv X^T \expect(Y\mid X) \\
+        ={}&amp; (X^T X)\inv X^T Xβ \\
+        ={}&amp; β.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now suppose <span class="inline-math">$\tilde β = CY$</span> is a another linear estimator in <span class="inline-math">$Y$</span>.
+    Write
+    <span class="display-math">$$ \begin{align*}
+        C = (X^T X)\inv X^T + A.
+    \end{align*} $$</span>
+    Note
+    <span class="display-math">$$ \begin{align*}
+        \expect(\tilde β \mid X) = ((X^T X)\inv X^T + A)(Xβ) = β + AXβ
+    \end{align*} $$</span>
+    so if <span class="inline-math">$\tilde β$</span> is unbiased, then <span class="inline-math">$AXβ = 0$</span> for all <span class="inline-math">$β$</span> and thus <span class="inline-math">$AX = 0$</span>.
+</p>
+<p>
+    Now
+    <span class="display-math">$$ \begin{align*}
+        \var(\tilde β\mid X) ={}&amp; C \var(Y\mid X)\, C^T \\
+        ={}&amp; \bigl((X^T X)\inv X^T + A\bigr) (σ^2 I_n) \bigl((X^T X)\inv X^T + A\bigr)^T \\
+        ={}&amp; σ^2 \Bigl((X^T X)\inv X^T X (X^T X)\inv  + \underbrace{AX}_{0}(X^T X)\inv + (X^TX)\inv \underbrace{X^T A^T}_{0} + AA^T\Bigr) \\
+        ={}&amp; σ^2\bigl((X^T X)\inv + AA^T\bigr) \\
+        ={}&amp; \var(\hat β \mid X) + σ^2 AA^T.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore <span class="inline-math">$\var(\tilde β\mid X) - \var(\hat β \mid X)$</span> is a positive semidefinite matrix,
+    i.e.
+    <span class="display-math">$$ \begin{align*}
+        \var(a^T \tilde β\mid X) ={}&amp; a^T \var(\tilde β\mid X)\, a\\
+        ={}&amp; a^T \var(\hat  β\mid X)\, a + σ^2 a^T A A^T a \\
+        ={}&amp; \var(a^T \hat β\mid X) + σ^2 \|A^T a\|^2 \\
+        \geq{} &amp; \var(a^T \hat β\mid X).
+    \end{align*} $$</span>
+</p>

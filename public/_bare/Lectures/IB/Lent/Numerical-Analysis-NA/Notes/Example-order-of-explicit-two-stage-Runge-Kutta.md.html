@@ -1,0 +1,42 @@
+<p>
+    An explicit two-stage Runge-Kutta has the form
+    <span class="display-math">$$ \begin{align*}
+        \v k_1 ={}&amp; \v f(t_n, \v y_n), \\
+        \v k_2 ={}&amp; \v f(t_n + c_2 h, \v y_n + c_2 h \v k_1), \\
+        \v y_{n+1} ={}&amp; \v y_n + h(b_1 \v k_1 + b_2 \v k_2).
+    \end{align*} $$</span>
+</p>
+<p>
+    (We omit evaluation at <span class="inline-math">$(t_n, \v y_n)$</span> to simplify notation from now on.)
+</p>
+<p>
+    Taylor expand <span class="inline-math">$\v k_2$</span> about <span class="inline-math">$(t_n, \v y_n)$</span> to give
+    <span class="display-math">$$ \begin{align*}
+        \v k_2 ={}&amp; \v f + c_2h \,\v f_t + c_2h\,(\v k_1 \cdot ∇_\v y) \v f + O(h^2) \\
+        ={}&amp; \v f + c_2h(\v f_t + (\v f\cdot ∇_\v y) \v f) + O(h^2).
+    \end{align*} $$</span>
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        \v y&#x27; = \v f(t, \v y) \implies \v y&#x27;&#x27; = \v f_t + (\v y&#x27; \cdot ∇_y)\v f = \v f_t + (\v f\cdot ∇_\v y) \v f
+    \end{align*} $$</span>
+    so assuming <span class="inline-math">$\v y_n = \v y(t_n)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \v k_1 = \v y&#x27;, \qquad \v k_2 = \v y&#x27; + c_2h \v y&#x27;&#x27; + O(h^2).
+    \end{align*} $$</span>
+</p>
+<p>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \v y_{n+1} ={}&amp; \v y + h(b_1+b_2) \v y&#x27; + h^2 b_2 c_2 \v y&#x27;&#x27;
+    \end{align*} $$</span>
+    while
+    <span class="display-math">$$ \begin{align*}
+        \v y(t_{n+1}) ={}&amp; \v y + h\v y&#x27; + \frac{1}{2}h^2 \v y&#x27;&#x27; + O(h^3).
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore the method is of order 2 if
+    <span class="display-math">$$ \begin{align*}
+        b_1 + b_2 = 1, \qquad b_2c_2 = \frac{1}{2}.
+    \end{align*} $$</span>
+</p>

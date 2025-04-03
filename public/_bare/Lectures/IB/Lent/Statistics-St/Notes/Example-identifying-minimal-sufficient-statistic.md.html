@@ -1,0 +1,20 @@
+<p>
+    Suppose <span class="inline-math">$X_1, \ldots, X_n \sim N(μ, σ^2)$</span> where <span class="inline-math">$μ, σ^2$</span> are unknown.
+    We want to find a minimal statistic for <span class="inline-math">$μ, σ^2$</span>.
+</p>
+<p>
+    Compute
+    <span class="display-math">$$ \begin{align*}
+        \frac{p(x; θ)}{p(y; θ)} ={}&amp; \frac{(2πσ^2)^{-n/2} \exp(-\frac{1}{2σ^2}\sum_{i} (x_i - μ)^2)}{(2πσ^2)^{-n/2} \exp(-\frac{1}{2σ^2} \sum_{i} (y_i - μ)^2)} \\
+        ={}&amp; \exp\left(-\frac{1}{2σ^2}\left(\sum_{i} x_i^2 - \sum_{i} y_i^2\right) + \frac{μ}{σ^2}\left(\sum_{i} x_i - \sum_{i} y_i\right)\right),
+    \end{align*} $$</span>
+    which does not depend on <span class="inline-math">$μ$</span> or <span class="inline-math">$σ^2$</span> iff <span class="inline-math">$\sum_{i} x_i^2 = \sum_{i} y_i^2$</span> and <span class="inline-math">$\sum_{i} x_i = \sum_{i} y_i$</span>.
+    Therefore <span class="inline-math">$T(X) = (\sum_{i} x_i^2, \sum_{i} x_i)$</span> is a minimal sufficient statistic.
+</p>
+<p>
+    Since minimal sufficient statistic is unique up to bijection,
+    <span class="display-math">$$ \begin{align*}
+        \tilde T(X) = (\bar X, S^2) = \left(\frac{1}{n}\sum_{i} X_i, \frac{1}{n-1}\sum_{i} (X_i - \bar X)^2\right)
+    \end{align*} $$</span>
+    is also minimal sufficient.
+</p>

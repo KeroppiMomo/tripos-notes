@@ -1,0 +1,46 @@
+<p>
+    Since <span class="inline-math">$V$</span> is finitely generated as a <span class="inline-math">$\mathbb{F}$</span>-module,
+    its basis finitely generates the <span class="inline-math">$\mathbb{F}[X]$</span>-module <span class="inline-math">$V_α$</span> as well
+    (since <span class="inline-math">$\mathbb{F}\leq \mathbb{F}[X]$</span>).
+</p>
+<p>
+    Apply the <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-structure-theorem.html">structure theorem</a> to see (as <span class="inline-math">$\mathbb{F}[X]$</span>-modules)
+    <span class="display-math">$$ \begin{align*}
+        V_α \isom \mathbb{F}[X] \oplus \ldots \oplus \mathbb{F}[X] \oplus \mathbb{F}[X]/(f_1) \oplus \ldots \oplus \mathbb{F}[X]/(f_r)
+    \end{align*} $$</span>
+    where <span class="inline-math">$f_i \neq 0$</span> and <span class="inline-math">$f_i\mid f_{i+1}$</span>.
+    This isomorphism is also valid as <span class="inline-math">$\mathbb{F}$</span>-modules (vector spaces over <span class="inline-math">$\mathbb{F}$</span>),
+    and we see that <span class="inline-math">$V$</span> is finite-dimensional while <span class="inline-math">$\mathbb{F}[X]$</span> is infinite-dimensional.
+    Therefore there is no <span class="inline-math">$\mathbb{F}[X]$</span> components:
+    <span class="display-math">$$ \begin{align*}
+        V_α \isom \mathbb{F}[X]/(f_1) \oplus \ldots \oplus \mathbb{F}[X]/(f_r).
+    \end{align*} $$</span>
+</p>
+<p>
+    Since <span class="inline-math">$\mathbb{F}$</span> is a field, WLOG we can take <span class="inline-math">$f_i$</span> to be monic
+    by multiplying by a unit.
+</p>
+<p>
+    Viewing this as <span class="inline-math">$\mathbb{F}$</span>-modules and
+    writing <span class="inline-math">$f_i = a_{i0} + a_{i 1} X + \ldots + a_{i,(d_i-1)} X^{d_i-1} + X^{d_i}$</span>,
+    the vector space <span class="inline-math">$\mathbb{F}[X]/(f_i)$</span> has a basis
+    <span class="inline-math">$\set{1, X, X^2, \ldots, X^{d_i-1}}$</span>
+    (since it generates and is linearly independent).
+    Since the action of <span class="inline-math">$α$</span> under the isomorphism
+    is multiplying by <span class="inline-math">$X$</span>,
+    in this basis <span class="inline-math">$α(1) = X, α(X) = X^2, \ldots, α(X^{d_i-1}) = X^{d_i} = -a_{i 0} - a_{i 1}X - \ldots a_{i,(d_i -1)} X^{d_i-1}$</span>
+    so in matrix form,
+    <span class="display-math">$$ \begin{align*}
+        α|_{\mathbb{F}[X]/(f_i)} = \pmat{0 &amp;&amp;&amp;&amp; -a_{0 i}  \\
+        1 &amp;&amp;&amp;&amp; -a_{i 1} \\
+        &amp;1 &amp;&amp;&amp; -a_{i 2} \\
+        &amp;&amp;\ddots&amp;&amp;\vdots \\
+        &amp;&amp;&amp;1 &amp; -a_{i,d_i-1}} = c(f_i).
+    \end{align*} $$</span>
+</p>
+<p>
+    Thus combining all bases,
+    <span class="display-math">$$ \begin{align*}
+        α = \pmat{c(f_1) \\ &amp; \ddots \\ &amp;&amp; c(f_r)}.
+    \end{align*} $$</span>
+</p>

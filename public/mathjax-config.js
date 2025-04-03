@@ -15,6 +15,9 @@ const preamble = `
 \\DeclareMathOperator{\\GL}{GL}
 \\DeclareMathOperator{\\SL}{SL}
 \\DeclareMathOperator{\\ord}{ord}
+\\DeclareMathOperator{\\Log}{Log}
+\\DeclareMathOperator{\\Res}{Res}
+
 \\newcommand{\\id}{\\mathrm{id}}
 \\newcommand{\\op}{\\operatorname}
 \\newcommand{\\R}{\\mathbb{R}}
@@ -23,7 +26,7 @@ const preamble = `
 \\newcommand{\\Q}{\\mathbb{Q}}
 \\newcommand{\\N}{\\mathbb{N}}
 \\newcommand{\\se}[1]{\\{#1\\}}
-\\newcommand{\\sb}[2]{\\{#1\\mid #2\\}}
+\\newcommand{\\sb}[2]{\\left\\{#1\\;\\middle|\\; #2\\right\\}}
 \\newcommand{\\actson}{\\curvearrowright}
 \\newcommand{\\mrm}[1]{\\mathrm{#1}}
 \\newcommand{\\Ci}{\\mathbb{C}_\\infty}
@@ -62,6 +65,7 @@ const preamble = `
 \\newcommand{\\fsum}[4][=]{\\for[#1]{\\sum}{#2}{#3}{#4}}
 
 \\newcommand{\\operp}{⦹}
+
 `
 
 MathJax = {

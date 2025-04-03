@@ -1,0 +1,28 @@
+<p>
+    The likelihood function is
+    <span class="display-math">$$ \begin{align*}
+        L_{Y\mid X}(β, σ^2) = (2πσ^2)^{-n/2} \exp\left(-\frac{1}{2σ^2} \|Y - Xβ\|^2\right).
+    \end{align*} $$</span>
+    Log-likelihood
+    <span class="display-math">$$ \begin{align*}
+        l_{Y\mid X}(β, σ^2) = -\frac{n}{2}\log σ^2 - \frac{1}{2σ^2} \|Y-Xβ\|^2.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$(\hat β_{\text{MLE}}, \hat σ^2_{\text{MLE}})$</span> maximises <span class="inline-math">$l_{Y\mid X}(β, σ^2)$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \hat β_{\text{MLE}} = \arg\max_{β\in \R^p}\left(-\frac{n}{2}\log \hat σ^2_{\text{MLE}} - \frac{1}{2\hat σ^2_{\text{MLE}}}\|Y-Xβ\|^2\right) = \arg\min_{β\in \R^p} \|Y-Xβ\|^2.
+    \end{align*} $$</span>
+    Also
+    <span class="display-math">$$ \begin{align*}
+        &amp;0 = \pdfd{l_{Y\mid X}}{σ^2}\bigg|_{\hat β_{\text{MLE}}, \hat σ^2_{\text{MLE}}}
+        = -\frac{n}{2\hat σ^2_{\text{MLE}}} + \frac{1}{2(\hat σ^2_{\text{MLE}})^2} \|Y - X\hat β_{\text{MLE}}\|^2 \\
+        \implies&amp; \hat σ^2_{\text{MLE}} = \frac{1}{n}\min_{β\in \R^p} \|Y-Xβ\|^2 := \frac{\mathrm{RSS}}{n}.
+    \end{align*} $$</span>
+</p>
+<p>
+    The maximum likelihood is then
+    <span class="display-math">$$ \begin{align*}
+        L_{Y\mid X}(\hat β_{\text{MLE}}, \hat σ^2_{\text{MLE}}) = \left(\frac{2πe}{n}\mathrm{RSS}\right)^{-n/2}.
+    \end{align*} $$</span>
+</p>

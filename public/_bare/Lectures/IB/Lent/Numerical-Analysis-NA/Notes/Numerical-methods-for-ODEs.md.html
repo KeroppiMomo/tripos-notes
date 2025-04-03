@@ -1,0 +1,958 @@
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Initial value problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            Given <span class="inline-math">$f: \R\times \R^d \to \R^d$</span> and <span class="inline-math">$\v y_0\in \R^d$</span>,
+            consider an initial value problem
+            <span class="display-math">$$ \begin{align*}
+                \v y&#x27; ={}&amp; \v f(t, \v y), \quad 0\leq t\leq T, \\
+                \v y(0) ={}&amp; \v y_0.
+            \end{align*} $$</span>
+        </p>
+        <p>
+            For a certain step size <span class="inline-math">$h&gt;0$</span>,
+            seek an approximation <span class="inline-math">$\v y_{n} \approx \v y(t_n)$</span>
+            where <span class="inline-math">$t_n = nh$</span>.
+        </p>
+        
+    </div>
+</div><p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (convergent method)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-convergent-method.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose given a step size <span class="inline-math">$h&gt;0$</span>,
+                a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">numerical method</a> generates
+                <span class="inline-math">$(\v y_n^{(h)})_{n=0}^N$</span> where <span class="inline-math">$N = \lfloor T/h\rfloor$</span>.
+            </p>
+            <p>
+                We say the method is <em>convergent</em> if
+                <span class="display-math">$$ \begin{align*}
+                    \max_{n} \|\v y_n^{(h)} - \v y(t_n)\| \to 0 \qquad \text{as }h\to 0.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (local truncation error, order of method)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-local-truncation-error-order-of-method.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>local truncation error</em> of a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">numerical method</a>
+                is the error of the method assuming we have obtained the true solution previously:
+                for a method <span class="inline-math">$\v y_{n+1} = \v ϕ(t_n, \v y_0, \ldots, \v y_n)$</span>, the local truncation error is
+                <span class="display-math">$$ \begin{align*}
+                    \v η_{n+1} = \v y(t_{n+1}) - \v ϕ(t_n, \v y(t_{0}), \ldots, \v y(t_n)).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                We say the method has <em>order</em> <span class="inline-math">$p$</span> if <span class="inline-math">$\v η_{n+1} = O(h^{p+1})$</span> where <span class="inline-math">$h$</span> is the step size.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            One-step methods
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/One-step-methods.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Euler's method
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Euler-s-method.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <div class="markdown-callout" data-callout="method">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Euler method</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    For an <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">initial value problem</a>,
+                                    <span class="display-math">$$ \begin{align*}
+                                        \v y_{n+1} = \v y_n + h \v f(t_n, \v y_n).
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (convergence of the Euler method)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-convergence-of-the-Euler-method.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For an <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">initial value problem</a>,
+                                        suppose
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$\v y&#x27;&#x27;$</span> is bounded on <span class="inline-math">$[0,T]$</span>; and
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$\v f$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Lipschitz-continuity.html">Lipschitz</a> in <span class="inline-math">$\v y$</span>, i.e.
+                                            <span class="inline-math">$\|\v f(t,\v x) - \v f(t, \v y)\| \leq λ\|\v x - \v y\|$</span> for all <span class="inline-math">$0\leq t\leq T$</span> and <span class="inline-math">$\v x,\v y\in \R^d$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        Then the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Euler-s-method.html">Euler method</a> has <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-local-truncation-error-order-of-method.html">order</a> 1 and is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-convergent-method.html">convergent</a>,
+                                        with global error <span class="inline-math">$\v e_n := \v y(t_n) - \v y_n = O(h)$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-convergence-of-the-Euler-method.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Theta methods
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theta-methods.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <div class="markdown-callout" data-callout="method">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Theta methods</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    For an <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">initial value problem</a> and some <span class="inline-math">$θ\in [0,1]$</span>,
+                                    <span class="display-math">$$ \begin{align*}
+                                        \v y_{n+1} = \v y_n + h\bigl(θ\,\v f(t_n, \v y_n) + (1-θ)\, \v f(t_{n+1}, \v y_{n+1})\bigr).
+                                    \end{align*} $$</span>
+                                </p>
+                                
+                            </div>
+                        </div><table>
+                            <tr>
+                                <th class="table-cell-left"><p>
+                                    <span class="inline-math">$θ$</span>
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Name
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Scheme
+                                </p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$1$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    Euler method
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\v y_{n+1} = \v y_n + h\, \v f(t_n ,\v y_n)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    explicit
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$1/2$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    Trapezoidal rule
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\v y_{n+1} = \v y_n + \frac{1}{2}h\bigl(\v f(t_n ,\v y_n) + \v f(t_{n+1}, \v y_{n+1})\bigr)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    implicit
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$0$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    Backward Euler
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\v y_{n+1} = \v y_n + h\, \v f(t_{n+1}, \v y_{n+1})$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    implicit
+                                </p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            For <span class="inline-math">$θ\in [0,1)$</span>,
+                            the method is <em>implicit</em>: we need to solve an equation for <span class="inline-math">$\v y_{n+1}$</span>
+                            (by e.g. fixed point iteration, Newton-Raphson, modified Newton-Raphson etc).
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (order of theta methods)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proposition-order-of-theta-methods.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theta-methods.html">theta method</a> has order
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            2 if <span class="inline-math">$θ=1/2$</span> (the trapezoidal rule); or
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            1 otherwise.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-order-of-theta-methods.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Multistep methods
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <div class="markdown-callout" data-callout="method">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Multistep method</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        For an <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">initial value problem</a>,
+                        an <span class="inline-math">$s$</span>-step method use <span class="inline-math">$\v y_n, \v y_{n+1}, \ldots, \v y_{n+s-1}$</span> to find <span class="inline-math">$\v y_{n+s}$</span> by
+                        <span class="display-math">$$ \begin{align*}
+                            \sum_{m=0}^{s} a_m \v y_{n+m} = h\sum_{m=0}^{s} b_m \v f_{n+m}
+                        \end{align*} $$</span>
+                        where <span class="inline-math">$\v f_{n+m} = \v f(t_{n+m}, \v y_{n+m})$</span>.
+                    </p>
+                    
+                </div>
+            </div><ul>
+            <li>
+                <p>
+                    We say it is <em>homogeneous</em> if it satisfies the normalisation condition <span class="inline-math">$a_s = 1$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    It is explicit if <span class="inline-math">$b_s = 0$</span>, and implicit otherwise.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Define the polynomials
+                <span class="display-math">$$ \begin{align*}
+                    ρ(w) = \sum_{m=0}^{s} a_m w^m, \qquad σ(w) = \sum_{m=0}^{s} b_m w^m.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (order of multistep method)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The following are equivalent conditions for a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">multistep method</a>
+                            to have <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-local-truncation-error-order-of-method.html">order</a> <span class="inline-math">$p\geq 1$</span>:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                its coefficients satisfy
+                                <span class="display-math">$$ \begin{align*}
+                                \sum_{m=0}^{s} a_m ={}&amp; 0, \\
+                                \sum_{m=0}^{s} m^k a_m ={}&amp; k \sum_{m=0}^{s} m^{k-1} b_m, \qquad \forall k=1,2,\ldots,p;
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                it is exact on <span class="inline-math">$\mathcal{P}_p$</span>:
+                                <span class="display-math">$$ \begin{align*}
+                                \sum_{m=0}^{s} a_m Q(t_{n+m}) = h\sum_{m=0}^{s} b_m Q&#x27;(t_{n+m}) \qquad \forall Q\in \mathcal{P}_p;
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                the associated polynomials satisfy
+                                <span class="display-math">$$ \begin{align*}
+                                ρ(e^{z}) - zσ(e^{z}) = O(z^{p+1}), \qquad \text{as } z\to 0
+                                \end{align*} $$</span>
+                                or equivalently (with the substitution <span class="inline-math">$w=e^z$</span> and noting <span class="inline-math">$\log w = O(|w-1|)$</span>)
+                                <span class="display-math">$$ \begin{align*}
+                                \frac{ρ(w)}{\log w} = σ(w) + O(|w-1|^{p}), \qquad \text{as }w\to 1.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-order-of-multistep-method.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Dahlquist equivalence theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Dahlquist-equivalence-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">multistep method</a> is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-convergent-method.html">convergent</a> iff
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                it is of order <span class="inline-math">$p\geq 1$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                the polynomial <span class="inline-math">$ρ$</span> satisfies the <em>root condition</em>,
+                                i.e. all complex roots of <span class="inline-math">$ρ$</span> lie in <span class="inline-math">$|z|\leq 1$</span>
+                                and all roots with modulus 1 are simple.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Constructing multistep methods with maximum order
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Constructing-multistep-methods-with-maximum-order.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            To construct an <span class="inline-math">$s$</span>-step <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">method</a>,
+                            we can take some <span class="inline-math">$ρ\in \mathcal{P}_s$</span>
+                            such that <span class="inline-math">$ρ(1) = 0$</span> and <span class="inline-math">$ρ$</span> satisfies the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Dahlquist-equivalence-theorem.html">root condition</a>.
+                            Then we can determine <span class="inline-math">$σ$</span> by expanding
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{ρ(w)}{\log w} = σ(w) + O(|w-1|^p).
+                            \end{align*} $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                For an implicit method, we allow <span class="inline-math">$σ\in \mathcal{P}_s$</span>, <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">so</a> we obtain an order of <span class="inline-math">$p=s+1$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For an explicit method, we allow <span class="inline-math">$σ\in \mathcal{P}_{s-1}$</span>, so we obtain an order of <span class="inline-math">$p=s$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Adams methods
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Adams-methods.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The choice <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html"><span class="inline-math">$ρ(w)$</span></a> <span class="inline-math">$= w^s - w^{s-1} = w^{s-1}(w-1)$</span> corresponds to <em>Adams methods</em>.
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            <em>Adams-Bashforth methods</em> are explicit, and has order <span class="inline-math">$p=s$</span>.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <em>Adams-Moulton methods</em> are implicit, and has order <span class="inline-math">$p=s+1$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <div class="markdown-embed embed-result">
+                                            <div class="markdown-embed-title">
+                                                Proposition (coefficients of Adams methods as integrals of polynomials)
+                                                <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proposition-coefficients-of-Adams-methods-as-integrals-of-polynomials.html">open_in_new</a>
+                                            </div>
+                                            <div class="markdown-embed-content">
+                                                <p>
+                                                    The coefficients <span class="inline-math">$b_m$</span> in an <span class="inline-math">$s$</span>-step Adams method are given by
+                                                    <span class="display-math">$$ \begin{align*}
+                                                        b_m = \int_{s-1}^{s} l_m(t) \d t
+                                                    \end{align*} $$</span>
+                                                    where <span class="inline-math">$l_m(t) = ω(t)/(t-m)ω&#x27;(m)$</span> are the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lagrange-interpolating-polynomial.html">Lagrange fundamental polynomials</a>:
+                                                </p>
+                                                <ul>
+                                                <li>
+                                                    <p>
+                                                        for an Adams-Moulton (explicit) method, the nodes are <span class="inline-math">$0,1,\ldots,s$</span>, i.e. <span class="inline-math">$ω(t) = \prod_{m=0}^{s} (t-m)$</span>;
+                                                    </p>
+                                                    
+                                                </li><li>
+                                                    <p>
+                                                        for an Adams-Bashforth (implicit) method, the nodes are <span class="inline-math">$0,1,\ldots,s-1$</span>, i.e. <span class="inline-math">$ω(t) = \prod_{m=0}^{s-1} (t-m)$</span>.
+                                                    </p>
+                                                    
+                                                </li>
+                                                </ul>
+                                                <p>
+                                                    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-coefficients-of-Adams-methods-as-integrals-of-polynomials.html">Proof</a>
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-2-step-Adams-methods.html">Example (2-step Adams methods)</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Backward differentiation formula
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Backward-differentiation-formula.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We can construct an implicit <span class="inline-math">$s$</span>-step, <span class="inline-math">$s$</span>-order method by taking
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html"><span class="inline-math">$σ(w)$</span></a> <span class="inline-math">$= b_s w^s$</span>
+                            and normalising <span class="inline-math">$b_s = 1$</span>.
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (coefficients of the backward differentiation formula)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proposition-coefficients-of-the-backward-differentiation-formula.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        In the <span class="inline-math">$s$</span>-step <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Backward-differentiation-formula.html">backward differentiation formula</a>,
+                                        the coefficients are given by
+                                        <span class="display-math">$$ \begin{align*}
+                                            ρ(w) ={}&amp; \sum_{k=1}^{s} \frac{1}{k}w^{s-k} (w-1)^k \in \mathcal{P}_s, \\
+                                        \end{align*} $$</span>
+                                        or equivalently
+                                        <span class="display-math">$$ \begin{align*}
+                                            a_s ={}&amp; \sum_{k=1}^{s} \frac{1}{k}, \\
+                                            a_m ={}&amp; \frac{(-1)^{s-m}}{s-m}\pmat{s \\ m}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-coefficients-of-the-backward-differentiation-formula.html">Derivation</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Higher order multistep methods
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Higher-order-multistep-methods.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            (Non-examinable)
+                        </p>
+                        <p>
+                            There are no <span class="inline-math">$s$</span>-step method of order <span class="inline-math">$2s+1$</span> (<a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-no-multistep-method-of-order-2s-1.html">derivation</a>),
+                            but there exists unique implicit method of order <span class="inline-math">$2s$</span>
+                            and explicit method of order <span class="inline-math">$2s-1$</span>.
+                        </p>
+                        <p>
+                            However:
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (first Dahlquist barrier)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-first-Dahlquist-barrier.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If an <span class="inline-math">$s$</span>-step method is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-convergent-method.html">convergent</a>
+                                        (i.e. the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Dahlquist-equivalence-theorem.html">root condition</a> is satisfied),
+                                        then
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$p\leq s$</span> for an explicit method (achieved by <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Adams-methods.html">Adams-Bashforth</a>);
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$p\leq s+1$</span> for an implicit method when <span class="inline-math">$s$</span> is odd (achieved by <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Adams-methods.html">Adams-Moulton</a>);
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$p\leq s+2$</span> for an implicit method when <span class="inline-math">$s$</span> is even (achieved by <span class="inline-math">$ρ(w) = w^s - 1$</span>).
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Runge-Kutta methods
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Runge-Kutta-methods.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <div class="markdown-callout" data-callout="method">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Runge-Kutta methods</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        For an <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">initial value problem</a>,
+                        an <em><span class="inline-math">$s$</span>-stage explicit Runge-Kutta method</em> has the form
+                        <span class="display-math">$$ \begin{align*}
+                            \v k_1 ={}&amp; \v f(t_n, \v y_n), &amp;&amp; c_1 = 0\\
+                            \v k_2 ={}&amp; \v f(t_n + c_2 h, \v y_n + h(a_{21} \v k_1)), &amp;&amp;c_2 = a_{21} \\
+                            \v k_3 ={}&amp; \v f(t_n + c_3 h, \v y_n + h(a_{31} \v k_1 + a_{32} \v k_2)), &amp;&amp;c_3 = a_{31} + a_{32} \\
+                            \vdots \\
+                            \v k_s ={}&amp; \v f\Bigl(t_n + c_s h, \v y_n + h \sum_{j=1}^{s-1} a_{sj} \v k_j\Bigr), &amp;&amp; c_s = \sum_{j=1}^{s-1} a_{sj} \\
+                            \v y_{n+1} ={}&amp; \v y_n + h \sum_{i=1}^{s} b_i \v k_i, &amp;&amp; 1 = \sum_{i=1}^{s} b_i.
+                        \end{align*} $$</span>
+                        >
+                        A general Runge-Kutta method is
+                        <span class="display-math">$$ \begin{align*}
+                            \v k_i ={}&amp; \v f(t_n + c_ih, \v y_n + h\sum_{j=1}^{s} a_{ij} \v k_j), &amp;&amp;c_i = \sum_{j=1}^{s} a_{ij}, &amp;&amp;i=1,2,\ldots,s, \\
+                            \v y_{n+1} ={}&amp; \v y_n + h \sum_{i=1}^{s} b_i \v k_i, &amp;&amp;1 = \sum_{i=1}^{s} b_i k_i.
+                        \end{align*} $$</span>
+                        which is explicit if <span class="inline-math">$a_{ij} \leq 0$</span> for all <span class="inline-math">$i\leq j$</span> and implicit otherwise.
+                    </p>
+                    
+                </div>
+            </div><p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Motivation-of-Runge-Kutta-methods.html">Motivation of Runge-Kutta methods</a>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-order-of-explicit-two-stage-Runge-Kutta.html">Example (order of explicit two-stage Runge-Kutta)</a>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-order-of-implicit-two-stage-Runge-Kutta.html">Example (order of implicit two-stage Runge-Kutta)</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (collocation at zeros of orthogonal polynomial)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-collocation-at-zeros-of-orthogonal-polynomial.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$\prod_{i=1}^{s} (t-c_i)$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-orthogonal-polynomial.html">orthogonal</a> on the interval <span class="inline-math">$[0,1]$</span>
+                            to all polynomials of degree <span class="inline-math">$r-1\leq s-1$</span>.
+                            Let <span class="inline-math">$l_i$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lagrange-interpolating-polynomial.html">fundamental Lagrange polynomials</a> of degree <span class="inline-math">$s-1$</span> for the knots <span class="inline-math">$c_i$</span>,
+                            and
+                            <span class="display-math">$$ \begin{align*}
+                                a_{ij} = \int_{0}^{c_i} l_j(t) \d t, \qquad b_i = \int_{0}^{1} l_i(t) \d t.
+                            \end{align*} $$</span>
+                            Then the (highly implicit) <span class="inline-math">$s$</span>-stage <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Runge-Kutta-methods.html">Runge-Kutta method</a>
+                            with these parameters is of order <span class="inline-math">$s+r$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                The highest order of an <span class="inline-math">$s$</span>-stage implicit Runge-Kutta method
+                                (known as the <em>Guass-Legendre Runge-Kutta method</em>) is <span class="inline-math">$2s$</span>,
+                                corresponding to the collocation at zeros of the Legendre polynomial.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Stiff ODEs
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Stiff-ODEs.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                An ODE is said to be <em>stiff</em>
+                if we have to depress the step size <span class="inline-math">$h$</span>
+                for stability well beyond the need of accuracy.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-stiff-ODE.html">Example (stiff ODE)</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (linear stability domain, A-stable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-linear-stability-domain-A-stable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">numerical method</a> applied to <span class="inline-math">$y&#x27; = λy, y(0)=1$</span> produces <span class="inline-math">$(y_n^{(h)})_n$</span>.
+                            The <em>linear stability domain</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                \mathcal{D} = \sb{λh \in \C}{y_n^{(h)}\to 0 \text{ as }n\to \infty}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            We say the method is <em><span class="inline-math">$A$</span>-stable</em> if
+                            the left-half plane <span class="inline-math">$\C^- = \sb{z\in \C}{\Re z &lt; 0} \subseteq D$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-linear-stability-domain-of-theta-methods.html">Example (linear stability domain of theta methods)</a>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Stability of multistep methods
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Stability-of-multistep-methods.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-linear-stability-domain-A-stable.html">linear stability domain</a> of a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">multistep method</a>
+                            <span class="inline-math">$\sum_{m=0}^{s} a_m \v y_{n+m} = h \sum_{m=0}^{s} b_m \v f_{n+m}$</span>
+                            contains <span class="inline-math">$z = λh$</span> iff
+                            the solution to the recurrence equation
+                            <span class="display-math">$$ \begin{align*}
+                                \sum_{m=0}^{s} a_m y_{n+m} = z \sum_{m=0}^{s} b_m y_{n+m}
+                            \end{align*} $$</span>
+                            tends to 0 as <span class="inline-math">$n\to \infty$</span>.
+                            This is equivalent to the polynomial
+                            <span class="display-math">$$ \begin{align*}
+                                p_z(x) := ρ(x) - z\,σ(x) = \sum_{m=0}^{s} a_m x^m - z \sum_{m=0}^{s} b_mx^m
+                            \end{align*} $$</span>
+                            having the moduli of all roots <span class="inline-math">$&lt;1$</span>.
+                        </p>
+                        <p>
+                            Tricks to finding the linear stability domain:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$z\in \partial D$</span> iff <span class="inline-math">$p_z(x) = 0$</span> for some <span class="inline-math">$|x|=1$</span>.
+                                So if we write <span class="inline-math">$x=e^{it}$</span> (<span class="inline-math">$t\in \R$</span>), then
+                                <span class="display-math">$$ \begin{align*}
+                                z(t) = \frac{ρ(e^{it})}{σ(e^{it})},
+                                \end{align*} $$</span>
+                                defines the curve <span class="inline-math">$\partial D$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If we're looking for the real stability interval <span class="inline-math">$I = \mathcal{D}\cap \R$</span>,
+                                the boundary is given by <span class="inline-math">$p_{z_1}(1) = 0 \iff z_1 = ρ(1)/σ(1)$</span>
+                                and <span class="inline-math">$p_{z_2}(-1) = 0 \iff z_2 = ρ(-1)/σ(-1)$</span>.
+                                Moreover if the method has order <span class="inline-math">$\geq 1$</span>, <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">then</a> <span class="inline-math">$ρ(1) = 0$</span>,
+                                so it is highly likely that
+                                <span class="display-math">$$ \begin{align*}
+                                I = \Bigl(\frac{ρ(-1)}{σ(-1)}, 0\Bigr).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-finding-real-stability-interval.html">Example (finding real stability interval)</a>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (second Dahlquist barrier)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-second-Dahlquist-barrier.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        No <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">multistep method</a> of <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-local-truncation-error-order-of-method.html">order</a> <span class="inline-math">$p\geq 3$</span> can be <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-linear-stability-domain-A-stable.html"><span class="inline-math">$A$</span>-stable</a>.
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theta-methods.html">Trapezoidal rule</a> is <span class="inline-math">$A$</span>-stable of order <span class="inline-math">$2$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            Still, some high-order multistep methods
+                            are of good use, e.g. BDF methods of order <span class="inline-math">$\leq 6$</span>
+                            <a href="https://en.wikipedia.org/wiki/Backward_differentiation_formula#Stability">have a wedge</a> about <span class="inline-math">$(-\infty, 0)$</span>.
+                            We say these are <em>$A</em>0<span class="inline-math">$-stable_.$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Stability of Runge-Kutta methods
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Stability-of-Runge-Kutta-methods.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Lemma (no explicit Runge-Kutta method can be A-stable)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lemma-no-explicit-Runge-Kutta-method-can-be-A-stable.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        No <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Runge-Kutta-methods.html">explicit Runge-Kutta method</a> can be <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-linear-stability-domain-A-stable.html"><span class="inline-math">$A$</span>-stable</a>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-no-explicit-Runge-Kutta-method-can-be-A-stable.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            However, implicit Runge-Kutta methods may be <span class="inline-math">$A$</span>-stable.
+                            (<a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-A-stable-Runge-Kutta-method.html">Example</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Numerical implementation of methods for ODEs
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-implementation-of-methods-for-ODEs.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Milne device
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Milne-device.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For multistep methods,
+                            we use a pair of methods of the same order <span class="inline-math">$p$</span>:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                the <em>predictor</em>: explicit, lower computational cost; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                the <em>corrector</em>: implicit, higher accuracy.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            The predictor provides a good initial guess in the solution of the implicit corrector equations,
+                            and allows for error estimation:
+                        </p>
+                        <p>
+                            If the local truncation errors are
+                            <span class="display-math">$$ \begin{align*}
+                                \v y(t_{n+1}) - \v y_{n+1}^{\text{P}} ={}&amp; c_{\text{P}} h^p \v y^{(p)}(t_n) + O(h^{p+1}), \\
+                                \v y(t_{n+1}) - \v y_{n+1}^{\text{C}} ={}&amp; c_{\text{C}} h^p \v y^{(p)}(t_n) + O(h^{p+1}), 
+                            \end{align*} $$</span>
+                            then we estimate the error as
+                            <span class="display-math">$$ \begin{align*}
+                                \v y(t_{n+1}) - \v y_{n+1}^\text{C} \approx -\frac{c_{\text{C}}}{c_\text{P} - c_\text{C}}(\v y_{n+1}^\text{P} - \v y_{n+1}^{\text{C}}).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Embedded Runge-Kutta method
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Embedded-Runge-Kutta-method.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Runge-Kutta methods do not have a single error constant.
+                        </p>
+                        <p>
+                            Instead we use two (typically explicit) Runge-Kutta methods:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                one of <span class="inline-math">$s$</span> stages and order <span class="inline-math">$p$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                one of <span class="inline-math">$s+l$</span> stages and order <span class="inline-math">$p+1$</span>,
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            with the first <span class="inline-math">$s$</span> stages identical to reduce computational cost.
+                            Then we have an estimate of the lower order method
+                            <span class="display-math">$$ \begin{align*}
+                                \v y(t_{n+1}) - \v y_{n+1}^{[1]}\approx \v y_{n+1}^{[2]} - \v y_{n+1}^{[1]}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            For example
+                            <span class="display-math">$$ \begin{align*}
+                                k_1 ={}&amp; f(t_n, y_n), \\
+                                k_2 ={}&amp; f(t_n + \frac{1}{2}h, y_n + \frac{1}{2}hk_1), \\
+                                k_3 ={}&amp; f(t_n + h, y_n - hk_1 + 2hk_2), \\
+                                y_{n+1}^{[1]} ={}&amp; y_n + hk_2, \\
+                                y_{n+1}^{[2]} ={}&amp; y_n + \frac{1}{6}h(k_1 + 4k_2 + k_3).
+                            \end{align*} $$</span>
+                            <span class="inline-math">$y_{n+1}^{[1]}$</span> has order <span class="inline-math">$2$</span> accuracy, and <span class="inline-math">$y_{n+1}^{[2]}$</span> has order <span class="inline-math">$3$</span> accuracy.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Zadunaisky device
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Zadunaisky-device.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose the ODE <span class="inline-math">$\v y&#x27;(t) = \v f(t, \v y)$</span> is solved by an arbitrary numerical method of order <span class="inline-math">$p$</span>,
+                            and we have stored some past values <span class="inline-math">$\v y_n, \v y_{n-1}, \ldots, \v y_{n-p}$</span>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$\v q\in \mathcal{P}_q$</span> be a polynomial that interpolates <span class="inline-math">$\v q(t_i) = \v y_i$</span> for <span class="inline-math">$i=n,\ldots,n-p$</span>.
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-polynomial-interpolation-error.html">Then</a> <span class="inline-math">$\v q(t) - \v y(t) = O(h^{p+1})$</span>.
+                            Note <span class="inline-math">$\v q$</span> solves a new ODE
+                            <span class="display-math">$$ \begin{align*}
+                                \v z&#x27; = \v f(t,\v y) + \underbrace{\v q&#x27; - \v f(t, \v q)}_{\text{small}}, \tag{*}
+                            \end{align*} $$</span>
+                            which slightly differs from our original ODE by a term <span class="inline-math">$\v q&#x27; - \v y&#x27;$</span> which we expect to be small.
+                        </p>
+                        <p>
+                            Now apply the same method to produce <span class="inline-math">$\v z_{n+1}$</span>.
+                            The Zadunaisky device estimates the local truncation error of <span class="inline-math">$\v y_{n+1}$</span> as
+                            <span class="display-math">$$ \begin{align*}
+                                \v y(t_{n+1}) - \v y_{n+1} \approx \v q(t_{n+1}) - \v z_{n+1}.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

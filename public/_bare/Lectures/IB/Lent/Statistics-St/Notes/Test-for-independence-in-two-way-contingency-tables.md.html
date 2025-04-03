@@ -1,0 +1,33 @@
+<p>
+    Suppose <span class="inline-math">$(X_1, Y_1), \ldots, (X_n, Y_n) \sim P$</span> iid,
+    with <span class="inline-math">$X_1\in (1,2,\ldots,r)$</span> and <span class="inline-math">$Y_1\in (1,2,\ldots,c)$</span>.
+    Test <span class="inline-math">$H_0: X_1$</span> and <span class="inline-math">$Y_1$</span> are independent.
+</p>
+<p>
+    Summarise data by a contingency table with entries <span class="inline-math">$N_{xy} = \sum_{i=1}^{n} \mathbb{1}_{\set{X_i = x, Y_i = y}}$</span>.
+    Model as
+    <span class="display-math">$$ \begin{align*}
+        (N_{11}, \ldots, N_{1c}, \ldots, N_{r1}, \ldots, N_{rc}) \sim \mathrm{Multinomial}(n; p_{11}, \ldots, p_{1c}, \ldots, p_{r 1}, \ldots, p_{rc}).
+    \end{align*} $$</span>
+    Now
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$H_0$</span>: <span class="inline-math">$p_{xy} = p_{x+} p_{+y}$</span> where <span class="inline-math">$p_{x+}, p_{+y}\geq 0$</span>, <span class="inline-math">$\sum_{x} p_{x+} = 1 = \sum_{y} p_{+y}$</span>
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$H_1$</span>: <span class="inline-math">$p_{xy}$</span> unrestricted (but still <span class="inline-math">$p_{xy} \geq 0$</span>, <span class="inline-math">$\sum_{x,y} p_{xy} = 1$</span>), excluding <span class="inline-math">$H_0$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Apply Pearson's chi-squared test with
+    <span class="display-math">$$ \begin{align*}
+        O_{xy} = N_{xy}, \qquad E_{xy} = \frac{N_{x+} N_{+y}}{n}, \qquad d=(r-1)(c-1).
+    \end{align*} $$</span>
+    (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-independence-in-two-way-contingency-tables.html">Derivation</a>)
+</p>

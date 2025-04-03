@@ -1,0 +1,52 @@
+<p>
+    The idea is the Taylor expand everything.
+</p>
+
+<h1>Proof for 1</h1>
+
+<p>
+    <span class="display-math">$$ \begin{align*}
+        &amp;\sum_{m=0}^{s} a_m \v y(t_{n+m}) - h\sum_{m=0}^{s} b_m \v y&#x27;(t_{n+m}) \\
+        ={}&amp; \sum_{m=0}^{s} a_m \sum_{k=0}^{\infty} \frac{(mh)^k}{k!} \v y^{(k)}(t_n) - h \sum_{m=0}^{s} b_m \sum_{k=1}^{\infty} \frac{(mh)^{k-1}}{(k-1)!} \v y^{(k)}(t_n) \\
+        ={}&amp; \left(\sum_{m=0}^{s} a_m\right)\v y(t_n) + \sum_{k=1}^{\infty} \frac{h^k}{k!} \left(\sum_{m=0}^{s} m^k a_m -  km^{k-1}b_m\right) \v y^{(k)}(t_n).
+    \end{align*} $$</span>
+    The method has order <span class="inline-math">$p$</span> iff this expression is <span class="inline-math">$O(h^{p+1})$</span>,
+    which occurs iff all coefficients of <span class="inline-math">$h^k$</span> vanish for <span class="inline-math">$k=0,1,\ldots,p$</span>,
+    as claimed.
+</p>
+
+<h1>Proof for 2</h1>
+
+<p>
+    Write
+    <span class="display-math">$$ \begin{align*}
+        \v y(t_{n+m}) = \v Q(t_{n+m}) + O(h^{p+1})
+    \end{align*} $$</span>
+    where <span class="inline-math">$\v Q\in \mathcal{P}_p$</span>.
+</p>
+<p>
+    The multistep method has order <span class="inline-math">$p$</span> iff
+    <span class="display-math">$$ \begin{align*}
+        &amp;\sum_{m=0}^{s} a_m \v y(t_{n+m}) = h\sum_{m=0}^{s} b_m \v y&#x27;(t_{n+m}) + O(h^{p+1}) \\
+        \iff&amp; \sum_{m=0}^{s} a_m \v Q(t_{n+m}) = h\sum_{m=0}^{s} b_m \v Q&#x27;(t_{n+m})
+    \end{align*} $$</span>
+    for any <span class="inline-math">$\v Q$</span>.
+</p>
+
+<h1>Proof for 3</h1>
+
+<p>
+    <span class="display-math">$$ \begin{align*}
+        ρ(e^z) - zσ(e^z) ={}&amp; \sum_{m=0}^{s} a_m e^{mz} - z\sum_{m=0}^{s} b_m e^{mz} \\
+        ={}&amp; \sum_{m=0}^{s} a_m \sum_{k=0}^{\infty} \frac{1}{k!} m^k z^k -  z \sum_{m=0}^{s} b_m \sum_{k=0}^{\infty} \frac{1}{k!} m^k z^k \\
+        ={}&amp; \left(\sum_{m=0}^{s} a_m\right) + \sum_{k=1}^{\infty} \frac{1}{k!} \left(\sum_{m=0}^{s} a_m m^k - kb_m m^{k-1}\right) z^k
+    \end{align*} $$</span>
+    which is <span class="inline-math">$O(h^{p+1})$</span> iff 1 holds.
+</p>
+<blockquote>
+    <p>
+        This has identical proof as 1
+        because Taylor expansion is informally <span class="inline-math">$f(x+h) = e^{hD} f(x)$</span> where <span class="inline-math">$D = \dd{x}$</span>.
+    </p>
+    
+</blockquote>

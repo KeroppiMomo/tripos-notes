@@ -1,0 +1,28 @@
+<p>
+    For <span class="inline-math">$H_0: μ=μ_0$</span> vs <span class="inline-math">$H_1: μ\neq μ_0$</span>,
+    the generalised likelihood ratio statistic is
+    <span class="display-math">$$ \begin{align*}
+        Λ(X) ={}&amp; \frac{\sup_{μ\in \R} L_X(μ)}{L_X(μ_0)} \\
+        ={}&amp; \frac{(2πσ^2)^{-n/2} \exp(-\frac{1}{2σ^2}\sum_{i=1}^{n} (X_i-\overline{X})^2)}{(2πσ^2)^{-n/2} \exp(-\frac{1}{2σ^2} \sum_{i=1}^{n} (X_i - μ_0)^2)}.
+    \end{align*} $$</span>
+    where we have used the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Maximum-likelihood-estimator-for-the-normal-location-problem.html">maximum likelihood estimator</a> <span class="inline-math">$\overline{X}$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        2\log Λ = -\frac{1}{σ^2}\left(\sum_{i=1}^{n} (X_i-\overline{X})^2 - \sum_{i=1}^{n} (X_i - μ_0)^2\right) = \frac{n}{σ^2}(\overline{X} - μ_0)^2 = Z^2.
+    \end{align*} $$</span>
+    (Note this resembles <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-Wilks-theorem.html">Wilks' theorem</a>.)
+</p>
+<p>
+    Therefore the likelihood ratio test rejects <span class="inline-math">$H_0$</span> if
+    <span class="display-math">$$ \begin{align*}
+        Z^2 &gt; c_α
+    \end{align*} $$</span>
+    where <span class="inline-math">$c_α$</span> is chosen such that <span class="inline-math">$\prob_{μ_0}(Z^2 &gt; c_α) = α$</span>.
+    Since <span class="inline-math">$Z\sim N(0,1)$</span>, <span class="inline-math">$Z^2 \sim χ_1^2$</span> so <span class="inline-math">$c_α$</span>
+    is the upper <span class="inline-math">$α$</span> quantile of <span class="inline-math">$χ_1^2$</span>.
+    Equivalently, reject if
+    <span class="display-math">$$ \begin{align*}
+        |Z| &gt; z_{α/2}
+    \end{align*} $$</span>
+    where <span class="inline-math">$z_{α/2}$</span> is the upper <span class="inline-math">$α/2$</span> quantile of <span class="inline-math">$N(0,1)$</span>.
+</p>

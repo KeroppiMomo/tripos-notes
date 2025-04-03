@@ -1,0 +1,41 @@
+<p>
+    It suffices to prove for the case <span class="inline-math">$d=1$</span>.
+    <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-Taylor-s-theorem.html">Taylor expand</a> the exact solution:
+    <span class="display-math">$$ \begin{align*}
+        y(t_{n+1}) ={}&amp; y(t_n) + h y&#x27;(t_n) + \frac{1}{2}h^2 y&#x27;&#x27;(τ_n) \\
+        ={}&amp; y(t_n) + hf\bigl(t_n, y(t_n)\bigr) + \frac{1}{2}h^2 y&#x27;&#x27;(τ_n)
+    \end{align*} $$</span>
+    for some <span class="inline-math">$τ_n \in (t_n, t_{n+1})$</span>.
+    The Euler method is
+    <span class="display-math">$$ \begin{align*}
+        y_{n+1} = y_n + hf(t_n, y_n).
+    \end{align*} $$</span>
+</p>
+<p>
+    Subtracting,
+    <span class="display-math">$$ \begin{align*}
+        e_{n+1} = e_n + h\Bigl(f\bigl(t_n, y(t_n)\bigr) - f\bigl(t_n, y_n\bigr)\Bigr) + \frac{1}{2}h^2 y&#x27;&#x27;(τ_n).
+    \end{align*} $$</span>
+</p>
+<p>
+    To see the order, assume <span class="inline-math">$y_n = y(t_n)$</span>, so <span class="inline-math">$e_n = 0$</span> and <span class="inline-math">$e_{n+1} = η_{n+1}$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        η_{n+1} = \frac{1}{2}h^2y&#x27;&#x27;(τ_n) \leq \frac{1}{2}\|y&#x27;&#x27;\|_\infty h^2 = O(h^2)
+    \end{align*} $$</span>
+    so the method has order 1.
+</p>
+<p>
+    To see convergence, we make use of the Lipschitz condition to have
+    <span class="display-math">$$ \begin{align*}
+        |e_{n+1}| \leq{} &amp; |e_n| + hλ\,|y(t_n) - y_n| + \frac{1}{2}h^2 \|y&#x27;&#x27;\|_\infty \\
+        ={}&amp; (1+hλ) \, |e_n|  + \frac{1}{2}h^2 \|y&#x27;&#x27;\|_\infty.
+    \end{align*} $$</span>
+    Solving this recurrence,
+    <span class="display-math">$$ \begin{align*}
+        |e_n| \leq{} &amp; (1+hλ)^n \, \underbrace{|e_0|}_{0} + \frac{1}{2}h^2 \|y&#x27;&#x27;\|_\infty \sum_{k=0}^{n-1} (1+hλ)^k \\
+        ={}&amp; \frac{1}{2}h^2 \|y&#x27;&#x27;\|_\infty \cdot \frac{(1+hλ)^n-1}{hλ} \\
+        \leq{} &amp; \frac{\|y&#x27;&#x27;\|_\infty}{2λ}h e^{λnh} &amp;&amp;1+x \leq e^x \\
+        \leq{}&amp; \frac{\|y&#x27;&#x27;\|_\infty}{2λ} e^{λT} h \\
+        ={}&amp; O(h).
+    \end{align*} $$</span>
+</p>

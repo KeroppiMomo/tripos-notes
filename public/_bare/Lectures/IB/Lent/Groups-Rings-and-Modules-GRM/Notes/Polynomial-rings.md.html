@@ -1,0 +1,247 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (polynomial ring)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-polynomial-ring.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$R$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-ring.html">ring</a>.
+            </p>
+            <p>
+                The <em>polynomial ring</em> <span class="inline-math">$R[X]$</span> is the set of all
+                polynomials in <span class="inline-math">$X$</span> with coefficients in <span class="inline-math">$R$</span>
+                <span class="display-math">$$ \begin{align*}
+                    R[X] = \sb{\sum_{i=0}^{n} a_i X^i}{n\geq 0, \, a_i\in R}
+                \end{align*} $$</span>
+                where <span class="inline-math">$X^i$</span> are formal symbols,
+                with <span class="inline-math">$0_{R[X]} = 0_R$</span>, <span class="inline-math">$1_{R[X]} = 1_R$</span> and the usual operations
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{i=0}^{n} a_i X^i + \sum_{i=0}^{m} b_i X^i ={}&amp; \sum_{i=0}^{\max\set{n,m}} (a_i + b_i )X^i, \\
+                    \left(\sum_{i=0}^{n} a_i X^i\right) \cdot \left(\sum_{i=0}^{m} b_i X^i\right) ={}&amp; \sum_{i=0}^{n+m} \left(\sum_{j=0}^{i} a_j b_{i-j}\right) X^i. \\
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The polynomial ring of two variables <span class="inline-math">$R[X,Y] \isom (R[X])[Y]$</span> is constructed similarly, etc.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (ring of formal power series)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-ring-of-formal-power-series.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>ring of formal power series in <span class="inline-math">$X$</span> with coefficients in <span class="inline-math">$R$</span></em> is
+                <span class="display-math">$$ \begin{align*}
+                    R[[X]] = \sb{\sum_{i=0}^{\infty} r_i X^i}{r\in R}
+                \end{align*} $$</span>
+                with the usual operations.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (polynomial ring over a field is a Euclidean domain)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-polynomial-ring-over-a-field-is-a-Euclidean-domain.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-field.html">field</a>.
+                The polynomial ring <span class="inline-math">$K[X]$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-Euclidean-domain.html">Euclidean domain</a>,
+                with Euclidean function <span class="inline-math">$ϕ = \deg$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proof-polynomial-ring-over-a-field-is-a-Euclidean-domain.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Keep in mind <span class="inline-math">$K[X]$</span> has all the nice properties you get in a Euclidean domain.
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (content of polynomial, primitive polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-content-of-polynomial-primitive-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$R$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-unique-factorisation-domain.html">unique factorisation domain</a>.
+            </p>
+            <p>
+                The <em>content</em> of <span class="inline-math">$f = a_0 + a_1 X + \ldots + a_n X^n \in$</span> <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-polynomial-ring.html"><span class="inline-math">$R[X]$</span></a> is
+                <span class="display-math">$$ \begin{align*}
+                    c(f) = \op{gcd}(a_0, a_1, \ldots, a_n) \in R,
+                \end{align*} $$</span>
+                <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-existence-and-uniqueness-of-GCD-and-LCM-in-UFD.html">defined up to associates</a>.
+            </p>
+            <p>
+                We say <span class="inline-math">$f$</span> is <em>primitive</em> if <span class="inline-math">$c(f)$</span> is a unit.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (product of primitive polynomials is primitive)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Lemma-product-of-primitive-polynomials-is-primitive.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$R$</span> be a unique factorisation domain.
+            </p>
+            <p>
+                If <span class="inline-math">$f,g\in R[X]$</span> are <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-content-of-polynomial-primitive-polynomial.html">primitive</a>,
+                then so is <span class="inline-math">$f\cdot g$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proof-product-of-primitive-polynomials-is-primitive.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (content of product of polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Corollary-content-of-product-of-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$R$</span> be a unique factorisation domain.
+            </p>
+            <p>
+                For <span class="inline-math">$f,g\in R[X]$</span>, <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-content-of-polynomial-primitive-polynomial.html"><span class="inline-math">$c$</span></a><span class="inline-math">$(fg)$</span> and <span class="inline-math">$c(f) c(g)$</span> are associates.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proof-content-of-product-of-polynomials.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Gauss's lemma, reducibility of polynomials in UFD and its field of fractions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Lemma-Gauss-s-lemma-reducibility-of-polynomials-in-UFD-and-its-field-of-fractions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$R$</span> be a unique factorisation domain
+                and <span class="inline-math">$F$</span> be its <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-field-of-fractions.html">field of fractions</a>.
+            </p>
+            <p>
+                For a <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-content-of-polynomial-primitive-polynomial.html">primitive</a> polynomial <span class="inline-math">$f\in R[X]$</span>,
+                <span class="inline-math">$f$</span> is irreducible in <span class="inline-math">$R[X]$</span> iff <span class="inline-math">$f$</span> is irreducible in <span class="inline-math">$F[X]$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proof-Gauss-s-lemma.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (divisibility of polynomials in UFD and its field of fractions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-divisibility-of-polynomials-in-UFD-and-its-field-of-fractions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$R$</span> be a unique factorisation domain
+                and <span class="inline-math">$F$</span> be its <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-field-of-fractions.html">field of fractions</a>.
+            </p>
+            <p>
+                For a <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-content-of-polynomial-primitive-polynomial.html">primitive</a> polynomial <span class="inline-math">$g\in R[X]$</span>,
+                a polynomial <span class="inline-math">$f\in R[X]$</span> is divisible by <span class="inline-math">$g$</span> in <span class="inline-math">$R[X]$</span>
+                iff it is divisible by <span class="inline-math">$g$</span> in <span class="inline-math">$F[X]$</span>.
+            </p>
+            <p>
+                Equivalently, if <span class="inline-math">$J=(g)\lhd R[X]$</span> and <span class="inline-math">$I=(g)\lhd F[X]$</span>,
+                then <span class="inline-math">$J = I \cap R[X]$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proof-divisibility-of-polynomials-in-UFD-and-its-field-of-fractions.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (polynomial ring of UFD is UFD)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-polynomial-ring-of-UFD-is-UFD.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$R$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-unique-factorisation-domain.html">unique factorisation domain</a>,
+                then so is <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-polynomial-ring.html"><span class="inline-math">$R[X]$</span></a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proof-polynomial-ring-of-UFD-is-UFD.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    We can repeat to show <span class="inline-math">$R[X_1, \ldots X_n]$</span> is a unique factorisation domain.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Eisenstein's criterion)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-Eisenstein-s-criterion.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$R$</span> be a unique factorisation domain
+                and <span class="inline-math">$f=a_0 + a_1 X + \ldots + a_n X^n\in R[X]$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-content-of-polynomial-primitive-polynomial.html">primitive</a>
+                with <span class="inline-math">$a_n \neq 0$</span>.
+            </p>
+            <p>
+                If there exists an irreducible <span class="inline-math">$p\in R$</span> such that
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$p\not\mid a_n$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$p\mid a_i$</span> for all <span class="inline-math">$i=0,1,\ldots,n-1$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$p^2\not\mid a_0$</span>,
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                then <span class="inline-math">$f$</span> is irreducible in <span class="inline-math">$R[X]$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proof-Eisenstein-s-criterion.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

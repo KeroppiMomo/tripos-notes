@@ -1,0 +1,307 @@
+<div class="markdown-callout" data-callout="method">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Multistep method</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            For an <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">initial value problem</a>,
+            an <span class="inline-math">$s$</span>-step method use <span class="inline-math">$\v y_n, \v y_{n+1}, \ldots, \v y_{n+s-1}$</span> to find <span class="inline-math">$\v y_{n+s}$</span> by
+            <span class="display-math">$$ \begin{align*}
+                \sum_{m=0}^{s} a_m \v y_{n+m} = h\sum_{m=0}^{s} b_m \v f_{n+m}
+            \end{align*} $$</span>
+            where <span class="inline-math">$\v f_{n+m} = \v f(t_{n+m}, \v y_{n+m})$</span>.
+        </p>
+        
+    </div>
+</div><ul>
+<li>
+    <p>
+        We say it is <em>homogeneous</em> if it satisfies the normalisation condition <span class="inline-math">$a_s = 1$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        It is explicit if <span class="inline-math">$b_s = 0$</span>, and implicit otherwise.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Define the polynomials
+    <span class="display-math">$$ \begin{align*}
+        ρ(w) = \sum_{m=0}^{s} a_m w^m, \qquad σ(w) = \sum_{m=0}^{s} b_m w^m.
+    \end{align*} $$</span>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (order of multistep method)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The following are equivalent conditions for a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">multistep method</a>
+                to have <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-local-truncation-error-order-of-method.html">order</a> <span class="inline-math">$p\geq 1$</span>:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    its coefficients satisfy
+                    <span class="display-math">$$ \begin{align*}
+                    \sum_{m=0}^{s} a_m ={}&amp; 0, \\
+                    \sum_{m=0}^{s} m^k a_m ={}&amp; k \sum_{m=0}^{s} m^{k-1} b_m, \qquad \forall k=1,2,\ldots,p;
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    it is exact on <span class="inline-math">$\mathcal{P}_p$</span>:
+                    <span class="display-math">$$ \begin{align*}
+                    \sum_{m=0}^{s} a_m Q(t_{n+m}) = h\sum_{m=0}^{s} b_m Q&#x27;(t_{n+m}) \qquad \forall Q\in \mathcal{P}_p;
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    the associated polynomials satisfy
+                    <span class="display-math">$$ \begin{align*}
+                    ρ(e^{z}) - zσ(e^{z}) = O(z^{p+1}), \qquad \text{as } z\to 0
+                    \end{align*} $$</span>
+                    or equivalently (with the substitution <span class="inline-math">$w=e^z$</span> and noting <span class="inline-math">$\log w = O(|w-1|)$</span>)
+                    <span class="display-math">$$ \begin{align*}
+                    \frac{ρ(w)}{\log w} = σ(w) + O(|w-1|^{p}), \qquad \text{as }w\to 1.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-order-of-multistep-method.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Dahlquist equivalence theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Dahlquist-equivalence-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">multistep method</a> is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-convergent-method.html">convergent</a> iff
+            </p>
+            <ul>
+            <li>
+                <p>
+                    it is of order <span class="inline-math">$p\geq 1$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    the polynomial <span class="inline-math">$ρ$</span> satisfies the <em>root condition</em>,
+                    i.e. all complex roots of <span class="inline-math">$ρ$</span> lie in <span class="inline-math">$|z|\leq 1$</span>
+                    and all roots with modulus 1 are simple.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Constructing multistep methods with maximum order
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Constructing-multistep-methods-with-maximum-order.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                To construct an <span class="inline-math">$s$</span>-step <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">method</a>,
+                we can take some <span class="inline-math">$ρ\in \mathcal{P}_s$</span>
+                such that <span class="inline-math">$ρ(1) = 0$</span> and <span class="inline-math">$ρ$</span> satisfies the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Dahlquist-equivalence-theorem.html">root condition</a>.
+                Then we can determine <span class="inline-math">$σ$</span> by expanding
+                <span class="display-math">$$ \begin{align*}
+                    \frac{ρ(w)}{\log w} = σ(w) + O(|w-1|^p).
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    For an implicit method, we allow <span class="inline-math">$σ\in \mathcal{P}_s$</span>, <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">so</a> we obtain an order of <span class="inline-math">$p=s+1$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    For an explicit method, we allow <span class="inline-math">$σ\in \mathcal{P}_{s-1}$</span>, so we obtain an order of <span class="inline-math">$p=s$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Adams methods
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Adams-methods.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The choice <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html"><span class="inline-math">$ρ(w)$</span></a> <span class="inline-math">$= w^s - w^{s-1} = w^{s-1}(w-1)$</span> corresponds to <em>Adams methods</em>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <em>Adams-Bashforth methods</em> are explicit, and has order <span class="inline-math">$p=s$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <em>Adams-Moulton methods</em> are implicit, and has order <span class="inline-math">$p=s+1$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (coefficients of Adams methods as integrals of polynomials)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proposition-coefficients-of-Adams-methods-as-integrals-of-polynomials.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The coefficients <span class="inline-math">$b_m$</span> in an <span class="inline-math">$s$</span>-step Adams method are given by
+                                        <span class="display-math">$$ \begin{align*}
+                                            b_m = \int_{s-1}^{s} l_m(t) \d t
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$l_m(t) = ω(t)/(t-m)ω&#x27;(m)$</span> are the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lagrange-interpolating-polynomial.html">Lagrange fundamental polynomials</a>:
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            for an Adams-Moulton (explicit) method, the nodes are <span class="inline-math">$0,1,\ldots,s$</span>, i.e. <span class="inline-math">$ω(t) = \prod_{m=0}^{s} (t-m)$</span>;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            for an Adams-Bashforth (implicit) method, the nodes are <span class="inline-math">$0,1,\ldots,s-1$</span>, i.e. <span class="inline-math">$ω(t) = \prod_{m=0}^{s-1} (t-m)$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-coefficients-of-Adams-methods-as-integrals-of-polynomials.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-2-step-Adams-methods.html">Example (2-step Adams methods)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Backward differentiation formula
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Backward-differentiation-formula.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We can construct an implicit <span class="inline-math">$s$</span>-step, <span class="inline-math">$s$</span>-order method by taking
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html"><span class="inline-math">$σ(w)$</span></a> <span class="inline-math">$= b_s w^s$</span>
+                and normalising <span class="inline-math">$b_s = 1$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (coefficients of the backward differentiation formula)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proposition-coefficients-of-the-backward-differentiation-formula.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In the <span class="inline-math">$s$</span>-step <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Backward-differentiation-formula.html">backward differentiation formula</a>,
+                            the coefficients are given by
+                            <span class="display-math">$$ \begin{align*}
+                                ρ(w) ={}&amp; \sum_{k=1}^{s} \frac{1}{k}w^{s-k} (w-1)^k \in \mathcal{P}_s, \\
+                            \end{align*} $$</span>
+                            or equivalently
+                            <span class="display-math">$$ \begin{align*}
+                                a_s ={}&amp; \sum_{k=1}^{s} \frac{1}{k}, \\
+                                a_m ={}&amp; \frac{(-1)^{s-m}}{s-m}\pmat{s \\ m}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-coefficients-of-the-backward-differentiation-formula.html">Derivation</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Higher order multistep methods
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Higher-order-multistep-methods.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                (Non-examinable)
+            </p>
+            <p>
+                There are no <span class="inline-math">$s$</span>-step method of order <span class="inline-math">$2s+1$</span> (<a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-no-multistep-method-of-order-2s-1.html">derivation</a>),
+                but there exists unique implicit method of order <span class="inline-math">$2s$</span>
+                and explicit method of order <span class="inline-math">$2s-1$</span>.
+            </p>
+            <p>
+                However:
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (first Dahlquist barrier)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-first-Dahlquist-barrier.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If an <span class="inline-math">$s$</span>-step method is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-convergent-method.html">convergent</a>
+                            (i.e. the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Dahlquist-equivalence-theorem.html">root condition</a> is satisfied),
+                            then
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$p\leq s$</span> for an explicit method (achieved by <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Adams-methods.html">Adams-Bashforth</a>);
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$p\leq s+1$</span> for an implicit method when <span class="inline-math">$s$</span> is odd (achieved by <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Adams-methods.html">Adams-Moulton</a>);
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$p\leq s+2$</span> for an implicit method when <span class="inline-math">$s$</span> is even (achieved by <span class="inline-math">$ρ(w) = w^s - 1$</span>).
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,14 @@
+<p>
+    The Bayes loss is
+    <span class="display-math">$$ \begin{align*}
+        R_X(\tilde θ) ={}&amp; \int_{\R} |\tilde θ - θ|\,π(θ\mid X) \d θ \\
+        ={}&amp; \int_{-\infty}^{\tilde θ} (\tilde θ - θ)\,π(θ\mid X) \d θ
+        + \int_{\tilde θ}^{\infty} (θ - \tilde θ)\, π(θ\mid X) \d θ.
+    \end{align*} $$</span>
+    The minimiser <span class="inline-math">$\hat θ$</span> satisfies
+    <span class="display-math">$$ \begin{align*}
+        0 = \left.\dfd{R_X}{\tilde θ}\right|_{\hat θ} ={}&amp; \int_{-\infty}^{\hat θ} π(θ\mid X) \d θ - \int_{\hat θ}^{\infty} π(θ\mid X) \d θ \\
+        \implies \int_{-\infty}^{\hat θ} π(θ\mid X) \d θ ={}&amp; \int_{\hat θ}^{\infty} π(θ\mid X) \d θ \\
+        \prob_π(θ &lt; \hat θ\mid X)  ={}&amp; \prob_π(θ &gt;\tilde θ \mid X).
+    \end{align*} $$</span>
+</p>

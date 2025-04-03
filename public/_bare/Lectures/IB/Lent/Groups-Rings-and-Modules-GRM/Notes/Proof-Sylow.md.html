@@ -1,0 +1,120 @@
+
+<h1>Existence of Sylow <span class="inline-math">$p$</span>-subgroup</h1>
+
+<p>
+    Let <span class="inline-math">$G$</span> act on the set of <strong>subsets</strong> (not subgroups) of <span class="inline-math">$G$</span> of size <span class="inline-math">$p^a$</span>
+    <span class="display-math">$$ \begin{align*}
+        Ω = \sb{X\subseteq G}{|X| = p^a}
+    \end{align*} $$</span>
+    by
+    <span class="display-math">$$ \begin{align*}
+        g*X = \sb{gx}{x\in X}.
+    \end{align*} $$</span>
+    We will find an orbit of size <span class="inline-math">$m$</span>.
+</p>
+<p>
+    Firstly, from combinatorics we get
+    <span class="display-math">$$ \begin{align*}
+        |Ω| = \pmat{p^a m \\ p^a} = \prod_{i=0}^{p^a-1} \frac{p^a m - i}{p^a - i}.
+    \end{align*} $$</span>
+    Note that for <span class="inline-math">$0\leq n\leq a$</span>, we have <span class="inline-math">$p^n \mid p^a m-i$</span> iff <span class="inline-math">$p^n\mid p^a - i$</span>
+    (since they differ by a multiple of <span class="inline-math">$p^n\mid p^a$</span>),
+    so all factors of <span class="inline-math">$p$</span> in the numerator cancel out with those in the denominator.
+    Hence <span class="inline-math">$p\not\mid |Ω|$</span>.
+</p>
+<blockquote>
+    <p>
+        We won't use this, but we can do better and say <span class="inline-math">$|Ω| \equiv m \pmod p$</span>.
+        This is a special case of <a href="https://en.wikipedia.org/wiki/Lucas%27s_theorem">Lucas' theorem</a>,
+        and the following proof is adopted from <a href="https://proofwiki.org/wiki/Lucas%27_Theorem">here</a>.
+        >
+        We will show that
+        <span class="display-math">$$ \begin{align*}
+            \pmat{pn \\ pm} \equiv \pmat{n \\ m} \pmod p, \qquad n\geq m.
+        \end{align*} $$</span>
+        Write
+        <span class="display-math">$$ \begin{align*}
+            \pmat{pn \\ pm} = \prod_{k=0}^{m-1} \prod_{i=0}^{p-1} \frac{p(n-k) - i}{p(m-k)-i} = \prod_{k=0}^{m-1} \Biggl(\frac{n-k}{m-k} \underbrace{\prod_{i=1}^{p-1} \frac{p(n-k)-i}{p(m-k)-i}}_{C_k}\Biggr).
+        \end{align*} $$</span>
+        The denominators in <span class="inline-math">$C_k$</span> are not divisible by <span class="inline-math">$p$</span>, so by multiplicative inverses exist.
+        Hence
+        <span class="display-math">$$ \begin{align*}
+            C_k \equiv \prod_{i=1}^{p-1} \frac{-i}{-i} \equiv 1 \pmod p.
+        \end{align*} $$</span>
+        Thus
+        <span class="display-math">$$ \begin{align*}
+            \pmat{pn \\ pm} \equiv \prod_{k=0}^{m-1} \frac{n-k}{m-k} = \pmat{n \\ m} \pmod p.
+        \end{align*} $$</span>
+    </p>
+    
+</blockquote>
+<p>
+    Since orbits partition <span class="inline-math">$Ω$</span>,
+    there exists some orbit <span class="inline-math">$G\cdot T$</span> where <span class="inline-math">$T\in Ω$</span> such that <span class="inline-math">$p\not\mid |G\cdot T|$</span>.
+    By <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Corollary-orbit-stabiliser.html">orbit-stabiliser</a>, <span class="inline-math">$|G\cdot T| |\mathrm{Stab}_G(T)| = p^a m$</span>.
+    So <span class="inline-math">$p^a \mid |\mathrm{Stab}_G(T)|$</span>.
+</p>
+<p>
+    Furthermore, for each <span class="inline-math">$t\in T$</span>, the coset <span class="inline-math">$\mathrm{Stab}_G(T) \, t\subseteq T$</span>.
+    Also every <span class="inline-math">$t\in T$</span> lies in a coset <span class="inline-math">$\mathrm{Stab}_G(T) \, t$</span>.
+    Thus the cosets partition <span class="inline-math">$T$</span>, resulting in <span class="inline-math">$|\mathrm{Stab}_G(T)| \mid |T| = p^a$</span>.
+    Hence <span class="inline-math">$|\mathrm{Stab}_G(T)| = p^a$</span>
+    and <span class="inline-math">$\mathrm{Stab}_G(T)$</span> is a Sylow <span class="inline-math">$p$</span>-subgroup of <span class="inline-math">$G$</span>.
+</p>
+
+<h1>Sylow <span class="inline-math">$p$</span>-subgroups are conjugate</h1>
+
+<p>
+    We will prove a stronger claim:
+    for all <span class="inline-math">$P\in \mathrm{Syl}_p(G)$</span> and subgroup <span class="inline-math">$Q\leq G$</span> of size <span class="inline-math">$p^b$</span>
+    where <span class="inline-math">$b\leq a$</span>, there exists <span class="inline-math">$g\in G$</span> such that <span class="inline-math">$gQg\inv \leq P$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$Q$</span> act on <span class="inline-math">$G/P$</span> by left multiplication:
+    <span class="display-math">$$ \begin{align*}
+        q * (gP) = qgP.
+    \end{align*} $$</span>
+    By orbit-stabiliser, the size of an orbit divides <span class="inline-math">$|Q| = p^b$</span> and so is either 1 or a positive power of <span class="inline-math">$p$</span>.
+    But <span class="inline-math">$p\not\mid m = |G/P|$</span>,
+    so since orbits partition <span class="inline-math">$G/P$</span>,
+    there exists a size 1 orbit <span class="inline-math">$gP$</span>.
+    This has the property that for all <span class="inline-math">$q\in Q$</span>,
+    we have <span class="inline-math">$qgP = gP$</span> so <span class="inline-math">$g\inv q g\in P$</span>.
+    Hence <span class="inline-math">$g\inv Q g\leq P$</span>.
+</p>
+
+<h1><span class="inline-math">$n_p = |G : N_G(P)|$</span></h1>
+
+<p>
+    Let <span class="inline-math">$G$</span> act on <span class="inline-math">$\mathrm{Syl}_p(G)$</span> by conjugation.
+    By the above, there is exactly one orbit of size <span class="inline-math">$n_p$</span>.
+    By <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Theorem-orbit-stabiliser.html">orbit-stabiliser</a>, <span class="inline-math">$n_p = |G : \mathrm{Stab}_G(P)|$</span>,
+    where <span class="inline-math">$P$</span> is any Sylow <span class="inline-math">$p$</span>-subgroup and
+    <span class="inline-math">$\mathrm{Stab}_G(P) = \sb{g\in G}{gPg\inv = P} = N_G(P)$</span>.
+</p>
+<p>
+    Then apply <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Theorem-Lagrange-s-theorem.html">Lagrange</a> to see <span class="inline-math">$n_p \mid |G|$</span>.
+</p>
+
+<h1><span class="inline-math">$n_p \equiv 1 \pmod p$</span></h1>
+
+<p>
+    Pick some <span class="inline-math">$P\in \mathrm{Syl}_p(G)$</span>.
+    Let <span class="inline-math">$P$</span> act on <span class="inline-math">$\mathrm{Syl}_p(G)$</span> by conjugation.
+    Orbit-stabiliser says all orbits have size 1 or some positive power of <span class="inline-math">$p$</span>.
+    As orbits partition <span class="inline-math">$\mathrm{Syl}_p(G)$</span>,
+    it suffices to show that there is only one orbit of size 1,
+    namely <span class="inline-math">$\set{P}$</span>.
+</p>
+<p>
+    Suppose <span class="inline-math">$\set{Q}$</span> is a size 1 orbit, where <span class="inline-math">$Q \in \mathrm{Syl}_p(G)$</span>.
+    This means <span class="inline-math">$hQh\inv \in Q$</span> for all <span class="inline-math">$h\in P$</span>,
+    and so <span class="inline-math">$P\leq N_G(Q)$</span> by definition.
+</p>
+<p>
+    Note that since <span class="inline-math">$P\leq N_G(Q) \leq G$</span> and <span class="inline-math">$p^a$</span> is the largest power dividing <span class="inline-math">$|G|$</span>,
+    <span class="inline-math">$p^a$</span> is also the largest power dividing <span class="inline-math">$|N_G(Q)|$</span>,
+    so <span class="inline-math">$P$</span> and <span class="inline-math">$Q$</span> are Sylow-<span class="inline-math">$p$</span> subgroups of <span class="inline-math">$N_G(Q)$</span>,
+    and thus <span class="inline-math">$P = gQg\inv$</span> for some <span class="inline-math">$g\in N_G(Q)$</span> by the above.
+    However <span class="inline-math">$Q$</span> is normal in <span class="inline-math">$N_G(Q)$</span>, so <span class="inline-math">$P=Q$</span>.
+</p>

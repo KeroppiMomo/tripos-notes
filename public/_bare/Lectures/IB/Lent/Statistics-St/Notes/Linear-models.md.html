@@ -1,0 +1,621 @@
+<p>
+    We try to find a linear relationship between
+    <span class="inline-math">$X\in \R^{n\times p}$</span> the <em>design matrix</em> (independent variables)
+    and <span class="inline-math">$Y\in \R^{n}$</span> the <em>response</em> (dependent variables).
+    Each row is a single observation.
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (normal linear model)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-normal-linear-model.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>(homoscedastic) normal linear model</em> assumes
+                <span class="display-math">$$ \begin{align*}
+                    Y\mid X \sim N(X β, σ^2 I_n)
+                \end{align*} $$</span>
+                where <span class="inline-math">$β\in \R^p$</span> and <span class="inline-math">$σ^2&gt;0$</span> are unknown parameters.
+            </p>
+            <p>
+                This can alternatively be expressed as
+                <span class="display-math">$$ \begin{align*}
+                    Y = X β + ε
+                \end{align*} $$</span>
+                where <span class="inline-math">$ε\sim N(0_n, σ^2 I_n)$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (linear condition expectation model)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-linear-condition-expectation-model.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>(homoscedastic) linear conditional expectation model</em> assumes
+                <span class="display-math">$$ \begin{align*}
+                    \expect(Y\mid X) = X β, \qquad \var(Y\mid X) = σ^2 I_n
+                \end{align*} $$</span>
+                where <span class="inline-math">$β\in \R^p$</span> and <span class="inline-math">$σ^2&gt;0$</span> are unknown parameters.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Least square estimator
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Least-square-estimator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>least square <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a></em> for <span class="inline-math">$β$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    \hat β = \arg\min_{β\in \R^p} \|Y - Xβ\|.
+                \end{align*} $$</span>
+                <span class="inline-math">$\hat β$</span> solves the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-normal-equations.html">normal equation</a>
+                <span class="display-math">$$ \begin{align*}
+                    X^T(Y - X\hat β) = 0.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                If <span class="inline-math">$X$</span> has full rank, <span class="inline-math">$X^T X$</span> is invertible, so
+                <span class="display-math">$$ \begin{align*}
+                    \hat β = (X^T X)\inv X^T Y.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Let <span class="inline-math">$μ = Xβ$</span>.
+                Then the least squares problem is equivalent to
+                <span class="display-math">$$ \begin{align*}
+                    \hat μ = \arg\min_{μ\in \mathrm{Col}(X)} \|Y - μ\|
+                \end{align*} $$</span>
+                where <span class="inline-math">$\mathrm{Col}(X)$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-column-space-column-rank-row-space-row-rank.html">column space</a> of <span class="inline-math">$X$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The <em>fitted value</em> <span class="inline-math">$\hat μ$</span> is given by
+                    <span class="display-math">$$ \begin{align*}
+                    \hat μ = X\hat β = PY
+                    \end{align*} $$</span>
+                    where
+                    <span class="display-math">$$ \begin{align*}
+                    P = X(X^T X)\inv X^T
+                    \end{align*} $$</span>
+                    is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">orthogonal projection matrix</a> into <span class="inline-math">$\mathrm{Col}(X)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The vector of <em>residues</em> is given by
+                    <span class="display-math">$$ \begin{align*}
+                    R = Y - \hat μ = (I - P)Y.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    The residual sum of squares is
+                    <span class="display-math">$$ \begin{align*}
+                    \text{RSS} = \|R\|^2.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (MLE in normal linear model)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proposition-MLE-in-normal-linear-model.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-normal-linear-model.html">normal linear model</a>,
+                            the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">maximum likelihood estimators</a> for <span class="inline-math">$β$</span> and <span class="inline-math">$σ^2$</span> are
+                            <span class="display-math">$$ \begin{align*}
+                                \hat β_{\text{MLE}} ={}&amp; \arg\min_{β\in \R^p} \|Y - Xβ\|, \\
+                                \hat σ^2_{\text{MLE}} ={}&amp;  \frac{\text{RSS}}{n} =\frac{1}{n}\|Y - X\hat β_{\text{MLE}}\| = \frac{1}{n}\min_{β\in \R^p} \|Y-Xβ\|^2.
+                            \end{align*} $$</span>
+                            The resulting maximum likelihood is
+                            <span class="display-math">$$ \begin{align*}
+                                L_{Y\mid X}(\hat β_{\text{MLE}}, \hat σ^2_{\text{MLE}}) = \left(\frac{2πe}{n}\mathrm{RSS}\right)^{-n/2}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-least-square-estimator-as-MLE-in-normal-linear-model.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Gauss-Markov)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-Gauss-Markov.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Assume <span class="inline-math">$X$</span> has full rank.
+                        </p>
+                        <p>
+                            In the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-linear-condition-expectation-model.html">linear conditional expectation model</a>,
+                            the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Least-square-estimator.html">least square estimator</a> <span class="inline-math">$\hat β$</span>
+                            is the <em>best linear unbiased estimator</em> (BLUE),
+                            i.e. <span class="inline-math">$\hat β$</span> is linear in <span class="inline-math">$Y$</span>, unbiased,
+                            and for any other linear unbiased estimator <span class="inline-math">$\tilde β$</span>,
+                            we have <span class="inline-math">$\var \tilde β$</span> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html"><span class="inline-math">$\preceq$</span></a> <span class="inline-math">$\var \hat β$</span>
+                            (which means <span class="inline-math">$\var(a^T β) \leq \var(a^T \tilde β)$</span>).
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-Gauss-Markov.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (orthogonal projection matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A square matrix <span class="inline-math">$P \in \R^{n\times n}$</span>
+                            is an <em>orthogonal projection matrix</em>
+                            if it is symmetric (<span class="inline-math">$P^T = P$</span>) and idempotent (<span class="inline-math">$P^2=P$</span>).
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                See <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-projection.html">orthogonal projection</a>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$P$</span> is a orthogonal projection matrix iff <span class="inline-math">$P=UU^T$</span>
+                                where the columns of <span class="inline-math">$U\in \R^{n\times \mathrm{rank}(P)}$</span>
+                                form an orthonormal basis for the column space of <span class="inline-math">$P$</span>. (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-orthogonal-projection-matrix-iff-U-U-transpose.html">Proof</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Eigenvalues of <span class="inline-math">$P$</span> is either 0 or 1.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\mathrm{rank}(P) = \tr(P)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$I-P$</span> is also an orthogonal projection matrix.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\|Y\|^2 = \|PY\|^2 + \|(I - P)Y\|^2$</span> for any <span class="inline-math">$Y\in \R^n$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (orthogonal projection matrix acting on multivariate normal)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Lemma-orthogonal-projection-matrix-acting-on-multivariate-normal.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$ε\sim N(0, σ^2 I_n)$</span> and <span class="inline-math">$P$</span> is an <span class="inline-math">$n\times n$</span> <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">orthogonal projection matrix</a>.
+                            Then
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$Pε \sim N(0, σ^2 P)$</span> and <span class="inline-math">$(I_n-P)ε\sim N(0,σ^2(I_n-P))$</span> are independent; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\|Pε\|^2/σ^2 \sim χ^2_{\mathrm{rank}(P)}$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-orthogonal-projection-matrix-acting-on-multivariate-normal.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (distribution of MLE in normal linear model)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-distribution-of-MLE-in-normal-linear-model.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In a <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-normal-linear-model.html">normal linear model</a>,
+                            assume <span class="inline-math">$X$</span> is fixed and has full rank.
+                            Then <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">maximum likelihood estimators</a>
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$\hat β_{\text{MLE}}$</span> and <span class="inline-math">$\hat σ^2_{\text{MLE}}$</span> are independent;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\hat β_{\text{MLE}} \sim N(β, σ^2(X^TX)\inv)$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$n\,\hat σ^2_{\text{MLE}}/σ^2 \sim χ_{n-p}^2$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-distribution-of-MLE-in-normal-linear-model.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Since <span class="inline-math">$\hat σ_{\text{MLE}}^2$</span> is biased (<span class="inline-math">$\expect(\hat σ^2_{\text{MLE}}) = \frac{n-p}{n}σ^2$</span>),
+                                it is more common to use the unbiased estimator
+                                <span class="display-math">$$ \begin{align*}
+                                \hat σ^2 = \frac{n}{n-p}\hat σ_{\text{MLE}}^2 = \frac{1}{n-p} \|Y - X\hat β_{\text{MLE}}\|^2.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            F-test
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        F-distribution
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em><span class="inline-math">$F$</span>-distribution</em> with <span class="inline-math">$d_1$</span> and <span class="inline-math">$d_2$</span> degrees of freedom,
+                            denoted as <span class="inline-math">$F_{d_1, d_2}$</span>, is defined to be the distribution of
+                            <span class="display-math">$$ \begin{align*}
+                                R = \frac{S_1/d_1}{S_2/d_2}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$S_1 \sim χ^2_{d_1}$</span> and <span class="inline-math">$S_2\sim χ_{d_2}^2$</span> are independent.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                If <span class="inline-math">$T\sim$</span> <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Student-s-t-distribution.html"><span class="inline-math">$t_{d}$</span></a>, then <span class="inline-math">$T^2 \sim F(1, d)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Partition the design matrix <span class="inline-math">$X = \pmat{X_0 &amp; X_1}$</span> with <span class="inline-math">$X_0 \in \R^{n\times p_0}, X_1 \in \R^{n\times (p-p_0)}$</span>.
+                Consider the nested models
+            </p>
+            <table>
+                <tr>
+                    <th class="table-cell-left"><p>
+                        Model
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Hypothesis
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Design
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Fitted values
+                    </p>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        Saturated
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$μ\in \R^n$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$I_n$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\hat μ = Y$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        Full
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$μ\in \mathrm{colspan}(X)$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$X$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\hat μ = PY$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        Sub/Null
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$μ\in \mathrm{colspan}(X_0)$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$X_0$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\hat μ = P_0Y$</span>
+                    </p>
+                    </td>
+                </tr>
+            </table>
+            <p>
+                where <span class="inline-math">$P = X(X^T X)\inv X^T$</span> and <span class="inline-math">$P_0 = X_0(X_0^T X_0)\inv X_0^T$</span>.
+            </p>
+            <p>
+                If we partition <span class="inline-math">$β = \pmat{β_0 \\ β_1}$</span> the same way (<span class="inline-math">$β_0\in \R^{p_0}$</span>, <span class="inline-math">$β_{1}\in \R^{p-p_0}$</span>),
+                then the sub-model is saying <span class="inline-math">$β_1 = \v 0$</span>.
+            </p>
+            <p>
+                The size <span class="inline-math">$α$</span> <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">generalised likelihood ratio test</a> for testing
+                <span class="inline-math">$H_0:$</span> sub-model vs <span class="inline-math">$H_1:$</span> full model (minus sub-model)
+                rejects <span class="inline-math">$H_0$</span> if
+                <span class="display-math">$$ \begin{align*}
+                    \frac{\|(P-P_0) Y\|^2 / (p-p_0)}{\|(I-P)Y\|^2/(n-p)} &gt; F_{p-p_0, n-p}(α).
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-F-test-as-likelihood-ratio-test.html">Derivation</a>)
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        t-test for one parameter in linear model
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/t-test-for-one-parameter-in-linear-model.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The t-test for testing <span class="inline-math">$H_0: β_j = β_{0j}$</span> against <span class="inline-math">$H_1: β_j \neq β_{0j}$</span>
+                            (for some particular <span class="inline-math">$j$</span>)
+                            is to reject <span class="inline-math">$H_0$</span> when
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{|\hat β_{j,\text{MLE}} - β_{0j}|}{\sqrt{\hat σ^2{(X^T X)\inv}_{jj}}} &gt; t_{n-p}(α/2)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\hat σ^2 = \frac{1}{n-p}\|Y - X\hat β_{\text{MLE}}\|$</span> is the unbiased estimator for <span class="inline-math">$σ^2$</span>.
+                            (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-t-test-for-one-parameter-in-linear-model.html">Derivation</a>)
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-confidence-interval-and-simple-test.html">This gives</a> a <span class="inline-math">$(1-α)$</span>-confidence interval for <span class="inline-math">$β_j$</span>:
+                            <span class="display-math">$$ \begin{align*}
+                                \hat β_{j,\text{MLE}} \pm t_{n-p}(α/2) \sqrt{\hat σ^2 {(X^T X)\inv}_{jj}}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            We can rephrase this as nested models:
+                            <span class="display-math">$$ \begin{align*}
+                                Y - β_{0j} X_j = \pmat{X_1 &amp; \ldots &amp; X_j &amp; \ldots &amp; X_p} \pmat{β_1 \\ \vdots \\ β_{j} - β_{0j} \\ \vdots \\ β_{p}} + ε.
+                            \end{align*} $$</span>
+                            This is equivalent to the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test.html">F-test for nested models</a>.
+                            (Derivation: TODO)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        F-test for all parameters in linear model
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test-for-all-parameters-in-linear-model.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The F-test for testing <span class="inline-math">$H_0: β = β_0$</span> against <span class="inline-math">$H_1: β\neq β_0$</span>
+                            is to reject <span class="inline-math">$H_0$</span> when
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{\|X(\hat β_{\text{MLE}} - β_0)\|^2/p}{\hat σ^2} &gt; F_{p,n-p}(α)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\hat σ^2 = \frac{1}{n-p}\|Y - X\hat β_{\text{MLE}}\|$</span> is the unbiased estimator for <span class="inline-math">$σ^2$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-confidence-interval-and-simple-test.html">This gives</a> a <span class="inline-math">$(1-α)$</span>-confidence set for <span class="inline-math">$β$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                \sb{β\in \R^n}{\frac{\|X(\hat β_{\text{MLE}} - β)^2\|}{p\hat σ^2} \leq F_{p,n-p}(α)},
+                            \end{align*} $$</span>
+                            which is an ellipsoid.
+                        </p>
+                        <p>
+                            This is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test.html">F-test for nested models</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Analysis of variance
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Analysis-of-variance.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Model
+                            <span class="display-math">$$ \begin{align*}
+                                Y_{ij} = μ_i + ε_{ij}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$j=1,\ldots,n_i$</span>, <span class="inline-math">$i=1,\ldots,k$</span> and the noise follows <span class="inline-math">$ε_{ij} \sim N(0,σ^2)$</span>.
+                            Want to test <span class="inline-math">$H_0: μ_1 = \ldots = μ_k$</span> against <span class="inline-math">$H_1: μ_1,\ldots,μ_k\in \R$</span> unrestricted, excluding <span class="inline-math">$H_0$</span>.
+                        </p>
+                        <p>
+                            This is a nested model:
+                            <span class="display-math">$$ \begin{align*}
+                                Y = \underbrace{\pmat{\v 1_{n_1} \\ \v 1_{n_2} &amp; \v 1_{n_2} \\ \vdots &amp; &amp; \ddots \\ \v 1_{n_k} &amp; &amp;&amp; \v 1_{n_k}}}_{X^{\text{full}}}\,\underbrace{\pmat{μ \\ μ_2-μ \\ \vdots \\ μ_k - μ}}_{β} + ε
+                            \end{align*} $$</span>
+                            with
+                            <span class="display-math">$$ \begin{align*}
+                                \hat μ^{\text{saturated}} = Y, \qquad \hat μ^{\text{full}} = \pmat{\overline{Y_{1+}} \v 1_{n_1} \\ \vdots \\ \overline{Y_{k+}} \v 1_{n_k}}, \qquad \hat μ^{\text{sub}} = \overline{Y_{++}} \v 1_{n}.
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\overline{Y_{i+}} = \frac{1}{n_i}\sum_{j=1}^{n_i} Y_{ij}$</span> and <span class="inline-math">$\overline{Y_{++}} = \frac{1}{n} \sum_{i=1}^{k} \sum_{j=1}^{n_i} Y_{ij}$</span>.
+                        </p>
+                        <p>
+                            We often form the ANOVA table
+                        </p>
+                        <table>
+                            <tr>
+                                <th class="table-cell-left"><p>
+                                    Source of variation
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Sum of squares
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Degrees of freedom
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    Mean squares
+                                </p>
+                                </th>
+                                <th class="table-cell-left"><p>
+                                    F-statistic
+                                </p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Between groups
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\mathrm{SSA} = \sum_{i=1}^{k} n_i(\overline{Y_{i+}} - \overline{Y_{++}})^2$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$k-1$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\mathrm{MSA} = \mathrm{SSA}/(k-1)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\mathrm{MSA}/\mathrm{MSE}$</span>
+                                </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Within groups
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\mathrm{SSE} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (Y_{ij} - \overline{Y_{i+}})^2$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$n-k$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\mathrm{MSE} = \mathrm{SSE}/(n-k)$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"></td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    -
+                                </p>
+                                </td>
+                                <td class="table-cell-left"></td>
+                                <td class="table-cell-left"></td>
+                                <td class="table-cell-left"></td>
+                                <td class="table-cell-left"></td>
+                            </tr>
+                            <tr>
+                                <td class="table-cell-left"><p>
+                                    Total
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$\mathrm{SST} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (Y_{ij} - \overline{Y_{++}})^2$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"><p>
+                                    <span class="inline-math">$n-1$</span>
+                                </p>
+                                </td>
+                                <td class="table-cell-left"></td>
+                                <td class="table-cell-left"></td>
+                            </tr>
+                        </table>
+                        <p>
+                            Therefore the F-test is
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{\mathrm{MSA}}{\mathrm{MSE}} = \frac{\sum_{i=1}^{k} n_i (\overline{Y_{i+}} - \overline{Y_{++}})^2/(k-1)}{\sum_{i=1}^{k} \sum_{j=1}^{n_i} (Y_{ij} - \overline{Y_{i+}})^2/(n-k)} &gt; F_{k-1,n-k}(α).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

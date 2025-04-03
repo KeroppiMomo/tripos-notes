@@ -1,0 +1,25 @@
+<p>
+    Let <span class="inline-math">$f=a_0 + a_1 X + \ldots + a_n X^n$</span> and <span class="inline-math">$g=b_0 + b_1 X + \ldots + b_m X^m$</span>
+    be primitive, with <span class="inline-math">$a_n, b_m \neq 0$</span>.
+    Suppose for a contradiction that <span class="inline-math">$fg$</span> is not primitive.
+</p>
+<p>
+    Since <span class="inline-math">$R$</span> is a unique factorisation domain,
+    find some irreducible <span class="inline-math">$p\in R$</span> that divides the non-unit <span class="inline-math">$c(fg)$</span>.
+    As <span class="inline-math">$c(f)$</span> and <span class="inline-math">$c(g)$</span> are units,
+    <span class="inline-math">$p\not\mid c(f)$</span> and <span class="inline-math">$p\not\mid c(g)$</span>.
+    Therefore there exists a minimal <span class="inline-math">$k=0,1,\ldots,n$</span> such that <span class="inline-math">$p\not\mid a_k$</span>
+    and a minimal <span class="inline-math">$l = 0,1,\ldots,m$</span> such that <span class="inline-math">$p\not\mid b_l$</span>.
+</p>
+<p>
+    Now consider the coefficient of <span class="inline-math">$X^{k+l}$</span> in <span class="inline-math">$fg$</span>, which is
+    <span class="display-math">$$ \begin{align*}
+        C = \underbrace{a_0 b_{k+l} + \ldots + a_{k-1} b_{l+1}}_{\text{divisible by $p$}} + a_k b_l + \underbrace{a_{k+1} b_{l-1} + \ldots + a_{k+l} b_0}_{\text{divisible by $p$}}.
+    \end{align*} $$</span>
+    The first <span class="inline-math">$k$</span> terms involves <span class="inline-math">$a_0, \ldots, a_{k-1}$</span>,
+    and the last <span class="inline-math">$l$</span> terms involves <span class="inline-math">$b_0, \ldots b_{l-1}$</span>,
+    which are all divisible by <span class="inline-math">$p$</span>.
+    <span class="inline-math">$p\mid c(fg)$</span> so <span class="inline-math">$p\mid C$</span>, and therefore <span class="inline-math">$p\mid a_k b_l$</span>.
+    But by construction <span class="inline-math">$p\not\mid a_k, b_l$</span> and <span class="inline-math">$p$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-irreducible-iff-prime-in-UFD.html">prime</a>,
+    so we have a contradiction.
+</p>

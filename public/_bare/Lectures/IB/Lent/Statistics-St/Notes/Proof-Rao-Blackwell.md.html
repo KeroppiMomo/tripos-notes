@@ -1,0 +1,37 @@
+
+<h1><span class="inline-math">$\hat θ$</span> is an estimator</h1>
+
+<p>
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        \hat θ = \expect_θ(\tilde θ \mid T) = \int_{\mathcal{X}} \tilde θ(x)\, p_θ(x\mid T) \d x
+    \end{align*} $$</span>
+    where <span class="inline-math">$p_θ(x\mid T)$</span> does not depend on <span class="inline-math">$θ$</span> by sufficiency of <span class="inline-math">$T$</span>.
+    Thus <span class="inline-math">$\hat θ$</span> does not depend on <span class="inline-math">$θ$</span>.
+</p>
+
+<h1><span class="inline-math">$\op{MSE}(\hat θ) \leq \op{MSE}(\tilde θ)$</span></h1>
+
+<p>
+    We will use the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proposition-bias-variance-decomposition.html">bias-variance decomposition</a>
+    <span class="display-math">$$ \begin{align*}
+        \op{MSE}(\hat θ) = \op{bias}(\hat θ)^2 + \var(\hat θ).
+    \end{align*} $$</span>
+</p>
+<p>
+    By the law of total expectation,
+    <span class="display-math">$$ \begin{align*}
+        \expect_θ(\hat θ) = \expect_θ\bigl(\expect_θ(\tilde θ \mid T)\bigr) = \expect_θ(\tilde θ),
+    \end{align*} $$</span>
+    so <span class="inline-math">$\op{bias}(\hat θ) = \op{bias}(\tilde θ)$</span>.
+</p>
+<p>
+    Now by the law of total variance,
+    <span class="display-math">$$ \begin{align*}
+        \var(\tilde θ) = \var(\underbrace{\expect_θ(\tilde θ\mid T)}_{\hat θ}) + \expect_θ(\var(\tilde θ\mid T)) \geq \var(\hat θ),
+    \end{align*} $$</span>
+    so <span class="inline-math">$\mathrm{MSE}(\tilde θ) \geq \mathrm{MSE}(\hat θ)$</span>.
+    Equality occurs iff <span class="inline-math">$\expect_θ(\var(\tilde θ \mid T)) = 0$</span>,
+    which means <span class="inline-math">$\var(\tilde θ\mid T) = 0$</span> with probability 1.
+    Hence <span class="inline-math">$\tilde θ$</span> is a function of <span class="inline-math">$T$</span> with probability 1.
+</p>

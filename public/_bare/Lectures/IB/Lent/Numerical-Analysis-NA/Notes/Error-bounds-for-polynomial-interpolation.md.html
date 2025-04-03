@@ -1,0 +1,123 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (polynomial interpolation error)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-polynomial-interpolation-error.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$f\in C^{n+1}[a,b]$</span> in a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Polynomial-interpolation.html">polynomial interpolation problem</a>.
+            </p>
+            <p>
+                The interpolating polynomial <span class="inline-math">$p\in \mathcal{P}_n$</span>
+                has interpolation error
+                <span class="display-math">$$ \begin{align*}
+                    f(x) - p(x) = f[x_0, \ldots, x_n, x]\, ω(x) = \frac{1}{(n+1)!} \, ω(x) \,f^{(n+1)}(ξ)
+                \end{align*} $$</span>
+                for some <span class="inline-math">$ξ\in [a,b]$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-polynomial-interpolation-error.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This gives a bound of the maximal error
+                    <span class="display-math">$$ \begin{align*}
+                    \|f-p\|_{\infty} \leq \frac{1}{(n+1)!} \|ω\|_\infty \|f^{(n+1)}\|_\infty
+                    \end{align*} $$</span>
+                    where <span class="inline-math">$\|g\|_\infty = \max_{x\in [a,b]} |g(x)|$</span> is the <span class="inline-math">$L^\infty$</span> norm.
+                    We want to use nodes <span class="inline-math">$x_0, \ldots, x_n$</span> so that <span class="inline-math">$\|ω\|_\infty$</span> is minimised.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Chebyshev polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-Chebyshev-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>Chebyshev polynomial</em> <span class="inline-math">$T_n$</span> on <span class="inline-math">$[-1,1]$</span> is defined as
+                <span class="display-math">$$ \begin{align*}
+                    T_n(x) = \cos(n\cos\inv x), \qquad x\in [-1,1].
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Trigonometric identity implies the recurrence relation
+                    <span class="display-math">$$ \begin{align*}
+                    T_0 ={}&amp; 1, \\
+                    T_1 ={}&amp; x, \\
+                    T_{n+1}(x) ={}&amp; 2x\, T_n(x) + T_{n-1}(x)
+                    \end{align*} $$</span>
+                    so <span class="inline-math">$T_n$</span> are indeed polynomials.
+                </p>
+                
+            </li><li>
+                <p>
+                    The highest degree term in <span class="inline-math">$T_n$</span> is <span class="inline-math">$2^{n-1} x^n$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Chebyshev polynomial has minimum L-inf norm)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Chebyshev-polynomial-has-minimum-L-inf-norm.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Among all monic polynomials <span class="inline-math">$\mathcal{P}_n$</span>,
+                the Chebyshev polynomial <span class="inline-math">$γT_{n}$</span> has the smallest <span class="inline-math">$L^\infty$</span> norm
+                <span class="display-math">$$ \begin{align*}
+                    \inf_{a_i} \max_{x\in [0,1]} |x^n + a_{n-1} x^{n+1} + \ldots + a_0| = \|γT_n\| = γ
+                \end{align*} $$</span>
+                where <span class="inline-math">$γ = 1/2^{n-1}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Chebyshev-polynomial-has-minimum-L-inf-norm.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (optimality of Chebyshev nodes)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Corollary-optimality-of-Chebyshev-nodes.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Among all choices of interpolating nodes <span class="inline-math">$Δ = (x_i)_{i=0}^n$</span>,
+                the <em>Chebyshev nodes</em> <span class="inline-math">$Δ^\ast = (x_i^\ast)_{i=0}^n$</span> where
+                <span class="display-math">$$ \begin{align*}
+                    x_i^\ast = \cos \biggl(\frac{2i+1}{2n+2}π\biggr)
+                \end{align*} $$</span>
+                give the best estimate for <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-polynomial-interpolation-error.html">interpolation error</a>, i.e.
+                <span class="display-math">$$ \begin{align*}
+                    \inf_{Δ} \|ω_Δ\|_\infty = \|ω_{Δ^\ast}\|_\infty = \frac{1}{2^n}
+                \end{align*} $$</span>
+                and so
+                <span class="display-math">$$ \begin{align*}
+                    \|f-p_{Δ^\ast}\|_\infty \leq \frac{1}{2^n} \frac{1}{(n+1)!} \|f^{n+1}\|_\infty.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-optimality-of-Chebyshev-nodes.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

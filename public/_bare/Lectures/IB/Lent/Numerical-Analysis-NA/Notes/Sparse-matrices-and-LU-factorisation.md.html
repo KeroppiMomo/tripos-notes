@@ -1,0 +1,69 @@
+<p>
+    A matrix is said to be <em>sparse</em> if most entries are zero.
+    By contrast, a matrix with most entries non-zero is called <em>dense</em>.
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (band matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-band-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A square matrix <span class="inline-math">$A$</span> is a <em>band matrix</em> with bandwidth <span class="inline-math">$2r+1$</span>
+                if <span class="inline-math">$a_{ij} = 0$</span> for <span class="inline-math">$|i-j|&gt;r$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (LU factorisation preserves leading zeros)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proposition-LU-factorisation-preserves-leading-zeros.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$A=LU$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/LU-factorisation.html">LU factorisation</a>
+                of a sparse matrix <span class="inline-math">$A$</span>. Then
+            </p>
+            <ul>
+            <li>
+                <p>
+                    all leading zeros in the rows of <span class="inline-math">$A$</span> to the left of the diagonal are inherited by <span class="inline-math">$L$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    all leading zeros in the columns of <span class="inline-math">$A$</span> above the diagonal are inherited by <span class="inline-math">$U$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-LU-factorisation-preserves-leading-zeros.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$A$</span> is a band matrix, then <span class="inline-math">$L$</span> and <span class="inline-math">$U$</span> are also band matrices with the same bandwidth as <span class="inline-math">$A$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Sometimes if <span class="inline-math">$A$</span> is sparse, we can try reordering its rows and columns to
+                    have more leading zeros, thus reducing the fill-in in <span class="inline-math">$L$</span> and <span class="inline-math">$U$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    The <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-direct-approach-of-LU-factorisation.html">LU algorithm</a>
+    takes <span class="inline-math">$O(nr^2)$</span> operations to factorise for a banded <span class="inline-math">$A$</span> with bandwidth <span class="inline-math">$r$</span>.
+    And to solve a linear system after factorisation, it takes <span class="inline-math">$O(nr)$</span> operations.
+</p>

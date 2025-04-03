@@ -1,0 +1,31 @@
+<p>
+    Since <span class="inline-math">$K$</span> is an integral domain,
+    <span class="inline-math">$\deg(f\cdot g) = \deg(f)+\deg(g)\geq \deg(f)$</span> for all non-zero <span class="inline-math">$f,g\in K[X]$</span>.
+</p>
+<p>
+    To check if division algorithm works,
+    let <span class="inline-math">$f = \sum_{i=0}^{n} a_i X^i$</span>, <span class="inline-math">$a_n\neq 0$</span> have degree <span class="inline-math">$n$</span>
+    and <span class="inline-math">$g=\sum_{i=0}^{m} b_i X^i$</span>, <span class="inline-math">$b_m\neq 0$</span>
+    have degree <span class="inline-math">$m$</span>.
+    We will induct on <span class="inline-math">$n$</span>.
+</p>
+<p>
+    If <span class="inline-math">$n&lt;m$</span>, then setting <span class="inline-math">$q=0$</span> and <span class="inline-math">$s=f$</span> works.
+</p>
+<p>
+    If <span class="inline-math">$n\geq m$</span>, set
+    <span class="display-math">$$ \begin{align*}
+        h = f - a_n b_m\inv X^{n-m} g.
+    \end{align*} $$</span>
+    Note <span class="inline-math">$h=0$</span> or <span class="inline-math">$\deg(h) &lt; n$</span>. If <span class="inline-math">$n=m$</span>, we are done with <span class="inline-math">$q = a_nb_m\inv X^{n-m}$</span> and <span class="inline-math">$r=h$</span>.
+    Otherwise, by induction hypothesis, we can write
+    <span class="display-math">$$ \begin{align*}
+        h = \tilde q g + \tilde r
+    \end{align*} $$</span>
+    where <span class="inline-math">$\tilde q, \tilde r\in K[X]$</span> with <span class="inline-math">$\tilde r=0$</span> or <span class="inline-math">$\deg(\tilde r)&lt;m$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        f = (\tilde q + a_n b_m\inv X^{n-m}) g + \tilde r
+    \end{align*} $$</span>
+    and we are done with <span class="inline-math">$q = \tilde q + a_n b_m\inv X^{n-m}$</span> and <span class="inline-math">$r=\tilde r$</span>.
+</p>

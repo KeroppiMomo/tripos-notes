@@ -1,0 +1,73 @@
+
+<h1>Existence of factorisation</h1>
+
+<p>
+    Let <span class="inline-math">$r\in R$</span> be non-zero and non-unit,
+    and suppose to the contrary that <span class="inline-math">$r$</span>
+    cannot be written as a product of irreducibles.
+    Construct <span class="inline-math">$r_1, r_2, r_3, \ldots$</span> as follows:
+</p>
+<ol start="1">
+<li>
+    <p>
+        In particular <span class="inline-math">$r$</span> is not an irreducible,
+        so write <span class="inline-math">$r = r_1 s_1$</span>,
+        where <span class="inline-math">$r_1, s_1\in R$</span> are non-zero non-units.
+        They cannot be both irreducibles,
+        so WLOG assume <span class="inline-math">$r_1$</span> is not an irreducible.
+    </p>
+    
+</li><li>
+    <p>
+        Write <span class="inline-math">$r_1 = r_2 s_2$</span>, both non-zero non-units.
+        Again they cannot be both irreducibles,
+        so WLOG assume <span class="inline-math">$r_2$</span> is not an irreducible.
+    </p>
+    
+</li>
+</ol>
+<p>
+    And so on.
+</p>
+<p>
+    This leads to
+    <span class="display-math">$$ \begin{align*}
+        r = r_1s_1 = r_2 s_2 s_1 = r_3 s_3 s_2 s_1 = \ldots
+    \end{align*} $$</span>
+    and so
+    <span class="display-math">$$ \begin{align*}
+        (r) \subseteq (r_1) \subseteq (r_2) \subseteq (r_3) \subseteq \ldots.
+    \end{align*} $$</span>
+    However since <span class="inline-math">$R$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-Noetherian-iff-all-ideals-are-finitely-generated.html">Noetherian</a>,
+    the chain stabilises,
+    and thus <span class="inline-math">$(r_n) = (r_{n+1})$</span> for some (in fact all) large <span class="inline-math">$n$</span>.
+    Then <span class="inline-math">$r_{n+1} s_{n+1} = r_n$</span>, so <span class="inline-math">$s_{n+1}$</span> must be a unit,
+    contradicting with the construction.
+</p>
+
+<h1>Uniqueness of factorisation</h1>
+
+<p>
+    Let
+    <span class="display-math">$$p_1 \ldots p_n = q_1 \ldots q_m$$</span>
+    be products of irreducibles <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-equivalence-of-maximal-ideal-prime-ideal-prime-element-irreducible-element-in-PID.html">or equivalently</a> primes.
+</p>
+<p>
+    Since <span class="inline-math">$p_1\mid q_1 \ldots q_m$</span> and <span class="inline-math">$p_1$</span> is prime,
+    <span class="inline-math">$p_1$</span> divides some <span class="inline-math">$q_i$</span> and reorder to say <span class="inline-math">$p_1 \mid q_1$</span>.
+    Then <span class="inline-math">$q_1 = p_1 u_1$</span> for some <span class="inline-math">$u_1\in R$</span>.
+    But <span class="inline-math">$q_1$</span> is irreducible and <span class="inline-math">$p_1$</span> is not a unit,
+    so <span class="inline-math">$u_1$</span> is a unit.
+    Therefore cancelling <span class="inline-math">$p_1$</span> on both sides (as we're working in an integral domain),
+    <span class="display-math">$$ \begin{align*}
+        p_2 p_3 \ldots p_n = \underbrace{u_1 q_2}_{\tilde q_2} q_3 \ldots q_m.
+    \end{align*} $$</span>
+    where <span class="inline-math">$\tilde q_2 = u_1 q_2$</span> is still an irreducible.
+</p>
+<p>
+    Continue as above to show <span class="inline-math">$p_i$</span> and <span class="inline-math">$q_i$</span> are associates for <span class="inline-math">$i\leq \max\set{n,m}$</span>.
+    If one of the sides run out of irreducibles first,
+    then we get a product of irreducibles being equal to a unit,
+    which is impossible as irreducibles cannot be units.
+    Thus <span class="inline-math">$n=m$</span>.
+</p>

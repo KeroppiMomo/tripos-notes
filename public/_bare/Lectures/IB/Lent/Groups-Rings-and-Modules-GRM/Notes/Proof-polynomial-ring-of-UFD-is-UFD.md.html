@@ -1,0 +1,65 @@
+
+<h1>Existence of factorisation</h1>
+
+<p>
+    Let <span class="inline-math">$f\in R[X]$</span> be a non-zero non-unit polynomial.
+    First write <span class="inline-math">$f = c(f)\, \tilde f$</span>
+    where <span class="inline-math">$\tilde f\in R[X]$</span> is primitive.
+    We can factorise <span class="inline-math">$c(f) = p_1 \ldots p_n$</span> for <span class="inline-math">$p_i \in R$</span> irreducible,
+    which are also irreducible in <span class="inline-math">$R[X]$</span>.
+    So it suffices to give factorisations for primitive polynomials <span class="inline-math">$\tilde f$</span>.
+</p>
+<p>
+    Induct on <span class="inline-math">$\deg \tilde f$</span>.
+    If <span class="inline-math">$\deg \tilde f = 0$</span>, <span class="inline-math">$\tilde f$</span> is a unit and so we're done.
+    If <span class="inline-math">$\tilde f$</span> is irreducible,
+    we are also done.
+    Otherwise we can write <span class="inline-math">$\tilde f = g\cdot h$</span>
+    where <span class="inline-math">$g,h\in R[X]$</span> are not units.
+    Since <span class="inline-math">$\tilde f$</span> is primitive,
+    <span class="inline-math">$g,h$</span> are primitive, so neither can be constants,
+    i.e. <span class="inline-math">$\deg g, \deg h &gt; 0$</span>.
+    As <span class="inline-math">$R$</span> is an integral domain, <span class="inline-math">$\deg \tilde f = \deg g + \deg h$</span>,
+    so <span class="inline-math">$\deg g,\deg h &lt; \deg \tilde f$</span>.
+    Use the induction hypothesis to factorise <span class="inline-math">$g = q_1 \ldots q_m$</span> and <span class="inline-math">$h = r_1 \ldots r_k$</span>.
+    We finally obtain
+    <span class="display-math">$$ \begin{align*}
+        f = p_1 \ldots p_n q_1 \ldots q_m r_1 \ldots r_k.
+    \end{align*} $$</span>
+</p>
+
+<h1>Uniqueness of factorisation</h1>
+
+<p>
+    Suppose
+    <span class="display-math">$$ \begin{align*}
+        p_1 \ldots p_n q_1 \ldots q_m = r_1 \ldots r_k s_1 \ldots s_l
+    \end{align*} $$</span>
+    where all <span class="inline-math">$p_i, q_i, r_i, s_i$</span> are irreducibles, <span class="inline-math">$p_i,r_i\in R$</span>
+    and <span class="inline-math">$q_i, s_i\in R[X]$</span> with degree <span class="inline-math">$\geq 1$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$q_i, s_i$</span> are irreducible, they are primitive,
+    so taking content on both sides,
+    <span class="display-math">$$ \begin{align*}
+        p_1 \ldots p_n = u\cdot r_1 \ldots r_k
+    \end{align*} $$</span>
+    for some unit <span class="inline-math">$u\in R$</span>.
+    Then by unique factorisation in <span class="inline-math">$R$</span>,
+    <span class="inline-math">$n=k$</span> and <span class="inline-math">$p_i$</span> and <span class="inline-math">$q_i$</span> are associates up to reordering.
+</p>
+<p>
+    Now we have
+    <span class="display-math">$$ \begin{align*}
+        u\cdot q_1 \ldots q_m = s_1 \ldots s_l,
+    \end{align*} $$</span>
+    with both sides primitive.
+    Viewing in <span class="inline-math">$F[X]$</span> where <span class="inline-math">$F$</span> is the field of fractions of <span class="inline-math">$R$</span>,
+    since <span class="inline-math">$F[X]$</span> is a Euclidean domain and thus unique factorisation domain,
+    we have <span class="inline-math">$m=l$</span> and up to reordering, <span class="inline-math">$q_i$</span> and <span class="inline-math">$s_i$</span> are associates in <span class="inline-math">$F[X]$</span>.
+    This means <span class="inline-math">$q_i \mid s_i$</span> and <span class="inline-math">$s_i \mid q_i$</span> in <span class="inline-math">$F[X]$</span>,
+    but since <span class="inline-math">$q_i$</span> and <span class="inline-math">$s_i$</span> are primitive,
+    <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-divisibility-of-polynomials-in-UFD-and-its-field-of-fractions.html">this is equivalent</a>
+    to <span class="inline-math">$q_i \mid s_i$</span> and <span class="inline-math">$s_i \mid q_i$</span> in <span class="inline-math">$R[X]$</span>.
+    Thus <span class="inline-math">$q_i$</span> and <span class="inline-math">$s_i$</span> are associates in <span class="inline-math">$R[X]$</span>.
+</p>

@@ -1,0 +1,413 @@
+<p>
+    A <em>hypothesis</em> is an assumption about the distribution of the data <span class="inline-math">$X$</span>.
+</p>
+<p>
+    A <em>simple hypothesis</em> specifies the distribution of <span class="inline-math">$X$</span> completely
+    (e.g. parameter is a fixed value),
+    and otherwise it is <em>composite</em>.
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (hypothesis test)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    A <em>test</em> for a <em>null hypothesis</em> <span class="inline-math">$H_0$</span>
+                    against an <em>alternative hypothesis</em> <span class="inline-math">$H_1$</span> is a binary-valued statistic <span class="inline-math">$T(X) \in \set{0,1}$</span>, where
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        <span class="inline-math">$T(X) = 1$</span> means we <em>reject</em> <span class="inline-math">$H_0$</span> as the data contains enough evidence against <span class="inline-math">$H_0$</span>; and
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$T(X) = 0$</span> means we <em>do not reject</em> <span class="inline-math">$H_0$</span> as the data contains not enough evidence against <span class="inline-math">$H_0$</span>.
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    The <em>power function</em> of the test is <span class="inline-math">$β(T; θ) = \prob_θ(T(X) = 1)$</span>, the probability of rejection under <span class="inline-math">$θ$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The <em>type I error rate</em> is <span class="inline-math">$β(T; θ)$</span> for <span class="inline-math">$θ\in Θ_0$</span>, the rate of "false rejection".
+                </p>
+                
+            </li><li>
+                <p>
+                    The <em>type II error rate</em> is <span class="inline-math">$1-β(T; θ)$</span> for <span class="inline-math">$θ\in Θ_1$</span>, the rate of "false acceptance".
+                </p>
+                
+            </li><li>
+                <p>
+                    The <em>size</em> of the test is <span class="inline-math">$\sup_{θ\in Θ_0} β(T; θ)$</span>, the largest type I error rate.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (uniformly most powerful test)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-uniformly-most-powerful-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html">test</a> <span class="inline-math">$T: \mathcal{X}\to \set{0,1}$</span> is said to be the <em>uniformly most powerful</em> (UMP)
+                size <span class="inline-math">$α$</span> test for testing <span class="inline-math">$H_0: θ\in Θ_0$</span> against <span class="inline-math">$H_1: θ\in Θ_1$</span> if
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    it has size <span class="inline-math">$α$</span>, i.e. <span class="inline-math">$\sup_{θ\in Θ_0} β(T, θ) = α$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    for any other test <span class="inline-math">$\tilde T$</span> with size at most <span class="inline-math">$α$</span>, we have <span class="inline-math">$β(T, θ) \geq β(\tilde T, θ)$</span> for all <span class="inline-math">$θ\in Θ_1$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (likelihood ratio test)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-likelihood-ratio-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose the data <span class="inline-math">$X$</span> follows <span class="inline-math">$p(x; θ)$</span> where <span class="inline-math">$θ$</span> is unknown.
+                Let <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_0$</span></a><span class="inline-math">$: θ = θ_0$</span> and <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_1$</span></a><span class="inline-math">$: θ = θ_1$</span> be simple hypotheses.
+            </p>
+            <p>
+                The <em>likelihood ratio statistic</em> is
+                <span class="display-math">$$ \begin{align*}
+                    Λ(X) = \frac{L_X(θ_1)}{L_X(θ_0)} = \frac{p(X; θ_1)}{p(X; θ_0)}
+                \end{align*} $$</span>
+                where <span class="inline-math">$L_X$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">likelihood function</a>.
+            </p>
+            <p>
+                A <em>likelihood ratio test</em> is a test of the form
+                <span class="display-math">$$T(X) = 1_{\set{Λ(X) &gt; c}}.$$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Neyman-Pearson Lemma)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Lemma-Neyman-Pearson-Lemma.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose the data <span class="inline-math">$X$</span> follows <span class="inline-math">$p(x; θ)$</span> where <span class="inline-math">$θ$</span> is unknown.
+                Let <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_0$</span></a><span class="inline-math">$: θ = θ_0$</span> and <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_1$</span></a><span class="inline-math">$: θ = θ_1$</span> be simple hypotheses.
+            </p>
+            <p>
+                Assume <span class="inline-math">$p(x; θ_0)$</span> and <span class="inline-math">$p(x; θ_1)$</span> have the same support, i.e.
+                are non-zero on the same set.
+                Suppose there exists <span class="inline-math">$c&gt;0$</span> such that the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-likelihood-ratio-test.html">likelihood ratio test</a>
+                <span class="inline-math">$T^\ast(X) = 1_{\set{Λ(X) &gt; c}}$</span> has <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html">size</a> exactly <span class="inline-math">$α$</span>.
+            </p>
+            <p>
+                Then <span class="inline-math">$T^\ast$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-uniformly-most-powerful-test.html">uniformly most powerful</a>,
+                i.e. <span class="inline-math">$T^\ast$</span> maximises <span class="inline-math">$β(T; θ_1)$</span> subject to <span class="inline-math">$β(T; θ_0)\leq α$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-Neyman-Pearson-Lemma.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (generalised likelihood ratio test)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose the data <span class="inline-math">$X$</span> follows <span class="inline-math">$p(x; θ)$</span> where <span class="inline-math">$θ$</span> is unknown.
+                Let <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_0$</span></a><span class="inline-math">$: θ \in Θ_0$</span> and <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_1$</span></a><span class="inline-math">$: θ \in Θ_1$</span> be simple hypotheses.
+            </p>
+            <p>
+                The <em>generalised likelihood ratio statistic</em> is
+                <span class="display-math">$$ \begin{align*}
+                    Λ(X) = \frac{\sup_{θ\in Θ_0 \cup Θ_1} L_X(θ)}{\sup_{θ\in Θ_0} L_X(θ)} = \frac{\sup_{θ\in Θ_0\cup Θ_1} p(X; θ)}{\sup_{θ\in Θ_0} p(X; θ)}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                A <em>generalised likelihood ratio test</em> is a test of the form
+                <span class="display-math">$$ \begin{align*}
+                    T(X) = 1_{\set{Λ(X) &gt; c}}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Wilks' theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-Wilks-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$Θ_0\subseteq Θ_1$</span>,
+                and let <span class="inline-math">$Λ(X)$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">generalised likelihood ratio test</a>
+                for testing <span class="inline-math">$H_0: θ\in Θ_0$</span> against <span class="inline-math">$H_1: θ\in Θ_1\setminus Θ_0$</span>.
+            </p>
+            <p>
+                Under regularity conditions, we have
+                <span class="display-math">$$ \begin{align*}
+                    2\log Λ(X) \xrightarrow{d} χ_{d_1-d_0}^2 \quad \text{as $n\to \infty$ under $H_0$}
+                \end{align*} $$</span>
+                where <span class="inline-math">$d_1, d_0$</span> are the degrees of freedom (number of free parameters) of <span class="inline-math">$H_1$</span> and <span class="inline-math">$H_0$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (p-value)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-p-value.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T(X) = 1_{\set{Λ(X) &gt; c}}$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html">test</a> for testing <span class="inline-math">$H_0: θ\in Θ_0$</span>
+                against <span class="inline-math">$H_1: θ\in Θ_1$</span>.
+            </p>
+            <p>
+                The <em>p-value statistic</em> is defined as
+                <span class="display-math">$$ \begin{align*}
+                    P = \sup_{θ\in Θ_0} \prob_θ(Λ(\tilde X) &gt; Λ(X) \mid X)
+                \end{align*} $$</span>
+                where <span class="inline-math">$\tilde X$</span> is an iid copy of <span class="inline-math">$X$</span> (i.e. <span class="inline-math">$\tilde X\sim p(x; θ)$</span> and independent of <span class="inline-math">$X$</span>).
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$T$</span> has size <span class="inline-math">$α$</span>, then <span class="inline-math">$T = 1_{\set{P \leq α}}$</span>. (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-p-value-and-size.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (probability integral transform)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proposition-probability-integral-transform.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$Θ_0 = \set{θ_0}$</span> and <span class="inline-math">$Λ(X)$</span> is continuous under <span class="inline-math">$θ=θ_0$</span>.
+            </p>
+            <p>
+                Then the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-p-value.html">p-value</a> <span class="inline-math">$P\sim \mathrm{Unif}[0,1]$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-probability-integral-transform.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (confidence interval and simple test)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-confidence-interval-and-simple-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$X\sim p(x; θ)$</span> where <span class="inline-math">$θ\in Θ$</span> is unknown.
+                Consider <span class="inline-math">$T: Θ\times \mathcal{X}\to \set{0,1}$</span> and <span class="inline-math">$I: \mathcal{X}\to \mathcal{P}(Θ)$</span>
+                satisfying
+                <span class="display-math">$$ \begin{align*}
+                    I(X) = \sb{θ\in Θ}{T(θ, X) = 0}
+                \end{align*} $$</span>
+                or equivalently
+                <span class="display-math">$$ \begin{align*}
+                    T(θ, X) = \mathbb{1}_{\set{θ\not\in I(X)}}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The following are equivalent:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$T(θ_0, X)$</span> is a size <span class="inline-math">$α$</span> <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html">test</a> for <span class="inline-math">$H: θ=θ_0$</span> for all <span class="inline-math">$θ_0\in Θ$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$I(X)$</span> is a <span class="inline-math">$(1-α)$</span>-confidence set for <span class="inline-math">$θ$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-confidence-interval-and-simple-test.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Pearson's chi-squared test
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Pearson-s-chi-squared-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Often for <span class="inline-math">$Λ$</span> the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">generalised likelihood ratio statistic</a>,
+                we obtain
+                <span class="display-math">$$ \begin{align*}
+                    2\log Λ = 2\sum_{i} O_i \log \frac{O_i}{E_i}
+                \end{align*} $$</span>
+                where <span class="inline-math">$O_i$</span> and <span class="inline-math">$E_i$</span> are the observed and expected counts of <span class="inline-math">$i$</span>,
+                satisfying <span class="inline-math">$\sum_{i} O_i = \sum_{i} E_i$</span>.
+            </p>
+            <p>
+                <em>Pearson's chi-squared statistic</em> is the approximation
+                <span class="display-math">$$ \begin{align*}
+                    2\log Λ \approx \sum_{i} \frac{(O_i - E_i)^2}{E_i}
+                \end{align*} $$</span>
+                valid when <span class="inline-math">$(O_i - E_i)/E_i \approx 0$</span>.
+                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-Pearson-s-chi-squared-statistic.html">Derivation</a>)
+            </p>
+            <p>
+                By <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-Wilks-theorem.html">Wilks' theorem</a>, <span class="inline-math">$2\log Λ \xrightarrow{d} χ^2_d$</span> under <span class="inline-math">$H_0$</span>
+                with a certain degree of freedom <span class="inline-math">$d$</span>.
+                So the size <span class="inline-math">$α$</span> <em>Pearson's chi-squared test</em>
+                rejects <span class="inline-math">$H_0$</span> if
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{i} \frac{(O_i - E_i)^2}{E_i} &gt; χ^2_d(α).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Goodness-of-fit test
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Goodness-of-fit-test.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$(N_1, \ldots, N_k) \sim \mathrm{Multinomial}(n; p_1, \ldots, p_k)$</span>.
+                            Test <span class="inline-math">$H_0: p=p_0(θ)$</span> for some <span class="inline-math">$θ$</span> against <span class="inline-math">$H_1: p_i$</span> unrestricted (but still <span class="inline-math">$p_i\geq 0$</span> and <span class="inline-math">$\sum_{i} p_i=1$</span>), excluding <span class="inline-math">$H_0$</span>.
+                        </p>
+                        <p>
+                            Apply Pearson's chi-squared test with
+                            <span class="display-math">$$ \begin{align*}
+                                O_i = N_i, \qquad E_i = np_{0i}(\hat θ_{\text{MLE}}), \qquad d = k-1-\op{df}(H_0).
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\hat θ_{\text{MLE}}$</span> is the maximum likelihood estimator for <span class="inline-math">$θ$</span> under <span class="inline-math">$H_0$</span>
+                            and <span class="inline-math">$\op{df}(H_0)$</span> is the degree of freedom of <span class="inline-math">$H_0$</span>.
+                            (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-goodness-of-fit-test.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Test for independence in two-way contingency tables
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Test-for-independence-in-two-way-contingency-tables.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$(X_1, Y_1), \ldots, (X_n, Y_n) \sim P$</span> iid,
+                            with <span class="inline-math">$X_1\in (1,2,\ldots,r)$</span> and <span class="inline-math">$Y_1\in (1,2,\ldots,c)$</span>.
+                            Test <span class="inline-math">$H_0: X_1$</span> and <span class="inline-math">$Y_1$</span> are independent.
+                        </p>
+                        <p>
+                            Summarise data by a contingency table with entries <span class="inline-math">$N_{xy} = \sum_{i=1}^{n} \mathbb{1}_{\set{X_i = x, Y_i = y}}$</span>.
+                            Model as
+                            <span class="display-math">$$ \begin{align*}
+                                (N_{11}, \ldots, N_{1c}, \ldots, N_{r1}, \ldots, N_{rc}) \sim \mathrm{Multinomial}(n; p_{11}, \ldots, p_{1c}, \ldots, p_{r 1}, \ldots, p_{rc}).
+                            \end{align*} $$</span>
+                            Now
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$H_0$</span>: <span class="inline-math">$p_{xy} = p_{x+} p_{+y}$</span> where <span class="inline-math">$p_{x+}, p_{+y}\geq 0$</span>, <span class="inline-math">$\sum_{x} p_{x+} = 1 = \sum_{y} p_{+y}$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$H_1$</span>: <span class="inline-math">$p_{xy}$</span> unrestricted (but still <span class="inline-math">$p_{xy} \geq 0$</span>, <span class="inline-math">$\sum_{x,y} p_{xy} = 1$</span>), excluding <span class="inline-math">$H_0$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            Apply Pearson's chi-squared test with
+                            <span class="display-math">$$ \begin{align*}
+                                O_{xy} = N_{xy}, \qquad E_{xy} = \frac{N_{x+} N_{+y}}{n}, \qquad d=(r-1)(c-1).
+                            \end{align*} $$</span>
+                            (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-independence-in-two-way-contingency-tables.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Test for homogeneity
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Test-for-homogeneity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Now for each row <span class="inline-math">$x$</span>, we make a fixed number <span class="inline-math">$n_x$</span> of samples.
+                            Model as
+                            <span class="display-math">$$ \begin{align*}
+                                (N_{x1}, \ldots, N_{xc}) \sim \mathrm{Multinomial}(n_x; p_{1\mid x}, \ldots, p_{c\mid x}).
+                            \end{align*} $$</span>
+                            Test <span class="inline-math">$H_0:p_{y\mid x}$</span> does not depend on <span class="inline-math">$x$</span>
+                            against <span class="inline-math">$H_1: p_{y\mid x}$</span> unrestricted (but still <span class="inline-math">$p_{y\mid x}\geq 0$</span> and <span class="inline-math">$\sum_{y} p_{y\mid x} = 1$</span>),
+                            excluding <span class="inline-math">$H_0$</span>.
+                        </p>
+                        <p>
+                            The test is the same as the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Test-for-independence-in-two-way-contingency-tables.html">test for independence</a>.
+                            (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-test-for-homogeneity.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

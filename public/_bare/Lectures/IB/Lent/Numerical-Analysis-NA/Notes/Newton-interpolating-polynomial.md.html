@@ -1,0 +1,78 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (divided difference)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-divided-difference.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Polynomial-interpolation.html">polynomial interpolation problem</a>,
+                the <em>divided difference</em> of <span class="inline-math">$f$</span> of order <span class="inline-math">$k$</span>
+                is the leading coefficient of the polynomial <span class="inline-math">$p_k\in \mathcal{P}_k$</span>
+                that interpolates <span class="inline-math">$f$</span> on <span class="inline-math">$x_0, \ldots, x_k$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$f[x_0] = f(x_0)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    By the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lagrange-interpolating-polynomial.html">Lagrange form</a>,
+                    <span class="display-math">$$ \begin{align*}
+                    f[x_0, \ldots, x_k] = \sum_{i=0}^{n} \frac{f(x_i)}{ω&#x27;(x_i)}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Newton interpolating polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Newton-interpolating-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Polynomial-interpolation.html">polynomial interpolation problem</a>,
+                the interpolating polynomial is given by
+                <span class="display-math">$$ \begin{align*}
+                    p_n(x) = \sum_{k=0}^{n} f[x_0, \ldots, x_k] \prod_{i=0}^{k-1} (x-x_i)
+                \end{align*} $$</span>
+                where <span class="inline-math">$f[x_0, \ldots, x_k]$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-divided-difference.html">divided difference</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Newton-interpolating-polynomial.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (recurrence relation of divided difference)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-recurrence-relation-of-divided-difference.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-divided-difference.html">divided differences</a> satisfy the recurrence relation
+                <span class="display-math">$$ \begin{align*}
+                    f[x_0, x_1, \ldots, x_{k-1}, x_k] = \frac{f[x_1, \ldots, x_{k-1}, x_k] - f[x_0, x_1, \ldots, x_{k-1}]}{x_k - x_0}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-recurrence-relation-of-divided-difference.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-Newton-interpolating-polynomial.html">Example (Newton interpolating polynomial)</a>
+</p>

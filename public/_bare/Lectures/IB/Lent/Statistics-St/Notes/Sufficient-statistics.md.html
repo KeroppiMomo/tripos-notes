@@ -1,0 +1,149 @@
+<div class="markdown-callout" data-callout="principle">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Sufficiency principle</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            If <span class="inline-math">$T(X)$</span> is a sufficient statistic
+            and in two experiments with data <span class="inline-math">$x$</span> and <span class="inline-math">$y$</span>
+            we have <span class="inline-math">$T(x) = T(y)$</span>,
+            then the "evidence" about <span class="inline-math">$θ$</span> given the two experiments is the same.
+        </p>
+        
+    </div>
+</div><p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (sufficient statistic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-sufficient-statistic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A statistic <span class="inline-math">$T = T(X)$</span> is said to be <em>sufficient</em> for <span class="inline-math">$θ$</span>
+                if the conditional distribution of <span class="inline-math">$X$</span> given <span class="inline-math">$T(X)$</span>
+                does not depend on <span class="inline-math">$θ$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Fisher-Neyman factorisation theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-Fisher-Neyman-factorisation-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$X$</span> follows a distribution <span class="inline-math">$p(x; θ)$</span> depending on an unknown parameter <span class="inline-math">$θ$</span>.
+            </p>
+            <p>
+                A statistic <span class="inline-math">$T$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-sufficient-statistic.html">sufficient</a> for <span class="inline-math">$θ$</span> iff
+                <span class="display-math">$$ \begin{align*}
+                    p(x; θ) = g(T(X), θ)\, h(x)
+                \end{align*} $$</span>
+                for some functions <span class="inline-math">$g$</span> and <span class="inline-math">$h$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-Fisher-Neyman-factorisation-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (minimal sufficient statistic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-minimal-sufficient-statistic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-sufficient-statistic.html">sufficient statistic</a> <span class="inline-math">$T(X)$</span>
+                is <em>minimal sufficient</em>
+                if it is a function of every other statistic,
+                i.e. if <span class="inline-math">$S(X)$</span> is a sufficient statistic,
+                then <span class="inline-math">$S(x) = S(y) \implies T(x) = T(y)$</span> for all <span class="inline-math">$x,y\in \mathcal{X}$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Minimal sufficient statistics are unique up to a bijection.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (equal iff probability ratio independent of parameter implies minimal sufficient)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-equal-iff-probability-ratio-independent-of-parameter-implies-minimal-sufficient.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$T$</span> is a statistic, satisfying that
+                <span class="inline-math">$T(x) = T(y)$</span> iff <span class="inline-math">$p(x; θ)/p(y; θ)$</span> does not depend on <span class="inline-math">$θ$</span>.
+                Then <span class="inline-math">$T$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-minimal-sufficient-statistic.html">minimal sufficient</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-equal-iff-probability-ratio-independent-of-parameter-implies-minimal-sufficient.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If the range of <span class="inline-math">$X$</span> depends on <span class="inline-math">$θ$</span>, the condition means <span class="inline-math">$p(x;θ) = c(x,y)p(y;θ)$</span> for some <span class="inline-math">$c(x,y)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Example-identifying-minimal-sufficient-statistic.html">Example (identifying minimal sufficient statistic)</a>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Rao-Blackwell)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-Rao-Blackwell.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$T$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-sufficient-statistic.html">sufficient statistic</a>.
+            </p>
+            <p>
+                For any <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a> <span class="inline-math">$\tilde θ$</span> of <span class="inline-math">$θ$</span>,
+                let <span class="inline-math">$\hat θ = \expect_θ(\tilde θ\mid T)$</span> be another estimator.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \op{MSE}(\hat θ) \leq \op{MSE}(\tilde θ)
+                \end{align*} $$</span>
+                with equality iff <span class="inline-math">$\tilde θ$</span> is a function of <span class="inline-math">$T$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-Rao-Blackwell.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This reinforces the sufficiency principle:
+                    we should only consider estimators that are functions of
+                    sufficient statistics,
+                    since otherwise we can always make a better one.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

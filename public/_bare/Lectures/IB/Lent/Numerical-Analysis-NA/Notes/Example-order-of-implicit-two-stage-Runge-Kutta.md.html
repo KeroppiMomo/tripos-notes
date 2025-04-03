@@ -1,0 +1,45 @@
+<p>
+    Consider the implicit two-stage Runge-Kutta method
+    <span class="display-math">$$ \begin{align*}
+        k_1 ={}&amp; f(t_n, y_n + \tfrac{1}{4}h(k_1 - k_2)), \tag{1}\\
+        k_2 ={}&amp; f(t_n + \tfrac{2}{3}h, y_n + \tfrac{1}{12}h(3k_1 + 5k_2)), \tag{2} \\
+        y_{n+1} ={}&amp; y_n + \tfrac{1}{4}h(k_1 + 3k_2). \tag{3}
+    \end{align*} $$</span>
+</p>
+<p>
+    We'll simplify our analysis by considering the autonomous system <span class="inline-math">$y&#x27; = f(y)$</span> instead.
+</p>
+<p>
+    (We omit evaluation at <span class="inline-math">$t_n$</span> for simplicity.)
+</p>
+<p>
+    Expand (1) and (2) to obtain
+    <span class="display-math">$$ \begin{align*}
+        k_1 ={}&amp; f + \tfrac{1}{4}hf_y(k_1-k_2) + \tfrac{1}{32}h^2 f_{yy}(k_1-k_2)^2 + O(h^3), \tag{4} \\
+        k_2 ={}&amp; f + \tfrac{1}{12}hf_y(3k_1 + 5k_2) + \tfrac{1}{288} h^2 f_{yy}(3k_1 + 5k_2)^2 + O(h^3). \tag{5}
+    \end{align*} $$</span>
+    Substitute <span class="inline-math">$k_1 = f + O(h)$</span> and <span class="inline-math">$k_2 = f + O(h)$</span> back into (4) and (5) to get
+    <span class="display-math">$$ \begin{align*}
+        k_1 = f + O(h^2), \qquad k_2 = f + \tfrac{2}{3}hf_y f + O(h^2).
+    \end{align*} $$</span>
+    Substitute these back into (4) and (5) again to gain one more order,
+    <span class="display-math">$$ \begin{align*}
+        k_1 ={}&amp; f - \tfrac{1}{6}h^2 f_y^2 f + O(h^3), \\
+        k_2 ={}&amp; f + \tfrac{2}{3}h f_y f + h^2(\tfrac{5}{18} f_{y}^2 f + \tfrac{2}{9} f_{yy} f^2) + O(h^3).
+    \end{align*} $$</span>
+</p>
+<p>
+    Substitute these into (3) to get
+    <span class="display-math">$$ \begin{align*}
+        y_{n+1} = y_n + hf + \tfrac{1}{2}h^2 f_y f + \tfrac{1}{6}h^3 (f_y^2 f + f_{yy}y^2) + O(h^4).
+    \end{align*} $$</span>
+    Note that
+    <span class="display-math">$$ \begin{align*}
+        y&#x27; = f(y) \implies y&#x27;&#x27; = f_y y&#x27; = f_y f \implies y&#x27;&#x27;&#x27; = f_y^2 f + f_{yy} f^2.
+    \end{align*} $$</span>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        y_{n+1} = y_n + hy&#x27; + \tfrac{1}{2}h^2y&#x27;&#x27; + \tfrac{1}{6}h^2 y&#x27;&#x27;&#x27; + O(h^4).
+    \end{align*} $$</span>
+    So the method has order at least 3.
+</p>

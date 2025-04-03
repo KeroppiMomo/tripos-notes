@@ -1,0 +1,48 @@
+<p>
+    Consider the ODE <span class="inline-math">$y&#x27; = λy$</span>.
+</p>
+
+<h1>Forward Euler</h1>
+
+<p>
+    The scheme is
+    <span class="display-math">$$ \begin{align*}
+        y_{n+1} = y_n + hλ y_n
+    \end{align*} $$</span>
+    so <span class="inline-math">$y_n \to 0$</span> iff <span class="inline-math">$|1+λh|&lt;1$</span>.
+    Therefore the linear stability domain is
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{D} = \sb{z\in \C}{|z+1| &lt; 1}.
+    \end{align*} $$</span>
+    Thus forward Euler is not <span class="inline-math">$A$</span>-stable.
+</p>
+
+<h1>Trapezoidal rule</h1>
+
+<p>
+    The scheme is
+    <span class="display-math">$$ \begin{align*}
+        y_{n+1} = y_n + \frac{1}{2}λh(y_n + y_{n+1}) \implies y_{n+1} = \frac{1+z/2}{1-z/2}y_n.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$\frac{|1+z/2|}{|1-z/2|} &lt; 1$</span> iff <span class="inline-math">$\Re z &lt; 0$</span>, so the linear stability domain is
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{D} = \sb{z\in \C}{\Re z &lt; 0} = \C^-
+    \end{align*} $$</span>
+    and thus the method is <span class="inline-math">$A$</span>-stable.
+</p>
+
+<h1>Backward Euler</h1>
+
+<p>
+    The scheme is
+    <span class="display-math">$$ \begin{align*}
+        y_{n+1} = y_n + λhy_{n+1} \implies y_{n+1} = \frac{y_n}{1-z}.
+    \end{align*} $$</span>
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{D} = \sb{z\in \C}{|z-1|&gt;1}
+    \end{align*} $$</span>
+    and so this method is <span class="inline-math">$A$</span>-stable.
+</p>

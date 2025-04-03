@@ -1,0 +1,25 @@
+<p>
+    (Sheet 2 Q6)
+</p>
+<p>
+    A general explicit Runge-Kutta method is
+    <span class="display-math">$$ \begin{align*}
+        \v k_i ={}&amp; \v f\Bigl(t_n + c_i h, \v y_n + h \sum_{j=1}^{i-1} a_{ij} \v k_j\Bigr), &amp;&amp; c_s = \sum_{j=1}^{i-1} a_{ij} \\
+        \v y_{n+1} ={}&amp; \v y_n + h \sum_{i=1}^{s} b_i \v k_i, &amp;&amp; 1 = \sum_{i=1}^{s} b_i.
+    \end{align*} $$</span>
+    Applying this to <span class="inline-math">$f(t,y) = λy$</span>, we get
+    <span class="display-math">$$ \begin{align*}
+        hk_i = hλ \left(y_n + \sum_{j=1}^{i-1} a_{ij}hk_j\right), \qquad y_{n+1} = y_n + \sum_{i=1}^{s} b_i hk_i.
+    \end{align*} $$</span>
+    By induction we see that <span class="inline-math">$hk_i = q_i(λ)\cdot y_n$</span> for some polynomial <span class="inline-math">$q_i\in \mathcal{P}_i$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        y_{n+1} = \underbrace{\left(1 + \sum_{i=1}^{s} b_i q_i(λh)\right)}_{p_s(λh)\in \mathcal{P}_s}y_n.
+    \end{align*} $$</span>
+    The linear stability domain is
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{D} = \sb{z\in \C}{|p_s(z)|&lt;1}.
+    \end{align*} $$</span>
+    But <span class="inline-math">$p_s$</span> is a polynomial so <span class="inline-math">$p_s(z)\to \pm\infty$</span> as <span class="inline-math">$z\to -\infty$</span>,
+    and thus <span class="inline-math">$\mathbb{C}^-\not\subseteq \mathcal{D}$</span>.
+</p>

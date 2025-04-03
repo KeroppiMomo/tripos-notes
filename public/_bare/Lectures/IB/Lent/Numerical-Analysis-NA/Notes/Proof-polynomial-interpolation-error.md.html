@@ -1,0 +1,69 @@
+
+<h1>Proof 1</h1>
+
+<p>
+    The result follows from two claims:
+</p>
+
+<h2><span class="inline-math">$f(x) - p(x) = f[x_0, \ldots, x_n, x] \, ω(x)$</span></h2>
+
+<p>
+    Let <span class="inline-math">$\tilde p\in \mathcal{P}_{n+1}$</span>
+    be the polynomial that interpolates <span class="inline-math">$f$</span> on <span class="inline-math">$x_0, \ldots, x_n, x$</span>.
+    From the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Newton-interpolating-polynomial.html">proof of the Newton form</a>,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        f(x) - p(x) = \tilde p(x) - p(x) = f[x_0, \ldots, x_n, x] \,\prod_{i=0}^{n} (x-x_i) = f[x_0, \ldots, x_n, x]\, ω(x).
+    \end{align*} $$</span>
+</p>
+
+<h2><span class="inline-math">$f[x_0, \ldots, x_k] = \frac{1}{k!} f^{(k)}(ξ)$</span> for some <span class="inline-math">$ξ$</span> if <span class="inline-math">$f$</span> is <span class="inline-math">$C^k$</span></h2>
+
+<p>
+    Let <span class="inline-math">$p\in \mathcal{P}_k$</span> be the polynomial that interpolates <span class="inline-math">$f$</span> on <span class="inline-math">$x_0,\ldots,x_k$</span>.
+</p>
+<p>
+    <span class="inline-math">$f-p\in C^k[a,b]$</span> has (at least) <span class="inline-math">$(k+1)$</span> roots <span class="inline-math">$x_0, \ldots, x_k$</span>,
+    so by <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Lemma-Rolle-s-theorem.html">Rolle's theorem</a>,
+    <span class="inline-math">$(f-p)&#x27; \in C^{k-1}[a,b]$</span> has <span class="inline-math">$k$</span> roots,
+    one on each interval <span class="inline-math">$(x_i, x_{i+1})$</span>.
+    Repeatedly application of Rolle's theorem yields a root <span class="inline-math">$ξ\in (a,b)$</span>
+    of <span class="inline-math">$(f-p)^{(k)}$</span>.
+</p>
+<p>
+    The leading coefficient of <span class="inline-math">$p\in \mathcal{P}_k$</span> is <span class="inline-math">$f[x_0, \ldots, x_k]$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        f^{(k)}(ξ) = p^{(k)}(ξ) = k!\, f[x_0, \ldots, x_k].
+    \end{align*} $$</span>
+</p>
+
+<h1>Proof 2</h1>
+
+<p>
+    Fix <span class="inline-math">$x$</span>.
+    We will directly show <span class="inline-math">$f(x) - p(x) = \frac{1}{(n+1)!} f^{(n+1)}(ξ) \, ω(x)$</span> for some <span class="inline-math">$ξ$</span>.
+</p>
+<p>
+    If <span class="inline-math">$x=x_i$</span> for some <span class="inline-math">$i$</span>, then both sides vanish so we are done.
+</p>
+<p>
+    Otherwise <span class="inline-math">$ω(x)\neq 0$</span>, and consider the function
+    <span class="display-math">$$ \begin{align*}
+        ϕ(t) = f(t) - p(t) - \frac{f(x) - p(x)}{ω(x)} ω(t).
+    \end{align*} $$</span>
+    This has the property that <span class="inline-math">$ϕ$</span> vanishes at <span class="inline-math">$x_0, \ldots, x_n$</span>, as well as <span class="inline-math">$x$</span>.
+    Moreover, <span class="inline-math">$ϕ\in C^{(n+1)}[a,b]$</span>.
+</p>
+<p>
+    <span class="inline-math">$ϕ$</span> has <span class="inline-math">$(n+2)$</span> roots, so applying Rolle's theorem repeatedly gives
+    a root <span class="inline-math">$ξ\in (a,b)$</span> of <span class="inline-math">$ϕ^{(n+1)}$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        0 = ϕ^{(n+1)}(ξ) ={}&amp; f^{(n+1)}(ξ) - p^{(n+1)}(ξ) - \frac{f(x) - p(x)}{ω(x)} ω^{(n+1)}(t) \\
+        ={}&amp; f^{(n+1)}(ξ) - \frac{f(x) - p(x)}{ω(x)} (n+1)!
+    \end{align*} $$</span>
+    where <span class="inline-math">$p^{(n+1)}(ξ) = 0$</span> because <span class="inline-math">$p\in \mathcal{P}_n$</span>
+    and <span class="inline-math">$ω^{(n+1)}(t) = (n+1)!$</span> because <span class="inline-math">$ω$</span> is a monic degree-<span class="inline-math">$(n+1)$</span> polynomial.
+    Rearranging yields the result.
+</p>

@@ -1,0 +1,39 @@
+
+<h1><span class="inline-math">$A = LDL^T$</span> <span class="inline-math">$\implies$</span> SPD</h1>
+
+<p>
+    <span class="inline-math">$A$</span> is symmetric because <span class="inline-math">$A^T = (L^T)^T D^T L^T = LDL^T$</span>.
+</p>
+<p>
+    <span class="inline-math">$A$</span> is positive definite because for all <span class="inline-math">$\v x\in \R^n$</span>, let <span class="inline-math">$\v y=L^T \v x$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \v x^T A \v x = \v y^T D \v y = \sum_{i=1}^{n} d_{ii} y_i^2 \geq 0
+    \end{align*} $$</span>
+    with equality iff <span class="inline-math">$\v y=0$</span> iff <span class="inline-math">$\v x=0$</span>.
+</p>
+
+<h1>Positive definite <span class="inline-math">$\implies$</span> strictly regular</h1>
+
+<p>
+    Suppose <span class="inline-math">$A$</span> is positive definite, and let <span class="inline-math">$A_k$</span> be its <span class="inline-math">$k$</span>-th principal minor.
+    For any <span class="inline-math">$\v x = (x_1, \ldots, x_k)\in \R^k$</span> non-zero,
+    let <span class="inline-math">$\v x_\ast = (x_1, \ldots, x_k, 0, \ldots, 0)\in \R^n$</span>, which is non-zero.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        0 &lt; \v x_\ast^T A \v x_\ast = \v x^T A_k \v x
+    \end{align*} $$</span>
+    so <span class="inline-math">$A_k \v x\neq 0$</span>.
+    Hence <span class="inline-math">$A_k$</span> is non-singular.
+</p>
+
+<h1>SPD <span class="inline-math">$\implies$</span> <span class="inline-math">$A=LDL^T$</span></h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Corollary-LDLT-factorisation.html">By the above</a> <span class="inline-math">$A$</span> has a <span class="inline-math">$LDL^T$</span> factorisation.
+    <span class="inline-math">$D$</span> has positive entries because taking <span class="inline-math">$\v x = (L^T)\inv \v e_k\neq \v 0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        0 &lt; \v x^T A \v x = \v e_k^T D \v e_k = d_{kk}
+    \end{align*} $$</span>
+    for each <span class="inline-math">$k=1,2,\ldots,n$</span>.
+</p>

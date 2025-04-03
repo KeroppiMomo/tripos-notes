@@ -1,0 +1,39 @@
+<p>
+    Take <span class="inline-math">$s=2$</span>, <span class="inline-math">$ρ(w) = w(w-1)$</span>.
+    We'll follow the construction <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Constructing-multistep-methods-with-maximum-order.html">here</a>.
+</p>
+<p>
+    Let <span class="inline-math">$w = ξ+1$</span>.
+    Expand about <span class="inline-math">$w=1$</span> i.e. <span class="inline-math">$ξ=0$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \frac{ρ(w)}{\log w} ={}&amp; \frac{ξ + ξ^2}{\log(1+ξ)} \\
+        ={}&amp; \frac{ξ+ξ^2}{ξ - \frac{1}{2}ξ^2 + \frac{1}{3}ξ^3 + O(ξ^4)} \\
+        ={}&amp; (1 + ξ)\bigl(1 -\tfrac{1}{2}ξ + \tfrac{1}{3}ξ^2 + O(ξ^3)\bigr)\inv \\
+        ={}&amp; (1+ξ)\bigl(1 - (-\tfrac{1}{2}ξ + \tfrac{1}{3}ξ^2) + (-\tfrac{1}{2}ξ + \tfrac{1}{3}ξ^2)^2 + O(ξ^3)\bigr) \\
+        ={}&amp; (1+ξ)\bigl(1 + \tfrac{1}{2}ξ - \tfrac{1}{12}ξ^2 + O(ξ^3)\bigr) \\
+        ={}&amp; 1 + \tfrac{3}{2}ξ + \tfrac{5}{12}ξ^2 + O(ξ^3) \\
+        ={}&amp; {-\tfrac{1}{12}} + \tfrac{2}{3} w + \tfrac{5}{12}w^2 + O(|w-1|^3) \\
+        ={}&amp; {-\tfrac{1}{2}} + \tfrac{3}{2}w + O(|w-1|^2).
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        For an implicit method, take <span class="inline-math">$σ(w) = -\frac{1}{12} + \frac{2}{3}w + \frac{5}{12}w^2 \in \mathcal{P}_2$</span>.
+        So the 2-step 3rd-order Adams-Moulton method is
+        <span class="display-math">$$ \begin{align*}
+        y_{n+2} - y_{n+1} = h\left(\frac{5}{12}f_{n+2} + \frac{2}{3}f_{n+1} - \frac{1}{12}f_n\right).
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        For an explicit method, take <span class="inline-math">$σ(w) = -\frac{1}{2} + \frac{3}{2}w \in \mathcal{P}_1$</span>.
+        So the 2-step 2nd-order Adams-Bashforth method is
+        <span class="display-math">$$ \begin{align*}
+        y_{n+2} - y_{n+1} = h\left(\frac{3}{2}f_{n+1} - \frac{1}{2} f_n\right).
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>

@@ -1,0 +1,49 @@
+<p>
+    We will show <span class="inline-math">$\mathrm{Fit}_k(A)$</span> is unchanged by row and column operations.
+    Since determinants of submatrices stay unchanged under transpose,
+    <span class="inline-math">$\mathrm{Fit}_k(A) = \mathrm{Fit}_k(A^T)$</span>
+    so it suffices to check row operations.
+</p>
+<p>
+    Let <span class="inline-math">$C$</span> be a <span class="inline-math">$k\times k$</span> submatrix of <span class="inline-math">$A$</span>,
+    and consider adding <span class="inline-math">$c$</span> times row <span class="inline-math">$i$</span> to row <span class="inline-math">$j$</span> of <span class="inline-math">$A$</span> to form <span class="inline-math">$B$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        If both rows lie inside <span class="inline-math">$C$</span>,
+        then the determinant is unchanged by <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Proposition-determinant-when-adding-multiple-of-rows-or-columns-onto-another.html">properties of determinants</a>.
+    </p>
+    
+</li><li>
+    <p>
+        If row <span class="inline-math">$j$</span> lie outside <span class="inline-math">$C$</span>, then <span class="inline-math">$C$</span> is unchanged.
+    </p>
+    
+</li><li>
+    <p>
+        Suppose row <span class="inline-math">$j$</span> lie inside <span class="inline-math">$C$</span> but row <span class="inline-math">$i$</span> is not.
+        Let the new submatrix be <span class="inline-math">$C&#x27;$</span>.
+        Expanding the determinant along row <span class="inline-math">$j$</span>, we have
+        <span class="display-math">$$ \begin{align*}
+        \det C&#x27; = \det C + c\det D
+        \end{align*} $$</span>
+        where <span class="inline-math">$D$</span> is obtained from <span class="inline-math">$C$</span>
+        by replacing row <span class="inline-math">$j$</span> with row <span class="inline-math">$i$</span>.
+        But <span class="inline-math">$D$</span> is a <span class="inline-math">$k\times k$</span> submatrix of <span class="inline-math">$A$</span>,
+        so <span class="inline-math">$\det C&#x27; \in \mathrm{Fit}_k(A)$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore <span class="inline-math">$\mathrm{Fit}_k(B) \subseteq \mathrm{Fit}_k(A)$</span>.
+    But row operation is invertible so <span class="inline-math">$\mathrm{Fit}_k(B) = \mathrm{Fit}_k(A)$</span>.
+</p>
+<p>
+    Multiplying a unit to a row
+    alters determinants of submatrices by up to a unit,
+    and swapping two rows
+    alters by up to a sign change,
+    which doesn't change the Fitting ideals.
+</p>

@@ -1,0 +1,36 @@
+
+<h1>Distribution of <span class="inline-math">$Pε$</span> and <span class="inline-math">$(I-P)ε$</span></h1>
+
+<p>
+    The random variable
+    <span class="display-math">$$ \begin{align*}
+        \tilde ε = \pmat{Pε \\ (I-P)ε} = \pmat{P \\ I-P} ε
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Proposition-affine-functions-of-Gaussian-are-Gaussian.html">is</a> a multivariate normal with mean
+    <span class="display-math">$$ \begin{align*}
+        \expect(\tilde ε) = \pmat{P\\I-P} \expect(ε) = \v 0
+    \end{align*} $$</span>
+    and variance
+    <span class="display-math">$$ \begin{align*}
+        \var(\tilde ε) ={}&amp; \pmat{P \\ I-P} \var(ε) \pmat{P\\I-P}^T \\
+        ={}&amp; σ^2 \pmat{P \\ I-P} \pmat{P^T &amp; I-P^T} \\
+        ={}&amp; σ^2 \pmat{P^2 &amp; P(I-P) \\ (I-P)P &amp; (I-P)^2} \\
+        ={}&amp; σ^2 \pmat{P &amp; 0 \\ 0 &amp; I-P}
+    \end{align*} $$</span>
+    since <span class="inline-math">$P^T = P = P^2$</span>.
+    <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Proof-Zero-correlation-implies-independence-for-bivariate-normal.html">Therefore</a> <span class="inline-math">$Pε \sim N(0, σ^2 P)$</span> and <span class="inline-math">$(I-P)ε\sim N(0, σ^2(I-P))$</span> are independent.
+</p>
+
+<h1>Distribution of <span class="inline-math">$\|Pε\|^2$</span></h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">Write</a> <span class="inline-math">$P = UU^T$</span> where <span class="inline-math">$U\in \R^{n\times \mathrm{rank}(P)}$</span> has orthonormal columns.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \|Pε\|^2 = ε^T P^T P ε = ε^T U\underbrace{U^T U}_{I_{\mathrm{rank}(P)}}U^T ε = \|U^T ε\|^2 = \sum_{i=1}^{\mathrm{rank}(P)} (U^T ε)_i^2.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$U^T ε \sim N(0, U^T σ^2I_nU) = N(0, σ^2 I_{\mathrm{rank}(P)})$</span>,
+    each <span class="inline-math">$(U^Tε)_i$</span> are independent <span class="inline-math">$N(0,σ^2)$</span>.
+    Therefore <span class="inline-math">$\|Pε\|^2/σ^2$</span> is a sum of <span class="inline-math">$\mathrm{rank}(P)$</span> independent <span class="inline-math">$N(0,1)$</span> random variables,
+    so <span class="inline-math">$\|Pε\|^2/σ^2 \sim χ_{\mathrm{rank}(P)}^2$</span>.
+</p>

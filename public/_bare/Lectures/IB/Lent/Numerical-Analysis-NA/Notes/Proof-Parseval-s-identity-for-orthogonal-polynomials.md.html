@@ -1,0 +1,29 @@
+<p>
+    Fix <span class="inline-math">$ε&gt;0$</span>.
+</p>
+<p>
+    The <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-Stone-Weierstrass-theorem.html">Stone-Weierstrass theorem</a> implies that
+    since <span class="inline-math">$f\in C[a,b]$</span>,
+    there exists a polynomial <span class="inline-math">$\hat p$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \|f - \hat p\|_\infty \equiv \sup_{[a,b]} |f - \hat p| &lt; ε.
+    \end{align*} $$</span>
+    Let <span class="inline-math">$n$</span> be the degree of <span class="inline-math">$\hat p$</span>.
+    Then for all <span class="inline-math">$N&gt;n$</span>,
+    the least square approximant <span class="inline-math">$p_N^\ast\in \mathcal{P}_N$</span> has error
+    <span class="display-math">$$ \begin{align*}
+        \|f-p_N^\ast\| \leq{}&amp; \|f-p_n^\ast\| \\
+        \leq{}&amp; \|f-\hat p\| \\
+        \leq{} &amp; \int_{a}^{b} |f(x)-\hat p(x)|^2 w(x) \d x \\
+        \leq{} &amp; \bigl(\sup_{[a,b]} |f-\hat p|\bigr)^2 \int_{a}^{b} w(x) \d x \\
+        \leq{} &amp; ε^2 \underbrace{\int_{a}^{b} w(x) \d x}_{\text{const.}}.
+    \end{align*} $$</span>
+    Therefore using the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-least-square-approximant.html">error of the least square approximant</a>,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{k=0}^N \frac{\langle f,Q_k\rangle^2}{\|Q_k\|^2} = \|f\|^2 - \|f-p_N^\ast\|^2 \to \|f\|^2 
+    \end{align*} $$</span>
+    as <span class="inline-math">$N\to \infty$</span>.
+</p>
+<p>
+    <iframe src="https://www.desmos.com/calculator/lbd5eo5kyc?embed" width="100%" height="500"></iframe>
+</p>

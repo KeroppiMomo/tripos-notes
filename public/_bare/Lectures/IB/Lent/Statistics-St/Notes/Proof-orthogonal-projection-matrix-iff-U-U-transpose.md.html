@@ -1,0 +1,32 @@
+<p>
+    Let <span class="inline-math">$m=\mathrm{rank}(P)$</span>.
+</p>
+<p>
+    Notice <span class="inline-math">$U^T U = I_m$</span> since columns of <span class="inline-math">$U$</span> are orthonormal.
+    If <span class="inline-math">$P = UU^T$</span>, then it is symmetric and <span class="inline-math">$P^2 = UU^TUU^T = UU^T = P$</span>.
+</p>
+<p>
+    Conversely, let <span class="inline-math">$\set{v_1, \ldots, v_m}$</span> be an orthonormal basis for the column space of <span class="inline-math">$P$</span>,
+    and extend it to <span class="inline-math">$\set{v_1, \ldots, v_m, \ldots, v_n}$</span> an orthonormal basis for <span class="inline-math">$\R^n$</span>.
+    Form the matrix
+    <span class="display-math">$$ \begin{align*}
+        U = \pmat{v_1 &amp; \ldots &amp; v_m}.
+    \end{align*} $$</span>
+    We will show that <span class="inline-math">$UU^T$</span> and <span class="inline-math">$P$</span> agree on the basis.
+</p>
+<p>
+    For <span class="inline-math">$1\leq i\leq m$</span>, <span class="inline-math">$v_i$</span> is in the column space of <span class="inline-math">$P$</span>, so say <span class="inline-math">$v_i = Pw_i$</span>.
+    Then <span class="inline-math">$Pv_i = P^2w_i = Pw_i = v_i$</span>.
+    This agrees with
+    <span class="display-math">$$ \begin{align*}
+        UU^T v_i = \pmat{v_1 &amp; \ldots &amp; v_m} \pmat{v_1^T \\ \vdots \\ v_m^T} v_i = \pmat{v_1 &amp; \ldots &amp; v_m} \v e_i = v_i
+    \end{align*} $$</span>
+    by orthonormality of <span class="inline-math">$\set{v_1, \ldots, v_m}$</span>.
+</p>
+<p>
+    Moreover for <span class="inline-math">$m+1\leq i\leq n$</span>, we have <span class="inline-math">$Pv_i = P^T v_i = 0$</span> since <span class="inline-math">$v_i$</span> is orthogonal to the column space of <span class="inline-math">$P$</span>.
+    This agrees with
+    <span class="display-math">$$ \begin{align*}
+        UU^T v_i = \pmat{v_1 &amp; \ldots &amp; v_m} \pmat{v_1^T \\ \vdots \\ v_m^T} v_i = \pmat{v_1 &amp; \ldots &amp; v_m} \v 0 = \v 0.
+    \end{align*} $$</span>
+</p>

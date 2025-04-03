@@ -1,0 +1,11 @@
+<p>
+    Compute
+    <span class="display-math">$$ \begin{align*}
+        \op{MSE}(\hat θ) ={}&amp; \expect_θ((\hat θ-θ)^2) \\
+        ={}&amp; \expect_θ\Bigl(\bigl((\hat θ - \expect_θ(\hat θ)) + \underbrace{(\expect_θ(\hat θ) - θ)}_{\text{deterministic}}\bigr)^2\Bigr) \\
+        ={}&amp; \expect_θ\bigl((\hat θ - \expect_θ(\hat θ))^2\bigr) 
+        + 2(\expect_θ(\hat θ) - θ) \cdot \underbrace{\expect_θ\bigl(\hat θ - \expect_θ(\hat θ) \bigr)}_{0}
+        + \bigl(\expect_θ(\hat θ) - θ\bigr)^2 \\
+        ={}&amp; \var(\hat θ) + \op{bias}(\hat θ)^2.
+    \end{align*} $$</span>
+</p>

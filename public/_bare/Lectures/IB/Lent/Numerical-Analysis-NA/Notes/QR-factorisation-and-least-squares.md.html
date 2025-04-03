@@ -1,0 +1,28 @@
+<p>
+    To solve a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Linear-least-squares.html">least squares problem</a>,
+    let <span class="inline-math">$A=QR$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/QR-factorisation.html">QR factorisation</a> of <span class="inline-math">$A$</span>,
+    and assume <span class="inline-math">$A$</span> has full rank <span class="inline-math">$n$</span>.
+</p>
+<p>
+    Since <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Lemma-equivalent-definitions-of-orthogonal-matrices.html">orthogonal transformations are length-preserving</a>,
+    <span class="display-math">$$ \begin{align*}
+        \|A\v c - \v y\| = \|Q^T(A\v c - \v y)\| = \|R\v c - Q^T \v y\|
+    \end{align*} $$</span>
+    Let <span class="inline-math">$Q^T \v y = \v z$</span>. The form of <span class="inline-math">$R\v c - Q^T \v y$</span> looks like
+    <span class="display-math">$$ \begin{align*}
+        \pmat{* &amp; * &amp; \ldots &amp; * \\
+        &amp;* &amp; \ldots &amp; * \\
+        &amp;&amp;\ddots &amp; \vdots \\
+        &amp;&amp;&amp;* \\
+        0 &amp; 0 &amp; \ldots &amp; 0 \\
+        \vdots &amp; \vdots &amp; &amp; \vdots \\
+        0 &amp; 0 &amp; \ldots &amp; 0} \pmat{c_1 \\ c_2 \\ \vdots \\ c_n}
+        = \pmat{z_1 \\ z_2 \\ \vdots \\ z_{n} \\ z_{n+1} \\ \vdots \\ z_{m}}.
+    \end{align*} $$</span>
+    We see that the best <span class="inline-math">$\v c$</span> we can pick is by solving the
+    non-singular linear system corresponding to the first <span class="inline-math">$n$</span> equations
+    (using back substitution).
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-least-squares-using-QR-factorisation.html">Example (least squares using QR factorisation)</a>
+</p>

@@ -1,0 +1,32 @@
+
+<h1>Solves least squares <span class="inline-math">$\implies$</span> normal equations</h1>
+
+<p>
+    <span class="inline-math">$\v c^\ast$</span> minimises
+    <span class="display-math">$$ \begin{align*}
+        \|\v y - A\v c\|^2 = \sum_{i=1}^{m} \Bigl(y_i - \sum_{j=1}^{n} a_{ij} c_j\Bigr)^2.
+    \end{align*} $$</span>
+    Take derivative for each <span class="inline-math">$k=1,2,\ldots,m$</span>,
+    <span class="display-math">$$ \begin{align*}
+        0 = \pdfd{\|\v y - A\v c\|^2}{c_k}\bigg|_{\v c^\ast} = -2\sum_{i=1}^{m} \Bigl(y_i - \sum_{j=1}^{n} a_{ij}c^\ast_j\Bigr)a_{ik}
+    \end{align*} $$</span>
+    so in matrix notation,
+    <span class="display-math">$$ \begin{align*}
+        A^T (\v y - A\v c^\ast) = 0.
+    \end{align*} $$</span>
+</p>
+
+<h1>Nomral equations <span class="inline-math">$\implies$</span> solves least squares</h1>
+
+<p>
+    If <span class="inline-math">$A^T(A\v c^\ast - \v y) = \v 0$</span>,
+    then for all <span class="inline-math">$\v c\in \R^m$</span>,
+    write <span class="inline-math">$\v c = \v c^\ast + \v d$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        \|A\v c - \v y\|^2 ={}&amp; \bigl((A\v c^\ast - \v y) + A\v d\bigr)^T \bigl((A\v c^\ast - \v y) + A\v d\bigr) \\
+        ={}&amp; \|A\v c^\ast - \v y\|^2 + \|A\v d\|^2 + 2\v d^T \underbrace{A^T(A\v c^\ast - \v y)}_{\v 0} \\
+        \geq{}&amp; \|A\v c^\ast - \v y\|^2.
+    \end{align*} $$</span>
+    Equality holds iff <span class="inline-math">$A\v d = \v 0$</span>.
+    If <span class="inline-math">$A$</span> has full rank, this is equivalent to <span class="inline-math">$\v d=0$</span>.
+</p>

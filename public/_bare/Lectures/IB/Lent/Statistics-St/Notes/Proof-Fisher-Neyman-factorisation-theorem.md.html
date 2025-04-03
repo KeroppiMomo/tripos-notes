@@ -1,0 +1,27 @@
+<p>
+    We will restrict to the discrete case.
+</p>
+
+<h1>Factorisation <span class="inline-math">$\implies$</span> sufficiency</h1>
+
+<p>
+    Suppose <span class="inline-math">$\prob_θ(X=x) = g(T(x), θ) \cdot h(x)$</span>. Then
+    <span class="display-math">$$ \begin{align*}
+        \prob_θ(X = x\mid T = t) ={}&amp; \frac{\prob_θ(X=x, T = t)}{\sum_{x&#x27;} \prob(X=x&#x27;, T=t)} \\
+        ={}&amp; \frac{\prob_θ(X=x) \, \mathbb{1}_{\set{T(x) = t}}}{\sum_{x&#x27;} \prob_θ(X=x&#x27;) \, \mathbb{1}_{\set{T(x&#x27;) = t}}} \\
+        ={}&amp; \frac{g(t, θ)\, h(x) \, \mathbb{1}_{\set{T(x)=t}}}{\sum_{x&#x27;} g(t, θ)\,h(x&#x27;)\, \mathbb{1}_{\set{T(x&#x27;) = t}}} \\
+        ={}&amp; \frac{h(x) \mathbb{1}_{\set{T(x) = t}}}{\sum_{x&#x27;} h(x&#x27;) \, \mathbb{1}_{\set{T(x&#x27;) = t}}}
+    \end{align*} $$</span>
+    which does not depend on <span class="inline-math">$θ$</span>.
+</p>
+
+<h1>Sufficiency <span class="inline-math">$\implies$</span> factorisation</h1>
+
+<p>
+    If <span class="inline-math">$T$</span> is sufficient, then
+    <span class="display-math">$$ \begin{align*}
+        \prob_θ(X = x) ={}&amp; \prob_θ(X=x, T(X) = T(x)) \\
+        ={}&amp; \underbrace{\prob_θ(X=x\mid T(X) = T(x))}_{h(x)} \cdot \underbrace{\prob_θ(T(X) = T(x))}_{g(T(x), θ)}
+    \end{align*} $$</span>
+    where the first factor does not depend on <span class="inline-math">$θ$</span> by definition of sufficiency.
+</p>

@@ -1,0 +1,150 @@
+<p>
+    An ODE is said to be <em>stiff</em>
+    if we have to depress the step size <span class="inline-math">$h$</span>
+    for stability well beyond the need of accuracy.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-stiff-ODE.html">Example (stiff ODE)</a>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (linear stability domain, A-stable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-linear-stability-domain-A-stable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">numerical method</a> applied to <span class="inline-math">$y&#x27; = λy, y(0)=1$</span> produces <span class="inline-math">$(y_n^{(h)})_n$</span>.
+                The <em>linear stability domain</em> is
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{D} = \sb{λh \in \C}{y_n^{(h)}\to 0 \text{ as }n\to \infty}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                We say the method is <em><span class="inline-math">$A$</span>-stable</em> if
+                the left-half plane <span class="inline-math">$\C^- = \sb{z\in \C}{\Re z &lt; 0} \subseteq D$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-linear-stability-domain-of-theta-methods.html">Example (linear stability domain of theta methods)</a>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Stability of multistep methods
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Stability-of-multistep-methods.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-linear-stability-domain-A-stable.html">linear stability domain</a> of a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">multistep method</a>
+                <span class="inline-math">$\sum_{m=0}^{s} a_m \v y_{n+m} = h \sum_{m=0}^{s} b_m \v f_{n+m}$</span>
+                contains <span class="inline-math">$z = λh$</span> iff
+                the solution to the recurrence equation
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{m=0}^{s} a_m y_{n+m} = z \sum_{m=0}^{s} b_m y_{n+m}
+                \end{align*} $$</span>
+                tends to 0 as <span class="inline-math">$n\to \infty$</span>.
+                This is equivalent to the polynomial
+                <span class="display-math">$$ \begin{align*}
+                    p_z(x) := ρ(x) - z\,σ(x) = \sum_{m=0}^{s} a_m x^m - z \sum_{m=0}^{s} b_mx^m
+                \end{align*} $$</span>
+                having the moduli of all roots <span class="inline-math">$&lt;1$</span>.
+            </p>
+            <p>
+                Tricks to finding the linear stability domain:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$z\in \partial D$</span> iff <span class="inline-math">$p_z(x) = 0$</span> for some <span class="inline-math">$|x|=1$</span>.
+                    So if we write <span class="inline-math">$x=e^{it}$</span> (<span class="inline-math">$t\in \R$</span>), then
+                    <span class="display-math">$$ \begin{align*}
+                    z(t) = \frac{ρ(e^{it})}{σ(e^{it})},
+                    \end{align*} $$</span>
+                    defines the curve <span class="inline-math">$\partial D$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If we're looking for the real stability interval <span class="inline-math">$I = \mathcal{D}\cap \R$</span>,
+                    the boundary is given by <span class="inline-math">$p_{z_1}(1) = 0 \iff z_1 = ρ(1)/σ(1)$</span>
+                    and <span class="inline-math">$p_{z_2}(-1) = 0 \iff z_2 = ρ(-1)/σ(-1)$</span>.
+                    Moreover if the method has order <span class="inline-math">$\geq 1$</span>, <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">then</a> <span class="inline-math">$ρ(1) = 0$</span>,
+                    so it is highly likely that
+                    <span class="display-math">$$ \begin{align*}
+                    I = \Bigl(\frac{ρ(-1)}{σ(-1)}, 0\Bigr).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-finding-real-stability-interval.html">Example (finding real stability interval)</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (second Dahlquist barrier)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-second-Dahlquist-barrier.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            No <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">multistep method</a> of <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-local-truncation-error-order-of-method.html">order</a> <span class="inline-math">$p\geq 3$</span> can be <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-linear-stability-domain-A-stable.html"><span class="inline-math">$A$</span>-stable</a>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theta-methods.html">Trapezoidal rule</a> is <span class="inline-math">$A$</span>-stable of order <span class="inline-math">$2$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Still, some high-order multistep methods
+                are of good use, e.g. BDF methods of order <span class="inline-math">$\leq 6$</span>
+                <a href="https://en.wikipedia.org/wiki/Backward_differentiation_formula#Stability">have a wedge</a> about <span class="inline-math">$(-\infty, 0)$</span>.
+                We say these are <em>$A</em>0<span class="inline-math">$-stable_.$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Stability of Runge-Kutta methods
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Stability-of-Runge-Kutta-methods.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (no explicit Runge-Kutta method can be A-stable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lemma-no-explicit-Runge-Kutta-method-can-be-A-stable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            No <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Runge-Kutta-methods.html">explicit Runge-Kutta method</a> can be <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-linear-stability-domain-A-stable.html"><span class="inline-math">$A$</span>-stable</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-no-explicit-Runge-Kutta-method-can-be-A-stable.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                However, implicit Runge-Kutta methods may be <span class="inline-math">$A$</span>-stable.
+                (<a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-A-stable-Runge-Kutta-method.html">Example</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>

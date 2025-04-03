@@ -1,0 +1,42 @@
+<p>
+    The z-test refers to rejecting <span class="inline-math">$H_0$</span> if
+    <span class="display-math">$$ \begin{align*}
+        Z := \frac{\sqrt{n}(\overline{X} - μ_0)}{σ} &gt; z_α
+    \end{align*} $$</span>
+    where <span class="inline-math">$z_α$</span> is the upper <span class="inline-math">$α$</span> quantile of <span class="inline-math">$N(0,1)$</span>.
+</p>
+
+<h1>z-test has size <span class="inline-math">$α$</span></h1>
+
+<p>
+    The power function of the test
+    <span class="display-math">$$ \begin{align*}
+        β(T, μ) ={}&amp; \prob_μ(Z&gt;z_α) \\
+        ={}&amp; \prob_μ\Bigl(\underbrace{\frac{\sqrt{n}(\overline{X} - μ)}{σ}}_{\sim N(0,1) \text{ under }μ} &gt; z_α  + \frac{\sqrt{n}(μ_0 - μ)}{σ}\Bigr) \\
+        ={}&amp; 1 - Φ\left(z_α + \frac{\sqrt{n}(μ_0 - μ)}{σ}\right)
+    \end{align*} $$</span>
+    (where <span class="inline-math">$Φ$</span> is the cumulative distribution function of <span class="inline-math">$N(0,1)$</span>)
+    is an increasing function of <span class="inline-math">$μ$</span>.
+    Therefore the size of the test is
+    <span class="display-math">$$ \begin{align*}
+        \sup_{μ\leq μ_0} β(T, μ) = β(T, μ_0) = α.
+    \end{align*} $$</span>
+</p>
+
+<h1>z-test is more powerful</h1>
+
+<p>
+    Let <span class="inline-math">$\tilde T$</span> be a test of size at most <span class="inline-math">$α$</span>, i.e. <span class="inline-math">$\sup_{μ\leq μ_0} β(\tilde T, μ) \leq α$</span>.
+</p>
+<p>
+    Viewed as a test for <span class="inline-math">$H_0: μ=μ_0$</span> against <span class="inline-math">$H_1: μ=μ_1$</span> where <span class="inline-math">$μ_1 &gt; μ_0$</span>,
+    the size <span class="inline-math">$\tilde T$</span> is now <span class="inline-math">$β(\tilde T, μ_0) \leq α$</span>.
+    Therefore <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/z-test.html">since</a> the <span class="inline-math">$z$</span>-test is uniformly most powerful here,
+    <span class="display-math">$$ \begin{align*}
+        β(T, μ_1) \geq β(T,μ_0).
+    \end{align*} $$</span>
+    This holds for any <span class="inline-math">$μ_1&gt;μ_0$</span>.
+</p>
+<p>
+    Therefore the z-test is uniformly most powerful for testing <span class="inline-math">$H_0: μ\leq μ_0$</span> against <span class="inline-math">$H_1: μ&gt;μ_0$</span>.
+</p>

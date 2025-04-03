@@ -1,0 +1,113 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Householder reflection)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-Householder-reflection.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Given a non-zero vector <span class="inline-math">$\v u\in \R^m$</span>,
+                the <span class="inline-math">$m\times m$</span> matrix
+                <span class="display-math">$$ \begin{align*}
+                    H_\v u = I - \frac{2}{\|\v u\|^2} \v u \v u^T
+                \end{align*} $$</span>
+                is called a <em>Householder transformation</em> or <em>reflection</em>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$H_\v u$</span> reflects a vector about the <span class="inline-math">$(m-1)$</span>-dimensional hyperplane normal to <span class="inline-math">$\v u$</span>.
+                    (<a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-Householder-reflection.html">Derivation</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$H_{\v u}$</span> is orthogonal.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$\|\v a\|=\|\v b\|$</span>, then <span class="inline-math">$H_{\v a - \v b}(\v a) = \v b$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Given any vector <span class="inline-math">$\v a = (a_1, \ldots, a_{k-1}, a_k, a_{k+1}, \ldots, a_m)\in \R^m$</span>,
+    we can get <span class="inline-math">$\v b = (a_1, \ldots, a_{k-1}, γ, 0, \ldots, 0)\in \R^m$</span>
+    where <span class="inline-math">$γ = \pm\sqrt{a_k^2 + a_{k+1}^2 + \ldots + a_m^2}$</span>
+    by applying the Householder reflection for <span class="inline-math">$\v u = \v a - \v b = (0,\ldots,0, a_k - γ, a_{k+1}, \ldots, a_m)$</span>.
+    Note that <span class="inline-math">$H_u$</span> has the block matrix form
+    <span class="display-math">$$ \begin{align*}
+        H_\v u = \pmat{I_{k-1} &amp; 0 \\
+        0 &amp; *}
+    \end{align*} $$</span>
+    so the first <span class="inline-math">$k-1$</span> components are preserved under <span class="inline-math">$H_\v u$</span>.
+</p>
+<p>
+    Therefore we can kill off all subdiagonal entires of a matrix this way:
+    <span class="display-math">$$ \begin{align*}
+        \pmat{*&amp;*&amp;* \\
+        *&amp;*&amp;* \\
+        *&amp;*&amp;* \\
+        *&amp;*&amp;*}
+        \xrightarrow{H_1}
+        \pmat{\bullet&amp;\bullet&amp;\bullet \\
+        0&amp;\bullet&amp;\bullet \\
+        0&amp;\bullet&amp;\bullet \\
+        0&amp;\bullet&amp;\bullet}
+        \xrightarrow{H_2}
+        \pmat{*&amp;*&amp;* \\
+        0&amp;\bullet&amp;\bullet \\
+        0&amp;0&amp;\bullet \\
+        0&amp;0&amp;\bullet}
+        \xrightarrow{H_3}
+        \pmat{*&amp;*&amp;* \\
+        0&amp;*&amp;* \\
+        0&amp;0&amp;\bullet \\
+        0&amp;0&amp;0}
+    \end{align*} $$</span>
+    (Legend: <span class="inline-math">$*$</span> remains the same as the previous matrix; <span class="inline-math">$\bullet$</span> has changed through a rotation.)
+</p>
+<p>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        R = H_m\ldots H_2 H_1 A \implies A = \underbrace{(H_m \ldots H_2H_1)^T}_{Q} R.
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-QR-factorisation-using-Householder-reflections.html">Example (QR factorisation using Householder reflections)</a>
+</p>
+<p>
+    Practicality:
+</p>
+<ul>
+<li>
+    <p>
+        Numerically, don't compute the matrix of <span class="inline-math">$H_\v u$</span>! Always perform vector products <span class="inline-math">$\v v - \frac{2}{\|u\|^2}\v u \v u^T \v v$</span> instead.
+    </p>
+    
+</li><li>
+    <p>
+        How to choose the sign of <span class="inline-math">$γ$</span>?
+    </p>
+    <ul>
+    <li>
+        <p>
+            For hand computation, choose <span class="inline-math">$\sign γ = \sign a_k$</span> to make numbers smaller.
+        </p>
+        
+    </li><li>
+        <p>
+            For numerical computation, choose <span class="inline-math">$\sign γ = -\sign a_k$</span> to make numbers larger for stability.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ul>

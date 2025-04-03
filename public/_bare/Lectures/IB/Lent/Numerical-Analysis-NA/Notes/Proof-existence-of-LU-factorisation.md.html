@@ -1,0 +1,48 @@
+
+<h1>LU factorisable <span class="inline-math">$\implies$</span> strictly regular</h1>
+
+<p>
+    Suppose <span class="inline-math">$A = LU$</span>.
+    Consider their <span class="inline-math">$k$</span>-th principal minor
+    <span class="display-math">$$ \begin{align*}
+        \pmat{A_k &amp; * \\ *&amp;*} = A = LU = \pmat{L_k &amp; * \\ *&amp;*} \pmat{U_k &amp; * \\ *&amp;*}\implies A_k = L_k U_k.
+    \end{align*} $$</span>
+    <span class="inline-math">$L$</span> and <span class="inline-math">$U$</span> are triangular with non-zero diagonal entries so
+    <span class="inline-math">$L_k$</span> and <span class="inline-math">$U_k$</span> are non-singular.
+    Hence so is <span class="inline-math">$A_k$</span>.
+</p>
+
+<h1>Strictly regular <span class="inline-math">$\implies$</span> LU factorisable</h1>
+
+<p>
+    Proceed by induction on <span class="inline-math">$n$</span>.
+    The case <span class="inline-math">$n=1$</span> is clear.
+</p>
+<p>
+    For <span class="inline-math">$n&gt;1$</span>, partition <span class="inline-math">$A\in \R^{n\times n}$</span> as
+    <span class="display-math">$$ \begin{align*}
+        A = \pmat{A_{n-1} &amp; \v w \\
+        \v v^T &amp; a_{nn}}.
+    \end{align*} $$</span>
+    We want to get <span class="inline-math">$A = LU$</span> where
+    <span class="display-math">$$ \begin{align*}
+        L = \pmat{L_{n-1} &amp; \v 0 \\ \v x^T &amp; 1}, \qquad U = \pmat{U_{n-1} &amp; \v y \\ \v 0^T &amp; u_{nn}}.
+    \end{align*} $$</span>
+    Multiply to see we want
+    <span class="display-math">$$ \begin{align*}
+        \pmat{A_{n-1} &amp; \v w \\ \v v^T &amp; a_{nn}} = \pmat{L_{n-1} U_{n-1} &amp; L_{n-1} \v y \\ \v x^T U_{n-1} &amp; \v x^T \v y + u_{nn}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    By induction hypothesis, since <span class="inline-math">$A_{n-1}\in \R^{n\times n}$</span> is strictly regular,
+    we can factorise <span class="inline-math">$A_{n-1} = L_{n-1} U_{n-1}$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \v w = L_{n-1} \v y, \quad \v v = U_{n-1}^T \v x, \quad u_{nn} = a_{nn} - \v x^T \v y
+    \end{align*} $$</span>
+    are solvable since <span class="inline-math">$L_{n-1}$</span> and <span class="inline-math">$U_{n-1}$</span> are non-singular.
+</p>
+<p>
+    Finally we see that <span class="inline-math">$u_{nn}\neq 0$</span>,
+    as <span class="inline-math">$0\neq \det A = \det L \det U = 1\cdot u_{nn}\det U_{n-1}$</span>.
+</p>

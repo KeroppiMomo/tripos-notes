@@ -1,0 +1,50 @@
+
+<h1>Exact on <span class="inline-math">$\mathcal{P}_{2n+1}$</span> <span class="inline-math">$\implies$</span> nodes at roots of <span class="inline-math">$Q_{n+1}$</span></h1>
+
+<p>
+    Let <span class="inline-math">$\int_{a}^{b} f(x)ω(x) \d x\approx \sum_{i=0}^{n} a_i f(x_i)$</span> be exact on <span class="inline-math">$\mathcal{P}_{2n+1}$</span>.
+    We will show that <span class="inline-math">$\hat Q_{n+1}(x) = \prod_{i=0}^{n} (x-x_i)\in \mathcal{P}_{n+1}$</span>
+    is the <span class="inline-math">$(n+1)$</span>-th monic orthogonal polynomial,
+    and then the result follows from the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lemma-unique-monic-orthogonal-polynomial.html">uniqueness of monic orthogonal polynomials</a>.
+</p>
+<p>
+    For any <span class="inline-math">$q\in \mathcal{P}_n$</span>,
+    since <span class="inline-math">$\hat Q_{n+1}\cdot q\in \mathcal{P}_{2n+1}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \langle \hat Q_{n+1}, q\rangle_w = \int_{a}^{b} \hat Q_{n+1}(x)\,q(x)\,ω(x) \d x
+        = \sum_{i=0}^{n} a_i\,\underbrace{\hat Q_{n+1}(x_i)}_{0}\,q(x_i) = 0.
+    \end{align*} $$</span>
+</p>
+
+<h1>Nodes at roots of <span class="inline-math">$Q_{n+1}$</span> <span class="inline-math">$\implies$</span> exact on <span class="inline-math">$\mathcal{P}_{2n+1}$</span></h1>
+
+<p>
+    Let <span class="inline-math">$x_i$</span> be the roots of <span class="inline-math">$Q_{n+1}$</span>.
+    For any <span class="inline-math">$p\in \mathcal{P}_{2n+1}$</span>,
+    apply the division algorithm to get
+    <span class="display-math">$$ \begin{align*}
+        p = Q_{n+1}\cdot q + r
+    \end{align*} $$</span>
+    where <span class="inline-math">$q,r\in \mathcal{P}_n$</span>.
+</p>
+<p>
+    Notice since <span class="inline-math">$Q_{n+1}$</span> is orthogonal to <span class="inline-math">$\mathcal{P}_n$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} Q_{n+1}qω \d x =\langle Q_{n+1}, q\rangle = 0.
+    \end{align*} $$</span>
+    Moreover since the quadrature <span class="inline-math">$\int_{a}^{b} fω \d x \approx \sum_{i=0}^{n} a_i f(x_i)$</span>
+    is exact on <span class="inline-math">$\mathcal{P}_n$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} rω \d x = \sum_{i=0}^{n} a_i r(x_i).
+    \end{align*} $$</span>
+    Also
+    <span class="display-math">$$ \begin{align*}
+        p(x_i) = \underbrace{Q_{n+1}(x_i)}_{0} \, q(x_{i}) + r(x_i) = r(x_i).
+    \end{align*} $$</span>
+</p>
+<p>
+    Combining these, we get
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} pω \d x = \int_{a}^{b} Q_{n+1}qω \d x + \int_{a}^{b} rω \d x = 0 + \sum_{i=0}^{n} a_i r(x_i) = \sum_{i=0}^{n} a_i p(x_i).
+    \end{align*} $$</span>
+</p>

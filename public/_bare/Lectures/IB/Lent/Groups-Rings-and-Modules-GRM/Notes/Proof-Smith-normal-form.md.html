@@ -1,0 +1,160 @@
+
+<h1>Existence</h1>
+
+<p>
+    Our goal is to convert a matrix <span class="inline-math">$A$</span> via row and column operations to the form
+    <span class="display-math">$$ \begin{align*}
+        \pmat{d &amp; 0 &amp; \ldots &amp; 0 \\
+        0 \\
+        \vdots &amp; &amp; C\\
+        0}
+    \end{align*} $$</span>
+    where <span class="inline-math">$d\in R$</span> divides all entries in the matrix <span class="inline-math">$C$</span>,
+    and then apply induction.
+</p>
+<p>
+    Algorithm:
+</p>
+<ol start="1">
+<li>
+    <p>
+        If <span class="inline-math">$A=0$</span>, we are done.
+        Otherwise use row/column operations to swap
+        a non-zero element to <span class="inline-math">$A_{11}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If some <span class="inline-math">$A_{1j}$</span> is not divisible by <span class="inline-math">$A_{11}$</span>,
+        write as <span class="inline-math">$A_{1j} = A_{11}q + r$</span> with <span class="inline-math">$ϕ(r) &lt; ϕ(A_{11})$</span>
+        (as we're in a Euclidean domain). Then use column operations to
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            subtract <span class="inline-math">$q$</span> times column <span class="inline-math">$1$</span> from column <span class="inline-math">$j$</span>, making <span class="inline-math">$A_{1j}$</span> equal to <span class="inline-math">$r$</span>, and then
+        </p>
+        
+    </li><li>
+        <p>
+            swap column <span class="inline-math">$1$</span> and <span class="inline-math">$j$</span>, making <span class="inline-math">$A_{11}$</span> equal to <span class="inline-math">$r$</span>.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        Go to step 2 until row 1 is all divisible by <span class="inline-math">$A_{11}$</span>.
+        Use column operations to subtract multiples of column 1 from all other columns,
+        making row 1 all zero except <span class="inline-math">$A_{11}$</span>.
+        Now the matrix looks like
+        <span class="display-math">$$ \begin{align*}
+            \pmat{* &amp; 0 &amp; \ldots &amp; 0 \\
+            * &amp; * &amp; \ldots &amp; * \\
+            \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+            * &amp; * &amp; \ldots &amp; *}.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        If some <span class="inline-math">$A_{i1}$</span> is not divisible by <span class="inline-math">$A_{11}$</span>,
+        write as <span class="inline-math">$A_{i 1} = A_{11}q + r$</span> with <span class="inline-math">$ϕ(r) &lt; ϕ(A_{11})$</span>.
+        Use row operations to
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            subtract <span class="inline-math">$q$</span> times row <span class="inline-math">$1$</span> from row <span class="inline-math">$j$</span>, making <span class="inline-math">$A_{i 1}$</span> equal to <span class="inline-math">$r$</span>, and then
+        </p>
+        
+    </li><li>
+        <p>
+            swap row <span class="inline-math">$1$</span> and <span class="inline-math">$i$</span>, making <span class="inline-math">$A_{11}$</span> equal to <span class="inline-math">$r$</span>.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        Go to step 2 until column <span class="inline-math">$1$</span> is all divisible by <span class="inline-math">$A_{11}$</span>
+        and row <span class="inline-math">$1$</span> is all zero except <span class="inline-math">$A_{11}$</span>.
+        Use row operations to subtract multiples of row 1 from all other columns,
+        making column <span class="inline-math">$1$</span> and row <span class="inline-math">$1$</span> all zero except <span class="inline-math">$A_{11}$</span>.
+        Now the matrix looks like
+        <span class="display-math">$$ \begin{align*}
+            \pmat{* &amp; 0 &amp; \ldots &amp; 0 \\
+            0 &amp; * &amp; \ldots &amp; * \\
+            \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+            0 &amp; * &amp; \ldots &amp; *}.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$A_{ij}$</span> is not divisible by <span class="inline-math">$A_{11}$</span> where <span class="inline-math">$i,j&gt;1$</span>,
+        write as <span class="inline-math">$A_{ij} = A_{11} q + r$</span> with <span class="inline-math">$ϕ(r) &lt; ϕ(A_{11})$</span>.
+        Use column and row operations to
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            add column <span class="inline-math">$1$</span> to column <span class="inline-math">$j$</span>, making <span class="inline-math">$A_{1j}$</span> equal to <span class="inline-math">$A_{11}$</span>,
+        </p>
+        
+    </li><li>
+        <p>
+            subtract <span class="inline-math">$q$</span> times row <span class="inline-math">$1$</span> from row <span class="inline-math">$i$</span>, making <span class="inline-math">$A_{ij}$</span> equal to <span class="inline-math">$r$</span>, and
+        </p>
+        
+    </li><li>
+        <p>
+            swap row <span class="inline-math">$1$</span> and row <span class="inline-math">$i$</span>, and also swap column <span class="inline-math">$1$</span> and column <span class="inline-math">$j$</span>, making <span class="inline-math">$A_{11}$</span> equal to <span class="inline-math">$r$</span>.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        Go to step 2 until row 1 and column 1 are all zero except <span class="inline-math">$A_{11}$</span>,
+        and the lower-right <span class="inline-math">$(m-1)\times (n-1)$</span> block is divisible by <span class="inline-math">$A_{11}$</span>.
+    </p>
+    
+</li>
+</ol>
+
+<h1>Uniqueness</h1>
+
+<p>
+    Suppose two Smith normal forms <span class="inline-math">$M = \mathrm{diag}(d_1, \ldots, d_k), M&#x27; = \mathrm{diag}(d_1&#x27;, \ldots, d_k&#x27;)$</span> are equivalent
+    (allowing <span class="inline-math">$d_i=0$</span>).
+</p>
+<p>
+    The Fitting ideals are <span class="inline-math">$\mathrm{Fit}_r(M) = (\prod_{i=1}^{r} d_i)$</span> and <span class="inline-math">$\mathrm{Fit}_r(M&#x27;) = (\prod_{i=1}^{r} d_i&#x27;)$</span>
+    and <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-equivalent-matrices-have-same-Fitting-ideals.html">they agree</a>, so
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$(d_1) = (d_1&#x27;)$</span>, so <span class="inline-math">$d_1$</span> and <span class="inline-math">$d_1&#x27;$</span> are associates;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$(d_1d_2) = (d_1&#x27;d_2&#x27;)$</span>, so <span class="inline-math">$d_1 d_2$</span> and <span class="inline-math">$d_1&#x27; d_2&#x27;$</span> are associates and thus so are <span class="inline-math">$d_2$</span> and <span class="inline-math">$d_2&#x27;$</span>,
+    </p>
+    
+</li>
+</ul>
+<p>
+    and so on.
+</p>
+<p>
+    <a href="https://keroppimomo.github.io/smith-decomposition/">Interactive illustration</a>
+</p>
+<p>
+    <iframe src="https://keroppimomo.github.io/smith-decomposition/" width="100%" height="1000px"></iframe>
+</p>

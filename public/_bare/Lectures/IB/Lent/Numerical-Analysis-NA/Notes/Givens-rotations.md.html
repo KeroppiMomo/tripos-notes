@@ -1,0 +1,91 @@
+<p>
+    For any vector <span class="inline-math">$\v a\in \R^m$</span>, the <em>Givens rotation</em> matrix <span class="inline-math">$Ω^{[p,q]}\in \R^{m\times m}$</span>
+    is an orthogonal transformation
+    that makes the <span class="inline-math">$q$</span>-th component zero and preserves
+    all components other than the <span class="inline-math">$p$</span> and <span class="inline-math">$q$</span>-th ones:
+    <span class="display-math">$$ \begin{align*}
+        \underbrace{\pmat{1\\&amp;\ddots\\&amp;&amp;\frac{a_p}{\sqrt{a_p^2+a_q^2}} &amp;&amp; \frac{a_q}{\sqrt{a_p^2+a_q^2}} \\ &amp;&amp;&amp;\ddots \\&amp;&amp;-\frac{a_q}{\sqrt{a_p^2+a_q^2}}&amp;&amp;\frac{a_p}{\sqrt{a_p^2+a_q^2}} \\ &amp;&amp;&amp;&amp;&amp;\ddots \\ &amp;&amp;&amp;&amp;&amp;&amp;1}}_{Ω^{[p,q]}}
+        \underbrace{\pmat{a_{1} \\ \vdots \\ a_p \\ \vdots \\ a_q \\ \vdots \\ a_m}}_{\v a}
+        = \pmat{a_1 \\ \vdots \\ a_p^2 + a_q^2 \\ \vdots \\ 0 \\ \vdots \\a_m}
+    \end{align*} $$</span>
+</p>
+<p>
+    Applying <span class="inline-math">$Ω^{[p,q]}$</span> to a matrix <span class="inline-math">$A$</span>,
+    all rows other than rows <span class="inline-math">$p$</span> and <span class="inline-math">$q$</span> are unchanged,
+    one entry in row <span class="inline-math">$p$</span> is killed,
+    and the span of rows <span class="inline-math">$p$</span> and <span class="inline-math">$q$</span> is preserved.
+</p>
+<p>
+    Thus after at most <span class="inline-math">$mn$</span> Givens rotations,
+    we can annihilate all subdiagonal elements:
+    <span class="display-math">$$ \begin{align*}
+        \pmat{*&amp;*&amp;*\\
+        *&amp;*&amp;* \\
+        *&amp;*&amp;* \\
+        *&amp;*&amp;*}
+        &amp;\xrightarrow{Ω^{[1,2]}}
+        \pmat{\bullet &amp;\bullet&amp;\bullet\\
+        0 &amp;\bullet&amp;\bullet \\
+        *&amp;*&amp;* \\
+        *&amp;*&amp;*}
+        \xrightarrow{Ω^{[1,3]}}
+        \pmat{\bullet &amp;\bullet&amp;\bullet\\
+        0 &amp;*&amp;* \\
+        0&amp;\bullet&amp;\bullet \\
+        *&amp;*&amp;*}
+        \xrightarrow{Ω^{[1,4]}}
+        \pmat{\bullet &amp;\bullet&amp;\bullet\\
+        0 &amp;*&amp;* \\
+        0&amp;*&amp;* \\
+        0&amp;\bullet&amp;\bullet} \\
+        &amp;\xrightarrow{Ω^{[2,3]}}
+        \pmat{*&amp;*&amp;* \\
+        0 &amp;\bullet&amp;\bullet \\
+        0&amp;0&amp;\bullet \\
+        0&amp;*&amp;*}
+        \xrightarrow{Ω^{[2,4]}}
+        \pmat{*&amp;*&amp;* \\
+        0 &amp;\bullet&amp;\bullet \\
+        0&amp;0&amp;* \\
+        0&amp;0&amp;\bullet} \\
+        &amp;\xrightarrow{Ω^{[3,4]}}
+        \pmat{*&amp;*&amp;* \\
+        0 &amp;*&amp;* \\
+        0&amp;0&amp;\bullet \\
+        0&amp;0&amp;0} \\
+    \end{align*} $$</span>
+    (Legend: <span class="inline-math">$*$</span> remains the same as the previous matrix; <span class="inline-math">$\bullet$</span> has changed through a rotation.)
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        &amp; R = (Ω^{[m-1,m]})\cdot (Ω^{[m-2,m]} Ω^{[m-2, m-1]}) \cdot \ldots \cdot (Ω^{[1,m]} \ldots Ω^{[1,3]} Ω^{[1,2]}) \cdot A \\
+        \implies &amp; A = \underbrace{\Bigl[(Ω^{[m-1,m]})\cdot (Ω^{[m-2,m]} Ω^{[m-2, m-1]}) \cdot \ldots \cdot (Ω^{[1,m]} \ldots Ω^{[1,3]} Ω^{[1,2]})\Bigr]^T}_{Q} R.
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-QR-factorisation-using-Givens-rotations.html">Example (QR factorisation using Givens rotations)</a>
+</p>
+<p>
+    Cost:
+</p>
+<ul>
+<li>
+    <p>
+        Computing <span class="inline-math">$R$</span>: <span class="inline-math">$O(mn\cdot n)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Computing an explicit form of <span class="inline-math">$Q$</span> (usually not necessary):
+        perform all the Given rotations on <span class="inline-math">$I_m$</span>.
+        This gives an extra cost of <span class="inline-math">$O(mn\cdot m)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Computing <span class="inline-math">$Q^T \v b$</span>: <span class="inline-math">$O(mn)$</span>.
+    </p>
+    
+</li>
+</ul>

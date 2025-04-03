@@ -1,0 +1,98 @@
+<p>
+    Find <span class="inline-math">$\v c\in \R^3$</span> that minimises <span class="inline-math">$\|A\v c - \v y\|$</span>, where
+    <span class="display-math">$$ \begin{align*}
+        A = \frac{1}{2}\pmat{1 &amp; 3 &amp; 6 \\ 1&amp;1&amp;2 \\ 1&amp;3&amp;4 \\ 1&amp;1&amp;0}, \qquad \v y = \pmat{1 \\ 1 \\ 1 \\ 0}.
+    \end{align*} $$</span>
+</p>
+<p>
+    First QR-factorise <span class="inline-math">$A$</span>.
+    Let's use Householder reflections:
+</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$γ$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\v u$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$H_\v u = I - \frac{2}{\|\v u\|^2}\v u\v u^T$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$M&#x27; = H_\v u M$</span>
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$A = \frac{1}{2}\pmat{1 &amp; 3 &amp; 6 \\ 1&amp;1&amp;2 \\ 1&amp;3&amp;4 \\ 1&amp;1&amp;0}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-\left\|\frac{1}{2}\pmat{1\\1\\1\\1}\right\| = -1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{2}\pmat{-1 \\ 1 \\ 1 \\ 1}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{2}\pmat{1&amp;1&amp;1&amp;1 \\ 1&amp;1&amp;-1&amp;-1 \\ 1&amp;-1&amp;1&amp;-1 \\ 1&amp;-1&amp;-1&amp;1}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{1 &amp; 2 &amp; 3 \\ 0 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\left\|\pmat{0\\1\\0}\right\| = 1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{0\\1\\1\\0}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{1&amp;0&amp;0&amp;0 \\ 0&amp;0&amp;-1&amp;0 \\ 0&amp;-1&amp;0&amp;0 \\ 0&amp;0&amp;0&amp;1}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{1&amp;2&amp;3 \\ 0&amp;-1&amp;-2 \\0&amp;0&amp;-1 \\ 0&amp;0&amp;0}$</span>
+        </p>
+        </td>
+    </tr>
+</table>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        A ={}&amp; \underbrace{\left[\pmat{1&amp;0&amp;0&amp;0 \\ 0&amp;0&amp;-1&amp;0 \\ 0&amp;-1&amp;0&amp;0 \\ 0&amp;0&amp;0&amp;1} \cdot \frac{1}{2}\pmat{1&amp;1&amp;1&amp;1 \\ 1&amp;1&amp;-1&amp;-1 \\ 1&amp;-1&amp;1&amp;-1 \\ 1&amp;-1&amp;-1&amp;1}\right]^T}_{Q} \, \underbrace{\pmat{1&amp;2&amp;3 \\ 0&amp;-1&amp;-2 \\ 0&amp;0&amp;-1 \\ 0&amp;0&amp;0}}_{R} \\
+        ={}&amp; \underbrace{\frac{1}{2}\pmat{1&amp;1&amp;1&amp;1 \\ -1&amp;1&amp;-1&amp;1 \\-1&amp;-1&amp;1&amp;1 \\ 1&amp;-1&amp;-1&amp;1}^T}_{Q} \, \underbrace{\pmat{1&amp;2&amp;3 \\ 0&amp;-1&amp;-2 \\ 0&amp;0&amp;-1 \\ 0&amp;0&amp;0}}_{R} \\
+    \end{align*} $$</span>
+</p>
+<p>
+    Compute
+    <span class="display-math">$$ \begin{align*}
+        Q^T \v y = \frac{1}{2}\pmat{1&amp;1&amp;1&amp;1 \\ -1&amp;1&amp;-1&amp;1 \\-1&amp;-1&amp;1&amp;1 \\ 1&amp;-1&amp;-1&amp;1} \pmat{1\\1\\1\\0} = \frac{1}{2}\pmat{3\\-1 \\ -1\\-1}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Then solve
+    <span class="display-math">$$ \begin{align*}
+        \pmat{1&amp;2&amp;3\\0&amp;-1&amp;-2\\0&amp;0&amp;-1} \v c^\ast = \frac{1}{2}\pmat{3\\-1 \\-1} \implies \v c^\ast = \frac{1}{2}\pmat{2\\ -1\\ 1}.
+    \end{align*} $$</span>
+    This gives minimum
+    <span class="display-math">$$ \begin{align*}
+        \|A\v c^\ast - \v y\| = \|R\v c^\ast - Q^T \v y\| = \left\|\frac{1}{2}\pmat{0\\0\\0\\-1}\right\| = \frac{1}{2}.
+    \end{align*} $$</span>
+</p>

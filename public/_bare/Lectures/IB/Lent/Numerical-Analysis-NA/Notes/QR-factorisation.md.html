@@ -1,0 +1,334 @@
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">QR factorisation</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            For any (rectangular) matrix <span class="inline-math">$A \in \R^{m\times n}$</span>, find <span class="inline-math">$Q,R$</span> such that
+            <span class="display-math">$$ \begin{align*}
+                A = QR
+            \end{align*} $$</span>
+            where
+        </p>
+        <ul>
+        <li>
+            <p>
+                <span class="inline-math">$Q\in \R^{m\times m}$</span> is <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Lemma-equivalent-definitions-of-orthogonal-matrices.html">orthogonal</a> (i.e. <span class="inline-math">$Q^TQ = I$</span>); and
+            </p>
+            
+        </li><li>
+            <p>
+                <span class="inline-math">$R\in \R^{m\times n}$</span> is upper triangular (i.e. <span class="inline-math">$r_{ij} = 0$</span> for <span class="inline-math">$i&gt;j$</span>).
+            </p>
+            
+        </li>
+        </ul>
+        
+    </div>
+</div><p>
+    If <span class="inline-math">$m&gt;n$</span>, the bottom <span class="inline-math">$m-n$</span> rows of <span class="inline-math">$R$</span> are zero, so
+    we can write <span class="inline-math">$Q\in \R^{m\times n}$</span> and <span class="inline-math">$R^{n\times n}$</span> instead.
+    This is the <em>reduced QR factorisation</em>.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (existence and uniqueness of QR factorisation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-existence-and-uniqueness-of-QR-factorisation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Any matrix <span class="inline-math">$A$</span> has a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/QR-factorisation.html">QR factorisation</a>.
+            </p>
+            <p>
+                If <span class="inline-math">$A$</span> is square and non-singular, then
+                <span class="inline-math">$A$</span> admits a unique factorisation <span class="inline-math">$A = QR$</span> with <span class="inline-math">$R$</span> having
+                a positive diagonal.
+            </p>
+            <p>
+                Proof of existence: see Gram-Schmidt, Givens rotations, or Householder reflections.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-uniqueness-of-QR-factorisation.html">Proof of uniqueness</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            QR factorisation using the Gram-Schmidt process
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/QR-factorisation-using-the-Gram-Schmidt-process.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\v a_1, \ldots, \v a_n\in \R^m$</span> be the columns of <span class="inline-math">$A$</span>.
+                By performing the Gram-Schmidt process on <span class="inline-math">$\v a_1, \ldots, \v a_n$</span>,
+                we find an orthonormal set <span class="inline-math">$\v q_1, \ldots, \v q_k \in \R^m$</span> (<span class="inline-math">$k\leq n$</span>)
+                and coefficients <span class="inline-math">$r_{ij}\in \R$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    \v a_i = \sum_{j=1}^{i} r_{ji} \v q_j.
+                \end{align*} $$</span>
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    A = \underbrace{\pmat{\v q_1 &amp; \ldots &amp; \v q_k}}_{Q}
+                    \underbrace{\pmat{r_{11} &amp; r_{12} &amp; \ldots &amp; r_{1k} &amp; \ldots &amp; r_{1n} \\
+                    &amp; r_{22} &amp; \ldots &amp; r_{2k} &amp; \ldots &amp; r_{2n} \\
+                    &amp;&amp;\ddots &amp; \vdots &amp; &amp; \vdots\\
+                    &amp;&amp;&amp;r_{kk} &amp; \ldots &amp; r_{kn}}}_{R}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-QR-factorisation-using-the-Gram-Schmidt-process.html">Example (QR factorisation using the Gram-Schmidt process)</a>
+            </p>
+            <p>
+                However Gram-Schmidt is very numerically unstable.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Givens rotations
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Givens-rotations.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For any vector <span class="inline-math">$\v a\in \R^m$</span>, the <em>Givens rotation</em> matrix <span class="inline-math">$Ω^{[p,q]}\in \R^{m\times m}$</span>
+                is an orthogonal transformation
+                that makes the <span class="inline-math">$q$</span>-th component zero and preserves
+                all components other than the <span class="inline-math">$p$</span> and <span class="inline-math">$q$</span>-th ones:
+                <span class="display-math">$$ \begin{align*}
+                    \underbrace{\pmat{1\\&amp;\ddots\\&amp;&amp;\frac{a_p}{\sqrt{a_p^2+a_q^2}} &amp;&amp; \frac{a_q}{\sqrt{a_p^2+a_q^2}} \\ &amp;&amp;&amp;\ddots \\&amp;&amp;-\frac{a_q}{\sqrt{a_p^2+a_q^2}}&amp;&amp;\frac{a_p}{\sqrt{a_p^2+a_q^2}} \\ &amp;&amp;&amp;&amp;&amp;\ddots \\ &amp;&amp;&amp;&amp;&amp;&amp;1}}_{Ω^{[p,q]}}
+                    \underbrace{\pmat{a_{1} \\ \vdots \\ a_p \\ \vdots \\ a_q \\ \vdots \\ a_m}}_{\v a}
+                    = \pmat{a_1 \\ \vdots \\ a_p^2 + a_q^2 \\ \vdots \\ 0 \\ \vdots \\a_m}
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Applying <span class="inline-math">$Ω^{[p,q]}$</span> to a matrix <span class="inline-math">$A$</span>,
+                all rows other than rows <span class="inline-math">$p$</span> and <span class="inline-math">$q$</span> are unchanged,
+                one entry in row <span class="inline-math">$p$</span> is killed,
+                and the span of rows <span class="inline-math">$p$</span> and <span class="inline-math">$q$</span> is preserved.
+            </p>
+            <p>
+                Thus after at most <span class="inline-math">$mn$</span> Givens rotations,
+                we can annihilate all subdiagonal elements:
+                <span class="display-math">$$ \begin{align*}
+                    \pmat{*&amp;*&amp;*\\
+                    *&amp;*&amp;* \\
+                    *&amp;*&amp;* \\
+                    *&amp;*&amp;*}
+                    &amp;\xrightarrow{Ω^{[1,2]}}
+                    \pmat{\bullet &amp;\bullet&amp;\bullet\\
+                    0 &amp;\bullet&amp;\bullet \\
+                    *&amp;*&amp;* \\
+                    *&amp;*&amp;*}
+                    \xrightarrow{Ω^{[1,3]}}
+                    \pmat{\bullet &amp;\bullet&amp;\bullet\\
+                    0 &amp;*&amp;* \\
+                    0&amp;\bullet&amp;\bullet \\
+                    *&amp;*&amp;*}
+                    \xrightarrow{Ω^{[1,4]}}
+                    \pmat{\bullet &amp;\bullet&amp;\bullet\\
+                    0 &amp;*&amp;* \\
+                    0&amp;*&amp;* \\
+                    0&amp;\bullet&amp;\bullet} \\
+                    &amp;\xrightarrow{Ω^{[2,3]}}
+                    \pmat{*&amp;*&amp;* \\
+                    0 &amp;\bullet&amp;\bullet \\
+                    0&amp;0&amp;\bullet \\
+                    0&amp;*&amp;*}
+                    \xrightarrow{Ω^{[2,4]}}
+                    \pmat{*&amp;*&amp;* \\
+                    0 &amp;\bullet&amp;\bullet \\
+                    0&amp;0&amp;* \\
+                    0&amp;0&amp;\bullet} \\
+                    &amp;\xrightarrow{Ω^{[3,4]}}
+                    \pmat{*&amp;*&amp;* \\
+                    0 &amp;*&amp;* \\
+                    0&amp;0&amp;\bullet \\
+                    0&amp;0&amp;0} \\
+                \end{align*} $$</span>
+                (Legend: <span class="inline-math">$*$</span> remains the same as the previous matrix; <span class="inline-math">$\bullet$</span> has changed through a rotation.)
+            </p>
+            <p>
+                Therefore
+                <span class="display-math">$$ \begin{align*}
+                    &amp; R = (Ω^{[m-1,m]})\cdot (Ω^{[m-2,m]} Ω^{[m-2, m-1]}) \cdot \ldots \cdot (Ω^{[1,m]} \ldots Ω^{[1,3]} Ω^{[1,2]}) \cdot A \\
+                    \implies &amp; A = \underbrace{\Bigl[(Ω^{[m-1,m]})\cdot (Ω^{[m-2,m]} Ω^{[m-2, m-1]}) \cdot \ldots \cdot (Ω^{[1,m]} \ldots Ω^{[1,3]} Ω^{[1,2]})\Bigr]^T}_{Q} R.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-QR-factorisation-using-Givens-rotations.html">Example (QR factorisation using Givens rotations)</a>
+            </p>
+            <p>
+                Cost:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Computing <span class="inline-math">$R$</span>: <span class="inline-math">$O(mn\cdot n)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Computing an explicit form of <span class="inline-math">$Q$</span> (usually not necessary):
+                    perform all the Given rotations on <span class="inline-math">$I_m$</span>.
+                    This gives an extra cost of <span class="inline-math">$O(mn\cdot m)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Computing <span class="inline-math">$Q^T \v b$</span>: <span class="inline-math">$O(mn)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Householder reflections
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Householder-reflections.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Householder reflection)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-Householder-reflection.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given a non-zero vector <span class="inline-math">$\v u\in \R^m$</span>,
+                            the <span class="inline-math">$m\times m$</span> matrix
+                            <span class="display-math">$$ \begin{align*}
+                                H_\v u = I - \frac{2}{\|\v u\|^2} \v u \v u^T
+                            \end{align*} $$</span>
+                            is called a <em>Householder transformation</em> or <em>reflection</em>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$H_\v u$</span> reflects a vector about the <span class="inline-math">$(m-1)$</span>-dimensional hyperplane normal to <span class="inline-math">$\v u$</span>.
+                                (<a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-Householder-reflection.html">Derivation</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$H_{\v u}$</span> is orthogonal.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$\|\v a\|=\|\v b\|$</span>, then <span class="inline-math">$H_{\v a - \v b}(\v a) = \v b$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Given any vector <span class="inline-math">$\v a = (a_1, \ldots, a_{k-1}, a_k, a_{k+1}, \ldots, a_m)\in \R^m$</span>,
+                we can get <span class="inline-math">$\v b = (a_1, \ldots, a_{k-1}, γ, 0, \ldots, 0)\in \R^m$</span>
+                where <span class="inline-math">$γ = \pm\sqrt{a_k^2 + a_{k+1}^2 + \ldots + a_m^2}$</span>
+                by applying the Householder reflection for <span class="inline-math">$\v u = \v a - \v b = (0,\ldots,0, a_k - γ, a_{k+1}, \ldots, a_m)$</span>.
+                Note that <span class="inline-math">$H_u$</span> has the block matrix form
+                <span class="display-math">$$ \begin{align*}
+                    H_\v u = \pmat{I_{k-1} &amp; 0 \\
+                    0 &amp; *}
+                \end{align*} $$</span>
+                so the first <span class="inline-math">$k-1$</span> components are preserved under <span class="inline-math">$H_\v u$</span>.
+            </p>
+            <p>
+                Therefore we can kill off all subdiagonal entires of a matrix this way:
+                <span class="display-math">$$ \begin{align*}
+                    \pmat{*&amp;*&amp;* \\
+                    *&amp;*&amp;* \\
+                    *&amp;*&amp;* \\
+                    *&amp;*&amp;*}
+                    \xrightarrow{H_1}
+                    \pmat{\bullet&amp;\bullet&amp;\bullet \\
+                    0&amp;\bullet&amp;\bullet \\
+                    0&amp;\bullet&amp;\bullet \\
+                    0&amp;\bullet&amp;\bullet}
+                    \xrightarrow{H_2}
+                    \pmat{*&amp;*&amp;* \\
+                    0&amp;\bullet&amp;\bullet \\
+                    0&amp;0&amp;\bullet \\
+                    0&amp;0&amp;\bullet}
+                    \xrightarrow{H_3}
+                    \pmat{*&amp;*&amp;* \\
+                    0&amp;*&amp;* \\
+                    0&amp;0&amp;\bullet \\
+                    0&amp;0&amp;0}
+                \end{align*} $$</span>
+                (Legend: <span class="inline-math">$*$</span> remains the same as the previous matrix; <span class="inline-math">$\bullet$</span> has changed through a rotation.)
+            </p>
+            <p>
+                Hence
+                <span class="display-math">$$ \begin{align*}
+                    R = H_m\ldots H_2 H_1 A \implies A = \underbrace{(H_m \ldots H_2H_1)^T}_{Q} R.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-QR-factorisation-using-Householder-reflections.html">Example (QR factorisation using Householder reflections)</a>
+            </p>
+            <p>
+                Practicality:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Numerically, don't compute the matrix of <span class="inline-math">$H_\v u$</span>! Always perform vector products <span class="inline-math">$\v v - \frac{2}{\|u\|^2}\v u \v u^T \v v$</span> instead.
+                </p>
+                
+            </li><li>
+                <p>
+                    How to choose the sign of <span class="inline-math">$γ$</span>?
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        For hand computation, choose <span class="inline-math">$\sign γ = \sign a_k$</span> to make numbers smaller.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        For numerical computation, choose <span class="inline-math">$\sign γ = -\sign a_k$</span> to make numbers larger for stability.
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Choosing between Givens and Householder transformations:
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$A$</span> is dense, Householder is more convenient.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$A$</span> is sparse, use Givens to rotate away the non-zero entries.
+    </p>
+    
+</li>
+</ul>

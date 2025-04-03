@@ -1,0 +1,39 @@
+<p>
+    The following are equivalent conditions for a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">multistep method</a>
+    to have <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-local-truncation-error-order-of-method.html">order</a> <span class="inline-math">$p\geq 1$</span>:
+</p>
+<ol start="1">
+<li>
+    <p>
+        its coefficients satisfy
+        <span class="display-math">$$ \begin{align*}
+        \sum_{m=0}^{s} a_m ={}&amp; 0, \\
+        \sum_{m=0}^{s} m^k a_m ={}&amp; k \sum_{m=0}^{s} m^{k-1} b_m, \qquad \forall k=1,2,\ldots,p;
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        it is exact on <span class="inline-math">$\mathcal{P}_p$</span>:
+        <span class="display-math">$$ \begin{align*}
+        \sum_{m=0}^{s} a_m Q(t_{n+m}) = h\sum_{m=0}^{s} b_m Q&#x27;(t_{n+m}) \qquad \forall Q\in \mathcal{P}_p;
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        the associated polynomials satisfy
+        <span class="display-math">$$ \begin{align*}
+        ρ(e^{z}) - zσ(e^{z}) = O(z^{p+1}), \qquad \text{as } z\to 0
+        \end{align*} $$</span>
+        or equivalently (with the substitution <span class="inline-math">$w=e^z$</span> and noting <span class="inline-math">$\log w = O(|w-1|)$</span>)
+        <span class="display-math">$$ \begin{align*}
+        \frac{ρ(w)}{\log w} = σ(w) + O(|w-1|^{p}), \qquad \text{as }w\to 1.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ol>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-order-of-multistep-method.html">Proof</a>
+</p>

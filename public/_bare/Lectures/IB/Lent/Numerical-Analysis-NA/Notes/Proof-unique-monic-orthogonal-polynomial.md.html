@@ -1,0 +1,41 @@
+
+<h1>Existence</h1>
+
+<p>
+    We perform <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Gram-Schmidt-process.html">Gram-Schmidt orthogonalisation</a>
+    on <span class="inline-math">$\set{1, x, x_2, \ldots, x^n}$</span>:
+    define <span class="inline-math">$Q_0 \equiv 1$</span>, and
+    <span class="display-math">$$ \begin{align*}
+        Q_n(x) := x^n - \sum_{k=0}^{n-1} \frac{\langle x^n, Q_k\rangle}{\|Q_k\|^2} Q_k
+    \end{align*} $$</span>
+    for each <span class="inline-math">$n=1,2,\ldots$</span>.
+</p>
+<p>
+    See that <span class="inline-math">$Q_n$</span> is monic. 
+    Besides, <span class="inline-math">$\langle Q_n, Q_k\rangle = 0$</span> for all <span class="inline-math">$k&lt;n$</span>, since
+    <span class="display-math">$$ \begin{align*}
+        \langle Q_n, Q_k\rangle = \langle Q_n, Q_k\rangle - \sum_{i=0}^{n-1} \frac{\langle x^n,Q_i\rangle}{\|Q_i\|^2} \underbrace{\langle Q_i, Q_k\rangle}_{\text{$0$ if $i\neq k$}} = \langle Q_n, Q_k\rangle - \frac{\langle x^n, Q_k\rangle}{\|Q_k\|^2} \langle Q_k, Q_k\rangle = 0
+    \end{align*} $$</span>
+    by induction.
+</p>
+
+<h1>Uniqueness</h1>
+
+<p>
+    Suppose <span class="inline-math">$Q_n$</span> and <span class="inline-math">$\tilde Q_n$</span> are both monic and orthogonal to <span class="inline-math">$\mathcal{P}_{n-1}$</span>.
+    Then <span class="inline-math">$Q_n - \tilde Q_n \in \mathcal{P}_{n-1}$</span>,
+    so <span class="inline-math">$\langle Q_n-\tilde Q_n, Q_n - \tilde Q_n \rangle = \langle Q_n, Q_n-\tilde Q_n\rangle - \langle \tilde Q_n ,Q_n - \tilde Q_n\rangle = 0$</span>
+    and thus <span class="inline-math">$Q_n = \tilde Q_n$</span>.
+</p>
+
+<h1>Expansion</h1>
+
+<p>
+    By Gram-Schmidt, <span class="inline-math">$\mathcal{P}_n = \mathrm{span}(x^k)_{k=0}^n = \mathrm{span}(Q_k)_{k=0}^n$</span>,
+    so for all <span class="inline-math">$p\in \mathcal{P}_n$</span>,
+    there exists <span class="inline-math">$c_k$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        p = \sum_{k=0}^{n} c_k Q_k.
+    \end{align*} $$</span>
+    Taking <span class="inline-math">$\langle \cdot,Q_k\rangle$</span> on both sides yields <span class="inline-math">$\langle p,Q_k\rangle = c_k \langle Q_k, Q_k\rangle$</span>.
+</p>

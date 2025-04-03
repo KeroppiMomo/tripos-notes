@@ -1,0 +1,110 @@
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Least squares problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            Given <span class="inline-math">$A \in \R^{m\times n}$</span> and <span class="inline-math">$\v y\in \R^m$</span>,
+            find <span class="inline-math">$\v c$</span> that minimises <span class="inline-math">$\|A\v c - \v y\|^2$</span>.
+        </p>
+        
+    </div>
+</div><p>
+    For <span class="inline-math">$m&gt;n$</span>, usually the system <span class="inline-math">$A\v c = \v y$</span> is overdetermined
+    and there is no solution.
+    We try to find an approximate one.
+</p>
+<p>
+    Application: <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Least-square-estimator.html">least square estimator</a> in IB Statistics.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (normal equations)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-normal-equations.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="inline-math">$\v c^\ast\in \R^m$</span> is the solution to the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Linear-least-squares.html">least squares problem</a>
+                iff it solves the <em>normal equations</em>
+                <span class="display-math">$$ \begin{align*}
+                    A^TA\v c^\ast = A^T \v y.
+                \end{align*} $$</span>
+                <span class="inline-math">$A^TA$</span> is called the <em>Gram matrix</em>, and <span class="inline-math">$\v c^\ast$</span> is the <em>normal solution</em>.
+            </p>
+            <p>
+                Moreover if <span class="inline-math">$A$</span> has full rank, then <span class="inline-math">$\v c^\ast = (A^T A)\inv A^T \v y$</span> is unique.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-normal-equations.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This is not suitable for numerical computation:
+                </p>
+                <ol start="1">
+                <li>
+                    <p>
+                        <span class="inline-math">$A^TA$</span> may become numerically singular;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$A^TA$</span> can be dense even when <span class="inline-math">$A$</span> is sparse;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        computing <span class="inline-math">$A^TA$</span> may lead to a loss of accuracy.
+                    </p>
+                    
+                </li>
+                </ol>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            QR factorisation and least squares
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/QR-factorisation-and-least-squares.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                To solve a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Linear-least-squares.html">least squares problem</a>,
+                let <span class="inline-math">$A=QR$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/QR-factorisation.html">QR factorisation</a> of <span class="inline-math">$A$</span>,
+                and assume <span class="inline-math">$A$</span> has full rank <span class="inline-math">$n$</span>.
+            </p>
+            <p>
+                Since <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Lemma-equivalent-definitions-of-orthogonal-matrices.html">orthogonal transformations are length-preserving</a>,
+                <span class="display-math">$$ \begin{align*}
+                    \|A\v c - \v y\| = \|Q^T(A\v c - \v y)\| = \|R\v c - Q^T \v y\|
+                \end{align*} $$</span>
+                Let <span class="inline-math">$Q^T \v y = \v z$</span>. The form of <span class="inline-math">$R\v c - Q^T \v y$</span> looks like
+                <span class="display-math">$$ \begin{align*}
+                    \pmat{* &amp; * &amp; \ldots &amp; * \\
+                    &amp;* &amp; \ldots &amp; * \\
+                    &amp;&amp;\ddots &amp; \vdots \\
+                    &amp;&amp;&amp;* \\
+                    0 &amp; 0 &amp; \ldots &amp; 0 \\
+                    \vdots &amp; \vdots &amp; &amp; \vdots \\
+                    0 &amp; 0 &amp; \ldots &amp; 0} \pmat{c_1 \\ c_2 \\ \vdots \\ c_n}
+                    = \pmat{z_1 \\ z_2 \\ \vdots \\ z_{n} \\ z_{n+1} \\ \vdots \\ z_{m}}.
+                \end{align*} $$</span>
+                We see that the best <span class="inline-math">$\v c$</span> we can pick is by solving the
+                non-singular linear system corresponding to the first <span class="inline-math">$n$</span> equations
+                (using back substitution).
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-least-squares-using-QR-factorisation.html">Example (least squares using QR factorisation)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,36 @@
+<p>
+    It's matrix multiplication.
+    Stare at this:
+    <span class="display-math">$$ \begin{align*}
+        \pmat{* &amp; * &amp; * &amp; * \\
+        * &amp; * &amp; * &amp; * \\
+        0 &amp; 0 &amp; * &amp; * \\
+        * &amp; * &amp; * &amp; * }
+        =
+        \pmat{1\\
+        * &amp; 1\\
+        0 &amp; 0 &amp; 1\\
+        * &amp; * &amp; * &amp; 1 }
+        \pmat{* &amp; * &amp; * &amp; * \\
+        &amp; * &amp; * &amp; * \\
+        &amp;&amp; * &amp; * \\
+        &amp;&amp;&amp; * }
+    \end{align*} $$</span>
+</p>
+<p>
+    This is all of it spelt out: notice on row <span class="inline-math">$i$</span>,
+    <span class="display-math">$$ \begin{align*}
+        a_{i1} ={}&amp; l_{i1} u_{11}, \\
+        a_{i2} ={}&amp; l_{i1} u_{12} + l_{i2} u_{22}, \\
+        a_{i3} ={}&amp; l_{i1} u_{13} + l_{i2} u_{23} + l_{i 3} u_{33}
+    \end{align*} $$</span>
+    etc.
+    Since <span class="inline-math">$u_{kk}\neq 0$</span>,
+    if <span class="inline-math">$a_{i 1}=0$</span>, then <span class="inline-math">$l_{i 1}$</span>;
+    if furthermore <span class="inline-math">$a_{i 2} = 0$</span>, then <span class="inline-math">$l_{i 2} = 0$</span>,
+    and so on.
+</p>
+<p>
+    (We can't have <span class="inline-math">$i$</span> leading zeros on row <span class="inline-math">$i$</span> of <span class="inline-math">$A$</span>,
+    since otherwise the <span class="inline-math">$i$</span>-th principal minor of <span class="inline-math">$A$</span> is singular.)
+</p>

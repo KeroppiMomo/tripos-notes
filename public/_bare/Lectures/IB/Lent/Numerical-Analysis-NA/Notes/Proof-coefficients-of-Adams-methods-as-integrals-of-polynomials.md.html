@@ -1,0 +1,36 @@
+<p>
+    An Adams method has order <span class="inline-math">$p$</span> <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">iff</a>
+    <span class="display-math">$$ \begin{align*}
+        \sum_{m=0}^{s} b_m Q&#x27;(m) = Q(s) - Q(s-1) = \int_{s-1}^{s} Q&#x27;(t) \d t &amp;&amp;\forall Q\in \mathcal{P}_p.
+    \end{align*} $$</span>
+    Writing <span class="inline-math">$q(t) = Q&#x27;(t)$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        \sum_{m=0}^{s} b_mq(m) = \int_{s-1}^{s} q(t) \d t
+    \end{align*} $$</span>
+    for all <span class="inline-math">$q\in \mathcal{P}_{p-1}$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        For an explicit method, <span class="inline-math">$p=s+1$</span>.
+        Let <span class="inline-math">$l_m$</span> be the Lagrange fundamental polynomials
+        with nodes <span class="inline-math">$0,1,\ldots,s$</span>, i.e. <span class="inline-math">$l_m(t) = ω(t)/(t-m)ω&#x27;(m)$</span> with <span class="inline-math">$ω(t) = \prod_{m=0}^{s} (t-m)$</span>.
+        By taking <span class="inline-math">$q=l_m\in \mathcal{P}_{s}$</span> and noting <span class="inline-math">$l_m(n) = δ_{mn}$</span>, we have
+        <span class="display-math">$$ \begin{align*}
+        b_m = \sum_{n=0}^{s} b_n l_m(n) = \int_{s-1}^{s} l_m(t) \d t.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        For an implicit method, <span class="inline-math">$p=s$</span> and <span class="inline-math">$b_s = 0$</span>.
+        Take <span class="inline-math">$l_m$</span> to be the Lagrange fundamental polynomials
+        with nodes <span class="inline-math">$0,1,\ldots,s-1$</span> instead.
+        Then taking <span class="inline-math">$q=l_m \in \mathcal{P}_{s-1}$</span>,
+        <span class="display-math">$$ \begin{align*}
+        b_m = \sum_{n=0}^{s-1} b_n l_m(n) = \int_{s-1}^{s} l_m(t) \d t.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>

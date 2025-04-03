@@ -1,0 +1,76 @@
+<p>
+    Let <span class="inline-math">$\v l_k$</span> be the columns of <span class="inline-math">$L$</span> and <span class="inline-math">$\v u_k^T$</span> be the rows of <span class="inline-math">$U$</span>.
+    By matrix multiplication,
+    <span class="display-math">$$ \begin{align*}
+        A = \sum_{k=1}^{n} \v l_k \v u_k^T.
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$A^{(0)} = A$</span>.
+</p>
+<ol start="1">
+<li>
+    <p>
+        Take <span class="inline-math">$\v u_1^T=$</span> first row of <span class="inline-math">$A^{(0)}$</span> and <span class="inline-math">$\v l_1 = \frac{1}{A_{11}^{(0)}}\times$</span> first column of <span class="inline-math">$A^{(0)}$</span>. Then
+        <span class="display-math">$$ \begin{align*}
+        A^{(1)} := A^{(0)} - \v l_1 \v u_1^T = \pmat{0 &amp; 0 &amp; \ldots &amp; 0 \\
+        0 &amp; * &amp; \ldots &amp; * \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; * &amp; \ldots &amp; * }.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        Take <span class="inline-math">$\v u_2^T=$</span> second row of <span class="inline-math">$A^{(1)}$</span> and <span class="inline-math">$\v l_2 = \frac{1}{A_{22}^{(1)}}\times$</span> second column of <span class="inline-math">$A^{(1)}$</span>.
+        Then
+        <span class="display-math">$$ \begin{align*}
+        A^{(2)} := A^{(1)} - \v l_2 \v u_2^T = \pmat{0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
+        0 &amp; 0 &amp; * &amp; \ldots &amp; * \\
+        \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; 0 &amp; * &amp; \ldots &amp; * }.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ol>
+<p>
+    And so on.
+</p>
+<p>
+    This takes <span class="inline-math">$O(n^3)$</span> computations.
+    With a better algorithm, we can get <span class="inline-math">$O(n^{\log_2 7}) \approx O(n^{2.8})$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-direct-approach-of-LU-factorisation.html">Example (direct approach of LU factorisation)</a>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Column pivoting in LU factorisation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Column-pivoting-in-LU-factorisation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Direct-approach-of-LU-factorisation.html">LU algorithm</a>
+                fails if <span class="inline-math">$A_{kk}^{(k-1)} = 0$</span>.
+                To avoid this and to improve numerical stability,
+                we exchange rows so that the element of largest magnitude in column <span class="inline-math">$k$</span>
+                is at the pivotal position <span class="inline-math">$(k,k)$</span>.
+                This pre-multiplies a permutation matrix.
+            </p>
+            <p>
+                We obtain a factorisation
+                <span class="display-math">$$ \begin{align*}
+                    PA = LU \implies A = P^T LU
+                \end{align*} $$</span>
+                where <span class="inline-math">$P$</span> is the product of all permutation matrices multiplied.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-column-pivoting-in-LU-factorisation.html">Example (column pivoting in LU factorisation)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

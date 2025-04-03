@@ -1,0 +1,79 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Student's t-distribution
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Student-s-t-distribution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>t-distribution</em> with <span class="inline-math">$k$</span> degrees of freedom, denoted as <span class="inline-math">$t_k$</span>,
+                is defined as the distribution of
+                <span class="display-math">$$ \begin{align*}
+                    T = \frac{Z}{\sqrt{Y/k}}
+                \end{align*} $$</span>
+                where <span class="inline-math">$Z\sim N(0,1)$</span> and <span class="inline-math">$Y \sim χ_k^2$</span> are independent.
+            </p>
+            <p>
+                It has a density function
+                <span class="display-math">$$ \begin{align*}
+                    p(x) = \frac{Γ(\frac{k+1}{2})}{\sqrt{πk}\, Γ(\frac{k}{2})} \left(1+\frac{x^2}{k}\right)^{-(k+1)/2}.
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$t_1$</span> is the <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Cauchy-distribution.html">Cauchy distribution</a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$t_k \xrightarrow{d} N(0,1)$</span> as <span class="inline-math">$k\to \infty$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The tail behaves like <span class="inline-math">$x^{-(k+1)}$</span>, so moments <span class="inline-math">$\expect(|X|^m)&lt;\infty$</span> only for <span class="inline-math">$0&lt; m&lt;k$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Suppose <span class="inline-math">$μ$</span> and <span class="inline-math">$σ^2$</span> are both unknown.
+</p>
+<p>
+    <em>Student's t-statistic</em> for the hypothesis <span class="inline-math">$H_0: μ = μ_0$</span> is given by
+    <span class="display-math">$$ \begin{align*}
+        T = \frac{\sqrt{n}(\overline{X} - μ_0)}{\sqrt{S_{XX}/(n-1)}}.
+    \end{align*} $$</span>
+    <span class="inline-math">$T\sim$</span> <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Student-s-t-distribution.html"><span class="inline-math">$t_{n-1}$</span></a>, since
+    <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-sample-mean-and-sample-variance-for-iid-normals.html"><span class="inline-math">$\sqrt{n}(\overline{X} - μ_0)/σ \sim N(0,1)$</span> and <span class="inline-math">$S_{XX}/σ^2 \sim χ_{n-1}^2$</span> are independent</a>.
+</p>
+<ul>
+<li>
+    <p>
+        One-sided <span class="inline-math">$t$</span>-test: to test <span class="inline-math">$H_0: μ\leq μ_0$</span> against <span class="inline-math">$H_1: μ&gt;μ_0$</span>,
+        reject <span class="inline-math">$H_0$</span> if
+        <span class="display-math">$$ \begin{align*}
+        T &gt; t_{n-1}(α)
+        \end{align*} $$</span>
+        where <span class="inline-math">$t_{n-1}(α)$</span> is the upper <span class="inline-math">$α$</span> quantile of <span class="inline-math">$t_{n-1}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Two-sided <span class="inline-math">$t$</span>-test: to test <span class="inline-math">$H_0: μ=μ_0$</span> against <span class="inline-math">$H_1: μ\neq μ_0$</span>,
+        reject <span class="inline-math">$H_0$</span> if
+        <span class="display-math">$$ \begin{align*}
+        |T| &gt; t_{n-1}(α/2).
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>
+<p>
+    This is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/t-test-for-one-parameter-in-linear-model.html">generalised in a normal linear model</a>.
+</p>

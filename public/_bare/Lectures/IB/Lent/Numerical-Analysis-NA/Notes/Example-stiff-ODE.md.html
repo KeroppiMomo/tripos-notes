@@ -1,0 +1,36 @@
+<p>
+    Consider the autonomous system
+    <span class="display-math">$$ \begin{align*}
+        \v y&#x27; = A\v y, \qquad \v y(0) = \v y_0.
+    \end{align*} $$</span>
+    where <span class="inline-math">$A$</span> is diagonalisable into <span class="inline-math">$A = WDW\inv$</span>, <span class="inline-math">$D = \mathrm{diag}(λ_1 ,\ldots, λ_n)$</span>.
+    The exact solution is
+    <span class="display-math">$$ \begin{align*}
+        \v y(t) = We^{tD} W\inv \v y_0
+    \end{align*} $$</span>
+    If <span class="inline-math">$\Re λ_i &lt; 0$</span>, then <span class="inline-math">$\v y(t) \to 0$</span> as <span class="inline-math">$t\to \infty$</span>.
+</p>
+<p>
+    Now suppose we use the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Euler-s-method.html">Euler method</a> to numerically solve this.
+    We have the recurrence relation
+    <span class="display-math">$$ \begin{align*}
+        \v y_{n+1} = \v y_n + hA\v y_n = (I+hA) \v y_n.
+    \end{align*} $$</span>
+    We can diagonalise as <span class="inline-math">$I + hA = W(I + hD)W\inv$</span>,
+    so the numerical solution is
+    <span class="display-math">$$ \begin{align*}
+        \v y_{n} = W(I + hD)^n W\inv \v y_0.
+    \end{align*} $$</span>
+    To recover the correct asymptotic behaviour <span class="inline-math">$\v y_n\to 0$</span>,
+    we require
+    <span class="display-math">$$ \begin{align*}
+        |1 + λ_i h| &lt; 1 \qquad \forall i.
+    \end{align*} $$</span>
+</p>
+<p>
+    For example, if <span class="inline-math">$A = \pmat{-100 &amp; 0 \\ 0 &amp; -1}$</span>,
+    then due to the very negative eigenvalue <span class="inline-math">$-100$</span>,
+    we require <span class="inline-math">$h&lt;50$</span>.
+    But this has nothing to do with accuracy,
+    since the component <span class="inline-math">$e^{-100}$</span> tends to 0 very quickly.
+</p>

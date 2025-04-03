@@ -1,0 +1,24 @@
+<p>
+    The t-test for testing <span class="inline-math">$H_0: β_j = β_{0j}$</span> against <span class="inline-math">$H_1: β_j \neq β_{0j}$</span>
+    (for some particular <span class="inline-math">$j$</span>)
+    is to reject <span class="inline-math">$H_0$</span> when
+    <span class="display-math">$$ \begin{align*}
+        \frac{|\hat β_{j,\text{MLE}} - β_{0j}|}{\sqrt{\hat σ^2{(X^T X)\inv}_{jj}}} &gt; t_{n-p}(α/2)
+    \end{align*} $$</span>
+    where <span class="inline-math">$\hat σ^2 = \frac{1}{n-p}\|Y - X\hat β_{\text{MLE}}\|$</span> is the unbiased estimator for <span class="inline-math">$σ^2$</span>.
+    (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-t-test-for-one-parameter-in-linear-model.html">Derivation</a>)
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-confidence-interval-and-simple-test.html">This gives</a> a <span class="inline-math">$(1-α)$</span>-confidence interval for <span class="inline-math">$β_j$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \hat β_{j,\text{MLE}} \pm t_{n-p}(α/2) \sqrt{\hat σ^2 {(X^T X)\inv}_{jj}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    We can rephrase this as nested models:
+    <span class="display-math">$$ \begin{align*}
+        Y - β_{0j} X_j = \pmat{X_1 &amp; \ldots &amp; X_j &amp; \ldots &amp; X_p} \pmat{β_1 \\ \vdots \\ β_{j} - β_{0j} \\ \vdots \\ β_{p}} + ε.
+    \end{align*} $$</span>
+    This is equivalent to the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test.html">F-test for nested models</a>.
+    (Derivation: TODO)
+</p>

@@ -1,0 +1,44 @@
+<p>
+    By the definition of an algebraic integer,
+    <span class="inline-math">$α$</span> is the root of a monic polynomial <span class="inline-math">$g\in \Z[X]$</span>,
+    so <span class="inline-math">$g\in I$</span> and thus <span class="inline-math">$I$</span> is non-zero.
+</p>
+<p>
+    Take <span class="inline-math">$f_α\in I$</span> to be of minimal degree.
+    By dividing by its content,
+    we can assume <span class="inline-math">$f_α$</span> is primitive.
+</p>
+<p>
+    Let <span class="inline-math">$h\in I$</span>. In <span class="inline-math">$\Q[X]$</span>, run the Euclidean algorithm to get
+    <span class="display-math">$$ \begin{align*}
+        h = f_α q + r \qquad (\text{in $\Q[X]$})
+    \end{align*} $$</span>
+    where <span class="inline-math">$q,r\in \Q[X]$</span> and either <span class="inline-math">$r=0$</span> or <span class="inline-math">$\deg r&lt;\deg f_α$</span>.
+    If <span class="inline-math">$r\neq 0$</span>,
+    "clear denominators" by finding <span class="inline-math">$a,b\in \Z\setminus \set{0}$</span> such that <span class="inline-math">$aq, br\in \Z[X]$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        abh = bf_α\cdot (aq) + a\cdot (br).
+    \end{align*} $$</span>
+    Plugging in <span class="inline-math">$α$</span>, since <span class="inline-math">$h(α) = 0$</span> and <span class="inline-math">$f_α(α) = 0$</span>, we have <span class="inline-math">$a\cdot (br)(α) = 0$</span>
+    and so <span class="inline-math">$(br)(α) = 0$</span>.
+    But then <span class="inline-math">$br\in I$</span> contradicts with the minimality of <span class="inline-math">$\deg f_α$</span>.
+</p>
+<p>
+    Therefore <span class="inline-math">$r=0$</span> and hence <span class="inline-math">$f_α \mid h$</span> in <span class="inline-math">$\Q[X]$</span>.
+    Since <span class="inline-math">$f_α$</span> is primitive, <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-divisibility-of-polynomials-in-UFD-and-its-field-of-fractions.html">this implies</a> <span class="inline-math">$f_α\mid h$</span> in <span class="inline-math">$\Z[X]$</span>.
+    Hence <span class="inline-math">$I = (f_α)$</span>.
+</p>
+<p>
+    To see <span class="inline-math">$f_α$</span> is irreducible,
+    note by the <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-first-isomorphism-theorem-for-rings.html">first isomorphism theorem</a>,
+    <span class="inline-math">$\Z[X]/(f_α) = \Z[X]/\ker(e_α) \isom \im(e_α) \leq \C$</span>.
+    Since <span class="inline-math">$\C$</span> is an integral domain,
+    so is <span class="inline-math">$\Z[X]/(f_α)$</span>,
+    and <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-ideal-is-prime-iff-quotient-is-an-integral-domain.html">thus</a> <span class="inline-math">$(f_α)$</span> is a prime ideal.
+    <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-prime-element-is-irreducible.html">Therefore</a> <span class="inline-math">$f_α$</span> is an irreducible.
+</p>
+<p>
+    Moreover <span class="inline-math">$g\in (f_α)$</span>, so <span class="inline-math">$f_α \mid g$</span> and so the leading coefficient of <span class="inline-math">$f_α$</span> is a unit.
+    Hence we can take <span class="inline-math">$f_α$</span> to be monic.
+</p>

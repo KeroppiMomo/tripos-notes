@@ -1,0 +1,58 @@
+<p>
+    Find the real stability interval of the
+    3-step 3rd-order Adams-Bashforth method
+    <span class="display-math">$$ \begin{align*}
+        \v y_{n+3} - \v y_{n+2} = h \bigl(\tfrac{23}{12} \v f_{n+2} - \tfrac{4}{3} \v f_{n+1} + \tfrac{5}{12} \v f_n\bigr).
+    \end{align*} $$</span>
+</p>
+<p>
+    With <span class="inline-math">$f = λy$</span>, the characteristic polynomial is
+    <span class="display-math">$$ \begin{align*}
+        p_z(x) = (x^3 - x^2) - z\bigl(\tfrac{23}{12} x^2 - \tfrac{4}{3} x + \tfrac{5}{12}\bigr).
+    \end{align*} $$</span>
+    Note <span class="inline-math">$p_z(-1) = -2 - \frac{11}{3}z$</span> has root <span class="inline-math">$z=-11/6$</span>,
+    so we guess that
+    <span class="display-math">$$ \begin{align*}
+        I = \mathcal{D}\cap \R \stackrel{?}{=} (-11/6, 0).
+    \end{align*} $$</span>
+</p>
+<p>
+    It's then just analysis:
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$z&gt;0$</span>, then <span class="inline-math">$p_z(1) = -z &lt; 0$</span> and <span class="inline-math">$p_z(\infty) = \infty$</span> so there is a root <span class="inline-math">$&gt;1$</span>
+        and thus it is not stable.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$z&lt;-6/11$</span>, then <span class="inline-math">$p_z(-1) = -2-\frac{11}{3}z &gt; 0$</span> and <span class="inline-math">$p_z(-\infty) = \infty$</span>
+        so there is a root <span class="inline-math">$&lt;1$</span> and thus it is not stable.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$-6/11&lt;z&lt;0$</span>, we have
+        <span class="display-math">$$ \begin{align*}
+        p(-1) &amp;= -2-\tfrac{11}{3}z &lt; 0, \\
+        p(0) &amp;= -\tfrac{5}{12} z &gt; 0, \\
+        p(\tfrac{1}{2}) &amp;= -\tfrac{1}{8} - \tfrac{11}{48}z &lt; 0, \\
+        p(1) &amp;= -z &gt; 0
+        \end{align*} $$</span>
+        so all three roots of <span class="inline-math">$p_z$</span> are real and reside within <span class="inline-math">$(-1,1)$</span>.
+        Therefore the method is stable.
+    </p>
+    
+</li>
+</ul>
+<blockquote>
+    <p>
+        Linear stability domain:
+        >
+        <img src="/tripos-notes/media/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Linear-Stability-Domain-of-3-step-3rd-order-Adams-Bashforth.jpeg">
+        `ComplexRegionPlot[AllTrue[NSolveValues[x^3 - x^2 - z (32/12 x^2 - 4/3 x + 5/12), x], Abs[#] <= 1 &], {z, -0.6 - 0.6 I, 0.6 + 0.6 I}, GridLines -> {{-1, 0, 1}, {-1, 0, 1}}]`
+    </p>
+    
+</blockquote>

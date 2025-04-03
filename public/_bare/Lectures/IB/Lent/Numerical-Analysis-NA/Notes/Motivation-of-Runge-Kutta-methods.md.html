@@ -1,0 +1,40 @@
+<p>
+    If we consider the ODE <span class="inline-math">$\v y&#x27; = \v f(t)$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        \v y(t_{n+1}) = \v y(t_n) + \int_{0}^{h} \v f(t) \d t
+    \end{align*} $$</span>
+    and we can approximate the integral with a quadrature:
+    <span class="display-math">$$ \begin{align*}
+        \v y_{n+1} = \v y_n + h \sum_{i=1}^{s} b_i \v f(t_n + c_ih).
+    \end{align*} $$</span>
+</p>
+<p>
+    However when we have a genuine ODE <span class="inline-math">$\v y&#x27; = f(t, \v y)$</span> and
+    we still try to approximate
+    <span class="display-math">$$ \begin{align*}
+        \v y(t_{n+1}) \approx \v y_n + h \sum_{i=1}^{s} b_i \v f(t_n + c_i h, \v y(t_n + c_ih)),
+    \end{align*} $$</span>
+    we see we don't know the values of <span class="inline-math">$\v y(t_n + c_ih)$</span>.
+</p>
+<p>
+    The idea is the approximate them by previous values:
+    <span class="display-math">$$ \begin{align*}
+        \v y(t_n + c_i h) ={}&amp; \v y(t_n) + \int_{t_n}^{t_{n} + c_ih} \v f(t, \v y(t)) \d t \\
+        \approx{}&amp; \v y(t_n) + h \sum_{j=1}^{i-1} a_{ij} \v f(t_n + c_jh, \v y(t_n + c_jh)) \\
+        \implies \v f(t_n+c_ih, \v y(t_n + c_ih)) \approx{}&amp; \v f\Bigl(t_n + c_ih, \v y(t_n) + h\sum_{j=1}^{i-1} a_{ij} \v f(t_n + c_j h, \v y(t_n+c_j h))\Bigr).
+    \end{align*} $$</span>
+    Let <span class="inline-math">$\v k_i \approx \v f(t_n + c_ih, \v y(t_n + c_i h))$</span>.
+    Hence we obtain the Runge-Kutta method
+    <span class="display-math">$$ \begin{align*}
+        \v k_i ={}&amp; \v f\Bigl(t_n + c_ih, \v y_n + h \sum_{j=1}^{i-1} a_{ij} \v k_j\Bigr), \qquad i=1,2,\ldots,s, \\
+        \v y_{n+1} ={}&amp; \v y_n + h \sum_{i=1}^{s} b_i \v k_i.
+    \end{align*} $$</span>
+</p>
+<p>
+    A reasonable requirement is
+    for the quadratures to be exact when <span class="inline-math">$\v f$</span> is constant,
+    so we impose
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=1}^{s} b_i = 1, \qquad \sum_{j=1}^{i-1} a_{ij} = c_i.
+    \end{align*} $$</span>
+</p>

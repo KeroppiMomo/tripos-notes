@@ -1,0 +1,119 @@
+<p>
+    Often for <span class="inline-math">$Λ$</span> the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">generalised likelihood ratio statistic</a>,
+    we obtain
+    <span class="display-math">$$ \begin{align*}
+        2\log Λ = 2\sum_{i} O_i \log \frac{O_i}{E_i}
+    \end{align*} $$</span>
+    where <span class="inline-math">$O_i$</span> and <span class="inline-math">$E_i$</span> are the observed and expected counts of <span class="inline-math">$i$</span>,
+    satisfying <span class="inline-math">$\sum_{i} O_i = \sum_{i} E_i$</span>.
+</p>
+<p>
+    <em>Pearson's chi-squared statistic</em> is the approximation
+    <span class="display-math">$$ \begin{align*}
+        2\log Λ \approx \sum_{i} \frac{(O_i - E_i)^2}{E_i}
+    \end{align*} $$</span>
+    valid when <span class="inline-math">$(O_i - E_i)/E_i \approx 0$</span>.
+    (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-Pearson-s-chi-squared-statistic.html">Derivation</a>)
+</p>
+<p>
+    By <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-Wilks-theorem.html">Wilks' theorem</a>, <span class="inline-math">$2\log Λ \xrightarrow{d} χ^2_d$</span> under <span class="inline-math">$H_0$</span>
+    with a certain degree of freedom <span class="inline-math">$d$</span>.
+    So the size <span class="inline-math">$α$</span> <em>Pearson's chi-squared test</em>
+    rejects <span class="inline-math">$H_0$</span> if
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i} \frac{(O_i - E_i)^2}{E_i} &gt; χ^2_d(α).
+    \end{align*} $$</span>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Goodness-of-fit test
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Goodness-of-fit-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$(N_1, \ldots, N_k) \sim \mathrm{Multinomial}(n; p_1, \ldots, p_k)$</span>.
+                Test <span class="inline-math">$H_0: p=p_0(θ)$</span> for some <span class="inline-math">$θ$</span> against <span class="inline-math">$H_1: p_i$</span> unrestricted (but still <span class="inline-math">$p_i\geq 0$</span> and <span class="inline-math">$\sum_{i} p_i=1$</span>), excluding <span class="inline-math">$H_0$</span>.
+            </p>
+            <p>
+                Apply Pearson's chi-squared test with
+                <span class="display-math">$$ \begin{align*}
+                    O_i = N_i, \qquad E_i = np_{0i}(\hat θ_{\text{MLE}}), \qquad d = k-1-\op{df}(H_0).
+                \end{align*} $$</span>
+                where <span class="inline-math">$\hat θ_{\text{MLE}}$</span> is the maximum likelihood estimator for <span class="inline-math">$θ$</span> under <span class="inline-math">$H_0$</span>
+                and <span class="inline-math">$\op{df}(H_0)$</span> is the degree of freedom of <span class="inline-math">$H_0$</span>.
+                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-goodness-of-fit-test.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Test for independence in two-way contingency tables
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Test-for-independence-in-two-way-contingency-tables.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$(X_1, Y_1), \ldots, (X_n, Y_n) \sim P$</span> iid,
+                with <span class="inline-math">$X_1\in (1,2,\ldots,r)$</span> and <span class="inline-math">$Y_1\in (1,2,\ldots,c)$</span>.
+                Test <span class="inline-math">$H_0: X_1$</span> and <span class="inline-math">$Y_1$</span> are independent.
+            </p>
+            <p>
+                Summarise data by a contingency table with entries <span class="inline-math">$N_{xy} = \sum_{i=1}^{n} \mathbb{1}_{\set{X_i = x, Y_i = y}}$</span>.
+                Model as
+                <span class="display-math">$$ \begin{align*}
+                    (N_{11}, \ldots, N_{1c}, \ldots, N_{r1}, \ldots, N_{rc}) \sim \mathrm{Multinomial}(n; p_{11}, \ldots, p_{1c}, \ldots, p_{r 1}, \ldots, p_{rc}).
+                \end{align*} $$</span>
+                Now
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$H_0$</span>: <span class="inline-math">$p_{xy} = p_{x+} p_{+y}$</span> where <span class="inline-math">$p_{x+}, p_{+y}\geq 0$</span>, <span class="inline-math">$\sum_{x} p_{x+} = 1 = \sum_{y} p_{+y}$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$H_1$</span>: <span class="inline-math">$p_{xy}$</span> unrestricted (but still <span class="inline-math">$p_{xy} \geq 0$</span>, <span class="inline-math">$\sum_{x,y} p_{xy} = 1$</span>), excluding <span class="inline-math">$H_0$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Apply Pearson's chi-squared test with
+                <span class="display-math">$$ \begin{align*}
+                    O_{xy} = N_{xy}, \qquad E_{xy} = \frac{N_{x+} N_{+y}}{n}, \qquad d=(r-1)(c-1).
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-independence-in-two-way-contingency-tables.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Test for homogeneity
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Test-for-homogeneity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Now for each row <span class="inline-math">$x$</span>, we make a fixed number <span class="inline-math">$n_x$</span> of samples.
+                Model as
+                <span class="display-math">$$ \begin{align*}
+                    (N_{x1}, \ldots, N_{xc}) \sim \mathrm{Multinomial}(n_x; p_{1\mid x}, \ldots, p_{c\mid x}).
+                \end{align*} $$</span>
+                Test <span class="inline-math">$H_0:p_{y\mid x}$</span> does not depend on <span class="inline-math">$x$</span>
+                against <span class="inline-math">$H_1: p_{y\mid x}$</span> unrestricted (but still <span class="inline-math">$p_{y\mid x}\geq 0$</span> and <span class="inline-math">$\sum_{y} p_{y\mid x} = 1$</span>),
+                excluding <span class="inline-math">$H_0$</span>.
+            </p>
+            <p>
+                The test is the same as the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Test-for-independence-in-two-way-contingency-tables.html">test for independence</a>.
+                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-test-for-homogeneity.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>

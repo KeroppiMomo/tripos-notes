@@ -1,0 +1,315 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            F-distribution
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-distribution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em><span class="inline-math">$F$</span>-distribution</em> with <span class="inline-math">$d_1$</span> and <span class="inline-math">$d_2$</span> degrees of freedom,
+                denoted as <span class="inline-math">$F_{d_1, d_2}$</span>, is defined to be the distribution of
+                <span class="display-math">$$ \begin{align*}
+                    R = \frac{S_1/d_1}{S_2/d_2}
+                \end{align*} $$</span>
+                where <span class="inline-math">$S_1 \sim χ^2_{d_1}$</span> and <span class="inline-math">$S_2\sim χ_{d_2}^2$</span> are independent.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$T\sim$</span> <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Student-s-t-distribution.html"><span class="inline-math">$t_{d}$</span></a>, then <span class="inline-math">$T^2 \sim F(1, d)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Partition the design matrix <span class="inline-math">$X = \pmat{X_0 &amp; X_1}$</span> with <span class="inline-math">$X_0 \in \R^{n\times p_0}, X_1 \in \R^{n\times (p-p_0)}$</span>.
+    Consider the nested models
+</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            Model
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Hypothesis
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Design
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Fitted values
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Saturated
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$μ\in \R^n$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$I_n$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\hat μ = Y$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Full
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$μ\in \mathrm{colspan}(X)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$X$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\hat μ = PY$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Sub/Null
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$μ\in \mathrm{colspan}(X_0)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$X_0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\hat μ = P_0Y$</span>
+        </p>
+        </td>
+    </tr>
+</table>
+<p>
+    where <span class="inline-math">$P = X(X^T X)\inv X^T$</span> and <span class="inline-math">$P_0 = X_0(X_0^T X_0)\inv X_0^T$</span>.
+</p>
+<p>
+    If we partition <span class="inline-math">$β = \pmat{β_0 \\ β_1}$</span> the same way (<span class="inline-math">$β_0\in \R^{p_0}$</span>, <span class="inline-math">$β_{1}\in \R^{p-p_0}$</span>),
+    then the sub-model is saying <span class="inline-math">$β_1 = \v 0$</span>.
+</p>
+<p>
+    The size <span class="inline-math">$α$</span> <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">generalised likelihood ratio test</a> for testing
+    <span class="inline-math">$H_0:$</span> sub-model vs <span class="inline-math">$H_1:$</span> full model (minus sub-model)
+    rejects <span class="inline-math">$H_0$</span> if
+    <span class="display-math">$$ \begin{align*}
+        \frac{\|(P-P_0) Y\|^2 / (p-p_0)}{\|(I-P)Y\|^2/(n-p)} &gt; F_{p-p_0, n-p}(α).
+    \end{align*} $$</span>
+    (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-F-test-as-likelihood-ratio-test.html">Derivation</a>)
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            t-test for one parameter in linear model
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/t-test-for-one-parameter-in-linear-model.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The t-test for testing <span class="inline-math">$H_0: β_j = β_{0j}$</span> against <span class="inline-math">$H_1: β_j \neq β_{0j}$</span>
+                (for some particular <span class="inline-math">$j$</span>)
+                is to reject <span class="inline-math">$H_0$</span> when
+                <span class="display-math">$$ \begin{align*}
+                    \frac{|\hat β_{j,\text{MLE}} - β_{0j}|}{\sqrt{\hat σ^2{(X^T X)\inv}_{jj}}} &gt; t_{n-p}(α/2)
+                \end{align*} $$</span>
+                where <span class="inline-math">$\hat σ^2 = \frac{1}{n-p}\|Y - X\hat β_{\text{MLE}}\|$</span> is the unbiased estimator for <span class="inline-math">$σ^2$</span>.
+                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-t-test-for-one-parameter-in-linear-model.html">Derivation</a>)
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-confidence-interval-and-simple-test.html">This gives</a> a <span class="inline-math">$(1-α)$</span>-confidence interval for <span class="inline-math">$β_j$</span>:
+                <span class="display-math">$$ \begin{align*}
+                    \hat β_{j,\text{MLE}} \pm t_{n-p}(α/2) \sqrt{\hat σ^2 {(X^T X)\inv}_{jj}}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                We can rephrase this as nested models:
+                <span class="display-math">$$ \begin{align*}
+                    Y - β_{0j} X_j = \pmat{X_1 &amp; \ldots &amp; X_j &amp; \ldots &amp; X_p} \pmat{β_1 \\ \vdots \\ β_{j} - β_{0j} \\ \vdots \\ β_{p}} + ε.
+                \end{align*} $$</span>
+                This is equivalent to the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test.html">F-test for nested models</a>.
+                (Derivation: TODO)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            F-test for all parameters in linear model
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test-for-all-parameters-in-linear-model.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The F-test for testing <span class="inline-math">$H_0: β = β_0$</span> against <span class="inline-math">$H_1: β\neq β_0$</span>
+                is to reject <span class="inline-math">$H_0$</span> when
+                <span class="display-math">$$ \begin{align*}
+                    \frac{\|X(\hat β_{\text{MLE}} - β_0)\|^2/p}{\hat σ^2} &gt; F_{p,n-p}(α)
+                \end{align*} $$</span>
+                where <span class="inline-math">$\hat σ^2 = \frac{1}{n-p}\|Y - X\hat β_{\text{MLE}}\|$</span> is the unbiased estimator for <span class="inline-math">$σ^2$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-confidence-interval-and-simple-test.html">This gives</a> a <span class="inline-math">$(1-α)$</span>-confidence set for <span class="inline-math">$β$</span>
+                <span class="display-math">$$ \begin{align*}
+                    \sb{β\in \R^n}{\frac{\|X(\hat β_{\text{MLE}} - β)^2\|}{p\hat σ^2} \leq F_{p,n-p}(α)},
+                \end{align*} $$</span>
+                which is an ellipsoid.
+            </p>
+            <p>
+                This is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test.html">F-test for nested models</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Analysis of variance
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Analysis-of-variance.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Model
+                <span class="display-math">$$ \begin{align*}
+                    Y_{ij} = μ_i + ε_{ij}
+                \end{align*} $$</span>
+                where <span class="inline-math">$j=1,\ldots,n_i$</span>, <span class="inline-math">$i=1,\ldots,k$</span> and the noise follows <span class="inline-math">$ε_{ij} \sim N(0,σ^2)$</span>.
+                Want to test <span class="inline-math">$H_0: μ_1 = \ldots = μ_k$</span> against <span class="inline-math">$H_1: μ_1,\ldots,μ_k\in \R$</span> unrestricted, excluding <span class="inline-math">$H_0$</span>.
+            </p>
+            <p>
+                This is a nested model:
+                <span class="display-math">$$ \begin{align*}
+                    Y = \underbrace{\pmat{\v 1_{n_1} \\ \v 1_{n_2} &amp; \v 1_{n_2} \\ \vdots &amp; &amp; \ddots \\ \v 1_{n_k} &amp; &amp;&amp; \v 1_{n_k}}}_{X^{\text{full}}}\,\underbrace{\pmat{μ \\ μ_2-μ \\ \vdots \\ μ_k - μ}}_{β} + ε
+                \end{align*} $$</span>
+                with
+                <span class="display-math">$$ \begin{align*}
+                    \hat μ^{\text{saturated}} = Y, \qquad \hat μ^{\text{full}} = \pmat{\overline{Y_{1+}} \v 1_{n_1} \\ \vdots \\ \overline{Y_{k+}} \v 1_{n_k}}, \qquad \hat μ^{\text{sub}} = \overline{Y_{++}} \v 1_{n}.
+                \end{align*} $$</span>
+                where <span class="inline-math">$\overline{Y_{i+}} = \frac{1}{n_i}\sum_{j=1}^{n_i} Y_{ij}$</span> and <span class="inline-math">$\overline{Y_{++}} = \frac{1}{n} \sum_{i=1}^{k} \sum_{j=1}^{n_i} Y_{ij}$</span>.
+            </p>
+            <p>
+                We often form the ANOVA table
+            </p>
+            <table>
+                <tr>
+                    <th class="table-cell-left"><p>
+                        Source of variation
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Sum of squares
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Degrees of freedom
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Mean squares
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        F-statistic
+                    </p>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        Between groups
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathrm{SSA} = \sum_{i=1}^{k} n_i(\overline{Y_{i+}} - \overline{Y_{++}})^2$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$k-1$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathrm{MSA} = \mathrm{SSA}/(k-1)$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathrm{MSA}/\mathrm{MSE}$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        Within groups
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathrm{SSE} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (Y_{ij} - \overline{Y_{i+}})^2$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$n-k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathrm{MSE} = \mathrm{SSE}/(n-k)$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"></td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        -
+                    </p>
+                    </td>
+                    <td class="table-cell-left"></td>
+                    <td class="table-cell-left"></td>
+                    <td class="table-cell-left"></td>
+                    <td class="table-cell-left"></td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        Total
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathrm{SST} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (Y_{ij} - \overline{Y_{++}})^2$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$n-1$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"></td>
+                    <td class="table-cell-left"></td>
+                </tr>
+            </table>
+            <p>
+                Therefore the F-test is
+                <span class="display-math">$$ \begin{align*}
+                    \frac{\mathrm{MSA}}{\mathrm{MSE}} = \frac{\sum_{i=1}^{k} n_i (\overline{Y_{i+}} - \overline{Y_{++}})^2/(k-1)}{\sum_{i=1}^{k} \sum_{j=1}^{n_i} (Y_{ij} - \overline{Y_{i+}})^2/(n-k)} &gt; F_{k-1,n-k}(α).
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>

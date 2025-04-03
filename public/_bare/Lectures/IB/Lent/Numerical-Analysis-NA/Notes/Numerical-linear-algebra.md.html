@@ -1,0 +1,943 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            LU factorisation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/LU-factorisation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">LU factorisation</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        For a square matrix <span class="inline-math">$A\in \R^{n\times n}$</span> non-singular, find <span class="inline-math">$L$</span> and <span class="inline-math">$U$</span> so that
+                        <span class="display-math">$$ \begin{align*}
+                            A = LU
+                        \end{align*} $$</span>
+                        where
+                    </p>
+                    <ul>
+                    <li>
+                        <p>
+                            <span class="inline-math">$L\in \R^{n\times n}$</span> is lower unitriangular (i.e. <span class="inline-math">$l_{ij} = 0$</span> for <span class="inline-math">$i&lt;j$</span> and <span class="inline-math">$l_{ii}=0$</span> for all <span class="inline-math">$i$</span>); and
+                        </p>
+                        
+                    </li><li>
+                        <p>
+                            <span class="inline-math">$U\in \R^{n\times n}$</span> is upper triangular (i.e. <span class="inline-math">$u_{ij} = 0$</span> for <span class="inline-math">$i&gt;j$</span>) and non-singular (<span class="inline-math">$u_{ii}\neq 0$</span> for all <span class="inline-math">$i$</span>).
+                        </p>
+                        
+                    </li>
+                    </ul>
+                    
+                </div>
+            </div><p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Direct approach of LU factorisation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Direct-approach-of-LU-factorisation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\v l_k$</span> be the columns of <span class="inline-math">$L$</span> and <span class="inline-math">$\v u_k^T$</span> be the rows of <span class="inline-math">$U$</span>.
+                            By matrix multiplication,
+                            <span class="display-math">$$ \begin{align*}
+                                A = \sum_{k=1}^{n} \v l_k \v u_k^T.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$A^{(0)} = A$</span>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Take <span class="inline-math">$\v u_1^T=$</span> first row of <span class="inline-math">$A^{(0)}$</span> and <span class="inline-math">$\v l_1 = \frac{1}{A_{11}^{(0)}}\times$</span> first column of <span class="inline-math">$A^{(0)}$</span>. Then
+                                <span class="display-math">$$ \begin{align*}
+                                A^{(1)} := A^{(0)} - \v l_1 \v u_1^T = \pmat{0 &amp; 0 &amp; \ldots &amp; 0 \\
+                                0 &amp; * &amp; \ldots &amp; * \\
+                                \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+                                0 &amp; * &amp; \ldots &amp; * }.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Take <span class="inline-math">$\v u_2^T=$</span> second row of <span class="inline-math">$A^{(1)}$</span> and <span class="inline-math">$\v l_2 = \frac{1}{A_{22}^{(1)}}\times$</span> second column of <span class="inline-math">$A^{(1)}$</span>.
+                                Then
+                                <span class="display-math">$$ \begin{align*}
+                                A^{(2)} := A^{(1)} - \v l_2 \v u_2^T = \pmat{0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
+                                0 &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
+                                0 &amp; 0 &amp; * &amp; \ldots &amp; * \\
+                                \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+                                0 &amp; 0 &amp; * &amp; \ldots &amp; * }.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            And so on.
+                        </p>
+                        <p>
+                            This takes <span class="inline-math">$O(n^3)$</span> computations.
+                            With a better algorithm, we can get <span class="inline-math">$O(n^{\log_2 7}) \approx O(n^{2.8})$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-direct-approach-of-LU-factorisation.html">Example (direct approach of LU factorisation)</a>
+                        </p>
+                        <p>
+                            <div class="markdown-embed">
+                                <div class="markdown-embed-title">
+                                    Column pivoting in LU factorisation
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Column-pivoting-in-LU-factorisation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Direct-approach-of-LU-factorisation.html">LU algorithm</a>
+                                        fails if <span class="inline-math">$A_{kk}^{(k-1)} = 0$</span>.
+                                        To avoid this and to improve numerical stability,
+                                        we exchange rows so that the element of largest magnitude in column <span class="inline-math">$k$</span>
+                                        is at the pivotal position <span class="inline-math">$(k,k)$</span>.
+                                        This pre-multiplies a permutation matrix.
+                                    </p>
+                                    <p>
+                                        We obtain a factorisation
+                                        <span class="display-math">$$ \begin{align*}
+                                            PA = LU \implies A = P^T LU
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$P$</span> is the product of all permutation matrices multiplied.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-column-pivoting-in-LU-factorisation.html">Example (column pivoting in LU factorisation)</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Applications of LU factorisation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Applications-of-LU-factorisation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Solving linear systems: to solve <span class="inline-math">$A\v x = \v b$</span> where <span class="inline-math">$A$</span> is non-singular and square,
+                                factorise <span class="inline-math">$A=LU$</span> (in <span class="inline-math">$O(n^3)$</span> time),
+                                solve <span class="inline-math">$L\v y = \v b$</span> by forward substitution (in <span class="inline-math">$O(n^2)$</span> time)
+                                and solve <span class="inline-math">$U\v x = \v y$</span> by backward substitution (in <span class="inline-math">$O(n^2)$</span> time).
+                            </p>
+                            <p>
+                                This is better than Gaussian elimination (<span class="inline-math">$O(n^3)$</span> time)
+                                if we need to solve <span class="inline-math">$A\v x=\v b$</span> for the same <span class="inline-math">$A$</span> but many different <span class="inline-math">$\v b$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Finding determinant of <span class="inline-math">$A$</span>: <span class="inline-math">$\det A = \det L \det U = 1\cdot \prod_{i=1}^{n} u_{ii}$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Inverting <span class="inline-math">$A$</span>: solve <span class="inline-math">$A\v a\inv_k = \v e_k$</span> for each <span class="inline-math">$k$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (strictly regular matrix)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-strictly-regular-matrix.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A square matrix <span class="inline-math">$A\in \R^{n\times n}$</span> is said to be <em>strictly regular</em>
+                            if all its principal minors (top left blocks of <span class="inline-math">$A$</span>, i.e.
+                            <span class="inline-math">$A_1 = \pmat{a_{11}}, A_2 = \pmat{a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}}, \ldots, A_n = A$</span>)
+                            are non-singular.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (existence of LU factorisation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-existence-of-LU-factorisation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A square matrix <span class="inline-math">$A\in \R^{n\times n}$</span> admits an <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/LU-factorisation.html">LU factorisation</a>
+                            iff <span class="inline-math">$A$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-strictly-regular-matrix.html">strictly regular</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-existence-of-LU-factorisation.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Every non-singular matrix <span class="inline-math">$A$</span> admits an LU factorisation with pivoting,
+                                i.e. <span class="inline-math">$PA = LU$</span> for some permutation matrix.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (uniqueness of LU factorisation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-uniqueness-of-LU-factorisation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/LU-factorisation.html">LU factorisation</a> is unique,
+                            i.e. if <span class="inline-math">$L_1U_1=L_2U_2$</span> are two LU factorisations
+                            (<span class="inline-math">$L_i$</span> lower unitriangular, <span class="inline-math">$U_i$</span> non-singular and upper triangular),
+                            then <span class="inline-math">$L_1=L_2$</span> and <span class="inline-math">$U_1=U_2$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-uniqueness-of-LU-factorisation.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (LDU factorisation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Corollary-LDU-factorisation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="inline-math">$A\in \R^{n\times n}$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-strictly-regular-matrix.html">strictly regular</a>
+                            iff it admits a factorisation <span class="inline-math">$A = LDU$</span>,
+                            where <span class="inline-math">$L$</span> is lower unitriangular, <span class="inline-math">$D$</span> is non-singular and diagonal,
+                            and <span class="inline-math">$U$</span> is upper unitriangular.
+                        </p>
+                        <p>
+                            Moreover the factorisation is unique.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-LDU-factorisation.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (LDLT factorisation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Corollary-LDLT-factorisation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="inline-math">$A\in \R^{n\times n}$</span> is strictly regular and symmetric
+                            iff it admits a factorisation <span class="inline-math">$A = LDL^T$</span>
+                            where <span class="inline-math">$L$</span> is lower unitriangular and <span class="inline-math">$D$</span> is non-singular and diagonal.
+                        </p>
+                        <p>
+                            Moreover the factorisation is unique.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-LDLT-factorisation.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Symmetric positive definite matrices in LU factorisation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Symmetric-positive-definite-matrices-in-LU-factorisation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (LDLT factorisation of SPD matrix)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-LDLT-factorisation-of-SPD-matrix.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <span class="inline-math">$A\in \R^{n\times n}$</span> is <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-symmetric-matrix.html">symmetric</a> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html">positive definite</a>
+                                        iff it admits a factorisation <span class="inline-math">$A=LDL^T$</span>
+                                        where <span class="inline-math">$L$</span> is lower unitriangular and <span class="inline-math">$D$</span> is diagonal with positive entries.
+                                    </p>
+                                    <p>
+                                        Moreover the factorisation is unique.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-LDLT-factorisation-of-SPD-matrix.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Corollary (Cholesky factorisation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Corollary-Cholesky-factorisation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        <span class="inline-math">$A\in \R^{n\times n}$</span> is <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-symmetric-matrix.html">symmetric</a> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html">positive definite</a>
+                                        iff it admits a factorisation <span class="inline-math">$A = LL^T$</span>
+                                        where <span class="inline-math">$L$</span> is lower triangular with a positive diagonal.
+                                    </p>
+                                    <p>
+                                        Moreover the factorisation is unique.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Cholesky-factorisation.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Strictly diagonally dominant matrices in LU factorisation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Strictly-diagonally-dominant-matrices-in-LU-factorisation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (strictly diagonally dominant)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-strictly-diagonally-dominant.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A square matrix <span class="inline-math">$A\in \R^{n\times n}$</span>
+                                        is said to be <em>strictly diagonally dominant</em> (by rows) if
+                                        <span class="display-math">$$ \begin{align*}
+                                            |a_{ii}| &gt; \sum_{\substack{j=1 \\j\neq i}}^n |a_{ij}| \qquad \forall \text{row }i=1,\ldots,n.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (SDD is strictly regular)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-SDD-is-strictly-regular.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        If <span class="inline-math">$A\in \R^{n\times n}$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-strictly-diagonally-dominant.html">strictly diagonally dominant</a>,
+                                        then <span class="inline-math">$A$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-strictly-regular-matrix.html">strictly regular</a>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-SDD-is-strictly-regular.html">Proof</a>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-existence-of-LU-factorisation.html">Therefore</a> <span class="inline-math">$A$</span> admits an LU factorisation.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (Gershgorin circle theorem)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-Gershgorin-circle-theorem.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        For an <span class="inline-math">$n\times n$</span> matrix <span class="inline-math">$A$</span>, for each row <span class="inline-math">$i$</span> define
+                                        <span class="display-math">$$ R_i = \sum_{j\neq i} |A_{ij}| $$</span>
+                                        and define a disk <span class="inline-math">$D_i(A_{ii}, R_i)\subset\C$</span> to be the circle with centre <span class="inline-math">$A_{ii}$</span> and radius <span class="inline-math">$R_i$</span>.
+                                    </p>
+                                    <p>
+                                        Then every eigenvalues lie within a disk <span class="inline-math">$D_i$</span> for some <span class="inline-math">$i$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Proof-Gershgorin-circle-theorem.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Sparse matrices and LU factorisation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Sparse-matrices-and-LU-factorisation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A matrix is said to be <em>sparse</em> if most entries are zero.
+                            By contrast, a matrix with most entries non-zero is called <em>dense</em>.
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (band matrix)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-band-matrix.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A square matrix <span class="inline-math">$A$</span> is a <em>band matrix</em> with bandwidth <span class="inline-math">$2r+1$</span>
+                                        if <span class="inline-math">$a_{ij} = 0$</span> for <span class="inline-math">$|i-j|&gt;r$</span>.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (LU factorisation preserves leading zeros)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proposition-LU-factorisation-preserves-leading-zeros.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$A=LU$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/LU-factorisation.html">LU factorisation</a>
+                                        of a sparse matrix <span class="inline-math">$A$</span>. Then
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            all leading zeros in the rows of <span class="inline-math">$A$</span> to the left of the diagonal are inherited by <span class="inline-math">$L$</span>; and
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            all leading zeros in the columns of <span class="inline-math">$A$</span> above the diagonal are inherited by <span class="inline-math">$U$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-LU-factorisation-preserves-leading-zeros.html">Proof</a>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            If <span class="inline-math">$A$</span> is a band matrix, then <span class="inline-math">$L$</span> and <span class="inline-math">$U$</span> are also band matrices with the same bandwidth as <span class="inline-math">$A$</span>.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            Sometimes if <span class="inline-math">$A$</span> is sparse, we can try reordering its rows and columns to
+                                            have more leading zeros, thus reducing the fill-in in <span class="inline-math">$L$</span> and <span class="inline-math">$U$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            The <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-direct-approach-of-LU-factorisation.html">LU algorithm</a>
+                            takes <span class="inline-math">$O(nr^2)$</span> operations to factorise for a banded <span class="inline-math">$A$</span> with bandwidth <span class="inline-math">$r$</span>.
+                            And to solve a linear system after factorisation, it takes <span class="inline-math">$O(nr)$</span> operations.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            QR factorisation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/QR-factorisation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">QR factorisation</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        For any (rectangular) matrix <span class="inline-math">$A \in \R^{m\times n}$</span>, find <span class="inline-math">$Q,R$</span> such that
+                        <span class="display-math">$$ \begin{align*}
+                            A = QR
+                        \end{align*} $$</span>
+                        where
+                    </p>
+                    <ul>
+                    <li>
+                        <p>
+                            <span class="inline-math">$Q\in \R^{m\times m}$</span> is <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Lemma-equivalent-definitions-of-orthogonal-matrices.html">orthogonal</a> (i.e. <span class="inline-math">$Q^TQ = I$</span>); and
+                        </p>
+                        
+                    </li><li>
+                        <p>
+                            <span class="inline-math">$R\in \R^{m\times n}$</span> is upper triangular (i.e. <span class="inline-math">$r_{ij} = 0$</span> for <span class="inline-math">$i&gt;j$</span>).
+                        </p>
+                        
+                    </li>
+                    </ul>
+                    
+                </div>
+            </div><p>
+                If <span class="inline-math">$m&gt;n$</span>, the bottom <span class="inline-math">$m-n$</span> rows of <span class="inline-math">$R$</span> are zero, so
+                we can write <span class="inline-math">$Q\in \R^{m\times n}$</span> and <span class="inline-math">$R^{n\times n}$</span> instead.
+                This is the <em>reduced QR factorisation</em>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (existence and uniqueness of QR factorisation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-existence-and-uniqueness-of-QR-factorisation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Any matrix <span class="inline-math">$A$</span> has a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/QR-factorisation.html">QR factorisation</a>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$A$</span> is square and non-singular, then
+                            <span class="inline-math">$A$</span> admits a unique factorisation <span class="inline-math">$A = QR$</span> with <span class="inline-math">$R$</span> having
+                            a positive diagonal.
+                        </p>
+                        <p>
+                            Proof of existence: see Gram-Schmidt, Givens rotations, or Householder reflections.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-uniqueness-of-QR-factorisation.html">Proof of uniqueness</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        QR factorisation using the Gram-Schmidt process
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/QR-factorisation-using-the-Gram-Schmidt-process.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\v a_1, \ldots, \v a_n\in \R^m$</span> be the columns of <span class="inline-math">$A$</span>.
+                            By performing the Gram-Schmidt process on <span class="inline-math">$\v a_1, \ldots, \v a_n$</span>,
+                            we find an orthonormal set <span class="inline-math">$\v q_1, \ldots, \v q_k \in \R^m$</span> (<span class="inline-math">$k\leq n$</span>)
+                            and coefficients <span class="inline-math">$r_{ij}\in \R$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                \v a_i = \sum_{j=1}^{i} r_{ji} \v q_j.
+                            \end{align*} $$</span>
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                A = \underbrace{\pmat{\v q_1 &amp; \ldots &amp; \v q_k}}_{Q}
+                                \underbrace{\pmat{r_{11} &amp; r_{12} &amp; \ldots &amp; r_{1k} &amp; \ldots &amp; r_{1n} \\
+                                &amp; r_{22} &amp; \ldots &amp; r_{2k} &amp; \ldots &amp; r_{2n} \\
+                                &amp;&amp;\ddots &amp; \vdots &amp; &amp; \vdots\\
+                                &amp;&amp;&amp;r_{kk} &amp; \ldots &amp; r_{kn}}}_{R}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-QR-factorisation-using-the-Gram-Schmidt-process.html">Example (QR factorisation using the Gram-Schmidt process)</a>
+                        </p>
+                        <p>
+                            However Gram-Schmidt is very numerically unstable.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Givens rotations
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Givens-rotations.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For any vector <span class="inline-math">$\v a\in \R^m$</span>, the <em>Givens rotation</em> matrix <span class="inline-math">$Ω^{[p,q]}\in \R^{m\times m}$</span>
+                            is an orthogonal transformation
+                            that makes the <span class="inline-math">$q$</span>-th component zero and preserves
+                            all components other than the <span class="inline-math">$p$</span> and <span class="inline-math">$q$</span>-th ones:
+                            <span class="display-math">$$ \begin{align*}
+                                \underbrace{\pmat{1\\&amp;\ddots\\&amp;&amp;\frac{a_p}{\sqrt{a_p^2+a_q^2}} &amp;&amp; \frac{a_q}{\sqrt{a_p^2+a_q^2}} \\ &amp;&amp;&amp;\ddots \\&amp;&amp;-\frac{a_q}{\sqrt{a_p^2+a_q^2}}&amp;&amp;\frac{a_p}{\sqrt{a_p^2+a_q^2}} \\ &amp;&amp;&amp;&amp;&amp;\ddots \\ &amp;&amp;&amp;&amp;&amp;&amp;1}}_{Ω^{[p,q]}}
+                                \underbrace{\pmat{a_{1} \\ \vdots \\ a_p \\ \vdots \\ a_q \\ \vdots \\ a_m}}_{\v a}
+                                = \pmat{a_1 \\ \vdots \\ a_p^2 + a_q^2 \\ \vdots \\ 0 \\ \vdots \\a_m}
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Applying <span class="inline-math">$Ω^{[p,q]}$</span> to a matrix <span class="inline-math">$A$</span>,
+                            all rows other than rows <span class="inline-math">$p$</span> and <span class="inline-math">$q$</span> are unchanged,
+                            one entry in row <span class="inline-math">$p$</span> is killed,
+                            and the span of rows <span class="inline-math">$p$</span> and <span class="inline-math">$q$</span> is preserved.
+                        </p>
+                        <p>
+                            Thus after at most <span class="inline-math">$mn$</span> Givens rotations,
+                            we can annihilate all subdiagonal elements:
+                            <span class="display-math">$$ \begin{align*}
+                                \pmat{*&amp;*&amp;*\\
+                                *&amp;*&amp;* \\
+                                *&amp;*&amp;* \\
+                                *&amp;*&amp;*}
+                                &amp;\xrightarrow{Ω^{[1,2]}}
+                                \pmat{\bullet &amp;\bullet&amp;\bullet\\
+                                0 &amp;\bullet&amp;\bullet \\
+                                *&amp;*&amp;* \\
+                                *&amp;*&amp;*}
+                                \xrightarrow{Ω^{[1,3]}}
+                                \pmat{\bullet &amp;\bullet&amp;\bullet\\
+                                0 &amp;*&amp;* \\
+                                0&amp;\bullet&amp;\bullet \\
+                                *&amp;*&amp;*}
+                                \xrightarrow{Ω^{[1,4]}}
+                                \pmat{\bullet &amp;\bullet&amp;\bullet\\
+                                0 &amp;*&amp;* \\
+                                0&amp;*&amp;* \\
+                                0&amp;\bullet&amp;\bullet} \\
+                                &amp;\xrightarrow{Ω^{[2,3]}}
+                                \pmat{*&amp;*&amp;* \\
+                                0 &amp;\bullet&amp;\bullet \\
+                                0&amp;0&amp;\bullet \\
+                                0&amp;*&amp;*}
+                                \xrightarrow{Ω^{[2,4]}}
+                                \pmat{*&amp;*&amp;* \\
+                                0 &amp;\bullet&amp;\bullet \\
+                                0&amp;0&amp;* \\
+                                0&amp;0&amp;\bullet} \\
+                                &amp;\xrightarrow{Ω^{[3,4]}}
+                                \pmat{*&amp;*&amp;* \\
+                                0 &amp;*&amp;* \\
+                                0&amp;0&amp;\bullet \\
+                                0&amp;0&amp;0} \\
+                            \end{align*} $$</span>
+                            (Legend: <span class="inline-math">$*$</span> remains the same as the previous matrix; <span class="inline-math">$\bullet$</span> has changed through a rotation.)
+                        </p>
+                        <p>
+                            Therefore
+                            <span class="display-math">$$ \begin{align*}
+                                &amp; R = (Ω^{[m-1,m]})\cdot (Ω^{[m-2,m]} Ω^{[m-2, m-1]}) \cdot \ldots \cdot (Ω^{[1,m]} \ldots Ω^{[1,3]} Ω^{[1,2]}) \cdot A \\
+                                \implies &amp; A = \underbrace{\Bigl[(Ω^{[m-1,m]})\cdot (Ω^{[m-2,m]} Ω^{[m-2, m-1]}) \cdot \ldots \cdot (Ω^{[1,m]} \ldots Ω^{[1,3]} Ω^{[1,2]})\Bigr]^T}_{Q} R.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-QR-factorisation-using-Givens-rotations.html">Example (QR factorisation using Givens rotations)</a>
+                        </p>
+                        <p>
+                            Cost:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Computing <span class="inline-math">$R$</span>: <span class="inline-math">$O(mn\cdot n)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Computing an explicit form of <span class="inline-math">$Q$</span> (usually not necessary):
+                                perform all the Given rotations on <span class="inline-math">$I_m$</span>.
+                                This gives an extra cost of <span class="inline-math">$O(mn\cdot m)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Computing <span class="inline-math">$Q^T \v b$</span>: <span class="inline-math">$O(mn)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Householder reflections
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Householder-reflections.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (Householder reflection)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-Householder-reflection.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Given a non-zero vector <span class="inline-math">$\v u\in \R^m$</span>,
+                                        the <span class="inline-math">$m\times m$</span> matrix
+                                        <span class="display-math">$$ \begin{align*}
+                                            H_\v u = I - \frac{2}{\|\v u\|^2} \v u \v u^T
+                                        \end{align*} $$</span>
+                                        is called a <em>Householder transformation</em> or <em>reflection</em>.
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$H_\v u$</span> reflects a vector about the <span class="inline-math">$(m-1)$</span>-dimensional hyperplane normal to <span class="inline-math">$\v u$</span>.
+                                            (<a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-Householder-reflection.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$H_{\v u}$</span> is orthogonal.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            If <span class="inline-math">$\|\v a\|=\|\v b\|$</span>, then <span class="inline-math">$H_{\v a - \v b}(\v a) = \v b$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            Given any vector <span class="inline-math">$\v a = (a_1, \ldots, a_{k-1}, a_k, a_{k+1}, \ldots, a_m)\in \R^m$</span>,
+                            we can get <span class="inline-math">$\v b = (a_1, \ldots, a_{k-1}, γ, 0, \ldots, 0)\in \R^m$</span>
+                            where <span class="inline-math">$γ = \pm\sqrt{a_k^2 + a_{k+1}^2 + \ldots + a_m^2}$</span>
+                            by applying the Householder reflection for <span class="inline-math">$\v u = \v a - \v b = (0,\ldots,0, a_k - γ, a_{k+1}, \ldots, a_m)$</span>.
+                            Note that <span class="inline-math">$H_u$</span> has the block matrix form
+                            <span class="display-math">$$ \begin{align*}
+                                H_\v u = \pmat{I_{k-1} &amp; 0 \\
+                                0 &amp; *}
+                            \end{align*} $$</span>
+                            so the first <span class="inline-math">$k-1$</span> components are preserved under <span class="inline-math">$H_\v u$</span>.
+                        </p>
+                        <p>
+                            Therefore we can kill off all subdiagonal entires of a matrix this way:
+                            <span class="display-math">$$ \begin{align*}
+                                \pmat{*&amp;*&amp;* \\
+                                *&amp;*&amp;* \\
+                                *&amp;*&amp;* \\
+                                *&amp;*&amp;*}
+                                \xrightarrow{H_1}
+                                \pmat{\bullet&amp;\bullet&amp;\bullet \\
+                                0&amp;\bullet&amp;\bullet \\
+                                0&amp;\bullet&amp;\bullet \\
+                                0&amp;\bullet&amp;\bullet}
+                                \xrightarrow{H_2}
+                                \pmat{*&amp;*&amp;* \\
+                                0&amp;\bullet&amp;\bullet \\
+                                0&amp;0&amp;\bullet \\
+                                0&amp;0&amp;\bullet}
+                                \xrightarrow{H_3}
+                                \pmat{*&amp;*&amp;* \\
+                                0&amp;*&amp;* \\
+                                0&amp;0&amp;\bullet \\
+                                0&amp;0&amp;0}
+                            \end{align*} $$</span>
+                            (Legend: <span class="inline-math">$*$</span> remains the same as the previous matrix; <span class="inline-math">$\bullet$</span> has changed through a rotation.)
+                        </p>
+                        <p>
+                            Hence
+                            <span class="display-math">$$ \begin{align*}
+                                R = H_m\ldots H_2 H_1 A \implies A = \underbrace{(H_m \ldots H_2H_1)^T}_{Q} R.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-QR-factorisation-using-Householder-reflections.html">Example (QR factorisation using Householder reflections)</a>
+                        </p>
+                        <p>
+                            Practicality:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Numerically, don't compute the matrix of <span class="inline-math">$H_\v u$</span>! Always perform vector products <span class="inline-math">$\v v - \frac{2}{\|u\|^2}\v u \v u^T \v v$</span> instead.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                How to choose the sign of <span class="inline-math">$γ$</span>?
+                            </p>
+                            <ul>
+                            <li>
+                                <p>
+                                    For hand computation, choose <span class="inline-math">$\sign γ = \sign a_k$</span> to make numbers smaller.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    For numerical computation, choose <span class="inline-math">$\sign γ = -\sign a_k$</span> to make numbers larger for stability.
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Choosing between Givens and Householder transformations:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$A$</span> is dense, Householder is more convenient.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$A$</span> is sparse, use Givens to rotate away the non-zero entries.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Linear least squares
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Linear-least-squares.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Least squares problem</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        Given <span class="inline-math">$A \in \R^{m\times n}$</span> and <span class="inline-math">$\v y\in \R^m$</span>,
+                        find <span class="inline-math">$\v c$</span> that minimises <span class="inline-math">$\|A\v c - \v y\|^2$</span>.
+                    </p>
+                    
+                </div>
+            </div><p>
+                For <span class="inline-math">$m&gt;n$</span>, usually the system <span class="inline-math">$A\v c = \v y$</span> is overdetermined
+                and there is no solution.
+                We try to find an approximate one.
+            </p>
+            <p>
+                Application: <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Least-square-estimator.html">least square estimator</a> in IB Statistics.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (normal equations)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-normal-equations.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="inline-math">$\v c^\ast\in \R^m$</span> is the solution to the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Linear-least-squares.html">least squares problem</a>
+                            iff it solves the <em>normal equations</em>
+                            <span class="display-math">$$ \begin{align*}
+                                A^TA\v c^\ast = A^T \v y.
+                            \end{align*} $$</span>
+                            <span class="inline-math">$A^TA$</span> is called the <em>Gram matrix</em>, and <span class="inline-math">$\v c^\ast$</span> is the <em>normal solution</em>.
+                        </p>
+                        <p>
+                            Moreover if <span class="inline-math">$A$</span> has full rank, then <span class="inline-math">$\v c^\ast = (A^T A)\inv A^T \v y$</span> is unique.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-normal-equations.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                This is not suitable for numerical computation:
+                            </p>
+                            <ol start="1">
+                            <li>
+                                <p>
+                                    <span class="inline-math">$A^TA$</span> may become numerically singular;
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$A^TA$</span> can be dense even when <span class="inline-math">$A$</span> is sparse;
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    computing <span class="inline-math">$A^TA$</span> may lead to a loss of accuracy.
+                                </p>
+                                
+                            </li>
+                            </ol>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        QR factorisation and least squares
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/QR-factorisation-and-least-squares.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            To solve a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Linear-least-squares.html">least squares problem</a>,
+                            let <span class="inline-math">$A=QR$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/QR-factorisation.html">QR factorisation</a> of <span class="inline-math">$A$</span>,
+                            and assume <span class="inline-math">$A$</span> has full rank <span class="inline-math">$n$</span>.
+                        </p>
+                        <p>
+                            Since <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Lemma-equivalent-definitions-of-orthogonal-matrices.html">orthogonal transformations are length-preserving</a>,
+                            <span class="display-math">$$ \begin{align*}
+                                \|A\v c - \v y\| = \|Q^T(A\v c - \v y)\| = \|R\v c - Q^T \v y\|
+                            \end{align*} $$</span>
+                            Let <span class="inline-math">$Q^T \v y = \v z$</span>. The form of <span class="inline-math">$R\v c - Q^T \v y$</span> looks like
+                            <span class="display-math">$$ \begin{align*}
+                                \pmat{* &amp; * &amp; \ldots &amp; * \\
+                                &amp;* &amp; \ldots &amp; * \\
+                                &amp;&amp;\ddots &amp; \vdots \\
+                                &amp;&amp;&amp;* \\
+                                0 &amp; 0 &amp; \ldots &amp; 0 \\
+                                \vdots &amp; \vdots &amp; &amp; \vdots \\
+                                0 &amp; 0 &amp; \ldots &amp; 0} \pmat{c_1 \\ c_2 \\ \vdots \\ c_n}
+                                = \pmat{z_1 \\ z_2 \\ \vdots \\ z_{n} \\ z_{n+1} \\ \vdots \\ z_{m}}.
+                            \end{align*} $$</span>
+                            We see that the best <span class="inline-math">$\v c$</span> we can pick is by solving the
+                            non-singular linear system corresponding to the first <span class="inline-math">$n$</span> equations
+                            (using back substitution).
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-least-squares-using-QR-factorisation.html">Example (least squares using QR factorisation)</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

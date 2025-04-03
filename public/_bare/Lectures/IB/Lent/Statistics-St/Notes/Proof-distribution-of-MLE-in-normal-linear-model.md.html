@@ -1,0 +1,59 @@
+<p>
+    Write
+    <span class="display-math">$$ \begin{align*}
+        Y = Xβ + ε
+    \end{align*} $$</span>
+    where <span class="inline-math">$ε\mid X \sim N(\v 0, σ^2 I_n)$</span>.
+    Also let
+    <span class="display-math">$$ \begin{align*}
+        P = X(X^T X)\inv X^T
+    \end{align*} $$</span>
+    be the orthogonal projection matrix onto the columns space of <span class="inline-math">$X$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$\hat β_{\text{MLE}}$</span> <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proposition-MLE-in-normal-linear-model.html">solves the least squares problem</a> and <span class="inline-math">$X$</span> has full rank,
+    <span class="display-math">$$ \begin{align*}
+        \hat β_{\text{MLE}} ={}&amp; (X^T X)\inv X^T Y \\
+        ={}&amp; (X^T X)\inv X^T (Xβ + ε) \\
+        ={}&amp; β + (X^T X)\inv X^T ε,
+    \end{align*} $$</span>
+    which has mean and variance
+    <span class="display-math">$$ \begin{align*}
+        \expect(\hat β_{\text{MLE}}) ={}&amp; β + (X^TX)\inv X^T \expect(ε) = β,  \\
+        \var(\hat β_{\text{MLE}}) ={}&amp; (X^T X)\inv X^T \var(ε) \,X(X^TX)\inv \\
+        ={}&amp; σ^2 (X^T X)\inv X^T X (X^T X)\inv \\
+        ={}&amp; σ^2 (X^T X)\inv.
+    \end{align*} $$</span>
+    This is an affine transformation of the Gaussian <span class="inline-math">$ε$</span>, <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Proposition-affine-functions-of-Gaussian-are-Gaussian.html">so</a>
+    <span class="display-math">$$ \begin{align*}
+        \hat β_{\text{MLE}} \sim N(β, σ^2(X^T X)\inv).
+    \end{align*} $$</span>
+</p>
+<p>
+    Moreover since <span class="inline-math">$PX = X$</span> (since <span class="inline-math">$P$</span> fixes the image of <span class="inline-math">$X$</span>),
+    we have <span class="inline-math">$X^T = X^T P^T = X^T P$</span>. So
+    <span class="display-math">$$ \begin{align*}
+        \hat β_{\text{MLE}} = β + (X^T X)\inv X^T Pε
+    \end{align*} $$</span>
+    is a function of <span class="inline-math">$Pε$</span>.
+</p>
+<p>
+    Meanwhile
+    <span class="display-math">$$ \begin{align*}
+        \hat σ^2_{\text{MLE}} ={}&amp; \frac{1}{n}\|(I_n-P)Y\|^2 \\
+        ={}&amp; \frac{1}{n}\|(I_n-P)(Xβ + ε)\|^2 \\
+        ={}&amp; \frac{1}{n}\|\underbrace{(I_n-P)X}_{0} β + (I_n-P)ε\|^2 \\
+        ={}&amp; \frac{1}{n}\|(I_n-P)ε\|^2
+    \end{align*} $$</span>
+    is a function of <span class="inline-math">$(I_n-P)ε$</span>.
+</p>
+<p>
+    By the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Lemma-orthogonal-projection-matrix-acting-on-multivariate-normal.html">lemma</a>,
+    <span class="inline-math">$Pε$</span> and <span class="inline-math">$(I_n-P)ε$</span> are independent, and thus so is <span class="inline-math">$\hat β_{\text{MLE}}$</span> and <span class="inline-math">$\hat σ^2_{\text{MLE}}$</span>.
+    Moreover
+    <span class="display-math">$$ \begin{align*}
+        n\,\hat σ^2_{\text{MLE}}/σ^2 = \|(I-P)ε\|^2/σ^2
+        \sim χ_{\mathrm{rank}(I_n-P)}^2
+        = χ_{n-p}^2.
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,42 @@
+<p>
+    Under <span class="inline-math">$H_0$</span>, the maximum likelihood estimators <span class="inline-math">$\hat p_{y}^{(0)}$</span>
+    maximises
+    <span class="display-math">$$ \begin{align*}
+        l(\hat p_y^{(0)}) = \sum_{x,y} N_{xy} \log \hat p_y^{(0)} = \sum_{y=1}^{c} \underbrace{\left(\sum_{x=1}^{r} N_{xy}\right)}_{N_{+y}} \log \hat p_y^{(0)}
+    \end{align*} $$</span>
+    subject to <span class="inline-math">$\sum_{y} \hat p_y^{(0)} = 1$</span> and <span class="inline-math">$\hat p_{y}^{(0)}\geq 0$</span>.
+    As <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-goodness-of-fit-test.html">before</a> we have
+    <span class="display-math">$$ \begin{align*}
+        \hat p_y^{(0)} = \frac{N_{+y}}{n}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now under <span class="inline-math">$H_1$</span>, the maximum likelihood estimators <span class="inline-math">$\hat p_{y\mid x}^{(1)}$</span> maximises
+    <span class="display-math">$$ \begin{align*}
+        l(\hat p_{y\mid x}^{(1)}) = \sum_{x=1}^{r} \sum_{y=1}^{c}  N_{xy} \log \hat p_{y\mid x}^{(1)}.
+    \end{align*} $$</span>
+    subject to <span class="inline-math">$\sum_{y} \hat p_{y\mid x}^{(1)} = 1$</span> and <span class="inline-math">$\hat p_{y\mid x}^{(1)}\geq 0$</span>.
+    As each row follows an independent multinomial distribution,
+    we can maximise each row separately to get
+    <span class="display-math">$$ \begin{align*}
+        \hat p_{y\mid x}^{(1)} = \frac{N_{xy}}{n_x}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Substituting into the likelihood ratio,
+    <span class="display-math">$$ \begin{align*}
+        2\log Λ = 2\sum_{x,y} N_{xy} \log \frac{N_{xy}/n_x}{N_{+y}/n} = 2\sum_{x,y} N_{xy} \log \frac{N_{xy}}{n_x N_{+y}/n},
+    \end{align*} $$</span>
+    so we have <span class="inline-math">$O_{xy} = N_{xy}$</span> and <span class="inline-math">$E_{xy} = n_x N_{+y}/n$</span>.
+</p>
+<p>
+    <span class="inline-math">$H_1$</span> has <span class="inline-math">$rc$</span> variables (<span class="inline-math">$p_{1\mid 1}, \ldots, p_{c\mid 1}, \ldots, p_{1\mid r}, \ldots, p_{c\mid r}$</span>)
+    and <span class="inline-math">$r$</span> constraints (<span class="inline-math">$1=\sum_{y} p_{y\mid 1} = \ldots = \sum_{y} p_{y\mid r}$</span>)
+    so <span class="inline-math">$rc-r$</span> degrees of freedom.
+    <span class="inline-math">$H_0$</span> has <span class="inline-math">$c$</span> variables (<span class="inline-math">$p_{1}, \ldots p_{c}$</span>) and <span class="inline-math">$1$</span> constraint (<span class="inline-math">$\sum_{y=1}^{c} p_y = 1$</span>),
+    so <span class="inline-math">$c-1$</span> degrees of freedom.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        d = (rc-r) - (c-1) = (r-1)(c-1).
+    \end{align*} $$</span>
+</p>

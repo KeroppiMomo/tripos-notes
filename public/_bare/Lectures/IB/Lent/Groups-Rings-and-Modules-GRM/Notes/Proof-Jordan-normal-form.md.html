@@ -1,0 +1,55 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (primes in the complex polynomial ring)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Lemma-primes-in-the-complex-polynomial-ring.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-prime-element.html">primes</a> in <span class="inline-math">$\C[X]$</span> are exactly <span class="inline-math">$(X-λ)$</span> for any <span class="inline-math">$λ\in \C$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proof-primes-in-the-complex-polynomial-ring.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    As in the proof for the <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proof-rational-canonical-form.html">rational canonical form</a>,
+    <span class="inline-math">$V_α$</span> is finitely generated.
+    This time we apply the <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-primary-decomposition-theorem.html">primary decomposition theorem</a> to get
+    <span class="display-math">$$ \begin{align*}
+        V_α \isom \C[X]/((X-λ_1)^{a_1}) \oplus \ldots \oplus \C[X]/((X-λ_r)^{a_r}),
+    \end{align*} $$</span>
+    where there is no <span class="inline-math">$\C[X]$</span> summands
+    because <span class="inline-math">$V$</span> is a finite-dimensional vector space (<span class="inline-math">$\C$</span>-module)
+    while <span class="inline-math">$\C[X]$</span> is infinite-dimensional.
+</p>
+<p>
+    The vector space <span class="inline-math">$\C[X]/((X-λ_i)^{a_i})$</span> has a basis <span class="inline-math">$\set{1, X-λ_i, (X-λ_i)^2, \ldots, (X-λ_i)^{a_i-1}}$</span>,
+    in which the endomorphism <span class="inline-math">$β(v) = (X-λ_i)\cdot v$</span> has matrix form
+    <span class="display-math">$$ \begin{align*}
+        \pmat{0 \\
+        1 \\
+        &amp; 1\\
+        &amp;&amp; \ddots\\
+        &amp;&amp;&amp; 1 &amp; 0} \in M_{a_i \times a_i}(\C).
+    \end{align*} $$</span>
+    Since <span class="inline-math">$α = β + λ_i\,\id$</span>, the matrix of <span class="inline-math">$α$</span> is then
+    <span class="display-math">$$ \begin{align*}
+        \pmat{λ_i \\
+        1 &amp; λ_i \\
+        &amp; 1 &amp; λ_i \\
+        &amp;&amp;\ddots &amp; \ddots  \\
+        &amp;&amp;&amp; 1 &amp; λ_i} = J_{a_i}(λ_i)
+    \end{align*} $$</span>
+    which is a Jordan block.
+</p>
+<p>
+    Therefore combining the bases for <span class="inline-math">$V$</span>,
+    <span class="display-math">$$ \begin{align*}
+        α = \pmat{J_{a_1}(λ_1) \\ &amp;\ddots \\ &amp;&amp;J_{a_r}(λ_r)}
+    \end{align*} $$</span>
+    as required.
+</p>

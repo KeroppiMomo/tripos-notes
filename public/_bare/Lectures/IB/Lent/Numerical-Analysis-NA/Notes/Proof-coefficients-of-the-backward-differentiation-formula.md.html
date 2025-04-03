@@ -1,0 +1,59 @@
+
+<h1>Proof 1</h1>
+
+<p>
+    To have order <span class="inline-math">$s$</span>, we <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">require</a>
+    <span class="display-math">$$ \begin{align*}
+        ρ(w) = \log w\cdot σ(w) + O(|w-1|^{s+1}) = w^s \log w + O(|w-1|^{s+1}).
+    \end{align*} $$</span>
+</p>
+<p>
+    Observe
+    <span class="display-math">$$ \begin{align*}
+        \log w = -\log \frac{1}{w} = -\log\left(1 - \frac{w-1}{w}\right) = \sum_{k=1}^{\infty} \frac{1}{k}\left(\frac{w-1}{w}\right)^k.
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        w^s  \log w = \underbrace{\sum_{k=1}^{s} \frac{1}{k} w^{s-k} (w-1)^k}_{\in \mathcal{P}_s} + O(|w-1|^{s+1}),
+    \end{align*} $$</span>
+    and we identity the bracketed term with <span class="inline-math">$ρ(w)$</span>.
+</p>
+
+<h1>Proof 2</h1>
+
+<p>
+    To have order <span class="inline-math">$s$</span>, we <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">require</a>
+    <span class="display-math">$$ \begin{align*}
+        \sum_{m=0}^{s} a_m Q(m) = Q&#x27;(s)
+    \end{align*} $$</span>
+    which is numerical differentiation.
+    Take
+    <span class="display-math">$$ \begin{align*}
+        Q(t) = l_m(t)
+    \end{align*} $$</span>
+    the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lagrange-interpolating-polynomial.html">Lagrange fundamental polynomials</a> of nodes <span class="inline-math">$0,1,\ldots,s$</span>
+    to get
+    <span class="display-math">$$ \begin{align*}
+        a_m = l_m&#x27;(s).
+    \end{align*} $$</span>
+</p>
+<p>
+    Now we just compute the derivative.
+    Use the form
+    <span class="display-math">$$ \begin{align*}
+        l_m(t) ={}&amp; \frac{\prod_{n=0}^{m-1} (t-n) \prod_{n=m+1}^{s} (t-n)}{\prod_{n=0}^{m-1} (m-n) \prod_{n=m+1}^{s} (m-n)} \\
+        ={}&amp; \frac{(-1)^{s-m}}{m!\, (s-m)!}\prod_{n=0}^{m-1} (t-n) \prod_{n=m+1}^{s} (t-n)
+    \end{align*} $$</span>
+    to see, for <span class="inline-math">$m\neq s$</span>,
+    <span class="display-math">$$ \begin{align*}
+        l_m&#x27;(s) ={}&amp; \frac{(-1)^{s-m}}{m!\,(s-m)!} \prod_{n=0}^{m-1} (s-n) \prod_{n=m+1}^{s-1} (s-n) \\
+        ={}&amp; \frac{(-1)^{s-m}}{m!\,(s-m)!} \frac{s!}{s-m} \\
+        ={}&amp; \frac{(-1)^{s-m}}{s-m} \pmat{s \\ m},
+    \end{align*} $$</span>
+    and for <span class="inline-math">$m=s$</span>,
+    <span class="display-math">$$ \begin{align*}
+        l_s(t) ={}&amp; \frac{1}{s!} \prod_{m=0}^{s-1} (t-m) \\
+        l_s&#x27;(s) ={}&amp; \frac{1}{s!} \sum_{m=0}^{s-1} \frac{s!}{s-m} \\
+        ={}&amp; \sum_{m=1}^{s} \frac{1}{m}.
+    \end{align*} $$</span>
+</p>

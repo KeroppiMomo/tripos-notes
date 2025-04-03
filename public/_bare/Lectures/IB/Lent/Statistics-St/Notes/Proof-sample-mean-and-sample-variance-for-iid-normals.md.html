@@ -1,0 +1,60 @@
+<blockquote>
+    <p>
+        This immediately follows from applying the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-distribution-of-MLE-in-normal-linear-model.html">more general result for normal linear models</a> to
+        <span class="display-math">$$ \begin{align*}
+            \pmat{Y_1 \\ \vdots \\ Y_n} = \pmat{1 \\ \vdots \\ 1}μ + ε.
+        \end{align*} $$</span>
+    </p>
+    
+</blockquote>
+<p>
+    Define some <span class="inline-math">$n\times n$</span> orthogonal matrix with the first row <span class="inline-math">$1/\sqrt{n}$</span>
+    <span class="display-math">$$ \begin{align*}
+        U = \pmat{1/\sqrt{n} &amp; \ldots &amp; 1/\sqrt{n} \\
+        * &amp; \ldots &amp; * \\
+        \vdots &amp; &amp; \vdots \\
+        * &amp; \ldots &amp; *} \in M_{n\times n}(\R)
+    \end{align*} $$</span>
+</p>
+<blockquote>
+    <p>
+        The actual matrix is not important, but one such matrix is
+        <span class="display-math">$$ \begin{align*}
+        U = \pmat{\frac{1}{\sqrt{n}} &amp; \frac{1}{\sqrt{n}} &amp; \frac{1}{\sqrt{n}} &amp; \frac{1}{\sqrt{n}} &amp; \ldots &amp; \frac{1}{\sqrt{n}} \\
+            \frac{1}{\sqrt{2}} &amp; -\frac{1}{\sqrt{2}} &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
+            \frac{1}{\sqrt{3\times 2}} &amp; \frac{1}{\sqrt{3\times 2}} &amp; -\frac{2}{\sqrt{3\times 2}} &amp; 0 &amp; \ldots &amp; 0 \\
+            \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+            \frac{1}{\sqrt{n(n-1)}} &amp; \frac{1}{\sqrt{n(n-1)}} &amp; \frac{1}{\sqrt{n(n-1)}} &amp; \frac{1}{\sqrt{n(n-1)}} &amp; \ldots &amp; -\frac{(n-1)}{\sqrt{n(n-1)}}}.
+        \end{align*} $$</span>
+    </p>
+    
+</blockquote>
+<p>
+    Let <span class="inline-math">$X = (X_1, \ldots, X_n) \sim N(μ \v 1_n, σ^2I_n)$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        Y := UX = \pmat{\frac{1}{\sqrt{n}} \sum_{i} X_i \\ *} = \pmat{\sqrt{n}\, \overline{X} \\ *}.
+    \end{align*} $$</span>
+    The mean and variance of <span class="inline-math">$Y$</span> are
+    <span class="display-math">$$ \begin{align*}
+        \expect(Y) ={}&amp;  U\cdot μ 1_n = \pmat{\sqrt{n}\, μ \\ 0 \\ \vdots \\0}, \\
+        \var(Y) ={}&amp; U^T \cdot σ^2I_n\cdot U = σ^2I_n
+    \end{align*} $$</span>
+    by properties of the orthogonal matrix <span class="inline-math">$U$</span>.
+    Since <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Proposition-affine-functions-of-Gaussian-are-Gaussian.html">linear transform of a multivariate normal is still a multivariate normal</a>,
+    <span class="display-math">$$ \begin{align*}
+        Y \sim N\left(\pmat{\sqrt{n}\, μ \\ 0 \\ \vdots \\ 0}, σ^2 I_n\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    Note <span class="inline-math">$Y_1 = \sqrt{n}\, \overline{X}$</span>, and <span class="inline-math">$Y^T Y = X^T U^T U X = X^T X$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        Y_2^2 + \ldots + Y_n^2 = \sum_{i=1}^{n} X_i^2 - n\,\overline{X}^2 = \sum_{i=1}^{n} (X_i - \overline{X})^2 = S_{XX}.
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Proof-Zero-correlation-implies-independence-for-bivariate-normal.html">Since</a> <span class="inline-math">$Y_1, Y_2, \ldots, Y_n$</span> have no correlation,
+    they are independent.
+    Moreover <span class="inline-math">$Y_1 = \sqrt{n}\overline{X} \sim N(\sqrt{n}μ, σ^2)$</span> and <span class="inline-math">$Y_2, \ldots, Y_n \sim N(0, σ^2)$</span> iid,
+    and hence <span class="inline-math">$\overline{X} \sim N(μ, σ^2/n)$</span>
+    and <span class="inline-math">$S_{XX}/σ^2 = (Y_2/σ)^2 + \ldots + (Y_n/σ)^2$</span>
+    is a sum of <span class="inline-math">$n-1$</span> standard normals so follows <span class="inline-math">$χ_{n-1}^2$</span>.
+</p>

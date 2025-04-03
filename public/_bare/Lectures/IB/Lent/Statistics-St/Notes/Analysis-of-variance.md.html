@@ -1,0 +1,119 @@
+<p>
+    Model
+    <span class="display-math">$$ \begin{align*}
+        Y_{ij} = μ_i + ε_{ij}
+    \end{align*} $$</span>
+    where <span class="inline-math">$j=1,\ldots,n_i$</span>, <span class="inline-math">$i=1,\ldots,k$</span> and the noise follows <span class="inline-math">$ε_{ij} \sim N(0,σ^2)$</span>.
+    Want to test <span class="inline-math">$H_0: μ_1 = \ldots = μ_k$</span> against <span class="inline-math">$H_1: μ_1,\ldots,μ_k\in \R$</span> unrestricted, excluding <span class="inline-math">$H_0$</span>.
+</p>
+<p>
+    This is a nested model:
+    <span class="display-math">$$ \begin{align*}
+        Y = \underbrace{\pmat{\v 1_{n_1} \\ \v 1_{n_2} &amp; \v 1_{n_2} \\ \vdots &amp; &amp; \ddots \\ \v 1_{n_k} &amp; &amp;&amp; \v 1_{n_k}}}_{X^{\text{full}}}\,\underbrace{\pmat{μ \\ μ_2-μ \\ \vdots \\ μ_k - μ}}_{β} + ε
+    \end{align*} $$</span>
+    with
+    <span class="display-math">$$ \begin{align*}
+        \hat μ^{\text{saturated}} = Y, \qquad \hat μ^{\text{full}} = \pmat{\overline{Y_{1+}} \v 1_{n_1} \\ \vdots \\ \overline{Y_{k+}} \v 1_{n_k}}, \qquad \hat μ^{\text{sub}} = \overline{Y_{++}} \v 1_{n}.
+    \end{align*} $$</span>
+    where <span class="inline-math">$\overline{Y_{i+}} = \frac{1}{n_i}\sum_{j=1}^{n_i} Y_{ij}$</span> and <span class="inline-math">$\overline{Y_{++}} = \frac{1}{n} \sum_{i=1}^{k} \sum_{j=1}^{n_i} Y_{ij}$</span>.
+</p>
+<p>
+    We often form the ANOVA table
+</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            Source of variation
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Sum of squares
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Degrees of freedom
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Mean squares
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            F-statistic
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Between groups
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathrm{SSA} = \sum_{i=1}^{k} n_i(\overline{Y_{i+}} - \overline{Y_{++}})^2$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$k-1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathrm{MSA} = \mathrm{SSA}/(k-1)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathrm{MSA}/\mathrm{MSE}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Within groups
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathrm{SSE} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (Y_{ij} - \overline{Y_{i+}})^2$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$n-k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathrm{MSE} = \mathrm{SSE}/(n-k)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"></td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            -
+        </p>
+        </td>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"></td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Total
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathrm{SST} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (Y_{ij} - \overline{Y_{++}})^2$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$n-1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"></td>
+    </tr>
+</table>
+<p>
+    Therefore the F-test is
+    <span class="display-math">$$ \begin{align*}
+        \frac{\mathrm{MSA}}{\mathrm{MSE}} = \frac{\sum_{i=1}^{k} n_i (\overline{Y_{i+}} - \overline{Y_{++}})^2/(k-1)}{\sum_{i=1}^{k} \sum_{j=1}^{n_i} (Y_{ij} - \overline{Y_{i+}})^2/(n-k)} &gt; F_{k-1,n-k}(α).
+    \end{align*} $$</span>
+</p>

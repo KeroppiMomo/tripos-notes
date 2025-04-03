@@ -1,0 +1,30 @@
+<p>
+    Continuing from the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-goodness-of-fit-test.html">goodness-of-fit test</a>,
+    we need to solve for the maximum likelihood estimator under <span class="inline-math">$H_0$</span>.
+    Log-likelihood
+    <span class="display-math">$$ \begin{align*}
+        l_N = \sum_{x,y} N_{xy}\log(p_{x+} p_{+y})
+        = \sum_{x=1}^{r} \underbrace{\left(\sum_{y=1}^{c} N_{xy}\right)}_{N_{x+}}\log p_{x+} + \sum_{y=1}^{c} \underbrace{\left(\sum_{x=1}^{r} N_{xy}\right)}_{N_{+y}} \log p_{+y}.
+    \end{align*} $$</span>
+    To maximise this, we can maximise the two terms separately to get
+    <span class="display-math">$$ \begin{align*}
+        \hat p_{x+} = \frac{N_{x+}}{n}, \qquad \hat p_{+y} = \frac{N_{+y}}{n}.
+    \end{align*} $$</span>
+</p>
+<p>
+    So
+    <span class="display-math">$$ \begin{align*}
+        2\log Λ = 2\sum_{x,y} N_{xy} \log \frac{N_{xy}/n}{(N_{x+}/n)(N_{+y}/n)} = 2\sum_{x,y} N_{xy} \log \frac{N_{xy}}{N_{x+}N_{+y}/n}.
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$O_{xy} = N_{xy}$</span> and <span class="inline-math">$E_{xy} = N_{x+}N_{+y}/n$</span> in Pearson's statistic.
+</p>
+<p>
+    <span class="inline-math">$H_1$</span> has <span class="inline-math">$rc-1$</span> degrees of freedom as before,
+    and <span class="inline-math">$H_0$</span> has <span class="inline-math">$r+c$</span> variables (<span class="inline-math">$p_{1+}, \ldots, p_{r+}, p_{+1}, \ldots, p_{+c}$</span>)
+    and <span class="inline-math">$2$</span> constraints (<span class="inline-math">$\sum_{x} p_{x+} = 1 = \sum_{y} p_{+y} = 1$</span>),
+    so <span class="inline-math">$r+c-2$</span> degrees of freedom.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        d = (rc-1)-(r+c-2) = (r-1)(c-1).
+    \end{align*} $$</span>
+</p>

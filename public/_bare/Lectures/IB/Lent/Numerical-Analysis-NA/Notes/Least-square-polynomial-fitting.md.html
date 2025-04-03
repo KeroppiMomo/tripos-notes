@@ -1,0 +1,81 @@
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Least square polynomial fitting problem</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            Given <span class="inline-math">$f\in C[a,b]$</span> and a weight function <span class="inline-math">$w(x)\geq 0$</span>,
+            find the <em>(weighted) least square approximant</em>
+            <span class="display-math">$$ \begin{align*}
+                p^\ast = \arg \min_{p\in \mathcal{P}_n} \|f-p\|_{w}
+            \end{align*} $$</span>
+            where
+            <span class="display-math">$$ \begin{align*}
+                \|f-p\|_w = \left(\int_{a}^{b} |f-g|^2 w \d x\right)^{1/2}.
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (least square approximant)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-least-square-approximant.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Least-square-polynomial-fitting.html">least square polynomial fitting problem</a>,
+                let <span class="inline-math">$(Q_k)_{k=0}^n$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-orthogonal-polynomial.html">orthogonal polynomials</a>.
+            </p>
+            <p>
+                Then the least square approximant is given by
+                <span class="display-math">$$ \begin{align*}
+                        p^\ast = \sum_{k=0}^{n} \frac{\langle f,Q_k\rangle}{\|Q_k\|^2} Q_k \in \mathcal{P}_n
+                \end{align*} $$</span>
+                with error
+                <span class="display-math">$$ \begin{align*}
+                    \|f-p^\ast\|^2 = \|f\|^2 - \|p^\ast\| = \|f\|^2 - \sum_{k=0}^{n} \frac{\langle f,Q_k\rangle^2}{\|Q_k\|^2}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-least-square-approximant.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Parseval's identity for orthogonal polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Parseval-s-identity-for-orthogonal-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Given a <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-weighted-inner-product.html">weighted inner product</a> with <span class="inline-math">$[a,b]$</span> finite,
+                let <span class="inline-math">$(Q_k)_{k=0}^n$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-orthogonal-polynomial.html">orthogonal polynomials</a>.
+            </p>
+            <p>
+                Then for any <span class="inline-math">$f\in C[a,b]$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{k=0}^{\infty} \frac{\langle f,Q_k\rangle^2}{\|Q_k\|^2} = \|f\|^2.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Parseval-s-identity-for-orthogonal-polynomials.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    To find a polynomial <span class="inline-math">$p$</span> such that <span class="inline-math">$\|f-p\|\leq ε$</span>,
+                    compute the partial sums <span class="inline-math">$\sum_{k=0}^{N} \frac{\langle f,Q_k\rangle^2}{\|Q_k\|^2}$</span>
+                    until it is at least <span class="inline-math">$\|f\|^2 - ε^2$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,119 @@
+<div class="markdown-callout" data-callout="method">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Theta methods</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            For an <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-methods-for-ODEs.html">initial value problem</a> and some <span class="inline-math">$θ\in [0,1]$</span>,
+            <span class="display-math">$$ \begin{align*}
+                \v y_{n+1} = \v y_n + h\bigl(θ\,\v f(t_n, \v y_n) + (1-θ)\, \v f(t_{n+1}, \v y_{n+1})\bigr).
+            \end{align*} $$</span>
+        </p>
+        
+    </div>
+</div><table>
+    <tr>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$θ$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Name
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Scheme
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            Euler method
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\v y_{n+1} = \v y_n + h\, \v f(t_n ,\v y_n)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            explicit
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1/2$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            Trapezoidal rule
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\v y_{n+1} = \v y_n + \frac{1}{2}h\bigl(\v f(t_n ,\v y_n) + \v f(t_{n+1}, \v y_{n+1})\bigr)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            implicit
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            Backward Euler
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\v y_{n+1} = \v y_n + h\, \v f(t_{n+1}, \v y_{n+1})$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            implicit
+        </p>
+        </td>
+    </tr>
+</table>
+<p>
+    For <span class="inline-math">$θ\in [0,1)$</span>,
+    the method is <em>implicit</em>: we need to solve an equation for <span class="inline-math">$\v y_{n+1}$</span>
+    (by e.g. fixed point iteration, Newton-Raphson, modified Newton-Raphson etc).
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (order of theta methods)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proposition-order-of-theta-methods.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theta-methods.html">theta method</a> has order
+            </p>
+            <ul>
+            <li>
+                <p>
+                    2 if <span class="inline-math">$θ=1/2$</span> (the trapezoidal rule); or
+                </p>
+                
+            </li><li>
+                <p>
+                    1 otherwise.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-order-of-theta-methods.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

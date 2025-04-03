@@ -1,0 +1,37 @@
+<p>
+    Runge-Kutta methods do not have a single error constant.
+</p>
+<p>
+    Instead we use two (typically explicit) Runge-Kutta methods:
+</p>
+<ol start="1">
+<li>
+    <p>
+        one of <span class="inline-math">$s$</span> stages and order <span class="inline-math">$p$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        one of <span class="inline-math">$s+l$</span> stages and order <span class="inline-math">$p+1$</span>,
+    </p>
+    
+</li>
+</ol>
+<p>
+    with the first <span class="inline-math">$s$</span> stages identical to reduce computational cost.
+    Then we have an estimate of the lower order method
+    <span class="display-math">$$ \begin{align*}
+        \v y(t_{n+1}) - \v y_{n+1}^{[1]}\approx \v y_{n+1}^{[2]} - \v y_{n+1}^{[1]}.
+    \end{align*} $$</span>
+</p>
+<p>
+    For example
+    <span class="display-math">$$ \begin{align*}
+        k_1 ={}&amp; f(t_n, y_n), \\
+        k_2 ={}&amp; f(t_n + \frac{1}{2}h, y_n + \frac{1}{2}hk_1), \\
+        k_3 ={}&amp; f(t_n + h, y_n - hk_1 + 2hk_2), \\
+        y_{n+1}^{[1]} ={}&amp; y_n + hk_2, \\
+        y_{n+1}^{[2]} ={}&amp; y_n + \frac{1}{6}h(k_1 + 4k_2 + k_3).
+    \end{align*} $$</span>
+    <span class="inline-math">$y_{n+1}^{[1]}$</span> has order <span class="inline-math">$2$</span> accuracy, and <span class="inline-math">$y_{n+1}^{[2]}$</span> has order <span class="inline-math">$3$</span> accuracy.
+</p>

@@ -1,0 +1,20 @@
+<p>
+    Suppose the ODE <span class="inline-math">$\v y&#x27;(t) = \v f(t, \v y)$</span> is solved by an arbitrary numerical method of order <span class="inline-math">$p$</span>,
+    and we have stored some past values <span class="inline-math">$\v y_n, \v y_{n-1}, \ldots, \v y_{n-p}$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$\v q\in \mathcal{P}_q$</span> be a polynomial that interpolates <span class="inline-math">$\v q(t_i) = \v y_i$</span> for <span class="inline-math">$i=n,\ldots,n-p$</span>.
+    <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-polynomial-interpolation-error.html">Then</a> <span class="inline-math">$\v q(t) - \v y(t) = O(h^{p+1})$</span>.
+    Note <span class="inline-math">$\v q$</span> solves a new ODE
+    <span class="display-math">$$ \begin{align*}
+        \v z&#x27; = \v f(t,\v y) + \underbrace{\v q&#x27; - \v f(t, \v q)}_{\text{small}}, \tag{*}
+    \end{align*} $$</span>
+    which slightly differs from our original ODE by a term <span class="inline-math">$\v q&#x27; - \v y&#x27;$</span> which we expect to be small.
+</p>
+<p>
+    Now apply the same method to produce <span class="inline-math">$\v z_{n+1}$</span>.
+    The Zadunaisky device estimates the local truncation error of <span class="inline-math">$\v y_{n+1}$</span> as
+    <span class="display-math">$$ \begin{align*}
+        \v y(t_{n+1}) - \v y_{n+1} \approx \v q(t_{n+1}) - \v z_{n+1}.
+    \end{align*} $$</span>
+</p>

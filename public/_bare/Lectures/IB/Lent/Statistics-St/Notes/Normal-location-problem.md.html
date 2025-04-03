@@ -1,0 +1,296 @@
+<p>
+    Suppose <span class="inline-math">$X_1, \ldots, X_n \sim N(μ, σ^2)$</span> iid.
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Minimal sufficient statistic for the normal location problem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Minimal-sufficient-statistic-for-the-normal-location-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$μ$</span> is unknown but <span class="inline-math">$σ^2$</span> is known, then a <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-minimal-sufficient-statistic.html">minimal sufficient statistic</a> is <span class="inline-math">$\overline{X} = \frac{1}{n}\sum_{i=1}^{n} X_i$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If both <span class="inline-math">$μ$</span> and <span class="inline-math">$σ^2$</span> are unknown, then a minimal sufficient statistic is <span class="inline-math">$(\sum_{i} X_i, \sum_{i} X_i^2)$</span>
+                    (or under a bijection, <span class="inline-math">$(\overline{X}, S_{XX})$</span>).
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-minimal-sufficient-statistic-for-the-normal-location-problem.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (sample mean and sample variance for iid normals)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-sample-mean-and-sample-variance-for-iid-normals.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$X_1, \ldots, X_n \sim N(μ,σ^2)$</span> iid, and let
+                <span class="display-math">$$ \begin{align*}
+                    \overline{X} = \frac{1}{n}\sum_{i=1}^{n} X_i, \qquad S_{XX} = \sum_{i=1}^{n} (X_i - \overline{X})^2.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Then <span class="inline-math">$\overline{X} \sim N(μ, σ^2/n)$</span> and <span class="inline-math">$S_{XX}/σ^2 \sim χ^2_{n-1}$</span> are independent.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-sample-mean-and-sample-variance-for-iid-normals.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Maximum likelihood estimator for the normal location problem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Maximum-likelihood-estimator-for-the-normal-location-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">maximum likelihood estimator</a> for <span class="inline-math">$μ$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    \hat μ_{\text{MLE}} = \overline{X} := \frac{1}{n}\sum_{i=1}^{n} X_i
+                \end{align*} $$</span>
+                regardless of whether <span class="inline-math">$σ^2$</span> is known.
+                This is unbiased.
+            </p>
+            <p>
+                The maximum likelihood estimator for <span class="inline-math">$σ^2$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    \hat σ^2_{\text{MLE}} = \frac{S_{XX}}{n} := \frac{1}{n}\sum_{i=1}^{n} (X_i - \overline{X})^2.
+                \end{align*} $$</span>
+                This is biased in a finite sample but asymptotically unbiased: <span class="inline-math">$\expect(\hat σ^2_{\text{MLE}}) = \frac{n-1}{n}σ^2$</span>.
+            </p>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-maximum-likelihood-estimator-for-the-normal-location-problem.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Confidence interval for normal location problem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Confidence-interval-for-normal-location-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$μ$</span> is unknown but <span class="inline-math">$σ^2$</span> is known.
+            </p>
+            <p>
+                A <span class="inline-math">$(1-α)$</span>-<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-confidence-interval-region.html">confidence interval</a> is
+                <span class="display-math">$$ \begin{align*}
+                    \left[\overline{X} - \frac{σz_{α_1}}{\sqrt{n}},\; \overline{X} + \frac{σz_{α_2}}{\sqrt{n}}\right]
+                \end{align*} $$</span>
+                where <span class="inline-math">$α_1 + α_2 = α$</span>.
+                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-confidence-interval-for-normal-location-problem.html">Derivation</a>)
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Choose <span class="inline-math">$α_1 = α_2 = α/2$</span> for an interval centred around the point estimator <span class="inline-math">$\overline{X}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    For <span class="inline-math">$α=0.05$</span>, <span class="inline-math">$z_{α/2}\approx 1.96$</span>, so the confidence interval is <span class="inline-math">$\overline{X} \pm 1.96\, σ/\sqrt{n}$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Conjugate prior for normal location problem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Conjugate-prior-for-normal-location-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$μ$</span> is unknown but <span class="inline-math">$σ^2$</span> is known.
+            </p>
+            <p>
+                The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Bayesian-inference.html">conjugate prior</a> is <span class="inline-math">$μ\sim N(μ_0, λ_0\inv)$</span> where <span class="inline-math">$μ_0\in \R$</span> and <span class="inline-math">$λ_0&gt;0$</span> are given.
+                After observing <span class="inline-math">$X_1, \ldots, X_n \sim N(μ, λ\inv)$</span>, the posterior distribution is
+                <span class="display-math">$$ \begin{align*}
+                    μ\mid X \sim N\biggl(\frac{λ_0 μ_0 + nλ\overline{X}}{λ_0 + nλ}, \frac{1}{λ_0 + nλ}\biggr).
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-conjugate-prior-for-normal-location-problem.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            z-test
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/z-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$σ^2$</span> is known.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-likelihood-ratio-test.html">likelihood ratio test</a>
+                    for testing <span class="inline-math">$H_0: μ=μ_0$</span> against <span class="inline-math">$H_1: μ=μ_1$</span> where <span class="inline-math">$μ_1 &gt; μ_0$</span>
+                    is the <em>one-sided z-test</em>: reject <span class="inline-math">$H_0$</span> if
+                    <span class="display-math">$$ \begin{align*}
+                        Z := \frac{\sqrt{n}(\overline{X} - μ_0)}{σ} &gt; z_α
+                    \end{align*} $$</span>
+                    where <span class="inline-math">$z_α$</span> is the upper <span class="inline-math">$α$</span> quantile of the standard normal distribution.
+                </p>
+                <p>
+                    By the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Lemma-Neyman-Pearson-Lemma.html">Neyman-Pearson lemma</a>,
+                    the z-test is the size <span class="inline-math">$α$</span> uniformly most powerful test.
+                    (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-one-sided-z-test-as-a-LRT.html">Derivation</a>)
+                </p>
+                <p>
+                    <div class="markdown-embed embed-result">
+                        <div class="markdown-embed-title">
+                            Proposition (one-tailed z-test is UMP)
+                            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proposition-one-tailed-z-test-is-UMP.html">open_in_new</a>
+                        </div>
+                        <div class="markdown-embed-content">
+                            <p>
+                                The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/z-test.html">z-test</a>
+                                is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-uniformly-most-powerful-test.html">uniformly most powerful</a>
+                                for testing <span class="inline-math">$H_0: μ\leq μ_0$</span> against <span class="inline-math">$H_1: μ&gt;μ_0$</span>
+                                in the normal location problem.
+                            </p>
+                            <p>
+                                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-one-tailed-z-test-is-UMP.html">Proof</a>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </p>
+                
+            </li><li>
+                <p>
+                    The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">generalised likelihood ratio test</a>
+                    for testing <span class="inline-math">$H_0: μ = μ_0$</span> against <span class="inline-math">$H_1: μ\neq μ_0$</span>
+                    is the <em>two-sided z-test</em>:
+                    reject <span class="inline-math">$H_0$</span> if
+                    <span class="display-math">$$ \begin{align*}
+                        |Z| &gt; z_{α/2}.
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-two-sided-z-test-as-a-LRT.html">Derivation</a>)
+                    This is the UMP unbiased test.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Student's t-test
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Student-s-t-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Student's t-distribution
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Student-s-t-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>t-distribution</em> with <span class="inline-math">$k$</span> degrees of freedom, denoted as <span class="inline-math">$t_k$</span>,
+                            is defined as the distribution of
+                            <span class="display-math">$$ \begin{align*}
+                                T = \frac{Z}{\sqrt{Y/k}}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$Z\sim N(0,1)$</span> and <span class="inline-math">$Y \sim χ_k^2$</span> are independent.
+                        </p>
+                        <p>
+                            It has a density function
+                            <span class="display-math">$$ \begin{align*}
+                                p(x) = \frac{Γ(\frac{k+1}{2})}{\sqrt{πk}\, Γ(\frac{k}{2})} \left(1+\frac{x^2}{k}\right)^{-(k+1)/2}.
+                            \end{align*} $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$t_1$</span> is the <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Cauchy-distribution.html">Cauchy distribution</a>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$t_k \xrightarrow{d} N(0,1)$</span> as <span class="inline-math">$k\to \infty$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The tail behaves like <span class="inline-math">$x^{-(k+1)}$</span>, so moments <span class="inline-math">$\expect(|X|^m)&lt;\infty$</span> only for <span class="inline-math">$0&lt; m&lt;k$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Suppose <span class="inline-math">$μ$</span> and <span class="inline-math">$σ^2$</span> are both unknown.
+            </p>
+            <p>
+                <em>Student's t-statistic</em> for the hypothesis <span class="inline-math">$H_0: μ = μ_0$</span> is given by
+                <span class="display-math">$$ \begin{align*}
+                    T = \frac{\sqrt{n}(\overline{X} - μ_0)}{\sqrt{S_{XX}/(n-1)}}.
+                \end{align*} $$</span>
+                <span class="inline-math">$T\sim$</span> <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Student-s-t-distribution.html"><span class="inline-math">$t_{n-1}$</span></a>, since
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-sample-mean-and-sample-variance-for-iid-normals.html"><span class="inline-math">$\sqrt{n}(\overline{X} - μ_0)/σ \sim N(0,1)$</span> and <span class="inline-math">$S_{XX}/σ^2 \sim χ_{n-1}^2$</span> are independent</a>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    One-sided <span class="inline-math">$t$</span>-test: to test <span class="inline-math">$H_0: μ\leq μ_0$</span> against <span class="inline-math">$H_1: μ&gt;μ_0$</span>,
+                    reject <span class="inline-math">$H_0$</span> if
+                    <span class="display-math">$$ \begin{align*}
+                    T &gt; t_{n-1}(α)
+                    \end{align*} $$</span>
+                    where <span class="inline-math">$t_{n-1}(α)$</span> is the upper <span class="inline-math">$α$</span> quantile of <span class="inline-math">$t_{n-1}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Two-sided <span class="inline-math">$t$</span>-test: to test <span class="inline-math">$H_0: μ=μ_0$</span> against <span class="inline-math">$H_1: μ\neq μ_0$</span>,
+                    reject <span class="inline-math">$H_0$</span> if
+                    <span class="display-math">$$ \begin{align*}
+                    |T| &gt; t_{n-1}(α/2).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                This is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/t-test-for-one-parameter-in-linear-model.html">generalised in a normal linear model</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>

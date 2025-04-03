@@ -1,0 +1,32 @@
+<p>
+    For multistep methods,
+    we use a pair of methods of the same order <span class="inline-math">$p$</span>:
+</p>
+<ul>
+<li>
+    <p>
+        the <em>predictor</em>: explicit, lower computational cost; and
+    </p>
+    
+</li><li>
+    <p>
+        the <em>corrector</em>: implicit, higher accuracy.
+    </p>
+    
+</li>
+</ul>
+<p>
+    The predictor provides a good initial guess in the solution of the implicit corrector equations,
+    and allows for error estimation:
+</p>
+<p>
+    If the local truncation errors are
+    <span class="display-math">$$ \begin{align*}
+        \v y(t_{n+1}) - \v y_{n+1}^{\text{P}} ={}&amp; c_{\text{P}} h^p \v y^{(p)}(t_n) + O(h^{p+1}), \\
+        \v y(t_{n+1}) - \v y_{n+1}^{\text{C}} ={}&amp; c_{\text{C}} h^p \v y^{(p)}(t_n) + O(h^{p+1}), 
+    \end{align*} $$</span>
+    then we estimate the error as
+    <span class="display-math">$$ \begin{align*}
+        \v y(t_{n+1}) - \v y_{n+1}^\text{C} \approx -\frac{c_{\text{C}}}{c_\text{P} - c_\text{C}}(\v y_{n+1}^\text{P} - \v y_{n+1}^{\text{C}}).
+    \end{align*} $$</span>
+</p>

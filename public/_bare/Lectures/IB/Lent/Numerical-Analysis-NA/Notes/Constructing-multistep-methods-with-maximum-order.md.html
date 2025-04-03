@@ -1,0 +1,86 @@
+<p>
+    To construct an <span class="inline-math">$s$</span>-step <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">method</a>,
+    we can take some <span class="inline-math">$ρ\in \mathcal{P}_s$</span>
+    such that <span class="inline-math">$ρ(1) = 0$</span> and <span class="inline-math">$ρ$</span> satisfies the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Dahlquist-equivalence-theorem.html">root condition</a>.
+    Then we can determine <span class="inline-math">$σ$</span> by expanding
+    <span class="display-math">$$ \begin{align*}
+        \frac{ρ(w)}{\log w} = σ(w) + O(|w-1|^p).
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        For an implicit method, we allow <span class="inline-math">$σ\in \mathcal{P}_s$</span>, <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html">so</a> we obtain an order of <span class="inline-math">$p=s+1$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        For an explicit method, we allow <span class="inline-math">$σ\in \mathcal{P}_{s-1}$</span>, so we obtain an order of <span class="inline-math">$p=s$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Adams methods
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Adams-methods.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The choice <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-order-of-multistep-method.html"><span class="inline-math">$ρ(w)$</span></a> <span class="inline-math">$= w^s - w^{s-1} = w^{s-1}(w-1)$</span> corresponds to <em>Adams methods</em>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <em>Adams-Bashforth methods</em> are explicit, and has order <span class="inline-math">$p=s$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <em>Adams-Moulton methods</em> are implicit, and has order <span class="inline-math">$p=s+1$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (coefficients of Adams methods as integrals of polynomials)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proposition-coefficients-of-Adams-methods-as-integrals-of-polynomials.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The coefficients <span class="inline-math">$b_m$</span> in an <span class="inline-math">$s$</span>-step Adams method are given by
+                            <span class="display-math">$$ \begin{align*}
+                                b_m = \int_{s-1}^{s} l_m(t) \d t
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$l_m(t) = ω(t)/(t-m)ω&#x27;(m)$</span> are the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lagrange-interpolating-polynomial.html">Lagrange fundamental polynomials</a>:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                for an Adams-Moulton (explicit) method, the nodes are <span class="inline-math">$0,1,\ldots,s$</span>, i.e. <span class="inline-math">$ω(t) = \prod_{m=0}^{s} (t-m)$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for an Adams-Bashforth (implicit) method, the nodes are <span class="inline-math">$0,1,\ldots,s-1$</span>, i.e. <span class="inline-math">$ω(t) = \prod_{m=0}^{s-1} (t-m)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-coefficients-of-Adams-methods-as-integrals-of-polynomials.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Example-2-step-Adams-methods.html">Example (2-step Adams methods)</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

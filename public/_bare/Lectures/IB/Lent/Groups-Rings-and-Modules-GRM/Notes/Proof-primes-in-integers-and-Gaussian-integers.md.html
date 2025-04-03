@@ -1,0 +1,87 @@
+<p>
+    Let <span class="inline-math">$N(z) = |z|^2$</span>.
+</p>
+
+<h1>Sum of squares <span class="inline-math">$\implies$</span> not prime in <span class="inline-math">$\Z[i]$</span></h1>
+
+<p>
+    If <span class="inline-math">$p = a^2 + b^2$</span> for <span class="inline-math">$a,b\in \Z$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        p = (a+ib)(a-ib),
+    \end{align*} $$</span>
+    with <span class="inline-math">$(a+ib),(a-ib)$</span> non-zero non-units (<a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-units-in-Gaussian-integers.html">since</a> <span class="inline-math">$N(a\pm ib) = p\neq 0,1$</span>).
+</p>
+
+<h1>Not prime in <span class="inline-math">$\Z[i]$</span> <span class="inline-math">$\implies$</span> sum of squares</h1>
+
+<p>
+    Let <span class="inline-math">$p=uv$</span> where <span class="inline-math">$u,v\in \Z[i]$</span> are non-units.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        p^2 = N(p) = N(u) N(v) \qquad \text{(in $\Z_{\geq 0}$)}.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$N(u), N(v) \neq 1$</span> and <span class="inline-math">$p$</span> is prime in <span class="inline-math">$\Z$</span>, we have <span class="inline-math">$N(u) = p = N(v)$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        p = u\bar u = (\Re u)^2 + (\Im u)^2.
+    \end{align*} $$</span>
+</p>
+
+<h1>Sum of squares <span class="inline-math">$\implies$</span> <span class="inline-math">$p\equiv 1,2\pmod 4$</span></h1>
+
+<p>
+    Since <span class="inline-math">$a^2 \equiv 0$</span> or <span class="inline-math">$1\pmod 4$</span> by arithmetic,
+    <span class="inline-math">$p = a^2 + b^2 \equiv 0, 1, 2\pmod 4$</span>.
+    <span class="inline-math">$p$</span> is prime so <span class="inline-math">$4\not\mid p$</span>.
+</p>
+
+<h1><span class="inline-math">$p\equiv 1,2\pmod 4$</span> <span class="inline-math">$\implies$</span> not prime in <span class="inline-math">$\Z[i]$</span></h1>
+
+<p>
+    If <span class="inline-math">$p\equiv 2\pmod 4$</span>, then <span class="inline-math">$p=2=1^2 + 1^2$</span>.
+</p>
+<p>
+    If <span class="inline-math">$p\equiv 1\pmod 4$</span>, we can solve <span class="inline-math">$x^2 \equiv -1 \pmod p$</span>.
+    To see this, note a consequence of the <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-classification-of-finite-abelian-groups.html">classification of finite abelian group</a> is
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (multiplicative group of integers mod p is cyclic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Lemma-multiplicative-group-of-integers-mod-p-is-cyclic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$p$</span> be a prime number.
+            </p>
+            <p>
+                The group <span class="inline-math">$\mathbb{F}_p^\times$</span>
+                of non-zero integers mod <span class="inline-math">$p$</span> under multiplication
+                is <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-cyclic-group.html">cyclic</a>, i.e. <span class="inline-math">$\mathbb{F}_p^\times \isom C_{p-1}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proof-multiplicative-group-of-integers-mod-p-is-cyclic.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    Then <span class="inline-math">$-1$</span> is the unique element in <span class="inline-math">$\mathbb{F}_p^\times$</span> with order 2,
+    and so by picking <span class="inline-math">$x$</span> to be an order 4 element, we have <span class="inline-math">$x^2 \equiv -1\pmod 4$</span>.
+</p>
+<blockquote>
+    <p>
+        This can <a href="https://math.stackexchange.com/q/122048">also be shown</a> by Wilson's theorem
+        <span class="display-math">$$ \begin{align*}
+            -1 \equiv{}&amp; (p-1)! \\
+            \equiv{}&amp; 1 \cdot 2 \cdot \ldots \cdot \frac{p-1}{2} \cdot \frac{p+1}{2} \cdot \ldots \cdot (p-2) \cdot (p-1) \\
+            \equiv{}&amp; \left(1\cdot 2\cdot \ldots \cdot \frac{p-1}{2}\right)^2 (-1)^{(p-1)/2} \\
+            \equiv{}&amp; \left(1\cdot 2\cdot \ldots \cdot \frac{p-1}{2}\right)^2 &amp;\pmod p
+        \end{align*} $$</span>
+        since <span class="inline-math">$(p-1)/2$</span> is even.
+    </p>
+    
+</blockquote>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        p\mid x^2+1 = (x+i)(x-i) \qquad \text{(in $\Z[i]$)}
+    \end{align*} $$</span>
+    but <span class="inline-math">$p\not\mid x\pm i$</span>, so <span class="inline-math">$p$</span> is not a prime in <span class="inline-math">$\Z[i]$</span>.
+</p>

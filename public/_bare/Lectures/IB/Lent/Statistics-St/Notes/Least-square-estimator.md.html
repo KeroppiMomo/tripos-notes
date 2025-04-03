@@ -1,0 +1,237 @@
+<p>
+    The <em>least square <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a></em> for <span class="inline-math">$β$</span> is
+    <span class="display-math">$$ \begin{align*}
+        \hat β = \arg\min_{β\in \R^p} \|Y - Xβ\|.
+    \end{align*} $$</span>
+    <span class="inline-math">$\hat β$</span> solves the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-normal-equations.html">normal equation</a>
+    <span class="display-math">$$ \begin{align*}
+        X^T(Y - X\hat β) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$X$</span> has full rank, <span class="inline-math">$X^T X$</span> is invertible, so
+    <span class="display-math">$$ \begin{align*}
+        \hat β = (X^T X)\inv X^T Y.
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$μ = Xβ$</span>.
+    Then the least squares problem is equivalent to
+    <span class="display-math">$$ \begin{align*}
+        \hat μ = \arg\min_{μ\in \mathrm{Col}(X)} \|Y - μ\|
+    \end{align*} $$</span>
+    where <span class="inline-math">$\mathrm{Col}(X)$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-column-space-column-rank-row-space-row-rank.html">column space</a> of <span class="inline-math">$X$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        The <em>fitted value</em> <span class="inline-math">$\hat μ$</span> is given by
+        <span class="display-math">$$ \begin{align*}
+        \hat μ = X\hat β = PY
+        \end{align*} $$</span>
+        where
+        <span class="display-math">$$ \begin{align*}
+        P = X(X^T X)\inv X^T
+        \end{align*} $$</span>
+        is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">orthogonal projection matrix</a> into <span class="inline-math">$\mathrm{Col}(X)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        The vector of <em>residues</em> is given by
+        <span class="display-math">$$ \begin{align*}
+        R = Y - \hat μ = (I - P)Y.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        The residual sum of squares is
+        <span class="display-math">$$ \begin{align*}
+        \text{RSS} = \|R\|^2.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (MLE in normal linear model)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proposition-MLE-in-normal-linear-model.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-normal-linear-model.html">normal linear model</a>,
+                the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">maximum likelihood estimators</a> for <span class="inline-math">$β$</span> and <span class="inline-math">$σ^2$</span> are
+                <span class="display-math">$$ \begin{align*}
+                    \hat β_{\text{MLE}} ={}&amp; \arg\min_{β\in \R^p} \|Y - Xβ\|, \\
+                    \hat σ^2_{\text{MLE}} ={}&amp;  \frac{\text{RSS}}{n} =\frac{1}{n}\|Y - X\hat β_{\text{MLE}}\| = \frac{1}{n}\min_{β\in \R^p} \|Y-Xβ\|^2.
+                \end{align*} $$</span>
+                The resulting maximum likelihood is
+                <span class="display-math">$$ \begin{align*}
+                    L_{Y\mid X}(\hat β_{\text{MLE}}, \hat σ^2_{\text{MLE}}) = \left(\frac{2πe}{n}\mathrm{RSS}\right)^{-n/2}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-least-square-estimator-as-MLE-in-normal-linear-model.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Gauss-Markov)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-Gauss-Markov.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Assume <span class="inline-math">$X$</span> has full rank.
+            </p>
+            <p>
+                In the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-linear-condition-expectation-model.html">linear conditional expectation model</a>,
+                the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Least-square-estimator.html">least square estimator</a> <span class="inline-math">$\hat β$</span>
+                is the <em>best linear unbiased estimator</em> (BLUE),
+                i.e. <span class="inline-math">$\hat β$</span> is linear in <span class="inline-math">$Y$</span>, unbiased,
+                and for any other linear unbiased estimator <span class="inline-math">$\tilde β$</span>,
+                we have <span class="inline-math">$\var \tilde β$</span> <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html"><span class="inline-math">$\preceq$</span></a> <span class="inline-math">$\var \hat β$</span>
+                (which means <span class="inline-math">$\var(a^T β) \leq \var(a^T \tilde β)$</span>).
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-Gauss-Markov.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (orthogonal projection matrix)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A square matrix <span class="inline-math">$P \in \R^{n\times n}$</span>
+                is an <em>orthogonal projection matrix</em>
+                if it is symmetric (<span class="inline-math">$P^T = P$</span>) and idempotent (<span class="inline-math">$P^2=P$</span>).
+            </p>
+            <ul>
+            <li>
+                <p>
+                    See <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-projection.html">orthogonal projection</a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$P$</span> is a orthogonal projection matrix iff <span class="inline-math">$P=UU^T$</span>
+                    where the columns of <span class="inline-math">$U\in \R^{n\times \mathrm{rank}(P)}$</span>
+                    form an orthonormal basis for the column space of <span class="inline-math">$P$</span>. (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-orthogonal-projection-matrix-iff-U-U-transpose.html">Proof</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    Eigenvalues of <span class="inline-math">$P$</span> is either 0 or 1.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mathrm{rank}(P) = \tr(P)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$I-P$</span> is also an orthogonal projection matrix.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\|Y\|^2 = \|PY\|^2 + \|(I - P)Y\|^2$</span> for any <span class="inline-math">$Y\in \R^n$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (orthogonal projection matrix acting on multivariate normal)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Lemma-orthogonal-projection-matrix-acting-on-multivariate-normal.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$ε\sim N(0, σ^2 I_n)$</span> and <span class="inline-math">$P$</span> is an <span class="inline-math">$n\times n$</span> <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">orthogonal projection matrix</a>.
+                Then
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$Pε \sim N(0, σ^2 P)$</span> and <span class="inline-math">$(I_n-P)ε\sim N(0,σ^2(I_n-P))$</span> are independent; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\|Pε\|^2/σ^2 \sim χ^2_{\mathrm{rank}(P)}$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-orthogonal-projection-matrix-acting-on-multivariate-normal.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (distribution of MLE in normal linear model)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-distribution-of-MLE-in-normal-linear-model.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In a <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-normal-linear-model.html">normal linear model</a>,
+                assume <span class="inline-math">$X$</span> is fixed and has full rank.
+                Then <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">maximum likelihood estimators</a>
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$\hat β_{\text{MLE}}$</span> and <span class="inline-math">$\hat σ^2_{\text{MLE}}$</span> are independent;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\hat β_{\text{MLE}} \sim N(β, σ^2(X^TX)\inv)$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$n\,\hat σ^2_{\text{MLE}}/σ^2 \sim χ_{n-p}^2$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proof-distribution-of-MLE-in-normal-linear-model.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Since <span class="inline-math">$\hat σ_{\text{MLE}}^2$</span> is biased (<span class="inline-math">$\expect(\hat σ^2_{\text{MLE}}) = \frac{n-p}{n}σ^2$</span>),
+                    it is more common to use the unbiased estimator
+                    <span class="display-math">$$ \begin{align*}
+                    \hat σ^2 = \frac{n}{n-p}\hat σ_{\text{MLE}}^2 = \frac{1}{n-p} \|Y - X\hat β_{\text{MLE}}\|^2.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

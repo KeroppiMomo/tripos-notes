@@ -1,0 +1,193 @@
+<div class="markdown-callout" data-callout="problem">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Approximation of linear functionals</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            Given a <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-map.html">linear functional</a> <span class="inline-math">$λ: C^{n+1}[a,b] \to \R$</span>,
+            find an approximation of the form
+            <span class="display-math">$$ \begin{align*}
+                λ(f) = \sum_{i=0}^{N} a_i f(x_i).
+            \end{align*} $$</span>
+            <span class="inline-math">$a_i$</span> are called <em>weights</em>, <span class="inline-math">$x_i$</span> are called <em>nodes</em>, and this expression is called a <em>quadrature formula</em>.
+        </p>
+        
+    </div>
+</div><p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (exact formula)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-exact-formula.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a linear functional <span class="inline-math">$λ: C^{n+1}[a,b]\to\R$</span>
+                and an approximation <span class="inline-math">$λ(f) \approx \sum_{i=0}^{N} a_if(x_i)$</span>.
+            </p>
+            <p>
+                We say the formula is <em>exact</em> on <span class="inline-math">$\mathcal{P}_n$</span> if equality holds when <span class="inline-math">$f\in \mathcal{P}_n$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$N&lt;n$</span>, we say it is of <em>high accuracy</em>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (exact on Pn iff interpolating formula)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lemma-exact-on-Pn-iff-interpolating-formula.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a linear functional <span class="inline-math">$λ: C^{n+1}[a,b]\to\R$</span>
+                and an approximation <span class="inline-math">$λ(f) \approx \sum_{i=0}^{N} a_if(x_i)$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$N=n$</span>, the formula is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-exact-formula.html">exact</a> on <span class="inline-math">$\mathcal{P}_n$</span>
+                iff it is the <em>interpolating formula</em>
+                <span class="display-math">$$ \begin{align*}
+                    a_i = λ(l_i)
+                \end{align*} $$</span>
+                where <span class="inline-math">$l_0, \ldots, l_n$</span> are the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lagrange-interpolating-polynomial.html">fundamental Lagrange polynomials</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-exact-on-Pn-iff-interpolating-formula.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Numerical integration
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-integration.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Numerical integration</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        Given a weight function <span class="inline-math">$w(x)\geq 0$</span>,
+                        seek an approximation
+                        <span class="display-math">$$ \begin{align*}
+                            I(f) := \int_{a}^{b} f(x) \,w(x) \d x \approx \sum_{i=0}^n a_i f(x_i), \qquad f\in C[a,b].
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (no quadrature rule exact on P_{2n+2} for numerical integration)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lemma-no-quadrature-rule-exact-on-P_-2n-2-for-numerical-integration.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            No quadrature rule with <span class="inline-math">$(n+1)$</span> nodes is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-exact-formula.html">exact</a> on <span class="inline-math">$\mathcal{P}_{2n+2}$</span>
+                            for <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-integration.html">numerical integration</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-no-quadrature-rule-exact-on-P_-2n-2-for-numerical-integration.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Gaussian quadrature)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Gaussian-quadrature.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let a quadrature <span class="inline-math">$\int_{a}^{b} f(x)ω(x) \d x \approx \sum_{i=0}^{n} a_i f(x_i)$</span>
+                            for <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-integration.html">numerical integration</a>
+                            be <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-exact-formula.html">exact</a> on <span class="inline-math">$\mathcal{P}_{n}$</span> (i.e. the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lemma-exact-on-Pn-iff-interpolating-formula.html">interpolating formula</a>).
+                        </p>
+                        <p>
+                            Then it is exact on <span class="inline-math">$\mathcal{P}_{2n+1}$</span>
+                            iff <span class="inline-math">$x_0, \ldots, x_n$</span> are the <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lemma-roots-of-orthogonal-polynomials.html"><span class="inline-math">$(n+1)$</span> distinct roots</a> of
+                            an <span class="inline-math">$n$</span>-th <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-orthogonal-polynomial.html">orthogonal polynomial</a>
+                            with respect to the inner product <span class="inline-math">$\langle f,g\rangle = \int_{a}^{b} a(x)b(x)ω(x) \d x$</span>.
+                        </p>
+                        <p>
+                            Such a quadrature is called a <em>Gaussian quadrature</em>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Gaussian-quadrature.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Composite quadrature formula
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Composite-quadrature-formula.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose we want to estimate <span class="inline-math">$\int_{a}^{b} f(x)ω(x) \d x \approx \sum_{i=0}^{n} a_i f(x_i)$</span>
+                            with accuracy <span class="inline-math">$ε\ll 1$</span>.
+                        </p>
+                        <p>
+                            We could choose a <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Gaussian-quadrature.html">Gaussian quadrature</a> of high order,
+                            but computing roots of orthogonal polynomials is difficult.
+                        </p>
+                        <p>
+                            Instead, split into many sub-intervals, and apply a simple quadrature on each sub-interval.
+                        </p>
+                        <p>
+                            One can show that if a quadrature exact on <span class="inline-math">$\mathcal{P}_n$</span> is applied with step size <span class="inline-math">$h$</span>,
+                            the total error is <span class="inline-math">$O(h^{n+1})$</span> for <span class="inline-math">$f\in C^{n+1}[a,b]$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Numerical differentiation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-differentiation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <div class="markdown-callout" data-callout="problem">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Numerical differentiation</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        Seek an approximation
+                        <span class="display-math">$$ \begin{align*}
+                            I(f) := f^{(k)}(x) \approx \sum_{i=0}^{n} a_i f(x_i).
+                        \end{align*} $$</span>
+                    </p>
+                    
+                </div>
+            </div><p>
+                The <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Lemma-exact-on-Pn-iff-interpolating-formula.html">interpolating formula</a> is
+                <span class="display-math">$$ \begin{align*}
+                    f^{(k)} \approx k! \,f[x_0, \ldots, x_k]
+                \end{align*} $$</span>
+                using <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-polynomial-interpolation-error.html">the divided difference of a polynomial</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>

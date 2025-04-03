@@ -1,0 +1,68 @@
+<p>
+    Recall in a general ring, we have the chain of implication for <span class="inline-math">$r\neq 0$</span>
+    <span class="display-math">$$ \begin{align*}
+        \text{$(r)$ maximal ideal} \implies \text{$(r)$ prime ideal} \iff \text{$r$ prime element} \implies \text{$r$ irreducible}.
+    \end{align*} $$</span>
+    So it suffices to prove
+</p>
+
+<h1>Irreducible <span class="inline-math">$\implies$</span> maximal</h1>
+
+<p>
+    Suppose <span class="inline-math">$(r) \subseteq I \lhd R$</span>.
+    Since <span class="inline-math">$R$</span> is a principal ideal domain, let <span class="inline-math">$I = (s)$</span>.
+    Then <span class="inline-math">$s\mid r$</span> and so <span class="inline-math">$r = sx$</span> for some <span class="inline-math">$x\in R$</span>.
+    But <span class="inline-math">$r$</span> is irreducible, so either
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$s$</span> is a unit, <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Derivation-ideal-containing-units.html">in which case</a> <span class="inline-math">$I = R$</span>; or
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$x$</span> is a unit, in which case <span class="inline-math">$I = (r)$</span>.
+    </p>
+    
+</li>
+</ul>
+
+<h1>Irreducible <span class="inline-math">$\implies$</span> prime element</h1>
+
+<p>
+    (We'll prove this for extra)
+</p>
+<p>
+    Let <span class="inline-math">$r\in R$</span> be irreducible and <span class="inline-math">$r\mid xy$</span>.
+    We will show <span class="inline-math">$r\mid x$</span> or <span class="inline-math">$r\mid y$</span>.
+</p>
+<p>
+    The ideal <span class="inline-math">$(r,x)\lhd R$</span> is principal,
+    so let <span class="inline-math">$(r,x) = (z)$</span> for some <span class="inline-math">$z\in R$</span>.
+    Then <span class="inline-math">$z\mid r$</span> and <span class="inline-math">$z\mid x$</span>.
+</p>
+<p>
+    Write <span class="inline-math">$r = qz$</span> for some <span class="inline-math">$q\in R$</span>.
+    Since <span class="inline-math">$r$</span> is irreducible, either <span class="inline-math">$q$</span> is a unit or <span class="inline-math">$z$</span> is a unit.
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$q$</span> is a unit, then <span class="inline-math">$z = q\inv r$</span>, so <span class="inline-math">$r \mid z \mid x$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$z$</span> is a unit, <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Derivation-ideal-containing-units.html">then</a> <span class="inline-math">$(r,x) = R$</span>,
+        so <span class="inline-math">$1\in (r,x)$</span>.
+        Therefore there exists <span class="inline-math">$a,b\in R$</span> such that
+        <span class="display-math">$$ \begin{align*}
+        &amp;1 = ar + bx \\
+        \implies &amp; y = ayr + bxy.
+        \end{align*} $$</span>
+        Since <span class="inline-math">$r\mid xy$</span>, we obtain <span class="inline-math">$r\mid y$</span>.
+    </p>
+    
+</li>
+</ul>
