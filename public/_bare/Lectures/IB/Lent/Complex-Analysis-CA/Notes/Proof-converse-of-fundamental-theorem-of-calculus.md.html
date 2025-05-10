@@ -1,0 +1,38 @@
+
+<h1><span class="inline-math">$\int_γ f = 0$</span> for all closed curves <span class="inline-math">$γ$</span></h1>
+
+<p>
+    Fix some point <span class="inline-math">$a_0\in U$</span>.
+    For each <span class="inline-math">$w\in U$</span>, choose, by path-connectedness of <span class="inline-math">$U$</span>, a path <span class="inline-math">$γ_w$</span> in <span class="inline-math">$U$</span> from <span class="inline-math">$a_0$</span> to <span class="inline-math">$w$</span>,
+    and define
+    <span class="display-math">$$ \begin{align*}
+        F(w) := \int_{γ_w} f.
+    \end{align*} $$</span>
+</p>
+<p>
+    To check <span class="inline-math">$F&#x27; = f$</span>,
+    for each <span class="inline-math">$w\in U$</span>,
+    pick some <span class="inline-math">$r&gt;0$</span> such that <span class="inline-math">$B(w,r)\subseteq U$</span>.
+    Let <span class="inline-math">$w+h \in B(w,r)$</span> and <span class="inline-math">$δ_h$</span> be the straight line path from <span class="inline-math">$w$</span> to <span class="inline-math">$w+h$</span>.
+</p>
+<p>
+    Note that <span class="inline-math">$γ_w + δ_h - γ_{w+h}$</span> is a closed path.
+    Therefore by hypothesis,
+    <span class="display-math">$$ \begin{align*}
+        F(w+h) = \int_{γ_{w+h}} f = \int_{γ_w} f + \int_{δ_h} f = F(w) + hf(w) + \int_{δ_h} f(z) - f(w) \d z.
+    \end{align*} $$</span>
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        \left|\frac{F(w+h) - F(w)}{h} - f(w)\right| ={}&amp; \left|\frac{1}{h}\int_{δ_h} f(z) - f(w) \d z\right| \\
+        \leq{} &amp; \frac{1}{|h|} \cdot \mathrm{length}(δ_h) \cdot \sup_{z\in δ_h} |f(z) - f(w)| \to 0
+    \end{align*} $$</span>
+    as <span class="inline-math">$h\to 0$</span> by continuity of <span class="inline-math">$f$</span>.
+</p>
+
+<h1><span class="inline-math">$U$</span> starlike and <span class="inline-math">$\int_γ f = 0$</span> for all closed triangles <span class="inline-math">$γ$</span></h1>
+
+<p>
+    Take <span class="inline-math">$a_0\in U$</span> be the point where the line segment between <span class="inline-math">$a_0$</span> and any <span class="inline-math">$w\in U$</span> lies inside <span class="inline-math">$U$</span>,
+    and pick <span class="inline-math">$γ_w$</span> be such line segment.
+    The above argument follows by noticing <span class="inline-math">$γ_w + δ_h - γ_{w+h}$</span> is the boundary of a triangle.
+</p>

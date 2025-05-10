@@ -1,0 +1,54 @@
+<p>
+    WLOG assume <span class="inline-math">$a=0$</span>.
+</p>
+
+<h1>Radius of convergnce of <span class="inline-math">$\sum_{n=1}^{\infty} nc_nz^{n-1}$</span></h1>
+
+<p>
+    Consider the series <span class="inline-math">$\sum_{n=1}^{\infty} nc_n(z-a)^{n-1}$</span>.
+    Since <span class="inline-math">$\sum_{n=1}^{\infty} |c_n| |z|^{n} \leq \sum_{n=1}^{\infty} n|c_n||z|^n$</span>,
+    if <span class="inline-math">$\sum_{n=1}^{\infty} nc_nz^{n-1}$</span> converges absolutely,
+    then so does <span class="inline-math">$\sum_{n=0}^{\infty} c_nz^n$</span>,
+    and thus the radius of convergence is at most <span class="inline-math">$R$</span> by <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-comparison-test.html">comparison</a>.
+</p>
+<p>
+    Let <span class="inline-math">$z\in B(0,R)$</span>.
+    Pick some <span class="inline-math">$r$</span> so that <span class="inline-math">$|z| &lt; r &lt; R$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        |nc_n z^{n-1}| = |c_n| r^{n-1} \cdot n \biggl(\frac{|z|}{r}\biggr)^{n-1}.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$n|z|^{n-1}/r^{n-1} \to 0$</span> as <span class="inline-math">$n\to \infty$</span>,
+    we can apply the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-Weierstrass-M-test.html">Weierstrass M-test</a> with <span class="inline-math">$M_n = |c_n| r^{n-1}$</span>,
+    for which <span class="inline-math">$\sum_{n=0}^{\infty} M_n &lt; \infty$</span>.
+    Thus the radius of convergence is <span class="inline-math">$R$</span>.
+</p>
+
+<h1>Derivative of <span class="inline-math">$\sum_{n=0}^{\infty} c_nz^n$</span></h1>
+
+<p>
+    Define the function <span class="inline-math">$ϕ_N: B(0,R)\times B(0,R) \to \C$</span> by
+    <span class="display-math">$$ \begin{align*}
+        ϕ_N(z,w) = \sum_{n=1}^{N} c_n \sum_{j=0}^{n-1} z^j w^{n-1-j}.
+    \end{align*} $$</span>
+    For <span class="inline-math">$|z|,|w| &lt; R$</span> with <span class="inline-math">$z\neq w$</span>,
+    pick <span class="inline-math">$r$</span> such that <span class="inline-math">$|z|,|w| &lt; r&lt; R$</span>.
+    <span class="display-math">$$ \begin{align*}
+        \left|c_n \sum_{j=0}^{n-1} z^j w^{n-1-j}\right| \leq |nc_n r^{n-1}|
+    \end{align*} $$</span>
+    and <span class="inline-math">$\sum_{n=1}^{\infty} |nc_n r^{n-1}|&lt;\infty$</span>,
+    so by the M-test, <span class="inline-math">$ϕ_N(z,w)$</span> converges uniformly to say <span class="inline-math">$ϕ(z,w)$</span>.
+</p>
+<p>
+    If <span class="inline-math">$z\neq w$</span>, by the geometric sum formula,
+    <span class="display-math">$$ \begin{align*}
+        ϕ_N(z,w) = \sum_{n=1}^{N} c_n \frac{z^n - w^n}{z-w}.
+    \end{align*} $$</span>
+    By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-limit.html">uniform limit theorem</a>,
+    <span class="display-math">$$ \begin{align*}
+        ϕ(w,w) ={}&amp; \lim_{z\to w} ϕ(z,w) \\
+        \sum_{n=1}^{\infty} n c_n w^{n-1} ={}&amp; \lim_{z\to w} \sum_{n=1}^{\infty} c_n \frac{z^n - w^n}{z-w} \\
+        ={}&amp; \lim_{z\to w} \frac{\sum_{n=0}^{\infty} c_n z^n - \sum_{n=0}^{\infty} c_n w^n}{z-w}
+    \end{align*} $$</span>
+    so <span class="inline-math">$\sum_{n=0}^{\infty} c_n z^n$</span> is differentiable at <span class="inline-math">$z=w$</span> with derivative <span class="inline-math">$\sum_{n=1}^{\infty} nc_n w^{n-1}$</span>.
+</p>

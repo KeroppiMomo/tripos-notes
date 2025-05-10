@@ -1,0 +1,1792 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Complex differentiation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Complex-differentiation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (domain)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-domain.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>domain</em> in <span class="inline-math">$\C$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-set-in-metric-space.html">open</a>, non-empty and <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">path-connected</a> subset.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (complex differentiation, holomorphic, entire)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: U\to \C$</span> be a function on a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-domain.html">domain</a> <span class="inline-math">$U$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$f$</span> is <em>differentiable</em> at <span class="inline-math">$u\in U$</span> if
+                                <span class="display-math">$$ \begin{align*}
+                                f&#x27;(u) = \lim_{z\to u} \frac{f(z) - f(u)}{z-u}
+                                \end{align*} $$</span>
+                                exists.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$f$</span> is <em>holomorphic</em> at <span class="inline-math">$u\in U$</span> if there exists <span class="inline-math">$ε&gt;0$</span> such that
+                                <span class="inline-math">$f$</span> is differentiable at all <span class="inline-math">$z\in B(u,ε)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$f: \C\to \C$</span> is <em>entire</em> if it is holomorphic on <span class="inline-math">$\C$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Cauchy-Riemann equation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-Cauchy-Riemann-equation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U\subseteq \C$</span> be a domain and <span class="inline-math">$f: U\to \C$</span> be a function.
+                            Write <span class="inline-math">$f = u + iv$</span> where <span class="inline-math">$u=\Re f: U\to \R$</span> and <span class="inline-math">$v=\Im f: U\to \R$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$f$</span> is differentiable at <span class="inline-math">$w=c+id$</span> with <span class="inline-math">$f&#x27;(w) = p+iq$</span>
+                            iff <span class="inline-math">$u$</span> and <span class="inline-math">$v: U\subseteq \R^2\to \R$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-differentiation-in-Rn.html">real-differentiable</a>
+                            at <span class="inline-math">$(c,d)$</span> and satisfies the <em>Cauchy-Riemann equations</em>
+                            <span class="display-math">$$ \begin{align*}
+                                u_x = v_y, \qquad -u_y = v_x.
+                            \end{align*} $$</span>
+                            In this case, <span class="inline-math">$u_x = v_y = p$</span> and <span class="inline-math">$-u_y = v_x = q$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Cauchy-Riemann-equation.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Recall the fact that if <span class="inline-math">$u_x,u_y,v_x,v_y$</span> are continuous, <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-continuously-differentiable-iff-partial-derivatives-are-continuous.html">then</a> <span class="inline-math">$u,v$</span> are real-differentiable on <span class="inline-math">$U$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (vanishing complex derivative implies constant)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-vanishing-complex-derivative-implies-constant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$f: U\to \C$</span> is holomorphic on a domain <span class="inline-math">$U$</span>
+                            and <span class="inline-math">$f&#x27;(z) \equiv 0$</span> on <span class="inline-math">$U$</span>,
+                            then <span class="inline-math">$f$</span> is constant on <span class="inline-math">$U$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-vanishing-complex-derivative-implies-constant.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Conformality of holomorphic functions
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Conformality-of-holomorphic-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Holomorphic functions are <em>conformal</em>, i.e. angle-preserving:
+                        </p>
+                        <p>
+                            Suppose <span class="inline-math">$U$</span> is a domain, <span class="inline-math">$w\in \C$</span> and <span class="inline-math">$f: U \to \C$</span> holomorphic with <span class="inline-math">$f&#x27;(w)\neq 0$</span>.
+                            Take two paths <span class="inline-math">$γ_1, γ_2: [-1, 1] \to U$</span> with <span class="inline-math">$γ_i(0) = w$</span>,
+                            and assume <span class="inline-math">$γ_1,γ_2\in C^1$</span> with <span class="inline-math">$γ_1&#x27;(0),γ_2&#x27;(0)\neq 0$</span>.
+                        </p>
+                        <p>
+                            Note that for <span class="inline-math">$i=1,2$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \arg\bigl((f\circ γ_i)&#x27;(0)\bigr) = \arg\bigl(f&#x27;(w) \cdot γ_i&#x27;(0)\bigr) = \arg(f&#x27;(w)) + \arg(γ_i&#x27;(0))
+                            \end{align*} $$</span>
+                            so
+                            <span class="display-math">$$ \begin{align*}
+                                \arg\bigl((f\circ γ_2)&#x27;(0)\bigr) - \arg\bigl((f\circ γ_1)&#x27;(0)\bigr) = \arg(γ_2&#x27;(0)) - \arg(γ_1&#x27;(0)).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            https://www.desmos.com/calculator/c7zkoejyxy
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (conformal equivalence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-conformal-equivalence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U,V$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-domain.html">domains</a> in <span class="inline-math">$\C$</span>.
+                        </p>
+                        <p>
+                            A function <span class="inline-math">$f: U\to V$</span> is called a <em>conformal equivalence</em>
+                            if it is bijective, holomorphic and <span class="inline-math">$f&#x27;(u)\neq 0$</span> for all <span class="inline-math">$u\in U$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$U$</span> is said to be <em>conformally equivalent</em> to <span class="inline-math">$V$</span> if such <span class="inline-math">$f$</span> exists.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                This is an equivalence relation.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                We will later show that if <span class="inline-math">$f$</span> is injective and holomorphic on <span class="inline-math">$U$</span>, then <span class="inline-math">$f&#x27;(z) \neq 0$</span> on <span class="inline-math">$U$</span>,
+                                so that condition is redundant.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Möbius transformations
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Mobius-transformations.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Also see <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/The-Mobius-Group.html">IA Groups</a>.
+                        </p>
+                        <p>
+                            We can define the Riemann sphere <span class="inline-math">$\hat \C = \C_\infty = \C \cup \set{\infty}$</span>
+                            by identifying <span class="inline-math">$\C$</span> with <span class="inline-math">$\mathbb{S}^2\setminus \set{0,0,1}\subseteq \R^3$</span>
+                            via the stereographic projection
+                            <span class="display-math">$$ \begin{align*}
+                                z\mapsto \left(\frac{z+\overline{z}}{|z|^2 + 1}, \frac{(z-\overline{z})/i}{|z|^2 + 1}, \frac{|z|^2-1}{|z|^2 + 1}\right)
+                            \end{align*} $$</span>
+                            and adding the point <span class="inline-math">$\infty$</span>.
+                        </p>
+                        <p>
+                            A Möbius transformation
+                            <span class="display-math">$$ \begin{align*}
+                                z \mapsto \frac{az+b}{cz+d}, \qquad ad-bc\neq 0
+                            \end{align*} $$</span>
+                            defines a conformal equivalence <span class="inline-math">$\C\setminus \set{-d/c} \to \C\setminus \set{a/c}$</span>.
+                        </p>
+                        <p>
+                            We can extend it to a continuous map at <span class="inline-math">$\infty$</span>.
+                            By using a Möbius map like <span class="inline-math">$z\mapsto 1/z$</span> to change coordinate so that <span class="inline-math">$\infty$</span> is finite,
+                            we check that the map is <em>holomorphic and conformal at <span class="inline-math">$\infty$</span></em>.
+                            Thus Möbius transformations are conformal equivalences <span class="inline-math">$\C_\infty \to \C_\infty$</span>.
+                        </p>
+                        <p>
+                            Consider a sector <span class="inline-math">$S$</span> bounded by two intersecting lines <span class="inline-math">$L_1$</span> and <span class="inline-math">$L_2$</span>.
+                            The image of <span class="inline-math">$S$</span> under a Möbius map depends on <span class="inline-math">$μ\inv(\infty)$</span>:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                If <span class="inline-math">$μ\inv(\infty) \in L_1 \cap L_2$</span>, then <span class="inline-math">$f(S)$</span> is a sector, bounded by lines <span class="inline-math">$f(L_1)$</span> and <span class="inline-math">$f(L_2)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$μ\inv(\infty) \in L_1\setminus L_2$</span>, then <span class="inline-math">$f(S)$</span> is one of the regions bounded by line <span class="inline-math">$f(L_1)$</span> and circle <span class="inline-math">$f(L_2)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$μ\inv(\infty) \not\in L_1\cup L_2$</span>, then <span class="inline-math">$f(S)$</span> is one of the regions bounded by circles <span class="inline-math">$f(L_1)$</span> and <span class="inline-math">$f(L_2)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <iframe src="https://www.desmos.com/calculator/te8kuxthbo?embed" width="100%" height="300"></iframe>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (simply connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-simply-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A subset <span class="inline-math">$U\subseteq \C$</span> is <em>simply connected</em>
+                            if every simple closed curve <span class="inline-math">$U$</span> is contractible,
+                            i.e. for any simple closed curve <span class="inline-math">$γ: \mathbb{S}^1 \to U$</span>,
+                            there exists some continuous <span class="inline-math">$\hat γ: \overline{B(0,1)} \to U$</span>
+                            with <span class="inline-math">$\hat γ|_{\mathbb{S}^1} = γ$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Riemann mapping theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Riemann-mapping-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-domain.html">domain</a> in <span class="inline-math">$\C$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$U\subset \C$</span> is proper and <span class="inline-math">$U$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-homologous-to-zero-simply-connected.html">simply connected</a>,
+                            then <span class="inline-math">$U$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-conformal-equivalence.html">conformally equivalent</a> to the unit disk.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (complex power series is holomorphic inside radius of convergence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-complex-power-series-is-holomorphic-inside-radius-of-convergence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f(z) = \sum_{n=0}^{\infty} c_n(z-a)^n$</span> be a complex <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Definition-power-series.html">power series</a>
+                            with a <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-radius-of-convergence.html">radius of convergence</a> <span class="inline-math">$R&gt;0$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$f$</span> is holomorphic on <span class="inline-math">$B(a,R)$</span>, with
+                            <span class="display-math">$$ \begin{align*}
+                                f&#x27;(z) = \sum_{n=1}^{\infty} nc_n(z-a)^{n-1}
+                            \end{align*} $$</span>
+                            which also has a radius of convergence <span class="inline-math">$R$</span> about <span class="inline-math">$z=a$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-complex-power-series-is-holomorphic-inside-radius-of-convergence.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                By induction, <span class="inline-math">$f$</span> has derivatives of all orders on <span class="inline-math">$B(a,R)$</span> and <span class="inline-math">$f^{(n)}(a) = n!\,c_n$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$f(z) \equiv 0$</span> on <span class="inline-math">$B(a,ε)$</span>, then <span class="inline-math">$f(z) \equiv 0$</span> on <span class="inline-math">$B(a,R)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (branch of logarithm)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-branch-of-logarithm.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U\subseteq C\setminus \set{0}$</span> be open.
+                        </p>
+                        <p>
+                            A <em>branch of the logarithm</em> is a continuous function <span class="inline-math">$λ: U\to \C$</span>
+                            such that <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Definition-exponential-function.html"><span class="inline-math">$\exp$</span></a><span class="inline-math">$(λ(z)) = z$</span> for all <span class="inline-math">$z\in U$</span>.
+                        </p>
+                        <p>
+                            For <span class="inline-math">$U = \C \setminus \sb{x\in \R}{x\leq 0}$</span>, we have the <em>principal logarithm</em> <span class="inline-math">$\Log: U \to \C$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                \Log(z) = \ln |z| + i \op{Arg}(z)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\op{Arg}(z) \in (-π, π)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (derivative and power series of principal logarithm)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-derivative-and-power-series-of-principal-logarithm.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <span class="inline-math">$\Log(z)$</span> is holomorphic in <span class="inline-math">$C\setminus \sb{x\in \R}{x\leq 0}$</span> with
+                            <span class="display-math">$$ \begin{align*}
+                                \dd{z} \Log(z) = \frac{1}{z}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Moreover if <span class="inline-math">$|z|&lt;1$</span>, then
+                            <span class="display-math">$$ \begin{align*}
+                                \Log(1+z) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1} z^n}{n}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-derivative-and-power-series-of-principal-logarithm.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Contour integration
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Contour-integration.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (complex integral)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-integral.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Define the <em>integral</em> of a continuous complex-valued function <span class="inline-math">$f: [a,b]\to \C$</span> as
+                            <span class="display-math">$$ \begin{align*}
+                                \int_{a}^{b} f(t) \d t := \int_{a}^{b} \Re(f(t)) \d t + i \int_{a}^{b} \Im(f(t)) \d t.
+                            \end{align*} $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\Re(f(t))$</span> and <span class="inline-math">$\Im(f(t))$</span> are integrable <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-continuous-function-is-integrable.html">since</a> they are continuous.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (sup-norm bound on complex integral)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-sup-norm-bound-on-complex-integral.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$f: [a,b]\to \C$</span> is continuous, then
+                            <span class="display-math">$$ \begin{align*}
+                                \left|\int_{a}^{b} f(t) \d t\right| \overset{(1)}{\leq} \int_{a}^{b} |f(t)| \d t \overset{(2)}{\leq} (b-a) \cdot \sup_{[a,b]} |f|,
+                            \end{align*} $$</span>
+                            with equality for (1) iff <span class="inline-math">$\arg(f(t))$</span> is constant, and equality for (2) iff <span class="inline-math">$f$</span> is constant.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-sup-norm-bound-on-complex-integral.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                In this course, we assume all curves are piecewise <span class="inline-math">$C^1$</span>.
+                We call simple closed curves <em>contours</em>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (arc length of a complex curve)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-arc-length-of-a-complex-curve.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>arc length</em> of a curve <span class="inline-math">$γ: [a,b]\to \C$</span> is defined as
+                            <span class="display-math">$$ \begin{align*}
+                                \mathrm{length}(γ) = \int_{a}^{b} |γ&#x27;(t)| \d t.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (integral along curve)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-integral-along-curve.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U$</span> be a domain in <span class="inline-math">$\C$</span>, <span class="inline-math">$f: U\to \C$</span> be a continuous function,
+                            and <span class="inline-math">$γ: [a,b]\to U$</span> be a <span class="inline-math">$C^1$</span>-smooth curve in <span class="inline-math">$U$</span>.
+                        </p>
+                        <p>
+                            The <em>integral of <span class="inline-math">$f$</span> along <span class="inline-math">$γ$</span></em> is
+                            <span class="display-math">$$ \begin{align*}
+                                \int_{γ} f(z) \d z := \int_{a}^{b} f(γ(t))\, γ&#x27;(t) \d t.
+                            \end{align*} $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Linearity: <span class="inline-math">$\int_{γ} αf(z) + βg(z) \d z = α\int_{γ} f(z) \d z + β\int_{γ} g(z) \d z$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For <span class="inline-math">$a\leq c\leq b$</span>, we have <span class="inline-math">$\int_{γ|_{[a,c]}} f + \int_{γ|_{[c,b]}} f = \int_{γ} f$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\int_{-γ} f = -\int_{γ} f$</span> where <span class="inline-math">$(-γ)(t) = γ(-t): [-b,-a]\to U$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Independence of parametrisation: if <span class="inline-math">$ϕ: [a&#x27;,b&#x27;] \to [a,b]$</span> is <span class="inline-math">$C^1$</span> with <span class="inline-math">$ϕ(a&#x27;) = a$</span> and <span class="inline-math">$ϕ(b&#x27;) = b$</span>,
+                                then by <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Corollary-integration-by-substitution.html">integration by substitution</a>,
+                                <span class="display-math">$$ \begin{align*}
+                                \int_{γ\circ ϕ} f = \int_{a&#x27;}^{b&#x27;} f(γ(ϕ(t))) \, γ&#x27;(ϕ(t))\, ϕ&#x27;(t) \d t = \int_{a}^{b} f(γ(u))\, γ&#x27;(u) \d u = \int_{γ} f.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$γ$</span> is piecewise <span class="inline-math">$C^1$</span>, sum up the integrals of each <span class="inline-math">$C^1$</span>-smooth curve.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (sup-norm bound on integral along curve)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-sup-norm-bound-on-integral-along-curve.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: U\to \C$</span> be continuous and <span class="inline-math">$γ: [a,b]\to U$</span> be a curve.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \left|\int_{γ} f(z) \d z\right| \leq \mathrm{length}(γ) \cdot \sup_{γ} |f|.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-sup-norm-bound-on-integral-along-curve.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (integral of uniform convergent functions along curve)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-integral-of-uniform-convergent-functions-along-curve.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$γ: [a,b]\to U\subseteq \C$</span> be a curve,
+                            <span class="inline-math">$f_n: U\to \C$</span> be a sequence of continuous functions and <span class="inline-math">$f: U\to \C$</span> be a continuous function.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f_n \tto f$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-convergence.html">uniformly</a> on <span class="inline-math">$γ([a,b])$</span>,
+                            then <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-integral-along-curve.html"><span class="inline-math">$\int_γ$</span></a> <span class="inline-math">$f_n(z) \d z \to \int_γ f(z) \d z$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-integral-of-uniform-convergent-functions-along-curve.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Cauchy's theorem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Cauchy-s-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (fundamental theorem of calculus for holomorphic functions)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-fundamental-theorem-of-calculus-for-holomorphic-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U$</span> be a domain and <span class="inline-math">$γ: [a,b]\to U$</span> be a curve.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$F: U\to \C$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on <span class="inline-math">$U$</span>,
+                            then
+                            <span class="display-math">$$ \begin{align*}
+                                \int_{γ} F&#x27;(z)\d z = F(γ(b)) - F(γ(a)).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-fundamental-theorem-of-calculus-for-holomorphic-functions.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Since <span class="inline-math">$F$</span> is holomorphic, <span class="inline-math">$F&#x27;$</span> is continuous (TODO), so the integral is defined.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$γ$</span> is closed, then the integral vanishes:
+                                <span class="display-math">$$ \begin{align*}
+                                \oint_γ F&#x27; = 0.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Example-contour-integral-of-powers.html">Example (contour integral of powers)</a>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (starlike domain)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-starlike-domain.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-domain.html">domain</a> <span class="inline-math">$U\subseteq \C$</span> is said to be <em>starlike</em>
+                            if there exists <span class="inline-math">$a_0\in U$</span> such that
+                            for all <span class="inline-math">$w\in U$</span>, the line segment from <span class="inline-math">$a_0$</span> to <span class="inline-math">$w$</span> lie inside <span class="inline-math">$U$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (triangle)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-triangle.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>triangle</em> in a domain <span class="inline-math">$U$</span> is
+                            the Euclidean convex hull of three points in <span class="inline-math">$U$</span>,
+                            lying wholly in <span class="inline-math">$U$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (converse of fundamental theorem of calculus)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-converse-of-fundamental-theorem-of-calculus.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U\subseteq \C$</span> be a domain and <span class="inline-math">$f$</span> be continuous on <span class="inline-math">$U$</span>.
+                        </p>
+                        <p>
+                            If either
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\oint_γ f=0$</span> for every closed curve <span class="inline-math">$γ$</span> in <span class="inline-math">$U$</span>; or
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$U$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-starlike-domain.html">starlike</a> and <span class="inline-math">$\oint_{\partial T} f = 0$</span> for every <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-triangle.html">triangle</a> <span class="inline-math">$T$</span> in <span class="inline-math">$U$</span>,
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            then <span class="inline-math">$f$</span> has an antiderivative, i.e. there exists a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> function <span class="inline-math">$F$</span> on <span class="inline-math">$U$</span>
+                            such that <span class="inline-math">$F&#x27;=f$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-converse-of-fundamental-theorem-of-calculus.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (integral of holomorphic function along closed triangle vanishes)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-integral-of-holomorphic-function-along-closed-triangle-vanishes.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-domain.html">domain</a>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f: U\to \C$</span> is either
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on <span class="inline-math">$U$</span>; or
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                continuous on <span class="inline-math">$U$</span>, and holomorphic on <span class="inline-math">$U$</span> possibly except finitely many points,
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            then for any <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-triangle.html">triangle</a> <span class="inline-math">$T\subseteq U$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \oint_{\partial T} f = 0.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-integral-of-holomorphic-function-along-closed-triangle-vanishes.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Cauchy's integral theorem on starlike domain)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Cauchy-s-integral-theorem-on-starlike-domain.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$U$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-starlike-domain.html">starlike domain</a> and <span class="inline-math">$f: U\to \C$</span>
+                            is continuous on <span class="inline-math">$U$</span> and <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on <span class="inline-math">$U$</span> except at finitely many points,
+                            then for any closed curve <span class="inline-math">$γ$</span> in <span class="inline-math">$U$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \oint_γ f = 0.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Cauchy-s-integral-theorem-on-starlike-domain.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Cauchy's integral formula on a disk)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Cauchy-s-integral-formula-on-a-disk.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: B(a,r)\to \C$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>.
+                        </p>
+                        <p>
+                            For all <span class="inline-math">$z\in B(a,r)$</span> and <span class="inline-math">$|z-a|&lt;ρ&lt;r$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                f(z) = \frac{1}{2πi} \oint_{|ζ-a|=ρ} \frac{f(ζ)}{ζ - z} \d ζ.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Cauchy-s-integral-formula-on-a-disk.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (mean value property of holomorphic functions)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-mean-value-property-of-holomorphic-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: B(a,r)\to \C$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>.
+                        </p>
+                        <p>
+                            For all <span class="inline-math">$0&lt;ρ&lt;r$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                f(a) = \int_{0}^{1} f(a+ρe^{2πit}) \d t,
+                            \end{align*} $$</span>
+                            i.e. <span class="inline-math">$f(a)$</span> takes the average value around the boundary of any disk centred at <span class="inline-math">$a$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-mean-value-property-of-holomorphic-functions.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (local maximum principle)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-local-maximum-principle.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: B(a,r)\to \C$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$|f(z)| \leq |f(a)|$</span> for all <span class="inline-math">$z\in B(a,r)$</span>, then <span class="inline-math">$f$</span> is constant.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-local-maximum-principle.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Liouville's theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Liouville-s-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$f: \C\to \C$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">entire</a> and bounded,
+                            then <span class="inline-math">$f$</span> is constant.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Liouville-s-theorem.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (fundamental theorem of algebra)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-fundamental-theorem-of-algebra.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Every non-constant polynomial <span class="inline-math">$p(z)\in \C[z]$</span> has a root in <span class="inline-math">$\C$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-fundamental-theorem-of-algebra.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Taylor expansion of holomorphic functions)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Taylor-expansion-of-holomorphic-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: B(a,r)\to \C$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$f$</span> has a <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Power-series.html">power series</a> representation valid on <span class="inline-math">$D(a,r)$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                f(z) = \sum_{n=0}^{\infty} c_n (z-a)^n
+                            \end{align*} $$</span>
+                            where the coefficients <span class="inline-math">$c_n$</span> are given by
+                            <span class="display-math">$$ \begin{align*}
+                                c_n = \frac{f^{(n)}(a)}{n!} = \frac{1}{2πi} \oint_{|ζ-a|=ρ} \frac{f(ζ)}{(ζ-a)^{n+1}} \d ζ
+                            \end{align*} $$</span>
+                            for any <span class="inline-math">$0&lt;ρ&lt;r$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Taylor-expansion-of-holomorphic-functions.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                If <span class="inline-math">$f$</span> is holomorphic on a domain <span class="inline-math">$U$</span> and <span class="inline-math">$z\in U$</span>,
+                                then for any <span class="inline-math">$B(z,ε)\subseteq U$</span> we choose,
+                                <span class="inline-math">$f$</span> has a valid power series expansion on the disk.
+                                (But this may not be convergent on all of <span class="inline-math">$U$</span>.)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Therefore if <span class="inline-math">$f$</span> is holomorphic,
+                                then <span class="inline-math">$f$</span> is infinitely differentiable and analytic.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (Morera's theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-Morera-s-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U$</span> be a domain.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f:U\to \C$</span> is continuous and <span class="inline-math">$\oint_γ f=0$</span> for all closed curves <span class="inline-math">$γ$</span> in <span class="inline-math">$U$</span>,
+                            then <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on <span class="inline-math">$U$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Morera-s-theorem.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (continuous and holomorphic away from finite set implies holomorphic)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-continuous-and-holomorphic-away-from-finite-set-implies-holomorphic.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$f: U\to \C$</span> is continuous on a domain <span class="inline-math">$U$</span>
+                            and holomorphic away from a finite set <span class="inline-math">$S\subseteq U$</span>,
+                            then <span class="inline-math">$f$</span> is holomorphic on all of <span class="inline-math">$U$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-continuous-and-holomorphic-away-from-finite-set-implies-holomorphic.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (order of vanishing)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-order-of-vanishing.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: B(a,r)\to \C$</span> be holomorphic, <span class="inline-math">$f(a) = 0$</span> but <span class="inline-math">$f\not\equiv 0$</span>.
+                The <em>order of vanishing</em> of <span class="inline-math">$f$</span> at <span class="inline-math">$a$</span>
+                is the smallest <span class="inline-math">$m&gt;0$</span> such that the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Taylor-expansion-of-holomorphic-functions.html">Taylor series</a> coefficient <span class="inline-math">$c_m\neq 0$</span>.
+            </p>
+            <p>
+                Equivalently, we can write
+                <span class="display-math">$$ \begin{align*}
+                    f(z) = (z-a)^m g(z)
+                \end{align*} $$</span>
+                where <span class="inline-math">$g$</span> is holomorphic on <span class="inline-math">$B(a,r)$</span> and <span class="inline-math">$g(a)\neq 0$</span>.
+            </p>
+            <p>
+                We say <span class="inline-math">$f$</span> has a zero of <em>order</em> <span class="inline-math">$m$</span> at <span class="inline-math">$a$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (principle of isolated zeros)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-principle-of-isolated-zeros.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$f: B(a,r)\to \C$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> and <span class="inline-math">$f\not\equiv 0$</span>,
+                then there exists <span class="inline-math">$0&lt;ρ&lt;r$</span> such that
+                <span class="inline-math">$f(z)\neq 0$</span> for all <span class="inline-math">$z\in B(a,ρ)^\times := B(a,ρ)\setminus \set{a}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-principle-of-isolated-zeros.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (identity theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-identity-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f,g: U\to \C$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on a domain <span class="inline-math">$U$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\sb{z\in U}{f(z) = g(z)}$</span> has an <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-accumulation-point-derived-set.html">accumulation point</a> in <span class="inline-math">$U$</span>,
+                then <span class="inline-math">$f(z)\equiv g(z)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-identity-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (maximum modulus principle)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-maximum-modulus-principle.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$U\subseteq \C$</span> be a domain.
+            </p>
+            <p>
+                If <span class="inline-math">$U$</span> is bounded, and <span class="inline-math">$f:U\cup \partial U\to \C$</span> is continuous on <span class="inline-math">$U\cup \partial U$</span>
+                and <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on <span class="inline-math">$U$</span>,
+                then <span class="inline-math">$|f|$</span> achieves its maximum on <span class="inline-math">$\partial U$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-maximum-modulus-principle.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (analytic continuation, natural boundary)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-analytic-continuation-natural-boundary.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$U\subseteq V\subseteq \C$</span> are domains,
+                and <span class="inline-math">$f:U \to \C$</span> and <span class="inline-math">$g: V\to \C$</span> are <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>.
+            </p>
+            <p>
+                We say <span class="inline-math">$g$</span> is an <em>analytic continuation</em> of <span class="inline-math">$f$</span>
+                if <span class="inline-math">$g|_U = f$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$f: U\to \C$</span> has no non-trivial analytic continuation (i.e. <span class="inline-math">$V\neq U$</span>),
+                then the boundary <span class="inline-math">$\partial U$</span> of <span class="inline-math">$U$</span> is called
+                the <em>natural boundary</em> of <span class="inline-math">$f$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Winding number
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Winding-number.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (existence of continuous winding angle)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-existence-of-continuous-winding-angle.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$γ: [a,b]\to \C\setminus \set{w}$</span> be a continuous curve.
+                        </p>
+                        <p>
+                            Then there exists a continuous function <span class="inline-math">$θ: [a,b]\to \R$</span>
+                            such that <span class="inline-math">$γ(t) = w + r(t) e^{iθ(t)}$</span>
+                            where <span class="inline-math">$r(t) = |γ(t) - w|$</span>.
+                        </p>
+                        <p>
+                            Moreover <span class="inline-math">$θ$</span> is unique up to a shift by any multiple of <span class="inline-math">$2π$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-existence-of-continuous-winding-angle.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (winding number)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-winding-number.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$γ: [a,b]\to \C$</span> be a closed curve and <span class="inline-math">$w\in \C\setminus γ$</span>.
+                        </p>
+                        <p>
+                            The <em>winding number</em> (or <em>winding index</em>) of <span class="inline-math">$γ$</span> about <span class="inline-math">$w$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                I(γ; w) = \frac{θ(b) - θ(a)}{2π}\in \Z
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$θ: [a,b]\to \R$</span> is a continuous polar angle defined <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-existence-of-continuous-winding-angle.html">here</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (integral form of the winding number)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Lemma-integral-form-of-the-winding-number.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$γ: [a,b]\to γ$</span> be a closed curve and <span class="inline-math">$w\not\in γ$</span>.
+                            Then the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-winding-number.html">winding number</a> is
+                            <span class="display-math">$$ \begin{align*}
+                                I(γ; w) = \frac{1}{2πi} \oint_{γ} \frac{\d z}{z - w}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-integral-form-of-the-winding-number.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (winding number is locally constant)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-winding-number-is-locally-constant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$γ$</span> is a closed curve and <span class="inline-math">$w\in \C\setminus γ$</span>,
+                            then there exists <span class="inline-math">$ε&gt;0$</span>
+                            such that the winding number <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-winding-number.html"><span class="inline-math">$I(γ; z)$</span></a> is constant on <span class="inline-math">$B(w,ε)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-winding-number-is-locally-constant.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (curve bounding a domain)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-curve-bounding-a-domain.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We say a closed curve <span class="inline-math">$γ$</span> bounds a domain <span class="inline-math">$U$</span> if the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-winding-number.html">winding number</a> is
+                            <span class="display-math">$$ \begin{align*}
+                                I(γ; w) = \begin{cases}
+                                    1, &amp; w\in U, \\
+                                    0, &amp; w\not\in U.
+                                \end{cases}
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (homologous to zero, simply connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-homologous-to-zero-simply-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U\subseteq \C$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-domain.html">domain</a>.
+                        </p>
+                        <p>
+                            We say a closed curve <span class="inline-math">$γ$</span> in <span class="inline-math">$U$</span> is <em>homologous to zero</em> in <span class="inline-math">$U$</span>
+                            if <span class="inline-math">$γ$</span> does not wind around any point outside <span class="inline-math">$U$</span>,
+                            i.e. <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-winding-number.html"><span class="inline-math">$I(γ; w)$</span></a> <span class="inline-math">$=0$</span> for all <span class="inline-math">$w\not\in U$</span>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$U$</span> is <em>simply connected</em> if every closed curve in <span class="inline-math">$U$</span>
+                            is homologous to zero in <span class="inline-math">$U$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                This definition is different to the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-simply-connected.html">topological one</a>,
+                                but is equivalent due to the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Riemann-mapping-theorem.html">Riemann mapping theorem</a>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (disk is simply connected)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-disk-is-simply-connected.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A disk <span class="inline-math">$B(a,R)\subseteq \C$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-homologous-to-zero-simply-connected.html">simply connected</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-disk-is-simply-connected.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (general Cauchy's integral formula)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-general-Cauchy-s-integral-formula.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: U\to \C$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on a domain <span class="inline-math">$U$</span>,
+                            and let <span class="inline-math">$γ$</span> be a closed curve in <span class="inline-math">$U$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$γ$</span> is homologous to zero in <span class="inline-math">$U$</span>, then
+                            <span class="display-math">$$ \begin{align*}
+                                \oint_γ f(z) \d z = 0
+                            \end{align*} $$</span>
+                            and for all <span class="inline-math">$w\in U\setminus γ$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                I(γ; w) \, f(w) = \frac{1}{2πi} \oint_{γ} \frac{f(z)}{z-w}\d z.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-general-Cauchy-s-integral-formula.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Laurent expansion and singularities
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Laurent-expansion-and-singularities.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Laurent expansion)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Laurent-expansion.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on an annulus <span class="inline-math">$A:= \sb{z\in \C}{r&lt;|z-a|&lt;R}$</span>
+                            for some <span class="inline-math">$a\in \C$</span> and <span class="inline-math">$0\leq r&lt;R\leq \infty$</span>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$f$</span> has a unique convergent expansion about <span class="inline-math">$a$</span> on <span class="inline-math">$A$</span>
+                                <span class="display-math">$$ \begin{align*}
+                                f(z) = \sum_{n=-\infty}^{\infty} c_n(z-a)^n
+                                \end{align*} $$</span>
+                                called the <em>Laurent series</em> of <span class="inline-math">$f$</span> about <span class="inline-math">$a$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The Laurent series converges uniformly on some slightly shrunk annulus
+                                <span class="inline-math">$\sb{z\in \C}{ρ&#x27; &lt; |z-a|&lt;ρ}$</span> (where <span class="inline-math">$r&lt;ρ&#x27;\leq ρ&lt;R$</span>).
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The coefficients are given by
+                                <span class="display-math">$$ \begin{align*}
+                                c_n = \frac{1}{2πi} \int_{|z| = ρ} \frac{f(z)}{(z-a)^{n+1}} \d z
+                                \end{align*} $$</span>
+                                for any <span class="inline-math">$r&lt;ρ&lt;R$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Laurent-expansion.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (isolated singularity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-isolated-singularity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on a domain <span class="inline-math">$U$</span>.
+                        </p>
+                        <p>
+                            A point <span class="inline-math">$a\in \C\setminus U$</span> is called an <em>isolated singularity</em> of <span class="inline-math">$f$</span>
+                            if <span class="inline-math">$f$</span> is holomorphic on a punctured neighbourhood of <span class="inline-math">$a$</span>,
+                            i.e. there exists <span class="inline-math">$r&gt;0$</span> such that <span class="inline-math">$B(a,r)^\times := B(a,r) \setminus \set{a} \subseteq U$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (removable singularity, pole, essential singularity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider a holomorphic function <span class="inline-math">$f: B(a,r)^\times\to \C$</span>
+                            with an <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-isolated-singularity.html">isolated singularity</a> at <span class="inline-math">$z=a$</span>.
+                            It has a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Laurent-expansion.html">Laurent expansion</a> <span class="inline-math">$f(z) = \sum_{n=-\infty}^{\infty} c_n (z-a)^n$</span>
+                            valid on <span class="inline-math">$B(a,r)^\times$</span>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$z=a$</span> is
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                a <em>removable singularity</em> if <span class="inline-math">$c_n = 0$</span> for all <span class="inline-math">$n&lt;0$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                a <em>pole</em> (of <em>order</em> <span class="inline-math">$k$</span>) if there exists <span class="inline-math">$k&gt;0$</span> such that <span class="inline-math">$c_{-k}\neq 0$</span> but <span class="inline-math">$c_n=0$</span> for all <span class="inline-math">$n&lt;-k$</span>; or
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                an <em>essential singularity</em> if otherwise (i.e. <span class="inline-math">$c_n\neq 0$</span> for infinitely many <span class="inline-math">$n&lt;0$</span>).
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (principal part, residue)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-principal-part-residue.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: B(a,r)^\times\to \C$</span> be holomorphic
+                            with an <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-isolated-singularity.html">isolated singularity</a> at <span class="inline-math">$z=a$</span>,
+                            and write <span class="inline-math">$f(z) = \sum_{n=-\infty}^{\infty} c_n (z-a)^n$</span> as its <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Laurent-expansion.html">Laurent series</a>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                The <em>principal part</em> of <span class="inline-math">$f$</span> at <span class="inline-math">$a$</span> is <span class="inline-math">$\sum_{n=-\infty}^{-1} c_n(z-a)^n$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The <em>residue</em> of <span class="inline-math">$f$</span> at <span class="inline-math">$z=a$</span> is <span class="inline-math">$\Res_{z=a} f(z) := c_{-1}$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (limit definition of removable singularity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-limit-definition-of-removable-singularity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A holomorphic function <span class="inline-math">$f: B(a,r)^\times\to \C$</span> has a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">removable singularity</a> at <span class="inline-math">$z=a$</span>
+                            iff <span class="inline-math">$\lim_{z\to a} (z-a)f(z) = 0$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-limit-definition-of-removable-singularity.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                This is satisfied if <span class="inline-math">$f$</span> is continuous at <span class="inline-math">$a$</span>, or is bounded on <span class="inline-math">$B(a,r)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (equivalent definition of pole)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-equivalent-definition-of-pole.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let a holomorphic function <span class="inline-math">$f: B(a,r)^\times\to\C$</span>
+                            have an isolated singularity at <span class="inline-math">$z=a$</span>.
+                            The following are equivalent:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$f$</span> has a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">pole</a> of order <span class="inline-math">$k$</span> at <span class="inline-math">$z=a$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$f(z) = (z-a)^{-k} g(z)$</span> on <span class="inline-math">$B(a,r)^\times$</span> for some holomorphic function <span class="inline-math">$g$</span> on <span class="inline-math">$B(a,r)$</span> where <span class="inline-math">$g(a)\neq 0$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$f(z) = 1/h(z)$</span> on <span class="inline-math">$B(a,ε)^\times$</span> for some <span class="inline-math">$0&lt;ε&lt;r$</span>
+                                and holomorphic function <span class="inline-math">$h$</span> on <span class="inline-math">$B(a,ε)$</span> having a zero of <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-order-of-vanishing.html">order</a> <span class="inline-math">$k$</span> at <span class="inline-math">$z=a$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            Consequently, <span class="inline-math">$f$</span> has a pole at <span class="inline-math">$z=a$</span> iff <span class="inline-math">$\lim_{z\to a} |f(z)| = \infty$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-equivalent-definition-of-pole.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (essential singularity iff no limit)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-essential-singularity-iff-no-limit.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A holomorphic function <span class="inline-math">$f: B(a,r)^\times\to \C$</span> has an <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">essential singularity</a> at <span class="inline-math">$z=a$</span>
+                            iff <span class="inline-math">$|f(z)|$</span> has no limit (in <span class="inline-math">$\R\cup \set{\infty}$</span>) as <span class="inline-math">$z\to a$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-essential-singularity-iff-no-limit.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (big Picard theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-big-Picard-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: B(a,r)^\times\to \C$</span> be holomorphic
+                            with an <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">essential singularity</a> at <span class="inline-math">$a$</span>.
+                            Then for all <span class="inline-math">$0&lt;ρ&lt;r$</span>, the image <span class="inline-math">$f(B(a,ρ)^\times) = \C$</span> or <span class="inline-math">$\C\setminus\set{b}$</span> for some <span class="inline-math">$b\in \C$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Weaker (but easier to prove) result: the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Casorati-Weierstrass.html">Casorati-Weierstrass theorem</a>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (meromorphic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-meromorphic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We say <span class="inline-math">$f$</span> is <em>meromorphic</em> on a domain <span class="inline-math">$U$</span>
+                if <span class="inline-math">$f$</span> is holomorphic on <span class="inline-math">$U$</span>
+                except for a set of isolated singularities
+                which are at worst poles (<a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">poles</a> or <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">removable</a>).
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (residue theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-residue-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-meromorphic.html">meromorphic</a> on a domain <span class="inline-math">$U$</span>
+                and <span class="inline-math">$γ$</span> be a closed curve <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-homologous-to-zero-simply-connected.html">homologous to zero</a> in <span class="inline-math">$U$</span>,
+                not containing any poles of <span class="inline-math">$f$</span>.
+            </p>
+            <p>
+                Let <span class="inline-math">$a_1, \ldots, a_m$</span> be the finitely many poles of <span class="inline-math">$f$</span>
+                that <span class="inline-math">$γ$</span> winds around (i.e. <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-winding-number.html"><span class="inline-math">$I(γ; a_n)$</span></a> <span class="inline-math">$\neq 0$</span>).
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \oint_γ f(z) \d z = 2πi\sum_{n=1}^{m} I(γ; a_n) \Res_{z=a} f(a).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-residue-theorem.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This generalises <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Cauchy-s-integral-theorem-on-starlike-domain.html">Cauchy's theorem</a> and <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-general-Cauchy-s-integral-formula.html">Cauchy's integral formula</a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$γ$</span> is a closed curve <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-curve-bounding-a-domain.html">bounding</a> a domain <span class="inline-math">$D$</span>,
+                    and <span class="inline-math">$f$</span> is holomorphic on <span class="inline-math">$D$</span> and a neighbourhood of <span class="inline-math">$γ$</span>,
+                    then <span class="inline-math">$\oint_γ f = 0$</span> and <span class="inline-math">$f(w) = \frac{1}{2πi}\oint_γ f(z)/(z-w)\d z$</span> for all <span class="inline-math">$w\in D\setminus γ.$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Applying the residue theorem
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Applying-the-residue-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$f$</span> has a simple pole at <span class="inline-math">$z=a$</span>, then <span class="inline-math">$\Res_{z=a} f(z) = \lim_{z\to a} (z-a) f(z)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$f(z) = g(z)/h(z)$</span> where <span class="inline-math">$g,h$</span> are holomorphic at <span class="inline-math">$a$</span>, <span class="inline-math">$g(a)\neq 0$</span>,
+                    and <span class="inline-math">$h$</span> has a simple zero at <span class="inline-math">$a$</span>, then <span class="inline-math">$\Res_{z=a}f(z) = g(a)/h&#x27;(a)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$f(z) = g(z)/(z-a)^k$</span> where <span class="inline-math">$g$</span> is holomorphic at <span class="inline-math">$a$</span>, <span class="inline-math">$g(a)\neq 0$</span>, and <span class="inline-math">$k\in \N$</span>,
+                    then <span class="inline-math">$\Res_{z=a} f(z) = g^{(k-1)}(a)/(k-1)!$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (Jordan's lemma)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Lemma-Jordan-s-lemma.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>
+                            on <span class="inline-math">$|z|&gt;r$</span> for some <span class="inline-math">$r&gt;0$</span>,
+                            and assume <span class="inline-math">$|zf(z)|$</span> is bounded on <span class="inline-math">$|z|&gt;r$</span>.
+                        </p>
+                        <p>
+                            Then for all <span class="inline-math">$α&gt;0$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \int_{C_R} f(z) \, e^{iα z} \d z \to 0 \qquad \text{as }R\to \infty
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$C_R: [0,π]\to \C$</span> is the upper semicircle of radius <span class="inline-math">$R$</span>
+                            given by <span class="inline-math">$C_R(t) = Re^{it}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Jordan-s-lemma.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (integral around simple pole along arc)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Lemma-integral-around-simple-pole-along-arc.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f$</span> be holomorphic on <span class="inline-math">$B(a,R)^\times$</span>
+                            with a simple pole at <span class="inline-math">$z=a$</span>.
+                            Let <span class="inline-math">$γ_r(t) = a+re^{it}$</span> for <span class="inline-math">$t\in [α,β]$</span>
+                            be a family of curves for <span class="inline-math">$0&lt;r&lt;R$</span>.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \int_{γ_r} f(z) \d z \to \Res_{z=a} f(z) \cdot (β-α)i \qquad \text{as }r\to 0.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-integral-around-simple-pole-along-arc.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (argument principle)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-argument-principle.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$γ$</span> is a closed curve <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-curve-bounding-a-domain.html">bounding</a> a domain <span class="inline-math">$U$</span>, and
+                <span class="inline-math">$f$</span> is meromorphic on <span class="inline-math">$U\cup γ$</span> with no poles or zeros on <span class="inline-math">$γ$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    I(f\circ γ; 0) = \frac{1}{2πi}\oint_γ \frac{f&#x27;}{f}\d z = (\text{\# zeros of $f$ in $U$}) - (\text{\# poles of $f$ in $U$}).
+                \end{align*} $$</span>
+                counted with multiplicity (i.e. a zero/pole of order <span class="inline-math">$k$</span> is counted <span class="inline-math">$k$</span> times).
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-argument-principle.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$f&#x27;/f$</span> is called the <em>logarithmic derivative</em>, which measures the argument of <span class="inline-math">$f$</span>.
+                    The argument principle says <span class="inline-math">$2π(\text{\# zeros} - \text{\# poles})$</span> is the change in <span class="inline-math">$\arg f(z)$</span>
+                    as <span class="inline-math">$z$</span> travels <span class="inline-math">$γ$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Apply to <span class="inline-math">$g(z) = f(z) - c$</span> to see
+                    <span class="display-math">$$ \begin{align*}
+                    I(f\circ γ; c) = \frac{1}{2πi} \oint_γ \frac{f&#x27;(z)}{f(z)-c} \d z = (\#f\inv(c)) - (\#\text{ poles of $f$}),
+                    \end{align*} $$</span>
+                    counted with multiplicity (the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-local-degree.html">local degree</a> for each preimage of <span class="inline-math">$c$</span>).
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (local degree)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-local-degree.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f$</span> be holomorphic and non-constant
+                on a neighbourhood of <span class="inline-math">$a\in \C$</span>.
+            </p>
+            <p>
+                The <em>local (mapping) degree</em> of <span class="inline-math">$f$</span> at <span class="inline-math">$a$</span>
+                (denoted as <span class="inline-math">$\deg_{z=a} f(a)$</span>) is
+                the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-order-of-vanishing.html">order of vanishing</a> of <span class="inline-math">$z\mapsto f(z) - f(a)$</span> at <span class="inline-math">$z=a$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (local mapping theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-local-mapping-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: B(a,R)\to \C$</span> be holomorphic and non-constant,
+                with a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-local-degree.html">local degree</a> <span class="inline-math">$k$</span> at <span class="inline-math">$z=a$</span>.
+            </p>
+            <p>
+                For all <span class="inline-math">$r&gt;0$</span> sufficiently small,
+                there exists <span class="inline-math">$ε&gt;0$</span> such that
+                for all <span class="inline-math">$w\in B(f(a),ε)^\times$</span>,
+                the equation <span class="inline-math">$f(z) = w$</span> has exactly <span class="inline-math">$k$</span> simple solutions (i.e. each with local degree 1)
+                in <span class="inline-math">$B(a,r)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-local-mapping-theorem.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$k=1$</span>, then <span class="inline-math">$f: B(a,r)\to B(a,ε)$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-conformal-equivalence.html">conformal equivalence</a>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (open mapping theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-open-mapping-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>
+                non-constant function sends <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-open-set-in-metric-space.html">open sets</a> to open sets.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-open-mapping-theorem.html">Proof</a>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Rouche-s-theorem-implies-open-mapping-theorem.html">Proof using Rouché's theorem</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Rouché's theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Rouche-s-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$γ$</span> be a closed curve <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-curve-bounding-a-domain.html">bounding</a> a domain <span class="inline-math">$D$</span>,
+                and <span class="inline-math">$f,g$</span> are <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> functions on <span class="inline-math">$D\cup γ$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$|f(z)| &gt; |g(z)|$</span> on <span class="inline-math">$γ$</span>,
+                then <span class="inline-math">$f$</span> and <span class="inline-math">$f+g$</span> have the same number of zeros in <span class="inline-math">$D$</span>,
+                counting multiplicity (<a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-order-of-vanishing.html">order of vanishing</a>).
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Rouche-s-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Uniform convergence of holomorphic functions
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Uniform-convergence-of-holomorphic-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (locally uniform convergence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-locally-uniform-convergence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$U\subseteq \C$</span> be open, and <span class="inline-math">$f_n: U\to\C$</span> be a sequence of functions.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$\set{f_n}$</span> <em>converges locally uniformly</em> on <span class="inline-math">$U$</span>
+                            to a function <span class="inline-math">$f: U\to \C$</span>
+                            if for all <span class="inline-math">$a\in U$</span>,
+                            there exists <span class="inline-math">$B(a,r)\subseteq U$</span>
+                            such that <span class="inline-math">$f_n\tto f$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-convergence.html">uniformly</a> on <span class="inline-math">$B(a,r)$</span>,
+                            i.e. for all <span class="inline-math">$ε&gt;0$</span>,
+                            there exists <span class="inline-math">$N\in \N$</span> such that for all <span class="inline-math">$n&gt;N$</span>,
+                            <span class="inline-math">$|f_n(z) - f(z)| &lt; ε$</span> for all <span class="inline-math">$z\in D(a,r)$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Locally uniform convergence is equivalent to uniform convergence on any compact subset.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (locally uniform limit preserves holomorphicity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-locally-uniform-limit-preserves-holomorphicity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\set{f_n}$</span> be a sequence on a domain <span class="inline-math">$U$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f_n$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> and <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-locally-uniform-convergence.html">locally uniformly</a> converges to <span class="inline-math">$f:U\to \C$</span>,
+                            then <span class="inline-math">$f$</span> is holomorphic and <span class="inline-math">$f_n&#x27; \to f&#x27;$</span> locally uniformly.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-locally-uniform-limit-preserves-holomorphicity.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (locally uniform limit of injective holomorphic function is injective or constant)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-locally-uniform-limit-of-injective-holomorphic-function-is-injective-or-constant.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\set{f_n}$</span> be a sequence on a domain <span class="inline-math">$U$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f_n$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>, injective, and <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-locally-uniform-convergence.html">locally uniformly</a> converges to <span class="inline-math">$f:U\to \C$</span>,
+                            then <span class="inline-math">$f$</span> is injective or constant.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-locally-uniform-limit-of-injective-holomorphic-function-is-injective-or-constant.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

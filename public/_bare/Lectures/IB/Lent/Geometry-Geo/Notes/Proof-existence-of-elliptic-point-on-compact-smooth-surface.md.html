@@ -1,0 +1,37 @@
+<p>
+    Let <span class="inline-math">$Σ$</span> be a compact smooth surface in <span class="inline-math">$\R^3$</span>.
+    Since <span class="inline-math">$Σ$</span> is compact,
+    the function <span class="inline-math">$Σ\to \R$</span> sending <span class="inline-math">$p\mapsto \|p\|$</span>
+    attains a maximum <span class="inline-math">$R&gt;0$</span> at say <span class="inline-math">$p\in Σ$</span>.
+    Then <span class="inline-math">$Σ \subseteq \overline{B(0,R)}$</span>.
+    WLOG rotate the axes so that <span class="inline-math">$p = (0,0,R)$</span>.
+</p>
+<p>
+    Locally near <span class="inline-math">$p$</span>,
+    <span class="inline-math">$Σ$</span> <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-equivalent-definitions-of-smooth-surface-in-R3.html">can be viewed</a> as the graph of a function
+    over one of the coordinate planes.
+    But <span class="inline-math">$Σ \cap \set{z&gt;R} = \emptyset$</span>, so it must be over the <span class="inline-math">$xy$</span>-plane.
+    Let <span class="inline-math">$V\subseteq \R^2$</span> be an open set and <span class="inline-math">$f: V\to \R$</span> such that
+    <span class="inline-math">$Σ = \sb{(x,y,f(x,y))}{(x,y)\in V}$</span>,
+    with <span class="inline-math">$f(0,0)=(0,0,R)$</span>.
+</p>
+<p>
+    Now on <span class="inline-math">$(x,y)\in V$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        f(x,y) \leq \sqrt{R^2 - x^2 - y^2}.
+    \end{align*} $$</span>
+    Noting that <span class="inline-math">$f$</span> attains a local maximum at <span class="inline-math">$(0,0)$</span> so <span class="inline-math">$f_x(0,0) = 0 = f_y(0,0)$</span>,
+    Taylor expansion gives
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{2}\underbrace{(f_{xx}(0,0) x^2 + 2f_{xy}(0,0)xy + f_{yy}(0,0)y^2)}_{\II_p((x,y),(x,y))} \leq -\frac{1}{2R}(x^2 + y^2) + O(x^3, y^3).
+    \end{align*} $$</span>
+    The second order terms are bilinear forms, so
+    <span class="display-math">$$ \begin{align*}
+        \pmat{L &amp; M \\ M &amp; N} \leq -\frac{1}{R}\pmat{1 &amp; 0 \\ 0 &amp; 1}.
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$\pmat{L &amp; M \\ M &amp; N}$</span> is negative definite.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        κ(p) = \det \pmat{L &amp; M \\ M &amp; N}\biggr|_0 &gt; 0.
+    \end{align*} $$</span>
+</p>

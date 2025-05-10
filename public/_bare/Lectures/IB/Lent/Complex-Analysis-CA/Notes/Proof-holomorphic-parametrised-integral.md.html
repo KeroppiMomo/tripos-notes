@@ -1,0 +1,20 @@
+<p>
+    Since holomorphicity is a local property,
+    WLOG restrict <span class="inline-math">$U$</span> to a disk.
+    We will apply <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-Morera-s-theorem.html">Morera</a>:
+</p>
+<p>
+    Let <span class="inline-math">$T: [c,d]\to U$</span> be a closed curve. Then
+    <span class="display-math">$$ \begin{align*}
+        \oint_{γ} g(z) \d z ={}&amp; \int_{c}^{d} \left(\int_{a}^{b} ϕ(γ(t), s) \d s\right) γ&#x27;(t) \d t \\
+        ={}&amp; \int_{c}^{d} \left(\int_{a}^{b} ϕ(γ(t), s) \, γ&#x27;(t) \d s\right) \d t \\
+        ={}&amp; \int_{a}^{b} \left(\int_{c}^{d} ϕ(γ(t), s)\, γ&#x27;(t) \d t\right) \d s \tag{*} \\
+        ={}&amp; \int_{a}^{b} \oint_γ ϕ(z,s) \d z\d s
+    \end{align*} $$</span>
+    where <span class="inline-math">$(*)$</span> has used <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Lemma-Fubini-s-theorem.html">Fubini's theorem</a>.
+    By <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Cauchy-s-integral-theorem-on-starlike-domain.html">Cauchy's theorem in a disk</a>,
+    since <span class="inline-math">$z\mapsto ϕ(z,s)$</span> is holomorphic,
+    <span class="inline-math">$\oint_γ ϕ(z,s)\d z = 0$</span>.
+    Therefore <span class="inline-math">$\oint_γ g(z) \d z =0$</span>,
+    as required for Morera.
+</p>

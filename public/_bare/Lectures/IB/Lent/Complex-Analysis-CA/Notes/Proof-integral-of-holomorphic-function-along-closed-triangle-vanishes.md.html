@@ -1,0 +1,87 @@
+
+<h1>Holomorphic on <span class="inline-math">$U$</span></h1>
+
+<p>
+    Let <span class="inline-math">$L = \mathrm{length}(\partial T)$</span> and <span class="inline-math">$I = \left|\int_{\partial T} f\right|$</span>.
+    The idea is that the triangle can be shrunk to being close to a point.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Pasted-image-20250212105635.png">
+</p>
+<p>
+    Bisect the edge of <span class="inline-math">$T$</span> to obtain four triangles <span class="inline-math">$Δ_1, Δ_2, Δ_3, Δ_4$</span>,
+    each with parameter <span class="inline-math">$L/2$</span>.
+    By orienting them positively, <span class="inline-math">$\partial T = \partial Δ_1 + \partial Δ_2 + \partial Δ_3 + \partial Δ_4$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        I = \left|\int_{\partial T} f\right| = \left|\sum_{i=1}^{4} \int_{\partial Δ_i} f\right| \leq \sum_{i=1}^{4} \left|\int_{\partial Δ_i} f\right|
+    \end{align*} $$</span>
+    so at least one of them satisfies
+    <span class="display-math">$$ \begin{align*}
+        \left|\int_{\partial Δ_i} f\right| \geq \frac{I}{4}.
+    \end{align*} $$</span>
+    Call this <span class="inline-math">$T_1$</span>.
+</p>
+<p>
+    Repeat to obtain a sequence of nested triangles
+    <span class="display-math">$$ \begin{align*}
+        T \supseteq T_1 \supseteq T_2 \supseteq T_3 \supseteq \ldots
+    \end{align*} $$</span>
+    with <span class="inline-math">$\mathrm{length}(\partial T_n) = L/2^n$</span> and <span class="inline-math">$|\int_{\partial T_n} f| \geq I/4^n$</span>.
+</p>
+<p>
+    As a decreasing sequence of closed sets in a compact space,
+    <span class="inline-math">$\bigcap_{n=1}^{\infty} T_n$</span> will be a single point <span class="inline-math">$w\in U$</span>.
+</p>
+<p>
+    Let
+    <span class="display-math">$$ \begin{align*}
+        g(z) := \frac{f(z) - f(w)}{z-w} - f&#x27;(w),
+    \end{align*} $$</span>
+    which is continuous on <span class="inline-math">$U$</span>.
+    Now we can bound
+    <span class="display-math">$$ \begin{align*}
+        I \leq{}&amp; 4^n \left|\int_{\partial T_n} f(z) \d z\right| \\
+        ={}&amp; 4^n \left|\int_{\partial T_n} f(z) - f(w) - (z-w)f&#x27;(w) \d z\right| \tag{*} \\
+        ={}&amp; 4^n \left|\int_{\partial T_n} (z-w)g(z) \d z\right| \\
+        \leq{} &amp; 4^n \cdot \mathrm{length}(\partial T_n) \cdot \sup_{z\in \partial T_n} \bigl|(z-w) g(z)\bigr| \\
+        \leq{}&amp; 4^n \cdot (\mathrm{length}(\partial T_n))^2 \cdot \sup_{\partial T_n} |g| \\
+        ={} &amp; L^2 \cdot \sup_{\partial T_n} |g| \to 0
+    \end{align*} $$</span>
+    as <span class="inline-math">$n\to \infty$</span>, where <span class="inline-math">$(*)$</span> applies the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-fundamental-theorem-of-calculus-for-holomorphic-functions.html">fundamental theorem of calculus</a>
+    to the polynomial <span class="inline-math">$(z-w)f&#x27;(w) + f(w)$</span> along a closed curve.
+</p>
+
+<h1>Holomorphic on <span class="inline-math">$U$</span> except finitely many points</h1>
+
+<p>
+    Suppose <span class="inline-math">$f$</span> is continuous on <span class="inline-math">$U$</span> and holomorphic on <span class="inline-math">$U\setminus S$</span>
+    for some finite set <span class="inline-math">$S\subset U$</span>.
+</p>
+<p>
+    WLOG assume <span class="inline-math">$T$</span> contains exactly 0 or 1 point in <span class="inline-math">$S$</span>,
+    since otherwise subdivide <span class="inline-math">$T$</span> into triangles small enough
+    that each one has 0 or 1 point in <span class="inline-math">$S$</span>.
+    If <span class="inline-math">$T$</span> has 0 point in <span class="inline-math">$S$</span>, then we are done by the previous case.
+</p>
+<p>
+    Let <span class="inline-math">$\set{a} = S \cap T$</span>.
+    For any triangle <span class="inline-math">$T&#x27;\subseteq T$</span> containing <span class="inline-math">$a$</span>,
+    we can decompose <span class="inline-math">$T$</span> into a union of triangles <span class="inline-math">$\set{T_i}$</span> with one of which being <span class="inline-math">$T&#x27;$</span>.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Pasted-image-20250214101443.png">
+</p>
+<p>
+    By positively orienting them, <span class="inline-math">$\partial T = \sum_{i} \partial T_i$</span>.
+    Moreover by the previous case, <span class="inline-math">$\int_{\partial T_i} f = 0$</span>
+    except when <span class="inline-math">$T_i = T&#x27;$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \int_{\partial T} f ={}&amp; \int_{\partial T&#x27;} f \\
+        \implies \left|\int_{\partial T} f\right| \leq{} &amp; \mathrm{length}(\partial T&#x27;) \cdot \sup_{\partial T&#x27;} |f| \\
+        \leq{} &amp; \mathrm{length}(\partial T&#x27;) \cdot \sup_{T} |f|.
+    \end{align*} $$</span>
+    By continuity of <span class="inline-math">$f$</span>, <span class="inline-math">$\sup_T |f|$</span> is bounded.
+    Since we can make <span class="inline-math">$\mathrm{length}(\partial T&#x27;)$</span> arbitrarily small,
+    <span class="inline-math">$\int_{\partial T} f = 0$</span>.
+</p>

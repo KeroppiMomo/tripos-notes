@@ -1,0 +1,81 @@
+
+<h1>Allowable parametrisation</h1>
+
+<p>
+    Fix any point <span class="inline-math">$p\in Σ$</span> and any <span class="inline-math">$0\neq v\in T_pΣ$</span>.
+    <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-existence-of-geodesics.html">Take</a> a geodesic <span class="inline-math">$γ: (-ε, ε)\to Σ$</span>
+    with <span class="inline-math">$γ(0) = p$</span> and <span class="inline-math">$γ&#x27;(0) = v$</span>.
+    For all <span class="inline-math">$t\in (-ε, ε)$</span>,
+    <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-existence-of-geodesics.html">let</a> <span class="inline-math">$γ_t$</span> be a geodesic such that <span class="inline-math">$γ_t(0) = γ(t)$</span>
+    and <span class="inline-math">$γ_t&#x27;(0)$</span> is orthogonal to <span class="inline-math">$γ(t)$</span> at <span class="inline-math">$t$</span>.
+    Assume all geodesics are parametrised by arc length.
+</p>
+<p>
+    If we shrink <span class="inline-math">$ε$</span>, the geodesics <span class="inline-math">$γ_t$</span> for all <span class="inline-math">$t\in (-ε, ε)$</span>
+    is defined on <span class="inline-math">$(-δ, δ)$</span> for some uniform <span class="inline-math">$δ&gt;0$</span>.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        σ: V = (-δ, δ) \times (-ε, ε) &amp;\to Σ \\
+        (u, v) &amp;\mapsto γ_v(u).
+    \end{align*} $$</span>
+</p>
+<p>
+    Since geodesics are smooth and <span class="inline-math">$γ_t$</span> varies smoothly with <span class="inline-math">$t$</span>,
+    <span class="inline-math">$σ$</span> is smooth.
+</p>
+<p>
+    <span class="inline-math">$γ$</span> and <span class="inline-math">$γ_0$</span> meet orthogonally at <span class="inline-math">$p$</span>,
+    so <span class="inline-math">$σ_u(0) = γ_0&#x27;(0)$</span> and <span class="inline-math">$σ_v(0) = γ&#x27;(0)$</span> are linearly independent.
+    Shrink <span class="inline-math">$ε$</span> and <span class="inline-math">$δ$</span> to ensure <span class="inline-math">$σ_u$</span> and <span class="inline-math">$σ_v$</span> are linearly independent throughout <span class="inline-math">$V$</span>,
+    meaning that <span class="inline-math">$Dσ$</span> has rank 2.
+</p>
+<p>
+    In particular <span class="inline-math">$Dσ|_0: \R^2 \to T_p Σ$</span> is an isomorphism,
+    so by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-inverse-function-theorem.html">inverse function theorem</a>, <span class="inline-math">$σ$</span> is a homeomorphism
+    by shrinking <span class="inline-math">$ε$</span> and <span class="inline-math">$δ$</span> again.
+    Thus <span class="inline-math">$σ$</span> is an allowable parametrisation.
+</p>
+<blockquote>
+    <p>
+        More detail on applying inverse function theorem:
+        let <span class="inline-math">$\tilde σ$</span> be an allowable parametrisation near <span class="inline-math">$p=\tilde σ(0)$</span>.
+        <span class="inline-math">$\R^2 \xrightarrow{Dσ|_0} T_pΣ \xrightarrow{D\tilde σ|_0\inv} \R^2$</span> is a bijection,
+        so <span class="inline-math">$\tilde σ\inv \circ σ$</span> (a map between open subsets of <span class="inline-math">$\R^2$</span>)
+        has invertible derivative at <span class="inline-math">$0$</span>.
+        By the inverse function theorem, <span class="inline-math">$\tilde σ\inv \circ σ$</span> is locally a bijection (homeomorphism).
+        Since <span class="inline-math">$\tilde σ$</span> is a homeomorphism, so is <span class="inline-math">$σ$</span> locally (a map from open subset of <span class="inline-math">$\R^2$</span> to open subset of <span class="inline-math">$Σ$</span>).
+    </p>
+    
+</blockquote>
+
+<h1>First fundamental form</h1>
+
+<p>
+    <span class="inline-math">$E$</span> can be computed directly:
+    <span class="display-math">$$ \begin{align*}
+        \langle σ_u, σ_u\rangle = \langle γ_v&#x27;(u), γ_v&#x27;(u)\rangle = 1
+    \end{align*} $$</span>
+    by our assumption of parametrisation by arc length.
+</p>
+<p>
+    For <span class="inline-math">$F$</span>, the second geodesic equation of <span class="inline-math">$u \mapsto γ_{v_0}(u) = σ(u,v_0)$</span> is
+    <span class="display-math">$$ \begin{align*}
+        \dd{u}(F(u,v_0)) = 0
+    \end{align*} $$</span>
+    (because <span class="inline-math">$u = t$</span> and <span class="inline-math">$v = v_0$</span>) so <span class="inline-math">$F$</span> does not depend on <span class="inline-math">$u$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        F(u,v) = F(0,v) = \langle γ&#x27;(v), γ_v&#x27;(0)\rangle = 0
+    \end{align*} $$</span>
+    since <span class="inline-math">$γ_v$</span> is orthogonal to <span class="inline-math">$γ$</span>.
+</p>
+<p>
+    At <span class="inline-math">$u=0$</span>, <span class="inline-math">$v\mapsto σ(0,v) = γ(v)$</span> is parametrised by arc length, so
+    <span class="display-math">$$ \begin{align*}
+        G(0, v) = \langle σ_v(0,v), σ_v(0, v)\rangle = \langle γ&#x27;(v), γ&#x27;(v)\rangle = 1.
+    \end{align*} $$</span>
+    It is also a geodesic, and the first geodesic equation gives
+    <span class="display-math">$$ \begin{align*}
+        \dd{v}(F(0,v)) = \frac{1}{2}G_u (0,v) \implies G_u(0,v)=0.
+    \end{align*} $$</span>
+</p>

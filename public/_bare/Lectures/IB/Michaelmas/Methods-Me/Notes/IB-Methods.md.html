@@ -549,6 +549,14 @@
                         <ul>
                         <li>
                             <p>
+                                Rodrigue's formula:
+                                <span class="display-math">$$ \begin{align*}
+                                P_n(x) = \frac{1}{2^n n!} \dd[n]{x}(x^2 - 1)^n.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
                                 <span class="inline-math">$P_n$</span> are orthogonal:
                                 <span class="display-math">$$ \begin{align*}
                                 \int_{-1}^{+1} P_n(x) P_m(x) \d x = \frac{2}{2n+1} \delta_{nm}.
@@ -724,7 +732,7 @@
                             <span class="display-math">$$ \begin{align*}
                                 y(x) = \sum_{k} \frac{\langle f,Y_k\rangle}{\lambda_k} Y_k(x) = \int_{a}^{b} \left(\sum_{k} \frac{Y_k(x) Y_k(y)}{\lambda_k}\right) f(y) \d y := \int_{a}^{b} G(x,y) f(y) \d y
                             \end{align*} $$</span>
-                            where <span class="inline-math">$G(x,y)$</span> is called Green's function.
+                            where <span class="inline-math">$G(x,y)$</span> is called <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Green-s-functions.html">Green's function</a>.
                         </p>
                         
                     </div>
@@ -923,7 +931,7 @@
                                         \end{align*} $$</span>
                                         has separation of variables solutions in spherical polar coordinates
                                         <span class="display-math">$$ \begin{align*}
-                                            \phi(r,\theta) = \sum_{n=0}^{\infty} \left(a_n r^n + \frac{\beta_n}{r^{n+1}}\right) P_n(\cos\theta)
+                                            \phi(r,\theta) = \sum_{n=0}^{\infty} \left(\alpha_n r^n + \frac{\beta_n}{r^{n+1}}\right) P_n(\cos\theta)
                                         \end{align*} $$</span>
                                         where <span class="inline-math">$P_n$</span> is the <span class="inline-math">$n$</span>-th <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Legendre-equation.html">Legendre polynomial</a>.
                                     </p>
@@ -1487,7 +1495,7 @@
                                             <p>
                                                 We use the identity <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Lemma-Sturm-Liouville-operator-and-Wronskian.html"><span class="inline-math">$(pW(y_1,y_2))&#x27; = y_2 L y_1 - y_1 L y_2$</span></a> and <span class="inline-math">$Ly_1 = 0 = Ly_2$</span> to see
                                                 <span class="display-math">$$ \begin{align*}
-                                                y(x) = -\frac{1}{p(c) W(y_1,y_2)(c)} \left(y_2(x) \int_{a}^{x} y_2(\xi)f(\xi) \d \xi + y_1(x) \int_{x}^{b} y_1(\xi) f(\xi) \d \xi\right)
+                                                y(x) = -\frac{1}{p(c) W(y_1,y_2)(c)} \left(y_2(x) \int_{a}^{x} y_1(\xi)f(\xi) \d \xi + y_1(x) \int_{x}^{b} y_2(\xi) f(\xi) \d \xi\right)
                                                 \end{align*} $$</span>
                                                 for any <span class="inline-math">$c\in (a,b)$</span>.
                                             </p>
@@ -1709,7 +1717,7 @@
                             <p>
                                 Applying this to <span class="inline-math">$f(x)=\delta(x-y)$</span> gives
                                 <span class="display-math">$$ \begin{align*}
-                                \delta(x-y) = \frac{1}{2\pi} \int e^{i\lambda(x-y)} \d x.
+                                \delta(x-y) = \frac{1}{2\pi} \int e^{i\lambda(x-y)} \d \lambda.
                                 \end{align*} $$</span>
                             </p>
                             
@@ -2016,6 +2024,27 @@
                             
                         </li>
                         </ul>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (Fourier transform of powers of radius)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-transform-of-powers-of-radius.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        In <span class="inline-math">$\R^n$</span>, for <span class="inline-math">$\alpha&gt;0$</span>, we have
+                                        <span class="display-math">$$ \begin{align*}
+                                            \mathcal{F}_{\v x\mapsto \v \lambda}\big[|\v x|^{-\alpha}\big] = C_{n,\alpha} |\v \lambda|^{\alpha-n}
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$C_{n,\alpha}$</span> is a constant.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Fourier-transform-of-powers-of-radius.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
                         
                     </div>
                 </div>
@@ -2331,27 +2360,6 @@
                         <p>
                             <div class="markdown-embed embed-result">
                                 <div class="markdown-embed-title">
-                                    Proposition (Fourier transform of powers of radius)
-                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-Fourier-transform-of-powers-of-radius.html">open_in_new</a>
-                                </div>
-                                <div class="markdown-embed-content">
-                                    <p>
-                                        In <span class="inline-math">$\R^n$</span>, for <span class="inline-math">$\alpha&gt;0$</span>, we have
-                                        <span class="display-math">$$ \begin{align*}
-                                            \mathcal{F}_{\v x\mapsto \v \lambda}\big[|\v x|^{-\alpha}\big] = C_{n,\alpha} |\v \lambda|^{\alpha-n}
-                                        \end{align*} $$</span>
-                                        where <span class="inline-math">$C_{n,\alpha}$</span> is a constant.
-                                    </p>
-                                    <p>
-                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proof-Fourier-transform-of-powers-of-radius.html">Proof</a>
-                                    </p>
-                                    
-                                </div>
-                            </div>
-                        </p>
-                        <p>
-                            <div class="markdown-embed embed-result">
-                                <div class="markdown-embed-title">
                                     Proposition (free space Green's function for the Laplacian)
                                     <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Proposition-free-space-Green-s-function-for-the-Laplacian.html">open_in_new</a>
                                 </div>
@@ -2361,9 +2369,10 @@
                                         <span class="display-math">$$ \begin{align*}
                                             G(\v x; \v y) = \begin{cases}
                                                 -\dfrac{1}{(n-2) |S^{n-1}|} \cdot \dfrac{1}{|\v x-\v y|^{n-2}}, &amp;n&gt;2, \\
-                                                \dfrac{1}{2\pi} \log |\v x-\v y|, &amp;n=2.
+                                                \dfrac{1}{2\pi} \log |\v x-\v y|, &amp;n=2
                                             \end{cases}
                                         \end{align*} $$</span>
+                                        where <span class="inline-math">$|S^{n-1}|$</span> is the area of a unit <span class="inline-math">$(n-1)$</span>-sphere.
                                     </p>
                                     <p>
                                         Then <span class="inline-math">$G$</span> satisfies

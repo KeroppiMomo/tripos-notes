@@ -1,0 +1,36 @@
+<p>
+    Fix <span class="inline-math">$a\in U$</span>.
+    By locally uniform convergence,
+    there exists <span class="inline-math">$r&gt;0$</span> such that <span class="inline-math">$f_n \to f$</span>
+    uniformly on <span class="inline-math">$\overline{B(a,r)}$</span>.
+</p>
+
+<h1><span class="inline-math">$f$</span> is holomorphic</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-limit.html">Since</a> <span class="inline-math">$f_n$</span> is continuous, so is <span class="inline-math">$f$</span>.
+    Given any closed curve <span class="inline-math">$γ$</span> in <span class="inline-math">$B(a,r)$</span>,
+    using <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-integral-of-uniform-convergent-functions-along-curve.html">uniform convergence</a> and <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Cauchy-s-integral-theorem-on-starlike-domain.html">Cauchy's theorem</a>,
+    <span class="display-math">$$ \begin{align*}
+        \oint_γ f = \lim_{n\to \infty} \oint_γ f_n = 0.
+    \end{align*} $$</span>
+    Therefore by <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-Morera-s-theorem.html">Morera's theorem</a>,
+    <span class="inline-math">$f$</span> is holomorphic on <span class="inline-math">$B(a,r)$</span>.
+</p>
+
+<h1><span class="inline-math">$f_n&#x27;\to f$</span> locally uniformly</h1>
+
+<p>
+    Using the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-general-Cauchy-s-integral-formula.html">generalised Cauchy's integral formula</a>,
+    <span class="display-math">$$ \begin{align*}
+        |f&#x27;(w) - f_n&#x27;(w)| = \frac{1}{2π} \left|\int_{|z-a|=ρ} \frac{f(z) - f_n(z)}{(z-w)^2} \d z\right|
+    \end{align*} $$</span>
+    for any <span class="inline-math">$0&lt;ρ&lt;r$</span> and <span class="inline-math">$w\in B(a,ρ)$</span>.
+    For any <span class="inline-math">$ρ&lt;r/2$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        |f&#x27;(w) - f_n&#x27;(w)| \leq \frac{1}{2π} 2πr \frac{1}{(r/2)^2} \sup_{|z-a|=ρ} |f(z) - f_n(z)| \to 0 \qquad \text{as }n\to \infty.
+    \end{align*} $$</span>
+    This bound does not depend on <span class="inline-math">$w$</span>,
+    so <span class="inline-math">$f_n&#x27;\to f$</span> uniformly on <span class="inline-math">$B(a,r/2)$</span>.
+    Hence <span class="inline-math">$f_n&#x27; \to f$</span> locally uniformly on <span class="inline-math">$U$</span>.
+</p>

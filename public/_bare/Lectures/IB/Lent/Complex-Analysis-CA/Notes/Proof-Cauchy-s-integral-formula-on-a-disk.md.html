@@ -1,0 +1,42 @@
+<p>
+    We can replace <span class="inline-math">$f(ζ)$</span> with <span class="inline-math">$f(z)$</span>:
+    fix <span class="inline-math">$z\in B(a,r)$</span>,
+    and define
+    <span class="display-math">$$ \begin{align*}
+        g(ζ) := \begin{cases}
+            \dfrac{f(ζ) - f(z)}{ζ-z}, &amp;ζ\neq z. \\
+            f&#x27;(z), &amp;ζ=z.
+        \end{cases}
+    \end{align*} $$</span>
+    <span class="inline-math">$g$</span> is continuous on <span class="inline-math">$B(a,r)$</span> and holomorphic on <span class="inline-math">$B(a,r) \setminus \set{z}$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        \oint_{|ζ-a|=ρ} g(ζ) \d ζ = 0.
+    \end{align*} $$</span>
+    Since the circle <span class="inline-math">$|ζ-a|=ρ$</span> does not contain <span class="inline-math">$z$</span>, the integrand is <span class="inline-math">$\frac{f(ζ) - f(z)}{ζ-z}$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        \oint_{|ζ-a|=ρ} \frac{f(ζ)}{ζ-z} \d ζ = \oint_{|ζ-a|=ρ} \frac{f(z)}{ζ-z} \d ζ = f(z) \oint_{|ζ-a|=ρ} \frac{1}{ζ-z}\d ζ.
+    \end{align*} $$</span>
+    To compute the integral, recall the power series expansion
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{1-w} = \sum_{n=0}^{\infty} w^n
+    \end{align*} $$</span>
+    has a radius of convergence of 1.
+    So
+    <span class="display-math">$$ \begin{align*}
+        \oint_{|ζ-a|=ρ} \frac{1}{ζ-z} \d ζ ={}&amp; \oint_{|ζ-a|=ρ} \frac{1}{ζ-a} \frac{1}{1 - \frac{z-a}{ζ-a}} \d ζ \\
+        ={}&amp; \oint_{|ζ-a|=ρ} \sum_{n=0}^{\infty} \frac{(z-a)^n}{(ζ-a)^{n+1}} \d ζ \tag{*}\\
+        ={}&amp; \sum_{n=0}^{\infty} (z-a)^n \oint_{|ζ-a|=ρ} \frac{1}{(ζ-a)^{n+1}} \d ζ \\
+        ={}&amp; \sum_{n=0}^{\infty} (z-a)^n \oint_{|ξ|=ρ} \frac{1}{ξ^{n+1}} \d ξ.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$|\frac{z-a}{ζ-a}| = \frac{ρ}{|ζ-a|} &lt; 1$</span>, the series in <span class="inline-math">$(*)$</span> converges uniformly on the circle <span class="inline-math">$|ζ-a|=ρ$</span>,
+    <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-integral-of-uniform-convergent-functions-along-curve.html">so</a> we can swap the integral and sum.
+</p>
+<p>
+    From <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Example-contour-integral-of-powers.html">here</a>, the contour integral is <span class="inline-math">$2πi$</span> when <span class="inline-math">$n=0$</span> and 0 otherwise.
+    Therefore we obtain the result
+    <span class="display-math">$$ \begin{align*}
+        \oint_{|ζ-a|=ρ} \frac{f(ζ)}{ζ-z} \d ζ = 2πi f(z).
+    \end{align*} $$</span>
+</p>

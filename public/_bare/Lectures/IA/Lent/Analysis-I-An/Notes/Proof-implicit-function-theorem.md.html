@@ -1,0 +1,39 @@
+<p>
+    Introduce
+    <span class="display-math">$$ \begin{align*}
+        F: U&amp;\to \R^n \times \R^m \\
+        (x,y) &amp;\mapsto (x, f(x,y)).
+    \end{align*} $$</span>
+    Its Jacobian matrix is
+    <span class="display-math">$$ \begin{align*}
+        DF = \pmat{
+            I &amp; D_x f \\
+            0 &amp; D_y f
+        }
+    \end{align*} $$</span>
+    which has determinant <span class="inline-math">$\det DF = \det D_y f \neq 0$</span> at <span class="inline-math">$(x_0, y_0)$</span>.
+    So <span class="inline-math">$DF(x_0, y_0)$</span> is invertible.
+</p>
+<p>
+    By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-inverse-function-theorem.html">inverse function theorem</a>,
+    there exist neighbourhoods <span class="inline-math">$V\times V&#x27;\subseteq \R^{n+m}$</span> of <span class="inline-math">$F(x_0, y_0) = (x_0, 0)$</span>
+    and <span class="inline-math">$U&#x27;\subseteq U\subseteq \R^{n+m}$</span> of <span class="inline-math">$(x_0, y_0)$</span>
+    such that <span class="inline-math">$F: U&#x27; \to V\times V&#x27;$</span> is a bijection
+    and has a continuously differentiable inverse
+    <span class="inline-math">$G: V\times V&#x27; \to U&#x27;$</span>.
+</p>
+<p>
+    Writing <span class="inline-math">$G(x,y&#x27;) = (ϕ(x,y&#x27;), ψ(x,y&#x27;)) \in \R^n\times \R^{m}$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        &amp;(x,y&#x27;) = F\circ G(x,y&#x27;) = (ϕ(x,y&#x27;), f(ϕ(x,y&#x27;), ψ(x,y&#x27;))) \\
+        \implies &amp; ϕ(x,y&#x27;) = x.
+    \end{align*} $$</span>
+    Therefore for <span class="inline-math">$(x,y)\in U&#x27;$</span>,
+    <span class="display-math">$$ \begin{align*}
+        y&#x27; = f(x,y) \iff (x,y&#x27;)=F(x,y) \iff G(x,y&#x27;) = (x,y) \iff ψ(x,y&#x27;)=y.
+    \end{align*} $$</span>
+    Defining <span class="inline-math">$g: V\to \R^n$</span> by <span class="inline-math">$g(x) = ψ(x,0)$</span> does the job.
+</p>
+<p>
+    Smoothness of <span class="inline-math">$g$</span> follows from the statement in the inverse function theorem.
+</p>

@@ -1,0 +1,161 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (geodesic polygon)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic-polygon.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$Σ$</span> be an abstract smooth surface
+                with an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Riemannian-metric-on-abstract-smooth-surface.html">abstract Riemannian metric</a> <span class="inline-math">$g$</span>.
+            </p>
+            <p>
+                A <em>geodesic polygon</em> on <span class="inline-math">$(Σ, g)$</span>
+                is an embedding (i.e. the image under an injective homeomorphism)
+                of a closed disc such that the boundary can be decomposed
+                into finitely many <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic.html">geodesic</a> segments.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (local Gauss-Bonnet)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-local-Gauss-Bonnet.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$Σ$</span> be an abstract smooth surface
+                with an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Riemannian-metric-on-abstract-smooth-surface.html">abstract Riemannian metric</a> <span class="inline-math">$g$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$R$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic-polygon.html">geodesic <span class="inline-math">$n$</span>-gon</a>
+                with internal angle <span class="inline-math">$α_1, α_2, \ldots, α_n$</span>, then
+                <span class="display-math">$$ \begin{align*}
+                    \int_{R} κ_Σ \d A = \sum_{i=1}^{n} α_i - (n-2)π,
+                \end{align*} $$</span>
+                where <span class="inline-math">$κ_Σ$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Gauss-curvature.html">Gauss curvature</a> of the surface.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Idea of the proof:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Apply <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Lemma-Green-s-theorem.html">Green's theorem</a> to the right function.
+    </p>
+    
+</li><li>
+    <p>
+        Since the sides are geodesics,
+        the line integral concentrates at corners and contributes quantities related to the internal angles.
+    </p>
+    
+</li>
+</ol>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (global Gauss-Bonnet)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-global-Gauss-Bonnet.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$Σ$</span> be a compact abstract smooth surface
+                with an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Riemannian-metric-on-abstract-smooth-surface.html">abstract Riemannian metric</a> <span class="inline-math">$g$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \int_{Σ} κ_Σ \d A = 2π\, χ(Σ)
+                \end{align*} $$</span>
+                where <span class="inline-math">$κ_Σ$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Gauss-curvature.html">Gauss curvature</a>
+                and <span class="inline-math">$χ(Σ)$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Euler-characteristic.html">Euler characteristic</a> of the surface.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Proof sketch:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Every Riemannian <span class="inline-math">$Σ$</span> admits a decomposition into geodesic polygons.
+    </p>
+    
+</li><li>
+    <p>
+        Then local Gauss-Bonnet implies global Gauss-Bonnet:
+    </p>
+    <p>
+        Take a geodesic decomposition <span class="inline-math">$\set{P_1, \ldots, P_F}$</span> of <span class="inline-math">$Σ$</span>,
+        and suppose <span class="inline-math">$P_i$</span> has <span class="inline-math">$V_i$</span> internal angles <span class="inline-math">$α_{i1}, \ldots, α_{iV_i}$</span>.
+        Then additivity of integration yields
+        <span class="display-math">$$ \begin{align*}
+            \int_{Σ} κ_Σ \d A ={}&amp; \sum_{i=1}^{F} \int_{P_i} κ_Σ \d A \\
+            ={}&amp; \sum_{i=1}^{F} \left(\sum_{j=1}^{V_i} α_{ij} - (V_i - 2)π \right) \\
+            ={}&amp; \sum_{i=1}^{F} \sum_{j=1}^{V_i} α_{ij} - π\sum_{i=1}^{F} V_i + 2π \sum_{i=1}^{F} 1 \\
+            ={}&amp; 2πV - 2πE + 2πF = 2π\,χ(Σ).
+        \end{align*} $$</span>
+    </p>
+    <blockquote>
+        <p>
+            The first term has a contribution <span class="inline-math">$2π$</span> from every vertex.
+            In the second term, each face contributes its number of edges to the sum, which double counts every edge.
+        </p>
+        
+    </blockquote>
+    
+</li>
+</ol>
+<p>
+    Applications:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Area of a spherical triangle (<span class="inline-math">$κ\equiv 1$</span>) is (sheet 2)
+        <span class="display-math">$$ \begin{align*}
+        \text{area}_{S^2}(T) = α_1 + α_2 + α_3 - π.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proposition-area-of-hyperbolic-triangle.html">Area of a hyperbolic triangle</a> (<span class="inline-math">$κ\equiv -1$</span>) is
+        <span class="display-math">$$ \begin{align*}
+        \text{area}_{\mathbb{H}}(T) = π - α_1 - α_2 - α_3.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        Area of the compact hyperbolic surface <span class="inline-math">$Σ_g$</span> with genus <span class="inline-math">$g\geq 2$</span> is
+        <span class="display-math">$$ \begin{align*}
+            \text{area}(Σ_g) = -2π \,χ(Σ_g) = (4g-4)π.
+        \end{align*} $$</span>
+    </p>
+    <p>
+        We can also see this from our constructions:
+        <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Constructing-constant-negative-curvature-surface-with-regular-polygons.html">using</a> regular <span class="inline-math">$4g$</span>-gon <span class="inline-math">$P$</span> with internal angles <span class="inline-math">$2π/4g$</span>,
+        <span class="inline-math">$\text{area}(Σ_g) = \text{area}_{\text{hyp}}(P) = (4g-2)π - \sum_{i=1}^{4g} 2π/4g = (4π - 4)π$</span>.
+        <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Constructing-constant-negative-curvature-surface-with-right-angled-hexagons.html">Using</a> right-angled hexagons,
+        a genus <span class="inline-math">$g$</span> surface can be cut into <span class="inline-math">$2g-2$</span> pairs of pants,
+        each made of two right-angled hexagons,
+        which has area <span class="inline-math">$(6-2)π - \sum_{i=1}^{6} π/2 = π$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        A closed geodesic (i.e. <span class="inline-math">$γ(t+T) \equiv γ(t)$</span> for some <span class="inline-math">$T&gt;0$</span>)
+        on a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-flat-surface.html">flat</a> surface <span class="inline-math">$Σ$</span>
+        cannot bound a disc in <span class="inline-math">$Σ$</span>.
+        (<a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-closed-geodesic-on-a-flat-surface-cannot-bound-a-disc.html">Proof</a>)
+    </p>
+    
+</li>
+</ol>

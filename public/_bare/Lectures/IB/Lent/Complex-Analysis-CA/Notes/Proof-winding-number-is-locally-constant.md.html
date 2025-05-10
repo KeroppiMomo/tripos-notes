@@ -1,0 +1,28 @@
+<p>
+    The main idea is <span class="inline-math">$I(γ; w)$</span> can only take integer values.
+</p>
+
+<h1>Using the integral form</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Lemma-integral-form-of-the-winding-number.html">We have</a>
+    <span class="display-math">$$ \begin{align*}
+        I(γ; w) = \frac{1}{2πi} \oint_{γ} \frac{1}{ζ-w} \d ζ.
+    \end{align*} $$</span>
+    <span class="inline-math">$w\mapsto I(γ; w)$</span> is a continuous function, so it is locally constant.
+</p>
+
+<h1>Using Cauchy's integral formula</h1>
+
+<p>
+    Choose <span class="inline-math">$r&gt;0$</span> such that <span class="inline-math">$B(w,r)\subseteq \C\setminus γ$</span>.
+    For <span class="inline-math">$z\in B(w,ε)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        |I(γ; w) - I(γ; z)| ={}&amp; \frac{1}{2π}\left|\oint_{γ} \frac{1}{ζ-w} - \frac{1}{ζ-z} \d ζ\right| \\
+        ={}&amp; \frac{1}{2π} \left|\oint_{γ} \frac{w-z}{(ζ-w)(ζ-z)} \d ζ\right| \\
+        \leq{}&amp; \frac{1}{2π} \mathrm{length}(γ) \cdot \frac{ε}{r(r-ε)} \\
+        \to{}&amp; 0 \qquad \text{as }ε\to 0
+    \end{align*} $$</span>
+    so by taking <span class="inline-math">$ε&gt;0$</span> sufficiently small,
+    <span class="inline-math">$|I(γ; w) - I(γ; z)| &lt; 1$</span>, and therefore <span class="inline-math">$I(γ; w) = I(γ; z)$</span>.
+</p>

@@ -1,0 +1,26 @@
+<p>
+    Let
+    <span class="display-math">$$ \begin{align*}
+        θ := \arg\left(\int_{a}^{b} f(t) \d t\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \int_{a}^{b} e^{-iθ} f(t) \d t = e^{-iθ} \int_{a}^{b} f(t) \d t = \left|\int_{a}^{b} f(t) \d t\right|\in \R
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \left|\int_{a}^{b} f(t) \d t\right| ={}&amp; \Re \left(\int_{a}^{b} e^{-iθ} f(t) \d t\right) \\
+        ={}&amp; \int_{a}^{b} \Re(e^{-iθ} f(t)) \d t &amp;&amp;\text{definition of complex integrals}\\
+        \leq{}&amp; \int_{a}^{b} |e^{-iθ} f(t)| \d t \tag{1}\\
+        ={}&amp; \int_{a}^{b} |f(t)| \d t \\
+        \leq {}&amp; (b-a)\cdot \sup_{[a,b]} |f| &amp;&amp;\text{property of real integrals}. \tag{2}
+    \end{align*} $$</span>
+</p>
+<p>
+    For equality, both (1) and (2) are equalities.
+    Since <span class="inline-math">$f$</span> is continuous, (1) being an equality implies <span class="inline-math">$\arg(f(t)) = θ$</span> for all <span class="inline-math">$t$</span>,
+    and (2) being an equality implies <span class="inline-math">$|f(t)|$</span> is constant.
+    Thus equality holds iff <span class="inline-math">$f$</span> is constant.
+</p>

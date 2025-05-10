@@ -1,0 +1,29 @@
+<p>
+    Let <span class="inline-math">$f(z) = z^n$</span> for some fixed <span class="inline-math">$n\in \Z$</span>.
+    If <span class="inline-math">$n\geq 0$</span>, <span class="inline-math">$f$</span>, <span class="inline-math">$f$</span> is entire; if <span class="inline-math">$n&lt;0$</span>, then <span class="inline-math">$f$</span> is holomorphic on <span class="inline-math">$\C \setminus \set{0}$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$C_R$</span> be the circle of radius <span class="inline-math">$R&gt;0$</span> about <span class="inline-math">$0$</span>, positively oriented.
+    Parametrise as
+    <span class="display-math">$$ \begin{align*}
+        γ(t) = R\,e^{2πit}, \qquad t\in [0,1].
+    \end{align*} $$</span>
+    Then the integral of <span class="inline-math">$f$</span> along <span class="inline-math">$C_R$</span> is
+    <span class="display-math">$$ \begin{align*}
+        \int_{γ} f ={}&amp; \int_{0}^{1} f(γ(t)) \, γ&#x27;(t) \d t \\
+        ={}&amp; \int_{0}^{1} R^n e^{2πitn} \cdot R \cdot 2πi e^{2πit} \d t \\
+        ={}&amp; 2πiR^{n+1} \int_{0}^{1} e^{2πit(n+1)} \d t \\
+        ={}&amp; 2πiR^{n+1} \left(\int_{0}^{1} \cos 2πit(n+1) \d t + i\int_{0}^{1} \sin 2πit(n+1) \d t\right) \\
+        ={}&amp; \begin{cases}
+            0, &amp;n\neq -1, \\
+            2πi, &amp;n=-1.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    This agrees with the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-fundamental-theorem-of-calculus-for-holomorphic-functions.html">fundamental theorem of calculus</a>:
+    for <span class="inline-math">$n\neq -1$</span>, <span class="inline-math">$\frac{1}{n+1} z^{n+1}$</span> is an antiderivative of <span class="inline-math">$f$</span>,
+    so the contour integral is 0.
+    Meanwhile <span class="inline-math">$z^{-1}$</span> has no antiderivative defined on <span class="inline-math">$C_R$</span>
+    (e.g. <span class="inline-math">$\Log$</span> has a cut).
+</p>

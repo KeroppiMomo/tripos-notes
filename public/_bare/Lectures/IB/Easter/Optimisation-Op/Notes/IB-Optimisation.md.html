@@ -218,7 +218,7 @@
                                 
                             </li><li>
                                 <p>
-                                    Choose a step size <span class="inline-math">$\eta_t$</span>.
+                                    Choose a step size <span class="inline-math">$\epsilon_t$</span>.
                                 </p>
                                 
                             </li><li>
@@ -308,7 +308,7 @@
                                     <p>
                                         If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-smoothness-strongly-convexity.html"><span class="inline-math">$\beta$</span>-smooth</a>, then
                                         <span class="display-math">$$ \begin{align*}
-                                            f\Big(\v x - \frac{1}{\beta}\nabla f(\v x)\Big) \leq f(\v x) - \frac{\beta}{2}|\nabla f(\v x)|^2
+                                            f\Big(\v x - \frac{1}{\beta}\nabla f(\v x)\Big) \leq f(\v x) - \frac{1}{2\beta}|\nabla f(\v x)|^2
                                         \end{align*} $$</span>
                                     </p>
                                     <p>
@@ -429,7 +429,7 @@
                                         \end{align*} $$</span>
                                     </p>
                                     <p>
-                                        For <span class="inline-math">$f: \R^n \to \R$</span>, this is the same as trying to find the root of <span class="inline-math">$f&#x27;$</span> using a linear approximation:
+                                        For <span class="inline-math">$f: \R \to \R$</span>, this is the same as trying to find the root of <span class="inline-math">$f&#x27;$</span> using a linear approximation:
                                         <span class="display-math">$$ \begin{align*}
                                             x_{t+1} = x_t - \frac{f&#x27;(x_t)}{f&#x27;&#x27;(x_t)}.
                                         \end{align*} $$</span>
@@ -470,7 +470,7 @@
                                     <p>
                                         Then <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Newton-s-method.html">Newton's method</a> satisfies
                                         <span class="display-math">$$ \begin{align*}
-                                            f(x_t) - f(x^\ast) \leq \frac{2\alpha^3}{l^2}\left(\frac{l}{2\alpha^2}|\nabla f(\v x_0)|\right)^{2^{k+1}}
+                                            f(x_t) - f(x^\ast) \leq \frac{2\alpha^3}{l^2}\left(\frac{l}{2\alpha^2}|\nabla f(\v x_0)|\right)^{2^{t+1}}
                                         \end{align*} $$</span>
                                     </p>
                                     <p>
@@ -1443,7 +1443,7 @@
                                                     \text{Maximise } &amp; \v b^T \v \lambda \\
                                                     \text{subject to } &amp; \lambda_i \geq 0, &amp;&amp;i\in M_1, \\
                                                     &amp; \lambda_i \leq 0, &amp;&amp; i\in M_2, \\
-                                                    &amp; \lambda_i = 0, &amp;&amp; i\in M_3, \\
+                                                    &amp; \lambda_i \text{ free}, &amp;&amp; i\in M_3, \\
                                                     &amp;\v A_j^T \v \lambda \leq c_j, &amp;&amp;j\in N_1, \\
                                                     &amp;\v A_j^T \v \lambda \geq c_j, &amp;&amp;j\in N_2, \\
                                                     &amp;\v A_j^T \v \lambda = c_j, &amp;&amp;j\in N_3.
@@ -1586,7 +1586,7 @@
                                             
                                         </li><li>
                                             <p>
-                                                To make column <span class="inline-math">$A_{B(l)}$</span> exist the basis and <span class="inline-math">$A_j$</span> enter the basis,
+                                                To make column <span class="inline-math">$A_{B(l)}$</span> exit the basis and <span class="inline-math">$A_j$</span> enter the basis,
                                                 add to each row of the tableau a multiple of the <span class="inline-math">$l$</span>-th row (<em>pivot row</em>) so that <span class="inline-math">$u_l$</span> (<em>pivot element</em>) becomes 1 and all other entries of the pivot column are 0.
                                             </p>
                                             
@@ -2115,7 +2115,7 @@
                             
                         </li><li>
                             <p>
-                                Along this cycle, increase the flow <span class="inline-math">$x_{ij}$</span> until some flow in the flow decreases to zero.
+                                Along this cycle, increase the flow <span class="inline-math">$x_{ij}$</span> until some flow in the cycle decreases to zero.
                             </p>
                             
                         </li><li>

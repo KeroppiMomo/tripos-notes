@@ -1,0 +1,22 @@
+<p>
+    Recall that <span class="inline-math">$u: U\subseteq \R^2\to \R$</span> is real-differentiable at <span class="inline-math">$(c,d)$</span> with derivative <span class="inline-math">$Du(c,d)$</span> if
+    <span class="display-math">$$ \begin{align*}
+        \lim_{(x,y)\to (c,d)} \frac{u(x,y) - u(c,d) - Du(c,d)(x-c,y-d)}{\sqrt{(x-c)^2 + (y-c)^2}} = 0.
+    \end{align*} $$</span>
+    Moreover for a function <span class="inline-math">$g: U\to \C$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \lim_{z\to w} g = 0 \iff \lim_{z\to w} |g| = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now, <span class="inline-math">$f$</span> is differentiable at <span class="inline-math">$w=c+id$</span> with <span class="inline-math">$f&#x27;(w) = p+iq$</span> iff
+    <span class="display-math">$$ \begin{align*}
+        0 ={}&amp; \lim_{z\to w} \frac{f(z)-f(w)-(p+iq)(z-w)}{z-w} \\
+        ={}&amp; \lim_{z\to w} \frac{f(z)-f(w)-(p+iq)(z-w)}{|z-w|} \\
+        ={}&amp; \lim_{(x,y)\to (c,d)} \frac{u(x,y) + iv(x,y) - u(c,d) - iv(c,d) - (p+iq)(x+iy - c-id)}{\sqrt{(x-c)^2 +(y-d)^2}} \\
+        ={}&amp; \lim_{(x,y)\to (c,d)} \frac{u(x,y) - u(c,d) - \bigl(p(x-c) - q(y-d)\bigr)}{\sqrt{(x-c)^2 + (y-d)^2}} \\
+        &amp;+ i \lim_{(x,y)\to (c,d)} \frac{v(x,y) - v(c,d) - \bigl(q(x-c) + p(y-d)\bigr)}{\sqrt{(x-c)^2 + (y-d)^2}}
+    \end{align*} $$</span>
+    which holds iff both real and imaginary parts vanish, i.e.
+    <span class="inline-math">$u,v$</span> are real-differentiable and the Cauchy-Riemann equations hold.
+</p>

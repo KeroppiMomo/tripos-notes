@@ -1,0 +1,81 @@
+
+<h1>Existence of Laurent series</h1>
+
+<p>
+    Fix <span class="inline-math">$w\in A$</span> and choose <span class="inline-math">$ρ_1$</span> and <span class="inline-math">$ρ_2$</span> such that <span class="inline-math">$r&lt;ρ_1&lt;|w-a|&lt;ρ_2&lt;R$</span>.
+</p>
+
+<h2><span class="inline-math">$f(w)$</span> expressed in term of integrals</h2>
+
+<p>
+    <img src="/tripos-notes/media/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Pasted-image-20250407221220.png">
+</p>
+<p>
+    Define two closed curves <span class="inline-math">$γ_0, γ_1$</span> (positive oriented),
+    bounding two half-annuli defined by <span class="inline-math">$ρ_1$</span> and <span class="inline-math">$ρ_2$</span>,
+    labelled such that <span class="inline-math">$I(γ_1; w) = 1$</span> and <span class="inline-math">$I(γ_0; w) = 0$</span>.
+    Note <span class="inline-math">$γ_0$</span> and <span class="inline-math">$γ_1$</span> are homologous to zero in <span class="inline-math">$A$</span>,
+    so by the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-general-Cauchy-s-integral-formula.html">general Cauchy integral formula</a>,
+    <span class="display-math">$$ \begin{align*}
+        &amp;0 = \frac{1}{2πi}\oint_{γ_0} \frac{f(z)}{z-w} \d z,  \qquad 
+        f(w) = \frac{1}{2πi}\oint_{γ_1} \frac{f(z)}{z-w} \d z \\
+        \implies \qquad &amp; f(w) = \frac{1}{2πi}\int_{γ_0 + γ_1} \frac{f(z)}{z-w} \d z.
+    \end{align*} $$</span>
+</p>
+<p>
+    Notice <span class="inline-math">$γ_1 + γ_2 = \partial B(a,ρ_2) - \partial B(a,ρ_1)$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        f(w) = \frac{1}{2πi}\left(\oint_{|z|=ρ_2} \frac{f(z)}{z-w}\d z - \oint_{|z|=ρ_1} \frac{f(z)}{z-w}\d z\right).
+    \end{align*} $$</span>
+</p>
+
+<h2>Series expansion</h2>
+
+<p>
+    On <span class="inline-math">$|z-a|=ρ_1$</span>, we have <span class="inline-math">$|\frac{z-a}{w-a}| &lt; 1$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{z-w} = -\frac{1}{w-a} \frac{1}{1-\frac{z-a}{w-a}} = -\sum_{n=0}^{\infty} \frac{(z-a)^{n}}{(w-a)^{n+1}}, \tag{1}
+    \end{align*} $$</span>
+    converging uniformly.
+    Meanwhile on <span class="inline-math">$|z-a|=ρ_2$</span>, we have <span class="inline-math">$|\frac{w-a}{z-a}| &lt; 1$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{z-w} = \frac{1}{z-a} \frac{1}{1-\frac{w-a}{z-a}} = \sum_{n=0}^{\infty} \frac{(w-a)^{n}}{(z-a)^{n+1}} \tag{2}
+    \end{align*} $$</span>
+    also uniformly.
+</p>
+<p>
+    Substituting, and <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-integral-of-uniform-convergent-functions-along-curve.html">swapping <span class="inline-math">$\int$</span> and <span class="inline-math">$\sum$</span></a>,
+    <span class="display-math">$$ \begin{align*}
+        f(w) ={}&amp; \frac{1}{2πi} \left(\sum_{n=0}^{\infty} (w-a)^{n} \oint_{|z|=ρ_2} \frac{f(z)}{(z-a)^{n+1}} \d z + \sum_{n=0}^{\infty} (w-a)^{-(n+1)} \int_{|z|=ρ_1} f(z) \, (z-a)^{n} \d z \right) \\
+        ={}&amp; \frac{1}{2πi} \left(\sum_{n=0}^{\infty} (w-a)^n \oint_{|z|=ρ_2} \frac{f(z)}{(z-a)^{n+1}}\d z + \sum_{n=-\infty}^{-1} (w-a)^n \oint_{|z|=ρ_1} \frac{f(z)}{(z-a)^{n+1}} \d z\right),
+    \end{align*} $$</span>
+    as required.
+</p>
+
+<h1>Uniform convergence</h1>
+
+<p>
+    Pick <span class="inline-math">$r&lt;ρ_1&lt;ρ&lt;ρ&#x27;&lt;ρ_2&lt;R$</span>.
+    Then <span class="inline-math">$(1)$</span> and <span class="inline-math">$(2)$</span> converges uniformly on <span class="inline-math">$ρ&lt;|z-a|&lt;ρ&#x27;$</span>,
+    so the Laurent series converges uniformly also.
+</p>
+
+<h1>Coefficients</h1>
+
+<p>
+    Write
+    <span class="display-math">$$ \begin{align*}
+        f(z) = \sum_{n=-\infty}^{\infty} c_n(z-a)^n
+    \end{align*} $$</span>
+    and fix <span class="inline-math">$r&lt;ρ&lt;R$</span>.
+    We have
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{2πi} \int_{|z|=ρ} \frac{f(z)}{(z-a)^{m+1}} \d z = \frac{1}{2πi} \sum_{n=-\infty}^{\infty} c_n \int_{|z|=ρ} (z-a)^{n-m-1} \d z.
+    \end{align*} $$</span>
+    By <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Example-contour-integral-of-powers.html">previous computation</a>,
+    the integral is <span class="inline-math">$2πi$</span> if <span class="inline-math">$n-m-1=-1$</span> or zero otherwise.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{2πi}\oint_{|z|=ρ} \frac{f(z)}{(z-a)^{m+1}} \d z = c_m.
+    \end{align*} $$</span>
+</p>

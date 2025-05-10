@@ -1,0 +1,82 @@
+
+<h1><span class="inline-math">$d_g$</span> is well-defined</h1>
+
+<p>
+    Since <span class="inline-math">$Σ$</span> is connected and locally path-connected, it is path-connected,
+    so for any two points <span class="inline-math">$p,q\in Σ$</span>, there exists a continuous curve <span class="inline-math">$γ$</span> from <span class="inline-math">$p$</span> to <span class="inline-math">$q$</span>.
+</p>
+<blockquote>
+    <p>
+        Around every point <span class="inline-math">$p\in Σ$</span>, there exists a homeomorphism
+        <span class="inline-math">$ϕ: U\to V$</span> from an open neighbourhood <span class="inline-math">$U\subseteq Σ$</span> of <span class="inline-math">$p$</span>
+        to an open set <span class="inline-math">$V\subseteq \R^2$</span>.
+        Pick a small ball <span class="inline-math">$\tilde V = B(f(p), ε) \subseteq V$</span> around <span class="inline-math">$f(p)$</span> (which is path-connected)
+        and restrict <span class="inline-math">$ϕ: ϕ\inv(\tilde V) \to \tilde V$</span>
+        to see <span class="inline-math">$p$</span> has a path-connected open neighbourhood <span class="inline-math">$ϕ\inv(\tilde V)$</span>.
+        >
+        Now for any <span class="inline-math">$p\in Σ$</span>, the set <span class="inline-math">$\sb{q\in Σ}{\exists \text{continuous curve from }p\text{ to }q}$</span>
+        is both open and closed (because <span class="inline-math">$q$</span> is path-connected to <span class="inline-math">$p$</span> iff
+        any point on a sufficiently small neighbourhood of <span class="inline-math">$q$</span> is path-connected to <span class="inline-math">$p$</span>),
+        so by connectedness, this set must be the entire <span class="inline-math">$Σ$</span>.
+    </p>
+    
+</blockquote>
+<p>
+    We can cover the image of <span class="inline-math">$γ$</span> (which is compact)
+    by finitely many charts.
+    Since any two points on an open and connected set <span class="inline-math">$V\subseteq \R^2$</span>
+    can be joined by a smooth path, replace the piece of <span class="inline-math">$γ$</span> in the chart
+    by a smooth curve.
+    This gives a piecewise smooth curve from <span class="inline-math">$p$</span> to <span class="inline-math">$q$</span>.
+</p>
+
+<h1><span class="inline-math">$d_g$</span> is a metric</h1>
+
+<p>
+    Symmetry and triangle inequality are clear.
+    It remains to show <span class="inline-math">$d_g(p,q)=0\implies p=q$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$p,q\in Σ$</span> be distinct, so
+    there exists a chart <span class="inline-math">$(U,ϕ)$</span> for <span class="inline-math">$Σ$</span> at <span class="inline-math">$p$</span>
+    where <span class="inline-math">$ϕ: V\to U$</span>, <span class="inline-math">$ϕ(p)=0$</span> and <span class="inline-math">$q\not\in U$</span>.
+    Take <span class="inline-math">$ε&gt;0$</span> sufficiently small so that <span class="inline-math">$\overline{B(0,ε)} \subseteq V$</span>.
+    For any curve <span class="inline-math">$γ$</span> from <span class="inline-math">$p$</span> to <span class="inline-math">$q$</span>,
+    by continuity, there exist <span class="inline-math">$r\in γ\cap ϕ\inv(\partial B(0,ε))$</span>,
+    and let <span class="inline-math">$τ$</span> be a sub-curve of <span class="inline-math">$γ$</span> from <span class="inline-math">$p$</span> to <span class="inline-math">$r$</span>.
+    Since <span class="inline-math">$\mathrm{length}(τ) \leq \mathrm{length}(γ)$</span>,
+    it suffices to show that <span class="inline-math">$\mathrm{length}(τ)$</span> is bounded below by some positive quantity.
+</p>
+<p>
+    For any <span class="inline-math">$z\in ϕ\inv(\overline{B(0,ε)})$</span>,
+    the Riemannian metric
+    <span class="display-math">$$ \begin{align*}
+        \I_z = \pmat{E(z) &amp; F(z) \\ F(z) &amp; G(z)}
+    \end{align*} $$</span>
+    is positive definite, i.e. <span class="inline-math">$E,G&gt;0$</span> and <span class="inline-math">$EG - F^2 &gt; 0$</span>.
+    By compactness of <span class="inline-math">$ϕ\inv(\overline{B(0,ε)})$</span>,
+    there exists <span class="inline-math">$0 &lt; δ_1 &lt; δ_2$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        δ_1 \|x\|^2 \leq x^T \I_z x \leq δ_2\|x\|^2
+    \end{align*} $$</span>
+    for all <span class="inline-math">$x\in \R^2$</span>.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        &amp;δ_1 \int_{a}^{b} \|\dot γ\|_{\text{Eucl}} \d t \leq \int_{a}^{b} \sqrt{\dot γ^T \I_z \dot γ} \d t \leq δ_2 \int_{a}^{b} \|\dot γ\|_{\text{Eucl}} \d t \\
+        \implies &amp;δ_1 \,\mathrm{length}_{d_{\text{Eucl}}}(τ) \leq \mathrm{length}_{d_g}(τ) \leq δ_2 \mathrm{length}_{d_\text{Eucl}}(τ). \tag{*}
+    \end{align*} $$</span>
+    In particular
+    <span class="display-math">$$ \begin{align*}
+        \mathrm{length}_{d_g}(τ) \geq δ_1 ε
+    \end{align*} $$</span>
+    as required.
+</p>
+
+<h1>Equivalent topology</h1>
+
+<p>
+    <span class="inline-math">$(*)$</span> shows that the Euclidean metric and the Riemannian metric
+    are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-equivalence.html">equivalent</a>.
+    Therefore mapping through a parametrisation,
+    the induced topologies on <span class="inline-math">$Σ$</span> are equivalent as well.
+</p>

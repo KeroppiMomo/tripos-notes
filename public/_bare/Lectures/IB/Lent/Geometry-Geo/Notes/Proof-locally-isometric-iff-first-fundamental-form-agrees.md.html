@@ -1,0 +1,58 @@
+
+<h1>First fundamental form agrees <span class="inline-math">$\implies$</span> locally isometric</h1>
+
+<p>
+    Let <span class="inline-math">$f = σ&#x27; \circ σ\inv: U\to U&#x27;$</span>, which is a diffeomorphism.
+    For a curve <span class="inline-math">$γ(t) = σ(u(t), v(t))$</span> on <span class="inline-math">$Σ$</span>,
+    its image is <span class="inline-math">$f\circ γ(t) = σ&#x27;(u(t), v(t))$</span>.
+    Since the first fundamental form agrees,
+    their <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-length-of-curve-on-surface.html">lengths</a> are the same.
+</p>
+
+<h1>Locally isometric <span class="inline-math">$\implies$</span> first fundamental form</h1>
+
+<p>
+    We will show lengths of curves determine the first fundamental form.
+    WLOG let <span class="inline-math">$σ: V\to U$</span> be an allowable parametrisation with <span class="inline-math">$V=B(0,δ)\subseteq \R^2$</span>
+    and <span class="inline-math">$σ(0) = p$</span>.
+</p>
+<p>
+    Using the curve
+    <span class="display-math">$$ \begin{align*}
+        γ_ε: [0,ε]&amp;\to U \\
+        t &amp;\mapsto σ(t, 0),
+    \end{align*} $$</span>
+    we can determine
+    <span class="display-math">$$ \begin{align*}
+        \mathrm{length}(γ_ε) = \int_{0}^{ε} \sqrt{E(t,0)} \d t
+        \implies \sqrt{E(0,0)} = \dd{ε} \mathrm{length}(γ_ε)\Big|_0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Similarly
+    <span class="display-math">$$ \begin{align*}
+        χ_ε: [0,ε]&amp;\to U \\
+        t &amp;\mapsto σ(0, t),
+    \end{align*} $$</span>
+    determines
+    <span class="display-math">$$ \begin{align*}
+        \mathrm{length}(χ_ε) = \int_{0}^{ε} \sqrt{G(0,t)} \d t
+        \implies \sqrt{G(0,0)} = \dd{ε} \mathrm{length}(γ_ε)\Big|_0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Finally using
+    <span class="display-math">$$ \begin{align*}
+        λ_ε: [0,ε]&amp;\to U \\
+        t &amp;\mapsto σ(t, t),
+    \end{align*} $$</span>
+    we have
+    <span class="display-math">$$ \begin{align*}
+        &amp;\mathrm{length}(λ_ε) = \int_{0}^{ε} \sqrt{E(t,t) + 2F(t,t) + G(t,t)} \d t \\
+        \implies &amp; \sqrt{E(0,0) + 2F(0,0) + G(0,0)} = \dd{ε}\mathrm{length}(λ_ε)\Big|_0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore the first fundamental form at <span class="inline-math">$p=σ(0)$</span>
+    is determined by lengths of curves.
+</p>

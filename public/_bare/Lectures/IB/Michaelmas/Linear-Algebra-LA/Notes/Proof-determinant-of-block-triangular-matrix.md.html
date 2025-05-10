@@ -4,6 +4,9 @@
         C = (c_{ij}) = \pmat{A &amp; * \\ 0 &amp; B}.
     \end{align*} $$</span>
 </p>
+
+<h1>Proof 1</h1>
+
 <p>
     Recall <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-determinant-as-unique-volume-form.html">Leibniz formula</a>
     <span class="display-math">$$ \begin{align*}
@@ -27,4 +30,28 @@
         ={}&amp;\left(\sum_{\tau\in \mathrm{Sym}(X)} \sign(\tau) \prod_{i\in X} c_{\tau(i),i}\right) \left(\sum_{\theta\in \mathrm{Sym}(Y)} \sign(\theta) \prod_{i\in Y} c_{\theta(i),i}\right) \\
         ={}&amp; \det(A) \det(B).
     \end{align*} $$</span>
+</p>
+
+<h1>Proof 2</h1>
+
+<p>
+    If <span class="inline-math">$\det A=0$</span>, then columns of <span class="inline-math">$A$</span> are linearly dependent.
+    Then the first <span class="inline-math">$k$</span> columns of <span class="inline-math">$C$</span>
+    are also linearly dependent, so <span class="inline-math">$\det C = 0 = \det A \det B$</span>.
+</p>
+<p>
+    Otherwise, note
+    <span class="display-math">$$ \begin{align*}
+        &amp;\pmat{A &amp; D \\ 0 &amp; B} \pmat{I_k &amp; -A\inv D \\ 0 &amp; I_l}
+        = \pmat{A &amp; 0 \\ 0 &amp; I_l} \pmat{I_k &amp; 0 \\ 0 &amp; B} \\
+        \implies &amp; \det C \det \pmat{I_k &amp; -A\inv D \\ 0 &amp; I_l}
+        = \det \pmat{A &amp; 0 \\ 0 &amp; I_l} \det \pmat{I_k &amp; 0 \\ 0 &amp; B}.
+    \end{align*} $$</span>
+    By <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Laplace-expansion.html">Laplace expansion</a>,
+    <span class="display-math">$$ \begin{align*}
+        \det \pmat{I_k &amp; -A\inv D \\ 0 &amp; I_l} ={}&amp; 1 \\
+        \det \pmat{A &amp; 0 \\ 0 &amp; I_l} ={}&amp; \det A \\
+        \det \pmat{I_k &amp; 0 \\ 0 &amp; B} ={}&amp; \det B.
+    \end{align*} $$</span>
+    Substituting gives the result.
 </p>

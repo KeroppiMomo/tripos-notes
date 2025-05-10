@@ -1,0 +1,232 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Laurent expansion)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Laurent-expansion.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on an annulus <span class="inline-math">$A:= \sb{z\in \C}{r&lt;|z-a|&lt;R}$</span>
+                for some <span class="inline-math">$a\in \C$</span> and <span class="inline-math">$0\leq r&lt;R\leq \infty$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$f$</span> has a unique convergent expansion about <span class="inline-math">$a$</span> on <span class="inline-math">$A$</span>
+                    <span class="display-math">$$ \begin{align*}
+                    f(z) = \sum_{n=-\infty}^{\infty} c_n(z-a)^n
+                    \end{align*} $$</span>
+                    called the <em>Laurent series</em> of <span class="inline-math">$f$</span> about <span class="inline-math">$a$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The Laurent series converges uniformly on some slightly shrunk annulus
+                    <span class="inline-math">$\sb{z\in \C}{ρ&#x27; &lt; |z-a|&lt;ρ}$</span> (where <span class="inline-math">$r&lt;ρ&#x27;\leq ρ&lt;R$</span>).
+                </p>
+                
+            </li><li>
+                <p>
+                    The coefficients are given by
+                    <span class="display-math">$$ \begin{align*}
+                    c_n = \frac{1}{2πi} \int_{|z| = ρ} \frac{f(z)}{(z-a)^{n+1}} \d z
+                    \end{align*} $$</span>
+                    for any <span class="inline-math">$r&lt;ρ&lt;R$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Laurent-expansion.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (isolated singularity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-isolated-singularity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> on a domain <span class="inline-math">$U$</span>.
+            </p>
+            <p>
+                A point <span class="inline-math">$a\in \C\setminus U$</span> is called an <em>isolated singularity</em> of <span class="inline-math">$f$</span>
+                if <span class="inline-math">$f$</span> is holomorphic on a punctured neighbourhood of <span class="inline-math">$a$</span>,
+                i.e. there exists <span class="inline-math">$r&gt;0$</span> such that <span class="inline-math">$B(a,r)^\times := B(a,r) \setminus \set{a} \subseteq U$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (removable singularity, pole, essential singularity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a holomorphic function <span class="inline-math">$f: B(a,r)^\times\to \C$</span>
+                with an <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-isolated-singularity.html">isolated singularity</a> at <span class="inline-math">$z=a$</span>.
+                It has a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Laurent-expansion.html">Laurent expansion</a> <span class="inline-math">$f(z) = \sum_{n=-\infty}^{\infty} c_n (z-a)^n$</span>
+                valid on <span class="inline-math">$B(a,r)^\times$</span>.
+            </p>
+            <p>
+                We say <span class="inline-math">$z=a$</span> is
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    a <em>removable singularity</em> if <span class="inline-math">$c_n = 0$</span> for all <span class="inline-math">$n&lt;0$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    a <em>pole</em> (of <em>order</em> <span class="inline-math">$k$</span>) if there exists <span class="inline-math">$k&gt;0$</span> such that <span class="inline-math">$c_{-k}\neq 0$</span> but <span class="inline-math">$c_n=0$</span> for all <span class="inline-math">$n&lt;-k$</span>; or
+                </p>
+                
+            </li><li>
+                <p>
+                    an <em>essential singularity</em> if otherwise (i.e. <span class="inline-math">$c_n\neq 0$</span> for infinitely many <span class="inline-math">$n&lt;0$</span>).
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (principal part, residue)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-principal-part-residue.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: B(a,r)^\times\to \C$</span> be holomorphic
+                with an <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-isolated-singularity.html">isolated singularity</a> at <span class="inline-math">$z=a$</span>,
+                and write <span class="inline-math">$f(z) = \sum_{n=-\infty}^{\infty} c_n (z-a)^n$</span> as its <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Laurent-expansion.html">Laurent series</a>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The <em>principal part</em> of <span class="inline-math">$f$</span> at <span class="inline-math">$a$</span> is <span class="inline-math">$\sum_{n=-\infty}^{-1} c_n(z-a)^n$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The <em>residue</em> of <span class="inline-math">$f$</span> at <span class="inline-math">$z=a$</span> is <span class="inline-math">$\Res_{z=a} f(z) := c_{-1}$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (limit definition of removable singularity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-limit-definition-of-removable-singularity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A holomorphic function <span class="inline-math">$f: B(a,r)^\times\to \C$</span> has a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">removable singularity</a> at <span class="inline-math">$z=a$</span>
+                iff <span class="inline-math">$\lim_{z\to a} (z-a)f(z) = 0$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-limit-definition-of-removable-singularity.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This is satisfied if <span class="inline-math">$f$</span> is continuous at <span class="inline-math">$a$</span>, or is bounded on <span class="inline-math">$B(a,r)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (equivalent definition of pole)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-equivalent-definition-of-pole.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let a holomorphic function <span class="inline-math">$f: B(a,r)^\times\to\C$</span>
+                have an isolated singularity at <span class="inline-math">$z=a$</span>.
+                The following are equivalent:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$f$</span> has a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">pole</a> of order <span class="inline-math">$k$</span> at <span class="inline-math">$z=a$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$f(z) = (z-a)^{-k} g(z)$</span> on <span class="inline-math">$B(a,r)^\times$</span> for some holomorphic function <span class="inline-math">$g$</span> on <span class="inline-math">$B(a,r)$</span> where <span class="inline-math">$g(a)\neq 0$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$f(z) = 1/h(z)$</span> on <span class="inline-math">$B(a,ε)^\times$</span> for some <span class="inline-math">$0&lt;ε&lt;r$</span>
+                    and holomorphic function <span class="inline-math">$h$</span> on <span class="inline-math">$B(a,ε)$</span> having a zero of <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-order-of-vanishing.html">order</a> <span class="inline-math">$k$</span> at <span class="inline-math">$z=a$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Consequently, <span class="inline-math">$f$</span> has a pole at <span class="inline-math">$z=a$</span> iff <span class="inline-math">$\lim_{z\to a} |f(z)| = \infty$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-equivalent-definition-of-pole.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (essential singularity iff no limit)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-essential-singularity-iff-no-limit.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A holomorphic function <span class="inline-math">$f: B(a,r)^\times\to \C$</span> has an <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">essential singularity</a> at <span class="inline-math">$z=a$</span>
+                iff <span class="inline-math">$|f(z)|$</span> has no limit (in <span class="inline-math">$\R\cup \set{\infty}$</span>) as <span class="inline-math">$z\to a$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-essential-singularity-iff-no-limit.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (big Picard theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-big-Picard-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: B(a,r)^\times\to \C$</span> be holomorphic
+                with an <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">essential singularity</a> at <span class="inline-math">$a$</span>.
+                Then for all <span class="inline-math">$0&lt;ρ&lt;r$</span>, the image <span class="inline-math">$f(B(a,ρ)^\times) = \C$</span> or <span class="inline-math">$\C\setminus\set{b}$</span> for some <span class="inline-math">$b\in \C$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Weaker (but easier to prove) result: the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Casorati-Weierstrass.html">Casorati-Weierstrass theorem</a>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

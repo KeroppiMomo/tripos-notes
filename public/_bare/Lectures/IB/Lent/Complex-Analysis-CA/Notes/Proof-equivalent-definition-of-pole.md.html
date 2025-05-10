@@ -1,0 +1,60 @@
+
+<h1>Pole of order <span class="inline-math">$k$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$f(z) = (z-a)^{-k}g(z)$</span></h1>
+
+<p>
+    If <span class="inline-math">$f$</span> has a pole of order <span class="inline-math">$k$</span>, then its Laurent expansion is
+    <span class="display-math">$$ \begin{align*}
+        f(z) = \sum_{n=-k}^{\infty} c_n (z-a)^n = (z-a)^{-k} \underbrace{\sum_{n=0}^{\infty} c_{n-k}(z-a)^n}_{g(z)}
+    \end{align*} $$</span>
+    where <span class="inline-math">$g(z)$</span> is a power series with radius of convergence at least <span class="inline-math">$r$</span> and so is holomorphic.
+    Also <span class="inline-math">$g(0) = c_{-n}\neq 0$</span> by definition.
+</p>
+
+<h1><span class="inline-math">$f(z) = (z-a)^{-k}g(z)$</span> <span class="inline-math">$\implies$</span> pole of order <span class="inline-math">$k$</span></h1>
+
+<p>
+    Conversely, let <span class="inline-math">$g$</span> have a power series expansion <span class="inline-math">$g(z) = \sum_{n=0}^{\infty} b_n(z-a)^n$</span>
+    valid on <span class="inline-math">$B(a,r)$</span>, with <span class="inline-math">$b_0=g(a)\neq 0$</span>.
+    Then <span class="inline-math">$f$</span> has a Laurent series <span class="inline-math">$f(z) = \sum_{n=-k}^{\infty} b_{n+k}(z-a)^n$</span>.
+</p>
+
+<h1><span class="inline-math">$f(z) = (z-a)^{-k} \,g(z)$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$f(z) = 1/h(z)$</span></h1>
+
+<p>
+    By continuity, choose <span class="inline-math">$ε&gt;0$</span> such that <span class="inline-math">$g(z)\neq 0$</span> on <span class="inline-math">$B(a,ε)$</span>.
+    Then <span class="inline-math">$z\mapsto 1/g(z)$</span> is a holomorphic function on <span class="inline-math">$B(a,ε)$</span>,
+    and so <span class="inline-math">$h(z):=(z-a)^k / g(z)$</span> is holomorphic
+    with a zero of order <span class="inline-math">$k$</span> at <span class="inline-math">$z=a$</span>.
+</p>
+
+<h1><span class="inline-math">$f(z) = 1/h(z)$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$f(z) = (z-a)^{-k} \,g(z)$</span></h1>
+
+<p>
+    Conversely, write <span class="inline-math">$h(z) = (z-a)^k \,\tilde h(z)$</span>
+    where <span class="inline-math">$\tilde h(z)\neq 0$</span> on <span class="inline-math">$B(a,ε)$</span>.
+    Then <span class="inline-math">$g(z) := 1/\tilde h(z)$</span> is holomorphic on <span class="inline-math">$B(a,ε)$</span>
+    and <span class="inline-math">$f(z) = (z-a)^{-k} g(z)$</span> holds on <span class="inline-math">$B(a,ε^\times)$</span>.
+    Extend <span class="inline-math">$g$</span> to <span class="inline-math">$B(a,r)$</span> by setting <span class="inline-math">$g(z) = (z-a)^k f(z)$</span> on <span class="inline-math">$B(a,r)^\times$</span>.
+</p>
+
+<h1>Pole <span class="inline-math">$\implies$</span> <span class="inline-math">$\lim_{z\to a} |f(z)|=\infty$</span></h1>
+
+<p>
+    Apply 2 or 3.
+</p>
+
+<h1><span class="inline-math">$\lim_{z\to a} |f(z)|=\infty$</span> <span class="inline-math">$\implies$</span> pole</h1>
+
+<p>
+    There exists <span class="inline-math">$ε&gt;0$</span> such that <span class="inline-math">$f(z) \neq 0$</span> for all <span class="inline-math">$z\in B(a,ε)^\times$</span>,
+    so <span class="inline-math">$1/f(z)$</span> is holomorphic on <span class="inline-math">$B(a,ε)^\times$</span>.
+    Moreover <span class="inline-math">$|1/f(z)| \to 0$</span> as <span class="inline-math">$z\to a$</span>,
+    <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-limit-definition-of-removable-singularity.html">so</a> <span class="inline-math">$z=a$</span>
+    is a removable singularity for <span class="inline-math">$1/f(z)$</span>.
+    Thus <span class="inline-math">$1/f(z) = h(z)$</span> for some function <span class="inline-math">$h$</span> holomorphic on <span class="inline-math">$B(a,ε)$</span>.
+</p>
+<p>
+    <span class="inline-math">$h(a) = \lim_{z\to a} 1/f(z) = 0$</span> by continuity,
+    and hence <span class="inline-math">$h$</span> has a zero at <span class="inline-math">$z=a$</span>.
+    This satisfies 3.
+</p>

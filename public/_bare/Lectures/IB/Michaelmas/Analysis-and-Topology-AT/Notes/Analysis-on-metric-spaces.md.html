@@ -454,7 +454,8 @@
                     </div>
                     <div class="markdown-embed-content">
                         <p>
-                            Let <span class="inline-math">$Y$</span> be a set and <span class="inline-math">$\set{f_n}_{n\geq 1}^\infty$</span> be a sequence of functions <span class="inline-math">$Y\to\R$</span>.
+                            Let <span class="inline-math">$Y$</span> be a set, <span class="inline-math">$(Z,d)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric space</a>
+                            and <span class="inline-math">$\set{f_n}_{n\geq 1}^\infty$</span> be a sequence of functions <span class="inline-math">$Y\to Z$</span>.
                         </p>
                         <p>
                             We say <span class="inline-math">$\set{f_n}$</span> <em>converges uniformly</em> to <span class="inline-math">$f: Y\to\R$</span> (denoted as <span class="inline-math">$f_n\tto f$</span>) if, equivalently,
@@ -469,13 +470,16 @@
                             <p>
                                 for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$N\in\N$</span> such that for all <span class="inline-math">$n\geq N$</span>, we have
                                 <span class="display-math">$$ \begin{align*}
-                                \sup_{x\in Y} |f(x) - f_n(x)| &lt; \epsilon;
+                                \sup_{x\in Y} d(f(x), f_n(x)) &lt; \epsilon;
                                 \end{align*} $$</span>
                             </p>
                             
                         </li><li>
                             <p>
-                                for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$N\in\N$</span> such that for all <span class="inline-math">$n\geq N$</span> and <span class="inline-math">$x\in Y$</span>
+                                for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$N\in\N$</span> such that for all <span class="inline-math">$n\geq N$</span> and <span class="inline-math">$x\in Y$</span>, we have
+                                <span class="display-math">$$ \begin{align*}
+                                d(f(x), f_n(x)) &lt; \epsilon.
+                                \end{align*} $$</span>
                             </p>
                             
                         </li>
@@ -492,13 +496,14 @@
                     </div>
                     <div class="markdown-embed-content">
                         <p>
-                            Let <span class="inline-math">$Y$</span> be a set and <span class="inline-math">$\set{f_n}_{n\geq 1}^\infty$</span> is a sequence of functions <span class="inline-math">$Y\to\R$</span>.
+                            Let <span class="inline-math">$Y$</span> be a set, <span class="inline-math">$(Z,d)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric space</a>
+                            and <span class="inline-math">$\set{f_n}_{n\geq 1}^\infty$</span> be a sequence of functions <span class="inline-math">$Y\to Z$</span>.
                         </p>
                         <p>
                             <span class="inline-math">$\set{f_n}$</span> is said to be <em>uniformly Cauchy</em>
                             if for all <span class="inline-math">$\epsilon&gt;0$</span>, there exists <span class="inline-math">$N\in\N$</span> such that for all <span class="inline-math">$n,m\geq N$</span>, we have
                             <span class="display-math">$$ \begin{align*}
-                                \sup_{x\in Y}|f_n(x) - f_m(x)| &lt;\epsilon.
+                                \sup_{x\in Y} d(f_n(x), f_m(x)) &lt;\epsilon.
                             \end{align*} $$</span>
                         </p>
                         
@@ -511,18 +516,27 @@
                     </div>
                     <div class="markdown-embed-content">
                         <p>
-                            Let <span class="inline-math">$Y$</span> be a set and <span class="inline-math">$\set{f_n}_{n\geq 1}^\infty$</span> is a sequence of functions <span class="inline-math">$Y\to\R$</span>
+                            Let <span class="inline-math">$Y$</span> be a set, <span class="inline-math">$(Z,d)$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-completeness.html">complete</a> metric space
+                            and <span class="inline-math">$\set{f_n}_{n\geq 1}^\infty$</span> be a sequence of functions <span class="inline-math">$Y\to Z$</span>.
                         </p>
                         <p>
                             <span class="inline-math">$\set{f_n}$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-convergence.html">uniformly convergent</a> iff <span class="inline-math">$\set{f_n}$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniformly-Cauchy.html">uniformly Cauchy</a>.
                         </p>
                         <p>
-                            Consequently, the metric space <span class="inline-math">$L^\infty(Y) = (\set{\text{bounded functions } X\to \R},$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Examples-of-metric-spaces.html"><span class="inline-math">$\text{sup metric}$</span></a><span class="inline-math">$)$</span>
+                            Consequently, the metric space <span class="inline-math">$L^\infty(Y; Z) = (\set{\text{bounded functions } Y\to Z},$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Examples-of-metric-spaces.html"><span class="inline-math">$\text{sup metric}$</span></a><span class="inline-math">$)$</span>
                             is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-completeness.html">complete</a>.
                         </p>
                         <p>
                             <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-uniformly-convergent-iff-uniformly-Cauchy.html">Proof</a>
                         </p>
+                        <ul>
+                        <li>
+                            <p>
+                                This applies to <span class="inline-math">$Z=\R$</span> since <span class="inline-math">$(\R, |\cdot|)$</span> <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-general-principle-of-convergence.html">is complete</a>.
+                            </p>
+                            
+                        </li>
+                        </ul>
                         
                     </div>
                 </div>
@@ -565,17 +579,21 @@
                     </div>
                     <div class="markdown-embed-content">
                         <p>
-                            Let <span class="inline-math">$(X,d)$</span> and <span class="inline-math">$(Y,d&#x27;)$</span> be a metric spaces and <span class="inline-math">$\set{f_n}_{n\geq 1}^\infty$</span> of functions <span class="inline-math">$X\to Y$</span>, and let <span class="inline-math">$f: X\to Y$</span>.
+                            Let <span class="inline-math">$(X,τ)$</span> be a topological space,
+                            <span class="inline-math">$(Y,d)$</span> be a metric space,
+                            <span class="inline-math">$\set{f_n}_{n\geq 1}^\infty$</span> be functions <span class="inline-math">$X\to Y$</span>, and <span class="inline-math">$f: X\to Y$</span>.
                         </p>
                         <p>
-                            If <span class="inline-math">$f_n$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-limit.html"><span class="inline-math">$\tto$</span></a> <span class="inline-math">$f$</span> and <span class="inline-math">$f_n$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a>, then <span class="inline-math">$f$</span> is also continuous, i.e.
+                            If <span class="inline-math">$f_n$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-limit.html"><span class="inline-math">$\tto$</span></a> <span class="inline-math">$f$</span> and <span class="inline-math">$f_n$</span> are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous</a>, then <span class="inline-math">$f$</span> is also continuous,
+                            i.e. (if limits in <span class="inline-math">$X$</span> are unique)
                             <span class="display-math">$$ \begin{align*}
                                 \lim_{x\to x_0} \lim_{n\to \infty} f_n(x) = \lim_{n\to \infty} \lim_{x\to x_0}f_n(x).
                             \end{align*} $$</span>
                         </p>
                         <p>
-                            Consequently, the metric space <span class="inline-math">$C_b(X) = (\set{\text{bounded, continuous functions } X\to\R}, \text{sup metric})$</span> is (<a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequentially-closed.html">sequentially</a>) <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closed-set.html">closed</a> in <span class="inline-math">$L^\infty(X)$</span>,
-                            and is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-closed-set-in-complete-metric-space-is-complete.html">therefore</a> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-completeness.html">complete</a>.
+                            Consequently, the metric space <span class="inline-math">$C_b(X; Y) = (\set{\text{bounded, continuous functions } X\to Y}, \text{sup metric})$</span> is (<a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-sequentially-closed.html">sequentially</a>) <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-closed-set.html">closed</a> in <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-uniformly-convergent-iff-uniformly-Cauchy.html"><span class="inline-math">$L^\infty(X; Y)$</span></a>.
+                            So if <span class="inline-math">$Y$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-completeness.html">complete</a>,
+                            <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-closed-set-in-complete-metric-space-is-complete.html">so is</a> <span class="inline-math">$C_b(X; Y)$</span>.
                         </p>
                         <p>
                             <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-uniform-limit.html">Proof</a>
@@ -1266,7 +1284,7 @@
                     </div>
                     <div class="markdown-embed-content">
                         <p>
-                            Let <span class="inline-math">$x_0\in\R$</span>, <span class="inline-math">$y_0 \in \R^n$</span> and <span class="inline-math">$R&gt;0$</span>.
+                            Let <span class="inline-math">$x_0\in (a,b)$</span>, <span class="inline-math">$y_0 \in \R^n$</span> and <span class="inline-math">$R&gt;0$</span>.
                             Suppose
                             <span class="display-math">$$ \begin{align*}
                                 f(x,y): [a,b] \times B_R[y_0] \to \R^n
@@ -1284,6 +1302,16 @@
                         <p>
                             <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-Picard-Lindelof.html">Proof</a>
                         </p>
+                        <ul>
+                        <li>
+                            <p>
+                                This can be strengthened to say if <span class="inline-math">$f$</span> is smooth,
+                                then the solution <span class="inline-math">$y(x)$</span> depends smoothly on <span class="inline-math">$y_0$</span> and
+                                is smooth in <span class="inline-math">$t$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
                         
                     </div>
                 </div>
@@ -1363,6 +1391,14 @@
                         <p>
                             <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-closed-set-in-compact-space-is-compact.html">Proof</a>
                         </p>
+                        <ul>
+                        <li>
+                            <p>
+                                The <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-compact-subset-in-Hausdorff-space-is-closed.html">converse</a> is true if <span class="inline-math">$X$</span> is Hausdorff.
+                            </p>
+                            
+                        </li>
+                        </ul>
                         
                     </div>
                 </div>
@@ -1593,25 +1629,20 @@
                                     <p>
                                         <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuous-function-on-compact-set-attains-its-bounds.html">Proof</a>
                                     </p>
-                                    
-                                </div>
-                            </div>
-                            <div class="markdown-embed embed-result">
-                                <div class="markdown-embed-title">
-                                    Proposition (continuous function on compact set is complete)
-                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-continuous-function-on-compact-set-is-complete.html">open_in_new</a>
-                                </div>
-                                <div class="markdown-embed-content">
-                                    <p>
-                                        Let <span class="inline-math">$(X,\tau)$</span> be a topological space and <span class="inline-math">$C(X) = (\set{\text{continuous functions } X\to\R}, \text{sup metric})$</span>.
-                                    </p>
-                                    <p>
-                                        If <span class="inline-math">$(X,\tau)$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a>, then <span class="inline-math">$C(X)$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-completeness.html">complete</a>.
-                                    </p>
-                                    <p>
-                                        <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-continuous-function-on-compact-set-is-complete.html">Proof</a>
-                                        TODO
-                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            Consequently, <span class="inline-math">$C(X; Y) = (\set{\text{continuous functions }X\to Y}, \text{sup metric}) =$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-limit.html"><span class="inline-math">$C_b(X; Y)$</span></a>
+                                            is well-defined for any metric space <span class="inline-math">$Y$</span>.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            In particular if <span class="inline-math">$Y$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-completeness.html">complete</a>, <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-limit.html">then</a> so is <span class="inline-math">$C(X; Y)$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
                                     
                                 </div>
                             </div>

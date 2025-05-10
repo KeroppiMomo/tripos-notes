@@ -1,0 +1,135 @@
+<p>
+    The first statement follows from
+    applying the second statement to <span class="inline-math">$\tilde f(z) = (z-w)\, f(z)$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \oint_{γ} f(z) \d z = 2πi\,I(γ; w)\,\tilde f(w) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Using <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Lemma-integral-form-of-the-winding-number.html"><span class="inline-math">$I(γ; w) = \frac{1}{2πi} \oint_γ \frac{\d z}{z-w}$</span></a>,
+    it suffices to show
+    <span class="display-math">$$ \begin{align*}
+        \oint_γ \frac{f(z) - f(w)}{z-w} \d z = 0
+    \end{align*} $$</span>
+    for all <span class="inline-math">$w\not\in γ$</span>.
+</p>
+
+<h1>Auxilliary functions</h1>
+
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        g(z, w) := \begin{cases}
+            \frac{f(z) - f(w)}{z-w}, &amp;z\neq w, \\
+            f&#x27;(z), &amp;z=w.
+        \end{cases}
+    \end{align*} $$</span>
+    Note <span class="inline-math">$g$</span> is continuous in <span class="inline-math">$(z,w)$</span>.
+    Furthermore <span class="inline-math">$z\mapsto g(z,w)$</span> is holomorphic on <span class="inline-math">$U\setminus \set{w}$</span>
+    and <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-continuous-and-holomorphic-away-from-finite-set-implies-holomorphic.html">thus</a> holomorphic on <span class="inline-math">$U$</span>.
+    We want to show <span class="inline-math">$\oint_γ g(z, w)\d z = 0$</span> for all <span class="inline-math">$w\not\in U \setminus γ$</span>.
+</p>
+<p>
+    Further define
+    <span class="display-math">$$ \begin{align*}
+        h(w) := \begin{cases}
+            \oint_γ g(z, w)\d z, &amp;w\in U \\
+            \oint_γ \frac{f(ζ)}{ζ - w}\d ζ, &amp;w\in V
+        \end{cases}
+        \qquad \text{where}
+        \qquad V:= \sb{w\in \C}{I(z,w)=0}.
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$h$</span> is well-defined on <span class="inline-math">$\C$</span></h1>
+
+<p>
+    For <span class="inline-math">$w\in U\cap V$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \oint_γ g(z,w)\d z = \oint_γ \frac{f(z)}{z-w}\d z - \underbrace{\oint_γ \frac{f(w)}{z-w}\d z}_{I(z,w) = 0} = \oint_γ \frac{f(z)}{z-w}\d z.
+    \end{align*} $$</span>
+    Moreover <span class="inline-math">$h$</span> is defined on the entire <span class="inline-math">$\C=U\cup V$</span>,
+    because <span class="inline-math">$\C\setminus U \subseteq V$</span> as <span class="inline-math">$γ$</span> is homologous to zero in <span class="inline-math">$U$</span>.
+</p>
+
+<h1><span class="inline-math">$h$</span> is holomorphic</h1>
+
+<p>
+    To show <span class="inline-math">$h$</span> is holomorphic, we need two lemmas:
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Fubini's theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Lemma-Fubini-s-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$f: [a,b]\times [c,d]\to \C$</span> is continuous,
+                then
+                <span class="display-math">$$ \begin{align*}
+                    \int_{a}^{b} \left(\int_{c}^{d} f(x,y) \d y\right) \d x = \int_{c}^{d} \left(\int_{a}^{b} f(x,y) \d x\right) \d y.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Fubini-s-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (holomorphic parametrised integral)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Lemma-holomorphic-parametrised-integral.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$U\subseteq \C$</span> be open.
+            </p>
+            <p>
+                If <span class="inline-math">$ϕ: U\times [a,b]\to \C$</span> is continuous and <span class="inline-math">$z\mapsto ϕ(z,s)$</span>
+                is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> for all fixed <span class="inline-math">$s\in [a,b]$</span>, then
+                <span class="display-math">$$ \begin{align*}
+                    g(z) := \int_{a}^{b} ϕ(z,s) \d s
+                \end{align*} $$</span>
+                is a holomorphic function on <span class="inline-math">$U$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-holomorphic-parametrised-integral.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <span class="inline-math">$h$</span> can be written as
+    <span class="display-math">$$ \begin{align*}
+        h(w) = \begin{cases}
+            \int_{a}^{b} g(γ(t), w)\,γ&#x27;(t) \d t, &amp; w\in U, \\
+            \int_{a}^{b} \frac{f(γ(t))}{γ(t) - w}γ&#x27;(t) \d t, &amp; w\in V.
+        \end{cases}
+    \end{align*} $$</span>
+    <span class="inline-math">$U$</span> is open by definition of a domain,
+    and <span class="inline-math">$V$</span> is open since <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-winding-number-is-locally-constant.html">winding number is locally constant</a>.
+    The integrands are continuous in <span class="inline-math">$(t,w)$</span>, and
+    fixing <span class="inline-math">$w$</span>, the functions <span class="inline-math">$t\mapsto g(γ(t), w) γ&#x27;(t)$</span> and <span class="inline-math">$t\mapsto \frac{f(γ(t))}{γ(t)-w}γ&#x27;(t)$</span>
+    are holomorphic.
+    So by the lemma, the integrals is holomorphic on <span class="inline-math">$U$</span> and <span class="inline-math">$V$</span> respectively.
+    Therefore <span class="inline-math">$h$</span> is entire.
+</p>
+
+<h1><span class="inline-math">$h$</span> is bounded</h1>
+
+<p>
+    For all <span class="inline-math">$|w|$</span> sufficiently large, <span class="inline-math">$γ\subseteq B(0, |w|)$</span> and <span class="inline-math">$w\in V$</span>.
+    We have
+    <span class="display-math">$$ \begin{align*}
+        |h(w)| ={}&amp; \left|\oint_γ \frac{f(ζ)}{ζ-w} \d ζ\right| \leq \mathrm{length}(γ)\cdot \frac{\sup_{ζ\in γ}|f(ζ)|}{|w| - \sup_{ζ\in γ} |ζ|} \to 0
+    \end{align*} $$</span>
+    as <span class="inline-math">$|w|\to \infty$</span>.
+    Therefore <span class="inline-math">$h$</span> is bounded.
+</p>
+<p>
+    By <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Liouville-s-theorem.html">Liouville's theorem</a>, <span class="inline-math">$h$</span> is constant, so <span class="inline-math">$h\equiv 0$</span>,
+    as required.
+</p>

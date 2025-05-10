@@ -1,0 +1,96 @@
+
+<h1>Locally a graph <span class="inline-math">$\implies$</span> smooth surface</h1>
+
+<p>
+    At each point <span class="inline-math">$p\in Σ$</span>,
+    suppose WLOG <span class="inline-math">$Σ$</span> is locally a graph <span class="inline-math">$\sb{(x,y,g(x,y))}{(x,y)\in U}$</span> on the <span class="inline-math">$(x,y)$</span>-plane.
+    Then <span class="inline-math">$(U, π_{xy})$</span> is a chart where <span class="inline-math">$π_{xy}(x,y,z) = (x,y)$</span> is smooth
+    with a smooth inverse <span class="inline-math">$(x,y)\mapsto (x,y,g(x,y))$</span>.
+</p>
+
+<h1>Locally a graph <span class="inline-math">$\implies$</span> locally a level set</h1>
+
+<p>
+    <span class="inline-math">$Σ$</span> locally is <span class="inline-math">$f\inv(0)$</span> where <span class="inline-math">$f$</span> is given by
+    <span class="display-math">$$ \begin{align*}
+        f(x,y,z) = z - g(x,y).
+    \end{align*} $$</span>
+    Moreover <span class="inline-math">$f$</span> has non-zero derivative as <span class="inline-math">$\pdfd{f}{z} = 1 \neq 0$</span>.
+</p>
+
+<h1>Locally a grpah <span class="inline-math">$\implies$</span> locally image of allowable parametrisation</h1>
+
+<p>
+    We have a parametrisation
+    <span class="display-math">$$ \begin{align*}
+        σ(x,y) = (x,y,g(x,y))
+    \end{align*} $$</span>
+    which is allowable because
+    <span class="display-math">$$ \begin{align*}
+        Dσ = \pmat{1 &amp; 0 \\ 0 &amp; 1 \\ g_x &amp; g_y}
+    \end{align*} $$</span>
+    has rank 2.
+</p>
+
+<h1>Locally a level set <span class="inline-math">$\implies$</span> locally a graph</h1>
+
+<p>
+    Assuming <span class="inline-math">$Df|_{(x_0, y_0, z_0)} \neq 0$</span>, permuting coordinates if necessary,
+    WLOG we have <span class="inline-math">$\partial f/\partial z|_{(x_0, y_0, z_0)} \neq 0$</span>.
+</p>
+<p>
+    By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-implicit-function-theorem.html">implicit function theorem</a>,
+    there exists an open neighbourhood <span class="inline-math">$V \subseteq \R^2$</span> of <span class="inline-math">$(x_0, y_0)$</span>
+    and a smooth function <span class="inline-math">$g: V\to \R$</span> such that <span class="inline-math">$g(x_0, y_0) = z_0$</span>,
+    and moreover in an open neighbourhood of <span class="inline-math">$(x_0, y_0, z_0)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        (x,y,z) \in Σ \iff f(x,y,z) = 0 \iff z = g(x,y).
+    \end{align*} $$</span>
+</p>
+
+<h1>Smooth surface in <span class="inline-math">$\R^3$</span> <span class="inline-math">$\implies$</span> locally image of allowable parametrisation</h1>
+
+<p>
+    For a chart <span class="inline-math">$(U, ϕ)$</span> at <span class="inline-math">$p\in Σ$</span> with <span class="inline-math">$ϕ: U\to V\subseteq \R^2$</span>,
+    the inverse <span class="inline-math">$σ=ϕ\inv: V \to U$</span>
+    is an allowable parametrisation, because
+    <span class="display-math">$$ \begin{align*}
+        \id_{V} = σ \circ ϕ
+        \implies I_2 = Dσ|_{ϕ(u,v)}\circ Dϕ|_{(u,v)}
+    \end{align*} $$</span>
+    so <span class="inline-math">$Dϕ$</span> has rank 2.
+</p>
+
+<h1>Locally image of allowable parametrisation <span class="inline-math">$\implies$</span> locally a graph</h1>
+
+<p>
+    Let <span class="inline-math">$p\in Σ$</span>, <span class="inline-math">$V\subseteq \R^2$</span> be open and <span class="inline-math">$σ: V\to Σ$</span> be an allowable parametrisation,
+    with <span class="inline-math">$σ(0) = p$</span>.
+</p>
+<p>
+    Writing <span class="inline-math">$σ(u,v) = (σ_1(u,v), σ_2(u,v), σ_3(u,v))$</span> for <span class="inline-math">$(u,v)\in V$</span>,
+    its derivative is
+    <span class="display-math">$$ \begin{align*}
+        Dσ = \pmat{\pdfd{σ_1}{u} &amp; \pdfd{σ_1}{v} \\
+        \pdfd{σ_2}{u} &amp; \pdfd{σ_2}{v} \\
+        \pdfd{σ_3}{u} &amp; \pdfd{σ_3}{v}},
+    \end{align*} $$</span>
+    which has rank 2 at <span class="inline-math">$(u,v)=0$</span>.
+    So WLOG suppose <span class="inline-math">$Dσ_1|_0$</span> and <span class="inline-math">$Dσ_2|_0$</span> are linearly independent.
+</p>
+<p>
+    Let <span class="inline-math">$π_{xy}(x,y,z) = (x,y)$</span> and consider <span class="inline-math">$ϕ = π_{xy} \circ σ: V \to \R^2$</span>.
+    The derivative
+    <span class="display-math">$$ \begin{align*}
+        Dϕ|_0 = Dπ_{xy}|_{p} \circ Dσ|_0
+        = \pmat{1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0}
+        \pmat{\pdfd{σ_1}{u} &amp; \pdfd{σ_1}{v} \\
+        \pdfd{σ_2}{u} &amp; \pdfd{σ_2}{v} \\
+        \pdfd{σ_3}{u} &amp; \pdfd{σ_3}{v}}
+        = \pmat{\pdfd{σ_1}{u} &amp; \pdfd{σ_1}{v} \\
+        \pdfd{σ_2}{u} &amp; \pdfd{σ_2}{v}}
+    \end{align*} $$</span>
+    which is invertible.
+    By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-inverse-function-theorem.html">inverse function theorem</a>,
+    <span class="inline-math">$ϕ$</span> is locally invertible, i.e. <span class="inline-math">$Σ$</span> is locally a graph.
+</p>

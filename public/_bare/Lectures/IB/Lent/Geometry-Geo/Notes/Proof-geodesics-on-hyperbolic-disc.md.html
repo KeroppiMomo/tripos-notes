@@ -1,0 +1,38 @@
+<p>
+    First consider <span class="inline-math">$0\in D$</span> and <span class="inline-math">$a\in D\cap \R_{\geq 0}$</span>.
+    Let <span class="inline-math">$γ(t) = (u(t), v(t)): [0,1]\to D$</span> be a smooth curve from <span class="inline-math">$0$</span> to <span class="inline-math">$a$</span>.
+    Its length is
+    <span class="display-math">$$ \begin{align*}
+        \mathrm{length}(γ) ={}&amp; 2\int_{0}^{1} \frac{\sqrt{\dot u^2 + \dot v^2}}{1 - u^2 - v^2} \d t \\
+        \geq{}&amp; 2 \int_{0}^{1} \frac{|\dot u|}{1 - u^2} \d t \tag{1}\\
+        \geq{} &amp; 2 \int_{0}^{1} \frac{\dot u}{1 - u^2} \d t \tag{2}\\
+        ={}&amp; 2 \int_{0}^{a} \frac{\d u}{1 - u^2} = 2 \tanh\inv(a).
+    \end{align*} $$</span>
+    (1) is an equality iff <span class="inline-math">$v \equiv 0$</span>, and (2) is an equality iff <span class="inline-math">$u$</span> is monotone.
+    So (sub-curve of) the diameter <span class="inline-math">$γ(t) = (at, 0)$</span> is globally length-minimising
+    and parametrised at constant speed,
+    and <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-geodesic-length-minimisation-and-energy-minimisation.html">thus</a> is the unique geodesic.
+    Moreover
+    <span class="display-math">$$ \begin{align*}
+        d_\text{hyp}(0, a) = 2 \tanh\inv(a).
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$\mathrm{Möb}(D)$</span> acts on <span class="inline-math">$D$</span> transitively:
+    given any <span class="inline-math">$p,q\in D$</span>, the Möbius map
+    <span class="display-math">$$ \begin{align*}
+        μ: z \mapsto λ\frac{z - p}{1 - \bar p z}
+    \end{align*} $$</span>
+    maps <span class="inline-math">$p$</span> to <span class="inline-math">$0$</span>, and <span class="inline-math">$λ$</span> can be chosen so that <span class="inline-math">$|λ|=1$</span> and <span class="inline-math">$q$</span> is mapped onto
+    <span class="inline-math">$D\cap \R_{\geq 0}$</span>.
+    Since it acts by isometry,
+    <span class="display-math">$$ \begin{align*}
+        d_\text{hyp}(p, q) = d_\text{hyp}(μ(p), μ(q)) = 2 \tanh\inv \left|\frac{q - p}{1 - \bar p q}\right|.
+    \end{align*} $$</span>
+</p>
+<p>
+    Moreover Möbius maps <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Theorem-Mobius-transformations-preserve-circles.html">send circles/lines to circles/lines</a>
+    and are <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Conformality-of-holomorphic-functions.html">conformal</a>.
+    Since <span class="inline-math">$μ$</span> sends <span class="inline-math">$\partial D$</span> to itself,
+    the diameter is sent to a circular arc meeting <span class="inline-math">$\partial D$</span> orthogonally.
+</p>

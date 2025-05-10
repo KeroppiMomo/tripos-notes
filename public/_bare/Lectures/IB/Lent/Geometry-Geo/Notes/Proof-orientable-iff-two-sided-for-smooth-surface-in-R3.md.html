@@ -1,0 +1,69 @@
+
+<h1>Orientable <span class="inline-math">$\implies$</span> two-sided</h1>
+
+<p>
+    Suppose <span class="inline-math">$Σ$</span> is equipped with oriented atlas.
+</p>
+<p>
+    For every point <span class="inline-math">$p\in Σ$</span>,
+    take <span class="inline-math">$σ: V\to U$</span> be an allowable parametrisation at <span class="inline-math">$p$</span>
+    (<span class="inline-math">$V\subseteq \R^2$</span>, <span class="inline-math">$U\subseteq Σ$</span> open)
+    so that the associated chart belongs to our oriented atlas.
+    Define the positive unit normal over <span class="inline-math">$U$</span> by
+    <span class="display-math">$$ \begin{align*}
+        n_σ = \frac{σ_u \times σ_v}{\|σ_u \times σ_v\|}.
+    \end{align*} $$</span>
+</p>
+<p>
+    We will show <span class="inline-math">$n_σ$</span> for all <span class="inline-math">$σ$</span> glue together to form a global map.
+    If <span class="inline-math">$\tilde σ: \tilde V\to\tilde U$</span> is another allowable parametrisation at <span class="inline-math">$p$</span>
+    in our oriented atlas (WLOG take <span class="inline-math">$σ(0) = p = \tilde σ(0)$</span>),
+    then <span class="inline-math">$σ = \tilde σ\circ ϕ$</span>
+    where the transition map <span class="inline-math">$ϕ=\tilde σ\inv\circ σ$</span>
+    is positively-oriented,
+    i.e. <span class="inline-math">$\det Dϕ &gt; 0$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        &amp;σ_u \times σ_v = \underbrace{(\det Dϕ|_0)}_{&gt;0} (\tilde σ_u\times \tilde σ_v) \tag{*}\\
+        \implies &amp; n_σ(p) = n_{\tilde σ}(p).
+    \end{align*} $$</span>
+</p>
+<blockquote>
+    <p>
+        To see the first line, write <span class="inline-math">$Dϕ|_0 = \pmat{α&amp;β\\γ&amp;δ}.$</span>
+        Then by chain rule, <span class="inline-math">$σ_u = α\tilde σ_u + γ\tilde σ_v$</span> and <span class="inline-math">$σ_v = β\tilde σ_u + δ\tilde σ_v$</span>.
+        Finally expand <span class="inline-math">$σ_u \times σ_v$</span>.
+    </p>
+    
+</blockquote>
+<p>
+    Thus we have a global choice of normal vector over <span class="inline-math">$Σ$</span>.
+</p>
+<p>
+    Because locally <span class="inline-math">$n_σ$</span> is a continuous function on <span class="inline-math">$V$</span>,
+    the global Gauss map is also continuous.
+</p>
+
+<h1>Two-sided <span class="inline-math">$\implies$</span> orientable</h1>
+
+<p>
+    Let <span class="inline-math">$n(p)$</span> be a global Gauss map.
+</p>
+<p>
+    For every point <span class="inline-math">$p\in Σ$</span>,
+    pick an allowable parametrisation <span class="inline-math">$σ: V\to U$</span> at <span class="inline-math">$p$</span>, with <span class="inline-math">$σ(0) = p$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \frac{σ_u \times σ_v}{\|σ_u \times σ_v\|} = \pm n(p).
+    \end{align*} $$</span>
+    If the sign is negative, then swap coordinates <span class="inline-math">$(u,v)\in V \mapsto (v,u)\in V&#x27;$</span>
+    to get a different allowable parametrisation <span class="inline-math">$σ&#x27;: \tilde V\to U$</span> gives a positive sign.
+</p>
+<p>
+    Form an atlas with these parametrisations.
+    By <span class="inline-math">$(*)$</span>, the transition map <span class="inline-math">$ϕ = \tilde σ\inv \circ σ$</span> satisfies
+    <span class="display-math">$$ \begin{align*}
+        &amp;σ_u \times σ_v = (\det Dϕ|_0) (\tilde σ_u \times \tilde σ_v) \\
+        \implies&amp; \det Dϕ_0 = \frac{\|σ_u \times σ_v\|}{\|\tilde σ_u \times \tilde σ_v\|} &gt; 0.
+    \end{align*} $$</span>
+</p>

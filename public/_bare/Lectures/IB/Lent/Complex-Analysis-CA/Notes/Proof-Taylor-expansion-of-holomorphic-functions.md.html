@@ -1,0 +1,16 @@
+<p>
+    Fix <span class="inline-math">$0&lt;ρ&lt;r$</span> and <span class="inline-math">$z\in B(a,ρ)$</span>.
+    Apply the series expansion
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{ζ-z} = \frac{1}{ζ-a} \frac{1}{1-\frac{z-a}{ζ-a}} = \sum_{n=0}^{\infty} \frac{(z-a)^n}{(ζ-a)^{n+1}},
+    \end{align*} $$</span>
+    which is valid on <span class="inline-math">$|z-a|&lt;|ζ-a|$</span>, to 
+    the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Cauchy-s-integral-formula-on-a-disk.html">Cauchy integral formula</a> to obtain
+    <span class="display-math">$$ \begin{align*}
+        f(z) ={}&amp; \frac{1}{2πi} \int_{|ζ-a|=ρ} \frac{f(ζ)}{ζ-z} \d ζ \\
+        ={}&amp; \frac{1}{2πi} \int_{|ζ-a|=ρ} f(ζ) \sum_{n=0}^{\infty} \frac{(z-a)^n}{(ζ-a)^{n+1}} \d ζ \\
+        ={}&amp; \sum_{n=0}^{\infty} \underbrace{\left(\frac{1}{2πi}\int_{|ζ-a|=ρ} \frac{f(ζ)}{(ζ-a)^{n+1}} \d ζ\right)}_{c_n} (z-a)^n
+    \end{align*} $$</span>
+    where swapping <span class="inline-math">$\sum$</span> and <span class="inline-math">$\int$</span> is legal by <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-integral-of-uniform-convergent-functions-along-curve.html">uniform convergence</a>
+    of the series on <span class="inline-math">$|ζ-a|=ρ$</span>.
+</p>

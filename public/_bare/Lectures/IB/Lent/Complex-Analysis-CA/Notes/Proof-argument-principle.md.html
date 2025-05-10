@@ -1,0 +1,47 @@
+
+<h1>First equality</h1>
+
+<p>
+    Use the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Lemma-integral-form-of-the-winding-number.html">integral form</a> of the winding number to see
+    <span class="display-math">$$ \begin{align*}
+        I(f\circ γ; 0) = \frac{1}{2πi} \oint_{f\circ γ} \frac{\d w}{w} = \frac{1}{2πi} \int_{a}^{b} \frac{f&#x27;(γ(t)) \,γ&#x27;(t)}{f(γ(t))} \d t = \frac{1}{2πi} \oint_{γ} \frac{f&#x27;(z)}{f(z)} \d z.
+    \end{align*} $$</span>
+</p>
+
+<h1>Second equality</h1>
+
+
+<h2>Simple poles of <span class="inline-math">$\frac{f&#x27;}{f}$</span> of residue <span class="inline-math">$k$</span> <span class="inline-math">$\iff$</span> zero of <span class="inline-math">$f$</span> with order <span class="inline-math">$k$</span> or pole of <span class="inline-math">$f$</span> with order <span class="inline-math">$-k$</span></h2>
+
+<p>
+    <span class="inline-math">$f&#x27;/f$</span> is holomorphic on <span class="inline-math">$U$</span> away from zeros and poles of <span class="inline-math">$f$</span>.
+</p>
+<p>
+    If <span class="inline-math">$f$</span> is a zero of order <span class="inline-math">$k$</span> at <span class="inline-math">$z=a$</span>, write
+    <span class="display-math">$$ \begin{align*}
+        f(z) = (z-a)^{k} g(z)
+    \end{align*} $$</span>
+    where <span class="inline-math">$g$</span> is holomorphic at <span class="inline-math">$a$</span> and <span class="inline-math">$g(a)\neq 0$</span>.
+    Differentiating,
+    <span class="display-math">$$ \begin{align*}
+        &amp;f&#x27;(z) = k(z-a)^{k-1} g(z) + (z-a)^k g&#x27;(z) \\
+        \implies &amp; \frac{f&#x27;(z)}{f(z)} = \frac{k}{z-a} + \frac{g&#x27;(z)}{g(z)}.
+    \end{align*} $$</span>
+    <span class="inline-math">$g(a)\neq 0$</span> so <span class="inline-math">$g&#x27;/g$</span> is holomorphic at <span class="inline-math">$a$</span>.
+    Therefore <span class="inline-math">$f&#x27;/f$</span> has a simple pole at <span class="inline-math">$z=a$</span> of residue <span class="inline-math">$k$</span>.
+</p>
+<p>
+    Similar computation for poles, with <span class="inline-math">$k$</span> replaced by <span class="inline-math">$-k$</span>.
+</p>
+
+<h2>Applying the residue theorem</h2>
+
+<p>
+    <span class="inline-math">$f&#x27;/f$</span> is meromorphic on <span class="inline-math">$U\cup γ$</span> with no poles on <span class="inline-math">$γ$</span>.
+    Moreover all points in <span class="inline-math">$U$</span> have a winding number of 1 since <span class="inline-math">$γ$</span> bounds <span class="inline-math">$U$</span>.
+    Therefore by the residue theorem,
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{2πi} \int_{γ} \frac{f&#x27;}{f} \d z ={}&amp; \sum_{\text{poles $a_i$ of $f&#x27;/f$ in $U$}} \Res_{z=a_i} \frac{f&#x27;(z)}{f(z)}
+    \end{align*} $$</span>
+    which counts the orders of zeros minus orders of poles.
+</p>

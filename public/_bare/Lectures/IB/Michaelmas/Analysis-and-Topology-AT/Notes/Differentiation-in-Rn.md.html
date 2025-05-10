@@ -203,32 +203,58 @@
             <p>
                 <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-inverse-function-theorem.html">Proof</a>
             </p>
+            <ul>
+            <li>
+                <p>
+                    This can be extended to say if <span class="inline-math">$f$</span> is smooth, then so is <span class="inline-math">$f\inv$</span>.
+                </p>
+                
+            </li>
+            </ul>
             
         </div>
     </div>
     <div class="markdown-embed embed-result">
         <div class="markdown-embed-title">
             Theorem (implicit function theorem)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-implicit-function-theorem.html">open_in_new</a>
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-implicit-function-theorem.html">open_in_new</a>
         </div>
         <div class="markdown-embed-content">
             <p>
                 Let <span class="inline-math">$f: U\to\R^m$</span> with <span class="inline-math">$U\subseteq \R^{n+m}$</span> open, and <span class="inline-math">$(x_0, y_0)\in U$</span>.
             </p>
             <p>
-                If <span class="inline-math">$f\in{}$</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-differentiation-in-Rn.html"><span class="inline-math">$C^1(U)$</span></a> and <span class="inline-math">$D_y f(x_0, y_0) \in \mathcal{L}(\R^m, \R^m)$</span>,
+                If <span class="inline-math">$f\in{}$</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-differentiation-in-Rn.html"><span class="inline-math">$C^1(U)$</span></a> and <span class="inline-math">$D_y f(x_0, y_0) \in \mathcal{L}(\R^m, \R^m)$</span> is invertible,
                 then there exists an open neighbourhood <span class="inline-math">$V$</span> of <span class="inline-math">$x_0$</span> and a unique <span class="inline-math">$g: V\to\R^m$</span>
                 such that
-                <span class="display-math">$$ \begin{align*}
-                    \begin{cases}
-                        g(x_0) = y_0, \\
-                        f(x, g(x)) = f(x_0, y_0) &amp;\forall x\in V.
-                    \end{cases}
-                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$g(x_0) = y_0$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$f(x, g(x)) = 0$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    there exists a neighbourhood <span class="inline-math">$W\subseteq \R^n$</span> of <span class="inline-math">$y_0$</span> such that
+                    if <span class="inline-math">$(x,y)\in V\times W$</span>, then <span class="inline-math">$f(x,y)=0 \iff y=g(x)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
                 Moreover, <span class="inline-math">$g\in C^1(V)$</span> with derivative
                 <span class="display-math">$$ \begin{align*}
                     Dg(x) = -\bigl(D_y f(x,g(x))\bigr)\inv \bigl(D_x f(x,g(x))\bigr).
                 \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Proof-implicit-function-theorem.html">Proof</a>
             </p>
             
         </div>
@@ -372,8 +398,9 @@
                             and <span class="inline-math">$x_0\in U$</span>.
                         </p>
                         <p>
-                            If <span class="inline-math">$\partial_i f, \partial_j f,$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-partial.html"><span class="inline-math">$\partial_{ij}^2$</span></a><span class="inline-math">$f$</span> exist on <span class="inline-math">$U$</span> and <span class="inline-math">$\partial_{ij}^2 f$</span> is continuous at <span class="inline-math">$x_0$</span>,
-                            then <span class="inline-math">$\partial_{ji} f(x_0)$</span> exists and <span class="inline-math">$\partial_{ji} f(x_0) = \partial_{ij} f(x_0)$</span>.
+                            If <span class="inline-math">$\partial_i f, \partial_j f,$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-partial.html"><span class="inline-math">$\partial_{ij}^2$</span></a><span class="inline-math">$f$</span> exist on <span class="inline-math">$U$</span>
+                            and <span class="inline-math">$\partial_{ij}^2 f$</span> is continuous at <span class="inline-math">$x_0$</span>,
+                            then <span class="inline-math">$\partial_{ji}^2 f(x_0)$</span> exists and <span class="inline-math">$\partial_{ji}^2 f(x_0) = \partial_{ij}^2 f(x_0)$</span>.
                         </p>
                         <p>
                             <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-mixed-partials-commute.html">Proof</a>
@@ -463,7 +490,7 @@
                         </li>
                         </ul>
                         <p>
-                            then there exists <span class="inline-math">$f: (a,b)^d$</span> such that <span class="inline-math">$f_n \tto f$</span> and <span class="inline-math">$Df_n \tto Df$</span>.
+                            then there exists <span class="inline-math">$f: (a,b)^d \to \R$</span> such that <span class="inline-math">$f_n \tto f$</span> and <span class="inline-math">$Df_n \tto Df$</span>.
                         </p>
                         <p>
                             <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proof-differentiation-under-uniform-convergence.html">Proof</a>

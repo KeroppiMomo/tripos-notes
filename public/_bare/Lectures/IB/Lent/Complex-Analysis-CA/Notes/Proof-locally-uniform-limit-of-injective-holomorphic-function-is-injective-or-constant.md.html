@@ -1,0 +1,41 @@
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-locally-uniform-limit-preserves-holomorphicity.html">Previously</a> we have shown <span class="inline-math">$f$</span> is holomorphic.
+</p>
+<p>
+    Suppose towards contradiction <span class="inline-math">$f$</span> is neither constant nor injective.
+    Let <span class="inline-math">$z_1\neq z_2$</span> be such that <span class="inline-math">$f(z_1) = f(z_2) = a$</span>.
+</p>
+<p>
+    <span class="inline-math">$U$</span> is connected and <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-open-set-in-Rn-path-connected-iff-connected.html">so</a> path-connected,
+    so we can find a path <span class="inline-math">$\tilde γ$</span> from <span class="inline-math">$z_1$</span> to <span class="inline-math">$z_2$</span>.
+    Construct a closed curve <span class="inline-math">$γ$</span> in <span class="inline-math">$U$</span> which bounds a domain containing <span class="inline-math">$\tilde γ$</span>,
+    so it winds exactly once around <span class="inline-math">$z_1$</span> and <span class="inline-math">$z_2$</span>.
+    <span class="inline-math">$γ$</span> can be chosen so that <span class="inline-math">$f(z)\neq a$</span> for all <span class="inline-math">$z\in γ$</span> by the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-principle-of-isolated-zeros.html">principle of isolated zeros</a>.
+</p>
+<blockquote>
+    <p>
+        How exactly?
+        Around each point on <span class="inline-math">$\tilde γ$</span>, choose a disk sufficiently small
+        so that it lies within <span class="inline-math">$U$</span> and contains at most one preimage of <span class="inline-math">$a$</span> under <span class="inline-math">$f$</span>.
+        Next, use compactness of <span class="inline-math">$\tilde γ$</span> to select finitely many such disks that
+        still cover <span class="inline-math">$\tilde γ$</span>.
+        Then it's clear we can construct <span class="inline-math">$γ$</span> (perhaps using horizontal and vertical segments)
+        that avoids all preimages of <span class="inline-math">$a$</span> and bounds a domain containing <span class="inline-math">$z_1$</span> and <span class="inline-math">$z_2$</span>.
+    </p>
+    
+</blockquote>
+<p>
+    Since <span class="inline-math">$f_n\to f$</span> and <span class="inline-math">$f_n&#x27; \to f&#x27;$</span> locally uniformly on <span class="inline-math">$U$</span>,
+    they converge uniformly on the compact set <span class="inline-math">$γ$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{2πi} \oint_γ \frac{f_n&#x27;(z)}{f_n(z) - a} \d z \to \frac{1}{2πi} \oint_γ \frac{f&#x27;(z)}{f(z)-a} \d z \qquad \text{as }n\to \infty.
+    \end{align*} $$</span>
+    By the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-argument-principle.html">argument principle</a>,
+    both sides count the number of preimages of <span class="inline-math">$a$</span> under <span class="inline-math">$f_n$</span> or <span class="inline-math">$f$</span>
+    accounting local degrees.
+    Since <span class="inline-math">$f_n$</span> is injective, it has at most one preimage of <span class="inline-math">$a$</span>,
+    of which the local degree is 1 by the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-local-mapping-theorem.html">local mapping theorem</a>.
+    Therefore LHS is at most 1.
+    However RHS is at least 2 due to <span class="inline-math">$z_1$</span> and <span class="inline-math">$z_2$</span>.
+</p>

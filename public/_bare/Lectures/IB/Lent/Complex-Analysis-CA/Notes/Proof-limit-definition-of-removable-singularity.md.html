@@ -1,0 +1,37 @@
+
+<h1>Removable singularity <span class="inline-math">$\implies$</span> <span class="inline-math">$(z-a)\,f(z) \to 0$</span></h1>
+
+<p>
+    If <span class="inline-math">$f$</span> has a removable singularity at <span class="inline-math">$z=a$</span>,
+    then <span class="inline-math">$f(z) = \sum_{n=0}^{\infty} c_n(z-a)^n$</span>
+    is valid on <span class="inline-math">$B(a,r)^\times$</span>,
+    so <span class="inline-math">$f$</span> is the restriction of a power series with radius of convergence at least <span class="inline-math">$r$</span>,
+    which is holomorphic on <span class="inline-math">$B(a,r)$</span>.
+    Thus <span class="inline-math">$(z-a)f(z) = \sum_{n=0}^{\infty} c_n(z-a)^{n+1} \to 0$</span>.
+</p>
+
+<h1><span class="inline-math">$(z-a)\,f(z)\to 0$</span> <span class="inline-math">$\implies$</span> removable singularity</h1>
+
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        g(z) := \begin{cases}
+            (z-a)^2 f(z), &amp; z\neq a, \\
+            0, &amp;z=a.
+        \end{cases}
+    \end{align*} $$</span>
+    <span class="inline-math">$g$</span> is continuous on <span class="inline-math">$B(a,r)$</span> and holomorphic on <span class="inline-math">$B(a,r)^\times$</span>,
+    <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Corollary-continuous-and-holomorphic-away-from-finite-set-implies-holomorphic.html">so</a>
+    holomorphic on <span class="inline-math">$B(a,r)$</span>.
+    Note that <span class="inline-math">$g(a) = 0$</span> and <span class="inline-math">$g&#x27;(a) = \lim_{z\to a} (z-a)^2f(z)/(z-a) = 0$</span> by hypothesis.
+    Therefore the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Taylor-expansion-of-holomorphic-functions.html">Taylor series expansion</a> of <span class="inline-math">$g$</span> has the form
+    <span class="display-math">$$ \begin{align*}
+        g(z) = \sum_{n=2}^{\infty} b_n(z-a)^n.
+    \end{align*} $$</span>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        f(z) = \frac{g(z)}{(z-a)^2} = \sum_{n=0}^{\infty} b_{n+2}(z-a)^n &amp;&amp;\text{on }B(a,r)^\times.
+    \end{align*} $$</span>
+    By the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-identity-theorem.html">identity principle</a> (or <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Laurent-expansion.html">uniqueness of Laurent expansion</a>),
+    the power series holds on <span class="inline-math">$B(a,r)$</span> as well.
+</p>

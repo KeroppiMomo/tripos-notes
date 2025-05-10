@@ -16,7 +16,7 @@ const preamble = `
 \\DeclareMathOperator{\\SL}{SL}
 \\DeclareMathOperator{\\ord}{ord}
 \\DeclareMathOperator{\\Log}{Log}
-\\DeclareMathOperator{\\Res}{Res}
+\\DeclareMathOperator*{\\Res}{Res}
 
 \\newcommand{\\id}{\\mathrm{id}}
 \\newcommand{\\op}{\\operatorname}
@@ -25,6 +25,8 @@ const preamble = `
 \\newcommand{\\Z}{\\mathbb{Z}}
 \\newcommand{\\Q}{\\mathbb{Q}}
 \\newcommand{\\N}{\\mathbb{N}}
+\\newcommand{\\I}{\\mathrm{I}}
+\\newcommand{\\II}{\\mathrm{II}}
 \\newcommand{\\se}[1]{\\{#1\\}}
 \\newcommand{\\sb}[2]{\\left\\{#1\\;\\middle|\\; #2\\right\\}}
 \\newcommand{\\actson}{\\curvearrowright}

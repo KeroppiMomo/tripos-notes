@@ -1,0 +1,41 @@
+<p>
+    WLOG assume <span class="inline-math">$w=0$</span> and replace <span class="inline-math">$γ$</span> with <span class="inline-math">$γ/|γ|$</span>
+    to assume <span class="inline-math">$|γ(t)|\equiv 1$</span>.
+</p>
+<blockquote>
+    <p>
+        Divide <span class="inline-math">$[a,b]$</span> into subintervals where <span class="inline-math">$γ$</span> misses one point of the unit circle,
+        and then piece all the arguments together.
+    </p>
+    
+</blockquote>
+<p>
+    <span class="inline-math">$γ$</span> is continuous on a compact interval <span class="inline-math">$[a,b]$</span> so it is uniformly continuous.
+    Let <span class="inline-math">$ε&gt;0$</span> such that <span class="inline-math">$|γ(s) - γ(t)|&lt;2$</span> if <span class="inline-math">$|s-t|\leq ε$</span>.
+    Subdivide <span class="inline-math">$a=a_0 &lt; a_1 &lt; \ldots &lt; a_{n-1} &lt; a_n = b$</span>
+    such that <span class="inline-math">$a_{j+1} - a_j &lt; 2ε$</span>.
+    Then if <span class="inline-math">$t\in [a_j, a_{j+1}]$</span>,
+    then <span class="inline-math">$|γ(t) - γ(\frac{a_j + a_{j+1}}{2})| &lt; 2$</span>, i.e. <span class="inline-math">$γ(t) \neq -γ(\frac{a_j + a_{j+1}}{2})$</span>.
+    Therefore <span class="inline-math">$γ|_{[a_j, a_{j+1}]}$</span> lies in a slit plane
+    and so has a continuously defined argument <span class="inline-math">$θ_j$</span>.
+</p>
+<p>
+    For each endpoint <span class="inline-math">$a_j$</span>,
+    <span class="display-math">$$ \begin{align*}
+        e^{iθ_{j-1}(a_j)} = γ(a_j) = e^{iθ_j(a_j)}
+    \end{align*} $$</span>
+    so <span class="inline-math">$θ_j(a_j) - θ_{j-1}\in 2π\Z$</span>.
+    Starting from <span class="inline-math">$j=1$</span>, shift <span class="inline-math">$θ_{j+1}$</span> by the relevant multiple of <span class="inline-math">$2π$</span>
+    so that <span class="inline-math">$θ_{j+1}(a_j) - θ_j(a_j) = 0$</span>.
+    This defines a continuous <span class="inline-math">$θ$</span>.
+</p>
+
+<h1>Uniqueness</h1>
+
+<p>
+    If <span class="inline-math">$θ$</span> and <span class="inline-math">$\tilde θ$</span> are two choices of continuous arguments,
+    then <span class="inline-math">$e^{iθ(t)} = e^{i\tilde θ(t)}$</span> implies <span class="inline-math">$θ(t) - \tilde θ(t) \in 2π\Z$</span> for all <span class="inline-math">$t\in [a,b]$</span>.
+    Thus <span class="inline-math">$θ-\tilde θ: [a,b]\to 2π\Z$</span> is a continuous function,
+    which <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-locally-constant-function-on-connected-domain-is-globally-constant.html">by the connectedness</a> of <span class="inline-math">$[a,b]$</span>,
+    implies <span class="inline-math">$θ-\tilde θ$</span> is constant.
+</p>

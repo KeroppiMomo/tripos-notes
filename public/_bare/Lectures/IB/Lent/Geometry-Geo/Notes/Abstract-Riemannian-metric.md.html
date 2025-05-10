@@ -1,0 +1,128 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Riemannian metric on open set in R2)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Riemannian-metric-on-open-set-in-R2.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V\subseteq \R^2$</span> be open.
+            </p>
+            <p>
+                An <em>(abstract) Riemannian metric</em> on <span class="inline-math">$V$</span> is a smooth map
+                <span class="display-math">$$ \begin{align*}
+                    V &amp;\to \set{\text{inner product on $\R^2$}} \\
+                    p &amp;\mapsto \I_p =\pmat{E(p) &amp; F(p) \\ F(p) &amp; G(p)}
+                \end{align*} $$</span>
+                (where <span class="inline-math">$E,G&gt;0$</span> and <span class="inline-math">$EG-F^2&gt;0$</span>).
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (length under Riemannian metric)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-length-under-Riemannian-metric.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let an open set <span class="inline-math">$V\subseteq \R^2$</span> be equipped with
+                a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Riemannian-metric-on-open-set-in-R2.html">Riemannian metric</a> <span class="inline-math">$p\mapsto \I_p = \pmat{E(p) &amp; F(p) \\ F(p) &amp; G(p)}$</span>.
+            </p>
+            <p>
+                The <em>length</em> of a smooth curve <span class="inline-math">$γ(t) = (u(t), v(t)): [a,b]\to V$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    \mathrm{length}(γ) = \int_{a}^{b} \sqrt{E\dot u^2 + 2F\dot u \dot v + G\dot v^2} \d t \equiv \int_{a}^{b} \|\dot γ(t)\|_{\I_{γ(t)}} \d t.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Riemannian metric on abstract smooth surface)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Riemannian-metric-on-abstract-smooth-surface.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$Σ$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-abstract-smooth-surface.html">abstract smooth surface</a>
+                with atlas <span class="inline-math">$\set{(U_i, ϕ_i)}_{i\in I}$</span> of homeomorphisms <span class="inline-math">$ϕ_i: U_i \to V_i\subseteq \R^2$</span>.
+            </p>
+            <p>
+                An <em>(abstract) Riemannian metric</em> on <span class="inline-math">$Σ$</span>
+                is a collection <span class="inline-math">$\left\{\pmat{E_i &amp; F_i \\ F_i &amp; G_i}\right\}_{i\in I}$</span>
+                of <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Riemannian-metric-on-open-set-in-R2.html">Riemannian metrics</a> on <span class="inline-math">$\set{V_i}_{i\in I}$</span>
+                such that the transition maps <span class="inline-math">$f = ϕ_j \circ ϕ_i\inv$</span> are isometries (preserves lengths of curves), i.e.
+                <span class="display-math">$$ \begin{align*}
+                    \pmat{E_i &amp; F_i \\ F_i &amp; G_i} = (Df)^T \pmat{E_j &amp; F_j \\ F_j &amp; G_j} (Df).
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (length metric of Riemannian metric)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-length-metric-of-Riemannian-metric.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Given an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Riemannian-metric-on-abstract-smooth-surface.html">abstract Riemannian metric</a> <span class="inline-math">$g$</span>
+                on a connected abstract smooth surface <span class="inline-math">$Σ$</span>,
+                define the <em>length metric</em>
+                <span class="display-math">$$ \begin{align*}
+                    d_g : Σ \times  Σ &amp;\to \R_{\geq 0} \\
+                    (p,q) &amp;\mapsto \inf_{γ} \mathrm{length}(γ)
+                \end{align*} $$</span>
+                where <span class="inline-math">$γ$</span> varies over piecewise smooth curves from <span class="inline-math">$p$</span> to <span class="inline-math">$q$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$(Σ, d_g)$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-metric-space.html">metric space</a>,
+                    with the same topology as the topology <span class="inline-math">$Σ$</span> has as a topological surface.
+                    (<a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-length-metric-of-Riemannian-metric.html">Proof</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (constant curvature genus g surfaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-constant-curvature-genus-g-surfaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                There exists an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Riemannian-metric-on-abstract-smooth-surface.html">Riemannian metric</a> on
+            </p>
+            <ul>
+            <li>
+                <p>
+                    the sphere <span class="inline-math">$S^2$</span> (with genus 0) with curvature <span class="inline-math">$1$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    the torus <span class="inline-math">$T^2$</span> (with genus 1) with curvature <span class="inline-math">$0$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    the compact surface <span class="inline-math">$Σ_g$</span> with genus <span class="inline-math">$g\geq 2$</span> and curvature <span class="inline-math">$-1$</span>.
+                    (<a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Constructing-constant-negative-curvature-surface-with-regular-polygons.html">Construction 1</a>,
+                    <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Constructing-constant-negative-curvature-surface-with-right-angled-hexagons.html">Construction 2</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

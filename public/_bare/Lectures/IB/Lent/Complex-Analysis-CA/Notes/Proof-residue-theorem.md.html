@@ -1,0 +1,56 @@
+
+<h1>Finitely many poles with non-zero winding number</h1>
+
+<p>
+    Let <span class="inline-math">$A$</span> be the set of poles with non-zero winding number,
+    and suppose <span class="inline-math">$A$</span> is infinite.
+</p>
+<p>
+    Since <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proposition-winding-number-is-locally-constant.html">winding number is locally constant</a>,
+    <span class="inline-math">$V = \sb{z\in \C}{I(γ; z) = 0}$</span> is open.
+    Therefore <span class="inline-math">$\C \setminus V$</span> is closed.
+    Moreover <span class="inline-math">$\C\setminus V$</span> is bounded,
+    since everything outside a disk containing <span class="inline-math">$γ$</span> has zero winding number.
+    Thus by <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-Heine-Borel-compact-iff-totally-bounded-and-complete.html">sequential compactness</a>,
+    <span class="inline-math">$A\subseteq \C\setminus V$</span> has an accumulation point <span class="inline-math">$a^\ast$</span>.
+</p>
+<p>
+    <span class="inline-math">$f$</span> is meromorphic (in particular singularities are isolated),
+    so <span class="inline-math">$a^\ast\in \partial U$</span>.
+    However <span class="inline-math">$U$</span> is open, so <span class="inline-math">$a^\ast \not\in U$</span>.
+    Since <span class="inline-math">$γ$</span> is homologous to zero in <span class="inline-math">$U$</span>, <span class="inline-math">$a^\ast \in V$</span>.
+    But it is impossible for <span class="inline-math">$A\subseteq \C\setminus V$</span>
+    to have an accumulation point in an open set <span class="inline-math">$V$</span>.
+</p>
+
+<h1>Residue theorem</h1>
+
+<p>
+    Let <span class="inline-math">$p_n$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-principal-part-residue.html">principal part</a> of <span class="inline-math">$f$</span> at <span class="inline-math">$z=a_i$</span>.
+    Since <span class="inline-math">$z=a_n$</span> is a pole, <span class="inline-math">$p_n$</span> is a polynomial in <span class="inline-math">$1/(z-a_n)$</span>, say
+    <span class="display-math">$$ \begin{align*}
+        p_n(z) = \sum_{l=1}^{k_n} c_{ln} (z-a_n)^{-l}.
+    \end{align*} $$</span>
+    Note we have
+    <span class="display-math">$$ \begin{align*}
+        \oint_γ p_n(z) \d z ={}&amp; \sum_{l=1}^{k_n} c_{ln} \oint_γ (z-a_n)^{-l} \d z \\
+        ={}&amp; c_{1n} \oint_γ \frac{1}{z-a_n} \d z + 
+        \sum_{l=2}^{k_n} c_{ln}   \underbrace{\oint_γ\dd{z}\frac{(z-a_l)^{-l+1}}{-l+1} \d z \\}_{0 \text{ by FTC}} \\
+        ={}&amp; 2πi\,I(γ; a_n)\Res_{z=a_n} f(z).
+    \end{align*} $$</span>
+</p>
+<p>
+    Now define
+    <span class="display-math">$$ \begin{align*}
+        g(z) := f(z) - \sum_{n=1}^m p_n(z),
+    \end{align*} $$</span>
+    which is holomorphic on <span class="inline-math">$U&#x27;:=U\setminus \set{\text{poles of winding number 0 for }γ}$</span>.
+    Moreover <span class="inline-math">$γ$</span> is homologous to zero in <span class="inline-math">$U&#x27;$</span>.
+    Therefore by <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-general-Cauchy-s-integral-formula.html">Cauchy's theorem</a>,
+    <span class="inline-math">$\oint_γ g(z) \d z = 0$</span>.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        \oint_γ f(z) \d z = \sum_{n=1}^{m} \oint_γ p_n(z) \d z = 2πi \sum_{n=1}^{m} I(γ; a_n) \Res_{z=a_n} f(z)
+    \end{align*} $$</span>
+    as required.
+</p>
