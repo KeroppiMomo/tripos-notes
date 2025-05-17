@@ -1,0 +1,125 @@
+<p>
+    When we introduce a force opposing and proportional to velocity, we get the equation of a damped harmonic motion:
+    <span class="display-math">$$ \ddot x + 2\gamma\dot x + \omega_0^2 x = 0.$$</span>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Solutions to damped harmonic motion
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Oscillating-Systems-OS/Notes/Solutions-to-damped-harmonic-motion.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We have characteristic equation
+                <span class="display-math">$$ \lambda^2 + 2\gamma\lambda + \omega_0^2 = 0 \implies \lambda = -\gamma \pm \sqrt{\gamma^2-\omega_0^2}. $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Heavy damping <span class="inline-math">$\gamma&gt;\omega_0$</span> is non-oscillatory.
+                    <span class="display-math">$$ x(t) = Ae^{-\big(\gamma+\sqrt{\gamma^2-\omega_0^2}\big)t} + Be^{-\big(\gamma-\sqrt{\gamma^2-\omega_0^2}\big)t}. $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    Light damping <span class="inline-math">$\gamma&lt;\omega_0$</span> oscillates with decaying amplitude.
+                    <span class="display-math">$$ x(t) = a_0 e^{-\gamma t}\cos(\omega_d t+\phi),\quad \omega_d = \sqrt{\omega_0^2 - \gamma^2} &lt; \omega_0. $$</span>
+                    Note that the oscillation frequency is smaller with damping. When <span class="inline-math">$\gamma\ll\omega_0$</span>, <span class="inline-math">$\omega_d \approx \omega_0$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Critical damping <span class="inline-math">$\gamma = \omega_0$</span> has the quickest decay without oscillation.
+                    <span class="display-math">$$ x(t) = Ae^{-\gamma t} + Bte^{-\gamma t}. $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Decay in damped harmonic motion
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Oscillating-Systems-OS/Notes/Decay-in-damped-harmonic-motion.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We can verify that the energy decay rate is exactly the power of the friction force:
+                <span class="display-math">$$ \dot E = \dd t\Big(\frac12 m\dot x^2 + \frac12 kx^2\Big) 
+                = \dot x(m\ddot x + kx) 
+                = -b\dot x^2.
+                $$</span>
+            </p>
+            <p>
+                For light damping, the amplitude of the oscillator at time <span class="inline-math">$t_n$</span> where the <span class="inline-math">$n$</span>-th maximum displacement occurs is
+                <span class="display-math">$$ a_n = a_0 e^{-\gamma t_n} $$</span>
+                so the characteristic time of amplitude decay is <span class="inline-math">$1/\gamma$</span>.
+            </p>
+            <p>
+                But for energy,
+                <span class="display-math">$$ E_n = \frac12 ka_n^2 = \frac 12 ka_0^2 e^{-2\gamma t_n} $$</span>
+                so the characteristic time of energy decay is <span class="inline-math">$1/2\gamma$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Comparing oscillators
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Oscillating-Systems-OS/Notes/Comparing-oscillators.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We want to combine the two characteristic times of decay time <span class="inline-math">$\tau=1/2\gamma$</span> and oscillation period <span class="inline-math">$T = 2\pi/\omega_0$</span>.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Logarithmic decrement
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Oscillating-Systems-OS/Notes/Logarithmic-decrement.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If the logarithmic decrement is <span class="inline-math">$\Delta$</span>, the <strong>_amplitude</strong>_ of successive oscillations decays by a factor of <span class="inline-math">$e^{-\Delta}$</span>. The formula is
+                            <span class="display-math">$$ \Delta = \frac{2\pi\gamma}{\omega_d}. $$</span>
+                            (<a href="/tripos-notes/Lectures/IA/Lent/Oscillating-Systems-OS/Notes/Derivation-of-logarithmic-decrement.html">Derivation</a>)
+                        </p>
+                        <p>
+                            The energy of successive oscillations decays by a factor of <span class="inline-math">$e^{-2\Delta}$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Quality factor
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Oscillating-Systems-OS/Notes/Quality-factor.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The qualify factor <span class="inline-math">$Q$</span> is defined as
+                            <span class="display-math">$$ Q = \frac{\omega_0}{2\gamma}. $$</span>
+                        </p>
+                        <p>
+                            For good oscillators, <span class="inline-math">$Q$</span> represents the number of radians of oscillation required for the <strong>_energy</strong>_ to fall by a factor of <span class="inline-math">$e$</span>. (<a href="/tripos-notes/Lectures/IA/Lent/Oscillating-Systems-OS/Notes/Derivation-of-meaning-of-qualify-factor.html">Derivation</a>)
+                            Such number for the amplitude is <span class="inline-math">$2Q$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                For good oscillators,
+                <span class="display-math">$$ Q = \frac\pi\Delta. $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>

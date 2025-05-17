@@ -1,0 +1,89 @@
+
+<h1>Discrete case</h1>
+
+<p>
+    Assemble the configuration of <span class="inline-math">$N$</span> charges one by one from infinity.
+</p>
+<ol start="1">
+<li>
+    <p>
+        No work is done to bring <span class="inline-math">$q_1$</span> from infinity to <span class="inline-math">$\v x_1$</span>: <span class="inline-math">$W_1 = 0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$q_2$</span>,
+        <span class="display-math">$$ \begin{align*}
+        W_2 = \frac{q_1 q_2}{4πε_0|\v x_1 - \v x_2|}.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$q_3$</span>,
+        <span class="display-math">$$ \begin{align*}
+        W_3 = \frac{q_1 q_3}{4πε_0|\v x_1 - \v x_3|} + \frac{q_2 q_3}{4πε_0|\v x_2 - \v x_3|},
+        \end{align*} $$</span>
+        etc.
+    </p>
+    
+</li>
+</ol>
+<p>
+    So the total work done is
+    <span class="display-math">$$ \begin{align*}
+        U = \frac{1}{2} \sum_{i=1}^{N}  \sum_{\substack{j=1\\j\neq i}}^{N} \frac{q_i q_j}{4πε_0 |\v x_j - \v x_i|}.
+    \end{align*} $$</span>
+</p>
+
+<h1>Continuous case</h1>
+
+
+<h2>In terms of potentials</h2>
+
+<p>
+    Either say the discrete case generalises, or:
+</p>
+<p>
+    Suppose we want to assemble the charge distribution <span class="inline-math">$ρ(\v x)$</span>,
+    in which case the electrostatic potential is <span class="inline-math">$Φ(\v x)$</span>.
+</p>
+<p>
+    Consider a charge distribution <span class="inline-math">$λ\, ρ(\v x)$</span>.
+    In this case by linearity of Maxwell's equations,
+    the potential is <span class="inline-math">$λ\, Φ(\v x)$</span>.
+    When we bring a small amount of charges in from infinity
+    to make the charge distribution <span class="inline-math">$(λ+δλ)ρ(\v x)$</span>,
+    the work done is
+    <span class="display-math">$$ \begin{align*}
+        δW = \int_{V} δλ\, ρ(\v x)\cdot λΦ(\v x) \d^3 \v x.
+    \end{align*} $$</span>
+    Thus integrating,
+    <span class="display-math">$$ \begin{align*}
+        W = \int_{0}^{1} \int_{V} ρ(\v x) \cdot λΦ(\v x) \d^3 \v x \d λ
+        = \frac{1}{2}\int_{V} ρ(\v x)Φ(\v x) \d^3\v x.
+    \end{align*} $$</span>
+</p>
+
+<h2>In terms of electric fields</h2>
+
+<p>
+    Use <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Maxwell-s-equations.html">(M1)</a> and <span class="inline-math">$\v E = -∇Φ$</span>,
+    <span class="display-math">$$ \begin{align*}
+        W ={}&amp; \frac{ε_0}{2} \int_{V} (∇\cdot \v E)Φ \d^3 \v x \\
+        ={}&amp; \frac{ε_0}{2} \int_{V} ∇\cdot (Φ\v E) - \v E\cdot ∇Φ \d^3 \v x \\
+        ={}&amp; \frac{ε_0}{2} \left(\int_{\partial V} Φ\v E\cdot \d \v S + \int_{V} \v |\v E|^2 \d^3 \v x\right),
+    \end{align*} $$</span>
+    where we have applied the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Theorem-divergence-theorem.html">divergence theorem</a>.
+</p>
+<p>
+    Now take <span class="inline-math">$V$</span> to be a sphere of radius <span class="inline-math">$R\to\infty$</span>.
+    Since <span class="inline-math">$ρ$</span> is contained,
+    by the <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Multipole-expansion-for-electric-potentials.html">multipole expansion</a>,
+    <span class="inline-math">$Φ = O(R\inv)$</span> and <span class="inline-math">$\v E = O(R^{-2})$</span> on <span class="inline-math">$S$</span>
+    while the area of <span class="inline-math">$\partial V$</span> is <span class="inline-math">$O(R^2)$</span>.
+    Thus the first term vanishes asymptotically and hence
+    <span class="display-math">$$ \begin{align*}
+        W = \int_{\R^3} \frac{1}{2}ε_0 |\v E|^2 \d^3 \v x.
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,109 @@
+<p>
+    Consider a <em>plane wave</em> where <span class="inline-math">$\v E$</span> and <span class="inline-math">$\v B$</span>
+    depend only on <span class="inline-math">$(x,t)$</span> but not <span class="inline-math">$(y,z)$</span>.
+</p>
+<p>
+    A more general solution has the form
+    <span class="display-math">$$ \begin{align*}
+        \v E = \Re(\v E_0 \exp i(\v k\cdot \v x - ω t)), \qquad \v B = \Re(\v B_0 \exp i(\v k\cdot \v x-ωt))
+    \end{align*} $$</span>
+    where <span class="inline-math">$\v E_0, \v B_0$</span> are constant complex vector amplitudes, and
+    <span class="inline-math">$\v k$</span> is the real <em>wavevector</em>.
+    The Maxwell's equations reduce to
+    <span class="display-math">$$ \begin{align*}
+        ∇\cdot \v E &amp;= 0 &amp;&amp;\implies &amp;\v k\cdot \v E_0 &amp;= 0, \\
+        ∇\cdot \v B &amp;= 0 &amp;&amp;\implies &amp;\v k\cdot \v B_0 &amp;= 0, \\
+        ∇\times  \v E &amp;= -\pdfd{\v B}{t} &amp;&amp;\implies &amp;\v k\times  \v E_0 &amp;= ω\v B_0, \\
+        ∇\times  \v B &amp;= μ_0 ε_0 \pdfd{\v E}{t} &amp;&amp;\implies &amp;\v k\times  \v B_0 &amp;= -\frac{ω}{c^2}\v E_0.
+    \end{align*} $$</span>
+    These imply the <em>dispersion relation</em>
+    <span class="display-math">$$ \begin{align*}
+        ω^2 = c^2 k^2.
+    \end{align*} $$</span>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Linearly polarised plane wave
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Linearly-polarised-plane-wave.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If we restrict <span class="inline-math">$\v E = E(x,t) \v e_y$</span> to only be in the <span class="inline-math">$y$</span> direction,
+                we obtain
+                <span class="display-math">$$ \begin{align*}
+                    \v E(x,t) &amp;= \bigl(f(x - ct) + g(x+ct)\bigr)\v e_y, \\
+                    \v B(x,t) &amp;= \frac{1}{c}\bigl(f(x-ct) - g(x+ct)\bigr)\v e_z,
+                \end{align*} $$</span>
+                which is a sum of wave travelling without change of form
+                in the <span class="inline-math">$+x$</span> direction and another travelling in the <span class="inline-math">$-x$</span> direction.
+                (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-linearly-polarised-plane-wave.html">Derivation</a>)
+            </p>
+            <p>
+                A <em>monochromatic wave</em> has the form
+                <span class="display-math">$$ \begin{align*}
+                    E = E_0 \cos(kx - ωt), \qquad B = \frac{E_0}{c}\cos(kx - ωt)
+                \end{align*} $$</span>
+                where <span class="inline-math">$E_0$</span> is a constant amplitude, <span class="inline-math">$k=\pm ω/c$</span>
+                is the <em>wavenumber</em>, and <span class="inline-math">$ω$</span> is the <em>angular frequency</em>.
+            </p>
+            <p>
+                This corresponds to our <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Electromagnetic-plane-waves.html">previous discussion</a> with <span class="inline-math">$\v E_0$</span> real.
+                Then <span class="inline-math">$\v B_0 = \frac{1}{ω}\v k\times \v E_0$</span> is also real,
+                and <span class="inline-math">$\v k, \v E_0, \v B_0$</span> form a right-handed orthogonal triad.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Elliptically polarised plane wave
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Elliptically-polarised-plane-wave.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For <span class="inline-math">$\v E_0 = \v a - i\v b$</span>, <span class="inline-math">$\v B_0 = \v a&#x27; - i\v b&#x27;$</span>,
+                we have
+                <span class="display-math">$$ \begin{align*}
+                    \v E &amp;= \v a \cos(\v k\cdot \v x - ωt) + \v b \sin(\v k\cdot \v x - ωt), \\
+                    \v B &amp;= \v a&#x27; \cos(\v k\cdot \v x - ωt) + \v b&#x27; \sin(\v k\cdot \v x - ωt), \\
+                \end{align*} $$</span>
+                with <span class="inline-math">$|\v a&#x27;| = |\v a|/c, |\v b&#x27;| = |\v b|/c$</span> and <span class="inline-math">$\v k,\v a,\v a&#x27;$</span> and <span class="inline-math">$\v k,\v b,\v b&#x27;$</span> being right-handed orthogonal triads.
+                The fields trace out an ellipse and the wave is <em>elliptically polarised</em>.
+            </p>
+            <p>
+                <iframe src="https://www.desmos.com/calculator/o6b9gaovp3?embed" width="100%" height="300"></iframe>
+            </p>
+            <p>
+                <em>Circular polarisation</em> occurs when <span class="inline-math">$|\v b| = |\v a|$</span>
+                and <span class="inline-math">$\v a\cdot \v b = 0$</span>.
+                It is <em>right-handed</em> if <span class="inline-math">$\v b = \vhat k\times \v a$</span>
+                and <em>left-handed</em> if <span class="inline-math">$\v b = -\vhat k\times \v a$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Energy for an electromagnetic plane wave
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Energy-for-an-electromagnetic-plane-wave.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For the plane wave solution <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Electromagnetic-plane-waves.html">here</a>,
+                the averaged (over time or space) energy density and flux density are
+                <span class="display-math">$$ \begin{align*}
+                    \langle w\rangle &amp;= \frac{1}{2}ε_0 |\v E_0|^2, \\
+                    \langle \v S\rangle &amp;= \langle w\rangle c\vhat k,
+                \end{align*} $$</span>
+                implying the wave transports energy at speed <span class="inline-math">$c$</span> in the direction <span class="inline-math">$\vhat k$</span>.
+                (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-energy-for-an-electromagnetic-plane-wave.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>

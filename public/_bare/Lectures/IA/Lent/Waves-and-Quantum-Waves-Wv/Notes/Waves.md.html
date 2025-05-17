@@ -1,0 +1,171 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            The wave equation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Waves-and-Quantum-Waves-Wv/Notes/The-wave-equation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A wavefunction <span class="inline-math">$\psi(x,t)$</span> should satisfy the <em>wave equation</em>
+                <span class="display-math">$$ \begin{align*}
+                    \pdfd[2]{\psi}{x} = \frac{1}{c^2}\pdfd[2]{\psi}{t}
+                \end{align*} $$</span>
+                where <span class="inline-math">$c$</span> is the wave speed.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Any solution is in the form <span class="inline-math">$\psi(x,t) = f(x-ct) + g(x+ct)$</span>. (<a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Derivation-second-order-wave-equation.html">Derivation</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    This is linear in <span class="inline-math">$\psi$</span>, so principle of superposition applies i.e. <span class="inline-math">$\psi_1+\psi_2$</span> is a solution.
+                </p>
+                
+            </li><li>
+                <p>
+                    It has complex solution <span class="inline-math">$\psi = \exp(i(kx \pm \omega t))$</span>, and taking the real part gives the physical quantity.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                In higher dimensions,
+                <span class="display-math">$$ \begin{align*}
+                    \nabla^2 \psi \equiv \pdfd[2]{\psi}{x} + \pdfd[2]{\psi}{y} + \pdfd[2]{\psi}{z} = \frac{1}{c^2}\pdfd[2]{\psi}{t}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Wavenumber, wavevector and angular frequency
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Waves-and-Quantum-Waves-Wv/Notes/Wavenumber-wavevector-and-angular-frequency.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The wavefunction <span class="inline-math">$\cos(kx-\omega t)$</span> has wavelength <span class="inline-math">$\lambda$</span> and frequency <span class="inline-math">$f$</span>,
+                and so we define the wavenumber <span class="inline-math">$k$</span> (unit <span class="inline-math">$\mathrm{m\inv}$</span>) and angular frequency <span class="inline-math">$\omega$</span> (unit <span class="inline-math">$\mathrm{rad\ s\inv}$</span>) to be
+                <span class="display-math">$$ \begin{align*}
+                    k = \frac{2\pi}{\lambda}, \quad \omega = \frac{2\pi}{T} = 2\pi f \implies c = \frac{\omega}{k}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                A plane wave in higher dimensions has a wavevector <span class="inline-math">$\v k$</span>, whose magnitude is <span class="inline-math">$k=2\pi/\lambda$</span> pointing in the direction of propagation.
+                It has wavefunction
+                <span class="display-math">$$ \begin{align*}
+                    \psi(\v r, t) = A \cos(\v k\cdot\v r - \omega t).
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Waves on a string
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Waves-and-Quantum-Waves-Wv/Notes/Waves-on-a-string.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A stretched string (with <span class="inline-math">$\psi$</span> much less than string length) satisfies the wave equation, with
+                <span class="display-math">$$ \begin{align*}
+                    c = \sqrt{\frac{T}{\rho}}
+                \end{align*} $$</span>
+                where <span class="inline-math">$T$</span> is the tension and <span class="inline-math">$\rho$</span> is the mass per length. (<a href="/tripos-notes/Lectures/IA/Lent/Waves-and-Quantum-Waves-Wv/Notes/Derivation-wave-speed-on-stretched-string.html">Derivation</a>)
+            </p>
+            <p>
+                For a wavefunction <span class="inline-math">$\psi(x,t)=A\cos(kx - \omega t)$</span>, the kinetic and potential energy densities are
+                <span class="display-math">$$ \begin{align*}
+                    \pdfd{K}{x} = \pdfd{U}{x} = \frac{1}{2}\rho \omega^2 A^2 \sin^2(kx - \omega t) = \frac{1}{2}Tk^2A^2\sin^2(kx-\omega t).
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IA/Lent/Waves-and-Quantum-Waves-Wv/Notes/Derivation-energy-density-on-a-string.html">Derivation</a>)
+                Total energy density is
+                <span class="display-math">$$ \begin{align*}
+                    \pdfd{E}{x} = \rho\omega^2 A^2\sin^2(kx-\omega t), \qquad \left\langle\pdfd{E}{x}\right\rangle = \frac{1}{2}\rho\omega^2 A^2.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The wave propagates along the string, so it delivers power to the newly oscillating length:
+                <span class="display-math">$$ \begin{align*}
+                    \langle P\rangle = \left\langle\pdfd{E}{x}\right\rangle \dfd{x}{t} = \frac{1}{2}\rho\omega^2 A^2 c.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Standing waves
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Waves-and-Quantum-Waves-Wv/Notes/Standing-waves.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A standing wave has wavefunction in separated form
+                <span class="display-math">$$ \begin{align*}
+                    \psi(x,y,t) = X(x) Y(y) \cos\omega t.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Positions where <span class="inline-math">$\psi=0$</span> are called <em>nodes</em>, and positions having maximum amplitude are called <em>antinodes</em>.
+            </p>
+            <p>
+                Upon reflection,
+            </p>
+            <ul>
+            <li>
+                <p>
+                    a fixed end (<span class="inline-math">$\psi=0$</span>) gives a phase change of <span class="inline-math">$\pi$</span>, but
+                </p>
+                
+            </li><li>
+                <p>
+                    a free end (<span class="inline-math">$\partial\psi/\partial x = 0$</span>) gives no phase change.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Solutions are quantised by an integer <span class="inline-math">$n$</span>. The <span class="inline-math">$n=1$</span> solution is called <em>fundamental</em>, and higher values are <em>overtones</em> or <em>harmonics</em>.
+            </p>
+            <p>
+                <div class="markdown-embed embed-example">
+                    <div class="markdown-embed-title">
+                        Example (standing wave in pipes)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Waves-and-Quantum-Waves-Wv/Notes/Example-standing-wave-in-pipes.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The pressure difference from atmosphere satisfies
+                            <span class="display-math">$$ \begin{align*}
+                                \psi_p \propto \pdfd{\psi}{x}.
+                            \end{align*} $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Open end has <span class="inline-math">$\psi_p = 0 = \pdfd{\psi}{x}$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Closed end has <span class="inline-math">$\psi = 0$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,20 @@
+<p>
+    Taylor expand:
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{|\v x-\v x&#x27;|}
+        ={}&amp; \frac{1}{|\v x|} - \v x&#x27; \cdot ∇\left(\frac{1}{|\v x|}\right)
+        + \frac{1}{2}(\v x&#x27;\cdot ∇)(\v x&#x27;\cdot ∇)\left(\frac{1}{|\v x|}\right) + O(|\v x&#x27;|^3) \\
+        ={}&amp; \frac{1}{|\v x|} + \frac{\v x&#x27;\cdot \v x}{|\v x|^3} - \frac{1}{2}\v x&#x27; \cdot ∇\left(\frac{\v x&#x27;\cdot \v x}{|\v x|^3}\right) + O(|\v x&#x27;|^3) \\
+        ={}&amp; \frac{1}{|\v x|} + \frac{\v x&#x27;\cdot \v x}{|\v x|^3} + \frac{1}{2}\v x&#x27;\cdot \left(\frac{3(\v x&#x27;\cdot \v x)\v x}{|\v x|^5} - \frac{\v x&#x27;}{|\v x|^3}\right) + O(|\v x&#x27;|^3) \\
+        ={}&amp; \frac{1}{|\v x|} + \frac{\v x&#x27;\cdot \v x}{|\v x|^3} + \frac{1}{2}\frac{3(\v x&#x27;\cdot \v x)^2 - |\v x&#x27;|^2|\v x|^2}{|\v x|^5} + O(|\v x&#x27;|^3) \\
+        ={}&amp; \frac{1}{|\v x|} + \frac{\v x&#x27;\cdot \v x}{|\v x|^3} + \frac{1}{2}\frac{3x_i x&#x27;_i x_j x&#x27;_j - x_i x_i x&#x27;_j x&#x27;_j}{|\v x|^5} + O(|\v x&#x27;|^3)
+    \end{align*} $$</span>
+</p>
+<p>
+    So the <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Electrostatic-potential.html">solution to Poisson's equation</a> becomes
+    <span class="display-math">$$ \begin{align*}
+        Φ(\v x) ={}&amp; \frac{1}{4πε_0} \int_{V} \frac{ρ(\v x&#x27;)}{|\v x-\v x&#x27;|} \d^3 \v x&#x27; \\
+        ={}&amp; \frac{1}{4πε_0} \left(\frac{\int_{V} ρ(\v x&#x27;) \d^3 \v x&#x27;}{|\v x|} + \frac{\v x \cdot \int_{V} \v x&#x27; ρ(\v x&#x27;) \d ^3 \v x&#x27;}{|\v x|^3}
+        + \frac{1}{2}\frac{x_i x_j \int_{V} (3x_i&#x27; x_j&#x27; - |\v x&#x27;|^2 δ_{ij}) ρ(\v x&#x27;) \d^3 \v x&#x27;}{|\v x|^5} + \ldots\right).
+    \end{align*} $$</span>
+</p>

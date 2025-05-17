@@ -1,0 +1,229 @@
+<p>
+    By <span class="inline-math">$∇\times \v E = 0$</span>, now the <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Scalar-and-vector-potentials.html">electrostatic potential</a> <span class="inline-math">$\v Φ$</span> satisfies
+    <span class="display-math">$$ \begin{align*}
+        \v E = -∇Φ
+    \end{align*} $$</span>
+</p>
+<p>
+    The <em>potential difference</em> or <em>voltage</em> between two points <span class="inline-math">$\v x_1$</span> and <span class="inline-math">$\v x_2$</span> is
+    <span class="display-math">$$ \begin{align*}
+        Φ(\v x_2)-Φ(\v x_1) = \int_{\v x_1}^{\v x_2}  \d Φ = -\int_{\v x_1}^{\v x_2} \v E(\v x) \cdot  \d \v x
+    \end{align*} $$</span>
+    independent of path.
+</p>
+<p>
+    Adding an arbitrary constant to <span class="inline-math">$Φ$</span> has no physical effect.
+    We usually choose <span class="inline-math">$Φ\to 0$</span> as <span class="inline-math">$|\v x|\to\infty$</span>,
+    but this is only possible if <span class="inline-math">$ρ(\v x)$</span> decays sufficiently rapidly.
+    E.g. for a <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Cylindrically-symmetric-charge-distribution.html">line charge</a>,
+    <span class="inline-math">$Φ(r)\propto \ln r$</span>.
+</p>
+<p>
+    (M1) implies <span class="inline-math">$Φ$</span> satisfies the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Poisson-equation-and-Laplace-equation.html">Poisson equation</a>
+    <span class="display-math">$$ \begin{align*}
+        -∇^2Φ = \frac{ρ}{ε_0},
+    \end{align*} $$</span>
+    which has an integral solution (assuming <span class="inline-math">$Φ\to 0$</span> as <span class="inline-math">$|\v x|\to \infty$</span>)
+    <span class="display-math">$$ \begin{align*}
+        Φ(\v x) = \frac{1}{4πε_0} \int_{\R^3} \frac{ρ(\v x&#x27;)}{|\v x&#x27;-\v x|} \d ^3\v x&#x27;.
+    \end{align*} $$</span>
+</p>
+<p>
+    This is the convolution of <span class="inline-math">$ρ(\v x)$</span> with potential of
+    a unit point charge at the origin
+    <span class="display-math">$$ \begin{align*}
+        Φ(\v x) = \frac{1}{4πε_0 |\v x|} \qquad \text{solving }
+        {-∇^2Φ} = \frac{δ(\v x)}{ε_0}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Electric dipole
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Easter/Gravitational-and-Electromagnetic-Fields-GEF/Notes/Electric-dipole.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\v d$</span> to be the vector from a <span class="inline-math">$-q$</span> charge to a <span class="inline-math">$+q$</span> charge. Define the dipole moment as
+                <span class="display-math">$$ \begin{align*}
+                    \v p = q\v d.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Force on electric dipole
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Easter/Gravitational-and-Electromagnetic-Fields-GEF/Notes/Force-on-electric-dipole.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Torque
+                            <span class="display-math">$$ \begin{align*}
+                                \v G = \v d\times(q\v E) = \v p\times \v E.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Force
+                            <span class="display-math">$$ \begin{align*}
+                                \v F = q\v E(\v r + \v d) - q\v E(\v r) \approx q(\v d\cdot\nabla)\v E = (\v p\cdot\nabla)\v E.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Potential and field due to electric dipole
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Easter/Gravitational-and-Electromagnetic-Fields-GEF/Notes/Potential-and-field-due-to-electric-dipole.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For <span class="inline-math">$|\v x|\ll|\v d|$</span>, the electric potential and field due to the dipole is
+                            <span class="display-math">$$ \begin{align*}
+                                \Phi(\v x) &amp;= \frac{\v p\cdot \v x}{4\pi\epsilon_0 |\v x|^3} &amp;&amp;= \frac{p\cos\theta}{4\pi\epsilon_0 r^2}, \\
+                                \v E(\v r) &amp;= \frac{3(\v p\cdot \v x)\v x - |\v x|^2 \v p}{4πε_0 |\v x|^5} &amp;&amp;= \frac{p\cos\theta}{2\pi\epsilon_0 r^3}\vhat r + \frac{p\sin\theta}{4\pi\epsilon_0 r^3}\vhat\theta
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\theta$</span> is the angle between <span class="inline-math">$\v x$</span> and <span class="inline-math">$\v p$</span>.
+                            (<a href="/tripos-notes/Lectures/IA/Easter/Gravitational-and-Electromagnetic-Fields-GEF/Notes/Derivation-potential-and-field-due-to-electric-dipole.html">Derivation</a>)
+                            Note that <span class="inline-math">$\Phi\propto 1/r^2, E\propto 1/r^3$</span>.
+                        </p>
+                        <p>
+                            Therefore on axis (<span class="inline-math">$\theta = 0$</span>),
+                            <span class="display-math">$$ \begin{align*}
+                                E(r) &amp;= \frac{p}{2\pi\epsilon_0 r^3} \text{ parallel to axis}
+                            \end{align*} $$</span>
+                            and off axis (<span class="inline-math">$\theta = \pi/2$</span>),
+                            <span class="display-math">$$ \begin{align*}
+                                E(r) &amp;= \frac{p}{4\pi\epsilon_0 r^3} \text{ anti-parallel to axis}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            A point dipole <span class="inline-math">$\v p$</span> at the origin correspond to
+                            <span class="display-math">$$ \begin{align*}
+                                ρ(\v x) = -\v p\cdot ∇δ(\v x)
+                            \end{align*} $$</span>
+                            so by linearity of Poisson's equation,
+                            <span class="display-math">$$ \begin{align*}
+                                Φ(\v x) = -\v p\cdot ∇\left(\frac{1}{4πε_0 |\v x|}\right).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                In atoms and molecules, external electric fields causes polarisation and induces <span class="inline-math">$\v p\propto \v E_\text{ext}$</span>.
+                This gives long-range forces between them:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Dipole-dipole: dipoles line up
+                </p>
+                
+            </li><li>
+                <p>
+                    Dipole-induced dipole
+                </p>
+                
+            </li><li>
+                <p>
+                    Fluctuating dipoles: dipoles synchronise and fluctuate in the same direction.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Multipole expansion for electric potentials
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Multipole-expansion-for-electric-potentials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a general charge distribution <span class="inline-math">$ρ(\v x)$</span> contained within <span class="inline-math">$V = \sb{\v x}{|\v x|&lt;R}$</span>,
+                the potential is, at large <span class="inline-math">$|\v x|\gg R$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    Φ(\v x) = \frac{1}{4πε_0}\left(\frac{Q}{|\v x|} + \frac{\v p\cdot \v x}{|\v x|^3} + \frac{1}{2} \frac{Q_{ij} x_i x_j}{|\v x|^5} + \ldots\right)
+                \end{align*} $$</span>
+                where the first three multipole moments are
+            </p>
+            <ul>
+            <li>
+                <p>
+                    total charge (<em>electric monopole moment</em>, scalar)
+                    <span class="display-math">$$ \begin{align*}
+                    Q = \int_{V} ρ(\v x) \d^3 \v x,
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    <em>electric dipole moment</em> (vector)
+                    <span class="display-math">$$ \begin{align*}
+                    \v p = \int_{V} \v x\,ρ(\v x) \d^3 \v x,
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    <em>electric quadruple moment</em> (traceless second-order symmetric tensor)
+                    <span class="display-math">$$ \begin{align*}
+                    Q_{ij} = \int_{V} (3x_i x_j - |\v x|^2 δ_{ij})\,ρ(\v x) \d^3 \v x.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-multipole-expansion.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Electrostatic energy
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Electrostatic-energy.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The work done against the electric force
+                <span class="inline-math">$\v F = q\v E$</span> in bringing a particle of charge <span class="inline-math">$q$</span>
+                from infinity (where <span class="inline-math">$Φ = 0$</span>) to <span class="inline-math">$\v x$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    W = -\int_{\infty}^{\v x} \v F\cdot  \d \v x = q \int_{\infty}^{\v x} ∇Φ\cdot \d \v x = q\, Φ(\v x).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The total work done to assemble a configuration
+                of <span class="inline-math">$N$</span> charges is
+                <span class="display-math">$$ \begin{align*}
+                    U = \frac{1}{2} \sum_{i=1}^{N}  \sum_{\substack{j=1\\j\neq i}}^{N} \frac{q_i q_j}{4πε_0 |\v x_j - \v x_i|}.
+                \end{align*} $$</span>
+                For a continuous charge distribution, occupying a finite volume <span class="inline-math">$V$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    U = \frac{1}{2}\int_{V} ρ Φ \d V = \int_{\R^3} \frac{1}{2}ε_0 |\v E|^2\d^3 \v x.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-electrostatic-energy.html">Derivation</a>)
+            </p>
+            <p>
+                We can interpret this as the energy stored in the electric field.
+            </p>
+            <p>
+                Our expressions for <span class="inline-math">$U$</span> suggest
+                the self-energy of a point charge is infinite.
+                Discard this as it is unchanging and causes no force.
+            </p>
+            
+        </div>
+    </div>
+</p>

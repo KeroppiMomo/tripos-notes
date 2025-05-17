@@ -1,0 +1,483 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Lorentz transformation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Michaelmas/Rotational-Mechanics-Special-Relativity-RMSR/Lorentz-transformation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose the origins of <span class="inline-math">$S$</span> and <span class="inline-math">$S&#x27;$</span> coincide at <span class="inline-math">$t=t&#x27;=0$</span>, i.e. treat coordinates as time interval from the event "origins coincide".
+                The coordinates transform as
+                <span class="display-math">$$ \v s&#x27; = \Lambda\v s$$</span>
+                <span class="display-math">$$ \pmat{ct \\ x \\ y \\ z} = \pmat{\gamma &amp; \gamma\beta &amp; 0 &amp; 0 \\
+                \gamma\beta &amp; \gamma &amp; 0 &amp; 0 \\
+                0 &amp; 0 &amp; 1 &amp; 0 \\
+                0 &amp; 0 &amp; 0 &amp; 1}
+                \pmat{ct&#x27; \\ x&#x27; \\ y&#x27; \\ z&#x27;}, \quad
+                \pmat{ct&#x27; \\ x&#x27; \\ y&#x27; \\ z&#x27;} = \pmat{\gamma &amp; -\gamma\beta &amp; 0 &amp; 0 \\
+                -\gamma\beta &amp; \gamma &amp; 0 &amp; 0 \\
+                0 &amp; 0 &amp; 1 &amp; 0 \\
+                0 &amp; 0 &amp; 0 &amp; 1}
+                \pmat{ct \\ x \\ y \\ z}$$</span>
+                <span class="display-math">$$ \begin{cases}
+                t &amp;= \gamma(t&#x27; + vx&#x27;/c^2)  \\
+                x &amp;= \gamma(x&#x27; + vt&#x27;) \\
+                y &amp;= y&#x27; \\
+                z &amp;= z&#x27;
+                \end{cases},
+                \begin{cases}
+                t&#x27; &amp;= \gamma(t - vx/c^2)  \\
+                x&#x27; &amp;= \gamma(x - vt) \\
+                y&#x27; &amp;= y \\
+                z&#x27; &amp;= z
+                \end{cases}. $$</span>
+                (<a href="/tripos-notes/Lectures/IA/Michaelmas/Rotational-Mechanics-Special-Relativity-RMSR/Derivation-of-Lorentz-transformation.html">Derivation</a>)
+            </p>
+            <p>
+                In general, a Lorentz transformation
+                may contain a boost with spacial isometries, and reverse time.
+                They form the Lorentz group, the set of all matrices <span class="inline-math">$Λ$</span> satisfying
+                <span class="display-math">$$ \begin{align*}
+                    {Λ^μ}_ρ η_{μν} {Λ^ν}_σ = η_{ρσ} \iff Λ^T ηΛ = η
+                \end{align*} $$</span>
+                where <span class="inline-math">$η$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Raising-and-lowering-indices.html">Minkowski metric tensor</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            4-tensors
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/4-tensors.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We use <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Einstein-suffix-notation.html">Einstein's suffix notation</a>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Greek indices <span class="inline-math">$μ, ν, ρ, σ$</span> etc run from 0 to 3 to cover the dimensions of spacetime.
+                </p>
+                
+            </li><li>
+                <p>
+                    Roman indices <span class="inline-math">$i, j, k, l$</span> etc run from 1 to 3 to cover the dimensions of space.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (4-tensor)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Definition-4-tensor.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>4-tensor</em> of type <span class="inline-math">$(r,s)$</span>
+                            is an object whose <span class="inline-math">$4^{r+s}$</span> components transform as
+                            <span class="display-math">$$ \begin{align*}
+                                {T&#x27;^{μ_1\ldots μ_r}}_{ν_1\ldots ν_s}
+                                = {Λ^{μ_1}}_{ρ_1} \ldots {Λ^{μ_r}}_{ρ_r}\, {(Λ\inv)^{σ_1}}_{ν_1}\ldots{(Λ\inv)^{σ_s}}_{ν_s} \, {T^{ρ_1 \ldots ρ_r}}_{σ_1 \ldots σ_s}
+                            \end{align*} $$</span>
+                            under a <a href="/tripos-notes/Lectures/IA/Michaelmas/Rotational-Mechanics-Special-Relativity-RMSR/Lorentz-transformation.html">Lorentz transformation</a> <span class="inline-math">$Λ$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    A <span class="inline-math">$(1,0)$</span>-tensor is a 4-vector.
+                </p>
+                
+            </li><li>
+                <p>
+                    A <span class="inline-math">$(0,1)$</span>-tensor is a 4-covector.
+                </p>
+                
+            </li><li>
+                <p>
+                    A <span class="inline-math">$(0,0)$</span>-tensor is a scalar (Lorentz invariant).
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Summation convention on spacetime requires the repeated Greek index
+                to appear once up and once down.
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Square of 4-vector
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Square-of-4-vector.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>square</em> of a 4-vector <span class="inline-math">$V$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                V\cdot V = η_{μν}V^μ V^ν
+                            \end{align*} $$</span>
+                            is a scalar thus a Lorentz invariant.
+                        </p>
+                        <p>
+                            <span class="inline-math">$V$</span> is
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                timelike if <span class="inline-math">$V\cdot V&lt;0$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                null/lightlike if <span class="inline-math">$V\cdot V = 0$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                spacelike if <span class="inline-math">$V\cdot V&gt;0$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Raising and lowering indices
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Raising-and-lowering-indices.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>Minkowski metric tensor</em>
+                            <span class="display-math">$$ \begin{align*}
+                                η_{μν} = \pmat{-1&amp;0&amp;0&amp;0\\ 0&amp;1&amp;0&amp;0 \\ 0&amp;0&amp;1&amp;0 \\ 0&amp;0&amp;0&amp;1} = \mathrm{diag}(-1,1,1,1)
+                            \end{align*} $$</span>
+                            and its inverse
+                            <span class="display-math">$$ \begin{align*}
+                                η^{μν} = \mathrm{diag}(-1,1,1,1)
+                            \end{align*} $$</span>
+                            are isotropic by definition of a <a href="/tripos-notes/Lectures/IA/Michaelmas/Rotational-Mechanics-Special-Relativity-RMSR/Lorentz-transformation.html">Lorentz transformation</a>.
+                            They provides an isomorphism between
+                            vectors and covectors:
+                            <span class="display-math">$$ \begin{align*}
+                                V^{μ} = η^{μν} V_ν, \qquad V_μ = η_{μν} V^{ν}.
+                            \end{align*} $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                We can raise or lower any tensor index.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The inner product of two 4-vectors can be written as <span class="inline-math">$V\cdot W = η_{μν} V^μ W^ν = V_μ W^μ = V^μ W_μ = η^{μν} V_μ W_ν$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">${η^μ}_ν = {δ^μ}_ν = \mathrm{diag}(1,1,1,1)$</span> is the Kronecker delta symbol.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Vector calculus in spacetime
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Vector-calculus-in-spacetime.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The spacetime derivative of a scalar field <span class="inline-math">$f(X)$</span> is a covector field
+                            <span class="display-math">$$ \begin{align*}
+                                \partial_μ f = (\partial_0 f, \partial_i f) = \left(\frac{1}{c} \pdfd{f}{t}, ∇f\right).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The spacetime divergence of a 4-vector field <span class="inline-math">$V(X) = (V^0, \v v)$</span>
+                            is a scalar field
+                            <span class="display-math">$$ \begin{align*}
+                                \partial_μ V^μ = \partial_0V^0 + \partial_i V^i = \frac{1}{c}\pdfd{V^0}{t} + ∇\cdot \v v.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The spacetime equivalent of the curl
+                            is the antisymmetric derivative of a covector field <span class="inline-math">$Y(X)$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                \partial_μ Y_ν - \partial_ν Y_μ.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The generalisation of the Laplacian <span class="inline-math">$∇^2$</span>
+                            is the d'Alembertian, a scalar differential operator
+                            <span class="display-math">$$ \begin{align*}
+                                \square = η^{μν}\partial_μ \partial_ν = -\frac{1}{c^2} \pdd[2]{t} + ∇^2.
+                            \end{align*} $$</span>
+                            The wave equation for a scalar field is <span class="inline-math">$\square f = 0$</span>.
+                            It is only a scalar equation for waves that travel at <span class="inline-math">$c$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Spacetime kinematics
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Spacetime-kinematics.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>proper time</em> <span class="inline-math">$τ$</span> is the time experienced by the particle.
+                The world line parametrised in <span class="inline-math">$τ$</span> has constant speed <span class="inline-math">$-c^2$</span>,
+                i.e. <span class="inline-math">$\d X \cdot \d X = -c^2 \d τ^2$</span>.
+            </p>
+            <p>
+                The <em>4-velocity</em> of a massive particle is
+                <span class="display-math">$$ \begin{align*}
+                    U = \dfd{X}{τ} = γ_\v u(c,\v u)
+                \end{align*} $$</span>
+                where <span class="inline-math">$\v u = \dfd{\v x}{t}$</span> is the 3-velocity.
+                We have
+                <span class="display-math">$$ \begin{align*}
+                    U\cdot U = -c^2.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-4-velocity.html">Derivation</a>)
+            </p>
+            <p>
+                The <em>4-momentum</em> of a massive particle with rest mass <span class="inline-math">$m&gt;0$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    P^μ = mU^μ = mγ_\v u(c, \v u) = \left(\frac{E}{c}, \v p\right)
+                \end{align*} $$</span>
+                where <span class="inline-math">$E$</span> is the energy and <span class="inline-math">$\v p = mγ_\v u \v u$</span> is the 3-momentum.
+                Computing its square <span class="inline-math">$P\cdot P = -m^2c^2$</span> gives
+                <span class="display-math">$$ \begin{align*}
+                    E^2 = (mc^2)^2 + (|\v p|c)^2.
+                \end{align*} $$</span>
+                Massless particles such as photons travel at the speed of light and they have
+                <span class="display-math">$$ \begin{align*}
+                    E = |\v p|c.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The relativistic equation of motion for a massive particle is
+                <span class="display-math">$$ \begin{align*}
+                    \dfd{P^μ}{τ} = f^μ
+                \end{align*} $$</span>
+                where <span class="inline-math">$f^μ$</span> is the 4-force.
+                Since <span class="inline-math">$P\cdot P$</span> is constant, we must have
+                <span class="display-math">$$ \begin{align*}
+                    f\cdot P = 0.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-inner-product-of-4-force-and-4-momentum.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            4-current density
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/4-current-density.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>4-current density</em> (or <em>charge-current density 4-vector</em>)
+                is defined as
+                <span class="display-math">$$ \begin{align*}
+                    J^μ = (ρc, \v J).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Charge-conservation.html">Charge conservation</a> is expressed as
+                <span class="display-math">$$ \begin{align*}
+                    \partial_μ J^μ = 0.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Electromagnetic tensor and the Lorentz force
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Electromagnetic-tensor-and-the-Lorentz-force.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The Lorentz force as a 4-vector is
+                <span class="display-math">$$ \begin{align*}
+                    f_μ = qF_{μν}U^ν
+                \end{align*} $$</span>
+                where <span class="inline-math">$F_{μν}$</span> is the <em>electromagnetic tensor</em> having components
+                <span class="display-math">$$ \begin{align*}
+                    F_{00} &amp;= 0, \\
+                    F_{0i} &amp;= -E_i/c, \\
+                    F_{i0} &amp;= E_i/c, \\
+                    F_{ij} &amp;= ε_{ijk} B_k.
+                \end{align*} $$</span>
+                In marix form,
+                <span class="display-math">$$ \begin{align*}
+                    F_{μν} = \pmat{0 &amp; -E_x/c &amp; -E_y/c &amp; -E_z/c \\
+                    E_x/c &amp; 0 &amp; B_z &amp; -B_y \\
+                    E_y/c &amp; -B_z &amp; 0 &amp; B_x \\
+                    E_z/c &amp; B_y &amp; -B_x &amp; 0}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The spatial component says
+                <span class="display-math">$$ \begin{align*}
+                    \dfd{\v p}{τ} = γ_\v uq(\v E + \v u \times \v B) \iff \dfd{\v p}{t}=q(\v E + \v u\times \v B) = \v F
+                \end{align*} $$</span>
+                where <span class="inline-math">$\v F$</span> is the 3-force.
+            </p>
+            <p>
+                The time component says
+                <span class="display-math">$$ \begin{align*}
+                    \dfd{E}{τ} = γ_\v u q\v E\cdot \v u \iff \dfd{E}{t} = q\v E\cdot \v u = \v F\cdot \v u.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Lorentz transformation of electromagnetic field
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Lorentz-transformation-of-electromagnetic-field.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If an inertial frame <span class="inline-math">$S&#x27;$</span> moves at a velocity <span class="inline-math">$\v v$</span> relative to <span class="inline-math">$S$</span>,
+                            then the components of <span class="inline-math">$\v E$</span> and <span class="inline-math">$\v B$</span> parallel and perpendicular to <span class="inline-math">$\v v$</span>
+                            transform as
+                            <span class="display-math">$$ \begin{align*}
+                                \v E_\parallel&#x27; &amp;= \v E_\parallel, &amp;
+                                \v E_\perp&#x27; &amp;= γ(\v E_\perp + \v v\times \v B_\perp), \\
+                                \v B_\parallel&#x27; &amp;= \v B_\parallel, &amp;
+                                \v B_\perp&#x27; &amp;= γ(\v B_\perp - \frac{1}{c^2}\v v\times \v E_\perp).
+                            \end{align*} $$</span>
+                            (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-lorentz-transformation-of-electromagnetic-field.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Lorentz invariants in electromagnetic field
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Lorentz-invariants-in-electromagnetic-field.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We obtain a (Lorentz invariant) scalar
+                            <span class="display-math">$$ \begin{align*}
+                                F_{μν} F^{μν} \propto |\v E|^2 - c^2 |\v B|^2
+                            \end{align*} $$</span>
+                            and a pseudo-scalar (transforming with a minus sign if <span class="inline-math">$\det Λ = -1$</span>)
+                            <span class="display-math">$$ \begin{align*}
+                                ε_{μνρσ} F^{μν} F^{ρσ} \propto \v E \cdot \v B.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-lorentz-invariants-in-electromagnetic-field.html">Derivation</a>)
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            4-potential
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/4-potential.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>4-potential</em> is the 4-vector
+                <span class="display-math">$$ \begin{align*}
+                    A^μ = \left(\frac{Φ}{c}, \v A\right).
+                \end{align*} $$</span>
+                Then the <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Electromagnetic-tensor-and-the-Lorentz-force.html">electromagnetic tensor</a> is the antisymmetric derivative
+                <span class="display-math">$$ \begin{align*}
+                    F_{μν} = \partial_μA_ν - \partial_ν A_μ.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-electromagnetic-tensor-and-4-potential.html">Derivation</a>)
+            </p>
+            <p>
+                Now a gauge transformation
+                <span class="display-math">$$ \begin{align*}
+                    \tilde A_μ = A_μ + \partial_μ χ
+                \end{align*} $$</span>
+                leaves <span class="inline-math">$F_{μν}$</span> unchanged because <span class="inline-math">$\partial_μ\partial_ν χ - \partial_ν \partial_μ χ = 0$</span>.
+            </p>
+            <p>
+                The equivalent of the <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Coulomb-gauge.html">Coulomb gauge</a>
+                is the <em>Lorentz gauge</em> in which
+                <span class="display-math">$$ \begin{align*}
+                    \partial_μ A^μ = 0.
+                \end{align*} $$</span>
+                This can be assume WLOG:
+                if <span class="inline-math">$\partial_μ A^μ \neq 0$</span>, take <span class="inline-math">$χ$</span> to be the solution
+                of the forced wave equation <span class="inline-math">$-\square χ = \partial_μ A^μ$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Maxwell's equations in spacetime
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Maxwell-s-equations-in-spacetime.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Maxwell-s-equations.html">Maxwell's equations</a> can be written in covariant form
+                <span class="display-math">$$ \begin{align*}
+                    \partial_ν F^{μν} = μ_0 F^μ
+                \end{align*} $$</span>
+                and
+                <span class="display-math">$$ \begin{align*}
+                    ε^{μνρσ} \partial_ν F_{ρσ} = 0 \iff \partial_μ F_{νρ} + \partial_ν F_{ρμ} + \partial_ρ F_{μν} = 0.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-Maxwell-s-equations-in-spacetime.html">Derivation</a>)
+            </p>
+            <p>
+                They agree with <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/4-current-density.html">charge conservation</a>. (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-charge-conservation-from-Maxwell-s-equations-in-spacetime.html">Derivation</a>)
+            </p>
+            <p>
+                In the <a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/4-potential.html">Lorentz gauge</a>, the second equation is automatically satisfied,
+                and the first becomes
+                <span class="display-math">$$ \begin{align*}
+                    -\square A^μ = μ_0 J^μ.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/IB/Lent/Electromagnetism-EM/Notes/Derivation-equation-for-4-potential.html">Derivation</a>)
+            </p>
+            
+        </div>
+    </div>
+</p>

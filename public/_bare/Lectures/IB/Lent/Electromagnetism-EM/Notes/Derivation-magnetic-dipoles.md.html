@@ -1,0 +1,49 @@
+<p>
+    Taylor expand
+    <span class="display-math">$$ \begin{align*}
+        \v A(\v x) ={}&amp; \frac{μ_0}{4π} \int_{V} \frac{\v J(\v x&#x27;)}{|\v x-\v x&#x27;|} \d^3\v x&#x27; \\
+        ={}&amp; \frac{μ_0}{4π} \int_{V} \v J(\v x&#x27;)\left(\frac{1}{|\v x|} + \frac{\v x\cdot \v x&#x27;}{|\v x|^3} + \ldots\right) \d^3 \v x&#x27; \\
+        \approx{}&amp; \frac{μ_0}{4π}\left(\frac{\int_{V} \v J(\v x&#x27;) \d^3 \v x&#x27;}{|\v x|} + \frac{x_i \int_{V} x&#x27;_i J_j(\v x&#x27;) \d^3 \v x&#x27;}{|\v x|^3}\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    The first term vanishes, because
+    <span class="display-math">$$ \begin{align*}
+        0 ={}&amp; \int_{\partial V} x_i J_j \d S_j &amp;&amp;\v J=0 \text{ on }\partial V \\
+        ={}&amp; \int_{V} \partial_j(x_i J_j) \d^3 \v x &amp;&amp;\text{divergence theorem} \\
+        ={}&amp; \int_{V} δ_{ij} J_j + x_i \underbrace{\partial_jJ_j}_{∇\cdot \v J = 0} \d^3 \v x \\
+        ={}&amp;\int_{V} J_i \d^3\v x.
+    \end{align*} $$</span>
+</p>
+<p>
+    The integral in the second term is anti-symmetric, as
+    <span class="display-math">$$ \begin{align*}
+        0 ={}&amp; \int_{\partial V} x_i x_j J_k \d S_k \\
+        ={}&amp; \int_{V} \partial_k(x_i x_j J_k) \d^3 \v x \\
+        ={}&amp; \int_{V} δ_{ik} x_j J_k + x_i δ_{jk} J_k + x_i x_j \underbrace{\partial_k J_k}_{0} \d^3 \v x \\
+        ={}&amp; \int_{V} x_j J_i \d^3 \v x + \int_{V} x_i J_j \d^3 \v x.
+    \end{align*} $$</span>
+</p>
+<p>
+    Thus we can write
+    <span class="display-math">$$ \begin{align*}
+        \int_{V} x_i J_j \d^3 \v x = ε_{ijk} m_k
+        \iff
+        m_i = \frac{1}{2}ε_{ijk} \int_{V} x_j J_k \d^3 \v x.
+    \end{align*} $$</span>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \v A(\v x) \approx \frac{μ_0}{4π} \frac{x_i ε_{ijk} m_k}{|\v x|^3}
+        = \frac{μ_0}{4π} \frac{\v m\times \v x}{|\v x|^3}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Finally
+    <span class="display-math">$$ \begin{align*}
+        \v B = ∇\times \v A &amp;\approx \frac{μ_0}{4π}∇\times \left(\frac{\v m\times \v x}{|\v x|^3}\right) \\
+        &amp;= \frac{μ_0}{4π}\left(\left(-\frac{3\v x}{|\v x|^5}\right) \times (\v m\times \v x)
+        + \frac{(∇\cdot \v x) \v m-(\v m\cdot ∇)\v x}{|\v x|^3}\right) \\
+        &amp;= \frac{μ_0}{4π} \left(\frac{-3|\v x|^2\v m + 3(\v m\cdot \v x)\v x + 3|\v x|^2\v m - |\v x|^2\v m}{|\v x|^5}\right) \\
+        &amp;= \frac{μ_0}{4π} \frac{3(\v m\cdot \v x)\v x - |\v x|^2 \v m}{|\v x|^5}.
+    \end{align*} $$</span>
+</p>
