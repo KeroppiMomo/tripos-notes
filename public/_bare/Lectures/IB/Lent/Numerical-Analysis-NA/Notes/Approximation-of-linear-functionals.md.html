@@ -191,3 +191,53 @@
         </div>
     </div>
 </p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Peano kernel theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Peano-kernel-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a linear functional <span class="inline-math">$λ: C^{(n+1)}[a,b]\to \R$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$λ$</span> vanishes on <span class="inline-math">$\mathcal{P}_n$</span> and we can exchange <span class="inline-math">$λ$</span> and <span class="inline-math">$\int_{a}^{b}$</span>, then
+                <span class="display-math">$$ \begin{align*}
+                    λ(f) = \frac{1}{n!} \int_{a}^{b} K_{λ}(t) f^{(n+1)}(t) \d t
+                \end{align*} $$</span>
+                where <span class="inline-math">$K_λ$</span> is the <em>Peano kernel</em>
+                <span class="display-math">$$ \begin{align*}
+                    K_λ(t) = λ(x\mapsto (x-t)_+^{n}), \qquad
+                    (x-t)_+ = \max\set{x-t, 0}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Peano-kernel-theorem.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If an approximation formula <span class="inline-math">$λ(f) \approx \sum_{i=0}^{N} a_i f(x_i)$</span>
+                    is <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-exact-formula.html">exact</a> on <span class="inline-math">$\mathcal{P}_n$</span>,
+                    then the error <span class="inline-math">$e_λ := λ(f) - \sum_{i=0}^{N} a_i f(x_i)$</span>
+                    vanishes on <span class="inline-math">$\mathcal{P}_n$</span>, so the theorem applies.
+                </p>
+                
+            </li><li>
+                <p>
+                    We have an estimate
+                    <span class="display-math">$$ \begin{align*}
+                    |λ(f)| \leq \frac{1}{n!} \|K_{λ}\|_1 \cdot \|f^{(n+1)}\|_{\infty} \equiv \frac{1}{n!} \int_{a}^{b} |K_λ(t)| \d t \cdot \max_{t\in [a,b]}|f^{(n+1)}|.
+                    \end{align*} $$</span>
+                    which is <em>sharp</em>, i.e. for all <span class="inline-math">$ε&gt;0$</span>,
+                    there exists <span class="inline-math">$f$</span> such that <span class="inline-math">$\mathrm{RHS} - \mathrm{LHS} &lt; ε$</span>.
+                    (<a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-sharp-estimate-from-Peano-kernel.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

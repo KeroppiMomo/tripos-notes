@@ -29,8 +29,8 @@
             <p>
                 If the local truncation errors are
                 <span class="display-math">$$ \begin{align*}
-                    \v y(t_{n+1}) - \v y_{n+1}^{\text{P}} ={}&amp; c_{\text{P}} h^p \v y^{(p)}(t_n) + O(h^{p+1}), \\
-                    \v y(t_{n+1}) - \v y_{n+1}^{\text{C}} ={}&amp; c_{\text{C}} h^p \v y^{(p)}(t_n) + O(h^{p+1}), 
+                    \v y(t_{n+1}) - \v y_{n+1}^{\text{P}} ={}&amp; c_{\text{P}} h^{p+1} \v y^{(p+1)}(t_n) + O(h^{p+2}), \\
+                    \v y(t_{n+1}) - \v y_{n+1}^{\text{C}} ={}&amp; c_{\text{C}} h^{p+1} \v y^{(p+1)}(t_n) + O(h^{p+2}), 
                 \end{align*} $$</span>
                 then we estimate the error as
                 <span class="display-math">$$ \begin{align*}
@@ -101,11 +101,11 @@
                 and we have stored some past values <span class="inline-math">$\v y_n, \v y_{n-1}, \ldots, \v y_{n-p}$</span>.
             </p>
             <p>
-                Let <span class="inline-math">$\v q\in \mathcal{P}_q$</span> be a polynomial that interpolates <span class="inline-math">$\v q(t_i) = \v y_i$</span> for <span class="inline-math">$i=n,\ldots,n-p$</span>.
+                Let <span class="inline-math">$\v q\in \mathcal{P}_p$</span> be a polynomial that interpolates <span class="inline-math">$\v q(t_i) = \v y_i$</span> for <span class="inline-math">$i=n,\ldots,n-p$</span>.
                 <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-polynomial-interpolation-error.html">Then</a> <span class="inline-math">$\v q(t) - \v y(t) = O(h^{p+1})$</span>.
                 Note <span class="inline-math">$\v q$</span> solves a new ODE
                 <span class="display-math">$$ \begin{align*}
-                    \v z&#x27; = \v f(t,\v y) + \underbrace{\v q&#x27; - \v f(t, \v q)}_{\text{small}}, \tag{*}
+                    \v z&#x27; = \v f(t,\v z) + \underbrace{\v q&#x27; - \v f(t, \v q)}_{\text{small}}, \tag{*}
                 \end{align*} $$</span>
                 which slightly differs from our original ODE by a term <span class="inline-math">$\v q&#x27; - \v y&#x27;$</span> which we expect to be small.
             </p>

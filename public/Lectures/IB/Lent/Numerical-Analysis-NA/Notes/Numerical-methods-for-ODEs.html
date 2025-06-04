@@ -517,12 +517,12 @@
                                                             <ul>
                                                             <li>
                                                                 <p>
-                                                                    for an Adams-Moulton (explicit) method, the nodes are <span class="inline-math">$0,1,\ldots,s$</span>, i.e. <span class="inline-math">$ω(t) = \prod_{m=0}^{s} (t-m)$</span>;
+                                                                    for an Adams-Bashforth (explicit) method, the nodes are <span class="inline-math">$0,1,\ldots,s$</span>, i.e. <span class="inline-math">$ω(t) = \prod_{m=0}^{s} (t-m)$</span>;
                                                                 </p>
                                                                 
                                                             </li><li>
                                                                 <p>
-                                                                    for an Adams-Bashforth (implicit) method, the nodes are <span class="inline-math">$0,1,\ldots,s-1$</span>, i.e. <span class="inline-math">$ω(t) = \prod_{m=0}^{s-1} (t-m)$</span>.
+                                                                    for an Adams-Moulton (implicit) method, the nodes are <span class="inline-math">$0,1,\ldots,s-1$</span>, i.e. <span class="inline-math">$ω(t) = \prod_{m=0}^{s-1} (t-m)$</span>.
                                                                 </p>
                                                                 
                                                             </li>
@@ -669,11 +669,12 @@
                                         \v k_s ={}&amp; \v f\Bigl(t_n + c_s h, \v y_n + h \sum_{j=1}^{s-1} a_{sj} \v k_j\Bigr), &amp;&amp; c_s = \sum_{j=1}^{s-1} a_{sj} \\
                                         \v y_{n+1} ={}&amp; \v y_n + h \sum_{i=1}^{s} b_i \v k_i, &amp;&amp; 1 = \sum_{i=1}^{s} b_i.
                                     \end{align*} $$</span>
-                                    >
+                                </p>
+                                <p>
                                     A general Runge-Kutta method is
                                     <span class="display-math">$$ \begin{align*}
                                         \v k_i ={}&amp; \v f(t_n + c_ih, \v y_n + h\sum_{j=1}^{s} a_{ij} \v k_j), &amp;&amp;c_i = \sum_{j=1}^{s} a_{ij}, &amp;&amp;i=1,2,\ldots,s, \\
-                                        \v y_{n+1} ={}&amp; \v y_n + h \sum_{i=1}^{s} b_i \v k_i, &amp;&amp;1 = \sum_{i=1}^{s} b_i k_i.
+                                        \v y_{n+1} ={}&amp; \v y_n + h \sum_{i=1}^{s} b_i \v k_i, &amp;&amp;1 = \sum_{i=1}^{s} b_i.
                                     \end{align*} $$</span>
                                     which is explicit if <span class="inline-math">$a_{ij} \leq 0$</span> for all <span class="inline-math">$i\leq j$</span> and implicit otherwise.
                                 </p>
@@ -843,7 +844,7 @@
                                         Still, some high-order multistep methods
                                         are of good use, e.g. BDF methods of order <span class="inline-math">$\leq 6$</span>
                                         <a href="https://en.wikipedia.org/wiki/Backward_differentiation_formula#Stability">have a wedge</a> about <span class="inline-math">$(-\infty, 0)$</span>.
-                                        We say these are <em>$A</em>0<span class="inline-math">$-stable_.$</span>
+                                        We say these are <em><span class="inline-math">$A_0$</span>-stable</em>.
                                     </p>
                                     
                                 </div>
@@ -923,8 +924,8 @@
                                     <p>
                                         If the local truncation errors are
                                         <span class="display-math">$$ \begin{align*}
-                                            \v y(t_{n+1}) - \v y_{n+1}^{\text{P}} ={}&amp; c_{\text{P}} h^p \v y^{(p)}(t_n) + O(h^{p+1}), \\
-                                            \v y(t_{n+1}) - \v y_{n+1}^{\text{C}} ={}&amp; c_{\text{C}} h^p \v y^{(p)}(t_n) + O(h^{p+1}), 
+                                            \v y(t_{n+1}) - \v y_{n+1}^{\text{P}} ={}&amp; c_{\text{P}} h^{p+1} \v y^{(p+1)}(t_n) + O(h^{p+2}), \\
+                                            \v y(t_{n+1}) - \v y_{n+1}^{\text{C}} ={}&amp; c_{\text{C}} h^{p+1} \v y^{(p+1)}(t_n) + O(h^{p+2}), 
                                         \end{align*} $$</span>
                                         then we estimate the error as
                                         <span class="display-math">$$ \begin{align*}
@@ -995,11 +996,11 @@
                                         and we have stored some past values <span class="inline-math">$\v y_n, \v y_{n-1}, \ldots, \v y_{n-p}$</span>.
                                     </p>
                                     <p>
-                                        Let <span class="inline-math">$\v q\in \mathcal{P}_q$</span> be a polynomial that interpolates <span class="inline-math">$\v q(t_i) = \v y_i$</span> for <span class="inline-math">$i=n,\ldots,n-p$</span>.
+                                        Let <span class="inline-math">$\v q\in \mathcal{P}_p$</span> be a polynomial that interpolates <span class="inline-math">$\v q(t_i) = \v y_i$</span> for <span class="inline-math">$i=n,\ldots,n-p$</span>.
                                         <a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-polynomial-interpolation-error.html">Then</a> <span class="inline-math">$\v q(t) - \v y(t) = O(h^{p+1})$</span>.
                                         Note <span class="inline-math">$\v q$</span> solves a new ODE
                                         <span class="display-math">$$ \begin{align*}
-                                            \v z&#x27; = \v f(t,\v y) + \underbrace{\v q&#x27; - \v f(t, \v q)}_{\text{small}}, \tag{*}
+                                            \v z&#x27; = \v f(t,\v z) + \underbrace{\v q&#x27; - \v f(t, \v q)}_{\text{small}}, \tag{*}
                                         \end{align*} $$</span>
                                         which slightly differs from our original ODE by a term <span class="inline-math">$\v q&#x27; - \v y&#x27;$</span> which we expect to be small.
                                     </p>
@@ -1034,9 +1035,9 @@
             <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">Multistep methods</a></li>
             <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Runge-Kutta-methods.html">Runge-Kutta methods</a></li>
             <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-linear-stability-domain-A-stable.html">Definition (linear stability domain, A-stable)</a></li>
-            <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Euler-s-method.html">Euler's method</a></li>
-            <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">Multistep methods</a></li>
             <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theta-methods.html">Theta methods</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">Multistep methods</a></li>
+            <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Euler-s-method.html">Euler's method</a></li>
             <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Runge-Kutta-methods.html">Runge-Kutta methods</a></li>
         </ul>
         
@@ -3295,10 +3296,10 @@
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250425140116.png">Pasted image 20250425140116</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250425140637.png">Pasted image 20250425140637</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250427234812.png">Pasted image 20250427234812</a></li>
-                                                    <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250428002439.png">Pasted image 20250428002439</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250430145337.png">Pasted image 20250430145337</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250430151739.png">Pasted image 20250430151739</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250430152705.png">Pasted image 20250430152705</a></li>
+                                                    <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250520130730.png">Pasted image 20250520130730</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-Clairaut-s-relation.html">Proof (Clairaut's relation)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-Euler-characteristic-of-a-connected-sum.html">Proof (Euler characteristic of a connected sum)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-Gauss-curvature-as-area-distortion-of-Gauss-map.html">Proof (Gauss curvature as area distortion of Gauss map)</a></li>
@@ -3637,6 +3638,7 @@
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-strictly-regular-matrix.html">Definition (strictly regular matrix)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-Householder-reflection.html">Derivation (Householder reflection)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-no-multistep-method-of-order-2s-1.html">Derivation (no multistep method of order 2s+1)</a></li>
+                                                    <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-sharp-estimate-from-Peano-kernel.html">Derivation (sharp estimate from Peano kernel)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Direct-approach-of-LU-factorisation.html">Direct approach of LU factorisation</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Embedded-Runge-Kutta-method.html">Embedded Runge-Kutta method</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Error-bounds-for-polynomial-interpolation.html">Error bounds for polynomial interpolation</a></li>
@@ -3672,7 +3674,7 @@
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Milne-device.html">Milne device</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Motivation-of-Runge-Kutta-methods.html">Motivation of Runge-Kutta methods</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">Multistep methods</a></li>
-                                                    <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Newton-interpolating-polynomial.html">Newton interpolating polynomial)</a></li>
+                                                    <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Newton-interpolating-polynomial.html">Newton interpolating polynomial</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-differentiation.html">Numerical differentiation</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-implementation-of-methods-for-ODEs.html">Numerical implementation of methods for ODEs</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-integration.html">Numerical integration</a></li>
@@ -3690,6 +3692,7 @@
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-LU-factorisation-preserves-leading-zeros.html">Proof (LU factorisation preserves leading zeros)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Newton-interpolating-polynomial.html">Proof (Newton interpolating polynomial)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Parseval-s-identity-for-orthogonal-polynomials.html">Proof (Parseval's identity for orthogonal polynomials)</a></li>
+                                                    <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Peano-kernel-theorem.html">Proof (Peano kernel theorem)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-SDD-is-strictly-regular.html">Proof (SDD is strictly regular)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-coefficients-of-Adams-methods-as-integrals-of-polynomials.html">Proof (coefficients of Adams methods as integrals of polynomials)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-coefficients-of-the-backward-differentiation-formula.html">Proof (coefficients of the backward differentiation formula)</a></li>
@@ -3731,6 +3734,7 @@
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-LDLT-factorisation-of-SPD-matrix.html">Theorem (LDLT factorisation of SPD matrix)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Newton-interpolating-polynomial.html">Theorem (Newton interpolating polynomial)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Parseval-s-identity-for-orthogonal-polynomials.html">Theorem (Parseval's identity for orthogonal polynomials)</a></li>
+                                                    <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Peano-kernel-theorem.html">Theorem (Peano kernel theorem)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-SDD-is-strictly-regular.html">Theorem (SDD is strictly regular)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-collocation-at-zeros-of-orthogonal-polynomial.html">Theorem (collocation at zeros of orthogonal polynomial)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-convergence-of-the-Euler-method.html">Theorem (convergence of the Euler method)</a></li>

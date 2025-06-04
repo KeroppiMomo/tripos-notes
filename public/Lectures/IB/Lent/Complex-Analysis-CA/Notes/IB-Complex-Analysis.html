@@ -469,7 +469,7 @@
                                         <span class="display-math">$$ \begin{align*}
                                             \left|\int_{a}^{b} f(t) \d t\right| \overset{(1)}{\leq} \int_{a}^{b} |f(t)| \d t \overset{(2)}{\leq} (b-a) \cdot \sup_{[a,b]} |f|,
                                         \end{align*} $$</span>
-                                        with equality for (1) iff <span class="inline-math">$\arg(f(t))$</span> is constant, and equality for (2) iff <span class="inline-math">$f$</span> is constant.
+                                        with equality for (1) iff <span class="inline-math">$\arg(f(t))$</span> is constant, and equality for (2) iff <span class="inline-math">$|f|$</span> is constant.
                                     </p>
                                     <p>
                                         <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-sup-norm-bound-on-complex-integral.html">Proof</a>
@@ -627,7 +627,7 @@
                                     <ul>
                                     <li>
                                         <p>
-                                            Since <span class="inline-math">$F$</span> is holomorphic, <span class="inline-math">$F&#x27;$</span> is continuous (TODO), so the integral is defined.
+                                            <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Taylor-expansion-of-holomorphic-functions.html">Since</a> <span class="inline-math">$F$</span> is holomorphic, <span class="inline-math">$F&#x27;$</span> is continuous, so the integral is defined.
                                         </p>
                                         
                                     </li><li>
@@ -1527,7 +1527,7 @@
                             that <span class="inline-math">$γ$</span> winds around (i.e. <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-winding-number.html"><span class="inline-math">$I(γ; a_n)$</span></a> <span class="inline-math">$\neq 0$</span>).
                             Then
                             <span class="display-math">$$ \begin{align*}
-                                \oint_γ f(z) \d z = 2πi\sum_{n=1}^{m} I(γ; a_n) \Res_{z=a} f(a).
+                                \oint_γ f(z) \d z = 2πi\sum_{n=1}^{m} I(γ; a_n) \Res_{z=a} f(z).
                             \end{align*} $$</span>
                         </p>
                         <p>
@@ -1587,21 +1587,36 @@
                                 </div>
                                 <div class="markdown-embed-content">
                                     <p>
-                                        Suppose <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>
-                                        on <span class="inline-math">$|z|&gt;r$</span> for some <span class="inline-math">$r&gt;0$</span>,
-                                        and assume <span class="inline-math">$|zf(z)|$</span> is bounded on <span class="inline-math">$|z|&gt;r$</span>.
-                                    </p>
-                                    <p>
-                                        Then for all <span class="inline-math">$α&gt;0$</span>,
-                                        <span class="display-math">$$ \begin{align*}
-                                            \int_{C_R} f(z) \, e^{iα z} \d z \to 0 \qquad \text{as }R\to \infty
-                                        \end{align*} $$</span>
+                                        Let <span class="inline-math">$f: C_R([0,π]) \to \C$</span> be a continuous function
                                         where <span class="inline-math">$C_R: [0,π]\to \C$</span> is the upper semicircle of radius <span class="inline-math">$R$</span>
                                         given by <span class="inline-math">$C_R(t) = Re^{it}$</span>.
+                                        Then for any <span class="inline-math">$α&gt;0$</span>,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \left|\int_{C_R} f(z) \, e^{iαz} \d z\right| \leq \frac{π}{α} \max_{t\in [0,π]} |f(Re^{it})|.
+                                        \end{align*} $$</span>
                                     </p>
                                     <p>
                                         <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Proof-Jordan-s-lemma.html">Proof</a>
                                     </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            When <span class="inline-math">$|f(z)|\to 0$</span> as <span class="inline-math">$z\to\infty$</span>,
+                                            we apply this to conclude <span class="inline-math">$\int_{C_R} f(z) e^{iαz} \d z \to 0$</span> as <span class="inline-math">$R\to \infty$</span>.
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            (The version stated in lectures:
+                                            if <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>
+                                            on <span class="inline-math">$|z|&gt;r$</span> for some <span class="inline-math">$r&gt;0$</span>,
+                                            and <span class="inline-math">$|zf(z)|$</span> is bounded on <span class="inline-math">$|z|&gt;r$</span>,
+                                            then for all <span class="inline-math">$α&gt;0$</span>, <span class="inline-math">$\int_{C_R} f(z) \, e^{iα z} \d z \to 0$</span> as <span class="inline-math">$R\to \infty$</span>.
+                                            This is so weak!)
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
                                     
                                 </div>
                             </div>
@@ -1644,7 +1659,7 @@
                             <span class="inline-math">$f$</span> is meromorphic on <span class="inline-math">$U\cup γ$</span> with no poles or zeros on <span class="inline-math">$γ$</span>.
                             Then
                             <span class="display-math">$$ \begin{align*}
-                                I(f\circ γ; 0) = \frac{1}{2πi}\oint_γ \frac{f&#x27;}{f}\d z = (\text{\# zeros of $f$ in $U$}) - (\text{\# poles of $f$ in $U$}).
+                                I(f\circ γ; 0) = \frac{1}{2πi}\oint_γ \frac{f&#x27;}{f}\d z = (\#\text{ zeros of $f$ in $U$}) - (\#\text{ poles of $f$ in $U$}).
                             \end{align*} $$</span>
                             counted with multiplicity (i.e. a zero/pole of order <span class="inline-math">$k$</span> is counted <span class="inline-math">$k$</span> times).
                         </p>
@@ -1655,7 +1670,7 @@
                         <li>
                             <p>
                                 <span class="inline-math">$f&#x27;/f$</span> is called the <em>logarithmic derivative</em>, which measures the argument of <span class="inline-math">$f$</span>.
-                                The argument principle says <span class="inline-math">$2π(\text{\# zeros} - \text{\# poles})$</span> is the change in <span class="inline-math">$\arg f(z)$</span>
+                                The argument principle says <span class="inline-math">$2π(\#\text{ zeros} - \#\text{ poles})$</span> is the change in <span class="inline-math">$\arg f(z)$</span>
                                 as <span class="inline-math">$z$</span> travels <span class="inline-math">$γ$</span>.
                             </p>
                             
@@ -1687,7 +1702,7 @@
                         </p>
                         <p>
                             The <em>local (mapping) degree</em> of <span class="inline-math">$f$</span> at <span class="inline-math">$a$</span>
-                            (denoted as <span class="inline-math">$\deg_{z=a} f(a)$</span>) is
+                            (denoted as <span class="inline-math">$\deg_{z=a} f(z)$</span>) is
                             the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-order-of-vanishing.html">order of vanishing</a> of <span class="inline-math">$z\mapsto f(z) - f(a)$</span> at <span class="inline-math">$z=a$</span>.
                         </p>
                         
@@ -1792,12 +1807,13 @@
                                         such that <span class="inline-math">$f_n\tto f$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-convergence.html">uniformly</a> on <span class="inline-math">$B(a,r)$</span>,
                                         i.e. for all <span class="inline-math">$ε&gt;0$</span>,
                                         there exists <span class="inline-math">$N\in \N$</span> such that for all <span class="inline-math">$n&gt;N$</span>,
-                                        <span class="inline-math">$|f_n(z) - f(z)| &lt; ε$</span> for all <span class="inline-math">$z\in D(a,r)$</span>.
+                                        <span class="inline-math">$|f_n(z) - f(z)| &lt; ε$</span> for all <span class="inline-math">$z\in B(a,r)$</span>.
                                     </p>
                                     <ul>
                                     <li>
                                         <p>
-                                            Locally uniform convergence is equivalent to uniform convergence on any compact subset.
+                                            Locally uniform convergence is
+                                            equivalent to uniform convergence on any <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a> subset.
                                         </p>
                                         
                                     </li>
@@ -4122,10 +4138,10 @@
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250425140116.png">Pasted image 20250425140116</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250425140637.png">Pasted image 20250425140637</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250427234812.png">Pasted image 20250427234812</a></li>
-                                                    <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250428002439.png">Pasted image 20250428002439</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250430145337.png">Pasted image 20250430145337</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250430151739.png">Pasted image 20250430151739</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250430152705.png">Pasted image 20250430152705</a></li>
+                                                    <li class="nav-file"><a href="/tripos-notes/media/Lectures/IB/Lent/Geometry-Geo/Notes/Pasted-image-20250520130730.png">Pasted image 20250520130730</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-Clairaut-s-relation.html">Proof (Clairaut's relation)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-Euler-characteristic-of-a-connected-sum.html">Proof (Euler characteristic of a connected sum)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-Gauss-curvature-as-area-distortion-of-Gauss-map.html">Proof (Gauss curvature as area distortion of Gauss map)</a></li>
@@ -4464,6 +4480,7 @@
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Definition-strictly-regular-matrix.html">Definition (strictly regular matrix)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-Householder-reflection.html">Derivation (Householder reflection)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-no-multistep-method-of-order-2s-1.html">Derivation (no multistep method of order 2s+1)</a></li>
+                                                    <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Derivation-sharp-estimate-from-Peano-kernel.html">Derivation (sharp estimate from Peano kernel)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Direct-approach-of-LU-factorisation.html">Direct approach of LU factorisation</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Embedded-Runge-Kutta-method.html">Embedded Runge-Kutta method</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Error-bounds-for-polynomial-interpolation.html">Error bounds for polynomial interpolation</a></li>
@@ -4499,7 +4516,7 @@
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Milne-device.html">Milne device</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Motivation-of-Runge-Kutta-methods.html">Motivation of Runge-Kutta methods</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Multistep-methods.html">Multistep methods</a></li>
-                                                    <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Newton-interpolating-polynomial.html">Newton interpolating polynomial)</a></li>
+                                                    <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Newton-interpolating-polynomial.html">Newton interpolating polynomial</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-differentiation.html">Numerical differentiation</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-implementation-of-methods-for-ODEs.html">Numerical implementation of methods for ODEs</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Numerical-integration.html">Numerical integration</a></li>
@@ -4517,6 +4534,7 @@
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-LU-factorisation-preserves-leading-zeros.html">Proof (LU factorisation preserves leading zeros)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Newton-interpolating-polynomial.html">Proof (Newton interpolating polynomial)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Parseval-s-identity-for-orthogonal-polynomials.html">Proof (Parseval's identity for orthogonal polynomials)</a></li>
+                                                    <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-Peano-kernel-theorem.html">Proof (Peano kernel theorem)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-SDD-is-strictly-regular.html">Proof (SDD is strictly regular)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-coefficients-of-Adams-methods-as-integrals-of-polynomials.html">Proof (coefficients of Adams methods as integrals of polynomials)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Proof-coefficients-of-the-backward-differentiation-formula.html">Proof (coefficients of the backward differentiation formula)</a></li>
@@ -4558,6 +4576,7 @@
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-LDLT-factorisation-of-SPD-matrix.html">Theorem (LDLT factorisation of SPD matrix)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Newton-interpolating-polynomial.html">Theorem (Newton interpolating polynomial)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Parseval-s-identity-for-orthogonal-polynomials.html">Theorem (Parseval's identity for orthogonal polynomials)</a></li>
+                                                    <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-Peano-kernel-theorem.html">Theorem (Peano kernel theorem)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-SDD-is-strictly-regular.html">Theorem (SDD is strictly regular)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-collocation-at-zeros-of-orthogonal-polynomial.html">Theorem (collocation at zeros of orthogonal polynomial)</a></li>
                                                     <li class="nav-file"><a href="/tripos-notes/Lectures/IB/Lent/Numerical-Analysis-NA/Notes/Theorem-convergence-of-the-Euler-method.html">Theorem (convergence of the Euler method)</a></li>
