@@ -1,0 +1,32 @@
+<p>
+    Since <span class="inline-math">$X = \bigcup_{n\in \N} nB_X$</span>,
+    <span class="inline-math">$Y = TX = \bigcup_{n\in \N} T(nB_X)$</span>.
+    <span class="inline-math">$Y$</span> is non-empty and complete,
+    so by <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-Baire-category.html">Baire category</a>,
+    there exists <span class="inline-math">$n\in \N$</span> such that <span class="inline-math">$\op{int} \overline{T(nB_X)} \neq \emptyset$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$B_r(y)\subseteq \overline{T(nB_X)}$</span> for some <span class="inline-math">$y\in X$</span>, <span class="inline-math">$r&gt;0$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-unit-ball.html"><span class="inline-math">$B_X$</span></a> is symmetric and convex, and hence so is <span class="inline-math">$\overline{T(nB_X)}$</span>.
+    Therefore for all <span class="inline-math">$z\in B_Y$</span>,
+    we have <span class="inline-math">$y + rz\in B_r(y)\subseteq \overline{T(nB_X)}$</span> and <span class="inline-math">$-y+rz\in -B_r(y)\subseteq \overline{T(nB_X)}$</span>,
+    so <span class="inline-math">$rz = \frac{1}{2}(y + rz) + \frac{1}{2}(-y + rz)\in \overline{T(nB_X)}$</span>.
+    Hence <span class="inline-math">$rB_Y \subseteq \overline{T(nB_X)}$</span>,
+    or equivalently <span class="inline-math">$B_Y \subseteq \overline{T(\frac{n}{r} B_X)}$</span>.
+</p>
+<p>
+    By the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Lemma-open-mapping-lemma.html">open mapping lemma</a>,
+    <span class="inline-math">$B_Y \subseteq T(\frac{2n}{r} B_X)$</span>.
+    This proves the second formulation of the theorem.
+</p>
+<p>
+    For the first formulation,
+    let <span class="inline-math">$U$</span> be an open set in <span class="inline-math">$X$</span>
+    and <span class="inline-math">$y\in T(U)$</span>.
+    Finding <span class="inline-math">$x\in X$</span> and <span class="inline-math">$ε&gt;0$</span> such that <span class="inline-math">$Tx = y$</span> and <span class="inline-math">$x + εB_X = B_ε(x) \subseteq U$</span>,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        T(U) \supseteq Tx + εT(B_X) \supseteq y + \frac{εr}{2n}B_Y = B_{εr/2n}(y)
+    \end{align*} $$</span>
+    so <span class="inline-math">$T(U)$</span> is open.
+</p>

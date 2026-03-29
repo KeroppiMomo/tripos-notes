@@ -1,0 +1,91 @@
+
+<h1><span class="inline-math">$I - T$</span> is invertible if <span class="inline-math">$\|T\|&lt;1$</span></h1>
+
+<p>
+    Since <span class="inline-math">$\|T^n\| \leq \|T\|^n$</span> and <span class="inline-math">$\|T\|&lt;1$</span>,
+    <span class="inline-math">$\sum_{n=0}^{\infty} T^n$</span> converges absolutely,
+    hence (as <span class="inline-math">$\mathcal{B}(X)$</span> is complete) converges.
+    Let <span class="inline-math">$S = \sum_{n=0}^{\infty} T^n$</span>.
+</p>
+<p>
+    Now
+    <span class="display-math">$$ \begin{align*}
+        ST = \sum_{n=1}^{\infty} T^n = TS
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        S(\id - T) = \id =  (\id - T)S
+    \end{align*} $$</span>
+    and thus <span class="inline-math">$(\id - T)\inv = S$</span>.
+</p>
+<p>
+    Moreover
+    <span class="display-math">$$ \begin{align*}
+        \|S\| \leq \sum_{n=1}^{\infty} \|T^n\| \leq \sum_{n=1}^{\infty} \|T\|^n = \frac{1}{1-\|T\|}.
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$S - T$</span> is invertible if <span class="inline-math">$\|T\|&lt;\frac{1}{\|S\|\inv}$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$S\in \mathcal{G}(X)$</span>
+    and <span class="inline-math">$T\in \mathcal{B}(X)$</span> are such that <span class="inline-math">$\|T\| &lt; 1/\|S\inv\|$</span>.
+    Now
+    <span class="display-math">$$ \begin{align*}
+        \|S\inv T\| \leq \|S\inv\|\|T\| &lt; 1
+    \end{align*} $$</span>
+    so the above shows that <span class="inline-math">$\id - S\inv T$</span> is invertible.
+    Hence <span class="inline-math">$S - T = S(\id - S\inv T)$</span> is invertible, with inverse
+    <span class="display-math">$$ \begin{align*}
+        (\id - S\inv T)\inv S\inv = \Bigl(\sum_{n=0}^{\infty} (S\inv T)^n\Bigr) S\inv.
+    \end{align*} $$</span>
+</p>
+<p>
+    Hence for each <span class="inline-math">$S\in \mathcal{G}(X)$</span>, the ball of radius <span class="inline-math">$1/\|S\inv\|$</span> is contained within <span class="inline-math">$\mathcal{G}(X)$</span>,
+    and thus <span class="inline-math">$\mathcal{G}(X)$</span> is open.
+</p>
+
+<h1><span class="inline-math">$(S,T) \mapsto ST$</span> is continuous</h1>
+
+<p>
+    <span class="display-math">$$ \begin{align*}
+        \|S&#x27;T&#x27; - ST\|\leq \|(S&#x27; - S)T&#x27; + S(T&#x27; - T)\| \leq \|S&#x27; - S\| \|T\| + \|S\| \|T - T\|.
+    \end{align*} $$</span>
+</p>
+<p>
+    So for <span class="inline-math">$ε&gt;0$</span>, taking <span class="inline-math">$\|S&#x27;-S\| &lt; \frac{ε}{2\|T\|}$</span> and <span class="inline-math">$\|T&#x27; - T\| &lt; \frac{ε}{2\|S\|}$</span>
+    makes <span class="inline-math">$\|S&#x27;T&#x27; - ST\| &lt; ε$</span>.
+</p>
+
+<h1><span class="inline-math">$T \mapsto T\inv$</span> is continuous</h1>
+
+<p>
+    Fix <span class="inline-math">$T\in \mathcal{G}(X)$</span>. For <span class="inline-math">$S\in \mathcal{G}(X)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|T\inv - S\inv\| = \|T\inv(S - T)S\inv\| = \|T\inv\|\|S\inv\|\|T - S\|. \tag{1}
+    \end{align*} $$</span>
+    Also
+    <span class="display-math">$$ \begin{align*}
+        \|S\inv\| \leq \|T\inv\| + \|T\inv - S\inv\| \leq \|T\inv\| + \|T\inv\|\|S\inv\|\|T - S\|.
+    \end{align*} $$</span>
+    So taking <span class="inline-math">$\|T - S\| \leq 1/2\|T\inv\|$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|S\inv\|\leq \|T\inv\| + \frac{1}{2}\|S\inv\| \implies \|S\inv\| \leq 2\|T\inv\|.
+    \end{align*} $$</span>
+</p>
+<p>
+    Substituting into <span class="inline-math">$(1)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|T\inv - S\inv\| \leq 2\|T\inv\|^2 \|T - S\| \to 0 \qquad \text{as }S\to T.
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$T_n \to T\not\in \mathcal{G}(X)$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$\|T_n\inv\|\to \infty$</span></h1>
+
+<p>
+    By the contrapositive of part 1,
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{\|T_n\inv\|} \leq \|T_n - T\| \to 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$\|T_n\inv\| \to \infty$</span> as <span class="inline-math">$n\to \infty$</span>.
+</p>

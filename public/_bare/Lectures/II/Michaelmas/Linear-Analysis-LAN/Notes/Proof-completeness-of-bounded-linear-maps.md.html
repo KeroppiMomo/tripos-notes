@@ -1,0 +1,52 @@
+<p>
+    Let <span class="inline-math">$(T_n)$</span> be a Cauchy sequence in <span class="inline-math">$\mathcal{B}(X,Y)$</span>.
+</p>
+<p>
+    For each <span class="inline-math">$x\in X$</span>, we obtain a Cauchy sequence <span class="inline-math">$(T_n x)$</span> in <span class="inline-math">$Y$</span>,
+    because <span class="inline-math">$\|T_n x - T_m x\| = \|(T_n - T_m)(x)\| \leq \|T_n - T_m\|\|x\| \to 0$</span>
+    as <span class="inline-math">$m,n\to \infty$</span>.
+    Since <span class="inline-math">$Y$</span> is complete, <span class="inline-math">$T_nx$</span> converges.
+</p>
+<p>
+    Define <span class="inline-math">$T: X \to Y$</span> by
+    <span class="display-math">$$ \begin{align*}
+        Tx = \lim_{n\to \infty} T_n x.
+    \end{align*} $$</span>
+</p>
+<p>
+    Check <span class="inline-math">$T_n \to T$</span> in <span class="inline-math">$\mathcal{B}(X,Y)$</span>:
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$T$</span> is linear by linearity of limits:
+        <span class="display-math">$$ \begin{align*}
+        T(x + λy) = \lim_{n\to \infty} T_n(x + λy) = \lim_{n\to \infty} (T_nx + λ T_n y) = \lim_{n\to \infty} T_n x + λ \lim_{n\to \infty} T_ny = Tx + λ Ty.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$T$</span> is bounded: since <span class="inline-math">$(T_n)$</span> is Cauchy,
+        it is bounded, so let <span class="inline-math">$M\geq 0$</span> such that <span class="inline-math">$\|T_n\| \leq M$</span>.
+        Then for each <span class="inline-math">$x\in X$</span>, <span class="inline-math">$\|T_n x\| \leq M \|x\|$</span>,
+        so taking the limit as <span class="inline-math">$n\to \infty$</span>,
+        and noting <span class="inline-math">$x \mapsto \|x\|$</span> is continuous,
+        we get <span class="inline-math">$\|Tx\| \leq M\|x\|$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$T_n \to T$</span> in operator norm:
+        fix <span class="inline-math">$ε&gt;0$</span>.
+        As <span class="inline-math">$(T_n)$</span> is Cauchy,
+        find <span class="inline-math">$N\in \N$</span> such that <span class="inline-math">$\|T_n - T_m\| &lt; ε$</span> for all <span class="inline-math">$n,m\geq N$</span>.
+        For any <span class="inline-math">$x\in X$</span>,
+        we get <span class="inline-math">$\|T_n x - T_m x\| &lt; ε \|x\|$</span>.
+        In the limit <span class="inline-math">$m\to \infty$</span>,
+        we have <span class="inline-math">$\|T_n x - Tx\| &lt; ε\|x\|$</span>.
+        This holds for all <span class="inline-math">$x$</span>, so <span class="inline-math">$\|T_n - T\| &lt; ε$</span> for all <span class="inline-math">$n\geq N$</span>.
+    </p>
+    
+</li>
+</ol>

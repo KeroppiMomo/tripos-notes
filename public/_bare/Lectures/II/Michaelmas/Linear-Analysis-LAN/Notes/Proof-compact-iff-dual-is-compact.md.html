@@ -1,0 +1,65 @@
+
+<h1><span class="inline-math">$T$</span> is compact <span class="inline-math">$\implies$</span> <span class="inline-math">$T^\ast$</span> is compact</h1>
+
+<p>
+    Let <span class="inline-math">$K = \overline{TB_X}$</span>, which is compact.
+</p>
+<p>
+    Note for <span class="inline-math">$g\in Y^\ast$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|T^\ast g\| ={}&amp; \sup_{x\in B_X} |(T^\ast g)x| \\
+        ={}&amp; \sup_{x\in B_X} |g(Tx)| \\
+        ={}&amp; \sup_{y\in TB_X} |g(y)| \\
+        ={}&amp; \sup_{y\in K} |g(y)| &amp;&amp;\text{continuity of $g$} \\
+        ={}&amp; \|g|_K\|_\infty.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        θ: T^\ast(B_{Y^\ast}) &amp;\to C(K) \\
+        T^\ast g &amp;\mapsto g|_K
+    \end{align*} $$</span>
+    is well-defined (<span class="inline-math">$T^\ast g = T^\ast h$</span> <span class="inline-math">$\iff$</span> <span class="inline-math">$\|T^\ast(g - h)\| = 0$</span>
+    <span class="inline-math">$\iff$</span> <span class="inline-math">$\|g|_K - h|_L\|_\infty = 0$</span> <span class="inline-math">$\iff$</span> <span class="inline-math">$g|_K = h|_L$</span>)
+    and isometric.
+    Then <span class="inline-math">$T^\ast(B_{Y^\ast})$</span> is totally bounded
+    iff <span class="inline-math">$\im θ = \sb{g|_K}{g\in B_{Y^\ast}}\subseteq C(K)$</span> is totally bounded.
+</p>
+<p>
+    Finally apply Arzelà-Ascoli to show <span class="inline-math">$\im θ$</span> is totally bounded:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Uniformly bounded: since <span class="inline-math">$K\subseteq Y$</span> is compact,
+        <span class="inline-math">$K$</span> is bounded, say <span class="inline-math">$K\subseteq MB_Y$</span>.
+        Then for <span class="inline-math">$g\in B_{Y^\ast}$</span>, <span class="inline-math">$y\in K$</span>, we have
+        <span class="inline-math">$\|g(y)\| \leq \|g\|\|y\| \leq 1\cdot M$</span>,
+        so <span class="inline-math">$\|g|_K\|_\infty \leq M$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Equicontinuous: fixing <span class="inline-math">$ε&gt;0$</span>, if <span class="inline-math">$y,z\in K$</span> satisfies <span class="inline-math">$\|y-z\|&lt;ε$</span>,
+        then <span class="inline-math">$\|g(y) - g(z)\| = \|g(y - z)\| \leq \|g\| \|y-z\| &lt; 1\cdot ε = ε$</span>.
+    </p>
+    
+</li>
+</ol>
+
+<h1><span class="inline-math">$T^\ast$</span> is compact <span class="inline-math">$\implies$</span> <span class="inline-math">$T$</span> is compact</h1>
+
+<p>
+    By the previous part,
+    <span class="inline-math">$T^{\ast\ast}\in \mathcal{B}(X^{\ast\ast}, Y^{\ast\ast})$</span> is compact.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-isometric-embedding-into-bidual.html">By Hahn-Banach</a>,
+    <span class="inline-math">$\hat{\ }: X \to X^{\ast\ast}$</span>
+    and <span class="inline-math">$\hat{\ }:  Y \to Y^{\ast\ast}$</span> are isometric.
+    The <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-dual-bounded-operator.html">identity</a> <span class="inline-math">$\widehat{Tx} = T^{\ast\ast} \hat x$</span> says
+    <span class="display-math">$$ \begin{align*}
+        \hat {\ }(TB_X ) = T^{\ast\ast}(\hat {\ }(B_X)) \subseteq T^{\ast\ast}(B_{X^{\ast\ast}})
+    \end{align*} $$</span>
+    which is totally bounded,
+    so <span class="inline-math">$TB_X$</span> is also totally bounded.
+</p>

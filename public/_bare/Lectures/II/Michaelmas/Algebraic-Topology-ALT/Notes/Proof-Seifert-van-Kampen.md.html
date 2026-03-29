@@ -1,0 +1,151 @@
+<blockquote>
+    <p>
+        We write <span class="inline-math">$[α]_A\in π_1(A, x_0)$</span> for a loop <span class="inline-math">$α$</span> in <span class="inline-math">$A$</span> and <span class="inline-math">$[β]_B\in π_1(B, x_0)$</span> for a loop <span class="inline-math">$β$</span> in <span class="inline-math">$B$</span>.
+        >
+        Use <span class="inline-math">$\cdot$</span> to denote usual path concatenation, and
+        use <span class="inline-math">$*$</span> to denote the group operation in the amalgamated free product <span class="inline-math">$π_1(A, x_0) *_{π_1(A\cap B, x_0)} π_1(B, x_0)$</span>.
+        We can perform two kinds of operations on a (possibly unreduced) word without changing the corresponding element in the amalgamated free product:
+    </p>
+    <ol start="1">
+    <!-- BEGIN BLOCK ID type-1 -->
+    <li id="^type-1">
+        <p>
+            <span class="inline-math">$[α]_A * [α&#x27;]_A = [α\cdot α&#x27;]_A$</span> and <span class="inline-math">$[β]_B * [β&#x27;]_B = [β\cdot β&#x27;]_B$</span>;
+        </p>
+        
+    </li>
+    <!-- END BLOCK ID type-1 -->
+    <!-- BEGIN BLOCK ID type-2 -->
+    <li id="^type-2">
+        <p>
+            <span class="inline-math">$[γ]_A = [γ]_B$</span> for a loop <span class="inline-math">$γ$</span> in <span class="inline-math">$A\cap B$</span>.
+        </p>
+        <p>
+            >
+            <span class="inline-math">$Φ$</span> converts <span class="inline-math">$[α]_A$</span> and <span class="inline-math">$[β]_B$</span> into elements in <span class="inline-math">$π_1(X, x_0)$</span>.
+        </p>
+        
+    </li>
+    <!-- END BLOCK ID type-2 -->
+    
+    </ol>
+    
+</blockquote>
+
+<h1>Surjectivity</h1>
+
+<p>
+    Let <span class="inline-math">$γ: [0,1]\to X$</span> be a loop at <span class="inline-math">$x_0$</span>.
+    <span class="inline-math">$\set{γ\inv(A), γ\inv(B)}$</span> is an open cover of <span class="inline-math">$[0,1]$</span>,
+    so we can let <span class="inline-math">$1/n$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-Lebesgue-number-lemma.html">Lesbegue number</a> for this cover.
+    This means each path <span class="inline-math">$γ|_{[i/n, (i+1)/n]}$</span>
+    is either entirely in <span class="inline-math">$A$</span> or entirely in <span class="inline-math">$B$</span>.
+    Concatenating consecutive paths that are all entirely in <span class="inline-math">$A$</span>
+    and consecutive paths that are all entirely in <span class="inline-math">$B$</span>,
+    we can write
+    <span class="display-math">$$ \begin{align*}
+        γ \simeq γ_1 \cdot γ_2 \cdot \ldots \cdot γ_k
+    \end{align*} $$</span>
+    where each <span class="inline-math">$γ_i$</span> lies entirely in <span class="inline-math">$A$</span> or <span class="inline-math">$B$</span>,
+    and all <span class="inline-math">$γ_i(0)$</span> and <span class="inline-math">$γ_i(1)$</span> lie in <span class="inline-math">$A\cap B$</span>.
+</p>
+<p>
+    For each <span class="inline-math">$i=1,2,\ldots,k-1$</span>,
+    choose a path <span class="inline-math">$u_i: γ_i(1) \rightsquigarrow x_0$</span> in <span class="inline-math">$A\cap B$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        γ \simeq (γ_1 \cdot u_1) \cdot (u_1\inv\cdot γ_2 \cdot u_2) \cdot \ldots \cdot (u_{k-1}\inv\cdot γ_k)
+    \end{align*} $$</span>
+    as paths in <span class="inline-math">$X$</span>,
+    where each bracketed path is a loop based at <span class="inline-math">$x_0$</span> lying entirely in <span class="inline-math">$A$</span> or <span class="inline-math">$B$</span>.
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        [γ] = Φ([γ_1\cdot u_1] * [u_1\inv\cdot γ_2\cdot u_2] * \ldots * [u_{k-1}\inv\cdot γ_k])
+    \end{align*} $$</span>
+    is the image of a product of elements coming from <span class="inline-math">$π_1(A, x_0)$</span> and <span class="inline-math">$π_1(B, x_0)$</span>.
+</p>
+
+<h1>Injectivity</h1>
+
+<p>
+    WLOG assume <span class="inline-math">$A,B$</span> are path-connected:
+    if there is a path-component of <span class="inline-math">$A$</span> or <span class="inline-math">$B$</span>
+    that does not intersect with <span class="inline-math">$A\cap B$</span>,
+    then removing it does not affect <span class="inline-math">$π_1(A,x_0)$</span>, <span class="inline-math">$π_1(B,x_0)$</span> or <span class="inline-math">$π_1(A\cap B, x_0)$</span>.
+    <span class="inline-math">$π_1(X,x_0) = \im Φ$</span> is also unchanged by the surjectivity of <span class="inline-math">$Φ$</span>.
+</p>
+<p>
+    Suppose <span class="inline-math">$Φ([γ_1]_{S_1} * \ldots * [γ_n]_{S_n}) = [c_{x_0}]$</span>
+    where <span class="inline-math">$S_i \in \set{A, B}$</span> and <span class="inline-math">$γ_i$</span> is a loop in <span class="inline-math">$S_i$</span> based at <span class="inline-math">$x_0$</span>,
+    and we want to show that <span class="inline-math">$[γ_1]_{S_1} * \ldots * [γ_n]_{S_n}$</span> is the identity in the amalgamated free product.
+</p>
+<p>
+    The hypothesis says we have <span class="inline-math">$c_{x_0} \simeq γ_1 \cdot \ldots \cdot γ_n$</span> as paths in <span class="inline-math">$X$</span>,
+    so let <span class="inline-math">$H: [0,1]\times [0,1]\to X$</span> be a homotopy of loops between them.
+    By reparametrising we can assume <span class="inline-math">$H|_{[\frac{i-1}{n}, \frac{i}{n}] \times \set{0}}$</span>
+    equals running <span class="inline-math">$γ_i$</span> <span class="inline-math">$n$</span> times as fast.
+    Now <span class="inline-math">$\set{H\inv(A), H\inv(B)}$</span> is an open cover of <span class="inline-math">$[0,1]\times [0,1]$</span>,
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-Lebesgue-number-lemma.html">so</a> there exists some <span class="inline-math">$N\in \N$</span> such that
+    <span class="inline-math">$n\mid N$</span> and the image of each grid square <span class="inline-math">$[\frac{i-1}{N}, \frac{i}{N}] \times [\frac{j-1}{N}, \frac{j}{N}]$</span>
+    under <span class="inline-math">$H$</span> lies entirely in <span class="inline-math">$A$</span> or entirely in <span class="inline-math">$B$</span>.
+    Call this choice <span class="inline-math">$S_{i,j}\in \set{A,B}$</span>.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250924160852.png">
+</p>
+<p>
+    For each grid point <span class="inline-math">$(\frac{i}{N}, \frac{j}{N})$</span>,
+    choose a path <span class="inline-math">$u_{i,j}: H(\frac{i}{N}, \frac{j}{N}) \rightsquigarrow x_0$</span>.
+    By path-connectedness of <span class="inline-math">$A$</span>, <span class="inline-math">$B$</span> and <span class="inline-math">$A\cap B$</span>,
+    if <span class="inline-math">$H(\frac{i}{N}, \frac{j}{N}) \in A\cap B$</span>,
+    then we can choose <span class="inline-math">$u_{i,j}$</span> to lie entirely in <span class="inline-math">$A\cap B$</span>,
+    and similarly with just <span class="inline-math">$A$</span> or just <span class="inline-math">$B$</span>.
+    Moreover if <span class="inline-math">$H(\frac{i}{N}, \frac{j}{N}) = x_0$</span> already,
+    then we can take <span class="inline-math">$u_{i,j} = c_{x_0}$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$\tilde h_{i,j}: (\frac{i-1}{N}, \frac{j}{N})\rightsquigarrow (\frac{i}{N}, \frac{j}{N})$</span>
+    and <span class="inline-math">$\tilde v_{i,j}: (\frac{i}{N}, \frac{j-1}{N}) \rightsquigarrow  (\frac{i}{N}, \frac{j}{N})$</span> be the straight line paths on <span class="inline-math">$[0,1]\times [0,1]$</span>.
+    We see the homotopic relations
+    <span class="display-math">$$ \begin{align*}
+        &amp;&amp;\tilde h_{i,j} &amp;\simeq \tilde v_{i-1,j}\inv \cdot \tilde h_{i,j-1} \cdot \tilde v_{i,j} &amp;&amp;\text{as paths in $[0,1]\times [0,1]$}\\
+        \implies &amp;&amp; h_{i,j} &amp;\simeq v_{i-1,j}\inv \cdot h_{i,j-1} \cdot v_{i,j} &amp;&amp;\text{as paths in $S_{i,j}$}
+    \end{align*} $$</span>
+    where <span class="inline-math">$h_{i,j} = H\circ h_{i,j}$</span> and <span class="inline-math">$v_{i,j} = H\circ v_{i,j}$</span>.
+    Thus conjugating with <span class="inline-math">$u$</span>'s gives an equality
+    <span class="display-math">$$ \begin{align*}
+        [u_{i-1,j}\inv\cdot h_{i,j} \cdot u_{i,j}]_{S_{i,j}}
+        ={}&amp; [u_{i-1,j-1}\inv\cdot v_{i-1,j} \cdot u_{i-1,j}]_{S_{i,j}}\inv \\
+        &amp;* [u_{i-1,j-1}\inv \cdot h_{i,j-1} \cdot u_{i,j-1}]_{S_{i,j}} \\
+        &amp;* [u_{i,j-1}\inv \cdot v_{i,j}\cdot u_{i,j}]_{S_{i,j}}.
+    \end{align*} $$</span>
+    in <span class="inline-math">$π_1(S_{i,j}, x_0)$</span> and thus (via operation 1) in the amalgamated free product.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250924160817.png">
+</p>
+<p>
+    Therefore all elements on a row <span class="inline-math">$j$</span> form a telescoping product
+    <span class="display-math">$$ \begin{align*}
+        \prod_{i=1}^{N} [u_{i-1,j}\inv \cdot h_{i,j} \cdot u_{i,j}]_{S_{i,j}}
+        ={}&amp; [u_{0,j-1}\inv\cdot v_{0,j} \cdot u_{0,j}]_{S_{0,j}}\inv \\
+        &amp;* \prod_{i=1}^{N} [u_{i-1,j-1}\inv \cdot h_{i,j-1} \cdot u_{i,j-1}]_{S_{i,j}} \\
+        &amp;* [u_{N,j-1}\inv\cdot v_{N,j}\cdot u_{0,j}]_{S_{N,j}}
+    \end{align*} $$</span>
+    because <span class="inline-math">$[u_{i,j-1}\inv \cdot v_{i,j} \cdot u_{i,j}]_{S_{i,j}}$</span> and <span class="inline-math">$[u_{i,j-1}\inv\cdot v_{i,j}\cdot u_{i,j}]_{S_{i+1,j}}$</span>
+    are identified (via operation 2)
+    in the amalgamated free product.
+</p>
+<p>
+    However note <span class="inline-math">$H|_{\set{0}\times [0,1]}$</span> and <span class="inline-math">$H|_{\set{1}\times [0,1]}$</span> are constant <span class="inline-math">$x_0$</span>,
+    so the first and last factors are identities.
+    Hence inducting on <span class="inline-math">$j$</span> yields
+    <span class="display-math">$$ \begin{align*}
+        \prod_{i=1}^{N} [u_{i-1,0}\inv\cdot h_{i,0}\cdot u_{i,0}]_{S_{i,0}} = \prod_{i=1}^{N} [u_{i-1,N}\inv \cdot h_{i,N}\cdot u_{i,N}]_{S_{i,N}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    On the left hand side, group every <span class="inline-math">$N/n$</span> factors together to form <span class="inline-math">$[γ_1]_{S_1} * \ldots * [γ_n]_{S_n}$</span>.
+    Also since the bottom edge of <span class="inline-math">$H$</span> is <span class="inline-math">$c_{x_0}$</span>, the right hand side is identity.
+    This gives the desired result.
+</p>

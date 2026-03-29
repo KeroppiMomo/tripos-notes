@@ -1,0 +1,67 @@
+<p>
+    Technique: use the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Corollary-open-mapping-theorem-on-Riemann-surfaces.html#^compact">fact</a>
+    that all analytic functions from compact Riemann surfaces to <span class="inline-math">$\C$</span> are constant.
+</p>
+<p>
+    Any function <span class="inline-math">$f: \C/Λ\to \C_\infty$</span> can be decomposed into an even and odd part:
+    <span class="display-math">$$ \begin{align*}
+        f(z) = \underbrace{\frac{f(z) + f(-z)}{2}}_{\text{even}} + \underbrace{\frac{f(z) - f(-z)}{2}}_{\text{odd}}.
+    \end{align*} $$</span>
+    If <span class="inline-math">$f$</span> is odd and elliptic, then since <span class="inline-math">$\wp&#x27;$</span> is odd also, <span class="inline-math">$f/\wp&#x27;$</span> is even.
+    Therefore it suffices to show for any even elliptic <span class="inline-math">$f$</span>,
+    there is a rational function <span class="inline-math">$Q$</span> such that <span class="inline-math">$f = Q \circ \wp$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$f$</span> is even, its zeros are of the form <span class="inline-math">$\pm a_1, \pm a_2, \ldots, \pm a_n$</span>
+    and poles are of the form <span class="inline-math">$\pm b_1, \pm b_2, \ldots, \pm b_n$</span>.
+    First assume all <span class="inline-math">$\pm a_i$</span> and <span class="inline-math">$\pm b_i$</span> are unramified for both <span class="inline-math">$f$</span> and <span class="inline-math">$\wp$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        g(z) := \frac{(\wp(z) - \wp(a_1)) \ldots (\wp(z) - \wp(a_n))}{(\wp(z) - \wp(b_1))\ldots (\wp(z) - \wp(b_n))}
+    \end{align*} $$</span>
+    also has simple zeros <span class="inline-math">$\pm a_1, \ldots, \pm a_n$</span> and simple poles <span class="inline-math">$\pm b_1, \ldots, \pm b_n$</span>.
+    Therefore <span class="inline-math">$f/g: \C/Λ\to \C$</span> is an analytic function,
+    so constant.
+    Hence <span class="inline-math">$f$</span> is a rational function in <span class="inline-math">$\wp$</span>.
+</p>
+<p>
+    Now we work around the assumption.
+    Note <span class="inline-math">$f, \wp: \C/Λ \to \C_\infty$</span>
+    have <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-local-mapping-on-Riemann-surfaces.html#^discrete">finitely many ramification points</a>.
+    Choose distinct <span class="inline-math">$c,d\in \C_\infty$</span> and define
+    <span class="display-math">$$ \begin{align*}
+        \tilde f(z) := \frac{f(z) - c}{f(z) - d},
+    \end{align*} $$</span>
+    Note <span class="inline-math">$\tilde f\inv(0) = f\inv(c)$</span> and <span class="inline-math">$\tilde f\inv(\infty) = f\inv(d)$</span>.
+    Except a finite number of pairs <span class="inline-math">$(c,d)$</span>,
+    the zeros and poles of <span class="inline-math">$\tilde f$</span> are unramified for <span class="inline-math">$\tilde f$</span> and <span class="inline-math">$\wp$</span>.
+    Therefore <span class="inline-math">$\tilde f$</span> is a rational function in <span class="inline-math">$\wp$</span>, and hence so is <span class="inline-math">$f$</span>.
+</p>
+
+<h1><span class="inline-math">$f = (\wp&#x27;)^2$</span></h1>
+
+<p>
+    Recall <span class="inline-math">$\wp&#x27;$</span> has a triple pole at <span class="inline-math">$0$</span> and a simple root at <span class="inline-math">$ω_1/2, ω_2/2, ω_3/2$</span>.
+    Since <span class="inline-math">$\wp&#x27;(ω_i/2) = 0$</span>, <span class="inline-math">$\wp(z) - \wp(ω_i/2)$</span> has a double pole at <span class="inline-math">$0$</span> and a double zero at <span class="inline-math">$ω_i/2$</span>.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        g(z) := (\wp(z) - \wp(ω_1/2))(\wp(z) - \wp(ω_2/2))(\wp(z) - \wp(ω_3/2)).
+    \end{align*} $$</span>
+    has a pole at <span class="inline-math">$0$</span> of order 6, and a double root at each <span class="inline-math">$ω_i/2$</span>.
+    Hence <span class="inline-math">$(\wp&#x27;)^2 / g: \C/Λ\to \C$</span> is analytic,
+    thus constant.
+</p>
+<p>
+    To determine the leading two coefficients of <span class="inline-math">$\wp$</span> in <span class="inline-math">$(\wp&#x27;)^2$</span>,
+    we compute the Laurent series.
+    Because <span class="inline-math">$\wp(z) - z^{-2}$</span> and <span class="inline-math">$\wp&#x27;(z) + 2z^{-3}$</span> are analytic at <span class="inline-math">$0$</span> and vanish at <span class="inline-math">$0$</span>,
+    we get
+    <span class="display-math">$$ \begin{gather*}
+        \wp(z) = z^{-2} + O(z), \quad \wp(z)^2 = z^{-4} + O(z^{-1}), \quad \wp(z)^3 = z^{-6} + O(z^{-3}), \\
+        \wp&#x27;(z) = -2z^{-3} + O(z), \quad \wp&#x27;(z)^2 = 4z^{-6} + O(z^{-2}).
+    \end{gather*} $$</span>
+    Comparing <span class="inline-math">$z^{-6}$</span> and <span class="inline-math">$z^{-4}$</span> terms, we have
+    <span class="display-math">$$ \begin{align*}
+        (\wp&#x27;)^2 = 4\wp^3 + 0\wp^2 + B\wp + C.
+    \end{align*} $$</span>
+</p>

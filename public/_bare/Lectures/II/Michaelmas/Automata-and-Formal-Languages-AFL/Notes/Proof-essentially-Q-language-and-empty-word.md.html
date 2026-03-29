@@ -1,0 +1,31 @@
+
+<h1>Forward direction</h1>
+
+<p>
+    Given an essentially <span class="inline-math">$\mathsf{Q}$</span> language <span class="inline-math">$L$</span>, witnessed
+    by an essentially <span class="inline-math">$\mathsf{Q}$</span> grammar <span class="inline-math">$G$</span>,
+    notice since all rules are <span class="inline-math">$ε$</span>-adequate,
+    no rule can introduce an instance of <span class="inline-math">$S$</span>,
+    and the only instance of <span class="inline-math">$S$</span>
+    is rewritten into a string without <span class="inline-math">$S$</span> in the first step of a derivation.
+    Let <span class="inline-math">$G&#x27;$</span> be the <span class="inline-math">$\mathsf{Q}$</span> grammar obtained by removing the rule <span class="inline-math">$S\to ε$</span> from <span class="inline-math">$G$</span>,
+    producing a <span class="inline-math">$\mathsf{Q}$</span> language <span class="inline-math">$L&#x27;$</span>.
+</p>
+<p>
+    The unique <span class="inline-math">$G$</span>-derivation that uses the rule <span class="inline-math">$S\to ε$</span> is precisely <span class="inline-math">$S \xrightarrow{G}_1 ε$</span>.
+    Then any other <span class="inline-math">$G$</span>-derivation is a <span class="inline-math">$G&#x27;$</span>-derivation.
+    Thus <span class="inline-math">$L=L&#x27;$</span> if <span class="inline-math">$G$</span> does not contain <span class="inline-math">$S\to ε$</span>
+    and <span class="inline-math">$L=L&#x27;\cup \set{ε}$</span> otherwise.
+</p>
+
+<h1>Backward direction</h1>
+
+<p>
+    If <span class="inline-math">$L&#x27;$</span> is a <span class="inline-math">$\mathsf{Q}$</span> grammar,
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-equivalent-to-epsilon-adequate-grammar.html">then</a> 
+    it is produced by an <span class="inline-math">$ε$</span>-adequate and <span class="inline-math">$\mathsf{Q}$</span> grammar <span class="inline-math">$G$</span>,
+    so <span class="inline-math">$L&#x27;$</span> is essentially <span class="inline-math">$\mathsf{Q}$</span>.
+</p>
+<p>
+    To produce <span class="inline-math">$L&#x27;\cup \set{ε}$</span>, add the rule <span class="inline-math">$S\to ε$</span> to <span class="inline-math">$G$</span>.
+</p>

@@ -1,0 +1,353 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (affinely independent)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-affinely-independent.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A finite set of points <span class="inline-math">$a_0, a_1, \ldots, a_n\in \R^m$</span>
+                is said to be <em>affinely independent</em>
+                if for all <span class="inline-math">$t_0, \ldots, t_n \in \R$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{i=0}^{n} t_i a_i = 0 \quad \text{and}\quad \sum_{i=0}^{n} t_i = 0 \quad \iff \quad t_0 = \ldots = t_n = 0.
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$a_0, a_1, \ldots, a_n$</span> are affinely independent
+                    iff <span class="inline-math">$a_1 - a_0, a_2 - a_0, \ldots, a_n - a_0$</span> are <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-independence.html">linearly independent</a>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-affinely-independent.html">Proof</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (simplex)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplex.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$a_0, a_1, \ldots, a_n\in \R^m$</span> are <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-affinely-independent.html">affinely independent</a>.
+            </p>
+            <p>
+                They are said to <em>span</em> an <em><span class="inline-math">$n$</span>-simplex</em>
+                <span class="display-math">$$ \begin{align*}
+                    σ = \langle a_0, \ldots, a_n\rangle = \sb{\sum_{i=0}^{n} t_i a_i}{t_i\geq 0, \; \sum_{i=0}^{n} t_i = 1}.
+                \end{align*} $$</span>
+                The <span class="inline-math">$a_i$</span>'s are the <em>vertices</em> of <span class="inline-math">$σ$</span>.
+            </p>
+            <p>
+                Any points <span class="inline-math">$x\in σ$</span> can be written uniquely (by affine independence)
+                as <span class="inline-math">$x = \sum_{i=0}^{n} t_ia_i$</span>.
+                <span class="inline-math">$(t_0, \ldots, t_n)$</span> are the <em>barycentric coordinates</em> of <span class="inline-math">$x$</span>.
+            </p>
+            <p>
+                A <em>face</em> of <span class="inline-math">$σ$</span> is a simplex <span class="inline-math">$τ$</span> spanned by a subset of <span class="inline-math">$\set{a_0, \ldots, a_n}$</span>.
+                We write <span class="inline-math">$τ\leq σ$</span>, and <span class="inline-math">$τ&lt;σ$</span> if <span class="inline-math">$τ$</span> is a proper face (i.e. <span class="inline-math">$τ\neq σ$</span>).
+            </p>
+            <p>
+                The <em>boundary</em> <span class="inline-math">$\partial σ$</span> of <span class="inline-math">$σ$</span> is the union of all of its proper faces.
+                The <em>interior</em> <span class="inline-math">$\mathring{σ}$</span> of <span class="inline-math">$σ$</span> is <span class="inline-math">$σ\setminus \partial σ$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    These notions of boundary and interior differ from the topological ones.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (simplicial complex)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-complex.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>(geometric) simplicial complex</em> in <span class="inline-math">$\R^m$</span>
+                is a finite set <span class="inline-math">$K$</span> of <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplex.html">simplices</a> in <span class="inline-math">$\R^m$</span> satisfying that
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    if <span class="inline-math">$σ\in K$</span> and <span class="inline-math">$τ\leq σ$</span>, then <span class="inline-math">$τ\in K$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    if <span class="inline-math">$σ, τ\in K$</span>, then either <span class="inline-math">$σ\cap τ$</span> is empty or is a face of both <span class="inline-math">$σ$</span> and <span class="inline-math">$τ$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                The <em>vertices</em> <span class="inline-math">$V_K$</span> of <span class="inline-math">$K$</span> is the set of
+                all 0-simplices of <span class="inline-math">$K$</span>.
+            </p>
+            <p>
+                The <em>dimension</em> of <span class="inline-math">$K$</span> is the largest <span class="inline-math">$n$</span>
+                for which <span class="inline-math">$K$</span> contains an <span class="inline-math">$n$</span>-simplex.
+            </p>
+            <p>
+                The <em>polyhedron</em> <span class="inline-math">$|K|\subseteq \R^m$</span> associated to <span class="inline-math">$K$</span>
+                is the union of all simplices in <span class="inline-math">$K$</span>.
+            </p>
+            <p>
+                The <em><span class="inline-math">$d$</span>-skeleton</em> <span class="inline-math">$K_{(d)}$</span> of <span class="inline-math">$K$</span>
+                is the sub-simplicial complex given
+                by all simplices of <span class="inline-math">$K$</span> of dimension at most <span class="inline-math">$d$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The standard <span class="inline-math">$n$</span>-simplex <span class="inline-math">$Δ^{n} \subseteq \R^{n+1}$</span>
+                    is the simplex spanned by the standard basis vectors <span class="inline-math">$e_1, \ldots, e_{n+1}$</span> of <span class="inline-math">$\R^{n+1}$</span>.
+                    The set of all its faces defines a simplicial complex.
+                </p>
+                
+            </li><li>
+                <p>
+                    The simplicial <span class="inline-math">$(n-1)$</span>-sphere is the simplicial complex given by the proper faces of <span class="inline-math">$Δ^n$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (point on polyhedron lies in interior of unique simplex)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-point-on-polyhedron-lies-in-interior-of-unique-simplex.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-complex.html">simplicial complex</a>.
+            </p>
+            <p>
+                Any point on the polyhedron <span class="inline-math">$|K|$</span> lies in the interior <span class="inline-math">$\mathring{σ}$</span> of some unique simplex <span class="inline-math">$σ\in K$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-point-on-polyhedron-lies-in-interior-of-unique-simplex.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (simplicial map)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-map.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> and <span class="inline-math">$L$</span> be <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-complex.html">simplicial complexes</a>.
+            </p>
+            <p>
+                A simplicial map is a function <span class="inline-math">$f: V_K \to V_L$</span>
+                such that if <span class="inline-math">$σ = \langle a_0, a_1, \ldots, a_p\rangle\in K$</span>,
+                then the set <span class="inline-math">$\set{f(a_0), \ldots f(a_p)}$</span> (which may contain repeated vertices)
+                spans a simplex of <span class="inline-math">$K$</span>, denoted as <span class="inline-math">$f(σ)$</span>.
+            </p>
+            <p>
+                We write <span class="inline-math">$f: K\to L$</span> for a simplicial map.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Each simplicial map <span class="inline-math">$f: K\to L$</span> indices a continuous map
+                    <span class="inline-math">$|f|: |K|\to |L|$</span> between polyhedra.
+                    We also have <span class="inline-math">$|f|\circ |g| = |f\circ g|$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-simplicial-map-induces-continuous-map.html">Proof</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (star, link)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-star-link.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-complex.html">simplicial complex</a> and <span class="inline-math">$x\in K$</span> be a point.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The <em>(open) star</em> of <span class="inline-math">$x$</span> is the union of the interior
+                    of simplices in <span class="inline-math">$K$</span> which contain <span class="inline-math">$x$</span>:
+                    <span class="display-math">$$ \begin{align*}
+                    \op{St}_K(x) = \bigcup_{x\in σ\in K} \mathring σ.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li><li>
+                <p>
+                    The <em>link</em> <span class="inline-math">$\op{Lk}_K(x)$</span> of <span class="inline-math">$x$</span> is the union
+                    of the simplices in <span class="inline-math">$K$</span> which do not contain <span class="inline-math">$x$</span>,
+                    but are a face of a simplex which contains <span class="inline-math">$x$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (simplicial approximation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-simplicial-approximation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> and <span class="inline-math">$L$</span> be <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-complex.html">simplicial complexes</a>,
+                and <span class="inline-math">$f: |K|\to |L|$</span> be a continuous map.
+            </p>
+            <p>
+                Let <span class="inline-math">$g: V_K\to V_L$</span> be a <em>simplicial approximation</em> to <span class="inline-math">$f$</span>, meaning for each <span class="inline-math">$v\in V_K$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    f(\op{St}_K(v)) \subseteq \op{St}_L(g(v)).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Then <span class="inline-math">$g$</span> defines a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-map.html">simplicial map</a>,
+                and <span class="inline-math">$f$</span> is homotopic to <span class="inline-math">$|g|$</span> via
+                <span class="display-math">$$ \begin{align*}
+                    H: |K| \times [0,1] &amp;\to |L| \\
+                    (x,t) &amp;\mapsto (1-t) \cdot f(x) + t\cdot g(t).
+                \end{align*} $$</span>
+                In particular <span class="inline-math">$H$</span> is relative to the subspace <span class="inline-math">$\sb{x\in |K|}{f(x) = |g|(x)}$</span> where <span class="inline-math">$f$</span> and <span class="inline-math">$|g|$</span> agree.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-simplicial-approximation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (barycentric subdivision)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-barycentric-subdivision.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>barycentre</em> of a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplex.html">simplex</a> <span class="inline-math">$σ = \langle a_0, a_1, \ldots, a_p\rangle$</span>
+                is the point
+                <span class="display-math">$$ \begin{align*}
+                    \hat σ = \frac{a_0 + \ldots + a_p}{p+1}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The <em>(first) barycentric subdivision</em>
+                of a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-complex.html">simplicial complex</a> <span class="inline-math">$K$</span> is
+                the simplicial complex
+                <span class="display-math">$$ \begin{align*}
+                    K&#x27; = \sb{\set{\hat σ_0, \hat σ_1, \ldots, \hat σ_p}}{σ_i\in K\text{ and } σ_0 &lt; σ_1 &lt; \ldots &lt; σ_p}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Define the <span class="inline-math">$r$</span>-th barycentric subdivision <span class="inline-math">$K^{(r)}$</span> inductively as <span class="inline-math">$(K^{(r-1)})&#x27;$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$K&#x27;$</span> is indeed a simplicial simplex and <span class="inline-math">$|K&#x27;| = |K|$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (mesh of simplicial complex)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-mesh-of-simplicial-complex.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>mesh</em> of a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-complex.html">simplicial complex</a> <span class="inline-math">$K$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    μ(K) = \max \sb{\|v_0 - v_1\|}{\langle v_0, v_1\rangle\in K}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (mesh of barycentric subdivisions tend to zero)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-mesh-of-barycentric-subdivisions-tend-to-zero.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-complex.html">simplicial complex</a> of dimension <span class="inline-math">$n$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    μ(K&#x27;) \leq \Bigl(\frac{n}{n+1}\Bigr) \cdot μ(K).
+                \end{align*} $$</span>
+                In particular, <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-mesh-of-simplicial-complex.html"><span class="inline-math">$μ$</span></a><span class="inline-math">$(K^{(r)}) \to 0$</span> as <span class="inline-math">$r\to \infty$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-mesh-of-barycentric-subdivisions-tend-to-zero.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (simplicial approximation theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-simplicial-approximation-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> and <span class="inline-math">$L$</span> be <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simplicial-complex.html">simplicial complexes</a>.
+            </p>
+            <p>
+                For any continuous map <span class="inline-math">$f: |K| \to |L|$</span>,
+                there exists a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-simplicial-approximation.html">simplicial approximation</a>
+                <span class="inline-math">$g:{}$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-barycentric-subdivision.html"><span class="inline-math">$K^{(r)}$</span></a><span class="inline-math">${}\to L$</span>
+                for some <span class="inline-math">$r$</span>.
+            </p>
+            <p>
+                Moreover, if <span class="inline-math">$f|_{|N|}: |N|\to |L|$</span> is already a simplicial map
+                on a subcomplex <span class="inline-math">$N \subseteq K$</span>,
+                then <span class="inline-math">$g$</span> can be taken to agree with <span class="inline-math">$f$</span> on <span class="inline-math">$V_N$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-simplicial-approximation-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

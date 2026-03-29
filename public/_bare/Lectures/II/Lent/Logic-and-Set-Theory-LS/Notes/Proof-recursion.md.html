@@ -1,0 +1,82 @@
+<p>
+    Call
+</p>
+<ul>
+<li>
+    <p>
+        a subset <span class="inline-math">$Y \subseteq X$</span> <em>downwards closed</em> if for all <span class="inline-math">$y\in Y$</span>, <span class="inline-math">$\op{pred}(y)\subseteq Y$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        a function <span class="inline-math">$f$</span> with domain <span class="inline-math">$Y \subseteq X$</span> an <em>attempt</em> if for all <span class="inline-math">$y\in Y$</span>,
+        we have <span class="inline-math">$f(y) = z$</span> iff <span class="inline-math">$ϕ(y, f|_{\op{pred}(y)}, z)$</span> holds.
+    </p>
+    
+</li>
+</ul>
+<p>
+    We need to produce an attempt with domain <span class="inline-math">$X$</span>.
+</p>
+
+<h1>If <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> are attempts with <span class="inline-math">$x\in \op{dom}(f)\cap \op{dom}(g)$</span>, then <span class="inline-math">$f(x) = g(x)$</span></h1>
+
+<p>
+    Prove this <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-order-induction-and-well-foundedness.html">by order induction</a>.
+    Suppose <span class="inline-math">$x\in \op{dom}(f) \cap \op{dom}(g)$</span>
+    is such that the claim holds for all <span class="inline-math">$y&lt;x$</span>, so
+    <span class="inline-math">$f|_{\op{pred}(x)} = g|_{\op{pred}(x)}$</span>.
+    Then <span class="inline-math">$f(x) = z$</span> iff <span class="inline-math">$ϕ(x, f|_{\op{pred}(x)}, z)$</span>
+    iff <span class="inline-math">$ϕ(x, g|_{\op{pred}(x)}, z)$</span> iff <span class="inline-math">$g(x) = z$</span>,
+    proving <span class="inline-math">$f(x) = g(x)$</span>.
+</p>
+<p>
+    This proves the uniqueness claim.
+</p>
+
+<h1>If <span class="inline-math">$Y\subseteq X$</span> is downwards closed and such that for all <span class="inline-math">$y\in Y$</span>, there is an attempt with domain containing <span class="inline-math">$y$</span>, then there is an attempt with domain <span class="inline-math">$Y$</span></h1>
+
+<p>
+    Let <span class="inline-math">$ψ(y,z)$</span> be the formula "there is an attempt <span class="inline-math">$f$</span> with <span class="inline-math">$y \in \op{dom}(f)$</span> and <span class="inline-math">$f(y) = z$</span>".
+    <span class="inline-math">$ψ$</span> is functional by our previous claim
+    and total by hypothesis.
+</p>
+<ol start="1">
+<li>
+    <p>
+        If we assume <span class="inline-math">$\mathsf{Repl}$</span> holds,
+        then find a set <span class="inline-math">$r$</span>
+        such that for all <span class="inline-math">$y\in Y$</span> and <span class="inline-math">$z$</span>, if <span class="inline-math">$ψ(y,z)$</span> holds,
+        then <span class="inline-math">$z\in r$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If we a priori have a set <span class="inline-math">$r$</span>, then this is already satisfied.
+    </p>
+    
+</li>
+</ol>
+<p>
+    Use <span class="inline-math">$\mathsf{Sep}$</span> to construct
+    <span class="display-math">$$ \begin{align*}
+        f := \sb{(y,z)\in Y \times r}{ψ(y,z)}.
+    \end{align*} $$</span>
+    <span class="inline-math">$f$</span> is an attempt with domain <span class="inline-math">$Y$</span>.
+</p>
+
+<h1>For all <span class="inline-math">$x\in X$</span>, there is an attempt with domain containing <span class="inline-math">$x$</span></h1>
+
+<p>
+    Prove by order induction.
+    Suppose <span class="inline-math">$x\in X$</span> is such that
+    for all <span class="inline-math">$y&lt;x$</span>, there is an attempt with domain containing <span class="inline-math">$y$</span>.
+    By the last claim, there is an attempt <span class="inline-math">$f$</span> with domain <span class="inline-math">$\op{pred}(x)$</span>.
+    By totality of <span class="inline-math">$ϕ$</span>,
+    find <span class="inline-math">$z$</span> such that <span class="inline-math">$ϕ(x, f, z)$</span> holds.
+    Then <span class="inline-math">$g := f \cup \set{(x,z)}$</span>
+    is an attempt with domain <span class="inline-math">$\op{pred}(x) \cup \set{x}$</span>, which is downwards closed.
+</p>
+<p>
+    This together with the last claim proves there is an attempt with domain <span class="inline-math">$X$</span>.
+</p>

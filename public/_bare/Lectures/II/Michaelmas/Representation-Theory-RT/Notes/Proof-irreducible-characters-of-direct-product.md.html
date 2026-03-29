@@ -1,0 +1,41 @@
+
+<h1>Tensor product of irreducible representations is irreduicble</h1>
+
+<p>
+    First we'll check if <span class="inline-math">$ρ: G\to \GL(V)$</span> and <span class="inline-math">$ρ&#x27;: H \to \GL(W)$</span> are irreducible,
+    then so is
+    <span class="display-math">$$ \begin{align*}
+        ρ \otimes ρ&#x27;: G \times H &amp;\to \GL(V \otimes W) \\
+        (g,h) &amp;\mapsto ρ(g) \otimes ρ&#x27;(h)
+    \end{align*} $$</span>
+    where <span class="inline-math">$ρ(g) \otimes ρ&#x27;(h)$</span> is a <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-product-of-linear-maps.html">tensor product</a> of linear maps.
+    Clear that this is a representation.
+    It has a character <span class="inline-math">$χ_{ρ \otimes ρ&#x27;}(g, h) = \tr (ρ(g) \otimes ρ&#x27;(h)) = \tr ρ(g) \cdot \tr ρ&#x27;(h) = χ_ρ(g) χ_{ρ&#x27;}(h)$</span>.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        \langle χ_{ρ\otimes ρ&#x27;}, χ_{ρ \otimes ρ&#x27;}\rangle ={}&amp; \langle χ_{ρ} χ_{ρ&#x27;}, χ_{ρ} χ_{ρ&#x27;}\rangle \\
+        ={}&amp; \frac{1}{\#(G \times H)}\sum_{(g,h)\in G \times H} χ_{ρ}(g) χ_{ρ&#x27;}(h) \overline{χ_{ρ}(g) χ_{ρ&#x27;}(h)} \\
+        ={}&amp; \left(\frac{1}{\# G} \sum_{g\in G} χ_ρ(g) \overline{χ_ρ(g)}\right) \left(\frac{1}{\# H} \sum_{h\in H} χ_{ρ&#x27;}(h) \overline{χ_{ρ&#x27;}(h)}\right) \\
+        ={}&amp; \langle χ_{ρ}, χ_ρ\rangle \langle χ_{ρ&#x27;}, χ_{ρ&#x27;}\rangle \\
+        ={}&amp; 1 \cdot  1 = 1.
+    \end{align*} $$</span>
+    Hence <span class="inline-math">$ρ \otimes ρ&#x27;$</span> is irreducible.
+</p>
+
+<h1>List is exhaustive</h1>
+
+<p>
+    Suppose <span class="inline-math">$ρ_1, \ldots, ρ_k$</span> and <span class="inline-math">$ρ_1&#x27;, \ldots, ρ_l&#x27;$</span>
+    are all the irreducible representations of <span class="inline-math">$G$</span> and <span class="inline-math">$H$</span> respectively.
+</p>
+<p>
+    Apply <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-character-table.html">column normality</a>:
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=1}^{k} \sum_{j=1}^{l} (\deg (ρ_i \otimes ρ_j&#x27;))^2
+        ={}&amp; \sum_{i=1}^{k} \sum_{j=1}^{l} (\deg ρ_i)^2(\deg ρ_j)^2 \\
+        ={}&amp; \Bigl(\sum_{i=1}^k (\deg ρ_i)^2\Bigr) \Bigl(\sum_{j=1}^{l} (\deg ρ_j&#x27;)^2\Bigr) \\
+        ={}&amp; \#G \cdot \#H \\
+        ={}&amp; \#(G \times H)
+    \end{align*} $$</span>
+    so <span class="inline-math">$ρ_i \otimes ρ_j&#x27;$</span> are all the irreducible representations of <span class="inline-math">$G \times H$</span>.
+</p>

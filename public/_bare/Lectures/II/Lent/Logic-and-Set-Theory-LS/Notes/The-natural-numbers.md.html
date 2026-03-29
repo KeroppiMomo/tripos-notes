@@ -1,0 +1,193 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (construction of natural numbers from Inf)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html"><span class="inline-math">$\mathsf{Inf}$</span></a>.
+            </p>
+            <p>
+                For an <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html">inductive set</a> <span class="inline-math">$a$</span>, which exists by <span class="inline-math">$\mathsf{Inf}$</span>,
+                define by <span class="inline-math">$\mathsf{Sep}$</span>
+                <span class="display-math">$$ \begin{align*}
+                    N_a := \sb{z\in a}{\forall x(\op{ind}(x) \Rightarrow z\in x)}.
+                \end{align*} $$</span>
+                Check this does not depend on <span class="inline-math">$a$</span>
+                and is the smallest inductive set.
+                Call this
+                <span class="display-math">$$ \begin{align*}
+                    \N := N_a
+                \end{align*} $$</span>
+                and call its elements the <em>natural numbers</em>.
+            </p>
+            <blockquote>
+                <p>
+                    Write <span class="inline-math">$0 := \emptyset$</span>, <span class="inline-math">$1 := s(0) = \set{0} = \set{\emptyset}$</span>,
+                    <span class="inline-math">$2 := s(1) = \set{0, 1} = \set{\emptyset, \set{\emptyset}}$</span>,
+                    <span class="inline-math">$3 := s(2) = \set{0, 1, 2} = \set{\emptyset, \set{\emptyset}, \set{\emptyset, \set{\emptyset}}}$</span>
+                    etc.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (induction)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-induction.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Construct <span class="inline-math">$\N$</span> as <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">here</a>.
+            </p>
+            <p>
+                If <span class="inline-math">$A \subseteq \N$</span> is such that <span class="inline-math">$\emptyset\in A$</span>
+                and whenever <span class="inline-math">$n\in A$</span>, we have <span class="inline-math">$s(n) \in A$</span>,
+                then <span class="inline-math">$A = \N$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-induction.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (minimal element, well-founded relation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-minimal-element-well-founded-relation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$R$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">binary relation</a> of a set <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                For a subset <span class="inline-math">$S\subseteq X$</span>,
+                an <em><span class="inline-math">$R$</span>-minimal element</em> of <span class="inline-math">$S$</span>
+                is an element <span class="inline-math">$m\in S$</span>
+                such that for all <span class="inline-math">$s\in S$</span>,
+                it is not the case that <span class="inline-math">$sRm$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$R$</span> is <em>well-founded</em> if all subsets of <span class="inline-math">$X$</span> have an <span class="inline-math">$R$</span>-minimal element.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (transitive set)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-transitive-set.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A set <span class="inline-math">$x$</span> is <em>transitive</em>
+                if for all sets <span class="inline-math">$y,z$</span>, if <span class="inline-math">$z\in y\in x$</span>, then <span class="inline-math">$z\in x$</span>.
+            </p>
+            <p>
+                Equivalently, all elements of <span class="inline-math">$x$</span> are subsets of <span class="inline-math">$x$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (transitivity of natural numbers)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-transitivity-of-natural-numbers.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Construct <span class="inline-math">$\N$</span> as <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">here</a>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$\N$</span> is transitive.
+                </p>
+                
+            </li><li>
+                <p>
+                    Any natural number is transitive.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-transitivity-of-natural-numbers.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (subset of natural numbers)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-subset-of-natural-numbers.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Construct <span class="inline-math">$\N$</span> as <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">here</a>.
+            </p>
+            <p>
+                If <span class="inline-math">$n,m\in \N$</span>, then <span class="inline-math">$m\subseteq n$</span> iff <span class="inline-math">$m = n$</span> or <span class="inline-math">$m\in n$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-subset-of-natural-numbers.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (well-order on N)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-well-order-on-N.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Construct <span class="inline-math">$\N$</span> as <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">here</a>.
+                Define a relation <span class="inline-math">$&lt;$</span> on <span class="inline-math">$\N$</span> by <span class="inline-math">$n&lt;m$</span> iff <span class="inline-math">$n\in m$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$&lt;$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-order</a> on <span class="inline-math">$\N$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-well-order-on-N.html">Proof</a>
+                TODO
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (finite, infinite, countable, uncountable, countably infinite)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-infinite-countable-uncountable-countably-infinite.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html"><span class="inline-math">$\mathsf{Inf}$</span></a>.
+            </p>
+            <p>
+                A set <span class="inline-math">$X$</span> is <em>finite</em> if there exists <span class="inline-math">$n\in{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html"><span class="inline-math">$\N$</span></a>
+                such that <span class="inline-math">$X$</span> is in bijection with <span class="inline-math">$n$</span>;
+                otherwise <span class="inline-math">$X$</span> is <em>infinite</em>.
+            </p>
+            <p>
+                <span class="inline-math">$X$</span> is <em>countable</em> if there exists an injection <span class="inline-math">$X \hookrightarrow \N$</span>;
+                otherwise <span class="inline-math">$X$</span> is <em>uncountable</em>.
+            </p>
+            <p>
+                <span class="inline-math">$X$</span> is <em>countably infinite</em> if there exists a bijection <span class="inline-math">$X\to \N$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>

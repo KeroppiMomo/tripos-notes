@@ -1,0 +1,61 @@
+
+<h1>Existence</h1>
+
+<p>
+    Consider <span class="inline-math">$l^\infty(M) = \set{\text{bounded functions }M \to \R}$</span>
+    equipped with the sup metric <span class="inline-math">$(f,g) \mapsto \|f - g\|_\infty \equiv \sup_{x\in M} |f(x) - g(x)|$</span>.
+</p>
+<p>
+    Fix any <span class="inline-math">$x_0\in M$</span>, and define
+    <span class="display-math">$$ \begin{align*}
+        j: X &amp;\to l^\infty(M) \\
+        x &amp;\mapsto (y \mapsto d(x, y) - d(x_0, y)).
+    \end{align*} $$</span>
+    <span class="inline-math">$j$</span> is well-defined, since by the triangle inequality
+    <span class="display-math">$$ \begin{align*}
+        |j(x)(y)| = |d(x,y) - d(x_0, y)| \leq d(x,x_0) \qquad \text{for all }y\in X
+    \end{align*} $$</span>
+    so <span class="inline-math">$j(x)$</span> is bounded.
+</p>
+<p>
+    Moreover <span class="inline-math">$j$</span> is isometric, because
+    <span class="display-math">$$ \begin{align*}
+        \|j(x) - j(x&#x27;)\|_\infty ={}&amp; \sup_{y\in X} \underbrace{|d(x,y) - d(x&#x27;,y)|}_{\leq d(x,x&#x27;)} = d(x,x&#x27;)
+    \end{align*} $$</span>
+    where the supremum is attained at <span class="inline-math">$y = x$</span>.
+</p>
+<p>
+    Define <span class="inline-math">$\tilde M = \overline{\im j}$</span> with <span class="inline-math">$\tilde d(f,g) = \|f-g\|_\infty$</span>.
+    <span class="inline-math">$\tilde M$</span> is a complete since it is closed in the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-uniformly-convergent-iff-uniformly-Cauchy.html">complete space <span class="inline-math">$l^\infty(M)$</span></a>.
+</p>
+
+<h1>Uniqueness</h1>
+
+<p>
+    Let <span class="inline-math">$j_1: (M, d) \to (\tilde M_1, \tilde d_1)$</span>
+    and <span class="inline-math">$j_2: (M, d) \to (\tilde M_2, \tilde d_2)$</span>
+    be isometric maps into two completions of <span class="inline-math">$(M,d)$</span>.
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        θ: \tilde M_1 &amp;\to \tilde M_2 \\
+        \lim_{n\to \infty} j_1(x_n) &amp;\mapsto \lim_{n\to \infty} j_2(x_n).
+    \end{align*} $$</span>
+    This is well-defined:
+    since <span class="inline-math">$\tilde M_1 = \overline{\im j_1}$</span>,
+    any element of <span class="inline-math">$\tilde M_1$</span> is of the form <span class="inline-math">$\lim_{n\to \infty} j_1(x_n)$</span>
+    for a sequence <span class="inline-math">$(x_n)_{n\in \N}$</span> in <span class="inline-math">$M$</span>.
+    If <span class="inline-math">$\lim_{n\to \infty} j_1(x_n) = \lim_{n\to \infty} j_1(x_n&#x27;)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        0 ={}&amp; \tilde d_1(\lim_{n\to \infty} j_1(x_n), \lim_{n\to \infty} j_1(x_n&#x27;)) \\
+        ={}&amp; \lim_{n\to \infty} \tilde d_1(j_1(x_n), j_1(x_n&#x27;)) \\
+        ={}&amp; \lim_{n\to \infty} d(x_n, x_n&#x27;) \\
+        ={}&amp; \lim_{n\to \infty} \tilde d_2(j_2(x_n), j_2(x_n&#x27;)) \\
+        ={}&amp; \tilde d_2(\lim_{n\to \infty} j_2(x_n), \lim_{n\to \infty} j_2(x_n&#x27;))
+    \end{align*} $$</span>
+    so <span class="inline-math">$\lim_{n\to \infty} j_2(x_n) = \lim_{n\to \infty} j_2(x_n&#x27;)$</span>.
+</p>
+<p>
+    This also shows <span class="inline-math">$θ$</span> is isometric and bijective.
+</p>

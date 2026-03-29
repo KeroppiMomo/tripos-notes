@@ -1,0 +1,227 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (restriction of representation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-restriction-of-representation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G$</span> be a group and <span class="inline-math">$H\leq G$</span> be a subgroup.
+            </p>
+            <p>
+                The <em>restriction</em> of a <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-representation.html">representation</a> <span class="inline-math">$ρ: G\to \GL(V)$</span> to <span class="inline-math">$H$</span>
+                is <span class="inline-math">$\op{Res}^G_H = ρ|_H: H \to \GL(V)$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (induction of representation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-induction-of-representation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G$</span> be a group and <span class="inline-math">$H\leq G$</span> be a subgroup.
+            </p>
+            <p>
+                The <em>induction</em> of a <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-representation.html">representation</a> <span class="inline-math">$ρ: H\to \GL(V)$</span>
+                is
+                <span class="display-math">$$ \begin{align*}
+                    \op{Ind}^G_H ρ: G &amp;\to \GL(\Hom_H(\C[G], V)) \\
+                    g &amp;\mapsto (θ \mapsto (x \mapsto θ(xg))).
+                \end{align*} $$</span>
+                where <span class="inline-math">$\Hom_H(\C[G], V) = \sb{f: \C[G] \to V \text{ linear}}{f(hx) = ρ(h) f(x)\; \forall h\in H, x\in \C[G]}$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\Hom_H(\C[G], V)$</span> is isomorphic to <span class="inline-math">$\sb{f: G\to V}{f(hg) = ρ(h)f(g)\; \forall h\in H, x\in \C[G]}$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (induction of character)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proposition-induction-of-character.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G$</span> be a finite group, <span class="inline-math">$H\leq G$</span> be a subgroup,
+                and <span class="inline-math">$ρ: H \to \GL(V)$</span> be a representation.
+            </p>
+            <p>
+                The <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-character-of-representation.html">character</a> of its <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-induction-of-representation.html">induction</a>
+                <span class="inline-math">$\op{Ind}^G_H ρ$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    \op{Ind}^G_H χ_ρ(g) ={}&amp; \frac{1}{\# H} \sum_{\substack{x\in G:\\ xgx\inv\in H}} χ_ρ(xgx\inv) \\
+                    ={}&amp; \sum_{\substack{Hx\in H\backslash G: \\ xgx\inv\in H}} χ_ρ(xgx\inv) \\
+                \end{align*} $$</span>
+                If <span class="inline-math">$\prescript{G}{}g \cap H = \prescript{H}{}h_1 \sqcup \ldots \sqcup \prescript{H}{} h_n$</span>,
+                then
+                <span class="display-math">$$ \begin{align*}
+                    \op{Ind}^G_H χ_ρ(g) = \# Z_G(g) \sum_{i=1}^{n} \frac{1}{\# Z_H(h_i)} χ_ρ(h_i).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Take this as a definition of the induction of a <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-class-function.html">class function</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-induction-of-character.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Frobenius reciprocity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proposition-Frobenius-reciprocity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G$</span> be a finite group and <span class="inline-math">$H\leq G$</span> be a subgroup.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    If <span class="inline-math">$V$</span> is a representation of <span class="inline-math">$G$</span> and <span class="inline-math">$W$</span> is a representation of <span class="inline-math">$H$</span>,
+                    then there is a natural vector space isomorphism
+                    <span class="display-math">$$ \begin{align*}
+                    \Hom_G(V, \op{Ind}^G_H W) \isom \Hom_H(\op{Res}^G_H V, W).
+                    \end{align*} $$</span>
+                    Here <span class="inline-math">$\op{Res}$</span> and <span class="inline-math">$\op{Ind}$</span> denote <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-restriction-of-representation.html">restriction</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-induction-of-representation.html">induction</a> of representations.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$ϕ\in \mathcal{C}_G$</span> is a class function on <span class="inline-math">$G$</span> and <span class="inline-math">$ψ\in \mathcal{C}_H$</span> is a class function on <span class="inline-math">$H$</span>,
+                    then
+                    <span class="display-math">$$ \begin{align*}
+                    \langle ϕ, \op{Ind}^G_H ψ\rangle_G = \langle \op{Res}^G_H ϕ, ψ\rangle_H.
+                    \end{align*} $$</span>
+                    Here <span class="inline-math">$\op{Res}$</span> and <span class="inline-math">$\op{Ind}$</span> denote <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-restriction-of-representation.html">restriction</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proposition-induction-of-character.html">induction</a> of class functions.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-Frobenius-reciprocity.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (double coset)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-double-coset.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G$</span> be a group
+                and <span class="inline-math">$H,K\leq G$</span> be subgroups.
+            </p>
+            <p>
+                A <em>double coset</em> of <span class="inline-math">$H$</span> and <span class="inline-math">$K$</span>
+                is a set of the form <span class="inline-math">$HwK = \sb{hwk}{h\in H, k\in K}$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$H\backslash G/K = \sb{HwK}{w\in G}$</span> denotes the set of all double cosets of <span class="inline-math">$H$</span> and <span class="inline-math">$K$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The double cosets partition <span class="inline-math">$G$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    A double coset is an orbit in any of the following action:
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        <span class="inline-math">$H \actson G/K$</span> by <span class="inline-math">$h*gK = hgK$</span>;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$K \actson H\backslash G$</span> by <span class="inline-math">$k*Hg = Hgk\inv$</span>;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$H \times K\actson G$</span> by <span class="inline-math">$(h,k)*g = hgk\inv$</span>.
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Corollary-orbit-stabiliser.html">Orbit-stabiliser</a> implies
+                    <span class="display-math">$$ \begin{align*}
+                    \#HwK = \frac{\# H \,\# K}{\#(H \cap wKw\inv)} = \frac{\#H \, \#K}{\#(K \cap w\inv H w)}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Mackey's restriction formula)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-Mackey-s-restriction-formula.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G$</span> be a group,
+                <span class="inline-math">$H,K\leq G$</span> be subgroups,
+                and <span class="inline-math">$V$</span> be a representation of <span class="inline-math">$H$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \op{Res}^G_K \op{Ind}^G_H V = \bigoplus_{HwK \in H\backslash G/K} \op{Ind}^K_{K \cap w\inv Hw} \prescript{w\inv}{}{\op{Res}^H_{H \cap wKw\inv}} V.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Here <span class="inline-math">$H\backslash G/K$</span> is the set of <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-double-coset.html">double cosets</a>, and
+                <span class="inline-math">$\op{Res}$</span> and <span class="inline-math">$\op{Ind}$</span> denote the <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-restriction-of-representation.html">restriction</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-induction-of-representation.html">induction</a> of representations.
+            </p>
+            <p>
+                <span class="inline-math">$\prescript{x}{}ρ$</span> denotes the twisted representation:
+                if <span class="inline-math">$ρ: S\to \GL(W)$</span>, <span class="inline-math">$S\leq T$</span> and <span class="inline-math">$x\in T$</span>,
+                then <span class="inline-math">$\prescript{x}{}ρ: xSx\inv \to \GL(W)$</span>
+                is defined by <span class="inline-math">$\prescript{x}{}ρ(y) = ρ(x\inv yx)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-Mackey-s-restriction-formula.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Together with <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proposition-Frobenius-reciprocity.html">Frobenius reciprocity</a>, this implies
+                    <span class="display-math">$$ \begin{align*}
+                    \langle \op{Ind}^G_H V, \op{Ind}^G_H V\rangle ={}&amp; \langle V, \op{Res}^G_H \op{Ind}^G_H V\rangle \\
+                    ={}&amp; \sum_{HwH\in H\backslash G/H} \langle V, \op{Ind}^H_{H \cap w\inv Hw} \prescript{w\inv}{}{\op{Res}^H_{H \cap wHw\inv}} V\rangle \\
+                    ={}&amp; \sum_{HwH\in H\backslash G/H} \langle \op{Res}^H_{H \cap w\inv H w} V, \prescript{w\inv}{}{\op{Res}^H_{H \cap w H w\inv}}V\rangle \\
+                    ={}&amp; \langle V, V\rangle + \sum_{\substack{HwH\in H\backslash G/H: \\w\not\in H}} \langle \op{Res}^H_{H \cap w\inv H w}, \prescript{w\inv}{}{\op{Res}^H_{H \cap wHw\inv} V}\rangle.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

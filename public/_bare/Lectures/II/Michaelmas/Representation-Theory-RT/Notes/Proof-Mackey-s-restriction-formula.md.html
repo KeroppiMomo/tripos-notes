@@ -1,0 +1,101 @@
+<p>
+    The <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-double-coset.html">partition</a> of <span class="inline-math">$G$</span> into double cosets (orbits of <span class="inline-math">$H\times K \actson G$</span>)
+    <span class="display-math">$$ \begin{align*}
+        G = \bigsqcup_{HwK\in H\backslash G/K} HwK
+    \end{align*} $$</span>
+    results in the decomposition
+    <span class="display-math">$$ \begin{align*}
+        \C[G] = \bigoplus_{HwK\in H\backslash G/K} \C[HwK]
+    \end{align*} $$</span>
+    into <span class="inline-math">$(H\times K)$</span>-invariant subspaces.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \Hom_H(\C[G], V) = \bigoplus_{KwH\in K\backslash G/H} \Hom_H(\C[HwK], V)
+    \end{align*} $$</span>
+    as <span class="inline-math">$K$</span>-spaces.
+    It suffices to show there is a <span class="inline-math">$K$</span>-isomorphism
+    <span class="display-math">$$ \begin{align*}
+        ψ: \Hom_H(\C[HwK], V) \xrightarrow{\sim} \Hom_{K \cap w\inv Hw}(\C[K], \prescript{w\inv}{}V).
+    \end{align*} $$</span>
+</p>
+<p>
+    Explicitly write <span class="inline-math">$ρ: H\to \GL(V)$</span> for the <span class="inline-math">$H$</span>-action on <span class="inline-math">$V$</span>.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        ψ: θ \mapsto (e_k \mapsto θ(e_{wk}))
+    \end{align*} $$</span>
+    and extend linearly.
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$ψ$</span> is well-defined: we need to show <span class="inline-math">$ψ(θ)$</span> is <span class="inline-math">$(K\cap w\inv H w)$</span>-linear for <span class="inline-math">$θ\in \Hom_H(\C[HwK], V)$</span>.
+        Let <span class="inline-math">$w\inv h w = K \cap w\inv H w$</span>, so <span class="inline-math">$h \in wKw\inv \cap H$</span>.
+        <span class="display-math">$$ \begin{align*}
+        ψ(θ)(w\inv hw \,e_k) ={}&amp; θ(e_{hwk}) \\
+        ={}&amp; ρ(h)\, θ(e_{wk}) &amp;&amp;\text{$θ$ is $H$-linear} \\
+        ={}&amp; \prescript{w\inv}{}ρ(w\inv h w)\, ψ(θ)(e_k).
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$ψ$</span> is clearly <span class="inline-math">$\C$</span>-linear.
+        To show <span class="inline-math">$ψ$</span> is <span class="inline-math">$K$</span>-linear,
+        let <span class="inline-math">$k&#x27;\in K$</span> and <span class="inline-math">$θ\in \Hom_H(\C[HwK], V)$</span>.
+        <span class="display-math">$$ \begin{align*}
+        ψ(k&#x27; * θ)(e_k) ={}&amp; (k&#x27;*θ)(e_{wk}) \\
+        ={}&amp; θ(e_{wkk&#x27;})  \\
+        ={}&amp; ψ(θ)(e_{kk&#x27;}) \\
+        ={}&amp; (k&#x27; * ψ(θ))(e_k)
+        \end{align*} $$</span>
+        so <span class="inline-math">$ψ(k&#x27;*θ) = k&#x27;*ψ(θ)$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Construct its inverse:
+    <span class="display-math">$$ \begin{align*}
+        \bar ψ: \Hom_{K\cap w\inv Hw}(\C[K], \prescript{w\inv}{}V) &amp;\to \Hom_H(\C[HwK], V) \\
+        ϕ &amp;\mapsto (e_{hwk} \mapsto ρ(h)\,ϕ(e_k)).
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\bar ψ(ϕ)$</span> is well-defined: if <span class="inline-math">$hwk = h&#x27;wk&#x27;$</span>, then
+        <span class="display-math">$$ \begin{align*}
+        ρ(h&#x27;) \,ϕ(e_{k&#x27;}) ={}&amp; ρ(h&#x27;) \, ϕ(e_{w\inv h&#x27;\inv h w k}) \\
+        ={}&amp; ρ(h&#x27;) \, \prescript{w\inv}{}ρ(w\inv h&#x27;\inv h w) ϕ(e_k) \\
+        ={}&amp; ρ(h&#x27;) ρ(h&#x27;\inv h) ϕ(e_k) \\
+        ={}&amp; ρ(h)\, ϕ(e_k).
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\bar ψ$</span> is well-defined: we need to check <span class="inline-math">$\bar ψ(ϕ)$</span> is <span class="inline-math">$H$</span>-linear.
+        <span class="display-math">$$ \begin{align*}
+        \bar ψ(ϕ)(h&#x27; \, e_{hwk}) = ρ(h&#x27;h) \, ϕ(e_k) = ρ(h&#x27;) ρ(h) ϕ(e_k) = ρ(h&#x27;)\, \bar ψ(ϕ)(e_{hwk}).
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$ψ\circ \bar ψ = \id$</span>: given <span class="inline-math">$ϕ\in \Hom_{K\cap w\inv H w}(\C[K], \prescript{w\inv}{}V)$</span>,
+        <span class="display-math">$$ \begin{align*}
+        ψ\circ \bar ψ(ϕ)(e_k) = \bar ψ(ϕ)(e_{wk}) = ϕ(e_k).
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\bar ψ \circ ψ = \id$</span>: given <span class="inline-math">$θ\in \Hom_H(\C[HwK], V)$</span>,
+        <span class="display-math">$$ \begin{align*}
+        \bar ψ\circ ψ(θ)(e_{hwk}) = ρ(h) ψ(θ)(e_k) = ρ(h)\,θ(e_{wk}) = θ(e_{hwk}).
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>

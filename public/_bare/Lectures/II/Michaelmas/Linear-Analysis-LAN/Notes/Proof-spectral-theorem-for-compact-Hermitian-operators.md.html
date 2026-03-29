@@ -1,0 +1,90 @@
+
+<h1>Non-zero spectrum element is eigenvalue</h1>
+
+<p>
+    The <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-spectrum-of-adjoint.html">Hermitian property</a> implies <span class="inline-math">$σ(T) = σ_{\text{ap}}(T)$</span>,
+    and the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-non-zero-approximate-eigenvalue-of-compact-operator-is-eigenvalue.html">compact property</a>
+    implies an non-zero approximate eigenvalue is an eigenvalue.
+</p>
+
+<h1>Eigenspace is finite-dimensional</h1>
+
+<p>
+    If <span class="inline-math">$λ\neq 0$</span> and <span class="inline-math">$E_T(λ)$</span> is infinite-dimensional,
+    then <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Gram-Schmidt-process.html">there exists</a> an orthonormal sequence
+    <span class="inline-math">$e_1, e_2, \ldots\in E_T(λ)$</span>.
+    Then <span class="inline-math">$(e_n)$</span> is bounded and for <span class="inline-math">$n\neq m$</span>
+    <span class="display-math">$$ \begin{align*}
+        \|Te_n - Te_m\| = \|λe_n - λe_m\| = λ \sqrt{2} &gt; 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$(Te_n)$</span> has no convergent subsequence.
+    This contradicts with <span class="inline-math">$T$</span> being compact.
+</p>
+
+<h1><span class="inline-math">$σ(T) \cap \sb{z\in \C}{|z|&gt;δ}$</span> is finite for all <span class="inline-math">$δ&gt;0$</span></h1>
+
+<p>
+    Suppose not,
+    so let <span class="inline-math">$(λ_n)_{n\in \N}$</span> be a pairwise distinct sequence in <span class="inline-math">$σ(T)$</span>
+    with <span class="inline-math">$|λ_n|&gt;δ$</span>.
+    They are eigenvalues,
+    so let <span class="inline-math">$x_n\in H$</span> be a <span class="inline-math">$λ_n$</span>-eigenvector with <span class="inline-math">$\|x_n\| = 1$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-properties-of-eigenvectors-of-self-adjoint-maps.html">Because</a>
+    <span class="inline-math">$T$</span> is Hermitian and <span class="inline-math">$(λ_n)$</span> are pairwise disjoint,
+    <span class="inline-math">$(x_n)$</span> are pairwise orthogonal.
+    Therefore <span class="inline-math">$(x_n)$</span> is bounded and for <span class="inline-math">$n\neq m$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|Te_n - Te_m\| = \|λ_n e_n - λ_m e_m\| = \sqrt{λ_n^2 + λ_m^2} &gt; \sqrt{2}δ &gt; 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$(Tx_n)$</span> has no convergent subspace.
+    This contradicts with <span class="inline-math">$T$</span> being compact.
+</p>
+
+<h1>Orthonormal basis</h1>
+
+<p>
+    Enumerate <span class="inline-math">$σ(T) \setminus \set{0} = \set{λ_1, λ_2, \ldots}$</span>
+    which consists of eigenvalues
+    and order them by <span class="inline-math">$|λ_1| \geq |λ_2| \geq \ldots$</span>.
+    Since <span class="inline-math">$E_T(λ_n)$</span> is finite-dimensional,
+    find a finite orthonormal basis for <span class="inline-math">$E_T(λ_n)$</span>.
+    Since <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-properties-of-eigenvectors-of-self-adjoint-maps.html">eigenvectors corresponding to distinct eigenvalues are orthogonal</a>,
+    putting them together
+    forms a orthonormal sequence <span class="inline-math">$e_1, e_2, \ldots$</span>.
+    Let <span class="inline-math">$μ_1, μ_2, \ldots$</span> be the corresponding eigenvalue.
+</p>
+<p>
+    Then on <span class="inline-math">$Y := \overline{\op{span}}\set{e_1, e_2,\ldots} = \overline{\op{span}} \bigcup_{n=1}^{\infty} E_T(λ_n)$</span>
+    which admits <span class="inline-math">$e_1, e_2, \ldots$</span> as an orthonormal basis,
+    <span class="display-math">$$ \begin{align*}
+        T\left(\sum_{n=1}^{\infty} x_n e_n\right) = \sum_{n=1}^{\infty} T(x_n e_n) = \sum_{n=1}^{\infty} μ_n x_n e_n.
+    \end{align*} $$</span>
+</p>
+<p>
+    This also shows that <span class="inline-math">$\ker T \cap Y = \set{0}$</span>.
+</p>
+<p>
+    Note <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-orthogonal-complement-in-Hilbert-space.html"><span class="inline-math">$H = Y \oplus Y^\perp$</span></a>.
+    If <span class="inline-math">$Y^\perp = \set{0}$</span>, then <span class="inline-math">$H = Y$</span> and <span class="inline-math">$\ker T = \set{0}$</span>
+    so we are done.
+</p>
+<p>
+    Otherwise, <span class="inline-math">$Y$</span> is an invariant subspace of <span class="inline-math">$T$</span>,
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-adjoint-of-subspace-preserving-map-preserves-orthogonal-complement.html">so</a> <span class="inline-math">$Y^\perp\neq \set{0}$</span> is an invariant subspace of <span class="inline-math">$T^\ast = T$</span>.
+    Then <span class="inline-math">$T|_{Y^\perp} \in \mathcal{B}(Y^\perp)$</span>
+    is still Hermitian and compact.
+</p>
+<p>
+    Moreover <span class="inline-math">$T|_{Y^\perp}$</span> has no non-zero eigenvalue,
+    because all eigenvectors corresponding to non-zero eigenvalues
+    lie in <span class="inline-math">$\bigcup_{n=1}^{\infty} E_T(λ_n) \subseteq Y$</span>.
+    Hence <span class="inline-math">$σ(T|_{Y^\perp}) = \set{0}$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-spectral-radius-of-Hermitian-operator.html">However</a> <span class="inline-math">$\|T|_{Y^\perp}\| = r(Y|_{Y^\perp}) = 0$</span>,
+    so <span class="inline-math">$T|_{Y^\perp} = 0$</span>.
+    This shows <span class="inline-math">$Y^\perp \subseteq \ker T$</span>.
+</p>
+<p>
+    Thus <span class="inline-math">$\ker T = Y^\perp$</span>.
+</p>

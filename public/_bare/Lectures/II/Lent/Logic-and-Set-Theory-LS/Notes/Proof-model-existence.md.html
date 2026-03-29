@@ -1,0 +1,82 @@
+<p>
+    Let <span class="inline-math">$T\subseteq T^\ast$</span> be consistent.
+    By Lindenbaum, let <span class="inline-math">$T^\ast \supseteq T$</span> be negation complete and consistent.
+</p>
+<p>
+    Let <span class="inline-math">$v: \mathbf{Fml}\to \mathbf{2}$</span> be the valuation
+    <span class="display-math">$$ \begin{align*}
+        v(ϕ) = \begin{cases}
+            1, &amp;\text{if }T^\ast \vdash ϕ, \\
+            0, &amp;\text{if }T^\ast \vdash \neg ϕ.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    Negation completeness guarantees <span class="inline-math">$T^\ast\vdash ϕ$</span> or <span class="inline-math">$T^\ast\vdash \neg ϕ$</span> happens,
+    and consistency guarantees they can't both happen.
+    Therefore <span class="inline-math">$v$</span> is well-defined.
+</p>
+<p>
+    <span class="inline-math">$v$</span> is a homomorphism:
+    <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-implication-algebra.html#^homo">it suffices</a> to check <span class="inline-math">$v$</span> is a homomorphism of implication algebras.
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$v(\bot) = 0$</span> as <span class="inline-math">$T^\ast$</span> is consistent.
+    </p>
+    
+</li><li>
+    <p>
+        We need to show <span class="inline-math">$v((ϕ \Rightarrow ψ)) = v(ϕ) \to v(ψ)$</span>.
+        Check the cases:
+    </p>
+    <ul>
+    <li>
+        <p>
+            If <span class="inline-math">$v(ψ) = 1$</span>, i.e. there is a <span class="inline-math">$T^\ast$</span>-proof <span class="inline-math">$D$</span> of <span class="inline-math">$ψ$</span>, then here is a <span class="inline-math">$T^\ast$</span>-proof of <span class="inline-math">$(ϕ\Rightarrow ψ)$</span>:
+        </p>
+        <ul>
+        <li>
+            <p>
+                <span class="inline-math">$D$</span>
+            </p>
+            
+        </li><li>
+            <p>
+                <span class="inline-math">$(ψ \Rightarrow (ϕ \Rightarrow ψ))$</span> (axiom of type 1)
+            </p>
+            
+        </li><li>
+            <p>
+                <span class="inline-math">$(ϕ \Rightarrow ψ)$</span> (modus ponens)
+            </p>
+            
+        </li>
+        </ul>
+        <p>
+            So <span class="inline-math">$T^\ast \vdash (ϕ \Rightarrow ψ)$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            If <span class="inline-math">$v(ϕ) = 0$</span>, i.e. <span class="inline-math">$T^\ast\vdash \neg ϕ$</span>,
+            note <em><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-consistency.html#^ex-falso">ex falso</a></em> implies <span class="inline-math">$\set{ϕ, \neg ϕ} \vdash ψ$</span>.
+            Applying the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-deduction-theorem.html">deduction theorem</a> twice gives
+            <span class="inline-math">$\emptyset \vdash (\neg ϕ \Rightarrow (ϕ \Rightarrow ψ))$</span>.
+            Then a proof using modus ponens results in <span class="inline-math">$T^\ast \vdash (ϕ \Rightarrow ψ)$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            If <span class="inline-math">$v(ϕ) = 1 = v((ϕ \Rightarrow ψ))$</span>,
+            then a proof using modus ponens results in <span class="inline-math">$T^\ast \vdash ψ$</span>,
+            so <span class="inline-math">$v(ψ) = 1$</span>.
+            The contrapositive handles the case <span class="inline-math">$v(ϕ) = 1$</span> and <span class="inline-math">$v(ψ) = 0$</span>.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ul>

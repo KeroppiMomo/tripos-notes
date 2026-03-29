@@ -1,0 +1,127 @@
+
+<h1><span class="inline-math">$T \vdash (ϕ \Rightarrow ψ)$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$T\cup \set{ϕ} \vdash ψ$</span></h1>
+
+<p>
+    Let <span class="inline-math">$D$</span> be a <span class="inline-math">$T$</span>-proof of <span class="inline-math">$ϕ\Rightarrow ψ$</span>.
+    Clearly <span class="inline-math">$D$</span> is a <span class="inline-math">$(T \cup \set{ϕ})$</span>-proof.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        Dϕψ
+    \end{align*} $$</span>
+    is a <span class="inline-math">$(T\cup \set{ϕ})$</span>-proof of <span class="inline-math">$ψ$</span>:
+    <span class="inline-math">$ϕ$</span> is by hypothesis <span class="inline-math">$A_{T \cup \set{ϕ}}$</span>,
+    and <span class="inline-math">$ψ$</span> is by modus ponens <span class="inline-math">$C$</span>
+    using <span class="inline-math">$ϕ\Rightarrow ψ$</span> inside <span class="inline-math">$D$</span>
+    and <span class="inline-math">$ϕ$</span>.
+</p>
+
+<h1><span class="inline-math">$T \cup \set{ϕ} \vdash ψ$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$T\vdash (ϕ \Rightarrow ψ)$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$D = ϕ_0 ϕ_1 \ldots ϕ_n$</span> is a <span class="inline-math">$T\cup \set{ϕ}$</span>-proof of <span class="inline-math">$ψ$</span>.
+    We will show by induction that <span class="inline-math">$T \vdash (ϕ \Rightarrow ϕ_i)$</span>
+    for all <span class="inline-math">$i$</span>.
+</p>
+<p>
+    Suppose <span class="inline-math">$T \vdash (ϕ\Rightarrow ϕ_j)$</span> for all <span class="inline-math">$j&lt;i$</span>.
+    Consider the condition that <span class="inline-math">$ϕ_i$</span> satisfies in the <span class="inline-math">$T\cup \set{ϕ}$</span>-proof <span class="inline-math">$D$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$ϕ_i\in T$</span> or <span class="inline-math">$ϕ_i$</span> is an axiom, then we have a <span class="inline-math">$T$</span>-proof of <span class="inline-math">$T\vdash (ϕ\Rightarrow ϕ_i)$</span>:
+    </p>
+    <ol start="0">
+    <li>
+        <p>
+            <span class="inline-math">$(ϕ_i \Rightarrow (ϕ \Rightarrow ϕ_i))$</span> (axiom of type 1)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$ϕ_i$</span> (<span class="inline-math">$ϕ_i\in T$</span> or <span class="inline-math">$ϕ_i$</span> is an axiom)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$(ϕ \Rightarrow ϕ_i)$</span> (modus ponens with 0 and 1)
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$ϕ_i = ϕ$</span>, the following is a proof of <span class="inline-math">$\emptyset\vdash (ϕ \Rightarrow ϕ)$</span>:
+    </p>
+    <ol start="0">
+    <li>
+        <p>
+            <span class="inline-math">$(ϕ \Rightarrow ({\color{yellow}(ϕ\Rightarrow ϕ)} \Rightarrow ϕ))$</span> (axiom of type 1)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$\bigl(\bigl(ϕ \Rightarrow ({\color{yellow}(ϕ\Rightarrow ϕ)} \Rightarrow ϕ)\bigr) \Rightarrow \bigl((ϕ \Rightarrow {\color{yellow}(ϕ\Rightarrow ϕ)}) \Rightarrow (ϕ \Rightarrow ϕ)\bigr)\bigr)$</span> (axiom of type 2)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$((ϕ \Rightarrow {\color{yellow}(ϕ\Rightarrow ϕ)}) \Rightarrow (ϕ \Rightarrow ϕ))$</span> (modus ponens with 0 and 1)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$(ϕ \Rightarrow {\color{yellow}(ϕ\Rightarrow ϕ)})$</span> (axiom of type 1)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$(ϕ \Rightarrow ϕ)$</span> (modus ponens with 2 and 3)
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        If there exists <span class="inline-math">$j,k&lt;i$</span> such that <span class="inline-math">$ϕ_j = (ϕ_k \Rightarrow ϕ_i)$</span>,
+        then by induction hypothesis <span class="inline-math">$T \vdash (ϕ \Rightarrow (ϕ_k \Rightarrow ϕ_i))$</span>
+        and <span class="inline-math">$T \vdash (ϕ \Rightarrow ϕ_k)$</span>.
+        Here is a <span class="inline-math">$(T\cup \set{(ϕ \Rightarrow (ϕ_k \Rightarrow ϕ_i)), (ϕ \Rightarrow ϕ_k)})$</span>-proof
+        of <span class="inline-math">$ϕ \Rightarrow ϕ_i$</span>:
+    </p>
+    <ol start="0">
+    <li>
+        <p>
+            <span class="inline-math">$\bigl(\bigl(ϕ \Rightarrow (ϕ_k \Rightarrow ϕ_i)\bigr) \Rightarrow \bigl((ϕ \Rightarrow ϕ_k) \Rightarrow (ϕ \Rightarrow ϕ_i)\bigr)\bigr)$</span> (axiom of type 2)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$(ϕ \Rightarrow (ϕ_k \Rightarrow ϕ_i))$</span> (hypothesis)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$((ϕ \Rightarrow ϕ_k) \Rightarrow (ϕ \Rightarrow ϕ_i))$</span> (modus ponens with 0 and 1)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$(ϕ \Rightarrow ϕ_k)$</span> (hypothesis)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$(ϕ \Rightarrow ϕ_i)$</span> (modus ponens with 2 and 3)
+        </p>
+        
+    </li>
+    </ol>
+    <p>
+        So <span class="inline-math">$T \vdash (ϕ \Rightarrow ϕ_i)$</span> by the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-lemma.html">lemma on lemmas</a>.
+    </p>
+    
+</li>
+</ul>

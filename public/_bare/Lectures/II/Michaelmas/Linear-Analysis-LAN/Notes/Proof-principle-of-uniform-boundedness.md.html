@@ -1,0 +1,25 @@
+<p>
+    Define for <span class="inline-math">$n\in \N$</span>
+    <span class="display-math">$$ \begin{align*}
+        A_n = \sb{x\in X}{\|Tx\|\leq n \; \text{ for all $T\in \mathcal{T}$}} = \bigcap_{T\in \mathcal{T}} \sb{x\in X}{\|Tx\| \leq n}.
+    \end{align*} $$</span>
+    <span class="inline-math">$A_n$</span> is the intersection of closed preimages under the continuous functions <span class="inline-math">$x\mapsto \|Tx\|$</span>,
+    so <span class="inline-math">$A_n$</span> is closed.
+</p>
+<p>
+    Since <span class="inline-math">$\mathcal{T}$</span> is pointwise bounded,
+    <span class="inline-math">$\bigcup_{n\in \N} A_n = X$</span>.
+    By the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-Baire-category.html">Baire category theorem</a>,
+    noting <span class="inline-math">$X$</span> is complete and non-empty,
+    there exists <span class="inline-math">$n\in \N$</span> such that <span class="inline-math">$\op{int} A_n = \op{int}\overline{A_n} \neq \emptyset$</span>.
+    Let <span class="inline-math">$r&gt;0$</span> and <span class="inline-math">$x\in A_n$</span> such that <span class="inline-math">$B_r[x] \subseteq A_n$</span>.
+</p>
+<p>
+    For each <span class="inline-math">$z\in B_X$</span>, <span class="inline-math">$x \pm rz\in B_r[x] \subseteq A_n$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \|Tz\| = \left\|\frac{1}{2r}((x + rz) - (x - rz))\right\| 
+        \leq \frac{1}{2r}\left(\|x + rz\| + \|x - rz\|\right)
+        \leq \frac{n}{r}
+    \end{align*} $$</span>
+    and hence <span class="inline-math">$\|T\| \leq n/r$</span> for all <span class="inline-math">$T\in \mathcal{T}$</span>.
+</p>

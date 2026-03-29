@@ -1,0 +1,62 @@
+
+<h1>Finite measures</h1>
+
+<p>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{G} = \sb{A\in \mathcal{A}}{μ(A) = ν(A)}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$\mathcal{G}$</span> is a monotone class:
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$E \in \mathcal{A}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$A\subseteq B$</span> with <span class="inline-math">$A,B\in \mathcal{G}$</span>,
+        then <span class="inline-math">$μ(B\setminus A) = μ(B) - μ(A) = ν(B)-ν(A) = ν(B\setminus A)$</span>
+        <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measure-space.html">because</a> the measures are finite.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$(A_n)_{n\in \N}$</span> is an increasing sequence in <span class="inline-math">$\mathcal{G}$</span>,
+        then by <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Proposition-continuity-of-measure.html">continuity</a>,
+        <span class="inline-math">$μ(\bigcup_{n\in \N} A_n) = \lim_{n\to \infty} μ(A_n) = \lim_{n\to \infty} ν(A_n) = ν(\bigcup_{n\in \N} A_n)$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    By assumption <span class="inline-math">$\mathcal{C}\subseteq \mathcal{G}$</span>, which
+    is stable by finite intersection.
+    Thus by the <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Theorem-monotone-class-lemma.html">monotone class lemma</a>,
+    <span class="inline-math">$\mathcal{A} = \mathcal{G}$</span>.
+</p>
+
+<h1>Increasing sequence</h1>
+
+<p>
+    Define on <span class="inline-math">$\mathcal{A}$</span>
+    <span class="display-math">$$ \begin{align*}
+        μ_n(A) = μ(A \cap E_n), \qquad ν_n(A) = ν(A \cap E_n).
+    \end{align*} $$</span>
+</p>
+<p>
+    Since <span class="inline-math">$\mathcal{C}$</span> is stable by finite intersections,
+    <span class="inline-math">$C \cap E_n \in \mathcal{C}$</span> for all <span class="inline-math">$C\in \mathcal{C}$</span>,
+    so <span class="inline-math">$μ_n(C) = ν_n(C)$</span>.
+    Also <span class="inline-math">$μ_n(E) = ν_n(E)&lt;\infty$</span>,
+    so the above result shows that <span class="inline-math">$μ_n = ν_n$</span>.
+</p>
+<p>
+    Then apply continuity to get for any <span class="inline-math">$A\in \mathcal{A}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        μ(A) = μ\biggl(\bigcup_{n\in \N} (A\cap E_n)\biggr) = \lim_{n\to \infty} μ_n(A) = \lim_{n\to \infty} ν_n(A) = ν\biggl(\bigcup_{n\in \N} (A\cap E_n)\biggr) = ν(A).
+    \end{align*} $$</span>
+</p>

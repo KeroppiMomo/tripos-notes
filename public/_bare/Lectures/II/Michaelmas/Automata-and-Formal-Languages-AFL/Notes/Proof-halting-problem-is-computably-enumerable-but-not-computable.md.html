@@ -1,0 +1,31 @@
+
+<h1>Computably enumerable</h1>
+
+<p>
+    By definition, <span class="inline-math">$f_{w,1}(v) = f_{U,2}(w,v)$</span> is computable,
+    so <span class="inline-math">$\mathbf{K}_0 = \op{dom}(f_{U,2})$</span> is computably enumerable.
+    Moreover <span class="inline-math">$w\mapsto (w,w)$</span> can be performed by a register machine,
+    so <span class="inline-math">$f: w\mapsto f_{U,2}(w,w) = f_{w,1}(w)$</span>
+    is computable and thus <span class="inline-math">$\mathbf{K}=\op{dom}(f)$</span> is computably enumerable.
+</p>
+
+<h1>Not computable</h1>
+
+<p>
+    Suppose either of them is, i.e. <span class="inline-math">$χ_{\mathbf{K}}$</span> or <span class="inline-math">$χ_{\mathbf{K}_0}$</span> is a computable function.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        f(w) = \begin{cases}
+            \uparrow, &amp;χ_{\mathbf{K}_0}(w,w) = χ_{\mathbf{K}}(w) = a, \\
+            a, &amp;χ_{\mathbf{K}_0}(w,w) = χ_{\mathbf{K}}(w) = ε.
+        \end{cases}
+    \end{align*} $$</span>
+    Since this is computable, let <span class="inline-math">$d\in \mathbb{W}$</span> be such that <span class="inline-math">$f = f_{d,1}$</span>.
+</p>
+<p>
+    However
+    <span class="display-math">$$ \begin{align*}
+        f(d) \downarrow \iff χ_{\mathbf{K}}(d) = a \iff χ_{\mathbf{K}_0}(d,d) = a \iff f(d) \downarrow.
+    \end{align*} $$</span>
+    Contradiction!
+</p>

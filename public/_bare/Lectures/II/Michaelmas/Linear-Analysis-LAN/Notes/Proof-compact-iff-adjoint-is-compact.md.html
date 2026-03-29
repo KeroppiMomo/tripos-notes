@@ -1,0 +1,25 @@
+<p>
+    Let <span class="inline-math">$H$</span> be a Hilbert space and <span class="inline-math">$T\in \mathcal{B}(H)$</span> be compact.
+    Fix a bounded sequence <span class="inline-math">$(x_n)_{n\in \N}$</span> in <span class="inline-math">$H$</span>.
+    We want to show <span class="inline-math">$(T^\ast x_n)_{n\in \N}$</span> has a convergent subsequence.
+</p>
+<p>
+    Let <span class="inline-math">$M&gt;0$</span> such that <span class="inline-math">$\|x_n\|&lt;M$</span> for all <span class="inline-math">$n$</span>.
+    <span class="inline-math">$(T^\ast x_n)$</span> is bounded:
+    <span class="display-math">$$ \begin{align*}
+        \|T^\ast x_n\| \leq \|T^\ast\| \|x_n\|\leq M\|T\|
+    \end{align*} $$</span>
+    so <span class="inline-math">$(TT^\ast x_n)_n$</span> has a convergent subsequence <span class="inline-math">$(TT^\ast x_{n_k})_k$</span>.
+</p>
+<p>
+    Notice <span class="inline-math">$(T^\ast x_{n_k})_{k}$</span> is Cauchy:
+    <span class="display-math">$$ \begin{align*}
+        \|T^\ast x_{n_k} - T^\ast x_{n_l}\|^2 ={}&amp; \langle T^\ast (x_{n_k} - x_{n_l}), T^\ast (x_{n_k}, x_{n_l})\rangle \\
+        ={}&amp; \langle x_{n_k} - x_{n_l}, TT^\ast(x_{n_k} - x_{n_l})\rangle \\
+        \leq{}&amp; \|x_{n_k} - x_{n_l}\| \|TT^\ast(x_{n_k} - x_{n_l})\| \\
+        \leq{}&amp; 2M\|TT^\ast x_{n_k} - TT^\ast x_{n_l}\| \\
+        \to{}&amp; 0
+    \end{align*} $$</span>
+    as <span class="inline-math">$m,n\to \infty$</span>.
+    Therefore <span class="inline-math">$T^\ast x_{n_k}$</span> converges.
+</p>

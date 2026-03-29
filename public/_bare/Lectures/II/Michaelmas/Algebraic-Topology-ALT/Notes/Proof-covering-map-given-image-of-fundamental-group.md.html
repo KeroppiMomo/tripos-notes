@@ -1,0 +1,53 @@
+<p>
+    Continue with the notation <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-construction-of-universal-cover.html">here</a>.
+</p>
+<p>
+    Define a relation on <span class="inline-math">$\tilde X$</span> by
+    <span class="display-math">$$ \begin{align*}
+        [γ] \sim [δ] \iff γ(1) = δ(1) \text{ and } [γ\cdot δ\inv] \in H.
+    \end{align*} $$</span>
+    Check that it is in fact an equivalence relation because <span class="inline-math">$H$</span> is a subgroup.
+    Note also that <span class="inline-math">$p$</span> agrees on <span class="inline-math">$\sim$</span>-equivalence classes.
+    Therefore we can define the quotient space <span class="inline-math">$\tilde X_H = \tilde X / {\sim}$</span>,
+    the quotient map <span class="inline-math">$q: \tilde X \to \tilde X_H$</span> and the induced map <span class="inline-math">$p_H: \tilde X_H \to X$</span>.
+</p>
+
+<h1>Covering map</h1>
+
+<p>
+    Notice if <span class="inline-math">$[γ]\in U_{[α]}$</span> and <span class="inline-math">$[γ&#x27;]\in U_{[β]}$</span> have <span class="inline-math">$[γ] \sim[γ&#x27;]$</span>,
+    then any element <span class="inline-math">$[γ\cdot η] \in U_{[α]}$</span>
+    is identified under <span class="inline-math">$\sim$</span> with <span class="inline-math">$[γ&#x27;\cdot η]\in U_{[β]}$</span> and vice versa,
+    so <span class="inline-math">$q(U_{[α]}) = q(U_{[β]})$</span>.
+    This means the images of <span class="inline-math">$U_{[α]}$</span> and <span class="inline-math">$U_{[β]}$</span> under <span class="inline-math">$q$</span> are either disjoint or equal.
+</p>
+<p>
+    If <span class="inline-math">$q([γ]) \in q(U_{[α]})$</span>, then <span class="inline-math">$q(U_{[γ]})$</span> and <span class="inline-math">$q(U_[α])$</span> are not disjoint and thus equal.
+    Hence <span class="inline-math">$[γ] \in U_{[γ]} \subseteq q\inv(q(U_{[α]}))$</span>,
+    which shows that <span class="inline-math">$q(U_{[α]})$</span> is open in <span class="inline-math">$\tilde X_H$</span>.
+</p>
+<p>
+    We have shown that, for <span class="inline-math">$U\in \mathcal{U}$</span>, <span class="inline-math">$q\inv(p_H\inv(U)) = p\inv(U)$</span> is a disjoint union of
+    sets of the form <span class="inline-math">$U_{[α]}$</span>,
+    so <span class="inline-math">$p_H\inv(U) = q(p\inv(U))$</span> is a union of sets of the form <span class="inline-math">$q(U_{[α]})$</span>.
+    They are open and disjoint as we argued, so <span class="inline-math">$p_H$</span> is a covering map.
+</p>
+
+<h1><span class="inline-math">$(p_H)_\ast(π_1(\tilde X_H, q([c_{x_0}]))) = H$</span></h1>
+
+<p>
+    For any <span class="inline-math">$[γ]\in H$</span>,
+    the lift <span class="inline-math">$\tilde γ$</span> of <span class="inline-math">$γ$</span> to <span class="inline-math">$\tilde X$</span> starting at <span class="inline-math">$[c_{x_0}]$</span> ends at <span class="inline-math">$[γ]$</span>.
+    Then <span class="inline-math">$q\circ \tilde γ$</span> is a lift of <span class="inline-math">$γ$</span> to <span class="inline-math">$\tilde X_H$</span>
+    starting at <span class="inline-math">$q([c_{x_0}])$</span> and ending at <span class="inline-math">$q([γ])$</span>.
+    But <span class="inline-math">$[γ] \sim [c_{x_0}]$</span>, so <span class="inline-math">$q\circ \tilde γ\in π_1(\tilde X_H, q([c_{x_0}]))$</span>.
+</p>
+<p>
+    Conversely for any <span class="inline-math">$[\tilde γ_{H}]\in π_1(\tilde X_H, q([c_{x_0}]))$</span>,
+    letting <span class="inline-math">$[γ] = p_H([\tilde γ_H])$</span>,
+    the lift <span class="inline-math">$\tilde γ$</span> of <span class="inline-math">$γ$</span> to <span class="inline-math">$\tilde X$</span>
+    starting at <span class="inline-math">$[c_{x_0}]$</span> ends at <span class="inline-math">$[γ]$</span>.
+    But <span class="inline-math">$p_H \circ \tilde γ_H \simeq γ = p_H \circ q \circ \tilde γ$</span>,
+    so <span class="inline-math">$q \circ \tilde γ_H \simeq \tilde γ$</span> is a loop in <span class="inline-math">$\tilde X_H$</span>.
+    Therefore <span class="inline-math">$[γ] \sim [c_{x_0}]$</span>.
+</p>

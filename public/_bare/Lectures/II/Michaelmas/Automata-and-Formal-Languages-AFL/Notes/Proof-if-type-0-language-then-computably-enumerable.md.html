@@ -1,0 +1,29 @@
+<p>
+    Let <span class="inline-math">$G = (Σ, V, P, S)$</span> be a grammar such that <span class="inline-math">$\mathcal{L}(G) = L$</span>.
+    Enlarge our alphabet to <span class="inline-math">$Σ&#x27; = Σ \cup \set{⮕}$</span>.
+</p>
+<p>
+    Given <span class="inline-math">$σ_0, \ldots, σ_n\in Ω^\ast$</span>,
+    call a string of the form
+    <span class="display-math">$$ \begin{align*}
+        σ_0\ ⮕\ σ_1\ ⮕\ \ldots\ ⮕\ σ_n
+    \end{align*} $$</span>
+    a <em>derivation code</em> with <em>start string</em> <span class="inline-math">$σ_0$</span> and <em>result string</em> <span class="inline-math">$σ_n$</span>
+    if <span class="inline-math">$(σ_0, \ldots, σ_n)$</span> is a <span class="inline-math">$G$</span>-derivation.
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        Y = \sb{(w,v)\in \mathbb{W} \times \mathbb{W}&#x27;}{
+        \text{$v$ is a $G$-derivation code with start string $S$ and result string $w$}}.
+    \end{align*} $$</span>
+    A register machine can check whether a <span class="inline-math">$\mathbb{W}&#x27; = (Σ&#x27;)^\ast$</span>
+    word is a derivation code
+    and whether the result string coincides with <span class="inline-math">$w$</span>.
+    Thus <span class="inline-math">$Y$</span> is computable.
+    By construction
+    <span class="display-math">$$ \begin{align*}
+        w\in \mathcal{L}(G) \iff \exists v(w,v)\in Y
+    \end{align*} $$</span>
+    so <span class="inline-math">$L$</span> is <span class="inline-math">$Σ_1$</span> and thus <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computably enumerable</a>.
+</p>

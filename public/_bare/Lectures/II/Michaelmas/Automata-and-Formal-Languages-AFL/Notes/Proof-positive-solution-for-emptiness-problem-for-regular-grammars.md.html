@@ -1,0 +1,31 @@
+
+<h1>If <span class="inline-math">$L\neq \emptyset$</span> satisfies regular pumping lemma with pumping number <span class="inline-math">$n$</span>, then there is a word <span class="inline-math">$w\in L$</span> with <span class="inline-math">$|w|&lt;n$</span></h1>
+
+<p>
+    Since <span class="inline-math">$L\neq \emptyset$</span>,
+    there exists a word <span class="inline-math">$w\in L$</span> that has minimal length.
+    If <span class="inline-math">$|w|\geq n$</span>, then
+    it can be pumped down to produce a word of smaller length in <span class="inline-math">$L$</span>,
+    which contradicts with minimality.
+    Thus <span class="inline-math">$|w|&lt;n$</span>.
+</p>
+
+<h1>The algorithm</h1>
+
+<p>
+    Construct, as in the proofs <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-regular-language-iff-accepted-by-automaton.html">here</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalence-of-deterministic-and-nondeterministic-automata.html">here</a>,
+    a deterministic automaton <span class="inline-math">$D$</span>
+    such that <span class="inline-math">$\mathcal{L}(G) = \mathcal{L}(D)$</span>
+    and the number of states of <span class="inline-math">$D$</span> is <span class="inline-math">$2^{m+1}$</span>
+    where <span class="inline-math">$m = |V|$</span> is the number of nonterminal symbols of <span class="inline-math">$G$</span>.
+</p>
+<p>
+    Check all (finitely many) words <span class="inline-math">$w$</span> of length at most <span class="inline-math">$2^{m+1}$</span>
+    whether <span class="inline-math">$w\in \mathcal{L}(D)$</span> by running the automaton.
+</p>
+<p>
+    If such <span class="inline-math">$w$</span> exists, then <span class="inline-math">$\mathcal{L}(G)\neq \emptyset$</span>.
+    Otherwise, since <span class="inline-math">$\mathcal{L}(D)$</span>
+    satisfies the pumping lemma with <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-regular-pumping-lemma.html">pumping number <span class="inline-math">$2^{m+1}$</span></a>,
+    <span class="inline-math">$\mathcal{L}(G) = \emptyset$</span> by the above.
+</p>

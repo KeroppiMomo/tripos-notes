@@ -1,0 +1,194 @@
+
+<h1>Over <span class="inline-math">$\R$</span></h1>
+
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (approximating absolute value with polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Lemma-approximating-absolute-value-with-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For any <span class="inline-math">$ε&gt;0$</span>,
+                there exists a real polynomial <span class="inline-math">$p$</span>
+                such that
+                <span class="display-math">$$ \begin{align*}
+                    \bigl||t| - p(t)\bigr| &lt; ε \qquad \forall t\in [-1,1].
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proof-approximating-absolute-value-with-polynomials.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (closed subalgebra of C(K) is a lattice)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Lemma-closed-subalgebra-of-C-K-is-a-lattice.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be a topological space.
+            </p>
+            <p>
+                If <span class="inline-math">$A$</span> is a closed <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-subalgebra.html">subalgebra</a> of <span class="inline-math">$C^\R(K)$</span>,
+                then <span class="inline-math">$A$</span> is a lattice,
+                i.e. if <span class="inline-math">$f,g\in A$</span>,
+                then <span class="inline-math">$\max\set{f,g}, \min\set{f,g}\in A$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proof-closed-subalgebra-of-C-K-is-a-lattice.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Let <span class="inline-math">$A$</span> be an subalgebra of <span class="inline-math">$C^\R(K)$</span>
+    that strongly separates points of <span class="inline-math">$K$</span>.
+    We want to show <span class="inline-math">$\overline{A} = C^\R(K)$</span>.
+</p>
+<p>
+    Fix <span class="inline-math">$f\in C^\R(K)$</span> and <span class="inline-math">$ε&gt;0$</span>.
+</p>
+
+<h2>Agreeing with <span class="inline-math">$f$</span> at two points</h2>
+
+<p>
+    Let <span class="inline-math">$x,y\in K$</span> be distinct.
+    We want to find <span class="inline-math">$f_{xy}\in A$</span>
+    such that <span class="inline-math">$f_{xy}(x) = f(x)$</span> and <span class="inline-math">$f_{xy}(y) = f(y)$</span>.
+</p>
+<p>
+    As <span class="inline-math">$A$</span> separates points of <span class="inline-math">$K$</span>,
+    find <span class="inline-math">$g\in A$</span> such that <span class="inline-math">$g(x) \neq g(y)$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$g(x), g(y)\neq 0$</span>, then <span class="inline-math">$h := g^2\in A$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If either <span class="inline-math">$g(x)$</span> or <span class="inline-math">$g(y)$</span> is 0, WLOG <span class="inline-math">$g(x)=0$</span>,
+        since <span class="inline-math">$A$</span> strongly separates points of <span class="inline-math">$K$</span>,
+        find <span class="inline-math">$h\in A$</span> such that <span class="inline-math">$h(x) \neq 0$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    In either case, <span class="inline-math">$(g(x), g(y)), (h(x), h(y))\in \R^2$</span>
+    are linearly independent.
+    Therefore there are <span class="inline-math">$λ,μ\in \R$</span>
+    such that <span class="inline-math">$f_{xy} := λg + μh\in A$</span> equals <span class="inline-math">$f(x)$</span> at <span class="inline-math">$x$</span>
+    and equals <span class="inline-math">$f(y)$</span> at <span class="inline-math">$y$</span>.
+</p>
+
+<h2>Approximating <span class="inline-math">$f$</span> on one side</h2>
+
+<p>
+    For each <span class="inline-math">$x\in K$</span>,
+    we will find <span class="inline-math">$f_x\in \overline{A}$</span>
+    such that <span class="inline-math">$f_x(x) = f(x)$</span>
+    and <span class="inline-math">$f_x &lt; f + ε$</span>.
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        U_{xy} = \sb{z\in K}{f_{xy}(z) &lt; f(z) + ε},
+    \end{align*} $$</span>
+    which is open by the continuity of <span class="inline-math">$f_{xy} - f$</span>.
+    Since <span class="inline-math">$f_{xy}(y) = f(y)$</span>, we have <span class="inline-math">$y\in U_{xy}$</span>,
+    so <span class="inline-math">$\sb{U_{xy}}{y\in K}$</span> is an open cover of <span class="inline-math">$K$</span>.
+    Apply compactness to find <span class="inline-math">$y_1, \ldots, y_n\in K$</span>
+    such that <span class="inline-math">$K = \bigcup_{i=1}^{n} U_{xy_i}$</span>.
+</p>
+<p>
+    As <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Lemma-closed-subalgebra-of-C-K-is-a-lattice.html"><span class="inline-math">$\overline{A}$</span> is a lattice</a>,
+    <span class="display-math">$$ \begin{align*}
+        f_x := \min\set{f_{xy_1}, \ldots, f_{xy_n}} \in \overline{A},
+    \end{align*} $$</span>
+    Check that <span class="inline-math">$f_x$</span> works:
+</p>
+<ul>
+<li>
+    <p>
+        For each <span class="inline-math">$y\in X$</span>,
+        there exists <span class="inline-math">$i$</span> such that <span class="inline-math">$y\in U_{xy_i}$</span>,
+        so <span class="inline-math">$f_x(y) \leq f_{xy_i}(y) &lt; f(y) + ε$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$f_{xy_i}(x) = x$</span> so <span class="inline-math">$f_x(x) = f(x)$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    This proves the claim.
+</p>
+
+<h2>Approximating <span class="inline-math">$f$</span> on both sides</h2>
+
+<p>
+    Now define
+    <span class="display-math">$$ \begin{align*}
+        V_x = \sb{z\in K}{f_x(z) &gt; f(z) - ε},
+    \end{align*} $$</span>
+    which is open by continuity of <span class="inline-math">$f_x - f$</span>.
+    Since <span class="inline-math">$f_x(x) = f(x)$</span>,
+    <span class="inline-math">$\sb{V_x}{x\in K}$</span> is an open cover of <span class="inline-math">$K$</span>.
+    By compactness,
+    let <span class="inline-math">$x_1, \ldots, x_m\in K$</span> such that <span class="inline-math">$K = \bigcup_{i=1}^{m} V_{x_i}$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$\overline{A}$</span> is a lattice,
+    <span class="display-math">$$ \begin{align*}
+        g := \max\set{f_{x_1}, \ldots, f_{x_m}} \in \overline{A}.
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        For each <span class="inline-math">$x\in X$</span>, there exists <span class="inline-math">$i$</span> such that <span class="inline-math">$x\in V_{x_i}$</span>,
+        so <span class="inline-math">$g(x) \geq f_{x_i}(x) &gt; f(x) - ε$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Since <span class="inline-math">$f_{x_i} &lt; f+ε$</span>, also <span class="inline-math">$g &lt; f + ε$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Hence <span class="inline-math">$\|g - f\|_\infty &lt; ε$</span>.
+    This shows <span class="inline-math">$f\in \overline{A}$</span>.
+</p>
+
+<h1>Over <span class="inline-math">$\C$</span></h1>
+
+<p>
+    Let <span class="inline-math">$A$</span> be a subalgebra of <span class="inline-math">$C^\C(K)$</span> that strongly separates points of <span class="inline-math">$K$</span>
+    and is closed under complex conjugation.
+</p>
+<p>
+    Let <span class="inline-math">$A^\R = A \cap C^\R(K)$</span>, a subalgebra of <span class="inline-math">$C^\R(K)$</span>.
+    <span class="inline-math">$A^\R$</span> still strongly separates points of <span class="inline-math">$K$</span>:
+    for any <span class="inline-math">$f\in A$</span>, since <span class="inline-math">$\overline{f}\in A$</span>,
+    we have <span class="inline-math">$\Re f = \frac{1}{2}(f + \overline{f})\in A^\R$</span>
+    and <span class="inline-math">$\Im f = \frac{1}{2i}(f - \overline{f})\in A^\R$</span>.
+</p>
+<p>
+    Therefore <span class="inline-math">$\overline{A^\R} = C^\R(K)$</span>
+    by our result over <span class="inline-math">$\R$</span>,
+    so <span class="inline-math">$C^\R(K) \subseteq A$</span>.
+    Then <span class="inline-math">$C^\C(K) = C^\R(K) + iC^\R(K) \subseteq A$</span>,
+    as required.
+</p>

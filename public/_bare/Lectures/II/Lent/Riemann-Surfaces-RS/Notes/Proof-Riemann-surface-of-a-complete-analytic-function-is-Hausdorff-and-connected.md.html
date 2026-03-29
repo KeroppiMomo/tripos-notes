@@ -1,0 +1,44 @@
+
+<h1>Hausdorff</h1>
+
+<p>
+    Let <span class="inline-math">$x = [(z, f)]\in [f,D]$</span> and <span class="inline-math">$y = [(w,g)]\in [g,E]$</span> be distinct points on <span class="inline-math">$R_\mathcal{F}$</span>.
+</p>
+<p>
+    If <span class="inline-math">$z \neq w\in \C$</span>, find disjoint open neighbourhoods
+    <span class="inline-math">$D&#x27;$</span> of <span class="inline-math">$z$</span> and <span class="inline-math">$E&#x27;$</span> of <span class="inline-math">$w$</span> in <span class="inline-math">$\C$</span>.
+    Then <span class="inline-math">$π\inv(D&#x27;)$</span> and <span class="inline-math">$π\inv(E&#x27;)$</span> are disjoint open neighbourhoods of <span class="inline-math">$x$</span> and <span class="inline-math">$y$</span>.
+</p>
+<p>
+    Otherwise if <span class="inline-math">$z=w$</span> and <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> do not agree on a neighbourhood of <span class="inline-math">$z$</span>,
+    find some open connected neighbourhood <span class="inline-math">$V\subseteq D \cap E$</span> of <span class="inline-math">$z$</span>
+    such that <span class="inline-math">$f|_V\neq g|_V$</span>.
+    We claim <span class="inline-math">$[f|_V,V]$</span> and <span class="inline-math">$[g|_V, V]$</span>
+    are disjoint open neighbourhoods of <span class="inline-math">$x$</span> and <span class="inline-math">$y$</span>.
+    If they are not disjoint,
+    say there exists <span class="inline-math">$ζ\in V$</span> such that <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> agree on a neighbourhood of <span class="inline-math">$ζ$</span>,
+    then by the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-identity-theorem.html">identity principle</a>,
+    <span class="inline-math">$f|_V = g|_V$</span>, which is a contradiction.
+</p>
+
+<h1>Path-connected</h1>
+
+<p>
+    Let <span class="inline-math">$x = [(z,f)]\in [f,D]$</span> and <span class="inline-math">$y=[(w,g)]\in [g,E]$</span>.
+    First suppose <span class="inline-math">$(f,D) \sim (g,E)$</span>.
+    As <span class="inline-math">$D \cap E \neq \emptyset$</span> and <span class="inline-math">$D$</span> and <span class="inline-math">$E$</span> are path-connected,
+    let <span class="inline-math">$γ_1$</span> be a path from <span class="inline-math">$z$</span> to <span class="inline-math">$ζ$</span> in <span class="inline-math">$D$</span>
+    and <span class="inline-math">$γ_2$</span> be a path from <span class="inline-math">$ζ$</span> to <span class="inline-math">$w$</span> in <span class="inline-math">$E$</span>,
+    for some <span class="inline-math">$ζ\in D\cap E$</span>.
+    Then <span class="inline-math">$δ_1 := π|_{[f,D]}\inv\circ γ_1$</span> is a path from <span class="inline-math">$x$</span> to <span class="inline-math">$π|_{[f,D]}\inv(ζ)$</span>
+    and <span class="inline-math">$δ_2 := π|_{[g,E]}\inv \circ γ_2$</span> is a path from <span class="inline-math">$π|_{[g,E]}\inv(ζ)$</span> to <span class="inline-math">$w$</span>.
+    Since
+    <span class="display-math">$$ \begin{align*}
+        [f,D] \supseteq [f, V] = [g,V] \subseteq [g,E]
+    \end{align*} $$</span>
+    where <span class="inline-math">$V$</span> is the connected component of <span class="inline-math">$D \cap E$</span> containing <span class="inline-math">$ζ$</span>,
+    we can join <span class="inline-math">$δ_1$</span> and <span class="inline-math">$δ_2$</span> to form a path from <span class="inline-math">$x$</span> to <span class="inline-math">$y$</span>.
+</p>
+<p>
+    For <span class="inline-math">$(f,D) \approx  (g,E)$</span>, keep joining paths.
+</p>

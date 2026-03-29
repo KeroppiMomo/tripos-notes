@@ -1,0 +1,53 @@
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250906201719.png">
+</p>
+
+<h1>Given <span class="inline-math">$y_0\in Y$</span>, construct a lift <span class="inline-math">$\tilde H_{y_0} : W_{y_0}\times [0,1] \to X$</span> for some neighbourhood <span class="inline-math">$W_{y_0}$</span> of <span class="inline-math">$y_0$</span></h1>
+
+<p>
+    For each <span class="inline-math">$t\in [0,1]$</span>,
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">take</a>
+    an open neighbourhood <span class="inline-math">$U_t$</span> of <span class="inline-math">$H(y_0, t)\in X$</span>
+    which is evenly covered.
+    Find some product open neighbourhood <span class="inline-math">$N_t \times I_t \subseteq H\inv(U_t)$</span> of <span class="inline-math">$(y_0, t)$</span>.
+    As <span class="inline-math">$\set{N_t \times I_t}_{t\in [0,1]}$</span> is an open cover for the compact metric space <span class="inline-math">$\set{y_0} \times [0,1]$</span>,
+    by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-Lebesgue-number-lemma.html">Lesbegue number lemma</a>,
+    there exists some <span class="inline-math">$N\in \N$</span> such that
+    each interval <span class="inline-math">$[\frac{i}{N}, \frac{i+1}{N}]$</span>
+    lies entirely inside <span class="inline-math">$I_{t_i}$</span> for some <span class="inline-math">$t_i$</span>.
+    Thus letting <span class="inline-math">$W_{y_0} = N_{t_0} \cap \ldots \cap  N_{t_{N-1}}$</span>,
+    we have that <span class="inline-math">$H(W_{y_0} \times [\frac{i}{N}, \frac{i+1}{N}])$</span>
+    lies entirely inside some <span class="inline-math">$U_t$</span>.
+</p>
+<p>
+    Define <span class="inline-math">$\tilde H_{y_0}(y, 0) = \tilde f(y)$</span>.
+    Now construct the lift inductively:
+    if <span class="inline-math">$\tilde H_{y_0}$</span> has been constructed on <span class="inline-math">$W_{y_0}\times [0, \frac{i}{N}]$</span>,
+    suppose <span class="inline-math">$H(W_{y_0} \times [\frac{i}{N}, \frac{i+1}{N}])$</span> lies
+    entirely inside an evenly covered set <span class="inline-math">$U\subseteq X$</span>.
+    Let <span class="inline-math">$V\subseteq \tilde X$</span> be an open set containing <span class="inline-math">$\tilde H_{y_0}(y_0, \frac{i}{N})$</span>
+    such that <span class="inline-math">$p|_V: V \to U$</span> is a homeomorphism.
+    Shrink <span class="inline-math">$W_{y_0}$</span> so that <span class="inline-math">$\tilde H_{y_0}(W_{y_0} \times \set{\frac{i}{N}}) \subseteq V$</span>
+    (i.e. replace <span class="inline-math">$W_{y_0}$</span> with <span class="inline-math">$W_{y_0} \cap \tilde H_{y_0}|_{W_{y_0} \times \set{i/N}}\inv(V)$</span>).
+    Then we can let
+    <span class="display-math">$$ \begin{align*}
+        \tilde H_{y_0}|_{W_{y_0} \times [\frac{i}{N}, \frac{i+1}{N}]} := p|_{V}\inv \circ H|_{W_{y_0} \times [\frac{i}{N}, \frac{i+1}{N}]}: \quad W_{y_0} \times [\tfrac{i}{N}, \tfrac{i+1}{N}] \to V,
+    \end{align*} $$</span>
+    and <span class="inline-math">$\tilde H_{y_0}|_{W_{y_0} \times [0, \frac{i+1}{N}]}$</span> is continuous by the <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-gluing-lemma.html">gluing lemma</a>.
+</p>
+
+<h1><span class="inline-math">$\tilde H$</span> agrees on <span class="inline-math">$(W_{y_0} \cap W_{y_1}) \times [0,1]$</span></h1>
+
+<p>
+    For each <span class="inline-math">$y\in W_{y_0} \cap W_{y_1}$</span>,
+    we have two lifts <span class="inline-math">$\tilde H_{y_0}(y, \cdot)$</span> and <span class="inline-math">$\tilde H_{y_1}(y, \cdot)$</span>
+    of <span class="inline-math">$H(y, \cdot)$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-uniqueness-of-lifts.html">Thus</a> <span class="inline-math">$S = \sb{y\in [0,1]}{\tilde H_{y_0}(y, t) = \tilde H_{y_1}(y,t)}$</span>
+    is both open and closed in <span class="inline-math">$[0,1]$</span>.
+    Since <span class="inline-math">$\tilde H_{y_0}(y,0) = \tilde f_0(y) = \tilde H_{y_1}(y,0)$</span>,
+    <span class="inline-math">$S$</span> is non-empty, so by the connectedness of <span class="inline-math">$[0,1]$</span>,
+    we have <span class="inline-math">$S = [0,1]$</span>.
+</p>
+<p>
+    The same argument shows uniqueness of <span class="inline-math">$\tilde H$</span>.
+</p>

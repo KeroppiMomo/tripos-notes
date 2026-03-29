@@ -1,0 +1,33 @@
+<p>
+    Focus on the case that <span class="inline-math">$L$</span> is positive.
+</p>
+<p>
+    Suppose <span class="inline-math">$μ_1$</span> and <span class="inline-math">$μ_2$</span> are finite measures
+    such that <span class="inline-math">$\int f \d μ_1 = \int f \d μ_2$</span>
+    for all <span class="inline-math">$f\in C(E)$</span>.
+    We need to show <span class="inline-math">$μ_1(A) = μ_2(A)$</span> for all <span class="inline-math">$A\in \mathcal{B}$</span>.
+</p>
+<p>
+    To approximate <span class="inline-math">$\mathbb{1}_A$</span>,
+    fix <span class="inline-math">$ε&gt;0$</span>.
+    [[FILE NOT FOUND: Let]] <span class="inline-math">$U_1, U_2$</span> be open sets and <span class="inline-math">$K_1, K_2$</span> be compact sets
+    such that <span class="inline-math">$K_i \subseteq A \subseteq U_i$</span>
+    and <span class="inline-math">$μ_i(U_i \setminus K_i) &lt; ε$</span> for <span class="inline-math">$i=1,2$</span>.
+    Then <span class="inline-math">$U := U_1 \cap U_2$</span> is still open,
+    <span class="inline-math">$K := K_1 \cup K_2$</span> is still compact,
+    still <span class="inline-math">$K \subseteq A \subseteq U$</span>
+    and <span class="inline-math">$μ_i(U \setminus K) &lt; ε$</span> for both <span class="inline-math">$i=1,2$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Lusin.html">Let</a> <span class="inline-math">$g:E \to [0,1]$</span> be continuous
+    with <span class="inline-math">$g|_K = 1$</span> and <span class="inline-math">$g|_{E\setminus U} = 0$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \left|\int \mathbb{1}_A \d μ_i - \int g \d μ_i\right| \leq \int |\mathbb{1}_A - g| \d μ_i &lt; ε
+    \end{align*} $$</span>
+    so as <span class="inline-math">$\int g \d μ_1 = \int g \d μ_2$</span>,
+    <span class="display-math">$$ \begin{align*}
+        |μ_1(A) - μ_2(A)| \leq{} &amp; \left|\int \mathbb{1}_A \d μ_1 - \int g \d μ_1 + \int g \d μ_2 - \int g \d μ_i\right| &lt; 2ε.
+    \end{align*} $$</span>
+    But <span class="inline-math">$ε$</span> is arbitrary so <span class="inline-math">$μ_1(A) = μ_2(A)$</span>.
+</p>

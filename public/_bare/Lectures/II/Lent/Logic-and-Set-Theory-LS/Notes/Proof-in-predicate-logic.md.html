@@ -1,0 +1,93 @@
+<p>
+    Let <span class="inline-math">$T\subseteq{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-alphabet-terms-formulas-sentences-in-predicate-logic.html"><span class="inline-math">$\mathrm{Fml}^a$</span></a>.
+    We require the following properties of <span class="inline-math">$\vdash$</span> in predicate logic:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Finiteness: if <span class="inline-math">$T \vdash ϕ$</span>, then there is a finite <span class="inline-math">$T_0\subseteq T$</span> such that <span class="inline-math">$T_0\vdash ϕ$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Soundness: if <span class="inline-math">$T \vdash ϕ$</span>, then <span class="inline-math">$T \vDash ϕ$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Assumption: if <span class="inline-math">$ϕ\in T$</span>, then <span class="inline-math">$T \vdash ϕ$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Strengthening: if <span class="inline-math">$T \subseteq T&#x27;$</span> and <span class="inline-math">$T \vdash ϕ$</span>, then <span class="inline-math">$T&#x27;\vdash ϕ$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Deduction theorem: <span class="inline-math">$T \vdash (ϕ \implies ψ)$</span> iff <span class="inline-math">$T \cup \set{ϕ} \vdash ψ$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Modus ponens: <span class="inline-math">$T \vdash (ϕ \implies ψ)$</span> and <span class="inline-math">$T \vdash ϕ$</span>, then <span class="inline-math">$T\vdash ψ$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Propositional tautologies:
+        let <span class="inline-math">$χ$</span> be a propositional tautology
+        with propositional variables <span class="inline-math">$p_1, \ldots, p_n$</span>.
+        For any predicate formulas <span class="inline-math">$ϕ_1, \ldots, ϕ_n$</span>,
+        let <span class="inline-math">$ϕ$</span> be the predicate formula
+        obtained from replacing <span class="inline-math">$p_i$</span> with <span class="inline-math">$ϕ_i$</span>.
+        Then <span class="inline-math">$T \vdash ϕ$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Implicativity: <span class="inline-math">$T \vdash ϕ$</span> iff <span class="inline-math">$T \vdash s(ϕ)$</span> where <span class="inline-math">$s: \mathrm{Fml}^a \to \mathrm{IFml}^a$</span> is defined <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-implication-formula-in-predicate-logic.html">here</a>.
+    </p>
+    
+</li><li>
+    <p>
+        Equality: the relation on <span class="inline-math">$a$</span>-terms
+        <span class="display-math">$$ \begin{align*}
+        t\sim t&#x27; :\iff T \vdash t = t&#x27;
+        \end{align*} $$</span>
+        is an equivalence relation.
+    </p>
+    
+</li><li>
+    <p>
+        Congruence: relations and operations respect equality, i.e.
+    </p>
+    <ul>
+    <li>
+        <p>
+            If <span class="inline-math">$r$</span> is an <span class="inline-math">$n$</span>-ary relation symbol,
+            and <span class="inline-math">$t_0, \ldots, t_{n-1}$</span> and <span class="inline-math">$t_{0}&#x27;, \ldots, t_{n-1}&#x27;$</span>
+            are <span class="inline-math">$a$</span>-terms such that <span class="inline-math">$T \vdash t_i = t_i&#x27;$</span>
+            for all <span class="inline-math">$i&lt;n$</span>,
+            then <span class="inline-math">$T \vdash  r t_0 \ldots t_{n-1}$</span> iff <span class="inline-math">$T \vdash r t_0&#x27; \ldots t_{n-1}&#x27;$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            If <span class="inline-math">$s$</span> is a <span class="inline-math">$n$</span>-ary function symbol,
+            and <span class="inline-math">$t_0, \ldots, t_{n-1}$</span> and <span class="inline-math">$t_{0}&#x27;, \ldots, t_{n-1}&#x27;$</span>
+            are <span class="inline-math">$a$</span>-terms such that <span class="inline-math">$T \vdash t_i = t_i&#x27;$</span>
+            for all <span class="inline-math">$i&lt;n$</span>,
+            then <span class="inline-math">$T \vdash s t_0 \ldots t_{n-1} = s t_{0}&#x27; \ldots t_{n-1}&#x27;$</span>.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        Universality: if <span class="inline-math">$T \vdash \forall xϕ$</span>, we have <span class="inline-math">$T \vdash ϕ\frac{t}{x}$</span> for all <span class="inline-math">$a$</span>-terms <span class="inline-math">$t$</span>.
+    </p>
+    
+</li>
+</ol>

@@ -1,0 +1,146 @@
+<p>
+    Let <span class="inline-math">$G, G&#x27;$</span> be two regular grammars.
+    Construct, as in the proofs <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-regular-language-iff-accepted-by-automaton.html">here</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalence-of-deterministic-and-nondeterministic-automata.html">here</a>,
+    deterministic automata <span class="inline-math">$D, D&#x27;$</span>
+    such that <span class="inline-math">$\mathcal{L}(G) = \mathcal{L}(D)$</span> and <span class="inline-math">$\mathcal{L}(G&#x27;) = \mathcal{L}(D&#x27;)$</span>.
+</p>
+<p>
+    We will show that
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-existence-of-minimal-automaton.html">our construction for minimal automata</a>
+    can be done algorithmically.
+</p>
+
+<h1>Determining inaccessible states</h1>
+
+<p>
+    Let <span class="inline-math">$D = (Σ, Q, δ, q_0, F)$</span> and <span class="inline-math">$n = |Q|$</span>.
+    A state <span class="inline-math">$q$</span> is accessible
+    iff there is a word <span class="inline-math">$w\in \mathbb{W}$</span> of length <span class="inline-math">$\leq n$</span>
+    such that <span class="inline-math">$\hat δ(q_0, w) = q$</span>
+    (by the same argument as <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-regular-pumping-lemma.html">here</a>).
+</p>
+<p>
+    Check all (finitely many) words of length <span class="inline-math">$\leq n$</span>
+    whether <span class="inline-math">$\hat δ(q_0, w) = q$</span>.
+</p>
+
+<h1>Determining indistinguishable states</h1>
+
+<p>
+    Perform the <em>table filling algorithm</em>:
+    write <span class="inline-math">$Q\times Q$</span> as a table.
+</p>
+<ol start="1">
+<li>
+    <p>
+        For each pair <span class="inline-math">$(q, q&#x27;)\in Q\times Q$</span>,
+    </p>
+    <ul>
+    <li>
+        <p>
+            if <span class="inline-math">$q\in F$</span> and <span class="inline-math">$q&#x27;\not\in F$</span> or vice versa, then
+        </p>
+        <ul>
+        <li>
+            <p>
+                mark <span class="inline-math">$ε$</span> into the <span class="inline-math">$(q,q&#x27;)$</span>-entry of the table
+                (meaning that <span class="inline-math">$ε$</span> distinguishes <span class="inline-math">$q$</span> and <span class="inline-math">$q&#x27;$</span>).
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        For each pair <span class="inline-math">$(p,p&#x27;) \in Q\times Q$</span>
+        not yet marked in the table,
+    </p>
+    <ul>
+    <li>
+        <p>
+            for each <span class="inline-math">$a \in Σ$</span>,
+        </p>
+        <ul>
+        <li>
+            <p>
+                let <span class="inline-math">$q = δ(p,a), q&#x27; = δ(p&#x27;,a)$</span>.
+            </p>
+            
+        </li><li>
+            <p>
+                If <span class="inline-math">$(q,q&#x27;)$</span> is already marked in the table, by say <span class="inline-math">$w$</span>, then
+            </p>
+            <ul>
+            <li>
+                <p>
+                    mark <span class="inline-math">$aw$</span> into <span class="inline-math">$(p,p&#x27;)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </li>
+        </ul>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        If some pair was marked in step 2, then repeat step 2.
+        Otherwise terminate.
+    </p>
+    
+</li>
+</ol>
+<p>
+    Only finitely many table entries can be filled,
+    so this algorithm terminates in at most <span class="inline-math">$|Q|^2$</span> steps.
+</p>
+
+<h2>Two states <span class="inline-math">$q, q&#x27;\in Q$</span> are indistinguishable iff <span class="inline-math">$(q,q&#x27;)$</span> is unmarked at the end of the algorithm</h2>
+
+<p>
+    If <span class="inline-math">$(q,q&#x27;)$</span> is marked by say <span class="inline-math">$w$</span>, then
+    by induction <span class="inline-math">$w$</span>, <span class="inline-math">$(\hat δ(q,w), \hat δ(q&#x27;,w))$</span> was marked by <span class="inline-math">$ε$</span>
+    in step 1, so <span class="inline-math">$w$</span> distinguishes <span class="inline-math">$q$</span> and <span class="inline-math">$q&#x27;$</span>.
+</p>
+<p>
+    Conversely, suppose there exist pairs
+    that can be distinguished but is not marked at the end of the algorithm.
+    Call these <em>bad pairs</em>.
+    Each pair has a distinguishing word.
+    Let <span class="inline-math">$(p,p&#x27;)$</span> be a bad pair with a distinguishing word <span class="inline-math">$w$</span>
+    of minimal length.
+</p>
+<p>
+    Since all pairs distinguished by <span class="inline-math">$ε$</span> are marked in step 1,
+    we must have <span class="inline-math">$|w|&gt;0$</span>.
+    Let <span class="inline-math">$w = av$</span> with <span class="inline-math">$a$</span> being the first letter.
+    Note <span class="inline-math">$q := δ(p, a)$</span>, <span class="inline-math">$q&#x27; := δ(p&#x27;, a)$</span>
+    are distinguished by <span class="inline-math">$v$</span>, which has a shorter length than <span class="inline-math">$w$</span>,
+    so <span class="inline-math">$(q,q&#x27;)$</span> cannot be a bad pair.
+    This means <span class="inline-math">$(q,q&#x27;)$</span> is marked.
+    But then in the step after <span class="inline-math">$(q,q&#x27;)$</span> was marked,
+    <span class="inline-math">$(p,p&#x27;)$</span> would have been marked,
+    which is a contradiction.
+</p>
+
+<h1>Determining whether the minimal automata are isomoprhic</h1>
+
+<p>
+    Now that we can find the minimal automata <span class="inline-math">$I$</span> of <span class="inline-math">$D$</span> and <span class="inline-math">$I&#x27;$</span> of <span class="inline-math">$D&#x27;$</span>,
+    we use the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-minimal-automaton.html">fact</a>
+    that <span class="inline-math">$\mathcal{L}(I) = \mathcal{L}(D) = \mathcal{L}(D&#x27;) = \mathcal{L}(I&#x27;)$</span>
+    iff <span class="inline-math">$I$</span> and <span class="inline-math">$I&#x27;$</span> are isomorphic.
+</p>
+<p>
+    If <span class="inline-math">$I$</span> and <span class="inline-math">$I&#x27;$</span> have different number of states,
+    then they are not isomorphic.
+    Otherwise they have the same number <span class="inline-math">$n$</span> of states
+    and there are at most <span class="inline-math">$n^n$</span> functions
+    that need to be checked to see if they are an isomorphism.
+</p>

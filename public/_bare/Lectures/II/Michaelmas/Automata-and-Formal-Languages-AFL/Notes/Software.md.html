@@ -1,0 +1,132 @@
+<p>
+    Fix an alphabet <span class="inline-math">$Σ$</span> and enlarge it by adding
+    the following symbols to a larger alphabet <span class="inline-math">$Σ&#x27;$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \mathbf{0} \quad \mathbf{1} \quad \mathbf{ε} \quad \mathbf{+} \quad \mathbf{?} \quad \mathbf{-} \quad \mathbf{(} \quad \mathbf{)} \quad \mathbf{,} \quad \mathbf{\mapsto} \quad \mathbf{\square}
+    \end{align*} $$</span>
+</p>
+<p>
+    We devise a coding: (write <span class="inline-math">$\op{code}(k)$</span> for the encoding of <span class="inline-math">$k$</span>)
+</p>
+<ul>
+<li>
+    <p>
+        Natural number: encode in binary, e.g. <span class="inline-math">$\op{code}(13) = \mathbf{1101}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        State: since only the size of <span class="inline-math">$Q$</span> matters, fix some listing <span class="inline-math">$Q = \set{q_0, \ldots, q_k}$</span>.
+        Then say <span class="inline-math">$\op{code}(q_i) = \op{code}(i)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Instruction: encode using <span class="inline-math">$\mathbf{+}$</span>, <span class="inline-math">$\mathbf{?}$</span> and <span class="inline-math">$\mathbf{-}$</span>, e.g. <span class="inline-math">$\op{code}(+(k,q,q&#x27;)) = \mathbf{+(} \op{code}(k) \mathbf{,} \op{code}(q) \mathbf{,} \op{code}(q&#x27;)\mathbf{)}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Program line: <span class="inline-math">$\op{code}(q\mapsto P(q)) = \op{code}(q)\mathbf{\mapsto}\op{code}(P(q))$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Register machine: <span class="inline-math">$\op{code}(Σ, Q, P) = \op{code}(q_0 \mapsto P(q_0)) \mathbf{,} \ldots \mathbf{,}\op{code}(q_k\mapsto P(q_k))$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Sequence of words: <span class="inline-math">$\op{code}(\v w) = w_0\mathbf{\square}\ldots \mathbf{\square}w_n \mathbf{\square}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Configuration: <span class="inline-math">$\op{code}(q,\v w) = \op{code}(q)\mathbf{\square}\op{code}(\v w)$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    A register machine can:
+</p>
+<ul>
+<li>
+    <p>
+        determine whether a word is a code about an instruction or a state etc.;
+    </p>
+    
+</li><li>
+    <p>
+        determine what state a given configuration is, what the instruction for a given state is etc;
+    </p>
+    
+</li><li>
+    <p>
+        perform the operation that assigns, to a configuration and an instruction's code,
+        the code of the transformed configuration;
+    </p>
+    
+</li><li>
+    <p>
+        perform the operation <span class="inline-math">$(\op{code}(M), \op{code}(\v w), v) \mapsto \op{code}($</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computation-on-register-machine.html"><span class="inline-math">$C$</span></a><span class="inline-math">$(\#(v), M, \v w))$</span>
+        (by <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Church-s-recursive-functions.html">recursion</a> of transforming configurations);
+    </p>
+    
+</li><li>
+    <p>
+        perform the operation
+        <span class="display-math">$$ \begin{align*}
+            t_{M,k}(\v w, v) = \begin{cases}
+                a, &amp;\text{$M$ has halted with input $\v w$ after at most $\#(v)$ steps}, \\
+                ε, &amp;\text{otherwise}
+            \end{cases}
+        \end{align*} $$</span>
+        called the <em>truncated computation</em> of <span class="inline-math">$M$</span>.
+        (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Algorithm-truncated-computation-of-register-machine.html">Algorithm</a>)
+    </p>
+    
+</li><!-- BEGIN BLOCK ID f-notation -->
+<li id="^f-notation">
+    <p>
+        The software principle: there is a <em>universal register machine</em> <span class="inline-math">$U$</span> such that
+        <span class="display-math">$$ \begin{align*}
+            f_{U,2}(v,u) = \begin{cases}
+                f_{M,k}(\v w), &amp;\text{$v=\op{code}(M), u = \op{code}(\v w)$ for some} \\
+                &amp;\text{register machine $M$ and sequence $\v w$ of words of length $k$}, \\
+                \uparrow, &amp;\text{otherwise}.
+            \end{cases}
+        \end{align*} $$</span>
+        (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-software-principle.html">Proof</a>)
+    </p>
+    <p>
+        We can then extend notation: for arbitrary <span class="inline-math">$v\in \mathbb{W}$</span>,
+        define <span class="inline-math">$f_{v,k}(\v w) = f_{U,2}(v,\op{code}(\v w))$</span>.
+    </p>
+    
+</li>
+<!-- END BLOCK ID f-notation -->
+
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (s-m-n)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-s-m-n.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$g: \mathbb{W}^{k+1} \dashrightarrow \mathbb{W}$</span> be a partial <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">computable</a> function.
+            </p>
+            <p>
+                There exists a total computable function <span class="inline-math">$h: \mathbb{W}\to \mathbb{W}$</span>
+                such that for all <span class="inline-math">$v\in \mathbb{W}$</span> and <span class="inline-math">$\v w\in \mathbb{W}^k$</span>,
+                we have <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Software.html#^f-notation"><span class="inline-math">$f_{h(v), k}$</span></a><span class="inline-math">$(\v w) = g(\v w, v)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-s-m-n.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

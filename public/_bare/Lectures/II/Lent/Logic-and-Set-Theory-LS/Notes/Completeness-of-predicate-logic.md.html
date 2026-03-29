@@ -1,0 +1,198 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (term structure)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-term-structure.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Fix a set <span class="inline-math">$T$</span> of <span class="inline-math">$a$</span>-formulas
+                and define the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-in-predicate-logic.html">equivalence relation</a> on <span class="inline-math">$\mathrm{Term}^a$</span> by
+                <span class="inline-math">$t \sim t&#x27; :\iff T \vdash t = t&#x27;$</span>.
+            </p>
+            <p>
+                The <em>term structure</em> <span class="inline-math">$\mathbf{H}$</span> of <span class="inline-math">$T$</span> is an <span class="inline-math">$a$</span>-structure
+                with an underlying set
+                <span class="display-math">$$ \begin{align*}
+                    H = \mathrm{Term}^a/{\sim}
+                \end{align*} $$</span>
+                and operations and relations
+                <span class="display-math">$$ \begin{gather*}
+                    s^\mathbf{H}([t_0], \ldots, [t_{n-1}]) := [st_0\ldots t_{n-1}], \\
+                    ([t_0], \ldots, [t_{n-1}]) \in r^\mathbf{H} :\iff T\vdash rt_0 \ldots t_{n-1},
+                \end{gather*} $$</span>
+                well-defined by congruence properties of <span class="inline-math">$\vdash$</span>.
+            </p>
+            <p>
+                The <em>term interpretation</em> of <span class="inline-math">$T$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    \mathfrak{I}^\mathbf{H}(t) := [t].
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Lindenbaum's lemma)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Lindenbaum-s-lemma.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T\subseteq \mathrm{Fml}$</span> is a set of formulae in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Propositional-logic.html">proposition</a> or <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Predicate-logic.html">predicate logic</a>.
+                Suppose <span class="inline-math">$\mathrm{Fml}$</span> can be <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-ordered</a>.
+                (Either <span class="inline-math">$\mathrm{Fml}$</span> is countable, or <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Zermelo-well-ordering.html">assume the axiom of choice</a>.)
+            </p>
+            <p>
+                If <span class="inline-math">$T$</span> is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-consistency.html">consistent</a>, then
+                there is some <span class="inline-math">$T^\ast \subseteq \mathrm{Fml}$</span>
+                containing <span class="inline-math">$T$</span> which is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-negation-complete.html">negation complete</a> and consistent.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Lindenbaum-s-lemma.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (witness)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-witness.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Fix a signature <span class="inline-math">$a$</span>.
+            </p>
+            <p>
+                A subset <span class="inline-math">$T \subseteq \mathrm{Fml}^a$</span>
+                <em>has a witness for <span class="inline-math">$a$</span></em> if
+                for all <span class="inline-math">$ϕ\in \mathrm{Fml}^a$</span> and <span class="inline-math">$x\in V$</span>,
+                there exists a term <span class="inline-math">$t$</span>
+                such that
+                <span class="display-math">$$ \begin{align*}
+                    T \vdash (\exists x ϕ) \Rightarrow ϕ\tfrac{t}{x}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Henkin's lemma)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Henkin-s-lemma.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$a$</span> be a signature.
+            </p>
+            <p>
+                If <span class="inline-math">$T \subseteq \mathrm{Fml}^a$</span> is
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-consistency.html">consistent</a>,
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-negation-complete.html">negation complete</a>
+                and <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-witness.html">has witness</a> for <span class="inline-math">$a$</span>,
+                then the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-term-structure.html">term structure</a> satisfies
+                <span class="display-math">$$ \begin{align*}
+                    \mathbf{H}, \mathfrak{I}^\mathbf{H} \vDash ϕ \iff T \vdash ϕ
+                \end{align*} $$</span>
+                for all <span class="inline-math">$ϕ\in \mathrm{Fml}^a$</span>.
+            </p>
+            <p>
+                In particular <span class="inline-math">$\mathbf{H}, \mathfrak{I}^\mathbf{H} \vDash T$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Henkin-s-lemma.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Henkenisation, model existence)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Henkenisation-model-existence.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-Zermelo-Fraenkel-set-theory.html"><span class="inline-math">$\mathsf{ZFC}$</span></a>.
+            </p>
+            <p>
+                Given <span class="inline-math">$T\subseteq \mathrm{Fml}^a$</span>,
+                let <span class="inline-math">$T_0 := T$</span> and <span class="inline-math">$a_0 := a$</span>.
+                For each <span class="inline-math">$n\in \N$</span>,
+                let
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$a_{n+1}$</span> be the signature
+                    <span class="inline-math">$a_n$</span> with one new constant symbol <span class="inline-math">$c_{ϕ,x}$</span> for each <span class="inline-math">$(ϕ,x)\in \mathrm{Fml}^{a_n} \times V$</span>,
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\tilde T_{n+1} := T_n \cup \sb{(\exists x ϕ) \Rightarrow ϕ\tfrac{c_{ϕ,x}}{x}}{ϕ\in \mathrm{Fml}^{a_n}, x\in V}$</span>
+                    and <span class="inline-math">$T_{n+1}\supseteq \tilde T_{n+1}$</span> be any superset that is negation complete for <span class="inline-math">$a_{n+1}$</span> (by <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Lindenbaum-s-lemma.html">Lindenbaum</a>).
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Take
+                <span class="display-math">$$ \begin{align*}
+                    a_\infty := \bigcup_{n\in \N} a_n, \quad T_\infty := \bigcup_{n\in \N} T_n.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Then <span class="inline-math">$T_\infty\subseteq \mathrm{Fml}^{a_\infty}$</span> is consistent, negation complete for <span class="inline-math">$a_\infty$</span>
+                and has witness for <span class="inline-math">$a_\infty$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Henkin-s-lemma.html">Thus</a>
+                the term structure <span class="inline-math">$\mathbf{H}$</span> of <span class="inline-math">$T_\infty$</span> is a model of <span class="inline-math">$T_\infty$</span>, hence of <span class="inline-math">$T$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Henkenisation-model-existence.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Gödel's completeness theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Godel-s-completeness-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Predicate-logic.html">predicate logic</a>, let <span class="inline-math">$T\subseteq \mathrm{Fml}^a$</span> and <span class="inline-math">$ϕ\in \mathrm{Fml}^a$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$T$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-interpretation-model-theory-in-predicate-logic.html"><span class="inline-math">${}\vDash{}$</span></a><span class="inline-math">$ϕ$</span>, then <span class="inline-math">$T$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-in-predicate-logic.html"><span class="inline-math">${}\vdash{}$</span></a><span class="inline-math">$ϕ$</span>.
+            </p>
+            <p>
+                Proof: <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-completeness-of-propositional-logic.html">follows</a> from <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Henkenisation-model-existence.html">model existence</a>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (compactness theorem in predciate logic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Corollary-compactness-theorem-in-predciate-logic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Predicate-logic.html">predicate logic</a>, let <span class="inline-math">$T\subseteq \mathrm{Fml}^a$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$T$</span> is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-interpretation-model-theory-in-predicate-logic.html">satisfiable</a>
+                iff every finite subset of <span class="inline-math">$T$</span> is satisfiable.
+            </p>
+            
+        </div>
+    </div>
+</p>

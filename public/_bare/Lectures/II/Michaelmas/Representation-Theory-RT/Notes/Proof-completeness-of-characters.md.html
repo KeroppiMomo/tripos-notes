@@ -1,0 +1,39 @@
+<p>
+    Let <span class="inline-math">$χ_1, \ldots, χ_k$</span> be all the irreducible characters,
+    afforded by representations <span class="inline-math">$ρ_1: G\to \GL(V_1), \ldots, ρ_k: G\to \GL(V_k)$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-orthonormality-of-characters.html">We already showed</a> <span class="inline-math">$χ_1, \ldots, χ_k$</span> are orthonormal,
+    so it remains to show all class functions
+    can be written as a linear combination of them.
+    It suffices to show the orthogonal complement of <span class="inline-math">$\op{\C-span}\set{χ_1, \ldots, χ_k}$</span>
+    is <span class="inline-math">$\set{0}$</span>.
+</p>
+<p>
+    Suppose <span class="inline-math">$f\in \mathcal{C}_G$</span> such that <span class="inline-math">$\langle f, χ_i\rangle = 0$</span> for all <span class="inline-math">$i$</span>.
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        f_i := \frac{1}{\#G} \sum_{g\in G} \overline{f(g)} ρ_i(g).
+    \end{align*} $$</span>
+    <span class="inline-math">$f_{i}$</span> is a <span class="inline-math">$G$</span>-linear endomorphism of <span class="inline-math">$V_i$</span>,
+    so by <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-Schur-s-lemma.html">Schur's lemma</a>,
+    <span class="inline-math">$f_i = λ\, \id$</span>.
+    However <span class="inline-math">$\tr f_i = \frac{1}{\# G} \sum_{g\in G} \overline{f(g)} χ_i(g) = \langle χ_i, f\rangle = 0$</span>,
+    so <span class="inline-math">$f_i = 0$</span>.
+</p>
+<p>
+    Then for any representation <span class="inline-math">$ρ$</span>,
+    by <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-Maschke-complete-reducibility.html">complete reducibility</a>,
+    we can write <span class="inline-math">$ρ \isom \bigoplus_i n_i ρ_i$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        \sum_{g\in G} \overline{f(g)}ρ(g) = 0. \tag{*}
+    \end{align*} $$</span>
+</p>
+<p>
+    Take <span class="inline-math">$ρ = ρ_\text{reg}$</span> to be the <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-permutation-representation.html#^regular">regular representation</a>
+    and let <span class="inline-math">$(*)$</span> act on the identity <span class="inline-math">$1\in \C[G]$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \sum_{g\in G} \overline{f(g)} \, g = 0 \qquad \text{in $\C[G]$}
+    \end{align*} $$</span>
+    so <span class="inline-math">$f(g) = 0$</span> for all <span class="inline-math">$g\in G$</span>.
+</p>

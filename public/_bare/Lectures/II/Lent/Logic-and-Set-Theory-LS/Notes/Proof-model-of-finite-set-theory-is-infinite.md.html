@@ -1,0 +1,27 @@
+<p>
+    We work in a model <span class="inline-math">$\mathbf{X}$</span> of <span class="inline-math">$\mathsf{FST}$</span>.
+</p>
+<p>
+    By <span class="inline-math">$\mathsf{Emp}$</span>,
+    there is some <span class="inline-math">$\emptyset\in X$</span>
+    such that no <span class="inline-math">$z\in X$</span> satisfies <span class="inline-math">$z\in \emptyset$</span>.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        x_0 := \emptyset, \quad x_{n+1} = \set{x_n}
+    \end{align*} $$</span>
+    using <span class="inline-math">$\mathsf{Pair}$</span>.
+</p>
+<p>
+    We claim <span class="inline-math">$n\mapsto x_n$</span> is an injection <span class="inline-math">$\N\hookrightarrow X$</span>,
+    i.e. if <span class="inline-math">$i&lt;j$</span>, then <span class="inline-math">$x_i \neq x_j$</span>.
+    Suppose not.
+    Then by induction find the minimal <span class="inline-math">$j$</span>
+    such that there is <span class="inline-math">$i&lt;j$</span> with <span class="inline-math">$x_i= x_j$</span>.
+    As <span class="inline-math">$j\neq 0$</span>, <span class="inline-math">$j = l + 1$</span> for some <span class="inline-math">$l\in \N$</span>,
+    so <span class="inline-math">$x_i = x_j = \set{x_l}$</span>.
+    Since <span class="inline-math">$x_l \in x_i$</span>, we have <span class="inline-math">$i\neq 0$</span>,
+    so <span class="inline-math">$i = k+1$</span> for some <span class="inline-math">$k\in \N$</span>.
+    Then <span class="inline-math">$\set{x_k} = x_i = x_j = \set{x_l}$</span>,
+    so <span class="inline-math">$x_k = x_l$</span>.
+    But this contradicts minimality of <span class="inline-math">$j$</span>.
+</p>

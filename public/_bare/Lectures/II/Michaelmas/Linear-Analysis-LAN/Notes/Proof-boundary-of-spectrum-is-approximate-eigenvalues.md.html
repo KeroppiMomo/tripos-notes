@@ -1,0 +1,36 @@
+<p>
+    Note <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-spectrum-resolvent-set-resolvent-function.html#^compact"><span class="inline-math">$σ(T)$</span> is closed</a>,
+    so <span class="inline-math">$\partial σ(T) = σ(T) \setminus \op{int}(σ(T)) = σ(T) \cap \overline{ρ(T)}$</span>.
+</p>
+<p>
+    Suppose <span class="inline-math">$λ\in \partial σ(T)$</span>.
+    Then there exists <span class="inline-math">$λ_n\in ρ(T)$</span>
+    such that <span class="inline-math">$λ_n \to λ\in σ(T)$</span> as <span class="inline-math">$n\to \infty$</span>.
+    Then <span class="inline-math">$λ_n \id - T \to λ \id - T$</span>
+    where <span class="inline-math">$λ_n\id - T \in \mathcal{G}(X)$</span>
+    and <span class="inline-math">$λ\id - T\not\in \mathcal{G}(X)$</span>,
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-invertible-operators-as-open-subset-and-topological-group.html">so</a> <span class="inline-math">$\|(λ_n\id - T)\inv\| \to \infty$</span>.
+    By picking <span class="inline-math">$y_n\in X$</span> such that
+    <span class="inline-math">$\|y_n\|= 1$</span> and <span class="inline-math">$\|(λ_n \id - T)\inv y_n\| \geq \frac{1}{2}\|(λ_n \id - T)\inv\|$</span>,
+    we get <span class="inline-math">$\|(λ_n\id - T)\inv y_n\| \to \infty$</span>.
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        x_n := \frac{(λ_n\id - T)\inv y_n}{ \|(λ_n\id - T)\inv y_n\|}.
+    \end{align*} $$</span>
+    Then <span class="inline-math">$\|x_n\| = 1$</span> and
+    <span class="display-math">$$ \begin{align*}
+        \|(λ\id - T)x_n\| \leq {}&amp; \|(λ_n\id - T)x_n\| + \|(λ - λ_n)x_n\| \\
+        ={}&amp; \underbrace{\frac{1}{\|(λ_n\id - T)\inv y_n\|}}_{\to 0} \underbrace{\|y_n\|}_{=1} + \underbrace{|λ-λ_n|}_{\to 0} \underbrace{\|x_n\|}_{=1} \\
+        \to{}&amp; 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$λ$</span> is an approximate eigenvalue.
+</p>
+<p>
+    Since <span class="inline-math">$σ(T)$</span> is closed and not <span class="inline-math">$\emptyset$</span> nor <span class="inline-math">$\C$</span>,
+    connectedness of <span class="inline-math">$\C$</span> implies <span class="inline-math">$σ(T)$</span> is not open.
+    Therefore <span class="inline-math">$\op{int}(σ(T)) \neq σ(T)$</span>
+    so <span class="inline-math">$\partial σ(T) \neq \emptyset$</span>.
+    Hence <span class="inline-math">$σ_\text{ap}(T)\neq \emptyset$</span>.
+</p>

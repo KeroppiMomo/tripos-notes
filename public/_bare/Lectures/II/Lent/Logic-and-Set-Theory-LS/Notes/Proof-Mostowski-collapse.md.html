@@ -1,0 +1,39 @@
+<p>
+    Clearly <span class="inline-math">$T$</span> is transitive and <span class="inline-math">$π$</span> is a surjective homomorphism.
+</p>
+<p>
+    Show by induction on <span class="inline-math">$x\in X$</span> the statement
+    <span class="display-math">$$ \begin{align*}
+        \forall y\in X \ (π(y) = π(x) \iff y = x).
+    \end{align*} $$</span>
+    Given the induction hypothesis
+    <span class="display-math">$$ \begin{align*}
+        \forall u&lt;x \ \forall v\ (π(u) = π(v) \iff u = v),
+    \end{align*} $$</span>
+    fix <span class="inline-math">$y\in X$</span> and suppose <span class="inline-math">$π(y) = π(x)$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$z\in X$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$z&lt;x$</span>, then 
+        <span class="inline-math">$π(z) \in π(x) = π(y)$</span>,
+        so there exists <span class="inline-math">$z&#x27;&lt;y$</span> such that <span class="inline-math">$π(z) = π(z&#x27;)$</span>.
+        Induction hypothesis with <span class="inline-math">$u=z$</span>, <span class="inline-math">$v=z&#x27;$</span> then says <span class="inline-math">$z = z&#x27;$</span>, so <span class="inline-math">$z &lt; y$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$z&lt;y$</span>, then <span class="inline-math">$π(z) \in π(y) = π(x)$</span>,
+        so there exists <span class="inline-math">$z&#x27;&lt;x$</span> such that <span class="inline-math">$π(z) = π(z&#x27;)$</span>.
+        Induction hypothesis with <span class="inline-math">$u=z&#x27;$</span>, <span class="inline-math">$v=z$</span> then says <span class="inline-math">$z=z&#x27;$</span>, so <span class="inline-math">$z&lt;x$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore <span class="inline-math">$z&lt;x\iff z&lt;y$</span>.
+    By extensionality, <span class="inline-math">$x=y$</span>.
+</p>

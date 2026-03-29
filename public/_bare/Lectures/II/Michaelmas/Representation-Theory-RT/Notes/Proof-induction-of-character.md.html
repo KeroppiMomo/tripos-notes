@@ -1,0 +1,109 @@
+<p>
+    It's just bookkeeping :(
+</p>
+<p>
+    We'll use the definition <span class="inline-math">$\op{Ind}^G_H V = \sb{f\in G\to V}{f(hg) = h\, f(g)}$</span>.
+</p>
+<p>
+    Recall that right cosets partition <span class="inline-math">$G$</span>.
+    Choose representatives for the right cosets <span class="inline-math">$H\backslash G = \set{Hg_1, \ldots, Hg_n}$</span>.
+    We have
+    <span class="display-math">$$ \begin{align*}
+        ψ: \op{Ind}^G_H V &amp;\to V^n \\
+        θ &amp;\mapsto (θ(g_1), \ldots, θ(g_n)).
+    \end{align*} $$</span>
+    an isomorphism of vector spaces:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$ψ$</span> is <span class="inline-math">$k$</span>-linear.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$ψ$</span> is injective:
+        if <span class="inline-math">$θ(g_1) = \ldots = θ(g_n) = 0$</span>,
+        then <span class="inline-math">$θ(hg_i) = h\, θ(g_i) = 0$</span>
+        for all <span class="inline-math">$h\in H$</span> and <span class="inline-math">$i=1,\ldots,n$</span>,
+        so <span class="inline-math">$θ = 0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$θ$</span> is surjective:
+        given <span class="inline-math">$(w_1, w_2, \ldots, w_n)\in V^n$</span>,
+        take <span class="inline-math">$θ\in \op{Ind}^G_H(V)$</span>
+        where <span class="inline-math">$θ(hg_i) = h w_i$</span> for all <span class="inline-math">$h\in H$</span> and <span class="inline-math">$i=1,\ldots,n$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Thus <span class="inline-math">$\op{Ind}^G_H V$</span> is <span class="inline-math">$(\dim V)^n$</span>-dimensional.
+    Write <span class="inline-math">$v^{(i)} \equiv (0, \ldots, 0, \underbrace{v}_{i\text{-th entry}}, 0, \ldots, 0)\in V^n$</span>.
+</p>
+<p>
+    Consider the corresponding <span class="inline-math">$G$</span>-action on <span class="inline-math">$V^n$</span>: <span class="inline-math">$g * x = ψ(g * ψ\inv(x))$</span>.
+    Fix <span class="inline-math">$g\in G$</span> and <span class="inline-math">$θ\in \op{Ind}_H^G V$</span>.
+    For each <span class="inline-math">$g_i$</span>,
+    let <span class="inline-math">$g_i g = h_i g_{j_i}$</span> for some <span class="inline-math">$h_i\in H$</span> and <span class="inline-math">$j_i$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        (g*θ)(g_i) = θ(g_i g) = θ(h_i g_{j_i}) = ρ(h_i) θ(g_{j_i})
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        ψ(g * θ) = (ρ(h_1)\, θ(g_{j_1}), \ldots, ρ(h_n)\, θ(g_{j_n})).
+    \end{align*} $$</span>
+    Hence taking <span class="inline-math">$θ = ψ\inv(v^{(j)})$</span>,
+    <span class="display-math">$$ \begin{align*}
+        g * v^{(j)} = ψ(g*ψ\inv(v^{(j)})) = (ρ(h_i) v)^{(i)}.
+    \end{align*} $$</span>
+    where <span class="inline-math">$i$</span> is such that <span class="inline-math">$j = j_i$</span>.
+</p>
+<p>
+    Picking a basis <span class="inline-math">$B$</span> for <span class="inline-math">$V$</span>,
+    we obtain a basis <span class="inline-math">$B&#x27; = B^{(1)} \sqcup B^{(2)} \sqcup \ldots B^{(n)}$</span> for <span class="inline-math">$V^n$</span>.
+    In this basis, the action of <span class="inline-math">$g$</span> on <span class="inline-math">$V^n$</span> has a matrix which splits into <span class="inline-math">$(\dim V) \times (\dim V)$</span> blocks,
+    the <span class="inline-math">$(i,j)$</span>-th of which is
+    <span class="display-math">$$ \begin{align*}
+        ([g]_{B&#x27;})_{i,j} = \begin{cases}
+            [ρ(h_i)]_B, &amp;\text{if $j = j_i$}, \\
+            0, &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    The block <span class="inline-math">$[ρ(h_i)]_B$</span> contributes to the trace
+    iff <span class="inline-math">$i = j_i$</span>, which occurs
+    iff <span class="inline-math">$g_i g = h_i g_i$</span> for some <span class="inline-math">$h_i\in H$</span>,
+    i.e. <span class="inline-math">$h_i = g_i g g_i\inv\in H$</span>.
+    The trace is therefore
+    <span class="display-math">$$ \begin{align*}
+        \tr(g, V^{n}) = \sum_{i:\; j_i = i} \tr(ρ(h_i)) = \sum_{\substack{Hg_i \in H\backslash G:\\ g_i gg_i\inv \in H}} χ_ρ(g_ig g_i\inv).
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$\displaystyle\frac{1}{\# H} \sum_{\substack{x\in G:\\ xgx\inv\in H}} χ_ρ(xgx\inv) = \sum_{\substack{Hx\in H\backslash G: \\ xgx\inv\in H}} χ_ρ(xgx\inv)$</span></h1>
+
+<p>
+    The right cosets <span class="inline-math">$H\backslash G$</span> partition <span class="inline-math">$G$</span>.
+    For each coset <span class="inline-math">$Hx\in H\backslash G$</span>,
+    if we choose a different coset representative <span class="inline-math">$Hx = Hy$</span>,
+    then <span class="inline-math">$y = hx$</span> for some <span class="inline-math">$h\in H$</span>,
+    so <span class="inline-math">$ygy\inv = hxgx\inv h\inv\in H \iff xgx\inv\in H$</span>,
+    and <span class="inline-math">$χ_ρ(ygy\inv) = χ_ρ(xgx\inv)$</span> as <span class="inline-math">$χ_ρ$</span> is a class function.
+</p>
+
+<h1><span class="inline-math">$\displaystyle\frac{1}{\# H} \sum_{\substack{x\in G:\\ xgx\inv\in H}} χ_ρ(xgx\inv) = \# Z_G(g) \sum_{i=1}^{n} \frac{1}{\# Z_H(h_i)} χ_ρ(h_i)$</span></h1>
+
+<p>
+    Counting:
+    <span class="display-math">$$ \begin{align*}
+        \sum_{\substack{x\in G: \\ xgx\inv\in H}} χ_ρ(xgx\inv)
+        ={}&amp; \sum_{_{h\in \prescript{G}{}g \cap H}} \underbrace{\#\sb{x\in G}{xgx\inv = h}}_{\# Z_G(h)} \,χ_ρ(h) \\
+        ={}&amp; \sum_{i=1}^{n} \#\prescript{H}{}h_i \, \#Z_G(h_i) \, χ_ρ(h_i) &amp;&amp;χ_ρ\in \mathcal{C}_H\\
+        ={}&amp; \sum_{i=1}^{n} \frac{\#H}{\#Z_H(h_i)} \#Z_G(h_i) \,χ_ρ(h).
+    \end{align*} $$</span>
+</p>

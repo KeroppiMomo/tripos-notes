@@ -1,0 +1,1337 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (analytic continuation, complete analytic function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-continuation-complete-analytic-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                An <em>analytic function element</em> is a pair <span class="inline-math">$(f, D)$</span>
+                where <span class="inline-math">$D \subset \C$</span> is a domain and <span class="inline-math">$f: D\to \C$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">analytic</a>.
+            </p>
+            <p>
+                Say <span class="inline-math">$(g,E)$</span> is a <em>direct analytic continuation</em>
+                of <span class="inline-math">$(f,D)$</span>
+                (written <span class="inline-math">$(f,D)\sim (g,E)$</span>)
+                if <span class="inline-math">$D \cap E \neq \emptyset$</span>
+                and <span class="inline-math">$f|_{D\cap E} = g|_{D\cap E}$</span>.
+            </p>
+            <p>
+                Say that <span class="inline-math">$(g,E)$</span> is an <em>analytic continuation</em> of <span class="inline-math">$(f,D)$</span>
+                (written <span class="inline-math">$(f, D) \approx (g, E)$</span>)
+                if there exists function elements <span class="inline-math">$(f_i, D_i)$</span> for <span class="inline-math">$0\leq i\leq n$</span>
+                with <span class="inline-math">$(f_0, D_0) = (f, D), (f_n, D_n) = (g,E)$</span>
+                and <span class="inline-math">$(f_i, D_i) \sim (f_{i+1}, D_{i+1})$</span> for all <span class="inline-math">$0\leq i&lt;n$</span>.
+                This is an equivalence relation.
+            </p>
+            <p>
+                If <span class="inline-math">$γ: [0,1]\to \C$</span> is continuous,
+                say <span class="inline-math">$(g,E)$</span> is an analytic continuation of <span class="inline-math">$(f,D)$</span> <em>along <span class="inline-math">$γ$</span></em>
+                if
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$γ(i/n) \in D_i$</span> for all <span class="inline-math">$i=0,1,\ldots,n$</span>, and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$γ([i/n, (i+1)/n]) \subseteq D_i \cup D_{i+1}$</span> for all <span class="inline-math">$i=0,1,\ldots,n-1$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                A <em>complete analytic function</em> is an equivalence class under <span class="inline-math">$\approx$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Riemann surface)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Riemann-surface.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a topological space
+                which is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Hausdorff-topological-space.html">Hausdorff</a> and <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a>.
+            </p>
+            <p>
+                An <em>analytic chart</em> on <span class="inline-math">$X$</span>
+                is a pair <span class="inline-math">$(U, ϕ)$</span> where <span class="inline-math">$U \subseteq X$</span> is non-empty and open
+                and <span class="inline-math">$ϕ: U \to \C$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-homeomorphism.html">homeomorphism</a> onto an open set of <span class="inline-math">$\C$</span>.
+            </p>
+            <p>
+                An <em>atlas</em> on <span class="inline-math">$X$</span> is a set <span class="inline-math">$\mathcal{A}$</span> of charts such that
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$\bigcup_{(U,ϕ)\in \mathcal{A}} U = X$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    for any <span class="inline-math">$(U_1, ϕ_1), (U_2, ϕ_2) \in \mathcal{A}$</span> with <span class="inline-math">$U_1 \cap U_2 \neq \emptyset$</span>,
+                    the <em>transition function</em>
+                    <span class="display-math">$$ \begin{align*}
+                    ϕ_1 \circ ϕ_2\inv: ϕ_2(U_1 \cap U_2) \to ϕ_1(U_1 \cap U_2)
+                    \end{align*} $$</span>
+                    is <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">analytic</a>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Two atlases <span class="inline-math">$\mathcal{A}$</span>, <span class="inline-math">$\mathcal{A}&#x27;$</span> on <span class="inline-math">$X$</span> are <em>equivalent</em>
+                if <span class="inline-math">$\mathcal{A}\cup \mathcal{A}&#x27;$</span> is also an atlas.
+                This is an equivalence relation.
+            </p>
+            <p>
+                A <em>conformal structure</em> on <span class="inline-math">$X$</span> is an equivalence class of atlases.
+            </p>
+            <p>
+                A <em>Riemann surface</em> is a Hausdorff, connected topological space with a conformal structure.
+            </p>
+            <blockquote>
+                <p>
+                    Radó's theorem: in fact all Riemann surfaces are <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-second-countable-topological-space.html">second countable</a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (analytic map on Riemann surfaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-map-on-Riemann-surfaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X, Y$</span> be <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Riemann-surface.html">Riemann surfaces</a> with atlases <span class="inline-math">$\mathcal{A}_X$</span>, <span class="inline-math">$\mathcal{A}_Y$</span>.
+            </p>
+            <p>
+                A continuous function <span class="inline-math">$f: X\to Y$</span>
+                is <em>analytic</em> if for all <span class="inline-math">$x\in X$</span>,
+                there exists charts <span class="inline-math">$(U, ϕ)\in \mathcal{A}_X$</span>
+                and <span class="inline-math">$(\tilde U, \tilde ϕ)\in \mathcal{A}_Y$</span>
+                with <span class="inline-math">$x\in U$</span>, <span class="inline-math">$f(x)\in \tilde U$</span>
+                such that
+                <span class="display-math">$$ \begin{align*}
+                    \tilde ϕ\circ f\circ ϕ\inv: ϕ(U \cap f\inv(\tilde U)) \to \tilde ϕ(f(U) \cap \tilde U)
+                \end{align*} $$</span>
+                is analytic.
+            </p>
+            <p>
+                A <em>conformal equivalence</em>
+                is an analytic bijection <span class="inline-math">$X\to Y$</span> with an analytic inverse.
+            </p>
+            <blockquote>
+                <p>
+                    As transition functions are analytic, this holds for all pairs of charts. (<a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-functions-diffeomorphism.html#^choice">Analogous proof</a>)
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (meromorphic on Riemann surface)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-meromorphic-on-Riemann-surface.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a Riemann surface.
+            </p>
+            <p>
+                A <em>meromorphic function</em> on <span class="inline-math">$X$</span>
+                is an <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-map-on-Riemann-surfaces.html">analytic</a> map <span class="inline-math">$X\to \C_\infty$</span>
+                which is not identically <span class="inline-math">$\infty$</span>.
+            </p>
+            <p>
+                Here <span class="inline-math">$\C_\infty$</span> is the <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-Riemann-sphere.html">Riemann sphere</a> <span class="inline-math">$\C \cup \set{\infty}$</span>,
+                homeomorphic to <span class="inline-math">$S^2$</span> via the stereographic projection and
+                with the conformal structure
+                <span class="display-math">$$ \begin{align*}
+                    \set{(\C, z \mapsto z), (\C^\times \cup \set{\infty}, (z \mapsto 1/z, \infty \mapsto 0))}.
+                \end{align*} $$</span>
+            </p>
+            <blockquote>
+                <p>
+                    This agrees with our <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-meromorphic.html">previous definition</a> of meromorphic functions on <span class="inline-math">$U \subseteq \C$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (inverse function theorem for analytic functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-inverse-function-theorem-for-analytic-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: D\to \C$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a> function on a domain <span class="inline-math">$D\subseteq \C$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$f&#x27;(z_0) \neq 0$</span>,
+                then there exist open neighbourhoods <span class="inline-math">$U\subseteq D$</span> of <span class="inline-math">$z_0$</span>
+                and <span class="inline-math">$V$</span> of <span class="inline-math">$f(z_0)$</span> such that <span class="inline-math">$f|_U: U\to V$</span> is <em>biholomorphic</em>,
+                i.e. <span class="inline-math">$f|_U$</span> has an holomorphic inverse.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-inverse-function-theorem-for-analytic-functions.html">Proof</a>
+            </p>
+            <blockquote>
+                <!-- BEGIN BLOCK ID bijection -->
+                <p id="^bijection">
+                    If <span class="inline-math">$f$</span> is a holomorphic bijection,
+                    then <span class="inline-math">$f\inv$</span> is holomorphic as well by applying this result to a small neighbourhood.
+                </p>
+                
+                <!-- END BLOCK ID bijection -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (local mapping on Riemann surfaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-local-mapping-on-Riemann-surfaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: X\to Y$</span> be an <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-map-on-Riemann-surfaces.html">analytic map between Riemann surfaces</a>,
+                <span class="inline-math">$x\in X$</span> and <span class="inline-math">$y = f(x)\in Y$</span>.
+                Suppose <span class="inline-math">$f$</span> is not constant.
+            </p>
+            <p>
+                There exists some <span class="inline-math">$d\geq 1$</span> and charts <span class="inline-math">$(U, ϕ)$</span> near <span class="inline-math">$x$</span> and <span class="inline-math">$(\tilde U, \tilde ϕ)$</span> near <span class="inline-math">$y$</span>
+                such that <span class="inline-math">$f(U) \subseteq \tilde U$</span>, <span class="inline-math">$ϕ(x) = 0 = \tilde ϕ(y)$</span> and
+                <span class="display-math">$$ \begin{align*}
+                    \tilde ϕ\circ f \circ ϕ\inv(z) = z^d.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                In particular if <span class="inline-math">$f$</span> is injective
+                in some neighbourhood of <span class="inline-math">$x$</span>,
+                then <span class="inline-math">$d = 1$</span> and <span class="inline-math">$f|_U: U \to f(U)$</span> is a conformal equivalence.
+            </p>
+            <p>
+                <span class="inline-math">$d$</span> is called the <em>ramification degree</em> or <em>local degree</em> of <span class="inline-math">$f$</span> at <span class="inline-math">$x$</span>.
+                If <span class="inline-math">$d_x &gt; 1$</span>, we say <span class="inline-math">$x$</span> is a <em>ramification point</em> of <span class="inline-math">$f$</span>,
+                and <span class="inline-math">$f(x)$</span> a <em>branch point</em> of <span class="inline-math">$f$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-local-mapping-on-Riemann-surfaces.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    See also <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-ramification-degree.html">ramification degree</a> in algebraic geometry.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID discrete -->
+                <p id="^discrete">
+                    This shows the set of ramification point is discrete in <span class="inline-math">$X$</span>.
+                    If <span class="inline-math">$X$</span> is compact, it is finite.
+                </p>
+                
+                <!-- END BLOCK ID discrete -->
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    For <span class="inline-math">$f: X\to \C_\infty$</span> <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-meromorphic-on-Riemann-surface.html">meromorphic</a>,
+                    the ramification degree at a zero is the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-order-of-vanishing.html">order of vanishing</a>,
+                    and the ramification degree at a pole is the <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-removable-singularity-pole-essential-singularity.html">order of the pole</a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (open mapping theorem on Riemann surfaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Corollary-open-mapping-theorem-on-Riemann-surfaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Any non-constant <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-map-on-Riemann-surfaces.html">analytic</a>
+                map <span class="inline-math">$f: X\to Y$</span> between Riemann surfaces
+                is open,
+                i.e. sends open sets to open sets.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-open-mapping-theorem-on-Riemann-surfaces.html">Proof</a>
+            </p>
+            <blockquote>
+                <!-- BEGIN BLOCK ID compact -->
+                <p id="^compact">
+                    If <span class="inline-math">$X$</span> is compact, then <span class="inline-math">$f(X)$</span> is both open and closed,
+                    so <span class="inline-math">$f$</span> is surjective by the connectedness of <span class="inline-math">$Y$</span>.
+                    Hence if <span class="inline-math">$Y$</span> is not compact, then there is no non-constant analytic map <span class="inline-math">$f: X\to Y$</span>.
+                </p>
+                
+                <!-- END BLOCK ID compact -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (local homeomorphism)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-local-homeomorphism.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> and <span class="inline-math">$\tilde X$</span> be topological spaces.
+            </p>
+            <p>
+                <span class="inline-math">$p: \tilde X\to X$</span> is a <em>local homeomorphism</em>
+                if for all <span class="inline-math">$\tilde x\in \tilde X$</span>,
+                there exists an open neighbourhood <span class="inline-math">$\tilde U \ni \tilde x$</span>
+                such that <span class="inline-math">$p|_{\tilde U}: \tilde U \to p(\tilde U)$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-homeomorphism.html">homeomorphism</a>.
+            </p>
+            <blockquote>
+                <p>
+                    A (regular) <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">covering space</a> is an example.
+                    If <span class="inline-math">$X, \tilde X$</span> are Hausdorff and path-connected, this is known as a "covering space" in this course.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (conformal structure on covering space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-conformal-structure-on-covering-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$p: \tilde X\to X$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-local-homeomorphism.html">local homeomorphism</a>.
+            </p>
+            <p>
+                If <span class="inline-math">$X$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Riemann-surface.html">Riemann surface</a>,
+                there exists a unique conformal structure on <span class="inline-math">$\tilde X$</span>
+                such that <span class="inline-math">$p$</span> is <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-map-on-Riemann-surfaces.html">analytic</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-conformal-structure-on-covering-space.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (harmonic function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-harmonic-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$D\subseteq \C$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-domain.html">domain</a>.
+                A function <span class="inline-math">$f: D\to \R$</span> is <em>harmonic</em>
+                if
+                <span class="display-math">$$ \begin{align*}
+                    0 = Δ f \equiv f_{x x} + f_{y y}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Let <span class="inline-math">$X$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Riemann-surface.html">Riemann surface</a>.
+                A function <span class="inline-math">$f: X\to \R$</span>
+                is <em>harmonic</em>
+                if for all charts <span class="inline-math">$(U, ϕ)$</span> in some atlas,
+                <span class="inline-math">$f \circ ϕ\inv: ϕ(U)\to \R$</span> is harmonic.
+            </p>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$D$</span> is a disc, then <span class="inline-math">$f$</span> is harmonic iff it is the real part of some <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">analytic</a> function <span class="inline-math">$D\to \C$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-harmonic-function-as-real-part-of-analytic-function.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    Identity principle: <span class="inline-math">$\sb{x\in X}{f(x) = 0}$</span> either is <span class="inline-math">$X$</span> or has empty interior.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Riemann surface of a complete analytic function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Riemann-surface-of-a-complete-analytic-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathcal{F}$</span> be an <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-continuation-complete-analytic-function.html">complete analytic function</a>.
+            </p>
+            <p>
+                Define the Riemann surface of <span class="inline-math">$\mathcal{F}$</span> as
+                the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-quotient-space-quotient-map-quotient-topology.html">quotient space</a> <span class="inline-math">$R_\mathcal{F} := S/{\sim}$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    S := \bigsqcup_{(f,D)\in \mathcal{F}} D \times \set{f}
+                \end{align*} $$</span>
+                and <span class="inline-math">$\sim$</span> is the equivalence relation on <span class="inline-math">$S$</span> given by
+                <span class="display-math">$$ \begin{align*}
+                    (z, f) \sim (w,g) :\iff \text{$z = w$ and $f=g$ on a neighbourhood of $z$}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                This gives a well-defined continuous map
+                <span class="display-math">$$ \begin{align*}
+                    π: R_\mathcal{F} &amp;\to \C \\
+                    [(z,f)] &amp;\mapsto z.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                A <em>section</em> of <span class="inline-math">$π$</span> over <span class="inline-math">$D$</span>
+                is a function <span class="inline-math">$s: D\to R_\mathcal{F}$</span> such that <span class="inline-math">$π \circ s = \id$</span>.
+            </p>
+            <p>
+                For <span class="inline-math">$(f,D)\in \mathcal{F}$</span>,
+                let
+                <span class="display-math">$$ \begin{align*}
+                    [f,D] := q(D\times \set{f})\subseteq R_\mathcal{F}
+                \end{align*} $$</span>
+                where <span class="inline-math">$q$</span> is the quotient map,
+                and a section
+                <span class="display-math">$$ \begin{align*}
+                    s_f := π|_{[f,D]}\inv: D \to [f,D] \hookrightarrow R_\mathcal{F}.
+                \end{align*} $$</span>
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$\sb{[f,D]}{(f,D)\in \mathcal{F}}$</span> is an open cover. (<a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-open-set-on-Riemann-surface-of-complete-analytic-function.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$π|_{[f,D]}: [f,D]\to D$</span> and <span class="inline-math">$q|_{D \times \set{f}}: D \times \set{f} \to [f,D]$</span> are homeomorphisms.
+                    (<a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-local-homeomorphisms-on-Riemann-surface-of-complete-analytic-function.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$R_\mathcal{F}$</span> is Hausdorff and path-connected. (<a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-Riemann-surface-of-a-complete-analytic-function-is-Hausdorff-and-connected.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-conformal-structure-on-covering-space.html">Therefore</a> 
+                    there is a unique conformal structure on <span class="inline-math">$R_\mathcal{F}$</span>
+                    (with charts <span class="inline-math">$π|_{[f,D]}$</span>) so that <span class="inline-math">$π$</span> is analytic.
+                    Then there is a unique analytic function <span class="inline-math">$F: R_\mathcal{F}\to \C$</span> such that <span class="inline-math">$F|_{[f,D]} = f \circ π|_{[f,D]}$</span>,
+                    given by
+                    <span class="display-math">$$ \begin{align*}
+                        F: R_\mathcal{F} &amp;\to \C \\
+                        [(z,f)] &amp;\mapsto f(z)
+                    \end{align*} $$</span>
+                    Note <span class="inline-math">$f = F \circ s_f$</span>.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID section -->
+                <p id="^section">
+                    There is a bijection
+                    <span class="display-math">$$ \begin{align*}
+                        \mathcal{F} &amp;\xrightarrow{\sim} \set{\text{continous section $s: D\to R_\mathcal{F}$ of $π$ over a domain $D\subseteq \C$}} \\
+                        (f,D) &amp;\mapsto s_f.
+                    \end{align*} $$</span>
+                    <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-complete-analytic-function-and-sections-of-Riemann-surface.html">Proof</a>
+                </p>
+                
+                <!-- END BLOCK ID section -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (germs of analytic functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-germs-of-analytic-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Define the <em>space of germs</em>
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{G} ={}&amp; \biggl(\bigsqcup_{(f,D)} D \times \set{f}\biggr)/{\sim}
+                \end{align*} $$</span>
+                where the union ranges over all function elements <span class="inline-math">$(f,D)$</span>
+                and <span class="inline-math">$\sim$</span> is defined <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Riemann-surface-of-a-complete-analytic-function.html">as before</a>,
+                and the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-local-homeomorphism.html">local homeomorphism</a>
+                <span class="display-math">$$ \begin{alignat*}{2}
+                    π_\mathcal{G} : &amp;&amp;\mathcal{G}&amp;\to \C \\
+                    &amp;&amp;[(z,f)] &amp;\mapsto z.
+                \end{alignat*} $$</span>
+            </p>
+            <p>
+                A <em>germ of analytic function</em> is a set of equivalence classes of the form <span class="inline-math">$π_\mathcal{G}\inv(z_0)$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    Observe
+                    <span class="display-math">$$ \begin{align*}
+                        \mathcal{G} = \bigsqcup_{\mathcal{F}} R_\mathcal{F}
+                    \end{align*} $$</span>
+                    the disjoint union of the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Riemann-surface-of-a-complete-analytic-function.html">Riemann surfaces of all complete analytic functions.</a>,
+                    so <span class="inline-math">$\mathcal{G}$</span> is Hausdorff and disconnected.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    For <span class="inline-math">$z_0\in \C$</span>, <span class="inline-math">$(f,D)$</span> and <span class="inline-math">$(g,E)$</span> determine same germ
+                    iff <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> agree on a neighbourhood of <span class="inline-math">$z_0$</span>,
+                    so
+                    <span class="display-math">$$ \begin{align*}
+                        π_\mathcal{G}\inv(z_0) \simeq \set{\text{power series $\sum_{n=0}^{\infty} a_n(z-z_0)^n$ with a non-zero radius of convergence}}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Riemann-surface-of-a-complete-analytic-function.html#^section">As before</a>
+                    there is a bijection
+                    <span class="display-math">$$ \begin{align*}
+                        \set{\text{analytic function $D\to \C$}} &amp;\xrightarrow{\sim} \set{\text{continuous section of $π_\mathcal{G}$ over a domain $D\subseteq \C$}} \\
+                        f &amp;\mapsto π_{\mathcal{G}}|_{[f,D]}\inv.
+                    \end{align*} $$</span>
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (valency theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-valency-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: X\to Y$</span> be a non-constant analytic map
+                between Riemann surfaces <span class="inline-math">$X,Y$</span> which are compact.
+            </p>
+            <p>
+                There exists an integer <span class="inline-math">$n\geq 1$</span> such that
+                for all <span class="inline-math">$y\in Y$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    n = \sum_{x\in f\inv(y)} d_x
+                \end{align*} $$</span>
+                where <span class="inline-math">$d_x$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-local-mapping-on-Riemann-surfaces.html">ramification degree</a>
+                of <span class="inline-math">$f$</span> at <span class="inline-math">$x$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$n$</span> is called the <em>degree</em> or <em>valency</em> of <span class="inline-math">$f$</span>,
+                and we say <span class="inline-math">$X$</span> is a <em>branched cover</em> of <span class="inline-math">$Y$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-valency-theorem.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    For meromorphic <span class="inline-math">$f: X\to C_\infty$</span>, considering preimages of <span class="inline-math">$0$</span> and <span class="inline-math">$\infty$</span> gives
+                    <span class="display-math">$$ \begin{align*}
+                        \#\text{zeros of $f$} = \#\text{poles of $f$}
+                    \end{align*} $$</span>
+                    counted with multiplicity.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    This gives <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-fundamental-theorem-of-algebra-using-valency-theorem-of-Riemann-surfaces.html">another proof</a> of the <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-fundamental-theorem-of-algebra-about-multiplicity.html">fundamental theorem of algebra</a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (subdivision)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-subdivision.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>subdivision</em> of a compact <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-topological-surface.html">topological surface</a> <span class="inline-math">$Σ$</span> comprises
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    a finite set <span class="inline-math">$V \subseteq Σ$</span> of vertices;
+                </p>
+                
+            </li><li>
+                <p>
+                    a finite set <span class="inline-math">$\set{e_i: \text{continuous }[0, 1] \to Σ}_{i\in E}$</span> of edges,
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                such that
+            </p>
+            <ul>
+            <li>
+                <p>
+                    each <span class="inline-math">$e_i$</span> is injective on <span class="inline-math">$(0,1)$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$e_i\inv(V) = \set{0,1}$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$e_i(0,1)$</span> and <span class="inline-math">$e_j(0,1)$</span> are disjoint for <span class="inline-math">$i\neq j$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    each connected component of <span class="inline-math">$Σ \setminus (\bigcup_{i} e_i[0,1] \cup V)$</span>
+                    is homeomorphic to an open disc, called an <em>open face</em>.
+                    Call a <em>face</em> the closure of such a component.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (triangulation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-triangulation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-subdivision.html">subdivision</a> is a <em>triangulation</em>
+                if each closed face contains exactly three edges,
+                and two closed faces are either disjoint or meet at an edge or a vertex.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (invariant of Euler characteristic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-invariant-of-Euler-characteristic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <ol start="1">
+            <li>
+                <p>
+                    Every compact topological surface <span class="inline-math">$Σ$</span> admits a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-subdivision.html">subdivision</a>
+                    (and in fact <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-triangulation.html">triangulation</a>).
+                </p>
+                
+            </li><li>
+                <p>
+                    The <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Euler-characteristic.html">Euler characteristic</a> <span class="inline-math">$χ(Σ)$</span>
+                    of <span class="inline-math">$Σ$</span> does not depend on the choice of subdivision, i.e.
+                    it defines a topological invariant of the surface <span class="inline-math">$Σ$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Riemann-Hurwitz formula)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-Riemann-Hurwitz-formula.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: X\to Y$</span> be a non-constant analytic map
+                between Riemann surfaces <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> that are compact.
+            </p>
+            <p>
+                Their <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Euler-characteristic.html">Euler characteristics</a> satisfy
+                <span class="display-math">$$ \begin{align*}
+                    χ(X) = n\cdot χ(Y) - \sum_{x\in X} (d_x - 1)
+                \end{align*} $$</span>
+                where <span class="inline-math">$n$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-valency-theorem.html">degree</a> of <span class="inline-math">$f$</span>
+                and <span class="inline-math">$d_x$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-local-mapping-on-Riemann-surfaces.html">ramification degree</a> of <span class="inline-math">$f$</span> at <span class="inline-math">$x$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-Riemann-Hurwitz-formula.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$f$</span> exists, then the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-classification-of-compact-Riemann-surfaces.html">genera</a> satisfy <span class="inline-math">$g(X) \geq g(Y)$</span>.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$g(X) = g(Y) &gt; 1$</span>, then <span class="inline-math">$n=1$</span> so <span class="inline-math">$f$</span> is an analytic isomorphism.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (classification of compact Riemann surfaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-classification-of-compact-Riemann-surfaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Every compact <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Riemann-surface.html">Riemann surface</a>
+                is homeomorphic to
+                an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-orientable-surface-orientation.html">orientable surface</a> of <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Subdivisions.html#^genus">genus</a> <span class="inline-math">$g\geq 0$</span>.
+            </p>
+            <p>
+                Moreover there is a conformal structure on the compact orientable surface of every genus <span class="inline-math">$g\geq 0$</span>.
+                [[FILE NOT FOUND: Example (compact branched cover of the Riemann sphere)]]
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Complex periodic functions
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Complex-periodic-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (simply periodic analytic function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proposition-simply-periodic-analytic-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: \C/\Z\to \C_\infty$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-meromorphic-on-Riemann-surface.html">meromorphic function</a>
+                            (or equivalently, let <span class="inline-math">$f: \C\to C_\infty$</span> be a <span class="inline-math">$\Z$</span>-periodic meromorphic function).
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f$</span> is analytic on <span class="inline-math">$\set{A &lt; \Im z &lt; B}$</span>, then
+                            there <span class="inline-math">$f$</span> has a Fourier series representation
+                            <span class="display-math">$$ \begin{align*}
+                                f(z) = \sum_{n=-\infty}^{\infty} a_n e^{2πiz},
+                            \end{align*} $$</span>
+                            uniformly convergent on compact sets.
+                        </p>
+                        <p>
+                            In particular, all analytic <span class="inline-math">$\C/\Z\to \C_\infty$</span> meromorphic functions
+                            are given by a Fourier series <span class="inline-math">$f(z) = \sum_{n=-\infty}^{\infty} a_n e^{2πi z}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-simply-periodic-analytic-function.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Weierstrass elliptic function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Weierstrass-elliptic-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given a lattice <span class="inline-math">$Λ = \Zω_1 + \Zω_2 \subseteq \C$</span> (<span class="inline-math">$ω_1, ω_2\neq 0$</span> and <span class="inline-math">$ω_1/ω_2\not\in \R$</span>),
+                            define the <em>Weierstrass <span class="inline-math">$\wp$</span>-function</em> <span class="inline-math">$\wp: \C\to \C_\infty$</span> by
+                            <span class="display-math">$$ \begin{align*}
+                                \wp(z) = \frac{1}{z^2} + \sum_{ω\in Λ\setminus \set{0}} \Bigl(\frac{1}{(z-ω)^2} - \frac{1}{ω^2}\Bigr).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                The series converges <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-locally-uniform-convergence.html">locally absolutely uniformly</a> on <span class="inline-math">$\C\setminus Λ$</span>.
+                                This defines an analytic function on <span class="inline-math">$\C\setminus Λ$</span>
+                                having double poles at each <span class="inline-math">$ω\in Λ$</span>
+                                with residue 0.
+                                (<a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-convergence-of-Weierstrass-elliptic-function.html">Proof</a>)
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$\wp$</span> is even and <span class="inline-math">$Λ$</span>-periodic, i.e. <span class="inline-math">$\wp(z) = \wp(-z)$</span> and <span class="inline-math">$\wp(z + ω) = \wp(z)$</span> for all <span class="inline-math">$ω\in Λ$</span>.
+                                It has derivative
+                                <span class="display-math">$$ \begin{align*}
+                                    \wp(z) = -2 \sum_{ω\in Λ} \frac{1}{(z-ω)^3}.
+                                \end{align*} $$</span>
+                                (<a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-Weierstrass-elliptic-function-is-even-and-periodic.html">Proof</a>)
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                The <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-valency-theorem.html">degree</a> of <span class="inline-math">$\wp: \C/Λ \to \C_\infty$</span> is 2, and
+                                the ramification points are <span class="inline-math">$0$</span>, <span class="inline-math">$ω_1/2$</span>, <span class="inline-math">$ω_2/2$</span> and <span class="inline-math">$ω_3/2 := (ω_1+ω_2)/2$</span>,
+                                with ramification degree 2.
+                                The branch points <span class="inline-math">$\infty = \wp(0)$</span>, <span class="inline-math">$e_i := \wp(ω_i/2)$</span> are distinct.
+                                (<a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-ramification-points-of-Weierstrass-elliptic-function.html">Proof</a>)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (classification of elliptic functions)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-classification-of-elliptic-functions.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Λ = \Zω_1 + \Z ω_2\subseteq \C$</span> be a lattice (<span class="inline-math">$ω_1, ω_2\neq 0$</span>, <span class="inline-math">$ω_1/ω_2\not\in \R$</span>).
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$f$</span> be an <em>elliptic function</em>, i.e. a meromorphic function <span class="inline-math">$f: \C/Λ \to \C_\infty$</span>,
+                            or equivalently, a meromorphic function <span class="inline-math">$f: \C\to \C_\infty$</span> with periodic <span class="inline-math">$Λ$</span>.
+                        </p>
+                        <p>
+                            There exists rational functions <span class="inline-math">$Q_1, Q_2$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                f = Q_1 \circ \wp + \wp&#x27; \cdot (Q_2 \circ \wp)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\wp$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Weierstrass-elliptic-function.html">Weierstrass elliptic function</a>.
+                            In more sophisticated language, the field of elliptic functions
+                            is <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-field-adjunction-simple-extension.html"><span class="inline-math">$\C(\wp, \wp&#x27;)$</span></a>.
+                        </p>
+                        <p>
+                            In particular, there is an algebraic relation
+                            <span class="display-math">$$ \begin{align*}
+                                (\wp(z)&#x27;)^2 = 4(\wp(z) - e_1)(\wp(z) - e_2)(\wp(z) - e_3) = 4\wp^3 + B\wp + C.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-classification-of-elliptic-functions.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Weierstrass elliptic function as conformal equivalence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-Weierstrass-elliptic-function-as-conformal-equivalence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Λ = \Zω_1 + \Z ω_2\subseteq \C$</span> be a lattice (<span class="inline-math">$ω_1, ω_2\neq 0$</span>, <span class="inline-math">$ω_1/ω_2\not\in \R$</span>).
+                        </p>
+                        <p>
+                            The analytic map
+                            <span class="display-math">$$ \begin{align*}
+                                \C/Λ \setminus \set{0} &amp;\to X = \sb{(x,y)\in \C\times \C}{y^2 = 4x^3 + Bx + C} \\
+                                u &amp;\mapsto (\wp(u), \wp&#x27;(u))
+                            \end{align*} $$</span>
+                            (where <span class="inline-math">$B,C$</span> are given <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-classification-of-elliptic-functions.html">here</a>)
+                            extends to a conformal equivalence
+                            <span class="display-math">$$ \begin{align*}
+                                \C/Λ \to \hat X := X \cup \set{\infty}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Proof: TODO
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (group law on complex torus)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proposition-group-law-on-complex-torus.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Λ = \Zω_1 + \Z ω_2\subseteq \C$</span> be a lattice (<span class="inline-math">$ω_1, ω_2\neq 0$</span>, <span class="inline-math">$ω_1/ω_2\not\in \R$</span>),
+                            and <span class="inline-math">$a,b,c\in \C\setminus Λ$</span> be distinct mod <span class="inline-math">$Λ$</span>.
+                        </p>
+                        <p>
+                            The conformal equivalence <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-Weierstrass-elliptic-function-as-conformal-equivalence.html"><span class="inline-math">$h: \C/Λ\to \hat X$</span></a>
+                            gives <span class="inline-math">$\hat X$</span> a group structure, given by
+                            <span class="display-math">$$ \begin{align*}
+                                a+b+c \in Λ     &amp;\iff h(a), h(b), h(c)\in \C\times \C \text{ are colinear} \\
+                                &amp;\iff \begin{vmatrix}1 &amp; \wp(a) &amp; \wp&#x27;(a) \\
+                                1 &amp; \wp(b) &amp; \wp&#x27;(b) \\
+                                1 &amp; \wp(c) &amp; \wp&#x27;(c) \\
+                                \end{vmatrix} = 0
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            From this we can derive the formula
+                            <span class="display-math">$$ \begin{align*}
+                                \wp(a+b) = \frac{1}{4}\left(\frac{\wp&#x27;(a) - \wp&#x27;(b)}{\wp(a) - \wp(b)}\right)^2 -\wp(a) - \wp(b).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-group-law-on-complex-torus.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (uniqueness of lifts)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-uniqueness-of-lifts.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$p: \tilde X \to X$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">covering space</a>
+                or a Hausdorff <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-local-homeomorphism.html">local homeomorphism</a>,
+                <span class="inline-math">$f: Y\to X$</span> be a map,
+                and <span class="inline-math">$\tilde f_0, \tilde f_1: Y\to \tilde X$</span>
+                be two <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-lifting.html">lifts</a> of <span class="inline-math">$f$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    S = \sb{y\in Y}{\tilde f_0(y) = \tilde f_1(y)}
+                \end{align*} $$</span>
+                is both open and closed.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-uniqueness-of-lifts.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Thus if <span class="inline-math">$Y$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a>, then either <span class="inline-math">$S = \emptyset$</span> or <span class="inline-math">$S = Y$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (homotopy lifting lemma, monodromy theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-homotopy-lifting-lemma-monodromy-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$p: \tilde X \to X$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">covering space</a>,
+                <span class="inline-math">$H: Y\times [0,1]\to X$</span> be a homotopy from <span class="inline-math">$f_0$</span> to <span class="inline-math">$f_1$</span>.
+            </p>
+            <p>
+                For a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-lifting.html">lift</a> <span class="inline-math">$\tilde f_0$</span> of <span class="inline-math">$f_0$</span>,
+                there exists a unique homotopy <span class="inline-math">$\tilde H: Y \times [0,1] \to \tilde X$</span> such that
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\tilde H(y, 0) = \tilde f_0(y)$</span> for all <span class="inline-math">$y\in Y$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$p\circ \tilde H = H$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Alternatively, we can take <span class="inline-math">$p: \tilde X\to X$</span> to be a <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-local-homeomorphism.html">local homeomorphism</a>
+                and <span class="inline-math">$\tilde X$</span> to be Hausdorff,
+                and assume any path from <span class="inline-math">$H(y, 0)$</span> to <span class="inline-math">$H(y,1)$</span> has a lift for all <span class="inline-math">$y\in Y$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-homotopy-lifting-lemma.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This is known as the <em>monodromy theorem</em> in Riemann surfaces.
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID path -->
+            <li id="^path">
+                <p>
+                    Taking <span class="inline-math">$Y = \set{*}$</span>, we see that
+                    given a path <span class="inline-math">$γ: [0,1] \to X$</span> and a starting point <span class="inline-math">$\tilde x_0 \in p\inv(γ(0))$</span>,
+                    there exists a unique lift <span class="inline-math">$\tilde γ: [0,1] \to \tilde X$</span> of <span class="inline-math">$γ$</span> starting at <span class="inline-math">$\tilde x_0$</span>.
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID path -->
+            <!-- BEGIN BLOCK ID homotopic-path -->
+            <li id="^homotopic-path">
+                <p>
+                    If <span class="inline-math">$γ\simeq γ&#x27;$</span> as paths from <span class="inline-math">$x_0$</span> and <span class="inline-math">$x_1$</span>,
+                    and <span class="inline-math">$\tilde γ,\tilde γ&#x27;$</span> are their lifts starting at a common point <span class="inline-math">$\tilde x_0 \in p\inv(x_0)$</span>,
+                    then <span class="inline-math">$\tilde γ\simeq \tilde γ&#x27;$</span> as paths.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-lifts-of-homotopic-paths-with-common-starting-point-are-homotopic.html">Proof</a>)
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID homotopic-path -->
+            <!-- BEGIN BLOCK ID fundamental-group -->
+            <li id="^fundamental-group">
+                <p>
+                    If <span class="inline-math">$x_0\in X$</span> and <span class="inline-math">$\tilde x_0\in p\inv(x_0)$</span>,
+                    then <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-based-maps-descend-to-homomorphisms-between-fundamental-groups.html"><span class="inline-math">$p_\ast$</span></a><span class="inline-math">${}: π_{1}(\tilde X, \tilde x_0) \to π_1(X, x_0)$</span> is an injection.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-covering-map-descends-to-injection-between-fundamental-groups.html">Proof</a>)
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID fundamental-group -->
+            
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (lifting theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-lifting-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$p: (\tilde X, \tilde x_0)\to (X, x_0)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-based-space-based-map-based-homotopy.html">based</a> <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">covering map</a>,
+                and <span class="inline-math">$f: (Y, y_0)\to (X, x_0)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-based-space-based-map-based-homotopy.html">based map</a>.
+            </p>
+            <p>
+                Assume <span class="inline-math">$Y$</span> is path-connected and <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-locally-path-connected.html">locally path-connected</a>.
+                Then there is a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-lifting.html">lift</a> <span class="inline-math">$\tilde f: (Y, y_0) \to (\tilde X, \tilde x_0)$</span>
+                of <span class="inline-math">$f$</span> iff <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-based-maps-descend-to-homomorphisms-between-fundamental-groups.html"><span class="inline-math">$f_\ast$</span></a><span class="inline-math">$(π_1(Y, y_0)) \subseteq p_\ast(π_1(\tilde X, \tilde x_0))$</span>.
+            </p>
+            <p>
+                Proof: Bredon Chapter 3 Theorem 4.1.
+            </p>
+            <blockquote>
+                <p>
+                    Note if <span class="inline-math">$Y$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simply-connected.html">simply connected</a>, then we always get a lift.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (lift to Riemann surface and analytic continuation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proposition-lift-to-Riemann-surface-and-analytic-continuation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(f,D)$</span> be a function element,
+                <span class="inline-math">$\mathcal{F}$</span> be the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-continuation-complete-analytic-function.html">complete analytic function</a> of <span class="inline-math">$(f,D)$</span>,
+                and <span class="inline-math">$π: R_\mathcal{F}\to \C$</span> be the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-Riemann-surface-of-a-complete-analytic-function.html">associated Riemann surface</a>.
+            </p>
+            <p>
+                If <span class="inline-math">$γ: [0,1]\to \C$</span> is a path such that <span class="inline-math">$γ(0) \in D$</span>,
+                the following are equivalent:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    there is a lift <span class="inline-math">$\tilde γ$</span> of <span class="inline-math">$γ$</span> with <span class="inline-math">$\tilde γ(0) = (γ(0), f) \in [f,D]$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    there is an analytic continuation <span class="inline-math">$(g,E)\approx (f,D)$</span> with <span class="inline-math">$γ(1) \in E$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-lift-to-Riemann-surface-and-analytic-continuation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (monodromy theorem for analytic continuation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-monodromy-theorem-for-analytic-continuation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$D,E\subseteq U\subseteq \C$</span> be domains and
+                <span class="inline-math">$γ_1, γ_2: [0,1]\to U$</span> be paths in <span class="inline-math">$U$</span> from <span class="inline-math">$a$</span> to <span class="inline-math">$b$</span>.
+            </p>
+            <p>
+                Suppose
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$(f,D)$</span><a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-continuation-complete-analytic-function.html"><span class="inline-math">${}\approx_{γ_i}{}$</span></a><span class="inline-math">$(g_i, E)$</span> for <span class="inline-math">$i=1,2$</span>,
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$γ_1$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-homotopic-as-paths.html"><span class="inline-math">${}\simeq{}$</span></a><span class="inline-math">$γ_2$</span> as paths, and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$(f,D)$</span> has an analytic continuation along any path starting from <span class="inline-math">$a$</span> in <span class="inline-math">$U$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Then <span class="inline-math">$g_1 = g_2$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-monodromy-theorem-for-analytic-continuation.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    Therefore, if <span class="inline-math">$U$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simply-connected.html">simply connected</a>
+                    and <span class="inline-math">$(f,D)$</span> can be analytically continued
+                    along every path starting from some <span class="inline-math">$a\in D$</span> in <span class="inline-math">$U$</span>,
+                    then <span class="inline-math">$f$</span> extends to an analytic function on <span class="inline-math">$U$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (properly discontinuous action)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-properly-discontinuous-action.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a topological space and <span class="inline-math">$G$</span> be a group <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-group-action.html">acting</a> on <span class="inline-math">$X$</span> by <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-homeomorphism.html">homeomorphisms</a>.
+            </p>
+            <p>
+                We say the action is <em>properly discontinuous</em>
+                if for all <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a> <span class="inline-math">$K\subseteq X$</span>,
+                the set <span class="inline-math">$\sb{g\in G}{gK\cap K \neq \emptyset}$</span> is finite.
+            </p>
+            <blockquote>
+                <p>
+                    Note "properly discontinuous" can mean <a href="https://mathoverflow.net/q/55726">many different things</a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Hausdorff covering space action)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proposition-Hausdorff-covering-space-action.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a topological space
+                and <span class="inline-math">$G$</span> is a group acting on <span class="inline-math">$X$</span> by homeomorphisms.
+            </p>
+            <p>
+                Suppose
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-Hausdorff-topological-space.html">Hausdorff</a>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$X$</span> is <em>locally compact</em>, i.e. any <span class="inline-math">$x\in X$</span> has a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a> neighbourhood;
+                </p>
+                
+            </li><li>
+                <p>
+                    the action is <em>free</em>, i.e. <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-orbits-and-stabilisers.html"><span class="inline-math">$\op{Stab}$</span></a><span class="inline-math">$_G(x) = \set{e}$</span> for all <span class="inline-math">$x\in X$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    the action is <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-properly-discontinuous-action.html"><em>properly discontinuous</em></a>,
+                    i.e. for all compact <span class="inline-math">$K\subseteq X$</span>, the set <span class="inline-math">$\sb{g\in G}{gK\cap K \neq \emptyset}$</span> is finite.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Then the quotient space <span class="inline-math">$X\backslash G$</span> is Hausdorff
+                and <span class="inline-math">$q: X\to X\backslash G$</span> is a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">covering space</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-Hausdorff-covering-space-action.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$X$</span> is a Riemann surface and <span class="inline-math">$G$</span> acts by conformal equivalences,
+                    then 1 and 2 are automatically satisfied.
+                    <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-conformal-structure-on-covering-space.html">Then</a> <span class="inline-math">$X\backslash G$</span> has a unique conformal structure
+                    such that <span class="inline-math">$q$</span> is analytic.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (uniformisation theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-uniformisation-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Every <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simply-connected.html">simply connected</a>
+                Riemann surface is <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-map-on-Riemann-surfaces.html">conformally equivalent</a>
+                to one of the following:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    the Riemann sphere <span class="inline-math">$\C_\infty$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    the complex plane <span class="inline-math">$\C$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    the unit disc <span class="inline-math">$\mathbb{D}$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <blockquote>
+                <p>
+                    These are not conformally equivalent: <span class="inline-math">$\C_\infty$</span> is compact, and the other two are not.
+                    There cannot be a conformal equivalence <span class="inline-math">$\C \to \mathcal{D}$</span> by Liouville's theorem.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    Any Riemann surface homeomorphic to <span class="inline-math">$\C_\infty$</span>
+                    is conformally equivalent to <span class="inline-math">$\C_\infty$</span> by compactness.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (classification of Riemann surfaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Corollary-classification-of-Riemann-surfaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Every Riemann surface <span class="inline-math">$X$</span>
+                is <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-map-on-Riemann-surfaces.html">conformally equivalent</a> to
+                <span class="display-math">$$ \begin{align*}
+                    G \backslash \tilde X
+                \end{align*} $$</span>
+                where <span class="inline-math">$\tilde X$</span> is one of <span class="inline-math">$\C_\infty$</span>, <span class="inline-math">$\C$</span> or <span class="inline-math">$\mathbb{D}$</span>,
+                and <span class="inline-math">$G$</span> is <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-properly-discontinuous-action.html">properly discontinuous</a>
+                group of conformal automorphisms of <span class="inline-math">$\tilde X$</span>.
+                We say <span class="inline-math">$X$</span> is <em>uniformised</em> by <span class="inline-math">$\tilde X$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    If <span class="inline-math">$\tilde X\isom \C_\infty$</span>, then <span class="inline-math">$X \isom \C_\infty$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$\tilde X\isom \C$</span>, then <span class="inline-math">$X \isom \C$</span>, <span class="inline-math">$\C/\Z$</span> or <span class="inline-math">$\C/Λ$</span> where <span class="inline-math">$Λ$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Complex-periodic-functions.html">lattice</a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$\tilde X\isom \mathbb{D}$</span>, then <span class="inline-math">$X\isom G\backslash \mathbb{H}$</span>
+                    where <span class="inline-math">$G$</span> is a properly discontinuous subgroup of <span class="inline-math">$\op{PSL}_2(\R) = \op{SL}_2(\R)/\set{\pm 1}$</span>,
+                    acting on the upper half plane <span class="inline-math">$\mathbb{H}$</span> by Möbius transformations.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Moreover, <span class="inline-math">$X$</span> is uniformised by at most one of <span class="inline-math">$\C_\infty, \C, \mathbb{D}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-classification-of-Riemann-surfaces.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-classification-of-compact-Riemann-surfaces.html">Therefore</a> all compact Riemann surfaces of genus <span class="inline-math">$&gt;1$</span> is uniformised by <span class="inline-math">$\mathbb{D}$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    ![[The (Picard's
+</p>

@@ -1,0 +1,59 @@
+
+<h1>Existence of <span class="inline-math">$f$</span>, <span class="inline-math">$ν_a$</span>, <span class="inline-math">$ν_s$</span></h1>
+
+<p>
+    Using the <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-measure-as-integral-outside-negligible-set.html">previous result</a>,
+    there exists <span class="inline-math">$A\in \mathcal{B}$</span> and <span class="inline-math">$f\in L^1(E, \mathcal{B}, μ)$</span> such that <span class="inline-math">$μ(E \setminus A) = 0$</span>
+    and <span class="inline-math">$ν(B) = \int_{B} f \d μ$</span> for all <span class="inline-math">$B \subseteq A$</span> measurable.
+</p>
+<p>
+    If <span class="inline-math">$ν \ll μ$</span>, then <span class="inline-math">$ν(E \setminus A) = 0$</span>.
+    Therefore for any <span class="inline-math">$B\in \mathcal{B}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        ν(B) = ν(B\cap A) + \underbrace{ν(B \setminus A)}_{\leq ν(E \setminus A) = 0} = \int_{B\cap A} f \d μ = \int_{B} f \d μ.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$f\inv(\infty)$</span> is negligible with respect to <span class="inline-math">$μ$</span> as <span class="inline-math">$\int_{E} f \d μ = ν(E) &lt; \infty$</span>,
+    so by replacing the value of <span class="inline-math">$f$</span> on <span class="inline-math">$f\inv(\infty)$</span>, we can assume <span class="inline-math">$f\inv(\infty) = \emptyset$</span>.
+</p>
+<p>
+    For a general <span class="inline-math">$ν$</span>, define
+    <span class="display-math">$$ \begin{align*}
+        ν_a(B) = ν(B \cap A), \quad ν_s(B) = ν(B \setminus A).
+    \end{align*} $$</span>
+    Clear that <span class="inline-math">$ν = ν_a + ν_s$</span> as <span class="inline-math">$B = (B\cap A) \sqcup (B \setminus A)$</span>.
+    <span class="inline-math">$ν_a \ll μ$</span> because <span class="inline-math">$\int_{B\cap A} f \d μ = 0$</span> if <span class="inline-math">$μ(B \cap A) = μ(B) = 0$</span>.
+    <span class="inline-math">$ν_s \perp μ$</span> because <span class="inline-math">$ν_s$</span> is concentrated on <span class="inline-math">$E\setminus A$</span>
+    and <span class="inline-math">$μ(E \setminus A) = 0$</span>.
+</p>
+
+<h1>Uniqueness of <span class="inline-math">$f$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$f,g$</span> are two Radon-Nikodym derivatives.
+    Let
+    <span class="display-math">$$ \begin{align*}
+        A_ε = \sb{x\in E}{f(x) - g(x) &gt; ε}.
+    \end{align*} $$</span>
+    Then by definition
+    <span class="display-math">$$ \begin{align*}
+        0 = ν(A_ε) - ν(A_ε) = \int_{A_ε} f - g \d μ \geq ε \, μ(A_ε).
+    \end{align*} $$</span>
+    so <span class="inline-math">$μ(A_ε) = 0$</span>.
+    Similarly <span class="inline-math">$μ(B_ε) = 0$</span> for <span class="inline-math">$B_ε = \sb{x\in E}{g(x) - f(x) &gt; ε}$</span>,
+    so <span class="inline-math">$μ(\sb{x\in E}{f(x) \neq g(x)}) = μ(\bigcup_{n\in \Z_{&gt;0}} A_ε \cup \bigcup_{n\in \Z_{&gt;0}} B_ε) = 0$</span>.
+</p>
+
+<h1>Uniqueness of <span class="inline-math">$ν_a, ν_s$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$ν = ν_a + ν_s$</span> with <span class="inline-math">$ν_a \ll μ$</span> and <span class="inline-math">$ν_a \perp μ$</span>,
+    and take any <span class="inline-math">$B\in \mathcal{B}$</span>.
+</p>
+<p>
+    If <span class="inline-math">$μ(B)=0$</span>, then <span class="inline-math">$ν_a(B) = 0$</span>, so <span class="inline-math">$ν_s(B) = ν(B)$</span>.
+</p>
+<p>
+    If <span class="inline-math">$μ(B)&gt;0$</span>, then <span class="inline-math">$ν_s(B) = 0$</span>, so <span class="inline-math">$ν_a(B) = ν(B)$</span>.
+</p>

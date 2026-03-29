@@ -1,0 +1,36 @@
+<p>
+    Let <span class="inline-math">$G$</span> be a group,
+    <span class="inline-math">$H,K\leq G$</span> be subgroups,
+    and <span class="inline-math">$V$</span> be a representation of <span class="inline-math">$H$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \op{Res}^G_K \op{Ind}^G_H V = \bigoplus_{HwK \in H\backslash G/K} \op{Ind}^K_{K \cap w\inv Hw} \prescript{w\inv}{}{\op{Res}^H_{H \cap wKw\inv}} V.
+    \end{align*} $$</span>
+</p>
+<p>
+    Here <span class="inline-math">$H\backslash G/K$</span> is the set of <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-double-coset.html">double cosets</a>, and
+    <span class="inline-math">$\op{Res}$</span> and <span class="inline-math">$\op{Ind}$</span> denote the <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-restriction-of-representation.html">restriction</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-induction-of-representation.html">induction</a> of representations.
+</p>
+<p>
+    <span class="inline-math">$\prescript{x}{}ρ$</span> denotes the twisted representation:
+    if <span class="inline-math">$ρ: S\to \GL(W)$</span>, <span class="inline-math">$S\leq T$</span> and <span class="inline-math">$x\in T$</span>,
+    then <span class="inline-math">$\prescript{x}{}ρ: xSx\inv \to \GL(W)$</span>
+    is defined by <span class="inline-math">$\prescript{x}{}ρ(y) = ρ(x\inv yx)$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-Mackey-s-restriction-formula.html">Proof</a>
+</p>
+<ul>
+<li>
+    <p>
+        Together with <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proposition-Frobenius-reciprocity.html">Frobenius reciprocity</a>, this implies
+        <span class="display-math">$$ \begin{align*}
+        \langle \op{Ind}^G_H V, \op{Ind}^G_H V\rangle ={}&amp; \langle V, \op{Res}^G_H \op{Ind}^G_H V\rangle \\
+        ={}&amp; \sum_{HwH\in H\backslash G/H} \langle V, \op{Ind}^H_{H \cap w\inv Hw} \prescript{w\inv}{}{\op{Res}^H_{H \cap wHw\inv}} V\rangle \\
+        ={}&amp; \sum_{HwH\in H\backslash G/H} \langle \op{Res}^H_{H \cap w\inv H w} V, \prescript{w\inv}{}{\op{Res}^H_{H \cap w H w\inv}}V\rangle \\
+        ={}&amp; \langle V, V\rangle + \sum_{\substack{HwH\in H\backslash G/H: \\w\not\in H}} \langle \op{Res}^H_{H \cap w\inv H w}, \prescript{w\inv}{}{\op{Res}^H_{H \cap wHw\inv} V}\rangle.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>

@@ -1,0 +1,190 @@
+<p>
+    A lot of diagram chasing!
+</p>
+
+<h1>Construction of <span class="inline-math">$δ$</span></h1>
+
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250927231046.png">
+</p>
+<p>
+    Let <span class="inline-math">$x\in \ker c$</span>.
+</p>
+<ol start="1">
+<li>
+    <p>
+        Since <span class="inline-math">$g$</span> is surjective, let <span class="inline-math">$y\in B$</span> such that <span class="inline-math">$g(y) = x$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Let <span class="inline-math">$y&#x27; = b(y)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Since <span class="inline-math">$g&#x27;(y&#x27;) = g&#x27;(b(y)) = c(g(y)) = c(x) = 0$</span>,
+        we see that <span class="inline-math">$y&#x27; \in \ker g&#x27;$</span>.
+        By exactness at <span class="inline-math">$B&#x27;$</span>, we have <span class="inline-math">$z\in A&#x27;$</span> such that <span class="inline-math">$f&#x27;(z) = y&#x27;$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Define <span class="inline-math">$δ(x) = [z] \in A&#x27;/\im a$</span>.
+    </p>
+    
+</li>
+</ol>
+
+<h1>Well-definedness</h1>
+
+<p>
+    In step 3, since <span class="inline-math">$f$</span> is injective, <span class="inline-math">$z$</span> is unique.
+    Therefore the only choice we have made
+    is in step 1.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250927231905.png">
+</p>
+<p>
+    Suppose <span class="inline-math">$g(y) = x = g(\tilde y)$</span> for <span class="inline-math">$y,\tilde y\in B$</span>.
+</p>
+<ol start="1">
+<li>
+    <p>
+        Therefore <span class="inline-math">$y-\tilde y \in \ker b$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Since <span class="inline-math">$\im f = \ker g$</span>, let <span class="inline-math">$α\in A$</span> such that <span class="inline-math">$f(α) = y-\tilde y$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Define <span class="inline-math">$y&#x27;, \tilde y&#x27;\in B&#x27;$</span> and <span class="inline-math">$z,\tilde z\in A&#x27;$</span> as before.
+    </p>
+    
+</li><li>
+    <p>
+        Because <span class="inline-math">$f&#x27;(a(α)) = b(f(α)) = b(y-\tilde y) = y&#x27;-\tilde y = f&#x27;(z-\tilde z)$</span>,
+        by injectivity of <span class="inline-math">$f&#x27;$</span>, we have <span class="inline-math">$a(α) = z-\tilde z$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Thus <span class="inline-math">$z-\tilde z\in \im a$</span>, and so <span class="inline-math">$[z] = [\tilde z]$</span>.
+    </p>
+    
+</li>
+</ol>
+
+<h1>Homomorphism</h1>
+
+<p>
+    For <span class="inline-math">$x,\tilde x\in \ker c$</span>,
+    we can take <span class="inline-math">$y+\tilde y$</span> as the lift of <span class="inline-math">$x+\tilde x$</span> to <span class="inline-math">$B$</span>.
+    Then <span class="inline-math">$\partial(x+\tilde x) = [z+\tilde z]$</span>.
+</p>
+
+<h1>Exactness of <span class="inline-math">$\ker a \xrightarrow{f_\ast} \ker b \xrightarrow{g_\ast} \ker c$</span></h1>
+
+<p>
+    <span class="inline-math">$f_\ast$</span> and <span class="inline-math">$g_\ast$</span> are restrictions of <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> to <span class="inline-math">$\ker a$</span> and <span class="inline-math">$\ker b$</span> respectively.
+    We see <span class="inline-math">$f(\ker a) \leq \ker b$</span> from the commutative square <span class="inline-math">$b\circ f = f&#x27; \circ a$</span>,
+    and similarly for <span class="inline-math">$g(\ker b) \leq \ker c$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$g\circ f = 0$</span>, the restriction <span class="inline-math">$\ker a \to \ker b \to \ker c$</span>
+    is still trivial.
+    Thus <span class="inline-math">$\im f_\ast \leq \ker g_\ast$</span>.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250927234917.png">
+    Conversely,
+    if <span class="inline-math">$β \in \ker g_\ast = \ker b \cap \ker g = \ker b \cap \im f$</span>,
+    then for <span class="inline-math">$α\in A$</span> such that <span class="inline-math">$f(α) = β$</span>,
+    we have <span class="inline-math">$f&#x27;(a(α)) = b(f(β)) = b(0) = 0$</span>.
+    By injectivity of <span class="inline-math">$f&#x27;$</span>, we have <span class="inline-math">$a(α) = 0$</span>.
+    Hence <span class="inline-math">$α\in \ker a$</span>, and so <span class="inline-math">$\ker g_\ast = \im f_\ast$</span>.
+</p>
+
+<h1>Exactness of <span class="inline-math">$A&#x27;/\im a \xrightarrow{f_\ast&#x27;} B&#x27;/\im b \xrightarrow{g_\ast&#x27;} C&#x27;/\im c$</span></h1>
+
+<p>
+    <span class="inline-math">$f&#x27;: A&#x27;\to B&#x27;$</span> sends <span class="inline-math">$\im a$</span> into <span class="inline-math">$\im b$</span> due to the commutative square <span class="inline-math">$b\circ f = f&#x27; \circ a$</span>,
+    so <span class="inline-math">$f&#x27;$</span> induces <span class="inline-math">$f_\ast&#x27;: A&#x27;/\im a \to B&#x27;/\im b$</span>.
+    Similarly <span class="inline-math">$g&#x27;: B&#x27;\to C&#x27;$</span> induces <span class="inline-math">$g_\ast&#x27;: B&#x27;/\im b \to C&#x27;/\im c$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$g&#x27; \circ f&#x27;$</span> is trivial, the induced map <span class="inline-math">$g_\ast&#x27; \circ f_\ast&#x27;$</span> is also trivial.
+    This shows <span class="inline-math">$\im f_\ast&#x27; \subseteq \ker g_\ast&#x27;$</span>.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20251001010108.png">
+</p>
+<p>
+    Conversely suppose <span class="inline-math">$g_\ast&#x27;([β]) = 0 \in C&#x27;/\im c$</span> for <span class="inline-math">$β\in B&#x27;$</span>.
+    Since <span class="inline-math">$[g&#x27;(β)] = g_\ast&#x27;([β]) = 0$</span>,
+    there exists <span class="inline-math">$x\in C$</span> such that <span class="inline-math">$g&#x27;(β) = c(x)$</span>.
+    Because <span class="inline-math">$g$</span> is surjective,
+    find some <span class="inline-math">$y\in B$</span> such that <span class="inline-math">$x = g(y)$</span>.
+    Now <span class="inline-math">$g&#x27;(β - b(y)) = g&#x27;(β) - c(g(y)) = 0$</span>,
+    so exactness at <span class="inline-math">$B&#x27;$</span> gives some <span class="inline-math">$z\in A&#x27;$</span>
+    such that <span class="inline-math">$f&#x27;(z) = β - b(y)$</span>.
+    Hence <span class="inline-math">$f_\ast&#x27;([z]) = [f&#x27;(z)] = [β]$</span>.
+</p>
+
+<h1>Exactness of <span class="inline-math">$\ker b \xrightarrow{g_\ast} \ker c \xrightarrow{δ} A&#x27;/\im a$</span></h1>
+
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250928001113.png">
+</p>
+<p>
+    For <span class="inline-math">$x = g_\ast(β)$</span>, we can choose <span class="inline-math">$y=β$</span> as the lift of <span class="inline-math">$x$</span> to <span class="inline-math">$B$</span>.
+    Then <span class="inline-math">$y&#x27; = 0$</span>, <span class="inline-math">$z = 0$</span> and <span class="inline-math">$[z]=0$</span>.
+    Hence <span class="inline-math">$x\in \ker δ$</span>.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250928000317.png">
+</p>
+<p>
+    Conversely, suppose <span class="inline-math">$x\in \ker δ$</span>.
+    This means <span class="inline-math">$z = a(α)$</span> for some <span class="inline-math">$α\in A$</span>.
+    Note
+    <span class="display-math">$$ \begin{align*}
+        b(y - f(α)) = b(y) - b(f(α)) = y&#x27; - f&#x27;(a(α)) = y&#x27; - f&#x27;(z) = 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$y-f(α)\in \ker b$</span>.
+    Finally
+    <span class="display-math">$$ \begin{align*}
+        g_\ast(y - f(α)) = g(y) - g(f(α)) = x - 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$x\in \im g_\ast$</span>.
+</p>
+
+<h1>Exactness of <span class="inline-math">$\ker c \xrightarrow{δ} A&#x27;/\im a \xrightarrow{f_\ast&#x27;} B&#x27;/\im b$</span></h1>
+
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250928001542.png">
+</p>
+<p>
+    For <span class="inline-math">$[z] = δ(x)$</span>,
+    the commutative diagram gives
+    <span class="display-math">$$ \begin{align*}
+        f_\ast&#x27;([z]) = [f&#x27;(z)] = [y&#x27;] = [b(y)] = 0 \in B&#x27;/\im b
+    \end{align*} $$</span>
+    so <span class="inline-math">$[z]\in \ker f_\ast&#x27;$</span>.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250928003220.png">
+</p>
+<p>
+    Conversely if <span class="inline-math">$f_\ast&#x27;([z]) = 0\in B/\im b$</span>,
+    then letting <span class="inline-math">$y&#x27; = f&#x27;(z)$</span>,
+    we have <span class="inline-math">$[y&#x27;] = 0\in B/\im b$</span>,
+    so <span class="inline-math">$y&#x27; = b(y)$</span> for some <span class="inline-math">$y\in B$</span>.
+    Then for <span class="inline-math">$x=g(y)$</span>,
+    note <span class="inline-math">$c(x) = g&#x27;(y&#x27;) = g&#x27;(f&#x27;(z)) = 0$</span>.
+    Therefore <span class="inline-math">$x\in \ker c$</span> and <span class="inline-math">$δ(x) = [z]$</span>.
+</p>

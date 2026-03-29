@@ -1,0 +1,44 @@
+<p>
+    Let <span class="inline-math">$G$</span> be a noncontracting grammar.
+</p>
+
+<h1>Upper bound for length of derivation of <span class="inline-math">$w\in \mathcal{L}(G)$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$w\in \mathcal{L}(G)$</span>.
+    Then there exists a derivation <span class="inline-math">$(σ_0, σ_1, \ldots, σ_n)$</span>
+    such that <span class="inline-math">$σ_0 = S$</span> and <span class="inline-math">$σ_n = w$</span>.
+    Take <span class="inline-math">$n$</span> to be minimal.
+</p>
+<p>
+    Since <span class="inline-math">$G$</span> is noncontracting, <span class="inline-math">$|σ_i| \leq |σ_{i+1}|$</span>, so the lengths
+    of strings in the derivation is non-decreasing.
+</p>
+<p>
+    For a fixed length <span class="inline-math">$m$</span>, there are exactly <span class="inline-math">$|Ω|^m$</span> such strings.
+    By the pigeonhole principle,
+    if there are more than <span class="inline-math">$|Ω|^m$</span> strings of length <span class="inline-math">$m$</span> in the derivation,
+    then one of them must repeat.
+    But then the derivation can be shortened by removing the loop,
+    contradicting with minimality of <span class="inline-math">$n$</span>.
+    Thus the derivation contains at most <span class="inline-math">$|Ω|^m$</span> strings of length <span class="inline-math">$m$</span>.
+</p>
+<p>
+    This gives an upper bound on the length of the entire derivation
+    <span class="display-math">$$ \begin{align*}
+        n\leq N := \sum_{i=1}^{|w|} |Ω|^i.
+    \end{align*} $$</span>
+</p>
+
+<h1>The algorithm</h1>
+
+<p>
+    Given <span class="inline-math">$w$</span> and <span class="inline-math">$G$</span>, compute <span class="inline-math">$N$</span>.
+</p>
+<p>
+    Write down all derivations of length <span class="inline-math">$N$</span>.
+</p>
+<p>
+    If one of them produce <span class="inline-math">$w$</span>, output "Yes".
+    Otherwise, output "No".
+</p>

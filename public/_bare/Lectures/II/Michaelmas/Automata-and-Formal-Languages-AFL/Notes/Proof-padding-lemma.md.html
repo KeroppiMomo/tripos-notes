@@ -1,0 +1,26 @@
+<blockquote>
+    <p>
+        Just keep adding irrelevant states!
+    </p>
+    
+</blockquote>
+<p>
+    Let <span class="inline-math">$M = (Σ, Q, P)$</span> be a register machine.
+    Introduce a new state <span class="inline-math">$\hat q\not\in Q$</span>.
+    <span class="inline-math">$\hat q$</span> does not show up in any instructions in the range of <span class="inline-math">$P$</span>.
+</p>
+<p>
+    Define <span class="inline-math">$\hat M = (Σ, Q\cup \set{\hat q}, \hat P)$</span>
+    where <span class="inline-math">$\hat P|_Q = P$</span> and <span class="inline-math">$\hat P(\hat q) = ?(0,ε,\hat q,\hat q)$</span>.
+</p>
+<p>
+    If <span class="inline-math">$C$</span> is a configuration with state in <span class="inline-math">$Q$</span>,
+    then <span class="inline-math">$\hat M$</span> and <span class="inline-math">$M$</span> transform <span class="inline-math">$C$</span> in the same way.
+    By induction, the computation sequences of <span class="inline-math">$\hat M$</span>
+    are precisely the computation sequences of <span class="inline-math">$M$</span> since we start from <span class="inline-math">$q_\mathrm{S}\in Q$</span>.
+</p>
+<p>
+    Thus <span class="inline-math">$M\mapsto M^+$</span> produces a strongly equivalent register machine
+    with strictly bigger state set.
+    Iterate this to produce infinitely many distinct strongly equivalent machines.
+</p>

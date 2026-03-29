@@ -1,0 +1,76 @@
+<p>
+    Let <span class="inline-math">$G = (Σ, V, P, S)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">context-free grammar</a>,
+    and <span class="inline-math">$A\in V$</span> be a variable.
+</p>
+<p>
+    A pair <span class="inline-math">$\mathbf{T} = (T,l)$</span> is a <em><span class="inline-math">$G$</span>-parse tree starting from <span class="inline-math">$A$</span></em>
+    if <span class="inline-math">$T$</span> is a finite <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-finitely-branching-tree.html">finitely branching tree</a> and <span class="inline-math">$l: T \to Ω$</span> satisfying
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$l(ε) = A$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        if <span class="inline-math">$l(t) \in Σ$</span>, then <span class="inline-math">$t$</span> is a leaf in <span class="inline-math">$T$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        if <span class="inline-math">$l(t) \in V$</span> and <span class="inline-math">$t$</span> is <span class="inline-math">$n+1$</span>-branching (<span class="inline-math">$n\in \N$</span>, i.e. <span class="inline-math">$t$</span> is not a leaf),
+        then there is a rule <span class="inline-math">$l(t) \to x_0 x_1 \ldots x_n \in P$</span>
+        such that <span class="inline-math">$l(tk) = x_k$</span> for all <span class="inline-math">$k=0,1,\ldots,n$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Write <span class="inline-math">$σ_\mathbf{T} = l(t_0) \ldots l(t_m)$</span> for the <em>string parsed by <span class="inline-math">$\mathbf{T}$</span></em>,
+    where <span class="inline-math">$l_0 &lt; t_1 &lt; \ldots &lt; t_m$</span> are the leaves of <span class="inline-math">$\mathbf{T}$</span>
+    totally-ordered by the left-to-right order.
+</p>
+<p>
+    For <span class="inline-math">$t\in T$</span> not a leaf,
+    define the <em>subtree at <span class="inline-math">$t$</span></em> by <span class="inline-math">$\mathbf{T}_t = (T_t, l_t)$</span> where
+    <span class="inline-math">$T_t = \sb{s\in \N^\ast}{ts\in T}$</span> and <span class="inline-math">$l_t(s) = l(ts)$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\mathbf{T}_t$</span> is a <span class="inline-math">$G$</span>-parse tree starting from <span class="inline-math">$l(t).$</span>
+    </p>
+    
+</li><li>
+    <p>
+        Under the left-to-right ordering, the leaves of <span class="inline-math">$\mathbf{T}_t$</span>
+        are a consecutive sequence of the leaves of <span class="inline-math">$\mathbf{T}$</span>.
+        Therefore <span class="inline-math">$σ_\mathbf{T} = u σ_{\mathbf{T}_t} v$</span>,
+        where <span class="inline-math">$u\in \mathbb{W}$</span> corresponds to all leaves of <span class="inline-math">$\mathbf{T}$</span> to the left of leaves of <span class="inline-math">$\mathbf{T}_t$</span>,
+        and <span class="inline-math">$w\in \mathbb{W}$</span> corresponds to all leaves of <span class="inline-math">$\mathbf{T}$</span> to the right of leaves of <span class="inline-math">$\mathbf{T}_t$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    If <span class="inline-math">$\mathbf{T}$</span> and <span class="inline-math">$\mathbf{T}&#x27;$</span> are <span class="inline-math">$G$</span>-parse trees,
+    <span class="inline-math">$t\in T$</span> with <span class="inline-math">$l(t) = A$</span> and <span class="inline-math">$\mathbf{T}&#x27;$</span> starts from <span class="inline-math">$A$</span>,
+    then we can <em>graft</em> <span class="inline-math">$\mathbf{T}&#x27;$</span> into <span class="inline-math">$\mathbf{T}$</span>:
+    define <span class="inline-math">$\mathrm{graft}(\mathbf{T}, t, \mathbf{T}&#x27;) = (T^\star, l^\star)$</span>
+    where <span class="inline-math">$T^\star = \sb{s\in T}{t\not\subseteq s} \cup \sb{ts}{s\in T&#x27;}$</span> and
+    <span class="display-math">$$ \begin{align*}
+        l^\star(s) = \begin{cases}
+            l(s), &amp;\text{if } t\not\subseteq s, \\
+            l&#x27;(u), &amp;\text{if } s = tu \text{ for some $u\in T&#x27;$}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        Grafting corresponds to removing the subword <span class="inline-math">$σ_{\mathbf{T}_t}$</span> from <span class="inline-math">$σ_{\mathbf{T}}$</span> and replacing it with <span class="inline-math">$σ_{\mathbf{T}&#x27;}$</span>.
+    </p>
+    
+</li>
+</ul>

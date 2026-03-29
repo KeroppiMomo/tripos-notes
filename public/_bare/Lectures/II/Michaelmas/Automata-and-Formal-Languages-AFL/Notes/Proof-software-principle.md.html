@@ -1,0 +1,60 @@
+<p>
+    Input <span class="inline-math">$v,u$</span>.
+</p>
+<ol start="1">
+<li>
+    <p>
+        Ensure <span class="inline-math">$v = \op{code}(M)$</span> for some <span class="inline-math">$M$</span> and <span class="inline-math">$u = \op{code}(\v w)$</span> for some <span class="inline-math">$\v w$</span>.
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            Otherwise, diverge.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        Empty scratch register <span class="inline-math">$i$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Compute <span class="inline-math">$(q, \v w&#x27;) = C(\#(u), M, \v w)$</span> where <span class="inline-math">$u$</span> is the content of register <span class="inline-math">$i$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$q = q_\mathrm{H}$</span>:
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            Write <span class="inline-math">$w_0$</span> into register 0 and halt.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        Otherwise:
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            Apply the successor function to register <span class="inline-math">$i$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            Go to 3.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li>
+</ol>

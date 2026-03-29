@@ -1,0 +1,81 @@
+
+<h1><span class="inline-math">$\int f \d μ &lt; \infty$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$f&lt;\infty$</span> almost everywhere</h1>
+
+<p>
+    Let <span class="inline-math">$A_n := f\inv([n,\infty])$</span> for <span class="inline-math">$n\geq 1$</span>.
+    By <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Proposition-Markov-inequality-in-measure-theory.html">Markov</a>,
+    <span class="display-math">$$ \begin{align*}
+        μ(A_n) \leq \frac{1}{n} \underbrace{\int f \d μ}_{&lt;\infty} \xrightarrow{n\to \infty} 0 \implies μ(A_n) \to 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Moreover <span class="inline-math">$f\inv(\set{\infty}) = \bigcap_{n\geq 1} A_n$</span>
+    with <span class="inline-math">$A_n$</span> being a decreasing sequence.
+    Noting that <span class="inline-math">$μ(A_1) &lt; \infty$</span>, <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Proposition-continuity-of-measure.html">continuity</a> of <span class="inline-math">$μ$</span> yields
+    <span class="inline-math">$μ(f\inv(\set{\infty})) = 0$</span>.
+</p>
+
+<h1><span class="inline-math">$\int f \d μ = 0$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$f = 0$</span> almost everywhere</h1>
+
+<p>
+    Let <span class="inline-math">$A_n = f\inv([1/n, \infty])$</span> for <span class="inline-math">$n\geq 1$</span>.
+    Again by Markov,
+    <span class="display-math">$$ \begin{align*}
+        μ(A_n) \leq n \underbrace{\int f \d μ}_{0} = 0 \implies μ(A_n) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Moreover <span class="inline-math">$f\inv((0,\infty]) = \bigcup_{n\geq 1} A_n$</span>
+    with <span class="inline-math">$A_n$</span> being an increasing sequence.
+    Therefore by continuity <span class="inline-math">$μ(f\inv((0,\infty])) = \lim_{n\to \infty} μ(A_n) = 0$</span>.
+</p>
+
+<h1><span class="inline-math">$f=0$</span> almost everywhere <span class="inline-math">$\implies$</span> <span class="inline-math">$\int f \d μ = 0$</span></h1>
+
+<p>
+    Let <span class="inline-math">$h\leq f$</span> be a non-negative simple function,
+    with a canonical representation <span class="inline-math">$h = \sum_{j=0}^{n} α_j \mathbb{1}_{A_j}$</span>
+    where <span class="inline-math">$0 = α_0 &lt; α_1 &lt; \ldots &lt; α_n$</span>.
+    For <span class="inline-math">$j=1,2, \ldots, n$</span>, since <span class="inline-math">$h\leq f$</span>,
+    <span class="display-math">$$ \begin{align*}
+        A_j = h\inv(\set{α_j}) \subseteq h\inv((0,\infty]) \subseteq f\inv((0,\infty])
+    \end{align*} $$</span>
+    so applying <span class="inline-math">$μ$</span>,
+    <span class="display-math">$$ \begin{align*}
+        μ(A_j) \leq μ(f\inv((0,\infty])) = 0
+    \end{align*} $$</span>
+    and hence
+    <span class="display-math">$$ \begin{align*}
+        \int h \d μ = \sum_{j=0}^{n} α_j μ(A_j) = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore <span class="inline-math">$\int f \d μ = 0$</span>.
+</p>
+
+<h1><span class="inline-math">$f = g$</span> almost everywhere <span class="inline-math">$\implies$</span> <span class="inline-math">$\int f\d μ = \int g\d μ$</span></h1>
+
+<blockquote>
+    <p>
+        <span class="inline-math">$f-g$</span> may not be non-negative, so we can't integrate it.
+    </p>
+    
+</blockquote>
+<p>
+    Consider the measurable functions <span class="inline-math">$\max\set{f,g}$</span> and <span class="inline-math">$\min\set{f,g}$</span>.
+    Then <span class="inline-math">$\max\set{f,g} - \min\set{f,g}$</span> is non-negative measurable.
+</p>
+<p>
+    Since <span class="inline-math">$f=g$</span> almost everywhere, <span class="inline-math">$\max\set{f,g}-\min\set{f,g} = 0$</span> almost everywhere.
+    From the above,
+    <span class="display-math">$$ \begin{align*}
+        \int \max\set{f,g} = \int \min\set{f,g} + \underbrace{\int (\max\set{f,g} - \min\set{f,g})}_{0} = \int \min\set{f,g}.
+    \end{align*} $$</span>
+</p>
+<p>
+    But using <span class="inline-math">$\min\set{f,g} \leq f,g \leq \max\set{f,g}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \int \min\set{f,g} \; \leq \; \int f, \int g \; \leq \; \int \max\set{f,g}
+    \end{align*} $$</span>
+    so we must have <span class="inline-math">$\int f = \int g$</span>.
+</p>

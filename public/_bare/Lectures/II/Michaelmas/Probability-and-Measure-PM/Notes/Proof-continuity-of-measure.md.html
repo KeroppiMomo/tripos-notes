@@ -1,0 +1,33 @@
+
+<h1>Increasing sequence</h1>
+
+<p>
+    Take
+    <span class="display-math">$$ \begin{align*}
+        C_0 ={}&amp; A_0, \\
+        C_n ={}&amp; A_n \setminus A_{n-1}, \qquad n\geq 1
+    \end{align*} $$</span>
+    which satisfies <span class="inline-math">$A_n = \bigsqcup_{i=0}^{n} C_i$</span>.
+    So
+    <span class="display-math">$$ \begin{align*}
+        μ\biggl(\bigcup_{n\geq 0} A_n\biggr) ={}&amp; μ\biggl(\bigsqcup_{n\geq 0} C_n\biggr) \\
+        ={}&amp; \lim_{n\to \infty} \sum_{i=0}^{n} μ(C_i) \\
+        ={}&amp; \lim_{n\to \infty} μ\biggl(\bigsqcup_{i=0}^{n} μ(C_i)\biggr) \\
+        ={}&amp; \lim_{n\to \infty} μ(A_n).
+    \end{align*} $$</span>
+</p>
+
+<h1>Decresaing sequence</h1>
+
+<p>
+    For a decreasing sequence <span class="inline-math">$(A_n)$</span>,
+    the complements <span class="inline-math">$(B_n = A_{0} \setminus A_n)_{n\geq 0}$</span> is increasing.
+    Also <span class="inline-math">$μ(A_n)\leq μ(A_0)&lt;\infty$</span> and <span class="inline-math">$μ(\bigcap_{n\in \N} A_n) \leq μ(A_0) &lt; \infty$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        μ(A_0) - μ\biggl(\bigcap_{n\geq 0} A_n\biggr) ={}&amp; μ\biggl(A_0 \setminus \bigcap_{n\geq 0} A_n\biggr) \\
+        ={}&amp; μ\biggl(\bigcup_{n\geq 0} B_n\biggr) \\
+        ={}&amp; \lim_{n\to \infty} μ(B_n) \\
+        ={}&amp; \lim_{n\to \infty} \bigl(μ(A_0) - μ(A_n)\bigr) \\
+        ={}&amp; μ(A_0) - \lim_{n\to \infty} μ(A_n).
+    \end{align*} $$</span>
+</p>

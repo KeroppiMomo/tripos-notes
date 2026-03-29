@@ -1,0 +1,79 @@
+<p>
+    A <em><span class="inline-math">$Σ$</span>-register machine</em> is a tuple <span class="inline-math">$M = (Σ, Q, P)$</span> where
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$Σ$</span> is a non-empty finite set (the <em>alphabet</em>);
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$Q$</span> is a finite set (of <em>states</em>) with two special elements
+        <span class="inline-math">$q_\mathrm{S} \neq q_\mathrm{H}$</span> (the <em>start state</em> and the <em>halt state</em>); and
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$P$</span> is a function with domain <span class="inline-math">$Q$</span> (the <em>program</em>), such that each <span class="inline-math">$P(q)$</span> is a <em><span class="inline-math">$(Σ, Q)$</span>-instruction</em>,
+        i.e. tuple of one of the following forms:
+        (<span class="inline-math">$k\in \N$</span>, <span class="inline-math">$a\in Σ$</span>, <span class="inline-math">$q\in Q$</span>, <span class="inline-math">$q&#x27;\in Q$</span>)
+    </p>
+    
+</li>
+</ul>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            Instruction
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Interpretation
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$+(k,a,q):=(0,k,a,q)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            Add the letter <span class="inline-math">$a$</span> to the content of register <span class="inline-math">$k$</span>;<br>then go to state <span class="inline-math">$q$</span>.
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$?(k,a,q,q&#x27;):=(1,k,a,q,q&#x27;)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            If the last letter in register <span class="inline-math">$k$</span> is <span class="inline-math">$a$</span>:<br>&emsp;go to state <span class="inline-math">$q$</span>;<br>otherwise:<br>&emsp;go to state <span class="inline-math">$q&#x27;$</span>.
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$?(k,ε,q,q&#x27;):=(2,k,q,q&#x27;)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            If register <span class="inline-math">$k$</span> is empty:<br>&emsp;go to state <span class="inline-math">$q$</span>;<br>otherwise:<br>&emsp;go to state <span class="inline-math">$q&#x27;$</span>.
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-(k,q,q&#x27;):=(3,k,q,q&#x27;)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            If register <span class="inline-math">$k$</span> is empty:<br>&emsp;go to state <span class="inline-math">$q$</span>;<br>otherwise:<br>&emsp;remove the final letter of its content;<br>&emsp;and go to state <span class="inline-math">$q&#x27;$</span>.
+        </p>
+        </td>
+    </tr>
+</table>
+<p>
+    <span class="inline-math">$q\mapsto P(q)$</span> is called a <em>program line</em>.
+</p>

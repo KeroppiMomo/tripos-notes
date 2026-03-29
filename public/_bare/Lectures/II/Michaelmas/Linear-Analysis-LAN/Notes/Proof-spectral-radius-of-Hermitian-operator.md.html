@@ -1,0 +1,65 @@
+
+<h1>Proof 1: using formula</h1>
+
+<p>
+    Note <span class="inline-math">$\|T^2\| = \|T^\ast T\|$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Examples-of-Hermitian-operators.html#^T-adjoint-T"><span class="inline-math">${}={}$</span></a><span class="inline-math">$\|T\|^2$</span>,
+    so by induction <span class="inline-math">$\|T^{2^n}\| = \|T\|^{2^n}$</span>.
+</p>
+<p>
+    Hence the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-spectral-radius-formula.html">spectral radius formula</a> says
+    <span class="display-math">$$ \begin{align*}
+        r(T) = \lim_{n\to \infty} \|T^{2^n}\|^{1/2^n} = \|T\|.
+    \end{align*} $$</span>
+</p>
+
+<h1>Proof 2: using approximate eigenvalues</h1>
+
+<p>
+    WLOG assume <span class="inline-math">$\|T\| = 1$</span> by replacing <span class="inline-math">$T$</span> with <span class="inline-math">$T/\|T\|$</span>.
+    We want to show either <span class="inline-math">$+1$</span> or <span class="inline-math">$-1$</span> is
+    an <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-point-spectrum-approximate-point-spectrum.html">approximate eigenvalue</a> of <span class="inline-math">$T$</span>.
+</p>
+<p>
+    From the definition of <span class="inline-math">$\|T\| = 1$</span>,
+    take <span class="inline-math">$(x_n)_{n\in \N}$</span> in <span class="inline-math">$H$</span>
+    such that <span class="inline-math">$\|x_n\| = 1$</span>
+    and <span class="inline-math">$\|Tx_n\| \to \|T\| = 1$</span>.
+</p>
+<p>
+    Now
+    <span class="display-math">$$ \begin{align*}
+        \|(\id - T^2)x_n\|^2 ={}&amp; \langle (\id - T^2)x_n, (\id - T^2)x_n\rangle \\
+        ={}&amp; \|x_n\|^2 - \langle x_n, T^2 x_n\rangle - \langle T^2 x_n, x_n\rangle + \|T^2 x_n\|^2 \\
+        \leq{}&amp; 1 - \langle Tx_n, Tx_n\rangle - \langle Tx_n, Tx_n\rangle + \|T\|^2 \|Tx_n\|^2 \\
+        ={}&amp; 1 - \|Tx_n\|^2 \to 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$(\id - T)(\id + T)x_n = (\id - T^2) x_n \to 0$</span>.
+</p>
+<p>
+    Two cases:
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$(\id + T)x_n\to 0$</span>, then <span class="inline-math">$-1$</span> is an approximate eigenvalue of <span class="inline-math">$T$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Otherwise, there exists <span class="inline-math">$ε&gt;0$</span> and a subsequence <span class="inline-math">$n_1 &lt; n_2 &lt; \ldots$</span> such that
+        <span class="inline-math">$\|(\id + T)x_{n_k}\| &gt; ε$</span> for all <span class="inline-math">$k\in \N$</span>.
+    </p>
+    <p>
+        Define
+        <span class="display-math">$$ \begin{align*}
+            y_k := \frac{(\id + T)x_{n_k}}{\|(\id + T)x_{n_k}\|}.
+        \end{align*} $$</span>
+        Then <span class="inline-math">$\|y_k\| = 1$</span> and
+        <span class="display-math">$$ \begin{align*}
+            \left\|(\id - T)y_k\right\| ={}&amp; \frac{\|(\id - T)(\id + T)x_{n_k}\|}{\|(\id + T)x_{n_k}\|} &lt; \frac{1}{ε} \|(\id - T)(\id + T)x_{n_k}\| \to 0
+        \end{align*} $$</span>
+        so <span class="inline-math">$+1$</span> is an approximate eigenvalue of <span class="inline-math">$T$</span>.
+    </p>
+    
+</li>
+</ul>

@@ -1,0 +1,33 @@
+<p>
+    Define the measurable sets
+    <span class="display-math">$$ \begin{align*}
+        A_i^{(n)} ={}&amp; f\inv\Bigl(\Bigl[\frac{i}{2^n}, \frac{i+1}{2^n}\Bigr)\Bigr), \qquad i=0,1, \ldots, n\cdot 2^n-1, \\
+        A_\infty^{(n)} ={}&amp; f\inv([n, \infty])
+    \end{align*} $$</span>
+    and the simple function
+    <span class="display-math">$$ \begin{align*}
+        f_n = \sum_{i=0}^{n \cdot 2^{n}-1} \frac{i}{2^n} \mathbb{1}_{A^{(n)}_i} + n \, \mathbb{1}_{A_{\infty}^{(n)}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    By construction <span class="inline-math">$f_n \leq f$</span>.
+    Also since the partitions <span class="inline-math">$\bigsqcup_{i=0}^{n \cdot 2^{n}-1} A_i^{(n)} \sqcup A^{(n)}_\infty$</span> of <span class="inline-math">$E$</span>
+    get finer as <span class="inline-math">$n$</span> increases,
+    <span class="inline-math">$f_n$</span> is increasing.
+</p>
+<p>
+    Fix <span class="inline-math">$x\in E$</span> and we want to show <span class="inline-math">$f_n(x)\to f(x)$</span>.
+</p>
+<p>
+    If <span class="inline-math">$f(x) = \infty$</span>,
+    then <span class="inline-math">$x\in A_\infty^{(n)}$</span> for all <span class="inline-math">$n$</span>,
+    so <span class="inline-math">$f_n(x) = n \to \infty = f(x)$</span> as required.
+</p>
+<p>
+    Otherwise if <span class="inline-math">$f(x) &lt; \infty$</span>, then for <span class="inline-math">$n&gt;f(x)$</span>, there is some <span class="inline-math">$0\leq i\leq n\cdot 2^n-1$</span>
+    such that
+    <span class="display-math">$$ \begin{align*}
+        f_n(x) = \frac{i}{2^n} \leq f(x) \leq \frac{i+1}{2^n} = f_n(x) + \frac{1}{2^n}.
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$f_n(x) \to f(x)$</span>.
+</p>

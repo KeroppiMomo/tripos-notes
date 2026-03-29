@@ -16,7 +16,12 @@ const preamble = `
 \\DeclareMathOperator{\\SL}{SL}
 \\DeclareMathOperator{\\ord}{ord}
 \\DeclareMathOperator{\\Log}{Log}
+\\DeclareMathOperator{\\Aut}{Aut}
+\\DeclareMathOperator{\\Gal}{Gal}
+\\DeclareMathOperator{\\Hom}{Hom}
 \\DeclareMathOperator*{\\Res}{Res}
+\\DeclareMathOperator*{\\limup}{\\,{\\uparrow} lim\\,}
+\\DeclareMathOperator*{\\limdown}{\\,{\\downarrow} lim\\,}
 
 \\newcommand{\\id}{\\mathrm{id}}
 \\newcommand{\\op}{\\operatorname}
@@ -27,7 +32,7 @@ const preamble = `
 \\newcommand{\\N}{\\mathbb{N}}
 \\newcommand{\\I}{\\mathrm{I}}
 \\newcommand{\\II}{\\mathrm{II}}
-\\newcommand{\\se}[1]{\\{#1\\}}
+\\newcommand{\\se}{\\{#1\\}}
 \\newcommand{\\sb}[2]{\\left\\{#1\\;\\middle|\\; #2\\right\\}}
 \\newcommand{\\actson}{\\curvearrowright}
 \\newcommand{\\mrm}[1]{\\mathrm{#1}}
@@ -67,6 +72,10 @@ const preamble = `
 \\newcommand{\\fsum}[4][=]{\\for[#1]{\\sum}{#2}{#3}{#4}}
 
 \\newcommand{\\operp}{⦹}
+
+\\newcommand{\\rel}{\\ \\ \\mathrm{rel}\\ }
+
+\\newcommand{\\mapsfrom}{\\leftarrow\\!\\shortmid}
 
 `
 

@@ -1,0 +1,216 @@
+
+<h1>Universal cover <span class="inline-math">$\implies$</span> semi-locally simply connected</h1>
+
+<p>
+    Suppose <span class="inline-math">$p: \tilde X\to X$</span> is a universal cover
+    and <span class="inline-math">$x_0\in X$</span> is a point.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">Let</a>
+    <span class="inline-math">$U\subseteq X$</span> be an open neighbourhood of <span class="inline-math">$x_0$</span>
+    which is evenly covered.
+    Pick some <span class="inline-math">$\tilde x_0\in p\inv(x_0)$</span>,
+    and take some open neighbourhood <span class="inline-math">$V\subseteq \tilde X$</span> of <span class="inline-math">$\tilde x_0$</span>
+    such that <span class="inline-math">$p|_V : V \to U$</span> is a homeomorphism.
+</p>
+<p>
+    For any loop <span class="inline-math">$γ$</span> in <span class="inline-math">$U$</span> based at <span class="inline-math">$x_0$</span>,
+    there is a lift <span class="inline-math">$\tilde γ = p|_V\inv\circ γ$</span> in <span class="inline-math">$V$</span>,
+    which is a loop based at <span class="inline-math">$\tilde x_0$</span>.
+    Thus the homeomorphism <span class="inline-math">$p_\ast: π_1(\tilde X, \tilde x_0)\to π_1(X, x_0)$</span>
+    sends <span class="inline-math">$[\tilde γ]$</span> to <span class="inline-math">$[γ]$</span>.
+    However <span class="inline-math">$\tilde X$</span> is simply connected,
+    so <span class="inline-math">$[\tilde γ] = [c_{\tilde x_0}]$</span>
+    and hence <span class="inline-math">$[γ] = [c_{x_0}]$</span>.
+</p>
+
+<h1>Path-connected, locally path-connected, semi-locally simply connected <span class="inline-math">$\implies$</span> universal cover</h1>
+
+<blockquote>
+    <p>
+        Motivation:
+        >
+        Suppose there is a universal cover <span class="inline-math">$p: \tilde X\to X$</span>.
+        Pick basepoints <span class="inline-math">$x_0\in X$</span> and <span class="inline-math">$\tilde x_0\in p\inv(x_0)\subseteq \tilde X$</span>.
+        <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-simply-connected-iff-unique-homotopy-class-of-paths.html">We know that</a> since <span class="inline-math">$\tilde X$</span> is simply connected,
+        for each point <span class="inline-math">$\tilde x\in \tilde X$</span>,
+        there is a unique homotopy class of paths from <span class="inline-math">$x_0$</span> to <span class="inline-math">$x$</span>.
+        This gives a bijection
+        <span class="display-math">$$ \begin{align*}
+            \tilde X \longleftrightarrow \set{\text{paths in $\tilde X$ starting from $\tilde x_0$}} \,\big/\, {\simeq}.
+        \end{align*} $$</span>
+        >
+        Moreover <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-homotopy-lifting-lemma-monodromy-theorem.html">path lifting</a> leads to a bijection
+        <span class="display-math">$$ \begin{align*}
+            \set{\text{paths in $\tilde X$ starting from $\tilde x_0$}} \longleftrightarrow
+            \set{\text{paths in $X$ starting from $x_0$}},
+        \end{align*} $$</span>
+        and homotopy lifting says paths in <span class="inline-math">$X$</span> are homotopic iff their lifts in <span class="inline-math">$\tilde X$</span> are homotopic.
+        >
+        Thus there is a bijection
+        <span class="display-math">$$ \begin{align*}
+            \tilde X \longleftrightarrow \set{\text{paths in $X$ starting from $x_0$}} \,\big/\, {\simeq}.
+        \end{align*} $$</span>
+        We will define <span class="inline-math">$\tilde X$</span> this way.
+    </p>
+    
+</blockquote>
+<p>
+    Define <span class="inline-math">$\tilde X$</span> and <span class="inline-math">$p$</span> as mentioned.
+</p>
+
+<h2>Base for the topology on <span class="inline-math">$X$</span></h2>
+
+<p>
+    We claim that
+    <span class="display-math">$$
+        \mathcal{U} = \left\{U\subseteq X\ \middle|\ \begin{align*}
+            &amp;\text{$U$ is open in $X$, is path-connected,} \\
+            &amp;\text{and $π_1(U, x) \to π_1(X, x)$ is trivial for all $x\in U$}
+        \end{align*}\right\}
+    $$</span>
+    is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-base-for-topology.html">base</a> for the topology of <span class="inline-math">$X$</span>.
+    (Here <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-based-maps-descend-to-homomorphisms-between-fundamental-groups.html"><span class="inline-math">$i_\ast$</span></a><span class="inline-math">${}: π_1(U,x)\to π_1(X,x)$</span> refers to the
+    homeomorphism induced by inclusion <span class="inline-math">$i: U\to X$</span>.)
+</p>
+<p>
+    It suffices to show
+    that for all open neighbourhood <span class="inline-math">$V\subseteq X$</span> of a point <span class="inline-math">$x\in X$</span>,
+    there exists a neighbourhood <span class="inline-math">$U\in \mathcal{U}$</span> of <span class="inline-math">$x$</span> that
+    is contained within <span class="inline-math">$V$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$X$</span> is semi-locally simply connected,
+    there exists a neighbourhood <span class="inline-math">$U&#x27;\subseteq V$</span>
+    of <span class="inline-math">$x$</span> where <span class="inline-math">$π_1(U&#x27;, x) \to π_1(X,x)$</span> is trivial.
+    Then by local path-connectedness,
+    find a path-connected neighbourhood <span class="inline-math">$U\subseteq U&#x27;$</span> of <span class="inline-math">$x$</span>.
+    Note <span class="inline-math">$π_1(U, x)\to π_1(X,x)$</span> has a factorisation
+    <span class="inline-math">$π_1(U, x) \to π_1(U&#x27;, x) \xrightarrow{\text{trivial}} π_1(X,x)$</span>
+    so is trivial.
+    In addition for any <span class="inline-math">$y\in U$</span>,
+    choose a path <span class="inline-math">$u: y \rightsquigarrow x$</span> in <span class="inline-math">$U$</span>.
+    The <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-change-of-basepoint.html">commutative square</a>
+</p>
+<p>
+    <iframe src="https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHBpXzEoVSwgeSkiXSxbMCwxLCJcXHBpXzEoVSx4KSJdLFsyLDAsIlxccGlfMShYLHkpIl0sWzIsMSwiXFxwaV8xKFgseCkiXSxbMCwxLCJ1X1xcIyIsMl0sWzAsMSwiXFxjb25nIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoibm9uZSJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzAsMl0sWzEsMywiXFx0ZXh0e3RyaXZpYWx9IiwyXSxbMiwzLCJ1X1xcIyJdLFsyLDMsIlxcY29uZyIsMl1d&embed" width="100%" height="250"></iframe>
+</p>
+<p>
+    shows that <span class="inline-math">$π_1(U, y) \to π_1(X, y)$</span> is also trivial.
+    Hence <span class="inline-math">$U\in \mathcal{U}$</span>.
+</p>
+
+<h2>Basis for the topology on <span class="inline-math">$\tilde X$</span></h2>
+
+<p>
+    We will show that there is a topology on <span class="inline-math">$\tilde X$</span>
+    which <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-defining-properties-of-bases-for-topology.html">admits the base</a>
+    <span class="display-math">$$ \begin{align*}
+        \tilde{\mathcal{U}} = \sb{U_{[α]}}{U\in \mathcal{U}, \; [α]\in \tilde X, \; α(1)\in U}
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        U_{[α]} = \sb{[α\cdot α&#x27;]}{\text{path $α&#x27;$ in $U$ starting at $α(1)$}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    The covering property is clear as <span class="inline-math">$[α] \in U_{[α]}$</span>,
+    so it suffices to check that if <span class="inline-math">$[γ]\in U_{[α]}\cap V_{[β]}$</span>,
+    then there exists a basic neighbourhood <span class="inline-math">$W\in \mathcal{U}$</span> of <span class="inline-math">$γ(1)$</span>
+    such that <span class="inline-math">$W_{[γ]}\subseteq U_{[α]} \cap V_{[β]}$</span>.
+</p>
+<p>
+    We can write <span class="inline-math">$[α\cdot α&#x27;] = [γ] = [β\cdot β&#x27;]$</span>
+    for paths <span class="inline-math">$α&#x27;$</span> in <span class="inline-math">$U$</span> and <span class="inline-math">$β&#x27;$</span> in <span class="inline-math">$V$</span>.
+    Take <span class="inline-math">$W \in \mathcal{U}$</span> so that <span class="inline-math">$γ(1) \in W\subseteq U\cap V$</span>,
+    which is possible as <span class="inline-math">$\mathcal{U}$</span> is a base.
+    For any path <span class="inline-math">$γ&#x27;$</span> in <span class="inline-math">$U\cap V$</span>,
+    we see
+    <span class="display-math">$$ \begin{align*}
+        [α \cdot \underbrace{(α&#x27;\cdot γ&#x27;)}_{\text{path in $U$}}] = [γ\cdot γ&#x27;] = [β \cdot \underbrace{(β&#x27;\cdot γ&#x27;)}_{\text{path in $V$}}],
+    \end{align*} $$</span>
+    so <span class="inline-math">$[γ\cdot γ&#x27;] \in U_{[α]} \cap V_{[β]}$</span>.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20250911213001.png">
+</p>
+
+<h2><span class="inline-math">$p$</span> is continuous</h2>
+
+<p>
+    It suffices to show that
+    <span class="inline-math">$p\inv(U)$</span> is open in <span class="inline-math">$\tilde X$</span> for all <span class="inline-math">$U\in \mathcal{U}$</span>.
+    For any <span class="inline-math">$[γ] \in p\inv(U)$</span>,
+    the neighbourhood <span class="inline-math">$U_{[γ]}\in \tilde{\mathcal{U}}$</span>
+    of <span class="inline-math">$[γ]\in \tilde X$</span> is contained within <span class="inline-math">$p\inv(U)$</span>.
+</p>
+
+<h2><span class="inline-math">$p|_{U_{[α]}}: U_{[α]} \to U$</span> is a homeomorphism</h2>
+
+<ul>
+<li>
+    <p>
+        Surjectivity: since <span class="inline-math">$U$</span> is path-connected, for any <span class="inline-math">$x\in U$</span>,
+        choose a path <span class="inline-math">$α&#x27;: α(1) \rightsquigarrow x$</span> in <span class="inline-math">$U$</span>.
+        Then <span class="inline-math">$p$</span> sends <span class="inline-math">$[α\cdot α&#x27;]\in U_{[α]}$</span> to <span class="inline-math">$x$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Injectivity: for <span class="inline-math">$[α\cdot α&#x27;], [α\cdot α&#x27;&#x27;]\in U_{[α]}$</span> ending at the same point,
+        <span class="inline-math">$α&#x27;\cdot α&#x27;&#x27;\inv$</span> is a loop in <span class="inline-math">$U$</span> based at <span class="inline-math">$α(1)$</span>.
+        Since <span class="inline-math">$π_1(U,α(1)) \to π_1(X,α(1))$</span> is trivial,
+        we have <span class="inline-math">$[α&#x27;\cdot α&#x27;&#x27;\inv] = [c_{α(1)}]$</span>
+        and thus <span class="inline-math">$[α\cdot α&#x27;] = [α\cdot α&#x27;&#x27;]$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Open map: our argument for surjectivity shows that
+        <span class="inline-math">$p(V_{[β]}) = V$</span>,
+        so <span class="inline-math">$p$</span> maps all base elements to open sets.
+    </p>
+    
+</li>
+</ul>
+
+<h2><span class="inline-math">$p$</span> is a covering map</h2>
+
+<p>
+    We claim that <span class="inline-math">$U\in\mathcal{U}$</span> is evenly covered by
+    sets of the form <span class="inline-math">$U_{[α]}\in \mathcal{U}$</span>.
+    It is clear that they cover <span class="inline-math">$p\inv(U)$</span>,
+    so we want to show any two <span class="inline-math">$U_{[α]}, U_{[β]}$</span>
+    are either disjoint or equal.
+</p>
+<p>
+    Suppose <span class="inline-math">$[γ]\in U_{[α]}\cap U_{[β]}$</span>,
+    so we can write <span class="inline-math">$[α\cdot α&#x27;] = [γ] = [β\cdot β&#x27;]$</span>
+    for paths <span class="inline-math">$α&#x27;,β&#x27;$</span> in <span class="inline-math">$U$</span>.
+    For any <span class="inline-math">$[α\cdot α&#x27;&#x27;]\in U_{[α]}$</span>,
+    observe <span class="inline-math">$[α\cdot α&#x27;&#x27;] = [β\cdot (β&#x27;\cdot α&#x27;\inv\cdot α&#x27;&#x27;)]\in U_{[β]}$</span>,
+    so <span class="inline-math">$U_{[α]}\subseteq U_{[β]}$</span>.
+    The reverse inclusion is similar.
+</p>
+
+<h2><span class="inline-math">$\tilde X$</span> is simply connected</h2>
+
+<p>
+    The key observation is
+    that for any path <span class="inline-math">$γ: [0,1]\to X$</span> starting from <span class="inline-math">$x_0$</span>,
+    its lift to <span class="inline-math">$\tilde X$</span> starting from <span class="inline-math">$[c_{x_0}]$</span>
+    is given by
+    <span class="display-math">$$ \begin{align*}
+        \tilde γ : [0,1] &amp;\to \tilde X \\
+        s &amp;\mapsto [ t \mapsto γ(st) ]
+    \end{align*} $$</span>
+    and ends at <span class="inline-math">$[γ]$</span>.
+    This shows that <span class="inline-math">$\tilde X$</span> is path-connected.
+</p>
+<p>
+    Moreover any loop <span class="inline-math">$\tilde γ$</span> in <span class="inline-math">$\tilde X$</span> based at <span class="inline-math">$[c_{x_0}]$</span>
+    is the lift of a loop <span class="inline-math">$γ = p\circ \tilde γ$</span> in <span class="inline-math">$X$</span> based at <span class="inline-math">$x_0$</span>.
+    However from the above, <span class="inline-math">$\tilde γ$</span> must end at <span class="inline-math">$[γ]$</span>,
+    so we have <span class="inline-math">$[γ] = [c_{x_0}]$</span>.
+    Hence <span class="inline-math">$p_\ast: π_1(\tilde X, [c_{x_0}]) \to π_1(X, x_0)$</span> is trivial.
+    But <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-homotopy-lifting-lemma-monodromy-theorem.html#^fundamental-group"><span class="inline-math">$p_\ast$</span> is injective</a>,
+    so <span class="inline-math">$π_1(\tilde X, [c_{x_0}])$</span> is trivial.
+</p>

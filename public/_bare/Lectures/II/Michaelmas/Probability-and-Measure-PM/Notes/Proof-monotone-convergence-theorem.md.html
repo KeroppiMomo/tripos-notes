@@ -1,0 +1,64 @@
+<p>
+    Let <span class="inline-math">$f = \lim_{n\to \infty} f_n = \sup_{n\to\infty} f_n$</span>.
+    <span class="inline-math">$f$</span> is non-negative, and <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Proposition-measurability-in-pointwise-limits.html">we have shown</a> <span class="inline-math">$f$</span> is measurable.
+</p>
+
+<h1><span class="inline-math">$\lim_{n\to \infty} \int f_n \leq \int f$</span></h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-integral-of-non-negative-measurable-function.html#^positivity">Since</a> <span class="inline-math">$f_n \leq f$</span> as <span class="inline-math">$f_n$</span> is increasing,
+    we have <span class="inline-math">$\int f_n \leq \int f$</span>.
+    Taking the limit gives <span class="inline-math">$\lim_{n\to \infty} \int f_n \leq \int f$</span>.
+</p>
+
+<h1><span class="inline-math">$\lim_{n\to \infty} \int f_n \geq \int f$</span></h1>
+
+<p>
+    Let <span class="inline-math">$h\leq f$</span> be a simple non-negative function,
+    and fix some <span class="inline-math">$ε&gt;0$</span>, so <span class="inline-math">$(1-ε)h &lt; f$</span>.
+    The sets
+    <span class="display-math">$$ \begin{align*}
+        E_n := \sb{x\in E}{(1-ε)h(x) \leq f_n(x)}.
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        is increasing because <span class="inline-math">$f_n$</span> is increasing; and
+    </p>
+    
+</li><li>
+    <p>
+        satisfies that <span class="inline-math">$\bigcup_{n\in \N} E_n = E$</span>,
+        because for each <span class="inline-math">$x\in X$</span>,
+        since <span class="inline-math">$f_n(x) \nearrow f(x) &gt; (1-ε)h(x)$</span>,
+        there exists some <span class="inline-math">$N$</span> such that <span class="inline-math">$(1-ε)h(x) \leq f_n(x)$</span> for all <span class="inline-math">$n\geq N$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore we can approximate
+    <span class="display-math">$$ \begin{align*}
+        f_n \geq (1-ε)h \cdot \mathbb{1}_{E_n}.
+    \end{align*} $$</span>
+    Writing <span class="inline-math">$h = \sum_{k=1}^{K} α_k \mathbb{1}_{A_k}$</span> in the canonical representation,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        h \,\mathbb{1}_{E_n} = \sum_{k=1}^{K} α_k \mathbb{1}_{A_k \cap E_n},
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \sup_{n\to \infty} \int f_n \geq{} &amp; \sup_{n\to \infty} \int (1-ε) h \, \mathbb{1}_{E_n} \\
+        \geq{} &amp; \sup_{n\to \infty} \sum_{k=1}^{K} (1-ε)α_k\, μ(A_k \cap E_n) \\
+        ={}&amp; (1-ε)\sum_{k=1}^{K} α_k\sup_{n\to \infty} μ(A_k \cap E_n) \\
+        ={}&amp; (1-ε)\sum_{k=1}^{K} α_k \,μ\Bigl(A_k \cap \underbrace{\bigcup_{n\in \N} E_n}_{E}\Bigr) \tag{*}\\
+        ={}&amp; (1-ε) \int h
+    \end{align*} $$</span>
+    where <span class="inline-math">$(*)$</span> has applied the <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Proposition-continuity-of-measure.html">continuity</a> of <span class="inline-math">$μ$</span>.
+    This holds for all <span class="inline-math">$ε$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        \limup_{n\to \infty} \int f_n \geq \int h \d μ
+    \end{align*} $$</span>
+    which holds for all <span class="inline-math">$h$</span>.
+</p>

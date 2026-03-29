@@ -1,0 +1,266 @@
+<p>
+    A <em>recursion tree</em>
+    is a pair <span class="inline-math">$Π = (T, l)$</span> where
+    <span class="inline-math">$T$</span> is a non-empty finite <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-finitely-branching-tree.html">tree</a>
+    and <span class="inline-math">$l$</span> is a function with <span class="inline-math">$\op{dom}(l)=T$</span> taking the following labels as values:
+</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            Label
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Arity
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Branching number
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Arities of successors
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            Interpretation
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{B}^π_{k,i}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            0
+        </p>
+        </td>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"><p>
+            Projection <span class="inline-math">$π_{k,i}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{B}^\mathrm{c}_k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            0
+        </p>
+        </td>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"><p>
+            Constant <span class="inline-math">$\mathrm{c}_{k,ε}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{B}^s$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            1
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            0
+        </p>
+        </td>
+        <td class="table-cell-left"></td>
+        <td class="table-cell-left"><p>
+            Successor <span class="inline-math">$s$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{C}_{n,k}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$n+1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$n,\underbrace{k,\ldots,k}_{n}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            Composition
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{R}_{k}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            2
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$k, k+2$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            Recursion
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{M}_k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            1
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$k+1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            Minimisation
+        </p>
+        </td>
+    </tr>
+</table>
+<p>
+    A recursion tree is <em>primitive</em> if no <span class="inline-math">$\mathsf{M}$</span>-labels occur.
+</p>
+<p>
+    Assign <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Church-s-recursive-functions.html">recursive functions</a> <span class="inline-math">$f_Π$</span> to each recursion tree
+    by recursion on the height of the tree:
+</p>
+<ul>
+<li>
+    <p>
+        The tree has height 0 iff <span class="inline-math">$l(ε)$</span> is a basic label:
+    </p>
+    
+</li>
+</ul>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$l(ε)$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$f_Π$</span>
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{B}^{π}_{k,i}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$π_{k,i}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{B}^\mathrm{c}_k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathrm{c}_{k,ε}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{B}^s$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$s$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            - Suppose the tree has height <span class="inline-math">$k+1$</span> and we already know <span class="inline-math">$f_{Π&#x27;}$</span> for all proper subtrees <span class="inline-math">$Π&#x27;$</span> of <span class="inline-math">$Π$</span>.
+        </p>
+        </td>
+        <td class="table-cell-left"></td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            Let <span class="inline-math">$\set{Π_i}$</span> be the subtrees at the successors of <span class="inline-math">$ε$</span>.
+        </p>
+        </td>
+        <td class="table-cell-left"></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$l(ε)$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$f_Π$</span>
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{C}_{n,k}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\v w\mapsto f_{Π_0}(f_{Π_1}(\v w), \ldots f_{Π_n}(\v w))$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{R}_k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            Recursion of <span class="inline-math">$f_{Π_0}$</span> and <span class="inline-math">$f_{Π_1}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathsf{M}_k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            Minimisation result of <span class="inline-math">$f_{Π_0}$</span>
+        </p>
+        </td>
+    </tr>
+</table>

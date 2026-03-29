@@ -1,0 +1,177 @@
+<p>
+    Informally, for a path-connected, locally path-connected and semi-locally simply connected space <span class="inline-math">$X$</span> and <span class="inline-math">$x_0\in X$</span>,
+    there are bijections
+    <span class="display-math">$$
+        \biggl\{\begin{gather}\text{path-connected based covering map}\\ p: (\tilde X, \tilde x_0)\to (X, x_0)\end{gather}\biggr\}
+        \,\Big/ \,\text{homeomorphism} \longleftrightarrow \set{\text{subgroups of $π_1(X, x_0)$}}
+    $$</span>
+    and
+    <span class="display-math">$$
+        \biggl\{\begin{gather}\text{path-connected covering map}\\ p: \tilde X\to X\end{gather}\biggr\}
+        \,\Big/ \,\text{homeomorphism} \longleftrightarrow \set{\text{conjugacy classes of subgroups of $π_1(X, x_0)$}}.
+    $$</span>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (locally path-connected)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-locally-path-connected.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A topological space <span class="inline-math">$X$</span>
+                is called <em>locally path-connected</em>
+                if for every point <span class="inline-math">$x\in X$</span>
+                and neighbourhood <span class="inline-math">$U$</span> of <span class="inline-math">$x$</span>,
+                there exists a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">path-connected</a>
+                neighbourhood <span class="inline-math">$V\subseteq U$</span> of <span class="inline-math">$x$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (semi-locally simply connected)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-semi-locally-simply-connected.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A topological space <span class="inline-math">$X$</span> is called <em>semi-locally simply connected</em>
+                if for all points <span class="inline-math">$x_0\in X$</span>,
+                there exists a neighbourhood <span class="inline-math">$U\subseteq X$</span> of <span class="inline-math">$x_0$</span>
+                such that any loop in <span class="inline-math">$U$</span> based at <span class="inline-math">$x_0$</span> is
+                contractible (i.e. <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-homotopic-as-paths.html">homotopic</a> to <span class="inline-math">$c_{x_0}$</span> as paths) in <span class="inline-math">$X$</span>.
+                In other words, the homeomorphism <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-based-maps-descend-to-homomorphisms-between-fundamental-groups.html"><span class="inline-math">$i_\ast$</span></a><span class="inline-math">${}: π_1(U, x_0)\to π_1(X, x_0)$</span>
+                induced by inclusion <span class="inline-math">$i: U \to X$</span> is trivial.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (construction of universal cover)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-construction-of-universal-cover.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose a space <span class="inline-math">$X$</span>
+                is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">path-connected</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-locally-path-connected.html">locally path-connected.</a>
+                Then <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-semi-locally-simply-connected.html">semi-locally simply connected</a> iff
+                there exists a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-universal-cover.html">universal cover</a> <span class="inline-math">$p: \tilde X \to X$</span>.
+            </p>
+            <p>
+                One such universal cover is given by, fixing some <span class="inline-math">$x_0\in X$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \tilde X ={}&amp; \set{\text{homotopy classes of paths in $X$ starting at $x_0$}}, \\
+                    p([γ]) ={}&amp; γ(1).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-construction-of-universal-cover.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    Note <span class="inline-math">$π_1(X,x_0)$</span> acts on <span class="inline-math">$\tilde X$</span> by homeomorphism <span class="inline-math">$γ\bullet [α] = [γ \bullet α]$</span>,
+                    and <span class="inline-math">$p$</span> induces a homeomorphism <span class="inline-math">$π_1(X,x_0) \backslash \tilde X\to X$</span>.
+                    This action is free and <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-properly-discontinuous-action.html">properly discontinuous</a> (<a href="https://math.stackexchange.com/q/4420941">Proof</a>).
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (covering map given image of fundamental group)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-covering-map-given-image-of-fundamental-group.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose a space <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">path-connected</a>, <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-locally-path-connected.html">locally path-connected</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-semi-locally-simply-connected.html">semi-locally simply connected</a>.
+            </p>
+            <p>
+                For any subgroup <span class="inline-math">$H\leq π_1(X, x_0)$</span>,
+                there exists a path-connected <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-based-space-based-map-based-homotopy.html">based</a> <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">covering map</a>
+                <span class="inline-math">$p: (\tilde X, \tilde x_0) \to (X, x_0)$</span>
+                such that <span class="inline-math">$\im($</span><a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-based-maps-descend-to-homomorphisms-between-fundamental-groups.html"><span class="inline-math">$p_\ast$</span></a><span class="inline-math">${}: π_1(\tilde X, \tilde x_0) \to π_1(X, x_0)) = H$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-covering-map-given-image-of-fundamental-group.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This is a stronger statement than the <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-construction-of-universal-cover.html">previous theorem</a>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (uniqueness of based covering spaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-uniqueness-of-based-covering-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$p_1: (\tilde X_1, \tilde x_1) \to (\tilde X, x_0)$</span>
+                and <span class="inline-math">$p_2: (\tilde X_2, \tilde x_2)\to (\tilde X, x_0)$</span>
+                be <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">path-connected</a> <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-based-space-based-map-based-homotopy.html">based</a> <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">covering spaces</a>.
+            </p>
+            <p>
+                There exists a based homeomorphism <span class="inline-math">$h: (\tilde X_1, \tilde x_1) \to (\tilde X_2, \tilde x_2)$</span>
+                such that <span class="inline-math">$p_2 \circ h = p_1$</span>, i.e. this diagram commutes:
+            </p>
+            <p>
+                <iframe src="https://q.uiver.app/#q=WzAsMyxbMCwwLCIoXFx0aWxkZSBYXzEsIFxcdGlsZGUgeF8xKSJdLFsyLDAsIihcXHRpbGRlIFhfMiwgXFx0aWxkZSB4XzIpIl0sWzEsMSwiKFgsIHhfMCkiXSxbMCwyLCJwXzEiXSxbMSwyLCJwXzIiLDJdLFswLDEsImgiLDAseyJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJob29rIiwic2lkZSI6InRvcCJ9LCJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifSwiaGVhZCI6eyJuYW1lIjoiZXBpIn19fV1d&embed" width="100%" height="200"></iframe>
+            </p>
+            <p>
+                iff
+                <span class="display-math">$$ \begin{align*}
+                    (p_1)_\ast\bigl(π_1(\tilde X_1, \tilde x_1)\bigr)
+                    = (p_2)_\ast\bigl(π_1(\tilde X_2, \tilde x_2)\bigr)
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-uniqueness-of-based-covering-spaces.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (uniqueness of unbased covering spaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-uniqueness-of-unbased-covering-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$p_1: \tilde X_1 \to \tilde X$</span> and <span class="inline-math">$p_2: \tilde X_2 \to \tilde X$</span>
+                be <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-path-connected.html">path-connected</a> <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">covering spaces</a>.
+            </p>
+            <p>
+                There exists a homeomorphism <span class="inline-math">$h: \tilde X_1\to \tilde X_2$</span>
+                such that <span class="inline-math">$p_2 \circ h = p_1$</span>,
+                i.e. this diagram commutes:
+            </p>
+            <p>
+                <iframe src="https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXHRpbGRlIFhfMSJdLFsyLDAsIlxcdGlsZGUgWF8yIl0sWzEsMSwiWCJdLFswLDIsInBfMSJdLFsxLDIsInBfMiIsMl0sWzAsMSwiaCIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Imhvb2siLCJzaWRlIjoidG9wIn0sImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9LCJoZWFkIjp7Im5hbWUiOiJlcGkifX19XV0=&embed" width="100%" height="200"></iframe>
+            </p>
+            <p>
+                iff <span class="inline-math">$(p_1)_\ast(π_1(\tilde X_1, \tilde x_1))$</span> and <span class="inline-math">$(p_2)_\ast(π_1(\tilde X_2, \tilde x_2))$</span>
+                are conjugate for some <span class="inline-math">$\tilde x_1\in \tilde X_1, \tilde x_2\in \tilde X_2$</span> where <span class="inline-math">$p_1(\tilde x_1) = p_2(\tilde x_2)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-uniqueness-of-unbased-covering-spaces.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

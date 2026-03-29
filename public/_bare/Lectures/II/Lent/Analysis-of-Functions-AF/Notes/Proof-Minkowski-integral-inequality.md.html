@@ -1,0 +1,42 @@
+
+<h1><span class="inline-math">$p=\infty$</span></h1>
+
+<p>
+    Since <span class="inline-math">$\int \|G(\cdot ,y)\|_\infty \d ν(y)&lt;\infty$</span>,
+    we have <span class="inline-math">$\|G(\cdot, y)\|_\infty &lt; \infty$</span> for <span class="inline-math">$ν$</span>-almost every <span class="inline-math">$y$</span>.
+    By the definition of <span class="inline-math">$\|\cdot\|_\infty$</span>,
+    <span class="inline-math">$|G(x,y)| \leq  \|G(\cdot ,y)\|_\infty &lt; \infty$</span> for <span class="inline-math">$μ\otimes ν$</span>-almost every <span class="inline-math">$x,y$</span>.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        |g(x)| \leq \int |G(x,y)| \d ν(y) \leq \int \|G(\cdot ,y)\|_\infty \d ν(y)
+    \end{align*} $$</span>
+    for <span class="inline-math">$μ$</span>-almost every <span class="inline-math">$x$</span>.
+</p>
+
+<h1><span class="inline-math">$1\leq p&lt;\infty$</span></h1>
+
+<p>
+    First suppose <span class="inline-math">$G\geq 0$</span>.
+    We want to show
+    <span class="display-math">$$ \begin{align*}
+        \|g\|_p \leq \int \|G(\cdot,y)\|_p \d ν(y).
+    \end{align*} $$</span>
+    If <span class="inline-math">$p=1$</span>, this is [[FILE NOT FOUND: Fubini]].
+    If <span class="inline-math">$p&gt;1$</span>, we apply [[FILE NOT FOUND: Fubini]] and [[FILE NOT FOUND: Hölder]]:
+    <span class="display-math">$$ \begin{align*}
+        \|g\|_p^p ={}&amp; \int \left(\int G(x,y) \d ν(y)\right) \cdot g(x)^{p-1} \d μ(x) \\
+        \leq{}&amp; \iint G(x,y) \cdot g(x)^{p-1} \d μ(x) \d ν(y) &amp;&amp;\text{Fubini}\\
+        \leq{}&amp; \int \|G(\cdot ,y)\|_p \cdot \|g^{p-1}\|_{p/(p-1)} \d ν(y) &amp;&amp;\text{Hölder} \\
+        \leq{}&amp; \int \|G(\cdot ,y)\|_p \d ν(y) \cdot \|g\|_p^{p-1}
+    \end{align*} $$</span>
+    and rearrange terms.
+</p>
+<p>
+    Since <span class="inline-math">$\int g(x)^p \d μ(x) = \|g\|_p \leq \int \|G(\cdot ,y)\|_p \d ν(y) &lt; \infty$</span>,
+    we have <span class="inline-math">$g(x) &lt; \infty$</span> for <span class="inline-math">$μ$</span>-almost every <span class="inline-math">$x$</span>.
+</p>
+<p>
+    Finally for a general <span class="inline-math">$G$</span>,
+    the above shows <span class="inline-math">$\int |G(x,y)| \d ν(y) &lt; \infty$</span>
+    for <span class="inline-math">$μ$</span>-almost every <span class="inline-math">$x$</span>, so <span class="inline-math">$g(x) = \int G(x,y) \d ν(y)$</span> exists.
+</p>

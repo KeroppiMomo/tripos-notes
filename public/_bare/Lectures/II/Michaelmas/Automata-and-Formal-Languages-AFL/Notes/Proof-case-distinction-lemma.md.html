@@ -1,0 +1,17 @@
+<p>
+    Let <span class="inline-math">$M = (Σ, Q, P)$</span> and <span class="inline-math">$M_i = (Σ, Q_i, P_i)$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-concatenation-lemma-subroutine-lemma.html">As before</a>,
+    assume <span class="inline-math">$Q\cap Q_i = \emptyset$</span>, <span class="inline-math">$Q_i\cap Q_j = \set{q_\mathrm{H}}$</span>
+    and <span class="inline-math">$P_i(q_\mathrm{H}) = P_j(q_{\mathrm{H}})$</span> for all distinct <span class="inline-math">$i,j\leq k$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$q_{\mathrm{S},i}$</span> be the start state of <span class="inline-math">$M_i$</span>
+    and <span class="inline-math">$\hat q_i$</span> be the answer states of <span class="inline-math">$M$</span>.
+    Let <span class="inline-math">$\hat P_i$</span> be the program
+    <span class="inline-math">$P_i$</span>, replacing all instances of <span class="inline-math">$q_{\mathrm{S},i}$</span> with <span class="inline-math">$\hat q_i$</span>.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        \hat M = \left(Σ, \quad Q \cup \bigcup_{i\leq k} (Q_i \setminus \set{q_{\mathrm{S},i}}), \quad P \cup  \bigcup_{i\leq k} \hat P_i\right).
+    \end{align*} $$</span>
+    Then <span class="inline-math">$\hat M$</span> performs the operation <span class="inline-math">$g$</span>.
+</p>

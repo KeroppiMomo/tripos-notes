@@ -1,0 +1,84 @@
+<p>
+    Let <span class="inline-math">$Σ$</span> be an alphabet.
+</p>
+<p>
+    Among the finite strings over the set of symbols <span class="inline-math">$Σ \cup \set{\emptyset, ε, (, ), +, {}^+,{}^* }$</span>,
+    we define the notion of <em>regular expression</em> by recursion:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\emptyset$</span> is a regular expression;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$ε$</span> is a regular expression;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$(R + S)$</span> is a regular expression if <span class="inline-math">$R,S$</span> are regular expressions;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$(RS)$</span> is a regular expression if <span class="inline-math">$R,S$</span> are regular expressions;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$R^+$</span> is a regular expression if <span class="inline-math">$R$</span> is a regular expression;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$R^\ast$</span> is a regular expression if <span class="inline-math">$R$</span> is a regular expression.
+    </p>
+    
+</li>
+</ul>
+<p>
+    We usually omit unnecessary parentheses.
+</p>
+<p>
+    We associate languages to regular expressions by recursion:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\mathcal{L}(\emptyset) = \emptyset$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathcal{L}(ε) = \set{ε}$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathcal{L}(a) = \set{a}$</span> if <span class="inline-math">$a\in Σ$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathcal{L}(R+S) = \mathcal{L}(R) \cup \mathcal{L}(S)$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathcal{L}(RS) = \mathcal{L}(R) \, \mathcal{L}(S)$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathcal{L}(R^+) = \mathcal{L}(R)$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Kleene-plus-Kleene-star.html"><span class="inline-math">$^+$</span></a>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathcal{L}(R^*) = \mathcal{L}(R)$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Kleene-plus-Kleene-star.html"><span class="inline-math">$^*$</span></a>;
+    </p>
+    
+</li>
+</ul>

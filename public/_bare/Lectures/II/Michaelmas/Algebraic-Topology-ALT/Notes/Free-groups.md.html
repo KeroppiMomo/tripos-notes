@@ -1,0 +1,213 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (free group)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-free-group.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$S$</span> be a set (the <em>alphabet</em>)
+                and suppose <span class="inline-math">$S\inv = \sb{s\inv}{s\in S}$</span> is disjoint from <span class="inline-math">$S$</span>.
+            </p>
+            <p>
+                A <em>word</em> in <span class="inline-math">$S$</span> is a (possibly empty) finite sequence <span class="inline-math">$(x_1, \ldots, x_n)$</span>
+                of elements in <span class="inline-math">$S$</span>.
+            </p>
+            <p>
+                An <em>elementary reduction</em> of a word
+                removes a subword <span class="inline-math">$(s, s\inv)$</span> or <span class="inline-math">$(s\inv, s)$</span>.
+                A word is <em>reduced</em> if it does not admit any elementary reductions.
+            </p>
+            <p>
+                The <em>free group</em> <span class="inline-math">$F(S)$</span> on the alphabet <span class="inline-math">$S$</span>
+                is the set of reduced words in <span class="inline-math">$S$</span>,
+                with the operation being concatenation and then applying
+                elementary reduction until the word is reduced.
+            </p>
+            <p>
+                Define a function <span class="inline-math">$ι: S \to F(S)$</span> sending <span class="inline-math">$s \mapsto (s)$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (universal property of free groups)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-universal-property-of-free-groups.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For any group <span class="inline-math">$H$</span> and alphabet <span class="inline-math">$S$</span>, the function
+                <span class="display-math">$$ \begin{align*}
+                    \set{\text{group homomorphisms $F(S)\to H$}} &amp;\to \set{\text{functions $S\to H$}} \\
+                    \varphi &amp;\mapsto ι \circ \varphi
+                \end{align*} $$</span>
+                is a bijection.
+                That is, for any (set) functions <span class="inline-math">$ϕ: S\to H$</span>,
+                there exists a unique group homomorphism <span class="inline-math">$\varphi:{}$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-free-group.html"><span class="inline-math">$F(S)$</span></a><span class="inline-math">${}\to H$</span>
+                such that this diagram commutes:
+            </p>
+            <p>
+                <iframe src="https://q.uiver.app/#q=WzAsMyxbMCwwLCJTIl0sWzAsMSwiRihTKSJdLFsyLDAsIkgiXSxbMCwyLCJcXHBoaSJdLFswLDEsIlxcaW90YSIsMl0sWzEsMiwiXFxleGlzdHMhXFwsIFxcdmFycGhpIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d&embed" width="100%" height="200"></iframe>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-universal-property-of-free-groups.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$F(S)$</span> is the unique group (up to isomorphism) satisfying the condition of this lemma.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (presentation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-presentation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$S$</span> be an alphabet and <span class="inline-math">$R \subseteq{}$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-free-group.html"><span class="inline-math">$F(S)$</span></a> be a subset.
+            </p>
+            <p>
+                The group with <em>generators</em> <span class="inline-math">$S$</span> and <em>relations</em> <span class="inline-math">$R$</span> is defined as the quotient
+                <span class="display-math">$$ \begin{align*}
+                    \langle S \mid R\rangle = F(S)\; /\; \langle \langle R\rangle\rangle
+                \end{align*} $$</span>
+                where <span class="inline-math">$\langle \langle R\rangle\rangle$</span> is the largest normal subgroup containing <span class="inline-math">$R$</span>:
+                <span class="display-math">$$ \begin{align*}
+                    \langle \langle R\rangle\rangle = \sb{\prod_{i=1}^{n} g_i\, r_i^{ε_i}\, g_i\inv}{g_i\in F(S), \; r_i\in R, \; ε_i \in \set{\pm 1}}.
+                \end{align*} $$</span>
+                The data <span class="inline-math">$(S,R)$</span> is called a <em>presentation</em> of the group.
+            </p>
+            <p>
+                If <span class="inline-math">$S$</span> and <span class="inline-math">$R$</span> are finite, we call it a <em>finite presentation</em>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (universal property of group presentations)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-universal-property-of-group-presentations.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For any group <span class="inline-math">$H$</span> and <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-presentation.html">group presentation</a> <span class="inline-math">$\langle S \mid R\rangle$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \set{\text{group homomorphisms } \langle S\mid R\rangle \to H} &amp;\to \sb{\text{functions }ϕ: S\to H}{\varphi(r)=1 \;\forall r\in R} \\
+                    ψ &amp;\mapsto q\circ ι \circ ψ
+                \end{align*} $$</span>
+                is a bijection, where <span class="inline-math">$q: F(S) \to \langle S\mid R\rangle$</span> is the quotient map
+                and <span class="inline-math">$\varphi: F(S)\to H$</span> is given by the <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-universal-property-of-free-groups.html">universal property of free groups</a>.
+            </p>
+            <p>
+                That is, for any (set) function <span class="inline-math">$ϕ: S\to H$</span>
+                such that <span class="inline-math">$ϕ(s_1)^{ε_1} \ldots ϕ(s_n)^{ε_n} = 1$</span> for all <span class="inline-math">$(s_1^{ε_1}, \ldots, s_n^{ε_n})\in R$</span>,
+                there exists a unique group homomorphism <span class="inline-math">$ψ: \langle S\mid R\rangle\to H$</span>
+                such that this diagram commutes:
+            </p>
+            <p>
+                <iframe src="https://q.uiver.app/#q=WzAsMyxbMCwwLCJTIl0sWzAsMSwiXFxsYW5nbGUgU1xcbWlkIFJcXHJhbmdsZSJdLFsyLDAsIkgiXSxbMCwyLCJcXHBoaSJdLFswLDEsInEgXFxjaXJjIFxcaW90YSIsMl0sWzEsMiwiXFxleGlzdHMhXFwsIFxccHNpIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d&embed" width="100%" height="200"></iframe>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-universal-property-of-group-presentations.html">Proof</a>
+            </p>
+            <ul>
+            <!-- BEGIN BLOCK ID canonical -->
+            <li id="^canonical">
+                <p>
+                    Any group <span class="inline-math">$G$</span> has a <em>canonical presentation</em>:
+                    the identity <span class="inline-math">$\id_G: G\to G$</span> induces
+                    a surjective homomorphism <span class="inline-math">$\varphi : F(G) \to G$</span>.
+                    This further induces <span class="inline-math">$ψ: \langle G\mid \ker \varphi\rangle \to G$</span>,
+                    which is an isomorphism by the <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Theorem-first-isomorphism-theorem-for-groups.html">first isomorphism theorem</a>.
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID canonical -->
+            
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (free product with amalgamation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-free-product-with-amalgamation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G_1$</span> and <span class="inline-math">$G_2$</span> be any groups,
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-universal-property-of-group-presentations.html#^canonical">given</a> by the presentations <span class="inline-math">$\langle S_1 \mid R_1\rangle$</span> and <span class="inline-math">$\langle S_2 \mid R_2\rangle$</span>,
+                where <span class="inline-math">$S_1 \cap S_2 = \emptyset$</span>.
+            </p>
+            <p>
+                Define the <em>free product</em> as
+                <span class="display-math">$$ \begin{align*}
+                    G_1 * G_2 = \langle S_1 \cup S_2 \mid R_1 \cup R_2\rangle.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The inclusions <span class="inline-math">$S_i\to S_1 \cup S_2 \to F(S_1 \cup S_2)\to G_1 * G_2$</span>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-universal-property-of-group-presentations.html">induce</a>
+                canonical homomorphisms <span class="inline-math">$G_1 \xrightarrow{j_1} G_1 * G_2 \xleftarrow{j_2} G_2$</span>.
+            </p>
+            <p>
+                Given a group <span class="inline-math">$H$</span> and homomorphisms <span class="inline-math">$G_1 \xleftarrow{i_1} G_1 * G_2 \xrightarrow{i_2} G_2$</span>,
+                define the <em>free product with amalgamation over <span class="inline-math">$H$</span></em> to be the quotient
+                <span class="display-math">$$ \begin{align*}
+                    G_1 *_H G_2 = (G_1 * G_2) \;/\; \langle \langle j_1(i_1(h)) \cdot (j_2(i_2(h)))\inv \mid h\in H\rangle\rangle.
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The free product is the free product with amalgamation over the trial group.
+                </p>
+                
+            </li><li>
+                <p>
+                    The construction ensures this commutes:
+                    <iframe src="https://q.uiver.app/#q=WzAsNCxbMCwxLCJIIl0sWzEsMCwiR18xIl0sWzEsMiwiR18yIl0sWzIsMSwiR18xICpfSCBHXzIiXSxbMCwxLCJpXzEiXSxbMCwyLCJpXzIiLDJdLFsyLDMsImpfMiIsMl0sWzEsMywial8xIl1d&embed" width="100%" height="250"></iframe>
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (universal property of amalgamated free product)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-universal-property-of-amalgamated-free-product.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be any group, and <span class="inline-math">$G_1 *_H G_2$</span> be an <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-free-product-with-amalgamation.html">amalgamated free product</a>.
+            </p>
+            <p>
+                For any homomorphisms <span class="inline-math">$ϕ_1: G_1 \to K$</span> and <span class="inline-math">$ϕ_2: G_2\to K$</span>
+                satisfying <span class="inline-math">$ϕ_1 \circ i_1 = ϕ_2 \circ i_2$</span>,
+                there exists a unique homomorphism <span class="inline-math">$ϕ: G_1 *_H G_2 \to K$</span>
+                such that <span class="inline-math">$ϕ_1 = ϕ \circ j_1$</span> and <span class="inline-math">$ϕ_2 = ϕ \circ j_2$</span>,
+                i.e. this diagram commutes:
+            </p>
+            <p>
+                <iframe src="https://q.uiver.app/#q=WzAsNSxbMCwxLCJIIl0sWzEsMCwiR18xIl0sWzEsMiwiR18yIl0sWzIsMSwiR18xICpfSCBHXzIiXSxbNCwxLCJLIl0sWzAsMSwiaV8xIl0sWzAsMiwiaV8yIiwyXSxbMiwzLCJqXzIiLDJdLFsxLDMsImpfMSJdLFsyLDQsIlxccGhpXzIiLDIseyJjdXJ2ZSI6Mn1dLFszLDQsIlxcZXhpc3RzIVxcLFxccGhpIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNCwiXFxwaGlfMSIsMCx7ImN1cnZlIjotMn1dXQ==&embed" width="100%" height="300"></iframe>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-universal-property-of-amalgamated-free-product.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

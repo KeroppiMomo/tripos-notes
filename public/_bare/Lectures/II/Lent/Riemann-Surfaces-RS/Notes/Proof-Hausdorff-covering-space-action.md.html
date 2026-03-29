@@ -1,0 +1,116 @@
+
+<h1>Covering space</h1>
+
+<p>
+    Fix <span class="inline-math">$x_0\in X$</span> and we need to find a evenly covered neighbourhood of <span class="inline-math">$x_0$</span>
+    under <span class="inline-math">$q: X \to G\backslash X$</span>.
+</p>
+<p>
+    By local compactness,
+    let <span class="inline-math">$x_0\in U\subseteq K$</span> where <span class="inline-math">$U$</span> is open and <span class="inline-math">$K$</span> is compact.
+    Hypothesis says <span class="inline-math">$\sb{g\in G}{gK\cap K\neq \emptyset}$</span> is finite.
+</p>
+<p>
+    For each <span class="inline-math">$g\in G\setminus \set{e}$</span>,
+    as the action is free, <span class="inline-math">$gx_0 \neq x_0$</span>.
+    Since <span class="inline-math">$X$</span> is Hausdorff,
+    take <span class="inline-math">$V_g, W_g$</span> be disjoint open neighbourhoods of <span class="inline-math">$x_0$</span> and <span class="inline-math">$gx_0$</span> respectively.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        U&#x27; := U \cap \bigcap_{\substack{g\in G\setminus \set{e}: \\ gK \cap K \neq \emptyset}} V_g \cap g\inv W_g,
+    \end{align*} $$</span>
+    which is a finite intersection of open sets.
+    Therefore <span class="inline-math">$U&#x27;$</span> is an open neighbourhood of <span class="inline-math">$x_0$</span>.
+</p>
+<p>
+    <span class="inline-math">$U&#x27;$</span> has the property that <span class="inline-math">$gU&#x27; \cap U&#x27; = \emptyset$</span> unless <span class="inline-math">$g = e$</span>: indeed for <span class="inline-math">$g\in G$</span>,
+</p>
+<ul>
+<li>
+    <p>
+        if <span class="inline-math">$gK\cap K = \emptyset$</span>, then <span class="inline-math">$gU&#x27; \cap U&#x27; = \emptyset$</span> as a subset; and
+    </p>
+    
+</li><li>
+    <p>
+        if <span class="inline-math">$gK \cap K \neq \emptyset$</span>, then <span class="inline-math">$U&#x27; \subseteq V_g$</span> and <span class="inline-math">$gU&#x27; \subseteq W_g$</span>, so <span class="inline-math">$gU&#x27; \cap U&#x27; = \emptyset$</span> by construction.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        q\inv(q(U&#x27;)) = \bigsqcup_{g\in G} gU&#x27;
+    \end{align*} $$</span>
+    is a disjoint union.
+    <span class="inline-math">$gU&#x27;$</span> is open as <span class="inline-math">$g$</span> acts by homeomorphisms,
+    so this is an open set, showing <span class="inline-math">$q(U&#x27;) \subseteq G\backslash X$</span> is open.
+</p>
+<p>
+    Furthermore, <span class="inline-math">$q$</span> is an open map:
+    for any open neighbourhood <span class="inline-math">$V \subseteq X$</span> of <span class="inline-math">$x_0$</span>,
+    we can WLOG assume <span class="inline-math">$U\subseteq V$</span> above,
+    and get an open neighbourhood <span class="inline-math">$q(x_0)\subseteq q(U&#x27;) \subseteq q(V)$</span>.
+</p>
+<p>
+    Hence <span class="inline-math">$q|_{gU&#x27;}: gU&#x27; \to q(U&#x27;)$</span>
+    is continuous, open and surjective.
+    It is injective also:
+    if <span class="inline-math">$q(x) = q(y)$</span> for <span class="inline-math">$x,y\in U&#x27;$</span>,
+    then there is <span class="inline-math">$g\in G$</span> such that <span class="inline-math">$gx = y$</span>,
+    so <span class="inline-math">$gU&#x27;\cap U&#x27;\neq \emptyset$</span>.
+    Thus <span class="inline-math">$g = e$</span> and <span class="inline-math">$x = y$</span>.
+    Thus <span class="inline-math">$q|_{gU&#x27;}$</span> is a homeomorphism.
+</p>
+
+<h1>Hausdorff</h1>
+
+<p>
+    Practically the same:
+</p>
+<p>
+    Fix <span class="inline-math">$x_1, x_2\in X$</span> such that <span class="inline-math">$q(x_1) \neq q(x_2)$</span>.
+    By local compactness, find open sets <span class="inline-math">$U_i$</span> and compact sets <span class="inline-math">$K_i$</span>
+    such that <span class="inline-math">$x_i \in  U_i \subseteq K_i$</span>, for <span class="inline-math">$i=1,2$</span>.
+</p>
+<p>
+    <span class="inline-math">$K_1 \cup K_2$</span> is a compact set of <span class="inline-math">$X$</span>.
+    By hypothesis, <span class="inline-math">$\sb{g\in G}{g(K_1 \cup K_2)\cap (K_1 \cup K_2) \neq \emptyset}$</span>
+    is finite,
+    so its subset <span class="inline-math">$\sb{g\in G}{gK_1 \cap K_2 \neq \emptyset}$</span> is finite also.
+</p>
+<p>
+    For each <span class="inline-math">$g\in G$</span>, because <span class="inline-math">$gx_1 \neq x_2$</span> and <span class="inline-math">$X$</span>
+    is Hausdorff,
+    let <span class="inline-math">$V_g$</span>, <span class="inline-math">$W_g$</span> be disjoint open neighbourhoods of <span class="inline-math">$gx_1$</span> and <span class="inline-math">$x_2$</span> respectively.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        U_1&#x27; &amp;:= U_1 \cap \bigcap_{\substack{g\in G\setminus \set{e}: \\ gK_1 \cap K_2 \neq \emptyset}} g\inv V_g, \\
+        U_2&#x27; &amp;:= U_2 \cap \bigcap_{\substack{g\in G\setminus \set{e}: \\ gK_1 \cap K_2 \neq \emptyset}} W_g,
+    \end{align*} $$</span>
+    which are open neighbourhoods of <span class="inline-math">$x_1$</span> and <span class="inline-math">$x_2$</span>.
+</p>
+<p>
+    We claim that <span class="inline-math">$gU_1&#x27; \cap U_2&#x27; = \emptyset$</span> for all <span class="inline-math">$g\in G$</span>.
+    Indeed
+</p>
+<ul>
+<li>
+    <p>
+        if <span class="inline-math">$gK_1 \cap K_2 = \emptyset$</span>, then its subset <span class="inline-math">$gU_1&#x27; \cap U_2&#x27; = \emptyset$</span> also; and
+    </p>
+    
+</li><li>
+    <p>
+        if <span class="inline-math">$gK_1 \cap K_2 \neq \emptyset$</span>, then <span class="inline-math">$gU_1&#x27; \subseteq V_g$</span> and <span class="inline-math">$U_2&#x27; \subseteq W_g$</span>, so <span class="inline-math">$gU_1&#x27; \cap U_2&#x27; = \emptyset$</span> by construction.
+    </p>
+    
+</li>
+</ul>
+<p>
+    As before,
+    because <span class="inline-math">$q\inv(q(U_i&#x27;)) = \bigcup_{g\in G} gU_i&#x27;$</span>
+    is open, <span class="inline-math">$q(U_i&#x27;)\subseteq G\backslash X$</span> is an open neighbourhood of <span class="inline-math">$q(x_i)$</span>.
+    Moreover our claim shows <span class="inline-math">$q(U_1&#x27;) \cap q(U_2&#x27;) = \emptyset$</span>.
+</p>

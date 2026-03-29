@@ -1,0 +1,66 @@
+<p>
+    Call a sequence <span class="inline-math">$(\mathbf{T}_0, \mathbf{T}_1, \ldots, \mathbf{T}_n)$</span> of <span class="inline-math">$G$</span>-parse trees <em>derivative</em> if
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$T_0 = \set{ε}$</span> and <span class="inline-math">$l_0(ε) = S$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        for each <span class="inline-math">$i&lt;n$</span>, the parse tree <span class="inline-math">$\mathbf{T}_{i+1} = (T_{i+1}, l_{i+1})$</span>
+        is obtained by taking a leaf <span class="inline-math">$t$</span> of <span class="inline-math">$T_i$</span> with <span class="inline-math">$l_i(t)\in V$</span> and a rule <span class="inline-math">$l_i(t) \to x_0 \ldots x_m\in P$</span>,
+        adding <span class="inline-math">$m+1$</span> successors of <span class="inline-math">$t$</span> and labelling them <span class="inline-math">$l_{i+1}(tk) = x_k$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    There is a one-to-one correspondence between <span class="inline-math">$G$</span>-derivations
+    and derivative sequences of <span class="inline-math">$G$</span>-parse trees:
+    a derivation <span class="inline-math">$S = σ_0 \xrightarrow{G}_1 σ_1 \xrightarrow{G}_1 \ldots \xrightarrow{G}_1  σ_n$</span>
+    uniquely defines a derivative sequence of <span class="inline-math">$G$</span>-parse trees <span class="inline-math">$(\mathbf{T}_0, \ldots, \mathbf{T}_n)$</span>
+    such that <span class="inline-math">$σ_{\mathbf{T}_i} = σ_i$</span> and vice versa.
+</p>
+<p>
+    This shows that a <span class="inline-math">$G$</span>-parse tree starting from <span class="inline-math">$S$</span> exists to parse every <span class="inline-math">$w\in \mathcal{L}(G)$</span>.
+</p>
+<p>
+    Conversely, let <span class="inline-math">$\mathbf{T} = (T, l)$</span> be a <span class="inline-math">$G$</span>-parse tree starting from <span class="inline-math">$S$</span> with <span class="inline-math">$σ_\mathbf{T} = w$</span>. We construct a derivative sequence of subtrees of <span class="inline-math">$\mathbf{T}$</span>:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Let <span class="inline-math">$\mathbf{T}_0 = (\set{ε}, l|_{\set{ε}})$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Having constructed <span class="inline-math">$\mathbf{T}_i$</span>, find some <span class="inline-math">$t\in T_i$</span>
+        that is a leaf in <span class="inline-math">$T_i$</span> but not a leaf in <span class="inline-math">$T$</span>.
+    </p>
+    <ul>
+    <li>
+        <p>
+            If such <span class="inline-math">$t$</span> does not exist, we terminate.
+        </p>
+        
+    </li><li>
+        <p>
+            Otherwise form <span class="inline-math">$T_{i+1}$</span> by adding the <span class="inline-math">$T$</span>-successors of <span class="inline-math">$t$</span> to <span class="inline-math">$T_i$</span>, and repeat step 2.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ol>
+<p>
+    We claim that the construction terminates when <span class="inline-math">$T_i = T$</span>:
+    suppose not.
+    Since <span class="inline-math">$T_i$</span> is a subtree of <span class="inline-math">$T$</span>, this means there exists <span class="inline-math">$t\in T\setminus T_i$</span>.
+    On the branch leading to <span class="inline-math">$t$</span> in <span class="inline-math">$T$</span>, there must be a maximal element of <span class="inline-math">$T_i$</span>.
+    It is then a leaf of <span class="inline-math">$T_i$</span> but not a leaf of <span class="inline-math">$T$</span>.
+    This means our construction has not terminated.
+</p>

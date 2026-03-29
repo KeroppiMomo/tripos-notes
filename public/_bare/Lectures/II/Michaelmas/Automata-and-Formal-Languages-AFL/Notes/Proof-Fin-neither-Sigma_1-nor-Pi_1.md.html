@@ -1,0 +1,41 @@
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-Rice.html">Rice's theorem</a> implies
+    <span class="inline-math">$\mathbb{W}\setminus \mathbf{K} \leq_m \mathbf{Fin}$</span>,
+    so we already have <span class="inline-math">$\mathbf{Fin}$</span> is not <span class="inline-math">$Σ_1$</span>.
+    To show <span class="inline-math">$\mathbf{Fin}$</span> is not <span class="inline-math">$Π_1$</span>,
+    we show <span class="inline-math">$\mathbf{K} \leq_m \mathbf{Fin}$</span>,
+    which will imply <span class="inline-math">$\mathbb{W}\setminus \mathbf{K} \leq_m \mathbb{W}\setminus \mathbf{Fin}$</span>
+    and use the fact that <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}$</span> is not <span class="inline-math">$Σ_1$</span>.
+</p>
+<p>
+    Consider the total computable <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Software.html">truncated computation function</a> <span class="inline-math">$t_{w,1}(u,v)$</span>.
+    Define the computable function
+    <span class="display-math">$$ \begin{align*}
+        g(w,v) = \begin{cases}
+            \uparrow &amp;\text{if }t_{w,1}(w,v) = a, \\
+            ε &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+    By the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-s-m-n.html">s-m-n theorem</a>,
+    let <span class="inline-math">$h$</span> be a total computable function such that <span class="inline-math">$f_{h(w),1}(v) = g(w,v)$</span>.
+    We claim that <span class="inline-math">$h$</span> reduces <span class="inline-math">$\mathbf{K}$</span> to <span class="inline-math">$\mathbf{Fin}$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$w\in \mathbf{K}$</span>, then <span class="inline-math">$f_{w,1}(w) \downarrow$</span>.
+        This means there exists some <span class="inline-math">$v&#x27;$</span>
+        such that <span class="inline-math">$t_{w,1}(u,v) = a$</span> for all <span class="inline-math">$v&gt;v&#x27;$</span>,
+        and hence <span class="inline-math">$f_{h(w),1}(v)$</span> converges for only finitely <span class="inline-math">$v$</span>.
+        Thus <span class="inline-math">$\mathrm{W}_{h(w)}$</span> is finite.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$w\not\in \mathbf{K}$</span>, then <span class="inline-math">$f_{w,1}\uparrow$</span>.
+        This means <span class="inline-math">$t_{w,1}(w,v) = ε$</span> for all <span class="inline-math">$v$</span>.
+        Hence <span class="inline-math">$\mathrm{W}_{h(w)} = \mathbb{W}$</span>.
+    </p>
+    
+</li>
+</ul>

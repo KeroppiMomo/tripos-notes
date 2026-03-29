@@ -1,0 +1,253 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (tensor product of vector spaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-product-of-vector-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V, W$</span> be finite-dimensional vector spaces,
+                with bases <span class="inline-math">$\set{v_1, \ldots, v_m}$</span> and <span class="inline-math">$\set{w_1, \ldots, w_m}$</span> respectively.
+            </p>
+            <p>
+                The <em>tensor product</em> <span class="inline-math">$V\oplus W$</span> of <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span>
+                is the <span class="inline-math">$mn$</span>-dimensional vector space
+                with bases labelled <span class="inline-math">$\sb{v_i \otimes w_j}{i=1,\ldots, m,\; j=1,\ldots, m}$</span>.
+            </p>
+            <p>
+                Define a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-bilinear-form.html">bilinear</a> map <span class="inline-math">$\otimes: V \times W \to V \otimes W$</span> by extending <span class="inline-math">$(v_i, w_j) \mapsto v_i \otimes w_j$</span> linearly, i.e.
+                <span class="display-math">$$ \begin{align*}
+                    \Bigl(\sum_{i=1}^{m} λ_i v_i\Bigr) \otimes \Bigl(\sum_{j=1}^{n} μ_j w_j\Bigr) = \sum_{i,j} λ_i μ_j (v_i \otimes w_j).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Alternatively define via a universal property:
+                the tensor product <span class="inline-math">$V \otimes W$</span> of <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span>
+                is a vector space,
+                together with a bilinear map <span class="inline-math">$ϕ: V\times W\to V \otimes W$</span>
+                such that
+                for any bilinear map <span class="inline-math">$h: V \times W\to U$</span>,
+                there exists a unique linear map <span class="inline-math">$\tilde h: V \otimes W\to U$</span>
+                such that <span class="inline-math">$h = \tilde h \circ ϕ$</span>.
+            </p>
+            <p>
+                <iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsMyxbMCwwLCJWIFxcdGltZXMgVyJdLFsxLDAsIlYgXFxvdGltZXMgVyJdLFsxLDEsIlUiXSxbMCwxLCJcXHBoaSJdLFswLDIsImgiLDJdLFsxLDIsIlxcdGlsZGUgaCJdXQ==&embed" width="100%" height="200"></iframe>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (tensor product of linear maps)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-product-of-linear-maps.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: V \to W$</span>, <span class="inline-math">$f&#x27;: V&#x27;\to W&#x27;$</span> be linear maps between finite-dimensional vector spaces.
+            </p>
+            <p>
+                The <em>tensor product</em> of <span class="inline-math">$f$</span> and <span class="inline-math">$f&#x27;$</span>
+                is the linear map <span class="inline-math">$f \otimes f&#x27;: V$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-product-of-vector-spaces.html"><span class="inline-math">${}\otimes{}$</span></a><span class="inline-math">$V&#x27; \to W \otimes W&#x27;$</span>
+                defined by
+                <span class="display-math">$$ \begin{align*}
+                    (f\otimes f&#x27;)(v \otimes w) = f(v) \otimes f&#x27;(w)
+                \end{align*} $$</span>
+                and extending linearly.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$A$</span> is the matrix of <span class="inline-math">$f$</span> in the basis <span class="inline-math">$\set{v_1, \ldots, v_m}$</span> for <span class="inline-math">$V$</span>
+                    and <span class="inline-math">$B$</span> is the matrix of <span class="inline-math">$f&#x27;$</span> in the basis <span class="inline-math">$\set{w_1, \ldots, w_n}$</span> for <span class="inline-math">$W$</span>,
+                    then in the basis <span class="inline-math">$\set{v_1 \otimes w_1, \ldots, v_1 \otimes w_n, v_2 \otimes w_1, \ldots, v_2 \otimes w_n, \ldots, v_m \otimes w_1, \ldots, v_m \otimes w_n}$</span>
+                    of <span class="inline-math">$V \otimes W$</span>,
+                    <span class="inline-math">$f \otimes f&#x27;$</span> has a matrix
+                    <span class="inline-math">$\pmat{a_{11} B &amp; a_{12} B &amp; \ldots \\$</span>    a<em>{21} B & a</em>{22} B & \ldots \\
+                        \vdots & \vdots & \ddots}<span class="inline-math">$.$</span>
+                    Therefore <span class="inline-math">$\tr(f \otimes f&#x27;) = \tr f \cdot \tr f&#x27;$</span>.
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID character -->
+            <li id="^character">
+                <p>
+                    For two representations <span class="inline-math">$ρ: G\to \GL(V)$</span> and <span class="inline-math">$ρ&#x27;: G\to \GL(V&#x27;)$</span>,
+                    their tensor product <span class="inline-math">$ρ \otimes ρ&#x27;: g \mapsto ρ(g) \otimes ρ&#x27;(g)$</span>
+                    affords a character <span class="inline-math">$χ_{ρ \otimes ρ&#x27;} = χ_{ρ} χ_{ρ&#x27;}$</span>.
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID character -->
+            
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (tensor powers, symmetric power, exterior power)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-powers-symmetric-power-exterior-power.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T^n V \equiv V^{\otimes n} = \underbrace{V \otimes V \otimes  \ldots \otimes V}_{n\text{ times}}$</span>
+                be the <em><span class="inline-math">$n$</span>-th <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-product-of-vector-spaces.html">tensor</a> power</em>.
+            </p>
+            <p>
+                For any <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-representation.html">representation</a> <span class="inline-math">$G\to \GL(V)$</span>,
+                there is a natural representation <span class="inline-math">$T^n V$</span> of <span class="inline-math">$G \times S_n$</span>, defined by
+                <span class="display-math">$$ \begin{align*}
+                    (g, σ)(v_1 \otimes v_2 \otimes  \ldots \otimes  v_n) = (gv_{σ(1)}) \otimes (gv_{σ(2)}) \otimes \ldots \otimes (gv_{σ(n)}).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Define the <em>symmetric power</em> as the isotypical component of the trivial representation of <span class="inline-math">$S_n$</span>:
+                <span class="display-math">$$ \begin{align*}
+                    S^nV = \sb{v\in V^{\otimes n}}{σv = v  \text{ for all }σ\in S_n}
+                \end{align*} $$</span>
+                and the <em>exterior power</em> as the isotypical component of the sign representation of <span class="inline-math">$S_n$</span>:
+                <span class="display-math">$$ \begin{align*}
+                    Λ^nV = \sb{v\in V^{\otimes n}}{σv = \sign(σ)\, v  \text{ for all }σ\in S_n}
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <span class="inline-math">$S^2V$</span> is called the <em>symmetric square</em> and <span class="inline-math">$Λ^2V$</span> is called the <em>exterior square</em>.
+                We write <span class="inline-math">$vw = v\otimes w + w \otimes v\in S^2V$</span> and <span class="inline-math">$v\wedge w = v \otimes w - w \otimes v$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$V$</span> is <span class="inline-math">$d$</span>-dimensional and has a basis <span class="inline-math">$\set{v_1, \ldots, v_d}$</span>,
+                    then
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        <span class="inline-math">$S^n V$</span> is <span class="inline-math">$\pmat{n+d-1 \\ d}$</span>-dimensional and has a basis <span class="inline-math">$\sb{\sum_{σ\in S_n} v_{i_{σ(1)}} \otimes v_{i_{σ(2)}} \otimes \ldots \otimes v_{i_{σ(n)}}}{1 \leq i_1 \leq i_2 \leq \ldots \leq  i_n \leq d}$</span>, and
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$Λ^n V$</span> is <span class="inline-math">$\pmat{n \\ d}$</span>-dimensional and has a basis <span class="inline-math">$\sb{\sum_{σ\in S_n} \sign(σ) \,v_{i_{σ(1)}} \otimes v_{i_{σ(2)}} \otimes \ldots \otimes v_{i_{σ(n)}}}{1 \leq i_1 &lt; i_2 &lt; \ldots &lt;  i_n \leq d}$</span>.
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    For <span class="inline-math">$n=2$</span>, <span class="inline-math">$V \otimes V = S^2 V \oplus Λ^2 V$</span>,
+                    because <span class="inline-math">$x = \frac{1}{2}\underbrace{(x + τx)}_{\in S^2 V} + \frac{1}{2}\underbrace{(x - τx)}_{\in Λ^2V}$</span> where <span class="inline-math">$τ = (1\,2)\in S_2$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (tensor algebra)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-algebra.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <span class="inline-math">$k$</span>-vector space,
+                and write <span class="inline-math">$T^n V = \underbrace{V \oplus V \oplus \ldots \oplus V}_{n\text{ times}}$</span>
+                be the <span class="inline-math">$n$</span>-th <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-powers-symmetric-power-exterior-power.html">tensor power</a>
+                (with <span class="inline-math">$T^0 V = k$</span>).
+            </p>
+            <p>
+                The <em>tensor algebra</em> of <span class="inline-math">$V$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    T(V) = \bigoplus_{n\geq 0} T^n V,
+                \end{align*} $$</span>
+                which is a <span class="inline-math">$k$</span>-<a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-algebra.html">algebra</a> with multiplication <span class="inline-math">$(x,y) \mapsto x\otimes y$</span>.
+            </p>
+            <p>
+                The <em>symmetric algebra</em> is
+                <span class="inline-math">$S(V) = T(V) / (\text{ideal generated by }u\otimes v - v \otimes u)$</span>,
+                and the <em>exterior algebra</em> is
+                <span class="inline-math">$Λ(V) = T(V) / (\text{ideal generated by }v\otimes v)$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (linear map as tensors)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proposition-linear-map-as-tensors.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span> be finite-dimensional vector spaces over <span class="inline-math">$k$</span>.
+                There is a canonical isomorphism
+                <span class="display-math">$$ \begin{align*}
+                    Φ: V^\ast \otimes W &amp;\xrightarrow{\sim} \Hom_k(V, W) \\
+                    θ \otimes w &amp;\mapsto (v \mapsto θ(v)\, w)
+                \end{align*} $$</span>
+                where <span class="inline-math">$V^\ast$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-dual-vector-space.html">dual space</a> of <span class="inline-math">$V$</span>
+                and <span class="inline-math">$V^\ast \otimes W$</span> is a <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-product-of-vector-spaces.html">tensor product</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-linear-map-as-tensors.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (character of symmetric and exterior squares)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proposition-character-of-symmetric-and-exterior-squares.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$ρ: G\to \GL(V)$</span> be a complex representation,
+                and let <span class="inline-math">$G$</span> act on <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-powers-symmetric-power-exterior-power.html"><span class="inline-math">$S^2 V$</span></a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-powers-symmetric-power-exterior-power.html"><span class="inline-math">$Λ^2 V$</span></a>.
+            </p>
+            <p>
+                Their characters are
+                <span class="display-math">$$ \begin{align*}
+                    χ_{S^2 V}(g) ={}&amp; \frac{1}{2}(χ_ρ(g)^2 + χ_ρ(g^2)), \\
+                    χ_{Λ^2 V}(g) ={}&amp; \frac{1}{2}(χ_ρ(g)^2 - χ_ρ(g^2)).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-character-of-symmetric-and-exterior-squares.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (irreducible characters of direct product)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Lemma-irreducible-characters-of-direct-product.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G$</span> and <span class="inline-math">$H$</span> be finite groups
+                with <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-subrepresentation-irreducible.html">irreducible</a> complex representations
+                <span class="inline-math">$V_1, \ldots, V_k$</span>
+                and <span class="inline-math">$W_1, \ldots, W_l$</span> respectively.
+            </p>
+            <p>
+                The complete list of irreducible complex representations
+                of <span class="inline-math">$G \times H$</span>
+                is (up to isomorphism)
+                <span class="inline-math">$V_i$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-tensor-product-of-vector-spaces.html"><span class="inline-math">${}\otimes{}$</span></a><span class="inline-math">$W_j$</span> for all <span class="inline-math">$i,j$</span>,
+                with the action being <span class="inline-math">$(g,h)(v \otimes w) = (gv) \otimes (hw)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-irreducible-characters-of-direct-product.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

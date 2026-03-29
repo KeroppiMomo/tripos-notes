@@ -1,0 +1,53 @@
+<p>
+    Construct by separation the set
+    <span class="display-math">$$ \begin{align*}
+        A := \sb{(Z, R)\in \mathcal{P}(X)\times \mathcal{P}(X\times X)}{\text{$R$ is a well-order on $Z$}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    By the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-representation-of-well-orders.html">representation theorem</a>,
+    every <span class="inline-math">$(Z,R)\in A$</span> is isomorphic to a unique ordinal.
+    So using replacement, take
+    <span class="display-math">$$ \begin{align*}
+        C := \sb{α}{\exists (Z,R)\in A: \text{$α$ is an ordinal and $(Z,R)\isom (α,\in)$}}.
+    \end{align*} $$</span>
+</p>
+
+<h1>Any well-order <span class="inline-math">$\mathbf{Y}$</span> injecting into <span class="inline-math">$X$</span> is isomorphic to some <span class="inline-math">$(Z,R)\in A$</span></h1>
+
+<p>
+    If <span class="inline-math">$f: Y\hookrightarrow X$</span> is an injection,
+    then <span class="inline-math">$f: \mathbf{Y} \to (Z,R)$</span> is an isomorphism where <span class="inline-math">$Z = \op{ran}(f)$</span>
+    and <span class="inline-math">$R = \sb{(z,z&#x27;)\in Z\times Z}{f\inv(z) &lt; f\inv(z&#x27;)}$</span>.
+</p>
+
+<h1><span class="inline-math">$C$</span> is the set of all ordinals injecting into <span class="inline-math">$X$</span></h1>
+
+<p>
+    Clearly if <span class="inline-math">$α\in C$</span>, then <span class="inline-math">$(α, \in) \isom (Z,R)$</span> for some <span class="inline-math">$(Z,R)\in A$</span> with <span class="inline-math">$Z\subseteq X$</span>
+    so <span class="inline-math">$α$</span> injects into <span class="inline-math">$X$</span>.
+</p>
+<p>
+    Conversely if <span class="inline-math">$α$</span> is an ordinal that injects into <span class="inline-math">$X$</span>,
+    then <span class="inline-math">$(α, \in)$</span> is isomorphic to some <span class="inline-math">$(Z,R)\in A$</span>
+    by the above claim, so <span class="inline-math">$α\in C$</span>.
+</p>
+
+<h1>Conclusion</h1>
+
+<p>
+    <span class="inline-math">$C$</span> is then a transitive set,
+    since if <span class="inline-math">$β\in α\in C$</span>, then <span class="inline-math">$β\subseteq α$</span> <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-ordinal.html#^elements">is an ordinal</a>
+    that injects into <span class="inline-math">$X$</span>,
+    so <span class="inline-math">$β\in C$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-ordinal.html#^trans">Hence</a> <span class="inline-math">$C$</span> is an ordinal.
+    Because <span class="inline-math">$C\not\in C$</span> (by irreflexivity of <span class="inline-math">$\in$</span> in <span class="inline-math">$C$</span>),
+    <span class="inline-math">$C$</span> does not inject into <span class="inline-math">$X$</span>.
+</p>
+<p>
+    Moreover if <span class="inline-math">$γ$</span> is another ordinal that does not inject into <span class="inline-math">$X$</span>,
+    then <span class="inline-math">$γ\not\in C$</span> i.e. <span class="inline-math">$γ\not&lt; C$</span>,
+    so <span class="inline-math">$C$</span> is the smallest ordinal that does not inject into <span class="inline-math">$X$</span>.
+</p>

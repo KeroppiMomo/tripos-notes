@@ -1,0 +1,52 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Vitali covering)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Lemma-Vitali-covering.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathcal{U}$</span> be a collection of balls in <span class="inline-math">$\R^d$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\mathcal{U}$</span> has bounded diameter,
+                then there exists a countable (or finite)
+                subcollection <span class="inline-math">$\set{B_{r_1}(x_1), B_{r_2}(x_2), \ldots} \subseteq \mathcal{U}$</span>
+                which is disjoint and
+                either <span class="inline-math">$\sum_{i=1}^{\infty} |B_{r_i}(x_i)| = \infty$</span>
+                or <span class="inline-math">$\bigcup \mathcal{U} \subseteq \bigcup_{i=1}^{\infty} B_{5r_i}(x_i)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Vitali-covering.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    For each <span class="inline-math">$x\in \R^d$</span> such that
+    <span class="inline-math">$Mf(x) &gt; t$</span>, by definition
+    there exists some <span class="inline-math">$r(x)$</span> such
+    that
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{t} \int_{B_{r(x)}(x)} |f(y)| \d y &gt; |B_{r(x)}(x)|.
+    \end{align*} $$</span>
+</p>
+<p>
+    Taking <span class="inline-math">$\mathcal{U} = \sb{B_{r(x)}(x)}{x\in \R^d, Mf(x)&gt;t}$</span>,
+    construct a Vitali covering <span class="inline-math">$\mathcal{V} = \set{B_{r(x_1)}(x_1), B_{r(x_2)}(x_2), \ldots}\subseteq \mathcal{U}$</span>.
+    By disjointness
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=1}^{\infty} |B_{r(x_i)}(x_i)| &lt; \frac{1}{t} \int_{\mathcal{\bigsqcup V}} |f(y)| \d y \leq \frac{1}{t} \|f\|_1
+    \end{align*} $$</span>
+    However <span class="inline-math">$f\in L^1(\R^d)$</span>,
+    so <span class="inline-math">$\sum_{i=1}^{\infty} |B_{r(x_i)}(x_i)| &lt; \infty$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \sb{x\in \R^d}{Mf(x) &gt; t} \subseteq \bigcup U \subseteq \bigcup_{i=1}^{\infty} B_{5r_i}(x_i)
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        |\sb{x\in \R^d}{Mf(x) &gt; t}| \leq \sum_{i=1}^{\infty} 5^d |B_{r_i}(x_i)| &lt; \frac{5^d}{t}\|f\|_1.
+    \end{align*} $$</span>
+</p>

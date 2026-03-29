@@ -1,0 +1,138 @@
+<p>
+    We can reconstruct abstract operations in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html">finite set theory</a>:
+</p>
+<ul>
+<li>
+    <p>
+        Ordinary (binary) union: <span class="inline-math">$x \cup y := \bigcup \set{x,y}$</span> (using <span class="inline-math">$\mathsf{Pair}$</span> and <span class="inline-math">$\mathsf{Union}$</span>)
+    </p>
+    
+</li><li>
+    <p>
+        Intersection: <span class="inline-math">$x \cap y := \sb{z\in x}{z\in y} = \sb{z\in y}{z\in x}$</span> (using <span class="inline-math">$\mathsf{Sep}$</span>).
+    </p>
+    
+</li><li>
+    <p>
+        Ordered pair: <span class="inline-math">$(x,y) := \set{\set{x}, \set{x,y}}$</span> known as the <em>Kuratowski pair</em>.
+    </p>
+    <p>
+        This has the property <span class="inline-math">$(x, y) = (x&#x27;, y&#x27;)$</span> iff <span class="inline-math">$x = x&#x27;$</span> and <span class="inline-math">$y = y&#x27;$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        The <em>Cartesian product</em>
+        <span class="display-math">$$ \begin{align*}
+            a \times b := \sb{p\in \mathcal{P}(\mathcal{P}(a\cup b))}{\exists x\exists y(x\in a \wedge y\in b\wedge p = (x,y))}
+        \end{align*} $$</span>
+        using <span class="inline-math">$\mathsf{Powerset}$</span> and <span class="inline-math">$\mathsf{Sep}$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (relation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For sets <span class="inline-math">$a,b$</span>,
+                an element <span class="inline-math">$r\in \mathcal{P}(a\times b)$</span>
+                is a <em>relation between <span class="inline-math">$a$</span> and <span class="inline-math">$b$</span></em>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$r$</span> is <em>functional</em> if <span class="inline-math">$\forall x \forall y \forall y&#x27;\ (x,y)\in r \wedge (x,y&#x27;)\in r \Rightarrow y = y&#x27;$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is <em>total</em> if <span class="inline-math">$\forall x\ x\in a \Rightarrow \exists y(y\in b \wedge (x,y)\in r)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is a <em>function</em> if <span class="inline-math">$r$</span> is functional and total.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is <em>injective</em> if <span class="inline-math">$\forall x\forall x&#x27;\forall y\ (x,y)\in r \wedge(x&#x27;, y)\in r \Rightarrow x = x&#x27;$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is <em>surjective</em> if <span class="inline-math">$\forall y\ y \in b \Rightarrow \exists x(x\in a \wedge (x,y)\in r)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Then <span class="inline-math">$r$</span> is called a <em>binary relation on <span class="inline-math">$a$</span></em>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$r$</span> is <em>reflexive</em> if <span class="inline-math">$\forall x\ (x,x)\in r$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is <em>irreflexive</em> if <span class="inline-math">$\forall x\ (x,x)\not\in r$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is <em>symmetric</em> if <span class="inline-math">$\forall x\forall y\ (x,y)\in r \Leftrightarrow (y,x)\in r$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is <em>transitive</em> if <span class="inline-math">$\forall x\forall y\forall z\ ((x,y)\in r\wedge (y,z)\in r) \Rightarrow (x,z)\in r$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is <em>antisymmetric</em> if <span class="inline-math">$\forall x\forall y ((x,y)\in r \wedge (y,x)\in r) \Rightarrow x=y$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is <em>linear</em> if <span class="inline-math">$\forall x\forall y\ (x,y)\in r \vee (y,x)\in r\vee x=y$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is a <em>partial order</em> if it is reflexive, transitive and antisymmetric.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is a <em>strict partial order</em> if it is irreflective and transitive.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is a <em>linear order</em> if it is a partial order which is linear.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is a <em>strict linear order</em> if it is a strict partial order which is linear.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$r$</span> is an <em>equivalence relation</em> if it is reflexive, symmetric and transitive.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

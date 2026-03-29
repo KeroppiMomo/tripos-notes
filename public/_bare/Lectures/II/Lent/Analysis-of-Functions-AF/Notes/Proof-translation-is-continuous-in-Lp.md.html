@@ -1,0 +1,31 @@
+<p>
+    Fix <span class="inline-math">$ε&gt;0$</span>.
+    <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Lemma-compactly-supported-continuous-functions-are-dense-in-Lp-Rd.html">Approximate</a>
+    <span class="inline-math">$f$</span> with some <span class="inline-math">$g\in C_c(\R^d)$</span> such that <span class="inline-math">$\|f-g\|_p &lt; ε$</span>.
+    Let <span class="inline-math">$R&gt;0$</span> be such that <span class="inline-math">$g(x) = 0$</span> on <span class="inline-math">$x\in \R^d \setminus B_R(0)$</span>.
+</p>
+<p>
+    As <span class="inline-math">$g$</span> is uniformly continuous,
+    for any <span class="inline-math">$ε_1&gt;0$</span>,
+    there exists <span class="inline-math">$δ&gt;0$</span> such that
+    <span class="inline-math">$|x-y|&lt;δ$</span> implies <span class="inline-math">$|g(x) - g(y)| &lt; ε_1$</span>.
+    Then for any <span class="inline-math">$a,b\in \R^d$</span>,
+    if <span class="inline-math">$|a-b|&lt;δ$</span>, then <span class="inline-math">$|τ(a)(x) - τ(b)(x)| &lt; ε_1$</span> for all <span class="inline-math">$x\in \R^d$</span>.
+    Moreover <span class="inline-math">$τ(a)(x) = 0 = τ(b)(x)$</span> outside <span class="inline-math">$B_R(a) \cup B_R(b)$</span>,
+    which has measure at most <span class="inline-math">$2|B_R(0)|$</span>,
+    depending only on <span class="inline-math">$g$</span>.
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \|τ_g(a) - τ_g(b)\|_p^p ={}&amp; \int_{B_R(a) \cup B_R(b)} |τ(a)(x) - τ(b)(x)|^p \d x \\
+        \leq{}&amp; ε_1^p \cdot 2|B_R(0)| &lt; ε^p
+    \end{align*} $$</span>
+    for sufficiently small <span class="inline-math">$ε_1$</span>.
+    Finally
+    <span class="display-math">$$ \begin{align*}
+        \|τ_f(a) - τ_f(b)\|_p \leq{}&amp; \|τ_f(a) - τ_g(a)\|_p + \|τ_g(a) - τ_g(b)\|_p + \|τ_g(b) - τ_f(b)\|_p \\
+        \leq{}&amp; \|f -g\|_p + \|τ_g(a) - τ_g(b)\|_p + \|f - g\|_p &lt; 3ε
+    \end{align*} $$</span>
+    by the translation invariance of the Lebesgue measure.
+</p>

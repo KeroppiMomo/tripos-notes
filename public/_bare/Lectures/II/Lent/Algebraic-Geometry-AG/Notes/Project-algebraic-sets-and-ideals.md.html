@@ -1,0 +1,161 @@
+<p>
+    Here we will show that <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-projective-zero-locus-projective-algebraic-set.html"><span class="inline-math">$Z$</span></a> and <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-ideal-of-subset-of-projective-space.html"><span class="inline-math">$I$</span></a> give
+    an inclusion-reversing bijective correspondence
+    <span class="display-math">$$ \begin{align*}
+        \set{\text{projective algebraic sets in $\mathbb{P}^n$}} \setminus \set{\emptyset} &amp;\leftrightarrow \set{\text{radical ideals of $k[x_0, \ldots, x_n]$}} \setminus \set{(x_0, \ldots, x_n), (0)} \\
+        \set{\text{irreducible projective varieties in $\mathbb{P}^n$}} \setminus  \set{\emptyset} &amp;\leftrightarrow \set{\text{prime ideals of $k[x_0, \ldots, x_n]$}} \setminus \set{(x_0, \ldots, x_n), (0)}\\
+        X &amp;\mapsto I(X) \\
+        Z(J) &amp;\mapsfrom J.
+    \end{align*} $$</span>
+</p>
+<p>
+    These follow from the same proofs as with <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Affine-algebraic-sets-and-ideals.html">affine algebraic sets</a>.
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$S \subseteq I(Z(S))$</span> for any subset <span class="inline-math">$S \subseteq k[x_1, \ldots, x_n]$</span>.
+    </p>
+    
+</li><!-- BEGIN BLOCK ID ZI -->
+<li id="^ZI">
+    <p>
+        <span class="inline-math">$X = Z(I(X))$</span> for any <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-projective-zero-locus-projective-algebraic-set.html">projective algebraic set</a> <span class="inline-math">$X$</span>.
+    </p>
+    
+</li>
+<!-- END BLOCK ID ZI -->
+<li>
+    <p>
+        <span class="inline-math">$X = Y$</span> iff <span class="inline-math">$I(X) = I(Y)$</span> for any affine algebraic <span class="inline-math">$X,Y$</span>, showing injectivity of <span class="inline-math">$I$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (affine cone)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-affine-cone.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a projective algebraic set <span class="inline-math">$X \subseteq \mathbb{P}^n$</span>
+                Define the <em>affine cone over <span class="inline-math">$X$</span></em> as
+                <span class="display-math">$$ \begin{align*}
+                    C(X) ={}&amp; \sb{(a_0,\ldots, a_n)\in \mathbb{A}^{n+1}}{(a_0: \ldots:a_n)\in X} \cup \set{0} \\
+                    ={}&amp; q\inv(X) \cup \set{0}
+                \end{align*} $$</span>
+                where <span class="inline-math">$q: \mathbb{A}^{n+1} \twoheadrightarrow \mathbb{P}^n: (a_0, \ldots, a_n) \mapsto (a_0:\ldots:a_n)$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    Write <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-affine-zero-locus-affine-algebraic-set.html"><span class="inline-math">$Z_a$</span></a>, <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-ideal-of-subset-of-affine-space.html"><span class="inline-math">$I_a$</span></a> for the affine case
+                    and <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-projective-zero-locus-projective-algebraic-set.html"><span class="inline-math">$Z_p$</span></a>, <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-ideal-of-subset-of-projective-space.html"><span class="inline-math">$I_p$</span></a> for the projective case.
+                </p>
+                <p>
+                    By definition (or from <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-equivalent-definitions-of-projective-Zariski-topology.html">here</a>),
+                    <span class="inline-math">$q\inv(Z_p(J)) = Z_a(J) \setminus \set{0}$</span>.
+                    Therefore
+                    <span class="display-math">$$ \begin{align*}
+                        C(Z_p(J)) = \begin{cases}
+                            Z_a(J), &amp;Z_p(J)\neq \emptyset, \\
+                            \set{0} \text{ or }\emptyset, &amp;Z_p(J) = \emptyset.
+                        \end{cases}
+                    \end{align*} $$</span>
+                </p>
+                <!-- BEGIN BLOCK ID Z-I -->
+                <p id="^Z-I">
+                    Moreover by definition
+                    <span class="display-math">$$ \begin{align*}
+                        I_a(C(X)) = \begin{cases}
+                            I_p(X), &amp;X\neq \emptyset, \\
+                            I_a(\set{0}) = (x_1, \ldots, x_n), &amp;X = \emptyset.
+                        \end{cases}
+                    \end{align*} $$</span>
+                </p>
+                
+                <!-- END BLOCK ID Z-I -->
+                
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID irred -->
+                <p id="^irred">
+                    <span class="inline-math">$C(X)$</span> is irreducible iff <span class="inline-math">$X$</span> is irreducible.
+                    >
+                    (<a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-irreducible-affine-cone.html">Proof</a>)
+                </p>
+                
+                <!-- END BLOCK ID irred -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (projective Nullstellensatz)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-projective-Nullstellensatz.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$J \lhd k[x_0, \ldots, x_n]$</span> be a homogeneous ideal.
+                We work over the projective space (<a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-projective-zero-locus-projective-algebraic-set.html"><span class="inline-math">$Z$</span></a>, <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-ideal-of-subset-of-projective-space.html"><span class="inline-math">$I$</span></a>).
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$Z(J)\neq \emptyset$</span>, then
+                    <span class="display-math">$$ \begin{align*}
+                    I(Z(J)) = \sqrt{J}
+                    \end{align*} $$</span>
+                    where <span class="inline-math">$\sqrt{J}$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-radical-ideal.html">radical ideal</a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$Z(J) = \emptyset$</span>, then
+                    <span class="display-math">$$ \begin{align*}
+                    \sqrt{J} = (x_0, \ldots, x_n) \text{ or }(0).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-projective-Nullstellensatz.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (irreducible projective varieties)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-irreducible-projective-varieties.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be an <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-projective-zero-locus-projective-algebraic-set.html">projective algebraic set</a>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$X$</span> is a finite union of <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-irreducible-topological-space.html">irreducible</a> varieties.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$X$</span> is irreducible iff <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-ideal-of-subset-of-projective-space.html"><span class="inline-math">$I$</span></a><span class="inline-math">$(X)$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-prime-ideal.html">prime ideal</a>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-irreducible-projective-varieties.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

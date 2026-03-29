@@ -1,0 +1,244 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (order induction and well-foundedness)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-order-induction-and-well-foundedness.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathbf{X} = (X, &lt;)$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">strict partial order</a>.
+                Write <span class="inline-math">$\op{pred}(x) := \sb{z\in X}{z&lt;x}$</span> for <span class="inline-math">$x\in X$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\mathbf{X}$</span> is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-minimal-element-well-founded-relation.html">well-founded</a>
+                iff it satisfies <em>order induction</em>,
+                i.e. for all <span class="inline-math">$A\subseteq X$</span>, if there holds
+                <span class="display-math">$$ \begin{align*}
+                    \forall x\in X (\op{pred}(x) \subseteq A \implies x\in A),
+                \end{align*} $$</span>
+                then <span class="inline-math">$A = X$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-order-induction-and-well-foundedness.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (recursion)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-recursion.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html">finite set theory</a>.
+            </p>
+            <p>
+                Let <span class="inline-math">$(X, &lt;)$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-minimal-element-well-founded-relation.html">well-founded</a> <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">strict partial order</a>
+                and <span class="inline-math">$ϕ$</span> be an <span class="inline-math">$\in$</span>-formula with <span class="inline-math">$\op{free}(ϕ) = \set{a,b,c}$</span>.
+                Suppose
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$ϕ$</span> is <em>functional</em>: for all <span class="inline-math">$a,b\in X$</span> and <span class="inline-math">$c,c&#x27;$</span> sets, if <span class="inline-math">$ϕ(a,b,c)$</span> and <span class="inline-math">$ϕ(a,b,c&#x27;)$</span> hold, then <span class="inline-math">$c = c&#x27;$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$ϕ$</span> is <em>total</em>: for all <span class="inline-math">$a,b\in X$</span>, there exists <span class="inline-math">$c$</span> such that <span class="inline-math">$ϕ(a,b,c)$</span> holds.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Assume either
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a> holds; or
+                </p>
+                
+            </li><li>
+                <p>
+                    there exists some <span class="inline-math">$r$</span> such that for all <span class="inline-math">$a,b\in X$</span>, if <span class="inline-math">$ϕ(a,b,c)$</span> holds, then <span class="inline-math">$c\in r$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Then there exists a unique function <span class="inline-math">$F$</span> with domain <span class="inline-math">$X$</span>
+                such that for all <span class="inline-math">$x\in X$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    F(x) = z \iff ϕ(x, F|_{\op{pred}(x)}, z).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-recursion.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (transitive closure)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-transitive-closure.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html"><span class="inline-math">$\mathsf{Inf}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a>.
+            </p>
+            <p>
+                For all sets <span class="inline-math">$x$</span>,
+                there exists a smallest <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-transitive-set.html">transitive</a> superset <span class="inline-math">$t \supseteq x$</span>,
+                i.e. if <span class="inline-math">$t&#x27;\supseteq x$</span> is a transitive set, then <span class="inline-math">$t&#x27; \supseteq t$</span>.
+                We call <span class="inline-math">$\op{tcl}(x) := t$</span> the <em>transitive closure</em> of <span class="inline-math">$x$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-transitive-closure.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (well-order, initial segment)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>well-order</em> <span class="inline-math">$\mathbf{X} = (X, &lt;)$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-minimal-element-well-founded-relation.html">well-founded</a> <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">strict linear order</a>.
+            </p>
+            <p>
+                An <em>initial segment</em> of <span class="inline-math">$\mathbf{X}$</span> is a subset <span class="inline-math">$A \subseteq X$</span>
+                such that <span class="inline-math">$\op{pred}(x) \subseteq A$</span> for all <span class="inline-math">$x\in A$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$A$</span> is a proper initial segment iff <span class="inline-math">$A = \op{pred}(x)$</span> for some <span class="inline-math">$x\in X$</span>.
+                    <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-proper-initial-segment-iff-predecessor-set.html">Proof</a>
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID subset -->
+                <p id="^subset">
+                    If <span class="inline-math">$A \subseteq X$</span> is a subset, then <span class="inline-math">$(A, {&lt;} \cap (A \times A))$</span> is a wellorder.
+                </p>
+                
+                <!-- END BLOCK ID subset -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (sum of well-orders)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-sum-of-well-orders.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathbf{X}$</span> and <span class="inline-math">$\mathbf{Y}$</span> be <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-orders</a>.
+                Assume <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> are disjoint.
+            </p>
+            <p>
+                Their sum is <span class="inline-math">$\mathbf{X} \oplus \mathbf{Y} := (X \sqcup Y, &lt;^+)$</span>, where
+                <span class="display-math">$$ \begin{align*}
+                    a &lt;^+ b :\iff \begin{cases}
+                        a\in X, b\in X, a&lt;b, &amp; \text{or} \\
+                        a\in Y, b\in Y, a&lt;b, &amp; \text{or} \\
+                        a\in X, b\in Y.
+                    \end{cases}
+                \end{align*} $$</span>
+                This is a well-order.
+            </p>
+            <blockquote>
+                <p>
+                    Writing <span class="inline-math">$\mathbf{1} = (1, &lt;)$</span>,
+                    <span class="inline-math">$s(X)$</span> is isomorphic to <span class="inline-math">$\mathbf{X} \oplus \mathbf{1}$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (product of well-orders)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-product-of-well-orders.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathbf{X}$</span> and <span class="inline-math">$\mathbf{Y}$</span> be <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-orders</a>.
+            </p>
+            <p>
+                Their <em>product</em> is <span class="inline-math">$\mathbf{X} \otimes \mathbf{Y} := (X \times Y, &lt;^\times)$</span>,
+                where <span class="inline-math">$&lt;^\times$</span> follows reverse lexicographical order:
+                <span class="display-math">$$ \begin{align*}
+                    (x,y)&lt;^\times  (x&#x27;, y&#x27;) :\iff y &lt; y&#x27; \vee (y = y&#x27; \wedge x&lt; x&#x27;).
+                \end{align*} $$</span>
+                This is a well-order.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (uniqueness of isomorphisms between well-orders)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-uniqueness-of-isomorphisms-between-well-orders.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathbf{X}$</span> and <span class="inline-math">$\mathbf{Y}$</span> be <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-orders</a>, and let <span class="inline-math">$A,B \subseteq Y$</span> be initial segments.
+            </p>
+            <p>
+                If <span class="inline-math">$f: \mathbf{X} \to \mathbf{A}$</span> and <span class="inline-math">$g: \mathbf{X} \to \mathbf{B}$</span> 
+                are <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-homomorphism-of-structures.html">isomorphisms</a> of well-orders,
+                then <span class="inline-math">$A = B$</span> and <span class="inline-math">$f = g$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-uniqueness-of-isomorphisms-between-well-orders.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    This shows a well-order is not isomorphic to any proper initial segment.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (fundamental theorem of well-orders)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-fundamental-theorem-of-well-orders.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$A$</span> be a set of <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-orders</a>
+                such that no two distinct elements are <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-homomorphism-of-structures.html">isomorphic</a>.
+            </p>
+            <p>
+                Then <span class="inline-math">$(A, \prec)$</span> is a well-order,
+                where <span class="inline-math">$\mathbf{X}\prec \mathbf{Y}$</span> iff
+                there is an isomorphism from <span class="inline-math">$\mathbf{X}$</span> to a proper initial segment of <span class="inline-math">$\mathbf{Y}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-fundamental-theorem-of-well-orders.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

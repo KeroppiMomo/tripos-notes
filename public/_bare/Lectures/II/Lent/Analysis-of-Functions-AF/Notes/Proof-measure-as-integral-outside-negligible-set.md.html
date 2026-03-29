@@ -1,0 +1,101 @@
+<p>
+    For <span class="inline-math">$t\geq 0$</span>, let <span class="inline-math">$E = P_t\sqcup N_t$</span> be the <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Hahn-decomposition.html">Hahn decomposition</a>
+    with respect to the signed measure <span class="inline-math">$ν - tμ$</span> (so <span class="inline-math">$P_t$</span> positive, <span class="inline-math">$N_t$</span> negative).
+    Notice
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$A \subseteq P_t$</span>, then <span class="inline-math">$ν(A) \geq t\, μ(A)$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$A \subseteq N_t$</span>, then <span class="inline-math">$ν(A) \leq t \, μ(A)$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Lent/Analysis-of-Functions-AF/LectureNotes/Pasted-image-20260126123859.png">
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        f_n(x) := \sup \sb{t\in 2^{-n} \Z_{\geq 0}}{x\in P_t}
+    \end{align*} $$</span>
+    and
+    <span class="display-math">$$ \begin{align*}
+        f(x) = \limup_{n\to \infty} f_n(x).
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$A_n := f_n\inv[0,\infty)$</span> satisfies <span class="inline-math">$μ(E\setminus A_n) = 0$</span></h1>
+
+<p>
+    Fix <span class="inline-math">$t\in 2^{-n} \Z_{\geq 0}$</span>.
+    Notice <span class="inline-math">$P_s$</span> is positive with respect to <span class="inline-math">$ν - tμ$</span> if <span class="inline-math">$s\geq t$</span>,
+    so because
+    <span class="display-math">$$ \begin{align*}
+        E \setminus A_n = f_n\inv(\infty) \subseteq \bigcup_{\substack{s\in 2^{-n} \Z_{\geq 0}: \\s\geq t}} P_s
+    \end{align*} $$</span>
+    and RHS <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-positive-negative-set.html#^union">is positive</a> with respect to <span class="inline-math">$ν - tμ$</span>,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        \infty &gt; ν(E \setminus A_n) \geq t\, μ(E \setminus A_n)
+    \end{align*} $$</span>
+    which holds for all <span class="inline-math">$t$</span>.
+    Hence finiteness of <span class="inline-math">$ν$</span> implies <span class="inline-math">$μ(E \setminus A_n) = 0$</span>.
+</p>
+
+<h1><span class="inline-math">$\left|ν(B) - \int_{B} f_n \d μ\right| \leq  2^{-n} μ(B)$</span> for any measurable <span class="inline-math">$B \subseteq A_n$</span></h1>
+
+<p>
+    Split
+    <span class="display-math">$$ \begin{align*}
+        B = \bigsqcup_{t\in 2^{-n} \Z_{\geq 0}} B_t, \qquad B_t = B \cap f_n\inv(t)
+    \end{align*} $$</span>
+    so it suffices to prove the claim for <span class="inline-math">$B_t$</span> since then
+    <span class="display-math">$$ \begin{align*}
+        \left|ν(B) - \int_{B} f_n \d μ\right| &amp;= \left|\sum_{t\in 2^{-n} \Z_{\geq 0}} ν(B_t) - \int_{B_t} f_n \d μ\right| \\
+        &amp;\leq \sum_{t\in 2^{-n}\Z_{\geq 0}} \left|ν(B_t) - \int_{B_t} f_n \d μ\right| \\
+        &amp;\leq \sum_{t\in 2^{-n} \Z_{\geq 0}} 2^{-n}μ(B_t) \\
+        &amp;= 2^{-n} μ(B).
+    \end{align*} $$</span>
+</p>
+<p>
+    Now
+    <span class="display-math">$$ \begin{align*}
+        B_t \subseteq f_n\inv(t) \subseteq P_t \setminus P_{t + 2^{-n}} = P_t \cap N_{t + 2^{-n}},
+    \end{align*} $$</span>
+    so from what we noted,
+    <span class="display-math">$$ \begin{align*}
+        t\, μ(B_t) \leq ν(B_t) \leq (t + 2^{-n}) μ(B_t).
+    \end{align*} $$</span>
+    Observing <span class="inline-math">$\int_{B_t} f_n \d μ = \int_{B_t} t \d μ = t\, μ(B_t)$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        0 \leq ν(B_t) - \int_{B} f_n \d μ \leq 2^{-n} μ(B_t)
+    \end{align*} $$</span>
+    as required.
+</p>
+
+<h1>Conclusion</h1>
+
+<p>
+    By the <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Theorem-monotone-convergence-theorem.html">monotone convergence theorem</a>,
+    <span class="display-math">$$ \begin{align*}
+        \int_{B} f_n \d μ \to \int_{B} f \d μ,
+    \end{align*} $$</span>
+    so for <span class="inline-math">$B \subseteq \bigcap_{n} A_n =: A$</span>,
+    taking the limit as <span class="inline-math">$n\to \infty$</span> gives
+    <span class="display-math">$$ \begin{align*}
+        \int_{B} f \d μ = ν(B).
+    \end{align*} $$</span>
+</p>
+<p>
+    Moreover <span class="inline-math">$μ(E \setminus A) = μ(\bigcup_{n} (E \setminus A_n)) \leq \sum_{n} μ(E \setminus A_n) = 0$</span>.
+</p>
+<p>
+    Finally <span class="inline-math">$\int_{E} f \d μ = ν(E) &lt; \infty$</span> and <span class="inline-math">$f\geq 0$</span>,
+    so <span class="inline-math">$f\in L^1(E, \mathcal{B}, μ)$</span>.
+</p>

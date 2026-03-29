@@ -1,0 +1,51 @@
+<p>
+    Let <span class="inline-math">$D = ϕ_0 ϕ_1 \ldots ϕ_n$</span> be a <span class="inline-math">$T$</span>-proof,
+    and <span class="inline-math">$v$</span> be a model of <span class="inline-math">$T$</span>.
+    We will prove <span class="inline-math">$v(ϕ_i) = 1$</span> by induction on <span class="inline-math">$i$</span>.
+</p>
+<p>
+    Suppose <span class="inline-math">$v(ϕ_j) = 1$</span> for all <span class="inline-math">$j&lt;i$</span>.
+    Consider the condition <span class="inline-math">$ϕ_i$</span> that satisfies:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$A_T$</span>: if <span class="inline-math">$ϕ_i\in T$</span>, then by definition of a model, <span class="inline-math">$v(ϕ_i) = 1$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$C$</span>: if there exists <span class="inline-math">$j,k&lt;i$</span> such that <span class="inline-math">$ϕ_j = (ϕ_k \Rightarrow ϕ_i)$</span>,
+        then <span class="inline-math">$v(ϕ_j) = 1 = v(ϕ_k)$</span> by the induction hypothesis,
+        so by the definition of a valuation, <span class="inline-math">$v(ϕ_j) = v(ϕ_k) \to v(ϕ_i)$</span>.
+        Thus <span class="inline-math">$v(ϕ_i) = 1$</span> by the definition of <span class="inline-math">$\to$</span> in <span class="inline-math">$\mathbf{2}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$B$</span>:
+    </p>
+    <ul>
+    <li>
+        <p>
+            If <span class="inline-math">$ϕ_i$</span> is an axiom of type 4,
+            we <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-implication-formula-in-propositional-logic.html">noted</a> <span class="inline-math">$t(ϕ)$</span> and <span class="inline-math">$ϕ$</span> are logically equivalent,
+            so <span class="inline-math">$ϕ_i$</span> is valid.
+        </p>
+        
+    </li><li>
+        <p>
+            Otherwise, it suffices to check the following Boolean identities
+            <span class="display-math">$$ \begin{align*}
+                1 &amp;= x \to (y\to x), \\
+                1 &amp;= (x\to (y\to z)) \to ((x\to y)\to (x\to z)) \\
+                1 &amp;= (((x\to 0)\to 0)\to x)
+            \end{align*} $$</span>
+            which you can do by computing truth tables.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ul>

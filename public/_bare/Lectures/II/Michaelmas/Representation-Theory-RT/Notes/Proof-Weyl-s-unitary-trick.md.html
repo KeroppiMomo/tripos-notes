@@ -1,0 +1,53 @@
+<p>
+    Since <span class="inline-math">$V$</span> is finite-dimensional,
+    pick any inner product <span class="inline-math">$(,)$</span> on <span class="inline-math">$V$</span>
+    by choosing a basis <span class="inline-math">$\set{v_1, \ldots, v_n}$</span> for <span class="inline-math">$V$</span>,
+    setting <span class="inline-math">$(v_i, v_j) = δ_{ij}$</span> and extending linearly.
+</p>
+<p>
+    Define an another inner product <span class="inline-math">$\langle ,\rangle$</span> on <span class="inline-math">$V$</span> by
+    <span class="display-math">$$ \begin{align*}
+        \langle v, w\rangle = \frac{1}{|G|} \sum_{g\in G} (gv, gw).
+    \end{align*} $$</span>
+    Check this is a <span class="inline-math">$G$</span>-invariant inner product:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\langle v, v\rangle = |G|\inv \sum_{g\in G} (gv,gv) \geq 0$</span>
+        with equality iff <span class="inline-math">$gv = 0$</span> for all <span class="inline-math">$g\in G$</span>, iff <span class="inline-math">$v = 0$</span> by taking <span class="inline-math">$g = 1$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$(,)$</span> is sesquilinear and Hermitian, and thus so is <span class="inline-math">$\langle ,\rangle$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        For any <span class="inline-math">$h\in G$</span>, changing variable to <span class="inline-math">$g&#x27; = gh$</span> yields
+        <span class="display-math">$$ \begin{align*}
+        \langle hv, hw\rangle = \frac{1}{|G|} \sum_{g\in G} (ghv, ghw) = \frac{1}{|G|} \sum_{g&#x27;\in G} (g&#x27;v,g&#x27;w) = \langle v,w\rangle
+        \end{align*} $$</span>
+        so <span class="inline-math">$\langle ,\rangle$</span> is <span class="inline-math">$G$</span>-invariant.
+    </p>
+    
+</li>
+</ul>
+<p>
+    For the second claim,
+    suppose <span class="inline-math">$U(V)$</span> is the unitary group with respect to the inner product <span class="inline-math">$(,)$</span>
+    with an orthonormal basis <span class="inline-math">$\set{v_1, \ldots, v_n}$</span> for <span class="inline-math">$V$</span>.
+    Let <span class="inline-math">$\set{w_1, \ldots, w_n}$</span> be an orthonormal basis for <span class="inline-math">$V$</span>
+    with respect to <span class="inline-math">$\langle ,\rangle$</span>,
+    and take <span class="inline-math">$X$</span> to be the change of basis matrix from <span class="inline-math">$\set{v_1, \ldots, v_n}$</span>
+    to <span class="inline-math">$\set{w_1, \ldots, w_n}$</span>.
+    This is so that <span class="inline-math">$\langle v,w\rangle = (Xv, Xw)$</span>.
+</p>
+<p>
+    Then <span class="inline-math">$(,)$</span> is invariant under <span class="inline-math">$X\, ρ(G)\, X\inv$</span>: for any <span class="inline-math">$g\in G$</span>,
+    <span class="display-math">$$ \begin{align*}
+        (XgX\inv v, XgX\inv w) = \langle gX \inv v, gX\inv w\rangle = \langle X\inv v, X\inv w\rangle = (v, w)
+    \end{align*} $$</span>
+    so <span class="inline-math">$X\, ρ(G)\, X\inv \leq U(V)$</span>.
+</p>

@@ -1,0 +1,850 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (derivation in regular grammar)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-derivation-in-regular-grammar.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G = (Σ, V, P, S)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">regular</a> grammar.
+            </p>
+            <p>
+                Suppose <span class="inline-math">$α\in Ω^\ast$</span> and <span class="inline-math">$S \xrightarrow{G} α$</span>.
+                Either
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$α = wA$</span> for some <span class="inline-math">$w\in \mathbb{W}$</span> and <span class="inline-math">$A\in V$</span>; or
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$α \in \mathbb{W}$</span>, in which case any derivation of <span class="inline-math">$α$</span>
+                    has length <span class="inline-math">$|α|$</span>:
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        the final step is an application of a terminal rule, creating the final letter in <span class="inline-math">$α$</span>, and
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        the other steps are application of nonterminal rules.
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-deduction-in-regular-grammar.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (regular concatenation grammar)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-regular-concatenation-grammar.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G = (Σ, V, P, S)$</span> and <span class="inline-math">$G&#x27; = (Σ, V&#x27;, P&#x27;, S&#x27;)$</span> be <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">regular</a>
+                grammars with disjoint sets of variables.
+            </p>
+            <p>
+                The <em>regular concatenation grammar</em> of <span class="inline-math">$G$</span> and <span class="inline-math">$G&#x27;$</span>
+                <span class="display-math">$$ \begin{align*}
+                H = \bigl(Σ, \quad V \cup V&#x27;, \quad P&#x27; \cup (P \setminus \sb{A \to a}{A \to a \in P}) \cup \sb{A \to aS&#x27;}{A \to a \in P}, \quad S\bigr)
+                \end{align*} $$</span>
+                produces
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{L}(H) = \mathcal{L}(G) \, \mathcal{L}(G&#x27;).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-regular-concatenation-grammar.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This shows that the class of regular languages is closed under concatenation.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (regular union grammar)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-regular-union-grammar.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G = (Σ, V, P, S)$</span> and <span class="inline-math">$G&#x27;=(Σ, V&#x27;, P&#x27;, S&#x27;)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">context-sensitive</a> grammars
+                with disjoint sets of variables.
+            </p>
+            <p>
+                The <em>regular union grammar</em> of <span class="inline-math">$G$</span> and <span class="inline-math">$G&#x27;$</span>
+                <span class="display-math">$$ \begin{align*}
+                    H = (Σ, \quad V\cup V&#x27; \cup \set{T}, \quad P \cup P&#x27; \cup \sb{T \to α}{S\to α\in P} \cup \sb{T\toα}{S&#x27; \to α\in P&#x27;}, \quad T)
+                \end{align*} $$</span>
+                produces
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{L}(H) = \mathcal{L}(G) \cup \mathcal{L}(G&#x27;).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-regular-union-grammar.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This shows that the class of regular languages is closed under union.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (deterministic automaton)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-deterministic-automaton.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>deterministic automaton</em> is a tuple <span class="inline-math">$D = (Σ, Q, δ, q_0, F)$</span> where
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$Σ$</span> is a non-empty finite set (the <em>alphabet</em>);
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$Q$</span> is a non-empty finite set (of <em>states</em>);
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$δ: Q\times Σ\to Q$</span> (the <em>transition function</em>);
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$q_0 \in Q$</span> (the <em>start state</em>); and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$F\subseteq Q\setminus \set{q_0}$</span> a subset (of <em>accepting states</em>).
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Extend <span class="inline-math">$δ$</span> to <span class="inline-math">$\hat δ: Q\times \mathbb{W}\to Q$</span> by
+                <span class="display-math">$$ \begin{align*}
+                    \hat δ(q, ε) = q, \qquad \hat δ(q, wa) = δ(\hat δ(q, w), a).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                For every word <span class="inline-math">$w=a_0 a_1 \ldots a_n\in \mathbb{W}$</span>,
+                the <em>state sequence of the computation</em> is
+                <span class="display-math">$$ \begin{alignat}{1}
+                    q_0 &amp; &amp;&amp;= \hat δ(q_0, ε), \\
+                    q_1 &amp;= δ(q_0, a_0) &amp;&amp;= \hat δ(q_0, a_0), \\
+                    q_2 &amp;= δ(q_1, a_1) &amp;&amp;= \hat δ(q_0, a_0 a_1), \\
+                    \vdots \\
+                    q_{n+1} &amp;= δ(q_n, a_n) &amp;&amp;= \hat δ(q_0, a_0 a_1 \ldots a_n) = \hat δ(q_0, w).
+                \end{alignat} $$</span>
+            </p>
+            <p>
+                The <em>language accepted by <span class="inline-math">$D$</span></em> is
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{L}(D) = \sb{w\in \mathbb{W}}{\hat δ(q_0, w) \in F}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (homomorphic automata)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-homomorphic-automata.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$D = (Σ, Q, δ, q_0, F)$</span> and <span class="inline-math">$D&#x27; = (Σ, Q&#x27;, δ&#x27;, q_0&#x27;, F&#x27;)$</span>
+                be <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-deterministic-automaton.html">deterministic automata</a> over the same alphabet <span class="inline-math">$Σ$</span>.
+            </p>
+            <p>
+                A map <span class="inline-math">$f: Q \to Q&#x27;$</span> is a <em>homomorphism</em> from <span class="inline-math">$D$</span> to <span class="inline-math">$D&#x27;$</span> if
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$f(δ(q, a)) = δ&#x27;(f(q), a)$</span> for all <span class="inline-math">$q\in Q$</span> and <span class="inline-math">$a\in Σ$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$f(q_0) = q_0&#x27;$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    for any <span class="inline-math">$q\in Q,$</span> we have <span class="inline-math">$q\in F$</span> iff <span class="inline-math">$f(q) \in F&#x27;$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <span class="inline-math">$f: Q\to Q&#x27;$</span> is an <em>isomorphism</em> if <span class="inline-math">$f$</span> is a bijective homomorphism.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    By induction, we also have <span class="inline-math">$f(\hat δ(q), w) = \hat δ&#x27;(f(q), w)$</span> for any <span class="inline-math">$q\in Q$</span>, <span class="inline-math">$w\in \mathbb{W}$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (homomorphic automata accept the same language)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-homomorphic-automata-accept-the-same-language.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$D$</span> and <span class="inline-math">$D&#x27;$</span> be deterministic automata.
+            </p>
+            <p>
+                If <span class="inline-math">$D$</span> and <span class="inline-math">$D&#x27;$</span> are <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-homomorphic-automata.html">homomorphic</a>, then <span class="inline-math">$\mathcal{L}(D) = \mathcal{L}(D&#x27;)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-homomorphic-automata-accept-the-same-language.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (nondeterministic automata)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-nondeterministic-automata.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>nondeterministic automaton</em> is a tuple <span class="inline-math">$N = (Σ, Q, δ, q_0, F)$</span> where
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$Σ$</span> is a non-empty finite set (the <em>alphabet</em>);
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$Q$</span> is a non-empty finite set (of <em>states</em>);
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$δ: Q\times Σ\to \mathcal{P}(Q)$</span> (the <em>transition function</em>);
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$q_0 \in Q$</span> (the <em>start state</em>); and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$F\subseteq Q\setminus \set{q_0}$</span> a subset (of <em>accepting states</em>).
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Extend <span class="inline-math">$δ$</span> to <span class="inline-math">$\hat δ: Q\times \mathbb{W}\to \mathcal{P}(Q)$</span> by
+                <span class="display-math">$$ \begin{align*}
+                    \hat δ(q,ε) = \set{q}, \qquad \hat δ(q, wa) = \bigcup \sb{δ(p,a)}{p\in \hat δ(q,w)}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                For every word <span class="inline-math">$w=a_0 a_1 \ldots a_n\in \mathbb{W}$</span>,
+                the <em>state set sequence</em> is
+                <span class="display-math">$$ \begin{align*}
+                    X_0 &amp;= \set{q_0}, \qquad X_{i+1} = \bigcup \sb{δ(p,a_i)}{p\in X_i}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The <em>language accepted by <span class="inline-math">$N$</span></em> is
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{L}(N) = \sb{w\in \mathbb{W}}{\hat δ(q_0, w) \cap F \neq \emptyset}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (equivalence of deterministic and nondeterministic automata)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-equivalence-of-deterministic-and-nondeterministic-automata.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For any <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-nondeterministic-automata.html">nondeterministic automaton</a> <span class="inline-math">$N$</span>,
+                there is a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-deterministic-automaton.html">deterministic automaton</a> <span class="inline-math">$D$</span>
+                such that <span class="inline-math">$\mathcal{L}(D) = \mathcal{L}(N)$</span>,
+                and vice versa.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalence-of-deterministic-and-nondeterministic-automata.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (regular language iff accepted by automaton)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-regular-language-iff-accepted-by-automaton.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A language is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">regular</a>
+                iff it is accepted by a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-deterministic-automaton.html">deterministic automaton</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-regular-language-iff-accepted-by-automaton.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (regular pumping lemma)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-regular-pumping-lemma.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$L\subseteq \mathbb{W}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-grammar-language.html">language</a>.
+                We say <span class="inline-math">$L$</span> _satisfies the (regular) pumping lemma
+                with pumping number <span class="inline-math">$n$</span>_
+                if for every word <span class="inline-math">$w\in L$</span> with length <span class="inline-math">$|w|\geq n$</span>,
+                there exists words <span class="inline-math">$x,y,z\in \mathbb{W}$</span> such that
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$w = xyz$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$|y|&gt;0$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$|xy|\leq n$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$xy^k z\in L$</span> for all <span class="inline-math">$k=0,1,2,\ldots$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                For every <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">regular</a> language <span class="inline-math">$L$</span>,
+                there exists some <span class="inline-math">$n$</span> such that <span class="inline-math">$L$</span>
+                satisfies the regular pumping lemma with pumping number <span class="inline-math">$n$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-regular-pumping-lemma.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Example-showing-a-language-is-not-regular-with-pumping-lemma.html">Example</a>
+                </p>
+                
+            </li><li>
+                <p>
+                    The converse is not true, i.e. there exists a language that satisfies the pumping lemma
+                    but is not regular. (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-counterexample-of-converse-of-regular-pumping-lemma.html">Proof</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (closure of regular languages under complementation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-closure-of-regular-languages-under-complementation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The class of <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">regular languages</a>
+                is closed under complementation,
+                i.e. if <span class="inline-math">$L$</span> is a regular language,
+                then so is <span class="inline-math">$\mathbb{W}^+ \setminus L$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-closure-of-regular-languages-under-complementation.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Note we have shown that the class of regular languages are closed
+                    under <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-regular-concatenation-grammar.html">concatenation</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-regular-union-grammar.html">union</a>
+                    (and thus intersection and set difference).
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (product automata for intersection and union)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-product-automata-for-intersection-and-union.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$D = (Σ, Q, δ, q_0, F)$</span> and <span class="inline-math">$D&#x27; = (Σ, Q&#x27;, δ&#x27;, q_0&#x27;, F&#x27;)$</span>
+                be two <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-deterministic-automaton.html">deterministic automata</a> over the same alphabet.
+            </p>
+            <p>
+                Define the <em>product automata for intersection and union</em> as
+                <span class="display-math">$$ \begin{align*}
+                    D \wedge D&#x27; ={}&amp; (Σ, \; Q\cup Q&#x27;, \; δ\times δ&#x27;, \; (q_0, q_0&#x27;), \; F \wedge F&#x27;), \\
+                    D \vee D&#x27; ={}&amp; (Σ, \; Q\cup Q&#x27;, \; δ\times δ&#x27;, \; (q_0, q_0&#x27;), \; F \vee F&#x27;)
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    F \wedge F&#x27; ={}&amp; \sb{(q,q&#x27;)\in Q\times Q&#x27;}{q\in F \text{ and } q&#x27;\in F&#x27;} = F\times F&#x27;, \\
+                    F \vee F&#x27; ={}&amp; \sb{(q,q&#x27;)\in Q\times Q&#x27;}{q\in F \text{ or } q&#x27;\in F&#x27;}
+                \end{align*} $$</span>
+                and
+                <span class="display-math">$$ \begin{align*}
+                    δ\times δ&#x27;: Σ \times (Q \times Q&#x27;) &amp;\to Q\times Q&#x27; \\
+                    (a, (q,q&#x27;)) &amp;\mapsto (δ(a,q), δ(a,q&#x27;)).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{L}(D \wedge D&#x27;) ={}&amp; \mathcal{L}(D) \cap \mathcal{L}(D&#x27;), \\
+                    \mathcal{L}(D \vee D&#x27;) ={}&amp; \mathcal{L}(D) \cup \mathcal{L}(D&#x27;).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-product-automata-for-intersection-and-union.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This is an <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-closure-of-regular-languages-under-complementation.html">alternative way</a> of showing
+                    the class of regular languages is closed under
+                    intersection and union (and thus complementation and set difference).
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Kleene plus, Kleene star)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Kleene-plus-Kleene-star.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$L\subseteq \mathbb{W}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-grammar-language.html">language</a>.
+            </p>
+            <p>
+                The <em>Kleene plus operation</em> is
+                <span class="display-math">$$ \begin{align*}
+                    L^+ = \sb{w\in \mathbb{W}}{\exists w_0, \ldots, w_n\in L \text{ such that } w = w_0 \ldots w_n},
+                \end{align*} $$</span>
+                i.e. finite concatenation of one or more elements of <span class="inline-math">$L$</span>.
+            </p>
+            <p>
+                The <em>Kleene star operation</em> is
+                <span class="display-math">$$ \begin{align*}
+                    L^\ast = L^+ \cup \set{ε}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (closure of regular languages under Kleene plus)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-closure-of-regular-languages-under-Kleene-plus.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$L$</span> is a regular language,
+                then so is <span class="inline-math">$L^+$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-closure-of-regular-languages-under-Kleene-plus.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (regular expression)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-regular-expression.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$Σ$</span> be an alphabet.
+            </p>
+            <p>
+                Among the finite strings over the set of symbols <span class="inline-math">$Σ \cup \set{\emptyset, ε, (, ), +, {}^+,{}^* }$</span>,
+                we define the notion of <em>regular expression</em> by recursion:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\emptyset$</span> is a regular expression;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$ε$</span> is a regular expression;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$(R + S)$</span> is a regular expression if <span class="inline-math">$R,S$</span> are regular expressions;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$(RS)$</span> is a regular expression if <span class="inline-math">$R,S$</span> are regular expressions;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$R^+$</span> is a regular expression if <span class="inline-math">$R$</span> is a regular expression;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$R^\ast$</span> is a regular expression if <span class="inline-math">$R$</span> is a regular expression.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                We usually omit unnecessary parentheses.
+            </p>
+            <p>
+                We associate languages to regular expressions by recursion:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\mathcal{L}(\emptyset) = \emptyset$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mathcal{L}(ε) = \set{ε}$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mathcal{L}(a) = \set{a}$</span> if <span class="inline-math">$a\in Σ$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mathcal{L}(R+S) = \mathcal{L}(R) \cup \mathcal{L}(S)$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mathcal{L}(RS) = \mathcal{L}(R) \, \mathcal{L}(S)$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mathcal{L}(R^+) = \mathcal{L}(R)$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Kleene-plus-Kleene-star.html"><span class="inline-math">$^+$</span></a>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\mathcal{L}(R^*) = \mathcal{L}(R)$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Kleene-plus-Kleene-star.html"><span class="inline-math">$^*$</span></a>;
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (equivalence of regular expressions and essentially regular languages)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-equivalence-of-regular-expressions-and-essentially-regular-languages.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <span class="inline-math">$L$</span> is an <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-S-safe-epsilon-adequate-essentially-Q.html">essentially regular</a> language iff
+                there exists a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-regular-expression.html">regular expression</a> <span class="inline-math">$R$</span>
+                such that <span class="inline-math">$L = \mathcal{L}(R)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-regular-expressions-produce-essentially-regular-languages.html">Proof of <span class="inline-math">$\mathcal{L}(R)$</span> being essentially regular</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (inaccessible state)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-inaccessible-state.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$D = (Σ, Q, δ, q_0, F)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-deterministic-automaton.html">deterministic automaton</a>.
+            </p>
+            <p>
+                A state <span class="inline-math">$q\in Q$</span> is <em>accessible</em> if there
+                exists a word <span class="inline-math">$w\in \mathbb{W}$</span> such that <span class="inline-math">$\hat δ(q_0, w) = q$</span>.
+                Otherwise it is <em>inaccessible</em>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Note if <span class="inline-math">$f: Q \to Q&#x27;$</span> is an <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-homomorphic-automata.html">homomorphism</a> between automata <span class="inline-math">$D$</span> and <span class="inline-math">$D&#x27;$</span>,
+                    then <span class="inline-math">$q&#x27;\in Q&#x27;$</span> being accessible implies <span class="inline-math">$q&#x27; \in \mathrm{range}(f)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (indistinguishable states, quotient automaton)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-indistinguishable-states-quotient-automaton.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$D = (Σ, Q, δ, q_0, F)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-deterministic-automaton.html">deterministic automaton</a>.
+            </p>
+            <p>
+                Two states <span class="inline-math">$q, q&#x27;\in Q$</span> are <em>indistinguishable</em>
+                if <span class="inline-math">$\hat δ(q, w)\in F \iff \hat δ(q&#x27;, w)\in F$</span> for all words <span class="inline-math">$w\in \mathbb{W}$</span>.
+            </p>
+            <p>
+                A word <span class="inline-math">$w\in \mathbb{W}$</span> is said to <em>distinguish</em> <span class="inline-math">$q$</span> and <span class="inline-math">$q&#x27;$</span> if <span class="inline-math">$\hat δ(q,w) \in F$</span>
+                and <span class="inline-math">$\hat δ(q&#x27;, w)\not\in F$</span> or vice versa.
+            </p>
+            <p>
+                Define an equivalence relation <span class="inline-math">$\sim$</span> on <span class="inline-math">$Q$</span>
+                where <span class="inline-math">$q\sim q&#x27;$</span> if <span class="inline-math">$q,q&#x27;$</span> are indistinguishable,
+                and write <span class="inline-math">$[q]$</span> for the equivalence class of <span class="inline-math">$q$</span>.
+                The <em>quotient automaton</em> is
+                <span class="display-math">$$ \begin{align*}
+                    D/{\sim} = (Σ, Q/{\sim}, [δ], [q_0], [F])
+                \end{align*} $$</span>
+                where <span class="inline-math">$[δ]([q], a) = [δ(q,a)]$</span>
+                and <span class="inline-math">$[F] = \sb{[q]}{q\in F}$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Note if <span class="inline-math">$f: Q \to Q&#x27;$</span> is an homomorphism between automata <span class="inline-math">$D$</span> and <span class="inline-math">$D&#x27;$</span>,
+                    then for any distinguishable <span class="inline-math">$p,q\in Q$</span>, we have <span class="inline-math">$f(p) \neq f(q)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The quotient automaton is well-defined. (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Derivation-well-defined-quotient-automaton.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (irreducible automaton)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-irreducible-automaton.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A deterministic automaton is said to be <em>irreducible</em>
+                if it has neither <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-inaccessible-state.html">inaccessible states</a>
+                nor <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-indistinguishable-states-quotient-automaton.html">indistinguishable</a> distinct states.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (quotient automaton has no indistinguishable states)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-quotient-automaton-has-no-indistinguishable-states.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                No two distinct states of a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-indistinguishable-states-quotient-automaton.html">quotient automaton</a> are <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-indistinguishable-states-quotient-automaton.html">indistinguishable</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-quotient-automaton-has-no-indistinguishable-states.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (automaton and its quotient accept the same language)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-automaton-and-its-quotient-accept-the-same-language.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For any deterministic automaton <span class="inline-math">$D$</span>,
+                we have <span class="inline-math">$\mathcal{L}(D)  = \mathcal{L}($</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-indistinguishable-states-quotient-automaton.html"><span class="inline-math">$D/{\sim}$</span></a><span class="inline-math">$)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-automaton-and-its-quotient-accept-the-same-language.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (homomorphism between irreducible automata)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-homomorphism-between-irreducible-automata.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-homomorphic-automata.html">homomorphism</a> between deterministic automata <span class="inline-math">$D$</span> and <span class="inline-math">$D&#x27;$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$D$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-irreducible-automaton.html">irreducible</a>, then <span class="inline-math">$f$</span> is injective.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$D&#x27;$</span> is irreducible, then <span class="inline-math">$f$</span> is surjective.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-homomorphism-between-irreducible-automata.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (minimal automaton)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-minimal-automaton.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Every deterministic automaton <span class="inline-math">$D$</span>
+                has a <em>minimal automaton</em> <span class="inline-math">$I$</span>, unique up to <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-homomorphic-automata.html">isomorphism</a>.
+                That is,
+                there exists an <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-irreducible-automaton.html">irreducible</a> automaton <span class="inline-math">$I$</span>
+                with <span class="inline-math">$\mathcal{L}(D) = \mathcal{L}(I)$</span> and at most as many states as <span class="inline-math">$D$</span>.
+                Moreover, if <span class="inline-math">$I$</span> and <span class="inline-math">$I&#x27;$</span> are irreducible automata,
+                then <span class="inline-math">$\mathcal{L}(I) = \mathcal{L}(I&#x27;)$</span>
+                iff they are isomorphic.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-existence-of-minimal-automaton.html">Proof of existence</a>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-uniqueness-of-minimal-automaton.html">Proof of uniqueness</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (positive solution for emptiness problem for regular grammars)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-positive-solution-for-emptiness-problem-for-regular-grammars.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems.html">emptiness problem</a> for <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">regular grammars</a> is solvable.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-positive-solution-for-emptiness-problem-for-regular-grammars.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (positive solution for equivalence problem for regular grammars)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-positive-solution-for-equivalence-problem-for-regular-grammars.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems.html">equivalence problem</a> for <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">regular grammars</a> is solvable.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-positive-solution-for-equivalence-problem-for-regular-grammars.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

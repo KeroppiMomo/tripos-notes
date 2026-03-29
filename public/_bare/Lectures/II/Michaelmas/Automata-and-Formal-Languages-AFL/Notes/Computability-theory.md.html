@@ -1,0 +1,1674 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Notation (partial functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Notation-partial-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Write <span class="inline-math">$f: X \dashrightarrow Y$</span> for a partial function <span class="inline-math">$f$</span> from <span class="inline-math">$X$</span> to <span class="inline-math">$Y$</span>,
+                i.e. a (total) function with domain <span class="inline-math">$\op{dom}(f)\subseteq X$</span> and range <span class="inline-math">$\mathrm{ran}(f)\subseteq Y$</span>.
+            </p>
+            <p>
+                Write <span class="inline-math">$f(x)\downarrow$</span> ("<span class="inline-math">$f$</span> converges on input <span class="inline-math">$x$</span>") when <span class="inline-math">$x\in \op{dom}(f)$</span>
+                and <span class="inline-math">$f(x)\uparrow$</span> ("<span class="inline-math">$f$</span> diverges on input <span class="inline-math">$x$</span>") otherwise.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (register machine)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-register-machine.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em><span class="inline-math">$Σ$</span>-register machine</em> is a tuple <span class="inline-math">$M = (Σ, Q, P)$</span> where
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$Σ$</span> is a non-empty finite set (the <em>alphabet</em>);
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$Q$</span> is a finite set (of <em>states</em>) with two special elements
+                    <span class="inline-math">$q_\mathrm{S} \neq q_\mathrm{H}$</span> (the <em>start state</em> and the <em>halt state</em>); and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$P$</span> is a function with domain <span class="inline-math">$Q$</span> (the <em>program</em>), such that each <span class="inline-math">$P(q)$</span> is a <em><span class="inline-math">$(Σ, Q)$</span>-instruction</em>,
+                    i.e. tuple of one of the following forms:
+                    (<span class="inline-math">$k\in \N$</span>, <span class="inline-math">$a\in Σ$</span>, <span class="inline-math">$q\in Q$</span>, <span class="inline-math">$q&#x27;\in Q$</span>)
+                </p>
+                
+            </li>
+            </ul>
+            <table>
+                <tr>
+                    <th class="table-cell-left"><p>
+                        Instruction
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Interpretation
+                    </p>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$+(k,a,q):=(0,k,a,q)$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        Add the letter <span class="inline-math">$a$</span> to the content of register <span class="inline-math">$k$</span>;<br>then go to state <span class="inline-math">$q$</span>.
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$?(k,a,q,q&#x27;):=(1,k,a,q,q&#x27;)$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        If the last letter in register <span class="inline-math">$k$</span> is <span class="inline-math">$a$</span>:<br>&emsp;go to state <span class="inline-math">$q$</span>;<br>otherwise:<br>&emsp;go to state <span class="inline-math">$q&#x27;$</span>.
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$?(k,ε,q,q&#x27;):=(2,k,q,q&#x27;)$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        If register <span class="inline-math">$k$</span> is empty:<br>&emsp;go to state <span class="inline-math">$q$</span>;<br>otherwise:<br>&emsp;go to state <span class="inline-math">$q&#x27;$</span>.
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$-(k,q,q&#x27;):=(3,k,q,q&#x27;)$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        If register <span class="inline-math">$k$</span> is empty:<br>&emsp;go to state <span class="inline-math">$q$</span>;<br>otherwise:<br>&emsp;remove the final letter of its content;<br>&emsp;and go to state <span class="inline-math">$q&#x27;$</span>.
+                    </p>
+                    </td>
+                </tr>
+            </table>
+            <p>
+                <span class="inline-math">$q\mapsto P(q)$</span> is called a <em>program line</em>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (computation on register machine)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computation-on-register-machine.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$M = (Σ, Q, P)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-register-machine.html">register machine</a>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The <em>upper register index</em> <span class="inline-math">$n$</span> of <span class="inline-math">$M$</span> is the maximal register number
+                    that appears in any of the (finite) instructions in the range of <span class="inline-math">$P$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    A <em>configuration</em> or <em>snapshot</em> of length <span class="inline-math">$m$</span>
+                    is a sequence <span class="inline-math">$C = (q, w_0, \ldots, w_{m-1}) \in Q \in \mathbb{W}^{m}$</span>.
+                    The first entry <span class="inline-math">$q$</span> is the <em>state</em>
+                    and the rest is the <em>register content</em> of the configuration.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$m\geq n+1$</span>, we say <em><span class="inline-math">$M$</span> transforms <span class="inline-math">$C$</span> into <span class="inline-math">$C&#x27;$</span></em> if any of the following is true:
+                    (we perform the action according to <span class="inline-math">$P(q)$</span>)
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        <span class="inline-math">$P(q) = +(k,a,q&#x27;)$</span> and <span class="inline-math">$C&#x27; = (q&#x27;, w_0, \ldots , w_{k-1}, w_k a, w_{k+1}, \ldots, w_{m-1})$</span>;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$P(q) = {?}(k,a,q&#x27;,q&#x27;&#x27;)$</span> and either
+                    </p>
+                    <ul>
+                    <li>
+                        <p>
+                            <span class="inline-math">$w_k = va$</span> for some <span class="inline-math">$v\in \mathbb{W}$</span> and <span class="inline-math">$C&#x27; = (q&#x27;, w_0, \ldots, w_{m-1})$</span>, or
+                        </p>
+                        
+                    </li><li>
+                        <p>
+                            <span class="inline-math">$w_k \neq va$</span> for all <span class="inline-math">$v\in \mathbb{W}$</span> and <span class="inline-math">$C&#x27; = (q&#x27;&#x27;, w_0, \ldots, w_{m-1})$</span>;
+                        </p>
+                        
+                    </li>
+                    </ul>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$P(q) = {?}(k,ε,q&#x27;,q&#x27;&#x27;)$</span> and either
+                    </p>
+                    <ul>
+                    <li>
+                        <p>
+                            <span class="inline-math">$w_k = ε$</span> and <span class="inline-math">$C&#x27; = (q&#x27;, w_0, \ldots, w_{m-1})$</span>, or
+                        </p>
+                        
+                    </li><li>
+                        <p>
+                            <span class="inline-math">$w_k \neq ε$</span> and <span class="inline-math">$C&#x27; = (q&#x27;&#x27;, w_0, \ldots, w_{m-1})$</span>;
+                        </p>
+                        
+                    </li>
+                    </ul>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$P(q) = -(k,q&#x27;,q&#x27;&#x27;)$</span> and either
+                    </p>
+                    <ul>
+                    <li>
+                        <p>
+                            <span class="inline-math">$w_k = ε$</span> and <span class="inline-math">$C&#x27; = (q&#x27;, w_0, \ldots, w_{m-1})$</span>, or
+                        </p>
+                        
+                    </li><li>
+                        <p>
+                            <span class="inline-math">$w_k = va$</span> for some <span class="inline-math">$v\in \mathbb{W}, a\in Σ$</span> and <span class="inline-math">$C&#x27; = (q&#x27;&#x27;, w_0, \ldots, w_{k-1}, v, w_{k+1}, \ldots, w_{m-1})$</span>.
+                        </p>
+                        
+                    </li>
+                    </ul>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    For some <span class="inline-math">$\v w = (w_0, \ldots, w_n)\in \mathbb{W}^{n+1}$</span>,
+                    the <em>computation sequence of <span class="inline-math">$M$</span> with input <span class="inline-math">$w$</span></em>
+                    is defined recursively as
+                    <span class="inline-math">$C(0, M, \mathbb{W}) = (q_\mathrm{S}, \v w)$</span>
+                    and <span class="inline-math">$M$</span> transforms <span class="inline-math">$C(k,M,\v w)$</span> to <span class="inline-math">$C(k+1,M,\v w)$</span>.
+                </p>
+                <p>
+                    If <span class="inline-math">$\v v = (v_0, \ldots, v_k)$</span> is a shorter input sequence (<span class="inline-math">$k&lt;n$</span>),
+                    interpret as <span class="inline-math">$\v w = (v_0, \ldots, v_k, ε, \ldots, ε)\in \mathbb{W}^{n+1}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Say a computation sequence <em>halts</em>
+                    if there exists some element of the form <span class="inline-math">$(q_H, \v v)$</span> in the sequence.
+                </p>
+                
+            </li><li>
+                <p>
+                    Say <em><span class="inline-math">$M$</span> halts on input <span class="inline-math">$\v w$</span> in <span class="inline-math">$k$</span> steps</em>
+                    if the computation sequence of <span class="inline-math">$M$</span> with input <span class="inline-math">$\v w$</span> halts
+                    and <span class="inline-math">$k$</span> is the least number such that <span class="inline-math">$C(k,M,\v w) = (q_H, \v v)$</span> for some <span class="inline-math">$\v v\in \mathbb{W}$</span>,
+                    called the <em>register content at the time of halting</em>.
+                    We also say <em><span class="inline-math">$M$</span> converges on input <span class="inline-math">$\v w$</span></em>.
+                    If the computation sequence does not halt, we say <em><span class="inline-math">$M$</span> diverges on input <span class="inline-math">$\v w$</span></em>.
+                </p>
+                
+            </li><li>
+                <p>
+                    For any partial function <span class="inline-math">$F: \mathbb{W}^{n+1} \dashrightarrow \mathbb{W}^{n+1}$</span>,
+                    we say <em><span class="inline-math">$M$</span> performs the operation <span class="inline-math">$F$</span></em> whenever upon input <span class="inline-math">$\v w$</span>,
+                    if <span class="inline-math">$F(\v w)\uparrow$</span>, then <span class="inline-math">$M$</span> diverges on input <span class="inline-math">$\v w$</span>;
+                    and if <span class="inline-math">$F(\v w)\downarrow$</span>, then <span class="inline-math">$M$</span> converges on input <span class="inline-math">$\v w$</span>
+                    with register content <span class="inline-math">$F(\v w)$</span> at the time of halting.
+                </p>
+                <p>
+                    If <span class="inline-math">$F$</span> is a total function, we also say <em><span class="inline-math">$M$</span> performs the total operation <span class="inline-math">$F$</span></em>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Strong equivalence of register machines
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Strong-equivalence-of-register-machines.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (strongly equivalent register machines)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-strongly-equivalent-register-machines.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Two <span class="inline-math">$Σ$</span>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-register-machine.html">register machines</a> <span class="inline-math">$M = (Σ, Q, P)$</span> and <span class="inline-math">$M&#x27; = (Σ, Q&#x27;, P&#x27;)$</span>
+                            are said to be <em>strongly equivalent</em> if for all <span class="inline-math">$k\in \N$</span> and <span class="inline-math">$\v w\in \mathbb{W}$</span>,
+                            letting <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computation-on-register-machine.html"><span class="inline-math">$C$</span></a><span class="inline-math">$(k,M,\v w) = (q,\v v)$</span> and <span class="inline-math">$C(k,M&#x27;,\v w) = (q&#x27;, \v v&#x27;)$</span>,
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                we have <span class="inline-math">$\v v = \v v&#x27;$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$q = q_H$</span> iff <span class="inline-math">$q&#x27; = q_H&#x27;$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <br>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                If <span class="inline-math">$|Q| = |Q&#x27;|$</span>, then for each register machine <span class="inline-math">$M=(Σ,Q,P)$</span>,
+                                we can make a strongly equivalent register machine <span class="inline-math">$M&#x27;=(Σ,Q&#x27;,P&#x27;)$</span> by relabelling.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (countably many register machines)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-countably-many-register-machines.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Fix <span class="inline-math">$Σ$</span>.
+                            There are only countably many <span class="inline-math">$Σ$</span>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-register-machine.html">register machines</a>
+                            up to <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-strongly-equivalent-register-machines.html">strong equivalence</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-countably-many-register-machines.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (padding lemma)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-padding-lemma.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For each register machine,
+                            there are infinitely many <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-strongly-equivalent-register-machines.html">strongly equivalent</a> register machines.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-padding-lemma.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (register machine answering questions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-register-machine-answering-questions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$M = (Σ, Q, P)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-register-machine.html">register machine</a>
+                with an <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computation-on-register-machine.html">upper register number</a> <span class="inline-math">$n$</span>.
+            </p>
+            <p>
+                A <em>question with <span class="inline-math">$k+1$</span> answers</em>
+                is a partition of <span class="inline-math">$\mathbb{W}^{n+1}$</span> into <span class="inline-math">$k+1$</span> disjoint sets <span class="inline-math">$A_0, \ldots, A_k$</span>.
+            </p>
+            <p>
+                Say <em><span class="inline-math">$M$</span> answers the question</em> <span class="inline-math">$\set{A_0, \ldots, A_k}$</span>
+                if
+            </p>
+            <ul>
+            <li>
+                <p>
+                    it has <span class="inline-math">$k+1$</span> designated <em>answer states</em> <span class="inline-math">$\hat q_0, \ldots, \hat q_k\in Q$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    for each <span class="inline-math">$\v w\in \mathbb{W}^{n+1}$</span>,
+                    the computation of <span class="inline-math">$M$</span> with input <span class="inline-math">$\v w$</span>
+                    produces a configuration <span class="inline-math">$(\hat q_i, \v w)$</span> (in finitely many steps)
+                    iff <span class="inline-math">$\v w\in A_i$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (concatenation lemma, subroutine lemma)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-concatenation-lemma-subroutine-lemma.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$M, M&#x27;$</span> be <span class="inline-math">$Σ$</span>-register machines.
+                If <span class="inline-math">$M$</span> <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computation-on-register-machine.html">performs operation</a> <span class="inline-math">$F$</span>
+                and <span class="inline-math">$M&#x27;$</span> performs operation <span class="inline-math">$F&#x27;$</span>,
+                then we can construct concretely a state machine that performs operation <span class="inline-math">$F&#x27;\circ F$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-concatenation-lemma-subroutine-lemma.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (case distinction lemma)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-case-distinction-lemma.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$Q = \sb{A_i}{i\leq k}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-register-machine-answering-questions.html">question</a> with <span class="inline-math">$k+1$</span> answers
+                and <span class="inline-math">$f_i: \mathbb{W}^{n+1}\dashrightarrow \mathbb{W}^{n+1}$</span>
+                for <span class="inline-math">$i\leq k$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$Q$</span> is answered by a register machine <span class="inline-math">$M$</span>
+                and <span class="inline-math">$f_i$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computation-on-register-machine.html">performed</a> by <span class="inline-math">$M_i$</span> for each <span class="inline-math">$i\leq k$</span>,
+                then we can construct a register machine that performs
+                the operation defined by <span class="inline-math">$g(\v w) = f_i(\v w)$</span> iff <span class="inline-math">$\v w\in M_i$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-case-distinction-lemma.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Example-of-register-machines.html">Example of register machines</a>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (computable function, weakly equivalent)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a <span class="inline-math">$Σ$</span>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-register-machine.html">register machine</a> <span class="inline-math">$M$</span> and some <span class="inline-math">$k\in \N$</span>,
+                define a partial function <span class="inline-math">$f_{M,k}: \mathbb{W}^k \dashrightarrow \mathbb{W}$</span> by
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$f_{M,k}\uparrow$</span> if <span class="inline-math">$M$</span> does not <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computation-on-register-machine.html">halt</a> on input <span class="inline-math">$\v w$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$f_{M,k}=v_0$</span> if <span class="inline-math">$M$</span> halts on input <span class="inline-math">$\v w$</span> with register content <span class="inline-math">$\v v$</span> at the time of halting.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Write <span class="inline-math">$\mathrm{W}_M = \op{dom}(f_{M,1})$</span>.
+                Two machines <span class="inline-math">$M,M&#x27;$</span> are called <em>weakly equivalent</em> if <span class="inline-math">$\mathrm{W}_M = \mathrm{W}_{M&#x27;}$</span>.
+            </p>
+            <p>
+                A partial function <span class="inline-math">$f: \mathbb{W}^k \dashrightarrow \mathbb{W}$</span>
+                is called <em>computable</em> if
+                there exists a <span class="inline-math">$Σ$</span>-register machine such that <span class="inline-math">$f_{M,k} = f$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-strongly-equivalent-register-machines.html">Strong equivalence</a> <span class="inline-math">$\implies f_{M,k} = f_{M&#x27;,k} \implies$</span> weak equivalence.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (computable set, computably enumerable set)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X\subseteq \mathbb{W}^k$</span>.
+            </p>
+            <p>
+                Any total function <span class="inline-math">$f: \mathbb{W}^k\to\mathbb{W}$</span>
+                satisfying <span class="inline-math">$f(\v w)\neq ε \iff \v w\in X$</span>
+                is called a <em>characteristic function</em> of <span class="inline-math">$X$</span>.
+                Fixing any <span class="inline-math">$a\in Σ$</span>, <em><strong>the</strong> characteristic function</em> is
+                <span class="display-math">$$ \begin{align*}
+                    χ_X(\v w) = \begin{cases}
+                        a, &amp;\v w\in X, \\
+                        ε, &amp;\v w\not\in X.
+                    \end{cases}
+                \end{align*} $$</span>
+                <span class="inline-math">$X$</span> is called <em>computable</em> if <span class="inline-math">$χ_X$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">computable</a>.
+            </p>
+            <p>
+                Any partial function <span class="inline-math">$f: \mathbb{W}^k \dashrightarrow \mathbb{W}$</span>
+                with <span class="inline-math">$\mathrm{dom}(f) = X$</span> is called a <em>pseudo-characteristic function</em> of <span class="inline-math">$X$</span>,
+                and <em><strong>the</strong> pseudo-characteristic function</em> of <span class="inline-math">$X$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    ψ_X(\v w) = \begin{cases}
+                        a, &amp;\v w\in X, \\
+                        \uparrow, &amp;\v w\not\in X.
+                    \end{cases}
+                \end{align*} $$</span>
+                <span class="inline-math">$X$</span> is called <em>computably enumerable</em> if <span class="inline-math">$ψ_X$</span> is computable.
+            </p>
+            <ul>
+            <!-- BEGIN BLOCK ID closure-complementation -->
+            <li id="^closure-complementation">
+                <p>
+                    If <span class="inline-math">$X$</span> is computable,
+                    then so is <span class="inline-math">$\mathbb{W}^k \setminus X$</span>. (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-closure-of-computable-sets-under-complementation.html">Proof</a>)
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID closure-complementation -->
+            <li>
+                <p>
+                    If <span class="inline-math">$X$</span> is computable, then <span class="inline-math">$X$</span> is computably enumerable. (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computable-set-is-computably-enumerable.html">Proof</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (regular language is computable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-regular-language-is-computable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Every <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">regular language</a> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-regular-language-is-computable.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Shortlex order
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Shortlex-order.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (shortlex order)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-shortlex-order.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose the finite alphabet <span class="inline-math">$Σ$</span> comes with some ordering <span class="inline-math">$&lt;$</span>.
+                        </p>
+                        <p>
+                            The <em>shortlex order</em> is an order relation on <span class="inline-math">$\mathbb{W}$</span>
+                            defined so that if <span class="inline-math">$w = b_0 \ldots b_k, v = c_0 \ldots c_l\in \mathbb{W}$</span>,
+                            <span class="inline-math">$w&lt;v$</span> iff <span class="inline-math">$|w|&lt;|v|$</span>, or <span class="inline-math">$|w| = |v|$</span> and <span class="inline-math">$w\neq v$</span> and for <span class="inline-math">$i$</span> minimal such that <span class="inline-math">$b_i\neq c_i$</span>, we have <span class="inline-math">$b_i &lt; c_i$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                It is a total order: irreflexive (no <span class="inline-math">$w$</span> satisfies <span class="inline-math">$w&lt;w$</span>), transitive (if <span class="inline-math">$u&lt;v&lt;w$</span>, then <span class="inline-math">$u&lt;w$</span>)
+                                and trichotomous (either <span class="inline-math">$v&lt;w$</span> or <span class="inline-math">$w&lt;v$</span> or <span class="inline-math">$v=w$</span>).
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$ε$</span> is the minimal element.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (shortlex order isomorphic to natural number)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-shortlex-order-isomorphic-to-natural-number.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-shortlex-order.html">shortlex order</a> <span class="inline-math">$(\mathbb{W}, &lt;)$</span> is isomorphic to <span class="inline-math">$(\N, &lt;)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-shortlex-order-isomorphic-to-natural-number.html">Proof</a>
+                        </p>
+                        <p>
+                            We use <span class="inline-math">$\#(w)$</span> to denote the natural number assigned to <span class="inline-math">$w\in \mathbb{W}$</span> by the canonical isomorphism.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (computability of shortlex ordering)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-computability-of-shortlex-ordering.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$&lt;$</span> be the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-shortlex-order.html">shortlex order</a>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                The characteristic function of <span class="inline-math">$\sb{(v,w)}{v&lt;w}$</span> is computable.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The function <span class="inline-math">$s(w) = v$</span> where <span class="inline-math">$v$</span> is the <span class="inline-math">$&lt;$</span>-immediate successor (i.e. <span class="inline-math">$\#(v) = \#(w)+1$</span>) is computable.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computability-of-shortlex-ordering.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Church's recursive functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Church-s-recursive-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>basic functions</em> are
+            </p>
+            <ul>
+            <li>
+                <p>
+                    projection functions <span class="inline-math">$π_{k,i}: \mathbb{W}^k \to \mathbb{W}: \v w\mapsto w_i$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    constant functions <span class="inline-math">$\mathrm{c}_{k,ε}: \mathbb{W}^k \to \mathbb{W}: \v w\mapsto ε$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-computability-of-shortlex-ordering.html">successor function</a> <span class="inline-math">$s: \mathbb{W}\to\mathbb{W}$</span> of shortlex ordering.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Given <span class="inline-math">$f: \mathbb{W}^m\dashrightarrow \mathbb{W}$</span> and <span class="inline-math">$g_1, \ldots, g_m: \mathbb{W}^k\dashrightarrow \mathbb{W}$</span>,
+                the <em>composition of <span class="inline-math">$f$</span> with $(g</em>1, \ldots, g<em>m)$</em> is
+                <span class="display-math">$$ \begin{align*}
+                    \mathbb{W}^k &amp;\dashrightarrow \mathbb{W} \\
+                    \v w &amp;\mapsto f(g_1(\v w), \ldots, g_m(\v w)).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Given <span class="inline-math">$f: \mathbb{W}^k\dashrightarrow \mathbb{W}$</span> and <span class="inline-math">$g: \mathbb{W}^{k+2}\dashrightarrow \mathbb{W}$</span>,
+                the <em>recursion result of <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span></em> is
+                <span class="display-math">$$ \begin{align*}
+                    h: \mathbb{W}^{k+1} &amp;\dashrightarrow \mathbb{W} \\
+                    (\v w, ε) &amp;\to f(\v w), \\
+                    (\v w, s(v)) &amp;\to g(\v w, s, h(\v w, s)).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Given <span class="inline-math">$f: \mathbb{W}^{k+1} \dashrightarrow \mathbb{W}$</span>, the <em>minimisation result of <span class="inline-math">$f$</span></em> is
+                <span class="display-math">$$ \begin{align*}
+                    \mathbb{W}^k &amp;\dashrightarrow \mathbb{W} \\
+                    \v w &amp;\mapsto \begin{cases}
+                        v, &amp;\text{$v$ is $&lt;$-minimal such that $f(\v w, v)=ε$ and $\forall u\leq v, f(\v w, u)\downarrow$}, \\
+                        \uparrow, &amp;\text{otherwise}.
+                    \end{cases}
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The class of <em>primitive recursive (partial) functions</em>
+                is the smallest class of partial functions
+                containing all basic functions that is closed under composition and recursion.
+            </p>
+            <p>
+                The class of <em>recursive (partial) functions</em>
+                is the smallest class of partial functions
+                containing all basic functions that is closed under composition, recursion and minimisation.
+            </p>
+            
+        </div>
+    </div>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Example-Grassmann-equations-for-addition.html">Example (Grassmann equations for addition)</a>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (recursion tree)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-recursion-tree.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>recursion tree</em>
+                is a pair <span class="inline-math">$Π = (T, l)$</span> where
+                <span class="inline-math">$T$</span> is a non-empty finite <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-finitely-branching-tree.html">tree</a>
+                and <span class="inline-math">$l$</span> is a function with <span class="inline-math">$\op{dom}(l)=T$</span> taking the following labels as values:
+            </p>
+            <table>
+                <tr>
+                    <th class="table-cell-left"><p>
+                        Label
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Arity
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Branching number
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Arities of successors
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        Interpretation
+                    </p>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{B}^π_{k,i}$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        0
+                    </p>
+                    </td>
+                    <td class="table-cell-left"></td>
+                    <td class="table-cell-left"><p>
+                        Projection <span class="inline-math">$π_{k,i}$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{B}^\mathrm{c}_k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        0
+                    </p>
+                    </td>
+                    <td class="table-cell-left"></td>
+                    <td class="table-cell-left"><p>
+                        Constant <span class="inline-math">$\mathrm{c}_{k,ε}$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{B}^s$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        1
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        0
+                    </p>
+                    </td>
+                    <td class="table-cell-left"></td>
+                    <td class="table-cell-left"><p>
+                        Successor <span class="inline-math">$s$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{C}_{n,k}$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$n+1$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$n,\underbrace{k,\ldots,k}_{n}$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        Composition
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{R}_{k}$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        2
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$k, k+2$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        Recursion
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{M}_k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        1
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$k+1$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        Minimisation
+                    </p>
+                    </td>
+                </tr>
+            </table>
+            <p>
+                A recursion tree is <em>primitive</em> if no <span class="inline-math">$\mathsf{M}$</span>-labels occur.
+            </p>
+            <p>
+                Assign <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Church-s-recursive-functions.html">recursive functions</a> <span class="inline-math">$f_Π$</span> to each recursion tree
+                by recursion on the height of the tree:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The tree has height 0 iff <span class="inline-math">$l(ε)$</span> is a basic label:
+                </p>
+                
+            </li>
+            </ul>
+            <table>
+                <tr>
+                    <th class="table-cell-left"><p>
+                        <span class="inline-math">$l(ε)$</span>
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        <span class="inline-math">$f_Π$</span>
+                    </p>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{B}^{π}_{k,i}$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$π_{k,i}$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{B}^\mathrm{c}_k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathrm{c}_{k,ε}$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{B}^s$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$s$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        - Suppose the tree has height <span class="inline-math">$k+1$</span> and we already know <span class="inline-math">$f_{Π&#x27;}$</span> for all proper subtrees <span class="inline-math">$Π&#x27;$</span> of <span class="inline-math">$Π$</span>.
+                    </p>
+                    </td>
+                    <td class="table-cell-left"></td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        Let <span class="inline-math">$\set{Π_i}$</span> be the subtrees at the successors of <span class="inline-math">$ε$</span>.
+                    </p>
+                    </td>
+                    <td class="table-cell-left"></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th class="table-cell-left"><p>
+                        <span class="inline-math">$l(ε)$</span>
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        <span class="inline-math">$f_Π$</span>
+                    </p>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{C}_{n,k}$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\v w\mapsto f_{Π_0}(f_{Π_1}(\v w), \ldots f_{Π_n}(\v w))$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{R}_k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        Recursion of <span class="inline-math">$f_{Π_0}$</span> and <span class="inline-math">$f_{Π_1}$</span>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$\mathsf{M}_k$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        Minimisation result of <span class="inline-math">$f_{Π_0}$</span>
+                    </p>
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (recursion tree represents recursive functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-recursion-tree-represents-recursive-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A partial function <span class="inline-math">$f$</span>
+                is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Church-s-recursive-functions.html">recursive</a>
+                iff there is a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-recursion-tree.html">recursive tree</a> <span class="inline-math">$Π$</span> such that <span class="inline-math">$f = f_Π$</span>.
+            </p>
+            <p>
+                Similarly, a partial function <span class="inline-math">$f$</span>
+                is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Church-s-recursive-functions.html">primitive recursive</a>
+                iff there is a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-recursion-tree.html">primitive recursive tree</a> <span class="inline-math">$Π$</span> such that <span class="inline-math">$f = f_Π$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-recursion-tree-represents-recursive-functions.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    By induction on the height of primitive recursion tree, all primitive recursive functions are total.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (computability of recursive functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-computability-of-recursive-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Every <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Church-s-recursive-functions.html">partial recursive function</a> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">computable</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computability-of-recursive-functions.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Merging and splitting words
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Merging-and-splitting-words.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-computability-of-recursive-functions.html">Since</a> addition, multiplication etc are recursive,
+                they are computable.
+                Thus we have access to arithmetics.
+            </p>
+            <p>
+                Consider the <em>Cantor zigzag bijection</em>
+                <span class="display-math">$$ \begin{align*}
+                    z: (i,j) \mapsto \frac{(i+j)(i+j+1)}{2} + j.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The bijection <span class="inline-math">$\mathbb{W}^2\to \mathbb{W}: (v,w)\mapsto u$</span> where <span class="inline-math">$\#(u) = z(\#(v), \#(w))$</span> is computable.
+                Thus we can merge <span class="inline-math">$v$</span> and <span class="inline-math">$w$</span> into a single word <span class="inline-math">$u = v*w$</span>.
+            </p>
+            <p>
+                Its inverse <span class="inline-math">$\cdot_{(0)}$</span>, <span class="inline-math">$\cdot_{(1)}$</span> is also computable:
+                search all possible values of <span class="inline-math">$v,w\leq u$</span> and check if <span class="inline-math">$u = v*w$</span>.
+                This is called splitting <span class="inline-math">$u$</span> into two words.
+            </p>
+            <p>
+                <iframe src="https://www.desmos.com/calculator/itv3irzqh3?embed" width="100%" height="400"></iframe>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Software
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Software.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Fix an alphabet <span class="inline-math">$Σ$</span> and enlarge it by adding
+                the following symbols to a larger alphabet <span class="inline-math">$Σ&#x27;$</span>:
+                <span class="display-math">$$ \begin{align*}
+                    \mathbf{0} \quad \mathbf{1} \quad \mathbf{ε} \quad \mathbf{+} \quad \mathbf{?} \quad \mathbf{-} \quad \mathbf{(} \quad \mathbf{)} \quad \mathbf{,} \quad \mathbf{\mapsto} \quad \mathbf{\square}
+                \end{align*} $$</span>
+            </p>
+            <p>
+                We devise a coding: (write <span class="inline-math">$\op{code}(k)$</span> for the encoding of <span class="inline-math">$k$</span>)
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Natural number: encode in binary, e.g. <span class="inline-math">$\op{code}(13) = \mathbf{1101}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    State: since only the size of <span class="inline-math">$Q$</span> matters, fix some listing <span class="inline-math">$Q = \set{q_0, \ldots, q_k}$</span>.
+                    Then say <span class="inline-math">$\op{code}(q_i) = \op{code}(i)$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Instruction: encode using <span class="inline-math">$\mathbf{+}$</span>, <span class="inline-math">$\mathbf{?}$</span> and <span class="inline-math">$\mathbf{-}$</span>, e.g. <span class="inline-math">$\op{code}(+(k,q,q&#x27;)) = \mathbf{+(} \op{code}(k) \mathbf{,} \op{code}(q) \mathbf{,} \op{code}(q&#x27;)\mathbf{)}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Program line: <span class="inline-math">$\op{code}(q\mapsto P(q)) = \op{code}(q)\mathbf{\mapsto}\op{code}(P(q))$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Register machine: <span class="inline-math">$\op{code}(Σ, Q, P) = \op{code}(q_0 \mapsto P(q_0)) \mathbf{,} \ldots \mathbf{,}\op{code}(q_k\mapsto P(q_k))$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Sequence of words: <span class="inline-math">$\op{code}(\v w) = w_0\mathbf{\square}\ldots \mathbf{\square}w_n \mathbf{\square}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Configuration: <span class="inline-math">$\op{code}(q,\v w) = \op{code}(q)\mathbf{\square}\op{code}(\v w)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                A register machine can:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    determine whether a word is a code about an instruction or a state etc.;
+                </p>
+                
+            </li><li>
+                <p>
+                    determine what state a given configuration is, what the instruction for a given state is etc;
+                </p>
+                
+            </li><li>
+                <p>
+                    perform the operation that assigns, to a configuration and an instruction's code,
+                    the code of the transformed configuration;
+                </p>
+                
+            </li><li>
+                <p>
+                    perform the operation <span class="inline-math">$(\op{code}(M), \op{code}(\v w), v) \mapsto \op{code}($</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computation-on-register-machine.html"><span class="inline-math">$C$</span></a><span class="inline-math">$(\#(v), M, \v w))$</span>
+                    (by <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Church-s-recursive-functions.html">recursion</a> of transforming configurations);
+                </p>
+                
+            </li><li>
+                <p>
+                    perform the operation
+                    <span class="display-math">$$ \begin{align*}
+                        t_{M,k}(\v w, v) = \begin{cases}
+                            a, &amp;\text{$M$ has halted with input $\v w$ after at most $\#(v)$ steps}, \\
+                            ε, &amp;\text{otherwise}
+                        \end{cases}
+                    \end{align*} $$</span>
+                    called the <em>truncated computation</em> of <span class="inline-math">$M$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Algorithm-truncated-computation-of-register-machine.html">Algorithm</a>)
+                </p>
+                
+            </li><!-- BEGIN BLOCK ID f-notation -->
+            <li id="^f-notation">
+                <p>
+                    The software principle: there is a <em>universal register machine</em> <span class="inline-math">$U$</span> such that
+                    <span class="display-math">$$ \begin{align*}
+                        f_{U,2}(v,u) = \begin{cases}
+                            f_{M,k}(\v w), &amp;\text{$v=\op{code}(M), u = \op{code}(\v w)$ for some} \\
+                            &amp;\text{register machine $M$ and sequence $\v w$ of words of length $k$}, \\
+                            \uparrow, &amp;\text{otherwise}.
+                        \end{cases}
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-software-principle.html">Proof</a>)
+                </p>
+                <p>
+                    We can then extend notation: for arbitrary <span class="inline-math">$v\in \mathbb{W}$</span>,
+                    define <span class="inline-math">$f_{v,k}(\v w) = f_{U,2}(v,\op{code}(\v w))$</span>.
+                </p>
+                
+            </li>
+            <!-- END BLOCK ID f-notation -->
+            
+            </ul>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (s-m-n)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-s-m-n.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$g: \mathbb{W}^{k+1} \dashrightarrow \mathbb{W}$</span> be a partial <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">computable</a> function.
+                        </p>
+                        <p>
+                            There exists a total computable function <span class="inline-math">$h: \mathbb{W}\to \mathbb{W}$</span>
+                            such that for all <span class="inline-math">$v\in \mathbb{W}$</span> and <span class="inline-math">$\v w\in \mathbb{W}^k$</span>,
+                            we have <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Software.html#^f-notation"><span class="inline-math">$f_{h(v), k}$</span></a><span class="inline-math">$(\v w) = g(\v w, v)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-s-m-n.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (halting problem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-halting-problem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>halting problem</em> and its two-variable variant are
+                the sets
+                <span class="display-math">$$ \begin{align*}
+                    \mathbf{K} &amp;= \sb{w\in \mathbb{W}}{f_{w,1}(w)\downarrow}, \\
+                    \mathbf{K}_0 &amp;= \sb{(w,v)\in \mathbb{W}^2}{f_{w,1}(v)\downarrow},
+                \end{align*} $$</span>
+                where <span class="inline-math">$f_{w,1}$</span> is defined <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Software.html#^f-notation">here</a>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (halting problem is computably enumerable but not computable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-halting-problem-is-computably-enumerable-but-not-computable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The sets <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-halting-problem.html"><span class="inline-math">$\mathbf{K}$</span> and <span class="inline-math">$\mathbf{K}_0$</span></a>
+                are <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computably enumerable</a> but not <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-halting-problem-is-computably-enumerable-but-not-computable.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Sigma_1, Pi_1, Delta_1 sets)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A set <span class="inline-math">$X\subseteq \mathbb{W}^k$</span>
+                is called <span class="inline-math">$Σ_1$</span>
+                if there exists a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable set</a> <span class="inline-math">$Y\subseteq \mathbb{W}^{k+1}$</span>
+                such that for all <span class="inline-math">$\v w\in \mathbb{W}^k$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \v w\in X \iff \exists v\in \mathbb{W} ((\v w,v)\in Y).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <span class="inline-math">$X$</span> is called <span class="inline-math">$Π_1$</span> if <span class="inline-math">$\mathbb{W}^k \setminus X$</span> is <span class="inline-math">$Σ_1$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$X$</span> is called <span class="inline-math">$Δ_1$</span> if <span class="inline-math">$X$</span> is both <span class="inline-math">$Σ_1$</span> and <span class="inline-math">$Π_1$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (computably enumerable iff Sigma_1)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-computably-enumerable-iff-Sigma_1.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A set is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computably enumerable</a>
+                iff it is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Σ_1$</span></a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computably-enumerable-iff-Sigma_1.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (computable iff Delta_1)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-computable-iff-Delta_1.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A set is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a> iff it is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Δ_1$</span></a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computable-iff-Delta_1.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (type 0 language iff computably enumerable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-type-0-language-iff-computably-enumerable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$L\subseteq \mathbb{W}$</span>.
+                <span class="inline-math">$L$</span> is a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">type 0 language</a>
+                iff <span class="inline-math">$L$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computably enumerable</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-if-type-0-language-then-computably-enumerable.html">Proof of <span class="inline-math">$\implies$</span></a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (closure of computable languages)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-closure-of-computable-languages.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The class of <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a> languages is closed under union,
+                intersection, complementation, and concatenation.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-closure-of-computable-languages.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (closure of computably enumerable languages)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-closure-of-computably-enumerable-languages.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The class of <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computably enumerable</a> languages is closed under union, intersection and concatenation,
+                but not complementation and set difference.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-closure-of-computably-enumerable-languages.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Reduction functions
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Reduction-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (many-one reducible, equivalent)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-many-one-reducible-equivalent.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$L, L&#x27;\subseteq \mathbb{W}$</span> be languages.
+                        </p>
+                        <p>
+                            A total <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">computable</a> function <span class="inline-math">$f: \mathbb{W}\to \mathbb{W}$</span>
+                            is called a <em>reduction of <span class="inline-math">$L$</span> to <span class="inline-math">$L&#x27;$</span></em> if
+                            for all <span class="inline-math">$w\in \mathbb{W}$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                w\in L \iff f(w) \in L&#x27;.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$L$</span> is <em>many-one reducible</em> to <span class="inline-math">$L&#x27;$</span> (denoted as <span class="inline-math">$L\leq_m L&#x27;$</span>)
+                            if there is a reduction from <span class="inline-math">$L$</span> to <span class="inline-math">$L&#x27;$</span>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$L$</span> is <em>many-one equivalent</em> to <span class="inline-math">$L&#x27;$</span> (denoted as <span class="inline-math">$L\equiv_m L&#x27;$</span>)
+                            if <span class="inline-math">$L\leq_m L&#x27;$</span> and <span class="inline-math">$L&#x27;\leq_m L$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\leq_m$</span> is a partial preorder, i.e. it is reflexive (<span class="inline-math">$L\leq_m L$</span> via <span class="inline-math">$f=\id_\mathbb{W}$</span>)
+                                and transitive (if <span class="inline-math">$L_1 \leq_m L_2$</span> and <span class="inline-math">$L_2 \leq_m L_3$</span>, then <span class="inline-math">$L_1 \leq_m L_3$</span> by concatenation of reductions).
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\equiv_m$</span> is an equivalence relation.
+                            </p>
+                            
+                        </li><!-- BEGIN BLOCK ID complement -->
+                        <li id="^complement">
+                            <p>
+                                Note <span class="inline-math">$L\leq_m L&#x27;\iff \mathbb{W}\setminus L \leq_m \mathbb{W}\setminus L&#x27;$</span>.
+                                Thus <span class="inline-math">$L$</span> and <span class="inline-math">$\mathbb{W}\setminus L$</span> is either many-one equivalent or incomparable by <span class="inline-math">$\leq_m$</span>.
+                            </p>
+                            
+                        </li>
+                        <!-- END BLOCK ID complement -->
+                        
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (many-one reducible to computable or computably enumerable languages)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-many-one-reducible-to-computable-or-computably-enumerable-languages.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$L,L&#x27;\subseteq \mathbb{W}$</span>.
+                            Suppose <span class="inline-math">$L$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-many-one-reducible-equivalent.html"><span class="inline-math">${}\leq_m{}$</span></a><span class="inline-math">$L&#x27;$</span>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                If <span class="inline-math">$L&#x27;$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a>, then so is <span class="inline-math">$L$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                If <span class="inline-math">$L&#x27;$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computably enumerable</a>, then so is <span class="inline-math">$L$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-many-one-reducible-to-computable-or-computably-enumerable-languages.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Interpret <span class="inline-math">$L\leq_m L&#x27;$</span> as "<span class="inline-math">$L$</span> is at most as complicated as <span class="inline-math">$L&#x27;$</span>".
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-halting-problem.html"><span class="inline-math">$\mathbf{K}$</span></a> and <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}$</span> are incomparable in <span class="inline-math">$\leq_m$</span>:
+                                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-many-one-reducible-equivalent.html#^complement">otherwise</a>
+                                <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}\equiv_m \mathbf{K}$</span>
+                                and in particular <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}\leq_m \mathbf{K}$</span>,
+                                contradicting with <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-halting-problem-is-computably-enumerable-but-not-computable.html"><span class="inline-math">$\mathbf{K}$</span> being <span class="inline-math">$Σ_1$</span> but not <span class="inline-math">$Π_1$</span></a>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (hardness and completeness)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-hardness-and-completeness.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\mathcal{C}\subseteq \mathcal{P}(\mathbb{W})$</span> be a class of languages
+                            and <span class="inline-math">$L\subseteq \mathbb{W}$</span> be a language.
+                        </p>
+                        <p>
+                            Say <span class="inline-math">$L$</span> is <span class="inline-math">$\mathcal{C}$</span>-hard if <span class="inline-math">$X$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-many-one-reducible-equivalent.html"><span class="inline-math">${}\leq_m{}$</span></a><span class="inline-math">$L$</span> for all <span class="inline-math">$X\in \mathcal{C}$</span>.
+                        </p>
+                        <p>
+                            Say <span class="inline-math">$L$</span> is <span class="inline-math">$\mathcal{C}$</span>-complete if <span class="inline-math">$L$</span> is <span class="inline-math">$\mathcal{C}$</span>-hard and <span class="inline-math">$L\in \mathcal{C}$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (non-trivial computable language is Delta_1-complete)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-non-trivial-computable-language-is-Delta_1-complete.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$L\subseteq \mathbb{W}$</span> is a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a> language,
+                            and <span class="inline-math">$L\neq \emptyset$</span> and <span class="inline-math">$L\neq \mathbb{W}$</span>,
+                            then <span class="inline-math">$L$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Δ_1$</span></a>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-hardness-and-completeness.html">complete</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-non-trivial-computable-language-is-Delta_1-complete.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (halting problem is Sigma_1-complete)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-halting-problem-is-Sigma_1-complete.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-halting-problem.html">halting problem</a> <span class="inline-math">$\mathbf{K}$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Σ_1$</span></a>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-hardness-and-completeness.html">complete</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-halting-problem-is-Sigma_1-complete.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (index set)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-index-set.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A set <span class="inline-math">$I\subseteq \mathbb{W}$</span>
+                is called an <em>index set</em>
+                if it is closed under <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">weak equivalence</a>,
+                i.e. if <span class="inline-math">$w\in I, v\in \mathbb{W}$</span> and <span class="inline-math">$\mathrm{W}_w = \mathrm{W}_v$</span>, then <span class="inline-math">$v\in I$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Any non-empty index set is infinite by the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-padding-lemma.html">padding lemma</a>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Rice)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-Rice.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If an <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-index-set.html">index set</a> <span class="inline-math">$I$</span> is not trivial (<span class="inline-math">$I\neq \emptyset$</span> and <span class="inline-math">$I\neq \mathbb{W}$</span>),
+                then <span class="inline-math">$I$</span> is not <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a>.
+            </p>
+            <p>
+                In particular, let <span class="inline-math">$e\in \mathbb{W}$</span> such that <span class="inline-math">$\mathrm{W}_e = \emptyset$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$e\in I$</span>, then <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}\leq_m I$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$e\not\in I$</span>, then <span class="inline-math">$\mathbf{K}\leq_m I$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-Rice.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Decision problems as computability of sets
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems-as-computability-of-sets.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider an encoding of grammars as words in <span class="inline-math">$\mathbb{W}$</span>:
+                for every word <span class="inline-math">$w$</span>, there is a grammar <span class="inline-math">$G_w$</span>,
+                and all grammars are of this form.
+            </p>
+            <p>
+                Then we can recast the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems.html">decision problems</a>:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <em>the word problem</em>: <span class="inline-math">$\sb{(u,v)}{u\in \mathcal{L}(G_v)}$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <em>the emptiness problem</em>: <span class="inline-math">$\sb{u}{\mathcal{L}(G_u) = \emptyset}$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <em>the equivalence problem</em>: <span class="inline-math">$\sb{(u,v)}{\mathcal{L}(G_u) = \mathcal{L}(G_v)}$</span>,
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                and we say a decision problem is solvable if the set is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-type-0-language-iff-computably-enumerable.html">It can be shown that</a>
+                there are total computable functions
+                that translate between codes of grammars
+                and register machines and vice versa.
+                They then witness the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-many-one-reducible-equivalent.html">many-one equivalences</a>
+                <span class="display-math">$$ \begin{alignat}{1}
+                    \mathbf{K}_0 &amp;= \sb{(w,v)}{w\in \mathrm{W}_v} &amp;&amp;\equiv_m \sb{(u,v)}{u\in \mathcal{L}(G_v)}, \\
+                    \mathbf{Emp} &amp;:= \sb{u}{\mathrm{W}_u = \emptyset} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) = \emptyset}, \\
+                    \mathbf{Fin} &amp;:= \sb{u}{\mathrm{W}_u \text{ is finite}} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) \text{ is finite}}, \\
+                    \mathbf{Inf} &amp;:= \sb{u}{\mathrm{W}_u \text{ is infinite}} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) \text{ is infinite}}, \\
+                    \mathbf{Tot} &amp;:= \sb{u}{\mathrm{W}_u = \mathbb{W}} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) = \mathbb{W}}, \\
+                \end{alignat} $$</span>
+            </p>
+            <p>
+                <span class="inline-math">$\mathbf{Emp}, \mathbf{Fin}, \mathbf{Inf}, \mathbf{Tot}$</span> are non-trivial <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-index-set.html">index sets</a>.
+                By Rice's theorem, we obtain
+                <span class="inline-math">$\mathbb{W}\setminus \mathbf{K} \leq_m \mathbf{Emp}, \mathbf{Fin}$</span>
+                and <span class="inline-math">$\mathbf{K}\leq_m \mathbf{Inf}, \mathbf{Tot}$</span>.
+                This shows the emptiness problem for type 0 languages is not solvable.
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Fin neither Sigma_1 nor Pi_1)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-Fin-neither-Sigma_1-nor-Pi_1.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems-as-computability-of-sets.html"><span class="inline-math">$\mathbf{Fin}$</span></a>
+                            is neither <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Σ_1$</span></a> nor <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Π_1$</span></a>.
+                        </p>
+                        <p>
+                            Consequently <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems-as-computability-of-sets.html"><span class="inline-math">$\mathbf{Inf}$</span></a> <span class="inline-math">$= \mathbb{W}\setminus \mathbf{Fin}$</span>
+                            is neither <span class="inline-math">$Σ_1$</span> nor <span class="inline-math">$Π_1$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-Fin-neither-Sigma_1-nor-Pi_1.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (equivalence problem for type 0 language is not solvable)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-equivalence-problem-for-type-0-language-is-not-solvable.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems.html">equivalence problem</a> for <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-normal-form.html">type 0 languages</a> is not solvable.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalence-problem-for-type-0-language-is-not-solvable.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

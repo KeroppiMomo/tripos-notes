@@ -1,0 +1,68 @@
+
+<h1>Universal cover for <span class="inline-math">$S^1$</span></h1>
+
+<p>
+    We will show <span class="inline-math">$p: \R \to S^1$</span> given by <span class="inline-math">$p(t) = e^{2πit}$</span>
+    is a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">covering map</a>.
+</p>
+<p>
+    For the set <span class="inline-math">$U_{y&gt;0} = \sb{x+iy\in S^1}{y&gt;0}$</span>,
+    its preimage
+    <span class="display-math">$$ \begin{align*}
+        p\inv(U_{y&gt;0}) = \bigsqcup_{j\in \Z} (j, j+\tfrac{1}{2})
+    \end{align*} $$</span>
+    is the disjoint union of open intervals.
+    On each interval,
+    <span class="display-math">$$ \begin{align*}
+        p|_{(j, j+\frac{1}{2})}: (j, j+\tfrac{1}{2}) \to U_{y&gt;0}
+    \end{align*} $$</span>
+    is a continuous bijection with continuous inverse
+    <span class="display-math">$$ \begin{align*}
+        p|_{(j, j+\frac{1}{2})}(x+iy) = j + \frac{1}{2π}\cos\inv(x).
+    \end{align*} $$</span>
+</p>
+<p>
+    Similarly with <span class="inline-math">$U_{y&lt;0}, U_{x&gt;0}$</span> and <span class="inline-math">$U_{x&lt;0}$</span>.
+    These four open sets cover <span class="inline-math">$S^1$</span>,
+    so <span class="inline-math">$p$</span> is a covering map.
+</p>
+<p>
+    Also <span class="inline-math">$\R$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-contractible-space.html">contractible</a>
+    so <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simply-connected.html">simply connected</a>.
+    Thus <span class="inline-math">$p$</span> is a universal cover.
+</p>
+
+<h1>Group isomorphism</h1>
+
+<p>
+    Choose the basepoint <span class="inline-math">$\tilde x_0 = 0 \in \Z = p\inv(1)$</span>.
+    Acting on this basepoint <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-action-of-fundamental-group-on-preimage-under-covering-map.html">gives a bijection</a>
+    <span class="display-math">$$ \begin{align*}
+        l: π_1(S^1, 1) \to \Z.
+    \end{align*} $$</span>
+</p>
+<p>
+    For any <span class="inline-math">$n\in \Z$</span>,
+    define a path <span class="inline-math">$\tilde u_n: [0,1] \to \R$</span>
+    given by <span class="inline-math">$t \mapsto nt$</span>
+    from <span class="inline-math">$0$</span> to <span class="inline-math">$n$</span>,
+    and let <span class="inline-math">$u_n = p\circ \tilde u_n.$</span>
+    Note that <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-simply-connected-iff-unique-homotopy-class-of-paths.html">since</a> <span class="inline-math">$\R$</span> is simply connected,
+    there is a unique homotopy class of paths between each pair of points.
+    So for any <span class="inline-math">$[γ]\in π_1(S^1, 1)$</span>,
+    if the lift <span class="inline-math">$\tilde γ$</span> of <span class="inline-math">$γ$</span> starting at 0
+    ends at <span class="inline-math">$n\in \Z = p\inv(1)$</span>,
+    then <span class="inline-math">$[\tilde γ] = [\tilde u_n]$</span> and thus <span class="inline-math">$[γ] = [u_n]$</span>.
+</p>
+<p>
+    Now we verify <span class="inline-math">$l$</span> is a homomorphism:
+    for any two elements <span class="inline-math">$[u_n], [u_m] \in π_1(S^1, 1)$</span>,
+    since <span class="inline-math">$\tilde u_n \cdot \tilde u_m$</span> and <span class="inline-math">$\tilde u_{n+m}$</span>
+    are both paths in <span class="inline-math">$\R$</span> from 0 to <span class="inline-math">$n+m$</span>,
+    they are homotopic as paths,
+    so <span class="inline-math">$[u_n] \cdot [u_m] = [u_{n+m}]$</span>.
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        l([u_n] \cdot [u_m]) = l([u_{n+m}]) = n+m = l([u_n]) + l([u_m]).
+    \end{align*} $$</span>
+</p>

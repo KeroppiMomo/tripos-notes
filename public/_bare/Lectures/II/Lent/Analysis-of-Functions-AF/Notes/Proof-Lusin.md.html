@@ -1,0 +1,86 @@
+<p>
+    The condition <span class="inline-math">$\|g\|_\infty \leq  \|f\|_\infty$</span> can be dropped:
+    if <span class="inline-math">$\|f\|_\infty = 0$</span>, just take <span class="inline-math">$g = 0$</span>.
+    Otherwise define
+    <span class="display-math">$$ \begin{align*}
+        ϕ: \C &amp;\to \C \\
+        z &amp;\mapsto \begin{cases}
+            z, &amp;|z| \leq  \|f\|_\infty, \\
+            \frac{\|f\|_\infty}{|z|} z, &amp;|z| \geq \|f\|_\infty,
+        \end{cases}
+    \end{align*} $$</span>
+    which is continuous with <span class="inline-math">$\|ϕ\|_\infty = \|f\|_\infty$</span>.
+    Given some continuous <span class="inline-math">$g: E\to \C$</span> such that <span class="inline-math">$g|_K \equiv 0$</span>
+    and <span class="inline-math">$μ(\sb{x\in E}{g(x) \neq f(x)}) &lt; ε$</span>,
+    let
+    <span class="display-math">$$ \begin{align*}
+        \tilde g = ϕ \circ g
+    \end{align*} $$</span>
+    which is still continuous with <span class="inline-math">$\tilde g|_K \equiv 0$</span>.
+    Moreover
+    <span class="display-math">$$ \begin{align*}
+        &amp;μ(\sb{x\in E}{\tilde g(x) \neq f(x)}) \\
+        ={}&amp; μ(\sb{x\in E}{g(x) \neq f(x)}) + μ(\sb{x\in E}{\tilde g(x) \neq g(x) = f(x)}) \\
+        &lt;{}&amp; ε + μ(\sb{x\in E}{|f(x)| &gt; \|f\|_\infty}) \\
+        ={}&amp; ε.
+    \end{align*} $$</span>
+</p>
+<p>
+    (See also Linear Analysis sheet 3 Q1)
+</p>
+
+<h1><span class="inline-math">$f = \mathbb{1}_A$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$f = \mathbb{1}_A$</span> for some measurable <span class="inline-math">$A$</span>
+    and <span class="inline-math">$K$</span> is a closed set disjoint from <span class="inline-math">$A$</span>.
+</p>
+<p>
+    [[FILE NOT FOUND: Take]] <span class="inline-math">$U$</span> open in <span class="inline-math">$E$</span> and <span class="inline-math">$L$</span> compact in <span class="inline-math">$E$</span>
+    such that <span class="inline-math">$L \subseteq A\subseteq U$</span>
+    and <span class="inline-math">$μ(U \setminus L) &lt; ε$</span>.
+    Replace <span class="inline-math">$U$</span> with <span class="inline-math">$U \setminus K$</span> (still open)
+    to assume <span class="inline-math">$U$</span> and <span class="inline-math">$K$</span> are disjoint.
+    Then <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-Urysohn-s-lemma.html">take</a> <span class="inline-math">$g$</span> to be any continuous function
+    <span class="inline-math">$E\to [0,1]$</span> such that <span class="inline-math">$g|_L = 1$</span> and <span class="inline-math">$g|_{E \setminus U} = 0$</span>,
+    e.g.
+    <span class="display-math">$$ \begin{align*}
+        g(x) = \frac{d(x, E\setminus U)}{d(x, E\setminus U) + d(x,L)}.
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$f: E\to \C$</span></h1>
+
+<p>
+    Split <span class="inline-math">$f = \Re f + \Im f$</span> to reduce to <span class="inline-math">$f: E\to \R$</span>.
+    Split <span class="inline-math">$f = f_+ + f_-$</span> to reduce to the case <span class="inline-math">$f: E\to [0, \infty)$</span>.
+    Moreover compose with an increasing homeomorphism <span class="inline-math">$[0, \infty)\to [0,1)$</span>
+    to reduce to the case <span class="inline-math">$f: E\to [0,1]$</span>.
+    Take <span class="inline-math">$K$</span> to be any closed set where <span class="inline-math">$f|_K \equiv 0$</span>.
+</p>
+<p>
+    Choose any consistent binary expansion of numbers in <span class="inline-math">$[0,1]$</span>
+    and let <span class="inline-math">$A_n$</span> be the set of <span class="inline-math">$x\in E$</span>
+    where the <span class="inline-math">$n$</span>-th digit in the binary expansion of <span class="inline-math">$f(x)$</span>
+    is 1.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        f = \sum_{n=1}^{\infty} 2^{-n} \mathbb{1}_{A_n}
+    \end{align*} $$</span>
+    and moreover <span class="inline-math">$K$</span> and <span class="inline-math">$A_n$</span> are disjoint for all <span class="inline-math">$n$</span>.
+</p>
+<p>
+    Using the previous case,
+    let <span class="inline-math">$g_n: E\to [0,1]$</span> be a continuous function
+    such that <span class="inline-math">$g_n|_K \equiv 0$</span>
+    and
+    <span class="display-math">$$μ(\sb{x\in E}{g_n(x) \neq \mathbb{1}_{A_n}(x)}) &lt; ε/2^n.$$</span>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        g = \sum_{n=1}^{\infty} 2^{-n} g_n.
+    \end{align*} $$</span>
+    Then <span class="inline-math">$g|_K \equiv 0$</span> and
+    <span class="display-math">$$ \begin{align*}
+        μ(\sb{x\in E}{f(x)\neq g(x)}) \leq \sum_{n=1}^{\infty} μ(\sb{x\in E}{g_n(x) \neq \mathbb{1}_{A_n}(x)}) &lt; ε.
+    \end{align*} $$</span>
+</p>

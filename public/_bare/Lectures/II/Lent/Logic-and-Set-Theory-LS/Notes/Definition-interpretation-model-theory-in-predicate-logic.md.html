@@ -1,0 +1,100 @@
+<p>
+    Let <span class="inline-math">$a$</span> be a signature, <span class="inline-math">$V$</span> be an infinite set of variables,
+    and <span class="inline-math">$\mathbf{X}$</span> be an <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-signature-structure-substructure-reduct.html"><span class="inline-math">$a$</span>-structure</a>.
+</p>
+<p>
+    An <em><span class="inline-math">$\mathbf{X}$</span>-interpretation</em> or <em><span class="inline-math">$\mathbf{X}$</span>-assignment</em>
+    is any function <span class="inline-math">$\mathfrak{I}: V\to X$</span>.
+    Extent to <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-alphabet-terms-formulas-sentences-in-predicate-logic.html"><span class="inline-math">$\mathrm{Term}^a$</span></a> by recursion:
+    <span class="display-math">$$ \begin{align*}
+        \mathfrak{I}(s_i t_0 \ldots t_{n-1}) := s_i^\mathbf{X}(\mathfrak{I}(t_0), \ldots, \mathfrak{I}(t_{n-1}))
+    \end{align*} $$</span>
+    where <span class="inline-math">$s_i^\mathbf{X}$</span> is the operation in <span class="inline-math">$\mathbf{X}$</span> indexed <span class="inline-math">$i$</span>.
+</p>
+<p>
+    Given an <span class="inline-math">$\mathbf{X}$</span>-interpretation <span class="inline-math">$\mathfrak{I}$</span>, define for <span class="inline-math">$x\in X$</span>, <span class="inline-math">$v\in V$</span> another <span class="inline-math">$\mathbf{X}$</span>-interpretation
+    <span class="display-math">$$ \begin{align*}
+        \mathfrak{I}\tfrac{x}{v}(w) = \begin{cases}
+            \mathfrak{I}(w), &amp;\text{if }w\neq v, \\
+            x, &amp;\text{if }w = v.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    Now interpret <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-alphabet-terms-formulas-sentences-in-predicate-logic.html"><span class="inline-math">$a$</span>-formulas</a>
+    in <span class="inline-math">$\mathbf{X}$</span> using <span class="inline-math">$\mathfrak{I}$</span>
+    according to <em>Tarski's recursive definition of truth</em>:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\mathbf{X}, \mathfrak{I} \vDash \top$</span> always holds.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathbf{X}, \mathfrak{I} \vDash \top$</span> never holds.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathbf{X}, \mathfrak{I} \vDash t = t&#x27;$</span> iff <span class="inline-math">$\mathfrak{I}(t) = \mathfrak{I}(t&#x27;)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathbf{X}, \mathfrak{I} \vDash r_j t_0 \ldots t_{n-1}$</span> iff <span class="inline-math">$a(j) = n$</span> and <span class="inline-math">$(\mathfrak{I}(t_0), \ldots, \mathfrak{I}(t_{n-1}))  \in r_j^\mathbf{X}$</span>,
+        where <span class="inline-math">$r_j^\mathbf{X}$</span> is the relation in <span class="inline-math">$\mathbf{X}$</span> indexed <span class="inline-math">$j$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathbf{X}, \mathfrak{I}\vDash (ϕ \wedge ψ)$</span> iff <span class="inline-math">$\mathbf{X}, \mathfrak{I}\vDash ϕ$</span> and <span class="inline-math">$\mathbf{X}, \mathfrak{J} \vDash ψ$</span>, etc.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathbf{X}, \mathfrak{I}\vDash \exists v ϕ$</span> iff
+        there exists some <span class="inline-math">$x\in X$</span> such that <span class="inline-math">$\mathbf{X}, \mathfrak{I}\tfrac{x}{v} \vDash ϕ$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathbf{X}, \mathfrak{I}\vDash \forall v ϕ$</span> iff
+        for all <span class="inline-math">$x\in X$</span>, there holds <span class="inline-math">$\mathbf{X}, \mathfrak{I}\tfrac{x}{v} \vDash ϕ$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    If <span class="inline-math">$ϕ$</span> is an <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-alphabet-terms-formulas-sentences-in-predicate-logic.html"><span class="inline-math">$a$</span>-sentence</a>,
+    write <span class="inline-math">$\mathbf{X}\vDash ϕ$</span> if for all (<a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-coincidence-lemma-in-predicate-logic.html">equivalently</a> some)
+    <span class="inline-math">$\mathbf{X}$</span>-interpretation <span class="inline-math">$\mathfrak{I}$</span>,
+    we have <span class="inline-math">$\mathbf{X}, \mathfrak{I}\vDash ϕ$</span>.
+    In this case we say <span class="inline-math">$ϕ$</span> is <em>true in <span class="inline-math">$\mathbf{X}$</span></em>;
+    otherwise say <span class="inline-math">$ϕ$</span> is <em>false</em> in <span class="inline-math">$\mathbf{X}$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$T\subseteq \mathrm{Fml}^a$</span>.
+    Write <span class="inline-math">$\mathbf{X}\vDash T$</span> if <span class="inline-math">$\mathbf{X}\vDash ϕ$</span> for all <span class="inline-math">$ϕ\in T$</span>.
+    In this case, say <span class="inline-math">$\mathbf{X}$</span> is a <em>model</em> of <span class="inline-math">$T$</span>.
+    Say <span class="inline-math">$T$</span> is <em>satisfiable</em> if <span class="inline-math">$T$</span> has a model.
+</p>
+<p>
+    Let <span class="inline-math">$T,S$</span> be sets of <span class="inline-math">$a$</span>-sentences.
+    Write <span class="inline-math">$T\vDash S$</span> for whenever <span class="inline-math">$\mathbf{X}\vDash T$</span>, we have <span class="inline-math">$\mathbf{X} \vDash S$</span>.
+</p>
+<p>
+    The <em>theory</em> <span class="inline-math">$\op{Th}(\mathbf{X})$</span> of <span class="inline-math">$\mathbf{X}$</span> is the set of <span class="inline-math">$a$</span>-sentences
+    which are true in <span class="inline-math">$\mathbf{X}$</span>.
+    Call two <span class="inline-math">$a$</span>-structures <span class="inline-math">$\mathbf{X}$</span> and <span class="inline-math">$\mathbf{Y}$</span> <em>elementarily equivalent</em>
+    if <span class="inline-math">$\op{Th}(\mathbf{X}) = \op{Th}(\mathbf{Y})$</span>.
+</p>
+<blockquote>
+    <p>
+        Note the duality of <span class="inline-math">$\forall$</span> and <span class="inline-math">$\exists$</span>:
+        <span class="inline-math">$\mathbf{X}, \mathfrak{I} \vDash \exists v\ \neg ϕ$</span>
+        iff <span class="inline-math">$\mathbf{X}, \mathfrak{I} \vDash \neg \forall v\ ϕ$</span>.
+    </p>
+    
+</blockquote>

@@ -1,0 +1,124 @@
+<p>
+    (Not yet reviewed)
+</p>
+<p>
+    Surjectivity follows from <span class="inline-math">$ϕ$</span> is dominant
+    and is a closed map,
+    so <span class="inline-math">$ϕ(V)$</span> is closed and dense so equals <span class="inline-math">$W$</span>.
+</p>
+<p>
+    Let's prove all but finitely many points are unramified.
+    WLOG for the second part,
+    we may assume <span class="inline-math">$V,W$</span> are smooth and affine
+    (by losing finitely many points, namely singular points
+    and projective points at infinity).
+</p>
+<p>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        ϕ: V \xhookrightarrow{\id \times ϕ} V \times W \xrightarrow{π_2} W.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$\id \times ϕ$</span> is an isomorphism (as the inverse <span class="inline-math">$π_1$</span> is a morphism),
+    it identifies local rings, so the ramification index <span class="inline-math">$e_P$</span> for <span class="inline-math">$ϕ$</span>
+    at <span class="inline-math">$P\in V$</span> equals
+    the ramification index of <span class="inline-math">$π_2$</span> at <span class="inline-math">$(\id \times ϕ)(P)$</span>.
+    Similarly, the degree of <span class="inline-math">$π_2$</span> is the degree of <span class="inline-math">$ϕ$</span>,
+    since <span class="inline-math">$k(V) \simeq k((\id \times ϕ)(V))$</span>.
+    So WLOG, <span class="inline-math">$ϕ = π_2|_{V}$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$W \subseteq \mathbb{A}^m$</span> be with coordinates <span class="inline-math">$y_1, \ldots, y_m$</span>,
+    and let <span class="inline-math">$Q \in W$</span> be <span class="inline-math">$(q_1, \ldots, q_m)$</span>,
+    so <span class="inline-math">$\mathfrak{m}_Q = (y_1 - q_1, \ldots, y_m - q_m)$</span> (though it is also principal).
+    Because <span class="inline-math">$ϕ$</span> is a projection map,
+    <span class="inline-math">$ϕ^\ast$</span> acts as the identity on <span class="inline-math">$y_i$</span>,
+    so we want to show if <span class="inline-math">$Q = ϕ(P)$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        ϕ^\ast \mathfrak{m}_Q O_{V, P} = \mathfrak{m}_P = (y_1 - q_1, \ldots, y_m - q_m) O_{V,P}.
+    \end{align*} $$</span>
+    We know <span class="inline-math">$ϕ^\ast: k(W) \hookrightarrow k(V)$</span>,
+    and <span class="inline-math">$\deg ϕ = [k(V) : ϕ^\ast k(W)]$</span>.
+    By the theorem of primitive element,
+    <span class="inline-math">$k(V) = (ϕ^\ast k(W))[α]$</span> for some <span class="inline-math">$α\in k(V)$</span>.
+    So we have
+    <span class="display-math">$$ \begin{align*}
+        \mathfrak{m}_P = (y_1 - q_1, \ldots, y_m - q_m, α - α(P)).
+    \end{align*} $$</span>
+    So we want to show <span class="inline-math">$α - α(P) \in ϕ^\ast \mathfrak{m}_Q O_{V,P}$</span>
+    for all but finitely many <span class="inline-math">$P\in V$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$p(\v y, x) = a_d(\v y) x^d + \ldots + a_1(\v y) x + a_0(\v y)$</span>
+    be the minimal polynomial (note irreducible) of <span class="inline-math">$α$</span> over <span class="inline-math">$ϕ^\ast(k(W))$</span>,
+    with <span class="inline-math">$d = \deg(ϕ)$</span>.
+    Clear denominators to assume WLOG <span class="inline-math">$a_j$</span> are in <span class="inline-math">$k[y_1, \ldots, y_m]$</span>.
+    (<span class="inline-math">$α$</span> is ramified iff <span class="inline-math">$α$</span> is a root of <span class="inline-math">$p$</span> and derivatives of <span class="inline-math">$α$</span>.)
+    Let <span class="inline-math">$L$</span> be the algebraic closure of <span class="inline-math">$k(y_1, \ldots, y_m)$</span>.
+    In <span class="inline-math">$L$</span>, we can factor <span class="inline-math">$p(\v y, x)$</span> as
+    <span class="display-math">$$ \begin{align*}
+        p(\v y, x) ={}&amp; a_d(\v y) \prod_{i=1}^{d} (x-α_i) \\
+        p&#x27;(\v y, x) ={}&amp; da_d(\v y) \prod_{j=1}^{d-1} (x-β_j).
+    \end{align*} $$</span>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        R(p, p&#x27;)(y_1, \ldots, y_m) := d a_d(\v y)^{2d-1} \prod_{i,j} (α_i - β_j).
+    \end{align*} $$</span>
+    By Galois theory (letting the Galois group act on this, this is the resultant),
+    this is a polynomial in <span class="inline-math">$y_1, \ldots, y_m$</span>.
+    <span class="inline-math">$R(p,p&#x27;)$</span> vanishes precisely when <span class="inline-math">$a_d$</span> vanishes
+    or <span class="inline-math">$p$</span> and <span class="inline-math">$p&#x27;$</span> have a common root.
+    By irreducibility of <span class="inline-math">$p$</span>, <span class="inline-math">$R(p,p&#x27;)$</span> is not identically zero on <span class="inline-math">$W$</span>,
+    because <span class="inline-math">$p$</span> and <span class="inline-math">$p&#x27;$</span> have no common factor.
+    Therefore
+    <span class="inline-math">$\sb{Q\in W}{R(p,p&#x27;)(q_1, \ldots, q_m) = 0} \subsetneq W$</span> is a proper closed subvariety,
+    so finite, and call the complement of its preimage <span class="inline-math">$U = \sb{P\in V}{R(p,p&#x27;)(ϕ(P)) \neq 0}$</span>,
+    noting <span class="inline-math">$V \setminus U$</span> is finite as each point has finite preimage.
+</p>
+<p>
+    If <span class="inline-math">$P\in U$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        \frac{p(\v y, α) - p(\v y, α(P))}{α - α(P)}\in k(V)
+    \end{align*} $$</span>
+    is a unit in <span class="inline-math">$O_{V,P}$</span>, as the numerator only has one factor of <span class="inline-math">$α - α(P)$</span>.
+    By construction, <span class="inline-math">$p(\v y, α)\in ϕ^\ast I(V)$</span>,
+    and <span class="inline-math">$p(\v y, α(P)) - p(\v q, α(P)) \in ϕ^\ast \mathfrak{m}_Q$</span>.
+    Since <span class="inline-math">$α - α(P) = (\text{unit})(p(\v y, α) - p(\v y, α(P)))$</span>,
+    we have <span class="inline-math">$α - α(P) \in ϕ^\ast \mathfrak{m}_Q$</span>.
+    So we have <span class="inline-math">$ϕ^\ast \mathfrak{m}_Q O_{V,P} = (y_1 - q_1, \ldots, y_1 - q_1, α - α(P)) = \mathfrak{m}_P$</span> as needed.
+</p>
+<p>
+    <span class="display-math">$$ \begin{align*}
+        \square
+    \end{align*} $$</span>
+</p>
+<p>
+    Sketch of the final statement (non-examinable):
+    we have <span class="inline-math">$ϕ^\ast : k(W) \hookrightarrow k(V)$</span>.
+    Fix <span class="inline-math">$Q \in W$</span> and let <span class="inline-math">$A := ϕ^\ast O_{W, Q}$</span>.
+    Define <span class="inline-math">$B = \bigcap_{P\in ϕ\inv(Q)} O_{V,P}$</span>.
+    Then <span class="inline-math">$ϕ^\ast: O_{W,A} \hookrightarrow B$</span>
+    realising <span class="inline-math">$B$</span> as a finitely generated torsion <span class="inline-math">$A$</span>-module.
+    By the structure theorem for finitely generated torsion-free modules over a Euclidean domain,
+    <span class="inline-math">$B \simeq A^{\oplus r}$</span>.
+    We have <span class="inline-math">$A \subseteq B \subseteq k(V)$</span>
+    and <span class="inline-math">$B$</span> is the integral closure of <span class="inline-math">$A$</span> in <span class="inline-math">$k(V)$</span>
+    (i.e. any element <span class="inline-math">$f$</span> of <span class="inline-math">$k(V)$</span>
+    which is a root of a monic polynomial with coefficients in <span class="inline-math">$A$</span>
+    is in <span class="inline-math">$B$</span>).
+    From this it follows <span class="inline-math">$[k(V) : ϕ^\ast k(W)]$</span> equals the rank <span class="inline-math">$r$</span> of <span class="inline-math">$B$</span> as an <span class="inline-math">$A$</span>-module.
+    This is what's called "examining the degree of the function field on the generic fibre".
+</p>
+<p>
+    On the other hand, by the Chinese remainder theorem,
+    <span class="display-math">$$ \begin{align*}
+        B/ϕ^\ast \mathfrak{m}_Q B \simeq \bigoplus_{P\in ϕ\inv(Q)} O_{V, P}/ ϕ^\ast \mathfrak{m}_Q O_{V,P} = \bigoplus_{P\in ϕ\inv(Q)} O_{V/P}/\mathfrak{m}_P^{e_P}
+    \end{align*} $$</span>
+    by definition of <span class="inline-math">$e_P$</span>.
+    So <span class="inline-math">$r = \sum_{P\in ϕ\inv(Q)} e_P$</span> as needed.
+    This is "studying the degree at a special fibre".
+</p>
+<p>
+    <span class="display-math">$$ \begin{align*}
+        \square
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,56 @@
+<p>
+    By the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-local-mapping-on-Riemann-surfaces.html">local mapping theorem</a>,
+    the set of ramification points is discrete.
+    As <span class="inline-math">$X$</span> is compact, it is finite.
+    Therefore the formula only involves a finite sum.
+</p>
+<p>
+    For each <span class="inline-math">$y\in Y$</span>,
+    as in the <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Proof-valency-theorem.html">proof of the valency theorem</a>,
+    find an open neighbourhood <span class="inline-math">$V_y$</span> of <span class="inline-math">$y$</span>
+    such that <span class="inline-math">$f\inv(V_y) = \bigsqcup_{x\in f\inv(y)} U_{x}$</span>
+    for disjoint open sets <span class="inline-math">$U_x$</span>,
+    and <span class="inline-math">$f|_{U_x\setminus \set{x}}: U_x \setminus \set{x}\to V_y\setminus \set{y}$</span>
+    is <span class="inline-math">$z\mapsto z^{d_x}$</span> in some charts.
+    By compactness of <span class="inline-math">$Y$</span>,
+    find a finite open cover <span class="inline-math">$\set{V_i}$</span> by these <span class="inline-math">$V_y$</span>'s.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-invariant-of-Euler-characteristic.html">Take</a> any triangulation <span class="inline-math">$\mathcal{T}_Y$</span> of <span class="inline-math">$Y$</span>.
+    By subdividing triangles,
+    we can assume all finitely many ramification points are vertices in <span class="inline-math">$\mathcal{T}_Y$</span>.
+    Furthermore, by compactness,
+    subdivide so that each triangle lies within some <span class="inline-math">$V_i$</span>.
+    (Apply the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-Lebesgue-number-lemma.html">Lebesgue number lemma</a>
+    and the <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-mesh-of-barycentric-subdivisions-tend-to-zero.html">shrinking mesh of barycentric subdivision</a>.)
+</p>
+<p>
+    Consider the preimage <span class="inline-math">$\mathcal{T}_X$</span> of <span class="inline-math">$\mathcal{T}_Y$</span> under <span class="inline-math">$f$</span>.
+    By construction,
+    if <span class="inline-math">$Δ$</span> is a triangle in <span class="inline-math">$\mathcal{T}_Y$</span> where a vertex <span class="inline-math">$y$</span> is a branch point
+    (by construction there can be at most one such vertex),
+    for each <span class="inline-math">$x\in f\inv(y)$</span>,
+    there are <span class="inline-math">$d_x$</span> many triangles in <span class="inline-math">$f\inv(Δ)\cap U_x$</span> sharing the vertex <span class="inline-math">$x$</span>.
+    Therefore <span class="inline-math">$f\inv(Δ)$</span> consists of <span class="inline-math">$\sum_{x\in f\inv(y)} d_x = n$</span> triangles by valency theorem.
+    If all vertices of <span class="inline-math">$Δ$</span> are unramified,
+    then <span class="inline-math">$f\inv(Δ)$</span> consists of <span class="inline-math">$n$</span> many disjoint triangles, one in each <span class="inline-math">$U_x$</span> for <span class="inline-math">$x\in f\inv(y)$</span>.
+    Hence the number of faces and edges of <span class="inline-math">$\mathcal{T}_X$</span> and <span class="inline-math">$\mathcal{T}_Y$</span> are related by
+    <span class="display-math">$$ \begin{align*}
+        F_X = n \cdot F_Y, \quad E_X = n \cdot E_Y.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now we count vertices.
+    Note by valency theorem
+    <span class="display-math">$$ \begin{align*}
+        n = \sum_{x\in f\inv(y)} d_x = \#f\inv(y) + \sum_{x\in f\inv(y)} (d_x - 1)
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        V_X = \sum_{\text{vertex $y$ of $\mathcal{T}_Y$}} \#f\inv(y) = \sum_{\text{vertex $y$ of $\mathcal{T}_Y$}} \Bigl(n - \sum_{x\in f\inv(y)} (d_x-1)\Bigr)
+        = n \cdot V_Y - \sum_{x\in X} (d_x - 1).
+    \end{align*} $$</span>
+</p>
+<p>
+    Combining yields the Riemann-Hurwitz formula.
+</p>

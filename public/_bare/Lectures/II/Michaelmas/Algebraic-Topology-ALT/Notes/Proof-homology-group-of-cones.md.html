@@ -1,0 +1,45 @@
+<p>
+    The inclusion map <span class="inline-math">$i: \set{v_0}\to K$</span>
+    is a simplicial map and so induces an inclusion chain map <span class="inline-math">$i_\bullet: C_\bullet(\set{v_0})\to C_\bullet(K)$</span>.
+    The only map <span class="inline-math">$r: K\to \set{v_0}$</span>
+    is also simplicial and induces a chain map <span class="inline-math">$r_\bullet: C_\bullet(K) \to C_\bullet(\set{v_0})$</span>.
+    We will show that <span class="inline-math">$r_\bullet$</span> is a chain homotopy inverse to <span class="inline-math">$i_\bullet$</span>.
+</p>
+<p>
+    One direction is easy: <span class="inline-math">$r_\bullet\circ i_\bullet = \id_{C_\bullet(\set{v_0})}$</span>.
+</p>
+<p>
+    We claim that
+    <span class="display-math">$$ \begin{align*}
+        h_n: C_n(K) &amp;\to C_{n+1}(K) \\
+        [[a_0, \ldots, a_n]] &amp;\mapsto [v_0, a_0, \ldots, a_n]
+    \end{align*} $$</span>
+    is a chain homotopy from <span class="inline-math">$i_\bullet \circ r_\bullet$</span> to <span class="inline-math">$\id_{C_\bullet(K)}$</span>.
+</p>
+<p>
+    It is well-defined: since <span class="inline-math">$K$</span> is a cone,
+    <span class="inline-math">$\{v_0, a_0, \ldots, a_n\}$</span> spans a simplex of <span class="inline-math">$K$</span>.
+    Moreover <span class="inline-math">$[a_0, \ldots, a_n] \mapsto [v_0, a_0, \ldots, a_n]$</span>
+    sends <span class="inline-math">$T_n(K)$</span> into <span class="inline-math">$T_{n+1}(K)$</span>.
+</p>
+<p>
+    Now we check
+    <span class="display-math">$$ \begin{align*}
+        h_{n-1}\circ d_n + d_{n+1} \circ h_n = \id_{C_\bullet(K)} - i_\bullet\circ r_\bullet.
+    \end{align*} $$</span>
+    For <span class="inline-math">$n&gt;0$</span>, noting <span class="inline-math">$r_n$</span> is trivial,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        (h_{n-1}\circ d_n + d_{n+1} \circ h_n)([[a_0, \ldots, a_n]]) ={}&amp; \sum_{i=0}^{n} (-1)^i [[v_0, a_0, \ldots, a_{i-1}, a_{i+1}, \ldots, a_n]] \\
+        &amp;+ [[a_0, \ldots, a_n]] \\
+        &amp;+ \sum_{i=0}^{n} (-1)^{i+1} [[v_0, a_0, \ldots, a_{i-1}, a_{i+1}, \ldots, a_n]] \\
+        ={}&amp; [[a_0, \ldots, a_n]] \\
+        ={}&amp; (\id - i_n \circ r_n)([[a_0, \ldots, a_n]]),
+    \end{align*} $$</span>
+    For <span class="inline-math">$n=0$</span>, 
+    <span class="display-math">$$ \begin{align*}
+        (h_{-1}\circ d_0 + d_{1} \circ h_0)([[a_0]]) ={}&amp; d_1([[v_0, a_0]]) \\
+        ={}&amp; [[a_0]] - [[v_0]] \\
+        ={}&amp; (\id - i_n \circ r_n)([[a_0]]).
+    \end{align*} $$</span>
+</p>

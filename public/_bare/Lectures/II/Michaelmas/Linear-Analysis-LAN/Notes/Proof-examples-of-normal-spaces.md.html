@@ -1,0 +1,58 @@
+
+<h1>Metric space</h1>
+
+<p>
+    For any point <span class="inline-math">$x\in X$</span> and any subset <span class="inline-math">$E \subseteq X$</span>,
+    define
+    <span class="display-math">$$ \begin{align*}
+        d(x,E) = \inf\sb{d(x,y)}{y\in E}.
+    \end{align*} $$</span>
+    Note <span class="inline-math">$d(x,E) = 0$</span> iff <span class="inline-math">$x\in \overline{E}$</span>.
+</p>
+<p>
+    Given disjoint closed sets <span class="inline-math">$A,B\subseteq X$</span>, define
+    <span class="display-math">$$ \begin{align*}
+        U ={}&amp; \sb{x\in X}{d(x, A)&lt; d(x,B)}, \\
+        V ={}&amp; \sb{x\in X}{d(x, A)&gt; d(x,B)}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Clearly <span class="inline-math">$U$</span> and <span class="inline-math">$V$</span> are disjoint.
+    Also since <span class="inline-math">$x\mapsto d(x,A) - d(x,B)$</span> is continuous,
+    <span class="inline-math">$U$</span> and <span class="inline-math">$V$</span> are open.
+    Moreover if <span class="inline-math">$x\in A$</span>, then <span class="inline-math">$x\not\in B = \overline{B}$</span>,
+    so <span class="inline-math">$d(x,A) = 0 &lt; d(x,B)$</span> and thus <span class="inline-math">$x\in U$</span>.
+    Similarly <span class="inline-math">$B \subseteq V$</span>.
+</p>
+
+<h1>Compact Hausdorff space</h1>
+
+<p>
+    Let <span class="inline-math">$A, B$</span> be disjoint closed sets.
+    Since <span class="inline-math">$X$</span> is compact, <span class="inline-math">$A,B$</span> are compact.
+</p>
+<p>
+    Fix <span class="inline-math">$x\in A$</span>.
+    For any <span class="inline-math">$y\in B$</span>,
+    using the Hausdorff property as <span class="inline-math">$x\neq y$</span>,
+    let <span class="inline-math">$U_{xy}, V_{xy}\subseteq X$</span> be disjoint open subsets
+    such that <span class="inline-math">$x\in U_{xy}$</span>, <span class="inline-math">$y\in V_{xy}$</span>.
+    <span class="inline-math">$\sb{V_{xy}}{y\in B}$</span> is an open cover of <span class="inline-math">$B$</span>, which is compact,
+    so find <span class="inline-math">$y_1, \ldots, y_n\in B$</span> such that
+    <span class="inline-math">$B \subseteq \bigcup_{i=1}^{n} V_{xy_i}$</span>.
+    Then define
+    <span class="display-math">$$ \begin{align*}
+        U_x := \bigcap_{i=1}^{n} U_{xy_i} \ni x, \qquad V_x := \bigcup_{i=1}^{n} V_{xy_i} \supseteq B,
+    \end{align*} $$</span>
+    which are disjoint and both open as finite intersection and union of open sets.
+</p>
+<p>
+    Now <span class="inline-math">$\sb{U_x}{x\in A}$</span> is an open cover of <span class="inline-math">$A$</span>,
+    so by compactness,
+    find <span class="inline-math">$x_1, \ldots, x_m\in A$</span> such that <span class="inline-math">$A \subseteq \bigcup_{i=1}^{m} U_{x_i}$</span>.
+    Then we obtain
+    <span class="display-math">$$ \begin{align*}
+        U := \bigcup_{i=1}^{m} U_{x_i}\supseteq A, \qquad V := \bigcap_{i=1}^{m} V_{x_i} \supseteq B,
+    \end{align*} $$</span>
+    which are disjoint and both open.
+</p>

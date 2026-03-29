@@ -1,0 +1,57 @@
+<p>
+    Let <span class="inline-math">$f\in L^p(\R^d)$</span>.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        f_R(x) = \begin{cases}
+            f(x), &amp;|x|&lt;R \text{ and } |f(x)| &lt; R, \\
+            0, &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+    Then <span class="inline-math">$f_R$</span> is increasing as <span class="inline-math">$R\to 0$</span> and <span class="inline-math">$f_R \to f$</span>.
+    By [[FILE NOT FOUND: dominated convergence]],
+    as <span class="inline-math">$|f_R(x) - f(x)|^p \leq 2^p |f(x)|^p$</span> which is <span class="inline-math">$L^1$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \int_{\R^d} |f_R(x) - f(x)|^p \d x \to 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Fix <span class="inline-math">$ε&gt;0$</span>.
+    Take <span class="inline-math">$R$</span> large enough such that <span class="inline-math">$\int_{\R^d} |f_R(x)-f(x)|^p \d x &lt; ε$</span>.
+</p>
+<p>
+    For any <span class="inline-math">$ε_1&gt;0$</span>, by <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Lusin.html">Lusin</a> applied to <span class="inline-math">$f_R|_{B_{R}[0]}$</span>,
+    there exists some continuous function <span class="inline-math">$g: B_{2R}[0]\to \C$</span>
+    such that
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\|g\|_\infty \leq \|f_R\|_\infty \leq  R$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$g(x) = 0$</span> on <span class="inline-math">$|x| = R$</span>, and
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$μ(\sb{x\in \R^d}{f_R(x) \neq g(x)}) &lt; ε_1$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Extend <span class="inline-math">$g$</span> to <span class="inline-math">$\R^d\to \C$</span> by setting <span class="inline-math">$g(x) = 0$</span> on <span class="inline-math">$g(x)=0$</span>
+    on <span class="inline-math">$|x| \geq R$</span>.
+    (The condition <span class="inline-math">$g(x) = 0$</span> on <span class="inline-math">$|x| = R$</span> ensures continuity.)
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \int_{\R^d} |f_R(x) - g(x)|^p \d x ={} &amp;\int_{|x|&lt;R} |f_R(x) - g(x)|^p \d x \\
+        \leq{} &amp; \int_{|x|&lt;R} (2R)^p \,\mathbb{1}_{\set{f_R(x)\neq g(x)}} \d x \\
+        ={}&amp; (2R)^p\cdot |B_R(0)|\cdot ε_1 &lt; ε
+    \end{align*} $$</span>
+    for sufficiently small <span class="inline-math">$ε_1$</span>.
+    Then by Minkowski's inequality,
+    <span class="inline-math">$\int_{\R^d} |f(x) - g(x)|^p \d x \leq \int_{\R^d} |f_R(x) - f(x)|^p \d x + \int_{\R^d} |f_R(x) - g(x)|^p \d x &lt; 2ε$</span>.
+</p>

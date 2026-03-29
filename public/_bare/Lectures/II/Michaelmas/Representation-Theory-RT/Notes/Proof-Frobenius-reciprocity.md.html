@@ -1,0 +1,89 @@
+
+<h1>Class function</h1>
+
+<p>
+    Expand:
+    <span class="display-math">$$ \begin{align*}
+        \langle ϕ, \op{Ind}^G_H ψ\rangle_G ={}&amp; \frac{1}{\#G\cdot \# H} \sum_{g\in G} ϕ(g) \sum_{\substack{x\in G: \\xgx\inv\in H}} \overline{ψ(xgx\inv)} \\
+        ={}&amp; \frac{1}{\#G \cdot \# H} \sum_{\substack{(g,x)\in G\times G:\\ xgx\inv\in H}} ϕ(g) \overline{ψ(xgx\inv)} \\
+        ={}&amp; \frac{1}{\#G \cdot \# H} \sum_{h\in H} \sum_{x\in G} ϕ(x\inv h x) \overline{ψ(h)} &amp;&amp;h = xgx\inv \\
+        ={}&amp; \frac{1}{\#G \cdot \# H} \sum_{h\in H} \sum_{x\in G} ϕ(h) \overline{ψ(h)} &amp;&amp;ϕ\in \mathcal{C}_G \\
+        ={}&amp; \frac{1}{\# H} \sum_{h\in H} ϕ(h) \overline{ψ(h)} \\
+        ={}&amp; \langle \op{Res}^G_H ϕ, ψ\rangle_H.
+    \end{align*} $$</span>
+</p>
+
+<h1>Vector spaces</h1>
+
+<p>
+    (Existence of isomorphism follows from <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-orthonormality-of-characters.html"><span class="inline-math">$\langle χ_U,χ_V\rangle_G = \dim \Hom_G(V, U)$</span></a>.)
+</p>
+<p>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        ψ: \Hom_G(V, \Hom_H(\C[G], W)) &amp;\to \Hom_H(V, W) \\
+        α &amp;\mapsto (v \mapsto α(v)(e_1)).
+    \end{align*} $$</span>
+</p>
+<p>
+    Let's spell out what <span class="inline-math">$α$</span> means: for <span class="inline-math">$v\in V$</span> and <span class="inline-math">$x\in \C[G]$</span>,
+    if <span class="inline-math">$g\in G$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        α(gv)(x) ={}&amp; (g * α(v))(x) &amp;&amp;\text{$α$ is $G$-linear} \\
+        ={}&amp; α(v)(xg) &amp;&amp;\text{$G$-action on $\Hom_H(\C[G], W)$},
+    \end{align*} $$</span>
+    and if <span class="inline-math">$h\in H$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        h \,α(v)(x) ={}&amp; α(v)(hx) &amp;&amp;\text{$α(v)$ is $H$-linear}.
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$ψ$</span> is well-defined: for <span class="inline-math">$h\in H$</span>,
+        <span class="display-math">$$ \begin{align*}
+        ψ(α)(hv) ={}&amp; α(hv)(e_1) \\
+        ={}&amp; α(v)(e_{1}\cdot h) \\
+        ={}&amp; α(v)(h\cdot e_1) \\
+        ={}&amp; h\, α(v)(e_1) \\
+        ={}&amp; h\, ψ(α)(v).
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$ψ$</span> is <span class="inline-math">$\C$</span>-linear.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$ψ$</span> is injective:
+        if <span class="inline-math">$α(v)(e_1) = 0$</span> for all <span class="inline-math">$v\in V$</span>,
+        then for all <span class="inline-math">$g\in G$</span> and <span class="inline-math">$v\in V$</span>,
+        <span class="display-math">$$ \begin{align*}
+        α(v)(e_g) ={}&amp; α(v)(e_1 \cdot g) = α(gv)(e_1) = 0
+        \end{align*} $$</span>
+        so <span class="inline-math">$α = 0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$ψ$</span> is surjective:
+        given <span class="inline-math">$θ\in \Hom_H(V,W)$</span>, let
+        <span class="display-math">$$ \begin{align*}
+        α(v)(e_{hg}) = h\, θ(gv), \qquad \forall h\in H, g\in G,
+        \end{align*} $$</span>
+        and extend <span class="inline-math">$α(v)$</span> linearly.
+        This is well-defined, as if <span class="inline-math">$hg = h&#x27;g&#x27;$</span> for <span class="inline-math">$h,h&#x27;\in H$</span>, <span class="inline-math">$g,g&#x27;\in G$</span>,
+        then <span class="inline-math">$h&#x27;\, θ(g&#x27; v) = h&#x27;\, θ(h&#x27;\inv h g) = h&#x27;h&#x27;\inv h\, θ(g) = h\,θ(g)$</span>
+        since <span class="inline-math">$θ$</span> is <span class="inline-math">$H$</span>-linear.
+        <span class="inline-math">$α(v)$</span> is <span class="inline-math">$H$</span>-linear,
+        as <span class="inline-math">$α(v)(h&#x27;\cdot e_{hg}) = α(v)(e_{h&#x27;hg}) = h&#x27;h\,θ(gv) = h&#x27;\,α(v)(e_{hg})$</span>.
+        <span class="inline-math">$α$</span> is clearly <span class="inline-math">$\C$</span>-linear,
+        and is <span class="inline-math">$G$</span>-linear because
+        <span class="inline-math">$α(g&#x27;v)(e_{hg}) = h\,θ(gg&#x27;v) = α(v)(e_{hgg&#x27;}) = α(v)(e_{hg}\cdot g&#x27;) = (g&#x27; * α(v))(e_{hg})$</span>.
+        Finally <span class="inline-math">$θ = ψ(α)$</span>.
+    </p>
+    
+</li>
+</ul>

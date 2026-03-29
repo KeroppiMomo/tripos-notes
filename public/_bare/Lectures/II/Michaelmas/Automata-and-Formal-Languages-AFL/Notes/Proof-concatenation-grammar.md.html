@@ -1,0 +1,75 @@
+
+<h1><span class="inline-math">$\mathcal{L}(G)\, \mathcal{L}(G&#x27;) \subseteq \mathcal{L}(H)$</span></h1>
+
+<p>
+    Let <span class="inline-math">$vw\in \mathcal{L}(G)\, \mathcal{L}(G&#x27;)$</span> with <span class="inline-math">$v\in \mathcal{L}(G)$</span> and <span class="inline-math">$w\in \mathcal{L}(G&#x27;)$</span>.
+    We have a <span class="inline-math">$G$</span>-derivation <span class="inline-math">$(σ_0, σ_1, \ldots, σ_n)$</span> of <span class="inline-math">$v$</span>
+    and a <span class="inline-math">$G&#x27;$</span>-derivation <span class="inline-math">$(τ_0, τ_1, \ldots, τ_m)$</span> of <span class="inline-math">$w$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        T \xrightarrow{H}_1 S S&#x27; = σ_0 S&#x27; \xrightarrow{H}_1 σ_1 S&#x27; \xrightarrow{H}_1 \ldots \xrightarrow{H}_1 σ_n S&#x27; &amp;= vS&#x27; \\
+        &amp;= vτ_0 \xrightarrow{H}_1 vτ_1 \xrightarrow{H}_1 \ldots\xrightarrow{H}_1 vτ_m = vw
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$\mathcal{L}(H) \subseteq \mathcal{L}(G)\, \mathcal{L}(G&#x27;)$</span> when <span class="inline-math">$G, G&#x27;$</span> do not share variables and are variable-based</h1>
+
+<p>
+    Let <span class="inline-math">$T = σ_0 \xrightarrow{H}_1 σ_1 \xrightarrow{H}_1 \ldots \xrightarrow{H}_1 σ_n = u$</span> be any <span class="inline-math">$H$</span>-derivation.
+    We will define recursively what it means that a symbol in <span class="inline-math">$σ_i$</span>
+    <em>belongs to the first half</em> in <span class="inline-math">$σ_i$</span>,
+    in a way such that the first half of <span class="inline-math">$σ_i$</span> forms an initial segment of <span class="inline-math">$σ_i$</span>
+    containing variables only from <span class="inline-math">$V$</span>
+    and the other half contains variables only from <span class="inline-math">$V&#x27;$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        For <span class="inline-math">$i=1$</span>, <span class="inline-math">$σ_1 = SS&#x27;$</span> since there is only one rule involving <span class="inline-math">$T$</span>.
+        Say <span class="inline-math">$S$</span> belongs to the first half of <span class="inline-math">$σ_1$</span> and <span class="inline-math">$S&#x27;$</span> does not.
+        Note that <span class="inline-math">$S\in V$</span> and <span class="inline-math">$S&#x27; \in V&#x27;$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Suppose <span class="inline-math">$σ_i = αγβ \xrightarrow{H}_1 αδβ = σ_{i+1}$</span>
+        is an application of the rule <span class="inline-math">$γ\to δ$</span>.
+        A symbol instance in <span class="inline-math">$α$</span> or <span class="inline-math">$β$</span> already occurs in <span class="inline-math">$σ_i$</span>,
+        so say it belongs to the first half of <span class="inline-math">$σ_{i+1}$</span> iff
+        it belongs to the first half of <span class="inline-math">$σ_i$</span>.
+    </p>
+    <p>
+        Since <span class="inline-math">$G, G&#x27;$</span> are variable-based, <span class="inline-math">$γ$</span> consists entirely of variables.
+        As <span class="inline-math">$V\cap V&#x27;=\emptyset$</span>, we have two cases:
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$γ\in V^\ast$</span>.
+            By induction hypothesis that variables from <span class="inline-math">$V$</span> are all in the first half, <span class="inline-math">$γ$</span> lies entirely in the first half of <span class="inline-math">$σ_i$</span>.
+            Say <span class="inline-math">$δ\in V^\ast$</span> lies entirely in the first half of <span class="inline-math">$σ_{i+1}$</span>.
+            Also say that this production step belongs to the first half.
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$γ\in V&#x27;^\ast$</span>.
+            We also have <span class="inline-math">$γ$</span> lies entirely in the second half of <span class="inline-math">$σ_i$</span>.
+            Say <span class="inline-math">$δ\in V&#x27;^\ast$</span> lies entirely in the second half of <span class="inline-math">$σ_{i+1}$</span>.
+            Also say that this production step belongs to the second half.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ul>
+<p>
+    Therefore <span class="inline-math">$u = vw$</span> where
+    <span class="inline-math">$v$</span> is the subword of letters belonging to the first half.
+    Now observe the production steps that belong to the first half
+    form a <span class="inline-math">$G$</span>-derivation of <span class="inline-math">$v$</span> from <span class="inline-math">$S$</span>.
+    Similarly all production steps that belong to the second half
+    form a <span class="inline-math">$G&#x27;$</span>-derivation of <span class="inline-math">$w$</span> from <span class="inline-math">$S&#x27;$</span>.
+    This shows <span class="inline-math">$u = vw \in \mathcal{L}(G) \, \mathcal{L}(G&#x27;)$</span>.
+</p>

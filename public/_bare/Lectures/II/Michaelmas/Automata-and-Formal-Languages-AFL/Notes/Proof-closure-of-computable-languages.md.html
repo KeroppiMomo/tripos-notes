@@ -1,0 +1,59 @@
+<p>
+    Consider two computable sets <span class="inline-math">$A,B\subseteq \mathbb{W}$</span>,
+    i.e. <span class="inline-math">$χ_A$</span> and <span class="inline-math">$χ_B$</span> are computable functions.
+</p>
+<p>
+    The characteristic functions of <span class="inline-math">$A\cap B$</span>, <span class="inline-math">$A\cup B$</span> and <span class="inline-math">$\mathbb{W}\setminus A$</span>
+    <span class="display-math">$$ \begin{align*}
+        χ_{A\cap B}(w) &amp;= \begin{cases}
+            a &amp;\text{if $χ_A(w) = a = χ_B(w)$}, \\
+            ε &amp;\text{otherwise},
+        \end{cases} \\
+        χ_{A\cup B}(w) &amp;= \begin{cases}
+            ε &amp;\text{if $χ_A(w) = ε = χ_B(w)$}, \\
+            a &amp;\text{otherwise},
+        \end{cases} \\
+        χ_{\mathbb{W}\setminus A}(w) &amp;= \begin{cases}
+            a &amp;\text{if $χ_A(w) = ε$}, \\
+            ε &amp;\text{otherwise}
+        \end{cases}
+    \end{align*} $$</span>
+    are computable, so they are computable sets.
+</p>
+<p>
+    The concatenation <span class="inline-math">$AB$</span> is computable:
+    input a word <span class="inline-math">$w\in \mathbb{W}$</span>.
+</p>
+<ol start="1">
+<li>
+    <p>
+        For each initial segment <span class="inline-math">$v$</span> of <span class="inline-math">$w$</span>,
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            if <span class="inline-math">$v$</span> is in <span class="inline-math">$A$</span> and the remainder of <span class="inline-math">$w$</span> is in <span class="inline-math">$B$</span>,
+        </p>
+        <ol start="1">
+        <li>
+            <p>
+                then output <span class="inline-math">$w\in AB$</span>.
+            </p>
+            
+        </li>
+        </ol>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        Otherwise output <span class="inline-math">$w\not\in AB$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    There are only finitely (<span class="inline-math">$|w|$</span>) many initial segments to check,
+    so the algorithm terminates.
+</p>

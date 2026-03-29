@@ -1,0 +1,56 @@
+
+<h1><span class="inline-math">$\sqrt{J} \subseteq I(Z(J))$</span></h1>
+
+<p>
+    If <span class="inline-math">$f^m \in J$</span>,
+    then for all <span class="inline-math">$p\in Z(J)$</span>,
+    since <span class="inline-math">$f^m(p) = 0$</span>,
+    we have <span class="inline-math">$f(p) = 0$</span>.
+    So <span class="inline-math">$f\in I(Z(J))$</span>.
+</p>
+
+<h1><span class="inline-math">$I(Z(J)) \subseteq \sqrt{J}$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$g\in I(Z(J))$</span> is non-zero,
+    and <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-Hilbert-s-basis-theorem.html">write</a> <span class="inline-math">$J = (f_1, \ldots, f_r)$</span>.
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        \tilde J := (f_1, \ldots, f_r, x_{n+1} g - 1)\lhd k[x_1, \ldots, x_n, x_{n+1}]
+    \end{align*} $$</span>
+    where <span class="inline-math">$f_i\in k[x_1, \ldots, x_n]$</span> is considered as an element of <span class="inline-math">$k[x_1, \ldots, x_n, x_{n+1}]$</span>.
+</p>
+
+<h2><span class="inline-math">$Z(\tilde J) = \emptyset$</span></h2>
+
+<p>
+    Suppose to the contrary there is some <span class="inline-math">$\tilde p = (p_1, \ldots, p_n, p_{n+1})\in Z(\tilde J)$</span>,
+    and let <span class="inline-math">$p := (p_1, \ldots, p_n)$</span> be its projection to the first <span class="inline-math">$n$</span> components.
+    Now since <span class="inline-math">$0 = f_i(\tilde p) = f_i(p)$</span>,
+    we have <span class="inline-math">$p\in Z(J)$</span>,
+    so <span class="inline-math">$g(\tilde p) = g(p) = 0$</span>.
+    But then <span class="inline-math">$x_{n+1} g - 1$</span> does not vanish at <span class="inline-math">$\tilde p$</span>,
+    contradiction.
+</p>
+
+<h2>Relating <span class="inline-math">$g$</span> to <span class="inline-math">$f_1, \ldots, f_r$</span></h2>
+
+<p>
+    By <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-zero-locus-of-proper-ideal-is-non-empty.html">Hilbert's weak Nullstellensatz</a>,
+    <span class="inline-math">$\tilde J = k[x_1, \ldots, x_{n+1}] \ni 1$</span>,
+    so there exists <span class="inline-math">$h_1, \ldots, h_r, h_{r+1}\in k[x_1, \ldots, x_{n+1}]$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=1}^{r} h_i f_i + h_{r+1}(x_{n+1} g -1) = 1.
+    \end{align*} $$</span>
+    This remains true over the field of fractions <span class="inline-math">$k(x_1, \ldots, x_{n+1})$</span>.
+    Set <span class="inline-math">$x_{n+1} = 1/g(x_1, \ldots, x_n)$</span> to get
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=1}^{r} h_i\Bigl(x_1, \ldots, x_n, \frac{1}{g(x_1, \ldots, x_n)}\Bigr) f_i(x_1, \ldots, x_n) = 1.
+    \end{align*} $$</span>
+    Finally clear the denominator to get
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=1}^{r} \tilde h_i(x_1, \ldots, x_n) f_i(x_1 ,\ldots, x_0) = g(x_1,\ldots, x_n)^m
+    \end{align*} $$</span>
+    for some <span class="inline-math">$m$</span> and <span class="inline-math">$\tilde h_i(x_1, \ldots, x_n) = h_i(x_1 ,\ldots, x_n, \frac{1}{g(x_1, \ldots, x_n)}) \in k[x_1, \ldots, x_n]$</span>.
+    Thus <span class="inline-math">$g^m\in J$</span>.
+</p>

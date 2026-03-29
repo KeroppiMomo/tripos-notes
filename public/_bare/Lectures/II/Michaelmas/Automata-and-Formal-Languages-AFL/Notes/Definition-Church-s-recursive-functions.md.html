@@ -1,0 +1,58 @@
+<p>
+    The <em>basic functions</em> are
+</p>
+<ul>
+<li>
+    <p>
+        projection functions <span class="inline-math">$π_{k,i}: \mathbb{W}^k \to \mathbb{W}: \v w\mapsto w_i$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        constant functions <span class="inline-math">$\mathrm{c}_{k,ε}: \mathbb{W}^k \to \mathbb{W}: \v w\mapsto ε$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-computability-of-shortlex-ordering.html">successor function</a> <span class="inline-math">$s: \mathbb{W}\to\mathbb{W}$</span> of shortlex ordering.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Given <span class="inline-math">$f: \mathbb{W}^m\dashrightarrow \mathbb{W}$</span> and <span class="inline-math">$g_1, \ldots, g_m: \mathbb{W}^k\dashrightarrow \mathbb{W}$</span>,
+    the <em>composition of <span class="inline-math">$f$</span> with $(g</em>1, \ldots, g<em>m)$</em> is
+    <span class="display-math">$$ \begin{align*}
+        \mathbb{W}^k &amp;\dashrightarrow \mathbb{W} \\
+        \v w &amp;\mapsto f(g_1(\v w), \ldots, g_m(\v w)).
+    \end{align*} $$</span>
+</p>
+<p>
+    Given <span class="inline-math">$f: \mathbb{W}^k\dashrightarrow \mathbb{W}$</span> and <span class="inline-math">$g: \mathbb{W}^{k+2}\dashrightarrow \mathbb{W}$</span>,
+    the <em>recursion result of <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span></em> is
+    <span class="display-math">$$ \begin{align*}
+        h: \mathbb{W}^{k+1} &amp;\dashrightarrow \mathbb{W} \\
+        (\v w, ε) &amp;\to f(\v w), \\
+        (\v w, s(v)) &amp;\to g(\v w, s, h(\v w, s)).
+    \end{align*} $$</span>
+</p>
+<p>
+    Given <span class="inline-math">$f: \mathbb{W}^{k+1} \dashrightarrow \mathbb{W}$</span>, the <em>minimisation result of <span class="inline-math">$f$</span></em> is
+    <span class="display-math">$$ \begin{align*}
+        \mathbb{W}^k &amp;\dashrightarrow \mathbb{W} \\
+        \v w &amp;\mapsto \begin{cases}
+            v, &amp;\text{$v$ is $&lt;$-minimal such that $f(\v w, v)=ε$ and $\forall u\leq v, f(\v w, u)\downarrow$}, \\
+            \uparrow, &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    The class of <em>primitive recursive (partial) functions</em>
+    is the smallest class of partial functions
+    containing all basic functions that is closed under composition and recursion.
+</p>
+<p>
+    The class of <em>recursive (partial) functions</em>
+    is the smallest class of partial functions
+    containing all basic functions that is closed under composition, recursion and minimisation.
+</p>

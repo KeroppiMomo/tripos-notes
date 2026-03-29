@@ -1,0 +1,126 @@
+<p>
+    Fix a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-signature-structure-substructure-reduct.html">signature</a> <span class="inline-math">$a: I \sqcup J \to \N$</span>
+    and an infinite set <span class="inline-math">$V$</span> of <em>variables</em>.
+    (<span class="inline-math">$I, J, V$</span> may not be countable.)
+</p>
+<p>
+    The <em>function symbols</em> are <span class="inline-math">$Σ_0^a := \sb{s_i}{i\in I}$</span>,
+    the <em>relation symbols</em> are <span class="inline-math">$Σ_1^a := \sb{r_j}{j\in J}$</span>
+    and the <em>logical symbols</em> are
+    <span class="display-math">$$ \begin{align*}
+        L = \set{\wedge, \vee, \Rightarrow, \neg, \bot, \top, =, \exists, \forall, ), (}.
+    \end{align*} $$</span>
+    The <em>alphabet</em> of signature <span class="inline-math">$a$</span> is
+    <span class="display-math">$$ \begin{align*}
+        Σ^a := Σ_0^a \cup Σ_1^a \cup V \cup L.
+    \end{align*} $$</span>
+</p>
+<p>
+    The set <span class="inline-math">$\mathrm{Term}^a$</span> of <em><span class="inline-math">$a$</span>-terms</em>
+    is the smallest subset of <span class="inline-math">$(Σ^a)^\ast$</span>
+    containing <span class="inline-math">$V$</span> such that
+    <span class="inline-math">$s_i t_0 t_1 \ldots t_{n-1}\in \mathrm{Term}^a$</span>
+    for any <span class="inline-math">$s_i\in Σ_0^a$</span> and <span class="inline-math">$t_0, \ldots, t_{n-1} \in \mathrm{Term}^a$</span>
+    with <span class="inline-math">$n = a(i)$</span>.
+</p>
+<p>
+    For <span class="inline-math">$t\in \mathrm{Term}^a$</span>, write <span class="inline-math">$\op{occ}(t)$</span> for the set of variables occurring in <span class="inline-math">$t$</span>.
+</p>
+<p>
+    The set <span class="inline-math">$\mathrm{Fml}^a$</span> of <em><span class="inline-math">$a$</span>-formulas</em>
+    is the smallest subset of <span class="inline-math">$(Σ^a)^\ast$</span> containing
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\perp$</span> and <span class="inline-math">$\top$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$t = t&#x27;$</span> for any <span class="inline-math">$t, t&#x27;\in \mathrm{Term}^\ast$</span>, and
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$r_j t_0 t_1 \ldots t_{n-1}$</span> for any <span class="inline-math">$r_j\in Σ_1^\ast$</span> and <span class="inline-math">$t_0, \ldots, t_{n-1} \in \mathrm{Term}^a$</span>
+        with <span class="inline-math">$n = a(j)$</span>,
+    </p>
+    
+</li>
+</ul>
+<p>
+    and such that, if <span class="inline-math">$ϕ, ψ\in \mathrm{Fml}^a$</span>, then so are the following:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\exists v ϕ$</span> for any <span class="inline-math">$v\in V$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\forall v ϕ$</span> for any <span class="inline-math">$v\in V$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$(ϕ \wedge ψ)$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$(ϕ\vee ψ)$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$(ϕ\Rightarrow ψ)$</span>, and
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\neg ϕ$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Define a function <span class="inline-math">$\op{free}$</span> on <span class="inline-math">$\mathrm{Fml}^a$</span> recursively:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\op{free}(\bot) = \op{free}(\top) = \emptyset$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\op{free}(t = t&#x27;) = \op{occ}(t) \cup \op{occ}(t&#x27;)$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\op{free}(r_j t_0 \ldots t_{n-1}) = \op{occ}(t_0) \cup \ldots\op{occ}(t_{n-1})$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\op{free}((ϕ \wedge ψ)) = \op{free}((ϕ \vee ψ)) = \op{free}((ϕ \Rightarrow ψ)) = \op{free}(ϕ) \cup \op{free}(ψ)$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\op{free}(\neg ϕ) = \op{free}(\neg ϕ)$</span>,
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\op{free}(\exists v ϕ) = \op{free}(\forall v ϕ) = \op{free}(ϕ) \setminus \set{v}$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    An <span class="inline-math">$a$</span>-formula <span class="inline-math">$ϕ$</span> is an <em><span class="inline-math">$a$</span>-sentence</em> if <span class="inline-math">$\op{free}(ϕ) = \emptyset$</span>.
+</p>

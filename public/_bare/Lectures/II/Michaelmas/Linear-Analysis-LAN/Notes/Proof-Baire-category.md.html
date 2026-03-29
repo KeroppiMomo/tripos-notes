@@ -1,0 +1,56 @@
+
+<h1>Intersection of countably many open dense sets is dense</h1>
+
+<p>
+    Let <span class="inline-math">$(U_n)_{n\in \N}$</span> be a countable collection of open dense sets,
+    and fix <span class="inline-math">$x_0\in X$</span> and <span class="inline-math">$r_0&gt;0$</span>.
+    We want to show <span class="inline-math">$B_{r_0}[x_0] \cap \bigcap_{n\in \N} U_n \not\in \emptyset$</span>.
+</p>
+<p>
+    We will construct a decreasing sequence of balls <span class="inline-math">$(B_{r_n}(x_n))_{n\geq 0}$</span>:
+    given <span class="inline-math">$x_n\in X$</span>, <span class="inline-math">$r_n&gt;0$</span>,
+    since <span class="inline-math">$U_{n+1}$</span> is dense, find <span class="inline-math">$x_{n+1}\in B_{r_n}(x_n) \cap U_{n+1}$</span>,
+    and since <span class="inline-math">$B_{r_n}(x_n) \cap U_{n+1}$</span> is open,
+    find <span class="inline-math">$r_{n+1}&gt;0$</span> such that <span class="inline-math">$B_{r_{n+1}}[x_{n+1}] \subseteq B_{r_n}(x_n) \cap U_{n+1}$</span>.
+    WLOG assume <span class="inline-math">$r_{n+1}\leq \frac{1}{n+1}$</span>.
+</p>
+<p>
+    By construction, if <span class="inline-math">$n\geq N$</span>,
+    <span class="display-math">$$ \begin{align*}
+        B_{r_n}(x_n) &amp;\subseteq B_{r_{n-1}}(x_{n-1}) \cap U_n \\
+        &amp;\subseteq B_{r_{n-2}}(x_{n-2}) \cap U_{n-1} \cap U_n \\
+        &amp;\subseteq \ldots \\
+        &amp;\subseteq B_{r_N}(x_N) \cap U_{N+1} \cap U_{N+2} \cap \ldots \cap U_n
+    \end{align*} $$</span>
+    so for <span class="inline-math">$m,n\geq N$</span>, we get <span class="inline-math">$\|x_n - x_m\| \leq 2r_N \leq 2/N$</span>.
+    Hence <span class="inline-math">$(x_n)_{n\geq 0}$</span> is a Cauchy sequence,
+    thus converges to say <span class="inline-math">$x$</span> in the complete space <span class="inline-math">$X$</span>.
+</p>
+<p>
+    Moreover if <span class="inline-math">$n\geq N$</span>, then <span class="inline-math">$x_n \in B_{r_N}[x_N]$</span> which is closed,
+    so <span class="inline-math">$x\in B_{r_N}[x_N]$</span>.
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        x\in \bigcap_{N\in \N} B_{r_N}[x_N] = B_{r_0}(x_0) \cap \bigcap_{n\in \N} U_n
+    \end{align*} $$</span>
+    as required.
+</p>
+
+<h1>Union of nowhere dense sets has empty interior</h1>
+
+<p>
+    Let <span class="inline-math">$(A_n)_{n\in \N}$</span> be a countable collection of nowhere dense sets,
+    meaning <span class="inline-math">$\op{int}(\overline{A_n}) = \emptyset$</span>.
+    Defining
+    <span class="display-math">$$ \begin{align*}
+        U_n = X \setminus \overline{A_n},
+    \end{align*} $$</span>
+    <span class="inline-math">$U_n$</span> is open and dense since <span class="inline-math">$\overline{U_n} = X \setminus \op{int}(\overline{A_n}) = X$</span>.
+</p>
+<p>
+    Thus by the above, <span class="inline-math">$\bigcap_{n\in \N} U_n$</span> is dense,
+    so
+    <span class="display-math">$$ \begin{align*}
+        \op{int}\left(\bigcup_{n\in \N} A_n\right) \subseteq \op{int}\left(\bigcup_{n\in \N} \overline{A_n} \right) = X \setminus \overline{\left(X \setminus \bigcup_{n\in \N} \overline{A_n}\right)} = X \setminus \overline{\bigcup_{n\in \N} U_n} = \emptyset.
+    \end{align*} $$</span>
+</p>

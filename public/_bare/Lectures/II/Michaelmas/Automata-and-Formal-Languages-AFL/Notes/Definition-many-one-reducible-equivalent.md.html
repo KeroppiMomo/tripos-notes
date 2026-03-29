@@ -1,0 +1,42 @@
+<p>
+    Let <span class="inline-math">$L, L&#x27;\subseteq \mathbb{W}$</span> be languages.
+</p>
+<p>
+    A total <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">computable</a> function <span class="inline-math">$f: \mathbb{W}\to \mathbb{W}$</span>
+    is called a <em>reduction of <span class="inline-math">$L$</span> to <span class="inline-math">$L&#x27;$</span></em> if
+    for all <span class="inline-math">$w\in \mathbb{W}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        w\in L \iff f(w) \in L&#x27;.
+    \end{align*} $$</span>
+</p>
+<p>
+    We say <span class="inline-math">$L$</span> is <em>many-one reducible</em> to <span class="inline-math">$L&#x27;$</span> (denoted as <span class="inline-math">$L\leq_m L&#x27;$</span>)
+    if there is a reduction from <span class="inline-math">$L$</span> to <span class="inline-math">$L&#x27;$</span>.
+</p>
+<p>
+    We say <span class="inline-math">$L$</span> is <em>many-one equivalent</em> to <span class="inline-math">$L&#x27;$</span> (denoted as <span class="inline-math">$L\equiv_m L&#x27;$</span>)
+    if <span class="inline-math">$L\leq_m L&#x27;$</span> and <span class="inline-math">$L&#x27;\leq_m L$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\leq_m$</span> is a partial preorder, i.e. it is reflexive (<span class="inline-math">$L\leq_m L$</span> via <span class="inline-math">$f=\id_\mathbb{W}$</span>)
+        and transitive (if <span class="inline-math">$L_1 \leq_m L_2$</span> and <span class="inline-math">$L_2 \leq_m L_3$</span>, then <span class="inline-math">$L_1 \leq_m L_3$</span> by concatenation of reductions).
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\equiv_m$</span> is an equivalence relation.
+    </p>
+    
+</li><!-- BEGIN BLOCK ID complement -->
+<li id="^complement">
+    <p>
+        Note <span class="inline-math">$L\leq_m L&#x27;\iff \mathbb{W}\setminus L \leq_m \mathbb{W}\setminus L&#x27;$</span>.
+        Thus <span class="inline-math">$L$</span> and <span class="inline-math">$\mathbb{W}\setminus L$</span> is either many-one equivalent or incomparable by <span class="inline-math">$\leq_m$</span>.
+    </p>
+    
+</li>
+<!-- END BLOCK ID complement -->
+
+</ul>

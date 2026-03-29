@@ -1,0 +1,85 @@
+
+<h1><span class="inline-math">$\mathsf{AC} \implies \mathsf{ZL}$</span></h1>
+
+<p>
+    Let <span class="inline-math">$\mathbf{P}$</span> be a non-empty chain-complete partial order.
+</p>
+<p>
+    Fix a choice function <span class="inline-math">$f: \mathcal{P}(P) \to P$</span> by <span class="inline-math">$\mathsf{AC}$</span>,
+    and <span class="inline-math">$p_0\in P$</span> (as <span class="inline-math">$P \neq \emptyset$</span>).
+    Introduce a new set <span class="inline-math">$\mathrm{STOP}\not\in P$</span>,
+    and define by <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-transfinite-induction.html">transfinite induction</a>
+    <span class="display-math">$$ \begin{align*}
+        g: α &amp;\to  P \cup \set{\mathrm{STOP}} \\
+        0 &amp;\mapsto p_0, \\
+        s(β) &amp;\mapsto \begin{cases}
+            f(S_{g(β)}), &amp;\text{if $S_{g(β)}\neq \emptyset$}, \\
+            \mathrm{STOP}, &amp;\text{otherwise},
+        \end{cases} \\
+        γ &amp;\mapsto \begin{cases}
+            f(B_{\op{ran}(g|_γ)}), &amp;\text{if $\op{ran}(g|_γ) \subseteq P$}, \\
+            \mathrm{STOP}, &amp;\text{otherwise},
+        \end{cases} &amp;&amp;\text{if $λ$ is a limit ordinal}
+    \end{align*} $$</span>
+    where
+    <span class="inline-math">$α := \aleph(P)$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Hartogs.html">Hartogs aleph</a>,
+    <span class="inline-math">$S_p := \sb{q\in P}{p &lt; q}$</span>
+    and <span class="inline-math">$B_A := \sb{q\in P}{q \text{ is a bound of }A}$</span>.
+</p>
+<p>
+    Note for <span class="inline-math">$β\leq α$</span>,
+    if <span class="inline-math">$\mathrm{STOP}\not\in  \op{ran}(g|_β)$</span>,
+    then <span class="inline-math">$g|_β: β \to P$</span>
+    is a order-preserving injection.
+    In particular, by definition of <span class="inline-math">$α$</span>,
+    <span class="inline-math">$\mathrm{STOP}\not\in \op{ran}(g)$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$γ\in α$</span> be minimal such that <span class="inline-math">$g(γ) = \mathrm{STOP}$</span>.
+    By construction, <span class="inline-math">$γ$</span> must be a successor ordinal,
+    say <span class="inline-math">$γ = s(β)$</span>,
+    and <span class="inline-math">$S_{g(β)} = \emptyset$</span>.
+    This means <span class="inline-math">$β$</span> is maximal.
+</p>
+
+<h1><span class="inline-math">$\mathsf{ZL} \implies \mathsf{AC}$</span></h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-choice-function-on-power-set.html">It suffices</a> to produce a choice function for <span class="inline-math">$\mathcal{P}(X)$</span> for a given set <span class="inline-math">$X$</span>.
+</p>
+<p>
+    Consider the set
+    <span class="display-math">$$ \begin{align*}
+        P := \sb{f\in \mathcal{P}(X) \times X}{\text{$f$ is a choice function for some $Y\subseteq \mathcal{P}(X)$}}
+    \end{align*} $$</span>
+    with the partial order <span class="inline-math">$\leq$</span> on <span class="inline-math">$P$</span> defined by
+    <span class="display-math">$$ \begin{align*}
+        f \leq g :\iff f \subseteq g,
+    \end{align*} $$</span>
+    i.e. <span class="inline-math">$\op{dom}(g) \supseteq \op{dom}(f)$</span> and <span class="inline-math">$f = g|_{\op{dom}(f)}$</span>.
+</p>
+<p>
+    <span class="inline-math">$P$</span> is non-empty as it contains <span class="inline-math">$\emptyset$</span>.
+</p>
+<p>
+    To show chain-completeness,
+    let <span class="inline-math">$C$</span> be a chain. Then
+    <span class="display-math">$$ \begin{align*}
+        f := \bigcup C
+    \end{align*} $$</span>
+    is a choice function such that <span class="inline-math">$g\subseteq f$</span> for all <span class="inline-math">$g\in C$</span>,
+    so <span class="inline-math">$f$</span> is a bound of <span class="inline-math">$C$</span>.
+</p>
+<p>
+    Therefore by Zorn's lemma,
+    <span class="inline-math">$P$</span> has a maximal element <span class="inline-math">$f$</span>,
+    which we claim to have domain <span class="inline-math">$\mathcal{P}(X)$</span>.
+    Otherwise suppose <span class="inline-math">$A \in \mathcal{P}(X) \setminus \op{dom}(f)$</span>.
+    If <span class="inline-math">$A = \emptyset$</span>, pick <span class="inline-math">$z$</span> to be anything,
+    and if <span class="inline-math">$A \neq \emptyset$</span>, pick any <span class="inline-math">$z\in A$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        g := f \cup \set{(A, z)}
+    \end{align*} $$</span>
+    is a choice function strictly greater than <span class="inline-math">$f$</span>.
+</p>

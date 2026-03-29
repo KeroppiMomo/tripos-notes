@@ -1,0 +1,38 @@
+<p>
+    A <em>rewrite system</em> <span class="inline-math">$R$</span> is a pair <span class="inline-math">$(Ω, P)$</span>
+    where
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$Ω$</span> is a non-empty finite set (of <em>symbols</em>); and
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$P\subseteq$</span> <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-strings.html"><span class="inline-math">$Ω^+$</span></a> <span class="inline-math">$\times$</span> <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-strings.html"><span class="inline-math">$Ω^\ast$</span></a> is a finite set (of <em>rewrite rules</em> or <em>production rules</em>).
+    </p>
+    
+</li>
+</ul>
+<p>
+    We write <span class="inline-math">$α\to β$</span> for an element <span class="inline-math">$(α,β)\in P$</span>.
+</p>
+<p>
+    For <span class="inline-math">$σ,τ\in Ω^\ast$</span>,
+    we write <span class="inline-math">$σ \xrightarrow{R}_1 τ$</span>
+    if there exists <span class="inline-math">$α,β,δ,γ\in Ω^\ast$</span> such that <span class="inline-math">$σ = αβγ$</span>, <span class="inline-math">$τ = αδγ$</span> and <span class="inline-math">$β\toδ\in P$</span>.
+    We say "<em><span class="inline-math">$R$</span> produces <span class="inline-math">$τ$</span> from <span class="inline-math">$σ$</span> in one step</em>" or "<em><span class="inline-math">$R$</span> rewrites <span class="inline-math">$σ$</span> into <span class="inline-math">$τ$</span> in one step</em>".
+</p>
+<p>
+    The relation <span class="inline-math">$\xrightarrow{R}$</span> is the transitive and reflexive closure of <span class="inline-math">$\xrightarrow{R}_1$</span>,
+    i.e. <span class="inline-math">$σ\xrightarrow{R} τ$</span>
+    if and only if <span class="inline-math">$σ=τ$</span> or there exists a sequence <span class="inline-math">$(σ_0, σ_1, \ldots, σ_n)$</span>
+    such that <span class="inline-math">$σ = σ_0 \xrightarrow{R}_1 σ_1 \xrightarrow{R}_1 \ldots\xrightarrow{R}_1 σ_n = τ$</span>.
+    We say "<em><span class="inline-math">$R$</span> produces <span class="inline-math">$τ$</span> from <span class="inline-math">$σ$</span></em>", "<em><span class="inline-math">$R$</span> rewrites <span class="inline-math">$σ$</span> into <span class="inline-math">$τ$</span></em>", or "<span class="inline-math">$τ$</span> can be derived from <span class="inline-math">$σ$</span> in <span class="inline-math">$R$</span>".
+    We call such a sequence an "<em><span class="inline-math">$R$</span>-derivation of <span class="inline-math">$τ$</span> from <span class="inline-math">$σ$</span> using <span class="inline-math">$R$</span> of length <span class="inline-math">$n$</span></em>".
+</p>
+<p>
+    If <span class="inline-math">$α\in Ω^\times$</span>, write <span class="inline-math">$\mathcal{D}(R,α) = \set{β\in Ω^\times \; | \; α \xrightarrow{R} β}$</span>
+    for the set of strings that can be derived from <span class="inline-math">$α$</span>.
+</p>

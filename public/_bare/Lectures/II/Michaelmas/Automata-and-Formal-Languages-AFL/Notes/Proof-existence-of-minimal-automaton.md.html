@@ -1,0 +1,18 @@
+<p>
+    Let <span class="inline-math">$D = (Σ, Q, δ, q_0, F)$</span>.
+    If <span class="inline-math">$q$</span> is accessible, then <span class="inline-math">$δ(q,a)$</span> for all <span class="inline-math">$a\in Σ$</span> are accessible.
+    Thus letting <span class="inline-math">$A\subseteq Q$</span> denote the set of accessible states,
+    we can define <span class="inline-math">$δ^\ast = δ|_{A\times Σ}: A\times Σ \to A$</span>.
+    Hence <span class="inline-math">$D^\ast = (Σ, A, δ^\ast, q_0, A\cap F)$</span> is a deterministic automaton.
+    Moreover we have <span class="inline-math">$w\in \mathcal{L}(D^\ast) \iff \hat δ^\ast(q_0, w) \in A\cup F \iff \hat δ(q_0, w)\in F \iff w\in \mathcal{L}(D)$</span>.
+</p>
+<p>
+    Now consider its quotient automaton <span class="inline-math">$I = D^\ast/{\sim}$</span>,
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-quotient-automaton-has-no-indistinguishable-states.html">which</a> has no distinct indistinguishable states.
+    We <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-automaton-and-its-quotient-accept-the-same-language.html">know</a>
+    <span class="inline-math">$\mathcal{L}(D) = \mathcal{L}(D^\ast) = \mathcal{L}(I)$</span>.
+    Furthermore <span class="inline-math">$I$</span> has no inaccessible states:
+    all <span class="inline-math">$q\in D^\ast$</span> can be written as <span class="inline-math">$q = \hat δ(q_0, w)$</span>,
+    so <span class="inline-math">$[q] = \widehat{[δ]}([q_0], w)$</span> is accessible.
+    Hence <span class="inline-math">$I$</span> is irreducible.
+</p>

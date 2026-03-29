@@ -1,0 +1,40 @@
+
+<h1>Simplicial map</h1>
+
+<p>
+    Let <span class="inline-math">$σ = \langle a_0, \ldots, a_p\rangle\in K$</span>.
+    Taking any <span class="inline-math">$x\in \mathring σ$</span>,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        &amp;&amp;x&amp;\in \bigcap_{i=0}^{p} \op{St}_K(a_i) \\
+        \implies &amp;&amp;f(x)&amp;\in \bigcap_{i=0}^{p} f(\op{St}_K(a_i)) \subseteq \bigcap_{i=0}^{p} \op{St}_K(g(a_i)).
+    \end{align*} $$</span>
+</p>
+<p>
+    This means <span class="inline-math">$f(x)$</span> is in the interior of some simplex which has <span class="inline-math">$g(a_i)$</span> as a vertex for each <span class="inline-math">$i=0,\ldots,p$</span>.
+    Hence the <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-point-on-polyhedron-lies-in-interior-of-unique-simplex.html">unique</a> simplex <span class="inline-math">$τ\in L$</span> whose interior contains <span class="inline-math">$f(x)$</span>
+    has vertices <span class="inline-math">$g(a_i)$</span>.
+    Thus <span class="inline-math">$\set{g(a_0), \ldots, g(a_p)}$</span> spans a face of <span class="inline-math">$τ$</span>,
+    so spans a simplex of <span class="inline-math">$L$</span>.
+</p>
+
+<h1>Homotopy</h1>
+
+<p>
+    We now check that <span class="inline-math">$(1-t)\cdot f(x) + t\cdot |g|(x)\in |L|$</span>
+    for all <span class="inline-math">$(x,t)\in |K|\times [0,1]$</span>.
+    Let <span class="inline-math">$σ = \langle a_0, \ldots, a_p\rangle\in K$</span> and <span class="inline-math">$τ\in L$</span>
+    such that <span class="inline-math">$x\in \mathring σ$</span> and <span class="inline-math">$f(x)\in \mathring τ$</span>.
+    Letting <span class="inline-math">$x = \sum_{i=0}^{p} t_i a_i$</span>,
+    the definition of <span class="inline-math">$|g|$</span> gives
+    <span class="display-math">$$ \begin{align*}
+        |g|(x) = \sum_{i=0}^{p} t_i \, g(a_i)
+    \end{align*} $$</span>
+    From the above argument, <span class="inline-math">$g(a_i)$</span> are vertices of <span class="inline-math">$τ$</span>,
+    so <span class="inline-math">$|g|(x)\in τ$</span>.
+    Thus <span class="inline-math">$(1-t)\cdot f(x) + t\cdot |g|(x)\in τ$</span> by convexity.
+</p>
+<p>
+    The defined map <span class="inline-math">$H$</span> is a linear interpolation
+    and so continuous.
+</p>

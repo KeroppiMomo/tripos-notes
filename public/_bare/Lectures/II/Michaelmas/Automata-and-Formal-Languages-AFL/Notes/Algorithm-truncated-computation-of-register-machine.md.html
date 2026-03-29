@@ -1,0 +1,71 @@
+<p>
+    Input: <span class="inline-math">$\op{code}(M), \op{code}(k), \op{code}(\v w), v$</span>.
+</p>
+<ol start="1">
+<li>
+    <p>
+        Empty an unused register <span class="inline-math">$i$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If the content of register <span class="inline-math">$i$</span> equals <span class="inline-math">$v$</span>:
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            Output <span class="inline-math">$ε$</span> and halt.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        Otherwise:
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            Compute <span class="inline-math">$(q,\v w&#x27;) = C(\#(u), M, \v w)$</span> where <span class="inline-math">$u$</span> is the content of register <span class="inline-math">$i$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            If <span class="inline-math">$q = q_\mathrm{H}$</span>:
+        </p>
+        <ol start="1">
+        <li>
+            <p>
+                Output <span class="inline-math">$a$</span> and halt.
+            </p>
+            
+        </li>
+        </ol>
+        
+    </li><li>
+        <p>
+            Otherwise:
+        </p>
+        <ol start="1">
+        <li>
+            <p>
+                Apply the successor function to register <span class="inline-math">$k$</span>.
+            </p>
+            
+        </li><li>
+            <p>
+                Go to 2.
+            </p>
+            
+        </li>
+        </ol>
+        
+    </li>
+    </ol>
+    
+</li>
+</ol>
+<p>
+    The loop can only be called at most <span class="inline-math">$\#(v)$</span> times, so this must halt in finite time.
+</p>

@@ -1,0 +1,42 @@
+<p>
+    The statement about terms follows from induction on <span class="inline-math">$\mathrm{Term}^a$</span>
+    and the recursive definition of interpretations.
+</p>
+<p>
+    For the statement about formulas, we check the following cases of <span class="inline-math">$ϕ$</span>:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\top$</span> or <span class="inline-math">$\bot$</span> is trivial.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$t = t&#x27;$</span> and <span class="inline-math">$r_j t_0 \ldots t_{n-1}$</span> follows from part 1.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$(χ \wedge ψ)$</span>, <span class="inline-math">$(χ \vee ψ)$</span>, <span class="inline-math">$(χ \Rightarrow ψ)$</span> and <span class="inline-math">$\neg χ$</span> follow from inductive hypothesis.
+    </p>
+    
+</li><li>
+    <p>
+        For <span class="inline-math">$\exists v ψ$</span>,
+        suppose <span class="inline-math">$\mathfrak{I}|_{\op{free}(\exists vψ)} = \mathfrak{J}|_{\op{free}(\exists vψ)}$</span>
+        and <span class="inline-math">$\mathbf{X}, \mathfrak{I} \vDash \exists v ψ$</span>.
+        This means there is <span class="inline-math">$x\in X$</span> such that <span class="inline-math">$\mathbf{X}$</span> such that <span class="inline-math">$\mathbf{X}, \mathfrak{I}\frac{x}{v} \vDash ψ$</span>.
+        Now <span class="inline-math">$\mathfrak{I}\frac{x}{v}|_{\op{free}(ψ)} = \mathfrak{J}\frac{x}{v}|_{\op{free}(ψ)}$</span>,
+        so we can apply induction hypothesis and get <span class="inline-math">$\mathbf{X}, \mathfrak{J}^x_v \vDash ψ$</span>.
+        By definition <span class="inline-math">$\mathbf{X}, \mathfrak{J}\vDash \exists vψ$</span>.
+        The other direction is the same.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\forall vψ$</span> follows from duality.
+    </p>
+    
+</li>
+</ul>

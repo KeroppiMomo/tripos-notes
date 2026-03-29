@@ -1,0 +1,81 @@
+
+<h1>For any <span class="inline-math">$A \in \mathcal{B}$</span>, there exists positive <span class="inline-math">$D\subseteq A$</span> such that <span class="inline-math">$μ(D) \geq μ(A)$</span></h1>
+
+<p>
+    We will construct sequences <span class="inline-math">$(A_n)$</span> and <span class="inline-math">$(B_n)$</span> as follows:
+    let <span class="inline-math">$A_0 := A$</span>.
+    Given <span class="inline-math">$A_{i-1}$</span>,
+    take <span class="inline-math">$B_{i} \subseteq A_{i-1}$</span> measurable
+    such that <span class="inline-math">$μ(B_i) \leq 0$</span>
+    and there does not exist measurable <span class="inline-math">$B&#x27;\subseteq A_{i-1}$</span>
+    and <span class="inline-math">$k\in \Z_{&gt;0}$</span> such that <span class="inline-math">$μ(B&#x27;) \leq -1/k &lt; μ(B_i)$</span>.
+    Let <span class="inline-math">$A_i := A_{i-1} \setminus B_i$</span>.
+</p>
+<p>
+    Now take
+    <span class="display-math">$$ \begin{align*}
+        D := \bigcap_{i\geq 0} A_i.
+    \end{align*} $$</span>
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$μ(D) \geq μ(A)$</span>: since
+        <span class="display-math">$$ \begin{align*}
+        A = D \sqcup \bigsqcup_{i\geq 1} B_i,
+        \end{align*} $$</span>
+        <span class="inline-math">$σ$</span>-additivity gives
+        <span class="display-math">$$ \begin{align*}
+        μ(A) = μ(D) + \sum_{i=1}^{\infty} \underbrace{μ(B_i)}_{\leq 0} \leq μ(D).
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$D$</span> is positive:
+        take <span class="inline-math">$B\subseteq D$</span> measurable.
+        Fix <span class="inline-math">$k\in \Z_{&gt;0}$</span>.
+        Since <span class="inline-math">$\sum_{i=1}^{\infty} μ(B_i)$</span> converges to <span class="inline-math">$μ(A) - μ(D) &gt; -\infty$</span>,
+        we have <span class="inline-math">$μ(B_i) \to 0$</span> as <span class="inline-math">$i\to \infty$</span>,
+        so there exists <span class="inline-math">$j$</span> such that <span class="inline-math">$μ(B_j) &gt; -1/k$</span>.
+        By construction as <span class="inline-math">$B \subseteq D \subseteq A_{j-1}$</span>,
+        we have <span class="inline-math">$μ(B) &gt; -1/k$</span> as well.
+        Thus <span class="inline-math">$μ(B) \geq 0$</span>
+    </p>
+    
+</li>
+</ul>
+
+<h1>Constructing <span class="inline-math">$P$</span></h1>
+
+<p>
+    Let <span class="inline-math">$s = \sup \sb{μ(B)}{B\in \mathcal{B} \text{ positive}}$</span>.
+    Then there exists a sequence <span class="inline-math">$P_1, P_2, \ldots$</span> of positive sets
+    such that <span class="inline-math">$s = \lim_{n\to \infty} μ(P_n)$</span>.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        P := \bigcup_{n\geq 1} P_n.
+    \end{align*} $$</span>
+    Then <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-positive-negative-set.html#^union"><span class="inline-math">$P$</span> is a positive set</a>.
+    Moreover
+    <span class="display-math">$$ \begin{align*}
+        μ(P) = μ(P_n) + μ(\underbrace{P \setminus P_n}_{\subseteq P}) \geq μ(P_n)
+    \end{align*} $$</span>
+    so <span class="inline-math">$μ(P) = s$</span>.
+</p>
+
+<h1><span class="inline-math">$N := E \setminus P$</span> is negative</h1>
+
+<p>
+    Let <span class="inline-math">$A\subseteq N := E\setminus P$</span> be measurable.
+    By the above claim,
+    there exists a positive set <span class="inline-math">$D\subseteq A$</span>
+    with <span class="inline-math">$μ(D) \geq μ(A)$</span>.
+    Since <span class="inline-math">$D$</span> and <span class="inline-math">$P$</span> are disjoint,
+    <span class="display-math">$$ \begin{align*}
+        μ(D \sqcup P) = μ(D) + μ(P) = μ(D) + s \geq s.
+    \end{align*} $$</span>
+    But <span class="inline-math">$D \sqcup P$</span> is positive,
+    so we must have <span class="inline-math">$μ(D) = 0$</span>
+    and hence <span class="inline-math">$μ(A) \leq 0$</span>.
+</p>

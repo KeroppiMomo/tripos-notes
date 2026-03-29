@@ -1,0 +1,390 @@
+<ol start="1">
+<li>
+    <p>
+        "Never halt":
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$f: \mathbb{W}^{n+1} \dashrightarrow \mathbb{W}^{n+1}$</span> with <span class="inline-math">$\mathrm{dom}(f) = \emptyset$</span>
+        </p>
+        
+    </li><li>
+        <p>
+            Performed by <span class="inline-math">$q_\mathrm{S}\mapsto +(0,a,q_\mathrm{S})$</span> (or any machine that does not have <span class="inline-math">$q_\mathrm{H}$</span> in its instructions)
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Halt without changing anything":
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$f(\v w) = \v w$</span>
+        </p>
+        
+    </li><li>
+        <p>
+            Performed by <span class="inline-math">$q_\mathrm{S} \mapsto {?}(0,ε,q_\mathrm{H},q_\mathrm{H})$</span>
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Is register <span class="inline-math">$i$</span> empty?"
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$A_0 = \sb{\v w}{w_i = ε}$</span>, <span class="inline-math">$A_1 = \sb{\v w}{w_i \neq ε}$</span>
+        </p>
+        
+    </li><li>
+        <p>
+            Performed by <span class="inline-math">$q_\mathrm{S} \mapsto {?}(i, ε, \hat q_0, \hat q_1)$</span>
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Does register <span class="inline-math">$i$</span> end with letter <span class="inline-math">$a$</span>?"
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$A_0 = \sb{\v w}{\exists v\in \mathbb{W}(w_i = va)}$</span>, <span class="inline-math">$A_1 = \mathbb{W}^{n+1}\setminus A_0$</span>
+        </p>
+        
+    </li><li>
+        <p>
+            Performed by <span class="inline-math">$q_\mathrm{S} \mapsto {?}(i,a,\hat q_0, \hat q_1)$</span>
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Delete the final letter in register <span class="inline-math">$i$</span>, if it exists"
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$q_\mathrm{S} \mapsto -(i,q_\mathrm{H},q_\mathrm{H})$</span>
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Delete the content of register <span class="inline-math">$i$</span>"
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$q_\mathrm{S} \mapsto -(i,q_\mathrm{H},q_\mathrm{S})$</span>
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Add <span class="inline-math">$a$</span> to the end of register <span class="inline-math">$i$</span>"
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$q_\mathrm{S} \mapsto +(i,a, q_\mathrm{H})$</span>
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Add <span class="inline-math">$w = a_0 \ldots a_m$</span> to the end of register <span class="inline-math">$i$</span>"
+    </p>
+    <ul>
+    <li>
+        <p>
+            <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-concatenation-lemma-subroutine-lemma.html">Concatenate</a> operations (7)
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Replace the content of register <span class="inline-math">$i$</span> with <span class="inline-math">$w$</span>"
+    </p>
+    <ul>
+    <li>
+        <p>
+            Empty register <span class="inline-math">$i$</span> by (6)
+        </p>
+        
+    </li><li>
+        <p>
+            Add <span class="inline-math">$w$</span> by (8)
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "What is the final letter of register <span class="inline-math">$i$</span>?"
+    </p>
+    <ul>
+    <li>
+        <p>
+            Let <span class="inline-math">$Σ = \set{a_1, \ldots, a_k}$</span>.
+            This is a question with <span class="inline-math">$k+1$</span> answers: <span class="inline-math">$A_i = \sb{\v w}{\exists v (w_i = va_i)}$</span> for <span class="inline-math">$i=1,\ldots,k$</span>
+            and <span class="inline-math">$A_0 = \sb{\v w}{w_i = ε}$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            Check using (4): if register <span class="inline-math">$i$</span> end in letter <span class="inline-math">$a_l$</span>,
+        </p>
+        <ul>
+        <li>
+            <p>
+                go to state <span class="inline-math">$\hat q_l$</span>.
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li><li>
+        <p>
+            Otherwise
+        </p>
+        <ul>
+        <li>
+            <p>
+                if <span class="inline-math">$l\neq k$</span>, answer the next question;
+            </p>
+            
+        </li><li>
+            <p>
+                if <span class="inline-math">$l=k$</span>, go to state <span class="inline-math">$\hat q_0$</span>.
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Copy the final letter of register <span class="inline-math">$i$</span> (if it exists) to register <span class="inline-math">$j$</span>"
+    </p>
+    <ul>
+    <li>
+        <p>
+            Determine the final letter by (10).
+        </p>
+        
+    </li><li>
+        <p>
+            If register <span class="inline-math">$i$</span> is empty,
+        </p>
+        <ul>
+        <li>
+            <p>
+                halt using (2).
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li><li>
+        <p>
+            If it is <span class="inline-math">$\hat q_l$</span>,
+        </p>
+        <ul>
+        <li>
+            <p>
+                add <span class="inline-math">$a_l$</span> at the end of register <span class="inline-math">$j$</span> using (7).
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Move the final letter of register <span class="inline-math">$i$</span> (if it exists) to register <span class="inline-math">$j$</span>"
+    </p>
+    <ul>
+    <li>
+        <p>
+            Check whether register <span class="inline-math">$i$</span> is empty by (3). If so,
+        </p>
+        <ul>
+        <li>
+            <p>
+                halt using (2).
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li><li>
+        <p>
+            Otherwise,
+        </p>
+        <ul>
+        <li>
+            <p>
+                copy the final letter of register <span class="inline-math">$i$</span> to register <span class="inline-math">$j$</span> using (11),
+            </p>
+            
+        </li><li>
+            <p>
+                and then delete the final letter in register <span class="inline-math">$i$</span> using (5).
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Move the content of register <span class="inline-math">$i$</span> into register <span class="inline-math">$j$</span> in reverse order"
+    </p>
+    <ul>
+    <li>
+        <p>
+            If register <span class="inline-math">$i$</span> is empty by (3),
+        </p>
+        <ul>
+        <li>
+            <p>
+                halt using (2);
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li><li>
+        <p>
+            otherwise
+        </p>
+        <ul>
+        <li>
+            <p>
+                Move the final letter of register <span class="inline-math">$i$</span> to register <span class="inline-math">$j$</span> using (12),
+            </p>
+            
+        </li><li>
+            <p>
+                and repeat.
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Move the content of register <span class="inline-math">$i$</span> into register <span class="inline-math">$j$</span>"
+    </p>
+    <ul>
+    <li>
+        <p>
+            Take an additional register <span class="inline-math">$k$</span>, which is first emptied using (6).
+        </p>
+        
+    </li><li>
+        <p>
+            Move content of register <span class="inline-math">$i$</span> into register <span class="inline-math">$k$</span> in reverse order,
+        </p>
+        
+    </li><li>
+        <p>
+            and then move content of register <span class="inline-math">$k$</span> into register <span class="inline-math">$j$</span> in reverse order using (13).
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Copy the content of register <span class="inline-math">$i$</span> into register <span class="inline-math">$j$</span> in reverse order"
+    </p>
+    <ul>
+    <li>
+        <p>
+            Take an additional register <span class="inline-math">$k$</span>, which is first emptied using (6).
+        </p>
+        
+    </li><li>
+        <p>
+            Until register <span class="inline-math">$i$</span> is empty,
+        </p>
+        <ul>
+        <li>
+            <p>
+                copy the final letter of register <span class="inline-math">$i$</span> to register <span class="inline-math">$k$</span> using (11)
+            </p>
+            
+        </li><li>
+            <p>
+                and move the final letter of register <span class="inline-math">$i$</span> to register <span class="inline-math">$j$</span> using (12).
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li><li>
+        <p>
+            Move the content of register <span class="inline-math">$k$</span> to register <span class="inline-math">$i$</span> in reverse order using (13).
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        "Copy the content of register <span class="inline-math">$i$</span> to register <span class="inline-math">$j$</span>"
+    </p>
+    <ul>
+    <li>
+        <p>
+            Take an additional register <span class="inline-math">$k$</span>, which is first emptied using (6).
+        </p>
+        
+    </li><li>
+        <p>
+            Copy the content of register <span class="inline-math">$i$</span> into register <span class="inline-math">$k$</span> in reverse order,
+        </p>
+        
+    </li><li>
+        <p>
+            and then copy the content of register <span class="inline-math">$k$</span> into register <span class="inline-math">$j$</span> in reverse order using (15).
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ol>

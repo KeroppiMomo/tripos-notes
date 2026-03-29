@@ -1,0 +1,63 @@
+<p>
+    Suppose <span class="inline-math">$σ(T) = \emptyset$</span>.
+    Then the resolvent function <span class="inline-math">$R_T: \C \to \mathcal{B}(X)$</span>
+    is <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-spectrum-resolvent-set-resolvent-function.html#^holomorphic">holomorphic</a> and defined on the entire <span class="inline-math">$\C$</span>.
+    Moreover for <span class="inline-math">$λ&gt;\|T\|$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|R_T(λ)\| ={}&amp; \left\|\sum_{n=0}^{\infty} \frac{T^n}{λ^{n+1}}\right\| \\
+        \leq{}&amp; \frac{1}{λ} \sum_{n=0}^{\infty} \left\|\frac{T}{λ}\right\|^n \\
+        ={}&amp; \frac{1}{λ(1 - \|T/λ\|)} \\
+        ={}&amp; \frac{1}{λ - \|T\|} \to 0
+    \end{align*} $$</span>
+    as <span class="inline-math">$|λ| \to \infty$</span>.
+    This also shows <span class="inline-math">$R_T(λ)$</span> is bounded.
+</p>
+
+<h1>General case, using Hahn-Banach</h1>
+
+<p>
+    Take any <span class="inline-math">$ϕ\in \mathcal{B}(X)^\ast$</span>, and let <span class="inline-math">$f = ϕ \circ R_T: \C \to \C$</span>.
+    <span class="inline-math">$f$</span> is entire: by continuity of <span class="inline-math">$ϕ$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \frac{f(μ) - f(λ)}{μ - λ} = ϕ\left(\frac{R_T(μ) - R_T(λ)}{μ - λ}\right) \to ϕ(R_T&#x27;(λ))  \qquad \text{as }μ \to λ,
+    \end{align*} $$</span>
+    and <span class="inline-math">$f(λ) \to 0$</span> as <span class="inline-math">$|λ|\to \infty$</span>:
+    <span class="display-math">$$ \begin{align*}
+        |f(λ)| = |ϕ(R_T(λ))| \leq \|ϕ\| \|R_T(λ)\| \to 0 \qquad \text{as }|λ| \to \infty
+    \end{align*} $$</span>
+    so in particular <span class="inline-math">$f(λ)$</span> is bounded as <span class="inline-math">$f$</span> is continuous.
+</p>
+<p>
+    Hence by <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Liouville-s-theorem.html">Liouville's theorem</a>(!),
+    <span class="inline-math">$f = 0$</span>.
+    Thus for each <span class="inline-math">$λ\in \C$</span>, <span class="inline-math">$ϕ(R_T(λ)) = 0$</span> for all <span class="inline-math">$ϕ\in \mathcal{B}(X)^\ast$</span>.
+    By <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Corollary-norming-functional.html">Hahn-Banach</a>, <span class="inline-math">$R_T(λ) = 0$</span>,
+    which is not invertible. Contradiction.
+</p>
+
+<h1>If <span class="inline-math">$X=H$</span> is a Hilbert space</h1>
+
+<p>
+    Take any <span class="inline-math">$x,y\in H$</span> and define
+    <span class="display-math">$$ \begin{align*}
+        f: \C &amp;\to \C \\
+        λ &amp;\mapsto \langle R_T(λ)x, y\rangle.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$f$</span> is entire: by continuity of <span class="inline-math">$\langle \cdot ,\cdot \rangle$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \frac{f(μ) - f(λ)}{μ - λ} = \left\langle \frac{R_T(μ) - R_T(λ)}{μ - λ}x, y\right\rangle \to \langle R_T&#x27;(λ)x, y\rangle \qquad \text{as }μ\to λ,
+    \end{align*} $$</span>
+    and <span class="inline-math">$f(λ)\to 0$</span> as <span class="inline-math">$|λ|\to \infty$</span>: by <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Cauchy-Schwarz.html">Cauchy-Schwarz</a>
+    <span class="display-math">$$ \begin{align*}
+        |f(λ)| \leq \|R_T(λ) x\| \|y\| \leq \|R_T(λ)\| \|x\| \|y\| \to 0 \qquad \text{as }|λ|\to \infty
+    \end{align*} $$</span>
+    so in particular <span class="inline-math">$f(λ)$</span> is bounded as <span class="inline-math">$f$</span> is continuous.
+</p>
+<p>
+    Hence by Liouville's theorem, <span class="inline-math">$f = 0$</span>.
+    Thus for each <span class="inline-math">$λ\in \C$</span>, <span class="inline-math">$\langle R_T(λ) x , y\rangle =0$</span> for all <span class="inline-math">$x,y\in H$</span>
+    so <span class="inline-math">$R_T(λ) = 0$</span>, which is not invertible.
+    Contradiction.
+</p>

@@ -1,0 +1,2097 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (language of set theory)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>language of set theory</em> or <em><span class="inline-math">$\in$</span>-language</em>
+                is the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-signature-structure-substructure-reduct.html">signature</a> with a single binary relation <span class="inline-math">$\in$</span>.
+            </p>
+            <p>
+                The formulae in this language are called <em><span class="inline-math">$\in$</span>-formulae</em>.
+                The set of all <span class="inline-math">$\in$</span>-formulae is denoted <span class="inline-math">$\mathrm{Fml}^\in$</span>.
+            </p>
+            <p>
+                Structures in this language are called <em><span class="inline-math">$\in$</span>-structures</em>
+                and can be represented as a directed graph <span class="inline-math">$\mathbf{X} = (X, E)$</span>
+                where <span class="inline-math">$E \subseteq X^2$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    We will use abbreviations in <span class="inline-math">$\in$</span>-formulae,
+                    e.g. <span class="inline-math">$ϕ \Leftrightarrow ψ$</span> for <span class="inline-math">$ϕ\Rightarrow ψ\wedge ψ \Rightarrow ϕ$</span>,
+                    <span class="inline-math">$x\not\in y$</span> for <span class="inline-math">$\neg x \in y$</span> etc.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (class, coextensional)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-class-coextensional.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\mathbf{X} = (X,E)$</span> be a model of set theory.
+            </p>
+            <p>
+                Elements of <span class="inline-math">$X$</span> are called <em><span class="inline-math">$\mathbf{X}$</span>-sets</em>,
+                and subsets of <span class="inline-math">$X$</span> are called <em><span class="inline-math">$\mathbf{X}$</span>-classes</em>.
+            </p>
+            <p>
+                We say a class <span class="inline-math">$A \subseteq X$</span>
+                is <em>coextensional</em> with a set <span class="inline-math">$x\in X$</span>
+                if for all <span class="inline-math">$z\in X$</span>,
+                we have <span class="inline-math">$z\in A$</span> iff <span class="inline-math">$zEx$</span>.
+            </p>
+            <p>
+                A class <span class="inline-math">$A \subseteq X$</span> is <em>proper</em> if it is not coextensional to any set.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Axioms of set theory
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Axioms-of-set-theory.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (axiom of extensionality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-extensionality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>axiom of extensionality</em> is the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html"><span class="inline-math">$\in$</span>-formula</a>
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{Ext} := \forall x\forall y (x = y \Leftrightarrow \forall z(z\in x\Leftrightarrow z\in y)).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                "Two sets are equal iff they have the same elements."
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (axiom schema of comprehension)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-schema-of-comprehension.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For any <span class="inline-math">$ϕ\in{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html"><span class="inline-math">$\mathrm{Fml}^\in$</span></a> with <span class="inline-math">$\op{free}(ϕ) = \set{v_0, \ldots, v_{n-1}, z}$</span>,
+                            define
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{Compr}_ϕ := \forall v_0 \ldots\forall v_{n-1} \exists c \forall z(z\in c \Leftrightarrow ϕ).
+                            \end{align*} $$</span>
+                            The collection of all <span class="inline-math">$\mathsf{Compr}_ϕ$</span> is <span class="inline-math">$\mathsf{Compr}$</span>,
+                            the <em>axiom schema of comprehension</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Russell's paradox)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-Russell-s-paradox.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For any <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html"><span class="inline-math">$\in$</span>-structure</a> <span class="inline-math">$\mathbf{X}$</span>,
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-schema-of-comprehension.html"><span class="inline-math">$\mathsf{Compr}_ϕ$</span></a>
+                            is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-interpretation-model-theory-in-predicate-logic.html">false</a>
+                            in <span class="inline-math">$\mathbf{X}$</span> where
+                            <span class="display-math">$$ϕ = \neg z \in z.$$</span>
+                            In particular <span class="inline-math">$\mathsf{Compr}$</span> does not hold in <span class="inline-math">$\mathbf{X}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Russell-s-paradox.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                Therefore <span class="inline-math">$X$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-class-coextensional.html">proper class</a>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (axiom of empty set)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-empty-set.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>axiom of empty set</em> is the <span class="inline-math">$\in$</span>-formula
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{Emp} := \exists c \ \forall z (z\in c \Leftrightarrow \bot).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                By <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-extensionality.html"><span class="inline-math">$\mathsf{Ext}$</span></a>, this defines a unique object in the model, denoted <span class="inline-math">$\emptyset$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (axiom of pairing)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-pairing.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>axiom of pairing</em> is the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html"><span class="inline-math">$\in$</span>-formula</a>
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{Pair} := \forall x\forall y \  \exists p \  \forall z(z\in p \Leftrightarrow (z=x \vee z=y)).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                By <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-extensionality.html"><span class="inline-math">$\mathsf{Ext}$</span></a>, for each <span class="inline-math">$x,y\in X$</span> this defines a unique object in a model <span class="inline-math">$X$</span>, denoted <span class="inline-math">$\set{x,y}$</span>, or <span class="inline-math">$\set{x}$</span> if <span class="inline-math">$x=y$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (axiom of union)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-union.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>axiom of union</em> is the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html"><span class="inline-math">$\in$</span>-formula</a>
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{Union} := \forall x\ \exists u\ \forall z(z\in u \Leftrightarrow \exists y(y\in x \wedge z\in y)).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                By <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-extensionality.html"><span class="inline-math">$\mathsf{Ext}$</span></a>,
+                                for each <span class="inline-math">$x\in X$</span> this defines a unique object in a model <span class="inline-math">$X$</span>, denoted <span class="inline-math">$\bigcup x$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (axiom of power set)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-power-set.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>axiom of power set</em> is the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html"><span class="inline-math">$\in$</span>-formula</a>
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{Powerset} :={}&amp; \forall x\ \exists p\ \forall z(z\in p \Leftrightarrow \forall y(y\in z \Rightarrow y\in x)) \\
+                                \equiv{}&amp; \forall x\ \exists p\ \forall z(z\in p\Leftrightarrow z\subseteq x).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                By <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-extensionality.html"><span class="inline-math">$\mathsf{Ext}$</span></a>,
+                                for each <span class="inline-math">$x\in X$</span> this defines a unique object in a model <span class="inline-math">$X$</span>, denoted <span class="inline-math">$\mathcal{P}(x)$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (axiom of separation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-separation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For each <span class="inline-math">$ϕ\in{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html"><span class="inline-math">$\mathrm{Fml}^\in$</span></a>
+                            with <span class="inline-math">$\op{free}(ϕ) = \set{v_0, \ldots, v_{n-1}, z}$</span>, define
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{Sep}_ϕ := \forall v_0 \ldots \forall v_{n-1} \ \forall x\ \exists s\ \forall z(z\in s \Leftrightarrow (z\in x\wedge ϕ)).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The collection of all <span class="inline-math">$\mathsf{Sep}_ϕ$</span> is <span class="inline-math">$\mathsf{Sep}$</span>,
+                            the <em>axiom schema of separation</em>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                By <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-extensionality.html"><span class="inline-math">$\mathsf{Ext}$</span></a>,
+                                for each <span class="inline-math">$ϕ\in \op{Fml}^\in$</span>, <span class="inline-math">$x\in X$</span>, <span class="inline-math">$\v v\in X^n$</span> this defines a unique object in a model <span class="inline-math">$X$</span>, denoted <span class="inline-math">$\sb{z\in x}{ϕ}$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (finite set theory)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Finite set theory <span class="inline-math">$\mathsf{FST}$</span>
+                            is the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiomatisation.html">axiom system</a>
+                            consisting of <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-extensionality.html"><span class="inline-math">$\mathsf{Ext}$</span></a>,
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-empty-set.html"><span class="inline-math">$\mathsf{Emp}$</span></a>,
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-pairing.html"><span class="inline-math">$\mathsf{Pair}$</span></a>,
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-union.html"><span class="inline-math">$\mathsf{Union}$</span></a>,
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-power-set.html"><span class="inline-math">$\mathsf{Powerset}$</span></a>,
+                            and <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-separation.html"><span class="inline-math">$\mathsf{Sep}$</span></a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (successor, inductive set, axiom of infinity)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html">finite set theory</a>.
+                        </p>
+                        <p>
+                            For any set <span class="inline-math">$x$</span>,
+                            the <em>successor</em> of <span class="inline-math">$x$</span> is <span class="inline-math">$s(x) := x \cup \set{x}$</span>.
+                        </p>
+                        <p>
+                            A set <span class="inline-math">$a$</span> is <em>inductive</em> if it satisfies the formula
+                            <span class="display-math">$$ \begin{align*}
+                                \op{ind}(a) := \emptyset \in a \ \wedge \ \forall x(x\in a \Rightarrow s(x) \in a).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The <em>axiom of infinity</em> is the formula
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{Inf} := \exists a \ \op{ind}(a).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (axiom of replacement)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For each <span class="inline-math">$ϕ\in{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html"><span class="inline-math">$\mathrm{Fml}^\in$</span></a>
+                            with <span class="inline-math">$\op{free}(ϕ) = \set{v_0, \ldots, v_{n-1}, v, w}$</span>,
+                            write <span class="inline-math">$ϕ \tfrac{x}{v} \tfrac{y}{w}$</span> for the formula
+                            where we replace all <span class="inline-math">$v$</span> and <span class="inline-math">$w$</span> in <span class="inline-math">$ϕ$</span> with <span class="inline-math">$x$</span> and <span class="inline-math">$y$</span> respectively.
+                            Define
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{Repl}_ϕ :={} \quad &amp;\forall v_0 \ldots \forall v_{n-1}\ \forall x \forall y \forall y&#x27; (ϕ \tfrac{x}{v} \tfrac{y}{w} \wedge ϕ \tfrac{x}{v} \tfrac{y&#x27;}{w} \Rightarrow y = y&#x27;) \\
+                                \Rightarrow{}&amp; \forall v_0 \ldots \forall v_{n-1}\ \forall d \exists r \ \forall y(y\in r \Leftrightarrow \exists x(x\in d \wedge \phi \tfrac{x}{v} \tfrac{y}{w})).
+                            \end{align*} $$</span>
+                            <span class="inline-math">$ϕ$</span> is said to be <em>functional</em> if the premise holds.
+                        </p>
+                        <p>
+                            The collection of all <span class="inline-math">$\mathsf{Repl}_ϕ$</span> is <span class="inline-math">$\mathsf{Repl}$</span>,
+                            the <em>axiom schema of replacement</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (axiom of choice)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-choice.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            In the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html">language of set theory</a>,
+                            let <span class="inline-math">$x$</span> be a set.
+                            <span class="inline-math">$f$</span> is a <em>choice function</em> for <span class="inline-math">$x$</span> if it satisfies
+                            <span class="display-math">$$ \begin{align*}
+                                \op{cf}(f, x) := \bigl(f: x\to \bigcup x\bigr) \wedge \forall y \bigl(y\in x \wedge y\neq \emptyset \Rightarrow f(y) \in y\bigr).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The <em>axiom of choice</em> is the <span class="inline-math">$\in$</span>-formula
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{AC} := \forall x \exists f\ \op{cf}(f,x).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (axiom of foundation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-foundation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>axiom of foundation</em> is the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-language-of-set-theory.html"><span class="inline-math">$\in$</span>-formula</a>
+                            <span class="display-math">$$ \begin{align*}
+                                \mathsf{Found} := \forall x (x \neq \emptyset \Rightarrow \exists m (m\in x \wedge m \cap x = \emptyset)).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$m \cap x = \emptyset$</span> iff <span class="inline-math">$m$</span> is <span class="inline-math">$\in$</span>-minimal in <span class="inline-math">$x$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Zermelo–Fraenkel set theory)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-Zermelo-Fraenkel-set-theory.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Define the following axiom systems:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\mathsf{Z} :={}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html"><span class="inline-math">$\mathsf{Inf}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-foundation.html"><span class="inline-math">$\mathsf{Found}$</span></a>,
+                                the <em>Zermelo set theory</em>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\mathsf{ZC} := \mathsf{Z}$</span> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-choice.html"><span class="inline-math">$\mathsf{AC}$</span></a>, the <em>Zermelo set theory with choice</em>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\mathsf{ZF} := \mathsf{Z}$</span> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a>,
+                                the <em>Zermelo-Fraenkel set theory</em>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\mathsf{ZFC} := \mathsf{ZF}$</span> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-choice.html"><span class="inline-math">$\mathsf{AC}$</span></a>, the <em>Zermelo-Fraenkel set theory with choice</em>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (model of finite set theory is infinite)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-model-of-finite-set-theory-is-infinite.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Any <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-interpretation-model-theory-in-predicate-logic.html">model</a> of <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html">finite set theory</a> is infinite.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-model-of-finite-set-theory-is-infinite.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Reconstruction of abstract mathematics in finite set theory
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Reconstruction-of-abstract-mathematics-in-finite-set-theory.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                We can reconstruct abstract operations in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html">finite set theory</a>:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Ordinary (binary) union: <span class="inline-math">$x \cup y := \bigcup \set{x,y}$</span> (using <span class="inline-math">$\mathsf{Pair}$</span> and <span class="inline-math">$\mathsf{Union}$</span>)
+                </p>
+                
+            </li><li>
+                <p>
+                    Intersection: <span class="inline-math">$x \cap y := \sb{z\in x}{z\in y} = \sb{z\in y}{z\in x}$</span> (using <span class="inline-math">$\mathsf{Sep}$</span>).
+                </p>
+                
+            </li><li>
+                <p>
+                    Ordered pair: <span class="inline-math">$(x,y) := \set{\set{x}, \set{x,y}}$</span> known as the <em>Kuratowski pair</em>.
+                </p>
+                <p>
+                    This has the property <span class="inline-math">$(x, y) = (x&#x27;, y&#x27;)$</span> iff <span class="inline-math">$x = x&#x27;$</span> and <span class="inline-math">$y = y&#x27;$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    The <em>Cartesian product</em>
+                    <span class="display-math">$$ \begin{align*}
+                        a \times b := \sb{p\in \mathcal{P}(\mathcal{P}(a\cup b))}{\exists x\exists y(x\in a \wedge y\in b\wedge p = (x,y))}
+                    \end{align*} $$</span>
+                    using <span class="inline-math">$\mathsf{Powerset}$</span> and <span class="inline-math">$\mathsf{Sep}$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (relation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For sets <span class="inline-math">$a,b$</span>,
+                            an element <span class="inline-math">$r\in \mathcal{P}(a\times b)$</span>
+                            is a <em>relation between <span class="inline-math">$a$</span> and <span class="inline-math">$b$</span></em>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$r$</span> is <em>functional</em> if <span class="inline-math">$\forall x \forall y \forall y&#x27;\ (x,y)\in r \wedge (x,y&#x27;)\in r \Rightarrow y = y&#x27;$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is <em>total</em> if <span class="inline-math">$\forall x\ x\in a \Rightarrow \exists y(y\in b \wedge (x,y)\in r)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is a <em>function</em> if <span class="inline-math">$r$</span> is functional and total.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is <em>injective</em> if <span class="inline-math">$\forall x\forall x&#x27;\forall y\ (x,y)\in r \wedge(x&#x27;, y)\in r \Rightarrow x = x&#x27;$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is <em>surjective</em> if <span class="inline-math">$\forall y\ y \in b \Rightarrow \exists x(x\in a \wedge (x,y)\in r)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            Then <span class="inline-math">$r$</span> is called a <em>binary relation on <span class="inline-math">$a$</span></em>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$r$</span> is <em>reflexive</em> if <span class="inline-math">$\forall x\ (x,x)\in r$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is <em>irreflexive</em> if <span class="inline-math">$\forall x\ (x,x)\not\in r$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is <em>symmetric</em> if <span class="inline-math">$\forall x\forall y\ (x,y)\in r \Leftrightarrow (y,x)\in r$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is <em>transitive</em> if <span class="inline-math">$\forall x\forall y\forall z\ ((x,y)\in r\wedge (y,z)\in r) \Rightarrow (x,z)\in r$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is <em>antisymmetric</em> if <span class="inline-math">$\forall x\forall y ((x,y)\in r \wedge (y,x)\in r) \Rightarrow x=y$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is <em>linear</em> if <span class="inline-math">$\forall x\forall y\ (x,y)\in r \vee (y,x)\in r\vee x=y$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is a <em>partial order</em> if it is reflexive, transitive and antisymmetric.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is a <em>strict partial order</em> if it is irreflective and transitive.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is a <em>linear order</em> if it is a partial order which is linear.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is a <em>strict linear order</em> if it is a strict partial order which is linear.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$r$</span> is an <em>equivalence relation</em> if it is reflexive, symmetric and transitive.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            The natural numbers
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/The-natural-numbers.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (construction of natural numbers from Inf)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html"><span class="inline-math">$\mathsf{Inf}$</span></a>.
+                        </p>
+                        <p>
+                            For an <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html">inductive set</a> <span class="inline-math">$a$</span>, which exists by <span class="inline-math">$\mathsf{Inf}$</span>,
+                            define by <span class="inline-math">$\mathsf{Sep}$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                N_a := \sb{z\in a}{\forall x(\op{ind}(x) \Rightarrow z\in x)}.
+                            \end{align*} $$</span>
+                            Check this does not depend on <span class="inline-math">$a$</span>
+                            and is the smallest inductive set.
+                            Call this
+                            <span class="display-math">$$ \begin{align*}
+                                \N := N_a
+                            \end{align*} $$</span>
+                            and call its elements the <em>natural numbers</em>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                Write <span class="inline-math">$0 := \emptyset$</span>, <span class="inline-math">$1 := s(0) = \set{0} = \set{\emptyset}$</span>,
+                                <span class="inline-math">$2 := s(1) = \set{0, 1} = \set{\emptyset, \set{\emptyset}}$</span>,
+                                <span class="inline-math">$3 := s(2) = \set{0, 1, 2} = \set{\emptyset, \set{\emptyset}, \set{\emptyset, \set{\emptyset}}}$</span>
+                                etc.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (induction)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-induction.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Construct <span class="inline-math">$\N$</span> as <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">here</a>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$A \subseteq \N$</span> is such that <span class="inline-math">$\emptyset\in A$</span>
+                            and whenever <span class="inline-math">$n\in A$</span>, we have <span class="inline-math">$s(n) \in A$</span>,
+                            then <span class="inline-math">$A = \N$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-induction.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (minimal element, well-founded relation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-minimal-element-well-founded-relation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$R$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">binary relation</a> of a set <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            For a subset <span class="inline-math">$S\subseteq X$</span>,
+                            an <em><span class="inline-math">$R$</span>-minimal element</em> of <span class="inline-math">$S$</span>
+                            is an element <span class="inline-math">$m\in S$</span>
+                            such that for all <span class="inline-math">$s\in S$</span>,
+                            it is not the case that <span class="inline-math">$sRm$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$R$</span> is <em>well-founded</em> if all subsets of <span class="inline-math">$X$</span> have an <span class="inline-math">$R$</span>-minimal element.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (transitive set)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-transitive-set.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A set <span class="inline-math">$x$</span> is <em>transitive</em>
+                            if for all sets <span class="inline-math">$y,z$</span>, if <span class="inline-math">$z\in y\in x$</span>, then <span class="inline-math">$z\in x$</span>.
+                        </p>
+                        <p>
+                            Equivalently, all elements of <span class="inline-math">$x$</span> are subsets of <span class="inline-math">$x$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (transitivity of natural numbers)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-transitivity-of-natural-numbers.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Construct <span class="inline-math">$\N$</span> as <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">here</a>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$\N$</span> is transitive.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Any natural number is transitive.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-transitivity-of-natural-numbers.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (subset of natural numbers)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-subset-of-natural-numbers.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Construct <span class="inline-math">$\N$</span> as <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">here</a>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$n,m\in \N$</span>, then <span class="inline-math">$m\subseteq n$</span> iff <span class="inline-math">$m = n$</span> or <span class="inline-math">$m\in n$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-subset-of-natural-numbers.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (well-order on N)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-well-order-on-N.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Construct <span class="inline-math">$\N$</span> as <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">here</a>.
+                            Define a relation <span class="inline-math">$&lt;$</span> on <span class="inline-math">$\N$</span> by <span class="inline-math">$n&lt;m$</span> iff <span class="inline-math">$n\in m$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$&lt;$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-order</a> on <span class="inline-math">$\N$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-well-order-on-N.html">Proof</a>
+                            TODO
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (finite, infinite, countable, uncountable, countably infinite)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-infinite-countable-uncountable-countably-infinite.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html"><span class="inline-math">$\mathsf{Inf}$</span></a>.
+                        </p>
+                        <p>
+                            A set <span class="inline-math">$X$</span> is <em>finite</em> if there exists <span class="inline-math">$n\in{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html"><span class="inline-math">$\N$</span></a>
+                            such that <span class="inline-math">$X$</span> is in bijection with <span class="inline-math">$n$</span>;
+                            otherwise <span class="inline-math">$X$</span> is <em>infinite</em>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$X$</span> is <em>countable</em> if there exists an injection <span class="inline-math">$X \hookrightarrow \N$</span>;
+                            otherwise <span class="inline-math">$X$</span> is <em>uncountable</em>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$X$</span> is <em>countably infinite</em> if there exists a bijection <span class="inline-math">$X\to \N$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Well-orders
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Well-orders.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (order induction and well-foundedness)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-order-induction-and-well-foundedness.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\mathbf{X} = (X, &lt;)$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">strict partial order</a>.
+                            Write <span class="inline-math">$\op{pred}(x) := \sb{z\in X}{z&lt;x}$</span> for <span class="inline-math">$x\in X$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$\mathbf{X}$</span> is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-minimal-element-well-founded-relation.html">well-founded</a>
+                            iff it satisfies <em>order induction</em>,
+                            i.e. for all <span class="inline-math">$A\subseteq X$</span>, if there holds
+                            <span class="display-math">$$ \begin{align*}
+                                \forall x\in X (\op{pred}(x) \subseteq A \implies x\in A),
+                            \end{align*} $$</span>
+                            then <span class="inline-math">$A = X$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-order-induction-and-well-foundedness.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (recursion)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-recursion.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html">finite set theory</a>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$(X, &lt;)$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-minimal-element-well-founded-relation.html">well-founded</a> <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">strict partial order</a>
+                            and <span class="inline-math">$ϕ$</span> be an <span class="inline-math">$\in$</span>-formula with <span class="inline-math">$\op{free}(ϕ) = \set{a,b,c}$</span>.
+                            Suppose
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$ϕ$</span> is <em>functional</em>: for all <span class="inline-math">$a,b\in X$</span> and <span class="inline-math">$c,c&#x27;$</span> sets, if <span class="inline-math">$ϕ(a,b,c)$</span> and <span class="inline-math">$ϕ(a,b,c&#x27;)$</span> hold, then <span class="inline-math">$c = c&#x27;$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$ϕ$</span> is <em>total</em>: for all <span class="inline-math">$a,b\in X$</span>, there exists <span class="inline-math">$c$</span> such that <span class="inline-math">$ϕ(a,b,c)$</span> holds.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            Assume either
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a> holds; or
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                there exists some <span class="inline-math">$r$</span> such that for all <span class="inline-math">$a,b\in X$</span>, if <span class="inline-math">$ϕ(a,b,c)$</span> holds, then <span class="inline-math">$c\in r$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            Then there exists a unique function <span class="inline-math">$F$</span> with domain <span class="inline-math">$X$</span>
+                            such that for all <span class="inline-math">$x\in X$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                F(x) = z \iff ϕ(x, F|_{\op{pred}(x)}, z).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-recursion.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (transitive closure)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-transitive-closure.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html"><span class="inline-math">$\mathsf{Inf}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a>.
+                        </p>
+                        <p>
+                            For all sets <span class="inline-math">$x$</span>,
+                            there exists a smallest <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-transitive-set.html">transitive</a> superset <span class="inline-math">$t \supseteq x$</span>,
+                            i.e. if <span class="inline-math">$t&#x27;\supseteq x$</span> is a transitive set, then <span class="inline-math">$t&#x27; \supseteq t$</span>.
+                            We call <span class="inline-math">$\op{tcl}(x) := t$</span> the <em>transitive closure</em> of <span class="inline-math">$x$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-transitive-closure.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (well-order, initial segment)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>well-order</em> <span class="inline-math">$\mathbf{X} = (X, &lt;)$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-minimal-element-well-founded-relation.html">well-founded</a> <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">strict linear order</a>.
+                        </p>
+                        <p>
+                            An <em>initial segment</em> of <span class="inline-math">$\mathbf{X}$</span> is a subset <span class="inline-math">$A \subseteq X$</span>
+                            such that <span class="inline-math">$\op{pred}(x) \subseteq A$</span> for all <span class="inline-math">$x\in A$</span>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$A$</span> is a proper initial segment iff <span class="inline-math">$A = \op{pred}(x)$</span> for some <span class="inline-math">$x\in X$</span>.
+                                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-proper-initial-segment-iff-predecessor-set.html">Proof</a>
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID subset -->
+                            <p id="^subset">
+                                If <span class="inline-math">$A \subseteq X$</span> is a subset, then <span class="inline-math">$(A, {&lt;} \cap (A \times A))$</span> is a wellorder.
+                            </p>
+                            
+                            <!-- END BLOCK ID subset -->
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (sum of well-orders)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-sum-of-well-orders.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\mathbf{X}$</span> and <span class="inline-math">$\mathbf{Y}$</span> be <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-orders</a>.
+                            Assume <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> are disjoint.
+                        </p>
+                        <p>
+                            Their sum is <span class="inline-math">$\mathbf{X} \oplus \mathbf{Y} := (X \sqcup Y, &lt;^+)$</span>, where
+                            <span class="display-math">$$ \begin{align*}
+                                a &lt;^+ b :\iff \begin{cases}
+                                    a\in X, b\in X, a&lt;b, &amp; \text{or} \\
+                                    a\in Y, b\in Y, a&lt;b, &amp; \text{or} \\
+                                    a\in X, b\in Y.
+                                \end{cases}
+                            \end{align*} $$</span>
+                            This is a well-order.
+                        </p>
+                        <blockquote>
+                            <p>
+                                Writing <span class="inline-math">$\mathbf{1} = (1, &lt;)$</span>,
+                                <span class="inline-math">$s(X)$</span> is isomorphic to <span class="inline-math">$\mathbf{X} \oplus \mathbf{1}$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (product of well-orders)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-product-of-well-orders.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\mathbf{X}$</span> and <span class="inline-math">$\mathbf{Y}$</span> be <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-orders</a>.
+                        </p>
+                        <p>
+                            Their <em>product</em> is <span class="inline-math">$\mathbf{X} \otimes \mathbf{Y} := (X \times Y, &lt;^\times)$</span>,
+                            where <span class="inline-math">$&lt;^\times$</span> follows reverse lexicographical order:
+                            <span class="display-math">$$ \begin{align*}
+                                (x,y)&lt;^\times  (x&#x27;, y&#x27;) :\iff y &lt; y&#x27; \vee (y = y&#x27; \wedge x&lt; x&#x27;).
+                            \end{align*} $$</span>
+                            This is a well-order.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (uniqueness of isomorphisms between well-orders)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-uniqueness-of-isomorphisms-between-well-orders.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\mathbf{X}$</span> and <span class="inline-math">$\mathbf{Y}$</span> be <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-orders</a>, and let <span class="inline-math">$A,B \subseteq Y$</span> be initial segments.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f: \mathbf{X} \to \mathbf{A}$</span> and <span class="inline-math">$g: \mathbf{X} \to \mathbf{B}$</span> 
+                            are <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-homomorphism-of-structures.html">isomorphisms</a> of well-orders,
+                            then <span class="inline-math">$A = B$</span> and <span class="inline-math">$f = g$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-uniqueness-of-isomorphisms-between-well-orders.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                This shows a well-order is not isomorphic to any proper initial segment.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (fundamental theorem of well-orders)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-fundamental-theorem-of-well-orders.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$A$</span> be a set of <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-orders</a>
+                            such that no two distinct elements are <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-homomorphism-of-structures.html">isomorphic</a>.
+                        </p>
+                        <p>
+                            Then <span class="inline-math">$(A, \prec)$</span> is a well-order,
+                            where <span class="inline-math">$\mathbf{X}\prec \mathbf{Y}$</span> iff
+                            there is an isomorphism from <span class="inline-math">$\mathbf{X}$</span> to a proper initial segment of <span class="inline-math">$\mathbf{Y}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-fundamental-theorem-of-well-orders.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Ordinals
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Ordinals.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (ordinal)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-ordinal.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A set <span class="inline-math">$α$</span> is an <em>ordinal</em>
+                            if it is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-transitive-set.html">transitive set</a>
+                            and <span class="inline-math">$(α, \in)$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-order</a>.
+                        </p>
+                        <p>
+                            An ordinal <span class="inline-math">$α$</span> is either
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                zero <span class="inline-math">$α = \emptyset$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                a <em>successor ordinal</em> if <span class="inline-math">$α = s(β)$</span> for some ordinal <span class="inline-math">$β$</span>; or
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                a <em>limit ordinal</em> if otherwise.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            Write <span class="inline-math">$α&lt;β$</span> for <span class="inline-math">$α\in β$</span>.
+                        </p>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID pred -->
+                            <p id="^pred">
+                                If <span class="inline-math">$x\in α$</span>, then <span class="inline-math">$\op{pred}(x) = \sb{y\in α}{y\in x} = x$</span> as <span class="inline-math">$x\subseteq α$</span>.
+                                So proper initial segments of <span class="inline-math">$α$</span> are precisely elements of <span class="inline-math">$α$</span>.
+                            </p>
+                            
+                            <!-- END BLOCK ID pred -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID elements -->
+                            <p id="^elements">
+                                Elements of ordinals are ordinals. (<a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-element-of-ordinal.html">Proof</a>)
+                            </p>
+                            
+                            <!-- END BLOCK ID elements -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID isom -->
+                            <p id="^isom">
+                                If <span class="inline-math">$α \isom β$</span> as well-orders, then <span class="inline-math">$α = β$</span>. (<a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-isomorphic-ordinals.html">Proof</a>)
+                            </p>
+                            
+                            <!-- END BLOCK ID isom -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID prec -->
+                            <p id="^prec">
+                                <span class="inline-math">$α\prec β$</span> iff <span class="inline-math">$α\in β$</span>. (<a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-ordinal-isomorphic-to-initial-segment.html">Proof</a>)
+                            </p>
+                            
+                            <!-- END BLOCK ID prec -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID trans -->
+                            <p id="^trans">
+                                A transitive set of ordinals is an ordinal. (<a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-transitive-set-of-ordinals.html">Proof</a>)
+                                Therefore if <span class="inline-math">$A$</span> is a set of ordinals, then <span class="inline-math">$\bigcup A$</span> is an ordinal.
+                            </p>
+                            
+                            <!-- END BLOCK ID trans -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-construction-of-natural-numbers-from-Inf.html">Assuming <span class="inline-math">$\mathsf{Inf}$</span></a>, we write <span class="inline-math">$ω = \N$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Borali-Forti, no set of all ordinals)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Borali-Forti-no-set-of-all-ordinals.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            There is no set of all <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-ordinal.html">ordinals</a>.
+                        </p>
+                        <p>
+                            That is, the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-class-coextensional.html">class</a> of all ordinals is proper.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Borali-Forti-no-set-of-all-ordinals.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Mostowski collapse)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Mostowski-collapse.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$\mathbf{X} = (X, &lt;)$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-minimal-element-well-founded-relation.html">well-founded</a> <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">strict partial order</a>.
+                            Define by <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-recursion.html">recursion</a> a function <span class="inline-math">$π$</span> on <span class="inline-math">$X$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                π(x) := \sb{π(y)}{y&lt;x}
+                            \end{align*} $$</span>
+                            called the <em>Mostowski collapse</em>,
+                            and let <span class="inline-math">$T = \op{ran}(π)$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$\mathbf{X}$</span> is <em>extensional</em>, i.e. <span class="inline-math">$\mathbf{X} \vDash{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-extensionality.html"><span class="inline-math">$\mathsf{Ext}$</span></a>,
+                            then <span class="inline-math">$T$</span> is transitive and <span class="inline-math">$π: \mathbf{X} \to (T, \in)$</span> is an isomorphism.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Mostowski-collapse.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (representation of well-orders)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-representation-of-well-orders.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a>.
+                        </p>
+                        <p>
+                            For every well-order <span class="inline-math">$\mathbf{X}$</span>,
+                            there exists a unique ordinal <span class="inline-math">$α$</span>
+                            such that <span class="inline-math">$\mathbf{X} \isom (α,\in)$</span>.
+                        </p>
+                        <p>
+                            Proof: <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-ordinal.html#^isom">uniqueness</a>, <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Mostowski-collapse.html">existence</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Hartogs)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Hartogs.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a>.
+                        </p>
+                        <p>
+                            For every set <span class="inline-math">$X$</span>,
+                            there is a smallest <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-ordinal.html">ordinal</a> <span class="inline-math">$\aleph(X)$</span>,
+                            called the <em>Hartogs aleph</em> of <span class="inline-math">$X$</span>,
+                            which does not inject into <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Hartogs.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                Therefore <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-cardinality.html"><span class="inline-math">$|X| &lt; |\aleph(X)|$</span></a>, so there is no set of largest size.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$\aleph(X)$</span> is an <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-initial-ordinal-cardinal.html">cardinal</a>.
+                                For <span class="inline-math">$κ$</span> a cardinal, its <em>cardinal successor</em> is <span class="inline-math">$κ^+ := \aleph(κ)$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (transfinite induction)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-transfinite-induction.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$ϕ$</span> is a formula with one free variable.
+                            Suppose
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$ϕ(0)$</span> holds;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for all <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-ordinal.html">ordinal</a> <span class="inline-math">$α$</span>, if <span class="inline-math">$ϕ(α)$</span> holds, then <span class="inline-math">$ϕ(s(α))$</span> holds; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                for all limit ordinal <span class="inline-math">$λ$</span>, if <span class="inline-math">$ϕ(α)$</span> holds for all ordinals <span class="inline-math">$α&lt;λ$</span>, then <span class="inline-math">$ϕ(λ)$</span> holds.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            Then <span class="inline-math">$ϕ(α)$</span> holds for all ordinals <span class="inline-math">$α$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-transfinite-induction.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Ordinal arithmetic
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Ordinal-arithmetic.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Define by <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-transfinite-induction.html">transfinite</a> <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-recursion.html">recursion</a>
+                            <span class="display-math">$$ \begin{align*}
+                                α + 0 &amp;:= α &amp; α\cdot 0 &amp;:= 0 &amp; α^0 &amp;:= 1 \\
+                                α + s(β) &amp;:= s(α + β)  &amp; α\cdot s(β) &amp;:= α \cdot β + α &amp; α^{s(β)} &amp;:= α^β \cdot α \\
+                                α + λ &amp;:= \bigcup \sb{α+γ}{γ&lt;λ} &amp; α\cdot λ &amp;:= \bigcup \sb{α\cdot γ}{γ&lt;λ} &amp; α^λ &amp;:= \bigcup \sb{α^γ}{γ&lt;λ}.
+                            \end{align*} $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Commutativity fails for all three.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Addition:
+                            </p>
+                            <ul>
+                            <li>
+                                <p>
+                                    <span class="inline-math">$(α + β, \in)\isom (α, \in)$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-sum-of-well-orders.html"><span class="inline-math">${}\oplus{}$</span></a><span class="inline-math">$(β, \in)$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Associativity holds.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$α + 0 = α = 0 + α$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Increasing: if <span class="inline-math">$α &lt; β$</span>, then <span class="inline-math">$γ + α &lt; γ + β$</span> but <span class="inline-math">$α + γ \leq β + γ$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Left cancellation: if <span class="inline-math">$α + β = α + γ$</span>, then <span class="inline-math">$β = γ$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Left subtraction: if <span class="inline-math">$α\leq β$</span>, then there is a unique <span class="inline-math">$δ$</span> such that <span class="inline-math">$α + δ = β$</span>.
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            
+                        </li><li>
+                            <p>
+                                Multiplication:
+                            </p>
+                            <ul>
+                            <li>
+                                <p>
+                                    <span class="inline-math">$(α\cdot β, \in)\isom(α, \in)$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-product-of-well-orders.html"><span class="inline-math">${}\otimes{}$</span></a><span class="inline-math">$(β, \in)$</span>
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Associativity holds.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$α \cdot 0 = 0 = 0 \cdot α$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$α \cdot 1 = α = 1 \cdot α$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Increasing: If <span class="inline-math">$α&lt;β$</span> and <span class="inline-math">$γ&gt;0$</span>, then <span class="inline-math">$γ \cdot α &lt; γ \cdot β$</span> but <span class="inline-math">$α \cdot γ \leq β \cdot γ$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    Left cancellation: if <span class="inline-math">$α \cdot β = α \cdot γ$</span> and <span class="inline-math">$α&gt;0$</span>, then <span class="inline-math">$β = γ$</span>.
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            
+                        </li><li>
+                            <p>
+                                Left distributivity: <span class="inline-math">$α\cdot (β + γ) = α \cdot β + α\cdot γ$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Exponentiation:
+                            </p>
+                            <ul>
+                            <li>
+                                <p>
+                                    <span class="inline-math">$α^0 = 1$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$0^α = 0$</span> if <span class="inline-math">$α&gt;0$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$α^1 = 1$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$1^α = 1$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$α^{β + γ} = α^β \cdot α^{γ}$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$α^{βγ} = (α^β)^γ$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    If <span class="inline-math">$α&lt;β$</span> and <span class="inline-math">$γ&gt;1$</span>, then <span class="inline-math">$γ^α &lt; γ^β$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    If <span class="inline-math">$α&lt;β$</span>, then <span class="inline-math">$α^γ \leq β^{γ}$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    If <span class="inline-math">$α^β = α^γ$</span> and <span class="inline-math">$α&gt;1$</span>, then <span class="inline-math">$β = γ$</span>.
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Equivalents of the axiom of choice
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Equivalents-of-the-axiom-of-choice.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (choice function on power set)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-choice-function-on-power-set.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html">finite set theory</a>.
+                        </p>
+                        <p>
+                            The <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-choice.html">axiom of choice</a> holds
+                            iff all power sets have a choice function.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-choice-function-on-power-set.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (existence of injection and surjection)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-existence-of-injection-and-surjection.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X,Y$</span> be sets and assume <span class="inline-math">$X \neq \emptyset$</span>.
+                        </p>
+                        <p>
+                            If there is an injection <span class="inline-math">$X\to Y$</span>,
+                            then there is a surjection <span class="inline-math">$Y \to X$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$Y$</span> can be <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-ordered</a>, then the converse holds.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-existence-of-injection-and-surjection.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Zermelo well-ordering)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Zermelo-well-ordering.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <em>Zermelo's well-ordering principle</em> <span class="inline-math">$\mathsf{ZWOP}$</span>
+                            is the statement "all sets can be <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-ordered</a>".
+                        </p>
+                        <p>
+                            In <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a>,
+                            <span class="inline-math">$\mathsf{ZWOP}$</span> is equivalent to <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-choice.html"><span class="inline-math">$\mathsf{AC}$</span></a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Zermelo-well-ordering.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$\mathsf{ZWOP}$</span> is equivalent to the statement "any set is in bijection with an ordinal"
+                                by the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-representation-of-well-orders.html">representation theorem</a>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Zorn's lemma)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Zorn-s-lemma.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\mathbf{P} = (P, \leq)$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">partial order</a>.
+                        </p>
+                        <p>
+                            Say <span class="inline-math">$p\in P$</span> is an <em>(upper) bound</em> of a subset <span class="inline-math">$A\subseteq P$</span>
+                            if <span class="inline-math">$a\leq p$</span> for all <span class="inline-math">$a\in A$</span>.
+                            If such <span class="inline-math">$p$</span> exists, say <span class="inline-math">$A$</span> is <em>bounded</em>.
+                        </p>
+                        <p>
+                            A subset <span class="inline-math">$A \subseteq P$</span> is a <em>chain</em> if <span class="inline-math">$(A, \leq)$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-relation.html">linear order</a>.
+                            <span class="inline-math">$P$</span> is said to be <em>chain-complete</em> if all chains are bounded.
+                        </p>
+                        <p>
+                            <em>Zorn's lemma</em> <span class="inline-math">$\mathsf{ZL}$</span> is the statement
+                            "all non-empty chain-complete partial orders have a maximal element".
+                        </p>
+                        <p>
+                            In <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a>,
+                            <span class="inline-math">$\mathsf{ZL}$</span> is equivalent to <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-choice.html"><span class="inline-math">$\mathsf{AC}$</span></a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Zorn-s-lemma.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Cardinality
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Cardinality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (cardinality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-cardinality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X,Y$</span> be sets.
+                        </p>
+                        <p>
+                            <span class="inline-math">$X,Y$</span> are said to be <em>of the same size</em>, <em>equinumerous</em> or <em>equivpollent</em>
+                            if there is a bijection <span class="inline-math">$X\to Y$</span>.
+                            We write <span class="inline-math">$|X| = |Y|$</span>.
+                        </p>
+                        <p>
+                            We write <span class="inline-math">$|X| \leq |Y|$</span> if there is an injection <span class="inline-math">$X\to Y$</span>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                Assuming <span class="inline-math">$\mathsf{AC}$</span>, <span class="inline-math">$|X|\leq |Y|$</span> <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-existence-of-injection-and-surjection.html">iff</a> there is a surjection <span class="inline-math">$Y \to X$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Cantor-Schröder-Bernstein)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Cantor-Schroder-Bernstein.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in a model of <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-Zermelo-Fraenkel-set-theory.html"><span class="inline-math">$\mathsf{ZF}$</span></a>.
+                            Let <span class="inline-math">$X, Y$</span> be sets.
+                        </p>
+                        <p>
+                            If <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-cardinality.html"><span class="inline-math">$|X|\leq |Y|$</span></a> and <span class="inline-math">$|Y| \leq |X|$</span>, then <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-cardinality.html"><span class="inline-math">$|X| = |Y|$</span></a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Cantor)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Cantor.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in a model of finite set theory.
+                        </p>
+                        <p>
+                            For any set <span class="inline-math">$X$</span>, <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-cardinality.html"><span class="inline-math">$|X| &lt; |\mathcal{P}(X)|$</span></a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Cantor.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (initial ordinal, cardinal)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-initial-ordinal-cardinal.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            An <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-ordinal.html">ordinal</a> <span class="inline-math">$α$</span> is called <em>initial</em>
+                            if <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-cardinality.html"><span class="inline-math">$|γ| &lt; |α|$</span></a> for all <span class="inline-math">$γ&lt;α$</span>.
+                            An initial ordinal is called a <em>cardinal</em>.
+                        </p>
+                        <p>
+                            In <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-set-theory.html"><span class="inline-math">$\mathsf{FST}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a>,
+                            if <span class="inline-math">$X$</span> is a set which can be well-ordered (which is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Zermelo-well-ordering.html">always the case</a> assuming <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-choice.html"><span class="inline-math">$\mathsf{AC}$</span></a>),
+                            write <span class="inline-math">$|X|$</span> for the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Zermelo-well-ordering.html">unique cardinal</a> in bijection with <span class="inline-math">$X$</span>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$κ$</span> is an initial ordinal, then <span class="inline-math">$κ$</span> is the minimal element of <span class="inline-math">$\sb{\text{ordinal }α}{|α| = |κ|}$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$κ, λ$</span> are initial ordinals, then either <span class="inline-math">$|κ|&lt;|λ|$</span>, <span class="inline-math">$κ = λ$</span>, or <span class="inline-math">$|κ|&gt;|λ|$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$A$</span> is a set of initial ordinals, then <span class="inline-math">$\bigcup A$</span> is also an initial ordinal.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (aleph numbers)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-aleph-numbers.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <span class="inline-math">$\mathsf{FST}$</span> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-successor-inductive-set-axiom-of-infinity.html"><span class="inline-math">$\mathsf{Inf}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a>.
+                            Define by <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-transfinite-induction.html">transfinite recursion</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\aleph_0 :={}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-ordinal.html"><span class="inline-math">$ω$</span></a>,
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\aleph_{s(α)} :={}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Hartogs.html"><span class="inline-math">$\aleph$</span></a><span class="inline-math">$(\aleph_α)$</span>,
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\aleph_γ := \bigcup \sb{\aleph_α}{α&lt;λ}$</span> if <span class="inline-math">$λ$</span> is a limit ordinal.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            An ordinal is called an <em>aleph</em> if it is <span class="inline-math">$\aleph_α$</span> for some <span class="inline-math">$α$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$\aleph_α$</span> is called a <em>successor cardinal</em> if <span class="inline-math">$α$</span> is a successor ordinal.
+                            Otherwise it is a <em>limit cardinal</em>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                By transfinite induction, <span class="inline-math">$\aleph_α$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-initial-ordinal-cardinal.html">cardinal</a> for all ordinal <span class="inline-math">$α$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (all infinite cardinals are alephs)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-all-infinite-cardinals-are-alephs.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <span class="inline-math">$\mathsf{FST}$</span> + <span class="inline-math">$\mathsf{Inf}$</span> + <span class="inline-math">$\mathsf{Repl}$</span>.
+                        </p>
+                        <p>
+                            Any <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-infinite-countable-uncountable-countably-infinite.html">infinite</a> <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-initial-ordinal-cardinal.html">cardinal</a> is an <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-aleph-numbers.html">aleph</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-all-infinite-cardinals-are-alephs.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Hessenberg)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Hessenberg.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in a model of <span class="inline-math">$\mathsf{FST}$</span> + <span class="inline-math">$\mathsf{Inf}$</span> + <span class="inline-math">$\mathsf{Repl}$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$κ$</span> is an <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-infinite-countable-uncountable-countably-infinite.html">infinite</a> <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-initial-ordinal-cardinal.html">cardinal</a>, then
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-initial-ordinal-cardinal.html"><span class="inline-math">$|κ \times κ|$</span></a><span class="inline-math">${}= κ$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Hessenberg.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (cardinal addition and multiplication)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-cardinal-addition-and-multiplication.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <span class="inline-math">$\mathsf{FST}$</span> + <span class="inline-math">$\mathsf{Inf}$</span> + <span class="inline-math">$\mathsf{Repl}$</span>.
+                        </p>
+                        <p>
+                            Define <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-initial-ordinal-cardinal.html">cardinal</a> addition and multiplication by
+                            <span class="display-math">$$ \begin{align*}
+                                κ + λ &amp;:= |κ \oplus λ| = |κ \times  \set{0} \cup λ \times \set{1}|, \\
+                                κ \cdot λ &amp;:= |κ \otimes λ| = |κ \times λ|.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            For cardinals <span class="inline-math">$κ,λ$</span> with both at least 1 and either infinite,
+                            <span class="display-math">$$ \begin{align*}
+                                κ + λ = \max\set{κ, λ} = κ\cdot λ.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-cardinal-addition-and-multiplication.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (cardinal exponentiation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-cardinal-exponentiation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in a model of <span class="inline-math">$\mathsf{FST}$</span> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-replacement.html"><span class="inline-math">$\mathsf{Repl}$</span></a> + <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-axiom-of-choice.html"><span class="inline-math">$\mathsf{AC}$</span></a>.
+                            For <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-initial-ordinal-cardinal.html">cardinals</a> <span class="inline-math">$κ, λ$</span>, define
+                            <span class="display-math">$$ \begin{align*}
+                                κ^λ = \left|\sb{f\in \mathcal{P}(λ\times κ)}{f: λ\to κ}\right|.
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <ul>
+                            <li>
+                                <p>
+                                    <span class="inline-math">$(κ$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-cardinal-addition-and-multiplication.html"><span class="inline-math">${}\cdot{}$</span></a><span class="inline-math">$λ)^μ = κ^μ \cdot λ^μ$</span>;
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$κ^{λ + μ} = κ^λ \cdot κ^μ$</span>;
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$κ^{λ\cdot μ} = (κ^λ)^{μ}$</span>;
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    If <span class="inline-math">$κ\leq λ$</span>, then <span class="inline-math">$κ^μ \leq λ^μ$</span> and <span class="inline-math">$μ^κ \leq μ^λ$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$|\mathcal{P}(λ)| = 2^λ$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    <span class="inline-math">$|\R| = 2^{\aleph_0}$</span>.
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (cardinal exponentiation with small base)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-cardinal-exponentiation-with-small-base.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in <span class="inline-math">$\mathsf{FST}$</span> + <span class="inline-math">$\mathsf{Inf}$</span> + <span class="inline-math">$\mathsf{Repl}$</span> + <span class="inline-math">$\mathsf{AC}$</span>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$κ,λ$</span> be cardinals.
+                            If <span class="inline-math">$λ$</span> is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-finite-infinite-countable-uncountable-countably-infinite.html">infinite</a> and <span class="inline-math">$2\leq κ\leq{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Hartogs.html"><span class="inline-math">$λ^+$</span></a>,
+                            then the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-cardinal-exponentiation.html">exponentiation</a> satisfies
+                            <span class="display-math">$$ \begin{align*}
+                                κ^λ = 2^λ.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-cardinal-exponentiation-with-small-base.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (beth numbers)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-beth-numbers.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Work in a model of <span class="inline-math">$\mathsf{FST}$</span> + <span class="inline-math">$\mathsf{Inf}$</span> + <span class="inline-math">$\mathsf{Repl}$</span> + <span class="inline-math">$\mathsf{AC}$</span>.
+                            Define by <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-transfinite-induction.html">transfinite recursion</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\beth_0 :={}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-ordinal.html"><span class="inline-math">$ω$</span></a>,
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\beth_{s(α)} :={}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-cardinal-exponentiation.html"><span class="inline-math">$2^{\beth_α}$</span></a>,
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\beth_{λ} := \bigcup \sb{2^{\beth_α}}{α&lt;λ}$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <blockquote>
+                            <p>
+                                By induction, <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-aleph-numbers.html"><span class="inline-math">$\aleph_α$</span></a><span class="inline-math">${}\leq \beth_α$</span> because <span class="inline-math">$\aleph(κ) = κ^+ \leq 2^κ$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (infinitely descending sequence)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-infinitely-descending-sequence.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Work in a model of <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-Zermelo-Fraenkel-set-theory.html"><span class="inline-math">$\mathsf{ZF}$</span></a><span class="inline-math">${}= \mathsf{FST} + \mathsf{Inf} + \mathsf{Repl} + \mathsf{Found}$</span>.
+            </p>
+            <p>
+                There is no <em>infinitely descending sequence</em>,
+                i.e. a function <span class="inline-math">$s$</span> of domain <span class="inline-math">$\N$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    s(n+1) \in s(n) \quad \text{for all $n\in \N$}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-infinitely-descending-sequence.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (epsilon-induction)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-epsilon-induction.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Work in a model of <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-Zermelo-Fraenkel-set-theory.html"><span class="inline-math">$\mathsf{ZF}$</span></a><span class="inline-math">${}= \mathsf{FST} + \mathsf{Inf} + \mathsf{Repl} + \mathsf{Found}$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$ϕ$</span> is a <span class="inline-math">$\in$</span>-formula which is <em>inductive</em>,
+                i.e. there holds
+                <span class="display-math">$$ \begin{align*}
+                    \forall x (\forall y (y\in x \Rightarrow ϕ(y)) \Rightarrow ϕ(x)),
+                \end{align*} $$</span>
+                then <span class="inline-math">$ϕ(x)$</span> holds for all sets <span class="inline-math">$x$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-epsilon-induction.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (von Neumann universe, Mirimanoff rank)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-von-Neumann-universe-Mirimanoff-rank.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Define by <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-transfinite-induction.html">transfinite recursion</a>
+                <span class="display-math">$$ \begin{align*}
+                    V_0 ={}&amp; \emptyset, \\
+                    V_{s(α)} ={}&amp; \mathcal{P}(V_α), \\
+                    V_λ ={}&amp; \bigcup_{α&lt;λ} V_α, &amp;&amp;\text{$λ$ is a limit ordinal}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                A set <span class="inline-math">$x$</span> is a <em>von Neumann set</em>
+                if <span class="inline-math">$x\in V_α$</span> for some ordinal <span class="inline-math">$α$</span>.
+                The class of all von Neumann sets is called the <em>von Neumann universe</em>.
+            </p>
+            <p>
+                If <span class="inline-math">$x$</span> is von Neumann,
+                its <em>Mirimanoff rank</em> is the minimum <span class="inline-math">$α$</span>
+                such that <span class="inline-math">$x\in V_{α+1}$</span> (or equivalently <span class="inline-math">$x \subseteq V_α$</span>).
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$V_α$</span> is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-transitive-set.html">transitive</a> by transfinite induction.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$α\in V_{α+1}$</span> for any ordinal <span class="inline-math">$α$</span>.
+                    Moreover <span class="inline-math">$\set{\text{ordinals in }V_α} = α$</span>.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    For <span class="inline-math">$x$</span> von Neumann,
+                    <span class="display-math">$$ \begin{align*}
+                        ρ(x) = \bigcup \sb{ρ(y)+1}{y \in x}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (every set is von Neumann)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-every-set-is-von-Neumann.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Work in a model of <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-Zermelo-Fraenkel-set-theory.html"><span class="inline-math">$\mathsf{ZF}$</span></a><span class="inline-math">${}= \mathsf{FST} + \mathsf{Inf} + \mathsf{Repl} + \mathsf{Found}$</span>.
+            </p>
+            <p>
+                Every set is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-von-Neumann-universe-Mirimanoff-rank.html">von Neumann</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-every-set-is-von-Neumann.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (proper class and boundedness)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-proper-class-and-boundedness.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a model <span class="inline-math">$\mathbf{X}$</span> of <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-Zermelo-Fraenkel-set-theory.html"><span class="inline-math">$\mathsf{ZF}$</span></a><span class="inline-math">${}= \mathsf{FST} + \mathsf{Inf} + \mathsf{Repl} + \mathsf{Found}$</span>.
+            </p>
+            <p>
+                A <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-class-coextensional.html">class</a>
+                <span class="inline-math">$A \subseteq X$</span> is said to be <em>bounded</em>
+                if <span class="inline-math">$A \subseteq V^\mathbf{X}_α$</span>
+                for some ordinal <span class="inline-math">$α$</span>, where <span class="inline-math">$V^\mathbf{X}_α\subseteq X$</span>
+                is the class coextensional to the von Neumann stage <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-von-Neumann-universe-Mirimanoff-rank.html"><span class="inline-math">$V_α$</span></a>.
+            </p>
+            <p>
+                A <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-definable.html">definable</a> subset <span class="inline-math">$A \subseteq X$</span>
+                is a proper class
+                iff <span class="inline-math">$A$</span> is <em>unbounded</em>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-proper-class-and-boundedness.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (hereditarily finite)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-hereditarily-finite.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Work in a model of <span class="inline-math">$\mathsf{FST} + \mathsf{Inf} + \mathsf{Repl}$</span>.
+            </p>
+            <p>
+                A set <span class="inline-math">$x$</span> is <em>hereditarily finite</em> if <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-transitive-closure.html"><span class="inline-math">$\op{tcl}$</span></a><span class="inline-math">$(x)$</span> is finite.
+            </p>
+            <p>
+                The class of hereditarily finite sets is <span class="inline-math">$\mathbf{HF}$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    Assuming <span class="inline-math">$\mathsf{Found}$</span> (so in <span class="inline-math">$\mathsf{ZF}$</span>),
+                    <span class="inline-math">$\mathbf{HF} ={}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-von-Neumann-universe-Mirimanoff-rank.html"><span class="inline-math">$V_ω$</span></a> is a set.
+                    (<a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-HF-is-a-set.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <p>
+                >In <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-Zermelo-Fraenkel-set-theory.html"><span class="inline-math">$\mathsf{ZFC}$</span></a>,
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$(\mathbf{HF}, \in)$</span> is a model of <span class="inline-math">$\mathsf{ZFC}$</span> except <span class="inline-math">$\mathsf{Inf}$</span>.
+                    >
+                    Note <span class="inline-math">$V_{ω+ω}$</span> fails replacement: <span class="inline-math">$ω+ω = \sb{ω+n}{n\in \N}\not\in V_{ω+ω}$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>

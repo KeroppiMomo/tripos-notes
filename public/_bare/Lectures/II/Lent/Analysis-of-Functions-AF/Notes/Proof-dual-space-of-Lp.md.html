@@ -1,0 +1,205 @@
+
+<h1>Well-defined</h1>
+
+<p>
+    Linearity of <span class="inline-math">$L_g$</span> follows from linearity of integral.
+    Hölder's inequality shows boundedness and
+    <span class="display-math">$$ \begin{align*}
+        \|L_g\| \leq \|g\|_q.
+    \end{align*} $$</span>
+</p>
+
+<h1>Isometry</h1>
+
+<p>
+    We want to show <span class="inline-math">$\|L_g\| \geq \|g\|_q$</span>.
+</p>
+
+<h2><span class="inline-math">$1&lt;p\leq \infty$</span></h2>
+
+<p>
+    Let <span class="inline-math">$g\in L^q(E)$</span> with <span class="inline-math">$1&lt;q&lt;\infty$</span>.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        f(x) := \begin{cases}
+            |g(x)|^q / g(x), &amp;g(x)\neq 0, \\
+            0, &amp;g(x) = 0.
+        \end{cases}
+    \end{align*} $$</span>
+    If <span class="inline-math">$p&lt;\infty$</span>, then using <span class="inline-math">$p(q-1) = q$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        \|f\|_p^p = \|g^{q-1}\|_p^p = \|g\|_q^q = \|g\|_q^{p(q-1)} \implies \|f\|_p = \|g\|_q^{q-1} &lt;\infty
+    \end{align*} $$</span>
+    and
+    <span class="display-math">$$ \begin{align*}
+        L_g(f) = \int |f(x)| |g(x)| \d μ = \int |g(x)|^q \d μ = \|g\|^q_q = \|f\|_p \|g\|_q.
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$\|L_g\| \geq \|g\|_q$</span>.
+</p>
+<p>
+    If <span class="inline-math">$p = \infty$</span> and <span class="inline-math">$q=1$</span>, then <span class="inline-math">$\|f\|_\infty \leq 1$</span>
+    and <span class="inline-math">$L_g(f) = \int |g(x)| \d μ = \|g\|_1$</span>,
+    so <span class="inline-math">$\|L_g\| \geq \|g\|_1$</span>.
+</p>
+
+<h2><span class="inline-math">$p=1$</span>, <span class="inline-math">$q=\infty$</span></h2>
+
+<!-- BEGIN BLOCK ID inf -->
+<p id="^inf">
+    It suffices to show if <span class="inline-math">$g\in L^\infty(E)$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        A = \sb{x\in E}{|g(x)| &gt; \|L_g\|}
+    \end{align*} $$</span>
+    has measure 0.
+</p>
+
+<!-- END BLOCK ID inf -->
+<p>
+    Let <span class="inline-math">$F\in \mathcal{B}$</span> be any measurable set with <span class="inline-math">$μ(F)&lt;\infty$</span>
+    and define
+    <span class="display-math">$$ \begin{align*}
+        B_k = \sb{x\in F}{|g(x)| \geq \|L_g\| + 1/k}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        f_k(x) = \frac{\mathbb{1}_{B_k}(x)}{g(x)},
+    \end{align*} $$</span>
+    which is <span class="inline-math">$L^1$</span> as <span class="inline-math">$\|f_k\|_1 \leq (\|L_g\| + 1/k)\inv \cdot μ(B_k) &lt; \infty$</span>.
+</p>
+<p>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        μ(B_k) = L_g(f_k) \leq \|L_g\|\|f_k\|_1 \leq \underbrace{\frac{\|L_g\|}{\|L_g\| + 1/k}}_{&lt;1} μ(B_k)
+    \end{align*} $$</span>
+    so <span class="inline-math">$μ(B_k) = 0$</span>.
+</p>
+<p>
+    Then <span class="inline-math">$\sb{x\in F}{|g(x)| &gt; \|L_g\|} = \bigcup_{k} B_k$</span> has measure zero.
+</p>
+<p>
+    As <span class="inline-math">$μ$</span> is <span class="inline-math">$σ$</span>-finite,
+    take <span class="inline-math">$F = F_1, F_2, \ldots$</span> with <span class="inline-math">$\bigcup_{i} F_i = E$</span>,
+    then argue <span class="inline-math">$A = \bigcup_{i} \sb{x\in F_i}{|g(x)| &gt; \|L_g\|}$</span> has measure zero.
+</p>
+
+<h1>Surjectivity when <span class="inline-math">$1\leq p&lt;\infty$</span></h1>
+
+<p>
+    We'll focus on when <span class="inline-math">$μ$</span> is finite.
+    Let <span class="inline-math">$L \in L^p(E)^\ast$</span> be a bounded linear functional.
+</p>
+
+<h2><span class="inline-math">$L(\mathbb{1}_A) = \int \mathbb{1}_A g \d μ$</span> for some <span class="inline-math">$g\in L^{1}(E)$</span></h2>
+
+<p>
+    Define, for <span class="inline-math">$A\in \mathcal{B}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        ν(A) = L(\mathbb{1}_A)
+    \end{align*} $$</span>
+    which is a complex measure:
+    finite additivity is clear from linearity of <span class="inline-math">$L$</span>.
+    Let <span class="inline-math">$A_1, A_2, \ldots$</span> be countably many disjoint measurable sets.
+    Letting <span class="inline-math">$B_n = \bigsqcup_{m\geq n} A_m$</span>,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        ν\Bigl(\bigsqcup_{n\geq 1} A_n\Bigr) = ν\Bigl(\bigsqcup_{m=1}^{n} A_m \sqcup B_{n+1}\Bigr) = \sum_{m=1}^{n} ν(A_m) + ν(B_{n+1})
+    \end{align*} $$</span>
+    so it suffices to show <span class="inline-math">$μ(B_{n}) \to 0$</span> as <span class="inline-math">$n\to \infty$</span>
+    for any decreasing sequence <span class="inline-math">$(B_n)$</span> with <span class="inline-math">$\bigcap_{n\geq 1} B_n = \emptyset$</span>.
+</p>
+<p>
+    This follows from
+    <span class="display-math">$$ \begin{align*}
+        ν(B_n) = L(\mathbb{1}_{B_n}) \leq \|L\| \|\mathbb{1}_{B_n}\|_q = \|L\| \cdot μ(B_n)^{1/q} \to 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Moreover <span class="inline-math">$ν$</span> is absolutely continuous with respect to <span class="inline-math">$μ$</span>,
+    since if <span class="inline-math">$μ(A) = 0$</span>,
+    then <span class="inline-math">$\mathbb{1}_A$</span> vanishes <span class="inline-math">$μ$</span>-almost everywhere
+    so equals 0 in <span class="inline-math">$L_q$</span>
+    and hence <span class="inline-math">$ν(A) = L(\mathbb{1}_A) = L(0) = 0$</span>.
+</p>
+<p>
+    Thus by <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Lebesgue-Radon-Nikodym.html">Radon-Nikodym</a>,
+    there exists some <span class="inline-math">$g\in L^1(E)$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        L(\mathbb{1}_A) = ν(A) = \int_{A} g \d μ.
+    \end{align*} $$</span>
+</p>
+
+<h2><span class="inline-math">$L(f) = \int fg \d μ$</span> for all <span class="inline-math">$f\in L^\infty(E)$</span></h2>
+
+<p>
+    By linearity, <span class="inline-math">$L(f) = \int fg \d μ$</span> for any simple function <span class="inline-math">$f$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$f\in L^\infty(E)$</span>.
+    Find a sequence <span class="inline-math">$f_n: E\to \C$</span> of simple functions
+    with <span class="inline-math">$|f_n(x)| \leq |f(x)|$</span>
+    and <span class="inline-math">$f_n(x) \to f(x)$</span> for <span class="inline-math">$μ$</span>-almost every <span class="inline-math">$x$</span>
+    (e.g. by <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Theorem-approximation-by-simple-functions.html">approximating</a> <span class="inline-math">$|f|$</span>
+    and multiplying by the argument).
+</p>
+<p>
+    As we assumed <span class="inline-math">$μ$</span> is finite, <span class="inline-math">$f\in L^p(E)$</span>.
+    By [[FILE NOT FOUND: dominated convergence]], <span class="inline-math">$f_n \to f$</span> in <span class="inline-math">$L^p$</span>,
+    so <span class="inline-math">$L(f_n) \to L(f)$</span> by the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-bounded-linear-maps-and-continuity.html">continuity</a> of <span class="inline-math">$L$</span>.
+</p>
+<p>
+    By [[FILE NOT FOUND: dominated convergence]] again, <span class="inline-math">$\int f_n g \d μ \to \int fg \d μ$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        L(f) = \lim_{n\to \infty} L(f_n) = \lim_{n\to \infty} \int f_ng \d μ = \int fg \d μ.
+    \end{align*} $$</span>
+</p>
+
+<h2><span class="inline-math">$g\in L^q(E)$</span></h2>
+
+<p>
+    If <span class="inline-math">$p=1$</span>,
+    <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-dual-space-of-Lp.html#^inf">our previous argument</a> shows <span class="inline-math">$\|g\|_\infty \leq \|L\|$</span>
+    as <span class="inline-math">$f_k$</span> is <span class="inline-math">$L^\infty$</span>.
+</p>
+<p>
+    Suppose <span class="inline-math">$p&gt;1$</span>.
+    For <span class="inline-math">$R&gt;0$</span>, define
+    <span class="display-math">$$ \begin{align*}
+        g_R(x) = \begin{cases}
+            g(x), &amp;|g(x)|&lt;R, \\
+            \frac{g(x)}{|g(x)|}R, &amp;|g(x)|\geq R
+        \end{cases}
+    \end{align*} $$</span>
+    which has <span class="inline-math">$\|g_{R}\|_\infty \leq R$</span>.
+    Let
+    <span class="display-math">$$ \begin{align*}
+        f_R(x) = \begin{cases}
+            |g_R(x)|^{q} / g_R(x), &amp;g_R(x)\neq 0, \\
+            0, &amp;g_R(x) = 0,
+        \end{cases}
+    \end{align*} $$</span>
+    which has <span class="inline-math">$\|f_R\|_\infty \leq R^{q-1}$</span> and shown previously <span class="inline-math">$\|g_R\|_q^{q-1} = \|f_R\| &lt; \infty$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \|L\| \cdot \|f_R\|_p \geq |L(f_R)| = \left|\int f_R g \d μ \right| \leq \int |f_R| |g| \d μ \leq \int |f_R| |g_R| \d μ = \|g_R\|_q^{q}
+    \end{align*} $$</span>
+    and hence
+    <span class="display-math">$$ \begin{align*}
+        \|g_R\|_q \leq \|L\|.
+    \end{align*} $$</span>
+    As <span class="inline-math">$|g_R|\to |g|$</span> as <span class="inline-math">$R\to \infty$</span>,
+    by <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Theorem-monotone-convergence-theorem.html">monotone convergence</a>,
+    <span class="inline-math">$\|g_R\|_q \to \|g\|_q$</span>,
+    so <span class="inline-math">$\|g\|_q \leq \|L\|$</span>.
+</p>
+
+<h2>Conclusion</h2>
+
+<p>
+    Now that <span class="inline-math">$g\in L^q(E)$</span>, we can talk about <span class="inline-math">$L_g$</span>.
+    As <span class="inline-math">$L(f) = L_g(f)$</span> on <span class="inline-math">$f\in L^\infty(E)$</span>,
+    which is dense in <span class="inline-math">$L^p(E)$</span>,
+    we have <span class="inline-math">$L = L_f$</span> by continuity.
+</p>

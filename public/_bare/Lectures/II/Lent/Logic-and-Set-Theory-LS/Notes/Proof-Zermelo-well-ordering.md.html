@@ -1,0 +1,56 @@
+
+<h1><span class="inline-math">$\mathsf{ZWOP} \implies \mathsf{AC}$</span></h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-choice-function-on-power-set.html">It suffices</a> to produce a choice function for <span class="inline-math">$\mathcal{P}(X)$</span> for a given set <span class="inline-math">$X$</span>.
+    If <span class="inline-math">$X = \emptyset$</span>, then the function works.
+</p>
+<p>
+    By <span class="inline-math">$\mathsf{ZWOP}$</span>, let <span class="inline-math">$(X,&lt;)$</span> be a well-order.
+    Fix some <span class="inline-math">$x_0\in X$</span>.
+    Then define (by separation)
+    <span class="display-math">$$ \begin{align*}
+        f: \mathcal{P}(X) &amp;\to X \\
+        Y &amp;\mapsto \begin{cases}
+            \text{$&lt;$-minimal element of $Y$}, &amp;\text{if }Y\neq \emptyset, \\
+            x_0, &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+    This is a choice function.
+</p>
+
+<h1><span class="inline-math">$\mathsf{AC} \implies \mathsf{ZWOP}$</span></h1>
+
+<p>
+    Let <span class="inline-math">$X$</span> be a set, and find <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Hartogs.html">Hartogs's aleph</a> <span class="inline-math">$α := \aleph(X)$</span>.
+    By <span class="inline-math">$\mathsf{AC}$</span>, fix a choice function <span class="inline-math">$f: \mathcal{P}(X) \to X$</span>.
+</p>
+<p>
+    Introduce a new set <span class="inline-math">$\mathrm{STOP}\not\in X$</span>.
+    Define by <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-order-induction-and-well-foundedness.html">induction</a>
+    <span class="display-math">$$ \begin{align*}
+        g: α &amp;\to X\cup \set{\mathrm{STOP}} \\
+        γ &amp;\mapsto \begin{cases}
+            f(X \setminus \op{ran}(g|_γ)), &amp;\text{if $X\not \subseteq \op{ran}(g|_γ)$}, \\
+            \mathrm{STOP}, &amp;\text{if $X \subseteq \op{ran}(g|_γ)$}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    Note by construction for <span class="inline-math">$β \leq γ$</span>,
+    <span class="inline-math">$\mathrm{STOP}\not\in \op{ran}(g|_{β})$</span>
+    implies <span class="inline-math">$g|_β : β\to X$</span> is injective.
+    In particular by definition of <span class="inline-math">$α$</span>,
+    we have <span class="inline-math">$\mathrm{STOP}\in \op{ran}(g)$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$γ\in α$</span> be least such that <span class="inline-math">$g(γ) = \mathrm{STOP}$</span>.
+    Then <span class="inline-math">$g|_γ: γ\to X$</span> is an injection by construction.
+    Moreover <span class="inline-math">$X \subseteq \op{ran}(g|_γ)$</span>,
+    so <span class="inline-math">$g|_γ$</span> is also a surjection.
+</p>
+<p>
+    Define a relation <span class="inline-math">$&lt;$</span> on <span class="inline-math">$X$</span> by <span class="inline-math">$x&lt;x&#x27;$</span> iff <span class="inline-math">$g\inv(x) \in g\inv(y)$</span>.
+    Then <span class="inline-math">$g|_γ: (γ, \in) \to (X, &lt;)$</span> is an isomorphism,
+    so <span class="inline-math">$(X, &lt;)$</span> is a well-order.
+</p>

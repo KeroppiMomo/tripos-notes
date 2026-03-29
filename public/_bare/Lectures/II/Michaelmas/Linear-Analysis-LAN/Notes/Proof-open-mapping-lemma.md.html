@@ -1,0 +1,43 @@
+<p>
+    Fix <span class="inline-math">$y\in B_Y$</span>.
+    Perform successive approximation:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Let <span class="inline-math">$x_0\in MB_X$</span> such that <span class="inline-math">$\|y - Tx_0\| \leq δ$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$(y-Tx_0)/δ\in B_Y$</span>, so let <span class="inline-math">$x_1\in MB_X$</span> such that <span class="inline-math">$\|(y-Tx_0)/δ - Tx_1\| \leq δ$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$(y - Tx_0 - δTx_1)/δ^2\in B_Y$</span>, so let <span class="inline-math">$x_2\in MB_X$</span> such that <span class="inline-math">$\|(y-Tx_0-δTx_1)/δ^2 - Tx_2\| \leq δ$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    And so on.
+    We obtain a sequence <span class="inline-math">$(x_n)$</span> in <span class="inline-math">$MB_X$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \left\|y - T(x_0 + δx_1 + \ldots + δ^n x_n)\right\| \leq δ^{n+1}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now <span class="inline-math">$\|\sum_{k=0}^{n} δ^k x_k\| \leq \sum_{k=0}^{n} δ^k M \leq M/(1-δ)$</span>,
+    so <span class="inline-math">$\sum_{k=0}^{n} δ^kx_k\in \frac{M}{1-δ}B_{X}$</span>,
+    which is closed.
+    Since <span class="inline-math">$X$</span> is complete,
+    <span class="inline-math">$\sum_{n=0}^{\infty} δ^n x_n$</span> converges to say <span class="inline-math">$x\in \frac{M}{1-δ} B_X$</span>.
+</p>
+<p>
+    As <span class="inline-math">$T$</span> is continuous,
+    <span class="display-math">$$ \begin{align*}
+        \|y - Tx\| = \lim_{n\to \infty} \|y - T(x_0 + δx_1 + \ldots + δ^n x_n)\| = 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$Tx = y$</span>, as required.
+</p>

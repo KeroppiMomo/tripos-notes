@@ -1,0 +1,82 @@
+<p>
+    Since <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-uniform-limit.html"><span class="inline-math">$C(K)$</span> is a complete metric space</a>,
+    by <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-Heine-Borel-compact-iff-totally-bounded-and-complete.html">Heine-Borel</a>,
+    <span class="inline-math">$\mathcal{F}\subseteq C(K)$</span> is relatively compact
+    iff <span class="inline-math">$\mathcal{F}$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-bounded-totally-bounded.html">totally bounded</a>,
+    i.e. <span class="inline-math">$\mathcal{F}$</span> has a finite <span class="inline-math">$ε$</span>-net for all <span class="inline-math">$ε&gt;0$</span>.
+</p>
+
+<h1>Totally bounded <span class="inline-math">$\implies$</span> uniformly bounded</h1>
+
+<p>
+    Choose a finite <span class="inline-math">$1$</span>-net <span class="inline-math">$\set{f_1, \ldots, f_n}$</span> of <span class="inline-math">$\mathcal{F}$</span>.
+</p>
+<p>
+    Then for any <span class="inline-math">$f\in \mathcal{F}$</span>,
+    there exists <span class="inline-math">$i$</span> such that <span class="inline-math">$\|f - f_i\|_\infty &lt; 1$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        \|f\|_\infty \leq \|f - f_i\|_\infty + \|f_i\|_\infty &lt; 1+ \max\{\|f_1\|_\infty, \ldots, \|f_n\|_\infty\}.
+    \end{align*} $$</span>
+</p>
+
+<h1>Totally bounded <span class="inline-math">$\implies$</span> equicontinuous</h1>
+
+<p>
+    Fix <span class="inline-math">$ε&gt;0$</span> and <span class="inline-math">$x\in K$</span>.
+    Let <span class="inline-math">$\set{f_1, \ldots, f_n}$</span> be an <span class="inline-math">$ε$</span>-net of <span class="inline-math">$\mathcal{F}$</span>.
+    For each <span class="inline-math">$f_i$</span>, by continuity
+    let <span class="inline-math">$U_i$</span> be a neighbourhood of <span class="inline-math">$x$</span>
+    such that <span class="inline-math">$|f_i(y) - f_i(x)| &lt; ε$</span> for all <span class="inline-math">$y\in U_i$</span>.
+</p>
+<p>
+    Take <span class="inline-math">$U = \bigcap_{i=1}^{n} U_i$</span>.
+    For each <span class="inline-math">$f\in \mathcal{F}$</span>,
+    there exists <span class="inline-math">$i$</span> such that <span class="inline-math">$\|f_i - f\|_\infty&lt;ε$</span>,
+    so for all <span class="inline-math">$y\in U\subseteq U_i$</span>,
+    <span class="display-math">$$ \begin{align*}
+        |f(y) - f(x)| &amp;\leq |f(y) - f_i(y)| + |f_i(y) - f_i(x)| + |f_i(x) - f(x)| \\
+        &amp;&lt; ε + ε + ε = 3ε.
+    \end{align*} $$</span>
+</p>
+
+<h1>Uniformly bounded and equicontinuous <span class="inline-math">$\implies$</span> totally bounded</h1>
+
+<p>
+    Fix <span class="inline-math">$ε&gt;0$</span>. We want to construct a finite <span class="inline-math">$ε$</span>-net of <span class="inline-math">$\mathcal{F}$</span>.
+</p>
+<p>
+    For each <span class="inline-math">$x\in K$</span>,
+    by equicontinuity, let <span class="inline-math">$U_x$</span> be an open neighbourhood of <span class="inline-math">$x$</span>
+    such that for all <span class="inline-math">$f\in \mathcal{F}$</span> and <span class="inline-math">$y\in U_x$</span>,
+    we have <span class="inline-math">$|f(y) - f(x)| &lt; ε$</span>.
+    <span class="inline-math">$\sb{U_x}{x\in K}$</span> is an open cover of the compact space <span class="inline-math">$K$</span>,
+    so there exists <span class="inline-math">$x_1, \ldots, x_n\in K$</span>
+    such that <span class="inline-math">$K = \bigcup_{i=1}^{n} U_{x_i}$</span>.
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        T: C(K) &amp;\to l_\infty^n \\
+        f &amp;\mapsto (f(x_1), \ldots, f(x_n))
+    \end{align*} $$</span>
+    and let <span class="inline-math">$S = T(\mathcal{F})$</span>.
+    Since <span class="inline-math">$\mathcal{F}$</span> is uniformly bounded,
+    <span class="inline-math">$S$</span> is bounded in <span class="inline-math">$l_\infty^n$</span>.
+    But <span class="inline-math">$l_\infty^n$</span> is finite-dimensional,
+    so <span class="inline-math">$S$</span> is totally bounded.
+</p>
+<p>
+    Let <span class="inline-math">$\set{f_1, \ldots, f_m}\subseteq \mathcal{F}$</span>
+    so that <span class="inline-math">$\set{Tf_1, \ldots, Tf_m}$</span>
+    is an <span class="inline-math">$ε$</span>-net of <span class="inline-math">$S$</span>.
+    Then <span class="inline-math">$\set{f_1, \ldots, f_m}$</span> is an <span class="inline-math">$3ε$</span>-net of <span class="inline-math">$S$</span>:
+    indeed for any <span class="inline-math">$f\in \mathcal{F}$</span>, <span class="inline-math">$x\in K$</span>,
+    letting <span class="inline-math">$i$</span> and <span class="inline-math">$j$</span> such that <span class="inline-math">$x\in U_{x_i}$</span>
+    and <span class="inline-math">$\|Tf - Tf_j\|_\infty &lt; ε$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        |f(x) - f_j(x)| \leq{}&amp; |f(x) - f(x_i)| + |f(x_i) - f_j(x_i)| + |f_j(x_i) - f_j(x)| \\
+        &lt;{}&amp; ε + \|Tf - Tf_j\|_\infty + ε \\
+        &lt;{}&amp; 3ε.
+    \end{align*} $$</span>
+</p>

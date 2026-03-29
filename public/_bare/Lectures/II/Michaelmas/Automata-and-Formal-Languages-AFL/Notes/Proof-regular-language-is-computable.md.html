@@ -1,0 +1,71 @@
+<p>
+    Let <span class="inline-math">$L\subseteq \mathbb{W}$</span> be a regular language
+    and <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-regular-language-iff-accepted-by-automaton.html">let</a> <span class="inline-math">$D = (Σ, Q, δ, q_0, F)$</span>
+    be a deterministic automaton that accepts <span class="inline-math">$L$</span>.
+    We will describe a register machine <span class="inline-math">$\hat M = (Σ, \hat Q, P)$</span>
+    that takes <span class="inline-math">$w$</span> as an input in register 0,
+    mimics the computation of <span class="inline-math">$D$</span>,
+    and outputs <span class="inline-math">$a$</span> if <span class="inline-math">$w\in L$</span> and <span class="inline-math">$ε$</span> if <span class="inline-math">$w\not\in L$</span>.
+    For each state <span class="inline-math">$q\in Q$</span> of the automaton,
+    <span class="inline-math">$M$</span> will have a subset <span class="inline-math">$Q_q \subseteq \hat Q$</span> of states.
+</p>
+<ul>
+<li>
+    <p>
+        Move the content of register 0 into register 1 in reverse order.
+    </p>
+    
+</li><li>
+    <p>
+        Move into <span class="inline-math">$Q_{q_0}$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    For each <span class="inline-math">$q\in Q$</span>, <span class="inline-math">$Q_q$</span> performs the following operations:
+</p>
+<ul>
+<li>
+    <p>
+        Read and remove the final letter in register 1, if exists.
+    </p>
+    
+</li><li>
+    <p>
+        If register 1 is empty,
+    </p>
+    <ul>
+    <li>
+        <p>
+            in case <span class="inline-math">$q\not\in F$</span>, empty register 0 and halt;
+        </p>
+        
+    </li><li>
+        <p>
+            in case <span class="inline-math">$q\in F$</span>, empty register 0, add <span class="inline-math">$a$</span> to register 0, and halt.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        If the removed letter is <span class="inline-math">$b$</span>:
+    </p>
+    <ul>
+    <li>
+        <p>
+            Compute <span class="inline-math">$q&#x27; = δ(q,b)$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            Move into <span class="inline-math">$Q_{q&#x27;}$</span>.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ul>

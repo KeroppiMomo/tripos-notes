@@ -1,0 +1,18 @@
+<p>
+    Let <span class="inline-math">$M=(Σ, Q, P)$</span> performs <span class="inline-math">$F$</span>
+    and <span class="inline-math">$M&#x27;=(Σ, Q&#x27;, P&#x27;)$</span> performs <span class="inline-math">$F&#x27;$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-strongly-equivalent-register-machines.html">WLOG</a> rename the state sets so that <span class="inline-math">$Q\cap Q&#x27; = \emptyset$</span>.
+</p>
+<p>
+    Since we only care about whether a machine performs an operation,
+    the program line <span class="inline-math">$P(q_\mathrm{H})$</span> at a halting state does not matter:
+    if <span class="inline-math">$q_\mathrm{H}$</span> is reached, the tail of the computation sequence afterwards
+    is irrelevant for the output of the computation.
+    So we can alter this instruction without affecting that <span class="inline-math">$M$</span> performs <span class="inline-math">$F$</span>.
+</p>
+<p>
+    Define <span class="inline-math">$\bar P$</span> by taking <span class="inline-math">$P$</span>, excluding <span class="inline-math">$q_\mathrm{H}$</span> from its domain,
+    and replacing all instances of <span class="inline-math">$q_\mathrm{H}$</span> in the instructions by <span class="inline-math">$q_\mathrm{S}&#x27;$</span>.
+    Then <span class="inline-math">$\hat M = (Σ, Q\cup Q&#x27; \setminus \set{q_\mathrm{H}}, \bar P\cup P&#x27;)$</span>
+    is a register machine that performs the operation <span class="inline-math">$F\circ F&#x27;.$</span>
+</p>

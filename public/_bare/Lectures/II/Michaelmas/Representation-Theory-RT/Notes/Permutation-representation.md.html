@@ -1,0 +1,136 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (permutation representation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-permutation-representation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose a finite group <span class="inline-math">$G$</span> acts on a finite set <span class="inline-math">$X$</span>.
+                Let <span class="inline-math">$k[X] = \sb{\sum_{x\in X} λ_x e_x}{λ_x\in k}$</span> be the <span class="inline-math">$\# X$</span>-dimensional <span class="inline-math">$k$</span>-vector space
+                of formal linear combinations of elements in <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                The corresponding <em>permutation <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-representation.html">representation</a></em> is
+                <span class="inline-math">$ρ_X: G\to \GL(k[X])$</span> defined by
+                <span class="display-math">$$ \begin{align*}
+                    ρ_X(g)(e_x) = e_{gx}
+                \end{align*} $$</span>
+                and extending linearly (so <span class="inline-math">$ρ_X(g)(\sum_{x\in X} λ_x e_x) = \sum_{x\in X} λ_x e_{gx}$</span>).
+            </p>
+            <p>
+                The <em>regular representation</em> <span class="inline-math">$ρ_\text{reg}$</span> is the permutation representation
+                corresponding to the regular action <span class="inline-math">$G\actson G$</span> (by left multiplication).
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Burnside, orbits and fixed points)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Lemma-Burnside-orbits-and-fixed-points.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G$</span> be a finite group <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-group-action.html">acting</a> on a finite set <span class="inline-math">$X$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \frac{1}{\# G}\sum_{g\in G} \# X^g = \#G\backslash X.
+                \end{align*} $$</span>
+                where <span class="inline-math">$X^g = \sb{x\in X}{gx = x}$</span> is the set of fixed points of <span class="inline-math">$g$</span>
+                and <span class="inline-math">$G\backslash X = \sb{Gx}{x\in X}$</span> is the set of the <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-orbits-and-stabilisers.html">orbits</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-Burnside.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (character of permutation representation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Lemma-character-of-permutation-representation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G$</span> be a finite group acting on finite sets <span class="inline-math">$X,Y$</span>,
+                and let <span class="inline-math">$ρ_X, ρ_Y$</span> be the corresponding complex <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-permutation-representation.html">permutation representation</a>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$π_X(g) :={}$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-character-of-representation.html"><span class="inline-math">$χ_{ρ_X}$</span></a><span class="inline-math">$(g) = \#X^g$</span> where <span class="inline-math">$X^g = \sb{x\in X}{gx = x}$</span> is the set of fixed points of <span class="inline-math">$g$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-character-of-permutation-representation.html">Proof</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\langle π_X, \mathbb{1}\rangle = \#G\backslash X$</span> where <span class="inline-math">$G\backslash X = \sb{Gx}{x\in X}$</span> is the set of orbits.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-inner-product-of-permutation-character-with-1.html">Proof</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\langle π_X, π_Y\rangle = \#G\backslash (X \times Y)$</span> where <span class="inline-math">$G$</span> acts on <span class="inline-math">$X\times Y$</span> by <span class="inline-math">$g(x,y) = (gx,gy)$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-inner-product-of-two-permutation-characters.html">Proof</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$π_X = \mathbb{1} + χ$</span> where <span class="inline-math">$χ$</span> is irreducible iff the action <span class="inline-math">$G\actson X$</span>
+                    is 2-transitive, i.e. <span class="inline-math">$G\actson X\times X$</span>
+                    has exactly two orbits <span class="inline-math">$Δ = \sb{(x,x)}{x\in X}$</span> and <span class="inline-math">$(X\times X) \setminus Δ$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-decomposition-of-permutation-representation-of-2-transitive-action.html">Proof</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (decomposition of regular representation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proposition-decomposition-of-regular-representation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G$</span> be a finite group,
+                and let <span class="inline-math">$ρ_\text{reg}$</span> be its <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-permutation-representation.html">regular representation</a> over <span class="inline-math">$k$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    If <span class="inline-math">$\op{char} k = 0$</span> or <span class="inline-math">$\op{char} k \not\mid \#G$</span>,
+                    then any irreducible representation is isomorphic to a subrepresentation of <span class="inline-math">$ρ_\text{reg}$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-regular-representation-contains-any-irreducible-representations.html">Proof</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$k = \C$</span> and <span class="inline-math">$χ_1, \ldots, χ_k$</span> are all the irreducible characters,
+                    <span class="inline-math">$ρ_\text{reg}$</span> has a decomposition
+                    <span class="display-math">$$ \begin{align*}
+                    π_\text{reg} = \sum_{i=1}^{k} (\deg χ_i) χ_i.
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-decomposition-of-regular-representation.html">Proof</a>)
+                </p>
+                
+            </li>
+            </ol>
+            <ul>
+            <li>
+                <p>
+                    This shows <span class="inline-math">$\# G = \deg π_\text{reg} = \sum_{i=1}^{k} (\deg χ_i)^2$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>

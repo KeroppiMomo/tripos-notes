@@ -1,0 +1,849 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (inner product space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a real (resp. complex) vector space.
+            </p>
+            <p>
+                An <em>inner product</em> on <span class="inline-math">$V$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-bilinear-form.html">bilinear form</a> (resp. <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-sesquilinear-form.html">sesquilinear form</a>) <span class="inline-math">$\langle \cdot,\cdot\rangle$</span> on <span class="inline-math">$V$</span> that is
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-symmetric-bilinear-form.html">symmetric</a> (resp. <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-Hermitian-sesquilinear-form.html">Hermitian</a>); and
+                </p>
+                
+            </li><li>
+                <p>
+                    <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-definite-bilinear-sesquilinear-and-quadratic-form.html">positive definite</a>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <span class="inline-math">$(V,\langle \cdot,\cdot\rangle)$</span> is called an <em>inner product space</em>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (norm in inner product space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-norm-in-inner-product-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(V,\langle \cdot,\cdot\rangle)$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>.
+            </p>
+            <p>
+                Define the <em>norm</em> of a vector <span class="inline-math">$v\in V$</span> as <span class="inline-math">$\|v\| = \sqrt{\langle v,v\rangle} \geq 0$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\|v\| = 0$</span> iff <span class="inline-math">$v=\v 0$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\|\cdot\|: V\to\R$</span> uniquely determines <span class="inline-math">$\langle \cdot,\cdot\rangle$</span> by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-polarisation-identity.html">polarisation identity</a>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Cauchy-Schwarz)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Cauchy-Schwarz.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(V,\langle \cdot,\cdot\rangle)$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>.
+                For all <span class="inline-math">$u,v\in V$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    |\langle u,v\rangle| \leq \|u\| \,\|v\|.
+                \end{align*} $$</span>
+                Equality occurs iff <span class="inline-math">$\set{u,v}$</span> spans a subspace of dimensions <span class="inline-math">$\leq 1$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Cauchy-Schwarz.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This shows <span class="inline-math">$\langle \cdot ,\cdot \rangle: V\times V \to V$</span>
+                    is continuous with respect to the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-triangle-inequality.html">norm topology</a>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (triangle inequality)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-triangle-inequality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(V,\langle \cdot,\cdot\rangle)$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>.
+                For all <span class="inline-math">$u,v\in V$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \|u+v\| \leq \|u\| + \|v\|.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-triangle-inequality.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Therefore any inner product space <span class="inline-math">$V$</span> is a <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-norm-normed-space.html">normed space</a>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (orthogonal, orthonormal set)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-orthonormal-set.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(V,\langle \cdot,\cdot\rangle)$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>.
+                A subset <span class="inline-math">$E\subseteq V$</span> is said to be
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <em>orthogonal</em> if <span class="inline-math">$\langle d,e\rangle = 0$</span> for all <span class="inline-math">$d,e\in E$</span> with <span class="inline-math">$d\neq e$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <em>orthonormal</em> if <span class="inline-math">$\langle d,e\rangle = \delta_{d,e}$</span> for all <span class="inline-math">$d,e\in E$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (linear combination and inner product)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-linear-combination-and-inner-product.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(V,\langle \cdot,\cdot\rangle)$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>.
+            </p>
+            <p>
+                If a subset <span class="inline-math">$E\subseteq V$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-orthonormal-set.html">orthogonal</a> and <span class="inline-math">$\v 0 \not\in E$</span>, then
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$E$</span> is <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-independence.html">linearly independent</a>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    for all <span class="inline-math">$v\in \langle E\rangle$</span>,
+                    <span class="display-math">$$ \begin{align*}
+                    v = \sum_{e\in E} &#x27; \frac{\langle v,e\rangle}{\langle e,e\rangle} e.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-linear-combination-and-inner-product.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (Parseval identity)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-Parseval-identity.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(V,\langle \cdot,\cdot\rangle)$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>,
+                and <span class="inline-math">$E\subseteq V$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-orthonormal-set.html">orthonormal</a> <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-basis.html">basis</a>.
+            </p>
+            <p>
+                For any <span class="inline-math">$u,v\in V$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \langle u,v\rangle ={}&amp; \sum_{e\in E} &#x27; \langle u,e\rangle \overline{\langle v,e\rangle}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Parseval-identity.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Gram-Schmidt process)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Gram-Schmidt-process.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>.
+            </p>
+            <p>
+                For any <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-independence.html">linearly independent</a> (finite or infinite) sequence
+                <span class="inline-math">$v_1, v_2, \ldots\in V$</span>,
+                there exists an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-orthonormal-set.html">orthonormal</a> sequence <span class="inline-math">$e_1, e_2, \ldots \in V$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    \langle e_1, \ldots, e_k\rangle = \langle v_1, \ldots, v_k\rangle \qquad \text{for all } k.
+                \end{align*} $$</span>
+                Moreover if <span class="inline-math">$\set{v_1, \ldots, v_k}$</span> for some <span class="inline-math">$k$</span> is already orthonormal,
+                then <span class="inline-math">$e_i = v_i$</span> for <span class="inline-math">$i\leq k$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Gram-Schmidt-process.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$V$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a>, then performing Gram-Schmidt on a <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-basis.html">basis</a> produces an orthonormal basis.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$V$</span> is finite-dimensional and <span class="inline-math">$E\subseteq V$</span> is an orthonormal set,
+                    then we can extend to a basis for <span class="inline-math">$V$</span> and perform Gram-Schmidt to obtain
+                    an orthonormal basis for <span class="inline-math">$V$</span> containing <span class="inline-math">$E$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (QR factorisation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-QR-factorisation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Define <span class="inline-math">$T(n,\mathbb{F}) \leq \mathrm{GL}_n(\mathbb{F})$</span> be the subgroup of upper triangular matrices.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \mathrm{GL}_n(\R) = O(n) \cdot T(n,\R) \qquad \text{and} \qquad \mathrm{GL}_n(\C) = U(n) \cdot T(n,\C).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <em>Proof</em>. For each matrix in <span class="inline-math">$\mathrm{GL}_n(\mathbb{F})$</span>, apply <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Gram-Schmidt-process.html">Gram-Schmidt</a> to its columns.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (internal orthogonal direct sum)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-internal-orthogonal-direct-sum.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>.
+            </p>
+            <p>
+                <span class="inline-math">$V$</span> is the <em>(internal) orthogonal direct sum</em> of two subspaces <span class="inline-math">$U,W\leq V$</span>
+                (denoted as <span class="inline-math">$V = U\operp W$</span>) if
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$V = U+W$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\langle u,w\rangle = 0$</span> for all <span class="inline-math">$u\in U$</span> and <span class="inline-math">$w\in W$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (orthogonal complement)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-orthogonal-complement.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>.
+            </p>
+            <p>
+                For any subspace <span class="inline-math">$W\leq V$</span>, we have <span class="inline-math">$V = W$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-internal-orthogonal-direct-sum.html"><span class="inline-math">$\operp$</span></a> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-to-set.html"><span class="inline-math">$W^\perp$</span></a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-orthogonal-complement.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This is false in infinite dimensions.
+                </p>
+                
+            </li><li>
+                <p>
+                    This shows <span class="inline-math">$\dim(W^\perp) = \dim(V) - \dim(W)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (orthogonal projection)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-projection.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>
+                and <span class="inline-math">$W\leq V$</span> be a subspace.
+            </p>
+            <p>
+                The <em>orthogonal projection</em> of <span class="inline-math">$V$</span> onto <span class="inline-math">$W$</span> is defined as the map
+                <span class="display-math">$$ \begin{align*}
+                    \pi_W: \qquad V&amp;\to V \\
+                    w + u &amp;\mapsto w
+                \end{align*} $$</span>
+                where <span class="inline-math">$w\in W$</span> and <span class="inline-math">$u\in W^\perp$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    This is well-defined because <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-orthogonal-complement.html"><span class="inline-math">$V = W\oplus W^\perp$</span></a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\pi_W$</span> is a <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-map.html">linear map</a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\im(\pi_W) = W$</span> and <span class="inline-math">$\ker(\pi_W) = W^\perp$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\pi_W|_W = \id_W$</span> so <span class="inline-math">$\pi_W^2 = \pi_W$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\id_V - \pi_W = \pi_{W^\perp}$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (orthogonal projection and basis)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-orthogonal-projection-and-basis.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Following the notation <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-projection.html">here</a>,
+                if <span class="inline-math">$\set{e_1, \ldots, e_k}$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-orthonormal-set.html">orthonormal</a> <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-basis.html">basis</a> for <span class="inline-math">$W$</span>,
+                then
+                <span class="display-math">$$ \begin{align*}
+                    \pi_W(v) = \sum_{i=1}^{k} \langle v, e_i\rangle e_i \qquad \text{for all }v\in V.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-orthogonal-projection-and-basis.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (closest-point projection)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-closest-point-projection.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Following the notation <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-projection.html">here</a>,
+                for all <span class="inline-math">$v\in V$</span> and <span class="inline-math">$w\in W$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \|v - \pi_W(v)\| \leq \|v - w\|
+                \end{align*} $$</span>
+                with equality iff <span class="inline-math">$w=\pi_W(v)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-closest-point-projection.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (external orthogonal direct sum)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-external-orthogonal-direct-sum.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(V_1, \langle \cdot,\cdot\rangle_1)$</span> and <span class="inline-math">$(V_2, \langle \cdot,\cdot\rangle_2)$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product spaces</a>.
+            </p>
+            <p>
+                Define an inner product on the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-external-direct-sum.html">external direct sum</a> <span class="inline-math">$V_1 \oplus V_2$</span> via
+                <span class="display-math">$$ \begin{align*}
+                    \big\langle (v_1, v_2), (v_1&#x27;, v_2&#x27;)\big\rangle = \langle v_1,v_1&#x27;\rangle_1 + \langle v_2, v_2&#x27;\rangle_2
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Riesz representation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-Riesz-representation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a> over <span class="inline-math">$\R$</span>.
+                The map
+                <span class="display-math">$$ \begin{align*}
+                    \phi_{\R, V}: V&amp;\to V^\star \\
+                    v &amp;\mapsto (u \mapsto \langle u,v\rangle)
+                \end{align*} $$</span>
+                is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isomorphism-of-vector-spaces.html">isomorphism</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-Riesz-representation.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    We insist the inner product to be real to ensure linearity in both arguments.
+                </p>
+                
+            </li><li>
+                <p>
+                    Surjectivity can fail in infinite-dimensional vector spaces.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (adjoint map)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-adjoint-map.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product spaces</a> and
+                <span class="inline-math">$\alpha: V\to W$</span> be a <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-linear-map.html">linear map</a>.
+            </p>
+            <p>
+                A linear map <span class="inline-math">$\alpha^\star: W\to V$</span> is called an <em>adjoint map</em> to <span class="inline-math">$\alpha$</span> if
+                <span class="display-math">$$ \begin{align*}
+                    \langle \alpha(v), w\rangle_W = \langle v, \alpha^\star(w)\rangle_V \qquad \text{for all }v\in V, w\in W.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (adjoint map in finite-dimensional spaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-adjoint-map-in-finite-dimensional-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> and <span class="inline-math">$W$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> inner product spaces.
+            </p>
+            <p>
+                For any linear map <span class="inline-math">$\alpha: V\to W$</span>,
+                its <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-adjoint-map.html">adjoint map</a> <span class="inline-math">$\alpha^\star$</span> exists and is unique.
+            </p>
+            <p>
+                Moreover, for any <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-orthonormal-set.html">orthonormal</a> bases <span class="inline-math">$B,C$</span> for <span class="inline-math">$V,W$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    [\alpha^\star]^{C}_B = \overline{[\alpha]^B_C}^T.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-adjoint-map.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<ul>
+<li>
+    <p>
+        The adjoint and the dual are related by <a href="/tripos-notes/media/Lectures/IB/Michaelmas/Linear-Algebra-LA/Pasted-image-20241130114008.png">this commutative diagram</a>:
+        <span class="display-math">$$ \begin{align*}
+        (\text{adjoint } \alpha^\star) = \phi_{\R,V}\inv\circ(\text{dual }\alpha^\star)\circ\phi_{\R,W}
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (adjoint of subspace-preserving map preserves orthogonal complement)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-adjoint-of-subspace-preserving-map-preserves-orthogonal-complement.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an inner product space and <span class="inline-math">$W\leq V$</span> be a subspace.
+                Further suppose <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> has an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-adjoint-map.html">adjoint</a> <span class="inline-math">$\alpha^\star$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\alpha(W) \leq W$</span>, then <span class="inline-math">$a^\star(W^\perp) \leq W^\perp$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-adjoint-of-subspace-preserving-map-preserves-orthogonal-complement.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Hermitian, self-adjoint operator)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-Hermitian-self-adjoint-operator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an inner product space.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> is said to be <em>Hermitian</em>
+                or <em>self-adjoint</em> if <span class="inline-math">$\alpha$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-adjoint-map.html">adjoint map</a> to itself.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (matrix of self-adjoint map)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-matrix-of-self-adjoint-map.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional inner product space over <span class="inline-math">$\R$</span> (resp. <span class="inline-math">$\C$</span>),
+                and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-Hermitian-self-adjoint-operator.html">self-adjoint</a> iff
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-matrix-of-a-linear-map.html"><span class="inline-math">$[\alpha]_B$</span></a> is symmetric (resp. Hermitian)
+                for some (or equivalently any) <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-orthonormal-set.html">orthonormal</a> basis <span class="inline-math">$B$</span> for <span class="inline-math">$V$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-matrix-of-self-adjoint-map.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (isometry in inner product spaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isometry-in-inner-product-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product space</a>.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> is said to be an <em>isometry</em> if
+                <span class="display-math">$$ \begin{align*}
+                    \langle \alpha(v), \alpha(w)\rangle = \langle v,w\rangle \qquad \text{for all }v,w\in V.
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    By the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-polarisation-identity.html">polarisation identity</a>, <span class="inline-math">$\alpha$</span> is an isometry iff <span class="inline-math">$\|\alpha(v)\| = \|v\|$</span> for all <span class="inline-math">$v\in V$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\alpha$</span> preserves orthonormality of sets.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (adjoint of isometry is its inverse)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-adjoint-of-isometry-is-its-inverse.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an inner product space and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> .
+                Suppose <span class="inline-math">$\alpha$</span> has an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-adjoint-map.html">adjoint map</a> <span class="inline-math">$\alpha^\star$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isometry-in-inner-product-spaces.html">isometry</a> iff <span class="inline-math">$\alpha$</span> is invertible and <span class="inline-math">$\alpha\inv = \alpha^\star$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-adjoint-of-isometry-is-its-inverse.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (matrix of isometry)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-matrix-of-isometry.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional inner product space over <span class="inline-math">$\R$</span> (resp. <span class="inline-math">$\C$</span>), and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isometry-in-inner-product-spaces.html">isometry</a> iff <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-matrix-of-a-linear-map.html"><span class="inline-math">$[\alpha]_B$</span></a> is orthogonal (resp. unitary)
+                for some (or equivalently any) <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-orthonormal-set.html">orthonormal</a> basis <span class="inline-math">$B$</span> for <span class="inline-math">$V$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-matrix-of-isometry.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (orthogonal and unitary groups of inner product spaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-and-unitary-groups-of-inner-product-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be an inner product space over <span class="inline-math">$\mathbb{F}$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    For <span class="inline-math">$\mathbb{F}=\R$</span>, define the <em>orthogonal group of <span class="inline-math">$V$</span></em> as <span class="inline-math">$O(V) = \{\alpha\in \mathcal{L}(V,V) \ |\ \alpha\text{ is an }$</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isometry-in-inner-product-spaces.html"><span class="inline-math">$\text{isometry}$</span></a><span class="inline-math">$\}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    For <span class="inline-math">$\mathbb{F}=\C$</span>, define the <em>unitary group of <span class="inline-math">$V$</span></em> as <span class="inline-math">$U(V) = \{\alpha\in \mathcal{L}(V,V) \ |\ \alpha\text{ is an }$</span><a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isometry-in-inner-product-spaces.html"><span class="inline-math">$\text{isometry}$</span></a><span class="inline-math">$\}$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <br>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$V$</span> has dimension <span class="inline-math">$n$</span>,
+                    then by letting an orthonormal basis for <span class="inline-math">$V$</span>,
+                    <span class="inline-math">$\alpha\mapsto$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-matrix-of-isometry.html"><span class="inline-math">$[\alpha]_B$</span></a> is an <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-isomorphism.html">isomorphism</a> of groups between <span class="inline-math">$O(V) \isom O(n)$</span> or <span class="inline-math">$U(V) \isom U(n)$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (orthogonal projection iff idempotent and self-adjoint)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-orthogonal-projection-iff-idempotent-and-self-adjoint.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-finite-dimensional-vector-space.html">finite-dimensional</a> inner product space, and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-orthogonal-projection.html">orthogonal projection</a> iff <span class="inline-math">$\alpha$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-Hermitian-self-adjoint-operator.html">self-adjoint</a> and <span class="inline-math">$\alpha^2 = \alpha$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-orthogonal-projection-iff-idempotent-and-self-adjoint.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (spectral theorem for self-adjoint maps)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-spectral-theorem-for-self-adjoint-maps.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional inner product space.
+            </p>
+            <p>
+                For any <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-Hermitian-self-adjoint-operator.html">self-adjoint</a> map <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>,
+                <span class="inline-math">$V$</span> has an orthonormal basis consisting of eigenvectors of <span class="inline-math">$\alpha$</span> with real eigenvalues.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-spectral-theorem-for-self-adjoint-maps.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (spectral theorem for real symmetric and Hermitian matrices)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-spectral-theorem-for-real-symmetric-and-Hermitian-matrices.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$A\in M_{n\times n}(\R)$</span> be symmetric (resp. <span class="inline-math">$A\in M_{n\times n}(\C)$</span> be Hermitian).
+                Then there exists
+                <span class="inline-math">$P\in O(n)$</span> (resp. <span class="inline-math">$P\in U(n)$</span>) such that
+                <span class="inline-math">$PAP\inv\in M_{n\times n}(\R)$</span> is diagonal.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-spectral-theorem-for-real-symmetric-and-Hermitian-matrices.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (simultaneous diagonalisation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Corollary-simultaneous-diagonalisation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional vector space over <span class="inline-math">$\R$</span> (resp. <span class="inline-math">$\C$</span>).
+            </p>
+            <p>
+                If <span class="inline-math">$\phi,\psi$</span> be <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-symmetric-bilinear-form.html">symmetric</a> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-bilinear-form.html">bilinear forms</a> (resp. <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-Hermitian-sesquilinear-form.html">Hermitian</a> <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-sesquilinear-form.html">sesquilinear forms</a>)
+                and <span class="inline-math">$\phi$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-definite-bilinear-sesquilinear-and-quadratic-form.html">positive definite</a>,
+                then there exists a basis <span class="inline-math">$B$</span> for <span class="inline-math">$V$</span> such that <span class="inline-math">$[\phi]_B = I_n$</span> and <span class="inline-math">$[\psi]_B$</span> is real and diagonal.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-simultaneous-diagonalisation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (spectral theorem for unitary maps)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-spectral-theorem-for-unitary-maps.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional inner product space over <span class="inline-math">$\C$</span>.
+            </p>
+            <p>
+                For any <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isometry-in-inner-product-spaces.html">isometry</a> <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>,
+                <span class="inline-math">$V$</span> has an orthonormal basis consisting of eigenvector of <span class="inline-math">$\alpha$</span>
+                with eigenvalues of unit modulus.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proof-spectral-theorem-for-unitary-maps.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Not all orthogonal matrices are diagonalisable over <span class="inline-math">$\R$</span>, e.g. <span class="inline-math">$\pmat{\cos\theta &amp; \sin\theta \\ -\sin\theta &amp; \cos\theta}$</span> for <span class="inline-math">$\theta\in (0,\pi)$</span> (characteristic polynomial is not a product of linear factors).
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (normal map for finite-dimensional inner product space)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-normal-map-for-finite-dimensional-inner-product-space.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional inner product space.
+            </p>
+            <p>
+                A map <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span> is said to be <em>normal</em>
+                if it commutes with its <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-adjoint-map.html">adjoint</a>, i.e. <span class="inline-math">$\alpha\alpha^\star = \alpha^\star \alpha$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (spectral theorem for normal maps)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-spectral-theorem-for-normal-maps.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$V$</span> be a finite-dimensional inner product space over <span class="inline-math">$\C$</span>, and <span class="inline-math">$\alpha\in \mathcal{L}(V,V)$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\alpha$</span> is normal iff <span class="inline-math">$V$</span> has an orthonormal basis of eigenvectors of <span class="inline-math">$\alpha$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>

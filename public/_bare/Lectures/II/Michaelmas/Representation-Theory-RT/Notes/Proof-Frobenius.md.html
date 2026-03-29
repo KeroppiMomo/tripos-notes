@@ -1,0 +1,162 @@
+<p>
+    Let <span class="inline-math">$n = |G:H|$</span>.
+    Each conjugate <span class="inline-math">$gHg\inv$</span> of <span class="inline-math">$H$</span> fixes a unique coset <span class="inline-math">$gH$</span>,
+    and <span class="inline-math">$gHg\inv$</span> and <span class="inline-math">$g&#x27;Hg&#x27;\inv$</span> fixing the same coset <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-Frobenius-group.html#^conjugate">implies</a> they equal.
+    Thus there are exactly <span class="inline-math">$n$</span> conjugates of <span class="inline-math">$H$</span>,
+    every pair of which <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-Frobenius-group.html#^conjugate">intersects trivially</a>.
+    So there are exactly <span class="inline-math">$n(\# H -1)$</span> elements of <span class="inline-math">$G$</span>
+    that fixes exactly one coset <span class="inline-math">$G/H$</span>,
+    leaving <span class="inline-math">$K$</span> with <span class="inline-math">$\# G - n(\# H - 1) = n$</span> elements.
+</p>
+<p>
+    Let <span class="inline-math">$\prescript{H}{}h_1 = \set{1}, \prescript{H}{}h_2, \ldots, \prescript{H}{}h_s$</span>
+    be all the conjugacy classes of <span class="inline-math">$H$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-Frobenius-group.html#^ccls"><span class="inline-math">$H \cap \prescript{G}{}h = \prescript{H}{}h$</span> for all <span class="inline-math">$h\in H$</span></a>,
+    so <span class="inline-math">$\prescript{G}{}h_1, \ldots, \prescript{G}{}h_s$</span> are distinct conjugacy classes of <span class="inline-math">$G$</span>.
+    Therefore all the conjugacy classes of <span class="inline-math">$G$</span> are
+    <span class="display-math">$$ \begin{align*}
+        \prescript{G}{}h_1 = \set{1}, \prescript{G}{}h_2, \ldots, \prescript{G}{}h_s, \prescript{G}{}k_1, \ldots, \prescript{G}{} k_t
+    \end{align*} $$</span>
+    where <span class="inline-math">$K = \set{1} \sqcup \bigsqcup_{j=1}^{t} \prescript{G}{}k_j$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$χ_1, \ldots, χ_m$</span> be all the irreducible characters of <span class="inline-math">$H$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-Frobenius-group.html#^ccls">Recalling</a> <span class="inline-math">$Z_G(h) = Z_H(h)$</span> for all <span class="inline-math">$h\in H$</span>,
+    and using the formula <span class="inline-math">$\op{Ind}^G_H χ(g) = \sum_{l} \frac{\# Z_G(g_l)}{\# Z_H(h_l)} χ(h_l)$</span>
+    when <span class="inline-math">$H \cap \prescript{G}{}g = \prescript{H}{}h_1 \sqcup \prescript{H}{}h_2 \sqcup \ldots$</span>,
+    consider the class functions
+    <span class="display-math">$$ \begin{align*}
+        θ_i = \op{Ind}^G_H χ_i - χ_i(1) \op{Ind}^G_H \mathbb{1}_H + χ_i(1) \,\mathbb{1}_G
+    \end{align*} $$</span>
+    and
+    <span class="display-math">$$ \begin{align*}
+        θ = \sum_{i=1}^{m} θ_i(1)\, θ_i.
+    \end{align*} $$</span>
+</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$h_j$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$k_j$</span>
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\op{Ind}^G_H χ_i$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$nχ_i(1)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$χ_i(h_j)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\op{Ind}^G_H \mathbb{1}_H$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$n$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathbb{1}_G$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$θ_i$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$χ_i(1)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$χ_i(h_j)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$χ_i(1)$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$θ$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\sum_{i=1}^{m} χ_i(1)^2 = \# H$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\sum_{i=1}^{m} χ_i(1)χ_i(h_j) = 0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\sum_{i=1}^{m} χ_i(1)^2 = \# H$</span>
+        </p>
+        </td>
+    </tr>
+</table>
+<p>
+    where the last row uses <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-character-table.html">column orthonormality of characters</a>.
+</p>
+<p>
+    Now
+    <span class="display-math">$$ \begin{align*}
+        \langle θ_i, θ_i\rangle ={}&amp; \frac{1}{\#G} \sum_{g\in G} |θ_i(g)|^2 \\
+        ={}&amp; \frac{1}{\# G}\left(\sum_{k\in K} |χ_i(1)|^2 + \sum_{g\in G\setminus K} |θ_i(g)|^2\right) \\
+        ={}&amp; \frac{1}{\# G}\left(n |χ_i(1)|^2 + n \sum_{h\in H\setminus \set{1}} |χ_i(h)|^2\right) \\
+        ={}&amp; \frac{n}{\# G} \sum_{h\in H} |χ_i(h)|^2 \\
+        ={}&amp; \langle χ_i,  χ_i\rangle = 1.
+    \end{align*} $$</span>
+    Moreover <span class="inline-math">$θ_i(1) &gt; 0$</span>,
+    so <span class="inline-math">$θ_i$</span> is an actual character of <span class="inline-math">$G$</span>.
+</p>
+<p>
+    Because <span class="inline-math">$θ$</span> is then an actual character of <span class="inline-math">$G$</span>,
+    <span class="display-math">$$ \begin{align*}
+        K = \sb{g\in G}{θ(g) = θ(1)} \lhd G.
+    \end{align*} $$</span>
+</p>

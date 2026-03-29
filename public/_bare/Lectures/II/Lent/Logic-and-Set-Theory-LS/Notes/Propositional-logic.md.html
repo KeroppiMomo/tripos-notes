@@ -1,0 +1,631 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (reasoning algebra, Boolean algebra)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-reasoning-algebra-Boolean-algebra.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <em>reasoning algebra</em>
+                is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-signature-structure-substructure-reduct.html">structure</a>
+                <span class="display-math">$$ \begin{align*}
+                    \mathbf{X} = (X, +, \cdot, \to, -, 0,1)
+                \end{align*} $$</span>
+                where <span class="inline-math">$X$</span> is a set,
+                <span class="inline-math">$+, \cdot , \to$</span> are binary operations,
+                <span class="inline-math">$-$</span> is a unary operation,
+                and <span class="inline-math">$0\neq 1\in X$</span> are nullary operations on <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$\mathbf{X}$</span> is <em>Boolean</em> if
+                the following <em>Boolean laws</em> hold: for all <span class="inline-math">$x,y,z\in X$</span>,
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    associativity: <span class="inline-math">$x + (y + z) = (x + y) + z$</span> and <span class="inline-math">$x \cdot (y \cdot z) = (x \cdot y) \cdot z$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    commutativity: <span class="inline-math">$x+y = y+x$</span> and <span class="inline-math">$x\cdot y = y\cdot x$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    distributivity: <span class="inline-math">$x+(y\cdot z) = (x+y) \cdot (x+z)$</span> and <span class="inline-math">$x\cdot (y+z) = x\cdot y + x\cdot z$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    neutrality: <span class="inline-math">$x+0 = x$</span> and <span class="inline-math">$x\cdot 1 = x$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    annihilation: <span class="inline-math">$x+1 = 1$</span> and <span class="inline-math">$x\cdot 0 = 0$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    idempotence: <span class="inline-math">$x+x = x$</span> and <span class="inline-math">$x\cdot x = x$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    absorption: <span class="inline-math">$x+(x\cdot y) = x$</span> and <span class="inline-math">$x\cdot (x+y) = x$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    double negation: <span class="inline-math">$-(-x) = x$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    contradiction: <span class="inline-math">$x\cdot (-x) = 0$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    excluded middle: <span class="inline-math">$x + (-x) = 1$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    De Morgan's laws: <span class="inline-math">$-(x+y) = (-x)\cdot (-y)$</span> and <span class="inline-math">$-(x\cdot y) = (-x) + (-y)$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    implication: <span class="inline-math">$x\to y = (-x) + y$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$\mathbf{2} = (\set{0,1}, +, \cdot ,\to, -, 0,1)$</span>
+                    with the usual truth table is a Boolean algebra.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (formula in propositional logic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-formula-in-propositional-logic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Given a countable set <span class="inline-math">$P$</span> of <em>propositional letters</em>,
+                the <em>alphabet of propositional logic</em> is
+                <span class="display-math">$$ \begin{align*}
+                    Σ = P \cup \set{\wedge, \vee, \Rightarrow, \neg, \bot, \top, ), (}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The set of <em>formulas</em> (denoted <span class="inline-math">$\mathrm{Fml}$</span>)
+                is the smallest subset of <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-strings.html"><span class="inline-math">$Σ^\ast$</span></a>
+                containing
+            </p>
+            <ul>
+            <li>
+                <p>
+                    all elements of <span class="inline-math">$P$</span>,
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\bot$</span> and <span class="inline-math">$\top$</span>,
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                and such that if <span class="inline-math">$ϕ, ψ\in \mathrm{Fml}$</span>, then so are
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$(ϕ \wedge ψ)$</span>,
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$(ϕ\vee ψ)$</span>,
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$(ϕ\Rightarrow ψ)$</span>, and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\neg ϕ$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Then we obtain a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-reasoning-algebra-Boolean-algebra.html">reasoning algebra</a>
+                <span class="inline-math">$\mathbf{Fml} = (\mathrm{Fml}, +, \cdot, \to, -, 1, 0)$</span> by iteratively defining
+                <span class="inline-math">$ϕ + ψ := (ϕ \vee ψ)$</span>, <span class="inline-math">$ϕ\cdot ψ := (ϕ\wedge ψ)$</span>,
+                <span class="inline-math">$ϕ\to ψ := (ϕ \Rightarrow ψ)$</span>,
+                <span class="inline-math">$-ϕ := \neg ϕ$</span>,
+                <span class="inline-math">$1 = \top$</span>, and
+                <span class="inline-math">$0 = \bot$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    We drop parentheses in informal settings.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (valuation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-valuation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A function <span class="inline-math">$v: \mathrm{Fml}\to 2$</span> is a
+                <em>valuation</em> if it is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-homomorphism-of-structures.html">homomorphism</a>
+                from <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-formula-in-propositional-logic.html"><span class="inline-math">$\mathbf{Fml}$</span></a>
+                to <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-reasoning-algebra-Boolean-algebra.html"><span class="inline-math">$\mathbf{2}$</span></a>.
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$v(\top) = 1$</span> and <span class="inline-math">$v(\bot) = 0$</span>.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    For any function <span class="inline-math">$f: P \to 2$</span>,
+                    there exists a unique extension to a valuation by induction.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID coincidence -->
+                <p id="^coincidence">
+                    Coincidence lemma:
+                    let <span class="inline-math">$\op{occ}(ϕ)\subseteq P$</span> be the (finite)
+                    set of propositional letters that occur in <span class="inline-math">$ϕ$</span>.
+                    If <span class="inline-math">$v,w$</span> are valuations
+                    such that <span class="inline-math">$v|_{\op{occ}(ϕ)} = w|_{\op{occ}(ϕ)}$</span>,
+                    then <span class="inline-math">$v(ϕ) = w(ϕ)$</span>.
+                </p>
+                
+                <!-- END BLOCK ID coincidence -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (valid, logically equivalent)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-valid-logically-equivalent.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$ϕ, ψ\in{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-formula-in-propositional-logic.html"> <span class="inline-math">$\mathrm{Fml}$</span></a>.
+            </p>
+            <p>
+                Say <span class="inline-math">$ϕ$</span> is <em>valid</em> if <span class="inline-math">$v(ϕ) = 1$</span> for all <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-valuation.html">valuations</a> <span class="inline-math">$v$</span>.
+            </p>
+            <p>
+                Say <span class="inline-math">$ϕ$</span> and <span class="inline-math">$ψ$</span> are <em>logically equivalent</em> if <span class="inline-math">$v(ϕ) = v(ψ)$</span> for all valuations <span class="inline-math">$v$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    By the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-valuation.html#^coincidence">coincidence lemma</a>,
+                    to check validity or logical equivalence,
+                    we can compute truth tables.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (model, satisfiable, semantically entail)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-model-satisfiable-semantically-entail.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$v$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-valuation.html">valuation</a>
+                and <span class="inline-math">$T \subseteq \mathrm{Fml}$</span> be a subset of <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-formula-in-propositional-logic.html">formulas</a>.
+            </p>
+            <p>
+                Say <span class="inline-math">$v$</span> is a <em>model</em> of <span class="inline-math">$T$</span>
+                if <span class="inline-math">$v(ϕ) = 1$</span> for all <span class="inline-math">$ϕ\in T$</span>.
+            </p>
+            <p>
+                Say <span class="inline-math">$T$</span> is <em>satisfiable</em> if it has a model.
+            </p>
+            <p>
+                Say <span class="inline-math">$T$</span> semantically entails a formula <span class="inline-math">$ϕ\in \mathrm{Fml}$</span>
+                (denoted <span class="inline-math">$T \vDash ϕ$</span>)
+                if <span class="inline-math">$v(ϕ) = 1$</span> for all model <span class="inline-math">$v$</span> of <span class="inline-math">$T$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (implication algebra)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-implication-algebra.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                An <em>implication algebra</em>
+                is a tuple <span class="inline-math">$\mathbf{A} = (A, \to, 0)$</span>
+                where <span class="inline-math">$A$</span> is a set, <span class="inline-math">$\to$</span> is a binary operation,
+                and <span class="inline-math">$0 \in A$</span> is a nullary operation.
+            </p>
+            <p>
+                The <em><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-reasoning-algebra-Boolean-algebra.html">reasoning algebra</a> associated to <span class="inline-math">$A$</span></em>
+                is <span class="inline-math">$\mathbf{A}^+ = (A, +, \cdot, \to, -, 0,1)$</span>
+                where we define iteratively for all <span class="inline-math">$x, y\in A$</span>
+                <span class="display-math">$$ \begin{align*}
+                    1 &amp;:= 0\to 0, \\
+                    -x &amp;:= x \to 0, \\
+                    x + y &amp;:= (x\to 0) \to y, \\
+                    x \cdot y &amp;:= (x \to (y \to 0)) \to 0.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Call <span class="inline-math">$\mathbf{A}$</span> <em>Boolean</em> if <span class="inline-math">$\mathbf{A}^+$</span> is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-reasoning-algebra-Boolean-algebra.html">Boolean</a>.
+            </p>
+            <blockquote>
+                <!-- BEGIN BLOCK ID homo -->
+                <p id="^homo">
+                    If <span class="inline-math">$f: A\to B$</span> is a function between implication algebras,
+                    then <span class="inline-math">$f$</span> is a homomorphism <span class="inline-math">$\mathbf{A}\to \mathbf{B}$</span>
+                    iff it is a homomorphism <span class="inline-math">$\mathbf{A}^+\to \mathbf{B}^+$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-homomorphisms-of-implication-algebra.html">Proof</a>)
+                </p>
+                
+                <!-- END BLOCK ID homo -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (implication formula in propositional logic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-implication-formula-in-propositional-logic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In propositional logic,
+                an <em>implication formula</em>
+                is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-formula-in-propositional-logic.html">formula</a> which does not contain
+                the symbols <span class="inline-math">$\wedge$</span>, <span class="inline-math">$\vee$</span>, <span class="inline-math">$\neg$</span>, <span class="inline-math">$\top$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    Define recursively
+                    <span class="display-math">$$ \begin{align*}
+                        t: \mathrm{Fml} &amp;\to \mathrm{IFml} \\
+                        p &amp;\mapsto p \\
+                        \bot &amp;\mapsto \bot \\
+                        \top &amp;\mapsto (\bot \Rightarrow \bot) \\
+                        \neg ϕ &amp;\mapsto (t(ϕ) \Rightarrow \bot) \\
+                        (ϕ \Rightarrow ψ) &amp;\mapsto (t(ϕ) \Rightarrow t(ψ)) \\
+                        (ϕ \vee ψ) &amp;\mapsto (t(ϕ)\Rightarrow \bot) \Rightarrow t(ψ) \\
+                        (ϕ \wedge ψ) &amp;\mapsto (t(ϕ) \Rightarrow (t(ψ) \Rightarrow \bot))\Rightarrow \bot.
+                    \end{align*} $$</span>
+                    Check by induction that <span class="inline-math">$t$</span> is well-defined surjection
+                    and <span class="inline-math">$t(ϕ)$</span> and <span class="inline-math">$ϕ$</span> are <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-valid-logically-equivalent.html">logically equivalent</a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (proof in propositional logic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-proof-in-propositional-logic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T \subseteq{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-formula-in-propositional-logic.html"><span class="inline-math">$\mathrm{Fml}$</span></a>.
+            </p>
+            <p>
+                A string <span class="inline-math">$D = ϕ_0 ϕ_1 \ldots ϕ_n \in \mathrm{Fml}^\ast$</span> is called a <em><span class="inline-math">$T$</span>-proof</em>
+                if for each <span class="inline-math">$i = 0, 1, \ldots, n$</span>,
+                one of the following holds:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$A_T$</span>: <span class="inline-math">$ϕ_i\in T$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$B$</span>: <span class="inline-math">$ϕ_i$</span> is one of the following <em>axioms</em>:
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        Type 1: <span class="inline-math">$ϕ_i = (ϕ \Rightarrow (ψ \Rightarrow ϕ))$</span> for some <span class="inline-math">$ϕ, ψ\in \mathrm{Fml}$</span>;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        Type 2: <span class="inline-math">$ϕ_i = \bigl(\bigl(ϕ \Rightarrow (ψ \Rightarrow χ)\bigr) \Rightarrow \bigl((ϕ \Rightarrow ψ) \Rightarrow (ϕ \Rightarrow χ)\bigr)\bigr)$</span> for some <span class="inline-math">$ϕ, ψ, χ\in \mathrm{Fml}$</span>;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        Type 3: <span class="inline-math">$ϕ_i = (((ϕ \Rightarrow \bot) \Rightarrow \bot) \Rightarrow ϕ)$</span> for some <span class="inline-math">$ϕ\in \mathrm{Fml}$</span>;
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        Type 4: <span class="inline-math">$ϕ_i = (ϕ \Rightarrow{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-implication-formula-in-propositional-logic.html"><span class="inline-math">$t$</span></a><span class="inline-math">$(ϕ))$</span> or <span class="inline-math">$(t(ϕ) \Rightarrow ϕ)$</span> for some <span class="inline-math">$ϕ\in \mathrm{Fml}$</span>;
+                    </p>
+                    
+                </li>
+                </ul>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$C$</span>: there exists <span class="inline-math">$j,k&lt;i$</span> such that <span class="inline-math">$(ϕ_j, ϕ_k, ϕ_i)$</span> is an <em>instance of modus ponens</em>,
+                    i.e. <span class="inline-math">$ϕ_j = (ϕ_k \Rightarrow ϕ_i)$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Call <span class="inline-math">$D$</span> a <em>proof</em> if <span class="inline-math">$T = \emptyset$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$ϕ$</span> occurs in <span class="inline-math">$D$</span>, then say <span class="inline-math">$D$</span> is a <em>proof of <span class="inline-math">$ϕ$</span></em>.
+            </p>
+            <p>
+                If there is a <span class="inline-math">$T$</span>-proof for <span class="inline-math">$ϕ$</span>, write <span class="inline-math">$T \vdash ϕ$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$T\subseteq T&#x27;$</span>, then every <span class="inline-math">$T$</span>-proof is a <span class="inline-math">$T&#x27;$</span>-proof.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$D$</span> is a <span class="inline-math">$T$</span>-proof and <span class="inline-math">$E$</span> is <span class="inline-math">$S$</span>-proof, then <span class="inline-math">$DE$</span> is a <span class="inline-math">$(T \cup S)$</span>-proof.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID finite -->
+                <p id="^finite">
+                    Finiteness theorem:
+                    if <span class="inline-math">$D$</span> is a <span class="inline-math">$T$</span>-proof,
+                    then <span class="inline-math">$D$</span> is a <span class="inline-math">$T_0$</span>-proof
+                    where <span class="inline-math">$T_0 = \sb{ϕ\in T}{ϕ\text{ occurs in }D}$</span> is a finite set.
+                </p>
+                
+                <!-- END BLOCK ID finite -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (lemma)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-lemma.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T\subseteq \mathrm{Fml}$</span> and <span class="inline-math">$ϕ,ψ\in \mathrm{Fml}$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$T$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-proof-in-propositional-logic.html"><span class="inline-math">${}\vdash{}$</span></a><span class="inline-math">$ϕ$</span> and <span class="inline-math">$T\cup \set{ϕ} \vdash ψ$</span>,
+                then <span class="inline-math">$T \vdash ψ$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-lemma.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (deduction theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-deduction-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T\subseteq \mathrm{Fml}$</span> and <span class="inline-math">$ϕ,ψ\in \mathrm{Fml}$</span>.
+            </p>
+            <p>
+                Then <span class="inline-math">$T$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-proof-in-propositional-logic.html"><span class="inline-math">${}\vdash{}$</span></a><span class="inline-math">$(ϕ \Rightarrow ψ)$</span> iff <span class="inline-math">$T \cup \set{ϕ} \vdash ψ$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-deduction-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (soundness of propositional logic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-soundness-of-propositional-logic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Propositional-logic.html">propositional logic</a>, let <span class="inline-math">$T\subseteq \mathrm{Fml}$</span> and <span class="inline-math">$ϕ\in \mathrm{Fml}$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$T$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-proof-in-propositional-logic.html"><span class="inline-math">${}\vdash{}$</span></a><span class="inline-math">$ϕ$</span>, then <span class="inline-math">$T$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-model-satisfiable-semantically-entail.html"><span class="inline-math">${}\vDash{}$</span></a><span class="inline-math">$ϕ$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-soundness-of-propositional-logic.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (consistency)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-consistency.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T\subseteq \mathrm{Fml}$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$T$</span> is said to be <em>inconsistent</em>
+                if <span class="inline-math">$T$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-proof-in-propositional-logic.html"><span class="inline-math">${}\vdash{}$</span></a><span class="inline-math">$\bot$</span>.
+                Otherwise it is <em>consistent</em>.
+            </p>
+            <blockquote>
+                <!-- BEGIN BLOCK ID ex-falso -->
+                <p id="^ex-falso">
+                    <em>Ex falso</em>: <span class="inline-math">$\bot \vdash ϕ$</span> for all <span class="inline-math">$ϕ\in \mathrm{Fml}$</span>. (<a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-ex-falso.html">Proof</a>)
+                    Therefore by the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-lemma.html">lemma on lemmas</a>, <span class="inline-math">$T$</span> is inconsistent iff <span class="inline-math">$T \vdash ϕ$</span> for all <span class="inline-math">$ϕ$</span>.
+                </p>
+                
+                <!-- END BLOCK ID ex-falso -->
+                
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID lemma -->
+                <p id="^lemma">
+                    If <span class="inline-math">$T$</span> is consistent and <span class="inline-math">$T \vdash ϕ$</span>, then <span class="inline-math">$T\cup \set{ϕ}$</span> is consistent by the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Lemma-lemma.html">lemma on lemmas</a>.
+                </p>
+                
+                <!-- END BLOCK ID lemma -->
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$T$</span> is inconsistent, then there exists a finite subset <span class="inline-math">$T_0 \subseteq T$</span> which is inconsistent,
+                    by the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-proof-in-propositional-logic.html#^finite">finiteness theorem</a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (negation complete)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-negation-complete.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T \subseteq \mathrm{Fml}$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$T$</span> is <em>negation complete</em>
+                if for all <span class="inline-math">$ϕ\in \mathrm{Fml}$</span>,
+                either <span class="inline-math">$T$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-proof-in-propositional-logic.html"><span class="inline-math">${}\vdash{}$</span></a><span class="inline-math">$ϕ$</span> or <span class="inline-math">$T \vdash \neg ϕ$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Lindenbaum's lemma)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Lindenbaum-s-lemma.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T\subseteq \mathrm{Fml}$</span> is a set of formulae in <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Propositional-logic.html">proposition</a> or <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Predicate-logic.html">predicate logic</a>.
+                Suppose <span class="inline-math">$\mathrm{Fml}$</span> can be <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-well-order-initial-segment.html">well-ordered</a>.
+                (Either <span class="inline-math">$\mathrm{Fml}$</span> is countable, or <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Zermelo-well-ordering.html">assume the axiom of choice</a>.)
+            </p>
+            <p>
+                If <span class="inline-math">$T$</span> is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-consistency.html">consistent</a>, then
+                there is some <span class="inline-math">$T^\ast \subseteq \mathrm{Fml}$</span>
+                containing <span class="inline-math">$T$</span> which is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-negation-complete.html">negation complete</a> and consistent.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-Lindenbaum-s-lemma.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (model existence in propositional logic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-model-existence-in-propositional-logic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Every <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-consistency.html">consistent</a> set of <span class="inline-math">$\mathrm{Fml}$</span> is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-model-satisfiable-semantically-entail.html">satisfiable</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-model-existence.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (compactness theorem in propositional logic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Corollary-compactness-theorem-in-propositional-logic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T\subseteq \mathrm{Fml}$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$T$</span> is <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-model-satisfiable-semantically-entail.html">satisfiable</a>
+                iff every finite subset of <span class="inline-math">$T$</span> is satisfiable.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-compactness-theorem.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (completeness of propositional logic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-completeness-of-propositional-logic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                In <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Propositional-logic.html">propositional logic</a>, let <span class="inline-math">$T\subseteq \mathrm{Fml}$</span> and <span class="inline-math">$ϕ\in \mathrm{Fml}$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$T$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-model-satisfiable-semantically-entail.html"><span class="inline-math">${}\vDash{}$</span></a><span class="inline-math">$ϕ$</span>, then <span class="inline-math">$T$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-proof-in-propositional-logic.html"><span class="inline-math">${}\vdash{}$</span></a><span class="inline-math">$ϕ$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-completeness-of-propositional-logic.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

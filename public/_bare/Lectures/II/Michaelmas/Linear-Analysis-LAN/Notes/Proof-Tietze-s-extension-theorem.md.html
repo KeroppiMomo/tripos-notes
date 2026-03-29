@@ -1,0 +1,87 @@
+
+<h1>Over <span class="inline-math">$\R$</span></h1>
+
+<p>
+    Let <span class="inline-math">$X = C_b^\R(K)$</span> and <span class="inline-math">$Y = C_b^\R(L)$</span>, which are Banach spaces.
+    Consider the linear map
+    <span class="display-math">$$ \begin{align*}
+        R: X&amp;\to Y\\
+        f &amp;\mapsto f|_L.
+    \end{align*} $$</span>
+    Note <span class="inline-math">$\|f|_L\|_\infty \leq \|f\|_\infty$</span>,
+    so <span class="inline-math">$R$</span> is bounded.
+    We want to show <span class="inline-math">$R(\frac{1}{3}B_{X})$</span> is <span class="inline-math">$\frac{2}{3}$</span>-dense in <span class="inline-math">$B_Y$</span>.
+    Then by the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Lemma-open-mapping-lemma.html">opening mapping lemma</a>,
+    <span class="inline-math">$R(B_X) \supseteq B_Y$</span>, and then we are done by homogeneity.
+</p>
+<p>
+    Fix <span class="inline-math">$g\in B_Y$</span>.
+    Let
+    <span class="display-math">$$ \begin{align*}
+        A = g\inv([-1, -\tfrac{1}{3}]), \qquad B = g\inv([\tfrac{1}{3}, 1]),
+    \end{align*} $$</span>
+    which are closed by continuity.
+</p>
+<p>
+    By <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-Urysohn-s-lemma.html">Urysohn's lemma</a>,
+    let <span class="inline-math">$\tilde f: K \to [0,1]$</span> be continuous
+    such that <span class="inline-math">$\tilde f = 0$</span> on <span class="inline-math">$A$</span> and <span class="inline-math">$\tilde f = 1$</span> on <span class="inline-math">$B$</span>.
+    Define a continuous function <span class="inline-math">$f: K \to [-\frac{1}{3},\frac{1}{3}]$</span> by <span class="inline-math">$f = \frac{2}{3}\tilde f - \frac{1}{3}$</span>
+    so that <span class="inline-math">$\tilde f = -\frac{1}{3}$</span> on <span class="inline-math">$A$</span> and <span class="inline-math">$\tilde f = \frac{1}{3}$</span> on <span class="inline-math">$B$</span>.
+</p>
+<p>
+    Now <span class="inline-math">$\|f|_L - g\|_\infty \leq \frac{2}{3}$</span>:
+</p>
+<ul>
+<li>
+    <p>
+        on <span class="inline-math">$A$</span>, <span class="inline-math">$-1\leq g\leq -\frac{1}{3}$</span> and <span class="inline-math">$f = -\frac{1}{3}$</span>, so <span class="inline-math">$\|f|_A - g|_A\| \leq \frac{2}{3}$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        on <span class="inline-math">$B$</span>, <span class="inline-math">$\frac{1}{3} \leq g \leq 1$</span> and <span class="inline-math">$f = \frac{1}{3}$</span>, so <span class="inline-math">$\|f|_B - g|_B\| \leq \frac{2}{3}$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        on <span class="inline-math">$X \setminus A \setminus B$</span>, <span class="inline-math">$-\frac{1}{3}&lt;g&lt;\frac{1}{3}$</span> and <span class="inline-math">$-\frac{1}{3}\leq f\leq \frac{1}{3}$</span>, so <span class="inline-math">$\|f|_{X \setminus A \setminus B} - g|_{X\setminus A\setminus B}\|\leq \frac{2}{3}$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore <span class="inline-math">$R(\frac{1}{3} B_X)$</span> is <span class="inline-math">$\frac{2}{3}$</span>-dense in <span class="inline-math">$B_Y$</span>.
+</p>
+
+<h1>Over <span class="inline-math">$\C$</span></h1>
+
+<p>
+    (Sheet 2 Q1)
+</p>
+<p>
+    Let <span class="inline-math">$g\in C_b^\C(L)$</span>.
+    If <span class="inline-math">$g = 0$</span>, then <span class="inline-math">$f = 0\in C_b^\C(K)$</span> works, so assume <span class="inline-math">$\|g\|_\infty &gt; 0$</span>.
+</p>
+<p>
+    Extend <span class="inline-math">$\Re g, \Im g\in C_b^\R(L)$</span>
+    to get <span class="inline-math">$f_1, f_2\in C_b^\R(K)$</span> respectively.
+    Let <span class="inline-math">$f = f_1 + if_2\in C_b^\C(K)$</span>,
+    which agrees with <span class="inline-math">$g$</span> on <span class="inline-math">$L$</span>.
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        ϕ: \C &amp;\to \C \\
+        z &amp;\mapsto \begin{cases}
+            z, &amp;|z| \leq \|g\|_\infty, \\
+            \frac{\|g\|_\infty}{\|z\|}z, &amp;|z|\geq \|g\|_\infty,
+        \end{cases}
+    \end{align*} $$</span>
+    which is continuous by the <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-gluing-lemma.html">gluing lemma</a>.
+</p>
+<p>
+    Then <span class="inline-math">$ϕ \circ f$</span> is continuous and <span class="inline-math">$\|ϕ \circ f\|_\infty \leq \|ϕ\|_\infty = \|g\|_\infty$</span>.
+    But <span class="inline-math">$ϕ \circ f$</span> still agrees with <span class="inline-math">$g$</span> on <span class="inline-math">$L$</span>,
+    so <span class="inline-math">$\|ϕ \circ f\|_\infty = \|g\|_\infty$</span>, as required.
+</p>

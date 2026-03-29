@@ -1,0 +1,53 @@
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Corollary-inner-product-space-is-separable-iff-has-orthonormal-basis.html">Any separable inner product space has an orthonormal basis.</a>
+</p>
+
+<h1><span class="inline-math">$\dim X = n &lt; \infty$</span></h1>
+
+<p>
+    <span class="inline-math">$T$</span> is an inverse
+    <span class="display-math">$$ \begin{align*}
+        T\inv: a \mapsto \sum_{i=1}^{n} a_i e_i
+    \end{align*} $$</span>
+    so is a bijection.
+</p>
+<p>
+    It is isometric because by Pythagoras
+    <span class="display-math">$$ \begin{align*}
+        \|T\inv a\|^2 = \left\|\sum_{i=1}^{n} a_ie_i\right\|^2 ={}&amp; \sum_{i=1}^{n} |a_i|^2 = \|a\|_2^2
+    \end{align*} $$</span>
+    for all <span class="inline-math">$a\in l_2^n$</span>.
+</p>
+
+<h1><span class="inline-math">$\dim X = \infty$</span> and <span class="inline-math">$X$</span> is complete</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-Parseval-s-identities-for-inner-product-spaces.html">Parseval's identity</a> says for all <span class="inline-math">$x\in X$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|x\|^2 = \sum_{i=1}^{\infty} |\langle x,e_i\rangle|^2 = \|Tx\|_2^2
+    \end{align*} $$</span>
+    so <span class="inline-math">$T$</span> is a well-defined isometric linear map.
+</p>
+<p>
+    To show surjectivity, fix <span class="inline-math">$a\in l_2$</span>.
+    Let, for each <span class="inline-math">$n\in \N$</span>,
+    <span class="display-math">$$ \begin{align*}
+        s_n = \sum_{i=1}^{n} a_i e_i.
+    \end{align*} $$</span>
+</p>
+<p>
+    Then by Pythagoras, for <span class="inline-math">$n\geq m$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|s_n - s_m\|^2 = \left\|\sum_{i=m+1}^{n} a_ie_i\right\|^2 = \sum_{i=m+1}^{n} |a_i|^2 \leq \sum_{i=m+1}^{\infty} |a_i|^2 \to 0
+    \end{align*} $$</span>
+    as <span class="inline-math">$m\to \infty$</span>.
+    Hence <span class="inline-math">$(s_n)_{n\in \N}$</span> is a Cauchy sequence.
+    Since <span class="inline-math">$X$</span> is complete,
+    <span class="inline-math">$s_n$</span> converges to say <span class="inline-math">$s \equiv \sum_{i=1}^{\infty} a_i e_i$</span>.
+</p>
+<p>
+    For each <span class="inline-math">$i\in \N$</span>, <span class="inline-math">$\langle s_n, e_i\rangle = a_i$</span> for all <span class="inline-math">$n\geq i$</span>,
+    so by the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Cauchy-Schwarz.html">continuity</a> of <span class="inline-math">$\langle \cdot ,\cdot \rangle$</span>,
+    we have <span class="inline-math">$\langle s,e_i\rangle = a_i$</span>.
+    Hence <span class="inline-math">$Ts = a$</span>.
+</p>

@@ -1,0 +1,74 @@
+<p>
+    Let <span class="inline-math">$X$</span> be a finite-dimensional vector space.
+    Choose a basis <span class="inline-math">$e_1, \ldots, e_n$</span> for <span class="inline-math">$X$</span>.
+    Define the norm <span class="inline-math">$\|\cdot \|_1$</span> by
+    <span class="display-math">$$ \begin{align*}
+        \left\|\sum_{k=1}^{n} x_ke_k\right\|_1 = \sum_{k=1}^{n} |x_k|.
+    \end{align*} $$</span>
+    It suffices to show that any other norm <span class="inline-math">$\|\cdot \|&#x27;$</span> is equivalent to <span class="inline-math">$\|\cdot \|_1$</span>.
+</p>
+
+<h1><span class="inline-math">$\id: (X, \|\cdot\|_1) \to (X, \|\cdot\|&#x27;)$</span> is continuous</h1>
+
+<p>
+    By triangle inequality and homogeneity, for <span class="inline-math">$x = \sum_{k=1}^{n} x_k e_k$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|x\|&#x27; \leq \sum_{k=1}^{n} |x_k| \|e_k\|&#x27; \leq M\cdot \|x\|_1
+    \end{align*} $$</span>
+    where <span class="inline-math">$M = \max\{\|e_1\|&#x27;, \|e_2\|&#x27;, \ldots, \|e_n\|&#x27;\}$</span>.
+    Therefore <span class="inline-math">$\id: (X, \|\cdot\|_1) \to (X, \|\cdot\|&#x27;)$</span> is bounded.
+</p>
+
+<h1><span class="inline-math">$S := \sb{x\in X}{\|x\|_1 = 1}$</span> is compact in <span class="inline-math">$(X, \|\cdot\|_1)$</span></h1>
+
+<p>
+    Let <span class="inline-math">$(x^{(r)})_{r\in \N}$</span> be a sequence in <span class="inline-math">$S$</span>.
+</p>
+<p>
+    For each <span class="inline-math">$k$</span>, <span class="inline-math">$(x_k^{(r)})$</span> is a sequence in <span class="inline-math">$\R$</span>.
+    By repeated application of <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-Bolzano-Weierstrass-theorem.html">Bolzano-Weierstrass</a>,
+    extract a subsequence <span class="inline-math">$r_1&lt;r_2&lt; \ldots$</span> such that <span class="inline-math">$(x_k^{(r_l)})_{l\in \N}$</span>
+    is convergent for each <span class="inline-math">$k$</span>.
+    Let <span class="inline-math">$x_k = \lim_{l\to \infty} x_k^{(r_l)}$</span>.
+</p>
+<p>
+    Then <span class="inline-math">$x\in S$</span> since
+    <span class="display-math">$$ \begin{align*}
+        \|x\|_1 = \sum_{k=1}^{n} |x_k|
+        = \sum_{k=1}^{n}  \lim_{l\to \infty} |x_k^{(r_l)}|
+        = \lim_{l\to \infty} \sum_{k=1}^{n} |x_k^{(r_l)}|
+        = \lim_{l\to \infty} \|x^{(r_l)}\|_1
+        = 1
+    \end{align*} $$</span>
+    and <span class="inline-math">$x^{(r_l)}\to x$</span> in <span class="inline-math">$(X, \|\cdot\|_1)$</span> since
+    <span class="display-math">$$ \begin{align*}
+        \lim_{l\to \infty} \|x^{(r_l)} - x\|_1
+        = \lim_{l\to \infty} \sum_{k=1}^{n} |x^{(r_l)}_k - x_k|
+        = \sum_{k=1}^{n} \lim_{l\to \infty} |x_k^{(r_l)} - x_k|
+        = \sum_{k=1}^{n} 0
+        = 0.
+    \end{align*} $$</span>
+    We could exchange limits as all sums are finite.
+</p>
+<p>
+    Therefore <span class="inline-math">$S$</span> is sequentially compact, <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Proposition-sequentially-compact-and-compact.html">thus</a> compact.
+</p>
+
+<h1><span class="inline-math">$\id: (X, \|\cdot\|&#x27;) \to (X, \|\cdot\|_1)$</span> is continuous</h1>
+
+<p>
+    <span class="inline-math">$x\mapsto \|x\|&#x27;$</span> for <span class="inline-math">$x\in S$</span> is continuous
+    as a composition of inclusion <span class="inline-math">$S \hookrightarrow (X, \|\cdot\|_1)$</span>
+    and <span class="inline-math">$\id: (X, \|\cdot\|_1) \to (X, \|\cdot\|&#x27;)$</span>,
+    which are both continuous.
+</p>
+<p>
+    As <span class="inline-math">$S$</span> is compact,
+    <span class="inline-math">$c_0 = \inf_{x\in S} \|x\|&#x27;$</span> is attained, at say <span class="inline-math">$x_0\in S$</span>.
+    Since <span class="inline-math">$x_0\neq 0$</span>, <span class="inline-math">$c_0 = \|x_0\|&#x27; &gt; 0$</span>.
+    Therefore for any <span class="inline-math">$x\in S$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|x\|&#x27; \geq c = c\|x\|_1
+    \end{align*} $$</span>
+    and by homogeneity, this holds for all <span class="inline-math">$x\in X$</span>.
+</p>

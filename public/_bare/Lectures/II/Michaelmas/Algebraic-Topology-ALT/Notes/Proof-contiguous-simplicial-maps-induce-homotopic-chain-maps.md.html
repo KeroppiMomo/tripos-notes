@@ -1,0 +1,36 @@
+<p>
+    Define a homotopy
+    <span class="display-math">$$ \begin{align*}
+        h_n: C_{n}(K) &amp;\to C_{n+1}(L) \\
+        [[a_0, a_1, \ldots, a_n]] &amp;\mapsto \sum_{i=0}^{n} (-1)^i [[f(a_0), \ldots, f(a_i), g(a_i), \ldots, g(a_{n})]].
+    \end{align*} $$</span>
+</p>
+<p>
+    This is well-defined:
+    we check that for any adjacent transposition <span class="inline-math">$σ = (j, j+1)$</span>,
+    <span class="inline-math">$[[a_{σ(0)}, \ldots, a_{σ(n)}]] = [[a_0, \ldots, a_{j-1}, a_{j+1}, a_j, a_{j+2}, \ldots, a_n]]$</span>
+    is mapped to
+    <span class="display-math">$$ \begin{align*}
+        &amp;\sum_{i=0}^{j-1} (-1)^i [[f(a_0), \ldots, f(a_i), g(a_i), \ldots, g(a_{j-1}), g(a_{j+1}), g(a_j), g(a_{j+2}), \ldots, a_n]] \\
+        +&amp; (-1)^{j} [[f(a_0), \ldots, f(a_{j-1}), f(a_{j+1}), g(a_{j+1}), g(a_j), g(a_{j+2}), \ldots, g(a_n)]] \\
+        +&amp; (-1)^{j+1} [[f(a_0), \ldots, f(a_{j-1}), f(a_{j+1}), f(a_j), g(a_j), g(a_{j+2}), \ldots, g(a_n)]] \\
+        +&amp; \sum_{i=j+2}^{n} (-1)^i [[f(a_0), \ldots, f(a_{j-1}), f(a_{j+1}), f(a_j), f(a_{j+2}), \ldots, f(a_i), g(a_i), \ldots, g(a_n)]] \\
+        ={}&amp; -\sum_{i=0}^{n} (-1)^i [[f(a_0), \ldots, f(a_i), g(a_i), \ldots, g(a_n)]].
+    \end{align*} $$</span>
+</p>
+<p>
+    Now we compute
+    <span class="display-math">$$ \begin{align*}
+        &amp;(d_{n+1} \circ h_n + h_{n-1} \circ d_n)([[a_0, \ldots, a_n]]) \\
+        ={}&amp; d_{n+1}\biggl(\sum_{i=0}^{n} (-1)^i [[f(a_0), \ldots, f(a_i), g(a_i), \ldots, g(a_n)]]\biggr) \\
+        &amp; + h_n\biggl(\sum_{j=0}^{n} (-1)^j [[a_0, \ldots, a_{j-1}, a_{j+1}, \ldots, a_n]]\biggr) \\
+        ={}&amp; \sum_{i=0}^{n} (-1)^i \biggl(\sum_{j=0}^{i-1} (-1)^j [[f(a_0), \ldots, f(a_{j-1}), f(a_{j+1}), \ldots, f(a_i), g(a_i), \ldots, g(a_n)]] \\
+        &amp;\qquad \qquad \quad {}+ (-1)^{i} [[f(a_0), \ldots, f(a_{i-1}), g(a_i), \ldots, g(a_n)]] \\
+        &amp;\qquad \qquad \quad {}+ (-1)^{i+1} [[f(a_0), \ldots, f(a_i), g(a_{i+1}), \ldots, g(a_n)]] \\
+        &amp;\qquad \qquad \quad {}+ \sum_{j=i+2}^{n} (-1)^{j} [[f(a_0), \ldots, f(a_i), g(a_i), \ldots, g(a_{j-2}), g(a_j), \ldots, g(a_n)]]\biggr) \\
+        &amp; + \sum_{j=0}^{n} (-1)^j \biggl(\sum_{i=0}^{j-1} (-1)^i [[f(a_0), \ldots, f(a_i), g(a_i), \ldots g(a_{j-1}), g(a_{j+1}), \ldots, g(a_n)]] \\
+        &amp;\qquad \qquad \quad {}+ \sum_{i=j+1}^{n} (-1)^{i-1} [[f(a_0), \ldots, f(a_{j-1}), f(a_{j+1}), \ldots, f(a_i), g(a_i), \ldots, g(a_n)]]\biggr) \\
+        ={}&amp; [[g(a_0), \ldots, g(a_n)]] - [[f(a_0), \ldots, f(a_n)]] \\
+        ={}&amp; (f_n - g_n)([[a_0, \ldots, a_n]]).
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,73 @@
+
+<h1>Lebesgue point everywhere for <span class="inline-math">$f$</span> continuous</h1>
+
+<p>
+    Suppose <span class="inline-math">$f$</span> is continuous and fix <span class="inline-math">$x\in \R^d$</span> and <span class="inline-math">$ε&gt;0$</span>.
+    By continuity there exists <span class="inline-math">$δ&gt;0$</span>
+    such that <span class="inline-math">$|f(y) - f(x)| &lt; ε$</span> whenever <span class="inline-math">$y\in B_δ(x)$</span>.
+    Then for <span class="inline-math">$r&lt;δ$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{|B_r(x)|} \int_{B_r(x)} \underbrace{|f(y) - f(x)|}_{&lt;ε} \d y \leq ε.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \lim_{r\to 0} \frac{1}{|B_r(x)|} \int_{B_r(x)} |f(y)-f(x)| \d y = 0.
+    \end{align*} $$</span>
+</p>
+
+<h1>General case</h1>
+
+<p>
+    Fix <span class="inline-math">$f\in L^1(\R^d)$</span>.
+</p>
+<p>
+    For any compactly supported continuous <span class="inline-math">$g\in C_c(\R^d)$</span>,
+    writing <span class="inline-math">$f = g + (f-g)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        |f(y) - f(x)| \leq |g(y) - g(x)| + |(g-f)(y) - (g-f)(x)|
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{multline*}
+        \frac{1}{|B_r(x)|} \int_{B_r(x)} |f(y) - f(x)| \d y \\
+        \leq \frac{1}{|B_r(x)|} \int_{B_r(x)} |g(y) - g(x)| \d y + \frac{1}{|B_r(x)|} \int_{B_r(x)} |(g-f)(y) - (g-f)(x)| \d y.
+    \end{multline*} $$</span>
+    Taking lim sup on both sides and noting our result for continuous functions,
+    <span class="display-math">$$ \begin{align*}
+        &amp;\limsup_{r\to 0} \frac{1}{|B_r(x)|} \int_{B_r(x)} |f(y) - f(x)| \d y \\
+        \leq{} &amp;\limsup_{r\to 0} \frac{1}{|B_r(x)|} \int_{B_r(x)} \underbrace{|(g-f)(y) - (g-f)(x)|}_{\leq |g-f|(y) + |g-f|(x)} \d y \\
+        \leq{} &amp;\limsup_{r\to 0} \frac{1}{|B_r(x)|} \int_{B_r(x)} |g-f|(y) \d y + |g-f|(x) \\
+        \leq{} &amp;M(g-f)(x) + |g-f|(x)
+    \end{align*} $$</span>
+    where <span class="inline-math">$M(g-f)$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-Hardy-Littlewood-maximal-function.html">Hardy-Littlewood maximal function</a>.
+</p>
+<p>
+    Letting
+    <span class="display-math">$$ \begin{align*}
+        A(ε) := \sb{x\in \R^d}{\limsup_{r\to 0} \frac{1}{|B_r(x)|} \int_{B_r(x)} |f(y) - f(x)| \d y &gt; ε},
+    \end{align*} $$</span>
+    the inequality above shows
+    <span class="display-math">$$ \begin{align*}
+        A(ε) \subseteq \sb{x\in \R^d}{M(g-f)(x) &gt; ε/2} \cup \sb{x\in \R^d}{|g-f|(x) &gt; ε/2}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Taking the Lebesgue measure on both sides,
+    and noting the <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proposition-maximal-inequality.html">maximal inequality</a>
+    and the <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Proposition-Markov-inequality-in-measure-theory.html">Markov inequality</a>,
+    <span class="display-math">$$ \begin{align*}
+        |A(ε)| \leq \frac{C_d}{ε/2} \|g-f\|_1 + \frac{1}{ε/2} \|g-f\|_1 = \frac{2(C_d + 1)}{ε}\|g-f\|_1.
+    \end{align*} $$</span>
+</p>
+<p>
+    This holds for all continuous <span class="inline-math">$g$</span>.
+    As [[FILE NOT FOUND: the space of compactly supported continuous function $C_c(\R^d)$ is dense in $L^1(\R^d)$]],
+    we can take <span class="inline-math">$g$</span> such that <span class="inline-math">$\|g - f\|_1\to 0$</span>.
+    This shows <span class="inline-math">$|A(ε)| = 0$</span>.
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \R^d \setminus \sb{x\in \R^d}{\lim_{r\to 0} \frac{1}{|B_r(x)|}\int_{B_r(x)} |f(y) - f(x)| \d y = 0} = \bigcup_{n\in \Z_{&gt;0}} A(1/n)
+    \end{align*} $$</span>
+    has Lebesgue measure 0.
+</p>

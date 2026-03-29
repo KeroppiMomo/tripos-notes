@@ -1,0 +1,52 @@
+
+<h1>Well-defined and isometric</h1>
+
+<p>
+    <span class="inline-math">$θ_x: y \mapsto \langle y,x\rangle$</span>
+    is clearly linear.
+</p>
+<p>
+    By <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Cauchy-Schwarz.html">Cauchy-Schwarz</a>,
+    <span class="inline-math">$|θ_x(y)| = |\langle y,x\rangle| \leq \|y\| \|x\|$</span>
+    so <span class="inline-math">$θ_x$</span> is bounded with <span class="inline-math">$\|θ_x\| \leq \|x\|$</span>.
+</p>
+<p>
+    Moreover <span class="inline-math">$|θ_x(\frac{x}{\|x\|})| = \|x\|$</span> with <span class="inline-math">$\frac{x}{\|x\|}\in B_H$</span> so <span class="inline-math">$\|θ_x\| = \|x\|$</span>.
+</p>
+
+<h1>Conjugate-linear</h1>
+
+<p>
+    <span class="display-math">$$ \begin{align*}
+        θ_{λx + μx&#x27;}(y) = \langle y, λx + μx&#x27;\rangle = \bar λ \langle y,x\rangle + \overline{μ} \langle y,x&#x27;\rangle = (\overline{λ}θ_x + \overline{μ}θ_{x&#x27;})(y)
+    \end{align*} $$</span>
+    so <span class="inline-math">$θ_{λx + μx&#x27;} = \bar λ θ_x + \bar μ θ_{x&#x27;}$</span>.
+</p>
+
+<h1>Surjectivity</h1>
+
+<p>
+    Fix <span class="inline-math">$f\in H^\ast$</span>.
+    We want to find <span class="inline-math">$x\in H$</span> such that <span class="inline-math">$f = θ_x$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$Y = \ker f$</span>,
+    which is a closed subspace,
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-orthogonal-complement-in-Hilbert-space.html">so</a> <span class="inline-math">$H = Y \oplus Y^\perp$</span>.
+    Note <span class="inline-math">$Y^\perp$</span> is one-dimensional,
+    for if <span class="inline-math">$y,z\in Y^\perp$</span>,
+    <span class="display-math">$$ \begin{align*}
+        f\bigl(f(y) z - f(z) y\bigr) = 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$f(y) z - f(z) y \in Y \cap Y^\perp$</span>
+    and hence <span class="inline-math">$f(y) z - f(z) y = 0$</span>.
+</p>
+<p>
+    By scaling, find <span class="inline-math">$x\in Y^\perp$</span> such that <span class="inline-math">$f(x) = \|x\|^2$</span>.
+    Then for any <span class="inline-math">$z \in H$</span>,
+    writing <span class="inline-math">$z = y + λx$</span> where <span class="inline-math">$y\in Y$</span> and <span class="inline-math">$λ\in \mathbb{F}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \langle z,x\rangle = \underbrace{\langle x,y\rangle}_{0} + λ\|x\|^2 = \underbrace{f(y)}_{0} + λ f(x) = f(z)
+    \end{align*} $$</span>
+    so <span class="inline-math">$f = θ_x$</span>.
+</p>

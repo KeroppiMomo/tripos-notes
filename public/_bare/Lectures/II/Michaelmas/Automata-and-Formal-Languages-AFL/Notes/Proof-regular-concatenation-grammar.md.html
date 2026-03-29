@@ -1,0 +1,37 @@
+
+<h1><span class="inline-math">$\mathcal{L}(H) \supseteq \mathcal{L}(G) \, \mathcal{L}(G&#x27;)$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$vw\in \mathcal{L}(G) \mathcal{L}(G&#x27;)$</span> with <span class="inline-math">$S \xrightarrow{G} v$</span> and <span class="inline-math">$S&#x27; \xrightarrow{G&#x27;} w$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-derivation-in-regular-grammar.html">We know</a>
+    the final production in the derivation of <span class="inline-math">$v$</span> is a terminal rule, say <span class="inline-math">$A\to a$</span>.
+    Replacing the last step with an application of <span class="inline-math">$A \to aS&#x27;$</span>,
+    we have <span class="inline-math">$S \xrightarrow{H} vS&#x27;$</span>.
+    Moreover, <span class="inline-math">$S&#x27;\xrightarrow{G&#x27;}w$</span> implies <span class="inline-math">$S&#x27; \xrightarrow{H} w$</span>,
+    so <span class="inline-math">$S \xrightarrow{H} vw$</span>.
+</p>
+
+<h1><span class="inline-math">$\mathcal{L}(H) \subseteq \mathcal{L}(G) \, \mathcal{L}(G&#x27;)$</span></h1>
+
+<p>
+    Let <span class="inline-math">$S = σ_0 \xrightarrow{H}_1 σ_1 \xrightarrow{H}_1 \ldots \xrightarrow{H}_1 σ_n = u\in \mathbb{W}$</span>
+    be an <span class="inline-math">$H$</span>-derivation.
+    Again <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-derivation-in-regular-grammar.html">we know</a>
+    all strings <span class="inline-math">$σ_0, σ_1 ,\ldots, σ_{n-1}$</span> contain exactly one variable.
+    Rules of <span class="inline-math">$H$</span> ensure a non-decreasing number of variables in <span class="inline-math">$V&#x27;$</span>,
+    so if <span class="inline-math">$σ_i$</span> contains a variable in <span class="inline-math">$V&#x27;$</span>,
+    then this remains true for all <span class="inline-math">$σ_{i+1}, σ_{i+2}, \ldots, σ_{n-1}$</span>.
+    Therefore strings with variables from <span class="inline-math">$V$</span>
+    form an initial segment of the derivation.
+</p>
+<p>
+    Let <span class="inline-math">$m$</span> be the unique number such that <span class="inline-math">$σ_m$</span>
+    has a variable from <span class="inline-math">$V$</span> and <span class="inline-math">$σ_{m+1}$</span> has a variable from <span class="inline-math">$V&#x27;$</span>.
+    This must be an application of an <span class="inline-math">$H$</span>-rule of the form <span class="inline-math">$A \to aS&#x27;$</span>,
+    so <span class="inline-math">$σ_m = xA$</span> and <span class="inline-math">$σ_{m+1} = xaS&#x27;$</span>.
+    All rules applied before <span class="inline-math">$m$</span> are <span class="inline-math">$G$</span>-rules (since they do not involve variables from <span class="inline-math">$V&#x27;$</span>)
+    and all rules applied after <span class="inline-math">$m+1$</span> are <span class="inline-math">$G&#x27;$</span>-rules (since they do not involve variables from <span class="inline-math">$V$</span>).
+    Thus <span class="inline-math">$S \xrightarrow{G} xA$</span>
+    and using <span class="inline-math">$A \to a\in P$</span>, <span class="inline-math">$S\xrightarrow{G} xa$</span>.
+    Writing <span class="inline-math">$v = xa$</span> and <span class="inline-math">$u = vw$</span>, we have <span class="inline-math">$S&#x27; \xrightarrow{G&#x27;} w$</span>.
+</p>

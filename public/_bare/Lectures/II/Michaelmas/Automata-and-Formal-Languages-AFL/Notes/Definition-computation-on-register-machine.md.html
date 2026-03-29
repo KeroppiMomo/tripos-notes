@@ -1,0 +1,129 @@
+<p>
+    Let <span class="inline-math">$M = (Σ, Q, P)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-register-machine.html">register machine</a>.
+</p>
+<ul>
+<li>
+    <p>
+        The <em>upper register index</em> <span class="inline-math">$n$</span> of <span class="inline-math">$M$</span> is the maximal register number
+        that appears in any of the (finite) instructions in the range of <span class="inline-math">$P$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        A <em>configuration</em> or <em>snapshot</em> of length <span class="inline-math">$m$</span>
+        is a sequence <span class="inline-math">$C = (q, w_0, \ldots, w_{m-1}) \in Q \in \mathbb{W}^{m}$</span>.
+        The first entry <span class="inline-math">$q$</span> is the <em>state</em>
+        and the rest is the <em>register content</em> of the configuration.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$m\geq n+1$</span>, we say <em><span class="inline-math">$M$</span> transforms <span class="inline-math">$C$</span> into <span class="inline-math">$C&#x27;$</span></em> if any of the following is true:
+        (we perform the action according to <span class="inline-math">$P(q)$</span>)
+    </p>
+    <ul>
+    <li>
+        <p>
+            <span class="inline-math">$P(q) = +(k,a,q&#x27;)$</span> and <span class="inline-math">$C&#x27; = (q&#x27;, w_0, \ldots , w_{k-1}, w_k a, w_{k+1}, \ldots, w_{m-1})$</span>;
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$P(q) = {?}(k,a,q&#x27;,q&#x27;&#x27;)$</span> and either
+        </p>
+        <ul>
+        <li>
+            <p>
+                <span class="inline-math">$w_k = va$</span> for some <span class="inline-math">$v\in \mathbb{W}$</span> and <span class="inline-math">$C&#x27; = (q&#x27;, w_0, \ldots, w_{m-1})$</span>, or
+            </p>
+            
+        </li><li>
+            <p>
+                <span class="inline-math">$w_k \neq va$</span> for all <span class="inline-math">$v\in \mathbb{W}$</span> and <span class="inline-math">$C&#x27; = (q&#x27;&#x27;, w_0, \ldots, w_{m-1})$</span>;
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$P(q) = {?}(k,ε,q&#x27;,q&#x27;&#x27;)$</span> and either
+        </p>
+        <ul>
+        <li>
+            <p>
+                <span class="inline-math">$w_k = ε$</span> and <span class="inline-math">$C&#x27; = (q&#x27;, w_0, \ldots, w_{m-1})$</span>, or
+            </p>
+            
+        </li><li>
+            <p>
+                <span class="inline-math">$w_k \neq ε$</span> and <span class="inline-math">$C&#x27; = (q&#x27;&#x27;, w_0, \ldots, w_{m-1})$</span>;
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$P(q) = -(k,q&#x27;,q&#x27;&#x27;)$</span> and either
+        </p>
+        <ul>
+        <li>
+            <p>
+                <span class="inline-math">$w_k = ε$</span> and <span class="inline-math">$C&#x27; = (q&#x27;, w_0, \ldots, w_{m-1})$</span>, or
+            </p>
+            
+        </li><li>
+            <p>
+                <span class="inline-math">$w_k = va$</span> for some <span class="inline-math">$v\in \mathbb{W}, a\in Σ$</span> and <span class="inline-math">$C&#x27; = (q&#x27;&#x27;, w_0, \ldots, w_{k-1}, v, w_{k+1}, \ldots, w_{m-1})$</span>.
+            </p>
+            
+        </li>
+        </ul>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        For some <span class="inline-math">$\v w = (w_0, \ldots, w_n)\in \mathbb{W}^{n+1}$</span>,
+        the <em>computation sequence of <span class="inline-math">$M$</span> with input <span class="inline-math">$w$</span></em>
+        is defined recursively as
+        <span class="inline-math">$C(0, M, \mathbb{W}) = (q_\mathrm{S}, \v w)$</span>
+        and <span class="inline-math">$M$</span> transforms <span class="inline-math">$C(k,M,\v w)$</span> to <span class="inline-math">$C(k+1,M,\v w)$</span>.
+    </p>
+    <p>
+        If <span class="inline-math">$\v v = (v_0, \ldots, v_k)$</span> is a shorter input sequence (<span class="inline-math">$k&lt;n$</span>),
+        interpret as <span class="inline-math">$\v w = (v_0, \ldots, v_k, ε, \ldots, ε)\in \mathbb{W}^{n+1}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Say a computation sequence <em>halts</em>
+        if there exists some element of the form <span class="inline-math">$(q_H, \v v)$</span> in the sequence.
+    </p>
+    
+</li><li>
+    <p>
+        Say <em><span class="inline-math">$M$</span> halts on input <span class="inline-math">$\v w$</span> in <span class="inline-math">$k$</span> steps</em>
+        if the computation sequence of <span class="inline-math">$M$</span> with input <span class="inline-math">$\v w$</span> halts
+        and <span class="inline-math">$k$</span> is the least number such that <span class="inline-math">$C(k,M,\v w) = (q_H, \v v)$</span> for some <span class="inline-math">$\v v\in \mathbb{W}$</span>,
+        called the <em>register content at the time of halting</em>.
+        We also say <em><span class="inline-math">$M$</span> converges on input <span class="inline-math">$\v w$</span></em>.
+        If the computation sequence does not halt, we say <em><span class="inline-math">$M$</span> diverges on input <span class="inline-math">$\v w$</span></em>.
+    </p>
+    
+</li><li>
+    <p>
+        For any partial function <span class="inline-math">$F: \mathbb{W}^{n+1} \dashrightarrow \mathbb{W}^{n+1}$</span>,
+        we say <em><span class="inline-math">$M$</span> performs the operation <span class="inline-math">$F$</span></em> whenever upon input <span class="inline-math">$\v w$</span>,
+        if <span class="inline-math">$F(\v w)\uparrow$</span>, then <span class="inline-math">$M$</span> diverges on input <span class="inline-math">$\v w$</span>;
+        and if <span class="inline-math">$F(\v w)\downarrow$</span>, then <span class="inline-math">$M$</span> converges on input <span class="inline-math">$\v w$</span>
+        with register content <span class="inline-math">$F(\v w)$</span> at the time of halting.
+    </p>
+    <p>
+        If <span class="inline-math">$F$</span> is a total function, we also say <em><span class="inline-math">$M$</span> performs the total operation <span class="inline-math">$F$</span></em>.
+    </p>
+    
+</li>
+</ul>

@@ -1,0 +1,58 @@
+
+<h1><span class="inline-math">$\mathcal{K}(X,Y) \subseteq \mathcal{B}(X,Y)$</span></h1>
+
+<p>
+    For <span class="inline-math">$T\in \mathcal{K}(X,Y)$</span>,
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-Heine-Borel-compact-iff-totally-bounded-and-complete.html">since</a>
+    <span class="inline-math">$\overline{T(B_X)}$</span> is compact,
+    <span class="inline-math">$T(B_X)$</span> is totally bounded,
+    so bounded.
+</p>
+
+<h1><span class="inline-math">$T,S \in \mathcal{K}(X,Y)$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$λT + μS \in \mathcal{K}(X,Y)$</span></h1>
+
+<p>
+    Let <span class="inline-math">$(x_n)_{n\in \N}$</span> be a sequence in <span class="inline-math">$B_X$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$T$</span> is compact, find a subsequence <span class="inline-math">$n_1&lt;n_2&lt;\ldots$</span>
+    such that <span class="inline-math">$(Tx_{n_k})_{k\in \N}$</span> converges in <span class="inline-math">$Y$</span>.
+    And since <span class="inline-math">$S$</span> is compact,
+    find a sub-subsequence <span class="inline-math">$m_1&lt;m_2&lt;\ldots$</span>
+    such that both <span class="inline-math">$(Tx_{m_k})_{k\in \N}$</span>
+    and <span class="inline-math">$(Sx_{m_k})_{k\in \N}$</span> converge in <span class="inline-math">$Y$</span>.
+    Then <span class="inline-math">$(λTx_{m_k} + μSx_{m_k})_{k\in \N}$</span>
+    converges in <span class="inline-math">$Y$</span>.
+    Hence <span class="inline-math">$λT + μS$</span> is compact.
+</p>
+<p>
+    This shows <span class="inline-math">$\mathcal{K}(X,Y)$</span> is a vector subspace of <span class="inline-math">$\mathcal{B}(X,Y)$</span>.
+</p>
+
+<h1><span class="inline-math">$\mathcal{K}(X,Y)$</span> is sequentially closed</h1>
+
+<p>
+    Suppose <span class="inline-math">$(T_n)_{n\in \N}$</span> is a sequence in <span class="inline-math">$\mathcal{K}(X,Y)$</span>
+    such that <span class="inline-math">$T_n \to T$</span> in <span class="inline-math">$\mathcal{B}(X,Y)$</span>.
+    To show <span class="inline-math">$T$</span> is compact,
+    we will produce an finite <span class="inline-math">$ε$</span>-net for <span class="inline-math">$TB_X$</span> for each <span class="inline-math">$ε&gt;0$</span>.
+</p>
+<p>
+    Fix <span class="inline-math">$ε&gt;0$</span>.
+    Since <span class="inline-math">$T_n\to T$</span>, find <span class="inline-math">$n\in \N$</span>
+    such that <span class="inline-math">$\|T_n - T\| &lt; ε$</span>.
+    By compactness of <span class="inline-math">$T_n$</span>,
+    let <span class="inline-math">$x_1, \ldots, x_m\in B_X$</span>
+    such that
+    <span class="inline-math">$\{T_nx_1, \ldots, T_nx_m\}$</span> is an <span class="inline-math">$ε$</span>-net of <span class="inline-math">$T_nB_X$</span>.
+</p>
+<p>
+    For each <span class="inline-math">$x\in B_X$</span>,
+    find <span class="inline-math">$i$</span> such that <span class="inline-math">$\|T_nx - T_nx_i\|&lt;ε$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \|Tx - Tx_i\| &amp;\leq \underbrace{\|Tx - T_n x\|}_{\leq \|T - T_n\|} + \|T_n x - T_nx_i\| + \underbrace{\|T_n x_i - Tx_i\|}_{\leq \|T_n - T\|}\\
+        &amp;&lt; 3ε.
+    \end{align*} $$</span>
+    So <span class="inline-math">$\set{Tx_1, \ldots, Tx_m}$</span> is a <span class="inline-math">$3ε$</span>-net of <span class="inline-math">$TB_X$</span>.
+</p>

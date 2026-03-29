@@ -1,0 +1,52 @@
+<p>
+    Consider <span class="inline-math">$Σ = \set{0,1}$</span>,
+    and if <span class="inline-math">$w\in \mathbb{W}$</span> contains at least one <span class="inline-math">$0$</span>,
+    write <span class="inline-math">$\mathrm{tail}(w)$</span> for the number of <span class="inline-math">$1$</span>s
+    in <span class="inline-math">$w$</span> that follow the last occurring <span class="inline-math">$0$</span>
+    (e.g. <span class="inline-math">$\mathrm{tail}(0101111) = 4$</span>).
+</p>
+<p>
+    For any subset <span class="inline-math">$X \subseteq \N$</span>,
+    define a language <span class="inline-math">$L_X \subseteq \mathbb{W}$</span> by
+    <span class="inline-math">$w \in L_X$</span> iff
+    either <span class="inline-math">$w$</span> has no <span class="inline-math">$0$</span>, or <span class="inline-math">$\mathrm{tail}(w) \in X$</span>.
+</p>
+
+<h1><span class="inline-math">$L_X$</span> satisfies the pumping lemma with pumping number 2</h1>
+
+<p>
+    Consider <span class="inline-math">$w\in L_X$</span> with <span class="inline-math">$|w|\geq 2$</span>.
+    Let <span class="inline-math">$x = ε$</span>, <span class="inline-math">$y\in \set{0,1}$</span> be the first symbol of <span class="inline-math">$w$</span>, and <span class="inline-math">$z$</span> such that <span class="inline-math">$w = xyz$</span>.
+</p>
+<p>
+    Two cases:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$y = 0$</span>. Then <span class="inline-math">$w$</span> contains a <span class="inline-math">$0$</span> so <span class="inline-math">$\mathrm{tail}(w) \in X$</span>.
+        Pumping up, <span class="inline-math">$\mathrm{tail}(0^k z) = \mathrm{tail}(0z) \in X$</span> for all <span class="inline-math">$k\geq 1$</span>.
+        Pumping down, if <span class="inline-math">$z$</span> contains no <span class="inline-math">$0$</span>, then <span class="inline-math">$z\in L_X$</span> immediately;
+        otherwise <span class="inline-math">$\mathrm{tail}(z) = \mathrm{tail}(0z) \in X$</span> so <span class="inline-math">$z\in L_X$</span> as well.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$y = 1$</span>. If <span class="inline-math">$z$</span> contains no <span class="inline-math">$0$</span>, then <span class="inline-math">$1^k z$</span> has no <span class="inline-math">$0$</span> for all <span class="inline-math">$k$</span>;
+        otherwise <span class="inline-math">$\mathrm{tail}(1^k z) = \mathrm{tail}(1z)$</span> so <span class="inline-math">$1^k z\in L_X$</span>.
+    </p>
+    
+</li>
+</ul>
+
+<h1>Exists non-regular language satisfying the pumping lemma</h1>
+
+<p>
+    If <span class="inline-math">$X,Y\subseteq \N$</span> are distinct, then <span class="inline-math">$L_X \neq L_Y$</span>.
+    To see this, suppose <span class="inline-math">$n\in X\setminus Y$</span>.
+    Then <span class="inline-math">$10^n \in L_X \setminus L_Y$</span>.
+    Similarly for <span class="inline-math">$n\in Y\setminus X$</span>.
+    Hence since there is uncountably many <span class="inline-math">$X\subseteq \N$</span>,
+    there is uncountably many languages of the form <span class="inline-math">$L_X$</span>.
+    However there are only <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-countably-many-languages-produced-by-grammar.html">countably many regular languages</a>.
+</p>

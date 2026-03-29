@@ -1,0 +1,42 @@
+<p>
+    The <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-principle-of-isolated-zeros.html">principle of isolated zeros</a>
+    implies for each <span class="inline-math">$y\in Y$</span>,
+    the set <span class="inline-math">$f\inv(y)$</span> is discrete.
+    As <span class="inline-math">$X$</span> is compact, <span class="inline-math">$f\inv(y)$</span> is finite.
+    Therefore we can define
+    <span class="display-math">$$ \begin{align*}
+        n(y) = \sum_{x\in f\inv(y)} d_x.
+    \end{align*} $$</span>
+    To show <span class="inline-math">$n$</span> is constant on <span class="inline-math">$Y$</span>,
+    as <span class="inline-math">$Y$</span> is connected,
+    it suffices to find,
+    for all <span class="inline-math">$y$</span>,
+    a neighbourhood of <span class="inline-math">$y$</span> where <span class="inline-math">$n$</span> is constant.
+</p>
+<p>
+    Fix <span class="inline-math">$y\in Y$</span>.
+    For each <span class="inline-math">$x\in f\inv(y)$</span>,
+    by <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Theorem-local-mapping-on-Riemann-surfaces.html">local mapping theorem</a>,
+    find open neighbourhoods <span class="inline-math">$U_x\ni x$</span> and <span class="inline-math">$V_x\ni y$</span>
+    such that <span class="inline-math">$f|_{U_x\setminus \set{x}}: U_x \setminus \set{x} \to V_x \setminus \set{y}$</span>
+    is surjective and <span class="inline-math">$d_x$</span>-to-1.
+    By shrinking <span class="inline-math">$U_x$</span>, assume <span class="inline-math">$\sb{U_x}{x\in f\inv(y)}$</span> are disjoint.
+</p>
+<p>
+    Let
+    <span class="display-math">$$ \begin{align*}
+        V := \biggl(\bigcap_{x\in f\inv(y)} V_x\biggr) \setminus f\Bigl(X \setminus \bigcup_{x\in f\inv(y)} U_x\Bigr).
+    \end{align*} $$</span>
+    Because <span class="inline-math">$X\setminus \bigcup_{x\in f\inv(y)} U_x$</span> is closed, it is compact, so its image under <span class="inline-math">$f$</span> is compact hence closed.
+    Therefore <span class="inline-math">$V$</span> is an open neighbourhood of <span class="inline-math">$x$</span>.
+</p>
+<p>
+    For all <span class="inline-math">$y&#x27;\in V\setminus \set{y}$</span>,
+    note by construction <span class="inline-math">$f\inv(y&#x27;) \subseteq  \bigcup_{x\in f\inv(y)} U_x$</span>, so
+    all <span class="inline-math">$x&#x27;\in f\inv(y&#x27;)$</span> are unramified.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        n(y&#x27;) = \# f\inv(y&#x27;) = \sum_{x\in f\inv(y)} \#(f\inv(y&#x27;) \cap U_x) = \sum_{x\in f\inv(y)} d_x = n(y).
+    \end{align*} $$</span>
+    Hence <span class="inline-math">$n$</span> is constant on <span class="inline-math">$V$</span>.
+</p>

@@ -1,0 +1,48 @@
+
+<h1>Computable <span class="inline-math">$\implies\Delta_1$</span></h1>
+
+<p>
+    If a set <span class="inline-math">$X\subseteq \mathbb{W}^k$</span> is computable,
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html#^closure-complementation">then</a> so is <span class="inline-math">$\mathbb{W}^k \setminus X$</span>,
+    so it suffices to show <span class="inline-math">$X$</span> is <span class="inline-math">$Σ_1$</span>.
+</p>
+<p>
+    Define <span class="inline-math">$Y = \sb{(\v w, v)\in \mathbb{W}^{k+1}}{\v w\in X}$</span>.
+    <span class="inline-math">$Y$</span> is computable: ignore <span class="inline-math">$v$</span> and do the computation to check if <span class="inline-math">$\v w\in X$</span>,
+    so <span class="inline-math">$X$</span> is <span class="inline-math">$Σ_1$</span>.
+</p>
+
+<h1><span class="inline-math">$Δ_1\implies$</span> computable</h1>
+
+<p>
+    Suppose <span class="inline-math">$X\subseteq \mathbb{W}^k$</span> and <span class="inline-math">$\mathbb{W}^k \setminus X$</span> are <span class="inline-math">$Σ_1$</span>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-computably-enumerable-iff-Sigma_1.html">thus</a> computably enumerable,
+    i.e. there exists register machines <span class="inline-math">$M, M&#x27;$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \v w\in X &amp;\iff \exists v (t_{M,k}(\v w, v) = a), \\
+        \v w\not\in X &amp;\iff \exists v (t_{M&#x27;,k}(\v w, v) = a)
+    \end{align*} $$</span>
+    where <span class="inline-math">$t_{M,k}$</span> is the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Software.html">truncated computation function</a>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Merging-and-splitting-words.html">Splitting</a> the word <span class="inline-math">$v$</span> into <span class="inline-math">$v_{(0)}$</span> and <span class="inline-math">$v_{(1)}$</span>,
+    define the computable total function
+    <span class="display-math">$$ \begin{align*}
+        f(\v w,v) = \begin{cases}
+            t_{M,k}(\v w, v_{(1)}) &amp;\text{if $\#(v_{(0)})$ is even}, \\
+            t_{M&#x27;,k}(\v w, v_{(1)}) &amp;\text{if $\#(v_{(0)})$ is odd}.
+        \end{cases}
+    \end{align*} $$</span>
+    Minimise this function to obtain <span class="inline-math">$h$</span>
+    which finds the least <span class="inline-math">$v$</span> such that <span class="inline-math">$f(\v w, v) = a$</span>.
+    For each <span class="inline-math">$\v w$</span>, since either <span class="inline-math">$\v w\in X$</span> or <span class="inline-math">$\v w\not\in X$</span>,
+    such a <span class="inline-math">$v$</span> must exist,
+    so <span class="inline-math">$h$</span> is a total function.
+    We finally have
+    <span class="display-math">$$ \begin{align*}
+        χ_X(\v w) = \begin{cases}
+            a &amp;\text{if $\#(h(\v w)_{(0)})$ is even}, \\
+            ε &amp;\text{if $\#(h(\v w)_{(0)})$ is odd}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>

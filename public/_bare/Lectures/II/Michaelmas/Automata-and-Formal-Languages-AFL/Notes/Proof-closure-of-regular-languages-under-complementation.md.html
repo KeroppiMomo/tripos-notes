@@ -1,0 +1,37 @@
+<p>
+    Let <span class="inline-math">$L$</span> be a regular language,
+    and <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-regular-language-iff-accepted-by-automaton.html">take</a> a deterministic automaton
+    <span class="inline-math">$D = (Σ, Q, δ, q_0, F)$</span> that accepts <span class="inline-math">$L$</span>.
+</p>
+<p>
+    We can assume WLOG that <span class="inline-math">$q_0$</span> is not in the range of <span class="inline-math">$δ$</span>:
+    let a new state <span class="inline-math">$q_0^\ast$</span> and let
+    <span class="display-math">$$ \begin{align*}
+        δ&#x27;(q,a) = \begin{cases}
+            q_0^\ast &amp;\text{if } δ(q,a) = q_0, \\
+            δ(q,a) &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+    Then <span class="inline-math">$(Σ, Q\cup \set{q_0^\ast}, δ&#x27;, q_0, F)$</span>
+    accepts the same language as <span class="inline-math">$D$</span>
+    and does not have <span class="inline-math">$q_0$</span> in the range of <span class="inline-math">$δ&#x27;$</span>.
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        \overline{D} = (Σ, Q, δ, q_0, Q\setminus (F \cup \set{q_0})).
+    \end{align*} $$</span>
+    We claim that <span class="inline-math">$\mathcal{L}(\overline{D}) = \mathbb{W}^+ \setminus \mathcal{L}(D)$</span>.
+</p>
+<p>
+    If <span class="inline-math">$w\in \mathcal{L}(\overline{D})$</span>,
+    then <span class="inline-math">$\hat δ(q_0, w) \in Q\setminus (F \cup \set{q_0})$</span>.
+    Thus <span class="inline-math">$w \neq ε$</span> (since <span class="inline-math">$\hat δ(q_0, ε) = q_0$</span>)
+    and <span class="inline-math">$\hat δ(q_0, w) \not\in F$</span>.
+</p>
+<p>
+    If <span class="inline-math">$w\neq ε$</span> and <span class="inline-math">$\hat δ(q_0, w)\not\in F$</span>,
+    then as <span class="inline-math">$q_0$</span> is not in the range of <span class="inline-math">$δ$</span>,
+    we know <span class="inline-math">$\hat δ(q_0, w) \neq q_0$</span> by <span class="inline-math">$w\neq ε$</span>.
+    Thus <span class="inline-math">$\hat δ(q_0, w) \in Q\setminus (F\cup \set{q_0})$</span>.
+</p>

@@ -1,0 +1,60 @@
+
+<h1><span class="inline-math">$x \mapsto x^p$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-function.html">convex</a> on <span class="inline-math">$(0,\infty)$</span></h1>
+
+<p>
+    <span class="inline-math">$\dd{x} x^p = p(p-1)x^{p-2} \geq 0$</span> for all <span class="inline-math">$x&gt;0$</span>,
+    so done by the <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Theorem-second-order-condition-of-convex-functions.html">second-order condition</a>.
+</p>
+<p>
+    Alternatively, fix <span class="inline-math">$y&gt;0$</span> and <span class="inline-math">$λ\in [0,1]$</span>.
+    It suffices to show
+    <span class="display-math">$$ \begin{align*}
+        g(x) = ((1-λ)x + λy)^p - (1-λ)x^p - λy^p.
+    \end{align*} $$</span>
+    is non-positive for <span class="inline-math">$x&gt;0$</span>.
+</p>
+<p>
+    Compute
+    <span class="display-math">$$ \begin{align*}
+        g&#x27;(x) ={}&amp; p(1-λ)((1-λ)x + λy)^{p-1} - p(1-λ)x^{p-1} \\
+        ={}&amp; p(1-λ)\left(((1-λ)x + λy)^{p-1} - x^{p-1}\right).
+    \end{align*} $$</span>
+    If <span class="inline-math">$x&lt;y$</span>, then <span class="inline-math">$(1-λ)x + λy &gt; x$</span>, so <span class="inline-math">$g&#x27;(x) \geq 0$</span>.
+    Similarly if <span class="inline-math">$x&gt;y$</span>, hen <span class="inline-math">$g&#x27;(x) \leq 0$</span>.
+    By the <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-mean-value-theorem.html">mean value theorem</a>,
+    <span class="inline-math">$g$</span> achieves a maximum at <span class="inline-math">$x=y$</span>, so <span class="inline-math">$g(x) \leq g(y) = 0$</span>.
+</p>
+
+<h1><a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-unit-ball.html"><span class="inline-math">$B$</span></a><span class="inline-math">${}= \sb{x\in l_p}{\|x\|_p\leq 1}$</span> is <a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Definition-convex-set.html">convex</a></h1>
+
+<p>
+    For <span class="inline-math">$x,y\in B$</span> and <span class="inline-math">$λ\in [0,1]$</span>, we want to show <span class="inline-math">$(1-λ)x + λy\in B$</span>.
+</p>
+<p>
+    The convexity of <span class="inline-math">$x\mapsto x^p$</span> gives
+    <span class="display-math">$$ \begin{align*}
+        |(1-λ)x_i + λy_i|^p \leq \bigl|(1-λ)|x_i| + λ |y_i|\bigr|^p \leq (1-λ) |x_i|^p + λ |y_i|^p.
+    \end{align*} $$</span>
+    Therefore for any <span class="inline-math">$n\in \N$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=1}^{n} |(1-λ)x_i + λy_i|^p \leq (1-λ) \sum_{i=1}^{n} |x_i|^p + λ \sum_{i=1}^{n} |y|^p.
+    \end{align*} $$</span>
+    Taking <span class="inline-math">$n\to \infty$</span> yields
+    <span class="display-math">$$ \begin{align*}
+        \|(1-λ)x + λy\|_p \leq (1-λ) \underbrace{\|x\|_p}_{\leq 1} + λ \underbrace{\|y\|_p}_{\leq 1} \leq 1
+    \end{align*} $$</span>
+    so <span class="inline-math">$(1-λ)x + λy\in B$</span>.
+</p>
+
+<h1><span class="inline-math">$\|x + y\|_p \leq \|x\|_p + \|y\|_p$</span></h1>
+
+<p>
+    If either <span class="inline-math">$x,y,x+y$</span> is zero, then the inequality is clear.
+</p>
+<p>
+    Assume not. Then using convexity of <span class="inline-math">$B$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \frac{x + y}{\|x\|_p + \|y\|_p} = \frac{\|x\|_p}{\|x\|_p + \|y\|_p} \underbrace{\frac{x}{\|x\|_p}}_{\in B} + \frac{\|y\|_p}{\|x\|_p + \|y\|_p} \underbrace{\frac{y}{\|y\|_p}}_{\in B} \in B
+    \end{align*} $$</span>
+    and hence <span class="inline-math">$\|x + y\|_p \leq \|x\|_p + \|y\|_p$</span>.
+</p>

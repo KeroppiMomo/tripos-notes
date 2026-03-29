@@ -1,0 +1,63 @@
+<p>
+    The key idea is to define, for each <span class="inline-math">$A\in \mathcal{M}(\mathcal{C})$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{M}_A := \sb{B\in \mathcal{M}(\mathcal{C})}{A\cap B\in \mathcal{M}(\mathcal{C})}.
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$\mathcal{M}_A$</span> is a monotone class</h1>
+
+<p>
+    It's just set theory and definition chasing:
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$A\cap E = A \in \mathcal{M}(\mathcal{C})$</span> so <span class="inline-math">$E\in \mathcal{M}_A$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$B\subseteq B&#x27;$</span> and <span class="inline-math">$B,B&#x27;\in \mathcal{M}_A$</span>,
+        then <span class="inline-math">$A\cap B \subseteq A \cap B&#x27;$</span> and both belong to <span class="inline-math">$\mathcal{M}(\mathcal{C})$</span>.
+        So <span class="inline-math">$A \cap (B&#x27;\setminus B) = (A \cap B&#x27;) \setminus (A \setminus B)\in \mathcal{M}(\mathcal{C})$</span>,
+        and thus <span class="inline-math">$B&#x27;\setminus B\in \mathcal{M}_A$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Let <span class="inline-math">$(B_n)_{n\in \N}$</span> be an increasing sequence in <span class="inline-math">$\mathcal{M}_A$</span>.
+        Then <span class="inline-math">$(A \cap B_n)_{n\in \N}$</span> is an increasing sequence in <span class="inline-math">$\mathcal{M}(\mathcal{C})$</span>,
+        so <span class="inline-math">$A \cap  \bigcup_{n} B_n = \bigcup_{n} (A\cap B_n) \in \mathcal{M}(\mathcal{C})$</span>.
+        Therefore <span class="inline-math">$\bigcup_{n} B_n \in \mathcal{M}_A$</span>.
+    </p>
+    
+</li>
+</ol>
+
+<h1><span class="inline-math">$\mathcal{M}(\mathcal{C})$</span> is stable by finite interseciton</h1>
+
+<p>
+    For any <span class="inline-math">$A \in \mathcal{C}$</span>,
+    since <span class="inline-math">$\mathcal{C}$</span> is stable by finite intersection,
+    <span class="inline-math">$\mathcal{C}\subseteq \mathcal{M}_A$</span>.
+    But <span class="inline-math">$\mathcal{M}_A\subseteq \mathcal{M}(\mathcal{C})$</span>
+    and <span class="inline-math">$\mathcal{M}(\mathcal{C})$</span> is minimal,
+    so <span class="inline-math">$\mathcal{M}_A = \mathcal{M}(\mathcal{C})$</span>.
+    This shows that for all <span class="inline-math">$A\in \mathcal{C}, B\in \mathcal{M}(\mathcal{C})$</span>,
+    we have <span class="inline-math">$A\cap B\in \mathcal{M}(\mathcal{C})$</span>.
+</p>
+<p>
+    This statement then shows that <span class="inline-math">$\mathcal{C}\subseteq \mathcal{M}_A$</span>
+    for all <span class="inline-math">$A\in \mathcal{M}(\mathcal{C})$</span>.
+    Argue similarly to conclude that for all <span class="inline-math">$A,B\in \mathcal{M}(\mathcal{C})$</span>,
+    we have <span class="inline-math">$A\cap B\in \mathcal{M}(\mathcal{C})$</span>.
+</p>
+<p>
+    Finally since <span class="inline-math">$σ(\mathcal{C})$</span> is a monotone class,
+    we have <span class="inline-math">$\mathcal{C} \subseteq \mathcal{M}(\mathcal{C}) \subseteq σ(\mathcal{C})$</span>.
+    Invoke <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Lemma-monotone-class-stable-by-finite-intersections-is-a-sigma-algebra.html">this lemma</a>
+    to see that <span class="inline-math">$\mathcal{M}(\mathcal{C})$</span>
+    is a <span class="inline-math">$σ$</span>-algebra.
+    Thus <span class="inline-math">$\mathcal{M}(\mathcal{C}) = σ(\mathcal{C})$</span>.
+</p>

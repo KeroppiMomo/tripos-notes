@@ -1,0 +1,48 @@
+<p>
+    Note <span class="inline-math">$Y^\perp = \bigcap_{y\in Y} \ker θ_y$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        θ_y: H &amp;\to \mathbb{F} \\
+        x &amp;\mapsto \langle x,y\rangle
+    \end{align*} $$</span>
+    is a linear map, bounded as <span class="inline-math">$\|\langle x,y\rangle\| \leq \|y\|\|x\|$</span>
+    by <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Cauchy-Schwarz.html">Cauchy-Schwarz</a>.
+    Since <span class="inline-math">$\ker θ_y$</span> is closed,
+    <span class="inline-math">$Y^\perp$</span> is a closed subspace of <span class="inline-math">$H$</span>.
+</p>
+<p>
+    Therefore <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-Banach-space-as-direct-sum.html">it suffices</a>
+    to show <span class="inline-math">$H$</span> is the algebraic direct sum of <span class="inline-math">$Y$</span> and <span class="inline-math">$Y^\perp$</span>.
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$Y \cap Y^\perp = \set{0}$</span>, because if <span class="inline-math">$x\in Y \cap Y^\perp$</span>,
+        then <span class="inline-math">$\langle x,x\rangle = 0$</span> so <span class="inline-math">$x = 0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        To see <span class="inline-math">$H = Y + Y^\perp$</span>,
+        fix some <span class="inline-math">$x\in H$</span>,
+        and let <span class="inline-math">$y\in Y$</span> be the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-closest-point-theorem.html">unique closest point</a> of <span class="inline-math">$Y$</span> to <span class="inline-math">$x$</span>.
+        We want to show <span class="inline-math">$z = x-y\in Y^\perp$</span>.
+    </p>
+    <p>
+        Suppose not, meaning there is some <span class="inline-math">$y&#x27;\in Y$</span> such that <span class="inline-math">$\langle y&#x27;,z\rangle \neq 0$</span>.
+        WLOG assume <span class="inline-math">$\langle y&#x27;,z\rangle&gt;0$</span> by replacing <span class="inline-math">$y&#x27;$</span> with <span class="inline-math">$e^{iθ} y&#x27;$</span>.
+    </p>
+    <p>
+        But
+        <span class="display-math">$$ \begin{align*}
+            \|x - \underbrace{(y + λy&#x27;)}_{\in Y}\|^2 ={}&amp; \|z - λy&#x27;\|^2 \\
+            ={}&amp; \langle z-λy&#x27;, z-λy&#x27;\rangle \\
+            ={}&amp; \|z\|^2 + λ^2 \|y&#x27;\|^2 - 2λ\langle y&#x27;,z\rangle \\
+            ={}&amp; \|z\|^2 - λ(2\langle y&#x27;,z\rangle - λ\|y&#x27;\|^2)
+        \end{align*} $$</span>
+        is smaller than <span class="inline-math">$\|z\|^2$</span> for sufficiently small <span class="inline-math">$λ&gt;0$</span>,
+        which is impossible as <span class="inline-math">$\|z\| = \|x - y\| = d(x,Y)$</span>.
+    </p>
+    
+</li>
+</ol>

@@ -1,0 +1,57 @@
+
+<h1>If <span class="inline-math">$T$</span> is consistent, then either <span class="inline-math">$T \cup \set{ϕ}$</span> or <span class="inline-math">$T \cup \set{\neg ϕ}$</span> is consistent for any <span class="inline-math">$ϕ\in \mathrm{Fml}$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$T \cup \set{ϕ}$</span> is not consistent,
+    i.e. <span class="inline-math">$T \cup \set{ϕ} \vdash \bot$</span>.
+    By the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-deduction-theorem.html">deduction theorem</a>,
+    <span class="inline-math">$T \vdash (ϕ \Rightarrow \bot)$</span>.
+</p>
+<p>
+    Here is a <span class="inline-math">$\set{(ϕ \Rightarrow \bot)}$</span>-proof of <span class="inline-math">$\neg ϕ$</span>:
+</p>
+<ol start="0">
+<li>
+    <p>
+        <span class="inline-math">$(ϕ \Rightarrow \bot)$</span> (hypothesis)
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$((ϕ \Rightarrow \bot) \Rightarrow \neg ϕ)$</span> (axiom of type 4)
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\neg ϕ$</span> (modus ponens using 0, 1)
+    </p>
+    
+</li>
+</ol>
+<p>
+    As <span class="inline-math">$T$</span> is consistent, <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-consistency.html#^lemma">so is</a> <span class="inline-math">$T \cup \set{(ϕ \Rightarrow \bot)}$</span>.
+</p>
+
+<h1>Construction of negation complete set</h1>
+
+<p>
+    Enumerate the countable set <span class="inline-math">$\mathrm{Fml} = \sb{ϕ_i}{i\in \N}$</span> (or well-order it).
+    Let <span class="inline-math">$T_0 = T$</span> and assume <span class="inline-math">$T_i$</span> is consistent by induction.
+    By what we've shown,
+    set <span class="inline-math">$T_{i+1} = T_i \cup \set{ϕ_i}$</span> or <span class="inline-math">$T_i \cup \set{\neg ϕ_i}$</span>
+    so that <span class="inline-math">$T_{i+1}$</span> is consistent.
+    Take <span class="inline-math">$T^\ast = \bigcup_{i\in \N} T_i$</span>.
+</p>
+<p>
+    <span class="inline-math">$T^\ast$</span> is negation complete:
+    for each <span class="inline-math">$ϕ\in \mathrm{Fml}$</span>,
+    either <span class="inline-math">$ϕ$</span> or <span class="inline-math">$\neg ϕ$</span> is contained in <span class="inline-math">$T^\ast$</span>,
+    so <span class="inline-math">$T^\ast\vdash ϕ$</span> or <span class="inline-math">$\neg ϕ$</span>.
+</p>
+<p>
+    <span class="inline-math">$T^\ast$</span> is consistent:
+    if <span class="inline-math">$T^\ast\vdash \bot$</span>,
+    by <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-proof-in-propositional-logic.html#^finite">finiteness</a>,
+    there exists some <span class="inline-math">$i$</span> such that <span class="inline-math">$T_i \vdash \bot$</span>,
+    which is impossible.
+</p>

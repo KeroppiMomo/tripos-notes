@@ -1,0 +1,58 @@
+
+<h1><span class="inline-math">$\deg ρ\mid \# G$</span></h1>
+
+<p>
+    Let <span class="inline-math">$χ$</span> be the character of <span class="inline-math">$ρ$</span>.
+    We <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proof-orthonormality-of-characters.html">know</a> that
+    <span class="display-math">$$ \begin{align*}
+        1 = \langle χ, χ\rangle = \sum_{i=1}^{k} \frac{\#\mathcal{C}_i}{\#G} χ(g_i) \overline{χ(g_i)}
+    \end{align*} $$</span>
+    where <span class="inline-math">$\mathcal{C}_1, \ldots, \mathcal{C}_k$</span> are all the conjugacy classes of <span class="inline-math">$G$</span>
+    with representatives <span class="inline-math">$g_1, \ldots, g_k$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        \frac{\# G}{\deg ρ} ={}&amp; \sum_{i=1}^{k} \underbrace{\frac{\# \mathcal{C}_i \cdot χ(g_i)}{\deg ρ}}_{ω_V(g_i)} \,\overline{χ(g_i)}.
+    \end{align*} $$</span>
+</p>
+<p>
+    We showed <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Lemma-central-character-of-group-algebra.html"><span class="inline-math">$ω_V(g_i)$</span></a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proposition-character-values-are-algebraic-integers.html"><span class="inline-math">$χ(g_i)$</span></a> are algebraic integers,
+    and <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-algebraic-integers-form-a-ring.html">thus</a> so is <span class="inline-math">$\#G/\deg ρ$</span>.
+    However it is rational,
+    <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Proposition-rational-algebraic-integer-is-an-integer.html">so</a> it is an integer,
+    showing <span class="inline-math">$\deg ρ \mid \# G$</span>.
+</p>
+
+<h1><span class="inline-math">$\deg ρ \mid \#G/\#Z(G)$</span></h1>
+
+<p>
+    For <span class="inline-math">$m\in \N$</span>,
+    consider <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Lemma-irreducible-characters-of-direct-product.html"><span class="inline-math">$ρ^{\otimes m}$</span></a><span class="inline-math">${}= \underbrace{ρ \otimes \ldots \otimes ρ}_{m\text{ times}}: G^m\to \GL(V^{\otimes m})$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Lemma-irreducible-characters-of-direct-product.html">Since</a> <span class="inline-math">$ρ$</span> is an irreducible representation of <span class="inline-math">$G$</span>,
+    <span class="inline-math">$ρ^{\otimes m}$</span> is an irreducible representation of <span class="inline-math">$G^m$</span>.
+</p>
+<p>
+    Moreover define
+    <span class="display-math">$$ \begin{align*}
+        Z&#x27; := \sb{(z_1, \ldots, z_m)\in Z(G)^m}{\prod_{i=1}^{m} z_i = 1}.
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-Schur-s-lemma.html#^centre">Recall</a> by Schur's lemma that
+    any <span class="inline-math">$z_i\in Z(G)$</span> acts on <span class="inline-math">$V$</span> by scalar multiplication,
+    i.e. <span class="inline-math">$ρ(z_i) = λ_i\,\id$</span> for some <span class="inline-math">$λ_i\in \C$</span>.
+    Therefore if <span class="inline-math">$\prod_{i=1}^{m} z_i = 1$</span> in <span class="inline-math">$G$</span>,
+    then <span class="inline-math">$(z_1, \ldots, z_m)$</span> acts on <span class="inline-math">$V^{\otimes m}$</span>
+    by scalar multiplication by <span class="inline-math">$\prod_{i=1}^{m} λ_i = 1$</span>
+    i.e. trivially.
+    Hence <span class="inline-math">$Z&#x27; \leq \ker ρ^{\otimes m}$</span>.
+</p>
+<p>
+    Thus <span class="inline-math">$V^{\otimes m}$</span> is an irreducible representation
+    of <span class="inline-math">$G^m / Z&#x27;$</span>,
+    which implies by our previous result
+    <span class="display-math">$$ \begin{align*}
+        (\deg ρ)^m = \dim V^{\otimes m} \mid \#(G^m / Z&#x27;) = \frac{(\#G)^m}{(\#Z(G))^{m-1}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    This holds for all <span class="inline-math">$m\in \N$</span>,
+    so <span class="inline-math">$\deg ρ \mid \#G/\#Z(G)$</span>.
+</p>

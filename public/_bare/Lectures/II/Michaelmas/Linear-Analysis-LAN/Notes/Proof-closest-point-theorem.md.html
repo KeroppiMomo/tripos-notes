@@ -1,0 +1,44 @@
+
+<h1>Existence</h1>
+
+<p>
+    Since <span class="inline-math">$d(x,Y) \equiv \inf\sb{\|x-y\|}{y\in Y}$</span>,
+    let <span class="inline-math">$(y_n)_{n\in \N}$</span> be a sequence in <span class="inline-math">$Y$</span>
+    such that <span class="inline-math">$\|x - y_n\| \to d(x,Y)$</span>.
+</p>
+<p>
+    <span class="inline-math">$(y_n)_{n\in \N}$</span> is Cauchy:
+    by the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-parallelogram-law.html">parallelogram law</a>,
+    <span class="display-math">$$ \begin{align*}
+        \|y_n - y_m\|^2 ={}&amp; \|(x-y_m) - (x-y_n)\|^2 \\
+        ={}&amp; 2\|x-y_m\|^2 + 2\|x - y_n\|^2 - \|2x - y_m - y_n\|^2 \\
+        ={}&amp; 2\|x-y_m\| + 2\|x - y_n\| - 4\,\biggl\|x - \underbrace{\frac{y_m + y_n}{2}}_{\in Y}\biggr\| \\
+        \leq{}&amp; 2\|x - y_m\| + 2\|x - y_n\| - 4 \, d(x,Y) \\
+        \to {}&amp; 2\,d(x,Y) + 2\, d(x,Y) - 4\,d(x,Y) = 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$\|y_n - y_m\| \to 0$</span> as <span class="inline-math">$n,m\to \infty$</span>.
+</p>
+<p>
+    As <span class="inline-math">$Y$</span> is closed in a complete space <span class="inline-math">$H$</span>,
+    <span class="inline-math">$Y$</span> is complete,
+    so <span class="inline-math">$y_n$</span> converges in <span class="inline-math">$Y$</span> to say <span class="inline-math">$y\in Y$</span>.
+</p>
+<p>
+    Now by continuity of <span class="inline-math">$\|\cdot\|$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|x - y\| = \lim_{n\to \infty} \|x - y_n\| = d(x,Y).
+    \end{align*} $$</span>
+</p>
+
+<h1>Uniqueness</h1>
+
+<p>
+    Suppose <span class="inline-math">$z\in Y$</span> also has <span class="inline-math">$\|x - z\| = d(x,Y)$</span>.
+    By the parallelogram law,
+    <span class="display-math">$$ \begin{align*}
+        \|y-z\|^2 ={}&amp; 2\|x-z\|^2 + 2\|x-y\|^2 - \|2x - y - z\|^2 \\
+        ={}&amp; 2\|x-z\|^2 + 2\|x-y\|^2 - 4\biggl\|x - \underbrace{\frac{y + z}{2}}_{\in Y}\biggr\|^2 \\
+        \leq{}&amp; 2\,d(x,Y) + 2\,d(x,Y) - 4\,d(x,Y) = 0
+    \end{align*} $$</span>
+    so <span class="inline-math">$y = z$</span>.
+</p>

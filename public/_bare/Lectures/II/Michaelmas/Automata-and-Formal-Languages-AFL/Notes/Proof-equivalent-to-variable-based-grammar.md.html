@@ -1,0 +1,84 @@
+
+<h1>Constructing a variable-based grammar</h1>
+
+<p>
+    Let <span class="inline-math">$G = (Σ, V, P, S)$</span> be a <span class="inline-math">$\mathsf{Q}$</span> grammar.
+    If <span class="inline-math">$\mathsf{Q}$</span> is "regular", <span class="inline-math">$G$</span> is already variable-based so we're done.
+</p>
+<p>
+    For each letter <span class="inline-math">$a\in Σ$</span>, we allocate a new variable <span class="inline-math">$X_a$</span> (not contained in <span class="inline-math">$Σ$</span> or <span class="inline-math">$V$</span>),
+    and define a new set of variables
+    <span class="display-math">$$V&#x27; = V \cup \sb{X_a}{a\in Σ}.$$</span>
+</p>
+<p>
+    Define the map <span class="inline-math">$X: Ω \to Ω$</span> by
+    <span class="display-math">$$ \begin{align*}
+        X(a) &amp;= X_a &amp;&amp; \text{if }a\in Σ,\\
+        X(A) &amp;= A &amp;&amp; \text{if }A\in V,
+    \end{align*} $$</span>
+    which extends to a map <span class="inline-math">$X: Ω^\ast \to Ω^\ast$</span>.
+</p>
+<p>
+    Define a new set of rewrite rules
+    <span class="display-math">$$ \begin{align*}
+        P&#x27; = \sb{X(α)\to X(β)}{α\to β\in P} \cup \sb{X_a \to a}{a\in Σ},
+    \end{align*} $$</span>
+    and let <span class="inline-math">$G&#x27; = (Σ, V&#x27;, P&#x27;, S = X(S))$</span>, which is variable-based.
+</p>
+<p>
+    Notice <span class="inline-math">$G&#x27;$</span> preserves any noncontracting, context-sensitive or context-free property.
+    It suffices to show that <span class="inline-math">$G$</span> and <span class="inline-math">$G&#x27;$</span> are equivalent.
+</p>
+
+<h1><span class="inline-math">$w\in \mathcal{L}(G) \iff X(w) \in \mathcal{D}(G&#x27;, S)$</span></h1>
+
+<p>
+    If <span class="inline-math">$w\in \mathcal{L}(G)$</span>,
+    let <span class="inline-math">$S = σ_0 \xrightarrow{G}_1 σ_1 \xrightarrow{G}_1 \ldots \xrightarrow{G}_1 σ_n = w$</span>
+    be a <span class="inline-math">$G$</span>-derivation.
+    Then <span class="inline-math">$S = X(S) = X(σ_0) \xrightarrow{G&#x27;}_1 X(σ_1) \xrightarrow{G&#x27;}_1 \ldots \xrightarrow{G&#x27;}_1 X(σ_n) = X(w)$</span>
+    is a <span class="inline-math">$G&#x27;$</span>-derivation, so <span class="inline-math">$X(w)\in \mathcal{D}(G&#x27;, S)$</span>.
+</p>
+<p>
+    Conversely <span class="inline-math">$X(w)\in \mathcal{D}(G&#x27;, S)$</span> contains no letters.
+    Notice that the number of letters after any rewrite rule in <span class="inline-math">$P&#x27;$</span> is non-decreasing,
+    so the <span class="inline-math">$G&#x27;$</span>-derivation <span class="inline-math">$S = τ_0 \xrightarrow{G&#x27;}_1 τ_1 \xrightarrow{G&#x27;}_1 \ldots \xrightarrow{G&#x27;}_1 τ_n = X(w)$</span> cannot contains any letters.
+    This means all strings are of the form <span class="inline-math">$τ_i = X(σ_i)$</span> for some <span class="inline-math">$σ_i\in Ω^\ast$</span>,
+    and each <span class="inline-math">$τ_i \xrightarrow{G&#x27;}_1 τ_{i+1}$</span> is an application of a rule of the form <span class="inline-math">$X(α)\to X(β)$</span>.
+    Hence <span class="inline-math">$S = σ_0 \xrightarrow{G}_1 σ_1 \xrightarrow{G}_1 \ldots \xrightarrow{G}_1 σ_n = w$</span>
+    is a <span class="inline-math">$G$</span>-derivation.
+</p>
+
+<h1><span class="inline-math">$w\in Σ^\ast$</span> and <span class="inline-math">$X(w)\in \mathcal{D}(G&#x27;, S) \iff w\in \mathcal{L}(G&#x27;)$</span></h1>
+
+<p>
+    If <span class="inline-math">$X(w)\in \mathcal{D}(G&#x27;, S)$</span> and <span class="inline-math">$w\in Σ^\ast$</span>,
+    then <span class="inline-math">$w$</span> can be derived from <span class="inline-math">$X(w)$</span> in <span class="inline-math">$G&#x27;$</span> by applying rules of the form <span class="inline-math">$X_a \to a$</span>.
+</p>
+<p>
+    Conversely, suppose <span class="inline-math">$w\in \mathcal{L}(G&#x27;)$</span>
+    and let <span class="inline-math">$S = σ_0 \xrightarrow{G&#x27;}_1 σ_1 \xrightarrow{G&#x27;}_1 \ldots \xrightarrow{G&#x27;}_1 σ_n = w$</span>
+    be a <span class="inline-math">$G&#x27;$</span>-derivation of <span class="inline-math">$w$</span>.
+    Let <span class="inline-math">$τ_i = X(σ_i)$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$σ_i \xrightarrow{G&#x27;}_1 σ_{i+1}$</span> is an application of a rule of the form <span class="inline-math">$X(α)\to X(β)$</span>,
+        then the same rule will warrant <span class="inline-math">$τ_i = X(σ_i)\xrightarrow{G&#x27;}_1 X(σ_{i+1}) = τ_{i+1}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$σ_i \xrightarrow{G&#x27;}_1 σ_{i+1}$</span> is an application of a rule of the form <span class="inline-math">$X_a\to a$</span>,
+        then <span class="inline-math">$τ_{i} = X(σ_i) = X(σ_{i+1}) = τ_{i+1}$</span>.
+        Since for each letter <span class="inline-math">$a$</span> in <span class="inline-math">$w$</span> there is only one rewrite rule that produces <span class="inline-math">$a$</span>,
+        we know exactly <span class="inline-math">$|w|$</span> many steps of the derivation must be of this form.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Removing these <span class="inline-math">$|w|$</span> many steps will make the remainder of the sequence
+    a <span class="inline-math">$G&#x27;$</span>-derivation of length <span class="inline-math">$n - |w|$</span> of <span class="inline-math">$X(w)$</span>.
+</p>

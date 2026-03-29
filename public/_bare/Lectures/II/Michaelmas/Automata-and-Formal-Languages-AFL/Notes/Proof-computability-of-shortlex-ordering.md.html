@@ -1,0 +1,243 @@
+
+<h1>"What is the relationship of the lengths of content in registers <span class="inline-math">$i$</span> and <span class="inline-math">$j$</span>?"</h1>
+
+<ol start="1">
+<li>
+    <p>
+        Copy the contents of registers <span class="inline-math">$i,j$</span> to unused registers <span class="inline-math">$i&#x27;, j&#x27;$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If both registers <span class="inline-math">$i&#x27;$</span> and <span class="inline-math">$j&#x27;$</span> are non-empty:
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            Remove the final letters from both registers.
+        </p>
+        
+    </li><li>
+        <p>
+            Go to 2.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        If both registers <span class="inline-math">$i&#x27;$</span> and <span class="inline-math">$j&#x27;$</span> are empty,
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            answer "they are of equal length".
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        If register <span class="inline-math">$i&#x27;$</span> is empty but register <span class="inline-math">$j&#x27;$</span> is not,
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            answer "the content of register <span class="inline-math">$i$</span> is shorter than the content of register <span class="inline-math">$j$</span>".
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        If register <span class="inline-math">$j&#x27;$</span> is empty but register <span class="inline-math">$i&#x27;$</span> is not,
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            answer "the content of register <span class="inline-math">$j$</span> is shorter than the content of register <span class="inline-math">$i$</span>".
+        </p>
+        
+    </li>
+    </ol>
+    
+</li>
+</ol>
+
+<h1>Characterstic function of <span class="inline-math">$\sb{(v,w)}{v&lt;w}$</span></h1>
+
+<ol start="1">
+<li>
+    <p>
+        Compare the lengths of <span class="inline-math">$v$</span> and <span class="inline-math">$w$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$|v|&lt;|w|$</span>,
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            empty register 0, add <span class="inline-math">$a$</span> to it, and halt.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$|w|&lt;|v|$</span>,
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            empty register 0 and halt.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$|w|=|v|$</span>:
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            Copy <span class="inline-math">$v,w$</span> into unused registers in reverse order.
+        </p>
+        
+    </li><li>
+        <p>
+            If both registers are non-empty:
+        </p>
+        <ol start="1">
+        <li>
+            <p>
+                Remove final letters <span class="inline-math">$v(i), w(i)$</span> from both registers.
+            </p>
+            
+        </li><li>
+            <p>
+                If <span class="inline-math">$v(i) &lt; w(i)$</span>,
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    empty register 0, add <span class="inline-math">$a$</span> to it, and halt.
+                </p>
+                
+            </li>
+            </ol>
+            
+        </li><li>
+            <p>
+                If <span class="inline-math">$w(i) &lt; v(i)$</span>,
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    empty register 0 and halt.
+                </p>
+                
+            </li>
+            </ol>
+            
+        </li><li>
+            <p>
+                Go to 4.2.
+            </p>
+            
+        </li>
+        </ol>
+        
+    </li><li>
+        <p>
+            Otherwise empty register 0 and halt.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li>
+</ol>
+
+<h1>Finding immediate successor of a word <span class="inline-math">$w$</span></h1>
+
+<p>
+    Suppose we have an ordering <span class="inline-math">$a_0 &lt; a_1 &lt; \ldots &lt; a_n$</span> on <span class="inline-math">$Σ$</span>.
+</p>
+<ol start="1">
+<li>
+    <p>
+        Empty an unused register <span class="inline-math">$j$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If a final letter (say <span class="inline-math">$a_l$</span>) can be moved from <span class="inline-math">$w$</span> to register <span class="inline-math">$j$</span>:
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            If <span class="inline-math">$a_l=a_n$</span>:
+        </p>
+        <ol start="1">
+        <li>
+            <p>
+                Go to 2.
+            </p>
+            
+        </li>
+        </ol>
+        
+    </li><li>
+        <p>
+            Otherwise:
+        </p>
+        <ol start="1">
+        <li>
+            <p>
+                Add <span class="inline-math">$a_{l+1}$</span> to <span class="inline-math">$w$</span>.
+            </p>
+            
+        </li><li>
+            <p>
+                Add as many letters <span class="inline-math">$a_0$</span> to <span class="inline-math">$w$</span> as there are letters in register <span class="inline-math">$j$</span>.
+            </p>
+            
+        </li><li>
+            <p>
+                Halt.
+            </p>
+            
+        </li>
+        </ol>
+        
+    </li>
+    </ol>
+    
+</li><li>
+    <p>
+        Otherwise:
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            Add as many letters <span class="inline-math">$a_0$</span> to <span class="inline-math">$w$</span> as there are letters in register <span class="inline-math">$j$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            Add one more <span class="inline-math">$a_0$</span>.
+        </p>
+        
+    </li>
+    </ol>
+    
+</li>
+</ol>

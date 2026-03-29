@@ -1,0 +1,42 @@
+<p>
+    To show <span class="inline-math">$T$</span> is well-defined,
+    we need to show <span class="inline-math">$Tf$</span> is continuous.
+    Since <span class="inline-math">$K$</span> is continuous on the compact set <span class="inline-math">$[0,1]\times [0,1]$</span>,
+    <span class="inline-math">$K$</span> is uniformly continuous,
+    so for all <span class="inline-math">$ε&gt;0$</span>,
+    there exists <span class="inline-math">$δ&gt;0$</span> such that
+    <span class="inline-math">$|K(u) - K(v)| &lt; ε$</span> whenever <span class="inline-math">$\|u - v\|&lt;δ$</span>.
+    Therefore if <span class="inline-math">$|y-z|&lt;δ$</span>, then
+    <span class="display-math">$$ \begin{align*}
+        |Tf(y) - Tf(z)| ={}&amp; \left|\int_{0}^{1} f(x)(K(y,x) - K(z,x)) \d x\right| \\
+        \leq{} &amp; \int_{0}^{1} |f(x)| |K(y,x) - K(z,x)| \d x \\
+        \leq{}&amp; ε \|f\|_\infty
+    \end{align*} $$</span>
+    so <span class="inline-math">$Tf$</span> is uniformly continuous, hence continuous.
+</p>
+<p>
+    We need to show <span class="inline-math">$TB_{C[0,1]}$</span> is relatively compact in <span class="inline-math">$C[0,1]$</span>.
+    Apply Arzelà-Ascoli:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Uniformly bounded:
+        for any <span class="inline-math">$f\in B_{C[0,1]}$</span>,
+        <span class="display-math">$$ \begin{align*}
+        \|Tf\|_\infty \leq \|f\|_\infty \|K\|_\infty \leq \|K\|_\infty.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        Equicontinuous:
+        the argument above shows that for all <span class="inline-math">$f\in B_{C[0,1]}$</span>,
+        if <span class="inline-math">$|y - z|&lt;δ$</span>, then
+        <span class="display-math">$$ \begin{align*}
+        |Tf(y) - Tf(z)| \leq ε\|f\|_\infty \leq ε.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ol>

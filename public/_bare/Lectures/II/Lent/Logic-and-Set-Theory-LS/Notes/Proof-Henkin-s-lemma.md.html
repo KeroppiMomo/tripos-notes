@@ -1,0 +1,54 @@
+<p>
+    By <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proof-in-predicate-logic.html">implicativity</a>,
+    we only need to consider implicative formulae.
+    Induct on <span class="inline-math">$ϕ\in \mathrm{IFml}^a$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        The case <span class="inline-math">$ϕ = \bot$</span> follows from consistency of <span class="inline-math">$T$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        The case <span class="inline-math">$ϕ = (t=t&#x27;)$</span> or <span class="inline-math">$ϕ = rt_0 \ldots t_{n-1}$</span> is by definition of <span class="inline-math">$\mathfrak{I}^\mathbf{H}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$ϕ = (ψ \Rightarrow χ)$</span>,
+        <span class="display-math">$$ \begin{align*}
+        \mathbf{H}, \mathfrak{I}^\mathbf{H} \vDash (ψ \Rightarrow χ) &amp;\iff \mathbf{H}, \mathfrak{I}^\mathbf{H} \vDash \neg ψ \text{ or }\mathbf{H}, \mathfrak{I}^\mathbf{H} \vDash χ &amp;&amp;\text{induction hypothesis}\\
+        &amp;\iff T \vdash \neg ψ \text{ or } T \vdash χ \\
+        &amp;\iff T \vdash (ψ \Rightarrow χ) &amp;&amp;\text{propositional tautology}.
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$ϕ = \forall x ψ$</span>, first notice by the substitution lemma,
+        <span class="display-math">$$ \begin{align*}
+            \mathbf{H}, \mathfrak{I}^\mathbf{H} \vDash \forall x ψ &amp;\iff \mathbf{H}, \mathfrak{I}^\mathbf{H}\tfrac{[t]}{x} \vDash ψ \quad \text{for all $t\in \mathrm{Term}^a$} \\
+            &amp;\iff \mathbf{H}, \mathfrak{I}^\mathbf{H} \vDash ψ\tfrac{t}{x}\quad \text{for all $t\in \mathrm{Term}^a$}.
+        \end{align*} $$</span>
+    </p>
+    <p>
+        If this does not hold,
+        i.e. there is some <span class="inline-math">$t\in \mathrm{Term}^a$</span> such that <span class="inline-math">$\mathbf{H}, \mathfrak{I}^\mathbf{H}\vDash ψ\frac{t}{x}$</span>,
+        then induction hypothesis says <span class="inline-math">$T \vdash ψ\frac{t}{x}$</span>.
+        By universality, <span class="inline-math">$T \not\vdash \forall x ψ$</span>.
+    </p>
+    <p>
+        Conversely if <span class="inline-math">$T \not\vdash \forall x ψ$</span>,
+        by negation completeness,
+        <span class="inline-math">$T \vdash \neg(\forall xψ)$</span>,
+        or equivalently (by implicativity) <span class="inline-math">$T \vdash \exists x \neg ψ$</span>.
+        Find a witness <span class="inline-math">$t\in \mathrm{Term}^a$</span>
+        such that <span class="inline-math">$T \vdash (\exists x \neg ψ) \Rightarrow (\neg ψ \frac{t}{x})$</span>.
+        By modus ponens, <span class="inline-math">$T \vdash \neg ψ \frac{t}{x}$</span>.
+        Induction hypothesis then says <span class="inline-math">$\mathbf{H}, \mathfrak{I}^\mathbf{H}\vDash \neg ψ\frac{t}{x}$</span>,
+        so <span class="inline-math">$\mathbf{H}, \mathfrak{I}^\mathbf{H}\not\vDash \forall xψ$</span>.
+    </p>
+    
+</li>
+</ul>

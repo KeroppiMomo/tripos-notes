@@ -1,0 +1,17 @@
+<p>
+    Let <span class="inline-math">$G = (Σ, V, P, S)$</span> be context-free.
+    Use ideas from the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalent-to-variable-based-grammar.html">proof for variable-based grammars</a>:
+    for each <span class="inline-math">$a\in Σ$</span>, introduce a new variable <span class="inline-math">$X_a$</span>.
+    For <span class="inline-math">$α\in Ω^\ast$</span>, let <span class="inline-math">$X(α)$</span> be the string <span class="inline-math">$α$</span> which each occurrence of
+    a letter is replaced by the corresponding new variable.
+    Define <span class="inline-math">$G&#x27; = (Σ, V&#x27;, P&#x27;, S)$</span> where <span class="inline-math">$V&#x27; = V \cup \sb{X_a}{a\in Σ}$</span>
+    and
+    <span class="display-math">$$ \begin{align*}
+        P&#x27; ={}&amp; \sb{A \to a}{A \to a \in P} \\
+        &amp;\cup \sb{A \to X(α)}{A \to α\in P, |α|\geq 2} \\
+        &amp;\cup \sb{X_a\to a}{a\in Σ}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$G&#x27;$</span> produces the same language as <span class="inline-math">$G$</span> and is variable-targeted.
+</p>

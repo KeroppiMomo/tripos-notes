@@ -1,0 +1,65 @@
+<p>
+    Let <span class="inline-math">$A, B\subseteq \mathbb{W}$</span> be computably enumerable languages,
+    with computable pseudo-characteristic functions <span class="inline-math">$ψ_A$</span> and <span class="inline-math">$ψ_B$</span>.
+</p>
+
+<h1>Intersection</h1>
+
+<p>
+    <span class="display-math">$$ \begin{align*}
+        ψ_{A\cap B}(w) = \begin{cases}
+            a &amp;\text{if $ψ_{A}(w) = a = ψ_B(w)$},  \\
+            \uparrow &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+
+<h1>Union</h1>
+
+<p>
+    Write <span class="inline-math">$A,B$</span> in <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-computably-enumerable-iff-Sigma_1.html"><span class="inline-math">$Σ_1$</span> form</a>:
+    find <span class="inline-math">$C,D\subseteq \mathbb{W}^2$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        w\in A \iff \exists v(w,v)\in C, \\
+        w\in B \iff \exists v(w,v)\in D, \\
+    \end{align*} $$</span>
+    Use the zigzag method:
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Merging-and-splitting-words.html">splitting</a> <span class="inline-math">$v$</span> into <span class="inline-math">$v_{(0)}$</span> and <span class="inline-math">$v_{(1)}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        w\in A\cup B \iff \exists v \text{ such that } \begin{cases}
+            (w, v_{(1)})\in C &amp; \text{if $\#(v_{(0)})$ is even, and} \\
+            (w, v_{(1)})\in D &amp; \text{if $\#(v_{(0)})$ is odd}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+
+<h1>Concatenation</h1>
+
+<p>
+    Define <span class="inline-math">$C,D$</span> as above. 
+    Given <span class="inline-math">$w,v\in \mathbb{W}$</span>,
+    write <span class="inline-math">$I(w,v)$</span> to denote the initial segment of <span class="inline-math">$w$</span>
+    of length <span class="inline-math">$\#(v)$</span> (possibly all of <span class="inline-math">$w$</span> if <span class="inline-math">$\#(v) \geq |w|$</span>)
+    and <span class="inline-math">$F(w,v)$</span> to denote the final segment of <span class="inline-math">$w$</span>
+    that remains after removing <span class="inline-math">$I(w,v)$</span> (possibly empty).
+</p>
+<p>
+    Split <span class="inline-math">$v$</span> into three parts: writing <span class="inline-math">$v_{(2)} = (v_{(1)})_{(0)}$</span> and <span class="inline-math">$v_{(3)} = (v_{(1)})_{(1)}$</span>,
+    we have <span class="inline-math">$v = v_{(0)} * (v_{(2)} * v_{(3)})$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        w\in AB \iff \exists v\Bigl(\bigl(I(w, v_{(0)}), v_{(2)}\bigr)\in C \wedge \bigl(F(w, v_{(0)}), v_{(3)}\bigr) \in D\Bigr),
+    \end{align*} $$</span>
+    putting <span class="inline-math">$AB$</span> in <span class="inline-math">$Σ_1$</span> form.
+    Hence <span class="inline-math">$AB$</span> is computably enumerable.
+</p>
+
+<h1>Complementation and set difference</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-halting-problem-is-computably-enumerable-but-not-computable.html">We have shown</a>
+    the halting problem <span class="inline-math">$\mathbf{K}$</span> is computably enumerable but not computable,
+    i.e. <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-computably-enumerable-iff-Sigma_1.html"><span class="inline-math">$Σ_1$</span></a> but not <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-computable-iff-Delta_1.html"><span class="inline-math">$Δ_1$</span></a>.
+    Thus <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}$</span> is not <span class="inline-math">$Σ_1$</span>,
+    showing that the class of computably enumerable languages is not closed under complementation.
+</p>

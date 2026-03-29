@@ -1,0 +1,39 @@
+<p>
+    Let <span class="inline-math">$Σ = \set{a}$</span>, <span class="inline-math">$V = \set{S}$</span>, <span class="inline-math">$P_0 = \set{S\to aaS, S\to a}$</span>, <span class="inline-math">$G_0 = (Σ, V, P_0, S).$</span>
+    We claim that
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{L}(G_0) = \sb{a^{2n+1}}{n\in \N}.
+    \end{align*} $$</span>
+</p>
+<p>
+    For the <span class="inline-math">$\supseteq$</span> direction,
+    apply <span class="inline-math">$S\to aaS$</span> to the start symbol <span class="inline-math">$n$</span> times
+    to obtain <span class="inline-math">$a^{2n} S$</span>, and then apply <span class="inline-math">$S\to a$</span> to obtain <span class="inline-math">$a^{2n+1}$</span>:
+    <span class="display-math">$$ \begin{align*}
+        S \xrightarrow{R}_1 aaS \xrightarrow{R}_1 aaaaS \xrightarrow{R}_1 \ldots \xrightarrow{R}_1 a^{2n} S \xrightarrow{R}_1 a^{2n} a.
+    \end{align*} $$</span>
+</p>
+<p>
+    For the <span class="inline-math">$\subseteq$</span> direction,
+    notice each rewrite step either keeps the number of symbols
+    the same or increase it by two.
+    Proceed by induction on the length of derivation,
+    that every string produced by <span class="inline-math">$G$</span> from <span class="inline-math">$S$</span> has odd length:
+    the unique string with a derivation of length zero is <span class="inline-math">$S$</span>,
+    which has odd length.
+    For a string <span class="inline-math">$w$</span> with derivation of length <span class="inline-math">$n+1$</span>,
+    since the string produced by the first <span class="inline-math">$n$</span> steps in the derivation
+    has odd length, <span class="inline-math">$w$</span> has odd length as well.
+</p>
+<p>
+    The same argument applies to show that the following grammars are equivalent:
+    <span class="display-math">$$ \begin{align*}
+        P_1 ={}&amp; \set{S\to aSa, S\to a}, \\
+        P_2 ={}&amp; \set{S\to Saa, S\to a}, \\
+        P_3 ={}&amp; \set{S\to aaS, S \to aaSaa, S\to a}, \\
+        P_4 ={}&amp; \set{S\to aaS, S \to aSa, S\to Saa, S\to a}, \\
+        P_5 ={}&amp; \set{S\to aaS, aSa \to aaa, S\to a}, \\
+        P_6 ={}&amp; \set{S\to aaS, aaS \to aSa, S\to a}, \\
+        P_7 ={}&amp; \set{S\to aaS, aaS \to a, S\to a}, \\
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,61 @@
+<p>
+    Let <span class="inline-math">$ξ$</span> be an ordinal.
+    Define a relation on <span class="inline-math">$ξ\times ξ$</span> by
+    <span class="display-math">$$ \begin{align*}
+        (α, β) &lt; (γ, δ) \iff &amp;\max(α, β) &lt; \max(γ, δ)  \\
+        &amp;\text{or }(\max(α, β) = \max(γ, δ) \text{ and }α&lt;γ) \\
+        &amp;\text{or }(\max(α, β) = \max(γ, δ) \text{ and }β &lt; δ).
+    \end{align*} $$</span>
+</p>
+<p>
+    (<a href="/tripos-notes/media/Lectures/II/Lent/Logic-and-Set-Theory-LS/LectureNotes/Pasted-image-20260306111526.png">Illustration</a>)
+</p>
+<p>
+    Note <span class="inline-math">$(ξ \times ξ, &lt;)$</span> is a well-order.
+    Then by the <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-representation-of-well-orders.html">representation theorem</a>,
+    there exists a unique ordinal <span class="inline-math">$γ_ξ$</span>
+    with an isomorphism <span class="inline-math">$g_ξ: (ξ \times ξ, &lt;) \to (γ_ξ, \in)$</span>.
+    Then <span class="inline-math">$|γ_ξ| = |ξ \times ξ|$</span>.
+    Moreover, if <span class="inline-math">$ξ &lt; η$</span>,
+    then <span class="inline-math">$ξ \times ξ$</span> is an <span class="inline-math">$&lt;$</span>-initial segment of <span class="inline-math">$η$</span>,
+    so <span class="inline-math">$g_ξ = g_η|_{ξ \times ξ}$</span> by <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Proposition-uniqueness-of-isomorphisms-between-well-orders.html">uniqueness</a>.
+    We therefore drop the subscript and write <span class="inline-math">$g$</span>.
+</p>
+<p>
+    Perform <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-transfinite-induction.html">transfinite induction</a> to
+    show <span class="inline-math">$κ = γ_κ$</span> for all infinite cardinal <span class="inline-math">$κ$</span>.
+    For <span class="inline-math">$κ = ω$</span>, notice <span class="inline-math">$g_ω: \N \times \N\to \N$</span> is an isomorphism.
+</p>
+<p>
+    Now suppose <span class="inline-math">$κ&gt;ω$</span> is an infinite cardinal
+    and <span class="inline-math">$γ_δ = δ$</span> for all infinite cardinals <span class="inline-math">$δ&lt;κ$</span>.
+    Consider <span class="inline-math">$(α, β)\in κ \times κ$</span> with either <span class="inline-math">$α,β$</span> infinite
+    (which exists as <span class="inline-math">$κ&gt;ω$</span>).
+    Take <span class="inline-math">$δ = s(\max\set{α, β})$</span>,
+    which is infinite and satisfies <span class="inline-math">$(α,β)\in δ \times δ$</span>.
+    This implies <span class="inline-math">$g(α,β) &lt; γ_δ$</span>
+    and so <span class="inline-math">$|g(α,β)| \leq |γ_δ| = |δ \times δ|$</span>.
+    Moreover as <span class="inline-math">$κ$</span> is an infinite cardinal,
+    <span class="inline-math">$κ$</span> is a limit ordinal,
+    so <span class="inline-math">$δ&lt;κ$</span>
+    and hence <span class="inline-math">$|δ| &lt; κ$</span>.
+</p>
+<p>
+    By the induction hypothesis, <span class="inline-math">$|δ| = |γ_{|δ|}| = |δ \times δ|$</span>, so
+    putting everything together,
+    <span class="display-math">$$ \begin{align*}
+        |g(α,β)| \leq |δ\times δ| = |δ| &lt; κ
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        g(α,β) &lt; κ
+    \end{align*} $$</span>
+    for all <span class="inline-math">$(α,β) \in κ \times κ$</span>.
+    Therefore <span class="inline-math">$γ_κ\leq κ$</span>.
+</p>
+<p>
+    Finally since <span class="inline-math">$|γ_κ| = |κ \times κ| \geq κ$</span>, we have <span class="inline-math">$γ_κ \geq κ$</span>. Hence <span class="inline-math">$γ_κ = κ$</span>.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Pasted-image-20260309233954.png">
+</p>

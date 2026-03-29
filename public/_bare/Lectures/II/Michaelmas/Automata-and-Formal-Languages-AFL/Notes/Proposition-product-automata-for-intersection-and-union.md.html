@@ -1,0 +1,41 @@
+<p>
+    Let <span class="inline-math">$D = (Σ, Q, δ, q_0, F)$</span> and <span class="inline-math">$D&#x27; = (Σ, Q&#x27;, δ&#x27;, q_0&#x27;, F&#x27;)$</span>
+    be two <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-deterministic-automaton.html">deterministic automata</a> over the same alphabet.
+</p>
+<p>
+    Define the <em>product automata for intersection and union</em> as
+    <span class="display-math">$$ \begin{align*}
+        D \wedge D&#x27; ={}&amp; (Σ, \; Q\cup Q&#x27;, \; δ\times δ&#x27;, \; (q_0, q_0&#x27;), \; F \wedge F&#x27;), \\
+        D \vee D&#x27; ={}&amp; (Σ, \; Q\cup Q&#x27;, \; δ\times δ&#x27;, \; (q_0, q_0&#x27;), \; F \vee F&#x27;)
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        F \wedge F&#x27; ={}&amp; \sb{(q,q&#x27;)\in Q\times Q&#x27;}{q\in F \text{ and } q&#x27;\in F&#x27;} = F\times F&#x27;, \\
+        F \vee F&#x27; ={}&amp; \sb{(q,q&#x27;)\in Q\times Q&#x27;}{q\in F \text{ or } q&#x27;\in F&#x27;}
+    \end{align*} $$</span>
+    and
+    <span class="display-math">$$ \begin{align*}
+        δ\times δ&#x27;: Σ \times (Q \times Q&#x27;) &amp;\to Q\times Q&#x27; \\
+        (a, (q,q&#x27;)) &amp;\mapsto (δ(a,q), δ(a,q&#x27;)).
+    \end{align*} $$</span>
+</p>
+<p>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{L}(D \wedge D&#x27;) ={}&amp; \mathcal{L}(D) \cap \mathcal{L}(D&#x27;), \\
+        \mathcal{L}(D \vee D&#x27;) ={}&amp; \mathcal{L}(D) \cup \mathcal{L}(D&#x27;).
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-product-automata-for-intersection-and-union.html">Proof</a>
+</p>
+<ul>
+<li>
+    <p>
+        This is an <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-closure-of-regular-languages-under-complementation.html">alternative way</a> of showing
+        the class of regular languages is closed under
+        intersection and union (and thus complementation and set difference).
+    </p>
+    
+</li>
+</ul>

@@ -1,0 +1,89 @@
+<p>
+    Consider an encoding of grammars as words in <span class="inline-math">$\mathbb{W}$</span>:
+    for every word <span class="inline-math">$w$</span>, there is a grammar <span class="inline-math">$G_w$</span>,
+    and all grammars are of this form.
+</p>
+<p>
+    Then we can recast the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems.html">decision problems</a>:
+</p>
+<ul>
+<li>
+    <p>
+        <em>the word problem</em>: <span class="inline-math">$\sb{(u,v)}{u\in \mathcal{L}(G_v)}$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <em>the emptiness problem</em>: <span class="inline-math">$\sb{u}{\mathcal{L}(G_u) = \emptyset}$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <em>the equivalence problem</em>: <span class="inline-math">$\sb{(u,v)}{\mathcal{L}(G_u) = \mathcal{L}(G_v)}$</span>,
+    </p>
+    
+</li>
+</ul>
+<p>
+    and we say a decision problem is solvable if the set is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-type-0-language-iff-computably-enumerable.html">It can be shown that</a>
+    there are total computable functions
+    that translate between codes of grammars
+    and register machines and vice versa.
+    They then witness the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-many-one-reducible-equivalent.html">many-one equivalences</a>
+    <span class="display-math">$$ \begin{alignat}{1}
+        \mathbf{K}_0 &amp;= \sb{(w,v)}{w\in \mathrm{W}_v} &amp;&amp;\equiv_m \sb{(u,v)}{u\in \mathcal{L}(G_v)}, \\
+        \mathbf{Emp} &amp;:= \sb{u}{\mathrm{W}_u = \emptyset} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) = \emptyset}, \\
+        \mathbf{Fin} &amp;:= \sb{u}{\mathrm{W}_u \text{ is finite}} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) \text{ is finite}}, \\
+        \mathbf{Inf} &amp;:= \sb{u}{\mathrm{W}_u \text{ is infinite}} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) \text{ is infinite}}, \\
+        \mathbf{Tot} &amp;:= \sb{u}{\mathrm{W}_u = \mathbb{W}} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) = \mathbb{W}}, \\
+    \end{alignat} $$</span>
+</p>
+<p>
+    <span class="inline-math">$\mathbf{Emp}, \mathbf{Fin}, \mathbf{Inf}, \mathbf{Tot}$</span> are non-trivial <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-index-set.html">index sets</a>.
+    By Rice's theorem, we obtain
+    <span class="inline-math">$\mathbb{W}\setminus \mathbf{K} \leq_m \mathbf{Emp}, \mathbf{Fin}$</span>
+    and <span class="inline-math">$\mathbf{K}\leq_m \mathbf{Inf}, \mathbf{Tot}$</span>.
+    This shows the emptiness problem for type 0 languages is not solvable.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Fin neither Sigma_1 nor Pi_1)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-Fin-neither-Sigma_1-nor-Pi_1.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems-as-computability-of-sets.html"><span class="inline-math">$\mathbf{Fin}$</span></a>
+                is neither <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Σ_1$</span></a> nor <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Π_1$</span></a>.
+            </p>
+            <p>
+                Consequently <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems-as-computability-of-sets.html"><span class="inline-math">$\mathbf{Inf}$</span></a> <span class="inline-math">$= \mathbb{W}\setminus \mathbf{Fin}$</span>
+                is neither <span class="inline-math">$Σ_1$</span> nor <span class="inline-math">$Π_1$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-Fin-neither-Sigma_1-nor-Pi_1.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (equivalence problem for type 0 language is not solvable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-equivalence-problem-for-type-0-language-is-not-solvable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems.html">equivalence problem</a> for <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-normal-form.html">type 0 languages</a> is not solvable.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalence-problem-for-type-0-language-is-not-solvable.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,83 @@
+<p>
+    Let <span class="inline-math">$T \subseteq{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-formula-in-propositional-logic.html"><span class="inline-math">$\mathrm{Fml}$</span></a>.
+</p>
+<p>
+    A string <span class="inline-math">$D = ϕ_0 ϕ_1 \ldots ϕ_n \in \mathrm{Fml}^\ast$</span> is called a <em><span class="inline-math">$T$</span>-proof</em>
+    if for each <span class="inline-math">$i = 0, 1, \ldots, n$</span>,
+    one of the following holds:
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$A_T$</span>: <span class="inline-math">$ϕ_i\in T$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$B$</span>: <span class="inline-math">$ϕ_i$</span> is one of the following <em>axioms</em>:
+    </p>
+    <ul>
+    <li>
+        <p>
+            Type 1: <span class="inline-math">$ϕ_i = (ϕ \Rightarrow (ψ \Rightarrow ϕ))$</span> for some <span class="inline-math">$ϕ, ψ\in \mathrm{Fml}$</span>;
+        </p>
+        
+    </li><li>
+        <p>
+            Type 2: <span class="inline-math">$ϕ_i = \bigl(\bigl(ϕ \Rightarrow (ψ \Rightarrow χ)\bigr) \Rightarrow \bigl((ϕ \Rightarrow ψ) \Rightarrow (ϕ \Rightarrow χ)\bigr)\bigr)$</span> for some <span class="inline-math">$ϕ, ψ, χ\in \mathrm{Fml}$</span>;
+        </p>
+        
+    </li><li>
+        <p>
+            Type 3: <span class="inline-math">$ϕ_i = (((ϕ \Rightarrow \bot) \Rightarrow \bot) \Rightarrow ϕ)$</span> for some <span class="inline-math">$ϕ\in \mathrm{Fml}$</span>;
+        </p>
+        
+    </li><li>
+        <p>
+            Type 4: <span class="inline-math">$ϕ_i = (ϕ \Rightarrow{}$</span><a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-implication-formula-in-propositional-logic.html"><span class="inline-math">$t$</span></a><span class="inline-math">$(ϕ))$</span> or <span class="inline-math">$(t(ϕ) \Rightarrow ϕ)$</span> for some <span class="inline-math">$ϕ\in \mathrm{Fml}$</span>;
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$C$</span>: there exists <span class="inline-math">$j,k&lt;i$</span> such that <span class="inline-math">$(ϕ_j, ϕ_k, ϕ_i)$</span> is an <em>instance of modus ponens</em>,
+        i.e. <span class="inline-math">$ϕ_j = (ϕ_k \Rightarrow ϕ_i)$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    Call <span class="inline-math">$D$</span> a <em>proof</em> if <span class="inline-math">$T = \emptyset$</span>.
+</p>
+<p>
+    If <span class="inline-math">$ϕ$</span> occurs in <span class="inline-math">$D$</span>, then say <span class="inline-math">$D$</span> is a <em>proof of <span class="inline-math">$ϕ$</span></em>.
+</p>
+<p>
+    If there is a <span class="inline-math">$T$</span>-proof for <span class="inline-math">$ϕ$</span>, write <span class="inline-math">$T \vdash ϕ$</span>.
+</p>
+<blockquote>
+    <p>
+        If <span class="inline-math">$T\subseteq T&#x27;$</span>, then every <span class="inline-math">$T$</span>-proof is a <span class="inline-math">$T&#x27;$</span>-proof.
+    </p>
+    
+</blockquote>
+<blockquote>
+    <p>
+        If <span class="inline-math">$D$</span> is a <span class="inline-math">$T$</span>-proof and <span class="inline-math">$E$</span> is <span class="inline-math">$S$</span>-proof, then <span class="inline-math">$DE$</span> is a <span class="inline-math">$(T \cup S)$</span>-proof.
+    </p>
+    
+</blockquote>
+<blockquote>
+    <!-- BEGIN BLOCK ID finite -->
+    <p id="^finite">
+        Finiteness theorem:
+        if <span class="inline-math">$D$</span> is a <span class="inline-math">$T$</span>-proof,
+        then <span class="inline-math">$D$</span> is a <span class="inline-math">$T_0$</span>-proof
+        where <span class="inline-math">$T_0 = \sb{ϕ\in T}{ϕ\text{ occurs in }D}$</span> is a finite set.
+    </p>
+    
+    <!-- END BLOCK ID finite -->
+    
+</blockquote>

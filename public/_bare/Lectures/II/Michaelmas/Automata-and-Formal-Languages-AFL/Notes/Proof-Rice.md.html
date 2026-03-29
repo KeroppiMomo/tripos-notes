@@ -1,0 +1,81 @@
+<p>
+    For a fixed <span class="inline-math">$w\in \mathbb{W}$</span>,
+    consider the function
+    <span class="display-math">$$ \begin{align*}
+         g_w(u,v) = \begin{cases}
+             f_{w,1}(v) &amp;\text{if $u\in \mathbf{K}$}, \\
+             \uparrow &amp;\text{otherwise},
+         \end{cases}
+    \end{align*} $$</span>
+    which is computable:
+    first compute <span class="inline-math">$f_{u,1}(u)$</span>.
+    If this diverges, we obtain the correct result.
+    Otherwise, compute <span class="inline-math">$f_{w,1}(v)$</span> and output the result (if there is one).
+    Thus by the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-s-m-n.html">s-m-n theorem</a>,
+    there exists a total computable <span class="inline-math">$h_w: \mathbb{W}\to \mathbb{W}$</span>
+    such that <span class="inline-math">$f_{h_w(u),1}(v) = g_w(u,v)$</span>.
+    This has the property that
+</p>
+<ul>
+<li>
+    <p>
+        if <span class="inline-math">$u\in \mathbf{K}$</span>, then <span class="inline-math">$f_{h_w(u),1}(v) = f_{w,1}(v)$</span> so <span class="inline-math">$\mathrm{W}_{h_w(u)} = \mathrm{W}_w$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        if <span class="inline-math">$u\not\in \mathbf{K}$</span>, then <span class="inline-math">$f_{h_w(u),1}(v) \uparrow$</span>, so <span class="inline-math">$\mathrm{W}_{h_w(u)} = \emptyset$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Let <span class="inline-math">$I$</span> be our index set.
+    By hypothesis, pick some <span class="inline-math">$w_1 \in I$</span> and <span class="inline-math">$w_0\in \mathbb{W}\setminus I$</span>.
+    Fix some <span class="inline-math">$e$</span> such that <span class="inline-math">$\mathrm{W}_e = \emptyset$</span>.
+    We have two cases:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$e\in I$</span>: we claim that <span class="inline-math">$h_{w_0}$</span> is a reduction of <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}$</span> to <span class="inline-math">$I$</span>.
+    </p>
+    <ul>
+    <li>
+        <p>
+            If <span class="inline-math">$u\in \mathbf{K}$</span>, then <span class="inline-math">$\mathrm{W}_{h_{w_0}(u)} = \mathrm{W}_{w_0}$</span>, so by closure, <span class="inline-math">$h_{w_0}(u) \not\in I$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            If <span class="inline-math">$u\not\in \mathbf{K}$</span>, then <span class="inline-math">$\mathrm{W}_{h_{w_0}(u)} = \emptyset = \mathrm{W}_{e}$</span>, so by closure, <span class="inline-math">$h_{w_0}(u) \in I$</span>.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$e\not\in I$</span>: we claim that <span class="inline-math">$h_{w_1}$</span> is a reduction of <span class="inline-math">$\mathbf{K}$</span> to <span class="inline-math">$I$</span>.
+    </p>
+    <ul>
+    <li>
+        <p>
+            If <span class="inline-math">$u\in \mathbf{K}$</span>, then <span class="inline-math">$\mathrm{W}_{h_{w_1}(u)} = \mathrm{W}_{w_1}$</span>, so by closure, <span class="inline-math">$h_{w_1}(u) \in I$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            If <span class="inline-math">$u\not\in \mathbf{K}$</span>, then <span class="inline-math">$\mathrm{W}_{h_{w_0}(u)} = \emptyset = \mathrm{W}_{e}$</span>, so by closure, <span class="inline-math">$h_{w_0}(u) \not\in I$</span>.
+        </p>
+        
+    </li>
+    </ul>
+    
+</li>
+</ul>
+<p>
+    Thus either <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}\leq_m I$</span> or <span class="inline-math">$\mathbf{K}\leq_m I$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-many-one-reducible-to-computable-or-computably-enumerable-languages.html">Since</a> <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-halting-problem-is-computably-enumerable-but-not-computable.html">neither <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}$</span> nor <span class="inline-math">$\mathbf{K}$</span> is computable</a>,
+    <span class="inline-math">$I$</span> is not computable.
+</p>

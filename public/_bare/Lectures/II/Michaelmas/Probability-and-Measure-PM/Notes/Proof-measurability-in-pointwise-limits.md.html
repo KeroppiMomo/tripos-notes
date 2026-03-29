@@ -1,0 +1,40 @@
+
+<h1>Measurability of inf, sup, lim inf, lim sup</h1>
+
+<p>
+    Let <span class="inline-math">$f := \inf_{n\in \N} f_n$</span>.
+    Since <span class="inline-math">$\mathcal{B}(\overline{\R}) = σ\sb{[-\infty, a)}{a\in \R}$</span>,
+    it <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Proposition-function-measurable-iff-preimages-of-generating-sets-are-measurable.html">suffices</a> to check <span class="inline-math">$f\inv([-\infty, a))\in \mathcal{A}$</span>
+    for all <span class="inline-math">$a\in \R$</span>.
+</p>
+<p>
+    Note if <span class="inline-math">$f(x) &lt; a$</span>,
+    then there exists some <span class="inline-math">$n\in \N$</span> such that <span class="inline-math">$f_n(x) &lt; a$</span>.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        f\inv([-\infty, a)) = \bigcup_{n\in \N} \underbrace{f_n\inv([-\infty, a))}_{\in \mathcal{A}} \in \mathcal{A},
+    \end{align*} $$</span>
+    so <span class="inline-math">$f$</span> is measurable.
+</p>
+<p>
+    <span class="inline-math">$\sup_{n\in \N} f_n = -\inf_{n\in \N} (-f_n)$</span> so is measurable.
+    Then it follows that <span class="inline-math">$\liminf f_n$</span> and <span class="inline-math">$\limsup f_n$</span> are measurable.
+</p>
+
+<h1>Measurablility of limits</h1>
+
+<p>
+    If <span class="inline-math">$f_n\to f$</span> pointwise,
+    then <span class="inline-math">$f = \liminf f_n = \limsup f_n$</span>, so is measurable.
+</p>
+
+<h1>Measurability of subset where limit exists</h1>
+
+<p>
+    Since for each <span class="inline-math">$x\in E$</span>, <span class="inline-math">$f_n(x)$</span> converges iff <span class="inline-math">$\limsup f_n(x) = \liminf f_n(x)$</span> as <span class="inline-math">$n\to \infty$</span>,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        \sb{x\in E}{f_n(x) \text{ has a limit}} = (\limsup f_n - \liminf f_n)\inv(\set{0}),
+    \end{align*} $$</span>
+    which is measurable because <span class="inline-math">$\limsup f_n - \liminf f_n$</span> is measurable.
+</p>

@@ -1,0 +1,60 @@
+
+<h1>Uniqueness</h1>
+
+<p>
+    Suppose <span class="inline-math">$S_1, S_2: H\to H$</span> are functions such that for all <span class="inline-math">$x,y\in H$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \langle x, S_1 y\rangle = \langle Tx, y\rangle = \langle x, S_2y\rangle
+    \end{align*} $$</span>
+    so 
+    <span class="display-math">$$ \begin{align*}
+        \langle x, S_1 y - S_2 y\rangle = 0.
+    \end{align*} $$</span>
+    Setting <span class="inline-math">$x = S_1 y - S_2 y$</span>,
+    we see <span class="inline-math">$S_1 y - S_2 y = 0$</span> for all <span class="inline-math">$y\in H$</span>.
+    Hence <span class="inline-math">$S_1 = S_2$</span>.
+</p>
+
+<h1>Existence</h1>
+
+<p>
+    Fix <span class="inline-math">$y\in H$</span>.
+</p>
+<p>
+    The linear function
+    <span class="display-math">$$ \begin{align*}
+        f: H &amp;\to \mathbb{F} \\
+        x &amp;\mapsto \langle Tx, y\rangle
+    \end{align*} $$</span>
+    is bounded, since <span class="inline-math">$|\langle Tx, y\rangle| \leq \|Tx\| \|y\| \leq \|T\|\|y\|\|x\|$</span>
+    by <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Cauchy-Schwarz.html">Cauchy-Schwarz</a>.
+    Therefore <span class="inline-math">$f\in H^\ast$</span> with <span class="inline-math">$\|f\| \leq \|T\|\|y\|$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$H$</span> is a Hilbert space,
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-Riesz-representation-for-Hilbert-spaces.html">Riesz representation theorem</a>
+    says there exists <span class="inline-math">$T^\ast y\in H$</span>
+    such that <span class="inline-math">$\langle Tx, y\rangle = f(x) = \langle x, T^\ast y\rangle$</span>
+    and <span class="inline-math">$\|T^\ast y\| = \|f\|$</span>.
+    This defines a function <span class="inline-math">$T^\ast: H\to H$</span>.
+</p>
+
+<h2><span class="inline-math">$T^\ast$</span> is bounded linear</h2>
+
+<p>
+    Apply bilinearity of <span class="inline-math">$\langle \cdot ,\cdot \rangle$</span>:
+    for all <span class="inline-math">$x,y,z\in H$</span>, <span class="inline-math">$λ\in \mathbb{F}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \langle x, T^\ast(λy + z)\rangle ={}&amp; \langle Tx, λy+z\rangle \\
+        ={}&amp; \overline{λ} \langle Tx, y \rangle + \langle Tx, z\rangle \\
+        ={}&amp; \overline{λ} \langle x, T^\ast y\rangle + \langle x, T^\ast z\rangle \\
+        ={}&amp; \langle x, λ T^\ast y + T^\ast z\rangle.
+    \end{align*} $$</span>
+    This holds for all <span class="inline-math">$x\in H$</span>,
+    so by uniqueness, <span class="inline-math">$T^\ast(λy + z) = λ T^\ast y + T^\ast z$</span>.
+</p>
+<p>
+    <span class="inline-math">$T^\ast$</span> is bounded,
+    since <span class="inline-math">$\|T^\ast y\| = \|f\| \leq \|T\|\|y\|$</span>
+    so <span class="inline-math">$\|T^\ast\| \leq \|T\|$</span>.
+</p>

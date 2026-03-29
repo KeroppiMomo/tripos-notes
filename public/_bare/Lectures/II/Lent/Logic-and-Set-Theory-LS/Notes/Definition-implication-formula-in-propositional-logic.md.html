@@ -1,0 +1,24 @@
+<p>
+    In propositional logic,
+    an <em>implication formula</em>
+    is a <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-formula-in-propositional-logic.html">formula</a> which does not contain
+    the symbols <span class="inline-math">$\wedge$</span>, <span class="inline-math">$\vee$</span>, <span class="inline-math">$\neg$</span>, <span class="inline-math">$\top$</span>.
+</p>
+<blockquote>
+    <p>
+        Define recursively
+        <span class="display-math">$$ \begin{align*}
+            t: \mathrm{Fml} &amp;\to \mathrm{IFml} \\
+            p &amp;\mapsto p \\
+            \bot &amp;\mapsto \bot \\
+            \top &amp;\mapsto (\bot \Rightarrow \bot) \\
+            \neg ϕ &amp;\mapsto (t(ϕ) \Rightarrow \bot) \\
+            (ϕ \Rightarrow ψ) &amp;\mapsto (t(ϕ) \Rightarrow t(ψ)) \\
+            (ϕ \vee ψ) &amp;\mapsto (t(ϕ)\Rightarrow \bot) \Rightarrow t(ψ) \\
+            (ϕ \wedge ψ) &amp;\mapsto (t(ϕ) \Rightarrow (t(ψ) \Rightarrow \bot))\Rightarrow \bot.
+        \end{align*} $$</span>
+        Check by induction that <span class="inline-math">$t$</span> is well-defined surjection
+        and <span class="inline-math">$t(ϕ)$</span> and <span class="inline-math">$ϕ$</span> are <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Definition-valid-logically-equivalent.html">logically equivalent</a>.
+    </p>
+    
+</blockquote>

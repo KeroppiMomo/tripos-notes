@@ -1,0 +1,89 @@
+<p>
+    Let <span class="inline-math">$A$</span> and <span class="inline-math">$B$</span> be disjoint closed sets.
+</p>
+
+<h1>Constructing layers of open and closed sets</h1>
+
+<p>
+    Enumerate <span class="inline-math">$\Q \cap [0,1] = \set{q_0 = 0, q_1 = 1, q_2, q_3, \ldots}$</span>.
+</p>
+<p>
+    We will construct a sequence <span class="inline-math">$(A_n)_{n\geq 0}$</span> of closed sets
+    and a sequence <span class="inline-math">$(U_n)_{n\geq 0}$</span> of open sets such that
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$U_0 = \emptyset$</span>, <span class="inline-math">$A_0 = A$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$U_1 = X \setminus B$</span>, <span class="inline-math">$A_1 = X$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        if <span class="inline-math">$q_i&lt;q_j$</span>, then <span class="inline-math">$U_i \subseteq A_i \subseteq U_j \subseteq A_j$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    Set <span class="inline-math">$U_0, A_0, U_1, A_1$</span> as specified in properties 1 and 2,
+    which then satisfies property 3.
+</p>
+<p>
+    Having constructed <span class="inline-math">$U_0, \ldots, U_{n-1}$</span> and <span class="inline-math">$A_0, \ldots, A_{n-1}$</span>
+    satisfying property 3,
+    find <span class="inline-math">$k, l &lt; n$</span>
+    such that <span class="inline-math">$q_k$</span> is maximal and <span class="inline-math">$q_l$</span> is minimal
+    satisfying <span class="inline-math">$q_k &lt; q_n &lt; q_l$</span>.
+    Then by the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-normal-topological-space.html">definition of a normal space</a>,
+    as <span class="inline-math">$A_k \subseteq U_l$</span>,
+    find <span class="inline-math">$A_n$</span> closed and <span class="inline-math">$U_n$</span> open such that <span class="inline-math">$A_k \subseteq U_n \subseteq A_n \subseteq U_l$</span>.
+</p>
+
+<h1>Defining separating function</h1>
+
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        f: X &amp;\to [0,1] \\
+        x &amp;\mapsto \inf\sb{q_n}{x\in A_n}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$f$</span> is well-defined,
+    since <span class="inline-math">$A_1 = X$</span> so <span class="inline-math">$\sb{q_n}{x\in A_n}$</span> is never empty.
+</p>
+<p>
+    Note <span class="inline-math">$f = 0$</span> on <span class="inline-math">$A$</span> (since <span class="inline-math">$A_0 = A$</span>)
+    and <span class="inline-math">$f = 1$</span> on <span class="inline-math">$B$</span> (since <span class="inline-math">$B \cap A_q = \emptyset$</span> for <span class="inline-math">$q&lt;1$</span>).
+</p>
+<p>
+    To show continuity of <span class="inline-math">$f$</span> at <span class="inline-math">$x_0$</span>:
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$0\leq q_k&lt;f(x_0)$</span>,
+        then <span class="inline-math">$X \setminus A_k$</span> is an open neighbourhood of <span class="inline-math">$x_0$</span>
+        contained within <span class="inline-math">$f\inv([q_k, 1])$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$f(x_0)&lt;q_l\leq 1$</span>,
+        then <span class="inline-math">$U_l$</span> is an open neighbourhood of <span class="inline-math">$x_0$</span>
+        contained within <span class="inline-math">$f\inv([0, q_l])$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore for any <span class="inline-math">$(a,b)\ni f(x_0)$</span>,
+    find <span class="inline-math">$k,l$</span> such that <span class="inline-math">$a&lt;q_k&lt;f(x_0)&lt;q_l&lt;b$</span>.
+    Then <span class="inline-math">$(X \setminus A_k) \cap U_l$</span> is an open neighbourhood of <span class="inline-math">$x_0$</span>
+    contained within <span class="inline-math">$[q_k, q_l] \subseteq (a,b)$</span>.
+</p>

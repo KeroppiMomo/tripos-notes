@@ -1,0 +1,601 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (complex measure, signed measure)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-complex-measure-signed-measure.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(E, \mathcal{B})$</span> be a <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-sigma-algebra-measurable-space.html">measurable space</a>.
+                A function <span class="inline-math">$μ: E \to X$</span> is said to be
+            </p>
+            <ul>
+            <li>
+                <p>
+                    a <em>complex measure</em> if <span class="inline-math">$X=\C$</span>...
+                </p>
+                
+            </li><li>
+                <p>
+                    a <em>signed measure</em> if <span class="inline-math">$X=\R$</span>...
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                and <span class="inline-math">$μ(\emptyset) = 0$</span> and <span class="inline-math">$μ$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measure-space.html"><span class="inline-math">$σ$</span>-additive</a>.
+            </p>
+            <blockquote>
+                <p>
+                    Signed measure cannot take value in <span class="inline-math">$\infty$</span>,
+                    so a <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measure-space.html">(positive) measure</a> need not be a signed measure.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (absolutely continuous, singular, concentrates)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-absolutely-continuous-singular-concentrates.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$μ, ν$</span> be <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measure-space.html">positive measures</a> on <span class="inline-math">$(E, \mathcal{B})$</span>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Say <span class="inline-math">$μ$</span> <em>concentrates</em> on a set <span class="inline-math">$A \subseteq E$</span> if
+                    <span class="inline-math">$μ(E \setminus A) = 0$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Say <span class="inline-math">$ν$</span> is <em>absolutely continuous</em> with respect to <span class="inline-math">$μ$</span>
+                    (denoted <span class="inline-math">$ν \ll μ$</span>)
+                    if whenever <span class="inline-math">$μ(A) = 0$</span> we have <span class="inline-math">$ν(A) = 0$</span>
+                    for all <span class="inline-math">$A\in \mathcal{B}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Say <span class="inline-math">$ν$</span> is <em>singular</em> with respect to <span class="inline-math">$μ$</span>
+                    (denoted <span class="inline-math">$ν \perp μ$</span>)
+                    if there exists <span class="inline-math">$A, B\in \mathcal{B}$</span>
+                    such that <span class="inline-math">$E = A \sqcup B$</span>, <span class="inline-math">$μ(A) = 0$</span>
+                    and <span class="inline-math">$ν(B) = 0$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (positive, negative set)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-positive-negative-set.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(E, \mathcal{B}, μ)$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-complex-measure-signed-measure.html">signed measure space</a>.
+            </p>
+            <p>
+                <span class="inline-math">$A \in \mathcal{B}$</span> is a <em>positive set</em>
+                (with respect to <span class="inline-math">$μ$</span>)
+                if <span class="inline-math">$μ(B)\geq 0$</span> for all measurable <span class="inline-math">$B \subseteq  A$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$A$</span> is a <em>negative set</em> if <span class="inline-math">$μ(B) \leq 0$</span> for all measurable <span class="inline-math">$B \subseteq  A$</span>.
+            </p>
+            <blockquote>
+                <!-- BEGIN BLOCK ID union -->
+                <p id="^union">
+                    A countable union of positive sets is positive; ditto for negative sets.
+                    (<a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-countable-union-of-positive-sets-is-positive.html">Proof</a>)
+                </p>
+                
+                <!-- END BLOCK ID union -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Hahn decomposition)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Hahn-decomposition.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(E, \mathcal{B}, μ)$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-complex-measure-signed-measure.html">signed measure space</a>.
+            </p>
+            <p>
+                There exists <span class="inline-math">$P,N\in \mathcal{B}$</span>
+                such that <span class="inline-math">$E = P \sqcup N$</span>,
+                <span class="inline-math">$P$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-positive-negative-set.html">positive set</a>
+                and <span class="inline-math">$N$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-positive-negative-set.html">negative set</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Hahn-decomposition.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    The decomposition is not unique, as you can move a measure-zero set between <span class="inline-math">$P$</span> and <span class="inline-math">$N$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Jordan decomposition of measures)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Jordan-decomposition-of-measures.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(E, \mathcal{B}, μ)$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-complex-measure-signed-measure.html">signed measure space</a>.
+            </p>
+            <p>
+                There exists unique positive measures <span class="inline-math">$μ^+$</span> and <span class="inline-math">$μ^-$</span> such that
+                <span class="inline-math">$μ = μ^+ - μ^-$</span> and <span class="inline-math">$μ^+$</span><a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-absolutely-continuous-singular-concentrates.html"><span class="inline-math">${}\perp{}$</span></a><span class="inline-math">$μ^-$</span>,
+                given by
+                <span class="display-math">$$ \begin{align*}
+                    μ^+(A) = μ(A \cap P), \quad μ^-(A) = -μ(A \cap N)
+                \end{align*} $$</span>
+                where <span class="inline-math">$E = P \sqcup N$</span> is any <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Hahn-decomposition.html">Hahn decomposition</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Jordan-decomposition-of-measures.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    We can define <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-integrable-integral-of-measurable-functions.html">integrals</a> as
+                    <span class="display-math">$$ \begin{align*}
+                        \int f \d μ = \int f \d μ^+ - \int f \d μ^-.
+                    \end{align*} $$</span>
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    The <em>total variation measure</em> is <span class="inline-math">$|μ| = μ^+ - μ^-$</span>.
+                    The <em>total variation norm</em> is <span class="inline-math">$\|μ\| = |μ|(E)$</span>.
+                    The space of all signed measures on <span class="inline-math">$(E, \mathcal{B})$</span>
+                    then forms a <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-Banach-space.html">Banach space</a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (measure as integral outside negligible set)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-measure-as-integral-outside-negligible-set.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$μ,ν$</span> be <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measure-space.html">positive measures</a> on <span class="inline-math">$(E, \mathcal{B})$</span>.
+                Assume <span class="inline-math">$μ, ν$</span> are finite.
+            </p>
+            <p>
+                There exists <span class="inline-math">$A \in \mathcal{B}$</span> and <span class="inline-math">$f\in L^1(E, \mathcal{B}, μ)$</span>
+                such that
+                <span class="display-math">$$ \begin{align*}
+                    μ(E \setminus A) = 0 \quad \text{and}\quad ν(B) = \int_{B} f \d μ \quad \text{for all $B\subseteq A$ measurable}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-measure-as-integral-outside-negligible-set.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Lebesgue-Radon-Nikodym)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Lebesgue-Radon-Nikodym.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$μ,ν$</span> be <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measure-space.html">positive measures</a> on <span class="inline-math">$(E, \mathcal{B})$</span>.
+                Assume <span class="inline-math">$μ, ν$</span> are finite.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    If <span class="inline-math">$ν$</span><a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-absolutely-continuous-singular-concentrates.html"><span class="inline-math">${}\ll{}$</span></a><span class="inline-math">$μ$</span>,
+                    then there exists a <span class="inline-math">$μ$</span>-integrable function <span class="inline-math">$f: E\to [0,\infty)$</span>
+                    such that
+                    <span class="display-math">$$ \begin{align*}
+                        ν(A) = \int_{A} f \d μ \qquad \text{for all }A \in \mathcal{B}.
+                    \end{align*} $$</span>
+                </p>
+                <p>
+                    Moreover <span class="inline-math">$f$</span> is unique up to a <span class="inline-math">$μ$</span>-measure-zero set.
+                </p>
+                <p>
+                    <span class="inline-math">$f$</span> is called the <em>Radon-Nikodym derivative</em>, denoted <span class="inline-math">$f = \dfd{ν}{μ}$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    There exists unique measures <span class="inline-math">$ν_a$</span> and <span class="inline-math">$ν_s$</span> on <span class="inline-math">$(E, \mathcal{B})$</span> such that
+                    <span class="display-math">$$ \begin{align*}
+                        ν = ν_a + ν_s, \qquad ν_a \ll μ, \quad ν_s \perp μ.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Lebesgue-Radon-Nikodym.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    This can be extended to when <span class="inline-math">$μ, ν$</span> are signed <span class="inline-math">$σ$</span>-finite.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (weak Lp)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-weak-Lp.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(E, \mathcal{B}, μ)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measure-space.html">measure space</a>.
+            </p>
+            <p>
+                A <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measurable-function.html">measurable</a> function <span class="inline-math">$f: E \to \R$</span> or <span class="inline-math">$\C$</span>
+                is said to be in <em>weak <span class="inline-math">$L^p(E, \mathcal{B}, μ)$</span></em> if
+                there exists some constant <span class="inline-math">$C&gt;0$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    μ(\sb{x\in E}{|f(x)| &gt; t}) \leq \frac{C}{t^p}.
+                \end{align*} $$</span>
+            </p>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$f$</span> is in <span class="inline-math">$L^p$</span>, then <span class="inline-math">$f$</span> is in weak <span class="inline-math">$L^p$</span> by the <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Proposition-Markov-inequality-in-measure-theory.html">Markov inequality</a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Hardy-Littlewood maximal function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-Hardy-Littlewood-maximal-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For <span class="inline-math">$f\in L^1(\R^d)$</span>,
+                the <em>Hardy-Littlewood maximal function</em> of <span class="inline-math">$f$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    Mf(x) = \sup_{r&gt;0} \frac{1}{|B_r(x)|} \int_{B_r(x)} |f(y)| \d y.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (maximal inequality)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proposition-maximal-inequality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For any <span class="inline-math">$f\in L^1(\R^d)$</span>,
+                its <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-Hardy-Littlewood-maximal-function.html">Hardy-Littlewood maximal function</a> satisfies
+                <span class="display-math">$$ \begin{align*}
+                    |\sb{x\in \R^d}{Mf(x) &gt; t}| &lt; \frac{C_d}{t} \|f\|_1
+                \end{align*} $$</span>
+                where <span class="inline-math">$C_d = 5^d$</span> is some constant.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-maximal-inequality.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    Therefore <span class="inline-math">$Mf$</span> is <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-weak-Lp.html">weak <span class="inline-math">$L^1$</span></a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Lebesgue differentiation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Lebesgue-differentiation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f\in L^1(\R^d)$</span>.
+            </p>
+            <p>
+                Almost every <span class="inline-math">$x\in \R^d$</span> is a <em>Lebesgue point</em> of <span class="inline-math">$f$</span>,
+                i.e. satisfies
+                <span class="display-math">$$ \begin{align*}
+                    \frac{1}{|B_r(x)|} \int_{B_r(x)} |f(y) - f(x)| \d y \to 0 \qquad \text{as $r\to 0$}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                This implies
+                <span class="display-math">$$ \begin{align*}
+                    \frac{1}{|B_r(x)|} \int_{B_r(x)} f(y) \d y \to f(x) \qquad \text{as $r\to 0$}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Lebesgue-differentiation.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Lusin)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Lusin.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$E$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a> metric space
+                and <span class="inline-math">$μ$</span> be a finite <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-Borel-sigma-algebra.html">Borel measure</a>.
+            </p>
+            <p>
+                For any <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measurable-function.html">measurable function</a> <span class="inline-math">$f: E\to \C$</span>
+                and <span class="inline-math">$ε&gt;0$</span>,
+                there exists a continuous function <span class="inline-math">$g: E\to \C$</span>
+                such that <span class="inline-math">$\|g\|_\infty \leq \|f\|_\infty$</span>
+                and
+                <span class="display-math">$$ \begin{align*}
+                    μ(\sb{x\in E}{f(x)\neq g(x)}) &lt; ε.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Moreover if <span class="inline-math">$f|_K \equiv 0$</span> on some closed set <span class="inline-math">$K\subseteq E$</span>,
+                then <span class="inline-math">$g$</span> can be chosen such that <span class="inline-math">$g|_K \equiv 0$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Lusin.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Egorov)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Egorov.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(E, \mathcal{B}, μ)$</span> be a finite <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measure-space.html">measure space</a>
+                and <span class="inline-math">$f, f_1, f_2, \ldots: E\to \C$</span> be <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measurable-function.html">measurable functions</a>.
+            </p>
+            <p>
+                If <span class="inline-math">$f_n(x)\to f(x)$</span> at almost every <span class="inline-math">$x$</span>,
+                then for any <span class="inline-math">$ε&gt;0$</span>,
+                there exists a measurable set <span class="inline-math">$A\in \mathcal{B}$</span>
+                such that <span class="inline-math">$f_n|_{A}$</span> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-uniform-convergence.html">converges uniformly</a>
+                to <span class="inline-math">$f|_A$</span>
+                and <span class="inline-math">$μ(E \setminus A) &lt; ε$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Egorov.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Riesz representation with measures)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Riesz-representation-with-measures.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$E$</span> be a compact metric space,
+            </p>
+            <p>
+                For any linear functional <span class="inline-math">$L:C(E)\to \C$</span>
+                (not necessarily bounded),
+                there exists a unique complex Borel measure <span class="inline-math">$μ$</span>
+                such that
+                <span class="display-math">$$ \begin{align*}
+                    L(f) = \int f \d μ
+                \end{align*} $$</span>
+                and <span class="inline-math">$\|L\| ={}$</span><a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Jordan-decomposition-of-measures.html"><span class="inline-math">$\|μ\|$</span></a>.
+            </p>
+            <p>
+                If <span class="inline-math">$L$</span> is <em>positive</em>, i.e. <span class="inline-math">$L(f) \geq 0$</span> if <span class="inline-math">$f\in C(E)$</span> is such that <span class="inline-math">$f: E\to [0,\infty)$</span>,
+                then <span class="inline-math">$μ$</span> is a finite measure
+                and <span class="inline-math">$\|L\| = μ(E)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Riesz-representation-with-measures-uniqueness.html">Proof of uniqueness</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Lp spaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-Lp-spaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(E, \mathcal{A}, μ)$</span> be a measure space
+                and <span class="inline-math">$f: E\to \C$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measurable-function.html">measurable function</a>.
+            </p>
+            <p>
+                For <span class="inline-math">$1\leq p&lt;\infty$</span>,
+                the <em><span class="inline-math">$L^p$</span> norm</em> of <span class="inline-math">$f$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    \|f\|_p := \int |f(x)|^p \d μ(x).
+                \end{align*} $$</span>
+                For <span class="inline-math">$p=\infty$</span>, the <em><span class="inline-math">$L^\infty$</span> norm</em> of <span class="inline-math">$f$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    \|f\|_\infty := \inf \sb{t&gt;0}{|f(x)|\leq t \text{ for $μ$-almost every $x$}}
+                \end{align*} $$</span>
+                with the convention <span class="inline-math">$\inf \emptyset = \infty$</span>.
+            </p>
+            <p>
+                Write <span class="inline-math">$L^p(E) = L^p(E, \mathcal{A}, μ)$</span>
+                for the space of measurable functions <span class="inline-math">$f: E\to \C$</span>
+                with <span class="inline-math">$\|f\|_p&lt;\infty$</span>,
+                and identifying functions which agree <span class="inline-math">$μ$</span>-almost everywhere.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Minkowski integral inequality)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-Minkowski-integral-inequality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(E, \mathcal{A}, μ)$</span>, <span class="inline-math">$(F, \mathcal{B}, ν)$</span> be <span class="inline-math">$σ$</span>-finite measure spaces
+                and <span class="inline-math">$G: E \times F\to \C$</span> be a <span class="inline-math">$\mathcal{A} \otimes \mathcal{B}$</span>-measurable function.
+                Fix <span class="inline-math">$p\in [1,\infty]$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\int \|G(\cdot ,y)\|_p\d ν(y)&lt;\infty$</span>,
+                then
+                <span class="display-math">$$ \begin{align*}
+                    g(x) := \int G(x,y) \d ν(y)
+                \end{align*} $$</span>
+                exists for <span class="inline-math">$μ$</span>-almost every <span class="inline-math">$x$</span>, and
+                <span class="display-math">$$ \begin{align*}
+                    \|g\|_p \leq \int \|G(\cdot ,y)\|_p\d ν(y).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Minkowski-integral-inequality.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (compactly supported continuous functions are dense in Lp(Rd))
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Lemma-compactly-supported-continuous-functions-are-dense-in-Lp-Rd.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For <span class="inline-math">$1\leq p&lt;\infty$</span>,
+                the space <span class="inline-math">$C_c(\R^d)$</span> of compactly supported continuous functions
+                is dense in <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-Lp-spaces.html"><span class="inline-math">$L^p$</span></a><span class="inline-math">$(\R^d)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-compactly-supported-continuous-functions-are-dense-in-Lp.html">Proof</a>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Not true in <span class="inline-math">$L^\infty$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Lp(Rd) is separable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proposition-Lp-Rd-is-separable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For <span class="inline-math">$1\leq p&lt;\infty$</span>, <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-Lp-spaces.html"><span class="inline-math">$L^p$</span></a><span class="inline-math">$(\R^d)$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-dense-set-separable-space.html">separable</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-Lp-Rd-is-separable.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (translation is continuous in Lp)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proposition-translation-is-continuous-in-Lp.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$1\leq p&lt; \infty$</span>
+                and suppose <span class="inline-math">$f\in{}$</span><a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-Lp-spaces.html"><span class="inline-math">$L^p$</span></a><span class="inline-math">$(\R^d)$</span>.
+            </p>
+            <p>
+                The function
+                <span class="display-math">$$ \begin{align*}
+                    τ_f: \R^d &amp;\to L^p(\R^d) \\
+                    a &amp;\mapsto (x \mapsto f(x - a))
+                \end{align*} $$</span>
+                is continuous.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-translation-is-continuous-in-Lp.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (dual space of Lp)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Theorem-dual-space-of-Lp.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(E,\mathcal{B},μ)$</span> be a <span class="inline-math">$σ$</span>-finite measure space
+                and <span class="inline-math">$1\leq p,q\leq \infty$</span> with <span class="inline-math">$1/p + 1/q = 1$</span>.
+            </p>
+            <p>
+                There is an <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-isomorphism-of-normed-spaces.html">isometric embedding</a>
+                from <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Definition-Lp-spaces.html"><span class="inline-math">$L_q(E)$</span></a> to <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-dual-normed-space.html"><span class="inline-math">$L_p(E)^\ast$</span></a>
+                <span class="display-math">$$ \begin{align*}
+                    L_q(E) &amp;\mapsto L_p(E)^\ast \\
+                    g &amp;\mapsto (L_g: f \mapsto \int f\cdot g \d μ).
+                \end{align*} $$</span>
+                If <span class="inline-math">$p&lt;\infty$</span>, then this is an isometric isomorphism.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Analysis-of-Functions-AF/Notes/Proof-dual-space-of-Lp.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

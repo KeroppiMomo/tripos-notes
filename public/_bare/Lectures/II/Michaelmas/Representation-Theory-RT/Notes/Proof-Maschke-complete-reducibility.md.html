@@ -1,0 +1,48 @@
+<p>
+    Let <span class="inline-math">$\tilde U$</span> be any <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Proposition-every-subspace-of-a-finite-dimensional-vector-space-has-a-direct-complement.html">direct complement</a>
+    of <span class="inline-math">$U$</span> in <span class="inline-math">$V$</span>, i.e. such that <span class="inline-math">$V = U \oplus \tilde U$</span> as vector spaces,
+    and let <span class="inline-math">$\tilde q: V\to U$</span> be the projection of <span class="inline-math">$V$</span> onto <span class="inline-math">$U$</span> along <span class="inline-math">$\tilde U$</span>,
+    i.e. <span class="inline-math">$q(u+\tilde u) = u$</span> for <span class="inline-math">$u\in U, \tilde u\in \tilde U$</span>.
+</p>
+<p>
+    Define for <span class="inline-math">$v\in V$</span>,
+    <span class="display-math">$$ \begin{align*}
+        q(v) = \frac{1}{|G|} \sum_{g\in G} g\,\tilde q(g\inv v),
+    \end{align*} $$</span>
+    well-defined as <span class="inline-math">$|G|\neq 0$</span> in <span class="inline-math">$k$</span>.
+</p>
+<p>
+    Check <span class="inline-math">$q$</span> is a projection of <span class="inline-math">$V$</span> onto <span class="inline-math">$U$</span>:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$q: V\to U$</span> because <span class="inline-math">$\tilde q(g\inv v)\in U$</span> and <span class="inline-math">$U$</span> is a <span class="inline-math">$G$</span>-invariant subspace.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$v\in U$</span>, then <span class="inline-math">$g\inv v\in U$</span>, so <span class="inline-math">$\tilde q(g\inv v) = g\inv v$</span>, and thus <span class="inline-math">$q(v) = v$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$q$</span> is clearly <span class="inline-math">$k$</span>-linear, so <span class="inline-math">$q$</span> is a projection of <span class="inline-math">$V$</span> onto <span class="inline-math">$U$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore linear algebra says <span class="inline-math">$V = U \oplus W$</span> as vector spaces where <span class="inline-math">$W = \ker q$</span>.
+</p>
+<p>
+    Moreover <span class="inline-math">$ϕ$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-G-homomorphism.html"><span class="inline-math">$G$</span>-linear</a>:
+    for any <span class="inline-math">$h\in G$</span>,
+    <span class="display-math">$$ \begin{align*}
+        q(h v) ={}&amp; \frac{1}{|G|} \sum_{g\in G} g\, \tilde q(g\inv h v) \\
+        ={}&amp; \frac{1}{|G|} \sum_{g&#x27;\in G} hg&#x27;\, \tilde q(g&#x27;\inv v) &amp;g&#x27; = h\inv g \\
+        ={}&amp; h\,q(v).
+    \end{align*} $$</span>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-G-homomorphism.html#^kernel-image">Thus</a> <span class="inline-math">$W = \ker q$</span> is a <span class="inline-math">$G$</span>-invariant subspace.
+    Hence <span class="inline-math">$V = U\oplus W$</span> as representations.
+</p>

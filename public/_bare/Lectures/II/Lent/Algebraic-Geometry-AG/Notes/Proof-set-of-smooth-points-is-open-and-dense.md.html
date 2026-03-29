@@ -1,0 +1,56 @@
+
+<h1><span class="inline-math">$X$</span> is affine irreducible</h1>
+
+<p>
+    Suppose <span class="inline-math">$X\subseteq \mathbb{A}^n$</span> be an affine irreducible variety
+    with <span class="inline-math">$I(X) = (f_1, \ldots, f_m)$</span>.
+    By <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dimension-smooth-points-on-variety.html">definition</a>, <span class="inline-math">$X^{\text{sm}}$</span> is non-empty,
+    so it suffices to show it is open.
+    Let <span class="inline-math">$d = \dim X$</span>, and we want to show
+    <span class="display-math">$$ \begin{align*}
+        X \setminus X^\text{sm} ={}&amp; \sb{P\in X}{\dim T_{X,P} &gt; d}
+    \end{align*} $$</span>
+    is a closed in <span class="inline-math">$X$</span>.
+</p>
+<p>
+    We <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-tangent-space-of-varieties.html">noted</a>
+    <span class="display-math">$$ \begin{align*}
+        \dim T_{X,P} = n - \op{rank} J_P
+    \end{align*} $$</span>
+    where <span class="inline-math">$J_P = (\pdfd{f_i}{x_j}(P))_{i,j}$</span> is the Jacobian matrix.
+    <a href="https://en.wikipedia.org/wiki/Rank_(linear_algebra">Linear algebra</a>#Determinantal<em>rank</em>%E2%80%93<em>size</em>of<em>largest</em>non-vanishing_minor)
+    says <span class="inline-math">$\op{rank} J_P \leq r$</span>
+    if all <span class="inline-math">$r\times r$</span> minors of <span class="inline-math">$J_P$</span> vanish.
+    This gives <span class="inline-math">$\pmat{n \\ r}\cdot \pmat{n\\ m}$</span>-many polynomial equations,
+    so <span class="inline-math">$X \setminus X^{\text{sm}} = \sb{P\in X}{\op{rank} J_P \leq n - d - 1}$</span>
+    is a closed subvariety taking <span class="inline-math">$r = n - d -1$</span>.
+</p>
+
+<h1>General <span class="inline-math">$X$</span></h1>
+
+<p>
+    Let <span class="inline-math">$X$</span> be an affine or projective algebraic set.
+</p>
+<p>
+    Suppose <span class="inline-math">$X = X_1 \cup \ldots\cup X_l$</span> where <span class="inline-math">$X_1, \ldots, X_l$</span> are its irreducible components,
+    so <span class="inline-math">$X_i^{\text{sm}}$</span> is open and dense in <span class="inline-math">$X_i$</span>.
+    Note by definition
+    <span class="display-math">$$ \begin{align*}
+        X \setminus X^\text{sm} ={}&amp; \bigcap_{i=1}^{l} X \setminus \Bigl(X_i^\text{sm} \setminus \bigcup_{\substack{j=1: \\ j\neq i}}^{l} X_j\Bigr) \\
+        ={}&amp; \bigcap_{i=1}^{l} \Bigl((X_i \setminus X_i^\text{sm}) \cup \bigcup_{\substack{j=1: \\ j\neq i}}^{l} X_j\Bigr).
+    \end{align*} $$</span>
+    <span class="inline-math">$X_i \setminus X_i^\text{sm}$</span> is closed in <span class="inline-math">$X_i$</span> so in <span class="inline-math">$X$</span>, and hence <span class="inline-math">$X \setminus X^\text{sm}$</span> is closed in <span class="inline-math">$X$</span> by finite set operations.
+</p>
+<p>
+    Moreover if <span class="inline-math">$U$</span> is a non-empty open set of <span class="inline-math">$X$</span>,
+    then <span class="inline-math">$U \cap X_i$</span> is a non-empty open set for some <span class="inline-math">$i$</span>, so
+    <span class="inline-math">$U \cap X_i^\text{sm}$</span> is a non-empty open set and hence dense.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        U \cap X^\text{sm} \supseteq (U \cap X_i^\text{sm}) \setminus \bigcup_{\substack{j=1: \\j\neq i}}^l  X_j \neq \emptyset.
+    \end{align*} $$</span>
+</p>
+<p>
+    The openness and density properties pass down to any open subset of <span class="inline-math">$X$</span>,
+    which proves the case for an quasiprojective variety <span class="inline-math">$X$</span>.
+</p>

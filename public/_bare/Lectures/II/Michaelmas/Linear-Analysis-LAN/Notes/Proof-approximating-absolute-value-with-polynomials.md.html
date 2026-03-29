@@ -1,0 +1,48 @@
+<p>
+    Fix <span class="inline-math">$ε&gt;0$</span>.
+</p>
+<p>
+    First we approximate <span class="inline-math">$|t|$</span> with a holomorphic function:
+    consider
+    <span class="display-math">$$ \begin{align*}
+        f(t) = \sqrt{t^2 + ε^2}.
+    \end{align*} $$</span>
+    Then by <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-Cauchy-Schwarz-inequality.html">Cauchy-Schwarz</a>
+    <span class="display-math">$$ \begin{align*}
+        \bigl|f(t) - |t|\bigr| \leq ε.
+    \end{align*} $$</span>
+</p>
+<p>
+    Next, to approximate <span class="inline-math">$f$</span>,
+    we write <span class="inline-math">$z \mapsto z^{1/2}$</span> for the holomorphic branch
+    of the square root on <span class="inline-math">$\C \setminus (-\infty,0]$</span>
+    such that <span class="inline-math">$x^{1/2} \in (0,\infty)$</span> for <span class="inline-math">$x\in (0,\infty)$</span>.
+    It is holomorphic on <span class="inline-math">$B_1(1) \equiv \sb{z\in \C}{|z - 1| &lt; 1}$</span>,
+    so has a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Taylor-expansion-of-holomorphic-functions.html">Taylor expansion</a> <span class="inline-math">$\sum_{n=0}^{\infty} a_n(z-1)^n$</span>.
+    The coefficients <span class="inline-math">$a_n$</span> are real since <span class="inline-math">$\dd[n]{z}z^{1/2}$</span> are real at <span class="inline-math">$z=1$</span>.
+</p>
+<p>
+    For <span class="inline-math">$t\in [-1, 1]$</span>, we have <span class="inline-math">$t^2 + ε^2 \in [ε^2, 1+ε^2]$</span>,
+    which is a compact subset in <span class="inline-math">$B_1(1)$</span>.
+    Since <span class="inline-math">$\sum_{n=0}^{\infty} a_n(s-1)^n$</span>
+    <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Theorem-Laurent-expansion.html">converges uniformly</a> to <span class="inline-math">$s^{1/2}$</span>
+    on <span class="inline-math">$s\in [ε^2, 1+ε^2]$</span>,
+    choose <span class="inline-math">$N\in \N$</span> such that <span class="inline-math">$|\sum_{n=0}^{N} a_n(s-1)^n - s^{1/2}| &lt; ε$</span>
+    for all <span class="inline-math">$s\in [ε^2, 1+ε^2]$</span>.
+    Thus for all <span class="inline-math">$t\in [-1,1]$</span>,
+    <span class="display-math">$$ \begin{align*}
+        |q(t) - f(t)| &lt; ε, \qquad q(t) = \sum_{n=0}^{N} a_n(t^2 + ε^2 - 1)^n.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        |q(t) - |t|| \leq |q(t) - f(t)| + |f(t) - |t|| &lt; 2ε, \qquad t\in [-1,1].
+    \end{align*} $$</span>
+    In particular <span class="inline-math">$|q(0)| &lt; 2ε$</span>.
+    Therefore taking
+    <span class="display-math">$$ \begin{align*}
+        p(t) = q(t) - q(0),
+    \end{align*} $$</span>
+    we get <span class="inline-math">$|p(t) - |t|| &lt; 4ε$</span>, as required.
+</p>

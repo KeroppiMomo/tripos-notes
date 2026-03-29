@@ -1,0 +1,88 @@
+
+<h1><span class="inline-math">$f_\ast$</span> does not depend on <span class="inline-math">$s$</span> or <span class="inline-math">$r$</span></h1>
+
+<p>
+    Suppose <span class="inline-math">$s: K^{(r)} \to L$</span> and <span class="inline-math">$t: K^{(q)} \to L$</span>
+    are simplicial approximation to <span class="inline-math">$f$</span>, WLOG assuming <span class="inline-math">$r\geq q$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-simplicial-approximation-to-identity.html">Choose</a>
+    a simplicial approximation <span class="inline-math">$a: K^{(q)} \to K^{(r)}$</span> to the identity map.
+    Then <span class="inline-math">$t$</span> and <span class="inline-math">$s \circ a: K^{(q)}\to L$</span>
+    are both simplicial approximation to <span class="inline-math">$f$</span>,
+    and <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-simplicial-approximations-are-contiguous.html">so</a> are contiguous
+    and <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-contiguous-simplicial-maps-induce-homotopic-chain-maps.html">induces</a> the same homomorphism <span class="inline-math">$t_\ast = (s \circ a)_\ast : H_n(K^{(q)}) \to H_n(L)$</span>.
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        t_\ast \circ ν_{K,q}\inv = s_\ast \circ a_\ast \circ ν_{K,q}\inv = s_\ast \circ ν_{K,r}\inv.
+    \end{align*} $$</span>
+</p>
+
+<h1>Composition</h1>
+
+<p>
+    Let <span class="inline-math">$t: L^{(q)} \to M$</span> be a simplicial approximation to <span class="inline-math">$g$</span>,
+    and <span class="inline-math">$s: K^{(r)} \to L^{(q)}$</span> be a simplicial approximation to <span class="inline-math">$f$</span>.
+    Then <span class="inline-math">$t \circ s$</span> is a simplicial approximation to <span class="inline-math">$g \circ f$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        (g \circ f)_\ast ={}&amp; (t \circ s)_\ast \circ ν_{K,r}\inv \\
+        ={}&amp; t_\ast \circ s_\ast \circ ν_{K,r}\inv \\
+        ={}&amp; (t_\ast \circ ν_{L,q}\inv) \circ (ν_{L,q} \circ s_\ast \circ ν_{K,r}\inv).
+    \end{align*} $$</span>
+</p>
+
+<h1>Homeomorphism</h1>
+
+<p>
+    Follows from <span class="inline-math">$(f\inv)_\ast = (f_\ast)\inv$</span> being continuous.
+</p>
+
+<h1>Homotopic maps</h1>
+
+<p>
+    Let <span class="inline-math">$f,g: |K|\to |L|$</span> be continuous maps.
+</p>
+
+<h2>Existence of <span class="inline-math">$ε&gt;0$</span> such that if <span class="inline-math">$|f(x) - g(x)| &lt; ε$</span> for all <span class="inline-math">$x\in |K|$</span>, then <span class="inline-math">$f_\ast = g_\ast$</span></h2>
+
+<p>
+    <span class="inline-math">$\sb{\op{St}_L(w)}{w\in V_L}$</span>
+    is an open cover of <span class="inline-math">$|L|$</span>, which is compact.
+    Take <span class="inline-math">$2ε$</span> to be the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-Lebesgue-number-lemma.html">Lesbegue number</a>.
+</p>
+<p>
+    Furthermore <span class="inline-math">$\sb{f\inv(B_ε(y))}{y\in |L|}$</span> is an open cover of the compact set <span class="inline-math">$|K|$</span>,
+    <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-Lebesgue-number-lemma.html">so</a> there exists some <span class="inline-math">$δ&gt;0$</span> such that for all <span class="inline-math">$x\in |K|$</span>, there is some <span class="inline-math">$y\in |L|$</span> such that <span class="inline-math">$f(B_δ(x)) \subseteq B_ε(y)$</span>.
+    This implies <span class="inline-math">$g(B_{δ}(x)) \subseteq B_{2ε}(y)$</span>,
+    so there is some <span class="inline-math">$w\in V_L$</span> such that <span class="inline-math">$f(B_{δ}(x))$</span> and <span class="inline-math">$g(B_{δ}(x))$</span> both lie in <span class="inline-math">$\op{St}_L(w)$</span>.
+</p>
+<p>
+    Now we'll construct one simplicial approximation <span class="inline-math">$s: K^{(r)} \to L$</span>
+    to both <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span>:
+    take <span class="inline-math">$r$</span> <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-mesh-of-barycentric-subdivisions-tend-to-zero.html">sufficiently large</a>
+    such that <span class="inline-math">$μ(K^{(r)}) &lt; δ/2$</span>.
+    For each <span class="inline-math">$v\in V_{K^{(r)}}$</span>,
+    <span class="inline-math">$\op{St}_{K^{(r)}}(v)$</span> lies within a ball of radius <span class="inline-math">$δ$</span>,
+    so <span class="inline-math">$f(\op{St}_{K^{(r)}}(v))$</span> and <span class="inline-math">$g(\op{St}_{K^{(r)}}(v))$</span>
+    lies within some <span class="inline-math">$\op{St}_L(w)$</span>.
+    Setting <span class="inline-math">$s(v) = w$</span> works.
+    Thus <span class="inline-math">$f_\ast = s_\ast \circ ν_{K,r}\inv = g_\ast$</span>.
+</p>
+
+<h2>Homotopy</h2>
+
+<p>
+    Let <span class="inline-math">$H: |K|\times [0,1] \to |L|$</span> be a homotopy from <span class="inline-math">$f$</span> to <span class="inline-math">$g$</span>.
+    Since <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-Tychonoff-product-of-compact-space-is-compact.html"><span class="inline-math">$|K| \times [0,1]$</span> is compact</a>,
+    <span class="inline-math">$H$</span> is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-Heine-Cantor-continuous-on-compact-set-implies-uniformly-continuous.html">uniformly continuous</a>,
+    so there exists some <span class="inline-math">$δ&gt;0$</span> such that
+    if <span class="inline-math">$|s-t|&lt;δ$</span>, then <span class="inline-math">$|H(x,s) - H(x,t)| &lt; ε$</span>.
+</p>
+<p>
+    Thus choosing <span class="inline-math">$0 = t_0 &lt; t_1 &lt; \ldots &lt; t_k = 1$</span>
+    where <span class="inline-math">$t_{i+1} - t_i &lt; δ$</span> for all <span class="inline-math">$i$</span>
+    and letting <span class="inline-math">$f_i(x) = H(x, t_i)$</span>,
+    we have that <span class="inline-math">$|f_{i+1} - f_i| &lt; ε$</span>,
+    so by the definition of <span class="inline-math">$ε$</span>,
+    <span class="inline-math">$f_\ast = (f_0)_\ast = (f_1)_\ast = \ldots = (f_k)_\ast = g_\ast$</span>.
+</p>
