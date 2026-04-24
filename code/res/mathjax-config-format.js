@@ -3,9 +3,20 @@ const preamble = `
 `
 
 MathJax = {
+    loader: {
+        load: [
+            '[tex]/extpfeil',
+            '[tex]/mathtools',
+        ],
+    },
     tex: {
         inlineMath: [['$', '$']],
         displayMath: [['$$', '$$']],
+        extensions: ["extpfeil.js"],
+        packages: {'[+]': [
+            'mathtools',
+            'extpfeil',
+        ]},
     },
     startup: {
         ready: () => {
