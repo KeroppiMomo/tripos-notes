@@ -1,0 +1,50 @@
+
+<h1>Existence of <span class="inline-math">$σ$</span>-embedding <span class="inline-math">$L\hookrightarrow M$</span></h1>
+
+<p>
+    Apply <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Zorn-s-lemma.html">Zorn's Lemma</a> to the partial order
+    <span class="display-math">$$ \begin{align*}
+        (S = \set{\text{$σ$-embedding $F\hookrightarrow M$ where $L/F/K$}}, \subseteq)
+    \end{align*} $$</span>
+    (where we compare two <span class="inline-math">$σ$</span>-embeddings <span class="inline-math">$τ_1, τ_2$</span> in the set-theoretic way:
+    <span class="inline-math">$τ_1\subseteq τ_2$</span> iff <span class="inline-math">$\op{dom}(τ_1) \subseteq \op{dom}(τ_2)$</span> and <span class="inline-math">$τ_1 = τ_2|_{\op{dom(τ_1)}}$</span>).
+</p>
+<p>
+    <span class="inline-math">$S$</span> is non-empty as <span class="inline-math">$σ\in S$</span>.
+</p>
+<p>
+    If <span class="inline-math">$T$</span> is a chain of <span class="inline-math">$S$</span>,
+    we take <span class="inline-math">$σ$</span> as an upper bound if <span class="inline-math">$T$</span> is empty.
+    Otherwise, let
+    <span class="display-math">$$ \begin{align*}
+        ϕ := \bigcup_{τ\in T} τ: \quad \bigcup_{τ\in T} \op{dom}(τ) &amp;\to M \\
+        x &amp;\mapsto τ(x) &amp;\text{if $x\in \op{dom}(τ)$},
+    \end{align*} $$</span>
+    which is a well-defined <span class="inline-math">$σ$</span>-embedding.
+    This is an upper bound of <span class="inline-math">$T$</span>.
+</p>
+<p>
+    Therefore Zorn's lemma provides a maximal element <span class="inline-math">$τ: F\hookrightarrow M$</span>.
+    We claim <span class="inline-math">$F = L$</span>.
+    Otherwise, for any <span class="inline-math">$α\in L\setminus F$</span>, which is algebraic over <span class="inline-math">$K$</span>,
+    let <span class="inline-math">$f\in K[X]$</span> be minimal polynomial of <span class="inline-math">$α$</span>.
+    As <span class="inline-math">$M$</span> is algebraically closed, pick a root <span class="inline-math">$β\in M$</span> of <span class="inline-math">$f$</span> in <span class="inline-math">$M$</span>.
+    Then <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-embedding-of-simple-extension.html">there exists</a> a <span class="inline-math">$τ$</span>-embedding
+    <span class="display-math">$$ \begin{align*}
+        F(α) &amp;\hookrightarrow M \\
+        α &amp;\mapsto β,
+    \end{align*} $$</span>
+    which extends <span class="inline-math">$τ$</span>,
+    contradicting maximality of <span class="inline-math">$τ$</span>.
+</p>
+
+<h1><span class="inline-math">$L,M$</span> are algebraic closures</h1>
+
+<p>
+    Let <span class="inline-math">$τ: L\hookrightarrow M$</span> be a <span class="inline-math">$σ$</span>-embedding.
+    Then we have a tower <span class="inline-math">$M / τ(L) / K$</span> of extensions.
+    Since <span class="inline-math">$M/K$</span> is algebraic, so is <span class="inline-math">$M/τ(L)$</span>.
+    But <span class="inline-math">$τ(L)\isom L$</span> is algebraically closed,
+    so <span class="inline-math">$M = τ(L)$</span>.
+    Thus <span class="inline-math">$τ$</span> is surjective, hence an isomorphism.
+</p>

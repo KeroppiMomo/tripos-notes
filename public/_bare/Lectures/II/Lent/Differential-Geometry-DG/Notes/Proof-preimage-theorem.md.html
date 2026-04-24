@@ -1,0 +1,47 @@
+<p>
+    Let <span class="inline-math">$x \in f\inv(y)$</span>.
+    We want a local parametrisation of <span class="inline-math">$f\inv(y)$</span> around <span class="inline-math">$x$</span>.
+    Since <span class="inline-math">$y$</span> is a regular value,
+    <span class="inline-math">$\d f_x: T_x X \to T_y Y$</span> is surjective.
+</p>
+<p>
+    Since <span class="inline-math">$\ker \d f_x \subseteq T_x X$</span> has dimension <span class="inline-math">$\dim Y - \dim X =: q$</span>,
+    find some linear surjection <span class="inline-math">$T: \R^N \to \R^q$</span>
+    with <span class="inline-math">$\ker T \cap \ker \d f_x = \set{0}$</span>.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        F = f \times T|_X: \quad X &amp;\to Y \times \R^q \\
+        x &amp;\mapsto (f(x), T(x)),
+    \end{align*} $$</span>
+    which is smooth and has derivative
+    <span class="display-math">$$ \begin{align*}
+        \d F_x = \d f_x \times \d T|_{T_xX} = \d f_x \times T|_{T_x X}: T_xX \to T_y Y \times \R^q.
+    \end{align*} $$</span>
+    <span class="inline-math">$\d F_x$</span> is an isomorphism
+    since <span class="inline-math">$\ker \d F_x = \ker \d f_x \cap \ker T|_{T_x X} = \set{0}$</span>
+    and <span class="inline-math">$\dim T_x X = \dim (T_y Y \times \R^q)$</span>.
+</p>
+<p>
+    The inverse function theorem then tells us
+    <span class="inline-math">$F$</span> is a local diffeomorphism,
+    i.e. there exists <span class="inline-math">$U\subseteq X$</span> open neighbourhood of <span class="inline-math">$x$</span>
+    such that <span class="inline-math">$F|_U: U \to F(U)$</span>
+    is a diffeomorphism.
+    By restricting <span class="inline-math">$U$</span> we can WLOG assume <span class="inline-math">$F(U) = f(U) \times T(U)$</span>.
+</p>
+<p>
+    Then define
+    <span class="display-math">$$ \begin{align*}
+        ψ := (F|_U)\inv|_{\set{y} \times T(U)}: \quad \set{y} \times T(U) \isom T(U) \to U \cap f\inv(y) \subset X.
+    \end{align*} $$</span>
+    This gives a local parametrisation of <span class="inline-math">$f\inv(y)$</span> near <span class="inline-math">$x$</span>:
+    <span class="inline-math">$T(U)$</span> is an open subset of <span class="inline-math">$\R^q$</span>,
+    and <span class="inline-math">$ψ$</span> is a diffeomorphism
+    as it is a restriction of a diffeomorphism.
+</p>
+<p>
+    Finally
+    <span class="display-math">$$ \begin{align*}
+        T_{x} f\inv(y) = \d ψ_{ψ\inv(x)}(\R^q) =  (\d F_x)\inv(\set{0}\times \R^q) = \ker \d f_x.
+    \end{align*} $$</span>
+</p>

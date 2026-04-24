@@ -1,0 +1,41 @@
+<p>
+    Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+    <span class="inline-math">$Θ\subseteq \R^d$</span> and <span class="inline-math">$X\sim f(\cdot, θ)$</span> be a random variable.
+</p>
+<p>
+    The <em>Fisher information matrix</em> is
+    <span class="display-math">$$ \begin{align*}
+        I(θ) := \expect_θ\left[\pdd{θ}\log f(X, θ) \; \pdd{θ^T} \log f(X, θ)\right] = \expect_θ[S(θ) \; S(θ)^T], \qquad θ\in \op{int}(Θ)
+    \end{align*} $$</span>
+    where <span class="inline-math">$S(θ) = \pdd{θ}\log f(X, θ)$</span> is the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-score-function.html">score</a>.
+</p>
+<blockquote>
+    <!-- BEGIN BLOCK ID variance -->
+    <p id="^variance">
+        Under regularity conditions, (if <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span> then)
+        <span class="display-math">$$ \begin{align*}
+            I(θ) = \var(S(θ))
+        \end{align*} $$</span>
+        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Fisher-information-as-variance-of-score.html">Derivation</a>)
+        and (if <span class="inline-math">$\int_{\mathcal{X}} \pdfxd{f}{θ_i}{θ_j} \d x = \pdxd{θ_i}{θ_j} \int_{\mathcal{X}} f \d x$</span> then)
+        <span class="display-math">$$ \begin{align*}
+            I(θ) = -\expect_θ\left[\pdd{θ} \pdd{θ^T} \log f(X, θ)\right].
+        \end{align*} $$</span>
+        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Fisher-information-in-terms-of-second-partials.html">Derivation</a>)
+    </p>
+    
+    <!-- END BLOCK ID variance -->
+    
+</blockquote>
+<blockquote>
+    <p>
+        If <span class="inline-math">$X = (X_1, \ldots, X_n)$</span> and <span class="inline-math">$X_i \sim f(\cdot, θ)$</span> are iid, then
+        under regularity conditions (if <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span> then)
+        <span class="display-math">$$ \begin{align*}
+            I_n(θ) := \expect_θ[S_n(θ) S_n(θ)^T] = n \, I(θ)
+        \end{align*} $$</span>
+        where <span class="inline-math">$S_n(θ) = \sum_{i=1}^{n} \pdd{θ} \log f(X_i, θ)$</span>.
+        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-tensorisation-of-Fisher-information.html">Derivation</a>)
+    </p>
+    
+</blockquote>

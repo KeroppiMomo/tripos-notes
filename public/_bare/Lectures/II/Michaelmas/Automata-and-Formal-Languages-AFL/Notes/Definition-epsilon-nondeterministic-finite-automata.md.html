@@ -1,0 +1,49 @@
+<p>
+    An <em><span class="inline-math">$ε$</span>-nondeterministic finite automaton</em> (<span class="inline-math">$ε$</span>-NFA)
+    is a tuple <span class="inline-math">$E = (Q, Σ, δ, q_0, F)$</span> where
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$Q$</span> is a non-empty finite set (of <em>states</em>);
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$Σ$</span> is a non-empty finite set (the <em>alphabet</em>);
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$δ: Q\times (Σ\times \set{ε})\to \mathcal{P}(Q)$</span> (the <em>transition function</em>);
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$q_0 \in Q$</span> (the <em>start state</em>); and
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$F\subseteq Q$</span> a subset (of <em>accepting states</em>).
+    </p>
+    
+</li>
+</ul>
+<p>
+    Let the <em><span class="inline-math">$ε$</span>-closure</em> of a set <span class="inline-math">$S\subseteq Q$</span> be
+    <span class="display-math">$$ \begin{align*}
+        \op{ecl}(S) := \bigcup_{n=0}^{\infty} S_n \qquad \text{where }S_0 := S,\; S_{n+1} = S_n \cup \bigcup_{q\in S_{n}} δ(q, ε).
+    \end{align*} $$</span>
+</p>
+<p>
+    Extend <span class="inline-math">$δ$</span> to <span class="inline-math">$\hat δ: Q \times Σ^\ast\to \mathcal{P}(Q)$</span> by
+    <span class="display-math">$$ \begin{align*}
+        \hat δ(q, ε) := \op{ecl}(q), \qquad 
+        \hat δ(q, wa) := \op{ecl}\left(\bigcup \sb{δ(p, a)}{p\in \hat δ(q, w)}\right).
+    \end{align*} $$</span>
+    The language accepted by <span class="inline-math">$E$</span> is
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{L}(N) := \sb{w\in Σ^\ast}{\hat δ(q_0, w)\cap F \neq \emptyset}.
+    \end{align*} $$</span>
+</p>

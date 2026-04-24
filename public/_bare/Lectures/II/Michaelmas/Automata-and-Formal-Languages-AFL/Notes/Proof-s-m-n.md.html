@@ -1,24 +1,37 @@
 <p>
-    Since <span class="inline-math">$g$</span> is computable, let <span class="inline-math">$M$</span> be a register machine that computes it,
-    i.e. <span class="inline-math">$f_{M,k+1}(\v w, v) = g(\v w, v)$</span>.
-    For any fixed <span class="inline-math">$v\in \mathbb{W}$</span>,
-    let <span class="inline-math">$M_v$</span> be the register machine that performs the operation <span class="inline-math">$\v w \mapsto (\v w, v)$</span>,
-    i.e. writing <span class="inline-math">$v$</span> to register <span class="inline-math">$k$</span>.
-    Note
-    <span class="display-math">$$ \begin{align*}
-        g(\v w, v) = f_{M, k+1}(f_{M_v, k}(\v w)) = f_{M\circ M_v, k}(\v w)
-    \end{align*} $$</span>
-    so it suffices to show the operation <span class="inline-math">$v\mapsto \op{code}(M$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-concatenation-lemma-subroutine-lemma.html"><span class="inline-math">${}\circ{}$</span></a><span class="inline-math">$M_v)$</span> is performed
-    by some register machine.
+    If such <span class="inline-math">$τ$</span> exists,
+    given <span class="inline-math">$\v a$</span> and <span class="inline-math">$\v x$</span>,
+    compute <span class="inline-math">$τ(\v a)$</span>,
+    and check if it encodes a program (else loop forever).
+    Then run the program with input <span class="inline-math">$\v x$</span>.
+    This shows <span class="inline-math">$h$</span> is partial computable.
 </p>
 <p>
-    Break it down into concatenating three register machines:
-    <span class="display-math">$$ \begin{align*}
-        v \mapsto \op{code}(M_v) \mapsto (\op{code}(M_v), \op{code}(M)) \mapsto \op{code}(M \circ M_v).
-    \end{align*} $$</span>
+    Conversely,
+    we have a program <span class="inline-math">$P$</span> that compute <span class="inline-math">$h$</span> on <span class="inline-math">$m+k$</span> variables.
+    To construct <span class="inline-math">$τ$</span>, given <span class="inline-math">$\v a$</span>,
+    insert instructions that set register <span class="inline-math">$R_1$</span> to <span class="inline-math">$a_1$</span>, ..., register <span class="inline-math">$R_k$</span> to <span class="inline-math">$a_k$</span> before <span class="inline-math">$P$</span>.
+    Then compute the code of the new program and return.
 </p>
 <p>
-    The first two operations <span class="inline-math">$v\mapsto \op{code}(M_v)$</span> and <span class="inline-math">$w\mapsto (w, \op{code}(M))$</span> are clear.
-    For the last one, note the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-concatenation-lemma-subroutine-lemma.html">proof of the concatenation lemma</a>
-    provides a concrete algorithm of how to perform the concatenation operation.
+    <!-- Since <span class="inline-math">$g$</span> is computable, let <span class="inline-math">$M$</span> be a register machine that computes it, -->
+    <!-- i.e. <span class="inline-math">$f_{M,k+1}(\v w, v) = g(\v w, v)$</span>. -->
+    <!-- For any fixed <span class="inline-math">$v\in \mathbb{W}$</span>, -->
+    <!-- let <span class="inline-math">$M_v$</span> be the register machine that performs the operation <span class="inline-math">$\v w \mapsto (\v w, v)$</span>, -->
+    <!-- i.e. writing <span class="inline-math">$v$</span> to register <span class="inline-math">$k$</span>. -->
+    <!-- Note -->
+    <!-- <span class="display-math">$$ \begin{align*} --&gt;
+    &lt;!--     g(\v w, v) = f_{M, k+1}(f_{M_v, k}(\v w)) = f_{M\circ M_v, k}(\v w) --&gt;
+    &lt;!-- \end{align*} $$</span> -->
+    <!-- so it suffices to show the operation <span class="inline-math">$v\mapsto \op{code}(M$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-concatenation-lemma-subroutine-lemma.html"><span class="inline-math">${}\circ{}$</span></a><span class="inline-math">$M_v)$</span> is performed -->
+    <!-- by some register machine. -->
+    <!---->
+    <!-- Break it down into concatenating three register machines: -->
+    <!-- <span class="display-math">$$ \begin{align*} --&gt;
+    &lt;!--     v \mapsto \op{code}(M_v) \mapsto (\op{code}(M_v), \op{code}(M)) \mapsto \op{code}(M \circ M_v). --&gt;
+    &lt;!-- \end{align*} $$</span> -->
+    <!---->
+    <!-- The first two operations <span class="inline-math">$v\mapsto \op{code}(M_v)$</span> and <span class="inline-math">$w\mapsto (w, \op{code}(M))$</span> are clear. -->
+    <!-- For the last one, note the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-concatenation-lemma-subroutine-lemma.html">proof of the concatenation lemma</a> -->
+    <!-- provides a concrete algorithm of how to perform the concatenation operation. -->
 </p>

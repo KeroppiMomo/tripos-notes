@@ -1,6 +1,6 @@
 <p>
-    Consider an encoding of grammars as words in <span class="inline-math">$\mathbb{W}$</span>:
-    for every word <span class="inline-math">$w$</span>, there is a grammar <span class="inline-math">$G_w$</span>,
+    Consider an encoding of grammars:
+    for every <span class="inline-math">$n\in \N$</span>, there is a grammar <span class="inline-math">$G_n$</span>,
     and all grammars are of this form.
 </p>
 <p>
@@ -28,7 +28,10 @@
     and we say a decision problem is solvable if the set is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a>.
 </p>
 <p>
-    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-type-0-language-iff-computably-enumerable.html">It can be shown that</a>
+    <!-- <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-type-0-language-iff-computably-enumerable.html">It can be shown that</a> -->
+</p>
+<p>
+    It can be shown that
     there are total computable functions
     that translate between codes of grammars
     and register machines and vice versa.
@@ -38,13 +41,14 @@
         \mathbf{Emp} &amp;:= \sb{u}{\mathrm{W}_u = \emptyset} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) = \emptyset}, \\
         \mathbf{Fin} &amp;:= \sb{u}{\mathrm{W}_u \text{ is finite}} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) \text{ is finite}}, \\
         \mathbf{Inf} &amp;:= \sb{u}{\mathrm{W}_u \text{ is infinite}} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) \text{ is infinite}}, \\
-        \mathbf{Tot} &amp;:= \sb{u}{\mathrm{W}_u = \mathbb{W}} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) = \mathbb{W}}, \\
+        \mathbf{Cof} &amp;:= \sb{u}{\N \setminus \mathrm{W}_u \text{ is finite}} &amp;&amp;\equiv_m \sb{u}{Σ^\ast \setminus \mathcal{L}(G_u) \text{ is finite}}, \\
+        \mathbf{Tot} &amp;:= \sb{u}{\mathrm{W}_u = \N} &amp;&amp;\equiv_m \sb{u}{\mathcal{L}(G_u) = Σ^\ast}, \\
     \end{alignat} $$</span>
 </p>
 <p>
     <span class="inline-math">$\mathbf{Emp}, \mathbf{Fin}, \mathbf{Inf}, \mathbf{Tot}$</span> are non-trivial <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-index-set.html">index sets</a>.
-    By Rice's theorem, we obtain
-    <span class="inline-math">$\mathbb{W}\setminus \mathbf{K} \leq_m \mathbf{Emp}, \mathbf{Fin}$</span>
+    By <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-Rice.html">Rice's theorem</a>, we obtain
+    <span class="inline-math">$\mathbb{N}\setminus \mathbf{K} \leq_m \mathbf{Emp}, \mathbf{Fin}$</span>
     and <span class="inline-math">$\mathbf{K}\leq_m \mathbf{Inf}, \mathbf{Tot}$</span>.
     This shows the emptiness problem for type 0 languages is not solvable.
 </p>
@@ -57,10 +61,10 @@
         <div class="markdown-embed-content">
             <p>
                 <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems-as-computability-of-sets.html"><span class="inline-math">$\mathbf{Fin}$</span></a>
-                is neither <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Σ_1$</span></a> nor <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Π_1$</span></a>.
+                is neither <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_n-Pi_n-Delta_n-sets.html"><span class="inline-math">$Σ_1$</span></a> nor <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_n-Pi_n-Delta_n-sets.html"><span class="inline-math">$Π_1$</span></a>.
             </p>
             <p>
-                Consequently <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems-as-computability-of-sets.html"><span class="inline-math">$\mathbf{Inf}$</span></a> <span class="inline-math">$= \mathbb{W}\setminus \mathbf{Fin}$</span>
+                Consequently <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Decision-problems-as-computability-of-sets.html"><span class="inline-math">$\mathbf{Inf}$</span></a> <span class="inline-math">$= \N\setminus \mathbf{Fin}$</span>
                 is neither <span class="inline-math">$Σ_1$</span> nor <span class="inline-math">$Π_1$</span>.
             </p>
             <p>
@@ -71,7 +75,34 @@
     </div>
 </p>
 <p>
-    <div class="markdown-embed embed-result">
+    By describing using the total computable set <span class="inline-math">$T = \sb{(m,x,n)}{\text{program }m\text{ with input }x\text{ terminates in }n\text{ steps}}$</span>,
+    we see
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$\mathbf{Emp} = \sb{m}{\forall x \forall n: (m,x,n)\not\in T}$</span> is <span class="inline-math">$Π_1$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathbf{Fin} = \sb{m}{\exists X\forall x\forall n: x\leq X \text{ or } (m,x,n)\not\in T}$</span> is <span class="inline-math">$Σ_2$</span> so <span class="inline-math">$\mathbf{Inf}$</span> is <span class="inline-math">$Π_2$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathbf{Cof} = \sb{m}{\exists X\forall x\exists n: x\leq X \text{ or } (m,x,n)\in T}$</span> is <span class="inline-math">$Σ_3$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\mathbf{Tot} = \sb{m}{\forall x\exists n: (m,x,n)\in T}$</span> is <span class="inline-math">$Π_2$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <!-- <div class="markdown-embed embed-result">
         <div class="markdown-embed-title">
             Proposition (equivalence problem for type 0 language is not solvable)
             <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-equivalence-problem-for-type-0-language-is-not-solvable.html">open_in_new</a>
@@ -85,5 +116,5 @@
             </p>
             
         </div>
-    </div>
+    </div> -->
 </p>

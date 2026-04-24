@@ -1,0 +1,50 @@
+<p>
+    Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a statistical model,
+    <span class="inline-math">$Θ \subseteq \R^p$</span>,
+    and <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span> with true parameter <span class="inline-math">$θ_0$</span>.
+</p>
+<p>
+    Assume <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regularity conditions</a>.
+    Let <span class="inline-math">$\hat θ_n$</span> be the maximum likelihood estimator based on <span class="inline-math">$X_1, \ldots, X_n$</span>.
+    Choose any estimator <span class="inline-math">$\hat I_n\xrightarrow{p}{}$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html"><span class="inline-math">$I(θ_0)$</span></a>
+    (such as <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Lemma-observed-Fisher-information.html"><span class="inline-math">$i_n(\hat θ_n)$</span>, <span class="inline-math">$j_n(\hat θ_n)$</span></a>, <span class="inline-math">$I(\hat θ_n)$</span>).
+</p>
+<ul>
+<li>
+    <p>
+        For all <span class="inline-math">$j = 1, \ldots, p$</span>,
+        <span class="display-math">$$ \begin{align*}
+        \frac{\sqrt{n}(\hat θ_{n,j} - θ_{0,j})}{\sqrt{(\hat I_n\inv)_{jj}}} \xrightarrow{d} N(0,1) \qquad 
+        \end{align*} $$</span>
+        so there is an asymptotically <span class="inline-math">$(1-α)$</span>-<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-confidence-interval-region.html">confidence interval</a> for <span class="inline-math">$θ_{0,j}$</span>
+        <span class="display-math">$$ \begin{align*}
+        \left[\hat θ_{n,j} - \frac{z_α \sqrt{(\hat I_n\inv)_{jj}}}{\sqrt{n}}, \hat θ_{n,j} + \frac{z_α \sqrt{(\hat I_n\inv)_{jj}}}{\sqrt{n}}\right]
+        \end{align*} $$</span>
+        where <span class="inline-math">$z_α$</span> is the upper <span class="inline-math">$α/2$</span>-quantile of a <span class="inline-math">$N(0,1)$</span> distribution.
+    </p>
+    
+</li><li>
+    <p>
+        Moreover
+        <span class="display-math">$$ \begin{align*}
+        n(\hat θ_n - θ_0)^T \hat I_n (\hat θ_n - θ_0) \xrightarrow{d} χ_p^2,
+        \end{align*} $$</span>
+        so there is an asymptotically <span class="inline-math">$(1-α)$</span>-confidence set for <span class="inline-math">$θ_0$</span>
+        <span class="display-math">$$ \begin{align*}
+        \sb{θ}{n(\hat θ_n - θ)^T \hat I_n(\hat θ_n - θ) \leq ξ_α}
+        \end{align*} $$</span>
+        where <span class="inline-math">$ξ_α$</span> is the upper <span class="inline-math">$α$</span> quantile of the <span class="inline-math">$χ_p^2$</span> distribution.
+    </p>
+    
+</li>
+</ul>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Wald-confidence-set.html">Proof</a>
+</p>
+<blockquote>
+    <p>
+        This gives tests for simple null hypotheses regarding <span class="inline-math">$θ_{0,j}$</span> or <span class="inline-math">$θ_0$</span>
+        with asymptotic size <span class="inline-math">$α$</span>.
+    </p>
+    
+</blockquote>

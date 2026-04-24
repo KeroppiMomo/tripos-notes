@@ -1,0 +1,27 @@
+<p>
+    Define for <span class="inline-math">$θ\in Θ$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \tilde I(θ) = \expect_{θ_0} [\underbrace{∇_θ \log f(X, θ) ∇_θ \log f(X, θ)^T}_{q(X,θ)}].
+    \end{align*} $$</span>
+    Note <span class="inline-math">$\tilde I(θ_0) = I(θ_0)$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \hat \imath_n - I(θ_0) = \underbrace{\bigl(\hat\imath_n(\hat θ_\text{MLE}) - \tilde I(\hat θ_{\text{MLE}})\bigr)}_{(A)} + \underbrace{\bigl(\tilde I(\hat θ_\text{MLE}) - \tilde I(θ_0)\bigr)}_{(B)} .
+    \end{align*} $$</span>
+</p>
+<p>
+    In <span class="inline-math">$(A)$</span>, we get rid of the dependence on the random variable <span class="inline-math">$\hat θ_{\text{MLE}}$</span>:
+    <span class="display-math">$$ \begin{align*}
+        |(A)| \leq \sup_{θ\in Θ} \Bigl|\frac{1}{n} \sum_{i=1}^{n} q(X,θ) - \expect_{θ_0} q(X,θ)\Bigr| \xrightarrow{P_{θ_0}} 0
+    \end{align*} $$</span>
+    by a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-uniform-law-of-large-numbers-in-compact-domain.html">uniform law of large number</a>.
+</p>
+<p>
+    Finally, note <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-consistency-of-MLE.html"><span class="inline-math">$\hat θ_\text{MLE} \xrightarrow{p} θ_0$</span></a>,
+    and by the regularity conditions,
+    <span class="inline-math">$\tilde I$</span> is continuous, so
+    the continuous mapping theorem yields <span class="inline-math">$(B) \xrightarrow{p} 0$</span>.
+</p>
+<p>
+    The case with <span class="inline-math">$\hat \jmath$</span> is similar.
+</p>

@@ -1,0 +1,60 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (classification of compact 1-dimensional manifold)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-classification-of-compact-1-dimensional-manifold.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$X$</span> is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a> 1-dimensional <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-with-boundary.html">manifold with boundary</a>,
+                then <span class="inline-math">$X$</span> is a disjoint union of
+                finitely many copies of <span class="inline-math">$S^1$</span> and <span class="inline-math">$[0,1]$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    In particular <span class="inline-math">$\# \partial X$</span> is even.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-preimage-theorem.html#^same-dim">Recall</a> <span class="inline-math">$\# f\inv(y)$</span> and <span class="inline-math">$\# g\inv(y)$</span> are finite.)
+</p>
+<p>
+    Let <span class="inline-math">$H: X \times [0,1]\to Y$</span> be a smooth homotopy from <span class="inline-math">$f$</span> to <span class="inline-math">$g$</span>.
+    First assume <span class="inline-math">$y$</span> is a regular value of <span class="inline-math">$H$</span>.
+    Then by the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-preimage-theorem.html">preimage theorem</a>,
+    <span class="inline-math">$H\inv(y)$</span> is a 1-dimensional submanifold of <span class="inline-math">$X$</span>
+    with boundary
+    <span class="display-math">$$ \begin{align*}
+        \partial H\inv(y) = H\inv(y) \cap \partial(X \times [0,1]) = H\inv(y) \cap (X \times \set{0,1}),
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \# f\inv(y) - \# g\inv(y) \equiv \#f\inv(y) + \# g\inv(y) = \# \partial H\inv(y) \pmod 2.
+    \end{align*} $$</span>
+    Moreover <span class="inline-math">$H\inv(y)$</span> is compact (as a closed set in the compact set <span class="inline-math">$X$</span>),
+    so by classification,
+    <span class="inline-math">$\#\partial H\inv(y)$</span> is even,
+    as required.
+</p>
+<p>
+    Now consider the general case when <span class="inline-math">$y$</span> may not be a regular value of <span class="inline-math">$H$</span>.
+    By the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-stack-of-records.html">stack of records theorem</a>,
+    there exists an open neighbourhood <span class="inline-math">$V\subseteq Y$</span> of <span class="inline-math">$y$</span>
+    such that <span class="inline-math">$f\inv(V) = \bigsqcup_{i=1}^{n} U_i$</span> and <span class="inline-math">$g\inv(V) = \bigsqcup_{i=1}^{\tilde n} \tilde U_i$</span>
+    where <span class="inline-math">$f|_{U_i}: U_i \xrightarrow{\sim} V$</span> and <span class="inline-math">$g|_{U_i}: \tilde U_i \xrightarrow{\sim} V$</span>
+    are diffeomorphisms.
+    Therefore for all <span class="inline-math">$w\in V$</span>, <span class="inline-math">$\#f\inv(w) = n$</span> and <span class="inline-math">$\# g\inv(w) = \tilde n$</span>.
+</p>
+<p>
+    Now by <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-Sard.html">Sard's theorem</a>,
+    <span class="inline-math">$\sb{y\in Y}{y\text{ is regular for all of }f,g,H}$</span>
+    is dense in <span class="inline-math">$Y$</span>,
+    so there exists <span class="inline-math">$w\in V$</span> which is regular for all of <span class="inline-math">$f,g,H$</span>.
+    Apply the above argument to show <span class="inline-math">$n = \tilde n$</span>,
+    and hence <span class="inline-math">$\# f\inv(y) = \# g\inv(y)$</span>.
+</p>

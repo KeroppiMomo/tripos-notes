@@ -1,0 +1,86 @@
+
+<h1><span class="inline-math">$K(X_1,\ldots, X_n)^{S_n}$</span></h1>
+
+<p>
+    Clearly <span class="inline-math">$K[s_1, \ldots, s_n] \subseteq K[X_1, \ldots, X_n]^{S_n}$</span>.
+</p>
+
+<h2>Elementary proof</h2>
+
+<p>
+    <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-polynomial-ring-of-UFD-is-UFD.html">Recall</a> <span class="inline-math">$K[X_1, \ldots, X_n]$</span> is a UFD.
+</p>
+<p>
+    Suppose <span class="inline-math">$f/g\in K(X_1, \ldots, X_n)^{S_n}$</span>,
+    and WLOG take <span class="inline-math">$f,g\in K[X_1, \ldots, X_n]$</span> to be coprime.
+    This means <span class="inline-math">$f/g = σ(f)/σ(g)$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        σ(g)\cdot f = σ(f) \cdot g \qquad \text{in $K[X_1 ,\ldots, X_n]$}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Since <span class="inline-math">$f \mid σ(f) \cdot g$</span> and <span class="inline-math">$f,g$</span> are coprime,
+    we have <span class="inline-math">$f\mid σ(f)$</span>.
+    This argument also shows <span class="inline-math">$g \mid σ(g)$</span>.
+    Moreover, <span class="inline-math">$σ(f)$</span> and <span class="inline-math">$σ(g)$</span> are coprime as well,
+    so we have <span class="inline-math">$σ(f)\mid f$</span> and <span class="inline-math">$σ(g)\mid g$</span>.
+</p>
+<p>
+    Hence <span class="inline-math">$f,σ(f)$</span> and <span class="inline-math">$g,σ(f)$</span> differ by a unit in <span class="inline-math">$K[X_1, \ldots, X_n]$</span>,
+    i.e. a constant.
+    As <span class="inline-math">$σ(g) f = σ(f)g$</span>, the constants are the same, so
+    <span class="display-math">$$ \begin{align*}
+        σ(f) = cf, \qquad σ(g) = cg
+    \end{align*} $$</span>
+    for some <span class="inline-math">$c\in K^\times$</span>.
+</p>
+<p>
+    Note <span class="inline-math">$σ$</span> has order dividing <span class="inline-math">$\# S_n = n!$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        c^{n!} f = σ^{n!}(f) = f \implies c^{n!} = 1
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        fg^{n!-1}, \;g^{n!} \in K[X_1, \ldots, X_n]^{S_n}.
+    \end{align*} $$</span>
+    By the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-fundamental-theorem-of-symmetric-polynomials.html">fundamental theorem of symmetric polynomial</a>,
+    <span class="inline-math">$K[X_1, \ldots, X_n]^{S_n} = K[s_1, \ldots, s_n]$</span>.
+    Hence <span class="inline-math">$f/g \in K(s_1, \ldots, s_n)$</span>.
+</p>
+
+<h2>Using <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-Artin-Galois-over-fixed-field.html">Artin's theorem</a></h2>
+
+<p>
+    By Artin, <span class="inline-math">$[K(X_1, \ldots, X_n) : K(X_1,\ldots, X_n)^{S_n}] = \# S_n = n!$</span>,
+    so <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-tower-law.html">it suffices</a> to show <span class="inline-math">$[K(X_1, \ldots, X_n): K(s_1, \ldots, s_n)] \leq n!$</span>.
+</p>
+<p>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        f(T) := \prod_{i=1}^{n} (T - X_i) = T^n - s_1 T^{n-1} + s_2 T^{n-2} - \ldots + (-1)^n s_n
+    \end{align*} $$</span>
+    a polynomial with coefficients in <span class="inline-math">$K(s_1, \ldots, s_n)$</span>.
+    <span class="inline-math">$K(X_1, \ldots, X_n)$</span> is a splitting field of <span class="inline-math">$f$</span> over <span class="inline-math">$K(s_1, \ldots, s_n)$</span>,
+    so by sheet 1 Q12,
+    <span class="display-math">$$ \begin{align*}
+        [K(X_1, \ldots, X_n) : K(s_1, \ldots, s_n)] \leq (\deg f)! = n!.
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$K(X_1, \ldots, X_n)^{A_n}$</span></h1>
+
+<p>
+    By Artin's theorem, <span class="inline-math">$[K(X_1, \ldots, X_n) : K(X_1, \ldots, X_n)^{A_n}] = \# A_n = \frac{1}{2}n!$</span>,
+    so by the tower law,
+    <span class="display-math">$$ \begin{align*}
+        [K(X_1, \ldots, X_n)^{A_n} : K(X_1, \ldots, X_n)^{S_n}] = 2.
+    \end{align*} $$</span>
+    It suffices to show <span class="inline-math">$δ$</span> is fixed by <span class="inline-math">$A_n$</span> but not <span class="inline-math">$S_n$</span>.
+    Indeed as <span class="inline-math">$\sign(σ)$</span> equals the number of inversions of <span class="inline-math">$σ$</span>,
+    <span class="display-math">$$ \begin{align*}
+        σ(δ) = \sign(σ) δ
+    \end{align*} $$</span>
+    for all <span class="inline-math">$σ\in S_n$</span>.
+    Since <span class="inline-math">$δ\neq 0$</span> and <span class="inline-math">$+1 \neq -1$</span> in <span class="inline-math">$K$</span>,
+    <span class="inline-math">$σ(δ) = δ$</span> if <span class="inline-math">$σ\in A_n$</span> and <span class="inline-math">$σ(δ) \neq δ$</span> if <span class="inline-math">$σ\not\in A_n$</span>.
+</p>

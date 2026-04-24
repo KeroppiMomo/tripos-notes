@@ -1,60 +1,19 @@
 <p>
-    Input <span class="inline-math">$v,u$</span>.
+    On input, check if <span class="inline-math">$n$</span> codes a program, else loop forever.
+    If so, decode <span class="inline-math">$m$</span> and see if it is a <span class="inline-math">$k$</span>-tuple (else loop forever).
+    Then run program defined by <span class="inline-math">$n$</span> on input <span class="inline-math">$((m)_0, \ldots, (m)_{k-1})$</span>.
+    If it halts, output <span class="inline-math">$r$</span> the contents of <span class="inline-math">$R_1$</span>, otherwise keep running.
 </p>
-<ol start="1">
-<li>
-    <p>
-        Ensure <span class="inline-math">$v = \op{code}(M)$</span> for some <span class="inline-math">$M$</span> and <span class="inline-math">$u = \op{code}(\v w)$</span> for some <span class="inline-math">$\v w$</span>.
-    </p>
-    <ol start="1">
-    <li>
-        <p>
-            Otherwise, diverge.
-        </p>
-        
-    </li>
-    </ol>
-    
-</li><li>
-    <p>
-        Empty scratch register <span class="inline-math">$i$</span>.
-    </p>
-    
-</li><li>
-    <p>
-        Compute <span class="inline-math">$(q, \v w&#x27;) = C(\#(u), M, \v w)$</span> where <span class="inline-math">$u$</span> is the content of register <span class="inline-math">$i$</span>.
-    </p>
-    
-</li><li>
-    <p>
-        If <span class="inline-math">$q = q_\mathrm{H}$</span>:
-    </p>
-    <ol start="1">
-    <li>
-        <p>
-            Write <span class="inline-math">$w_0$</span> into register 0 and halt.
-        </p>
-        
-    </li>
-    </ol>
-    
-</li><li>
-    <p>
-        Otherwise:
-    </p>
-    <ol start="1">
-    <li>
-        <p>
-            Apply the successor function to register <span class="inline-math">$i$</span>.
-        </p>
-        
-    </li><li>
-        <p>
-            Go to 3.
-        </p>
-        
-    </li>
-    </ol>
-    
-</li>
-</ol>
+<p>
+    <!-- Input <span class="inline-math">$v,u$</span>. -->
+    <!---->
+    <!-- 1. Ensure <span class="inline-math">$v = \op{code}(M)$</span> for some <span class="inline-math">$M$</span> and <span class="inline-math">$u = \op{code}(\v w)$</span> for some <span class="inline-math">$\v w$</span>. -->
+    <!--     1. Otherwise, diverge. -->
+    <!-- 2. Empty scratch register <span class="inline-math">$i$</span>. -->
+    <!-- 3. Compute <span class="inline-math">$(q, \v w&#x27;) = C(\#(u), M, \v w)$</span> where <span class="inline-math">$u$</span> is the content of register <span class="inline-math">$i$</span>. -->
+    <!-- 4. If <span class="inline-math">$q = q_\mathrm{H}$</span>: -->
+    <!--     1. Write <span class="inline-math">$w_0$</span> into register 0 and halt. -->
+    <!-- 5. Otherwise: -->
+    <!--     1. Apply the successor function to register <span class="inline-math">$i$</span>. -->
+    <!--     2. Go to 3. -->
+</p>

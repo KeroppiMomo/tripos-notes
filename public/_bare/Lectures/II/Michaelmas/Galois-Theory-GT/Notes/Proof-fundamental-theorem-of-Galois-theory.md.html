@@ -1,0 +1,131 @@
+
+<h1><span class="inline-math">$L/F$</span> is Galois</h1>
+
+<p>
+    Follows from <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-classification-of-finite-Galois-extension.html">classification</a>:
+</p>
+<p>
+    Since <span class="inline-math">$L/K$</span> is finite Galois,
+    <span class="inline-math">$L$</span> is a splitting field of a separable polynomial <span class="inline-math">$f$</span> over <span class="inline-math">$K$</span>.
+    Then <span class="inline-math">$L$</span> is also a splitting field of <span class="inline-math">$f$</span> over <span class="inline-math">$F$</span>, and <span class="inline-math">$f$</span> remains separable in <span class="inline-math">$F[X]$</span>.
+    Since <span class="inline-math">$L/F$</span> is finite, <span class="inline-math">$L/F$</span> is Galois.
+</p>
+
+<h1>Correspondence</h1>
+
+<p>
+    It follows from definition that <span class="inline-math">$\Gal(L/F)$</span> is a subgroup of <span class="inline-math">$\Gal(L/K)$</span>,
+    and that the functions are inclusion reversing.
+</p>
+<p>
+    Check the given maps are inverses of each other:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$L^{\Gal(L/F)} = F$</span> because <span class="inline-math">$L/F$</span> is Galois.
+    </p>
+    
+</li><li>
+    <p>
+        To see <span class="inline-math">$H = \Gal(L/L^H)$</span> for any subgroup <span class="inline-math">$H \leq \Gal(L/K)$</span>,
+        note from definition <span class="inline-math">$H \subseteq \Gal(L/L^H)$</span>,
+        so it suffices to show <span class="inline-math">$\# H \geq \# \Gal(L/L^H)$</span>.
+    </p>
+    <p>
+        By the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-primitive-element.html">primitive element theorem</a>,
+        <span class="inline-math">$L = L^H(α)$</span> for some <span class="inline-math">$α\in L$</span>.
+        Observe
+        <span class="display-math">$$ \begin{align*}
+            f(X) := \prod_{σ\in H} (X - σ(α)) \in L[X]
+        \end{align*} $$</span>
+        has <span class="inline-math">$α$</span> as a root,
+        and <span class="inline-math">$σ(f) = f$</span> for all <span class="inline-math">$σ\in H$</span> so <span class="inline-math">$f\in L^H[X]$</span>.
+        Thus
+        <span class="display-math">$$ \begin{align*}
+            [L:L^H] \leq \deg f = \# H.
+        \end{align*} $$</span>
+        As <span class="inline-math">$L/L^H$</span> is Galois, <span class="inline-math">$[L:L^H] = \#\Gal(L/L^H)$</span>, so we're done.
+    </p>
+    
+</li>
+</ul>
+
+<h1><span class="inline-math">$F/K$</span> Galois <span class="inline-math">$\implies$</span> <span class="inline-math">$σ(F) = F$</span> for all <span class="inline-math">$σ\in \Gal(L/K)$</span></h1>
+
+<p>
+    To show <span class="inline-math">$σ(F) \subseteq F$</span>, fix <span class="inline-math">$α\in L$</span>
+    and let <span class="inline-math">$f\in K[X]$</span> be the minimal polynomial of <span class="inline-math">$α$</span>.
+    Since <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-classification-of-finite-Galois-extension.html"><span class="inline-math">$f$</span> has <span class="inline-math">$σ(α)$</span> as a root</a>
+    and <span class="inline-math">$F/K$</span> is normal, <span class="inline-math">$σ(α)\in F$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$F \isom σ(F)$</span>, <span class="inline-math">$[F:K] = [σ(F):K]$</span> so by the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-tower-law.html">tower law</a>, <span class="inline-math">$F = σ(F)$</span>.
+</p>
+
+<h1><span class="inline-math">$σ(F) = F$</span> for all <span class="inline-math">$σ\in \Gal(L/K)$</span> <span class="inline-math">$\implies$</span> <span class="inline-math">$F/K$</span> Galois</h1>
+
+
+<h2>Using the fixed field definition</h2>
+
+<p>
+    Clearly <span class="inline-math">$K \subseteq F^{\Gal(F/K)}$</span>.
+    If <span class="inline-math">$α\in F \setminus K = F \setminus L^{\Gal(L/K)}$</span>,
+    there exists <span class="inline-math">$σ\in \Gal(L/K)$</span> such that
+    <span class="inline-math">$σ(α) \neq α$</span>.
+    But <span class="inline-math">$σ(F) = F$</span>, so <span class="inline-math">$σ$</span> restricts to an automorphism <span class="inline-math">$σ|_F: F\to F$</span>.
+    Hence <span class="inline-math">$α\not\in F^{\Gal(F/K)}$</span>.
+</p>
+
+<h2>Using classification as normal separable extension</h2>
+
+<p>
+    Fix <span class="inline-math">$α\in F$</span>, and let <span class="inline-math">$f\in K[X]$</span> be its minimal polynomial over <span class="inline-math">$K$</span>.
+    We want to show <span class="inline-math">$f$</span> splits in <span class="inline-math">$F$</span> and is separable.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-classification-of-finite-Galois-extension.html">As before</a>,
+    roots of <span class="inline-math">$f$</span> are <span class="inline-math">$σ(α)$</span> for <span class="inline-math">$σ\in \Gal(L/K)$</span>.
+    Because <span class="inline-math">$σ(F) = F$</span>, <span class="inline-math">$σ(α) \in F$</span>,
+    so <span class="inline-math">$f$</span> splits in <span class="inline-math">$F$</span>.
+    Also <span class="inline-math">$L/K$</span> is separable, so <span class="inline-math">$f$</span> is separable.
+</p>
+
+<h1><span class="inline-math">$σ(F) = F$</span> iff <span class="inline-math">$\Gal(L/F)$</span> is normal in <span class="inline-math">$\Gal(L/K)$</span></h1>
+
+<p>
+    Let <span class="inline-math">$H = \Gal(L/F)$</span>. Note
+    <span class="display-math">$$ \begin{align*}
+        L^{σHσ\inv} ={}&amp; \sb{α\in L}{στσ\inv(α) = α \quad \text{for all }τ\in H} \\
+        ={}&amp; \sb{α\in L}{τσ\inv(α) = σ\inv(α) \quad \text{for all }τ\in H} \\
+        ={}&amp; σ(L^H) = σ(F)
+    \end{align*} $$</span>
+    Therefore by correspondence,
+    <span class="display-math">$$ \begin{align*}
+        σ(F) = F \iff L^{σHσ\inv} = L^H \iff σHσ\inv = H.
+    \end{align*} $$</span>
+</p>
+
+<h1>Restriction homomorphism</h1>
+
+<p>
+    Consider the group homomorphism
+    <span class="display-math">$$ \begin{align*}
+        \op{res} : \Gal(L/K) &amp;\to \Gal(F/K) \\
+        σ &amp;\mapsto σ|_F.
+    \end{align*} $$</span>
+    Clearly its kernel is <span class="inline-math">$\Gal(L/F)$</span>.
+    <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Theorem-first-isomorphism-theorem-for-groups.html">First isomorphism theorem</a> then implies
+    <span class="display-math">$$ \begin{align*}
+        \Gal(L/K)\; / \; \Gal(L/F) \isom \im \op{res} \leq \Gal(F/K).
+    \end{align*} $$</span>
+</p>
+<p>
+    But comparing orders,
+    <span class="display-math">$$ \begin{align*}
+        \#(\Gal(L/K)/\Gal(L/F)) ={}&amp; \#\Gal(L/K) / \#\Gal(L/F) \\
+        ={}&amp; [L:K] / [L:F] \\
+        ={}&amp; [F:K] = \#\Gal(F/K)
+    \end{align*} $$</span>
+    so <span class="inline-math">$\im \op{res} = \Gal(F/K)$</span>.
+</p>

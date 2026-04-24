@@ -1,131 +1,150 @@
 <p>
-    Induct on the height of the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-recursion-tree-represents-recursive-functions.html">corresponding recursion tree</a>.
+    <!-- Induct on the height of the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-recursion-tree-represents-recursive-functions.html">corresponding recursion tree</a>. -->
+    <!-- # Basic functions -->
+    <!-- Projection and constant functions are computable by <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Example-of-register-machines.html">these examples</a>. -->
+    <!-- The successor function is already <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-computability-of-shortlex-ordering.html">proven</a> to be computable. -->
+    <!---->
+    <!-- # Composition -->
+    <!-- See <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-concatenation-lemma-subroutine-lemma.html">subroutine lemma</a>. -->
+    <!---->
+    <!-- # Recursion -->
+    <!-- Fix two computable partial functions <span class="inline-math">$f,g$</span> and inputs <span class="inline-math">$\v w, v$</span>. -->
+    <!---->
+    <!-- 1. Empty two unused registers <span class="inline-math">$k,l$</span>. -->
+    <!-- 2. Compute <span class="inline-math">$f(\v w)$</span>. -->
+    <!-- 3. Write into register <span class="inline-math">$l$</span>. -->
+    <!-- 4. If <span class="inline-math">$v$</span> equals the content of register <span class="inline-math">$k$</span>: -->
+    <!--     1. Output the content of register <span class="inline-math">$l$</span>. -->
+    <!-- 5. Otherwise: -->
+    <!--     1. Compute <span class="inline-math">$g(\v w, v_0, v_1)$</span> where <span class="inline-math">$v_0$</span> is the content of register <span class="inline-math">$k$</span> and <span class="inline-math">$v_1$</span> is the content of register <span class="inline-math">$l$</span>. -->
+    <!--     2. Write into register <span class="inline-math">$l$</span>. -->
+    <!--     3. Apply the successor function to the content of register <span class="inline-math">$k$</span>. -->
+    <!--     4. Go to 4. -->
+    <!---->
+    <!-- # Minimisation -->
+    <!-- Fix a computable partial function <span class="inline-math">$f$</span> and input <span class="inline-math">$\v w$</span>. -->
+    <!-- 1. Empty an unused register <span class="inline-math">$k$</span>. -->
+    <!-- 2. Compute <span class="inline-math">$f(\v w, u)$</span>, where <span class="inline-math">$u$</span> is the content of register <span class="inline-math">$k$</span>. -->
+    <!-- 3. If the result is <span class="inline-math">$ε$</span>: -->
+    <!--     1. Output the content of register <span class="inline-math">$k$</span>. -->
+    <!-- 4. Otherwise: -->
+    <!--     1. Apply the successor function to the content of register <span class="inline-math">$k$</span>. -->
+    <!--     2. Go to 2. -->
 </p>
 
-<h1>Basic functions</h1>
+<h1>Partial recursive <span class="inline-math">$\implies$</span> partial computable</h1>
 
 <p>
-    Projection and constant functions are computable by <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Example-of-register-machines.html">these examples</a>.
-    The successor function is already <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-computability-of-shortlex-ordering.html">proven</a> to be computable.
+    By induction.
 </p>
 
-<h1>Composition</h1>
+<h2>Zero function</h2>
 
-<p>
-    See <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-concatenation-lemma-subroutine-lemma.html">subroutine lemma</a>.
-</p>
-
-<h1>Recursion</h1>
-
-<p>
-    Fix two computable partial functions <span class="inline-math">$f,g$</span> and inputs <span class="inline-math">$\v w, v$</span>.
-</p>
-<ol start="1">
+<ul>
 <li>
     <p>
-        Empty two unused registers <span class="inline-math">$k,l$</span>.
+        <span class="inline-math">$S_1: (1, -, 1, 0)$</span>
     </p>
-    
-</li><li>
-    <p>
-        Compute <span class="inline-math">$f(\v w)$</span>.
-    </p>
-    
-</li><li>
-    <p>
-        Write into register <span class="inline-math">$l$</span>.
-    </p>
-    
-</li><li>
-    <p>
-        If <span class="inline-math">$v$</span> equals the content of register <span class="inline-math">$k$</span>:
-    </p>
-    <ol start="1">
-    <li>
-        <p>
-            Output the content of register <span class="inline-math">$l$</span>.
-        </p>
-        
-    </li>
-    </ol>
-    
-</li><li>
-    <p>
-        Otherwise:
-    </p>
-    <ol start="1">
-    <li>
-        <p>
-            Compute <span class="inline-math">$g(\v w, v_0, v_1)$</span> where <span class="inline-math">$v_0$</span> is the content of register <span class="inline-math">$k$</span> and <span class="inline-math">$v_1$</span> is the content of register <span class="inline-math">$l$</span>.
-        </p>
-        
-    </li><li>
-        <p>
-            Write into register <span class="inline-math">$l$</span>.
-        </p>
-        
-    </li><li>
-        <p>
-            Apply the successor function to the content of register <span class="inline-math">$k$</span>.
-        </p>
-        
-    </li><li>
-        <p>
-            Go to 4.
-        </p>
-        
-    </li>
-    </ol>
     
 </li>
-</ol>
+</ul>
 
-<h1>Minimisation</h1>
+<h2>Successor</h2>
 
-<p>
-    Fix a computable partial function <span class="inline-math">$f$</span> and input <span class="inline-math">$\v w$</span>.
-</p>
-<ol start="1">
+<ul>
 <li>
     <p>
-        Empty an unused register <span class="inline-math">$k$</span>.
+        <span class="inline-math">$S_1: (1, +, 0)$</span>
     </p>
-    
-</li><li>
-    <p>
-        Compute <span class="inline-math">$f(\v w, u)$</span>, where <span class="inline-math">$u$</span> is the content of register <span class="inline-math">$k$</span>.
-    </p>
-    
-</li><li>
-    <p>
-        If the result is <span class="inline-math">$ε$</span>:
-    </p>
-    <ol start="1">
-    <li>
-        <p>
-            Output the content of register <span class="inline-math">$k$</span>.
-        </p>
-        
-    </li>
-    </ol>
-    
-</li><li>
-    <p>
-        Otherwise:
-    </p>
-    <ol start="1">
-    <li>
-        <p>
-            Apply the successor function to the content of register <span class="inline-math">$k$</span>.
-        </p>
-        
-    </li><li>
-        <p>
-            Go to 2.
-        </p>
-        
-    </li>
-    </ol>
     
 </li>
-</ol>
+</ul>
+
+<h2>Projection</h2>
+
+<p>
+    To move register <span class="inline-math">$i$</span> to register <span class="inline-math">$1$</span>:
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Pasted-image-20260423203206.png">
+</p>
+
+<h2>Composition</h2>
+
+<p>
+    First transfer <span class="inline-math">$R_1, \ldots, R_l$</span> to <span class="inline-math">$R_{N+1}, \ldots, R_{N+l}$</span> with <span class="inline-math">$N$</span> large.
+</p>
+<p>
+    Then for each <span class="inline-math">$1\leq i\leq k$</span> in turn,
+    copy <span class="inline-math">$R_{N+1}, \ldots, R_{N+l}$</span> to <span class="inline-math">$R_{k+1, \ldots, R_{k+l}}$</span>,
+    perform <span class="inline-math">$g_i$</span> with all registers shifted up by <span class="inline-math">$k$</span>,
+    and transfer the answer from <span class="inline-math">$R_{k+1}$</span> to <span class="inline-math">$R_i$</span>,
+    then clear <span class="inline-math">$R_{k+2}, \ldots, R_N$</span>.
+</p>
+<p>
+    Finally apply <span class="inline-math">$f$</span>.
+</p>
+
+<h2>Recursion</h2>
+
+<p>
+    Copy <span class="inline-math">$R_1, \ldots, R_k$</span> to <span class="inline-math">$R_{N+1}, \ldots, R_{N+k}$</span>.
+    Transfer <span class="inline-math">$R_{k+1}$</span> to <span class="inline-math">$R_{N+k+2}$</span> (used to count down the <span class="inline-math">$(k+1)$</span>-th variable)
+    then do <span class="inline-math">$f$</span>.
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Lecture-Notes/Pasted-image-20251112125722.png">
+</p>
+
+<h2>Minimisation</h2>
+
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Lecture-Notes/Pasted-image-20251114121537.png">
+</p>
+
+<h1>Partial computable <span class="inline-math">$\implies$</span> partial recursive</h1>
+
+<p>
+    Let <span class="inline-math">$P$</span> be the program of a partial computable function <span class="inline-math">$f$</span>.
+    We will show that the function
+    <span class="display-math">$$ \begin{align*}
+        g: \N^{k+2} &amp;\to \N \\
+        (\v n, i, t) &amp;\mapsto \begin{cases}
+            \text{state} &amp;\text{if $i=0$}, \\
+            \text{content of $R_i$} &amp;\text{if $i\geq 1$}
+        \end{cases} \quad 
+        \text{ at time $t$ of computing $P$ with input $\v n$}
+    \end{align*} $$</span>
+    is primitive recursive.
+    Then by minimisation and composing with the zero function,
+    <span class="inline-math">$q: \N^{k}\to \N$</span> which is the minimum time such that <span class="inline-math">$g(\v n, 0, q(\v n)) = 0$</span>
+    is partial recursive.
+    Therefore <span class="inline-math">$f(\v n) = g(\v n, 1, q(\v n))$</span> is partial recursive by composition.
+</p>
+<p>
+    Let <span class="inline-math">$M$</span> be the upper register index of <span class="inline-math">$P$</span>.
+    Encode <span class="inline-math">$P$</span> as a function
+    <span class="display-math">$$ \begin{align*}
+        σ: \N^{M+1} &amp;\to \N^{M+1} \\
+        (\text{old state}, \text{old register content}) &amp;\mapsto (\text{new state}, \text{new register content}),
+    \end{align*} $$</span>
+    and let <span class="inline-math">$\bar σ:\N\to \N$</span> be the version using <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Encoding-tuples-as-integers.html">encoded tuples</a>.
+    <span class="inline-math">$\bar σ$</span> is primitive recursive:
+    <span class="inline-math">$n\mapsto (n)_i$</span> is primitive recursive,
+    and there are only finitely many instructions in <span class="inline-math">$P$</span>.
+</p>
+<p>
+    Now define by recursion
+    <span class="display-math">$$ \begin{align*}
+        h: \N^{k+2} &amp;\mapsto \N \\
+        (k, \v n, 0) &amp;\mapsto 2^{k} 3^{n_1} 5^{n_2} \ldots p_{k+1}^{n_k} \\
+        (k, \v n, t+1) &amp;\mapsto \bar σ(h(k, \v n, t)).
+    \end{align*} $$</span>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        g(\v n, i, t) = (h(1, \v n, t))_i.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$g(\v n, i, t) = 0$</span> for all <span class="inline-math">$i&gt;M$</span>, we can write this as
+    <span class="display-math">$$ \begin{align*}
+        g(\v n, i, t) = \sum_{j=0}^{M} δ_j(i) \,(h(1, \v n, t))_j
+    \end{align*} $$</span>
+    where <span class="inline-math">$δ_j$</span> and <span class="inline-math">$(\cdot )_j$</span> are primitive recursive for each <span class="inline-math">$j$</span>.
+</p>

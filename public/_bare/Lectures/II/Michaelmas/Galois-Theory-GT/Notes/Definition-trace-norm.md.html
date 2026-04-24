@@ -1,0 +1,79 @@
+<p>
+    Let <span class="inline-math">$L/K$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-finite-extension-degree.html">finite field extension</a>.
+</p>
+<p>
+    For <span class="inline-math">$α\in L$</span>, let <span class="inline-math">$m_α: L\to L: x \mapsto αx$</span>
+    be the <span class="inline-math">$K$</span>-linear map given by multiplication by <span class="inline-math">$α$</span>.
+</p>
+<p>
+    The <em>trace</em> and <em>norm</em> maps are
+    <span class="display-math">$$ \begin{align*}
+        \tr_{L/K}: L&amp;\to K, &amp;N_{L/K}: L&amp;\to K \\
+        α &amp;\mapsto \tr(m_α), &amp; α &amp;\mapsto \det(m_α).
+    \end{align*} $$</span>
+    (<a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-trace-of-a-linear-map.html"><span class="inline-math">$\tr$</span></a>, <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-determinant-of-linear-maps.html"><span class="inline-math">$\det$</span></a>)
+</p>
+<blockquote>
+    <p>
+        <span class="inline-math">$\tr_{L/K}$</span> is <span class="inline-math">$K$</span>-linear.
+    </p>
+    
+</blockquote>
+<blockquote>
+    <p>
+        <span class="inline-math">$N_{L/K}$</span> is multiplicative, i.e. <span class="inline-math">$N_{L/K}(αβ) = N_{L/K}(α) \cdot N_{L/K}(β)$</span>.
+    </p>
+    
+</blockquote>
+<blockquote>
+    <!-- BEGIN BLOCK ID zero-norm -->
+    <p id="^zero-norm">
+        <span class="inline-math">$N_{L/K}(α) = 0$</span> <span class="inline-math">$\iff$</span> <span class="inline-math">$m_α$</span> is singular <span class="inline-math">$\iff$</span> <span class="inline-math">$α = 0$</span>.
+    </p>
+    
+    <!-- END BLOCK ID zero-norm -->
+    
+</blockquote>
+<blockquote>
+    <!-- BEGIN BLOCK ID inter -->
+    <p id="^inter">
+        If <span class="inline-math">$M/L/K$</span> and <span class="inline-math">$α\in L$</span>, then
+        <span class="display-math">$$ \begin{align*}
+            \tr_{M/K}(α) &amp;= [M:L] \tr_{L/K}(α), &amp; N_{M/K}(α) &amp;= (N_{L/K}(α))^{[M:L]}.
+        \end{align*} $$</span>
+        In particular,
+        if <span class="inline-math">$α\in K$</span>, then <span class="inline-math">$\tr_{L/K}(α) = [L:K]α$</span> and <span class="inline-math">$N_{L/K}(α) = α^{[L:K]}$</span>.
+        (<a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-trace-and-norm-of-element-at-intermediate-subfield.html">Proof</a>)
+    </p>
+    
+    <!-- END BLOCK ID inter -->
+    
+</blockquote>
+<blockquote>
+    <!-- BEGIN BLOCK ID min-poly -->
+    <p id="^min-poly">
+        If <span class="inline-math">$α\in L$</span> has a minimal polynomial <span class="inline-math">$f(X) = X^n + a_{n-1} X^{n-1} + \ldots + a_1 X + a_0\in K[X]$</span> over <span class="inline-math">$K$</span>,
+        then
+        <span class="display-math">$$ \begin{align*}
+            \tr_{L/K}(α) &amp;= -[L:K(α)] a_{n-1} = [L:K(α)] \cdot (\text{sum of roots of $f$}), \\
+            N_{L/K}(α) &amp;= ((-1)^n a_0)^{[L:K(α)]} = (\text{product of roots of $f$})^{[L:K(α)]}.
+        \end{align*} $$</span>
+        (<a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-trace-and-norm-in-terms-of-minimal-polynomial.html">Proof</a>)
+    </p>
+    
+    <!-- END BLOCK ID min-poly -->
+    
+</blockquote>
+<blockquote>
+    <!-- BEGIN BLOCK ID trans -->
+    <p id="^trans">
+        Trace and norm are transitive, i.e. if <span class="inline-math">$M/L/K$</span> and <span class="inline-math">$α\in M$</span>, then
+        <span class="display-math">$$ \begin{align*}
+            \tr_{M/K}(α) ={}&amp; \tr_{L/K}(\tr_{M/L}(α)), &amp; N_{M/K}(α) ={}&amp; N_{L/K}(N_{M/L}(α)).
+        \end{align*} $$</span>
+        (<a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-transitivity-of-trace-and-norm.html">Proof</a>)
+    </p>
+    
+    <!-- END BLOCK ID trans -->
+    
+</blockquote>

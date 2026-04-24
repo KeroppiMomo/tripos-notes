@@ -25,16 +25,16 @@
     and <span class="inline-math">$T = S\cap L$</span>.
     Note that <span class="inline-math">$a$</span> sends <span class="inline-math">$L&#x27;$</span> into <span class="inline-math">$L$</span>,
     <span class="inline-math">$S&#x27;$</span> into <span class="inline-math">$S$</span>, and <span class="inline-math">$T&#x27;$</span> into <span class="inline-math">$T$</span>:
-    if <span class="inline-math">$\hat σ\in V_{L&#x27;}$</span>,
-    then the unique simplex <span class="inline-math">$σ$</span> whose interior contains <span class="inline-math">$\hat σ$</span>
+    if <span class="inline-math">$\hat τ\in V_{L&#x27;}$</span>,
+    then the unique simplex <span class="inline-math">$τ$</span> whose interior contains <span class="inline-math">$\hat τ$</span>
     is in <span class="inline-math">$L$</span>,
     and so any <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-simplicial-approximation-to-identity.html">simplicial approximation to the identity</a>
-    maps <span class="inline-math">$\hat σ$</span> to an element of <span class="inline-math">$V_{σ}\subseteq V_L$</span>,
-    and similarly for <span class="inline-math">$S$</span> and <span class="inline-math">$T$</span>.
+    maps <span class="inline-math">$\hat τ$</span> to an element of <span class="inline-math">$V_{τ}\subseteq V_L$</span>;
+    similarly for <span class="inline-math">$S$</span> and <span class="inline-math">$T$</span>.
 </p>
 <p>
     We then obtain a map between <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-Mayer-Vietoris.html">Mayer-Vietoris sequences</a>,
-    forming a commutative diagram:
+    forming a commutative diagram: (the middle commuting square is by naturality)
 </p>
 <p>
     <iframe src="https://q.uiver.app/#q=WzAsMTAsWzAsMCwiSF9uKFQnKSJdLFsxLDAsIkhfbihTJykgXFxvcGx1cyBIX24oTCcpIl0sWzIsMCwiSF9uKEsnKSJdLFszLDAsIkhfe24tMX0oVCcpIl0sWzQsMCwiSF97bi0xfShTJykgXFxvcGx1cyBIX3tuLTF9KEwnKSJdLFswLDEsIkhfbihUKSJdLFsxLDEsIkhfbihTKSBcXG9wbHVzIEhfbihMKSJdLFsyLDEsIkhfbihLKSJdLFszLDEsIkhfe24tMX0oVCkiXSxbNCwxLCJIX3tuLTF9KFMpIFxcb3BsdXMgSF97bi0xfShMKSJdLFswLDUsIihhfF97VCd9KV9cXGFzdCJdLFsxLDYsIihhfF97Uyd9KV9cXGFzdCBcXG9wbHVzIChhfF97TCd9KV9cXGFzdCJdLFsyLDcsImFfXFxhc3QiXSxbMyw4LCIoYXxfe1QnfSlfXFxhc3QiXSxbNCw5LCJIX24oUycpIFxcb3BsdXMgSF9uKEwnKSJdLFswLDFdLFs1LDZdLFsxLDJdLFs2LDddLFsyLDNdLFs3LDhdLFszLDRdLFs4LDldXQ==&embed" width="100%" height="200"></iframe>
@@ -58,9 +58,9 @@
     by induction assume <span class="inline-math">$d_{n-1} \circ s_{n-1} = s_{n-2} \circ d_{n-1}$</span>.
     Then
     <span class="display-math">$$ \begin{align*}
-        d_n \circ s_n(σ) ={}&amp; d_n([[\hat σ, s_{n-1}\circ d_n(σ)]]) \\
-        ={}&amp; s_{n-1}\circ d_n(σ) - [[\hat σ, d_{n-1} \circ s_{n-1} \circ d_n(σ)]] \\
-        ={}&amp; s_{n-1}\circ d_n(σ) - [[\hat σ, s_{n-2} \circ \underbrace{d_{n-1} \circ d_n}_{0}(σ)]] \\
+        d_n \circ s_n(σ) ={}&amp; d_n([\hat σ, s_{n-1}\circ d_n(σ)]) \\
+        ={}&amp; s_{n-1}\circ d_n(σ) - [\hat σ, d_{n-1} \circ s_{n-1} \circ d_n(σ)] \\
+        ={}&amp; s_{n-1}\circ d_n(σ) - [\hat σ, s_{n-2} \circ \underbrace{d_{n-1} \circ d_n}_{0}(σ)] \\
         ={}&amp; s_{n-1}\circ d_n(σ).
     \end{align*} $$</span>
 </p>
@@ -70,15 +70,15 @@
     sending <span class="inline-math">$\hat σ$</span> to the smallest vertex of <span class="inline-math">$σ$</span> with respect to <span class="inline-math">$\prec$</span>.
     We will show <span class="inline-math">$a_n \circ s_n: C_n(K) \to C_n(K)$</span> is the identity by induction on <span class="inline-math">$n$</span>.
     Certainly <span class="inline-math">$a_0 \circ s_0$</span> is.
-    For <span class="inline-math">$σ = [[v_0, \ldots, v_n]]\in C_n(K)$</span> with <span class="inline-math">$v_0\prec \ldots \prec v_n$</span>,
+    For <span class="inline-math">$σ = [v_0, \ldots, v_n]\in C_n(K)$</span> with <span class="inline-math">$v_0\prec \ldots \prec v_n$</span>,
     assuming <span class="inline-math">$a_{n-1} \circ s_{n-1} = \id_{C_{n-1}(K)}$</span>,
     we have
     <span class="display-math">$$ \begin{align*}
-        a_n(s_n(σ)) ={}&amp; a_n([[\hat σ, s_{n-1}\circ d_n(σ)]]) \\
-        ={}&amp; [[v_0, a_{n-1} \circ s_{n-1} \circ d_n(σ)]] \\
-        ={}&amp; [[v_0, d_n(σ)]] \\
-        ={}&amp; \sum_{i=0}^{n} (-1)^i [[v_0, v_0, \ldots, v_{i-1}, v_{i+1}, \ldots, v_n]] \\
-        ={}&amp; [[v_0, \ldots, v_n]]
+        a_n(s_n(σ)) ={}&amp; a_n([\hat σ, s_{n-1}\circ d_n(σ)]) \\
+        ={}&amp; [v_0, a_{n-1} \circ s_{n-1} \circ d_n(σ)] \\
+        ={}&amp; [v_0, d_n(σ)] \\
+        ={}&amp; \sum_{i=0}^{n} (-1)^i [v_0, v_0, \ldots, v_{i-1}, v_{i+1}, \ldots, v_n] \\
+        ={}&amp; [v_0, \ldots, v_n]
     \end{align*} $$</span>
     since duplicated <span class="inline-math">$v_0$</span>'s appear in terms <span class="inline-math">$i\neq 0$</span>.
     Hence <span class="inline-math">$\id_{H_n(K)} = a_\ast \circ s_\ast = ν_K \circ s_\ast$</span>.

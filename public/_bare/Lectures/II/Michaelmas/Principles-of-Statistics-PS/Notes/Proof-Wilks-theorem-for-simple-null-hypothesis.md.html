@@ -1,0 +1,48 @@
+<p>
+    Let <span class="inline-math">$H_0: θ \in Θ_0 = \set{θ_0}$</span> and <span class="inline-math">$Θ\subseteq \R^d$</span>.
+    Assume the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-asymptotic-normality-of-MLE.html">usual regularity conditions</a>,
+    we want to show
+    <span class="display-math">$$ \begin{align*}
+        2 \log Λ = 2 l_n(θ_0) - 2 l_n(\hat θ_n)\xrightarrow{d} χ_d^2,
+    \end{align*} $$</span>
+    where <span class="inline-math">$l_n(θ) = \sum_{i=1}^{n} \log f(X_i, θ)$</span>
+    and <span class="inline-math">$\hat θ_n$</span> is the maximum likelihood estimator based on <span class="inline-math">$X_1, \ldots, X_n$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$ε&gt;0$</span> be sufficiently small such that regularity conditions hold on <span class="inline-math">$\sb{θ}{\|θ - θ_0\| &lt; ε}$</span>,
+    and let <span class="inline-math">$E_n$</span> be the event where <span class="inline-math">$\|\hat θ_n - θ_0\|&lt;ε$</span>.
+    Since <span class="inline-math">$\hat θ_n \xrightarrow{p} θ_0$</span>, <span class="inline-math">$\prob(E_n) \to 1$</span>,
+    so it suffices to show the distributional limit of <span class="inline-math">$2\log Λ$</span> in <span class="inline-math">$E_n$</span>.
+</p>
+<p>
+    As <span class="inline-math">$l_n$</span> is <span class="inline-math">$C^2$</span>, we <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Theorem-Taylor-theorem.html">Taylor expand</a>
+    <span class="display-math">$$ \begin{align*}
+        2 l_n(θ_0) - 2l_n(\hat θ_n) = 2\pdfd{l_n}{θ^T}(\hat θ_n)\cdot  (\hat θ_n - θ_0) - (\hat θ_n - θ_0)^T \pdfxd{l_n}{θ}{θ^T}(\overline{θ_n}) (\hat θ_n - θ_0)
+    \end{align*} $$</span>
+    for some <span class="inline-math">$\overline{θ_n}$</span> on the line segment between <span class="inline-math">$θ_0$</span> and <span class="inline-math">$\hat θ_n$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$\hat θ_n$</span> maximises <span class="inline-math">$l_n$</span>, we have <span class="inline-math">$\pdfd{l_n}{θ}(\hat θ_n) = 0$</span>.
+    Moreover, <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-asymptotic-normality-of-MLE.html">asymptotic normality</a> shows <span class="inline-math">$\sqrt{n}(\hat θ_n - θ_0) \xrightarrow{d} N(0,I(θ_0\inv))$</span>.
+    It suffices to show <span class="inline-math">$-\frac{1}{n}\pdfxd{l_n}{θ}{θ^T}(\overline{θ_n}) \xrightarrow{p} I(θ_0)$</span>,
+    then we are done by the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Wald-confidence-set.html">result of Wald statistics</a>.
+</p>
+<p>
+    We apply the same technique as with the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Lemma-observed-Fisher-information.html">observed Fisher information</a>:
+    define
+    <span class="display-math">$$ \begin{align*}
+        \tilde J(θ) := \expect_{θ_0}\left[\pdd{θ}\pdd{θ^T}\log f(X, θ)\right]
+    \end{align*} $$</span>
+    and noting <span class="inline-math">$\tilde J(θ_0) = -I(θ_0)$</span>, decompose
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{n} \pdfxd{l_n}{θ}{θ^T}(\overline{θ_n}) - \tilde J(θ_0) ={}&amp; \left(\frac{1}{n}\sum_{i=1}^{n} \pdfxd{\log f(X,θ)}{θ}{θ^T}(\overline{θ_n}) - \tilde J(\overline{θ_n})\right) + (\tilde J(\overline{θ_n}) - \tilde J(θ_0)).
+    \end{align*} $$</span>
+    Upper bound the first term by
+    <span class="display-math">$$ \begin{align*}
+        \sup_{θ\in K} \left|\frac{1}{n}\sum_{i=1}^{n} \pdfxd{\log f(X,θ)}{θ}{θ^T}(θ) - \tilde J(θ)\right| \xrightarrow{a.s.} 0
+    \end{align*} $$</span>
+    using a uniform law of large numbers.
+    For the second term, since <span class="inline-math">$\hat θ_n\xrightarrow{p}θ_0$</span>,
+    we also have <span class="inline-math">$\overline{θ_n} \xrightarrow{p}θ_0$</span>,
+    and then apply the continuous mapping to <span class="inline-math">$\tilde J$</span>.
+</p>

@@ -1,0 +1,37 @@
+<p>
+    Let <span class="inline-math">$L = K(α_1, \ldots, α_n)$</span>.
+    Induct on <span class="inline-math">$n$</span>.
+    The case <span class="inline-math">$n=1$</span> is handled <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-embedding-of-simple-extension.html">here</a>.
+</p>
+<p>
+    For the induction step, define <span class="inline-math">$K_1 := K(α_1)$</span>.
+    By the <span class="inline-math">$n=1$</span> case,
+    <span class="display-math">$$ \begin{align*}
+        \# \op{Hom}_σ(K_1, M) \leq [K_1: K] \tag{1}
+    \end{align*} $$</span>
+    with equality iff <span class="inline-math">$σ(f_1)$</span> splits into distinct linear factors in <span class="inline-math">$M$</span>.
+    By induction hypothesis, as <span class="inline-math">$L = K_1(α_2, \ldots, α_n)$</span>, for each <span class="inline-math">$σ$</span>-embedding <span class="inline-math">$τ: K_1\to M$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \# \op{Hom}_τ(L, M) \leq [L: K_1]. \tag{2}
+    \end{align*} $$</span>
+</p>
+<p>
+    Because each <span class="inline-math">$σ$</span>-embedding <span class="inline-math">$ϕ: L\to M$</span>
+    is a <span class="inline-math">$τ$</span>-embedding where <span class="inline-math">$τ = σ|_{K_1}$</span>,
+    the total number of <span class="inline-math">$σ$</span>-embeddings <span class="inline-math">$L\to M$</span> is
+    <span class="display-math">$$ \begin{align*}
+        \# \op{Hom}_σ(L,M) = \sum_{τ\in \op{Hom}_σ(K_1, M)} \# \op{Hom}_τ(L, M) \leq [K_1:K] [L: K_1] = [L:K]
+    \end{align*} $$</span>
+    by <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-tower-law.html">tower law</a>.
+</p>
+<p>
+    If equality holds, then equality holds at <span class="inline-math">$(1)$</span>, so <span class="inline-math">$σ(f_1)$</span> splits into distinct linear factors over <span class="inline-math">$M$</span>.
+    Swapping the roles of <span class="inline-math">$f_i$</span> shows the same for <span class="inline-math">$f_2, \ldots, f_n$</span>.
+</p>
+<p>
+    If <span class="inline-math">$f_1, \ldots, f_n$</span> all split into distinct linear factors over <span class="inline-math">$M$</span>,
+    then equality holds at <span class="inline-math">$(1)$</span>.
+    Moreover the minimal polynomial of <span class="inline-math">$α_i$</span> is a factor of <span class="inline-math">$f_i$</span>,
+    so still splits into distinct linear factors over <span class="inline-math">$M$</span>.
+    Therefore equality holds at <span class="inline-math">$(2)$</span>.
+</p>

@@ -1,0 +1,69 @@
+<p>
+    Let <span class="inline-math">$ε&gt;0$</span> be such that <span class="inline-math">$B_ε(θ_0)$</span> is contained within <span class="inline-math">$K$</span>.
+    Let <span class="inline-math">$E_n$</span> be the event where <span class="inline-math">$\|\hat θ_n - θ_0\|&lt;ε$</span>.
+    By <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-consistency-of-MLE.html">consistency</a>, <span class="inline-math">$\prob(E_n) \to 1$</span> as <span class="inline-math">$n\to \infty$</span>.
+    Therefore, it suffices to prove the distributional limit of <span class="inline-math">$\sqrt{n}(\hat θ_n - θ_0)$</span>
+    in <span class="inline-math">$E_n$</span>.
+</p>
+<p>
+    As <span class="inline-math">$θ \mapsto f(x,θ)$</span> is twice continuously differentiable at <span class="inline-math">$θ_0$</span>
+    and <span class="inline-math">$\hat θ_n$</span> maximises <span class="inline-math">$\overline{l_n}(θ) := \frac{1}{n}\sum_{i=1}^{n} \log f(X_i, θ)$</span>,
+    we have <span class="inline-math">$\pdfd{\overline{l_n}}{θ}(\hat θ_n) = 0$</span>.
+    Applying <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-Taylor-s-theorem.html">Taylor's theorem</a>,
+    <span class="display-math">$$ \begin{align*}
+        0 = \pdfd{\overline{l_n}}{θ}(θ_0) + \overline{A_n}(\hat θ_n - θ_0)
+        \implies \sqrt{n} (\hat θ_n - θ_0) = -\overline{A_n}\inv \left(\sqrt{n}\pdfd{\overline{l_n}}{θ}(θ_0)\right)
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        (\overline{A_n})_{ij} = \pdfxd{\overline{l_n}}{θ_i}{θ_j} (θ^{(i)})
+    \end{align*} $$</span>
+    for some <span class="inline-math">$θ^{(i)}$</span> on the line segment between <span class="inline-math">$θ_0$</span> and <span class="inline-math">$\hat θ_n$</span>.
+</p>
+<p>
+    We will show <span class="inline-math">$\overline{A_n}\xrightarrow{p} -I(θ_0)$</span> and <span class="inline-math">$\sqrt{n} \pdfd{\overline{l_n}}{θ}(θ_0) \xrightarrow{d} N(0, I(θ_0))$</span>.
+    By the continuous mapping theorem (working in an event where <span class="inline-math">$\overline{A_n}$</span> is invertible),
+    <span class="inline-math">$\overline{A_n}\inv \xrightarrow{p} -I(θ_0)\inv$</span>, so by Slutsky's lemma,
+    <span class="display-math">$$ \begin{align*}
+        \sqrt{n}(\hat θ_n - θ_0) \xrightarrow{d} I(θ_0)\inv \cdot N(0, I(θ_0)) = N(0, I(θ_0)\inv).
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$\sqrt{n} \pdfd{\overline{l_n}}{θ}(θ_0)$</span></h1>
+
+<p>
+    Using that <span class="inline-math">$\pdfd{\log f(X, θ)}{θ}(θ_0)$</span> has <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-score-function.html">mean <span class="inline-math">$0$</span></a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html">variance <span class="inline-math">$I(θ_0)$</span></a>,
+    <span class="display-math">$$ \begin{align*}
+        \sqrt{n} \pdfd{\overline{l_n}}{θ}(θ_0) &amp;= \sqrt{n}\biggl(\frac{1}{n}\sum_{i=1}^{n} \pdfd{\log f(X_i, θ)}{θ}(θ_0) - \underbrace{\expect_{θ_0}\left[\pdfd{\log f(X,θ)}{θ}(θ_0)\right]}_{0}\biggr) \\
+        &amp;\xrightarrow{d} N\biggl(0, \var\Bigl(\pdfd{\log f(X,θ)}{θ}(θ_0)\Bigr)\biggr) \\
+        &amp;= N(0, I(θ_0)).
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$\overline{A_n}$</span></h1>
+
+<p>
+    Estimate using <span class="inline-math">$-I(θ_0)$</span> by
+    <span class="display-math">$$ \begin{align*}
+        (\overline{A_n})_{ij} ={}&amp; \left(\frac{1}{n}\sum_{i=1}^{n} \pdfxd{\log f(X_i, θ)}{θ_i}{θ_j}(θ^{(i)}) - \expect_{θ_0}\biggl[\pdfxd{\log f(X, θ)}{θ_i}{θ_j}(θ^{(i)}) \;\bigg|\; θ^{(i)}\biggr]\right) \\
+        &amp;+\left(\expect_{θ_0}\biggl[\pdfxd{\log f(X, θ)}{θ_i}{θ_j}(θ^{(i)}) \;\bigg|\; θ^{(i)}\biggr] -  \expect_{θ_0}\biggl[\pdfxd{\log f(X, θ)}{θ_i}{θ_j}(θ_0)\biggr]\right) \\
+        &amp;+ \expect_{θ_0}\biggl[\pdfxd{\log f(X, θ)}{θ_i}{θ_j}(θ_0)\biggr].
+    \end{align*} $$</span>
+</p>
+<p>
+    For the first term <span class="inline-math">$(I)$</span>, we eliminate the dependence on <span class="inline-math">$θ^{(i)}$</span> by bounding by
+    <span class="display-math">$$ \begin{align*}
+        |(I)| \leq \sup_{θ\in K} \left|\frac{1}{n} \sum_{i=1}^{n} \pdfxd{\log f(X_i, θ)}{θ_i}{θ_j}(θ) - \expect_{θ_0}\left[\pdfxd{\log f(X, θ)}{θ_i}{θ_j}(θ)\right]\right| \xrightarrow{a.s.} 0
+    \end{align*} $$</span>
+    and apply a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-uniform-law-of-large-numbers-in-compact-domain.html">uniform law of large numbers</a>.
+</p>
+<p>
+    For the second term, write <span class="inline-math">$g(θ) = \expect_{θ_0}[\pdfxd{\log f(X,θ)}{θ_i}{θ_j}(θ)]$</span>.
+    By dominated convergence, <span class="inline-math">$g$</span> is continuous.
+    Moreover since <span class="inline-math">$\hat θ_n \xrightarrow{p} θ_0$</span>, also <span class="inline-math">$θ^{(i)} \xrightarrow{p}θ_0$</span>,
+    so by the continuous mapping theorem,
+    <span class="inline-math">$g(\hat θ_n) \xrightarrow{p} g(θ_0)$</span>, showing the second term <span class="inline-math">$\xrightarrow{p} 0$</span>.
+</p>
+<p>
+    Finally, the third term equals <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html#^variance"><span class="inline-math">$-I(θ_0)_{ij}$</span></a>.
+</p>

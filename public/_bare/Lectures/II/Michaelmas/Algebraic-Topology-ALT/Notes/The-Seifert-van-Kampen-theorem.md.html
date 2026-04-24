@@ -1,0 +1,248 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Seifert-van Kampen)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-Seifert-van-Kampen.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a space, <span class="inline-math">$A, B\subseteq X$</span> be subsets and <span class="inline-math">$x_0\in A\cap B$</span>.
+                Inclusion maps <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-based-maps-descend-to-homomorphisms-between-fundamental-groups.html">induce</a> homomorphisms between <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-fundamental-group.html">fundamental groups</a>,
+                and the <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-universal-property-of-amalgamated-free-product.html">universal property of amalgamated free product</a> gives
+                a group homomorphism
+                <span class="display-math">$$ \begin{align*}
+                    Φ: π_1(A, x_0) *_{π_1(A\cap B, x_0)} π_1(B, x_0) \to π_1(X, x_0).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <iframe src="https://q.uiver.app/#q=WzAsNSxbMCwxLCJcXHBpXzEoQVxcY2FwIEIsIHhfMCkiXSxbMSwwLCJcXHBpXzEoQSwgeF8wKSJdLFsxLDIsIlxccGlfMShCLCB4XzApIl0sWzIsMSwiXFxwaV8xKEEsIHhfMCkgKl97XFxwaV8xKEFcXGNhcCBCLCB4XzApfSBcXHBpXzEoQiwgeF8wKSJdLFs1LDEsIlxccGlfMShYLCB4XzApIl0sWzAsMV0sWzAsMl0sWzIsMywiIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsMywiIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzIsNCwiIiwyLHsiY3VydmUiOjJ9XSxbMyw0LCJcXFBoaSIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsIiIsMCx7ImN1cnZlIjotMn1dXQ==&embed" width="100%" height="250"></iframe>
+            </p>
+            <p>
+                If
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$A,B$</span> are open subsets;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$A\cup B = X$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$A\cap B$</span> is path-connected,
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                then <span class="inline-math">$Φ$</span> is an isomorphism.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-Seifert-van-Kampen.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (cell complex)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-cell-complex.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a topological space
+                and <span class="inline-math">$f: S^{n-1}\to X$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">map</a>.
+            </p>
+            <p>
+                The space obtained by <em>attaching an <span class="inline-math">$n$</span>-cell to <span class="inline-math">$X$</span> along <span class="inline-math">$f$</span></em> is
+                the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-quotient-space.html">quotient space</a>
+                <span class="display-math">$$ \begin{align*}
+                    X \cup_f D^n := (X\sqcup D^n)/{\sim}
+                \end{align*} $$</span>
+                where <span class="inline-math">$\sim$</span> is the equivalence relation identifying <span class="inline-math">$x \sim f(x)$</span> for all <span class="inline-math">$x\in S^{n-1} = \partial D^n$</span>,
+                and an subset of <span class="inline-math">$X \sqcup D^n$</span> is open iff its intersections with <span class="inline-math">$X$</span> and with <span class="inline-math">$D^n$</span> are open.
+            </p>
+            <p>
+                A <em>finite cell complex</em> is a space obtained with finitely many steps as follows:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    Step 0: start with a finite set <span class="inline-math">$X^0$</span> of discrete points.
+                </p>
+                
+            </li><li>
+                <p>
+                    Step <span class="inline-math">$i\geq 1$</span>: attach finitely many <span class="inline-math">$i$</span>-cells to <span class="inline-math">$X^{i-1}$</span> to form <span class="inline-math">$X^i$</span>.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                Taking <span class="inline-math">$X = X^n$</span>, we say <span class="inline-math">$n$</span> is the <em>dimension</em> of <span class="inline-math">$X$</span>.
+                <span class="inline-math">$X^i$</span> is called the <em><span class="inline-math">$i$</span>-skeleton</em> of <span class="inline-math">$X$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (fundamental group when attaching cell)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-fundamental-group-when-attaching-cell.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a path-connected space
+                and <span class="inline-math">$f: (S^{n-1}, *)\to (X, x_0)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-based-space-based-map-based-homotopy.html">based map</a>.
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-cell-complex.html">Attach an <span class="inline-math">$n$</span>-cell</a> to <span class="inline-math">$X$</span> along <span class="inline-math">$f$</span> to form <span class="inline-math">$Y$</span>.
+                Let <span class="inline-math">$i_\ast: π_1(X, x_0)\to π_1(Y, x_0)$</span> be the <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-based-maps-descend-to-homomorphisms-between-fundamental-groups.html">homomorphism</a> induced by inclusion <span class="inline-math">$i: X \hookrightarrow Y$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    If <span class="inline-math">$n\geq 3$</span>, then <span class="inline-math">$i_\ast$</span> is an isomorphism.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$n=2$</span>, then <span class="inline-math">$i_\ast$</span> is a surjection with <span class="inline-math">$\ker i_\ast = \langle \langle [f]\rangle\rangle$</span>,
+                    the smallest normal subgroup containing <span class="inline-math">$[f]\in π_1(X,x_0)$</span>.
+                    In particular, <span class="inline-math">$π_1(Y, x_0) = π_1(X, x_0)/\langle \langle [f]\rangle\rangle$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-fundamental-group-when-attaching-cell.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    Therefore any <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-presentation.html">finitely presented group</a>
+                    arises as a fundamental group of some two-dimensional <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-cell-complex.html">finite cell complex</a>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-finitely-presented-group-as-fundamental-group.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (neighbourhood deformation retract)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-neighbourhood-deformation-retract.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a space.
+            </p>
+            <p>
+                A subset <span class="inline-math">$A\subseteq X$</span> is called a <em>neighbourhood deformation retract</em>
+                if there is an open neighbourhood <span class="inline-math">$A\subseteq U\subseteq X$</span>
+                and a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-retraction-deformation-retraction.html">deformation retraction</a> of <span class="inline-math">$U$</span> onto <span class="inline-math">$A$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Seifert-van Kampen for closed cover)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-Seifert-van-Kampen-for-closed-cover.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a space.
+            </p>
+            <p>
+                If <span class="inline-math">$A,B\subseteq X$</span> are closed subsets such that
+                <span class="inline-math">$A\cup B = X$</span>
+                and <span class="inline-math">$A\cap B$</span> is path-connected and a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-neighbourhood-deformation-retract.html">neighbourhood deformation retract</a> in both <span class="inline-math">$A$</span> and <span class="inline-math">$B$</span>,
+                then for <span class="inline-math">$x_0\in A\cap B$</span>,
+                the homomorphism
+                <span class="display-math">$$ \begin{align*}
+                    Φ: π_1(A, x_0) *_{π_1(A\cap B, x_0)} π_1(B, x_0) \to π_1(X, x_0)
+                \end{align*} $$</span>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-Seifert-van-Kampen.html">given by inclusion maps</a> is a isomorphism.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-Seifert-van-Kampen-for-closed-cover.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (classification of compact connected surfaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-classification-of-compact-connected-surfaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Any <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-compact.html">compact</a> <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-disconnected-connected-separation.html">connected</a> <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-abstract-smooth-surface.html">surface</a>
+                is <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-homeomorphism.html">homeomorphic</a> to one of the following:
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    the sphere <span class="inline-math">$S^2$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$Σ_g$</span>, the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Connect-sums.html">connect sum</a> of <span class="inline-math">$g$</span> <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/The-torus.html">tori</a> <span class="inline-math">$S^1 \times S^1$</span>, for <span class="inline-math">$g\geq 1$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$S_k$</span>, the connect sum of <span class="inline-math">$k$</span> <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/The-real-projective-plane.html">real projective planes</a> <span class="inline-math">$\mathbb{RP}^2 = S^2/\{\pm 1\}$</span>, for <span class="inline-math">$k\geq 1$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (fundamental group of compact connected surfaces)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-fundamental-group-of-compact-connected-surfaces.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-fundamental-group.html">fundamental group</a> of the <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-classification-of-compact-connected-surfaces.html">compact connected surfaces</a> are
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$π_1(S^2, *) \isom 1$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$π_1(Σ_g, *)\isom{}$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-presentation.html"><span class="inline-math">$\langle a_1, b_1, \ldots, a_g, b_g\mid \prod_{i=1}^{g} a_i b_i a_i\inv b_i\inv\rangle$</span></a>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$π_1(S_k, *)\isom \langle a_1, \ldots, a_k\mid \prod_{i=1}^{k} a_i^2\rangle$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-fundamental-group-of-compact-connected-surfaces.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

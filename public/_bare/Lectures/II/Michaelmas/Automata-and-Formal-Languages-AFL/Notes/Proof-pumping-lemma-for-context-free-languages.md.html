@@ -1,0 +1,34 @@
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Pasted-image-20260423172231.png">
+</p>
+<p>
+    Let <span class="inline-math">$G = (Σ, N, P, S)$</span> be a context-free grammar producing <span class="inline-math">$L$</span>,
+    and <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-equivalent-to-Chomsky-normal-form.html">we can choose</a> <span class="inline-math">$G$</span> to be in Chomsky normal form
+    by possibly losing <span class="inline-math">$ε$</span>.
+    Choose <span class="inline-math">$n = 2^{|N|+1}$</span>.
+</p>
+<p>
+    If <span class="inline-math">$u\in L$</span> has length <span class="inline-math">$\geq n$</span>,
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-length-of-word-parsed-by-parse-tree.html">then</a>
+    the parse tree has height <span class="inline-math">$\geq |N|+2$</span>,
+    meaning there is a path consisting of non-terminal symbols
+    from the root of length <span class="inline-math">$\geq |N|+1$</span>.
+    By the pigeonhole principle,
+    the bottommost <span class="inline-math">$|N|+1$</span> non-terminal symbols of this path
+    must contain a repeated symbol, say <span class="inline-math">$A$</span>
+    at a root of subtree <span class="inline-math">$\mathbf{T}&#x27;$</span> and sub-subtree <span class="inline-math">$\mathbf{T}&#x27;&#x27;$</span>.
+</p>
+<p>
+    Then <span class="inline-math">$u = vwxyz$</span>,
+    where <span class="inline-math">$x$</span> is the word of <span class="inline-math">$\mathbf{T}&#x27;&#x27;$</span> and <span class="inline-math">$wxy$</span> is the word of <span class="inline-math">$\mathbf{T}&#x27;$</span>.
+    Since <span class="inline-math">$\mathbf{T}&#x27;$</span> has height at most <span class="inline-math">$|N|+2$</span>,
+    its word <span class="inline-math">$wxy$</span> has length at most <span class="inline-math">$2^{|N|+1} = n$</span>.
+    Moreover <span class="inline-math">$\mathbf{T}&#x27;$</span> has another outgoing edge not towards <span class="inline-math">$\mathbf{T}&#x27;&#x27;$</span>,
+    so <span class="inline-math">$|wxy|&gt;|x|$</span>.
+</p>
+<p>
+    To pump down, replace <span class="inline-math">$\mathbf{T}&#x27;$</span> with <span class="inline-math">$\mathbf{T}&#x27;&#x27;$</span>,
+    resulting in a parse tree for <span class="inline-math">$vxz$</span>.
+    To pump up, replace <span class="inline-math">$\mathbf{T}&#x27;&#x27;$</span> with <span class="inline-math">$\mathbf{T}&#x27;$</span>,
+    resulting in a parse tree for <span class="inline-math">$vwwxyyz$</span>.
+</p>

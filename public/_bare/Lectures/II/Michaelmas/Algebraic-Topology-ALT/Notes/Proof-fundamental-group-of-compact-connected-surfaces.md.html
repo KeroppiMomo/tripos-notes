@@ -1,0 +1,87 @@
+
+<h1>The sphere</h1>
+
+<p>
+    Embedding <span class="inline-math">$S^2 = \sb{x\in \R^3}{|x| = 1}$</span>,
+    consider the open cover
+    <span class="display-math">$$ \begin{align*}
+        S^2 = \underbrace{(S^2 \setminus \set{(0,0,1)})}_{U} \cup \underbrace{(S^2 \setminus \set{(0,0,-1)})}_{V}.
+    \end{align*} $$</span>
+    <span class="inline-math">$U$</span> and <span class="inline-math">$V$</span> are homeomorphic to <span class="inline-math">$D^2$</span>, which is contractible <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-simply-connected.html">so</a> simply connected.
+    The intersection <span class="inline-math">$U\cap V$</span> is <span class="inline-math">$\set{-1&lt;z&lt;1}\cap S^2$</span>, which is path-connected.
+    Therefore by Seifert van-Kampen,
+    <span class="display-math">$$ \begin{align*}
+        π_1(S^2, *) \isom π_1(U, *) *_{π_1(U\cap V, *)} π_1(V, *) \isom 1 * 1 = 1
+    \end{align*} $$</span>
+</p>
+
+<h1>Orientable surfaces</h1>
+
+<p>
+    Let <span class="inline-math">$T^0$</span> be a torus with an open triangle removed.
+    By stretching the triangle,
+    <span class="inline-math">$T^0$</span> deformation retracts to <span class="inline-math">$S^1 \vee S^1$</span>,
+    inducing
+    <span class="display-math">$$ \begin{align*}
+        π_1(T^0, x_0) &amp;\xrightarrow{\sim} \langle a,b\mid\rangle \\
+        [r] &amp;\mapsto aba\inv b\inv
+    \end{align*} $$</span>
+    where <span class="inline-math">$r$</span> is the boundary of the triangle.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Lecture-Notes/Pasted-image-20251103113734.png">
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Pasted-image-20260421195005.png">
+</p>
+<p>
+    Glue <span class="inline-math">$g$</span> copies of <span class="inline-math">$T^0$</span> together along edges of triangles with a common vertex <span class="inline-math">$x_0$</span>
+    to form <span class="inline-math">$Σ_{g,\partial}$</span>,
+    and call the old boundary loops <span class="inline-math">$r_1, r_2, \ldots, r_g$</span>.
+    Each <span class="inline-math">$T^0$</span> is then a closed subset of <span class="inline-math">$Σ_{g,\partial}$</span>,
+    and the intersection of consecutive <span class="inline-math">$T^0$</span> is a line segment.
+    By <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-Seifert-van-Kampen-for-closed-cover.html">Seifert-van Kampen</a>,
+    since the intersection is a neighbourhood deformation retract and is simply connected,
+    <span class="display-math">$$ \begin{align*}
+        π_1(Σ_{g,\partial}, x_0) &amp;\xrightarrow{\sim} π_1(T^0, x_0) * \ldots * π_1(T^0, x_0) \isom \langle a_1, b_1, \ldots, a_g, b_g\rangle \\
+        [r_1 \cdot r_2 \cdot \ldots \cdot r_g] &amp;\mapsto a_1 b_1 a_1\inv b_1\inv \ldots a_g b_g a_g\inv b_g\inv.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now attach a 2-cell along the boundary <span class="inline-math">$r_1 \cdot r_2 \cdot \ldots \cdot r_g$</span>
+    to obtain <span class="inline-math">$Σ_g$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-fundamental-group-when-attaching-cell.html">Then</a>
+    <span class="display-math">$$ \begin{align*}
+        π_1(Σ_g, x_0) \isom π_1(Σ_{g,\partial}, x_0) / \langle \langle [r_1\cdot \ldots\cdot r_g]\rangle\rangle = \langle a_1, b_1, \ldots, a_g, b_g \mid \prod_{i=1}^{g} a_i b_i a_i\inv b_i\inv\rangle.
+    \end{align*} $$</span>
+</p>
+
+<h1>Non-orientable surface</h1>
+
+<p>
+    Let <span class="inline-math">$M$</span> be <span class="inline-math">$\mathbb{RP}^2$</span> with an open triangle removed (i.e. a Möbius strip).
+    By stretching the triangle, <span class="inline-math">$M$</span> deformation retracts to <span class="inline-math">$S^1$</span>,
+    inducing
+    <span class="display-math">$$ \begin{align*}
+        π_1(M, x_0) &amp;\xrightarrow{\sim} \langle a\mid\rangle \\
+        [r] &amp;\mapsto a^2
+    \end{align*} $$</span>
+    where <span class="inline-math">$r$</span> is the boundary of the triangle.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Lecture-Notes/Pasted-image-20251103115230.png">
+</p>
+<p>
+    As before, glue <span class="inline-math">$k$</span> copies together along the boundary segments
+    to form <span class="inline-math">$S_{k,\partial}$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        π_1(S_{k,\partial}, x_0) &amp;\xrightarrow{\sim} \langle a_1, \ldots, a_g\mid\rangle \\
+        [r_1 \cdot \ldots \cdot r_k]&amp; \mapsto a_1^2 \ldots a_k^2.
+    \end{align*} $$</span>
+    Attach a 2-cell to close the boundary and obtain <span class="inline-math">$S_k$</span>.
+    We get
+    <span class="display-math">$$ \begin{align*}
+        π_1(S_k, x_0) \isom π_1(S_k, x_0)/\langle \langle [r_1\cdot \ldots\cdot r_g]\rangle\rangle \isom \langle a_1, \ldots, a_g, \prod_{i=1}^{k} a_i^2\rangle
+    \end{align*} $$</span>
+</p>

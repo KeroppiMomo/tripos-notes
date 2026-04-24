@@ -1,0 +1,122 @@
+
+<h1>General case</h1>
+
+
+<h2>Constructing algebraic <span class="inline-math">$L/K$</span> where all non-constant polynomial in <span class="inline-math">$K[X]$</span> has a root in <span class="inline-math">$L$</span></h2>
+
+<p>
+    Let <span class="inline-math">$S$</span> be the set of all non-constant monic polynomials in <span class="inline-math">$K[X]$</span>.
+    Define
+    <span class="display-math">$$ \begin{align*}
+        R := K[X_f \mid f\in S],
+    \end{align*} $$</span>
+    the ring of finite <span class="inline-math">$K$</span>-linear combinations of formal symbols <span class="inline-math">$X_f$</span>,
+    and the ideal
+    <span class="display-math">$$ \begin{align*}
+        I := (f(X_f)\mid f\in S) \lhd R.
+    \end{align*} $$</span>
+</p>
+<p>
+    We claim <span class="inline-math">$I\neq R$</span>.
+    Otherwise, <span class="inline-math">$1\in I$</span>, so there is a finite subset <span class="inline-math">$T \subset S$</span> and coefficients <span class="inline-math">$g_f\in R$</span>
+    such that
+    <span class="display-math">$$ \begin{align*}
+        1 = \sum_{f\in T} g_f f(X_f). \tag{*}
+    \end{align*} $$</span>
+    As <span class="inline-math">$T$</span> is finite, let <span class="inline-math">$L$</span> be the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-existence-of-splitting-field.html">splitting field</a> of <span class="inline-math">$\prod_{f\in T} f(X)$</span> over <span class="inline-math">$K$</span>,
+    and let <span class="inline-math">$α_f$</span> be a root of <span class="inline-math">$f\in T$</span> in <span class="inline-math">$α$</span>.
+    Construct the <span class="inline-math">$K$</span>-algebra homomorphism
+    <span class="display-math">$$ \begin{align*}
+        ϕ: R &amp;\to L[X_f \mid f\in S\setminus T] \\
+        X_f &amp;\mapsto \begin{cases}
+            α_f, &amp;f\in T, \\
+            X_f, &amp;f\in S\setminus T.
+        \end{cases}
+    \end{align*} $$</span>
+    Then applying <span class="inline-math">$ϕ$</span> to <span class="inline-math">$(*)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        1 = \sum_{f\in T} ϕ(g_f) \underbrace{f(α_f)}_{0} = 0,
+    \end{align*} $$</span>
+    which is impossible as <span class="inline-math">$R$</span> is not a zero ring.
+</p>
+<p>
+    Therefore, by <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proposition-existence-of-maximal-ideal.html">Zorn's lemma</a>,
+    there exists a maximal ideal <span class="inline-math">$J$</span> of <span class="inline-math">$R$</span> containing <span class="inline-math">$I$</span>.
+    Define the field <span class="inline-math">$L := R/J$</span>.
+</p>
+<p>
+    Now we check:
+</p>
+<ul>
+<li>
+    <p>
+        Any non-constant polynomial <span class="inline-math">$f\in K[X]$</span> (WLOG monic)
+        has a root <span class="inline-math">$α_f := X_f + J$</span> in <span class="inline-math">$L$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Since <span class="inline-math">$L = K(α_f \mid f\in S) = \bigcup_{\text{finite }T\subseteq S} K(α_f\mid f\in T)$</span>
+        and <span class="inline-math">$K(α_f \mid f\in T)$</span> is finitely generated <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Lemma-algebraic-iff-finite-adjoined-extension.html">hence</a> algebraic over <span class="inline-math">$K$</span>,
+        <span class="inline-math">$L$</span> is algebraic over <span class="inline-math">$K$</span>.
+    </p>
+    
+</li>
+</ul>
+
+<h2>Algebraic closure of <span class="inline-math">$K$</span></h2>
+
+<p>
+    Repeating the above construction gives
+    <span class="display-math">$$ \begin{align*}
+        K \subseteq K_1 \subseteq K_2 \subseteq K_3 \subseteq \ldots
+    \end{align*} $$</span>
+    where each non-zero polynomial in <span class="inline-math">$K_n[X]$</span> has a root in <span class="inline-math">$K_{n+1}$</span>.
+</p>
+<p>
+    If <span class="inline-math">$f\in K[X]$</span> has degree <span class="inline-math">$n\geq 1$</span>,
+    it has a root <span class="inline-math">$α_1\in K_1$</span>.
+    Then <span class="inline-math">$f(X)/(X-α_1)$</span>
+    has a root in <span class="inline-math">$K_2$</span> and so on,
+    so <span class="inline-math">$f$</span> splits into linear factors in <span class="inline-math">$K_n$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$\bar K = \bigcup_{n=1}^{\infty} K_n$</span>.
+    This is a field since it is a nested union of fields.
+    Then every polynomial in <span class="inline-math">$K[X]$</span> splits into linear factors in <span class="inline-math">$\bar K$</span>,
+    and each element of <span class="inline-math">$\bar K$</span> belongs to some <span class="inline-math">$K_n$</span>
+    so is algebraic over <span class="inline-math">$K$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-algebraically-closed.html#^closure">Hence</a> <span class="inline-math">$\bar K$</span> is an algebraic closure of <span class="inline-math">$K$</span>.
+</p>
+
+<h1>Special cases</h1>
+
+
+<h2><span class="inline-math">$K\subseteq L$</span> where <span class="inline-math">$L$</span> is algebriacally closed</h2>
+
+<p>
+    Take
+    <span class="display-math">$$ \begin{align*}
+        \bar K = \sb{α\in L}{\text{$α$ is algebraic over $K$}}.
+    \end{align*} $$</span>
+    We <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Corollary-algebraic-elements-form-a-subfield.html">showed</a> <span class="inline-math">$\bar K$</span> is a field extension over <span class="inline-math">$K$</span>, clearly algebraic.
+</p>
+<p>
+    If <span class="inline-math">$f\in K[X]\setminus k$</span> is a non-constant polynomial,
+    then <span class="inline-math">$f$</span> splits in <span class="inline-math">$L$</span>.
+    But each root is algebraic over <span class="inline-math">$K$</span>, so lies in <span class="inline-math">$\bar K$</span>.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-algebraically-closed.html#^closure">Therefore</a> <span class="inline-math">$\bar K$</span> is an algebraic closure of <span class="inline-math">$K$</span>.
+</p>
+
+<h2><span class="inline-math">$K$</span> is countable</h2>
+
+<p>
+    Then the set <span class="inline-math">$S$</span> of monic non-constant polynomials in <span class="inline-math">$K[X]$</span> is countable.
+    Enumerate <span class="inline-math">$S = \set{f_1, f_2, \ldots}$</span>.
+</p>
+<p>
+    Construct iteratively <span class="inline-math">$L_0 := K$</span> and
+    <span class="inline-math">$L_{n+1}$</span> as the splitting field of <span class="inline-math">$f_n$</span> over <span class="inline-math">$L_n$</span>.
+    Then take <span class="inline-math">$\bar K := \bigcup_{n\in \N} L_n$</span>.
+    This is an algebraic closure.
+</p>

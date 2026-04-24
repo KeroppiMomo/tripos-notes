@@ -1,0 +1,40 @@
+<p>
+    We follow <a href="https://stats.stackexchange.com/q/500529">this</a>.
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (multivariate Cauchy-Schwarz)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-multivariate-Cauchy-Schwarz.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X\in \R^m$</span> and <span class="inline-math">$Y\in \R^n$</span> be square-integrable random variables.
+            </p>
+            <p>
+                If <span class="inline-math">$\var(X)$</span><a href="/tripos-notes/Lectures/IB/Easter/Optimisation-Op/Notes/Notation-definite-matrix.html"><span class="inline-math">${}\succ{}$</span></a><span class="inline-math">$0$</span>, then
+                <span class="display-math">$$ \begin{align*}
+                    \var(Y) \succeq \cov(Y,X) \var(X)\inv \cov(X,Y).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-multivariate-Cauchy-Schwarz.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Set <span class="inline-math">$Y$</span> to be  <span class="inline-math">$\tilde Φ$</span> and <span class="inline-math">$X$</span> to be <span class="inline-math">$\pdd{θ}\log f(X,θ)$</span>.
+    Then since <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-score-function.html#^mean"><span class="inline-math">$\expect_θ[\pdd{θ} \log f(X, θ)] = 0$</span></a>,
+    it suffices to show <span class="inline-math">$\cov_θ(\tilde θ, \pdd{θ}) = \pdd{θ}\expect_θ[\tilde Φ]$</span>.
+</p>
+<p>
+    <span class="display-math">$$ \begin{align*}
+        \cov_θ(X,Y) ={}&amp; \expect_θ\left[(\tilde Φ - \expect_θ[\tilde Φ]) \pdd{θ}\log f(X, θ)\right] \\
+        ={}&amp; \expect_θ\left[\tilde Φ \pdd{θ} \log f(X,θ)\right] - \expect_θ[\tilde Φ] \underbrace{\expect_θ\left[\pdd{θ}\log f(X,θ)\right]}_{0} \\
+        ={}&amp; \int_{\mathcal{X}} \tilde Φ(x) \frac{\pdd{θ}f(x,θ)}{f(x,θ)}\cdot f(x,θ) \d x \\
+        ={}&amp; \pdd{θ}\int_{\mathcal{X}} \tilde Φ(x) f(x,θ) \d x &amp;&amp;\text{regularity} \\
+        ={}&amp; \pdd{θ} \expect_θ[\tilde Φ].
+    \end{align*} $$</span>
+</p>

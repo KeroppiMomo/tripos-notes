@@ -1,0 +1,46 @@
+<p>
+    Take a geodesic polar coordinates,
+    such that one edge of <span class="inline-math">$T$</span> corresponds to <span class="inline-math">$θ = 0$</span>
+    and one corresponds to <span class="inline-math">$θ = α_1&gt;0$</span>.
+    Let the third edge be parametrised by <span class="inline-math">$γ(t) = ϕ(r(t), θ(t))$</span>, <span class="inline-math">$t\in [a,b]$</span>.
+</p>
+<p>
+    We claim <span class="inline-math">$θ$</span> is a strictly increasing function,
+    so <span class="inline-math">$γ$</span> is a graph of <span class="inline-math">$r = h(θ)$</span>
+    for some smooth function <span class="inline-math">$h: [0, α_1]\to [0,\infty)$</span>.
+    Indeed if not, there exists a point <span class="inline-math">$γ(t&#x27;)$</span>
+    such that <span class="inline-math">$\dot θ(t&#x27;) = 0$</span>.
+    But then <span class="inline-math">$θ = θ(t&#x27;)$</span> is the unique geodesic passing through <span class="inline-math">$(r(t&#x27;), θ(t&#x27;))$</span>
+    with tangent <span class="inline-math">$ϕ_r$</span>,
+    and <span class="inline-math">$γ$</span> is not that.
+</p>
+<p>
+    Then using the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-exponential-map-geodesic-normal-coordinates-geodesic-polar-coordinates.html">first fundamental form</a> of geodesic polars
+    and <span class="inline-math">$K = -\sqrt{G}_{rr}/\sqrt{G}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \int_{T} K \d A ={}&amp; \int_{ϕ\inv(T)} K \sqrt{G} \d A \\
+        ={}&amp; \lim_{ε\to 0} \int_{0}^{α_1} \int_{ε}^{h(r)} -\sqrt{G}_{rr} \d r \d θ \\
+        ={}&amp; \lim_{ε\to 0} \int_{0}^{α_1} -\sqrt{G}_r(h(r), θ) + \sqrt{G}_r(ε, θ) \d θ \\
+        ={}&amp; \int_{0}^{α_1} -\sqrt{G}_r(h(r), θ) + 1 \d θ \\
+        ={}&amp; \int_{0}^{α_1} -\sqrt{G}_r(h(r), θ) \d θ + α_1
+    \end{align*} $$</span> 
+    so it remains to show <span class="inline-math">$\int_{0}^{α_1} -\sqrt{G}_r(h(r)) \d θ = α_2 + α_3 - π$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$ψ$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-smooth-determination-of-angle.html">smooth determination of angle</a> from <span class="inline-math">$ϕ_r$</span> to <span class="inline-math">$\dot γ$</span>.
+    Using our <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-vector-field-along-curve-covariant-derivative-parallel.html#^basis-orthogonal">previous calculation</a>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \dot ψ = \underbrace{\left[\frac{\mathrm{D}\dot γ}{\d t}\right]}_{0} - \left[\frac{\mathrm{D}ϕ_r}{\d t}\right]
+        = -\frac{G_r \dot θ}{2\sqrt{G}}
+        = -\sqrt{G}_r \dot θ
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        ψ(b) - ψ(a) ={}&amp; \int_{a}^{b} -\sqrt{G}_r(r(t), θ(t)) \dot θ \d t
+        = \int_{0}^{α_1} -\sqrt{G}_r(h(θ), θ) \d θ.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$ψ(b) = α_2$</span> and <span class="inline-math">$ψ(a) = π - α_3$</span> so we are done.
+</p>

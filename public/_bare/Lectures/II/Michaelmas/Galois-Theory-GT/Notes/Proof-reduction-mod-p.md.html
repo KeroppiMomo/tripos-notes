@@ -1,0 +1,95 @@
+<p>
+    (Not yet reviewed)
+</p>
+<p>
+    Let <span class="inline-math">$K$</span> be a field, and <span class="inline-math">$f\in K[X]$</span> be monic and separable of degree <span class="inline-math">$n$</span>,
+    with splitting field <span class="inline-math">$L$</span> and roots <span class="inline-math">$α_1, \ldots, α_n\in L$</span>.
+</p>
+<p>
+    Let
+    <span class="display-math">$$ \begin{align*}
+        F(T_1, \ldots, T_n, X) = \prod_{σ\in S_n} (X - (α_1 T_{σ(1)} + \ldots + α_n T_{σ(n)})).
+    \end{align*} $$</span>
+    Then <span class="inline-math">$F(T_1, \ldots, T_n, X) \in K[T_1, \ldots, T_n, X]$</span>,
+    since coefficients in <span class="inline-math">$L$</span> are fixed by <span class="inline-math">$\Gal(L/K)$</span>.
+</p>
+<p>
+    Define an action on <span class="inline-math">$S_n$</span> on <span class="inline-math">$K[T_1, \ldots, T_n, X]$</span>
+    by setting
+    <span class="display-math">$$ \begin{align*}
+        (σ * h)(T_1 ,\ldots, T_n , X) = h(T_{σ(1)}, \ldots, T_{σ(n)}, X).
+    \end{align*} $$</span>
+    Note that <span class="inline-math">$σ*F = F$</span> for all <span class="inline-math">$σ\in S_n$</span>.
+</p>
+<div class="markdown-callout" data-callout="lemma">
+    <div class="markdown-callout-title">
+        <i data-lucide="file-text"></i>
+        <div class="markdown-callout-title-inner">Lemma 9.8</div>
+    </div>
+    <div class="markdown-callout-content">
+        <p>
+            Let <span class="inline-math">$F_1\in K[T_1, \ldots, T_n, X]$</span>
+            be an irreducible factor of <span class="inline-math">$F$</span>.
+        </p>
+        <p>
+            Then <span class="inline-math">$\Gal(f/K) \subseteq S_n$</span>
+            is conjugate to <span class="inline-math">$\op{Stab}(F_1) = \sb{τ\in S_n}{τ*F_1 = F_1}$</span>.
+        </p>
+        
+    </div>
+</div><p>
+    <em>Proof</em>.
+    Since <span class="inline-math">$S_n$</span> acts transitively on <span class="inline-math">$(X - (α_1 T_{σ(1)} + \ldots + α_n T_{σ(n)}))$</span>,
+    it acts transitively on the irreducible factors of <span class="inline-math">$F$</span>,
+    so replacing <span class="inline-math">$F_1$</span> by <span class="inline-math">$τ * F_1$</span>
+    for some suitable <span class="inline-math">$τ\in S_n$</span>,
+    we may assume it has a factors <span class="inline-math">$X - (α_1T_1 + \ldots + α_nT_n)$</span>.
+</p>
+<p>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \prod_{σ\in G} (X - (α_{σ(1)}T_1 + \ldots + α_{σ(n)}T_n))
+    \end{align*} $$</span>
+    has coefficients in <span class="inline-math">$K$</span> (as they are invariant under <span class="inline-math">$G$</span>),
+    and divides <span class="inline-math">$F_1$</span> (c.f. Remark 6.3),
+    and hence is equal to <span class="inline-math">$F_1$</span>, since <span class="inline-math">$F_1$</span> is irreducible.
+</p>
+<p>
+    For <span class="inline-math">$τ\in S_n$</span>, we have
+    <span class="display-math">$$ \begin{align*}
+        τ * F_1 ={}&amp; \prod_{σ\in G} (X - (α_{σ(1)}T_{τ(1)} + \ldots + α_{σ(n)} T_{τ(n)})) \\
+        ={}&amp; \prod_{σ\in G} (X - (α_{στ\inv(1)} T_1 + \ldots + α_{στ\inv(n)} T_n)) &amp;&amp;\text{reordering terms} \\
+        ={}&amp; \prod_{σ\in Gτ\inv} (X - (α_{σ(1)}T_1 + \ldots + α_{σ(n)}T_n))
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore <span class="inline-math">$τ * F_1 = F_1 \iff G = Gτ\inv \iff τ\in G$</span>.
+    <span class="display-math">$$ \begin{align*}
+        \square
+    \end{align*} $$</span>
+</p>
+<p>
+    <em>Proof of Theorem 9.6</em>.
+    By the symmetric polynomial theorem,
+    the coefficients of <span class="inline-math">$F$</span> are <span class="inline-math">$\Z$</span>-coefficients
+    polynomials in the coefficients of <span class="inline-math">$f$</span>,
+    so if <span class="inline-math">$f\in \Z[X]$</span>,
+    then <span class="inline-math">$F\in \Z[T_1, \ldots, T_n, X]$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$\bar f\in \mathbb{F}_p[X]$</span> and <span class="inline-math">$\bar F\in \mathbb{F}_p[T_1, \ldots, T_n, X]$</span>
+    be polynomials obtained by reducing mod <span class="inline-math">$p$</span>.
+    Then <span class="inline-math">$\bar F$</span> can also be constructed from <span class="inline-math">$\bar f$</span>
+    in the same way as <span class="inline-math">$F$</span> from <span class="inline-math">$f$</span>.
+</p>
+<p>
+    Write into distinct irreducible factors <span class="inline-math">$F = F_1 \ldots F_s$</span> with <span class="inline-math">$F_i\in \Z[T_1, \ldots, T_n, X]$</span>
+    (also irreducible in <span class="inline-math">$\Q[T_1, \ldots, T_n, X]$</span>)
+    and <span class="inline-math">$\bar F = Φ_1 \ldots Φ_t$</span> with <span class="inline-math">$\mathbb{F}_p[T_1, \ldots, T_n, X]$</span>.
+</p>
+<p>
+    WLOG <span class="inline-math">$Φ_1 \mid \bar F_1$</span> (so <span class="inline-math">$Φ_1 \not\mid \bar F_i$</span> for <span class="inline-math">$2\leq i\leq s$</span>).
+    Then <span class="inline-math">$\op{Stab}(Φ_1) = \sb{τ\in S_n}{τ * ϕ_{1} = ϕ_1} \subseteq \sb{τ\in S_n}{τ * F_1 = F_1} = \op{Stab}(F_1)$</span>.
+    Lemma 9.8 then shows up to conjugacy,
+    <span class="inline-math">$\Gal(F/\mathbb{F}_p) \subseteq \Gal(f/\Q)$</span>.
+</p>

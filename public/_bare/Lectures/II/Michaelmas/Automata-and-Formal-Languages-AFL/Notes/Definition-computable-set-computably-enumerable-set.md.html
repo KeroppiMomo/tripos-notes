@@ -1,45 +1,68 @@
 <p>
-    Let <span class="inline-math">$X\subseteq \mathbb{W}^k$</span>.
+    Let <span class="inline-math">$X\subseteq \N^k$</span>.
 </p>
 <p>
-    Any total function <span class="inline-math">$f: \mathbb{W}^k\to\mathbb{W}$</span>
-    satisfying <span class="inline-math">$f(\v w)\neq ε \iff \v w\in X$</span>
-    is called a <em>characteristic function</em> of <span class="inline-math">$X$</span>.
-    Fixing any <span class="inline-math">$a\in Σ$</span>, <em><strong>the</strong> characteristic function</em> is
+    The <em>characteristic function of <span class="inline-math">$X$</span></em> is
     <span class="display-math">$$ \begin{align*}
-        χ_X(\v w) = \begin{cases}
-            a, &amp;\v w\in X, \\
-            ε, &amp;\v w\not\in X.
+        χ_X(\v n) = \begin{cases}
+            1, &amp;\v n\in X, \\
+            0, &amp;\v n\not\in X.
         \end{cases}
     \end{align*} $$</span>
     <span class="inline-math">$X$</span> is called <em>computable</em> if <span class="inline-math">$χ_X$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">computable</a>.
 </p>
 <p>
-    Any partial function <span class="inline-math">$f: \mathbb{W}^k \dashrightarrow \mathbb{W}$</span>
-    with <span class="inline-math">$\mathrm{dom}(f) = X$</span> is called a <em>pseudo-characteristic function</em> of <span class="inline-math">$X$</span>,
-    and <em><strong>the</strong> pseudo-characteristic function</em> of <span class="inline-math">$X$</span> is
+    The <em>pseudo-characteristic function</em> of <span class="inline-math">$X$</span> is
     <span class="display-math">$$ \begin{align*}
-        ψ_X(\v w) = \begin{cases}
-            a, &amp;\v w\in X, \\
-            \uparrow, &amp;\v w\not\in X.
+        ψ_X(\v n) = \begin{cases}
+            1, &amp;\v n\in X, \\
+            \uparrow, &amp;\v n\not\in X.
         \end{cases}
     \end{align*} $$</span>
     <span class="inline-math">$X$</span> is called <em>computably enumerable</em> if <span class="inline-math">$ψ_X$</span> is computable.
 </p>
-<ul>
-<!-- BEGIN BLOCK ID closure-complementation -->
-<li id="^closure-complementation">
-    <p>
+<blockquote>
+    <!-- BEGIN BLOCK ID closure-complementation -->
+    <p id="^closure-complementation">
         If <span class="inline-math">$X$</span> is computable,
-        then so is <span class="inline-math">$\mathbb{W}^k \setminus X$</span>. (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-closure-of-computable-sets-under-complementation.html">Proof</a>)
+        then so is <span class="inline-math">$\N^k \setminus X$</span>.
     </p>
     
-</li>
-<!-- END BLOCK ID closure-complementation -->
-<li>
+    <!-- END BLOCK ID closure-complementation -->
+    
+</blockquote>
+<blockquote>
     <p>
         If <span class="inline-math">$X$</span> is computable, then <span class="inline-math">$X$</span> is computably enumerable. (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computable-set-is-computably-enumerable.html">Proof</a>)
     </p>
     
-</li>
-</ul>
+</blockquote>
+<blockquote>
+    <p>
+        If <span class="inline-math">$X\subseteq \N$</span>, the following are equivalent:
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            <span class="inline-math">$X$</span> is computably enumerable;
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$X$</span> is the domain of a partial computable function; (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computably-enumerable-iff-domain-of-partial-computable-function.html">Proof</a>)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$X$</span> is the range of a partial computable function; (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computably-enumerable-iff-range-of-partial-computable-function.html">Proof</a>)
+        </p>
+        
+    </li><li>
+        <p>
+            <span class="inline-math">$X=\emptyset$</span> or <span class="inline-math">$X$</span> is the range of a total computable function. (<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computable-enumerable-iff-range-of-total-computable-function.html">Proof</a>)
+        </p>
+        
+    </li>
+    </ol>
+    
+</blockquote>

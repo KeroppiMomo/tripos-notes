@@ -1,0 +1,32 @@
+<p>
+    Induct on <span class="inline-math">$n$</span>.
+    The case <span class="inline-math">$n=1$</span> follows
+    from <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Lemma-field-homomorphism-is-injective.html">injectivity of field embeddings</a>.
+</p>
+<p>
+    Suppose for <span class="inline-math">$n\geq 2$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=1}^{n} λ_i σ_i(x) = 0 \qquad \forall x\in K.
+        \tag{1}
+    \end{align*} $$</span>
+    Since <span class="inline-math">$σ_1 \neq σ_2$</span>, let <span class="inline-math">$y\in K$</span> such that <span class="inline-math">$σ_1(y) \neq σ_2(y)$</span>.
+    Substitute <span class="inline-math">$x \mapsto xy$</span> to see
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=1}^{n} λ_i σ_i(x) σ_i(y) = 0 \qquad \forall x\in K.
+        \tag{2}
+    \end{align*} $$</span>
+</p>
+<p>
+    Take <span class="inline-math">$(1)\cdot σ_1(y) - (2)$</span> to see
+    <span class="display-math">$$ \begin{align*}
+        \sum_{i=2}^{n} λ_i(σ_1(y) - σ_i(y)) \; σ_i(x) = 0 \qquad \forall x\in K.
+    \end{align*} $$</span>
+    By induction hypothesis, <span class="inline-math">$λ_2(σ_1(y) - σ_2(y)) = 0$</span>.
+    By construction <span class="inline-math">$σ_1(y) - σ_2(y) \neq 0$</span>,
+    so <span class="inline-math">$λ_2 = 0$</span>.
+</p>
+<p>
+    Now <span class="inline-math">$(1)$</span> only has <span class="inline-math">$n-1$</span> non-zero terms,
+    so apply induction hypothesis again to
+    conclude <span class="inline-math">$λ_1 = \ldots = λ_n = 0$</span>.
+</p>

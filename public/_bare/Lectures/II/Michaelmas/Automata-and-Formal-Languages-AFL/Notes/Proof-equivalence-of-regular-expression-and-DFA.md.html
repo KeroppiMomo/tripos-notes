@@ -1,0 +1,95 @@
+
+<h1>Regular expression <span class="inline-math">$\implies$</span> DFA</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-equivalence-of-DFA-and-NFA.html">It suffices</a> to produce an <span class="inline-math">$ε$</span>-NFA
+    for each regular expression.
+    We proceed by induction.
+</p>
+<p>
+    <img src="/tripos-notes/media/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Pasted-image-20260421213116.png">
+</p>
+<p>
+    All automata shown here has one unique accept state,
+    and no edges into the start state
+    and out of the accept state.
+</p>
+
+<h1>DFA <span class="inline-math">$\implies$</span> regular expression</h1>
+
+<p>
+    Let <span class="inline-math">$D = (Q, Σ, δ, q_0, F)$</span> be a DFA.
+    WLOG, relabel <span class="inline-math">$Q = \set{1, 2, \ldots, n}$</span> with <span class="inline-math">$q_0 = 1$</span>.
+    We will construct a regular expression <span class="inline-math">$R_{ij}^k$</span> for all <span class="inline-math">$i,j=1,2,\ldots,n$</span> and <span class="inline-math">$k=0,1,\ldots,n$</span>
+    such that
+</p>
+<blockquote>
+    <p>
+        <span class="inline-math">$\mathcal{L}(R_{ij}^k)$</span> is all words <span class="inline-math">$w\in Σ^\ast$</span>
+        where reading <span class="inline-math">$w$</span> from state <span class="inline-math">$i$</span> results in a state sequence <span class="inline-math">$q_0 = i, q_1, q_2, \ldots, q_{|w|-1}, q_{|w|} = j$</span>
+        with intermediate states <span class="inline-math">$q_l\leq k$</span> for all <span class="inline-math">$0&lt; l&lt; |w|$</span>.
+    </p>
+    
+</blockquote>
+<p>
+    Induct on <span class="inline-math">$k$</span>.
+    For <span class="inline-math">$k=0$</span>, let <span class="inline-math">$\set{σ_1, \ldots, σ_l} = \sb{σ}{δ(i,σ) = j}$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        if <span class="inline-math">$i=j$</span>, then
+        <span class="display-math">$$ \begin{align*}
+        R_{ij}^{0} := a_1 + \ldots + a_l + ε;
+        \end{align*} $$</span>
+    </p>
+    
+</li><li>
+    <p>
+        if <span class="inline-math">$i\neq j$</span>, then
+        <span class="display-math">$$ \begin{align*}
+        R_{ij}^0 := \begin{cases}
+            a_1 + \ldots + a_l, &amp;\text{if $l&gt;0$}, \\
+            \emptyset, &amp;\text{if $l=0$}.
+        \end{cases}
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ul>
+<p>
+    Now suppose <span class="inline-math">$R_{ij}^{k-1}$</span> has been constructed for all <span class="inline-math">$i,j$</span>.
+    We claim
+    <span class="display-math">$$ \begin{align*}
+        R_{ij}^k := R_{ij}^{k-1} + R_{ik}^{k-1} (R_{kk}^{k-1})^\ast R_{kj}^{k-1}
+    \end{align*} $$</span>
+    works.
+    Suppose <span class="inline-math">$w\in Σ^\ast$</span> results in a state sequence which starts at <span class="inline-math">$i$</span>, ends at <span class="inline-math">$j$</span>
+    and passes through intermediate states at most <span class="inline-math">$k$</span>. Two cases:
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$w$</span> does not pass through <span class="inline-math">$k$</span> as an intermediate state,
+        then <span class="inline-math">$w\in \mathcal{L}(R^{k-1}_{ij})$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Otherwise, split <span class="inline-math">$w = w_0 w_1 \ldots w_l w_{l+1}$</span> (for some <span class="inline-math">$l\geq 1$</span>),
+        where <span class="inline-math">$w_0$</span> goes from <span class="inline-math">$i$</span> to <span class="inline-math">$k$</span>,
+        each <span class="inline-math">$w_1, \ldots, w_l$</span> goes from <span class="inline-math">$k$</span> to <span class="inline-math">$k$</span>,
+        and <span class="inline-math">$w_{l+1}$</span> goes from <span class="inline-math">$k$</span> to <span class="inline-math">$j$</span>,
+        with the state <span class="inline-math">$k$</span> not reached as an intermediate state when reading each substring.
+        Then <span class="inline-math">$w_0\in \mathcal{L}(R_{ij}^{k-1})$</span>, <span class="inline-math">$w_1, \ldots, w_l\in \mathcal{L}(R_{kk}^{k-1})$</span>
+        and <span class="inline-math">$w_{l+1}\in \mathcal{L}(R_{jk}^{k-1})$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Finally, writing <span class="inline-math">$F = \set{q_1, \ldots, q_f}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{L}(D) = \mathcal{L}(R_{1q_1}^n + \ldots + R_{1q_f}^n).
+    \end{align*} $$</span>
+</p>

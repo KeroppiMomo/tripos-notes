@@ -1,0 +1,84 @@
+
+<h1>Galois <span class="inline-math">$\implies$</span> normal and separable</h1>
+
+<p>
+    Note <span class="inline-math">$\#\Aut(L/K) \leq [L:K]&lt;\infty$</span>.
+    We will show that if <span class="inline-math">$L/K$</span> is Galois, then any <span class="inline-math">$α\in L$</span>
+    has minimal polynomial
+    <span class="display-math">$$ \begin{align*}
+        f(X) = \prod_{β\in (\Aut(L/K))(α)} (X - β).
+    \end{align*} $$</span>
+</p>
+<p>
+    A priori <span class="inline-math">$f\in L[X]$</span>.
+    However for any <span class="inline-math">$σ\in \Aut(L/K)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        σ(f) = \prod_{β\in (\Aut(L/K))(α)} (X - σ(β)) = \prod_{β&#x27;\in (\Aut(L/K))(α)} (X - β&#x27;) = f
+    \end{align*} $$</span>
+    with <span class="inline-math">$β \mapsto β&#x27; := σ(β)$</span> a permutation of <span class="inline-math">$(\Aut(L/K))(α)$</span>,
+    so coefficients of <span class="inline-math">$f$</span> are in <span class="inline-math">$L^{\Aut(L/K)} = K$</span>.
+    Hence <span class="inline-math">$f\in K[X]$</span>.
+</p>
+<p>
+    We need to show if <span class="inline-math">$g\in K[X]$</span> has <span class="inline-math">$α$</span> as a root,
+    then <span class="inline-math">$f\mid g$</span> in <span class="inline-math">$K[X]$</span>.
+    Indeed because
+    <span class="display-math">$$ \begin{align*}
+        0 = σ(g(α)) = g(σ(α))
+    \end{align*} $$</span>
+    for any <span class="inline-math">$σ\in \Aut(L/K)$</span>,
+    <span class="inline-math">$(\Aut(L/K))(α)$</span> are roots of <span class="inline-math">$g$</span>.
+    Therefore <span class="inline-math">$f\mid g$</span> in <span class="inline-math">$L[X]$</span>,
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Lemma-GCD-of-polynomial-is-independent-of-base-field.html">hence</a> in <span class="inline-math">$K[X]$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$f$</span> splits into distinct linear factors over <span class="inline-math">$L$</span>,
+    <span class="inline-math">$L/K$</span> is normal and separable.
+</p>
+
+<h1>Normal and separable <span class="inline-math">$\implies$</span> splitting field of separable polynomial</h1>
+
+<p>
+    Let <span class="inline-math">$L = K(α_1, \ldots, α_n)$</span> and <span class="inline-math">$f_i$</span> be the minimal polynomial of <span class="inline-math">$α_i$</span>.
+    Let <span class="inline-math">$f = \op{lcm}(f_1, \ldots, f_n)\in K[X]$</span>.
+    Since <span class="inline-math">$L$</span> is normal, <span class="inline-math">$f$</span> splits in <span class="inline-math">$L$</span>,
+    and because <span class="inline-math">$X - α_i \mid f_i \mid f$</span> in <span class="inline-math">$L[X]$</span>, <span class="inline-math">$f$</span> has roots <span class="inline-math">$α_1, \ldots, α_n$</span>.
+    Therefore <span class="inline-math">$L$</span> is a splitting field of <span class="inline-math">$f$</span> over <span class="inline-math">$K$</span>.
+</p>
+<p>
+    We claim <span class="inline-math">$f$</span> is separable.
+    Since <span class="inline-math">$L$</span> is separable, <span class="inline-math">$f_i$</span> is separable.
+    Moreover if <span class="inline-math">$f_i\neq f_j$</span>,
+    then <span class="inline-math">$\op{gcd}(f_i, f_j) = 1$</span> in <span class="inline-math">$K[X]$</span> thus in <span class="inline-math">$L[X]$</span>
+    because <span class="inline-math">$f_i$</span>, <span class="inline-math">$f_j$</span> are irreducible,
+    so <span class="inline-math">$f_i, f_j$</span> share no roots.
+    Thus <span class="inline-math">$f$</span> splits into distinct linear factors in <span class="inline-math">$L$</span>.
+</p>
+
+<h1>Splitting field of separable polynomial <span class="inline-math">$\implies$</span> <span class="inline-math">$\# \Aut(L/K) = [L:K]$</span></h1>
+
+<p>
+    Let <span class="inline-math">$L = K(α_1, \ldots, α_n)$</span> be a splitting field of a separable <span class="inline-math">$f$</span> over <span class="inline-math">$K$</span>, where <span class="inline-math">$α_1, \ldots, α_n$</span> are roots of <span class="inline-math">$f$</span>.
+    Since the minimal polynomial <span class="inline-math">$f_i$</span> of <span class="inline-math">$α_i$</span> divides <span class="inline-math">$f$</span>,
+    <span class="inline-math">$f_i$</span> is also separable.
+    We <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-field-automorphism.html">noted</a> <span class="inline-math">$\Aut(L/K) = \Hom_K(L,L)$</span>.
+    Since <span class="inline-math">$f_i$</span> splits into distinct linear factors in <span class="inline-math">$L$</span>,
+    we <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-embedding-of-adjoined-extension-and-degree.html">showed</a> <span class="inline-math">$\#\Hom_k(L,L) = [L:K]$</span>.
+</p>
+
+<h1><span class="inline-math">$\# \Aut(L/K) = [L:K]$</span> <span class="inline-math">$\implies$</span> Galois</h1>
+
+<p>
+    Note the tower
+    <span class="display-math">$$ \begin{align*}
+        L/L^{\Aut(L/K)}/K.
+    \end{align*} $$</span>
+</p>
+<p>
+    Using <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-fixed-field.html#^auto"><span class="inline-math">$\Aut(L/K) = \Aut(L/L^{\Aut(L/K)})$</span></a>,
+    we get
+    <span class="display-math">$$ \begin{align*}
+        [L:K] = \#\Aut(L/K) = \# \Aut(L/L^{\Aut(L/K)}) \leq [L:L^{\Aut(L/K)}].
+    \end{align*} $$</span>
+    So by the tower law, <span class="inline-math">$[K:L^{\Aut(L/K)}] = 1$</span>, hence <span class="inline-math">$K = L^{\Aut(L/K)}$</span>
+</p>

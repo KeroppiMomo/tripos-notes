@@ -1,0 +1,90 @@
+
+<h1>Expanding</h1>
+
+<p>
+    Let <span class="inline-math">$\hat P$</span> be the smallest set of rewrite rules
+    containing <span class="inline-math">$P$</span> and such that
+</p>
+<ol start="1">
+<li>
+    <p>
+        if <span class="inline-math">$A\to ε\in \hat P$</span> and <span class="inline-math">$B\to αAβ\in \hat P$</span>,
+        then <span class="inline-math">$B \to αβ\in \hat P$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        if <span class="inline-math">$A \to B\in \hat P$</span> and <span class="inline-math">$B\to α\in \hat P$</span>,
+        then <span class="inline-math">$A \to α\in \hat P$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    <span class="inline-math">$\hat P$</span> is finite:
+    starting with <span class="inline-math">$P$</span>,
+    we add rewrite rules according to operations 1 and 2.
+    Since the added rules have bounded lengths,
+    this process must terminate.
+</p>
+<p>
+    Now we claim <span class="inline-math">$\hat G := (Σ, N, \hat P, S)$</span>
+    has the same language as <span class="inline-math">$G$</span>.
+    Clearly since <span class="inline-math">$\hat P \supseteq P$</span>, <span class="inline-math">$\mathcal{L}(\hat G) \supseteq \mathcal{L}(G)$</span>.
+    Conversely, if a derivation in <span class="inline-math">$\hat G$</span> uses the added rules,
+    we can expand it back to <span class="inline-math">$P$</span> by operations 1 and 2,
+    so <span class="inline-math">$\mathcal{L}(G) \subseteq \mathcal{L}(\hat G)$</span>.
+</p>
+
+<h1>Removing</h1>
+
+<p>
+    Now remove all <span class="inline-math">$ε$</span> and unit productions from <span class="inline-math">$\hat P$</span>,
+    forming <span class="inline-math">$\mathring P$</span>.
+    We claim <span class="inline-math">$\mathcal{L}(\mathring G) = \mathcal{L}(\hat G) \setminus \set{ε}$</span>.
+    <span class="inline-math">$\subseteq$</span> is clear.
+</p>
+<p>
+    For <span class="inline-math">$\supseteq$</span>, we will show a shortest <span class="inline-math">$\hat G$</span>-derivation
+    of a sentence <span class="inline-math">$σ\in Σ^+$</span> does not use any <span class="inline-math">$ε$</span> or unit productions,
+    and thus is a <span class="inline-math">$\mathring G$</span>-derivation.
+</p>
+
+<h2>Unit production</h2>
+
+<p>
+    Suppose it uses a unit production <span class="inline-math">$A\to B$</span>, so it has the form
+    <span class="display-math">$$ \begin{align*}
+        S \xrightarrow{\hat G} αAβ \xrightarrow{\hat G}_1 αBβ \xrightarrow{\hat G} σ.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$σ$</span> has no non-terminal symbols,
+    the <span class="inline-math">$B$</span> is eventually replaced by <span class="inline-math">$B\to γ$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        S \xrightarrow{\hat G}_m αAβ \xrightarrow{\hat G}_1 αBβ \xrightarrow{\hat G}_n α&#x27;Bβ&#x27; \xrightarrow{\hat G}_1 α&#x27;γβ&#x27; \xrightarrow{\hat G}_l σ.
+    \end{align*} $$</span>
+    Therefore using the rule <span class="inline-math">$A\to γ\in \hat P$</span> (and noting the grammar is context-free so derivations involving disjoint substrings are independent),
+    <span class="display-math">$$ \begin{align*}
+        S \xrightarrow{\hat G}_m αAβ \xrightarrow{\hat G}_1 αγβ \xrightarrow{\hat G}_n α&#x27;Bβ&#x27; \xrightarrow{\hat G}_l σ
+    \end{align*} $$</span>
+    is a <span class="inline-math">$\hat G$</span>-derivation shorter than the original,
+    which is a contradiction.
+</p>
+
+<h2><span class="inline-math">$ε$</span> production</h2>
+
+<p>
+    Now suppose it uses a <span class="inline-math">$ε$</span> production <span class="inline-math">$A\to ε$</span>, so it has the form
+    <span class="display-math">$$ \begin{align*}
+        S \xrightarrow{\hat G} α&#x27;Aβ&#x27; \xrightarrow{\hat G}_1 α&#x27;β&#x27; \xrightarrow{\hat G} σ.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$σ\neq ε$</span>, the <span class="inline-math">$A$</span> must be produced by a previous rewrite <span class="inline-math">$B\to γAδ$</span>:
+    <span class="display-math">$$ \begin{align*}
+        S \xrightarrow{\hat G}_m αBβ \xrightarrow{\hat G}_n αγAβδ \xrightarrow{\hat G}_l α&#x27;Aβ&#x27; \xrightarrow{\hat G}_1 α&#x27;β&#x27; \xrightarrow{\hat G}_p σ.
+    \end{align*} $$</span>
+    Using the rule <span class="inline-math">$B\to γδ\in \hat P$</span>,
+    <span class="display-math">$$ \begin{align*}
+        S \xrightarrow{\hat G}_m αBβ \xrightarrow{\hat G}_n αγβδ \xrightarrow{\hat G}_l α&#x27;β&#x27; \xrightarrow{\hat G}_p σ,
+    \end{align*} $$</span>
+    which is shorter, contradiction.
+</p>

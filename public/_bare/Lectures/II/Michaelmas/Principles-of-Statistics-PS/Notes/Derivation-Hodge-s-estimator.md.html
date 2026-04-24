@@ -1,0 +1,23 @@
+<p>
+    Under <span class="inline-math">$P_{θ_0}$</span> with <span class="inline-math">$θ_0\neq 0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        P_{θ_0}(\tilde θ\neq \hat θ) ={}&amp; P_{θ_0}(\underbrace{|\hat θ|}_{\geq |θ_0| - |\hat θ-θ_0|} &lt; n^{-1/4}) \\
+        \leq{}&amp; P_{θ_0}(|θ_0| - |\hat θ - θ_0| &lt; n^{-1/4}) \\
+        ={}&amp; P_{θ_0}(|θ_0| - n^{-1/4} &lt; |\hat θ - θ_0|) \to 0
+    \end{align*} $$</span>
+    because <span class="inline-math">$\hat θ \xrightarrow{p} θ_0$</span> (by consistency of MLE).
+</p>
+<p>
+    Therefore under <span class="inline-math">$P_{θ_0}$</span>, <span class="inline-math">$\sqrt{n}(\tilde θ - θ_0) \xrightarrow{d} N(0, I\inv(θ))$</span>
+    by the asymptotic normality of <span class="inline-math">$\hat θ$</span>.
+</p>
+<p>
+    However if <span class="inline-math">$θ_0 = 0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        P_{θ_0}(\tilde θ = \hat θ) = P_{θ_0}(|\hat θ| \geq n^{-1/4}) = P_{θ_0}(|\hat θ - θ_0| \sqrt{n} \geq n^{1/4}).
+    \end{align*} $$</span>
+    Recall that <span class="inline-math">$\sqrt{n}(\hat θ - θ_0)$</span> are bounded in probability (<span class="inline-math">$O_{P_{θ_0}}(1)$</span>, by Proposition 1(4) in Lecture 4).
+    Hence <span class="inline-math">$P_{θ_0}(\tilde θ = \hat θ) \xrightarrow{n\to \infty}0$</span>.
+    This implies that <span class="inline-math">$\sqrt{n}(\hat θ - θ_0) \xrightarrow{d} δ_{\set{0}}$</span>
+    and this has variance <span class="inline-math">$&lt; I(θ_0)\inv$</span> in general.
+</p>

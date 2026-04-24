@@ -6,40 +6,43 @@
 <p>
     Indistinguishability is an equivalence relation <span class="inline-math">$\sim$</span> on both <span class="inline-math">$Q$</span> and <span class="inline-math">$Q&#x27;$</span>.
     Extend it to <span class="inline-math">$Q\cup Q&#x27;$</span>: for <span class="inline-math">$q\in Q$</span> and <span class="inline-math">$q&#x27;\in Q&#x27;$</span>,
-    say <span class="inline-math">$q\sim q&#x27;$</span> if for all word <span class="inline-math">$w\in \mathbb{W}$</span>, we have <span class="inline-math">$\hat δ(q, w) \in F\iff \hat δ&#x27;(q&#x27;, w) \in F&#x27;$</span>.
+    say <span class="inline-math">$q\sim q&#x27;$</span> if for all word <span class="inline-math">$w\in Σ^\ast$</span>, we have <span class="inline-math">$\hat δ(q, w) \in F\iff \hat δ&#x27;(q&#x27;, w) \in F&#x27;$</span>.
 </p>
 <p>
-    Since <span class="inline-math">$\sb{w\in \mathbb{W}}{\hat δ(q_0, w)\in F} = \mathcal{L}(I) = \mathcal{L}(I&#x27;) = \sb{w\in \mathbb{W}}{\hat δ&#x27;(q_0&#x27;, w)\in F}$</span>,
+    Since <span class="inline-math">$Q$</span> has no indistinguishable states,
+    no distinct <span class="inline-math">$q_1, q_2\in Q$</span> lie in the same <span class="inline-math">$\sim$</span>-equivalence class.
+    Same for <span class="inline-math">$Q&#x27;$</span>.
+    Hence each equivalence class of <span class="inline-math">$\sim$</span> contains at most one element of <span class="inline-math">$Q$</span>
+    and at most one element of <span class="inline-math">$Q&#x27;$</span>.
+</p>
+<p>
+    On the other hand, 
+    since <span class="inline-math">$\sb{w\in Σ^\ast}{\hat δ(q_0, w)\in F} = \mathcal{L}(I) = \mathcal{L}(I&#x27;) = \sb{w\in Σ^\ast}{\hat δ&#x27;(q_0&#x27;, w)\in F}$</span>,
     we know <span class="inline-math">$q_0 \sim q_0&#x27;$</span>.
-</p>
-
-<h1>Every state in <span class="inline-math">$Q$</span> is indistiguishable from some state in <span class="inline-math">$Q&#x27;$</span></h1>
-
-<p>
-    All states in <span class="inline-math">$Q$</span> are accessible,
-    so let <span class="inline-math">$\mathrm{sp}(q)$</span> denote the length of the shortest path
-    from <span class="inline-math">$q_0$</span> to <span class="inline-math">$q\in Q$</span>.
-    We prove by induction on <span class="inline-math">$\mathrm{sp}(q)$</span>.
+    Therefore <span class="inline-math">$\hat δ(q_0, w) \sim {\hat δ}&#x27;(q_0&#x27;, w)$</span> for all <span class="inline-math">$w\in Σ^\ast$</span>
+    (otherwise if <span class="inline-math">$u\in Σ^\ast$</span> distinguishes them, then <span class="inline-math">$wu$</span> distinguishes <span class="inline-math">$q_0$</span> and <span class="inline-math">$q_0&#x27;$</span>).
+    Since all states in <span class="inline-math">$Q$</span>, <span class="inline-math">$Q&#x27;$</span> are accessible,
+    for each <span class="inline-math">$q\in Q$</span> there is some <span class="inline-math">$q&#x27;\in Q&#x27;$</span> such that <span class="inline-math">$q\sim q&#x27;$</span>,
+    and vice versa.
+    Thus each <span class="inline-math">$\sim$</span>-equivalent class has exactly one element of <span class="inline-math">$Q$</span> and exactly one element of <span class="inline-math">$Q&#x27;$</span>
 </p>
 <p>
-    For <span class="inline-math">$\mathrm{sp}(q) = 0$</span>, we know <span class="inline-math">$q = q_0 \sim q_0&#x27;$</span>.
-</p>
-<p>
-    Suppose <span class="inline-math">$\mathrm{sp}(q) = k+1$</span> and write <span class="inline-math">$q = δ(p,a)$</span>
-    for some <span class="inline-math">$p\in Q, q\in Σ$</span> with <span class="inline-math">$\mathrm{sp}(p) = k$</span>.
-    By induction hypothesis, <span class="inline-math">$p \sim p&#x27;$</span> for some <span class="inline-math">$p&#x27;\in Q&#x27;$</span>.
-    Let <span class="inline-math">$q&#x27; = δ(p&#x27;,a)$</span>,
-    If <span class="inline-math">$w$</span> distinguishes <span class="inline-math">$q$</span> and <span class="inline-math">$q&#x27;$</span>,
-    then <span class="inline-math">$aw$</span> distinguishes <span class="inline-math">$p$</span> and <span class="inline-math">$p&#x27;$</span>,
-    which is not true.
-    Thus <span class="inline-math">$q\sim q&#x27;$</span>.
-</p>
-
-<h1>No two states in <span class="inline-math">$Q&#x27;$</span> are indistinguishable from the same state in <span class="inline-math">$Q$</span></h1>
-
-<p>
-    Transitivity of <span class="inline-math">$\sim$</span> means <span class="inline-math">$p&#x27;\sim q\sim q&#x27;$</span> implies <span class="inline-math">$p&#x27;\sim q&#x27;$</span>,
-    but <span class="inline-math">$Q&#x27;$</span> has no indistinguishable states, so <span class="inline-math">$p&#x27; = q&#x27;$</span>.
+    <!-- # Every state in <span class="inline-math">$Q$</span> is indistiguishable from some state in <span class="inline-math">$Q&#x27;$</span> -->
+    <!-- All states in <span class="inline-math">$Q$</span> are accessible, -->
+    <!-- so let <span class="inline-math">$\mathrm{sp}(q)$</span> denote the length of the shortest path -->
+    <!-- from <span class="inline-math">$q_0$</span> to <span class="inline-math">$q\in Q$</span>. -->
+    <!-- We prove by induction on <span class="inline-math">$\mathrm{sp}(q)$</span>. -->
+    <!---->
+    <!-- For <span class="inline-math">$\mathrm{sp}(q) = 0$</span>, we know <span class="inline-math">$q = q_0 \sim q_0&#x27;$</span>. -->
+    <!---->
+    <!-- Suppose <span class="inline-math">$\mathrm{sp}(q) = k+1$</span> and write <span class="inline-math">$q = δ(p,a)$</span> -->
+    <!-- for some <span class="inline-math">$p\in Q, q\in Σ$</span> with <span class="inline-math">$\mathrm{sp}(p) = k$</span>. -->
+    <!-- By induction hypothesis, <span class="inline-math">$p \sim p&#x27;$</span> for some <span class="inline-math">$p&#x27;\in Q&#x27;$</span>. -->
+    <!-- Let <span class="inline-math">$q&#x27; = δ(p&#x27;,a)$</span>, -->
+    <!-- If <span class="inline-math">$w$</span> distinguishes <span class="inline-math">$q$</span> and <span class="inline-math">$q&#x27;$</span>, -->
+    <!-- then <span class="inline-math">$aw$</span> distinguishes <span class="inline-math">$p$</span> and <span class="inline-math">$p&#x27;$</span>, -->
+    <!-- which is not true. -->
+    <!-- Thus <span class="inline-math">$q\sim q&#x27;$</span>. -->
 </p>
 
 <h1>Homomorphism</h1>
@@ -47,9 +50,6 @@
 <p>
     Define <span class="inline-math">$f: Q \to Q&#x27;$</span> by letting <span class="inline-math">$f(q)$</span> be the unique <span class="inline-math">$q&#x27;\in Q&#x27;$</span>
     such that <span class="inline-math">$q \sim q&#x27;$</span>.
-    Swapping <span class="inline-math">$Q$</span> and <span class="inline-math">$Q&#x27;$</span>, we know no two states in <span class="inline-math">$Q$</span>
-    are indistinguishable from the same state in <span class="inline-math">$Q$</span>,
-    which gives injectivity of <span class="inline-math">$f$</span>.
 </p>
 <p>
     Check that it is a homomorphism:

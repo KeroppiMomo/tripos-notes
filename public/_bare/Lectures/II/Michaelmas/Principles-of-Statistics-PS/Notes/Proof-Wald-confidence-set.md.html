@@ -1,0 +1,41 @@
+
+<h1>Confidence interval</h1>
+
+<p>
+    Asymptotic normality implies <span class="inline-math">$\sqrt{n}(\hat θ_{n} - θ_0) \xrightarrow{d} N(0, I(θ_0)\inv)$</span>,
+    so
+    <span class="display-math">$$\sqrt{n}(\hat θ_{n,j}- θ_{0,j}) \xrightarrow{d} N(0, (I(θ_0)\inv)_{jj}).$$</span>
+</p>
+<p>
+    By the continuous mapping theorem, <span class="inline-math">$(\hat I_n\inv)_{jj} \xrightarrow{p} (I(θ_0)\inv)_{jj}$</span>,
+    so by Slutsky,
+    <span class="display-math">$$ \begin{align*}
+        \frac{\sqrt{n}(\hat θ_{n,j} - θ_{0,j})}{\sqrt{(\hat I_n\inv)_{jj}}} \xrightarrow{d} N(0, 1).
+    \end{align*} $$</span>
+</p>
+
+<h1>Confidence set</h1>
+
+<p>
+    Decompose
+    <span class="display-math">$$ \begin{align*}
+        n(\hat θ_n - θ_0)^T \hat I_n(\hat θ_n - θ_0)
+        ={}&amp; n(\hat θ_n - θ_0)^T I(θ_0) (\hat θ_n - θ_0) + n(\hat θ_n - θ_0)^T (\hat I_n - I(θ_0)) (\hat θ_n - θ_0).
+    \end{align*} $$</span>
+    We claim the first term <span class="inline-math">$\xrightarrow{d} χ_p^2$</span> and the second term <span class="inline-math">$\xrightarrow{p}0$</span>.
+    By Slutsky, we get <span class="inline-math">$n(\hat θ_n - θ_0)^T \hat I_n (\hat θ_n - θ_0) \xrightarrow{d}χ_p^2$</span>.
+</p>
+<p>
+    For the first term, by continuous mapping applied to <span class="inline-math">$x \mapsto x^T I(θ_0) x$</span>,
+    we have 
+    <span class="display-math">$$ \begin{align*}
+        \sqrt{n}(\hat θ_n -θ_0)^T I(θ_0) \sqrt{n}(\hat θ_n - θ_0) \xrightarrow{d} Z^T \cdot I(θ_0) \cdot Z, &amp;&amp;Z \sim N(0,I(θ_0)\inv).
+    \end{align*} $$</span>
+    Note <span class="inline-math">$\sqrt{I(θ_0)} Z \sim N(0, I_p)$</span>, so <span class="inline-math">$(\sqrt{I(θ_0) Z})^T (\sqrt{I(θ_0)}Z)$</span>
+    is a sum of <span class="inline-math">$p$</span> independent <span class="inline-math">$N(0,1)$</span> variables, and hence follows <span class="inline-math">$χ_p^2$</span>.
+</p>
+<p>
+    For the second term, since <span class="inline-math">$\sqrt{n}(\hat θ_n - θ_0)$</span> converges in distribution
+    and <span class="inline-math">$\hat I_n - I(θ_0)\xrightarrow{p} 0$</span>,
+    by Slutsky, the term converges to 0 in probability.
+</p>

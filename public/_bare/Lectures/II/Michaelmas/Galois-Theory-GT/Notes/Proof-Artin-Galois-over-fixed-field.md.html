@@ -1,0 +1,73 @@
+<p>
+    Let <span class="inline-math">$K = L^G$</span>.
+</p>
+
+<h1><span class="inline-math">$L/K$</span> is algebraic and separable</h1>
+
+<p>
+    Consider <span class="inline-math">$α\in L$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        f(X) := \prod_{β\in Gα} (X - β)
+    \end{align*} $$</span>
+    satisfies <span class="inline-math">$σ(f) = f$</span> for all <span class="inline-math">$f\in G$</span>,
+    so <span class="inline-math">$f\in L^G[X] = K[X]$</span>.
+    Since <span class="inline-math">$α$</span> is a root of <span class="inline-math">$f$</span>,
+    <span class="inline-math">$α$</span> is algebraic and separable over <span class="inline-math">$K$</span>,
+    and
+    <span class="display-math">$$ \begin{align*}
+        [K(α) : K] \leq \deg f = \# Gα \leq \# G. \tag{1}
+    \end{align*} $$</span>
+</p>
+
+<h1><span class="inline-math">$L/K$</span> is finite</h1>
+
+<p>
+    Choose <span class="inline-math">$α\in L$</span> such that <span class="inline-math">$[K(α):K]$</span> is maximal, possibly by <span class="inline-math">$(1)$</span>.
+    We claim <span class="inline-math">$K(α) = L$</span>.
+    Pick any <span class="inline-math">$β\in L$</span>.
+    Since <span class="inline-math">$K(α,β)$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-embedding-of-adjoined-extension-and-degree.html#^separable">separably</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Lemma-algebraic-iff-finite-adjoined-extension.html">finitely</a> generated,
+    it is separable and finite over <span class="inline-math">$K$</span>,
+    so by the primitive element theorem, there exists <span class="inline-math">$θ\in L$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        K(α,β) = K(θ).
+    \end{align*} $$</span>
+    By construction of <span class="inline-math">$α$</span>,
+    <span class="display-math">$$ \begin{align*}
+        [K(θ): K] \leq [K(α) : K] \leq [K(α,β):K] = [K(θ): K]
+    \end{align*} $$</span>
+    so <span class="inline-math">$[K(α):K] = [K(θ):K]$</span>,
+    and by the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-tower-law.html">tower law</a>, <span class="inline-math">$K(α) = K(θ)$</span>,
+    and thus <span class="inline-math">$β\in K(α)$</span>.
+</p>
+<p>
+    Hence <span class="inline-math">$L/K$</span> is finite.
+</p>
+
+<h1><span class="inline-math">$L/K$</span> is Galois</h1>
+
+
+<h2>Version 1</h2>
+
+<p>
+    Since <span class="inline-math">$G \subseteq \Aut(L/K)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        K \subseteq L^{\Aut(L/K)} \subseteq L^G = K
+    \end{align*} $$</span>
+    so <span class="inline-math">$L^{\Aut(L/K)} = K$</span>.
+    As <span class="inline-math">$L/K$</span> is algebraic, <span class="inline-math">$L/K$</span> is Galois.
+    Moreover as <span class="inline-math">$L/K$</span> is finite, <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-fundamental-theorem-of-Galois-theory.html">fundamental theorem</a> applies,
+    so <span class="inline-math">$L^{\Aut(L/K)} = L^G$</span> implies <span class="inline-math">$G = \Aut(L/K)$</span>.
+</p>
+
+<h2>Version 2</h2>
+
+<p>
+    Now
+    <span class="display-math">$$ \begin{align*}
+        \#\Aut(L/K) \leq [L:K] = [K(α) : K] \leq \# G
+    \end{align*} $$</span>
+    but <span class="inline-math">$G \subseteq \Aut(L/K)$</span>, so <span class="inline-math">$G = \Aut(L/K)$</span> and <span class="inline-math">$[L:K] = \#\Aut(L/K)$</span>.
+    By <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-classification-of-finite-Galois-extension.html">classification of finite Galois extensions</a>,
+    <span class="inline-math">$L/K$</span> is Galois.
+</p>

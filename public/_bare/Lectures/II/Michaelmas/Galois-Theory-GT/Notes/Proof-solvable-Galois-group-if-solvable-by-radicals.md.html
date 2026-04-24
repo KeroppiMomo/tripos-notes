@@ -1,0 +1,111 @@
+
+<h1>Extending a Galois extension to obtain a solvable Galois group</h1>
+
+<p>
+    Let <span class="inline-math">$L/K$</span> be a finite Galois extension,
+    <span class="inline-math">$a\in L^\times$</span> and <span class="inline-math">$n \in \Z_{\geq 1}$</span>.
+    We claim there is a finite extension <span class="inline-math">$M/L/K$</span> such that
+</p>
+<ul>
+<li>
+    <p>
+        <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-cyclotomic-extension.html"><span class="inline-math">$μ_n$</span></a><span class="inline-math">${}\subseteq M$</span> and <span class="inline-math">$\sqrt[n]{a}\in M$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$M/K$</span> is Galois; and
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\Gal(M/L)$</span> is solvable.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Indeed, let <span class="inline-math">$\Gal(L/K) = \set{σ_1, \ldots, σ_m}$</span>
+    and take
+    <span class="display-math">$$ \begin{align*}
+        f(X) := \prod_{i=1}^{m} (X^n - σ_i(a)).
+    \end{align*} $$</span>
+    Since <span class="inline-math">$σ_j(f) = f$</span> for all <span class="inline-math">$σ_j\in \Gal(L/K)$</span>,
+    we have <span class="inline-math">$f\in (L^{\Gal(L/K)})[X] = K[X]$</span>.
+</p>
+<p>
+    Take <span class="inline-math">$M$</span> to be the splitting field of <span class="inline-math">$f$</span> over <span class="inline-math">$L$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        M = L(μ_n, \sqrt[n]{σ_1(a)}, \ldots, \sqrt[n]{σ_m(a)}).
+    \end{align*} $$</span>
+    <span class="inline-math">$M$</span> is the compositum of <span class="inline-math">$L$</span> and the splitting field of <span class="inline-math">$f$</span> over <span class="inline-math">$K$</span>,
+    both of which are Galois over <span class="inline-math">$K$</span> (noting <span class="inline-math">$\op{char}(K) = 0$</span> so any splitting field is a Galois extension).
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-Galois-theory-of-compositum.html">Therefore</a> <span class="inline-math">$M$</span> is Galois over <span class="inline-math">$K$</span>.
+</p>
+<p>
+    Note <span class="inline-math">$M$</span> is obtained as a series of <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-Galois-theory-of-cyclotomic-extensions.html">cyclotomic</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-Galois-group-of-Kummer-extensions.html">Kummer</a> extensions
+    <span class="display-math">$$ \begin{align*}
+        L_0 &amp;:= L, \\
+        L_1 &amp;:= L_0(μ_n), \\
+        L_i &amp;:= L_{i-1}(\sqrt[n]{σ_{i-1}(α)}).
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$L_i/L_{i-1}$</span> is Galois and <span class="inline-math">$\Gal(M/L_{i-1}) / \Gal(M/L_i)$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-fundamental-theorem-of-Galois-theory.html"><span class="inline-math">${}\isom{}$</span></a><span class="inline-math">$\Gal(L_i/L_{i-1})$</span> is abelian.
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        1 = \Gal(M/L_{m+1}) \subseteq \Gal(M/L_{m}) \subseteq \ldots \subseteq \Gal(M/L_1) \subseteq \Gal(M/L_0) = \Gal(M/L)
+    \end{align*} $$</span>
+    shows <span class="inline-math">$\Gal(M/L)$</span> is solvable.
+</p>
+
+<h1>Repeating</h1>
+
+<p>
+    Back to the theorem:
+    let <span class="inline-math">$f$</span> be solvable by radicals over <span class="inline-math">$K$</span>,
+    i.e. there exist fields
+    <span class="display-math">$$ \begin{align*}
+        K_0 = K \subseteq K_1 \subseteq  \ldots \subseteq K_m
+    \end{align*} $$</span>
+    such that <span class="inline-math">$f$</span> has a root in <span class="inline-math">$K_m$</span> and <span class="inline-math">$K_i = K_{i-1}(a_i)$</span> where <span class="inline-math">$a_i^{n_i}\in K_{i-1}$</span>.
+</p>
+<p>
+    Set <span class="inline-math">$K_0&#x27; = K_0 = K$</span> and
+    apply the above construction repeatedly (with <span class="inline-math">$L = K_{i-1}&#x27;$</span>, <span class="inline-math">$a = a_i$</span>, <span class="inline-math">$n = n_i$</span>)
+    to obtain fields
+    <span class="display-math">$$ \begin{align*}
+        K_0&#x27; = K \subseteq K_1&#x27; \subseteq \ldots \subseteq K_m&#x27;
+    \end{align*} $$</span>
+    such that for all <span class="inline-math">$i=1,\ldots,m$</span>
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$K_i&#x27; \supseteq K_i$</span>;
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$K_i&#x27;/K$</span> is Galois; and
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\Gal(K_i&#x27;/K_{i-1}&#x27;)$</span> is solvable.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Since <span class="inline-math">$\Gal(K_i&#x27;/K) /\Gal(K_i&#x27;/K_{i-1}&#x27;) \isom \Gal(K_{i-1}&#x27;/K)$</span>,
+    induct (using the fact that if <span class="inline-math">$N$</span> and <span class="inline-math">$G/N$</span> are solvable, then <span class="inline-math">$G$</span> is solvable)
+    to show <span class="inline-math">$\Gal(K_m&#x27;/K)$</span> is solvable.
+</p>
+<p>
+    Finally, since <span class="inline-math">$f$</span> has a root in <span class="inline-math">$K_m\subseteq K_{m}&#x27;$</span>,
+    by <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-classification-of-finite-Galois-extension.html">normality</a> of <span class="inline-math">$K_m&#x27;$</span>,
+    <span class="inline-math">$f$</span> splits into linear factors in <span class="inline-math">$K_m&#x27;$</span>,
+    so <span class="inline-math">$K_m&#x27;$</span> contains a splitting field <span class="inline-math">$L$</span> of <span class="inline-math">$f$</span> over <span class="inline-math">$K$</span>.
+    Hence <span class="inline-math">$\Gal(f/K) = \Gal(L/K)\isom \Gal(K_m&#x27;/K) / \Gal(K_m&#x27;/L)$</span>
+    is a quotient of the solvable group <span class="inline-math">$\Gal(K_m&#x27;/K)$</span>,
+    hence solvable.
+</p>

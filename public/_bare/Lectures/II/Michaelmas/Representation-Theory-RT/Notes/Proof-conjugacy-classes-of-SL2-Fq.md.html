@@ -1,0 +1,105 @@
+<p>
+    Consider the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-minimal-polynomial.html">minimal polynomial</a> <span class="inline-math">$m_g(t)$</span> of an element <span class="inline-math">$g\in \SL_2(\mathbb{F}_q)$</span>.
+    If two elements of <span class="inline-math">$\SL_2(\mathbb{F}_q)$</span> have different minimal polynomial,
+    then they are not conjugate.
+    There are several cases:
+</p>
+
+<h1><span class="inline-math">$m_g(t) = t-λ$</span></h1>
+
+<p>
+    Since <span class="inline-math">$1 = \det g = λ^2$</span>, we get <span class="inline-math">$λ = \pm 1$</span>.
+    Then <span class="inline-math">$g = \pm I$</span>.
+</p>
+<p>
+    Let's compute the order of <span class="inline-math">$\SL_2(\mathbb{F}_q)$</span>.
+    For <span class="inline-math">$\pmat{a&amp;b\\c&amp;d}\in \SL_2(\mathbb{F}_q)$</span>,
+    if <span class="inline-math">$a\neq 0$</span>, then <span class="inline-math">$b,c$</span> can be taken to be any <span class="inline-math">$\mathbb{F}_q$</span>
+    and <span class="inline-math">$d = a\inv(1 + bc)$</span>.
+    If <span class="inline-math">$a = 0$</span>, then <span class="inline-math">$c = b\inv\in \mathbb{F}_q^\times$</span> and <span class="inline-math">$d$</span> can be any <span class="inline-math">$\mathbb{F}_q$</span>.
+    Therefore <span class="inline-math">$\# \SL_2(\mathbb{F}_q) = (q-1)q^2 + (q-1)q = (q-1)q(q+1)$</span>.
+</p>
+
+<h1><span class="inline-math">$m_g(t) = (t - λ)(t - μ)$</span> for some distinct <span class="inline-math">$λ,μ\in \mathbb{F}_q$</span></h1>
+
+<p>
+    Since <span class="inline-math">$\det g = 1$</span>, we have <span class="inline-math">$μ = λ\inv$</span>.
+    Letting <span class="inline-math">$\pmat{a\\b}$</span> and <span class="inline-math">$\pmat{c\\d}$</span> be the corresponding eigenvectors (which are orthogonal),
+    we get
+    <span class="display-math">$$ \begin{align*}
+        g = \pmat{a &amp; ηc \\ b &amp; ηd}\pmat{λ \\ &amp;λ\inv}\pmat{a &amp; ηc \\ b &amp; ηd}\inv
+    \end{align*} $$</span>
+    where <span class="inline-math">$η = (ad - bc)\inv$</span>.
+    This shows <span class="inline-math">$g$</span> is conjugate to <span class="inline-math">$\pmat{λ \\ &amp;λ\inv}$</span> in <span class="inline-math">$\SL_2(\mathbb{F}_q)$</span>.
+</p>
+<p>
+    Compute its centraliser: <span class="inline-math">$\pmat{a &amp; b \\ c &amp; d}\pmat{λ \\ &amp;λ\inv} = \pmat{λ \\ &amp;λ\inv} \pmat{a &amp; b \\ c &amp;d}$</span>
+    iff <span class="inline-math">$b=c=0$</span> since <span class="inline-math">$λ\neq λ\inv$</span>.
+    Therefore the centraliser is <span class="inline-math">$T$</span>.
+</p>
+<p>
+    <span class="inline-math">$T\isom \mathbb{F}_q^\times$</span>, so its order is <span class="inline-math">$q-1$</span>.
+    By orbit-stabiliser, the size of the conjugacy class is <span class="inline-math">$\#\SL_2(\mathbb{F}_q)/(q-1) = q(q+1)$</span>.
+</p>
+<p>
+    Note <span class="inline-math">$\pmat{λ \\&amp; λ\inv} = \pmat{&amp;1 \\ -1} \pmat{λ\inv \\ &amp;λ}\pmat{&amp;1 \\ -1}\inv$</span>.
+    Moreover conjugate matrices have equal trace.
+    Therefore there are in total <span class="inline-math">$\frac{1}{2}(q-3)$</span> such conjugacy classes
+    (the <span class="inline-math">$3$</span> comes from <span class="inline-math">$λ\neq 0, \pm 1$</span>).
+</p>
+
+<h1><span class="inline-math">$m_g(t)$</span> is quadratic and irreducible over <span class="inline-math">$\mathbb{F}_q$</span></h1>
+
+<p>
+    It splits into <span class="inline-math">$(t - λ)(t - λ\inv)$</span> for some <span class="inline-math">$λ = a+b\sqrt{ε}\in \mathbb{F}_{q^2}$</span>
+    where <span class="inline-math">$b\neq 0$</span>.
+    Since
+    <span class="display-math">$$\mathbb{F}_q \ni \tr(g) = λ + λ\inv = a + b\sqrt{ε} + \frac{a - b\sqrt{ε}}{a^2 - b^2ε},$$</span>
+    we have
+    <span class="display-math">$$ \begin{align*}
+        b\left(1 - \frac{1}{a^2 - b^2 ε}\right) = 0.
+    \end{align*} $$</span>
+    As <span class="inline-math">$b \neq 0$</span>, we get <span class="inline-math">$a^2 - b^2 ε = 1$</span>.
+    (Or <span class="inline-math">$λ, λ\inv$</span> are roots of a polynomial in <span class="inline-math">$\mathbb{F}_q$</span>, so <span class="inline-math">$λ\inv$</span> is the Galois conjugate of <span class="inline-math">$λ$</span>,
+    namely <span class="inline-math">$a - b\sqrt{ε}$</span>.)
+</p>
+<p>
+    <span class="inline-math">$g$</span> is conjugate to <span class="inline-math">$\pmat{a &amp; bε \\ b &amp; a}$</span> in <span class="inline-math">$\GL_2(\mathbb{F}_q)$</span>:
+    since they both have the minimal polynomial <span class="inline-math">$t^2 - 2\tr(g) t + 1 = t^2 - 2at+ 1$</span>,
+    they have the same <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-rational-canonical-form.html">rational canonical form</a> (because degree of minimal polynomial equals 2),
+    so are conjugate in <span class="inline-math">$\op{GL}_2(\mathbb{F}_q)$</span>.
+</p>
+<p>
+    We showed <span class="inline-math">$\sb{\pmat{c&amp;dε \\ d &amp;c}}{c,d\in \mathbb{F}_q, (c,d)\neq (0,0)}\leq \GL_2(\mathbb{F}_q)$</span>
+    is cyclic and <span class="inline-math">$\det$</span> restricted to it is surjective.
+    Therefore letting <span class="inline-math">$g = h\pmat{a &amp; bε \\ b &amp; a}h\inv$</span> for <span class="inline-math">$h\in \GL_2(\mathbb{F}_q)$</span>,
+    finding <span class="inline-math">$k = \pmat{c &amp; dε\\d&amp; c}$</span> with determinant <span class="inline-math">$(\det h)\inv$</span>,
+    we get <span class="inline-math">$g = kh\pmat{a &amp; bε \\ b &amp; a} h\inv k\inv$</span>, so <span class="inline-math">$g$</span> is conjugate to <span class="inline-math">$\pmat{a &amp; bε \\ b &amp;a}$</span> in <span class="inline-math">$\SL_2(\mathbb{F}_q)$</span>.
+</p>
+<p>
+    Routine computation of the centraliser shows it is <span class="inline-math">$T_{ns}$</span>.
+    Moreover by the above argument but using <span class="inline-math">$λ\inv$</span> instead,
+    <span class="inline-math">$\pmat{a &amp; bε \\ b &amp; a}$</span> is conjugate to <span class="inline-math">$\pmat{a &amp; -bε \\ -b &amp; a}$</span> in <span class="inline-math">$\SL_2(\mathbb{F}_q)$</span>.
+    Conjugate matrices have equal trace.
+    Therefore there are in total <span class="inline-math">$\frac{1}{2}(q+1-2)$</span> such conjugacy classes
+    (the <span class="inline-math">$2$</span> comes from <span class="inline-math">$a = \pm 1$</span>).
+</p>
+
+<h1><span class="inline-math">$m_g(t) = (t - λ)^2$</span></h1>
+
+<p>
+    Then <span class="inline-math">$1 = \det g = λ^2$</span> so <span class="inline-math">$λ = \pm 1$</span>.
+    Choosing an eigenvector as a basis vector,
+    <span class="inline-math">$g$</span> is conjugate to <span class="inline-math">$\pmat{λ &amp; μ \\ &amp;λ}$</span>.
+</p>
+<p>
+    Note for any <span class="inline-math">$x\in \mathbb{F}_q^\times$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \pmat{x \\ &amp;x\inv}\pmat{λ &amp; μ \\ &amp;λ} \pmat{x\inv \\ &amp;x} = \pmat{λ &amp; x^2μ \\ &amp;λ}
+    \end{align*} $$</span>
+    so <span class="inline-math">$g$</span> is conjugate to one of <span class="inline-math">$\pmat{λ &amp; 1 \\ &amp;λ}$</span> (if <span class="inline-math">$μ$</span> is square) or <span class="inline-math">$\pmat{λ &amp; ε \\ &amp;λ}$</span> (if otherwise).
+    Routine calculation shows these two are not conjugate in <span class="inline-math">$\SL_2(\mathbb{F}_q)$</span>.
+</p>
+<p>
+    Computation of centraliser is an exercise to you, my dear reader.
+</p>

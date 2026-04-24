@@ -1,0 +1,82 @@
+<p>
+    Let <span class="inline-math">$S$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">smooth surface</a> in <span class="inline-math">$\R^3$</span>
+    and <span class="inline-math">$α: I\to S$</span> be a curve.
+</p>
+<p>
+    A <em>vector field along <span class="inline-math">$α$</span></em>
+    is a smooth function <span class="inline-math">$V: I\to \R^3$</span>
+    such that <span class="inline-math">$V(t) \in T_{α(t)}S$</span>.
+</p>
+<p>
+    The <em>covariant derivative</em> of <span class="inline-math">$V$</span> is
+    a vector field <span class="inline-math">$\mathrm{D}V/\d t$</span> along <span class="inline-math">$α$</span> given by
+    the orthogonal projection of <span class="inline-math">$\d V/\d t$</span> onto <span class="inline-math">$T_{α(t)}S$</span>:
+    <span class="display-math">$$ \begin{align*}
+        \frac{\mathrm{D}V}{\d t} := \dfd{V}{t} - \left\langle \dfd{V}{t}, N\right\rangle N.
+    \end{align*} $$</span>
+</p>
+<p>
+    We say <span class="inline-math">$V$</span> is <em>parallel</em> along <span class="inline-math">$α$</span> if <span class="inline-math">$\frac{\mathrm{D}V}{\d t} \equiv 0$</span>.
+</p>
+<p>
+    If <span class="inline-math">$V$</span> is a unit vector field (i.e. <span class="inline-math">$\langle V, V\rangle = 1$</span>),
+    then <span class="inline-math">$\langle\frac{\mathrm{D}V}{\d t}, V\rangle = 0$</span> (see below).
+    The <em>algebraic value of the covariant derivative</em> <span class="inline-math">$[\mathrm{D}V/\d t]: I \to \R$</span>
+    is the smooth function satisfying
+    <span class="display-math">$$ \begin{align*}
+        \frac{\mathrm{D}V}{\d t} = \left[\frac{\mathrm{D}V}{\d t}\right] (N\times V).
+    \end{align*} $$</span>
+</p>
+<blockquote>
+    <!-- BEGIN BLOCK ID leibniz -->
+    <p id="^leibniz">
+        Leibniz's rule: for two vector fields <span class="inline-math">$V,W$</span> along <span class="inline-math">$α$</span>,
+        <span class="display-math">$$ \begin{align*}
+            \dd{t}\langle V,W\rangle = \left\langle \frac{\mathrm{D}V}{\d t}, W\right\rangle + \left\langle V, \frac{\mathrm{D}W}{\d t}\right\rangle.
+        \end{align*} $$</span>
+        (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-Leibniz-rule-of-convariant-derivative.html">Derivation</a>)
+        Therefore <span class="inline-math">$\langle \frac{\mathrm{D}V}{\d t}, V\rangle = 0$</span> if <span class="inline-math">$\langle V,V\rangle = 1$</span>.
+    </p>
+    
+    <!-- END BLOCK ID leibniz -->
+    
+</blockquote>
+<blockquote>
+    <!-- BEGIN BLOCK ID local -->
+    <p id="^local">
+        In a local parametrisation <span class="inline-math">$ϕ$</span>, writing <span class="inline-math">$α(t) = ϕ(u(t), v(t))$</span> and <span class="inline-math">$V(t) = a(t) ϕ_u(u(t), v(t)) + b(t) ϕ_v(u(t), v(t))$</span>,
+        we can express <span class="inline-math">$\mathrm{D}V/\d t$</span> in the basis <span class="inline-math">$\set{ϕ_u, ϕ_v}$</span>
+        using the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-Christoffel-symbols-for-surfaces-in-R3.html">Christoffel symbols</a>:
+        <span class="display-math">$$ \begin{align*}
+            \frac{\mathrm{D}V}{\d t} ={}\quad &amp; (\dot a + Γ_{11}^1 a \dot u + Γ_{12}^1 a \dot v + Γ_{12}^1 b \dot u + Γ_{22}^1 b \dot v) ϕ_u \\
+            {}+{} &amp;(\dot b + Γ_{11}^2a\dot u + Γ_{12}^2a \dot v + Γ_{12}^2b\dot u + Γ_{22}^2 b \dot v) ϕ_v.
+        \end{align*} $$</span>
+    </p>
+    
+    <!-- END BLOCK ID local -->
+    
+</blockquote>
+<blockquote>
+    <p>
+        If <span class="inline-math">$f: S\to \tilde S$</span> is an <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-isometry-of-surfaces-in-II-Differential-Geometry.html">isometry</a> between surfaces in <span class="inline-math">$\R^3$</span>,
+        then
+        <span class="display-math">$$ \begin{align*}
+            \frac{\mathrm{D}(f \circ V)}{\d t} = \d f_{α(t)}\left(\frac{\mathrm{D}V}{\d t}\right).
+        \end{align*} $$</span>
+    </p>
+    
+</blockquote>
+<blockquote>
+    <!-- BEGIN BLOCK ID basis-orthogonal -->
+    <p id="^basis-orthogonal">
+        If <span class="inline-math">$ϕ$</span> is an orthogonal parametrisation (i.e. <span class="inline-math">$F = 0$</span>),
+        then with <span class="inline-math">$N = (ϕ_u \times ϕ_v)/\|ϕ_u \times ϕ_v\|$</span>,
+        <span class="display-math">$$ \begin{align*}
+            \left[\frac{\mathrm{D}(ϕ_u/\sqrt{E})}{\d t}\right] = \frac{1}{2\sqrt{EG}}(G_u\dot v - E_v \dot u).
+        \end{align*} $$</span>
+        <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-covariant-derivative-of-basis-vector-in-orthogonal-parametrisation.html">Proof</a>
+    </p>
+    
+    <!-- END BLOCK ID basis-orthogonal -->
+    
+</blockquote>

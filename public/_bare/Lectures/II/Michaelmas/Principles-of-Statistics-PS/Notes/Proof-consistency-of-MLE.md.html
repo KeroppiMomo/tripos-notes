@@ -1,0 +1,53 @@
+<p>
+    Assumption 4 allows us to define
+    <span class="display-math">$$ \begin{align*}
+        l(θ) := \expect_{θ_0} [\log f(X, θ)].
+    \end{align*} $$</span>
+</p>
+<p>
+    Taking <span class="inline-math">$g(x,θ) = \log f(x,θ)$</span> and <span class="inline-math">$G(x) = \sup_{θ\in Θ} |\log f(x,θ)|$</span>,
+    assumptions 1, 2, 4 gives a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-uniform-law-of-large-numbers-in-compact-domain.html">uniform law of large numbers</a>
+    <span class="display-math">$$ \begin{align*}
+        \sup_{θ\in Θ} \left|\overline{l_n}(θ) - l(θ)\right| \xrightarrow{p} 0 \tag{1}
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        \overline{l_n}(θ) = \frac{1}{n}\sum_{i=1}^{n} \log f(X_i, θ).
+    \end{align*} $$</span>
+</p>
+<p>
+    By assumptions 4 and 5, <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-true-parameter-maximises-expectation-of-log-likelihood.html"><span class="inline-math">$θ_0$</span> is the unique maximiser of <span class="inline-math">$l$</span></a>.
+    Moreover assumption 2 together with dominated convergence applied to assumption 4
+    implies <span class="inline-math">$l$</span> is continuous.
+</p>
+<p>
+    Note <span class="inline-math">$\hat θ_n$</span> is a maximiser of <span class="inline-math">$\overline{l_n}(θ)$</span>.
+    Since <span class="inline-math">$\overline{l_n}$</span> is continuous, <span class="inline-math">$f&gt;0$</span> and <span class="inline-math">$Θ$</span> is compact,
+    a maximiser for <span class="inline-math">$\overline{l_n}$</span> always exists.
+</p>
+<p>
+    To show <span class="inline-math">$\hat θ_n \xrightarrow{p} θ_0$</span>, we need to show for all <span class="inline-math">$ε&gt;0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \prob[\hat θ_n \in Θ_ε] \xrightarrow{n\to \infty} 0
+    \end{align*} $$</span>
+    where <span class="inline-math">$Θ_ε = \sb{θ\in Θ}{\|θ - θ_0\| \geq ε}$</span>.
+</p>
+<p>
+    Fix <span class="inline-math">$ε&gt;0$</span>.
+    Since <span class="inline-math">$Θ_ε$</span> is compact and <span class="inline-math">$l$</span> is continuous,
+    there exists a maximiser <span class="inline-math">$θ_ε\in Θ_ε$</span> of <span class="inline-math">$l$</span>,
+    and <span class="inline-math">$l(θ_ε) &lt; l(θ_0)$</span> as <span class="inline-math">$θ_0$</span> is the unique maximiser of <span class="inline-math">$l$</span>.
+    Pick any <span class="inline-math">$δ&gt;0$</span> such that <span class="inline-math">$δ &lt; \frac{1}{2}(l(θ_0) - l(θ_ε))$</span>.
+    Let <span class="inline-math">$A_{n,ε}$</span> be the event where <span class="inline-math">$\sup_{θ\in Θ} |\overline{l_n}(θ) - l(θ)| &lt; δ$</span>,
+    which satisfies <span class="inline-math">$\prob(A_{n,ε}) \to 1$</span> by <span class="inline-math">$(1)$</span>.
+    In the event <span class="inline-math">$A_{n,ε}$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \sup_{θ\in Θ_ε}\overline{l_n}(θ) \leq{}&amp; \sup_{θ\in Θ_ε} l(θ) + \sup_{θ\in Θ_ε} |\overline{l_n}(θ) - l(θ)| \\
+        &lt;{} &amp; l(θ_ε) + δ \\
+        &lt;{}&amp; l(θ_0) - δ \\
+        &lt;{}&amp; \sup_{θ\in Θ} l(θ) - \sup_{θ\in Θ}|\overline{l_n}(θ) - l(θ)| \\
+        \leq{}&amp; \sup_{θ\in Θ} \overline{l_n}(θ)
+    \end{align*} $$</span>
+    so <span class="inline-math">$\hat θ_n$</span> cannot lie in <span class="inline-math">$Θ_ε$</span>.
+    Therefore <span class="inline-math">$\prob[\hat θ_n \in Θ_ε] \leq 1 - \prob(A_{n,ε}) \to 0$</span>.
+</p>

@@ -1,0 +1,13 @@
+<p>
+    Expand
+    <span class="display-math">$$ \begin{align*}
+        I_n(θ) :={}&amp; \expect_θ\left[\sum_{i=1}^{n} \sum_{j=1}^{n} \pdd{θ} \log f(X_i, θ) \pdd{θ^T} \log f(X_j, θ)\right] \\
+        ={}&amp; \sum_{i=1}^{n} \expect_θ\left[\pdd{θ} \log f(X_i, θ) \pdd{θ^T} \log f(X_i, θ)\right] \\
+        &amp;+ \sum_{i\neq j} \expect_θ\left[\pdd{θ}\log f(X_i, θ)\right] \expect_θ\left[\pdd{θ^T} \log(X_j, θ)\right]
+    \end{align*} $$</span>
+    by independence.
+</p>
+<p>
+    But by regularity, <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-score-function.html#^mean"><span class="inline-math">$\expect_θ[\pdd{θ} \log f(X_i, θ)] = 0$</span></a>,
+    so <span class="inline-math">$I_n(θ) = n I(θ)$</span> as <span class="inline-math">$X_1, \ldots, X_n$</span> are identically distributed.
+</p>

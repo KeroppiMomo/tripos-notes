@@ -1,0 +1,48 @@
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-Schur-s-lemma.html#^abelian">Since</a> <span class="inline-math">$S^1$</span> is abelian,
+    all its irreducible representation are one-dimensional.
+    Therefore we aim to find all continuous group homomorphisms <span class="inline-math">$ρ: S^1 \to \C^\times$</span>.
+</p>
+<p>
+    Consider <span class="inline-math">$|ρ|: S^1 \to (\R_{&gt;0}, \times )$</span>, which is a continuous group homomorphism.
+    Since <span class="inline-math">$S^1$</span> is compact, the image of <span class="inline-math">$|ρ|$</span> is compact as well.
+    The only compact subgroup of <span class="inline-math">$(\R_{&gt;0}, \times )$</span> is the trivial subgroup <span class="inline-math">$\set{1}$</span>,
+    so <span class="inline-math">$ρ: S^1 \to S^1$</span>.
+</p>
+<p>
+    Let
+    <span class="display-math">$$ψ: (\R, +)\to S^1: t \mapsto e^{2πit},$$</span>
+    a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-covering-space.html">covering map</a> of <span class="inline-math">$S^1$</span> which is also a group homomorphism.
+    Then <span class="inline-math">$ρ\circ ψ: \R\to S^1$</span> is still a continuous group homomorphism.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-lifting-theorem.html">We can lift</a> this to a continuous function <span class="inline-math">$f: \R\to \R$</span>
+    such that
+    <span class="display-math">$$ψ \circ f = ρ \circ ψ$$</span>
+    and <span class="inline-math">$f(0) = 0$</span>,
+    and we claim this is a group homomorphism.
+    Consider the map <span class="inline-math">$Δ: \R\times \R\to \R: (t,s) \mapsto f(t) + f(s) - f(t+s)$</span>,
+    which is continuous.
+    Since <span class="inline-math">$ψ \circ f$</span> is a group homomorphism, <span class="inline-math">$ψ\circ Δ$</span> is constant identity,
+    so <span class="inline-math">$Δ: \R \times \R \to \Z$</span>.
+    By connectedness, <span class="inline-math">$Δ$</span> is constant, and plugging in <span class="inline-math">$(0,0)$</span> shows <span class="inline-math">$Δ \equiv 0$</span>.
+</p>
+<p>
+    We claim any continuous group homomorphism <span class="inline-math">$f: \R\to \R$</span>
+    must be <span class="inline-math">$x\mapsto cx$</span> for some <span class="inline-math">$c\in \R$</span>.
+    Let <span class="inline-math">$c = f(1)$</span>.
+    Then for <span class="inline-math">$n\in \N$</span>, <span class="inline-math">$f(n) = f(1) + \ldots + f(1) = nc$</span>
+    and <span class="inline-math">$f(-n) = -f(n) = -nc$</span>.
+    Moreover for <span class="inline-math">$a,b\in \Z$</span>, <span class="inline-math">$b\neq 0$</span>,
+    we have <span class="inline-math">$f(a/b) + \ldots + f(a/b) = f(a) = na$</span>, so <span class="inline-math">$f(a/b) = na/b$</span>.
+    Thus <span class="inline-math">$f(q) = cq$</span> for all <span class="inline-math">$q\in \Q$</span>,
+    so by continuity and density of <span class="inline-math">$\Q$</span>, <span class="inline-math">$f(x) = cx$</span> for all <span class="inline-math">$x\in \R$</span>.
+</p>
+<p>
+    This then imply
+    <span class="display-math">$$ \begin{align*}
+        ρ(e^{2πit}) = e^{2πict}, \qquad t\in \R.
+    \end{align*} $$</span>
+    But <span class="inline-math">$e^{2πi(1)} = e^{2πi(0)}$</span>, so we have <span class="inline-math">$c\in \Z$</span>.
+</p>
+<p>
+    The last statement follows from complete reducibility of representations.
+</p>

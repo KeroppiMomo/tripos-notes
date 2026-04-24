@@ -1,5 +1,5 @@
 <p>
-    Let <span class="inline-math">$G = (Σ, V, P, S)$</span> be context-free.
+    Let <span class="inline-math">$G = (Σ, N, P, S)$</span> be context-free.
     Use ideas from the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalent-to-variable-based-grammar.html">proof for variable-based grammars</a>:
     for each <span class="inline-math">$a\in Σ$</span>, introduce a new variable <span class="inline-math">$X_a$</span>.
     For <span class="inline-math">$α\in Ω^\ast$</span>, let <span class="inline-math">$X(α)$</span> be the string <span class="inline-math">$α$</span> which each occurrence of
@@ -13,5 +13,18 @@
     \end{align*} $$</span>
 </p>
 <p>
-    <span class="inline-math">$G&#x27;$</span> produces the same language as <span class="inline-math">$G$</span> and is variable-targeted.
+    We claim <span class="inline-math">$\mathcal{L}(G&#x27;) = \mathcal{L}(G)$</span>.
+</p>
+<p>
+    <span class="inline-math">$\supseteq$</span>: for any <span class="inline-math">$G$</span>-derivation,
+    apply <span class="inline-math">$X$</span> to form a <span class="inline-math">$G&#x27;$</span>-derivation,
+    then rewrite using <span class="inline-math">$X_a\to a$</span>.
+</p>
+<p>
+    <span class="inline-math">$\subseteq$</span>: the variable <span class="inline-math">$X_a$</span> only appear on the LHS
+    of one rewrite rule <span class="inline-math">$X_a\to a$</span>,
+    which must be applied in a <span class="inline-math">$G&#x27;$</span>-derivation.
+    Therefore replacing <span class="inline-math">$X_a$</span> to <span class="inline-math">$a$</span> in a <span class="inline-math">$G&#x27;$</span>-derivation
+    and removing any application of <span class="inline-math">$X_a\to a$</span>
+    result in a valid <span class="inline-math">$G$</span>-derivation.
 </p>

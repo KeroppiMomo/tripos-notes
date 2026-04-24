@@ -1,0 +1,100 @@
+<p>
+    Frequentists treat <span class="inline-math">$θ$</span> as a fixed quantity,
+    while Bayesians treat <span class="inline-math">$θ$</span> as a probabilistic distribution on <span class="inline-math">$Θ$</span>
+    and view statistical inference as updating one's belief about <span class="inline-math">$θ$</span>.
+</p>
+<p>
+    Suppose initially we have a <em>prior distribution</em> <span class="inline-math">$π(θ)$</span>.
+    After observing data <span class="inline-math">$X=x$</span>,
+    the <em>posterior distribution</em> of <span class="inline-math">$θ$</span> is given by Bayes' theorem
+    <span class="display-math">$$ \begin{align*}
+        \underbrace{π(θ\mid x)}_{\text{posterior}} = \frac{π(θ)\,p(x\mid θ)}{p(x)} \propto  \underbrace{p(x\mid θ)}_{\text{likelihood}}\,\underbrace{π(θ)}_{\text{prior}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$π(θ\mid x)$</span> can be a probability distribution
+    even if the function <span class="inline-math">$π$</span> may not.
+    In this case we say <span class="inline-math">$π$</span> is an <em>improper prior</em>.
+</p>
+<p>
+    The <em>prior predictive distribution</em> is the marginal distribution of <span class="inline-math">$X$</span>
+    <span class="display-math">$$ \begin{align*}
+        π(x) = \int_{Θ} p(x\midθ) \,π(θ) \d θ
+    \end{align*} $$</span>
+    and the <em>posterior predictive distribution</em>
+    is the conditional distributional of an iid copy <span class="inline-math">$X&#x27;$</span> given <span class="inline-math">$X$</span>
+    <span class="display-math">$$ \begin{align*}
+        π(x&#x27;\mid x) = \int_{Θ} p(x&#x27;\mid θ) \, π(θ\mid x)\d θ.
+    \end{align*} $$</span>
+</p>
+<p>
+    We say a family of prior distributions is <em>conjugate</em>
+    to a likelihood model if the posterior distribution is in the same family.
+</p>
+<ul>
+<li>
+    <p>
+        Bayesian obeys the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Maximum-likelihood-estimator.html">likelihood principle</a> and thus the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Sufficient-statistics.html">sufficiency principle</a>.
+        (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-Bayesian-inference-and-sufficiency-principle.html">Derivation</a>)
+    </p>
+    
+</li>
+</ul>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Bayes estimator)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-Bayes-estimator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Given some <em>loss function</em> <span class="inline-math">$L: Θ\times Θ \to \R$</span>,
+                the <em>Bayes risk</em> of an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a> <span class="inline-math">$\tilde θ$</span> for <span class="inline-math">$θ$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    R_X(\tilde θ) = \expect_π(L(θ, \tilde θ)\mid X) = \int_{Θ} L(θ, \tilde θ(X))\, π(θ\mid X) \d θ.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The <em>Bayes estimator</em> is
+                <span class="display-math">$$ \begin{align*}
+                    \hat θ(X) = \arg\min_{\tilde θ} R_X(\tilde θ).
+                \end{align*} $$</span>
+            </p>
+            <ul>
+            <li>
+                <p>
+                    The Bayes estimator with the quadratic loss <span class="inline-math">$L(θ, \tilde θ) = (θ - \tilde θ)^2$</span>
+                    is the posterior mean. (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-Bayes-estimator-with-quadratic-loss.html">Derivation</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    The Bayes estimator with the absolute loss <span class="inline-math">$L(θ, \tilde θ) = |\tilde θ - θ|$</span>
+                    is the posterior median.
+                    (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-Bayes-estimator-with-absolute-loss.html">Derivation</a>)
+                </p>
+                
+            </li>
+            </ul>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (credible interval)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-credible-interval.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <span class="inline-math">$(1-α)$</span>-<em>credible interval</em> for <span class="inline-math">$θ$</span> is a random interval <span class="inline-math">$[L(X), U(X)]$</span>
+                such that
+                <span class="display-math">$$ \begin{align*}
+                    π(L(X) \leq θ \leq U(X)\mid X) = 1-α.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,56 @@
+
+<h1>Constructible <span class="inline-math">$n$</span>-gon <span class="inline-math">$\iff$</span> <span class="inline-math">$ϕ(n)$</span> is a power of two</h1>
+
+<p>
+    A regular <span class="inline-math">$n$</span>-gon is constructible <span class="inline-math">$\iff$</span> <span class="inline-math">$\cos(2π/n)$</span> is a constructible number
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-constructible-number-and-constructible-field.html"><span class="inline-math">$\iff$</span></a>
+    <span class="inline-math">$\Q(\cos(2π/n))$</span> is a constructible subfield of <span class="inline-math">$\R$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$ξ_n = e^{2πi/n}$</span> and <span class="inline-math">$α = ξ_n + ξ_n\inv = 2\cos(2π/n)$</span>.
+    By the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-Galois-theory-of-cyclotomic-extensions.html">theory of cyclotomic extensions</a>,
+    <span class="inline-math">$\Q(ξ_n)/\Q$</span> is Galois and <span class="inline-math">$\Gal(\Q(ξ_n)/\Q) \isom (\Z/n\Z)^\times$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        [\Q(ξ_n) : \Q] = ϕ(n).
+    \end{align*} $$</span>
+    Since <span class="inline-math">$[\Q(ξ_n):\Q(α)] = 2$</span> (as <span class="inline-math">$n\geq 3$</span>),
+    if <span class="inline-math">$\Q(α)$</span> is constructible,
+    then <span class="inline-math">$[\Q(α) : \Q]$</span> is a power of two,
+    and hence so is <span class="inline-math">$[\Q(ξ_n) : \Q]$</span> by the tower law.
+    Hence <span class="inline-math">$ϕ(n)$</span> is a power of two.
+</p>
+<p>
+    Conversely if <span class="inline-math">$ϕ(n)$</span> is a power of two,
+    then since <span class="inline-math">$\Gal(\Q(ξ_n)/\Q) \isom (\Z/n\Z)^\times$</span> is abelian and of order a power of two,
+    <span class="inline-math">$\Q(α)/\Q$</span> is Galois whose Galois group is also abelian and of order a power of two.
+    By <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-classification-of-finite-abelian-groups.html">classification of finite abelian groups</a> (or Chinese remainder theorem),
+    there exist subgroups <span class="inline-math">$1 = G_0 \subset  G_1 \subset   \ldots \subset  G_m = \Gal(\Q(α)/\Q)$</span>
+    where <span class="inline-math">$|G_i:G_{i-1}| = 2$</span>.
+    By <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-fundamental-theorem-of-Galois-theory.html">Galois correspondence</a>,
+    this corresponds to subfields <span class="inline-math">$\Q(α) = \Q(α)^{G_0} \supset \Q(α)^{G_1} \supset \ldots \supset \Q(α)^{G_m} = \Q$</span>
+    where consecutive degrees are 2.
+    Hence <span class="inline-math">$\Q(α)$</span> is constructible.
+</p>
+
+<h1><span class="inline-math">$ϕ(n)$</span> is a power of two <span class="inline-math">$\iff$</span> <span class="inline-math">$n$</span> is a product of powers of two and distinct Fermat primes</h1>
+
+<p>
+    Factorise <span class="inline-math">$n = \prod_{i} p_i^{a_i}$</span> into prime factors.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        ϕ(n) = \prod_{i} (p_i-1) p_i^{a_i-1}.
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$ϕ(n)$</span> is a power of two
+    iff <span class="inline-math">$n$</span> is a product of powers of two
+    and distinct primes of the form <span class="inline-math">$2^m + 1$</span>.
+</p>
+<p>
+    If <span class="inline-math">$2^m + 1$</span> is a prime, then <span class="inline-math">$m$</span> is a power of two.
+    Indeed if <span class="inline-math">$m = ab$</span> with <span class="inline-math">$b&gt;1$</span> odd,
+    then
+    <span class="display-math">$$ \begin{align*}
+        2^{ab} + 1 = (2^a)^b + 1 = (2^a + 1)((2^a)^{b-1} - (2^a)^{b-2} + \ldots - 2^a + 1)
+    \end{align*} $$</span>
+    is a non-trivial factorisation.
+</p>

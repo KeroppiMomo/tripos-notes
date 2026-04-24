@@ -1,0 +1,20 @@
+<p>
+    See <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computably-enumerable-iff-range-of-partial-computable-function.html">this</a> for one direction.
+</p>
+<p>
+    Suppose <span class="inline-math">$X\neq \emptyset$</span> is computably enumerable.
+    If <span class="inline-math">$X = \set{e_1, \ldots, e_k}$</span> is finite, then
+    <span class="display-math">$$ \begin{align*}
+        f(n) = \begin{cases}
+            e_n, &amp;n\leq k, \\
+            e_k, &amp;n&gt;k
+        \end{cases}
+    \end{align*} $$</span>
+    works.
+</p>
+<p>
+    If <span class="inline-math">$X$</span> is infinite, we make a total computable function <span class="inline-math">$f:\N\to \N$</span> as follows:
+    run a zig-zag to compute <span class="inline-math">$ψ_X(i)$</span> for all <span class="inline-math">$i\in \N$</span> in parallel.
+    Define <span class="inline-math">$f(m)$</span> to be the <span class="inline-math">$(m+1)$</span>-th <span class="inline-math">$i$</span> for which the computation of <span class="inline-math">$ψ_X(i)$</span> halts.
+    (<span class="inline-math">$f(0), f(1), \ldots$</span> is not necessarily in increasing order.)
+</p>

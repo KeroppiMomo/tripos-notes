@@ -1,0 +1,36 @@
+<p>
+    If <span class="inline-math">$X$</span> is computably enumerable, then
+    <span class="display-math">$$ \begin{align*}
+        n \mapsto \begin{cases}
+            n, &amp;\text{if $n\in X$}, \\
+            \uparrow, &amp;\text{otherwise}
+        \end{cases}
+    \end{align*} $$</span>
+    is a partial computable function:
+</p>
+<ol start="1">
+<li>
+    <p>
+        Copy <span class="inline-math">$R_1$</span> to an unused register <span class="inline-math">$R_n$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        Run <span class="inline-math">$ψ_X(n)$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If it halts, move <span class="inline-math">$R_n$</span> back to <span class="inline-math">$R_1$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    Conversely if <span class="inline-math">$X$</span> is the range of a partial computable function <span class="inline-math">$f: \N^k \dashrightarrow \N$</span>,
+    given <span class="inline-math">$x\in \N$</span>,
+    run a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Encoding-tuples-as-integers.html">zig-zag</a> to execute <span class="inline-math">$f(\v n)$</span> for all <span class="inline-math">$\v n\in \N^k$</span>.
+    When the computation of any <span class="inline-math">$f(\v n)$</span> terminates,
+    check if <span class="inline-math">$f(\v n) = x$</span>.
+    If so, halt and output <span class="inline-math">$1$</span>, and otherwise return to the zig-zag.
+</p>

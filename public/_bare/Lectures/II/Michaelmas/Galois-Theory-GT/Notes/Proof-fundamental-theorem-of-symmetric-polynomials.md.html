@@ -1,0 +1,85 @@
+
+<h1>Surjectivity</h1>
+
+<p>
+    Define the lexicographic ordering on the set of monomials by
+    <span class="display-math">$$ \begin{align*}
+        X_1^{i_1} \ldots X_n^{i_n} &lt; X_1^{j_1} \ldots X_n^{j_n} :\iff \exists r: i_1 = j_1, \ldots, i_{r-1} = j_{r-1}, i_r &lt; j_r.
+    \end{align*} $$</span>
+    This is a total ordering.
+</p>
+<p>
+    If <span class="inline-math">$f = 0$</span> , we are done.
+    Otherwise, induct on the total degree of <span class="inline-math">$f$</span> and the largest (with respect to <span class="inline-math">$&lt;$</span>) monomial, say <span class="inline-math">$X_1^{i_1}\ldots X_n^{i_n}$</span>,
+    appearing in a symmetric polynomial <span class="inline-math">$f$</span> (meaning its coefficient in <span class="inline-math">$f$</span> is non-zero).
+    Because <span class="inline-math">$f$</span> is symmetric, <span class="inline-math">$X_{σ(1)}^{i_1} \ldots X_{σ(n)}^{i_n}$</span> also appears in <span class="inline-math">$f$</span>.
+    Because <span class="inline-math">$X_1^{i_1} \ldots X_n^{i_n}$</span> is largest, we must have <span class="inline-math">$i_1 \geq i_2 \geq  \ldots \geq  i_n$</span>.
+</p>
+<p>
+    Observing
+    <span class="display-math">$$ \begin{align*}
+        X_1^{i_1} \ldots X_n^{i_n} = X_1^{i_1 - i_2} (X_1 X_2)^{i_2 - i_3} \ldots (X_1 \ldots X_n)^{i_n},
+    \end{align*} $$</span>
+    so define
+    <span class="display-math">$$ \begin{align*}
+        g := s_1^{i_1 - i_2} s_2^{i_2 - i_3} \ldots s_n^{i_n}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that for <span class="inline-math">$h_1,h_2\in R[X_1, \ldots, X_n]$</span>,
+    the largest monomial appearing in <span class="inline-math">$h_1 h_2$</span>
+    is the product of the one in <span class="inline-math">$h_1$</span> and the one in <span class="inline-math">$h_2$</span>.
+    Therefore the largest monomial in <span class="inline-math">$g$</span> is <span class="inline-math">$X_1^{i_1} \ldots X_n^{i_n}$</span>.
+    Letting <span class="inline-math">$c\neq 0$</span> be the coefficient of <span class="inline-math">$X_1^{i_1} \ldots X_n^{i_n}$</span> in <span class="inline-math">$f$</span>,
+    we form <span class="inline-math">$F := f - cg$</span>,
+    a symmetric polynomial with total degree <span class="inline-math">$\leq \deg f$</span>
+    and the largest monomial smaller than <span class="inline-math">$X_1^{i_1} \ldots X_n^{i_n}$</span>.
+</p>
+<p>
+    Since the number of monomials of bounded degree is finite,
+    after a finite number of steps, the process stops,
+    and we obtain <span class="inline-math">$f$</span> as a polynomial in <span class="inline-math">$s_1, \ldots, s_n$</span>.
+</p>
+
+<h1>Injectivity</h1>
+
+<p>
+    Here, write <span class="inline-math">$s_{1,n}, \ldots, s_{n,n}\in R[X_1, \ldots, X_n]$</span>
+    for the elementary symmetric polynomials in <span class="inline-math">$n$</span> variables.
+    Induct on <span class="inline-math">$n$</span>
+    to show the only polynomial <span class="inline-math">$g\in R[Y_1, \ldots, Y_n]$</span>
+    such that <span class="inline-math">$g(s_{1,n}, \ldots, s_{n,n}) = 0$</span> is <span class="inline-math">$g = 0$</span>.
+</p>
+<p>
+    For <span class="inline-math">$n=1$</span>, <span class="inline-math">$s_{1,1} = X_1$</span> so this is trivial.
+</p>
+<p>
+    For <span class="inline-math">$n\geq 2$</span>, suppose <span class="inline-math">$g \neq 0$</span>. Factorise as
+    <span class="display-math">$$ \begin{align*}
+        g(Y_1, \ldots, Y_n) = Y_n^{m} G(Y_1, \ldots, Y_n)
+    \end{align*} $$</span>
+    where <span class="inline-math">$m\geq 0$</span> and <span class="inline-math">$G\in R[Y_1, \ldots, Y_n]^\times$</span> such that <span class="inline-math">$Y_n\not\mid G$</span>.
+    Because <span class="inline-math">$s_{n,n}\neq 0$</span>, we must have <span class="inline-math">$G(s_{1,n},\ldots, s_{n,n}) = 0$</span>,
+    so by replacing <span class="inline-math">$g$</span> with <span class="inline-math">$G$</span>,
+    we can WLOG assume <span class="inline-math">$Y_n \not\mid g$</span>.
+</p>
+<p>
+    Note setting <span class="inline-math">$X_n = 0$</span> gives
+    <span class="display-math">$$ \begin{align*}
+        s_{r,n}(X_1, \ldots, X_{n-1}, 0) = \begin{cases}
+            s_{r,n-1}(X_1, \ldots, X_{n-1}), &amp;\text{if $r = 1,2,\ldots,n-1$}, \\
+            0, &amp;\text{if $r = n$}
+        \end{cases}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        0 ={}&amp; g(s_{1,n}(X_1, \ldots, X_{n-1}, 0), \ldots, s_{n,n}(X_1, \ldots, X_{n-1},0)) \\
+        ={}&amp; g(s_{1,n-1}, \ldots, s_{n-1,n-1}, 0).
+    \end{align*} $$</span>
+    By induction hypothesis,
+    since <span class="inline-math">$\tilde g(Y_1, \ldots, Y_{n-1}) := g(Y_1, \ldots, Y_{n-1}, 0)$</span>
+    is a polynomial such that <span class="inline-math">$\tilde g(s_{1,n-1}, \ldots, s_{n-1, n-1}) = 0$</span>,
+    we have <span class="inline-math">$\tilde g = 0$</span>.
+    Therefore <span class="inline-math">$Y_n \mid g$</span>,
+    which is a contradiction.
+</p>

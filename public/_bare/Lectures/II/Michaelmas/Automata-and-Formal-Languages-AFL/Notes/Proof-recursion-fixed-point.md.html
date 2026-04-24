@@ -1,0 +1,20 @@
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        h(x,y) := f_{g(f_{x,1}(x)),1}(y).
+    \end{align*} $$</span>
+    This is computable as it is a composition using the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Software.html">universal machine</a>
+    <span class="display-math">$$ \begin{align*}
+        h(x,y) = u(g(u(x, 1, 2^x)), 1, 2^y).
+    \end{align*} $$</span>
+</p>
+<p>
+    Apply <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-s-m-n.html">s-m-n</a> to obtain a total computable function <span class="inline-math">$τ: \N\to \N$</span>,
+    say computable using machine <span class="inline-math">$m$</span>, such that
+    <span class="display-math">$$ \begin{align*}
+        f_{f_{m,1}(x),1}(y) = f_{τ(x), 1}(y) = h(x,y) = f_{g(f_{x,1}(x)),1}(y).
+    \end{align*} $$</span>
+</p>
+<p>
+    Then <span class="inline-math">$n_0 = f_{m,1}(m) = τ(m)$</span> is the required fixed point.
+</p>

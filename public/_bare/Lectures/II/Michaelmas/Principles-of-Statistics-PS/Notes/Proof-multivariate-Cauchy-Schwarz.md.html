@@ -1,0 +1,18 @@
+<p>
+    Follows the <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Proposition-Cauchy-Schwarz-inequality-for-expectation.html">usual Cauchy-Schwarz</a>.
+</p>
+<p>
+    WLOG replace <span class="inline-math">$X$</span> with <span class="inline-math">$X - \expect[X]$</span> and <span class="inline-math">$Y$</span> with <span class="inline-math">$Y - \expect[Y]$</span> to assume <span class="inline-math">$\expect[X] = 0$</span> and <span class="inline-math">$\expect[Y] = 0$</span>.
+</p>
+<p>
+    For any <span class="inline-math">$n\times m$</span> matrix <span class="inline-math">$A$</span>,
+    <span class="inline-math">$(Y - AX)(Y - AX)^T$</span> is positive semidefinite, so
+    <span class="display-math">$$ \begin{align*}
+        0 \preceq \expect[(Y - AX)(Y - AX)^T] ={}&amp; \expect[YY^T] - A\expect[XY^T] - \expect[YX^T] A^T + A\expect[XX^T] A^T \\
+        ={}&amp; \var(Y) - A \cov(X, Y) + (-\cov(Y,X) + A\var(X))A^T.
+    \end{align*} $$</span>
+    Set <span class="inline-math">$A = \cov(Y,X) \var(X)\inv$</span> to have
+    <span class="display-math">$$ \begin{align*}
+        \var(Y) - \cov(Y,X)\var(X)\inv \cov(X,Y) \succeq 0.
+    \end{align*} $$</span>
+</p>

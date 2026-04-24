@@ -1,0 +1,480 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (symmetric polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-symmetric-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$R$</span> be a ring.
+            </p>
+            <p>
+                A <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-polynomial-ring.html">polynomial</a> <span class="inline-math">$f\in R[X_1, \ldots, X_n]$</span>
+                is <em>symmetric</em>
+                if for all permutation <span class="inline-math">$σ\in S_n$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    f(X_{σ(1)}, \ldots, X_{σ(n)}) = f(X_1, \ldots, X_n).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Write <span class="inline-math">$R[X_1, \ldots, X_n]^{S_n}$</span> to denote all symmetric polynomials.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (fundamental theorem of symmetric polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-fundamental-theorem-of-symmetric-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The <em>elementary <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-symmetric-polynomial.html">symmetric polynomials</a></em> in <span class="inline-math">$n$</span> variables
+                are <span class="inline-math">$s_1, \ldots, s_n$</span> given by
+                <span class="display-math">$$ \begin{align*}
+                    s_r(X_1, \ldots, X_n) = \sum_{1\leq i_1 &lt; \ldots &lt; i_r \leq n} X_{i_1} \ldots X_{i_r}.
+                \end{align*} $$</span>
+                Equivalently, they satisfy
+                <span class="display-math">$$ \begin{align*}
+                    \prod_{i=1}^{n} (X_i + T) = T^n + s_1 T^{n-1} + \ldots + s_{n-1} T + s_n.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                There is a ring isomorphism given by
+                <span class="display-math">$$ \begin{align*}
+                    R[Y_1, \ldots, Y_n] &amp;\to R[X_1, \ldots, X_n]^{S_n} \\
+                    Y_i &amp;\mapsto s_i(X_1, \ldots, X_n).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-fundamental-theorem-of-symmetric-polynomials.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Galois group of polynomial)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-Galois-group-of-polynomial.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be a field.
+            </p>
+            <p>
+                For a separable polynomial <span class="inline-math">$f\in K[X]$</span>,
+                let <span class="inline-math">$L = K(α_1, \ldots, α_n)$</span> be the its splitting field of <span class="inline-math">$f$</span> over <span class="inline-math">$K$</span>
+                and <span class="inline-math">$α_1, \ldots, α_n$</span> be the roots of <span class="inline-math">$f$</span> in <span class="inline-math">$L$</span> (so <span class="inline-math">$\deg f = n$</span>).
+                The <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-classification-of-finite-Galois-extension.html">Galois group</a> <span class="inline-math">$\Gal(L/K)$</span>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-embedding-of-simple-extension.html">acts</a> on <span class="inline-math">$\set{α_1, \ldots, α_n}$</span> faithfully,
+                determining an injective group homomorphism <span class="inline-math">$\Gal(L/K) \hookrightarrow S_n$</span>.
+            </p>
+            <p>
+                The <em>Galois group</em> <span class="inline-math">$\Gal(f/K) \leq S_n$</span> of <span class="inline-math">$f$</span> over <span class="inline-math">$K$</span> is the image of the homomorphism,
+                defined up to conjugacy.
+            </p>
+            <blockquote>
+                <!-- BEGIN BLOCK ID irred -->
+                <p id="^irred">
+                    <span class="inline-math">$f$</span> is irreducible iff <span class="inline-math">$\Gal(f/K)$</span> is transitive.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-irreducible-polnomial-iff-transitive-Galois-group.html">Proof</a>)
+                </p>
+                
+                <!-- END BLOCK ID irred -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (discriminant)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-discriminant.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f\in K[X]$</span> be a monic separable polynomial,
+                and let <span class="inline-math">$α_1, \ldots, α_n$</span> be its roots in some splitting field.
+            </p>
+            <p>
+                Define
+                <span class="display-math">$$ \begin{align*}
+                    Δ &amp;:= \prod_{i&lt;j} (α_i - α_j), \\
+                    \op{Disc}(f) &amp;:= Δ^2 = (-1)^{n(n-1)/2} \prod_{i\neq j} (α_i - α_j).
+                \end{align*} $$</span>
+                <span class="inline-math">$\op{Disc}(f)$</span> is called the <em>discriminant</em> of <span class="inline-math">$f$</span>.
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$\op{Disc}(f) \in K$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-discriminant-in-base-field.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    We have a formula
+                    <span class="display-math">$$ \begin{align*}
+                        \op{Disc}(X^n + bX + c) ={}&amp; (-1)^{n(n-1)/2}\bigl((1-n)^{n-1} b^n + n^n c^{n-1}\bigr).
+                    \end{align*} $$</span>
+                    (sheet 3 Q7).
+                    In particular for <span class="inline-math">$n=2,3$</span>,
+                    <span class="display-math">$$ \begin{align*}
+                        \op{Disc}(X^2 + bX + c) &amp;= b^2 - 4c, \\
+                        \op{Disc}(X^3 + bX + c) &amp;= -4b^3 - 27c.
+                    \end{align*} $$</span>
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Galois group in alternating group)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Lemma-Galois-group-in-alternating-group.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be a field and <span class="inline-math">$f\in K[X]$</span> be a separable polynomial.
+            </p>
+            <p>
+                If <span class="inline-math">$\op{char}(K)\neq 2$</span>, then
+                the fixed field of <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-Galois-group-of-polynomial.html"><span class="inline-math">$\Gal$</span></a><span class="inline-math">$(f/K) \cap A_n$</span> is <span class="inline-math">$K($</span><a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-discriminant.html"><span class="inline-math">$Δ$</span></a><span class="inline-math">$)$</span>.
+            </p>
+            <p>
+                Moreover, <span class="inline-math">$\Gal(f/K)\subseteq A_n$</span> iff <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-discriminant.html"><span class="inline-math">$\op{Disc}(f)$</span></a> is a square in <span class="inline-math">$K$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-Galois-group-in-alternating-group.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (cubic polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proposition-cubic-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be a field and <span class="inline-math">$f(X) = X^3 + aX^2 + bX + c \in K[X]$</span> be a cubic polynomial.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    If <span class="inline-math">$\op{char}(K)\neq 2$</span> and <span class="inline-math">$f$</span> is irreducible and separable, then
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-Galois-group-of-polynomial.html"><span class="inline-math">$\Gal$</span></a><span class="inline-math">$(f/K)\isom A_3$</span> if <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-discriminant.html"><span class="inline-math">$\op{Disc}(f)$</span></a> is a square in <span class="inline-math">$K$</span>; and
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        <span class="inline-math">$\Gal(f/K)\isom S_3$</span> otherwise.
+                    </p>
+                    
+                </li>
+                </ul>
+                <p>
+                    Proof: the only <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-Galois-group-of-polynomial.html#^irred">transitive subgroups</a> of <span class="inline-math">$S_3$</span> are <span class="inline-math">$A_3$</span> and <span class="inline-math">$S_3$</span>.
+                    Then apply the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Lemma-Galois-group-in-alternating-group.html">discriminant criterion</a>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Make a substitution <span class="inline-math">$X\mapsto X-\frac{a}{3}$</span> to assume <span class="inline-math">$f$</span> is a <em>depressed cubic</em>
+                    <span class="display-math">$$ \begin{align*}
+                        f(X) = X^3 + bX + c.
+                    \end{align*} $$</span>
+                </p>
+                <p>
+                    Letting <span class="inline-math">$α, β, γ$</span> be the roots of <span class="inline-math">$f$</span> and <span class="inline-math">$ω = e^{2πi/3}$</span>,
+                    then
+                    <span class="display-math">$$ \begin{align*}
+                        0 ={}&amp; α + β + γ, \\
+                        u :={}&amp; α + ωβ + ω^2 γ, \\
+                        v :={}&amp; α + ω^2 β + ωγ
+                    \end{align*} $$</span>
+                    satisfies
+                    <span class="display-math">$$ \begin{align*}
+                        u^3 + v^3 &amp;= -27c, &amp; uv &amp;= -3b
+                    \end{align*} $$</span>
+                    so <span class="inline-math">$u^3$</span> and <span class="inline-math">$v^3$</span> are the roots of
+                    <span class="display-math">$$ \begin{align*}
+                        X^2 + 27cX - 27b^3 = 0.
+                    \end{align*} $$</span>
+                </p>
+                <p>
+                    Solving for <span class="inline-math">$u^3,v^3$</span>, taking their cube roots,
+                    and solving for <span class="inline-math">$α,β,γ$</span> gives the roots of <span class="inline-math">$f$</span>.
+                </p>
+                <p>
+                    <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-cubic-formula.html">Proof</a>
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (resolvent cubic)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-resolvent-cubic.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be a field
+                and <span class="inline-math">$f\in k[X]$</span> be a monic quartic (degree 4) polynomial.
+            </p>
+            <p>
+                Letting <span class="inline-math">$α_1, α_2, α_3, α_4$</span> be the roots of <span class="inline-math">$f$</span> in some <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-splitting-field.html">splitting field</a>,
+                define
+                <span class="display-math">$$ \begin{align*}
+                    β_1 ={}&amp;(α_1 + α_2)(α_3 + α_4) \\
+                    β_2 ={}&amp; (α_1 + α_3)(α_2 + α_4) \\
+                    β_3 ={}&amp; (α_1 + α_4)(α_2 + α_3).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                The <em>resolvent cubic</em> of <span class="inline-math">$f$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    g(X) = \prod_{i=1}^{3} (X - β_i).
+                \end{align*} $$</span>
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$g\in k[X]$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-resolvent-cubic-has-coefficient-in-base-field.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-discriminant.html"><span class="inline-math">$\op{Disc}$</span></a><span class="inline-math">$(f) = \op{Disc}(g)$</span>.
+                    In particular, <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-separable-polynomial-extension.html">separable</a> iff <span class="inline-math">$g$</span> is separable.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-discriminant-of-resolvent-cubic.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID depressed -->
+                <p id="^depressed">
+                    For a depressed quartic <span class="inline-math">$f(X) = X^4 + pX^2 + qX + r$</span>,
+                    <span class="display-math">$$ \begin{align*}
+                        g(X) = X^3 - 2pX^2 + (p^2 - 4r)X + q^2.
+                    \end{align*} $$</span>
+                </p>
+                
+                <!-- END BLOCK ID depressed -->
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    Let <span class="inline-math">$S_4$</span> act on <span class="inline-math">$V \setminus \set{\id} = \set{(12)(34), (13)(24), (14)(23)}$</span> by conjugation,
+                    and let <span class="inline-math">$π: S_4 \to S_3$</span> be the corresponding homomorphism (surjective and <span class="inline-math">$\ker π = V$</span>).
+                    Then if <span class="inline-math">$f$</span> is separable, then
+                    <span class="display-math">$$ \begin{align*}
+                        π(\Gal(f/K)) = \Gal(g/K).
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-Galois-group-of-resolvent-cubic.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (quartic polynomials)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proposition-quartic-polynomials.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$K$</span> be a field and <span class="inline-math">$f\in K[X]$</span> be a monic quartic (degree 4) polynomial.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    Suppose <span class="inline-math">$f$</span> is irreducible.
+                    Compute its <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-discriminant.html">discriminant</a> <span class="inline-math">$\op{Disc}(g)$</span>
+                    and the Galois group of the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-resolvent-cubic.html">resolvent cubic</a> <span class="inline-math">$\Gal(f/K)$</span>.
+                    Then <span class="inline-math">$\Gal(f/K)$</span> is be one of the following:
+                </p>
+                
+            </li>
+            </ol>
+            <table>
+                <tr>
+                    <th class="table-cell-left"><p>
+                        <span class="inline-math">$\Gal(f/K)$</span>
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        <span class="inline-math">$\Gal(g/K)$</span>
+                    </p>
+                    </th>
+                    <th class="table-cell-left"><p>
+                        <span class="inline-math">$\op{Disc}(f)$</span> is a square in <span class="inline-math">$K$</span>?
+                    </p>
+                    </th>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$S_4$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$S_3$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        No
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$A_4$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$A_3$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        Yes
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$D_8 = \langle (1234), (13)\rangle$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$C_2$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        No
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$C_4$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$C_2$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        Yes
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$V = \langle (12)(34), (13)(34)\rangle$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        <span class="inline-math">$1$</span>
+                    </p>
+                    </td>
+                    <td class="table-cell-left"><p>
+                        Yes
+                    </p>
+                    </td>
+                </tr>
+            </table>
+            <ol start="2">
+            <li>
+                <p>
+                    Make a substitution <span class="inline-math">$X \mapsto X - \frac{a}{4}$</span> to assume <span class="inline-math">$f$</span> is a depressed quartic <span class="inline-math">$f(X) = X^4 + qX^2 + q + r$</span>.
+                    Solve its resolvent cubic given <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-resolvent-cubic.html#^depressed">here</a>.
+                    Then
+                    <span class="display-math">$$ \begin{align*}
+                    α_1 = \frac{1}{2}(\sqrt{-β_1}+\sqrt{-β_2}+\sqrt{-β_3})
+                    \end{align*} $$</span>
+                    where <span class="inline-math">$\sqrt{-β_i}$</span> are chosen so that <span class="inline-math">$\sqrt{-β_1}\sqrt{-β_2}\sqrt{-β_3} = -q$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-quartic-polynomials.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Galois group over F_p)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Lemma-Galois-group-over-F_p.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f\in \mathbb{F}_p[X]$</span> be a separable polynomial.
+            </p>
+            <p>
+                If <span class="inline-math">$f$</span> has irreducible factors of degree
+                <span class="inline-math">$n_1, \ldots, n_r$</span> (so <span class="inline-math">$\deg f = \sum_{i=1}^{r} n_i$</span>),
+                then <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-Galois-group-of-polynomial.html"><span class="inline-math">$\Gal$</span></a><span class="inline-math">$(f/\mathbb{F}_p)$</span>
+                is cyclic,
+                generated by an element of <a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-cycle-type.html">cycle type</a> <span class="inline-math">$(n_1, \ldots, n_r)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-Galois-group-over-F_p.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (reduction mod p)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-reduction-mod-p.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f$</span> be a monic and separable polynomial in <span class="inline-math">$\Z[X]$</span>,
+                and <span class="inline-math">$p$</span> be a prime number.
+            </p>
+            <p>
+                If the reduction <span class="inline-math">$\bar f\in \mathbb{F}_p[X]$</span> mod <span class="inline-math">$p$</span> of <span class="inline-math">$f$</span> is separable,
+                then
+                <span class="display-math">$$ \begin{align*}
+                    \Gal(\bar f/\mathbb{F}_p) \subseteq \Gal(f/\Q)
+                \end{align*} $$</span>
+                as subgroups of <span class="inline-math">$S_{\deg f}$</span> up to conjugacy.
+                (<a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-Galois-group-of-polynomial.html"><span class="inline-math">$\Gal$</span></a>)
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proof-reduction-mod-p.html">Proof</a> TODO
+            </p>
+            <blockquote>
+                <p>
+                    <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Lemma-Galois-group-over-F_p.html">Therefore</a> if the irreducible factors of <span class="inline-math">$\bar f$</span> have degrees <span class="inline-math">$n_1, \ldots, n_r$</span>,
+                    then there is a <span class="inline-math">$(n_1, \ldots, n_r)$</span>-cycle in <span class="inline-math">$\Gal(f/\Q)$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>

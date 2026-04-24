@@ -1,0 +1,45 @@
+<p>
+    Given a deterministic automaton <span class="inline-math">$D = (Q, Σ, δ, q_0, F)$</span>,
+    the nondeterministic automaton <span class="inline-math">$N = (Q, Σ, δ^\mathrm{n}, q_0, F)$</span> where
+    <span class="display-math">$$ \begin{align*}
+        δ^\mathrm{n}(q, a) = \set{δ(q,a)}
+    \end{align*} $$</span>
+    has <span class="inline-math">$\hat δ^\mathrm{n}(q, w) = \set{\hat δ(q, w)}$</span>
+    by induction, so <span class="inline-math">$\mathcal{L}(D) = \mathcal{L}(N)$</span>.
+</p>
+<p>
+    Conversely, given a nondeterministic automaton <span class="inline-math">$N = (Q, Σ, δ, q_0, F)$</span>,
+    we perform the <em>subset construction</em>:
+    define a deterministic automaton <span class="inline-math">$D = (\mathcal{P}(Q), Σ, Δ, \set{q_0}, G)$</span> where
+    <span class="display-math">$$ \begin{align*}
+        Δ(X,a) &amp;= \bigcup \sb{δ(q,a)}{q\in X}, \\
+        G &amp;= \sb{X\in \mathcal{P}(Q)}{X\cap F \neq \emptyset}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note that fixing a word <span class="inline-math">$w = a_0 a_1 \ldots a_n \in Σ^\ast$</span>,
+    the state sequence <span class="inline-math">$(X_0, \ldots, X_{n+1})$</span> corresponding to <span class="inline-math">$w$</span> in <span class="inline-math">$D$</span> equals
+    the state set sequence <span class="inline-math">$(Y_0, \ldots, Y_{n+1})$</span> corresponding to <span class="inline-math">$w$</span> in <span class="inline-math">$N$</span>,
+    i.e. <span class="inline-math">$X_i = Y_i$</span>, because by induction
+    <span class="display-math">$$ \begin{align*}
+        \hat Δ(\set{q_0}, ε) ={}&amp; \set{q_0} = \hat δ(q_0, ε) &amp;&amp;\text{by definition}, \\
+        \hat Δ(\set{q_0}, wa) ={}&amp; Δ(\hat Δ(\set{q_0}, w), a) &amp;&amp;\text{by definition} \\
+        ={}&amp; Δ(\hat δ(q_0, w), a) &amp;&amp;\text{induction hypothesis} \\
+        ={}&amp; \bigcup_{p\in \hat δ(q_0, w)} δ(p,a) &amp;&amp;\text{by definition} \\
+        ={}&amp; \hat δ(q_0, wa) &amp;&amp;\text{by definition}.
+    \end{align*} $$</span>
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        w\in \mathcal{L}(D) \iff X_{n+1}\in G \iff Y_{n+1} \cap F \neq \emptyset \iff w\in \mathcal{L}(N).
+    \end{align*} $$</span>
+</p>
+<p>
+    (If <span class="inline-math">$N$</span> has <span class="inline-math">$n$</span> states, then <span class="inline-math">$D$</span> has <span class="inline-math">$2^n$</span> states.)
+</p>
+<p>
+    For an <span class="inline-math">$ε$</span>-NFA, take instead <span class="inline-math">$D = (\mathcal{P}(Q), Σ, Δ, \op{ecl}(q_0), G)$</span> with
+    <span class="display-math">$$ \begin{align*}
+        Δ(X,a) := \op{ecl}\left(\bigcup \sb{δ(q,a)}{q\in X}\right)
+    \end{align*} $$</span>
+    and the argument is the same.
+</p>

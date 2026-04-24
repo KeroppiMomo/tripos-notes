@@ -14,68 +14,87 @@
     and is path-connected to a vertex of <span class="inline-math">$σ$</span> via a straight line.
 </p>
 
-<h1><span class="inline-math">$B_1(K)\leq \ker ϕ$</span></h1>
+<h1><span class="inline-math">$B_0(K)\leq \ker ϕ$</span></h1>
 
 <p>
-    If <span class="inline-math">$v\neq w$</span> lie in the same homology class,
-    then <span class="inline-math">$[[w]] - [[v]] = d_1(x) = \sum_{i=1}^{m} ([[b_i]] - [[a_i]])$</span> for some <span class="inline-math">$x = \sum_{i=1}^{m} [[a_i, b_i]]\in C_1(K)$</span>.
-    We claim that there is a sequence of vertices
-    <span class="display-math">$$ \begin{align*}
-        v = u_0, u_1, \ldots, u_{n-1}, u_n = w
-    \end{align*} $$</span>
-    such that each consecutive pair spans a 1-simplex of <span class="inline-math">$K$</span>.
-    This defines a path from <span class="inline-math">$v$</span> to <span class="inline-math">$w$</span> on <span class="inline-math">$|K|$</span>.
+    Note
+    <span class="display-math">$$B_0(K) = d_1(C_1(K)) = \Z\sb{d_1(σ)}{\text{oriented 1-simplex }σ}.$$</span>
+    For any <span class="inline-math">$σ = [u,v]$</span> oriented 1-simplex,
+    <span class="inline-math">$u,v$</span> are path-connected, so <span class="inline-math">$ϕ(d_1(σ)) = ϕ(v) - ϕ(u) = 0$</span>.
 </p>
 <p>
-    Perform a graph walking algorithm:
-</p>
-<ul>
-<li>
-    <p>
-        Step 0: Start at <span class="inline-math">$u_0=v.$</span>
-    </p>
-    
-</li><li>
-    <p>
-        Step <span class="inline-math">$i+1$</span>: let <span class="inline-math">$[[u_i, u_{i+1}]]$</span> be an unused edge in the expression of <span class="inline-math">$x$</span>.
-        If <span class="inline-math">$u_{i+1}=w$</span>, we stop. Otherwise, mark this edge as used and go to the next step.
-    </p>
-    
-</li>
-</ul>
-<p>
-    The algorithm terminates in at most <span class="inline-math">$m$</span> steps,
-    since an edge is taken at most once.
-    For every vertex <span class="inline-math">$u$</span>,
-    every used edge into <span class="inline-math">$u$</span> is paired with an used edge out of <span class="inline-math">$u$</span>,
-    except when the algorithm starts at <span class="inline-math">$u$</span> or ends at <span class="inline-math">$u$</span>.
-    This implies it is always possible to
-    find an unused edge <span class="inline-math">$[[u_i, u_{i+1}]]$</span>:
-    otherwise, if <span class="inline-math">$u_i=v$</span>, then the coefficient of <span class="inline-math">$[[v]]$</span> in <span class="inline-math">$d_1(x)$</span>
-    would be even, and if <span class="inline-math">$u_i\neq v$</span>, then the coefficient of <span class="inline-math">$[[u_i]]$</span> in <span class="inline-math">$d_m(x)$</span> would be odd.
+    <!-- If <span class="inline-math">$v\neq w$</span> lie in the same homology class, -->
+    <!-- then <span class="inline-math">$[[w]] - [[v]] = d_1(x) = \sum_{i=1}^{m} ([[b_i]] - [[a_i]])$</span> for some <span class="inline-math">$x = \sum_{i=1}^{m} [[a_i, b_i]]\in C_1(K)$</span>. -->
+    <!-- We claim that there is a sequence of vertices -->
+    <!-- <span class="display-math">$$ \begin{align*} --&gt;
+    &lt;!--     v = u_0, u_1, \ldots, u_{n-1}, u_n = w --&gt;
+    &lt;!-- \end{align*} $$</span> -->
+    <!-- such that each consecutive pair spans a 1-simplex of <span class="inline-math">$K$</span>. -->
+    <!-- This defines a path from <span class="inline-math">$v$</span> to <span class="inline-math">$w$</span> on <span class="inline-math">$|K|$</span>. -->
+    <!---->
+    <!-- Perform a graph walking algorithm: -->
+    <!-- - Step 0: Start at <span class="inline-math">$u_0=v.$</span> -->
+    <!-- - Step <span class="inline-math">$i+1$</span>: let <span class="inline-math">$[[u_i, u_{i+1}]]$</span> be an unused edge in the expression of <span class="inline-math">$x$</span>. -->
+    <!-- If <span class="inline-math">$u_{i+1}=w$</span>, we stop. Otherwise, mark this edge as used and go to the next step. -->
+    <!---->
+    <!-- The algorithm terminates in at most <span class="inline-math">$m$</span> steps, -->
+    <!-- since an edge is taken at most once. -->
+    <!-- For every vertex <span class="inline-math">$u$</span>, -->
+    <!-- every used edge into <span class="inline-math">$u$</span> is paired with an used edge out of <span class="inline-math">$u$</span>, -->
+    <!-- except when the algorithm starts at <span class="inline-math">$u$</span> or ends at <span class="inline-math">$u$</span>. -->
+    <!-- This implies it is always possible to -->
+    <!-- find an unused edge <span class="inline-math">$[[u_i, u_{i+1}]]$</span>: -->
+    <!-- otherwise, if <span class="inline-math">$u_i=v$</span>, then the coefficient of <span class="inline-math">$[[v]]$</span> in <span class="inline-math">$d_1(x)$</span> -->
+    <!-- would be even, and if <span class="inline-math">$u_i\neq v$</span>, then the coefficient of <span class="inline-math">$[[u_i]]$</span> in <span class="inline-math">$d_m(x)$</span> would be odd. -->
 </p>
 
-<h1><span class="inline-math">$\ker ϕ \leq B_1(K)$</span></h1>
+<h1><span class="inline-math">$\ker ϕ \leq B_0(K)$</span></h1>
 
 <p>
-    Conversely suppose <span class="inline-math">$v,w\in V_K$</span> lie in the same path component of <span class="inline-math">$|K|$</span>,
-    meaning there is a path <span class="inline-math">$γ: [0,1]\to |K|$</span> from <span class="inline-math">$v$</span> to <span class="inline-math">$w$</span>.
-    <span class="inline-math">$\{$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-star-link.html"><span class="inline-math">$\op{St}$</span></a><span class="inline-math">$_K(u)\mid u\in V_K\}$</span> is an open cover of <span class="inline-math">$|K|$</span>,
-    so <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-Lebesgue-number-lemma.html">by the compactness of <span class="inline-math">$[0,1]$</span></a>,
-    let <span class="inline-math">$n\in \N$</span> be such that <span class="inline-math">$γ([\frac{i}{n}, \frac{i+1}{n}])$</span>
-    lies entirely within <span class="inline-math">$\op{St}_K(u_i)$</span> for some <span class="inline-math">$u_i$</span>.
-    Since <span class="inline-math">$γ(\frac{i}{n})\in \op{St}_K(u_i) \cap \op{St}_K(u_{i-1})$</span>,
-    there is a simplex <span class="inline-math">$σ\in K$</span> whose interior contains <span class="inline-math">$γ(\frac{i}{n})$</span>
-    and has <span class="inline-math">$u_i$</span> and <span class="inline-math">$u_{i-1}$</span> as vertices.
-    Thus <span class="inline-math">$\langle u_{i-1}, u_{i}\rangle\in K$</span> as a face of <span class="inline-math">$σ$</span>.
-    We obtain a sequence of vertices
+    We claim
     <span class="display-math">$$ \begin{align*}
-        v = u_0, u_1, \ldots, u_{n-2}, u_{n-1} = w
+        \ker ϕ = \Z\sb{v-w}{v,w\in V_K \text{ in the same path component in $|K|$}}.
     \end{align*} $$</span>
-    where each consecutive pair spans a 1-simplex of <span class="inline-math">$K$</span>.
-    Hence
+    Indeed, suppose <span class="inline-math">$ϕ(\sum_{v\in V_K} n_v v) = 0$</span>,
+    i.e. for each path component <span class="inline-math">$P$</span>, say containing vertices <span class="inline-math">$V_P$</span>,
+    we have <span class="inline-math">$\sum_{v\in V_P} n_v = 0$</span>.
+    Choosing any representative <span class="inline-math">$v_P\in V_P$</span>,
+    we then have <span class="inline-math">$\sum_{v\in V_P} n_v v = \sum_{v\in V_P\setminus \set{v_P}} n_v(v - v_P)$</span>,
+    so summing over all <span class="inline-math">$P$</span>'s shows the claim.
+</p>
+<p>
+    Now it suffices to show if there is a path <span class="inline-math">$γ: [0,1]\to |K|$</span>
+    from <span class="inline-math">$v$</span> to <span class="inline-math">$w$</span>, then <span class="inline-math">$v-w\in B_0(K)$</span>.
+    <span class="inline-math">$I := [0,1]$</span> is a 1-dimensional simplicial complex,
+    so find a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-simplicial-approximation.html">simplicial approximation</a> <span class="inline-math">$Γ: I^{(r)}\to K$</span> to <span class="inline-math">$γ$</span>
+    with <span class="inline-math">$Γ(0) = u$</span> and <span class="inline-math">$Γ(1) = v$</span>.
+    Then letting <span class="inline-math">$0, \frac{1}{n}, \ldots, \frac{n-1}{n}, 1$</span> be the vertices of <span class="inline-math">$I^{(r)}$</span>,
+    we get a list <span class="inline-math">$v = v_0, v_1, \ldots, v_{n-1}, v_n = w$</span>
+    such that <span class="inline-math">$\langle v_i, v_{i+1}\rangle\in K$</span>.
+    Thus
     <span class="display-math">$$ \begin{align*}
-        [[w]] - [[v]] = d_1([[u_0, u_1]] + [[u_1, u_2]] + \ldots + [[u_{n-2}, u_{n-1}]]) \in B_{1}(K).
+        w - v = d_1([v_0, v_1] + [v_1, v_2] + \ldots + [v_{n-1}, v_n]) \in B_0(K).
     \end{align*} $$</span>
-    Hence <span class="inline-math">$\ker ϕ = B_1(K)$</span>.
+</p>
+<p>
+    <!-- Conversely suppose <span class="inline-math">$v,w\in V_K$</span> lie in the same path component of <span class="inline-math">$|K|$</span>, -->
+    <!-- meaning there is a path <span class="inline-math">$γ: [0,1]\to |K|$</span> from <span class="inline-math">$v$</span> to <span class="inline-math">$w$</span>. -->
+    <!-- <span class="inline-math">$\{$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-star-link.html"><span class="inline-math">$\op{St}$</span></a><span class="inline-math">$_K(u)\mid u\in V_K\}$</span> is an open cover of <span class="inline-math">$|K|$</span>, -->
+    <!-- so <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Lemma-Lebesgue-number-lemma.html">by the compactness of <span class="inline-math">$[0,1]$</span></a>, -->
+    <!-- let <span class="inline-math">$n\in \N$</span> be such that <span class="inline-math">$γ([\frac{i}{n}, \frac{i+1}{n}])$</span> -->
+    <!-- lies entirely within <span class="inline-math">$\op{St}_K(u_i)$</span> for some <span class="inline-math">$u_i$</span>. -->
+    <!-- Since <span class="inline-math">$γ(\frac{i}{n})\in \op{St}_K(u_i) \cap \op{St}_K(u_{i-1})$</span>, -->
+    <!-- there is a simplex <span class="inline-math">$σ\in K$</span> whose interior contains <span class="inline-math">$γ(\frac{i}{n})$</span> -->
+    <!-- and has <span class="inline-math">$u_i$</span> and <span class="inline-math">$u_{i-1}$</span> as vertices. -->
+    <!-- Thus <span class="inline-math">$\langle u_{i-1}, u_{i}\rangle\in K$</span> as a face of <span class="inline-math">$σ$</span>. -->
+    <!-- We obtain a sequence of vertices -->
+    <!-- <span class="display-math">$$ \begin{align*} --&gt;
+    &lt;!--     v = u_0, u_1, \ldots, u_{n-2}, u_{n-1} = w --&gt;
+    &lt;!-- \end{align*} $$</span> -->
+    <!-- where each consecutive pair spans a 1-simplex of <span class="inline-math">$K$</span>. -->
+    <!-- Hence -->
+    <!-- <span class="display-math">$$ \begin{align*} --&gt;
+    &lt;!--     [[w]] - [[v]] = d_1([[u_0, u_1]] + [[u_1, u_2]] + \ldots + [[u_{n-2}, u_{n-1}]]) \in B_{1}(K). --&gt;
+    &lt;!-- \end{align*} $$</span> -->
+    <!-- Hence <span class="inline-math">$\ker ϕ = B_1(K)$</span>. -->
 </p>

@@ -1,0 +1,50 @@
+<p>
+    A <em>nondeterministic finite automaton</em> (NFA) is a tuple <span class="inline-math">$N = (Q, Σ, δ, q_0, F)$</span> where
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$Q$</span> is a non-empty finite set (of <em>states</em>);
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$Σ$</span> is a non-empty finite set (the <em>alphabet</em>);
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$δ: Q\times Σ\to \mathcal{P}(Q)$</span> (the <em>transition function</em>);
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$q_0 \in Q$</span> (the <em>start state</em>); and
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$F\subseteq Q$</span> a subset (of <em>accepting states</em>).
+    </p>
+    
+</li>
+</ul>
+<p>
+    Extend <span class="inline-math">$δ$</span> to <span class="inline-math">$\hat δ: Q\times Σ^\ast\to \mathcal{P}(Q)$</span> by
+    <span class="display-math">$$ \begin{align*}
+        \hat δ(q,ε) = \set{q}, \qquad \hat δ(q, wa) = \bigcup \sb{δ(p,a)}{p\in \hat δ(q,w)}.
+    \end{align*} $$</span>
+</p>
+<p>
+    For every word <span class="inline-math">$w=a_0 a_1 \ldots a_n\in Σ^\ast$</span>,
+    the <em>state set sequence</em> is
+    <span class="display-math">$$ \begin{align*}
+        X_0 &amp;= \set{q_0}, \qquad X_{i+1} = \bigcup \sb{δ(p,a_i)}{p\in X_i}.
+    \end{align*} $$</span>
+</p>
+<p>
+    The <em>language accepted by <span class="inline-math">$N$</span></em> is
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{L}(N) = \sb{w\in Σ^\ast}{\hat δ(q_0, w) \cap F \neq \emptyset}.
+    \end{align*} $$</span>
+</p>

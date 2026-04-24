@@ -1,0 +1,52 @@
+<p>
+    Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+    <span class="inline-math">$Θ\subseteq \R^d$</span>,
+    <span class="inline-math">$X_1, \ldots, X_n$</span> be iid random variables,
+    and <span class="inline-math">$\tilde Φ = \tilde Φ(X_1, \ldots, X_n)$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a>
+    of <span class="inline-math">$Φ = Φ(θ)\in \R^k$</span>, a differentiable function <span class="inline-math">$Θ\to \R^k$</span>.
+</p>
+<p>
+    Under regularity conditions,
+    <span class="display-math">$$ \begin{align*}
+        \var_θ(\tilde Φ) \geq \frac{1}{n} \pdfd{\expect_θ[\tilde Φ]}{θ}(θ)^T \, I(θ)\inv \, \pdfd{\expect_θ[\tilde Φ]}{θ}(θ).
+    \end{align*} $$</span>
+</p>
+<p>
+    In particular, if <span class="inline-math">$\tilde Φ$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-bias-of-estimator.html">unbiased</a>, then
+    <span class="display-math">$$ \begin{align*}
+        \var_θ(\tilde Φ) \geq \frac{1}{n} \pdfd{Φ}{θ}(θ)^T \, I(θ)\inv \, \pdfd{Φ}{θ}(θ).
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Cramer-Rao.html">Proof</a>
+</p>
+<blockquote>
+    <p>
+        However, non-regular estimators can have better asymptotic variance.
+        For example, for <span class="inline-math">$\hat θ_n$</span> the maximum likelihood estimator in a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regular</a> parameter model,
+        define the <em>Hodge's estimator</em>
+        <span class="display-math">$$ \begin{align*}
+            \tilde θ_n = \begin{cases}
+                \hat θ_n, &amp;|\hat θ_n| \geq n^{-1/4}, \\
+                \hat θ_n, &amp;|\hat θ_n|&lt;n^{-1/4}.
+            \end{cases}
+        \end{align*} $$</span>
+    </p>
+    <ul>
+    <li>
+        <p>
+            For <span class="inline-math">$θ_0 \neq 0$</span>, <span class="inline-math">$\tilde θ_n - \hat θ_n \xrightarrow{p} 0$</span> so <span class="inline-math">$\sqrt{n}(\tilde θ_n - θ_0) \xrightarrow{d} N(0, I\inv(θ_0))$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            For <span class="inline-math">$θ_0 = 0$</span>, <span class="inline-math">$\tilde θ_n \xrightarrow{d} δ_0$</span>.
+        </p>
+        
+    </li>
+    </ul>
+    <p>
+        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Hodge-s-estimator.html">Derivation</a>)
+    </p>
+    
+</blockquote>

@@ -1,0 +1,56 @@
+<p>
+    Part 2 follows from part 1 by taking a maximal ideal of the non-zero ring <span class="inline-math">$R/I$</span>,
+    which <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-correspondence-theorem-for-rings.html">corresponds</a>
+    to a maximal ideal of <span class="inline-math">$R$</span> containing <span class="inline-math">$I$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$R$</span> be a non-zero ring.
+    We apply <a href="/tripos-notes/Lectures/II/Lent/Logic-and-Set-Theory-LS/Notes/Theorem-Zorn-s-lemma.html">Zorn's lemma</a> to the partial order
+    <span class="display-math">$$ \begin{align*}
+        (S = \sb{\text{ideal $I$ of $R$}}{I\subsetneq R}, \; \subseteq ).
+    \end{align*} $$</span>
+</p>
+<p>
+    Because <span class="inline-math">$R$</span> is non-zero, <span class="inline-math">$(0)$</span> is a proper ideal of <span class="inline-math">$R$</span> so <span class="inline-math">$S\neq \emptyset$</span>.
+</p>
+<p>
+    If <span class="inline-math">$T$</span> is a chain (total order under <span class="inline-math">$\subseteq$</span>) of <span class="inline-math">$S$</span>,
+    we take <span class="inline-math">$(0)$</span> to be the upper bound if <span class="inline-math">$T$</span> is empty.
+    Otherwise, let <span class="inline-math">$J := \bigcup_{I\in T} I$</span>.
+    <span class="inline-math">$J$</span> is a maximal ideal:
+</p>
+<ul>
+<li>
+    <p>
+        Because <span class="inline-math">$1\not\in I$</span> for all <span class="inline-math">$I\in T$</span>, <span class="inline-math">$1\not\in J$</span>, so <span class="inline-math">$J\neq R$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$r\in R$</span> and <span class="inline-math">$x\in J$</span>, then <span class="inline-math">$x\in I$</span> for some <span class="inline-math">$I\in T$</span>, so <span class="inline-math">$rx\in I$</span> thus <span class="inline-math">$rx\in J$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$0\in J$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        If <span class="inline-math">$x_1, x_2\in J$</span>,
+        then <span class="inline-math">$x_i\in I_i$</span> for some <span class="inline-math">$I_1, I_2\in J$</span>.
+        As <span class="inline-math">$J$</span> is totally ordered, either <span class="inline-math">$I_1 \subseteq I_2$</span> or <span class="inline-math">$I_2 \subseteq I_1$</span>,
+        WLOG the former.
+        Then <span class="inline-math">$x_1, x_2\in I_2$</span>, so <span class="inline-math">$x_1-x_2\in I_2$</span>, and hence <span class="inline-math">$x_1-x_2\in J$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Hence <span class="inline-math">$J\in S$</span> is an upper bound of <span class="inline-math">$T$</span>.
+</p>
+<p>
+    Thus by Zorn,
+    there is a <span class="inline-math">$\subseteq$</span>-maximal element <span class="inline-math">$I\in S$</span>.
+    Then <span class="inline-math">$I$</span> is a maximal ideal.
+</p>

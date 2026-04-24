@@ -1,0 +1,30 @@
+<p>
+    We will prove the contrapositive.
+    Suppose <span class="inline-math">$f$</span> has no fixed point.
+</p>
+<p>
+    Since <span class="inline-math">$X$</span> is compact,
+    <span class="display-math">$$ \begin{align*}
+        2δ := \min \sb{\|x - f(x)\|}{x\in X} &gt; 0.
+    \end{align*} $$</span>
+    Choose a triangulation <span class="inline-math">$K$</span> of <span class="inline-math">$X$</span> with mesh <span class="inline-math">$μ(K) &lt; δ$</span> (e.g. by <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Lemma-mesh-of-barycentric-subdivisions-tend-to-zero.html">subdividing</a>),
+    then find a simplicial approximation <span class="inline-math">$g: K^{(r)}\to K$</span> to <span class="inline-math">$f$</span>.
+    By definition, <span class="inline-math">$f(\op{St}_K(v)) \subseteq \op{St}_L(g(v)) \subseteq B_δ(g(v))$</span>,
+    so <span class="inline-math">$\|f(v) - g(v)\| &lt; δ$</span> for all <span class="inline-math">$v\in V_{K^{(r)}}$</span>.
+    Since <span class="inline-math">$\|f(v) - v\| \geq 2δ$</span>,
+    we must have <span class="inline-math">$\|g(v) - v\| \geq δ$</span>.
+    This shows if <span class="inline-math">$v\in σ\in K$</span>,
+    then <span class="inline-math">$g(v)\not\in σ$</span>.
+</p>
+<p>
+    Now induced map on homology is given by <span class="inline-math">$f_\ast = g_\ast \circ ν_{K,r}\inv = g_\ast \circ (s^{(r)}_\ast)\inv$</span>,
+    where <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proposition-isomorphic-homology-of-barycentric-subdivision.html"><span class="inline-math">$s^{(r)}_\bullet$</span></a>
+    is the canonical chain map <span class="inline-math">$C_\bullet(K;\Q) \to C_\bullet(K^{(r)}; \Q)$</span>
+    sending a simplex <span class="inline-math">$σ$</span> to a sum of its subdivided pieces (with appropriate orientation).
+    Our above construction ensures <span class="inline-math">$g_n(s^{(r)}_n(σ))$</span> is a sum of simplices disjoint from <span class="inline-math">$σ$</span>,
+    so the matrix of <span class="inline-math">$g_n\circ s_n^{(r)}$</span> has zero on its diagonal.
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        \tr (g_n \circ s_n^{(r)}) = 0.
+    \end{align*} $$</span>
+</p>

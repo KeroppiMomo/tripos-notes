@@ -1,0 +1,99 @@
+
+<h1><span class="inline-math">$L_1/K$</span> is Galois</h1>
+
+
+<h2><span class="inline-math">$L_1L_2/L_2$</span> is Galois</h2>
+
+<p>
+    By <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-classification-of-finite-Galois-extension.html">classification</a>,
+    <span class="inline-math">$L_1$</span> is a splitting field of a separable polynomial <span class="inline-math">$f$</span> over <span class="inline-math">$K$</span>.
+    Then <span class="inline-math">$L_1 L_2$</span> is a splitting field of <span class="inline-math">$f$</span> over <span class="inline-math">$L_2$</span> and <span class="inline-math">$f$</span> is still separable,
+    so <span class="inline-math">$L_1L_2/L_2$</span> is Galois.
+</p>
+
+<h2>Well-defined group injection</h2>
+
+<p>
+    If <span class="inline-math">$σ\in \Aut(L_1L_2/L_2)$</span>,
+    then by definition <span class="inline-math">$σ\in \Aut(L_1L_2/K)$</span>,
+    and we <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-normal-extension.html#^auto">showed</a> since <span class="inline-math">$L_1/K$</span> is normal,
+    <span class="inline-math">$σ|_{L_1}$</span> is an automorphism of <span class="inline-math">$L_1$</span>.
+    Hence the group homomorphism is well-defined.
+    Moreover if <span class="inline-math">$σ$</span> is in the kernel,
+    then <span class="inline-math">$σ|_{L_1} = \id_{L_1}$</span> and <span class="inline-math">$σ|_{L_2} = \id_{L_2}$</span>,
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-compositum.html#^auto">so</a> <span class="inline-math">$σ = \id_{L_1L_2}$</span>.
+    Hence the homomorphism is injective.
+</p>
+
+<h2>Surjectivity</h2>
+
+<p>
+    It is surjective iff <span class="inline-math">$\#\Gal(L_1L_2/L_2) = \#\Gal(L_1/K)$</span>,
+    which by <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-classification-of-finite-Galois-extension.html">classification</a>
+    is equivalent to saying <span class="inline-math">$[L_1L_2:L_2] = [L_1:K]$</span>.
+</p>
+<p>
+    If <span class="inline-math">$\#\Gal(L_1L_2/L_2) = \#\Gal(L_1/K)$</span>,
+    then since
+    <span class="display-math">$$ \begin{align*}
+    \Gal(L_1L_2/L_2) \xhookrightarrow{\text{restriction}} \Gal(L_1/L_1\cap L_2) \hookrightarrow \Gal(L_1/K),
+    \end{align*} $$</span>
+    we have <span class="inline-math">$\Gal(L_1/L_1 \cap L_2) = \Gal(L_1/K)$</span>,
+    so by <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-fundamental-theorem-of-Galois-theory.html">correspondence</a>, <span class="inline-math">$L_1 \cap L_2 = K$</span>.
+</p>
+<p>
+    Conversely, suppose <span class="inline-math">$L_1 \cap L_2 = K$</span>.
+    By the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-primitive-element.html">primitive element theorem</a>,
+    as <span class="inline-math">$L_1/K$</span> is finite and separable,
+    let <span class="inline-math">$L_1 = K(α)$</span> and <span class="inline-math">$f\in K[X]$</span> be the minimal polynomial of <span class="inline-math">$α$</span> over <span class="inline-math">$K$</span>.
+    Since <span class="inline-math">$L_1L_2 = L_2(α)$</span>,
+    it suffices to show <span class="inline-math">$f$</span> is also the minimal polynomial of <span class="inline-math">$α$</span> over <span class="inline-math">$L_2$</span>,
+    i.e. <span class="inline-math">$f$</span> is irreducible in <span class="inline-math">$L_2[X]$</span>, since then
+    <span class="display-math">$$ \begin{align*}
+        [L_1 L_2 : L_2] = \deg f = [L_1:K].
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$f = gh$</span> for <span class="inline-math">$g,h\in L_2[X]^\times$</span>.
+    Since <span class="inline-math">$f$</span> splits into linear factors over <span class="inline-math">$L_1$</span>,
+    in <span class="inline-math">$L_1L_2[X]$</span>,
+    we have that <span class="inline-math">$g,h$</span> are products of linear factors in <span class="inline-math">$L_1[X]$</span>,
+    so <span class="inline-math">$g,h\in L_1[X] \cap L_2[X] = K[X]$</span>.
+    But <span class="inline-math">$f$</span> is irreducible over <span class="inline-math">$K$</span>,
+    so either <span class="inline-math">$g$</span> or <span class="inline-math">$h$</span> is constant.
+    Thus <span class="inline-math">$f$</span> is irreducible over <span class="inline-math">$L_2$</span>.
+</p>
+
+<h1><span class="inline-math">$L_1/K$</span> and <span class="inline-math">$L_2/K$</span> are Galois</h1>
+
+
+<h2><span class="inline-math">$L_1L_2/K$</span> is Galois</h2>
+
+<p>
+    Since <span class="inline-math">$L_i/K$</span> is Galois,
+    <span class="inline-math">$L_i$</span> is a splitting field of some separable polynomial <span class="inline-math">$f_i\in K[X]$</span>.
+    Then <span class="inline-math">$L_1 L_2$</span> is a splitting field of the separable polynomial <span class="inline-math">$\op{lcm}(f_1, f_2)$</span>.
+    Thus <span class="inline-math">$L_1 L_2/K$</span> is Galois.
+</p>
+
+<h2>Well-defined group injection</h2>
+
+<p>
+    If <span class="inline-math">$σ\in \Gal(L_1L_2/K)$</span>, then <span class="inline-math">$σ|_K = \id$</span>
+    and <span class="inline-math">$σ(L_i) = L_i$</span> by normality.
+    Therefore the group homomorphism is well-defined.
+    It is injective since
+    if <span class="inline-math">$σ|_{L_1} = \id$</span> and <span class="inline-math">$σ|_{L_2} = \id$</span>,
+    then <span class="inline-math">$σ$</span> acts trivially on <span class="inline-math">$L_1L_2$</span>.
+</p>
+
+<h2>Surjectivity</h2>
+
+<p>
+    By the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-tower-law.html">tower law</a>,
+    <span class="display-math">$$ \begin{align*}
+        [L_1 L_2 : K] = [L_1 : K] [L_{1}L_2:L_1]
+    \end{align*} $$</span>
+    so <span class="inline-math">$[L_1L_2:K] = [L_1:K] [L_2:K]$</span> iff <span class="inline-math">$[L_{1}L_2 : L_1] = [L_2:K]$</span>,
+    which by part 1 holds iff <span class="inline-math">$L_1\cap L_2 = K$</span>.
+</p>

@@ -1,0 +1,93 @@
+
+<h1><span class="inline-math">$\set{\hat σ_0, \hat σ_1, \ldots, \hat σ_p}$</span> is affinely independent</h1>
+
+<p>
+    Suppose <span class="inline-math">$σ_0 &lt; σ_1 &lt; \ldots &lt; σ_p$</span>, <span class="inline-math">$\sum_{i=0}^{p} t_i \hat σ_i = 0$</span> and <span class="inline-math">$\sum_{i=0}^{p} t_i = 0$</span>.
+    If not all <span class="inline-math">$t_i=0$</span>, find the maximal <span class="inline-math">$j$</span> such that <span class="inline-math">$t_j \neq 0$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \hat σ_j = -\sum_{i=0}^{j-1} \frac{t_i}{t_j} \hat σ_i \in \langle \hat σ_0, \ldots, \hat σ_{j-1}\rangle \subseteq σ_{j-1} &lt; σ_j
+    \end{align*} $$</span>
+    but <span class="inline-math">$\hat σ_j$</span> is the interior of <span class="inline-math">$σ_j$</span>, contradiction.
+</p>
+
+<h1><span class="inline-math">$K&#x27;$</span> is a simplicial complex</h1>
+
+
+<h2>Faces</h2>
+
+<p>
+    For any <span class="inline-math">$\langle \hat σ_0, \ldots, \hat σ_p\rangle\in K&#x27;$</span> where <span class="inline-math">$σ_0 &lt; \ldots &lt; σ_p$</span> are simplices in <span class="inline-math">$K$</span>,
+    any subset of vertices <span class="inline-math">$\set{\hat σ_{i_0}, \ldots, \hat σ_{i_q}}$</span> (where <span class="inline-math">$i_0 &lt; \ldots &lt; i_q$</span>)
+    still results in a sequence <span class="inline-math">$σ_{i_0} &lt; \ldots &lt; σ_{i_q}$</span>.
+</p>
+
+<h2>Intersection</h2>
+
+<p>
+    Let <span class="inline-math">$σ&#x27; = \langle \hat σ_0, \ldots, \hat σ_p\rangle$</span> and <span class="inline-math">$τ&#x27;=\langle \hat τ_0, \ldots, \hat τ_q\rangle$</span>
+    where <span class="inline-math">$σ_0 &lt; \ldots &lt; σ_p$</span> and <span class="inline-math">$τ_0 &lt; \ldots &lt; τ_q$</span> are simplices in <span class="inline-math">$K$</span>.
+    Note <span class="inline-math">$σ&#x27; \subseteq σ_p$</span> and <span class="inline-math">$τ&#x27;\subseteq τ_q$</span>,
+    so <span class="display-math">$$σ&#x27; \cap τ&#x27; \subseteq σ_p \cap τ_q := δ,$$</span>
+    which is a common face of <span class="inline-math">$σ_p$</span> and <span class="inline-math">$τ_q$</span>.
+    Observe also that because <span class="inline-math">$δ\leq σ_p$</span> and <span class="inline-math">$σ&#x27;\subseteq σ_p$</span>,
+    we have (convince yourself using barycentric coordinates)
+    <span class="display-math">$$ \begin{align*}
+        σ&#x27; \cap δ &amp;= \langle \hat σ_0, \ldots, \hat σ_{p&#x27;}\rangle &amp;&amp;\text{where $p&#x27;$ is maximal such that $σ_{p&#x27;}\leq δ$}, \\
+        τ&#x27; \cap δ &amp;= \langle \hat τ_0, \ldots, \hat τ_{q&#x27;}\rangle &amp;&amp; \text{where $q&#x27;$ is maximal such that $σ_{q&#x27;}\leq δ$}.
+    \end{align*} $$</span>
+    Therefore by replacing <span class="inline-math">$σ&#x27;$</span> with <span class="inline-math">$σ&#x27;\cap δ$</span> and <span class="inline-math">$τ&#x27;$</span> with <span class="inline-math">$τ&#x27;\cap δ$</span>,
+    we can WLOG assume <span class="inline-math">$σ_p, τ_q$</span> are faces of a common simplex <span class="inline-math">$δ\in K$</span>.
+</p>
+<p>
+    Induct on the dimension of <span class="inline-math">$δ$</span> to show <span class="inline-math">$σ&#x27;\cap τ&#x27;\in K&#x27;$</span>.
+    Clear if <span class="inline-math">$δ$</span> is a 0-simplex.
+    Two cases:
+</p>
+<ul>
+<li>
+    <p>
+        If <span class="inline-math">$σ&#x27;$</span> or <span class="inline-math">$τ&#x27;$</span> does not contain <span class="inline-math">$\hat δ$</span>,
+        say <span class="inline-math">$σ_p &lt; δ$</span>, then <span class="inline-math">$σ&#x27;\cap τ&#x27;\subseteq σ_p$</span> lie
+        in a smaller dimensional simplex, so induction hypothesis can be applied.
+    </p>
+    
+</li><li>
+    <p>
+        Otherwise if both <span class="inline-math">$σ&#x27;$</span> and <span class="inline-math">$τ&#x27;$</span> contain <span class="inline-math">$\hat δ$</span>, i.e. <span class="inline-math">$σ_p = δ = τ_q$</span>,
+        then letting <span class="inline-math">$σ&#x27;&#x27; := \langle \hat σ_0, \ldots, \hat σ_{p-1}\rangle, τ&#x27;&#x27; := \langle \hat τ_0, \ldots, \hat τ_{q-1}\rangle\in K&#x27;$</span>,
+        we observe <span class="inline-math">$σ&#x27;\cap τ&#x27;$</span> is spanned by <span class="inline-math">$σ&#x27;&#x27;\cap τ&#x27;&#x27;$</span> and <span class="inline-math">$\hat δ$</span>.
+    </p>
+    <p>
+        (Indeed for any <span class="inline-math">$x\in σ&#x27;\cap τ&#x27; \setminus \set{\hat δ}$</span>,
+        make a ray from <span class="inline-math">$\hat δ$</span> to <span class="inline-math">$x$</span>,
+        which must intersect <span class="inline-math">$\partial δ$</span> at say <span class="inline-math">$y$</span>.
+        Now <span class="inline-math">$y\in \partial δ\cap σ&#x27; = σ&#x27;&#x27;$</span> and <span class="inline-math">$y\in \partial δ\cap τ&#x27; = τ&#x27;&#x27;$</span>,
+        so <span class="inline-math">$x$</span> is a convex combination of <span class="inline-math">$y\in σ&#x27;&#x27;\cap τ&#x27;&#x27;$</span> and <span class="inline-math">$\hat δ$</span>.)
+    </p>
+    <p>
+        Now <span class="inline-math">$σ&#x27;&#x27;\cap τ&#x27;&#x27;\subseteq σ_{p-1}&lt;δ$</span> lie in a smaller dimensional simplex,
+        so by induction hypothesis is in <span class="inline-math">$K&#x27;$</span>.
+        Thus <span class="inline-math">$σ&#x27;\cap τ&#x27;$</span> is also in <span class="inline-math">$K&#x27;$</span>.
+    </p>
+    
+</li>
+</ul>
+
+<h1><span class="inline-math">$|K&#x27;| = |K|$</span></h1>
+
+<p>
+    Since <span class="inline-math">$\langle \hat σ_0, \ldots, \hat σ_p\rangle \subseteq σ_p$</span>,
+    it is clear that <span class="inline-math">$|K&#x27;| \subseteq |K|$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$x\in σ = \langle a_0, \ldots, a_p\rangle\in K$</span>,
+    and write its barycentric coordinates as <span class="inline-math">$x = \sum_{i=0}^{p} t_i a_i$</span>.
+    By reordering the vertices, assume <span class="inline-math">$t_0 \geq t_1 \geq \ldots \geq t_p$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        x ={}&amp; (t_0 - t_1) \underbrace{a_0}_{\widehat{\langle a_0\rangle}} + 2(t_1 - t_2) \underbrace{\frac{a_0 + a_1}{2}}_{\widehat{\langle a_0, a_1\rangle}} + 3(t_2 - t_3) \underbrace{\frac{a_0 + a_1 + a_2}{3}}_{\widehat{\langle a_0, a_1, a_2\rangle}} + \ldots + (p+1)t_p \underbrace{\frac{a_0 + \ldots + a_p}{p+1}}_{\widehat{\langle a_0, \ldots, a_p\rangle}}
+    \end{align*} $$</span>
+    shows <span class="inline-math">$x\in \langle \widehat{\langle a_0\rangle}, \widehat {\langle a_0, a_1\rangle}, \ldots, \widehat{\langle a_0, \ldots, a_p\rangle}\rangle\in K&#x27;$</span>.
+    Hence <span class="inline-math">$|K| \subseteq |K&#x27;|$</span>.
+</p>

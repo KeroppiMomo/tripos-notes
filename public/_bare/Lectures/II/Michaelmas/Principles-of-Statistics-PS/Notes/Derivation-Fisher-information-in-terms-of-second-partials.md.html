@@ -1,0 +1,16 @@
+<p>
+    Compute
+    <span class="display-math">$$ \begin{align*}
+        &amp;\expect_θ\left[\pdd{θ}\pdd{θ^T} \log f(X, θ)\right]\\
+        ={}&amp; \expect_θ \left[\pdd{θ} \frac{1}{f(X,θ)} \pdd{θ^T} f(X, θ)\right] \\
+        ={}&amp; -\expect_θ \left[\frac{1}{f(X,θ)^2} \pdd{θ} f(X, θ)\pdd{θ^T} f(X, θ)\right] + \expect_θ\left[\frac{1}{f(X,θ)} \pdd{θ} \pdd{θ^T} f(X,θ)\right] \\
+        ={}&amp; -\expect_θ \left[\pdd{θ} \log f(X, θ)\pdd{θ^T} \log f(X, θ)\right] + \expect_θ\left[\frac{1}{f(X,θ)} \pdd{θ} \pdd{θ^T} f(X,θ)\right].
+    \end{align*} $$</span>
+</p>
+<p>
+    The second term is
+    <span class="display-math">$$ \begin{align*}
+        \int_{\mathcal{X}} \frac{1}{f(x,θ)} \pdd{θ} \pdd{θ^T} f(x,θ)\cdot f(x,θ)\d x = \pdd{θ} \pdd{θ^T} \underbrace{\int f(x,θ) \d x}_{1} = 0
+    \end{align*} $$</span>
+    by regularity.
+</p>

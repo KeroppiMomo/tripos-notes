@@ -1,19 +1,18 @@
 <p>
     <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-Rice.html">Rice's theorem</a> implies
-    <span class="inline-math">$\mathbb{W}\setminus \mathbf{K} \leq_m \mathbf{Fin}$</span>,
+    <span class="inline-math">$\N\setminus \mathbf{K} \leq_m \mathbf{Fin}$</span>,
     so we already have <span class="inline-math">$\mathbf{Fin}$</span> is not <span class="inline-math">$Σ_1$</span>.
     To show <span class="inline-math">$\mathbf{Fin}$</span> is not <span class="inline-math">$Π_1$</span>,
     we show <span class="inline-math">$\mathbf{K} \leq_m \mathbf{Fin}$</span>,
-    which will imply <span class="inline-math">$\mathbb{W}\setminus \mathbf{K} \leq_m \mathbb{W}\setminus \mathbf{Fin}$</span>
-    and use the fact that <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}$</span> is not <span class="inline-math">$Σ_1$</span>.
+    which will imply <span class="inline-math">$\N\setminus \mathbf{K} \leq_m \N\setminus \mathbf{Fin}$</span>
+    and use the fact that <span class="inline-math">$\N\setminus \mathbf{K}$</span> is not <span class="inline-math">$Σ_1$</span>.
 </p>
 <p>
-    Consider the total computable <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Software.html">truncated computation function</a> <span class="inline-math">$t_{w,1}(u,v)$</span>.
     Define the computable function
     <span class="display-math">$$ \begin{align*}
         g(w,v) = \begin{cases}
-            \uparrow &amp;\text{if }t_{w,1}(w,v) = a, \\
-            ε &amp;\text{otherwise}.
+            \uparrow &amp;\text{if running program $w$ with one input $w$ halts within $v$ steps}, \\
+            0 &amp;\text{otherwise}.
         \end{cases}
     \end{align*} $$</span>
     By the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-s-m-n.html">s-m-n theorem</a>,
@@ -25,16 +24,16 @@
     <p>
         If <span class="inline-math">$w\in \mathbf{K}$</span>, then <span class="inline-math">$f_{w,1}(w) \downarrow$</span>.
         This means there exists some <span class="inline-math">$v&#x27;$</span>
-        such that <span class="inline-math">$t_{w,1}(u,v) = a$</span> for all <span class="inline-math">$v&gt;v&#x27;$</span>,
+        such that running <span class="inline-math">$w$</span> with input <span class="inline-math">$w$</span> halts within <span class="inline-math">$v$</span> steps for all <span class="inline-math">$v&gt;v&#x27;$</span>,
         and hence <span class="inline-math">$f_{h(w),1}(v)$</span> converges for only finitely <span class="inline-math">$v$</span>.
         Thus <span class="inline-math">$\mathrm{W}_{h(w)}$</span> is finite.
     </p>
     
 </li><li>
     <p>
-        If <span class="inline-math">$w\not\in \mathbf{K}$</span>, then <span class="inline-math">$f_{w,1}\uparrow$</span>.
-        This means <span class="inline-math">$t_{w,1}(w,v) = ε$</span> for all <span class="inline-math">$v$</span>.
-        Hence <span class="inline-math">$\mathrm{W}_{h(w)} = \mathbb{W}$</span>.
+        If <span class="inline-math">$w\not\in \mathbf{K}$</span>, then <span class="inline-math">$f_{w,1}(w)\uparrow$</span>.
+        This means running the <span class="inline-math">$w$</span> with input <span class="inline-math">$w$</span> never halts.
+        Hence <span class="inline-math">$\mathrm{W}_{h(w)} = \N$</span>.
     </p>
     
 </li>

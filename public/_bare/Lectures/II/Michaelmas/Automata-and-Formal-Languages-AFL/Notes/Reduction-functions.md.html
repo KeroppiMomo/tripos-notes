@@ -6,47 +6,47 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                Let <span class="inline-math">$L, L&#x27;\subseteq \mathbb{W}$</span> be languages.
+                Let <span class="inline-math">$A, B\subseteq \N$</span> be subsets.
             </p>
             <p>
-                A total <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">computable</a> function <span class="inline-math">$f: \mathbb{W}\to \mathbb{W}$</span>
-                is called a <em>reduction of <span class="inline-math">$L$</span> to <span class="inline-math">$L&#x27;$</span></em> if
-                for all <span class="inline-math">$w\in \mathbb{W}$</span>,
+                A total <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-function-weakly-equivalent.html">computable</a> function <span class="inline-math">$f: \N\to \N$</span>
+                is called a <em>reduction of <span class="inline-math">$A$</span> to <span class="inline-math">$B$</span></em> if
+                for all <span class="inline-math">$w\in \N$</span>,
                 <span class="display-math">$$ \begin{align*}
-                    w\in L \iff f(w) \in L&#x27;.
+                    w\in A \iff f(w) \in B.
                 \end{align*} $$</span>
             </p>
             <p>
-                We say <span class="inline-math">$L$</span> is <em>many-one reducible</em> to <span class="inline-math">$L&#x27;$</span> (denoted as <span class="inline-math">$L\leq_m L&#x27;$</span>)
-                if there is a reduction from <span class="inline-math">$L$</span> to <span class="inline-math">$L&#x27;$</span>.
+                We say <span class="inline-math">$A$</span> is <em>many-one reducible</em> to <span class="inline-math">$B$</span> (denoted as <span class="inline-math">$A\leq_m B$</span>)
+                if there is a reduction from <span class="inline-math">$A$</span> to <span class="inline-math">$B$</span>.
             </p>
             <p>
-                We say <span class="inline-math">$L$</span> is <em>many-one equivalent</em> to <span class="inline-math">$L&#x27;$</span> (denoted as <span class="inline-math">$L\equiv_m L&#x27;$</span>)
-                if <span class="inline-math">$L\leq_m L&#x27;$</span> and <span class="inline-math">$L&#x27;\leq_m L$</span>.
+                We say <span class="inline-math">$A$</span> is <em>many-one equivalent</em> to <span class="inline-math">$B$</span> (denoted as <span class="inline-math">$A\equiv_m B$</span>)
+                if <span class="inline-math">$A\leq_m B$</span> and <span class="inline-math">$B\leq_m A$</span>.
             </p>
-            <ul>
-            <li>
+            <blockquote>
                 <p>
-                    <span class="inline-math">$\leq_m$</span> is a partial preorder, i.e. it is reflexive (<span class="inline-math">$L\leq_m L$</span> via <span class="inline-math">$f=\id_\mathbb{W}$</span>)
-                    and transitive (if <span class="inline-math">$L_1 \leq_m L_2$</span> and <span class="inline-math">$L_2 \leq_m L_3$</span>, then <span class="inline-math">$L_1 \leq_m L_3$</span> by concatenation of reductions).
+                    <span class="inline-math">$\leq_m$</span> is a partial order, i.e. it is reflexive (<span class="inline-math">$A\leq_m A$</span> via <span class="inline-math">$f=\id_\N$</span>)
+                    and transitive (if <span class="inline-math">$A_1 \leq_m A_2$</span> and <span class="inline-math">$A_2 \leq_m A_3$</span>, then <span class="inline-math">$A_1 \leq_m A_3$</span> by concatenation of reductions).
                 </p>
                 
-            </li><li>
+            </blockquote>
+            <blockquote>
                 <p>
                     <span class="inline-math">$\equiv_m$</span> is an equivalence relation.
                 </p>
                 
-            </li><!-- BEGIN BLOCK ID complement -->
-            <li id="^complement">
-                <p>
-                    Note <span class="inline-math">$L\leq_m L&#x27;\iff \mathbb{W}\setminus L \leq_m \mathbb{W}\setminus L&#x27;$</span>.
-                    Thus <span class="inline-math">$L$</span> and <span class="inline-math">$\mathbb{W}\setminus L$</span> is either many-one equivalent or incomparable by <span class="inline-math">$\leq_m$</span>.
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID complement -->
+                <p id="^complement">
+                    Note <span class="inline-math">$A\leq_m B\iff \N\setminus A \leq_m \N\setminus B$</span>.
+                    Thus <span class="inline-math">$A$</span> and <span class="inline-math">$\N\setminus A$</span> is either many-one equivalent or incomparable by <span class="inline-math">$\leq_m$</span>.
                 </p>
                 
-            </li>
-            <!-- END BLOCK ID complement -->
-            
-            </ul>
+                <!-- END BLOCK ID complement -->
+                
+            </blockquote>
             
         </div>
     </div>
@@ -76,23 +76,22 @@
             <p>
                 <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-many-one-reducible-to-computable-or-computably-enumerable-languages.html">Proof</a>
             </p>
-            <ul>
-            <li>
+            <blockquote>
                 <p>
                     Interpret <span class="inline-math">$L\leq_m L&#x27;$</span> as "<span class="inline-math">$L$</span> is at most as complicated as <span class="inline-math">$L&#x27;$</span>".
                 </p>
                 
-            </li><li>
+            </blockquote>
+            <blockquote>
                 <p>
-                    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-halting-problem.html"><span class="inline-math">$\mathbf{K}$</span></a> and <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}$</span> are incomparable in <span class="inline-math">$\leq_m$</span>:
+                    <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-halting-sets.html"><span class="inline-math">$\mathbf{K}$</span></a> and <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}$</span> are incomparable in <span class="inline-math">$\leq_m$</span>:
                     <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-many-one-reducible-equivalent.html#^complement">otherwise</a>
                     <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}\equiv_m \mathbf{K}$</span>
                     and in particular <span class="inline-math">$\mathbb{W}\setminus \mathbf{K}\leq_m \mathbf{K}$</span>,
                     contradicting with <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-halting-problem-is-computably-enumerable-but-not-computable.html"><span class="inline-math">$\mathbf{K}$</span> being <span class="inline-math">$Σ_1$</span> but not <span class="inline-math">$Π_1$</span></a>.
                 </p>
                 
-            </li>
-            </ul>
+            </blockquote>
             
         </div>
     </div>
@@ -105,14 +104,77 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                Let <span class="inline-math">$\mathcal{C}\subseteq \mathcal{P}(\mathbb{W})$</span> be a class of languages
-                and <span class="inline-math">$L\subseteq \mathbb{W}$</span> be a language.
+                Let <span class="inline-math">$\mathcal{C}\subseteq \mathcal{P}(\N)$</span> be a collection of subsets
+                and <span class="inline-math">$A\subseteq \N$</span> be a subset.
             </p>
             <p>
-                Say <span class="inline-math">$L$</span> is <span class="inline-math">$\mathcal{C}$</span>-hard if <span class="inline-math">$X$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-many-one-reducible-equivalent.html"><span class="inline-math">${}\leq_m{}$</span></a><span class="inline-math">$L$</span> for all <span class="inline-math">$X\in \mathcal{C}$</span>.
+                Say <span class="inline-math">$A$</span> is <span class="inline-math">$\mathcal{C}$</span>-hard if <span class="inline-math">$X$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-many-one-reducible-equivalent.html"><span class="inline-math">${}\leq_m{}$</span></a><span class="inline-math">$A$</span> for all <span class="inline-math">$X\in \mathcal{C}$</span>.
             </p>
             <p>
-                Say <span class="inline-math">$L$</span> is <span class="inline-math">$\mathcal{C}$</span>-complete if <span class="inline-math">$L$</span> is <span class="inline-math">$\mathcal{C}$</span>-hard and <span class="inline-math">$L\in \mathcal{C}$</span>.
+                Say <span class="inline-math">$A$</span> is <span class="inline-math">$\mathcal{C}$</span>-complete if <span class="inline-math">$A$</span> is <span class="inline-math">$\mathcal{C}$</span>-hard and <span class="inline-math">$A\in \mathcal{C}$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Sigma_n, Pi_n, Delta_n sets)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_n-Pi_n-Delta_n-sets.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A set <span class="inline-math">$X\subseteq \N^k$</span>
+                is called <span class="inline-math">$Σ_n$</span>
+                if there exists a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable set</a> <span class="inline-math">$Y\subseteq \N^{k+n}$</span>
+                such that for all <span class="inline-math">$\v x\in \N^k$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \v x\in X \iff \exists y_1 \forall y_2 \exists y_3 \forall y_4 \ldots m_n: (\v x, y_1, \ldots, y_m)\in Y.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <span class="inline-math">$X$</span> is called <span class="inline-math">$Π_n$</span> if <span class="inline-math">$\mathbb{N}^k \setminus X$</span> is <span class="inline-math">$Σ_n$</span>,
+                i.e. there exists a computable set <span class="inline-math">$Y\subseteq \N^{k+n}$</span> such that
+                <span class="display-math">$$ \begin{align*}
+                    \v x\in X \iff \forall y_1 \exists y_2 \forall y_3 \exists y_4 \ldots m_n: (\v x, y_1, \ldots, y_m)\in Y.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <span class="inline-math">$X$</span> is called <span class="inline-math">$Δ_1$</span> if <span class="inline-math">$X$</span> is both <span class="inline-math">$Σ_1$</span> and <span class="inline-math">$Π_1$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (computably enumerable iff Sigma_1)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-computably-enumerable-iff-Sigma_1.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A set is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computably enumerable</a>
+                iff it is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_n-Pi_n-Delta_n-sets.html"><span class="inline-math">$Σ_1$</span></a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computably-enumerable-iff-Sigma_1.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (computable iff Delta_1)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-computable-iff-Delta_1.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A set is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a> iff it is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_n-Pi_n-Delta_n-sets.html"><span class="inline-math">$Δ_1$</span></a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-computable-iff-Delta_1.html">Proof</a>
             </p>
             
         </div>
@@ -128,7 +190,7 @@
             <p>
                 If <span class="inline-math">$L\subseteq \mathbb{W}$</span> is a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-computable-set-computably-enumerable-set.html">computable</a> language,
                 and <span class="inline-math">$L\neq \emptyset$</span> and <span class="inline-math">$L\neq \mathbb{W}$</span>,
-                then <span class="inline-math">$L$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Δ_1$</span></a>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-hardness-and-completeness.html">complete</a>.
+                then <span class="inline-math">$L$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_n-Pi_n-Delta_n-sets.html"><span class="inline-math">$Δ_1$</span></a>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-hardness-and-completeness.html">complete</a>.
             </p>
             <p>
                 <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-non-trivial-computable-language-is-Delta_1-complete.html">Proof</a>
@@ -143,7 +205,7 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                The <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-halting-problem.html">halting problem</a> <span class="inline-math">$\mathbf{K}$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_1-Pi_1-Delta_1-sets.html"><span class="inline-math">$Σ_1$</span></a>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-hardness-and-completeness.html">complete</a>.
+                The <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-halting-sets.html">halting problem</a> <span class="inline-math">$\mathbf{K}$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Sigma_n-Pi_n-Delta_n-sets.html"><span class="inline-math">$Σ_1$</span></a>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-hardness-and-completeness.html">complete</a>.
             </p>
             <p>
                 <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-halting-problem-is-Sigma_1-complete.html">Proof</a>

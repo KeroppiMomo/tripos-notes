@@ -1,0 +1,46 @@
+<p>
+    Since <span class="inline-math">$L = K(α_1, \ldots, α_n)$</span> by finiteness,
+    it suffices to show any <span class="inline-math">$L = K(α, β)$</span> equals <span class="inline-math">$K(θ)$</span> for some <span class="inline-math">$θ\in L$</span>,
+    and induct.
+</p>
+<p>
+    We wish to find <span class="inline-math">$c\in K$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        L \equiv K(α,β) = K(θ), \qquad θ = α + cβ.
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$f,g\in K[X]$</span> be the minimal polynomials of <span class="inline-math">$α$</span> and <span class="inline-math">$β$</span> over <span class="inline-math">$K$</span> respectively,
+    and let <span class="inline-math">$α_1 = α, α_2, \ldots, α_n$</span> be roots of <span class="inline-math">$f$</span>, and <span class="inline-math">$β_1 = β, β_2, \ldots, β_m$</span> be roots of <span class="inline-math">$g$</span>
+    in some splitting field <span class="inline-math">$M$</span> of <span class="inline-math">$fg$</span> over <span class="inline-math">$L$</span>.
+    Since <span class="inline-math">$L/K$</span> is separable, all <span class="inline-math">$β_i$</span>'s are distinct.
+</p>
+<p>
+    Consider
+    <span class="display-math">$$ \begin{align*}
+        h(X) := f(θ - cX) \in K(θ)[X].
+    \end{align*} $$</span>
+    Note <span class="inline-math">$h(β) = f(α) = 0$</span>.
+    If <span class="inline-math">$h$</span> and <span class="inline-math">$g$</span> share no roots other than <span class="inline-math">$β$</span>,
+    then <span class="inline-math">$\op{gcd}(g,h) = X - β$</span> in <span class="inline-math">$M[X]$</span>.
+    But <span class="inline-math">$g,h\in K(θ)[X]$</span>, <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Lemma-GCD-of-polynomial-is-independent-of-base-field.html">so</a>
+    <span class="inline-math">$X - β\in K(θ)[X]$</span>.
+    Hence <span class="inline-math">$β\in K(θ)$</span>,
+    and thus <span class="inline-math">$α = θ - cβ \in K(θ)$</span>.
+    This shows <span class="inline-math">$K(θ) = K(α,β)$</span> as required.
+</p>
+<p>
+    Therefore we need to find <span class="inline-math">$c\in K$</span>
+    so that <span class="inline-math">$β_2, \ldots, β_m$</span> are not roots of <span class="inline-math">$h$</span>.
+    Since <span class="inline-math">$f$</span> has roots <span class="inline-math">$α_1, \ldots, α_n$</span>,
+    this is equivalent to saying choosing <span class="inline-math">$c$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        θ - cβ_j \neq α_i \iff c \neq \frac{α_j - α}{β - β_i} \quad \text{for all $i=2, \ldots, m$, $j=1, \ldots, n$}.
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$K$</span> is infinite, this is possible.
+    If <span class="inline-math">$K$</span> is finite,
+    then we <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Proposition-finite-multiplicative-subgroup-of-field-is-cyclic.html">showed</a> <span class="inline-math">$K^\times$</span> is cyclic,
+    so taking <span class="inline-math">$θ$</span> to be its generator works.
+</p>

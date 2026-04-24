@@ -1,0 +1,89 @@
+
+<h1><span class="inline-math">$V_n$</span> is irreducible</h1>
+
+<p>
+    Let <span class="inline-math">$W\leq V_n$</span> be a subrepresentation.
+    We want to show <span class="inline-math">$W = 0$</span> or <span class="inline-math">$V_n$</span>.
+</p>
+
+<h2>If <span class="inline-math">$\sum_{k=0}^{n} r_k x^{n-k} y^k \in W$</span> and <span class="inline-math">$r_i\neq 0$</span>, then <span class="inline-math">$x^{n-i}y^i\in W$</span></h2>
+
+<p>
+    We prove this claim by induction on <span class="inline-math">$\# \sb{k}{r_k\neq 0}$</span>.
+    Clear if this is 1, as <span class="inline-math">$W$</span> is a complex vector space.
+</p>
+<p>
+    Suppose <span class="inline-math">$r_i\neq 0$</span>,
+    and pick any <span class="inline-math">$z\in \C$</span> with <span class="inline-math">$z^n, z^{n-2}, \ldots, z^{2-n}, z^{-n}$</span> all distinct and <span class="inline-math">$|z| = 1$</span>.
+    Since <span class="inline-math">$W$</span> is a <span class="inline-math">$\op{SU}(2)$</span>-invariant subspace,
+    <span class="display-math">$$ \begin{align*}
+        W \ni \pmat{z \\ &amp;z\inv} * \sum_{k=0}^{n} r_k x^{n-k} y^k = \sum_{k=0}^{n} r_k z^{n-2k} x^{n-k} y^k.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$W$</span> is a complex vector space,
+    <span class="display-math">$$ \begin{align*}
+        W \ni z^{n-2i} \sum_{k=0}^{n} r_k x^{n-k} y^k.
+    \end{align*} $$</span>
+    Subtracting,
+    <span class="display-math">$$ \begin{align*}
+        W \ni \sum_{k=0}^{n} \underbrace{r_k(z^{n-2k} - z^{n-2i})}_{\tilde r_k} x^{n-k} y^k
+    \end{align*} $$</span>
+    with <span class="inline-math">$\tilde r_k = 0$</span> iff <span class="inline-math">$r_k = 0$</span> or <span class="inline-math">$k = i$</span>.
+    By induction hypothesis,
+    <span class="inline-math">$x^{n-k}y^k\in W$</span> for all <span class="inline-math">$k\neq i$</span> with <span class="inline-math">$r_k \neq 0$</span>.
+    Thus we conclude <span class="inline-math">$x^{n-i} y^i\in W$</span> using <span class="inline-math">$\sum_{k=0}^{n} r_k x^{n-k} y^k\in W$</span>.
+</p>
+
+<h2>Applying the claim</h2>
+
+<p>
+    Suppose <span class="inline-math">$w\in W\setminus \set{0}$</span>.
+    Then <span class="inline-math">$w$</span> contains some non-zero term <span class="inline-math">$x^{n-i} y^i$</span>,
+    and by the claim above, we have <span class="inline-math">$x^{n-i} y^i\in W$</span>.
+</p>
+<p>
+    Letting <span class="inline-math">$\pmat{a &amp; b \\ -\bar b &amp; \bar a}\in \op{SU}(2)$</span> act on <span class="inline-math">$x^{n-i} y^i$</span> for any <span class="inline-math">$a,b\neq 0$</span>,
+    we see <span class="inline-math">$(ax - \bar b y)^{n-i} (bx - \bar ay)^i \in W$</span>,
+    the <span class="inline-math">$x^n$</span> term of which has non-zero coefficient.
+    Therefore <span class="inline-math">$x^n \in W$</span>.
+</p>
+<p>
+    Finally letting <span class="inline-math">$\pmat{a &amp; b \\ -\bar b &amp; \bar a}\in \op{SU}(2)$</span> act again,
+    we have <span class="inline-math">$(ax - \bar b y)^n\in W$</span>,
+    where every term <span class="inline-math">$x^{n-k} y^k$</span> has non-zero coefficient.
+    Thus <span class="inline-math">$x^{n-k} y^k\in W$</span> for all <span class="inline-math">$k$</span>.
+    Hence <span class="inline-math">$W = V_n$</span>.
+</p>
+
+<h1><span class="inline-math">$V_n$</span> exhausts all irreducible representation</h1>
+
+<p>
+    Let <span class="inline-math">$V$</span> be an irreducible representation of <span class="inline-math">$\op{SU}(2)$</span>.
+    By our <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-representation-of-SU-2.html">previous results</a>,
+    <span class="inline-math">$χ_V(z)\in \Z_{\geq 0}[z, z\inv]^{\text{even}}$</span> is an even Laurent polynomial of non-negative integer coefficients,
+    and
+    <span class="display-math">$$ \begin{align*}
+        χ_{V_0}(z) ={}&amp; 1, \\
+        χ_{V_1}(z) ={}&amp; z + z\inv, \\
+        χ_{V_2}(z) ={}&amp; z^2 + 1 + z^{-2}, \\
+        χ_{V_3}(z) ={}&amp; z^3 + z + z\inv + z^{-3}, \\
+        \vdots
+    \end{align*} $$</span>
+    is a <span class="inline-math">$\Q$</span>-basis for <span class="inline-math">$\Q[z, z\inv]^{\text{even}}$</span> (even Laurent polynomial of rational coefficients).
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        χ_{V}(z) = \sum_{n=0}^{N} a_n \, χ_{V_n}(z)
+    \end{align*} $$</span>
+    for some <span class="inline-math">$a_n\in \Q$</span>.
+    Clearing denominators and moving negative terms to the other side,
+    <span class="display-math">$$ \begin{align*}
+        m \,χ_V(z) + \sum_{n=0}^{N} b_n\, χ_{V_n}(z) = \sum_{n=0}^{N} c_n\, χ_{V_n}(z)
+    \end{align*} $$</span>
+    for some <span class="inline-math">$m&gt;1$</span> and <span class="inline-math">$b_n, c_n\geq 0$</span>.
+    Both sides are characters of representations, so
+    <span class="display-math">$$ \begin{align*}
+        m V \oplus \bigoplus_{n=0}^N b_n V_n \simeq \bigoplus_{n=0}^N c_n V_n.
+    \end{align*} $$</span>
+</p>
+<p>
+    Since <span class="inline-math">$V$</span> and <span class="inline-math">$V_n$</span> are irreducible, we must have <span class="inline-math">$V = V_n$</span> for some <span class="inline-math">$n$</span>.
+</p>

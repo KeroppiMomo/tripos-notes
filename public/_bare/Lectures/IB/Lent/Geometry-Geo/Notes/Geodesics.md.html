@@ -88,7 +88,8 @@
             <p>
                 A smooth curve <span class="inline-math">$γ: [a,b]\to Σ$</span>
                 is a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic.html">geodesic</a> iff
-                <span class="inline-math">$\ddot γ(t)$</span> is normal to the surface for all <span class="inline-math">$t$</span>.
+                <span class="inline-math">$\ddot γ(t)$</span> is normal to the surface for all <span class="inline-math">$t$</span>,
+                i.e. <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-vector-field-along-curve-covariant-derivative-parallel.html"><span class="inline-math">$\mathrm{D}\dot γ/\d t$</span></a><span class="inline-math">${}= 0$</span>.
             </p>
             <p>
                 Consequently, geodesics are always parametrised with constant speed.
@@ -258,13 +259,22 @@
             <p>
                 Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span>,
                 <span class="inline-math">$p\in Σ$</span>
-                and <span class="inline-math">$0 \neq v \in$</span> <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-tangent-plane-of-smooth-surface-in-R3.html"><span class="inline-math">$T_p Σ$</span></a>.
+                and <span class="inline-math">$v \in$</span> <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-tangent-plane-of-smooth-surface-in-R3.html"><span class="inline-math">$T_p Σ$</span></a>.
             </p>
             <p>
                 There exists some <span class="inline-math">$ε&gt;0$</span>
                 and a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic.html">geodesic</a> <span class="inline-math">$γ: (-ε, ε)\to Σ$</span>
                 such that <span class="inline-math">$γ(0)=p$</span> and <span class="inline-math">$γ&#x27;(0)=v$</span>.
                 Moreover <span class="inline-math">$γ$</span> depends smoothly on the initial condition <span class="inline-math">$(p,v)$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$γ$</span> is unique in the following sense:
+                if <span class="inline-math">$\tilde γ: (-\tilde ε, \tilde ε)\to Σ$</span>
+                is another such geodesic,
+                then <span class="inline-math">$\tilde γ = γ$</span> on <span class="inline-math">$(-ε, ε) \cap (-\tilde ε, \tilde ε)$</span>.
+            </p>
+            <p>
+                Therefore there exists a unique maximal geodesic <span class="inline-math">$γ: (T_-, T_+)\to S$</span>.
             </p>
             <p>
                 <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-existence-of-geodesics.html">Proof</a>
@@ -274,8 +284,8 @@
     </div>
     <div class="markdown-embed embed-result">
         <div class="markdown-embed-title">
-            Corollary (geodesic normal coordinates)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Corollary-geodesic-normal-coordinates.html">open_in_new</a>
+            Corollary (geodesic parallel coordinates)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Corollary-geodesic-parallel-coordinates.html">open_in_new</a>
         </div>
         <div class="markdown-embed-content">
             <p>
@@ -297,8 +307,8 @@
     </div>
     <div class="markdown-embed embed-result">
         <div class="markdown-embed-title">
-            Lemma (curvature in geodesic normal coordinates)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-curvature-in-geodesic-normal-coordinates.html">open_in_new</a>
+            Lemma (curvature when E=1, F=0)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-curvature-when-E-1-F-0.html">open_in_new</a>
         </div>
         <div class="markdown-embed-content">
             <p>
@@ -307,13 +317,13 @@
             </p>
             <p>
                 If the first fundamental form is <span class="inline-math">$\d u^2 + G(u,v) \d v^2$</span>, then
-                the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Gauss-curvature.html">Gauss curvature</a> is
+                the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">Gauss curvature</a> is
                 <span class="display-math">$$ \begin{align*}
                     κ = -\frac{\sqrt{G}_{uu}}{\sqrt{G}}.
                 \end{align*} $$</span>
             </p>
             <p>
-                <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-curvature-in-geodesic-normal-coordinates.html">Proof</a>
+                <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-curvature-when-E-1-F-0.html">Proof</a>
             </p>
             
         </div>
@@ -327,14 +337,47 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                The <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Gauss-curvature.html">Gauss curvature</a> is an isometry invariant,
+                The <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">Gauss curvature</a> is an isometry invariant,
                 i.e. if <span class="inline-math">$Σ_1$</span> and <span class="inline-math">$Σ_2$</span> are two smooth surfaces in <span class="inline-math">$\R^3$</span>
-                and <span class="inline-math">$f: Σ_1 \to Σ_2$</span> is an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-isometric-locally-isometric.html">isometry</a>,
+                and <span class="inline-math">$f: Σ_1 \to Σ_2$</span> is an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-isometry-local-isometry-of-surfaces-in-IB-Geometry.html">isometry</a>,
                 then <span class="inline-math">$κ_{Σ_1}(p) = κ_{Σ_2}(f(p))$</span>.
             </p>
             <p>
-                <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-theorema-egregium.html">Proof</a>
+                In a local parametrisation, the Gauss curvature can be expressed as
+                <span class="display-math">$$ \begin{align*}
+                    K = \frac{1}{E}((Γ_{11}^2)_v - (Γ_{12}^2)_u + Γ_{11}^1 Γ_{12}^2 + Γ_{11}^2 Γ_{22}^2 - Γ_{12}^1 Γ_{11}^2 - Γ_{12}^2 Γ_{12}^2)
+                \end{align*} $$</span>
+                where <span class="inline-math">$Γ_{ij}^k$</span> are the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-Christoffel-symbols-for-surfaces-in-R3.html">Christoffel symbols</a>.
             </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-theorema-egregium-using-geodesic-parallel-coordinates.html">Proof using geodesic parallel coordinates</a>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-theorema-egregium-using-Christoffel-symbols.html">Proof using Christoffel symbols</a>
+            </p>
+            <blockquote>
+                <p>
+                    In a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">orthogonal</a>
+                    parametrisation (i.e. <span class="inline-math">$F = 0$</span>), this simplifies to
+                    <span class="display-math">$$ \begin{align*}
+                        K = -\frac{1}{2\sqrt{EG}}\left(\pdd{u} \frac{G_u}{\sqrt{EG}} + \pdd{v}\frac{E_v}{\sqrt{EG}}\right).
+                    \end{align*} $$</span>
+                </p>
+                <p>
+                    For an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">isomthermal</a>
+                    parametrisation with <span class="inline-math">$F = 0$</span>, <span class="inline-math">$E = G = λ^2$</span>,
+                    <span class="display-math">$$ \begin{align*}
+                        K = -\frac{1}{λ^2} ∇^2(\log λ).
+                    \end{align*} $$</span>
+                </p>
+                <p>
+                    With <span class="inline-math">$E = 1$</span>, <span class="inline-math">$F = 0$</span>, we get
+                    <span class="display-math">$$ \begin{align*}
+                        K = -\frac{\sqrt{G}_{uu}}{\sqrt{G}}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </blockquote>
             
         </div>
     </div>
@@ -352,8 +395,8 @@
             <ol start="1">
             <li>
                 <p>
-                    If <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Gauss-curvature.html"><span class="inline-math">$κ$</span></a> <span class="inline-math">$\equiv 0$</span>,
-                    then <span class="inline-math">$Σ$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-isometric-locally-isometric.html">locally isometric</a> to the plane <span class="inline-math">$\R^2$</span> (first fundamental form <span class="inline-math">$\d u^2 + \d v^2$</span>).
+                    If <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html"><span class="inline-math">$κ$</span></a> <span class="inline-math">$\equiv 0$</span>,
+                    then <span class="inline-math">$Σ$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-isometry-local-isometry-of-surfaces-in-IB-Geometry.html">locally isometric</a> to the plane <span class="inline-math">$\R^2$</span> (first fundamental form <span class="inline-math">$\d u^2 + \d v^2$</span>).
                 </p>
                 
             </li><li>

@@ -389,8 +389,8 @@
             <p>
                 <div class="markdown-embed">
                     <div class="markdown-embed-title">
-                        Bayesian inference
-                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Bayesian-inference.html">open_in_new</a>
+                        Bayesian inference in IB Statistics
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Bayesian-inference-in-IB-Statistics.html">open_in_new</a>
                     </div>
                     <div class="markdown-embed-content">
                         <p>
@@ -404,6 +404,22 @@
                             the <em>posterior distribution</em> of <span class="inline-math">$θ$</span> is given by Bayes' theorem
                             <span class="display-math">$$ \begin{align*}
                                 \underbrace{π(θ\mid x)}_{\text{posterior}} = \frac{π(θ)\,p(x\mid θ)}{p(x)} \propto  \underbrace{p(x\mid θ)}_{\text{likelihood}}\,\underbrace{π(θ)}_{\text{prior}}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <span class="inline-math">$π(θ\mid x)$</span> can be a probability distribution
+                            even if the function <span class="inline-math">$π$</span> may not.
+                            In this case we say <span class="inline-math">$π$</span> is an <em>improper prior</em>.
+                        </p>
+                        <p>
+                            The <em>prior predictive distribution</em> is the marginal distribution of <span class="inline-math">$X$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                π(x) = \int_{Θ} p(x\midθ) \,π(θ) \d θ
+                            \end{align*} $$</span>
+                            and the <em>posterior predictive distribution</em>
+                            is the conditional distributional of an iid copy <span class="inline-math">$X&#x27;$</span> given <span class="inline-math">$X$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                π(x&#x27;\mid x) = \int_{Θ} p(x&#x27;\mid θ) \, π(θ\mid x)\d θ.
                             \end{align*} $$</span>
                         </p>
                         <p>
@@ -644,7 +660,7 @@
                     <div class="markdown-embed-content">
                         <p>
                             Suppose the data <span class="inline-math">$X$</span> follows <span class="inline-math">$p(x; θ)$</span> where <span class="inline-math">$θ$</span> is unknown.
-                            Let <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_0$</span></a><span class="inline-math">$: θ \in Θ_0$</span> and <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_1$</span></a><span class="inline-math">$: θ \in Θ_1$</span> be simple hypotheses.
+                            Let <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_0$</span></a><span class="inline-math">$: θ \in Θ_0$</span> and <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_1$</span></a><span class="inline-math">$: θ \in Θ_1$</span> be hypotheses.
                         </p>
                         <p>
                             The <em>generalised likelihood ratio statistic</em> is
@@ -680,6 +696,9 @@
                                 2\log Λ(X) \xrightarrow{d} χ_{d_1-d_0}^2 \quad \text{as $n\to \infty$ under $H_0$}
                             \end{align*} $$</span>
                             where <span class="inline-math">$d_1, d_0$</span> are the degrees of freedom (number of free parameters) of <span class="inline-math">$H_1$</span> and <span class="inline-math">$H_0$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Wilks-theorem-for-simple-null-hypothesis.html">Proof for simple null hypothesis</a>
                         </p>
                         
                     </div>
@@ -1045,7 +1064,7 @@
                             Suppose <span class="inline-math">$μ$</span> is unknown but <span class="inline-math">$σ^2$</span> is known.
                         </p>
                         <p>
-                            The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Bayesian-inference.html">conjugate prior</a> is <span class="inline-math">$μ\sim N(μ_0, λ_0\inv)$</span> where <span class="inline-math">$μ_0\in \R$</span> and <span class="inline-math">$λ_0&gt;0$</span> are given.
+                            The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Bayesian-inference-in-IB-Statistics.html">conjugate prior</a> is <span class="inline-math">$μ\sim N(μ_0, λ_0\inv)$</span> where <span class="inline-math">$μ_0\in \R$</span> and <span class="inline-math">$λ_0&gt;0$</span> are given.
                             After observing <span class="inline-math">$X_1, \ldots, X_n \sim N(μ, λ\inv)$</span>, the posterior distribution is
                             <span class="display-math">$$ \begin{align*}
                                 μ\mid X \sim N\biggl(\frac{λ_0 μ_0 + nλ\overline{X}}{λ_0 + nλ}, \frac{1}{λ_0 + nλ}\biggr).

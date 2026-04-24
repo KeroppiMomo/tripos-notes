@@ -13,27 +13,29 @@
                     </div>
                     <div class="markdown-embed-content">
                         <p>
+                            Let <span class="inline-math">$\v x(t)$</span> be a curve.
                             For some starting point <span class="inline-math">$t_0$</span>, the arc length <span class="inline-math">$s(t)$</span> is the (signed) distance from <span class="inline-math">$t_0$</span> to <span class="inline-math">$t$</span>,
                             <span class="display-math">$$ s(t) = \int_{t_0}^t |\dv x(t&#x27;)|\,dt&#x27;. $$</span>
                         </p>
+                        <blockquote>
+                            <p>
+                                The arc length between two points on a curve is independent of the choice of parametrisation. (<a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Proof-arc-length-independent-of-parametrisation.html">Proof</a>)
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$\v x$</span> is <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-regular-parametrisation.html">regular</a>,
+                                then <span class="inline-math">$s&#x27;(t) = |\dot{\v x}(t)| &gt; 0$</span>, so <span class="inline-math">$s$</span> is invertible by the <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-inverse-function-theorem-on-R.html">inverse function theorem</a>.
+                                Using <span class="inline-math">$s$</span> to parametrise the curve i.e. <span class="inline-math">$\v x(s)$</span>, the tangent vector has unit norm:
+                                <span class="display-math">$$ \bigg|\dvd xs\bigg| = \frac{|d\v x/dt|}{ds/dt} = 1. $$</span>
+                            </p>
+                            
+                        </blockquote>
                         
                     </div>
                 </div>
             </p>
-            <ul>
-            <li>
-                <p>
-                    The arc length between two points on a curve is independent of the choice of parametrisation. (<a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Proof-arc-length-independent-of-parametrisation.html">Proof</a>)
-                </p>
-                
-            </li><li>
-                <p>
-                    Using <span class="inline-math">$s$</span> to parametrise the curve i.e. <span class="inline-math">$\v x(s)$</span>, the tangent vector has unit norm:
-                    <span class="display-math">$$ \bigg|\dvd xs\bigg| = \frac{|d\v x/dt|}{ds/dt} = 1. $$</span>
-                </p>
-                
-            </li>
-            </ul>
             
         </div>
     </div>
@@ -46,60 +48,47 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                Let <span class="inline-math">$σ: V\to U$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">allowable parametrisation</a>
-                on a smooth surface <span class="inline-math">$Σ$</span> in <span class="inline-math">$\R^3$</span>.
-                Define
+                Let <span class="inline-math">$Σ$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">smooth surface in <span class="inline-math">$\R^3$</span></a>
+                and <span class="inline-math">$p\in Σ$</span>.
+            </p>
+            <p>
+                The <em>first fundamental form</em> <span class="inline-math">$\I_p$</span> of <span class="inline-math">$Σ$</span> at <span class="inline-math">$p$</span>
+                is the restriction of the Euclidean inner product <span class="inline-math">$\langle ,\rangle$</span> in <span class="inline-math">$\R^3$</span> on the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-tangent-space.html">tangent space</a> <span class="inline-math">$T_pΣ$</span>,
+                i.e.
                 <span class="display-math">$$ \begin{align*}
-                    E = \langle σ_u, σ_u\rangle, \quad F = \langle σ_u, σ_v\rangle, \quad G = \langle σ_v, σ_v\rangle
+                    \I_p: T_pΣ \times T_pΣ &amp;\to \R \\
+                    (v,w) &amp;\mapsto \langle v,w\rangle.
                 \end{align*} $$</span>
-                which are functions of <span class="inline-math">$(u,v)\in V$</span>.
             </p>
-            <p>
-                The <em>first fundamental form</em> <span class="inline-math">$\I$</span> of <span class="inline-math">$Σ$</span> in the parametrisation <span class="inline-math">$σ$</span>
-                can be represented by
-            </p>
-            <ul>
-            <li>
+            <blockquote>
                 <p>
-                    the formal expression
+                    Given an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">allowable parametrisation</a> <span class="inline-math">$σ: V\to U$</span> on <span class="inline-math">$Σ$</span> near <span class="inline-math">$p$</span>,
+                    <span class="inline-math">$\set{σ_u, σ_v}$</span> is a basis of <span class="inline-math">$T_pΣ = \im \d σ_{σ\inv(p)}$</span>.
+                    In this basis, <span class="inline-math">$\I_p$</span> is represented by
                     <span class="display-math">$$ \begin{align*}
-                    E \d u^2 + 2F \d u \d v + G \d v^2,
+                        \pmat{E &amp; F \\ F &amp; G} := \pmat{\langle σ_u, σ_u\rangle &amp; \langle σ_u, σ_v\rangle \\ \langle σ_v, σ_u\rangle &amp; \langle σ_v, σ_v\rangle}
+                        = (\d σ)^T (\d σ),
+                    \end{align*} $$</span>
+                    which is a function in <span class="inline-math">$(u,v)\in V$</span>.
+                    Formally we also write
+                    <span class="display-math">$$ \begin{align*}
+                        \I_p = E \d u^2 + 2F \d u \d v + G \d v^2.
                     \end{align*} $$</span>
                 </p>
                 
-            </li><li>
+            </blockquote>
+            <blockquote>
                 <p>
-                    the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-inner-product-space.html">inner product</a> on <span class="inline-math">$\R^2$</span>
-                    <span class="display-math">$$ \begin{align*}
-                    I((u_1, v_1), (u_2, v_2)) = E u_1 u_2 + F(u_1 v_2 + v_1 u_2) + Gv_1 v_2,
-                    \end{align*} $$</span>
+                    A parametrisation is <em>orthogonal</em> if <span class="inline-math">$F = 0$</span>.
                 </p>
                 
-            </li><li>
+            </blockquote>
+            <blockquote>
                 <p>
-                    or its matrix representation
-                    <span class="display-math">$$ \begin{align*}
-                    \pmat{E &amp; F \\ F &amp; G} = (Dσ)^T (Dσ).
-                    \end{align*} $$</span>
+                    A parametrisation is <em>isothermal</em> if <span class="inline-math">$F = 0$</span> and <span class="inline-math">$E = G = λ^2$</span> for some function <span class="inline-math">$λ$</span>.
                 </p>
                 
-            </li>
-            </ul>
-            <p>
-                <br>
-            </p>
-            <ul>
-            <li>
-                <p>
-                    The first fundamental form at <span class="inline-math">$p = σ(0)$</span> represents the Euclidean inner product on <span class="inline-math">$T_p Σ$</span>:
-                    for <span class="inline-math">$v = Dσ|_0(v_0)$</span> and <span class="inline-math">$w = Dσ|_0(w_0)$</span>, we have
-                    <span class="display-math">$$ \begin{align*}
-                    \langle v,w\rangle = I(v_0, w_0).
-                    \end{align*} $$</span>
-                </p>
-                
-            </li>
-            </ul>
+            </blockquote>
             
         </div>
     </div>
@@ -130,8 +119,8 @@
 <p>
     <div class="markdown-embed embed-definition">
         <div class="markdown-embed-title">
-            Definition (isometric, locally isometric)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-isometric-locally-isometric.html">open_in_new</a>
+            Definition (isometry, local isometry of surfaces in IB Geometry)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-isometry-local-isometry-of-surfaces-in-IB-Geometry.html">open_in_new</a>
         </div>
         <div class="markdown-embed-content">
             <p>
@@ -165,7 +154,7 @@
                 Let <span class="inline-math">$Σ, Σ&#x27;$</span> be smooth surface in <span class="inline-math">$\R^3$</span>.
             </p>
             <p>
-                <span class="inline-math">$Σ$</span> and <span class="inline-math">$Σ&#x27;$</span> are <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-isometric-locally-isometric.html">locally isometric</a> near <span class="inline-math">$p\in Σ$</span>
+                <span class="inline-math">$Σ$</span> and <span class="inline-math">$Σ&#x27;$</span> are <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-isometry-local-isometry-of-surfaces-in-IB-Geometry.html">locally isometric</a> near <span class="inline-math">$p\in Σ$</span>
                 and <span class="inline-math">$p&#x27;\in Σ&#x27;$</span>
                 iff there are <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">allowable parametrisations</a>
                 <span class="inline-math">$σ: V\to U\subseteq Σ$</span> with <span class="inline-math">$σ(0)=p$</span>
@@ -276,23 +265,24 @@
                 where <span class="inline-math">$\I = \pmat{E &amp; F \\ F &amp; G}$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">first fundamental form</a>.
             </p>
             <p>
-                For any open sets <span class="inline-math">$U\subseteq Σ$</span>, define <span class="inline-math">$\mathrm{area}(U)$</span> by covering it
-                by images of allowable parametrisations.
+                If <span class="inline-math">$U = U_1 \sqcup \ldots \sqcup U_n \sqcup Y$</span>
+                such that <span class="inline-math">$U_1, \ldots, U_n$</span> are images of a parametrisation
+                and <span class="inline-math">$Y$</span> has <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-measure-zero-on-manifold.html">measure 0</a>,
+                then <span class="inline-math">$\op{area}(U) := \sum_{i=1}^{n} \op{area}(U_i)$</span>.
             </p>
-            <ul>
-            <li>
+            <blockquote>
                 <p>
                     Motivation: viewing <span class="inline-math">$σ_u$</span> and <span class="inline-math">$σ_v$</span> as an infinitesimal parallelogram on <span class="inline-math">$Σ$</span>,
                     we integrate over the area <span class="inline-math">$\sqrt{\langle σ_u\times σ_v, σ_u\times σ_v\rangle} = \sqrt{\langle σ_u, σ_u\rangle\langle σ_v, σ_v\rangle - \langle σ_u, σ_v\rangle^2}$</span>.
                 </p>
                 
-            </li><li>
+            </blockquote>
+            <blockquote>
                 <p>
                     <span class="inline-math">$\mathrm{area}(U)$</span> does not depend on the parametrisation. (<a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-area-on-surface-independent-of-parametrisation.html">Proof</a>)
                 </p>
                 
-            </li>
-            </ul>
+            </blockquote>
             
         </div>
     </div>

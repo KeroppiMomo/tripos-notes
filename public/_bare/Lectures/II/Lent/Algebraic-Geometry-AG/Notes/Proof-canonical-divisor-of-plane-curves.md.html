@@ -1,0 +1,81 @@
+<p>
+    Apply a linear change of coordinates (which preserves hyperplane sections)
+    to assume WLOG <span class="inline-math">$(0:1:0)\not\in V$</span>.
+    Let <span class="inline-math">$V = Z(f)$</span> where <span class="inline-math">$f\in k[x_0, x_1, x_2]$</span> is homogeneous of <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-hyperplane-section-degree-of-curve.html#^plane">degree</a> <span class="inline-math">$d$</span>.
+</p>
+
+<h1>Affine patch <span class="inline-math">$\set{x_0 \neq 0}$</span></h1>
+
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        x := \frac{x_1}{x_0}, \quad y := \frac{x_2}{x_0}, \quad F_0(x,y) := f(1, x, y).
+    \end{align*} $$</span>
+    Because <span class="inline-math">$f(1,x,y) = 0$</span> for <span class="inline-math">$(1:x:y)\in V$</span>,
+    taking differential gives
+    <span class="display-math">$$ \begin{align*}
+        0 = \pdfd{F_0}{x} \d x + \pdfd{F_0}{y} \d y,
+    \end{align*} $$</span>
+    so define
+    <span class="display-math">$$ \begin{align*}
+        ω := \frac{\d x}{\partial F_0/\partial y} = -\frac{\d y}{\partial F_0/\partial x}.
+    \end{align*} $$</span>
+    In the affine patch <span class="inline-math">$\set{x_0\neq 0}$</span> and for <span class="inline-math">$P\in V\cap \set{x_0\neq 0}$</span>,
+    by smoothness either <span class="inline-math">$\pdfd{F_0}{x}(P)$</span> or <span class="inline-math">$\pdfd{F_0}{y}(P)$</span> is non-zero.
+    If <span class="inline-math">$\pdfd{F_0}{y}(P) \neq 0$</span>, then <span class="inline-math">$x - x(P)$</span> is a local parameter, so
+    <span class="display-math">$$ \begin{align*}
+        ν_P(ω) = ν_P\Bigl(\frac{1}{\partial F_0/\partial y}\Bigr) = 0,
+    \end{align*} $$</span>
+    and if <span class="inline-math">$\pdfd{F_0}{x}(P) \neq 0$</span>, then <span class="inline-math">$y-y(P)$</span> is a local parameter, so
+    <span class="display-math">$$ \begin{align*}
+        ν_P(ω) = ν_P\Bigl(-\frac{1}{\partial F_0/\partial x}\Bigr) = 0.
+    \end{align*} $$</span>
+    Hence <span class="inline-math">$\op{supp}(ω)$</span> lies on the hyperplane <span class="inline-math">$\set{x_0 = 0}$</span>, meaning
+    <span class="display-math">$$ \begin{align*}
+        ω = \sum_{P\in V \cap \set{x_0 = 0}} ν_P(ω) P.
+    \end{align*} $$</span>
+</p>
+
+<h1>Affine patch <span class="inline-math">$\set{x_2 \neq 0}$</span></h1>
+
+<p>
+    Next, consider the affine patch <span class="inline-math">$\set{x_2\neq 0}$</span> and define
+    <span class="display-math">$$ \begin{gather*}
+        z := \frac{x_0}{x_2}, \quad w := \frac{x_1}{x_2}, \quad F_2(z,w) := f(z,w,1), \\
+        η := \frac{\d z}{\partial F_2/\partial w} = -\frac{\d w}{\partial F_2/\partial z}.
+    \end{gather*} $$</span>
+    As before, <span class="inline-math">$\op{supp}(η)$</span> lies on <span class="inline-math">$\set{x_2 = 0}$</span>.
+</p>
+
+<h1>Relating <span class="inline-math">$ω$</span> and <span class="inline-math">$η$</span></h1>
+
+<p>
+    We note that from definition
+    <span class="display-math">$$ \begin{align*}
+        F_0(x,y) = f(1,x,y) = y^{d} f\Bigl(\frac{1}{y}, \frac{x}{y}, 1\Bigr) = y^d F_2\Bigl(\frac{1}{y}, \frac{x}{y}\Bigr)
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \pdfd{F_0}{x}(x,y) = y^{d-1} \pdfd{F_2}{w}\Bigl(\frac{1}{y}, \frac{x}{y}\Bigr) = z^{1-d} \pdfd{F_2}{w}(z, w).
+    \end{align*} $$</span>
+</p>
+<p>
+    Moreover, taking the differential of <span class="inline-math">$y = 1/z$</span> gives
+    <span class="display-math">$$ \begin{align*}
+        \d y = -\frac{\d z}{z^2}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Substituting,
+    <span class="display-math">$$ \begin{align*}
+        ω = -\frac{\d y}{\partial F_0/\partial x} = \frac{z^{-2} \d z}{z^{1-d} \partial F_2/\partial w} = z^{d-3} η.
+    \end{align*} $$</span>
+    Therefore for <span class="inline-math">$P\in V \cap \set{x_0 = 0}$</span> (and noting <span class="inline-math">$x_2(P) \neq 0$</span> by assumption)
+    <span class="display-math">$$ \begin{align*}
+        ν_P(ω) = (d-3) ν_P(z) + \underbrace{ν_P(η)}_{0} = (d-3) ν_P(H)
+    \end{align*} $$</span>
+    and hence
+    <span class="display-math">$$ \begin{align*}
+        ω = (d-3) H.
+    \end{align*} $$</span>
+</p>

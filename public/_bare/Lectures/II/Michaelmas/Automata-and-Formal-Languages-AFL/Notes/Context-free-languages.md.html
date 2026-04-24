@@ -1,6 +1,145 @@
 <p>
     <div class="markdown-embed embed-definition">
         <div class="markdown-embed-title">
+            Definition (context-free grammar, language)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-context-free-grammar-language.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-grammar-language.html">grammar</a> <span class="inline-math">$G = (Σ, N, P, S)$</span>
+                is <em>context-free</em>
+                if every production rule <span class="inline-math">$α\to β\in P$</span>
+                has <span class="inline-math">$α\in N$</span>.
+                That is, every production rule is either of <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-hierarchy.html">type 2</a>
+                or <span class="inline-math">$A\to ε$</span> for <span class="inline-math">$A\in N$</span>.
+            </p>
+            <p>
+                A language <span class="inline-math">$L \subseteq Σ^\ast$</span> is <em>context-free</em> if it is produced by some context-free grammar.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Chomsky normal form)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-normal-form.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-grammar-language.html">grammar</a> <span class="inline-math">$G = (Σ, N, P, S)$</span> is said to be in <em>Chomsky normal form</em>
+                if all of its rewrite rules are either of the form <span class="inline-math">$A \to AB$</span>
+                (for <span class="inline-math">$A,B,C \in N$</span>) or of the form <span class="inline-math">$A \to a$</span> (for <span class="inline-math">$A\in N$</span> and <span class="inline-math">$a\in Σ$</span>).
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$G$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-hierarchy.html">context-free</a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (derivation length in Chomsky normal form)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-derivation-length-in-Chomsky-normal-form.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$G = (Σ, N, P, S)$</span> is a grammar in <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-normal-form.html">Chomsky normal form</a>
+                and <span class="inline-math">$w\in \mathcal{L}(G)$</span> with <span class="inline-math">$|w| = n$</span>,
+                then any <span class="inline-math">$G$</span>-derivation of <span class="inline-math">$w$</span> has length <span class="inline-math">$2n-1$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-derivation-length-in-Chomsky-normal-form.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (removing eps and unit productions from context-free grammar)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-removing-eps-and-unit-productions-from-context-free-grammar.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$G = (Σ, N, P, S)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-context-free-grammar-language.html">context-free grammar</a>.
+            </p>
+            <p>
+                There exists a context-free grammar <span class="inline-math">$\mathring G = (Σ, N, \mathring P, S)$</span>
+                where <span class="inline-math">$\mathring P$</span> has no <span class="inline-math">$ε$</span> production (i.e. rules of the form <span class="inline-math">$A\to ε$</span>)
+                and unit production (i.e. rules of the form <span class="inline-math">$A\to B$</span>)
+                and <span class="inline-math">$\mathcal{L}(\mathring G) = \mathcal{L}(G) \setminus \set{ε}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-removing-eps-and-unit-productions-from-context-free-grammar.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (equivalent to variable-targeted grammar)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-equivalent-to-variable-targeted-grammar.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For every <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-hierarchy.html">context-free</a> grammar
+                without <span class="inline-math">$ε$</span>-production (i.e. rules of the form <span class="inline-math">$A\to ε$</span>),
+                there exists an <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-equivalent-grammar.html">equivalent</a> context-free <em>variable-targeted</em> grammar,
+                i.e. where all rewrite rules are either <span class="inline-math">$A\to a$</span> or <span class="inline-math">$A \to B_1 B_2 \ldots B_k$</span>
+                (where <span class="inline-math">$A,B_1, \ldots, B_k\in N$</span> and <span class="inline-math">$a\in Σ$</span>).
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalent-to-variable-targeted-grammar.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (equivalent to Chomsky normal form)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-equivalent-to-Chomsky-normal-form.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For any <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-context-free-grammar-language.html">context-free grammar</a> <span class="inline-math">$G$</span>,
+                there exists a grammar <span class="inline-math">$\bar G$</span> in <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-normal-form.html">Chomsky normal form</a>
+                such that <span class="inline-math">$\mathcal{L}(\bar G) = \mathcal{L}(G) \setminus \set{ε}$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalent-to-Chomsky-normal-form.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <!-- <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (equivalent to unit-closed grammar)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-equivalent-to-unit-closed-grammar.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For every <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-hierarchy.html">context-free</a> grammar,
+                there exists an equivalent <em>unit closed</em> grammar, i.e.
+                if <span class="inline-math">$A\to B$</span> and <span class="inline-math">$B\to a$</span> are rewrite rules, then so is <span class="inline-math">$A\to a$</span> for <span class="inline-math">$A,B$</span> variables and <span class="inline-math">$a$</span> letter.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalent-to-unit-closed-grammar.html">Proof</a>
+            </p>
+            
+        </div>
+    </div> -->
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
             Definition (finitely branching tree)
             <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-finitely-branching-tree.html">open_in_new</a>
         </div>
@@ -91,8 +230,6 @@
             
         </div>
     </div>
-</p>
-<p>
     <div class="markdown-embed embed-definition">
         <div class="markdown-embed-title">
             Definition (parse tree)
@@ -100,7 +237,7 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                Let <span class="inline-math">$G = (Σ, V, P, S)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">context-free grammar</a>,
+                Let <span class="inline-math">$G = (Σ, V, P, S)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-hierarchy.html">context-free grammar</a>,
                 and <span class="inline-math">$A\in V$</span> be a variable.
             </p>
             <p>
@@ -178,8 +315,6 @@
             
         </div>
     </div>
-</p>
-<p>
     <div class="markdown-embed embed-result">
         <div class="markdown-embed-title">
             Proposition (equivalence of context-free grammar and parse tree)
@@ -187,7 +322,7 @@
         </div>
         <div class="markdown-embed-content">
             <p>
-                Let <span class="inline-math">$G = (Σ, V, P, S)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">context-free grammar</a>.
+                Let <span class="inline-math">$G = (Σ, V, P, S)$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-hierarchy.html">context-free grammar</a>.
             </p>
             <p>
                 <span class="inline-math">$w\in \mathcal{L}(G)$</span> iff there exists a <span class="inline-math">$G$</span>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-parse-tree.html">parse tree</a> <span class="inline-math">$\mathbf{T}$</span>
@@ -195,49 +330,6 @@
             </p>
             <p>
                 <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalence-of-context-free-grammar-and-parse-tree.html">Proof</a>
-            </p>
-            
-        </div>
-    </div>
-</p>
-<p>
-    <div class="markdown-embed embed-definition">
-        <div class="markdown-embed-title">
-            Definition (Chomsky normal form)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-normal-form.html">open_in_new</a>
-        </div>
-        <div class="markdown-embed-content">
-            <p>
-                A <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-grammar-language.html">grammar</a> <span class="inline-math">$G = (Σ, V, P, S)$</span> is said to be in <em>Chomsky normal form</em>
-                if all of its rewrite rules are either of the form <span class="inline-math">$A \to AB$</span>
-                for <span class="inline-math">$A,B,C \in V$</span> or of the form <span class="inline-math">$A \to a$</span> for <span class="inline-math">$A\in V$</span> and <span class="inline-math">$a\in Σ$</span>.
-            </p>
-            <ul>
-            <li>
-                <p>
-                    <span class="inline-math">$G$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">context-free</a>.
-                </p>
-                
-            </li>
-            </ul>
-            
-        </div>
-    </div>
-</p>
-<p>
-    <div class="markdown-embed embed-result">
-        <div class="markdown-embed-title">
-            Lemma (derivation length in Chomsky normal form)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-derivation-length-in-Chomsky-normal-form.html">open_in_new</a>
-        </div>
-        <div class="markdown-embed-content">
-            <p>
-                If <span class="inline-math">$G = (Σ, V, P, S)$</span> is a grammar in <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-normal-form.html">Chomsky normal form</a>
-                and <span class="inline-math">$w\in \mathcal{L}(G)$</span> with <span class="inline-math">$|w| = n$</span>,
-                then any <span class="inline-math">$G$</span>-derivation of <span class="inline-math">$w$</span> has length <span class="inline-math">$2n-1$</span>.
-            </p>
-            <p>
-                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-derivation-length-in-Chomsky-normal-form.html">Proof</a>
             </p>
             
         </div>
@@ -253,7 +345,7 @@
             <p>
                 If <span class="inline-math">$G$</span> is a grammar in <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-Chomsky-normal-form.html">Chomsky normal form</a>,
                 <span class="inline-math">$\mathbf{T}$</span> is a <span class="inline-math">$G$</span>-<a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-parse-tree.html">parse tree</a> of height <span class="inline-math">$h+1$</span>,
-                and <span class="inline-math">$σ_\mathbf{T} = w\in \mathbb{W}$</span>,
+                and <span class="inline-math">$σ_\mathbf{T} = w\in Σ^\ast$</span>,
                 then <span class="inline-math">$|w|\leq 2^h$</span>.
             </p>
             <p>
@@ -262,40 +354,45 @@
             
         </div>
     </div>
-</p>
-<p>
     <div class="markdown-embed embed-result">
         <div class="markdown-embed-title">
-            Lemma (equivalent to variable-targeted grammar)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-equivalent-to-variable-targeted-grammar.html">open_in_new</a>
+            Theorem (pumping lemma for context-free languages)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Theorem-pumping-lemma-for-context-free-languages.html">open_in_new</a>
         </div>
         <div class="markdown-embed-content">
             <p>
-                For every <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">context-free</a> grammar,
-                there exists an <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-equivalent-grammar.html">equivalent</a> context-free <em>variable-targeted</em> grammar,
-                i.e. where no rewrite rule <span class="inline-math">$A\to α$</span> has that <span class="inline-math">$|α|\geq 2$</span> and <span class="inline-math">$α$</span> contains letters.
+                For any <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-context-free-grammar-language.html">context-free language</a> <span class="inline-math">$L\subseteq Σ^\ast$</span>,
+                there exists <span class="inline-math">$n\in \N$</span>
+                such that for all <span class="inline-math">$u\in L$</span>,
+                if <span class="inline-math">$|u|\geq n$</span>, then
+                there are subwords <span class="inline-math">$v,w,x,y,z\in Σ^\ast$</span>
+                such that
             </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$u = vwxyz$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$w$</span> and <span class="inline-math">$y$</span> are not both <span class="inline-math">$ε$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$|wxy|\leq n$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$vw^k xy^k z\in L$</span> for all <span class="inline-math">$k=0,1,2,\ldots$</span>.
+                </p>
+                
+            </li>
+            </ol>
             <p>
-                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalent-to-variable-targeted-grammar.html">Proof</a>
-            </p>
-            
-        </div>
-    </div>
-</p>
-<p>
-    <div class="markdown-embed embed-result">
-        <div class="markdown-embed-title">
-            Lemma (equivalent to unit-closed grammar)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Lemma-equivalent-to-unit-closed-grammar.html">open_in_new</a>
-        </div>
-        <div class="markdown-embed-content">
-            <p>
-                For every <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Definition-noncontracting-context-sensitive-context-free-regular-Chomsky-hierarchy.html">context-free</a> grammar,
-                there exists an equivalent <em>unit closed</em> grammar, i.e.
-                if <span class="inline-math">$A\to B$</span> and <span class="inline-math">$B\to a$</span> are rewrite rules, then so is <span class="inline-math">$A\to a$</span> for <span class="inline-math">$A,B$</span> variables and <span class="inline-math">$a$</span> letter.
-            </p>
-            <p>
-                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-equivalent-to-unit-closed-grammar.html">Proof</a>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proof-pumping-lemma-for-context-free-languages.html">Proof</a>
             </p>
             
         </div>

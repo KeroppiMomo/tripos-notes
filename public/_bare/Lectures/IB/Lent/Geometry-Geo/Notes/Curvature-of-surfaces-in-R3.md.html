@@ -10,9 +10,9 @@
                 on a smooth surface <span class="inline-math">$Σ$</span> in <span class="inline-math">$\R^3$</span>.
                 Define
                 <span class="display-math">$$ \begin{align*}
-                    L ={}&amp; \langle n, σ_{uu}\rangle = -\langle n_u, σ_u\rangle, \\
-                    M ={}&amp; \langle n, σ_{uv}\rangle = -\langle n_u, σ_v\rangle = -\langle n_v, σ_u\rangle, \\
-                    N ={}&amp; \langle n, σ_{vv}\rangle = -\langle n_v, σ_v\rangle, \\
+                    e \equiv L :={}&amp; \langle n, σ_{uu}\rangle = -\langle n_u, σ_u\rangle, \\
+                    f \equiv M :={}&amp; \langle n, σ_{uv}\rangle = -\langle n_u, σ_v\rangle = -\langle n_v, σ_u\rangle, \\
+                    g \equiv N :={}&amp; \langle n, σ_{vv}\rangle = -\langle n_v, σ_v\rangle, \\
                     n ={}&amp; \frac{σ_u \times σ_v}{\|σ_u \times σ_v\|}
                 \end{align*} $$</span>
                 which are functions of <span class="inline-math">$(u,v)\in V$</span>. 
@@ -209,54 +209,46 @@
 <p>
     <div class="markdown-embed embed-definition">
         <div class="markdown-embed-title">
-            Definition (Gauss curvature)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Gauss-curvature.html">open_in_new</a>
+            Definition (curvature on surface in R3)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">open_in_new</a>
         </div>
         <div class="markdown-embed-content">
             <p>
-                Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span>.
+                Let <span class="inline-math">$S$</span> be a smooth surface in <span class="inline-math">$\R^3$</span> and <span class="inline-math">$p\in S$</span>.
             </p>
             <p>
-                The <em>Gauss curvature</em> of <span class="inline-math">$Σ$</span> at <span class="inline-math">$p\in Σ$</span> is
-                the determinant of the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-shape-operator.html">shape operator</a>
+                The <em>principal curvatures</em> of <span class="inline-math">$S$</span> at <span class="inline-math">$p$</span> are
                 <span class="display-math">$$ \begin{align*}
-                    κ(p) = \det(\mathbb{S}_p) = \det (Dn|_p: T_p Σ \to T_p Σ).
+                    k_1 &amp;:= \max_{\substack{v\in T_pS:\\ \I_p(v,v ) = 1}} \II_p(v,v), \\
+                    k_2 &amp;:= \min_{\substack{v\in T_pS:\\ \I_p(v,v ) = 1}} \II_p(v,v),
+                \end{align*} $$</span>
+                where <span class="inline-math">$\I$</span> and <span class="inline-math">$\II$</span> are the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">first</a> and <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-second-fundamental-form.html">second</a> fundamental forms.
+                Equivalently, <span class="inline-math">$k_1, k_2$</span> are the eigenvalues of the shape operator <span class="inline-math">$\mathbb{S}_p$</span>
+                (since <span class="inline-math">$\mathbb{S}_p$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-shape-operator-is-self-adjoint-with-respect-to-first-fundamental-form.html">self-adjoint</a> so <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-spectral-theorem-for-self-adjoint-maps.html">spectral theorem</a> holds).
+            </p>
+            <p>
+                If <span class="inline-math">$k_1\neq k_2$</span>, then the eigenvectors of <span class="inline-math">$\mathbb{S}_p$</span> are called the <em>principal directions</em>.
+            </p>
+            <p>
+                The <em>mean curvature</em> at <span class="inline-math">$p$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    H(p) := \frac{1}{2} \tr \mathbb{S}_p = \frac{1}{2}(k_1 + k_2)
+                \end{align*} $$</span>
+                and the <em>Gauss/Gaussian curvature</em> at <span class="inline-math">$p$</span> is
+                <span class="display-math">$$ \begin{align*}
+                    K(p) := \det \mathbb{S}_p = k_1 k_2.
                 \end{align*} $$</span>
             </p>
-            
-        </div>
-    </div>
-    <div class="markdown-embed embed-result">
-        <div class="markdown-embed-title">
-            Lemma (Gauss curvature in terms of fundamental forms)
-            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-Gauss-curvature-in-terms-of-fundamental-forms.html">open_in_new</a>
-        </div>
-        <div class="markdown-embed-content">
-            <p>
-                Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span>
-                and <span class="inline-math">$σ: V\to U$</span> be an allowable parametrisation
-                at <span class="inline-math">$σ(0) = p\in U\subseteq Σ$</span>.
-            </p>
-            <p>
-                Then the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Gauss-curvature.html">Gauss curvature</a> is given by
-                the ratio of the determinants of the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-second-fundamental-form.html">second</a> and <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">first fundamental forms</a>
-                <span class="display-math">$$ \begin{align*}
-                    κ(p) = \left.\frac{LN - M^2}{EG - F^2}\right|_{0} = \left.\frac{\det \II}{\det \I}\right|_0
-                \end{align*} $$</span>
-            </p>
-            <p>
-                Proof: follows from the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-second-fundamental-form-in-terms-of-shape-operator.html">matrix description of <span class="inline-math">$\II(v, w) = \I(\mathbb{S}v, w)$</span></a>.
-            </p>
-            <ul>
-            <li>
+            <blockquote>
                 <p>
-                    Note <span class="inline-math">$κ$</span> is independent of our choice of parametrisation,
-                    which agrees with how the matrices <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-first-fundamental-form-in-different-parametrisations.html"><span class="inline-math">$\I$</span></a> and <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-second-fundamental-form-in-different-parametrisations.html"><span class="inline-math">$\II$</span></a>
-                    transform under change of parametrisation.
+                    In a local parametrisation, the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-second-fundamental-form-in-terms-of-shape-operator.html">matrix relation</a> <span class="inline-math">$\II_p = \mathbb{S}_p^T \I_p$</span> implies
+                    <span class="display-math">$$ \begin{align*}
+                        K &amp;= \frac{\det \II_p}{\det \I_p} = \frac{eg - f^2}{EG - F^2}, \\
+                        H &amp;= \frac{eG + 2fF + gE}{2(EG - F^2)}.
+                    \end{align*} $$</span>
                 </p>
                 
-            </li>
-            </ul>
+            </blockquote>
             
         </div>
     </div>
@@ -270,7 +262,7 @@
         <div class="markdown-embed-content">
             <p>
                 We say a smooth surface <span class="inline-math">$Σ$</span> in <span class="inline-math">$\R^3$</span> is <em>flat</em>
-                if <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Gauss-curvature.html"><span class="inline-math">$κ$</span></a> <span class="inline-math">$\equiv 0$</span>.
+                if <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html"><span class="inline-math">$κ$</span></a> <span class="inline-math">$\equiv 0$</span>.
             </p>
             <ul>
             <li>
@@ -296,7 +288,7 @@
             <ul>
             <li>
                 <p>
-                    <em>elliptic</em> if <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Gauss-curvature.html"><span class="inline-math">$κ$</span></a><span class="inline-math">$(p) &gt; 0$</span>;
+                    <em>elliptic</em> if <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html"><span class="inline-math">$κ$</span></a><span class="inline-math">$(p) &gt; 0$</span>;
                 </p>
                 
             </li><li>

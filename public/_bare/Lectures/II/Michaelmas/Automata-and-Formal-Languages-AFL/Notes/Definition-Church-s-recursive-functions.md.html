@@ -4,55 +4,86 @@
 <ul>
 <li>
     <p>
-        projection functions <span class="inline-math">$π_{k,i}: \mathbb{W}^k \to \mathbb{W}: \v w\mapsto w_i$</span>;
+        projection functions <span class="inline-math">$π_{k,i}: \N^k \to \N: (n_1, \ldots, n_k)\mapsto n_i$</span>;
     </p>
     
 </li><li>
     <p>
-        constant functions <span class="inline-math">$\mathrm{c}_{k,ε}: \mathbb{W}^k \to \mathbb{W}: \v w\mapsto ε$</span>; and
+        the zero function <span class="inline-math">$\N \to \N: n\mapsto 0$</span>; and
     </p>
     
 </li><li>
     <p>
-        the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-computability-of-shortlex-ordering.html">successor function</a> <span class="inline-math">$s: \mathbb{W}\to\mathbb{W}$</span> of shortlex ordering.
+        the successor function <span class="inline-math">$\N\to \N: n\mapsto n+1$</span>.
     </p>
     
 </li>
 </ul>
 <p>
-    Given <span class="inline-math">$f: \mathbb{W}^m\dashrightarrow \mathbb{W}$</span> and <span class="inline-math">$g_1, \ldots, g_m: \mathbb{W}^k\dashrightarrow \mathbb{W}$</span>,
-    the <em>composition of <span class="inline-math">$f$</span> with $(g</em>1, \ldots, g<em>m)$</em> is
+    Given <span class="inline-math">$f: \mathbb{N}^k\dashrightarrow \N$</span> and <span class="inline-math">$g_1, \ldots, g_k: \N^l \dashrightarrow \N$</span>,
+    the <em>composition</em> of <span class="inline-math">$f$</span> with <span class="inline-math">$(g_1, \ldots, g_k)$</span> is
     <span class="display-math">$$ \begin{align*}
-        \mathbb{W}^k &amp;\dashrightarrow \mathbb{W} \\
-        \v w &amp;\mapsto f(g_1(\v w), \ldots, g_m(\v w)).
+        \N^l &amp;\dashrightarrow \N \\
+        \v n &amp;\mapsto f(g_1(\v n), \ldots, g_k(\v n)).
     \end{align*} $$</span>
 </p>
 <p>
-    Given <span class="inline-math">$f: \mathbb{W}^k\dashrightarrow \mathbb{W}$</span> and <span class="inline-math">$g: \mathbb{W}^{k+2}\dashrightarrow \mathbb{W}$</span>,
-    the <em>recursion result of <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span></em> is
+    Given <span class="inline-math">$f: \N^k \dashrightarrow \N$</span> and <span class="inline-math">$g: \N^{k+2}\dashrightarrow \N$</span>,
+    the <em>recursion result</em> of <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> is
     <span class="display-math">$$ \begin{align*}
-        h: \mathbb{W}^{k+1} &amp;\dashrightarrow \mathbb{W} \\
-        (\v w, ε) &amp;\to f(\v w), \\
-        (\v w, s(v)) &amp;\to g(\v w, s, h(\v w, s)).
+        h: \N^{k+1} &amp;\dashrightarrow \N \\
+        (\v n, 0) &amp;\mapsto f(\v n), \\
+        (\v n, \;n_{k+1}+ 1) &amp;\mapsto g(\v n, \; n_{k+1}, \; h(\v n, n_{k+1})).
     \end{align*} $$</span>
 </p>
 <p>
-    Given <span class="inline-math">$f: \mathbb{W}^{k+1} \dashrightarrow \mathbb{W}$</span>, the <em>minimisation result of <span class="inline-math">$f$</span></em> is
+    Given <span class="inline-math">$f: \N^{k+1} \dashrightarrow \N$</span>, the <em>minimisation result</em> of <span class="inline-math">$f$</span> is
     <span class="display-math">$$ \begin{align*}
-        \mathbb{W}^k &amp;\dashrightarrow \mathbb{W} \\
-        \v w &amp;\mapsto \begin{cases}
-            v, &amp;\text{$v$ is $&lt;$-minimal such that $f(\v w, v)=ε$ and $\forall u\leq v, f(\v w, u)\downarrow$}, \\
-            \uparrow, &amp;\text{otherwise}.
+        \N^k &amp;\dashrightarrow \N \\
+        \v n &amp;\mapsto \begin{cases}
+            m, &amp;\text{minimal $m$ such that $f(\v n, m) = 0$}, \\
+            \uparrow, &amp;\text{if $f(\v n, m) &gt; 0$ for all $m$}.
         \end{cases}
     \end{align*} $$</span>
 </p>
 <p>
-    The class of <em>primitive recursive (partial) functions</em>
+    <!-- The <em>basic functions</em> are -->
+    <!-- - projection functions <span class="inline-math">$π_{k,i}: \mathbb{W}^k \to \mathbb{W}: \v w\mapsto w_i$</span>; -->
+    <!-- - constant functions <span class="inline-math">$\mathrm{c}_{k,ε}: \mathbb{W}^k \to \mathbb{W}: \v w\mapsto ε$</span>; and -->
+    <!-- - the <a href="/tripos-notes/Lectures/II/Michaelmas/Automata-and-Formal-Languages-AFL/Notes/Proposition-computability-of-shortlex-ordering.html">successor function</a> <span class="inline-math">$s: \mathbb{W}\to\mathbb{W}$</span> of shortlex ordering. -->
+    <!---->
+    <!-- Given <span class="inline-math">$f: \mathbb{W}^m\dashrightarrow \mathbb{W}$</span> and <span class="inline-math">$g_1, \ldots, g_m: \mathbb{W}^k\dashrightarrow \mathbb{W}$</span>, -->
+    <!-- the <em>composition of <span class="inline-math">$f$</span> with $(g</em>1, \ldots, g<em>m)$</em> is -->
+    <!-- <span class="display-math">$$ \begin{align*} --&gt;
+    &lt;!--     \mathbb{W}^k &amp;\dashrightarrow \mathbb{W} \\ --&gt;
+    &lt;!--     \v w &amp;\mapsto f(g_1(\v w), \ldots, g_m(\v w)). --&gt;
+    &lt;!-- \end{align*} $$</span> -->
+    <!---->
+    <!-- Given <span class="inline-math">$f: \mathbb{W}^k\dashrightarrow \mathbb{W}$</span> and <span class="inline-math">$g: \mathbb{W}^{k+2}\dashrightarrow \mathbb{W}$</span>, -->
+    <!-- the <em>recursion result of <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span></em> is -->
+    <!-- <span class="display-math">$$ \begin{align*} --&gt;
+    &lt;!--     h: \mathbb{W}^{k+1} &amp;\dashrightarrow \mathbb{W} \\ --&gt;
+    &lt;!--     (\v w, ε) &amp;\to f(\v w), \\ --&gt;
+    &lt;!--     (\v w, s(v)) &amp;\to g(\v w, s, h(\v w, s)). --&gt;
+    &lt;!-- \end{align*} $$</span> -->
+    <!---->
+    <!-- Given <span class="inline-math">$f: \mathbb{W}^{k+1} \dashrightarrow \mathbb{W}$</span>, the <em>minimisation result of <span class="inline-math">$f$</span></em> is -->
+    <!-- <span class="display-math">$$ \begin{align*} --&gt;
+    &lt;!--     \mathbb{W}^k &amp;\dashrightarrow \mathbb{W} \\ --&gt;
+    &lt;!--     \v w &amp;\mapsto \begin{cases} --&gt;
+    &lt;!--         v, &amp;\text{$v$ is $&lt;$-minimal such that $f(\v w, v)=ε$ and $\forall u\leq v, f(\v w, u)\downarrow$}, \\ --&gt;
+    &lt;!--         \uparrow, &amp;\text{otherwise}. --&gt;
+    &lt;!--     \end{cases} --&gt;
+    &lt;!-- \end{align*} $$</span> -->
+    <!---->
+</p>
+<p>
+    The class of <em>primitive recursive functions</em>
     is the smallest class of partial functions
     containing all basic functions that is closed under composition and recursion.
 </p>
 <p>
-    The class of <em>recursive (partial) functions</em>
+    The class of <em>(partial) recursive functions</em>
     is the smallest class of partial functions
     containing all basic functions that is closed under composition, recursion and minimisation.
 </p>

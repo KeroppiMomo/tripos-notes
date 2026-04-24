@@ -1,0 +1,657 @@
+<p>
+    Let <span class="inline-math">$G = \SL_2(\mathbb{F}_q)$</span>.
+</p>
+
+<h1>Inducing from <span class="inline-math">$B = \sb{\pmat{a &amp; b \\ &amp;a\inv}}{a\in \mathbb{F}_q^\times, b\in \mathbb{F}_q}$</span></h1>
+
+<p>
+    Let <span class="inline-math">$λ$</span> be a generator of the cyclic group <span class="inline-math">$\mathbb{F}_p^\times$</span> of order <span class="inline-math">$q-1$</span>.
+    The subgroup <span class="inline-math">$B$</span> of upper triangular matrices have linear representations
+    <span class="display-math">$$ \begin{align*}
+        ρ_i: \qquad \qquad B &amp;\to \C^\times \\
+        \pmat{λ^k &amp; b \\ &amp;λ^{-k}} &amp;\mapsto ω^{ik}
+    \end{align*} $$</span>
+    where <span class="inline-math">$ω$</span> is any primitive <span class="inline-math">$(q-1)$</span>-th root of unity.
+</p>
+<p>
+    To compute <span class="inline-math">$\op{Ind}^{G}_B ρ_i$</span>,
+    we claim <span class="inline-math">$G = B \sqcup BsB$</span>, where
+    <span class="inline-math">$s = \pmat{&amp; 1 \\ -1}\not\in B$</span>.
+    We compute
+    <span class="display-math">$$ \begin{align*}
+        s\pmat{a &amp; b \\ &amp; a\inv} s\inv = \pmat{a\inv \\ -b &amp; a}.
+    \end{align*} $$</span>
+    This shows <span class="inline-math">$sBs\inv \cap B = T$</span>,
+    and <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-double-coset.html">orbit-stabiliser</a> implies
+    <span class="display-math">$$ \begin{align*}
+        \# BsB = \frac{\# B \cdot \# B}{\#(B \cap sBs\inv)} = \frac{((q-1)q)^2}{q-1} = q^2(q-1) = \# G - \#B
+    \end{align*} $$</span>
+    as claimed.
+    Therefore by <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-Mackey-s-restriction-formula.html">Mackey</a>,
+    <span class="display-math">$$ \begin{align*}
+        \langle \op{Ind}_B^{G} ρ_i, \op{Ind}_B^{G} ρ_i\rangle
+        ={}&amp; \langle ρ_i, ρ_i\rangle + \langle \op{Res}^B_T ρ_i, \prescript{s\inv}{}{\op{Res}^B_T}ρ_i\rangle \\
+        ={}&amp; \underbrace{\langle ρ_i, ρ_i\rangle}_{1} + \langle \op{Res}^B_T ρ_i, \op{Res}^B_T ρ_{-i}\rangle
+    \end{align*} $$</span>
+    because <span class="inline-math">$\prescript{s\inv}{}{\op{Res}^B_T ρ_i}(g) = ρ_i(sgs\inv) = ρ_i(g\inv) = ρ_{-i}(g)$</span>.
+</p>
+<p>
+    Therefore <span class="inline-math">$\op{Ind}_B^{G} ρ_i$</span> is irreducible
+    iff <span class="inline-math">$ρ_i = ρ_{-i}$</span>, i.e. <span class="inline-math">$i = 0$</span> or <span class="inline-math">$\frac{1}{2}(q-1)$</span> mod <span class="inline-math">$q-1$</span>.
+</p>
+<p>
+    Now compute how the conjugacy classes split.
+    <span class="display-math">$$ \begin{align*}
+        \pmat{a &amp; b \\ &amp;a\inv}\pmat{z \\&amp; z\inv}\pmat{a &amp; b \\ &amp;a\inv}\inv ={}&amp; \pmat{z &amp; ab(z\inv - z) \\ &amp;z\inv}, \\
+        \pmat{a &amp; b \\ &amp;a\inv}\pmat{\pm 1 &amp; μ \\&amp; \pm 1}\pmat{a &amp; b \\ &amp;a\inv}\inv ={}&amp; \pmat{\pm 1 &amp; a^2 μ \\ &amp;\pm 1}.
+    \end{align*} $$</span>
+    Therefore <span class="inline-math">$\pmat{z\\&amp;-z}$</span> splits into two conjugacy classes.
+    Using the <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Proposition-induction-of-character.html">induction formula</a>,
+    and <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Lemma-conjugacy-of-SL2-Fq.html">recalling</a> the centraliser is the same over both groups,
+</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$I$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$-I$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{λ\\&amp;-λ}^k$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{a &amp; bε\\ b&amp; a}^k$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{\pm 1 &amp; μ\\ &amp;\pm 1}$</span>
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\op{Ind}^G_B ρ$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(q+1)ρ(I)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(q+1)ρ(-I)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$ρ(\pmat{λ\\&amp;-λ}^k)+ρ(\pmat{-λ\\&amp;λ}^k)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            0
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$ρ(\pmat{\pm 1 &amp; k})$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\op{Ind}_B^{G} ρ_i$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$q+1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(q+1)(-1)^i$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$2\cos \frac{2πik}{q-1}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(\pm 1)^i$</span>
+        </p>
+        </td>
+    </tr>
+</table>
+<p>
+    For <span class="inline-math">$i = 0$</span>,
+    computing <span class="inline-math">$\langle \mathbb{1}, \op{Ind}^G_B ρ_0\rangle = 1$</span> shows <span class="inline-math">$\op{Ind}^G_B ρ_0 = \mathbb{1} + \op{St}$</span>
+    for some other irreducible representation <span class="inline-math">$\op{St}$</span>.
+    Letting <span class="inline-math">$\op{Ind}^G_B ρ_{\frac{1}{2}(q-1)} = χ_1 + χ_2$</span>, we get
+</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$I$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$-I$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{λ\\&amp;-λ}^k$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{a &amp; bε\\ b&amp; a}^k$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{\pm 1 &amp; μ\\ &amp;\pm 1}$</span>
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\mathbb{1}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\op{St}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$q$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$q$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$θ_i := \op{Ind}_B^{G} ρ_i$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$q+1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(q+1)(-1)^i$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$2\cos \frac{2πik}{q-1}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(\pm 1)^i$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$χ_1 + χ_2$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$q+1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(q+1)(-1)^{\frac{1}{2}(q-1)}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$2(-1)^k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(\pm 1)^{\frac{1}{2}(q-1)}$</span>
+        </p>
+        </td>
+    </tr>
+</table>
+
+<h1>Inducing from <span class="inline-math">$T_{ns}$</span></h1>
+
+<p>
+    Let <span class="inline-math">$\pmat{a &amp; bε \\ b &amp; a}$</span> be the generator of the cyclic group <span class="inline-math">$T_{ns}$</span> of order <span class="inline-math">$q+1$</span>.
+    <span class="inline-math">$T_{ns}$</span> has linear representations
+    <span class="display-math">$$ \begin{align*}
+        σ_j : \qquad \qquad T_{ns} &amp;\to \C^\times \\
+        \pmat{a &amp; bε \\ b &amp; a}^k &amp;\mapsto \tilde ω^{jk}
+    \end{align*} $$</span>
+    where <span class="inline-math">$\tilde ω$</span> is any primitive <span class="inline-math">$(q+1)$</span>-th root of unity.
+</p>
+<p>
+    As <span class="inline-math">$T_{ns}$</span> is abelian, conjugacy classes have size 1.
+    Therefore the conjugacy class <span class="inline-math">$\prescript{G}{}{\pmat{a &amp; bε \\ b &amp; a}^k}$</span>
+    splits into <span class="inline-math">$\pmat{a &amp; bε \\ b &amp; a}$</span> and <span class="inline-math">$\pmat{a &amp; -bε \\ -b &amp; a} = \pmat{a &amp; bε \\ b &amp; a}\inv$</span> in <span class="inline-math">$T_{ns}$</span>.
+</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$I$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$-I$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{λ\\&amp;-λ}^k$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{a &amp; bε\\ b&amp; a}^k$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{\pm 1 &amp; μ\\ &amp;\pm 1}$</span>
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\op{Ind}^G_B σ$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$q(q-1)σ(I)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$q(q-1)σ(-I)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$σ(\pmat{a &amp; bε \\ b &amp; a}^k) + σ(\pmat{a &amp; bε \\ b &amp; a}^{-k})$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\op{Ind}^G_B σ_j$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$q(q-1)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$q(q-1)(-1)^{j}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$2\cos \frac{2πjk}{q+1}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+    </tr>
+</table>
+<p>
+    Now the trick is to consider
+    <span class="display-math">$$ \begin{align*}
+        ϕ_j := (\mathrm{St} - \mathbb{1}) \otimes θ_j - \op{Ind}^G_B σ_j.
+    \end{align*} $$</span>
+</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$I$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$-I$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{λ\\&amp;-λ}^k$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{a &amp; bε\\ b&amp; a}^k$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{\pm 1 &amp; μ\\ &amp;\pm 1}$</span>
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$ϕ_j$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$q-1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(q-1)(-1)^{j}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-2\cos \frac{2πjk}{q+1}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-(\pm 1)^{j}$</span>
+        </p>
+        </td>
+    </tr>
+</table>
+<p>
+    Compute to see
+    <span class="display-math">$$ \begin{align*}
+        \langle ϕ_j, ϕ_j\rangle = \begin{cases}
+            2, &amp;\text{if }j \equiv 0, \frac{q+1}{2} \pmod {(q+1)}, \\
+            1, &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+    A priori <span class="inline-math">$ϕ_j$</span> is in the character ring but may not be a character.
+    For <span class="inline-math">$j \not\equiv 0, \frac{q+1}{2}\pmod{(q+1)}$</span>, since <span class="inline-math">$\langle ϕ_j, ϕ_j\rangle = 1$</span>
+    and <span class="inline-math">$ϕ_j(I) &gt; 0$</span>, <span class="inline-math">$ϕ_j$</span> is the character of an irreducible representation.
+</p>
+<p>
+    <span class="inline-math">$ϕ_0 = \mathrm{St} - \mathbb{1}$</span> so it is not interesting.
+    Write <span class="inline-math">$ϕ_{\frac{1}{2}(q+1)} = χ_3 - χ_4$</span> or <span class="inline-math">$χ_3 + χ_4$</span>,
+    since <span class="inline-math">$ϕ_{\frac{1}{2}(q+1)}(I) &gt; 0$</span>.
+</p>
+
+<h1>Last four chracters</h1>
+
+<p>
+    Recall <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Theorem-character-table.html">facts about the character table</a>.
+</p>
+<p>
+    We have found <span class="inline-math">$1 + 1 + \frac{q-3}{2} + \frac{q-1}{2} = q$</span> distinct irreducible characters:
+    <span class="inline-math">$\mathbb{1}, \mathrm{St}, θ_i, ϕ_j$</span>,
+    so four remains.
+</p>
+<p>
+    We consider <span class="inline-math">$\sum_{\text{irred }χ} (\deg χ)^2 = \#G$</span>.
+    The remaining four contribute to the sum
+    <span class="display-math">$$ \begin{align*}
+        \# G - (\deg \mathbb{1})^2 - (\deg \mathrm{St})^2 - \sum_{i=1}^{(q-3)/2} (\deg θ_i)^2 - \sum_{j=1}^{(q-1)/2} (\deg ϕ_j)^2 = q^2 + 2.
+    \end{align*} $$</span>
+    Computing <span class="inline-math">$\langle χ, ϕ_{\frac{1}{2}(q+1)}\rangle = 0$</span> for <span class="inline-math">$χ = \mathbb{1}, \mathrm{St}, θ_i, ϕ_j$</span>
+    (for <span class="inline-math">$1\leq i\leq \frac{q-1}{2}$</span>, <span class="inline-math">$1\leq j\leq \frac{q-1}{2}$</span>)
+    shows <span class="inline-math">$χ_3, χ_4$</span> are not one of the found characters.
+    Therefore we cannot have <span class="inline-math">$ϕ_{\frac{1}{2}(q+1)} = χ_3 - χ_4$</span>:
+    otherwise <span class="inline-math">$\deg χ_3 \geq q$</span> and with three others characters,
+    the sum <span class="inline-math">$\sum_{\text{irred }χ} (\deg χ)^2$</span> is too big.
+    Therefore <span class="inline-math">$ϕ_{\frac{1}{2}(q+1)} = χ_3 + χ_4$</span>,
+    and <span class="inline-math">$χ_1, χ_2, χ_3, χ_4$</span> are the four remaining characters.
+</p>
+<p>
+    Since <span class="inline-math">$\deg χ_1 + \deg χ_2 = q + 1$</span> and <span class="inline-math">$\deg χ_3 + \deg χ_4 = q-1$</span>,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        q^2 + 2 ={}&amp; (\deg χ_1)^2 + (q+1-\deg χ_1)^2 + (\deg χ_3)^2 + (q-1-\deg χ_2)^2 \\
+        ={}&amp; 2(\deg χ_1 - \tfrac{1}{2}(q+1))^2 + \tfrac{1}{2}(q+1)^2 + 2(\deg χ_3 - \tfrac{1}{2}(q-1))^2 + \tfrac{1}{2}(q-1)^2 \\
+        \geq{}&amp; q^2 + 1 \\
+    \end{align*} $$</span>
+    so we must have <span class="inline-math">$\deg χ_1 = \frac{1}{2}(q+1) = \deg χ_2$</span> and <span class="inline-math">$\deg χ_3 = \frac{1}{2}(q-1) = \deg χ_4$</span>.
+</p>
+<p>
+    The conjugacy classes <span class="inline-math">$\pmat{λ\\&amp;λ\inv}$</span> and <span class="inline-math">$\pmat{a&amp;bε \\ b&amp;a}$</span>
+    are self-inverses, <a href="/tripos-notes/Lectures/II/Michaelmas/Representation-Theory-RT/Notes/Definition-character-of-representation.html#^inverse">so</a>
+    the character values are real.
+</p>
+<p>
+    We apply column normality and a similar inequality arguments as above to get
+</p>
+<table>
+    <tr>
+        <th class="table-cell-left"><p>
+            Representative
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$I$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$-I$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{λ\\&amp;-λ}^k$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{a &amp; bε\\ b&amp; a}^k$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{\pm 1 &amp; 1\\ &amp;\pm 1}$</span>
+        </p>
+        </th>
+        <th class="table-cell-left"><p>
+            <span class="inline-math">$\pmat{\pm 1 &amp; ε \\ &amp;\pm 1}$</span>
+        </p>
+        </th>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$χ_1$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{2}(q+1)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{2}(q+1)(-1)^{\frac{q-1}{2}}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(-1)^k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$e_{\pm}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$g_{\pm}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$χ_2$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{2}(q+1)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{2}(q+1)(-1)^{\frac{q-1}{2}}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(-1)^k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(\pm 1)^{\frac{q-1}{2}} - e_{\pm}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$(\pm)^{\frac{q-1}{2}} - g_{\pm}$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$χ_3$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{2}(q-1)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-\frac{1}{2}(q+1)(-1)^{\frac{q+1}{2}}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-(-1)^k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$f_\pm$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$h_\pm$</span>
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$χ_4$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$\frac{1}{2}(q-1)$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-\frac{1}{2}(q+1)(-1)^{\frac{q+1}{2}}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$0$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-(-1)^k$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-(\pm 1)^{\frac{q+1}{2}} - f_{\pm}$</span>
+        </p>
+        </td>
+        <td class="table-cell-left"><p>
+            <span class="inline-math">$-(\pm 1)^{\frac{q+1}{2}} - h_{\pm}$</span>
+        </p>
+        </td>
+    </tr>
+</table>
+<p>
+    Now we solve for the last 16 entries.
+    We have the following relations:
+    <span class="display-math">$$ \begin{align*}
+        0 &amp;= \langle χ_1, \mathbb{1}\rangle &amp;&amp;\iff&amp; e_+ + e_- + g_+ + g_- &amp;= 1 + (-1)^{\frac{q-1}{2}} \\
+        0 &amp;= \langle χ_1, θ_1\rangle &amp;&amp;\iff&amp; e_+ - e_- + g_+ - g_- &amp;= 1 - (-1)^{\frac{q-1}{2}} \\
+        1 &amp;= \langle χ_1, χ_1\rangle &amp;&amp;\iff&amp; |e_+|^2 + |e_-|^2 + |g_+|^2 + |g_-|^2 &amp;= q+1 \\
+        0 &amp;= \langle χ_3, \mathbb{1}\rangle &amp;&amp;\iff&amp; f_+ + f_- + h_+ + h_- &amp;= 1 + (-1)^{\frac{q+1}{2}} \\
+        0 &amp;= \langle χ_3, θ_1\rangle &amp;&amp;\iff&amp; f_+ - f_- + h_+ - h_- &amp;= -1 + (-1)^{\frac{q+1}{2}} \\
+        1 &amp;= \langle χ_3, χ_3\rangle &amp;&amp;\iff&amp; |f_+|^2 + |f_-|^2 + |h_+|^2 + |h_-|^2 &amp;= q+1 \\
+    \end{align*} $$</span>
+    Moreover <span class="inline-math">$|χ_i(-I)| = χ_i(I)$</span>, so <span class="inline-math">$-I$</span> acts by scalar multiplication.
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        χ_i\left(-\pmat{\pm 1 &amp; a \\ &amp;\pm 1}\right) = \frac{χ_i(-I)}{χ_i(I)} χ_i\left(\pmat{\pm 1 &amp; a \\ &amp; \pm 1}\right).
+    \end{align*} $$</span>
+</p>
+<p>
+    Finally for <span class="inline-math">$(q-1)/2$</span> even,
+    then <span class="inline-math">$-1$</span> is a square,
+    so <span class="inline-math">$\pmat{\pm 1 &amp; 1 \\ &amp;\pm 1}$</span>, <span class="inline-math">$\pmat{\pm 1 &amp; ε \\ &amp;\pm 1}$</span> are self-inverses conjugacy classes.
+    This implies all <span class="inline-math">$e_\pm, f_\pm, g_\pm, h_\pm$</span> are real.
+    For <span class="inline-math">$(q-1)/2$</span> even,
+    then <span class="inline-math">$-1$</span> is not a square,
+    so <span class="inline-math">$\pmat{\pm 1 &amp; 1 \\ &amp;\pm 1}$</span> is inverse to <span class="inline-math">$\pmat{\pm 1 &amp; ε \\ &amp;\pm 1}$</span>.
+    This implies all <span class="inline-math">$e_\pm = \bar g_{\pm}, f_\pm = \bar h_\pm$</span>.
+</p>
+<p>
+    The above are enough to solve for all 16 variables.
+    Good luck!
+</p>
+<p>
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGp3eG1nbDEzbjAzZDkzY2hlM3p1eDFieXdhYXdpMmswMHY3Z2llMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/idYdfZ9xxVgVPNXjs0/giphy.gif" alt="frog">
+</p>
