@@ -1,0 +1,29 @@
+<p>
+    For any classifier <span class="inline-math">$δ$</span>,
+    <span class="display-math">$$ \begin{align*}
+        R_π(δ) ={}&amp; π_1 \prob[δ(X) = 0 \mid Y = 1] + π_0 \prob[δ(X) = 1 \mid Y = 0] \\
+        ={}&amp; \int_{\mathcal{X}} π_1 f_1(x) \mathbb{1}_{\{δ(x) = 0\}} + π_0 f_0(x) \mathbb{1}_{\set{δ(x) = 1}} \d x.
+    \end{align*} $$</span>
+    The integrand is minimsed if
+    <span class="display-math">$$ \begin{align*}
+        δ(x) = \begin{cases}
+            1, &amp;\text{if $π_0f_0(x) &lt; π_1 f_1(x)$}, \\
+            0, &amp;\text{otherwise}.
+        \end{cases} = δ_π(x).
+    \end{align*} $$</span>
+</p>
+<p>
+    If <span class="inline-math">$δ$</span> is a Bayes classifer, then
+    <span class="display-math">$$ \begin{align*}
+        0 ={}&amp; R_π(δ) - R_{π}(δ_π) \\
+        ={}&amp; \int_{\mathcal{X}} π_1 f_1(x) \mathbb{1}_{\set{δ(x) = 0}} + π_0 f_0(x) \mathbb{1}_{\{δ(x) = 1\}} - \min\set{π_1 f_1(x), π_0 f_0(x)}\d x
+    \end{align*} $$</span>
+    where the integrand is non-negative.
+    Therefore <span class="inline-math">$A := \sb{x\in \mathcal{X}}{π_1 f_1(x) \mathbb{1}_{\set{δ(x) = 0}} + π_0 f_0(x) \mathbb{1}_{\set{δ(x)=1}} &gt; \min\set{π_1 f_1(x), π_0 f_0(x)}}$</span> has Lebesgue measure 0,
+    so has measure 0 with respect to the law of <span class="inline-math">$X$</span>.
+</p>
+<p>
+    Given that <span class="inline-math">$B:=\sb{x\in \mathcal{X}}{π_1 f_1(x)\neq π_0 f_0(x)}$</span> has measure 0 with respect to the law of <span class="inline-math">$X$</span>,
+    <span class="inline-math">$\mathcal{X} \setminus (A \cup B)$</span> has measure 1,
+    meaning <span class="inline-math">$δ(X) = δ_π(X)$</span> almost surely.
+</p>

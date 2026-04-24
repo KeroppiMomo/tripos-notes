@@ -1,0 +1,46 @@
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-conditional-normal-distribution.html">Note</a> we showed that <span class="inline-math">$Ω :=\var(W\mid Z)$</span> does not depend on <span class="inline-math">$Z$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$M = \frac{1}{n}\mathbf{1}\mathbf{1}^T$</span> be the projection onto <span class="inline-math">$\mathbf{1}$</span>.
+    Recall <span class="inline-math">$P$</span> is the projection onto the column space of <span class="inline-math">$\pmat{\mathbf{1} &amp; Z}$</span>, which includes <span class="inline-math">$\mathbf{1}$</span>.
+</p>
+<p>
+    We <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-sample-variance-sample-correlation.html">noted</a>
+    <span class="display-math">$$ \begin{align*}
+        \hat Σ := \frac{1}{n} \pmat{\mathbf{W}^T \\ \mathbf{Z}^T} (I-M) \pmat{\mathbf{W} &amp; \mathbf{Z}} 
+        = \pmat{\frac{1}{n}\mathbf{W}^T(I-M) \mathbf{W} &amp; \frac{1}{n}\mathbf{W}^T(I-M)\mathbf{Z} \\
+        \frac{1}{n} \mathbf{Z}^T (I-M) \mathbf{W} &amp; \frac{1}{n} \mathbf{Z}^T (I-M) \mathbf{Z}}
+        =: \pmat{\hat Σ_{WW} &amp; \hat Σ_{WZ} \\ \hat Σ_{ZW} &amp; \hat Σ_{ZZ}}
+    \end{align*} $$</span>
+    is a maximum likelihood estimator for <span class="inline-math">$Σ := \var\pmat{W \\ Z} =: \pmat{Σ_{WW} &amp; Σ_{WZ} \\ Σ_{ZW} &amp; Σ_{ZZ}}$</span>.
+</p>
+<p>
+    We <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-conditional-normal-distribution.html">showed</a>
+    <span class="display-math">$$ \begin{align*}
+        Ω = Σ_{WW} - Σ_{WZ} Σ_{ZZ}\inv Σ_{ZW}
+    \end{align*} $$</span>
+    so a maximum likelihood estimator of <span class="inline-math">$Ω$</span> is
+    <span class="display-math">$$ \begin{align*}
+        \hat Ω :={}&amp; \hat Σ_{WW} - \hat Σ_{WZ} \hat Σ_{ZZ}\inv \hat Σ_{ZW} \\
+        ={}&amp; \frac{1}{n} \mathbf{W}^T(I-M)\mathbf{W} - \frac{1}{n}\mathbf{W}^T (I-M) \mathbf{Z} \left(\mathbf{Z}^T (I-M) \mathbf{Z}\right)\inv \mathbf{Z}^T (I-M) \mathbf{W} \\
+        ={}&amp; \frac{1}{n}\mathbf{W}^T(I-M - \tilde{\mathbf{Z}}(\tilde{\mathbf{Z}}^T \tilde{\mathbf{Z}})\inv \tilde{\mathbf{Z}}^T) \mathbf{W}
+    \end{align*} $$</span>
+    where <span class="inline-math">$\tilde {\mathbf{Z}} := (I-M)\mathbf{Z}$</span>.
+    Since the column space of <span class="inline-math">$\pmat{\mathbf{1} &amp; \mathbf{Z}}$</span>
+    is the orthogonal direct sum of <span class="inline-math">$\v 1$</span> and the column space of <span class="inline-math">$\tilde{\mathbf{Z}}$</span>,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        P = \underbrace{M}_{\text{projection onto $\mathbf{1}$}} + \underbrace{\tilde{\mathbf{Z}}(\tilde{\mathbf{Z}}^T \tilde{\mathbf{Z}})\inv \tilde{\mathbf{Z}}^T}_{\text{projection onto $\op{Col}(\tilde{\mathbf{Z}})$}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Hence
+    <span class="display-math">$$ \begin{align*}
+        \hat Ω = \frac{1}{n} \mathbf{W}^T (I- P) \mathbf{W}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Since <span class="inline-math">$ρ_{W^{(j)}, W^{(k)}\mid Z} = \frac{Ω_{jk}}{\sqrt{Ω_{jj} Ω_{kk}}}$</span>,
+    plugging the MLE <span class="inline-math">$\hat Ω$</span> in gives an MLE of <span class="inline-math">$ρ_{W^{(j)}, W^{(k)}|Z}$</span>.
+</p>

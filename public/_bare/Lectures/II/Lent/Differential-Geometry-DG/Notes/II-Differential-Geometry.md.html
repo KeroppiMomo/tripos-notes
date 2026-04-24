@@ -1,0 +1,2554 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Smooth manifolds
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Smooth-manifolds.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (smooth functions, diffeomorphism)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-functions-diffeomorphism.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: V\to V&#x27;$</span> be continuous.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                For an open set <span class="inline-math">$V\subseteq \R^n$</span> and <span class="inline-math">$V&#x27;= \R^m$</span>,
+                                <span class="inline-math">$f$</span> is <em>smooth</em> if it is infinitely differentiable (i.e. all partial derivatives of all orders exist).
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For a general subset <span class="inline-math">$V\subseteq \R^n$</span> and <span class="inline-math">$V&#x27; = \R^m$</span>,
+                                <span class="inline-math">$f$</span> is <em>smooth</em> at <span class="inline-math">$p\in V$</span>
+                                if there exists an open neighbourhood <span class="inline-math">$B\subseteq \R^n$</span> of <span class="inline-math">$p$</span>
+                                and a smooth map <span class="inline-math">$F: B \to \R^m$</span>
+                                such that <span class="inline-math">$F|_{B\cap V} = f|_{B \cap V}$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For <span class="inline-math">$V = Σ$</span> an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-abstract-smooth-surface.html">abstract smooth surface</a>
+                                and <span class="inline-math">$V&#x27; = \R^m$</span>,
+                                <span class="inline-math">$f$</span> is <em>smooth</em> at <span class="inline-math">$p\in Σ$</span> if for a chart <span class="inline-math">$(U, ϕ)$</span> at <span class="inline-math">$p$</span>
+                                in our atlas, the map <span class="inline-math">$f\circ ϕ\inv: ϕ(U) \to \R^m$</span> is smooth at <span class="inline-math">$ϕ(p)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For <span class="inline-math">$V=Σ_1$</span> and <span class="inline-math">$V&#x27;=Σ_2$</span> abstract smooth surface,
+                                <span class="inline-math">$f$</span> is <em>smooth</em> at <span class="inline-math">$p$</span> if for charts <span class="inline-math">$(U, ϕ)$</span> at <span class="inline-math">$p$</span> and <span class="inline-math">$(U&#x27;, ϕ&#x27;)$</span> at <span class="inline-math">$f(p)$</span>,
+                                the composition <span class="inline-math">$ϕ&#x27; \circ f \circ ϕ\inv$</span> is smooth at <span class="inline-math">$ϕ(p)$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <span class="inline-math">$f$</span> is called a <em>diffeomorphism</em> if it is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-homeomorphism.html">homeomorphism</a>,
+                            and <span class="inline-math">$f$</span> and <span class="inline-math">$f\inv$</span> are smooth.
+                        </p>
+                        <ul>
+                        <!-- BEGIN BLOCK ID choice -->
+                        <li id="^choice">
+                            <p>
+                                Smoothness on abstract smooth surfaces does not depend on the choice of chart <span class="inline-math">$(U,ϕ)$</span> at <span class="inline-math">$p$</span> in our atlas,
+                                because if we use a different chart <span class="inline-math">$(U&#x27;, ϕ&#x27;)$</span> at <span class="inline-math">$p$</span>,
+                                <span class="display-math">$$ \begin{align*}
+                                f\circ ϕ&#x27;\inv = (f\circ ϕ\inv) \circ (ϕ \circ ϕ&#x27;\inv)
+                                \end{align*} $$</span>
+                                where the transition map <span class="inline-math">$ϕ \circ ϕ&#x27;\inv$</span> is a diffeomorphism.
+                                So <span class="inline-math">$f\circ ϕ&#x27;\inv$</span> is smooth iff <span class="inline-math">$f\circ ϕ\inv$</span> is smooth.
+                            </p>
+                            
+                        </li>
+                        <!-- END BLOCK ID choice -->
+                        
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (manifold, submanifold, codimension)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-submanifold-codimension.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X\subseteq \R^N$</span> be a <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-subspace-topology.html">subspace</a>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$X$</span> is <span class="inline-math">$k$</span>-dimensional <em>smooth/differential manifold</em>
+                            if for all <span class="inline-math">$x\in X$</span>,
+                            there exists a diffeomorphism <span class="inline-math">$ϕ: U\to V$</span>,
+                            where <span class="inline-math">$U\subseteq X$</span> is an open neighbourhood of <span class="inline-math">$x$</span>
+                            and <span class="inline-math">$V \subseteq \R^k$</span> is open.
+                        </p>
+                        <p>
+                            Call <span class="inline-math">$ϕ$</span> a <em>coordinate system</em> or <em>chart</em>,
+                            and <span class="inline-math">$ϕ\inv$</span> a <em>local parametrisation</em>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$Y \subset X$</span> are both manifolds,
+                            we say <span class="inline-math">$Y$</span> is a <em>submanifold</em> of <span class="inline-math">$X$</span>.
+                            The <em>codimension</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                \op{codim}_X(Y) = \dim X - \dim Y.
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID chart -->
+                            <p id="^chart">
+                                By restricting <span class="inline-math">$U$</span>, we can WLOG take <span class="inline-math">$V$</span> to be a ball.
+                                Then composing with a diffeomorphism, we can take <span class="inline-math">$V = \R^k$</span>.
+                            </p>
+                            
+                            <!-- END BLOCK ID chart -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID zero -->
+                            <p id="^zero">
+                                A zero-dimensional manifold is a discrete subset of <span class="inline-math">$\R^N$</span>.
+                            </p>
+                            
+                            <!-- END BLOCK ID zero -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$X \times Y \subset \R^{N+M}$</span> is a manifold
+                                if <span class="inline-math">$X\subset \R^N$</span> and <span class="inline-math">$Y \subset \R^M$</span> are manifolds. (Sheet 1)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (tangent space)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-tangent-space.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X \subset \R^N$</span> be a <span class="inline-math">$k$</span>-dimensional <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-submanifold-codimension.html">manifold</a>, and <span class="inline-math">$x\in X$</span>.
+                            Choose a local parametrisation <span class="inline-math">$ψ: V\to U\ni x$</span> around <span class="inline-math">$x$</span>.
+                        </p>
+                        <p>
+                            The tangent space is the image
+                            <span class="display-math">$$ \begin{align*}
+                                T_x X := \d ψ_{ψ\inv(x)}(\R^k) \subset \R^{N}
+                            \end{align*} $$</span>
+                            a vector subspace of <span class="inline-math">$\R^N$</span>, where <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-differentiation-in-Rn.html"><span class="inline-math">$\d$</span> is the differential operator</a>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                This does not depend on parametrisation.
+                                (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-tangent-space-does-not-depend-on-parametrisation.html">Proof</a>)
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$\dim T_x X = k$</span>. (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-dimension-of-tangent-space.html">Proof</a>)
+                                This shows the dimension of <span class="inline-math">$X$</span> (at a point <span class="inline-math">$x$</span>) is well-defined.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (differential map, immersion, submersion)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-differential-map-immersion-submersion.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: X\to Y$</span> be a smooth function between <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-submanifold-codimension.html">manifolds</a>,
+                            and <span class="inline-math">$x\in X$</span>.
+                        </p>
+                        <p>
+                            Choose local parametrisations <span class="inline-math">$ψ_1: V_1\to U_1$</span> of <span class="inline-math">$X$</span> around <span class="inline-math">$x$</span>
+                            and <span class="inline-math">$ψ_2: V_2 \to U_2$</span> of <span class="inline-math">$Y$</span> around <span class="inline-math">$f(x)$</span>.
+                            WLOG assume <span class="inline-math">$f(\mathcal{V}_1) \subset \mathcal{V}_2$</span> by restricting.
+                        </p>
+                        <p>
+                            The <em>differential map</em> of <span class="inline-math">$f$</span> at <span class="inline-math">$x$</span> is the linear map
+                            <span class="display-math">$$ \begin{align*}
+                                \d f_x = \underbrace{\d (ψ_2)_{ψ_2\inv(f(x))}}_{\R^{\tilde k} \to T_{f(x)} Y} \circ \underbrace{\d(ψ_2\inv \circ f \circ ψ_1)_{ψ_1\inv(x)}}_{\R^k \to \R^{\tilde k}} \circ \underbrace{(\d(ψ_1)_{ψ_1\inv(x)})\inv}_{T_x X \to \R^k}: T_x X \to T_y Y
+                            \end{align*} $$</span>
+                            between <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-tangent-space.html">tangent spaces</a>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$f$</span> is an <em>immersion</em> at <span class="inline-math">$x\in X$</span> if <span class="inline-math">$\d f_x$</span> is an injection.
+                            <span class="inline-math">$f$</span> is an <em>submersion</em> at <span class="inline-math">$x\in X$</span> if <span class="inline-math">$\d f_x$</span> is a surjection.
+                        </p>
+                        <blockquote>
+                            <p>
+                                This does not depend on parametrisation.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                Chain rule applies:
+                                if <span class="inline-math">$f: X\to Y$</span> and <span class="inline-math">$g:Y\to Z$</span> are smooth maps between manifolds, then
+                                <span class="inline-math">$\d(g \circ f)_x = \d g_{f(x)} \circ \d f_{x}$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (inverse function theorem for manifolds)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-inverse-function-theorem-for-manifolds.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: X\to Y$</span> be a smooth map of manifolds and <span class="inline-math">$x\in X$</span>.
+                        </p>
+                        <p>
+                            If <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-differential-map-immersion-submersion.html"><span class="inline-math">$\d f_x$</span></a><span class="inline-math">${}: T_x X \to T_y Y$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isomorphism-of-vector-spaces.html">isomorphism</a>,
+                            then there exists
+                            an open neighbourhood <span class="inline-math">$U \subseteq X$</span> of <span class="inline-math">$x$</span>
+                            such that <span class="inline-math">$f|_U: U\to f(U)$</span> is a diffeomorphism.
+                        </p>
+                        <p>
+                            Proof: pass to charts and apply the <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Theorem-inverse-function-theorem.html">inverse function theorem in <span class="inline-math">$\R^n$</span></a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (critical point, critical value, regular value)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-critical-point-critical-value-regular-value.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: X\to Y$</span> be a smooth map between manifolds.
+                        </p>
+                        <p>
+                            <span class="inline-math">$x\in X$</span> is a <em>critical point</em> of <span class="inline-math">$f$</span>
+                            if <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-differential-map-immersion-submersion.html"><span class="inline-math">$\d f_x$</span></a><span class="inline-math">${}: T_x X\to T_{f(x)} Y$</span> is not surjective.
+                        </p>
+                        <p>
+                            <span class="inline-math">$y\in Y$</span> is a <em>critical value</em> of <span class="inline-math">$f$</span> if there exists some critical point <span class="inline-math">$x\in X$</span>
+                            such that <span class="inline-math">$y = f(x)$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$y\in Y$</span> is a <em>regular value</em> of <span class="inline-math">$f$</span> if it is not a critical value.
+                        </p>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$y\not\in f(X)$</span>, then <span class="inline-math">$y$</span> is a regular value.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$\dim Y &gt; \dim X$</span>,
+                                all points in <span class="inline-math">$Y$</span> are critical values
+                                as <span class="inline-math">$T_x X \to T_{f(x)} Y$</span> can never be surjective.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (preimage theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-preimage-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: X\to Y$</span> be a smooth map between manifolds.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$y\in Y$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-critical-point-critical-value-regular-value.html">regular value</a>,
+                            then <span class="inline-math">$f\inv(y)$</span> (if non-empty) is a manifold of <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-submanifold-codimension.html">codimension</a> <span class="inline-math">$\dim Y$</span>.
+                        </p>
+                        <p>
+                            Moreover, <span class="inline-math">$T_x f\inv(y) = \ker \d f_x$</span> for all <span class="inline-math">$x\in f\inv(y)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-preimage-theorem.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID same-dim -->
+                            <p id="^same-dim">
+                                If <span class="inline-math">$\dim X = \dim Y$</span>, then <span class="inline-math">$f\inv(y)$</span> is a discrete subset of <span class="inline-math">$X$</span>.
+                                If <span class="inline-math">$X$</span> is compact, then <span class="inline-math">$f\inv(y)$</span> is finite.
+                            </p>
+                            
+                            <!-- END BLOCK ID same-dim -->
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (stack of records)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-stack-of-records.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$f: X\to Y$</span> is a smooth map between manifolds.
+                            Assume
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$\dim X = \dim Y$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$X$</span> is compact; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$y\in Y$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-critical-point-critical-value-regular-value.html">regular value</a>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            Then there exists <span class="inline-math">$V\subset Y$</span> open neighbourhood of <span class="inline-math">$y$</span>
+                            such that <span class="inline-math">$f\inv(V) = W_1 \sqcup \ldots\sqcup  W_n$</span>
+                            for some disjoint open sets <span class="inline-math">$W_i\subseteq X$</span>
+                            with <span class="inline-math">$f|_{\mathcal{W}_i}: \mathcal{W}_i\to \mathcal{V}$</span> is a diffeomorphism.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-stack-of-records.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (measure zero in Rn)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Definition-measure-zero-in-Rn.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A subset <span class="inline-math">$A\subset \R^n$</span> has <em>measure zero</em> if for all <span class="inline-math">$\epsilon&gt;0$</span>,
+                            there exists a countable collection of <span class="inline-math">$n$</span>-dimensional cubes <span class="inline-math">$I_j$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                A\subset \bigcup_{j=1}^\infty I_j \quad \text{and}\quad \sum_{j=1}^{\infty} |I_j| &lt; \epsilon
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$|I_j|$</span> denotes the volume of <span class="inline-math">$I_j$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (measure zero on manifold)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-measure-zero-on-manifold.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a <span class="inline-math">$k$</span>-dimensional manifold
+                            and <span class="inline-math">$S \subseteq X$</span> be a subset.
+                        </p>
+                        <p>
+                            <span class="inline-math">$S$</span> is said to be of <em>measure zero</em>
+                            if for all local parametrisation <span class="inline-math">$ψ: V \to U$</span>,
+                            the set <span class="inline-math">$ψ\inv(S \cap U) \subseteq V\subseteq \R^k$</span>
+                            is of <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Definition-measure-zero-in-Rn.html">measure zero</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Sard)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-Sard.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: X\to Y$</span> be a smooth map between manifolds.
+                        </p>
+                        <p>
+                            The set of <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-critical-point-critical-value-regular-value.html">critical values</a> of <span class="inline-math">$f$</span> is of <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-measure-zero-on-manifold.html">measure zero</a> as a subset of <span class="inline-math">$Y$</span>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                Therefore the set of regular values is dense in <span class="inline-math">$Y$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (transversality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-transversality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: X\to Y$</span> be a smooth map between manifolds,
+                            and let <span class="inline-math">$Z \subseteq Y$</span> be a submanifold of <span class="inline-math">$Y$</span>.
+                        </p>
+                        <p>
+                            Say <span class="inline-math">$f$</span> is <em>traversal</em> to <span class="inline-math">$Z$</span> (denoted <span class="inline-math">$f \pitchfork Z$</span>)
+                            if for all <span class="inline-math">$x\in f\inv(Z)$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \im \d f_x + T_{f(x)} Z = T_{f(x)} Y
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\d f_x$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-differential-map-immersion-submersion.html">differential map</a>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$Z \cap f(X) = \emptyset$</span>, then <span class="inline-math">$f$</span> is transversal to <span class="inline-math">$Z$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$y\in Y$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-critical-point-critical-value-regular-value.html">regular value</a>
+                                iff <span class="inline-math">$f$</span> is transversal to the submanifold <span class="inline-math">$\set{y}\subseteq Y$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (preimage of transversal submanifold)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-preimage-of-transversal-submanifold.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: X\to Y$</span> be a smooth map between manifolds
+                            and <span class="inline-math">$Z\subseteq Y$</span> be a submanifold.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f$</span> is <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-transversality.html">transversal</a> to <span class="inline-math">$Z$</span>,
+                            then <span class="inline-math">$f\inv(Z)$</span> (if non-empty) is a submanifold of <span class="inline-math">$X$</span> with
+                            <span class="display-math">$$ \begin{align*}
+                                \op{codim}_X f\inv(Z) = \op{codim}_Y Z.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-preimage-of-transversal-submanifold.html">Proof</a> TODO
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (manifold with boundary)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-with-boundary.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Define the half plane as <span class="inline-math">$\mathbb{H}^k = \sb{(x_1, \ldots, x_k)\in \R^k}{x_k \geq 0}$</span>
+                            and its boundary <span class="inline-math">$\partial \mathbb{H}^k = \sb{(x_1, \ldots, x_k)\in \R^k}{x_k = 0}$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$X \subseteq \R^N$</span> is a <span class="inline-math">$k$</span>-dimensional <em>manifold with boundary</em>
+                            if for all <span class="inline-math">$x\in X$</span>,
+                            there exists a diffeomorphism <span class="inline-math">$ϕ: U\to V$</span>
+                            where <span class="inline-math">$U\subseteq X$</span> is an open neighbourhood of <span class="inline-math">$x$</span>
+                            and <span class="inline-math">$V \subseteq \mathbb{H}^k$</span> is an open set.
+                        </p>
+                        <p>
+                            The <em>boundary</em> of <span class="inline-math">$X$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                \partial X ={}&amp; \sb{x\in X}{\exists \text{chart } ϕ: U\to V\subseteq \mathbb{H}^k: \quad ϕ(x) \in \partial \mathbb{H}^k} \\
+                                ={}&amp; \sb{x\in X}{\forall \text{chart } ϕ: U\to V\subseteq \mathbb{H}^k: \quad ϕ(x) \in \partial \mathbb{H}^k}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The <em>interior</em> of <span class="inline-math">$X$</span> is <span class="inline-math">$\op{int} X = X \setminus \partial X$</span>.
+                        </p>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID chart -->
+                            <p id="^chart">
+                                <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-submanifold-codimension.html#^chart">As before</a> we can WLOG take <span class="inline-math">$V = \R^k$</span> or <span class="inline-math">$\mathbb{H}^k$</span>.
+                            </p>
+                            
+                            <!-- END BLOCK ID chart -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$\partial X$</span> is a <span class="inline-math">$(k-1)$</span>-dimensional <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-submanifold-codimension.html">manifold (without boundary)</a>
+                                and <span class="inline-math">$\op{int} X$</span> is a <span class="inline-math">$k$</span>-dimensional manifold.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID cross -->
+                            <p id="^cross">
+                                Generally if <span class="inline-math">$X$</span> is manifold with boundary and
+                                <span class="inline-math">$Y$</span> is a manifold (without boundary),
+                                then <span class="inline-math">$X \times Y$</span> is a manifold with boundary <span class="inline-math">$\partial(X \times Y) = \partial X \times Y$</span>.
+                            </p>
+                            
+                            <!-- END BLOCK ID cross -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                This differs from the notion of <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-boundary.html">boundary</a> and <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-interior.html">interior</a> in topological spaces.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (superlevel set as manifold with boundary)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Lemma-superlevel-set-as-manifold-with-boundary.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: X\to \R$</span> be a smooth map between manifolds.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$0$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-critical-point-critical-value-regular-value.html">regular value</a>
+                            of <span class="inline-math">$f$</span>,
+                            then <span class="inline-math">$f\inv([0, \infty))$</span>
+                            is a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-with-boundary.html">manifold with boundary</a>
+                            of dimension <span class="inline-math">$\dim X$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-superlevel-set-as-manifold-with-boundary.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (preimage theorem for manifold with boundary)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-preimage-theorem-for-manifold-with-boundary.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-with-boundary.html">manifold with boundary</a>, <span class="inline-math">$Y$</span> be a manifold,
+                            <span class="inline-math">$f: X\to Y$</span> be smooth, and <span class="inline-math">$y\in Y$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$y$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-critical-point-critical-value-regular-value.html">regular value</a>
+                            of <span class="inline-math">$f: X\to Y$</span> and <span class="inline-math">$f|_{\partial X}: \partial X\to Y$</span>,
+                            then <span class="inline-math">$f\inv(y)\subseteq X$</span> (if non-empty) is a manifold with boundary,
+                            with
+                            <span class="display-math">$$ \begin{align*}
+                                \op{codim}_X f\inv(y) = \dim Y
+                            \end{align*} $$</span>
+                            and
+                            <span class="display-math">$$ \begin{align*}
+                                \partial f\inv(y) = f\inv(y) \cap \partial X.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-preimage-theorem-for-manifold-with-boundary.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (smooth homotopy, smooth isotopy)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-smooth-homotopy-smooth-isotopy.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f,g: X\to Y$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-functions-diffeomorphism.html">smooth maps</a> between manifolds (<span class="inline-math">$X$</span> cannot have <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-with-boundary.html">boundary</a> but <span class="inline-math">$Y$</span> can).
+                        </p>
+                        <p>
+                            A <em>smooth homotopy</em> <span class="inline-math">$H: X\times [0,1]\to Y$</span>
+                            is a smooth map between <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-with-boundary.html#^cross">manifolds</a>
+                            which is a <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-homotopy.html">homotopy</a> from <span class="inline-math">$f$</span> to <span class="inline-math">$g$</span>,
+                            i.e. <span class="inline-math">$H(x, 0) = f(x)$</span> and <span class="inline-math">$H(x,1) = g(x)$</span> for all <span class="inline-math">$x\in X$</span>.
+                            If such <span class="inline-math">$H$</span> exists, we say <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> are <em>smoothly homotopic</em>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$f,g$</span> are <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-functions-diffeomorphism.html">diffeomorphisms</a>,
+                            a <em>smooth isotopy</em> <span class="inline-math">$H: X \times [0,1]\to Y$</span>
+                            is a smooth homotopy with <span class="inline-math">$x\mapsto H(x,t)$</span> is a diffeomorphism for each <span class="inline-math">$t\in [0,1]$</span>.
+                            If such <span class="inline-math">$H$</span> exists, we say <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> are <em>smoothly isotopic</em>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                "Smooth homotopic" and "Smooth isotopic" are equivalence relations.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (homotopy lemma, number of preimages)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Lemma-homotopy-lemma-number-of-preimages.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f,g: X\to Y$</span> be <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-functions-diffeomorphism.html">smooth maps</a> between manifolds (<span class="inline-math">$X$</span> cannot have <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-with-boundary.html">boundary</a> but <span class="inline-math">$Y$</span> can),
+                            and <span class="inline-math">$y\in Y$</span>.
+                            Suppose
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> are <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-smooth-homotopy-smooth-isotopy.html">smoothly homotopic</a>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$X$</span> is compact;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\dim X = \dim Y$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$y$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-critical-point-critical-value-regular-value.html">regular value</a> of <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \# f\inv(y) = \# g\inv(y).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-homotopy-lemma-number-of-preimages.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (homogeneity lemma)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Lemma-homogeneity-lemma.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a manifold without boundary,
+                            and let <span class="inline-math">$x,x&#x27;\in X$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$X$</span> is connected,
+                            then there exists a diffeomorphism <span class="inline-math">$h: X\to X$</span>
+                            sending <span class="inline-math">$x\mapsto x&#x27;$</span>
+                            which is <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-smooth-homotopy-smooth-isotopy.html">smoothly isotopic</a> to identity.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-homogeneity-lemma.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (degree mod 2)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-degree-mod-2.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: X\to Y$</span> be a smooth map between manifolds (<span class="inline-math">$X$</span> cannot have <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-with-boundary.html">boundary</a> but <span class="inline-math">$Y$</span> can),
+                            and <span class="inline-math">$y, y&#x27;\in Y$</span>.
+                            Suppose
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$\dim X = \dim Y$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$X$</span> is compact;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$Y$</span> is connected; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$y$</span> and <span class="inline-math">$y&#x27;$</span> are <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-critical-point-critical-value-regular-value.html">regular values</a> of <span class="inline-math">$f$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \# f\inv(y) \equiv \# f\inv(z) \pmod 2.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            This common value (mod 2) is called the <em>degree mod 2</em> of <span class="inline-math">$f$</span>
+                            (denoted <span class="inline-math">$\deg_2 f$</span>).
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-degree-mod-2.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                We <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Lemma-homotopy-lemma-number-of-preimages.html">showed</a> <span class="inline-math">$\deg_2 f = \deg_2 g$</span> if <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> are smoothly homotopic.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                A manifold <span class="inline-math">$X$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-contractible-space.html">contractible</a> (i.e. a constant map <span class="inline-math">$X\to X$</span> is smoothly homotopic to identity)
+                                iff <span class="inline-math">$X = \set{*}$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (ball does not retract to sphere)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-ball-does-not-retract-to-sphere.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The unit disc <span class="inline-math">$D^{n+1} = \sb{x\in \R^{n+1}}{|x| \leq 1}$</span>
+                            does not <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Definition-retraction-deformation-retraction.html">retract</a> to <span class="inline-math">$S^n = \sb{x\in \R^{n+1}}{|x| = 1}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-disc-does-not-retract-to-circle-using-homotopy.html">Proof of <span class="inline-math">$n=1$</span> using homotopy</a>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-ball-does-not-smoothly-retract-to-sphere.html">Proof of smooth retracts using degree mod <span class="inline-math">$2$</span></a>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-ball-does-not-retract-to-sphere.html">Proof using homology</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (Brouwer's fixed point theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Corollary-Brouwer-s-fixed-point-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Every <a href="/tripos-notes/Lectures/IB/Michaelmas/Analysis-and-Topology-AT/Notes/Definition-continuity-on-topological-space.html">continuous map</a>
+                            <span class="inline-math">$D^n\to D^n$</span> has a fixed point,
+                            where <span class="inline-math">$D^n = \sb{x\in \R^n}{|x|\leq 1}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Proof-Brouwer-s-fixed-point-theorem.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                This is a special case of the <a href="/tripos-notes/Lectures/II/Michaelmas/Algebraic-Topology-ALT/Notes/Theorem-Lefschetz-fixed-point.html">Lefschetz fixed point theorem</a>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (intersection number mod 2)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-intersection-number-mod-2.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$f: X\to Y$</span> be a smooth map between manifolds,
+                            and <span class="inline-math">$Z\subseteq Y$</span> be a submanifold.
+                        </p>
+                        <p>
+                            Assuming <span class="inline-math">$X$</span> is compact,
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-transversality.html"><span class="inline-math">$f\pitchfork Z$</span></a>
+                            and <span class="inline-math">$\dim X + \dim Y = \dim Z$</span>
+                            (so the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-preimage-of-transversal-submanifold.html">preimage theorem</a> implies <span class="inline-math">$f\inv(Y)\subset X$</span> is 0-dimensional so finite),
+                            define the <em>intersection number mod 2</em>
+                            <span class="display-math">$$ \begin{align*}
+                                I_2(f,Z) := \# f\inv(Z)\pmod 2.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            In particular if <span class="inline-math">$X\subset Y$</span> (taking <span class="inline-math">$f$</span> to be inclusion),
+                            <span class="display-math">$$ \begin{align*}
+                                I_2(X,Z) := \#(X \cap Z) \pmod 2.
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                Fact: if <span class="inline-math">$f$</span> and <span class="inline-math">$g$</span> are <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-smooth-homotopy-smooth-isotopy.html">smoothly homotopic</a> and <span class="inline-math">$f,g\pitchfork Z$</span>,
+                                then <span class="inline-math">$I_2(f,Z) = I_2(g,Z)$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$f$</span> is not transversal to <span class="inline-math">$Z$</span>,
+                                perturb <span class="inline-math">$f$</span> via a smooth homotopy.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (abstract manifold)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-abstract-manifold.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>(smooth) <span class="inline-math">$k$</span>-dimensional manifold</em> is a Hausdorff, second countable topological space <span class="inline-math">$X$</span>
+                            together with a collection of maps
+                            <span class="inline-math">$ϕ_α: U_α \to X$</span>
+                            satisfying the following:
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$U_α \subset \R^k$</span> open and <span class="inline-math">$ϕ_α: U_α \to ϕ_α(U_α) =: V_α$</span> is a homeomorphism.
+                                (In particular <span class="inline-math">$V_α$</span> is open.)
+                                Define <span class="inline-math">$ψ_α := ϕ_α\inv: V_α \to U_α$</span>, called a <em>chart</em>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\bigcup_{α} V_α = X$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Letting <span class="inline-math">$V_{αβ} := V_α \cap V_{β}$</span>, the map
+                                <span class="inline-math">$ϕ_β\inv \circ ϕ_α := ϕ_α\inv(V_{αβ}) \to ϕ_β\inv(V_{αβ})$</span>
+                                between open sets of <span class="inline-math">$\R^k$</span> is smooth.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The atlas is "maximal": suppose <span class="inline-math">$\tilde ϕ: \tilde U\to X$</span>
+                                is such that <span class="inline-math">$\set{ϕ_α}_α \cup \set{\tilde ϕ}$</span> still satisfies 1, 2, 3,
+                                then <span class="inline-math">$\tilde ϕ = ϕ_α$</span> for some <span class="inline-math">$α$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            A collection of <span class="inline-math">$ϕ_α$</span> satisfying 1, 2, 3 is called a <em>smooth atlas</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Whitney, embedding of manifolds)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-Whitney-embedding-of-manifolds.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For any <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-abstract-manifold.html"><span class="inline-math">$k$</span>-dimensional manifold</a> <span class="inline-math">$X$</span>,
+                            there exists a smooth embedding <span class="inline-math">$ϕ: X\to \R^{2k}$</span> of manifolds
+                            (i.e. <span class="inline-math">$ϕ: X\to ϕ(X)$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-functions-diffeomorphism.html">diffeomorphism</a>).
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Curves in II Differential Geometry
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Curves-in-II-Differential-Geometry.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (curve on manifold, regular, closed, simple)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curve-on-manifold-regular-closed-simple.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-abstract-manifold.html">smooth manifold</a>.
+                        </p>
+                        <p>
+                            A <em>(smooth) curve</em> is a smooth function <span class="inline-math">$α: I\to X$</span>
+                            where <span class="inline-math">$I\subseteq \R$</span> is an interval
+                            (so <span class="inline-math">$(a,b), [a,b], (a,b], [a,b)$</span>
+                            where <span class="inline-math">$a,b$</span> can be <span class="inline-math">$\pm \infty$</span>).
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$α$</span> is <em>regular</em> if <span class="inline-math">$α$</span> is an <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-differential-map-immersion-submersion.html">immersion</a>,
+                            i.e. <span class="inline-math">$α&#x27;(t) \neq 0$</span> for all <span class="inline-math">$t\in I$</span>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$α$</span> is <em>closed</em> if <span class="inline-math">$I = [a,b]$</span> is a closed interval
+                            and <span class="inline-math">$α^{(k)}(a) = α^{(k)}(b)$</span> for all <span class="inline-math">$k=0,1,2,\ldots$</span>.
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$α$</span> is <em>simple</em> if whenever <span class="inline-math">$α(t) = α(t&#x27;)$</span>,
+                            <span class="inline-math">$t$</span> and <span class="inline-math">$t&#x27;$</span> are at the endpoints of <span class="inline-math">$I$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (arc length of a curve)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-arc-length-of-a-curve.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\v x(t)$</span> be a curve.
+                            For some starting point <span class="inline-math">$t_0$</span>, the arc length <span class="inline-math">$s(t)$</span> is the (signed) distance from <span class="inline-math">$t_0$</span> to <span class="inline-math">$t$</span>,
+                            <span class="display-math">$$ s(t) = \int_{t_0}^t |\dv x(t&#x27;)|\,dt&#x27;. $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                The arc length between two points on a curve is independent of the choice of parametrisation. (<a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Proof-arc-length-independent-of-parametrisation.html">Proof</a>)
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$\v x$</span> is <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-regular-parametrisation.html">regular</a>,
+                                then <span class="inline-math">$s&#x27;(t) = |\dot{\v x}(t)| &gt; 0$</span>, so <span class="inline-math">$s$</span> is invertible by the <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-inverse-function-theorem-on-R.html">inverse function theorem</a>.
+                                Using <span class="inline-math">$s$</span> to parametrise the curve i.e. <span class="inline-math">$\v x(s)$</span>, the tangent vector has unit norm:
+                                <span class="display-math">$$ \bigg|\dvd xs\bigg| = \frac{|d\v x/dt|}{ds/dt} = 1. $$</span>
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (curvature of a curve)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-curvature-of-a-curve.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\v x(s)$</span> be a parametrisation by the arc length.
+                            The curvature is
+                            <span class="display-math">$$ \kappa(s) = \bigg|\dvd[2]xs\bigg| = \bigg|\dvd ts\bigg| $$</span>
+                            where <span class="inline-math">$\v t = d\v x/ds$</span> is the unit tangent vector.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (principal normal)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-principal-normal.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\v x(s)$</span> be a curve,
+                            and suppose <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-curvature-of-a-curve.html"><span class="inline-math">$κ(s)$</span></a><span class="inline-math">${}\neq 0$</span> at some <span class="inline-math">$s$</span>.
+                            The principal normal at a point <span class="inline-math">$\v x(s)$</span> is
+                            <span class="display-math">$$ \v n = \frac1\kappa\dvd[2]xs = \frac1\kappa\dvd ts. $$</span>
+                            <span class="inline-math">$1/\kappa$</span> ensures this is a unit vector.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (osculating plane)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-osculating-plane.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The plane spanned by <span class="inline-math">$\v t$</span> and <span class="inline-math">$\v n$</span> is called the <em>osculating plane</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (binormal)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-binormal.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For curves in <span class="inline-math">$\R^3$</span>, define the binormal as
+                            <span class="display-math">$$ \v b = \v t\times\v n. $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (torsion)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-torsion.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a curve in <span class="inline-math">$\R^3$</span>, the torsion <span class="inline-math">$\tau(s)$</span> is defined as
+                            <span class="display-math">$$ \dvd bs = -\tau\v n. $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Derivation-that-change-in-binormal-vector-is-along-normal.html">Derivation that change in b is parallel to n</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Frenet formulae)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-Frenet-formulae.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$α(s)$</span> be a curve parametrised by arc length.
+                            Its <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-tangent-vector.html">tangent <span class="inline-math">$t$</span></a>, <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-principal-normal.html">normal <span class="inline-math">$n$</span></a> and <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-binormal.html">binormal <span class="inline-math">$b$</span></a>
+                            satisfy the ordinary differential equation
+                            (called the Frenet formulae)
+                            <span class="display-math">$$ \begin{align*}
+                                \pmat{t&#x27;(s) \\ n&#x27;(s) \\ b&#x27;(s)} = \pmat{&amp; k(s) &amp; \\ -k(s) &amp; &amp; -τ(s) \\ &amp;τ(s)&amp;}\pmat{t(s) \\ n(s) \\ b(s)}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$k$</span> is the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-curvature-of-a-curve.html">curvature</a> and <span class="inline-math">$τ$</span> is the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-torsion.html">torsion</a>.
+                        </p>
+                        <p>
+                            The right-handed orthonormal basis <span class="inline-math">$(t, n, b)$</span> is called the <em>Frenet frame</em> associated to <span class="inline-math">$α$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (fundamental theorem of curve in R3)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-fundamental-theorem-of-curve-in-R3.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$I\subseteq  \R$</span> be an interval
+                            and <span class="inline-math">$k, τ: I\to \R$</span> be smooth functions.
+                            Suppose <span class="inline-math">$k&gt;0$</span>.
+                        </p>
+                        <p>
+                            Given any <span class="inline-math">$s_0\in I$</span>, any <span class="inline-math">$α_0\in \R^3$</span> and any right-handed orthonormal basis <span class="inline-math">$\set{t_0, n_0, b_0}$</span> of <span class="inline-math">$\R^3$</span>,
+                            there exists a curve <span class="inline-math">$α: I\to \R^3$</span>
+                            such that its curvature is <span class="inline-math">$k$</span>,
+                            its torsion is <span class="inline-math">$τ$</span>,
+                            <span class="inline-math">$α(s_0) = α_0$</span>, and
+                            <span class="inline-math">$\set{t_0, n_0, b_0}$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-Frenet-formulae.html">Frenet frame</a> at <span class="inline-math">$s_0$</span>.
+                        </p>
+                        <p>
+                            Moreover, if <span class="inline-math">$\tilde α: I\to \R^3$</span> is another curve
+                            with curvature <span class="inline-math">$k$</span> and torsion <span class="inline-math">$τ$</span>,
+                            then there exists <span class="inline-math">$R\in{}$</span><a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-special-orthogonal-group.html"><span class="inline-math">$\op{SO}(3)$</span></a> and <span class="inline-math">$v\in \R^3$</span>
+                            such that <span class="inline-math">$\tilde α = R \circ α + v$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-fundamental-theorem-of-curve-in-R3.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (curvature of plane curve)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-of-plane-curve.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$α: I\to \R^2$</span> be a planar curve, parametrised by arc length.
+                            Let <span class="inline-math">$n: I\to \R^2$</span> be a unit normal vector
+                            (i.e. orthogonal to <span class="inline-math">$\dot α$</span>) that varies smoothly.
+                        </p>
+                        <p>
+                            The <em>(signed) curvature</em> <span class="inline-math">$k_\text{signed}$</span> is defined that
+                            <span class="display-math">$$ \begin{align*}
+                                \ddot α(s) = k_\text{signed}(s) \,n(s).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$|k_\text{signed}|$</span> coincides with the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-curvature-of-a-curve.html">curvature</a> as a curve in <span class="inline-math">$\R^3$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Jordan curve theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-Jordan-curve-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$α: I\to \R^2$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curve-on-manifold-regular-closed-simple.html">simple closed curve</a> in <span class="inline-math">$\R^2$</span>,
+                            then there exists <span class="inline-math">$U \subset \R^2$</span>
+                            such that <span class="inline-math">$U \cup α(I)$</span>
+                            is a compact manifold with boundary,
+                            homeomorphic to the unit disc <span class="inline-math">$D^2$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (isoperimetric inequality)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-isoperimetric-inequality.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$α:I\to \R^2$</span> be a simple closed curve in <span class="inline-math">$\R^2$</span>
+                            and <span class="inline-math">$A$</span> be the region it <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-Jordan-curve-theorem.html">bounds</a>.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \op{length}(α)^2 \leq 4\pi \op{area}(A)
+                            \end{align*} $$</span>
+                            with equality iff <span class="inline-math">$α$</span> is a circle.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-isoperimetric-inequality.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Surfaces in 3-space in II Differential Geometry
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Surfaces-in-3-space-in-II-Differential-Geometry.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (smooth surface in R3)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>smooth surface in <span class="inline-math">$\R^3$</span></em> is a subspace <span class="inline-math">$Σ\subseteq \R^3$</span>
+                            that is a 2-dimensional <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-manifold-submanifold-codimension.html">manifold</a>,
+                            i.e.
+                            such that for all <span class="inline-math">$p\in Σ$</span>,
+                            there exists an open neighbourhood <span class="inline-math">$U\subseteq Σ$</span> of <span class="inline-math">$p$</span>
+                            which is <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-functions-diffeomorphism.html">diffeomorphic</a> to an open set in <span class="inline-math">$\R^2$</span>.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Unpacking the definition: 
+                                for all <span class="inline-math">$p\in Σ$</span>,
+                                there exists an open ball <span class="inline-math">$B\subseteq \R^3$</span> containing <span class="inline-math">$p$</span>,
+                                an open set <span class="inline-math">$V\subseteq \R^2$</span>
+                                and a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-functions-diffeomorphism.html">smooth</a> map <span class="inline-math">$f: B \to V$</span>,
+                                such that by writing <span class="inline-math">$U = B \cap Σ$</span> (which is open in <span class="inline-math">$Σ$</span>),
+                                <span class="inline-math">$f|_U: U \to V$</span> is a homeomorphism
+                                and its inverse <span class="inline-math">$V\hookrightarrow \R^3$</span> is smooth.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (first fundamental form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Σ$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">smooth surface in <span class="inline-math">$\R^3$</span></a>
+                            and <span class="inline-math">$p\in Σ$</span>.
+                        </p>
+                        <p>
+                            The <em>first fundamental form</em> <span class="inline-math">$\I_p$</span> of <span class="inline-math">$Σ$</span> at <span class="inline-math">$p$</span>
+                            is the restriction of the Euclidean inner product <span class="inline-math">$\langle ,\rangle$</span> in <span class="inline-math">$\R^3$</span> on the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-tangent-space.html">tangent space</a> <span class="inline-math">$T_pΣ$</span>,
+                            i.e.
+                            <span class="display-math">$$ \begin{align*}
+                                \I_p: T_pΣ \times T_pΣ &amp;\to \R \\
+                                (v,w) &amp;\mapsto \langle v,w\rangle.
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                Given an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">allowable parametrisation</a> <span class="inline-math">$σ: V\to U$</span> on <span class="inline-math">$Σ$</span> near <span class="inline-math">$p$</span>,
+                                <span class="inline-math">$\set{σ_u, σ_v}$</span> is a basis of <span class="inline-math">$T_pΣ = \im \d σ_{σ\inv(p)}$</span>.
+                                In this basis, <span class="inline-math">$\I_p$</span> is represented by
+                                <span class="display-math">$$ \begin{align*}
+                                    \pmat{E &amp; F \\ F &amp; G} := \pmat{\langle σ_u, σ_u\rangle &amp; \langle σ_u, σ_v\rangle \\ \langle σ_v, σ_u\rangle &amp; \langle σ_v, σ_v\rangle}
+                                    = (\d σ)^T (\d σ),
+                                \end{align*} $$</span>
+                                which is a function in <span class="inline-math">$(u,v)\in V$</span>.
+                                Formally we also write
+                                <span class="display-math">$$ \begin{align*}
+                                    \I_p = E \d u^2 + 2F \d u \d v + G \d v^2.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                A parametrisation is <em>orthogonal</em> if <span class="inline-math">$F = 0$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                A parametrisation is <em>isothermal</em> if <span class="inline-math">$F = 0$</span> and <span class="inline-math">$E = G = λ^2$</span> for some function <span class="inline-math">$λ$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (length of curve on surface)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-length-of-curve-on-surface.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$σ: V\to U$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">allowable parametrisation</a>
+                            on a smooth surface <span class="inline-math">$Σ$</span> in <span class="inline-math">$\R^3$</span>,
+                            and <span class="inline-math">$γ(t) = σ(u(t), v(t)): [a,b] \to U$</span> be a smooth curve.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \mathrm{length}(γ) &amp;= \int_{a}^{b} \sqrt{Eu&#x27;(t)^2 + 2F u&#x27;(t) v&#x27;(t) + G v&#x27;(t)^2} \d t \\
+                                &amp;= \int_{a}^{b} \sqrt{\I((u&#x27;(t), v&#x27;(t)), (u&#x27;(t), v&#x27;(t)))} \d t
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\I(x,y) = x^T \pmat{E &amp; F\\ F &amp; G} y$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">first fundamental form</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-length-of-curve-on-surface.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (isometry of surfaces in II Differential Geometry)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-isometry-of-surfaces-in-II-Differential-Geometry.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$ψ: S\to \tilde S$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-functions-diffeomorphism.html">diffeomorphism</a>
+                            of <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">surfaces in <span class="inline-math">$\R^3$</span></a>.
+                            We say <span class="inline-math">$ψ$</span> is an <em>isometry</em> if
+                            <span class="display-math">$$ \begin{align*}
+                                \I_p(v,w) = \tilde \I_{ψ(p)}(\d ψ_p(v), \d ψ_p(w))
+                            \end{align*} $$</span>
+                            holds for all <span class="inline-math">$p\in S$</span> and <span class="inline-math">$v,w\in T_pS$</span>,
+                            where <span class="inline-math">$\I$</span> and <span class="inline-math">$\tilde \I$</span> are the first fundamental forms of <span class="inline-math">$S$</span> and <span class="inline-math">$\tilde S$</span>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                Isometry preserves <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-length-of-curve-on-surface.html">length of curves</a>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (first fundamental form in different parametrisations)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-first-fundamental-form-in-different-parametrisations.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span>,
+                            with two allowable parametrisations
+                            <span class="inline-math">$\tilde σ: V\to U\subseteq Σ$</span> and <span class="inline-math">$σ: \tilde V\to U\subseteq Σ$</span>
+                            near <span class="inline-math">$p\in Σ$</span>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$ϕ = \tilde σ\inv\circ σ: V\to\tilde V$</span> be the transition map.
+                            The <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">first fundamental forms</a> in the two parametrisations are related by
+                            <span class="display-math">$$ \begin{align*}
+                                \pmat{E &amp; F \\ F &amp; G}
+                                = (Dϕ)^T \pmat{\tilde E &amp; \tilde F \\ \tilde F &amp; \tilde G} (Dϕ).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-first-fundamental-form-in-different-parametrisations.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (area on surface)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-area-on-surface.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$σ: V\to U$</span> be an allowable parametrisation
+                            for an open set <span class="inline-math">$U$</span> in a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">smooth surface in <span class="inline-math">$\R^3$</span></a>.
+                        </p>
+                        <p>
+                            Define the area of <span class="inline-math">$U$</span> as
+                            <span class="display-math">$$ \begin{align*}
+                                \mathrm{area}(U) = \int_{V} \sqrt{EG - F^2} \d u \d v = \int_{V} \sqrt{\det \I} \d u \d v
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\I = \pmat{E &amp; F \\ F &amp; G}$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">first fundamental form</a>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$U = U_1 \sqcup \ldots \sqcup U_n \sqcup Y$</span>
+                            such that <span class="inline-math">$U_1, \ldots, U_n$</span> are images of a parametrisation
+                            and <span class="inline-math">$Y$</span> has <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-measure-zero-on-manifold.html">measure 0</a>,
+                            then <span class="inline-math">$\op{area}(U) := \sum_{i=1}^{n} \op{area}(U_i)$</span>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                Motivation: viewing <span class="inline-math">$σ_u$</span> and <span class="inline-math">$σ_v$</span> as an infinitesimal parallelogram on <span class="inline-math">$Σ$</span>,
+                                we integrate over the area <span class="inline-math">$\sqrt{\langle σ_u\times σ_v, σ_u\times σ_v\rangle} = \sqrt{\langle σ_u, σ_u\rangle\langle σ_v, σ_v\rangle - \langle σ_u, σ_v\rangle^2}$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$\mathrm{area}(U)$</span> does not depend on the parametrisation. (<a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-area-on-surface-independent-of-parametrisation.html">Proof</a>)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (normal direction, Gauss map)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-normal-direction-Gauss-map.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span> and <span class="inline-math">$p\in Σ$</span> be a point.
+                        </p>
+                        <p>
+                            The <em>normal direction</em> to <span class="inline-math">$Σ$</span> at <span class="inline-math">$p$</span>
+                            is the Euclidean <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-orthogonal-complement.html">orthogonal complement</a>
+                            <span class="inline-math">$(T_p Σ)^\perp\subseteq \R^3$</span> of the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-tangent-plane-of-smooth-surface-in-R3.html">tangent plane</a>.
+                        </p>
+                        <p>
+                            A unit vector in <span class="inline-math">$(T_pΣ)^\perp$</span> is a <em>unit normal vector</em>.
+                        </p>
+                        <p>
+                            The <em>Gauss map</em> <span class="inline-math">$n: U\to S^2$</span> defined on a subset <span class="inline-math">$U\subseteq Σ$</span>
+                            is a continuous map that sends a point to the unit normal vector.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (two-sided surface)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-two-sided-surface.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">smooth surface in <span class="inline-math">$\R^3$</span></a> is <em>two-sided</em>
+                            if it admits a global continuous choice of <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-normal-direction-Gauss-map.html">unit normal vector</a>,
+                            i.e. a globally well-defined Gauss map.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (shape operator is self-adjoint with respect to first fundamental form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-shape-operator-is-self-adjoint-with-respect-to-first-fundamental-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For a smooth <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-two-sided-surface.html">oriented</a> surface <span class="inline-math">$Σ$</span> in <span class="inline-math">$\R^3$</span>,
+                            the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-shape-operator.html">shape operator</a> <span class="inline-math">$\mathbb{S}_p$</span> at a point <span class="inline-math">$p\in Σ$</span>
+                            is a <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-Hermitian-self-adjoint-operator.html">self-adjoint</a> linear map
+                            with respect to the inner product <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html"><span class="inline-math">$\I_p$</span></a> <span class="inline-math">$= \langle \cdot ,\cdot \rangle_{\R^3}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-shape-operator-is-self-adjoint-with-respect-to-first-fundamental-form.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (second fundamental form)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-second-fundamental-form.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$σ: V\to U$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">allowable parametrisation</a>
+                            on a smooth surface <span class="inline-math">$Σ$</span> in <span class="inline-math">$\R^3$</span>.
+                            Define
+                            <span class="display-math">$$ \begin{align*}
+                                e \equiv L :={}&amp; \langle n, σ_{uu}\rangle = -\langle n_u, σ_u\rangle, \\
+                                f \equiv M :={}&amp; \langle n, σ_{uv}\rangle = -\langle n_u, σ_v\rangle = -\langle n_v, σ_u\rangle, \\
+                                g \equiv N :={}&amp; \langle n, σ_{vv}\rangle = -\langle n_v, σ_v\rangle, \\
+                                n ={}&amp; \frac{σ_u \times σ_v}{\|σ_u \times σ_v\|}
+                            \end{align*} $$</span>
+                            which are functions of <span class="inline-math">$(u,v)\in V$</span>. 
+                            (Differentiate <span class="inline-math">$\langle n, σ_u\rangle=0=\langle n, σ_v\rangle$</span>
+                            to see those equalities.)
+                        </p>
+                        <p>
+                            The <em>second fundamental form</em> <span class="inline-math">$\II$</span> is represented by
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                the formal expression
+                                <span class="display-math">$$ \begin{align*}
+                                L \d u^2 + 2M \d u \d v + N \d v^2,
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                the symmetric bilinear form
+                                <span class="display-math">$$ \begin{align*}
+                                \II((u_1, v_1), (u_2, v_2)) = L u_1 u_2 + M(u_1 v_2 + v_1 u_2) + N v_1 v_2,
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                or its matrix representation
+                                <span class="display-math">$$ \begin{align*}
+                                \pmat{L &amp; M \\ M &amp; N} = -(Dn)^T (Dσ).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (second fundamental form in terms of shape operator)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-second-fundamental-form-in-terms-of-shape-operator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$Σ$</span> is a smooth oriented surface in <span class="inline-math">$\R^3$</span>,
+                            then the second fundamental form at <span class="inline-math">$p\in Σ$</span>
+                            is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-symmetric-bilinear-form.html">symmetric bilinear form</a> on <span class="inline-math">$T_p Σ$</span> given by
+                            <span class="display-math">$$ \begin{align*}
+                                \II_p(v,w) = \langle \mathbb{S}_pv, w\rangle \equiv \I_p(\mathbb{S}_pv,w)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\mathbb{S}$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-shape-operator.html">shape operator</a>
+                            and <span class="inline-math">$\I$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">first fundamental form</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-second-fundamental-form-in-terms-of-shape-operator.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Picking an allowable parametrisation <span class="inline-math">$σ$</span> at <span class="inline-math">$p$</span>, the matrices of the bilinear forms
+                                in the basis <span class="inline-math">$\set{σ_u, σ_v}$</span> then follow
+                                <span class="display-math">$$ \begin{align*}
+                                \II = \pmat{L &amp; M \\ M &amp; N} = \mathbb{S}^T \cdot \pmat{E &amp; F \\ F &amp; G} = \mathbb{S}^T \I.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (second fundamental form in different parametrisations)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-second-fundamental-form-in-different-parametrisations.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span>,
+                            with two allowable parametrisations
+                            <span class="inline-math">$\tilde σ: V\to U\subseteq Σ$</span> and <span class="inline-math">$σ: \tilde V\to U\subseteq Σ$</span>
+                            near <span class="inline-math">$p\in Σ$</span>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$ϕ = \tilde σ\inv\circ σ: V\to\tilde V$</span> be the transition map.
+                            The <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-second-fundamental-form.html">second fundamental forms</a> in the two parametrisations are related by
+                            <span class="display-math">$$ \begin{align*}
+                                \pmat{L&amp;M \\ M&amp;N}
+                                = \sign(\det Dϕ) \cdot (Dϕ)^T \pmat{\tilde L &amp; \tilde M \\ \tilde M &amp; \tilde N} (Dϕ).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-second-fundamental-form-in-different-parametrisations.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (normal curvature of a curve)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-normal-curvature-of-a-curve.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a surface in <span class="inline-math">$\R^3$</span>
+                            and let <span class="inline-math">$α: I\to S$</span> be a curve parametrised by arc length.
+                            Let <span class="inline-math">$N$</span> be a normal vector of <span class="inline-math">$S$</span> along <span class="inline-math">$α$</span>.
+                        </p>
+                        <p>
+                            The <em>normal curvature</em> of <span class="inline-math">$α$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                k_n(t) := \langle \ddot α(t), N(α(t))\rangle
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$k_n(t) = \II_{α(t)}(\dot α(t), \dot α(t))$</span>.
+                                (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-normal-curvature-in-terms-of-second-fundamental-form.html">Proof</a>)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (curvature on surface in R3)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a smooth surface in <span class="inline-math">$\R^3$</span> and <span class="inline-math">$p\in S$</span>.
+                        </p>
+                        <p>
+                            The <em>principal curvatures</em> of <span class="inline-math">$S$</span> at <span class="inline-math">$p$</span> are
+                            <span class="display-math">$$ \begin{align*}
+                                k_1 &amp;:= \max_{\substack{v\in T_pS:\\ \I_p(v,v ) = 1}} \II_p(v,v), \\
+                                k_2 &amp;:= \min_{\substack{v\in T_pS:\\ \I_p(v,v ) = 1}} \II_p(v,v),
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\I$</span> and <span class="inline-math">$\II$</span> are the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">first</a> and <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-second-fundamental-form.html">second</a> fundamental forms.
+                            Equivalently, <span class="inline-math">$k_1, k_2$</span> are the eigenvalues of the shape operator <span class="inline-math">$\mathbb{S}_p$</span>
+                            (since <span class="inline-math">$\mathbb{S}_p$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-shape-operator-is-self-adjoint-with-respect-to-first-fundamental-form.html">self-adjoint</a> so <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Theorem-spectral-theorem-for-self-adjoint-maps.html">spectral theorem</a> holds).
+                        </p>
+                        <p>
+                            If <span class="inline-math">$k_1\neq k_2$</span>, then the eigenvectors of <span class="inline-math">$\mathbb{S}_p$</span> are called the <em>principal directions</em>.
+                        </p>
+                        <p>
+                            The <em>mean curvature</em> at <span class="inline-math">$p$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                H(p) := \frac{1}{2} \tr \mathbb{S}_p = \frac{1}{2}(k_1 + k_2)
+                            \end{align*} $$</span>
+                            and the <em>Gauss/Gaussian curvature</em> at <span class="inline-math">$p$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                K(p) := \det \mathbb{S}_p = k_1 k_2.
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                In a local parametrisation, the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-second-fundamental-form-in-terms-of-shape-operator.html">matrix relation</a> <span class="inline-math">$\II_p = \mathbb{S}_p^T \I_p$</span> implies
+                                <span class="display-math">$$ \begin{align*}
+                                    K &amp;= \frac{\det \II_p}{\det \I_p} = \frac{eg - f^2}{EG - F^2}, \\
+                                    H &amp;= \frac{eG + 2fF + gE}{2(EG - F^2)}.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Christoffel symbols for surfaces in R3)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-Christoffel-symbols-for-surfaces-in-R3.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a surface in <span class="inline-math">$\R^3$</span> and <span class="inline-math">$ϕ$</span> be a local parametrisation.
+                        </p>
+                        <p>
+                            The <em>Christoffel symbols</em> <span class="inline-math">$Γ_{ij}^k$</span> are smooth functions in <span class="inline-math">$(u,v)$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                ϕ_{uu} ={}&amp; Γ_{11}^1 ϕ_u + Γ_{11}^2 ϕ_v + e N, \\
+                                ϕ_{uv} ={}&amp; Γ_{12}^1 ϕ_u + Γ_{12}^2 ϕ_v + f N, \\
+                                ϕ_{vv} ={}&amp; Γ_{22}^1 ϕ_u + Γ_{22}^2 ϕ_v + g N
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$e,f,g$</span> are coefficients in the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-second-fundamental-form.html">second fundamental form</a>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                In terms of coefficients <span class="inline-math">$E,F,G$</span> of the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">first fundamental form</a>,
+                                <span class="display-math">$$ \begin{align*}
+                                    \pmat{Γ_{11}^1 \\ Γ_{11}^2} ={}&amp; \pmat{E &amp; F \\ F &amp; G}\inv \pmat{\frac{1}{2} E_u \\ F_u - \frac{1}{2} E_v}, \\
+                                    \pmat{Γ_{12}^1 \\ Γ_{12}^2} ={}&amp; \pmat{E &amp; F \\ F &amp; G}\inv \pmat{\frac{1}{2} E_v \\ \frac{1}{2}G_u}, \\
+                                    \pmat{Γ_{22}^1 \\ Γ_{22}^2} ={}&amp; \pmat{E &amp; F \\ F &amp; G}\inv \pmat{F_u - \frac{1}{2} G_u \\ \frac{1}{2}G_v}.
+                                \end{align*} $$</span>
+                                (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-Christoffel-symbols-in-terms-of-first-fundamental-form.html">Derivation</a>)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (theorema egregium)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-theorema-egregium.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">Gauss curvature</a> is an isometry invariant,
+                            i.e. if <span class="inline-math">$Σ_1$</span> and <span class="inline-math">$Σ_2$</span> are two smooth surfaces in <span class="inline-math">$\R^3$</span>
+                            and <span class="inline-math">$f: Σ_1 \to Σ_2$</span> is an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-isometry-local-isometry-of-surfaces-in-IB-Geometry.html">isometry</a>,
+                            then <span class="inline-math">$κ_{Σ_1}(p) = κ_{Σ_2}(f(p))$</span>.
+                        </p>
+                        <p>
+                            In a local parametrisation, the Gauss curvature can be expressed as
+                            <span class="display-math">$$ \begin{align*}
+                                K = \frac{1}{E}((Γ_{11}^2)_v - (Γ_{12}^2)_u + Γ_{11}^1 Γ_{12}^2 + Γ_{11}^2 Γ_{22}^2 - Γ_{12}^1 Γ_{11}^2 - Γ_{12}^2 Γ_{12}^2)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$Γ_{ij}^k$</span> are the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-Christoffel-symbols-for-surfaces-in-R3.html">Christoffel symbols</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-theorema-egregium-using-geodesic-parallel-coordinates.html">Proof using geodesic parallel coordinates</a>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-theorema-egregium-using-Christoffel-symbols.html">Proof using Christoffel symbols</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                In a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">orthogonal</a>
+                                parametrisation (i.e. <span class="inline-math">$F = 0$</span>), this simplifies to
+                                <span class="display-math">$$ \begin{align*}
+                                    K = -\frac{1}{2\sqrt{EG}}\left(\pdd{u} \frac{G_u}{\sqrt{EG}} + \pdd{v}\frac{E_v}{\sqrt{EG}}\right).
+                                \end{align*} $$</span>
+                            </p>
+                            <p>
+                                For an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">isomthermal</a>
+                                parametrisation with <span class="inline-math">$F = 0$</span>, <span class="inline-math">$E = G = λ^2$</span>,
+                                <span class="display-math">$$ \begin{align*}
+                                    K = -\frac{1}{λ^2} ∇^2(\log λ).
+                                \end{align*} $$</span>
+                            </p>
+                            <p>
+                                With <span class="inline-math">$E = 1$</span>, <span class="inline-math">$F = 0$</span>, we get
+                                <span class="display-math">$$ \begin{align*}
+                                    K = -\frac{\sqrt{G}_{uu}}{\sqrt{G}}.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (energy of curve)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-energy-of-curve.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$γ: [a,b]\to \R^3$</span> be a smooth curve.
+                            Its <em>energy</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                E(γ) = \int_{a}^{b} \|γ&#x27;(t)\|^2 \d t.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (vector field along curve, covariant derivative, parallel)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-vector-field-along-curve-covariant-derivative-parallel.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-surface-in-R3.html">smooth surface</a> in <span class="inline-math">$\R^3$</span>
+                            and <span class="inline-math">$α: I\to S$</span> be a curve.
+                        </p>
+                        <p>
+                            A <em>vector field along <span class="inline-math">$α$</span></em>
+                            is a smooth function <span class="inline-math">$V: I\to \R^3$</span>
+                            such that <span class="inline-math">$V(t) \in T_{α(t)}S$</span>.
+                        </p>
+                        <p>
+                            The <em>covariant derivative</em> of <span class="inline-math">$V$</span> is
+                            a vector field <span class="inline-math">$\mathrm{D}V/\d t$</span> along <span class="inline-math">$α$</span> given by
+                            the orthogonal projection of <span class="inline-math">$\d V/\d t$</span> onto <span class="inline-math">$T_{α(t)}S$</span>:
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{\mathrm{D}V}{\d t} := \dfd{V}{t} - \left\langle \dfd{V}{t}, N\right\rangle N.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            We say <span class="inline-math">$V$</span> is <em>parallel</em> along <span class="inline-math">$α$</span> if <span class="inline-math">$\frac{\mathrm{D}V}{\d t} \equiv 0$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$V$</span> is a unit vector field (i.e. <span class="inline-math">$\langle V, V\rangle = 1$</span>),
+                            then <span class="inline-math">$\langle\frac{\mathrm{D}V}{\d t}, V\rangle = 0$</span> (see below).
+                            The <em>algebraic value of the covariant derivative</em> <span class="inline-math">$[\mathrm{D}V/\d t]: I \to \R$</span>
+                            is the smooth function satisfying
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{\mathrm{D}V}{\d t} = \left[\frac{\mathrm{D}V}{\d t}\right] (N\times V).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID leibniz -->
+                            <p id="^leibniz">
+                                Leibniz's rule: for two vector fields <span class="inline-math">$V,W$</span> along <span class="inline-math">$α$</span>,
+                                <span class="display-math">$$ \begin{align*}
+                                    \dd{t}\langle V,W\rangle = \left\langle \frac{\mathrm{D}V}{\d t}, W\right\rangle + \left\langle V, \frac{\mathrm{D}W}{\d t}\right\rangle.
+                                \end{align*} $$</span>
+                                (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-Leibniz-rule-of-convariant-derivative.html">Derivation</a>)
+                                Therefore <span class="inline-math">$\langle \frac{\mathrm{D}V}{\d t}, V\rangle = 0$</span> if <span class="inline-math">$\langle V,V\rangle = 1$</span>.
+                            </p>
+                            
+                            <!-- END BLOCK ID leibniz -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID local -->
+                            <p id="^local">
+                                In a local parametrisation <span class="inline-math">$ϕ$</span>, writing <span class="inline-math">$α(t) = ϕ(u(t), v(t))$</span> and <span class="inline-math">$V(t) = a(t) ϕ_u(u(t), v(t)) + b(t) ϕ_v(u(t), v(t))$</span>,
+                                we can express <span class="inline-math">$\mathrm{D}V/\d t$</span> in the basis <span class="inline-math">$\set{ϕ_u, ϕ_v}$</span>
+                                using the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-Christoffel-symbols-for-surfaces-in-R3.html">Christoffel symbols</a>:
+                                <span class="display-math">$$ \begin{align*}
+                                    \frac{\mathrm{D}V}{\d t} ={}\quad &amp; (\dot a + Γ_{11}^1 a \dot u + Γ_{12}^1 a \dot v + Γ_{12}^1 b \dot u + Γ_{22}^1 b \dot v) ϕ_u \\
+                                    {}+{} &amp;(\dot b + Γ_{11}^2a\dot u + Γ_{12}^2a \dot v + Γ_{12}^2b\dot u + Γ_{22}^2 b \dot v) ϕ_v.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                            <!-- END BLOCK ID local -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$f: S\to \tilde S$</span> is an <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-isometry-of-surfaces-in-II-Differential-Geometry.html">isometry</a> between surfaces in <span class="inline-math">$\R^3$</span>,
+                                then
+                                <span class="display-math">$$ \begin{align*}
+                                    \frac{\mathrm{D}(f \circ V)}{\d t} = \d f_{α(t)}\left(\frac{\mathrm{D}V}{\d t}\right).
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID basis-orthogonal -->
+                            <p id="^basis-orthogonal">
+                                If <span class="inline-math">$ϕ$</span> is an orthogonal parametrisation (i.e. <span class="inline-math">$F = 0$</span>),
+                                then with <span class="inline-math">$N = (ϕ_u \times ϕ_v)/\|ϕ_u \times ϕ_v\|$</span>,
+                                <span class="display-math">$$ \begin{align*}
+                                    \left[\frac{\mathrm{D}(ϕ_u/\sqrt{E})}{\d t}\right] = \frac{1}{2\sqrt{EG}}(G_u\dot v - E_v \dot u).
+                                \end{align*} $$</span>
+                                <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-covariant-derivative-of-basis-vector-in-orthogonal-parametrisation.html">Proof</a>
+                            </p>
+                            
+                            <!-- END BLOCK ID basis-orthogonal -->
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (parallel transport)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-parallel-transport.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a surface in <span class="inline-math">$\R^3$</span> and <span class="inline-math">$α: I\to S$</span> be a curve.
+                        </p>
+                        <p>
+                            Given any <span class="inline-math">$t_0\in I$</span> and <span class="inline-math">$v_0\in T_{α(t_0)}S$</span>,
+                            there exists a unique <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-vector-field-along-curve-covariant-derivative-parallel.html">vector field</a>
+                            <span class="inline-math">$V$</span> along <span class="inline-math">$α$</span>
+                            which is parallel along <span class="inline-math">$α$</span> (i.e. <span class="inline-math">$\mathrm{D}V/\d t = 0$</span>)
+                            and has <span class="inline-math">$V(t_0) = v_0$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$V$</span> is known as the <em>parallel transport</em> of <span class="inline-math">$v_0$</span> along <span class="inline-math">$α$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-parallel-transport.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                The map <span class="inline-math">$T_{α(0)}S\to T_{α(1)}S$</span> sending <span class="inline-math">$v_0$</span> to the parallel transport of <span class="inline-math">$v_0$</span> along <span class="inline-math">$α$</span> from <span class="inline-math">$0$</span> to <span class="inline-math">$1$</span>
+                                is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-isometry-in-inner-product-spaces.html">isometry</a> with respect to <span class="inline-math">$\I_{α(0)}$</span> and <span class="inline-math">$\I_{α(1)}$</span>.
+                                (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-parallel-transport-is-an-isometry.html">Derivation</a>)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (smooth determination of angle)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-smooth-determination-of-angle.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a surface in <span class="inline-math">$\R^3$</span>
+                            and let <span class="inline-math">$α: I\to S$</span> be a curve parametrised by arc length.
+                            Let <span class="inline-math">$N$</span> be a normal vector of <span class="inline-math">$S$</span> along <span class="inline-math">$α$</span>.
+                        </p>
+                        <p>
+                            For two unit <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-vector-field.html">vector fields</a> <span class="inline-math">$V,W$</span> along <span class="inline-math">$α$</span>,
+                            a <em>smooth determination of an angle</em> from <span class="inline-math">$V$</span> to <span class="inline-math">$W$</span>
+                            is a smooth function <span class="inline-math">$ϕ: I\to \R$</span> such that
+                            <span class="display-math">$$ \begin{align*}
+                                W = (\cos ϕ)\,V + (\sin ϕ)\, N \times V.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \dot ϕ = \left[\frac{\mathrm{D}W}{\d t}\right] - \left[\frac{\mathrm{D}V}{\d t}\right].
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-smooth-determination-of-angle.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (geodesic)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span>.
+                        </p>
+                        <p>
+                            A <em>geodesic</em> <span class="inline-math">$γ:[a,b]\to Σ$</span> is a critical point
+                            for the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-energy-of-curve.html">energy functional</a>
+                            in the space of smooth curves from <span class="inline-math">$γ(a)$</span> to <span class="inline-math">$γ(b)$</span>.
+                        </p>
+                        <p>
+                            Formulation: consider any <em>one-parameter variation</em> of <span class="inline-math">$γ$</span> with fixed end-points,
+                            i.e. smooth map <span class="inline-math">$Γ: (-ε, ε)\times [a,b]\to Σ$</span> such that
+                            writing <span class="inline-math">$γ_s(t) = Γ(s,t)$</span>,
+                            we have <span class="inline-math">$γ_0 = γ$</span>, and <span class="inline-math">$γ_s(a)$</span> and <span class="inline-math">$γ_s(b)$</span> are independent of <span class="inline-math">$s$</span>.
+                            Then <span class="inline-math">$γ$</span> is a geodesic if
+                            <span class="display-math">$$ \begin{align*}
+                                \dd{s} E(γ_s)\Big|_{s=0} = 0.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (geodesic equations)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-geodesic-equations.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span>
+                            and <span class="inline-math">$σ: V\to U$</span> be an allowable parametrisation.
+                        </p>
+                        <p>
+                            A smooth curve <span class="inline-math">$γ: [a,b]\to U$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic.html">geodesic</a> iff
+                            it satisfies the geodesic equations
+                            <span class="display-math">$$ \begin{align*}
+                                \dd{t}(E\dot u + F\dot v) ={}&amp; \frac{1}{2}(E_u \dot u^2 + 2F_u \dot u \dot v + G_u \dot v^2), \\
+                                \dd{t}(F\dot u + G\dot v) ={}&amp; \frac{1}{2}(E_v \dot u^2 + 2F_v \dot u \dot v + G_v \dot v^2).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-geodesic-equations.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                These are the <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Theorem-Euler-Lagrange-equation.html">Euler-Lagrange equations</a>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (geodesic iff acceleration normal to surface)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proposition-geodesic-iff-acceleration-normal-to-surface.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span>.
+                        </p>
+                        <p>
+                            A smooth curve <span class="inline-math">$γ: [a,b]\to Σ$</span>
+                            is a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic.html">geodesic</a> iff
+                            <span class="inline-math">$\ddot γ(t)$</span> is normal to the surface for all <span class="inline-math">$t$</span>,
+                            i.e. <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-vector-field-along-curve-covariant-derivative-parallel.html"><span class="inline-math">$\mathrm{D}\dot γ/\d t$</span></a><span class="inline-math">${}= 0$</span>.
+                        </p>
+                        <p>
+                            Consequently, geodesics are always parametrised with constant speed.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-geodesic-iff-acceleration-normal-to-surface.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (geodesic curvature)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-geodesic-curvature.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a surface in <span class="inline-math">$\R^3$</span>
+                            and let <span class="inline-math">$α: I\to S$</span> be a curve parametrised by arc length.
+                        </p>
+                        <p>
+                            The <em>geodesic curvature</em> of <span class="inline-math">$α$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-vector-field-along-curve-covariant-derivative-parallel.html">algebraic value of the covariant derivative</a> of <span class="inline-math">$\dot α$</span>:
+                            <span class="display-math">$$ \begin{align*}
+                                k_g(t) := \left[\frac{\mathrm{D\dot α}}{\d t}\right](t)
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$k_g \equiv 0$</span> <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proposition-geodesic-iff-acceleration-normal-to-surface.html">iff</a> <span class="inline-math">$α$</span> is a geodesic.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                In orthonormal components, <span class="inline-math">$\ddot α = \langle \dot α, N\rangle N + \langle \dot α, N \times \dot α\rangle(N \times \dot α) ={}$</span><a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-normal-curvature-of-a-curve.html"><span class="inline-math">$k_n$</span></a><span class="inline-math">$N + k_g (N \times \dot α)$</span>,
+                                so the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-curvature-of-a-curve.html">curvature</a> of the curve is
+                                <span class="display-math">$$ \begin{align*}
+                                    k^2 = k_n^2 + k_g^2.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (geodesic equations)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-geodesic-equations.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span>
+                            and <span class="inline-math">$σ: V\to U$</span> be an allowable parametrisation.
+                        </p>
+                        <p>
+                            A smooth curve <span class="inline-math">$γ: [a,b]\to U$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic.html">geodesic</a> iff
+                            it satisfies the geodesic equations
+                            <span class="display-math">$$ \begin{align*}
+                                \dd{t}(E\dot u + F\dot v) ={}&amp; \frac{1}{2}(E_u \dot u^2 + 2F_u \dot u \dot v + G_u \dot v^2), \\
+                                \dd{t}(F\dot u + G\dot v) ={}&amp; \frac{1}{2}(E_v \dot u^2 + 2F_v \dot u \dot v + G_v \dot v^2).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-geodesic-equations.html">Proof</a>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                These are the <a href="/tripos-notes/Lectures/IB/Easter/Variational-Principles-VP/Notes/Theorem-Euler-Lagrange-equation.html">Euler-Lagrange equations</a>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (existence of geodesics)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Lemma-existence-of-geodesics.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Σ$</span> be a smooth surface in <span class="inline-math">$\R^3$</span>,
+                            <span class="inline-math">$p\in Σ$</span>
+                            and <span class="inline-math">$v \in$</span> <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-tangent-plane-of-smooth-surface-in-R3.html"><span class="inline-math">$T_p Σ$</span></a>.
+                        </p>
+                        <p>
+                            There exists some <span class="inline-math">$ε&gt;0$</span>
+                            and a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic.html">geodesic</a> <span class="inline-math">$γ: (-ε, ε)\to Σ$</span>
+                            such that <span class="inline-math">$γ(0)=p$</span> and <span class="inline-math">$γ&#x27;(0)=v$</span>.
+                            Moreover <span class="inline-math">$γ$</span> depends smoothly on the initial condition <span class="inline-math">$(p,v)$</span>.
+                        </p>
+                        <p>
+                            <span class="inline-math">$γ$</span> is unique in the following sense:
+                            if <span class="inline-math">$\tilde γ: (-\tilde ε, \tilde ε)\to Σ$</span>
+                            is another such geodesic,
+                            then <span class="inline-math">$\tilde γ = γ$</span> on <span class="inline-math">$(-ε, ε) \cap (-\tilde ε, \tilde ε)$</span>.
+                        </p>
+                        <p>
+                            Therefore there exists a unique maximal geodesic <span class="inline-math">$γ: (T_-, T_+)\to S$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Proof-existence-of-geodesics.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (minimal surface)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-minimal-surface.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a surface in <span class="inline-math">$\R^3$</span>.
+                        </p>
+                        <p>
+                            For a local parametrisation <span class="inline-math">$ϕ: U\to V$</span>,
+                            given a smooth function <span class="inline-math">$h: U\to \R$</span>,
+                            the <em>normal variation</em> of <span class="inline-math">$V$</span> determined by <span class="inline-math">$h$</span> is
+                            the family
+                            <span class="display-math">$$ \begin{align*}
+                                ϕ^t(u,v) := ϕ(u,v) + t\, h(u,v)\, N(u,v), \qquad t\in (-ε, ε)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$N = \frac{ϕ_u \times ϕ_v}{\|ϕ_u \times ϕ_v\|}$</span>.
+                            For <span class="inline-math">$ε$</span> sufficiently small, <span class="inline-math">$ϕ^t(U)$</span> is a smooth surface in <span class="inline-math">$\R^3$</span>.
+                        </p>
+                        <p>
+                            Then the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">mean curvature</a> <span class="inline-math">$H \equiv 0$</span> iff
+                            <span class="display-math">$$ \begin{align*}
+                                0 = \dd{t} \op{area}(ϕ^t(U))\Big|_{t=0} \equiv \dd{t} \int_{U} \sqrt{E^t G^t - (F^t)^2} \d A \Big|_{t=0}
+                            \end{align*} $$</span>
+                            for all normal variation.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-minimal-surface.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (mean curvature as Laplacian of isothermal coordinates)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-mean-curvature-as-Laplacian-of-isothermal-coordinates.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a surface in <span class="inline-math">$\R^3$</span> and <span class="inline-math">$ϕ: U\to V$</span> be a local parametrisation.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$ϕ$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">isothermal</a> (i.e. <span class="inline-math">$E = G = λ^2$</span> and <span class="inline-math">$F = 0$</span>),
+                            then
+                            <span class="display-math">$$ \begin{align*}
+                                Δϕ \equiv ϕ_{uu} + ϕ_{v v} = 2λ^2 \v H.
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\v H = HN$</span> the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">mean curvature</a> in the normal direction.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-mean-curvature-as-Laplacian-of-isothermal-coordinates.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                Therefore <span class="inline-math">$S$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-minimal-surface.html">minimal surface</a> iff <span class="inline-math">$ϕ$</span> is harmonic.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Weierstrass representation of minimal surfaces)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-Weierstrass-representation-of-minimal-surfaces.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$ϕ: U\to V$</span> be a local parametrisation of a surface in <span class="inline-math">$\R^3$</span>,
+                            and write <span class="inline-math">$ϕ(u,v) = (x(u,v), y(u,v), z(u,v))$</span>.
+                            Suppose <span class="inline-math">$U\subseteq \R^2 \simeq \C$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-domain.html">domain</a> in the complex plane.
+                        </p>
+                        <p>
+                            Define the complex functions
+                            <span class="display-math">$$ \begin{align*}
+                                ϕ_1 = x_u - i x_v, \qquad ϕ_2 = y_u - i y_v, \qquad ϕ_3 = z_u - iz_v.
+                            \end{align*} $$</span>
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                We have
+                                <span class="display-math">$$ \begin{align*}
+                                    ϕ_1^2 + ϕ_2^2 + ϕ_3^2 ={}&amp; (E - G) - 2iF, \\
+                                \end{align*} $$</span>
+                                so <span class="inline-math">$ϕ$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">isothermal</a> iff
+                                <span class="display-math">$$ \begin{align*}
+                                    ϕ_1^2 + ϕ_2^2 + ϕ_3^2 = 0.
+                                \end{align*} $$</span>
+                            </p>
+                            <p>
+                                If <span class="inline-math">$ϕ$</span> is isothermal, <span class="inline-math">$ϕ$</span> is <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-minimal-surface.html">minimal</a> iff
+                                <span class="inline-math">$ϕ_1$</span>, <span class="inline-math">$ϕ_2$</span>, <span class="inline-math">$ϕ_3$</span> are all <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>,
+                            </p>
+                            <p>
+                                In this case
+                                <span class="display-math">$$ \begin{align*}
+                                    x(u,v) ={}&amp; x(u_0, v_0) + \Re \int_{(u_0, v_0)}^{(u,v)} ϕ_1 \d ζ, \\
+                                    y(u,v) ={}&amp; y(u_0, v_0) + \Re \int_{(u_0, v_0)}^{(u,v)} ϕ_2 \d ζ, \\
+                                    z(u,v) ={}&amp; z(u_0, v_0) + \Re \int_{(u_0, v_0)}^{(u,v)} ϕ_3 \d ζ
+                                \end{align*} $$</span>
+                                where the path of integration in <span class="inline-math">$U$</span> is arbitrary.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                For any <span class="inline-math">$f$</span> holomorphic and <span class="inline-math">$g$</span> meromorphic on <span class="inline-math">$U$</span>,
+                                given that <span class="inline-math">$fg^2$</span> is holomorphic on <span class="inline-math">$U$</span>
+                                (i.e. if <span class="inline-math">$z\in U$</span> is a pole of <span class="inline-math">$g$</span> of order <span class="inline-math">$k$</span>,
+                                then <span class="inline-math">$z$</span> is a zero of <span class="inline-math">$f$</span> of order <span class="inline-math">$\geq 2k$</span>),
+                                then
+                                <span class="display-math">$$ \begin{align*}
+                                    ϕ_1 = \frac{1}{2}f(1-g^2), \qquad ϕ_2 = \frac{i}{2}f(1 + g^2), \qquad ϕ_3 = fg
+                                \end{align*} $$</span>
+                                are holomorphic functions on <span class="inline-math">$U$</span> satisfying <span class="inline-math">$ϕ_1^2 + ϕ_2^2 + ϕ_3^2 = 0$</span>.
+                            </p>
+                            <p>
+                                Conversely, if <span class="inline-math">$ϕ_1, ϕ_2, ϕ_3$</span> are holomorphic functions on <span class="inline-math">$U$</span> satisfying <span class="inline-math">$ϕ_1^2 + ϕ_2^2 + ϕ_3^2 = 0$</span>,
+                                then either <span class="inline-math">$ϕ_1 = iϕ_2$</span> and <span class="inline-math">$ϕ_3 = 0$</span>,
+                                or <span class="inline-math">$(ϕ_1, ϕ_2, ϕ_3)$</span> are of the above form,
+                                called the <em>Weierstrass representation</em>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-Weierstrass-representation-of-minimal-surfaces.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                In the Weierstrass representation, the first fundamental form is given by
+                                <span class="display-math">$$ \begin{align*}
+                                    λ^2 = E = G = \left(\frac{1}{2}|f| (1 + |g|^2)\right)^2, \qquad F = 0.
+                                \end{align*} $$</span>
+                                (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-first-fundamental-form-of-Weierstrass-representation.html">Derivation</a>)
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                Letting <span class="inline-math">$π: S^2 \to \C_\infty$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/The-sphere-as-a-topological-surface.html">stereographic projection</a>
+                                (i.e. <span class="inline-math">$π\inv(z) = \frac{(2\Re z, 2 \Im z, |z|^2 - 1)}{|z|^2 + 1}$</span>),
+                                we have
+                                <span class="display-math">$$ \begin{align*}
+                                    g = π \circ N
+                                \end{align*} $$</span>
+                                so <span class="inline-math">$N: U \to S^2$</span> is an <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-map-on-Riemann-surfaces.html">analytic map</a> of Riemann surfaces.
+                                (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-Gauss-map-of-Weierstrass-representation-is-holomorphic.html">Derivation</a>)
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                The <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">Gaussian curvature</a> is
+                                <span class="display-math">$$ \begin{align*}
+                                    K = -\frac{16|g&#x27;|^2}{|f|^2 (1 + |g|^2)^4}.
+                                \end{align*} $$</span>
+                                (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-Gaussian-curvature-of-Weierstrass-representation.html">Derivation</a>)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (exponential map, geodesic normal coordinates, geodesic polar coordinates)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-exponential-map-geodesic-normal-coordinates-geodesic-polar-coordinates.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be surface in <span class="inline-math">$\R^3$</span> and <span class="inline-math">$p\in S$</span>.
+                        </p>
+                        <p>
+                            Define <span class="inline-math">$U := \{v\in T_pS \mid \exists$</span><a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-geodesic.html">geodesic</a> <span class="inline-math">$γ_v: [0,1]\to S$</span> such that <span class="inline-math">$γ_v(0) = p$</span>, <span class="inline-math">$\dot γ_v(0) = v\} \subseteq T_pS$</span>.
+                            The <em>exponential map</em> of <span class="inline-math">$S$</span> at <span class="inline-math">$p$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                \exp_p: U &amp;\to S \\
+                                v &amp;\mapsto γ_v(1).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$U$</span> is open, contains <span class="inline-math">$0\in T_pS$</span> and <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-starlike-domain.html">starlike</a>.
+                                (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-domain-of-exponential-map.html">Proof</a>)
+                            </p>
+                            
+                        </blockquote>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-differential-map-immersion-submersion.html"><span class="inline-math">$\d$</span></a> <span class="inline-math">$\exp_p|_0 = \id_{T_pS}$</span>.
+                            (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-derivative-of-exponential-map.html">Derivation</a>)
+                            Therefore the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-inverse-function-theorem-for-manifolds.html">inverse function theorem</a>
+                            implies <span class="inline-math">$\exp_{p}|_{\tilde U}: \tilde U \to V$</span> is a diffeomorphism for a neighbourhood <span class="inline-math">$\tilde U\subseteq U$</span> of <span class="inline-math">$0$</span>.
+                            We call <span class="inline-math">$V$</span> a <em>normal neighbourhood</em> of <span class="inline-math">$p$</span>.
+                        </p>
+                        <p>
+                            A <em>geodesic normal coordinates</em> is a local parametrisation
+                            <span class="inline-math">$σ(u,v) := {\exp_p} \circ ξ|_{ξ\inv(\tilde U)}(u,v)$</span> for some linear isometry <span class="inline-math">$ξ: \R^2 \to T_pS$</span>.
+                        </p>
+                        <p>
+                            A <em>geodesic polar coordinates</em> is
+                            <span class="inline-math">$ϕ(r,θ) := {\exp_p} \circ η|_{η\inv(\tilde U)}(r,θ)$</span> for
+                            some polar coordinates <span class="inline-math">$η: (0,\infty) \times (0,2π) \to T_pS$</span>,
+                            (which is a local parametrisation of <span class="inline-math">$V$</span> minus one radial geodesic).
+                        </p>
+                        <p>
+                            Images of circles under <span class="inline-math">$ϕ$</span> are called <em>geodesic circles</em>,
+                            and images of lines through origin are called <em>radial geodesics</em>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                Geodesic normal coordinates <span class="inline-math">$σ$</span> has first fundamental form at <span class="inline-math">$(0,0)$</span>
+                                <span class="display-math">$$ \begin{align*}
+                                    E(0,0) = 1, \qquad F(0, 0) = 0, \qquad G(0,0) = 1.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                Geodesic polar coordinates <span class="inline-math">$ϕ$</span> has first fundamental form
+                                <span class="display-math">$$ \begin{align*}
+                                    E \equiv 1, \qquad F\equiv 0, \qquad \lim_{r\to 0} \sqrt{G} = 0, \qquad \lim_{r\to 0} \sqrt{G}_r = 1.
+                                \end{align*} $$</span>
+                                The fact <span class="inline-math">$F\equiv 0$</span> is called <em>Gauss's lemma</em>.
+                                (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-exponential-map-geodesic-normal-coordinates-geodesic-polar-coordinates.html">Proof</a>)
+                                We <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-theorema-egregium.html">showed</a>
+                                <span class="display-math">$$ \begin{align*}
+                                    K = -\frac{\sqrt{G}_{rr}}{\sqrt{G}}.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (subdivision)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-subdivision.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <em>subdivision</em> of a compact <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-topological-surface.html">topological surface</a> <span class="inline-math">$Σ$</span> comprises
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                a finite set <span class="inline-math">$V \subseteq Σ$</span> of vertices;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                a finite set <span class="inline-math">$\set{e_i: \text{continuous }[0, 1] \to Σ}_{i\in E}$</span> of edges,
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            such that
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                each <span class="inline-math">$e_i$</span> is injective on <span class="inline-math">$(0,1)$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$e_i\inv(V) = \set{0,1}$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$e_i(0,1)$</span> and <span class="inline-math">$e_j(0,1)$</span> are disjoint for <span class="inline-math">$i\neq j$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                each connected component of <span class="inline-math">$Σ \setminus (\bigcup_{i} e_i[0,1] \cup V)$</span>
+                                is homeomorphic to an open disc, called an <em>open face</em>.
+                                Call a <em>face</em> the closure of such a component.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (triangulation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-triangulation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-subdivision.html">subdivision</a> is a <em>triangulation</em>
+                            if each closed face contains exactly three edges,
+                            and two closed faces are either disjoint or meet at an edge or a vertex.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Euler characteristic)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Euler-characteristic.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>Euler characteristic</em> of <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-subdivision.html">subdivision</a>
+                            of a compact topological surface <span class="inline-math">$Σ$</span> is defined as the integer
+                            <span class="display-math">$$ \begin{align*}
+                                χ(Σ) = \# \text{ vertices} - \#\text{ edges} + \# \text{ faces}.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (invariant of Euler characteristic)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-invariant-of-Euler-characteristic.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Every compact topological surface <span class="inline-math">$Σ$</span> admits a <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-subdivision.html">subdivision</a>
+                                (and in fact <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-triangulation.html">triangulation</a>).
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                The <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Euler-characteristic.html">Euler characteristic</a> <span class="inline-math">$χ(Σ)$</span>
+                                of <span class="inline-math">$Σ$</span> does not depend on the choice of subdivision, i.e.
+                                it defines a topological invariant of the surface <span class="inline-math">$Σ$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Gauss, geodesic triangle)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-Gauss-geodesic-triangle.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a surface in <span class="inline-math">$\R^3$</span>.
+                            Suppose <span class="inline-math">$T\subset S$</span> is a geodesic triangle
+                            (i.e. a set bound by three geodesics and homeomorphic to a closed disc),
+                            contained in a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-exponential-map-geodesic-normal-coordinates-geodesic-polar-coordinates.html">geodesic polar coordinates</a>
+                            centred at a vertex of <span class="inline-math">$T$</span>.
+                        </p>
+                        <p>
+                            Then letting <span class="inline-math">$α_1, α_2, α_3$</span> be the three internal angles of <span class="inline-math">$T$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \int_T K \d A = α_1 + α_2 + α_3 - π.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-Gauss-geodesic-triangle.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (global Gauss-Bonnet without boundary)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-global-Gauss-Bonnet-without-boundary.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Σ$</span> be a compact abstract smooth surface
+                            with an <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Riemannian-metric-on-abstract-smooth-surface.html">abstract Riemannian metric</a> <span class="inline-math">$g$</span>.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \int_{Σ} κ_Σ \d A = 2π\, χ(Σ)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$κ_Σ$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">Gauss curvature</a>
+                            and <span class="inline-math">$χ(Σ)$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Euler-characteristic.html">Euler characteristic</a> of the surface.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-global-Gauss-Bonnet-without-boundary.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Bonnet, geodesic curvature of disc bounding curve)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-Bonnet-geodesic-curvature-of-disc-bounding-curve.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a surface in <span class="inline-math">$\R^3$</span>.
+                        </p>
+                        <p>
+                            Suppose <span class="inline-math">$α: [a,b]\to U$</span> is a simple closed curve
+                            parametrised by arc length,
+                            lying in a local parametrisation <span class="inline-math">$ϕ: V\to U\subseteq S$</span>.
+                            Assume <span class="inline-math">$ϕ$</span> is orthogonal (i.e. <span class="inline-math">$F = 0$</span>),
+                            <span class="inline-math">$ϕ\inv\circ α$</span> bounds a disc <span class="inline-math">$D$</span>,
+                            and <span class="inline-math">$ϕ\inv\circ α$</span> is <a href="/tripos-notes/media/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Pasted-image-20240220144048.png">positively oriented</a>.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \int_{a}^{b} k_g \d s + \int_{ϕ(D)} K \d A = 2π
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$K$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">Gaussian curvature</a>
+                            and <span class="inline-math">$k_g$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-geodesic-curvature.html">geodesic curvature</a> of <span class="inline-math">$α$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-Bonnet-geodesic-curvature-of-disc-bounding-curve.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (global Gauss-Bonnet with boundary)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-global-Gauss-Bonnet-with-boundary.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$S$</span> be a surface with boundary in <span class="inline-math">$\R^3$</span>.
+                            Suppose <span class="inline-math">$S$</span> consists of <span class="inline-math">$n$</span> piecewise simple closed curves
+                            <span class="inline-math">$α_1, \ldots, α_n$</span>, mutually non-intersecting, parametrised by arc length,
+                            and <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Theorem-Stokes-theorem.html">positively oriented</a>.
+                            Let <span class="inline-math">$θ_1, \ldots, θ_p$</span> be the turning angles at the vertices of these curves.
+                        </p>
+                        <p>
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \int_{S} K \d A + \sum_{i=1}^{n} \int_{α_i} k_g \d s + \sum_{i=1}^{p} θ_i = 2π\,χ(S)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$K$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">Gaussian curvature</a>,
+                            <span class="inline-math">$k_g$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-geodesic-curvature.html">geodesic curvature</a>,
+                            and <span class="inline-math">$χ(S)$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-Euler-characteristic.html">Euler characteristic</a>.
+                        </p>
+                        <p>
+                            Proof sketch: apply <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-Bonnet-geodesic-curvature-of-disc-bounding-curve.html">Bonnet's theorem</a> on a triangulation.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

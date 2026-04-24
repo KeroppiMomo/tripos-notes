@@ -1,0 +1,2362 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (statistical model)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-random-variables.html">random variable</a>.
+            </p>
+            <p>
+                A <em>statistical model</em> is any family
+                <span class="inline-math">$\sb{f(θ)}{θ\in Θ}$</span> of <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-probability-density-function.html">probability density functions</a>
+                or <span class="inline-math">$\sb{P_θ}{θ\in Θ}$</span> of laws.
+            </p>
+            <p>
+                The set <span class="inline-math">$Θ$</span> is called the <em>parameter space</em>.
+            </p>
+            <p>
+                A model <span class="inline-math">$\sb{P_θ}{θ\in Θ}$</span>
+                is <em>correctly specified</em>
+                if there exists <span class="inline-math">$θ_0\in Θ$</span>
+                such that <span class="inline-math">$P_{θ_0}$</span> is the law of <span class="inline-math">$X$</span>.
+                We call <span class="inline-math">$θ_0$</span> the <em>true parameter</em> (not necessarily unique).
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (stochastic convergence)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-stochastic-convergence.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$(X_n: n\in \N)$</span>, <span class="inline-math">$X$</span> be random vectors in <span class="inline-math">$\R^k$</span>,
+                defined on the same probability space <span class="inline-math">$(Ω, \mathcal{A}, \mathcal{P})$</span>.
+            </p>
+            <p>
+                We say that <span class="inline-math">$X_n$</span> converges to <span class="inline-math">$X$</span> <em>almost surely</em> or <span class="inline-math">$X_n \xrightarrow{\text{a.s.}} X$</span> as <span class="inline-math">$n\to\infty$</span> if
+                <span class="display-math">$$ \begin{align*}
+                    \prob(\|X_n - X\|_2 \to 0 \text{ as } n\to \infty)\equiv \prob(w\in Ω : \|X_n(ω) - X(ω)\|_2 \to 0 \text{ as }n\to \infty) = 1.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                We say that <span class="inline-math">$X_n$</span> converges to <span class="inline-math">$X$</span> <em>in probability</em> or <span class="inline-math">$X_n \xrightarrow{p} X$</span> as <span class="inline-math">$n\to \infty$</span>
+                if for all <span class="inline-math">$ε&gt;0$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \prob(\|X_n - X\|_2 &gt; ε) \to 0 \qquad \text{as }n\to \infty.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                We say that <span class="inline-math">$X_n$</span> converges <em>in distribution</em> to <span class="inline-math">$X$</span>
+                or <span class="inline-math">$X_n \xrightarrow{d} X$</span> if
+                <span class="display-math">$$ \begin{align*}
+                    \prob(X_n \preceq t) \to \prob(X\preceq t) \qquad n\to \infty
+                \end{align*} $$</span>
+                (writing <span class="inline-math">$X \preceq t$</span> for a partial order <span class="inline-math">$X_1 \leq t_1, \ldots, X_k \leq t_k$</span>)
+                for all <span class="inline-math">$t$</span> where the map <span class="inline-math">$t \mapsto \prob(X\preceq t)$</span> is continuous.
+            </p>
+            <blockquote>
+                <p>
+                    Facts:
+                </p>
+                <ol start="1">
+                <li>
+                    <p>
+                        <span class="inline-math">$X_n \xrightarrow{a.s.} X \implies X_n\xrightarrow{p} X \implies X_n \xrightarrow{d} X$</span>.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        Continuous mapping theorem: if <span class="inline-math">$(X_n), X$</span> take values in <span class="inline-math">$\mathcal{X}\subseteq \R^n$</span>
+                        and <span class="inline-math">$g: \mathcal{X}\to \R$</span> is continuous, then <span class="inline-math">$X_n \xrightarrow{a.s./p/d} X \implies g(X_n) \xrightarrow{a.s./p/d} g(X)$</span>.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        Slutsky's lemma: suppose that <span class="inline-math">$X_n \xrightarrow{d} X, Y_n \xrightarrow{d} c$</span>
+                        where <span class="inline-math">$c\in \R$</span> is deterministic.
+                    </p>
+                    <ol start="1">
+                    <li>
+                        <p>
+                            <span class="inline-math">$Y_n \xrightarrow{p} c$</span>.
+                        </p>
+                        
+                    </li><li>
+                        <p>
+                            <span class="inline-math">$X_n + Y_n \xrightarrow{d} X+c$</span>.
+                        </p>
+                        
+                    </li><li>
+                        <p>
+                            <span class="inline-math">$X_n Y_n \xrightarrow{d} Xc$</span>. Also <span class="inline-math">$X_n/Y_n \xrightarrow{d} X/c$</span> if <span class="inline-math">$c\neq 0$</span>.
+                        </p>
+                        
+                    </li><li>
+                        <p>
+                            If <span class="inline-math">$(A_n)$</span> is a sequence of matrices such that
+                            <span class="inline-math">$(A_n)_{ij} \xrightarrow{p} A_{ij}$</span> for all <span class="inline-math">$i,j$</span>
+                            where <span class="inline-math">$A = (A_{ij})$</span> is deterministic,
+                            then <span class="inline-math">$A_n X_n \xrightarrow{d} AX$</span>.
+                        </p>
+                        
+                    </li>
+                    </ol>
+                    
+                </li><li>
+                    <p>
+                        If <span class="inline-math">$X_n \xrightarrow{d} X$</span>, then <span class="inline-math">$X$</span> is <em>bounded in probability</em> denoted <span class="inline-math">$X_n = O_\prob(1)$</span>,
+                        i.e. for all <span class="inline-math">$ε&gt;0$</span>, there exists <span class="inline-math">$M(ε)&lt;\infty$</span> and integer <span class="inline-math">$N&lt;\infty$</span>
+                        such that <span class="inline-math">$\prob(\|X_n\|_2 &gt; M(ε)) &lt; ε$</span> for all <span class="inline-math">$n\geq N$</span>.
+                    </p>
+                    
+                </li>
+                </ol>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (strong law of large numbers)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-strong-law-of-large-numbers.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span> taking values in <span class="inline-math">$\R^k$</span>.
+                Assume <span class="inline-math">$\expect \|X\|_2 &lt; \infty$</span>.
+            </p>
+            <p>
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \frac{1}{n} \sum_{i=1}^{n} X_i \xrightarrow{a.s.}\expect[X_i].
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Proof-strong-law-of-large-numbers-for-finite-fourth-moment.html">Proof for finite fourth moment</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (central limit theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-central-limit-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$X_n$</span> are square-integrable iid random variables in <span class="inline-math">$\R^d$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \sqrt{n}\left(\frac{1}{n} \sum_{i=1}^{n} X_i - \expect[X_i]\right) \xrightarrow{d} N(0, \var(X_1)).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                In particular for <span class="inline-math">$d=1$</span>, as <span class="inline-math">$n\to\infty$</span>, the normalised random variables
+                <span class="display-math">$$ \begin{align*}
+                    Z_n = \frac{S_n - \mu n}{\sigma\sqrt{n}} \to Z \sim N(0,1) \text{ in distribution}.
+                \end{align*} $$</span>
+                Equivalently, for all <span class="inline-math">$x\in\R$</span>
+                <span class="display-math">$$ \begin{align*}
+                    \prob\left(\frac{S_n - \mu n}{\sigma\sqrt{n}} \leq x\right) \to \Phi(x) = \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}} e^{-y^2/2}\, dy.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Proof-central-limit-theorem-with-finite-exponential-moment.html">Proof with finite exponential moment</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (bracketing and uniform law of large numbers)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-bracketing-and-uniform-law-of-large-numbers.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span> in <span class="inline-math">$\mathcal{X}\subseteq \R^k$</span>,
+                and let <span class="inline-math">$\mathcal{H}$</span> be a set of measurable functions <span class="inline-math">$\mathcal{X} \to \R$</span>.
+            </p>
+            <p>
+                Suppose for all <span class="inline-math">$ε&gt;0$</span>,
+                there exists finitely many measurable functions <span class="inline-math">$\overline{h_1}, \underline{h_1}, \ldots, \overline{h_N}, \underline{h_N}: \mathcal{X}\to \R$</span>
+                such that
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    the <em>brackets</em> <span class="inline-math">$\sb{[\underline{h_j}, \overline{h_j}]}{j=1,\ldots,N}$</span> <em>covers</em> <span class="inline-math">$\mathcal{H}$</span>, i.e. for all <span class="inline-math">$h\in \mathcal{H}$</span>,
+                    there exists <span class="inline-math">$j$</span> such that <span class="inline-math">$\underline{h_j}(x) \leq h(x) \leq \overline{h_j}(x)$</span> for all <span class="inline-math">$x\in \mathcal{X}$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\expect|\underline{h_j}(X)|, \expect|\overline{h_j}(X)| &lt; \infty$</span> for all <span class="inline-math">$j$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\expect[\overline{h_j}(X) - \underline{h_j}(X)] &lt; ε$</span> for all <span class="inline-math">$j$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \sup_{h\in \mathcal{H}} \left|\frac{1}{n}\sum_{j=1}^{n} h(X_i) - \expect h(X)\right| \xrightarrow{a.s.} 0 \qquad \text{as $n\to \infty$}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-bracketing-and-uniform-law-of-large-numbers.html">Proof (non-examinable)</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (uniform law of large numbers in compact domain)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-uniform-law-of-large-numbers-in-compact-domain.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span> in <span class="inline-math">$\mathcal{X}\subseteq \R^d$</span>,
+                <span class="inline-math">$Θ\subset \R^k$</span> and <span class="inline-math">$g: \mathcal{X}\times Θ\to \R$</span> is measurable.
+            </p>
+            <p>
+                Suppose
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$Θ$</span> is compact;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$θ \mapsto g(x, θ)$</span> is continuous as <span class="inline-math">$x\in \mathcal{X}$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    there exists a measurable function <span class="inline-math">$G: \mathcal{X}\to \R$</span> such that <span class="inline-math">$G(x) \geq g(x,θ)$</span> for all <span class="inline-math">$x\in \mathcal{X}, θ\in Θ$</span>
+                    and <span class="inline-math">$\expect |G(X)| &lt; \infty$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \sup_{θ\in Θ} \left|\frac{1}{n}\sum_{i=1}^{n} g(X_i, θ) - \expect g(X, θ)\right| \xrightarrow{a.s.} 0. \qquad \text{as $n\to \infty$}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Likelihood inference
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Likelihood-inference.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Maximum likelihood estimator
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Maximum-likelihood-estimator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (maximum likelihood estimator)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The <em>likelihood</em> of <span class="inline-math">$θ$</span> at the observed data <span class="inline-math">$X$</span>
+                                        is <span class="inline-math">$L_X: θ \mapsto p(X; θ)$</span>, viewed as a function of <span class="inline-math">$θ$</span>.
+                                    </p>
+                                    <p>
+                                        The <em>maximum likelihood estimator</em> (MLE) of <span class="inline-math">$θ$</span>
+                                        is the value of <span class="inline-math">$θ$</span> that maximises <span class="inline-math">$L_X$</span>, i.e.
+                                        <span class="display-math">$$ \begin{align*}
+                                            \hat θ_{\text{MLE}} = \arg\max_{θ\in Θ} L_X(θ),
+                                        \end{align*} $$</span>
+                                        which is an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a> for <span class="inline-math">$θ$</span> (a function of <span class="inline-math">$X$</span>).
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            Properties:
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <span class="inline-math">$\hat θ_{\text{MLE}}$</span> is a function of any <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-sufficient-statistic.html">sufficient statistic</a>. (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-MLE-is-a-function-of-sufficient-statistic.html">Derivation</a>)
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Under a bijection <span class="inline-math">$h$</span>, the MLE for <span class="inline-math">$η = h(θ)$</span> is <span class="inline-math">$\hat η_{\text{MLE}} = h(\hat θ_{\text{MLE}})$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Under certain conditions, the MLE is asymptotically normal: <span class="inline-math">$\sqrt{n}(\hat θ_{\text{MLE}} - θ) \xrightarrow{d} N(0, I\inv)$</span>
+                                where <span class="inline-math">$I$</span> is the Fisher information matrix.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <div class="markdown-callout" data-callout="principle">
+                            <div class="markdown-callout-title">
+                                <i data-lucide="file-text"></i>
+                                <div class="markdown-callout-title-inner">Likelihood principle</div>
+                            </div>
+                            <div class="markdown-callout-content">
+                                <p>
+                                    All information about <span class="inline-math">$θ$</span>
+                                    obtained from an experiment with data <span class="inline-math">$X$</span>
+                                    is contained in the likelihood function of <span class="inline-math">$θ$</span> given <span class="inline-math">$X$</span>.
+                                </p>
+                                
+                            </div>
+                        </div><p>
+                            This is stronger than the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Sufficient-statistics.html">sufficiency principle</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Information geometry
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Information-geometry.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (Kullback-Leibler divergence)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Kullback-Leibler-divergence.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$P_{θ_0}, P_θ$</span> be two laws on <span class="inline-math">$\mathcal{X}$</span> with densities <span class="inline-math">$f(\cdot , θ_0)$</span> and <span class="inline-math">$f(\cdot , θ)$</span>.
+                                        Suppose <span class="inline-math">$\expect_{θ_0}|\log(X, θ&#x27;)| &lt; \infty$</span> with <span class="inline-math">$X \sim P_{θ_0}$</span> for <span class="inline-math">$θ&#x27; = θ_0$</span> and <span class="inline-math">$θ$</span>.
+                                    </p>
+                                    <p>
+                                        The <em>Kullback-Leibler divergence</em> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            \op{KL}(P_{θ_0}, P_θ) := l(θ_0) - l(θ) = \int_{\mathcal{X}} f(x, θ_0) \log \frac{f(x, θ_0)}{f(x,θ)} \d x
+                                        \end{align*} $$</span>
+                                        where
+                                        <span class="display-math">$$ \begin{align*}
+                                            l(θ&#x27;) := \expect_{θ_0}[\log f(X, θ&#x27;)] \qquad (X \sim P_{θ_0}).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (true parameter maximises expectation of log likelihood)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-true-parameter-maximises-expectation-of-log-likelihood.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a statistical model,
+                                        with <span class="inline-math">$X \sim f(\cdot , θ_0)$</span>.
+                                    </p>
+                                    <p>
+                                        Suppose <span class="inline-math">$\expect_{θ_0}|\log (X, θ)|&lt;\infty$</span> for all <span class="inline-math">$θ\in Θ$</span>.
+                                        Then the true parameter <span class="inline-math">$θ_0$</span> maximises
+                                        <span class="display-math">$$ \begin{align*}
+                                            l(θ) := \expect_{θ_0}\log(X, θ)
+                                        \end{align*} $$</span>
+                                        and hence minimises <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Kullback-Leibler-divergence.html"><span class="inline-math">$\op{KL}(P_{θ_0}, P_θ)$</span></a>.
+                                    </p>
+                                    <p>
+                                        Moreover if <span class="inline-math">$θ$</span> is <em>identifiable</em> (i.e. <span class="inline-math">$f(\cdot, θ) = f(\cdot, θ&#x27;) \iff θ = θ&#x27;$</span>),
+                                        then <span class="inline-math">$θ_0$</span> is the unique maximiser of <span class="inline-math">$l$</span> and hence the unique minimiser of <span class="inline-math">$\op{KL}(P_{θ_0}, P_θ)$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-true-parameter-maximises-expectation-of-log-likelihood.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (score function)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-score-function.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                                        <span class="inline-math">$Θ\subseteq \R^d$</span> and
+                                        <span class="inline-math">$X_1, \ldots, X_n$</span> be iid copies of <span class="inline-math">$X$</span>.
+                                    </p>
+                                    <p>
+                                        The <em>score function</em> is a random vector
+                                        <span class="display-math">$$ \begin{align*}
+                                            S_n(θ) := \pdd{θ} l_n(θ) ={}&amp; \sum_{i=1}^{n} \pdd{θ} \log f(X_i, θ), \qquad θ \in \op{int}(Θ)
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$l_n(θ) := \sum_{i=1}^{n} \log f(X_i, θ)$</span> is the log-likelihood function.
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">maximum likelihood estimator</a> is a zero of <span class="inline-math">$S_n$</span>.
+                                        </p>
+                                        
+                                    </blockquote>
+                                    <blockquote>
+                                        <!-- BEGIN BLOCK ID mean -->
+                                        <p id="^mean">
+                                            Under regularity conditions (namely <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span>),
+                                            <span class="display-math">$$ \begin{align*}
+                                                \expect_θ S_n(θ) = 0.
+                                            \end{align*} $$</span>
+                                            (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-mean-of-score.html">Proof</a>)
+                                        </p>
+                                        
+                                        <!-- END BLOCK ID mean -->
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (Fisher information)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                                        <span class="inline-math">$Θ\subseteq \R^d$</span> and <span class="inline-math">$X\sim f(\cdot, θ)$</span> be a random variable.
+                                    </p>
+                                    <p>
+                                        The <em>Fisher information matrix</em> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            I(θ) := \expect_θ\left[\pdd{θ}\log f(X, θ) \; \pdd{θ^T} \log f(X, θ)\right] = \expect_θ[S(θ) \; S(θ)^T], \qquad θ\in \op{int}(Θ)
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$S(θ) = \pdd{θ}\log f(X, θ)$</span> is the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-score-function.html">score</a>.
+                                    </p>
+                                    <blockquote>
+                                        <!-- BEGIN BLOCK ID variance -->
+                                        <p id="^variance">
+                                            Under regularity conditions, (if <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span> then)
+                                            <span class="display-math">$$ \begin{align*}
+                                                I(θ) = \var(S(θ))
+                                            \end{align*} $$</span>
+                                            (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Fisher-information-as-variance-of-score.html">Derivation</a>)
+                                            and (if <span class="inline-math">$\int_{\mathcal{X}} \pdfxd{f}{θ_i}{θ_j} \d x = \pdxd{θ_i}{θ_j} \int_{\mathcal{X}} f \d x$</span> then)
+                                            <span class="display-math">$$ \begin{align*}
+                                                I(θ) = -\expect_θ\left[\pdd{θ} \pdd{θ^T} \log f(X, θ)\right].
+                                            \end{align*} $$</span>
+                                            (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Fisher-information-in-terms-of-second-partials.html">Derivation</a>)
+                                        </p>
+                                        
+                                        <!-- END BLOCK ID variance -->
+                                        
+                                    </blockquote>
+                                    <blockquote>
+                                        <p>
+                                            If <span class="inline-math">$X = (X_1, \ldots, X_n)$</span> and <span class="inline-math">$X_i \sim f(\cdot, θ)$</span> are iid, then
+                                            under regularity conditions (if <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span> then)
+                                            <span class="display-math">$$ \begin{align*}
+                                                I_n(θ) := \expect_θ[S_n(θ) S_n(θ)^T] = n \, I(θ)
+                                            \end{align*} $$</span>
+                                            where <span class="inline-math">$S_n(θ) = \sum_{i=1}^{n} \pdd{θ} \log f(X_i, θ)$</span>.
+                                            (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-tensorisation-of-Fisher-information.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (Cramér–Rao)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Cramer-Rao.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                                        <span class="inline-math">$Θ\subseteq \R^d$</span>,
+                                        <span class="inline-math">$X_1, \ldots, X_n$</span> be iid random variables,
+                                        and <span class="inline-math">$\tilde Φ = \tilde Φ(X_1, \ldots, X_n)$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a>
+                                        of <span class="inline-math">$Φ = Φ(θ)\in \R^k$</span>, a differentiable function <span class="inline-math">$Θ\to \R^k$</span>.
+                                    </p>
+                                    <p>
+                                        Under regularity conditions,
+                                        <span class="display-math">$$ \begin{align*}
+                                            \var_θ(\tilde Φ) \geq \frac{1}{n} \pdfd{\expect_θ[\tilde Φ]}{θ}(θ)^T \, I(θ)\inv \, \pdfd{\expect_θ[\tilde Φ]}{θ}(θ).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        In particular, if <span class="inline-math">$\tilde Φ$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-bias-of-estimator.html">unbiased</a>, then
+                                        <span class="display-math">$$ \begin{align*}
+                                            \var_θ(\tilde Φ) \geq \frac{1}{n} \pdfd{Φ}{θ}(θ)^T \, I(θ)\inv \, \pdfd{Φ}{θ}(θ).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Cramer-Rao.html">Proof</a>
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            However, non-regular estimators can have better asymptotic variance.
+                                            For example, for <span class="inline-math">$\hat θ_n$</span> the maximum likelihood estimator in a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regular</a> parameter model,
+                                            define the <em>Hodge's estimator</em>
+                                            <span class="display-math">$$ \begin{align*}
+                                                \tilde θ_n = \begin{cases}
+                                                    \hat θ_n, &amp;|\hat θ_n| \geq n^{-1/4}, \\
+                                                    \hat θ_n, &amp;|\hat θ_n|&lt;n^{-1/4}.
+                                                \end{cases}
+                                            \end{align*} $$</span>
+                                        </p>
+                                        <ul>
+                                        <li>
+                                            <p>
+                                                For <span class="inline-math">$θ_0 \neq 0$</span>, <span class="inline-math">$\tilde θ_n - \hat θ_n \xrightarrow{p} 0$</span> so <span class="inline-math">$\sqrt{n}(\tilde θ_n - θ_0) \xrightarrow{d} N(0, I\inv(θ_0))$</span>.
+                                            </p>
+                                            
+                                        </li><li>
+                                            <p>
+                                                For <span class="inline-math">$θ_0 = 0$</span>, <span class="inline-math">$\tilde θ_n \xrightarrow{d} δ_0$</span>.
+                                            </p>
+                                            
+                                        </li>
+                                        </ul>
+                                        <p>
+                                            (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Hodge-s-estimator.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (consistency of MLE)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-consistency-of-MLE.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a statistical model,
+                            with true parameter <span class="inline-math">$θ_0$</span> for <span class="inline-math">$X$</span>.
+                            Let <span class="inline-math">$\hat θ_n$</span> be the maximum likelihood estimator based on <span class="inline-math">$X_1, \ldots, X_n$</span> iid copies of <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            Suppose
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$Θ$</span> is compact;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$θ\mapsto f(x, θ)$</span> is continuous as <span class="inline-math">$x\in \mathcal{X}$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$f(x,θ) &gt; 0$</span> for all <span class="inline-math">$x\in \mathcal{X}, θ\in Θ$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\expect \sup_{θ\in Θ}|\log f(X, θ)| &lt; \infty$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                identifiability: <span class="inline-math">$f(\cdot, θ) = f(\cdot, θ&#x27;)\iff θ = θ&#x27;$</span>;
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            Then the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">maximum likelihood estimator</a> <span class="inline-math">$\hat θ_n$</span> exists and is <em>consistent</em>, i.e.
+                            <span class="display-math">$$ \begin{align*}
+                                \hat θ_n \xrightarrow{p} θ_0 \qquad \text{as $n\to \infty$}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-consistency-of-MLE.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (asymptotic normality of MLE)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-asymptotic-normality-of-MLE.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                            and <span class="inline-math">$θ_0$</span> be the true parameter of <span class="inline-math">$X$</span>.
+                            Let <span class="inline-math">$\hat θ_n$</span> be the maximum likelihood estimator based on <span class="inline-math">$X_1, \ldots, X_n$</span> iid copies of <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            Under <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regularity conditions</a>,
+                            <span class="display-math">$$ \begin{align*}
+                                \sqrt{n}(\hat θ_n - θ_0) \xrightarrow{d} N(0, I(θ_0)\inv)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$I(θ_0)$</span> is the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html">Fisher information matrix</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-asymptotic-normality-of-MLE.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                This shows <span class="inline-math">$\hat θ_n$</span> achieves the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Cramer-Rao.html">Cramér-Rao lower bound</a> asymptotically.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (delta method)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-delta-method.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$\hat θ_n$</span> is a sequence of estimators in <span class="inline-math">$Θ\subseteq \R^d$</span> satisfying
+                            <span class="display-math">$$ \begin{align*}
+                                r_n(\hat θ_n - θ_0) \xrightarrow{d} Z
+                            \end{align*} $$</span>
+                            for some deterministic <span class="inline-math">$r_n \to \infty$</span>.
+                        </p>
+                        <p>
+                            For a continuously differentiable function <span class="inline-math">$Φ: Θ \to \R^k$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                r_n(Φ(\hat θ_n) - Φ(θ_0)) \xrightarrow{d} \pdfd{Φ}{θ^T}(θ_0) \cdot Z.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-delta-method.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$\hat θ_n$</span> is the maximum likelihood estimator in a regular model, <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-asymptotic-normality-of-MLE.html">then</a>
+                                <span class="display-math">$$ \begin{align*}
+                                    \sqrt{n}(Φ(\hat θ_n) - Φ(θ_n)) \xrightarrow{d}N\Bigl(0, \pdfd{Φ}{θ^T}(θ_0)\; I(θ_0)\inv \;\pdfd{Φ}{θ}(θ_0)\Bigr)
+                                \end{align*} $$</span>
+                                and hence the <em>plug-in MLE</em> <span class="inline-math">$Φ(\hat θ_n)$</span> achieves the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Cramer-Rao.html">Cramér-Rao lower bound</a> asymptotically.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Lemma (observed Fisher information)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Lemma-observed-Fisher-information.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                            <span class="inline-math">$Θ \subseteq \R^p$</span>,
+                            and <span class="inline-math">$X_1, X_2, \ldots$</span> are iid copies of <span class="inline-math">$X$</span> with true parameter <span class="inline-math">$θ_0$</span>.
+                        </p>
+                        <p>
+                            Define the <em>observed <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html">Fisher information</a></em> matrix
+                            <span class="display-math">$$ \begin{align*}
+                                i_n(θ) = \frac{1}{n} \sum_{i=1}^{n} \pdd{θ} \log f(X_i, θ) \pdd{θ^T} \log f(X_i, θ)
+                            \end{align*} $$</span>
+                            or
+                            <span class="display-math">$$ \begin{align*}
+                                j_n(θ) = -\frac{1}{n} \sum_{i=1}^{n} \pdd{θ} \pdd{θ^T} \log f(X_i, θ).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Under <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regularity conditions</a>, if <span class="inline-math">$\hat θ_n$</span> is the maximum likelihood estimator,
+                            <span class="display-math">$$ \begin{align*}
+                                i_n(\hat θ_n) \xrightarrow{p} I(θ_0), \qquad j_n(\hat θ_n) \xrightarrow{p} I(θ_0).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-observed-Fisher-information.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Wald confidence set)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Wald-confidence-set.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a statistical model,
+                            <span class="inline-math">$Θ \subseteq \R^p$</span>,
+                            and <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span> with true parameter <span class="inline-math">$θ_0$</span>.
+                        </p>
+                        <p>
+                            Assume <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regularity conditions</a>.
+                            Let <span class="inline-math">$\hat θ_n$</span> be the maximum likelihood estimator based on <span class="inline-math">$X_1, \ldots, X_n$</span>.
+                            Choose any estimator <span class="inline-math">$\hat I_n\xrightarrow{p}{}$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html"><span class="inline-math">$I(θ_0)$</span></a>
+                            (such as <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Lemma-observed-Fisher-information.html"><span class="inline-math">$i_n(\hat θ_n)$</span>, <span class="inline-math">$j_n(\hat θ_n)$</span></a>, <span class="inline-math">$I(\hat θ_n)$</span>).
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                For all <span class="inline-math">$j = 1, \ldots, p$</span>,
+                                <span class="display-math">$$ \begin{align*}
+                                \frac{\sqrt{n}(\hat θ_{n,j} - θ_{0,j})}{\sqrt{(\hat I_n\inv)_{jj}}} \xrightarrow{d} N(0,1) \qquad 
+                                \end{align*} $$</span>
+                                so there is an asymptotically <span class="inline-math">$(1-α)$</span>-<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-confidence-interval-region.html">confidence interval</a> for <span class="inline-math">$θ_{0,j}$</span>
+                                <span class="display-math">$$ \begin{align*}
+                                \left[\hat θ_{n,j} - \frac{z_α \sqrt{(\hat I_n\inv)_{jj}}}{\sqrt{n}}, \hat θ_{n,j} + \frac{z_α \sqrt{(\hat I_n\inv)_{jj}}}{\sqrt{n}}\right]
+                                \end{align*} $$</span>
+                                where <span class="inline-math">$z_α$</span> is the upper <span class="inline-math">$α/2$</span>-quantile of a <span class="inline-math">$N(0,1)$</span> distribution.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Moreover
+                                <span class="display-math">$$ \begin{align*}
+                                n(\hat θ_n - θ_0)^T \hat I_n (\hat θ_n - θ_0) \xrightarrow{d} χ_p^2,
+                                \end{align*} $$</span>
+                                so there is an asymptotically <span class="inline-math">$(1-α)$</span>-confidence set for <span class="inline-math">$θ_0$</span>
+                                <span class="display-math">$$ \begin{align*}
+                                \sb{θ}{n(\hat θ_n - θ)^T \hat I_n(\hat θ_n - θ) \leq ξ_α}
+                                \end{align*} $$</span>
+                                where <span class="inline-math">$ξ_α$</span> is the upper <span class="inline-math">$α$</span> quantile of the <span class="inline-math">$χ_p^2$</span> distribution.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Wald-confidence-set.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                This gives tests for simple null hypotheses regarding <span class="inline-math">$θ_{0,j}$</span> or <span class="inline-math">$θ_0$</span>
+                                with asymptotic size <span class="inline-math">$α$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (generalised likelihood ratio test)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose the data <span class="inline-math">$X$</span> follows <span class="inline-math">$p(x; θ)$</span> where <span class="inline-math">$θ$</span> is unknown.
+                            Let <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_0$</span></a><span class="inline-math">$: θ \in Θ_0$</span> and <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_1$</span></a><span class="inline-math">$: θ \in Θ_1$</span> be hypotheses.
+                        </p>
+                        <p>
+                            The <em>generalised likelihood ratio statistic</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                Λ(X) = \frac{\sup_{θ\in Θ_0 \cup Θ_1} L_X(θ)}{\sup_{θ\in Θ_0} L_X(θ)} = \frac{\sup_{θ\in Θ_0\cup Θ_1} p(X; θ)}{\sup_{θ\in Θ_0} p(X; θ)}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            A <em>generalised likelihood ratio test</em> is a test of the form
+                            <span class="display-math">$$ \begin{align*}
+                                T(X) = 1_{\set{Λ(X) &gt; c}}.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Wilks' theorem)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-Wilks-theorem.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$Θ_0\subseteq Θ_1$</span>,
+                            and let <span class="inline-math">$Λ(X)$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">generalised likelihood ratio test</a>
+                            for testing <span class="inline-math">$H_0: θ\in Θ_0$</span> against <span class="inline-math">$H_1: θ\in Θ_1\setminus Θ_0$</span>.
+                        </p>
+                        <p>
+                            Under regularity conditions, we have
+                            <span class="display-math">$$ \begin{align*}
+                                2\log Λ(X) \xrightarrow{d} χ_{d_1-d_0}^2 \quad \text{as $n\to \infty$ under $H_0$}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$d_1, d_0$</span> are the degrees of freedom (number of free parameters) of <span class="inline-math">$H_1$</span> and <span class="inline-math">$H_0$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Wilks-theorem-for-simple-null-hypothesis.html">Proof for simple null hypothesis</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Bayesian inference in II Priniciple of Statistics
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Bayesian-inference-in-II-Priniciple-of-Statistics.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Bayesian inference in IB Statistics
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Bayesian-inference-in-IB-Statistics.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Frequentists treat <span class="inline-math">$θ$</span> as a fixed quantity,
+                            while Bayesians treat <span class="inline-math">$θ$</span> as a probabilistic distribution on <span class="inline-math">$Θ$</span>
+                            and view statistical inference as updating one's belief about <span class="inline-math">$θ$</span>.
+                        </p>
+                        <p>
+                            Suppose initially we have a <em>prior distribution</em> <span class="inline-math">$π(θ)$</span>.
+                            After observing data <span class="inline-math">$X=x$</span>,
+                            the <em>posterior distribution</em> of <span class="inline-math">$θ$</span> is given by Bayes' theorem
+                            <span class="display-math">$$ \begin{align*}
+                                \underbrace{π(θ\mid x)}_{\text{posterior}} = \frac{π(θ)\,p(x\mid θ)}{p(x)} \propto  \underbrace{p(x\mid θ)}_{\text{likelihood}}\,\underbrace{π(θ)}_{\text{prior}}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <span class="inline-math">$π(θ\mid x)$</span> can be a probability distribution
+                            even if the function <span class="inline-math">$π$</span> may not.
+                            In this case we say <span class="inline-math">$π$</span> is an <em>improper prior</em>.
+                        </p>
+                        <p>
+                            The <em>prior predictive distribution</em> is the marginal distribution of <span class="inline-math">$X$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                π(x) = \int_{Θ} p(x\midθ) \,π(θ) \d θ
+                            \end{align*} $$</span>
+                            and the <em>posterior predictive distribution</em>
+                            is the conditional distributional of an iid copy <span class="inline-math">$X&#x27;$</span> given <span class="inline-math">$X$</span>
+                            <span class="display-math">$$ \begin{align*}
+                                π(x&#x27;\mid x) = \int_{Θ} p(x&#x27;\mid θ) \, π(θ\mid x)\d θ.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            We say a family of prior distributions is <em>conjugate</em>
+                            to a likelihood model if the posterior distribution is in the same family.
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Bayesian obeys the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Maximum-likelihood-estimator.html">likelihood principle</a> and thus the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Sufficient-statistics.html">sufficiency principle</a>.
+                                (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-Bayesian-inference-and-sufficiency-principle.html">Derivation</a>)
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (Bayes estimator)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-Bayes-estimator.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Given some <em>loss function</em> <span class="inline-math">$L: Θ\times Θ \to \R$</span>,
+                                        the <em>Bayes risk</em> of an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a> <span class="inline-math">$\tilde θ$</span> for <span class="inline-math">$θ$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            R_X(\tilde θ) = \expect_π(L(θ, \tilde θ)\mid X) = \int_{Θ} L(θ, \tilde θ(X))\, π(θ\mid X) \d θ.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        The <em>Bayes estimator</em> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            \hat θ(X) = \arg\min_{\tilde θ} R_X(\tilde θ).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            The Bayes estimator with the quadratic loss <span class="inline-math">$L(θ, \tilde θ) = (θ - \tilde θ)^2$</span>
+                                            is the posterior mean. (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-Bayes-estimator-with-quadratic-loss.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            The Bayes estimator with the absolute loss <span class="inline-math">$L(θ, \tilde θ) = |\tilde θ - θ|$</span>
+                                            is the posterior median.
+                                            (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-Bayes-estimator-with-absolute-loss.html">Derivation</a>)
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (credible interval)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-credible-interval.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        A <span class="inline-math">$(1-α)$</span>-<em>credible interval</em> for <span class="inline-math">$θ$</span> is a random interval <span class="inline-math">$[L(X), U(X)]$</span>
+                                        such that
+                                        <span class="display-math">$$ \begin{align*}
+                                            π(L(X) \leq θ \leq U(X)\mid X) = 1-α.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Jeffreys prior)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Jeffreys-prior.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a> with <span class="inline-math">$Θ\subseteq \R^p$</span>.
+                        </p>
+                        <p>
+                            The Jeffreys prior is any (possibly improper) <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Bayesian-inference-in-IB-Statistics.html">prior</a>
+                            satisfying
+                            <span class="display-math">$$ \begin{align*}
+                                π_{J,θ}(θ) \propto \sqrt{\det I(θ)}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$I(θ)$</span> is the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html">Fisher information matrix</a>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                It is invariant under a change of coordinates in the parameter space <span class="inline-math">$Θ$</span>.
+                                (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Jeffreys-prior.html">Proof</a>)
+                                Therefore it is an <em>uninformative prior</em>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Bernstein-von Mises)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Bernstein-von-Mises.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a statistical model,
+                            <span class="inline-math">$Θ\subseteq \R^p$</span>,
+                            and <span class="inline-math">$X_1, X_2, \ldots$</span> are iid copies of <span class="inline-math">$X$</span>.
+                            Work in a frequentist framework: suppose the true parameter is <span class="inline-math">$θ_0$</span>.
+                            Let <span class="inline-math">$π$</span> be a <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Bayesian-inference-in-IB-Statistics.html">prior</a> on <span class="inline-math">$θ$</span>
+                            and <span class="inline-math">$π_n(θ) = π(θ \mid X_1, \ldots, X_n)$</span> be the (random) posterior distribution.
+                        </p>
+                        <p>
+                            Assume
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">usual regularity conditions</a>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$π$</span> has a continuous density at <span class="inline-math">$θ_0$</span> and <span class="inline-math">$π(θ_0)&gt;0$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            Then <span class="inline-math">$π_n$</span> converges to a <span class="inline-math">$N(\hat θ_n, I(θ_0)\inv/n)$</span> distribution in total variation almost surely,
+                            i.e. writing <span class="inline-math">$\hat ϕ_n$</span> for the density of <span class="inline-math">$N(\hat θ_n, I(θ_0)\inv/n)$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                2\|π_n - \hat ϕ_n\|_{TV} := \int_{Θ} |π_n(θ) - \hat ϕ_n(θ)| \d θ \xrightarrow{a.s.} 0.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-special-case-of-Bernstein-von-Mises.html">Proof of special case</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                Note for any measurable set <span class="inline-math">$A\subseteq Θ$</span>,
+                                <span class="display-math">$$ \begin{align*}
+                                    |π_n(A) - \hat ϕ_n(A)| \leq 2\|π_n - \hat ϕ_n\|_{TV} \xrightarrow{a.s.} 0.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                Suppose <span class="inline-math">$Θ\subseteq \R$</span> and consider a <span class="inline-math">$(1-α)$</span>-<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-credible-interval.html">credible interval</a>
+                                <span class="display-math">$$ \begin{align*}
+                                    C_n := \sb{θ}{\sqrt{n}|θ - \hat θ_n| &lt; R_n}
+                                \end{align*} $$</span>
+                                where <span class="inline-math">$R_n$</span> is chosen such that <span class="inline-math">$π_n(C_n) = 1-α$</span>
+                                Then <span class="inline-math">$C_n$</span> is an asymptotic <span class="inline-math">$(1-α)$</span>-<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-confidence-interval-region.html">confidence interval</a>,
+                                i.e. <span class="inline-math">$\prob_{θ_0}(θ_0 \in C_n) \to 1-α$</span>.
+                            </p>
+                            <p>
+                                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-credible-interval-as-confidence-interval.html">Proof</a>
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Decision theory
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Decision-theory.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (loss, risk)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Given a statistical model <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span>,
+                                        let a sample <span class="inline-math">$X$</span> takes value in <span class="inline-math">$\mathcal{X}$</span> and
+                                        there is an <em>action space</em> <span class="inline-math">$\mathcal{A}$</span>.
+                                    </p>
+                                    <p>
+                                        A <em>decision rule</em> is a function <span class="inline-math">$δ: \mathcal{X}\to \mathcal{A}$</span>.
+                                    </p>
+                                    <p>
+                                        A <em>loss function</em> is a function <span class="inline-math">$L: \mathcal{A}\times Θ \to [0,\infty)$</span>.
+                                    </p>
+                                    <p>
+                                        The <em>risk</em> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            R(δ, θ) := \expect_θ[L(δ(X), θ)] = \int_{\mathcal{X}} L(δ(X), θ) f(x,θ) \d x.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (Bayes risk, Bayes rule)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">Context</a>)
+                                        Given a prior distribution <span class="inline-math">$π$</span> on <span class="inline-math">$Θ$</span>,
+                                        the <em><span class="inline-math">$π$</span>-Bayes risk</em> of a decision rule <span class="inline-math">$δ$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            R_π(δ) := \expect_π[L(δ(X), θ)] \equiv \int_{Θ} R(δ,θ) \, π(θ) \d θ \equiv \int_{Θ} \int_{\mathcal{X}} L(δ(X), θ) \, f(x\mid θ)\, π(θ) \d x \d θ.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        If <span class="inline-math">$δ_π$</span> is a decision rule that minimises the <span class="inline-math">$π$</span>-Bayes risk,
+                                        then we call it a <em><span class="inline-math">$π$</span>-Bayes decision rule</em>.
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            See also <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-Bayes-estimator.html">Bayes estimator</a>.
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (posterior risk)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-posterior-risk.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">Context</a>)
+                                        Given a prior distribution <span class="inline-math">$π$</span> on <span class="inline-math">$Θ$</span>,
+                                        the <em><span class="inline-math">$π$</span>-posterior risk</em> of a decision rule <span class="inline-math">$δ$</span> given an observation <span class="inline-math">$x\in \mathcal{X}$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            \expect_π[L(δ(x), θ) \mid x] \equiv \int_{Θ} R(δ(x), θ) \,π(θ\mid x) \d θ.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (minimising posterior risk)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-minimising-posterior-risk.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">Context</a>)
+                                        Let <span class="inline-math">$δ$</span> be a decision rule and <span class="inline-math">$π$</span> be a prior on <span class="inline-math">$Θ$</span>.
+                                    </p>
+                                    <p>
+                                        If <span class="inline-math">$δ$</span> minimises the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-posterior-risk.html"><span class="inline-math">$π$</span>-posterior risk</a> for all <span class="inline-math">$x\in \mathcal{X}$</span>,
+                                        then <span class="inline-math">$δ$</span> is a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html"><span class="inline-math">$π$</span>-Bayes rule</a>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-minimising-posterior-risk.html">Proof</a>
+                                    </p>
+                                    <blockquote>
+                                        <!-- BEGIN BLOCK ID quadratic -->
+                                        <p id="^quadratic">
+                                            For the quadratic risk <span class="inline-math">$L(δ, θ) = (δ - θ)^2$</span>, a <span class="inline-math">$π$</span>-Bayes rule is
+                                            <span class="display-math">$$ \begin{align*}
+                                                δ_π(x) = \expect_π[θ \mid x].
+                                            \end{align*} $$</span>
+                                            (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Bayes-rule-for-quadratic-risk.html">Derivation</a>)
+                                        </p>
+                                        
+                                        <!-- END BLOCK ID quadratic -->
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (unbiased Bayes estimator is degenerate under quadratic loss)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-unbiased-Bayes-estimator-is-degenerate-under-quadratic-loss.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">Context</a>)
+                                        Let <span class="inline-math">$δ(x)$</span> be an estimator of <span class="inline-math">$θ$</span>.
+                                    </p>
+                                    <p>
+                                        Under the quadratic loss <span class="inline-math">$L(δ,θ) = (δ - θ)^2$</span>, if
+                                    </p>
+                                    <ol start="1">
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$δ$</span> is a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html"><span class="inline-math">$π$</span>-Bayes rule</a> for some prior <span class="inline-math">$π$</span> on <span class="inline-math">$Θ$</span>; and
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$δ$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-bias-of-estimator.html">unbiased</a>,
+                                        </p>
+                                        
+                                    </li>
+                                    </ol>
+                                    <p>
+                                        then <span class="inline-math">$δ(X) = θ$</span> almost surely.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-unbiased-Bayes-estimator-is-degenerate-under-quadratic-loss.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (maximal risk, minimax rule)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-maximal-risk-minimax-rule.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">Context</a>)
+                                        Let <span class="inline-math">$δ$</span> be a decision rule.
+                                    </p>
+                                    <p>
+                                        The <em>maximal risk</em> of <span class="inline-math">$δ$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            R_m(δ) := \sup_{θ\in Θ} R(δ,θ).
+                                        \end{align*} $$</span>
+                                        The <em>minimax risk</em> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            \inf_{δ} R_m(δ).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        If <span class="inline-math">$δ$</span> attains the minimax risk, it is called <em>minimax</em>.
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html"><span class="inline-math">$R_π(δ)$</span></a><span class="inline-math">${}\leq R_m(δ)$</span> for any prior <span class="inline-math">$π$</span>.
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (least favourable prior)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-least-favourable-prior.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html">Context</a>)
+                                        A prior <span class="inline-math">$λ$</span> on <span class="inline-math">$Θ$</span> is said to be <em>least favourable</em> if
+                                        <span class="display-math">$$ \begin{align*}
+                                            R_λ(δ_λ) \leq R_π(δ_π) &amp;&amp;\text{for all priors $π$}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (Bayes risk equals maximal risk)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Bayes-risk-equals-maximal-risk.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">Context</a>)
+                                        Let <span class="inline-math">$λ$</span> be a prior on <span class="inline-math">$Θ$</span>.
+                                    </p>
+                                    <p>
+                                        If a <span class="inline-math">$λ$</span>-<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html">Bayes rule</a> <span class="inline-math">$δ_λ$</span>
+                                        has equal <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html"><span class="inline-math">$π$</span>-Bayes risk</a> <span class="inline-math">$R_π(δ_λ)$</span> and <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-maximal-risk-minimax-rule.html">maximal risk</a> <span class="inline-math">$R_m(δ_λ)$</span>,
+                                        then
+                                    </p>
+                                    <ol start="1">
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$δ_λ$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-maximal-risk-minimax-rule.html">minimax</a>;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            if <span class="inline-math">$δ_λ$</span> is the unique <span class="inline-math">$λ$</span>-Bayes rule, then it is the unique minimax rule;
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$λ$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-least-favourable-prior.html">least favourable</a>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ol>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Bayes-risk-equals-maximal-risk.html">Proof</a>
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            A sufficient condition is that <span class="inline-math">$R(δ_λ, θ)$</span> is constant in <span class="inline-math">$θ$</span>.
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (admissible rule)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-admissible-rule.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">Context</a>)
+                                        Let <span class="inline-math">$δ,δ&#x27;$</span> be decision rules.
+                                    </p>
+                                    <p>
+                                        Say <span class="inline-math">$δ&#x27;$</span> <em>dominates</em> <span class="inline-math">$δ$</span> if
+                                    </p>
+                                    <ul>
+                                    <li>
+                                        <p>
+                                            <span class="inline-math">$R(δ&#x27;, θ) \leq R(δ, θ)$</span> for all <span class="inline-math">$θ\in Θ$</span>; and
+                                        </p>
+                                        
+                                    </li><li>
+                                        <p>
+                                            <span class="inline-math">$R(δ&#x27;, θ) &lt; R(δ, θ)$</span> for some <span class="inline-math">$θ\in Θ$</span>.
+                                        </p>
+                                        
+                                    </li>
+                                    </ul>
+                                    <p>
+                                        If such <span class="inline-math">$δ&#x27;$</span> exists, say <span class="inline-math">$δ$</span> is <em>inadmissible</em>.
+                                        Otherwise <span class="inline-math">$δ$</span> is <em>admissible</em>.
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            Any unique <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html">Bayes rule</a> is admissible. (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-unique-Bayes-rule-is-admissible.html">Proof</a>)
+                                        </p>
+                                        
+                                    </blockquote>
+                                    <blockquote>
+                                        <!-- BEGIN BLOCK ID minimax -->
+                                        <p id="^minimax">
+                                            If <span class="inline-math">$δ$</span> is admissible and <span class="inline-math">$R(δ, θ)$</span> is constant in <span class="inline-math">$θ$</span>, then <span class="inline-math">$δ$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-maximal-risk-minimax-rule.html">minimax</a>.
+                                            (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-admissible-rule-with-constant-risk-is-minimax.html">Proof</a>)
+                                        </p>
+                                        
+                                        <!-- END BLOCK ID minimax -->
+                                        
+                                    </blockquote>
+                                    <blockquote>
+                                        <p>
+                                            Complete class theorem:
+                                            all admissible estimators are Bayes estimators or limits of Bayes estimators.
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (sample mean is admissible in normal location problem)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-sample-mean-is-admissible-in-normal-location-problem.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Suppose <span class="inline-math">$X_1, \ldots, X_n$</span> are iid copies of <span class="inline-math">$X\sim N(θ, 1)$</span>
+                                        for some unknown parameter <span class="inline-math">$θ$</span>.
+                                    </p>
+                                    <p>
+                                        The sample mean <span class="inline-math">$\overline{X_n}$</span> is an <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-admissible-rule.html">admissible</a> and <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-maximal-risk-minimax-rule.html">minimax</a>
+                                        estimator of <span class="inline-math">$θ$</span> under the quadratic loss <span class="inline-math">$L(δ, θ) = (δ - θ)^2$</span>
+                                        (under regularity conditions).
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-sample-mean-is-admissible-in-normal-location-problem.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Theorem (James-Stein estimator)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-James-Stein-estimator.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$X\sim N_p(θ, I_p)$</span> where <span class="inline-math">$θ$</span> is an unknown parameter.
+                                        Define the <em>James-Stein estimator</em>
+                                        <span class="display-math">$$ \begin{align*}
+                                            δ^\text{JS}(X) = \left(1 - \frac{p-2}{\|X\|^2}\right) X.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        Under the quadratic <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">loss</a> <span class="inline-math">$L(δ,θ) = (δ - θ)^2$</span>,
+                                        its risk is
+                                        <span class="display-math">$$ \begin{align*}
+                                            R(δ^\text{JS}, θ) = p - (p-2) \expect_θ\left[\frac{1}{\|X\|^2}\right]
+                                        \end{align*} $$</span>
+                                        so <span class="inline-math">$δ^\text{JS}$</span> <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-admissible-rule.html">dominates</a> the maximum likelihood estimator <span class="inline-math">$X$</span> for <span class="inline-math">$p\geq 3$</span>.
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-James-Stein-estimator.html">Proof</a>
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            <span class="inline-math">$δ^\text{JS}$</span> is not admissible either as it is dominated by
+                                            <span class="display-math">$$ \begin{align*}
+                                                δ^\text{JS+}(X) = \max\left\{0, \;1-\frac{p-2}{\|X\|^2}\right\} X.
+                                            \end{align*} $$</span>
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Multivariate analysis
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Multivariate-analysis.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (classification problem, Bayes classifier)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-classification-problem-Bayes-classifier.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">regression problem</a> with <span class="inline-math">$X\in \mathcal{X}$</span> and <span class="inline-math">$Y\in \set{0,1}$</span>.
+                            Assume <span class="inline-math">$X\mid Y = 0$</span> has density <span class="inline-math">$f_0$</span> and <span class="inline-math">$X\mid Y = 1$</span> has density <span class="inline-math">$f_1$</span>.
+                            Suppose <span class="inline-math">$π$</span> is prior on <span class="inline-math">$Y$</span>, with <span class="inline-math">$π_0 = \prob[Y = 0]$</span> and <span class="inline-math">$π_1 = \prob[Y = 1]$</span>.
+                        </p>
+                        <p>
+                            The <em>regression function</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                η(x) := \prob[Y = 1 \mid X = x] = \frac{π_1 f_1(x)}{π_0 f_0(x) + π_1 f_1(x)}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            A <em>classifier</em> is a decision rule <span class="inline-math">$δ: \mathcal{X} \to \set{0,1}$</span>.
+                        </p>
+                        <p>
+                            The <em>0-1 loss</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                L(δ(X), Y) = \mathbb{1}_{\set{δ(X) \neq Y}}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            A classifier <span class="inline-math">$δ$</span> is a <em>Bayes classifier</em> if it is a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html"><span class="inline-math">$π$</span>-Bayes rule</a>,
+                            i.e. it minimises the <span class="inline-math">$π$</span>-Bayes risk
+                            <span class="display-math">$$ \begin{align*}
+                                R_π(δ) = \prob[δ(X) \neq Y].
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Bayes classifier)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-Bayes-classifier.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-classification-problem-Bayes-classifier.html">Bayes classifier</a>
+                            is given by
+                            <span class="display-math">$$ \begin{align*}
+                                δ_π(x) = \begin{cases}
+                                    1, &amp;\text{if $\frac{π_1 f_1(x)}{π_0 f_0(x)}&gt;1$}, \\
+                                    0, &amp;\text{otherwise}.
+                                \end{cases}
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            If <span class="inline-math">$\prob[\frac{π_1 f_1(X)}{π_0 f_0(X)} = 1] = 0$</span>,
+                            then any Bayes classifier <span class="inline-math">$δ$</span> satisfies <span class="inline-math">$δ(X) = δ_π(X)$</span> almost surely.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Bayes-classifier.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Correlation
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Correlation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (correlation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-correlation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        The correlation of two square-integrable random variables <span class="inline-math">$X,Y$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            \op{corr}(X,Y) = \frac{\cov(X,Y)}{\sqrt{\var(X)}\sqrt{\var(Y)}}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (sample variance, sample correlation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-sample-variance-sample-correlation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$X_1, \ldots, X_n$</span> be iid copies of
+                                        a square integrable random vector <span class="inline-math">$X = (X^{(1)}, \ldots, X^{(p)})$</span> in <span class="inline-math">$\R^p$</span>.
+                                        Form the matrix <span class="inline-math">$\mathbf{X} = \pmat{X_1^T \\ \vdots \\ X_n^T}$</span>.
+                                    </p>
+                                    <p>
+                                        Define the <em>sample variance</em>
+                                        <span class="display-math">$$ \begin{align*}
+                                            \hat Σ := \frac{1}{n} \sum_{i=1}^{n} (X_i - \overline{X_n})(X_i - \overline{X_n})^T = \frac{1}{n}((I - P)\mathbf{X})^T((I-P)\mathbf{X}) = \frac{1}{n}\mathbf{X}^T (I-P) \mathbf{X}
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$P = \frac{1}{n} \v 1 \v 1^T$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">projection matrix</a>
+                                        onto <span class="inline-math">$\mathbf{1} = (1, \ldots, 1)^T\in \R^p$</span>.
+                                    </p>
+                                    <p>
+                                        Define the <em>sample correlation</em>
+                                        <span class="display-math">$$ \begin{align*}
+                                            \hat ρ_{jk} := \frac{\hat Σ_{jk}}{\sqrt{\hat Σ_{jj} \hat Σ_{kk}}} = \frac{((I-P)\mathbf{X}^{(j)})^T((I-P) \mathbf{X}^{(k)})}{\|(I-P) \mathbf{X}^{(j)}\| \|(I-P) \mathbf{X}^{(k)}\|} = \frac{\sum_{i} (X_i^{(j)} - \overline{X_n}^{(j)})(X_i^{(k)} - \overline{X_n}^{(k)})}{\sqrt{\sum_{i} (X_i^{(j)} - \overline{X_n}^{(j)})^2 \cdot \sum_{i} (X_i^{(k)} - \overline{X_n}^{(k)})^2}}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            In a model <span class="inline-math">$X \sim N(μ, Σ)$</span>,
+                                            <span class="inline-math">$\hat Σ$</span> is the maximum likelihood estimator of <span class="inline-math">$Σ$</span>,
+                                            and <span class="inline-math">$\hat ρ_{jk}$</span> is the maximum likelihood estimator of <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-correlation.html"><span class="inline-math">$\op{corr}(X^{(j)}, X^{(k)})$</span></a>.
+                                        </p>
+                                        
+                                    </blockquote>
+                                    <blockquote>
+                                        <p>
+                                            In general, <span class="inline-math">$\hat Σ \xrightarrow{p} \var(X)$</span> by the <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-strong-law-of-large-numbers.html">strong law of large numbers</a>,
+                                            and <span class="inline-math">$\sqrt{n}(\hat Σ - \var(X))$</span> converges in distribution to a normal by the <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-central-limit-theorem.html">central limit theorem</a>.
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (conditional independence, partial correlation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-conditional-independence-partial-correlation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Given random vectors <span class="inline-math">$X, Y, Z$</span>,
+                                        we say that <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> are <em>conditionally independent</em> given <span class="inline-math">$Z$</span>
+                                        (or <span class="inline-math">$X \perp\!\!\!\perp Y \mid Z$</span>)
+                                        if
+                                        <span class="display-math">$$ \begin{align*}
+                                            f_{XY\mid Z}(x,y\mid z) = f_{X\mid Z}(x \mid z) f_{Y\mid Z}(y\mid z).
+                                        \end{align*} $$</span>
+                                        Equivalently,
+                                        <span class="display-math">$$ \begin{align*}
+                                            X \perp\!\!\!\perp Y \mid Z \iff f_{X\mid Y, Z}(x\mid y,z) = m(x,z)
+                                        \end{align*} $$</span>
+                                        for some function <span class="inline-math">$m$</span>, whenever <span class="inline-math">$f_{Y,Z}(y,z) &gt; 0$</span>.
+                                    </p>
+                                    <p>
+                                        The <em>partial correlation</em> of <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> given <span class="inline-math">$Z$</span>
+                                        is the correlation of <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> in the conditional density
+                                        <span class="inline-math">$f_{X,Y\mid Z}(\cdot ,\cdot \mid z)$</span>:
+                                        <span class="display-math">$$ \begin{align*}
+                                            ρ_{X,Y\mid Z}(z) = \frac{\cov(X,Y\mid Z = z)}{\sqrt{\var(X\mid Z=z) \var(Y\mid Z = z)}}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            If <span class="inline-math">$X,Y$</span> are conditionally independent given <span class="inline-math">$Z$</span>, then <span class="inline-math">$ρ_{X,Y\mid Z} \equiv 0$</span>.
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (conditional normal distribution)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-conditional-normal-distribution.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$Y\in \R^m, W\in \R^n$</span> be jointly <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-Gaussian-random-variables.html">Gaussian</a>
+                                        <span class="display-math">$$ \begin{align*}
+                                            \pmat{Y \\ W} \sim N\left(\pmat{μ_1 \\ μ_2}, \pmat{Σ_{11} &amp; Σ_{12} \\ Σ_{21} &amp; Σ_{22}}\right)
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$Σ = \pmat{Σ_{11} &amp; Σ_{12} \\ Σ_{21} &amp; Σ_{22}}$</span> is positive definite.
+                                        Then
+                                        <span class="display-math">$$ \begin{align*}
+                                            Y \mid W = w \sim N(μ_1 + Σ_{12} Σ_{22}\inv(w - μ_2),\;  Σ_{11} - Σ_{12} Σ_{22}\inv Σ_{21}).
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-conditional-normal-distribution.html">Proof</a>
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            Therefore
+                                            <span class="display-math">$$ \begin{align*}
+                                                Y = μ_1 + Σ_{12} Σ_{22}\inv(W - μ_2) + ε
+                                            \end{align*} $$</span>
+                                            where <span class="inline-math">$ε\sim N(0, Σ_{11} - Σ_{12} Σ_{22}\inv Σ_{21})$</span> and <span class="inline-math">$W$</span> are independent.
+                                        </p>
+                                        
+                                    </blockquote>
+                                    <blockquote>
+                                        <p>
+                                            Note <span class="inline-math">$\var(Y \mid Z) = Σ_{11} - Σ_{12} Σ_{22}\inv Σ_{21}$</span> does not depend on <span class="inline-math">$Z$</span>.
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                            <div class="markdown-embed embed-definition">
+                                <div class="markdown-embed-title">
+                                    Definition (sample conditional variance, sample partial correlation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-sample-conditional-variance-sample-partial-correlation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$(W_i, Z_i)_{i=1}^n$</span> be iid copies of <span class="inline-math">$(W, Z)$</span>, with <span class="inline-math">$W\in \R^m, Z \in \R^n$</span>.
+                                        Form the matrices <span class="inline-math">$\mathbf{W} = \pmat{W_1^T \\ \vdots \\ W_n^T}, \mathbf{Z} = \pmat{Z_1^T \\ \vdots \\Z_n^T}$</span>.
+                                    </p>
+                                    <p>
+                                        The <em>sample conditional variance</em> of <span class="inline-math">$W$</span> given <span class="inline-math">$Z$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            \hat Ω = \frac{1}{n}((I - P) \mathbf{W})^T ((I - P) \mathbf{W}) = \frac{1}{n}\mathbf{W}^T (I-P) \mathbf{W}
+                                        \end{align*} $$</span>
+                                        where <span class="inline-math">$P$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">projection matrix</a> onto the columns space of <span class="inline-math">$\pmat{\v 1 &amp; \mathbf{Z}}$</span>.
+                                    </p>
+                                    <p>
+                                        The <em>sample partial correlation</em> of <span class="inline-math">$W^{(j)}$</span> and <span class="inline-math">$W^{(k)}$</span> given <span class="inline-math">$Z$</span> is
+                                        <span class="display-math">$$ \begin{align*}
+                                            \hat ρ_{W^{(j)}, W^{(k)}\mid Z} = \frac{\hat Ω_{jk}}{\sqrt{\hat Ω_{jj} \hat Ω_{kk}}} = \frac{((I - P)\mathbf{W}^{(j)})^T ((I-P) \mathbf{W}^{(k)})}{\|(I-P)\mathbf{W}^{(j)}\| \|(I - P) \mathbf{W}^{(k)}\|}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <blockquote>
+                                        <p>
+                                            If <span class="inline-math">$(W,Z)$</span> is jointly Gaussian,
+                                            then <span class="inline-math">$\hat Ω$</span> is the maximum likelihood estimator of <span class="inline-math">$\var(W\mid Z)$</span>
+                                            and <span class="inline-math">$\hat ρ_{W^{(j)}, W^{(k)}\mid Z}$</span> is the maximum likelihood estimator of <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-conditional-independence-partial-correlation.html"><span class="inline-math">$ρ_{W^{(j)},W^{(k)}\mid Z}$</span></a>.
+                                            (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-sample-conditional-variance-sample-partial-correlation.html">Proof</a>)
+                                        </p>
+                                        
+                                    </blockquote>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        <p>
+                            <div class="markdown-embed embed-result">
+                                <div class="markdown-embed-title">
+                                    Proposition (F statistic in terms of sample partial correlation)
+                                    <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-F-statistic-in-terms-of-sample-partial-correlation.html">open_in_new</a>
+                                </div>
+                                <div class="markdown-embed-content">
+                                    <p>
+                                        Let <span class="inline-math">$(X_i, Y_i, Z_i)_{i=1}^n$</span> be iid copies of <span class="inline-math">$(X,Y,Z)$</span>
+                                        where <span class="inline-math">$X\in \R$</span>, <span class="inline-math">$Y\in \R$</span>, <span class="inline-math">$Z\in \R^p$</span>.
+                                        Form the matrices <span class="inline-math">$\mathbf{X} = \pmat{X_1 \\ \vdots \\X_n}$</span>,
+                                        <span class="inline-math">$\mathbf{Y} = \pmat{Y_1 \\ \vdots \\ Y_n}$</span>,
+                                        <span class="inline-math">$\mathbf{Z} = \pmat{Z_1^T \\ \vdots \\Z_n^T}$</span>.
+                                    </p>
+                                    <p>
+                                        Assuming <span class="inline-math">$\pmat{\v 1 &amp; \mathbf{X} &amp; \mathbf{Z}}$</span> has full column rank,
+                                        let <span class="inline-math">$P_0$</span>, <span class="inline-math">$P$</span> be the orthogonal projection matrices
+                                        onto <span class="inline-math">$\op{Col}\pmat{1 &amp; \mathbf{Z}}$</span> and <span class="inline-math">$\op{Col}\pmat{1 &amp; \mathbf{X} &amp; \mathbf{Z}}$</span>.
+                                    </p>
+                                    <p>
+                                        Then the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-sample-conditional-variance-sample-partial-correlation.html">sample partial correlation</a> is given by
+                                        <span class="display-math">$$ \begin{align*}
+                                            \hat ρ_{X,Y\mid Z} = \frac{\|(P - P_0) \mathbf{Y}\|}{\|(I-P_0) \mathbf{Y}\|}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test.html"><span class="inline-math">$F$</span>-statistic</a> is then
+                                        <span class="display-math">$$ \begin{align*}
+                                            \frac{\|(P - P_0) \mathbf{Y}\|^2}{\|(I-P)\mathbf{Y}\|^2/(n-p-2)} = (n-p-2)\frac{\hat ρ_{X,Y\mid Z}^2}{1 - \hat ρ_{X,Y\mid Z}^2}.
+                                        \end{align*} $$</span>
+                                    </p>
+                                    <p>
+                                        <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-F-statistic-in-terms-of-sample-partial-correlation.html">Proof</a>
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Principal component analysis
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Principal-component-analysis.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X_1, \ldots, X_n$</span> be iid copies of a random vector <span class="inline-math">$X\in \R^p$</span>.
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                Construct <span class="inline-math">$\hat Σ = \frac{1}{n} \sum_{i=1}^{n} (X_i - \overline{X_n}) (X_i - \overline{X_n})^T$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Find the first <span class="inline-math">$k$</span> eigenvectors <span class="inline-math">$\hat v_1, \ldots, \hat v_k$</span> of <span class="inline-math">$\hat Σ$</span> with largest magnitude of eigenvalue.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Project the samples onto these vectors
+                                <span class="display-math">$$ \begin{align*}
+                                \pmat{X_1^T \\ \vdots \\ X_n^T}\pmat{\hat v_1 &amp; \ldots &amp;\hat v_k}.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Monte Carlo methods
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Monte-Carlo-methods.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Simulation using inverse function
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Simulation-using-inverse-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose our desired density function is <span class="inline-math">$f$</span> in an open interval <span class="inline-math">$I$</span>.
+                            Then the distribution function <span class="inline-math">$F(x) = \int_{-\infty}^{x} f(y) dy$</span> is an increasing map from <span class="inline-math">$I$</span> to <span class="inline-math">$(0,1)$</span>.
+                            Let the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-quantile-function.html">quantile function</a> be
+                            <span class="display-math">$$ \begin{align*}
+                                G(u) = \inf\sb{x\in\R}{u\leq F(x)}.
+                            \end{align*} $$</span>
+                            (When <span class="inline-math">$f$</span> is positive everywhere, <span class="inline-math">$G=F\inv$</span>.)
+                            Note that for all <span class="inline-math">$x\in\R, u\in(0,1)$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                G(u) \leq x \iff u \leq F(x).
+                            \end{align*} $$</span>
+                            Then when we have <span class="inline-math">$U\sim U[0,1]$</span> and let <span class="inline-math">$X=G(U)$</span>, we have
+                            <span class="display-math">$$ \begin{align*}
+                                \prob(X\leq x) = \prob(G(U)\leq x) = \prob(U\leq F(x)) = F(x)
+                            \end{align*} $$</span>
+                            so <span class="inline-math">$X$</span> has a distribution function <span class="inline-math">$F_X$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Monte Carlo estimator)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Monte-Carlo-estimator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X_1, \ldots, X_n$</span> be iid samples of <span class="inline-math">$X \sim F$</span>.
+                        </p>
+                        <p>
+                            The <em>Monte Carlo estimator</em> for <span class="inline-math">$\expect g(X)$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                \hat I = \frac{1}{n} \sum_{i=1}^{n} g(X_i).
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$\var(\hat I) = \var(g(X))/n$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                The <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-strong-law-of-large-numbers.html">strong law of large number</a>
+                                says <span class="inline-math">$\hat I \xrightarrow{a.s.} \expect g(X)$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Importance sampling
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Importance-sampling.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> have density <span class="inline-math">$f$</span>, and we wish to estimate <span class="inline-math">$\expect g(X)$</span>.
+                            However <span class="inline-math">$f$</span> is hard to sample.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$\tilde f$</span> be a density which is easy to sample.
+                            Then since
+                            <span class="display-math">$$ \begin{align*}
+                                \expect_{X\sim f}[g(X)] = \expect_{X\sim \tilde f}\left[g(X) \cdot \frac{f(X)}{\tilde f(X)}\right],
+                            \end{align*} $$</span>
+                            we can sample <span class="inline-math">$X_1, X_2, \ldots \sim \tilde f$</span> iid and use the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Monte-Carlo-estimator.html">Monte Carlo estimator</a>
+                            <span class="display-math">$$ \begin{align*}
+                                \hat I_\text{IS} = \frac{1}{n} \sum_{i=1}^{n} g(X_i) \frac{f(X_i)}{\tilde f(X_i)} \xrightarrow{a.s.} \expect_{X\sim f}[g(X)].
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            This works best when <span class="inline-math">$\tilde f \propto fg$</span> approximately, since <span class="inline-math">$\var\hat I_{\text{IS}} = \var_{X\sim \tilde f}(\frac{g(X)f(X)}{\tilde f(X)})$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (rejection sampling)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-rejection-sampling.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X$</span> have a density <span class="inline-math">$f$</span> (which is difficult to sample) and we wish to estimate <span class="inline-math">$\expect g(X)$</span>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$X_1, X_2, \ldots\sim \tilde f$</span> and <span class="inline-math">$U_1, U_2, \ldots\sim U[0,1]$</span> all independent
+                            such that <span class="inline-math">$f(x) \leq M \tilde f(x)$</span>.
+                            Take
+                            <span class="display-math">$$ \begin{align*}
+                                K := \min \sb{i\geq 1}{U_i \geq \frac{f(X_i)}{M \tilde f(X_i)}}, \qquad Y := X_K.
+                            \end{align*} $$</span>
+                            Then <span class="inline-math">$Y \sim f$</span>.
+                        </p>
+                        <blockquote>
+                            <p>
+                                Note <span class="inline-math">$\expect[K] = \frac{\int M \tilde f(x) \d x}{\int f(x) \d x} = M$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Markov chain)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-Markov-chain.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            A sequence <span class="inline-math">$\ouline{X} = (X_n)_{n\geq 0}$</span> of random variables
+                            taking values in a discrete (finite or countably finite) set <span class="inline-math">$I$</span>
+                            is called a <em>Markov chain</em> with <em>state space</em> <span class="inline-math">$I$</span>
+                            if for all <span class="inline-math">$x_0, x_1, \ldots, x_n, x_{n+1}\in I$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \prob(X_{n+1} = x_{n+1} | X_n = x_n, \ldots, X_0 = x_0) = \prob(X_{n+1} = x_{n+1} | X_n = x_n).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            More generally, for a measurable space <span class="inline-math">$\mathcal{X}$</span>,
+                            <span class="inline-math">$\ouline{X}$</span> is a Markov chain taking value in <span class="inline-math">$\mathcal{X}$</span>
+                            if
+                            <span class="display-math">$$ \begin{align*}
+                                \prob(X_{n+1} \in B \mid X_n = x_n, \ldots, X_0 = x_0) = K(x_n, B)
+                            \end{align*} $$</span>
+                            for some function <span class="inline-math">$K$</span> called the <em>Markov kernel</em> such that
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$K(t, \cdot)$</span> is a <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-probability-measure.html">probability measure</a> for all <span class="inline-math">$t\in \mathcal{X}$</span>;
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$t \mapsto K(t, B)$</span> is measurable for all <span class="inline-math">$B\in \mathcal{X}$</span> measurable.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (invariant measure)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Consider a <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-time-homogenous-Markov-chain.html">Markov chain</a> on <span class="inline-math">$I$</span> with a transition matrix <span class="inline-math">$P$</span>.
+                        </p>
+                        <p>
+                            A <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-measure-on-state-space.html">measure</a> <span class="inline-math">$\lambda$</span> on <span class="inline-math">$I$</span> is said to be <em>invariant</em> with respect to <span class="inline-math">$P$</span> if
+                            <span class="display-math">$$ \begin{align*}
+                                \lambda &amp;= \lambda P &amp;&amp;\text{or equivalently} &amp; \lambda_j = \sum_{i\in I} \lambda_i P(i,j).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            More generally, for a Markov kernel <span class="inline-math">$K$</span>,
+                            a <a href="/tripos-notes/Lectures/II/Michaelmas/Probability-and-Measure-PM/Notes/Definition-measure-space.html">measure</a> <span class="inline-math">$λ$</span> is invariant if
+                            <span class="display-math">$$ \begin{align*}
+                                λ(B) = \int_{\mathcal{X}} K(t, B) \,λ(\d t).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            If <span class="inline-math">$λ$</span> has a density <span class="inline-math">$f$</span> and <span class="inline-math">$K(t,\cdot )$</span> has a density <span class="inline-math">$k(t,\cdot )$</span>, then
+                            <span class="display-math">$$ \begin{align*}
+                                f(x) = \int_{\mathcal{X}} k(t,x) f(t) \d t.
+                            \end{align*} $$</span>
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                <em>Invariant distribution</em> can be defined the same way.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Gibbs sampling)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-Gibbs-sampling.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            To generate samples from a multivariate distribution <span class="inline-math">$(X,Y)$</span> with joint density <span class="inline-math">$f_{XY}$</span>,
+                            let <span class="inline-math">$f_{X\mid Y}$</span> and <span class="inline-math">$f_{Y\mid X}$</span> be the conditional densities.
+                        </p>
+                        <p>
+                            Given an initial state <span class="inline-math">$(X_1, Y_1)$</span>, form a Markov chain <span class="inline-math">$(X_n, Y_n)_{n\geq 1}$</span> by
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                sampling <span class="inline-math">$X_{n+1}\sim f_{X\mid Y}(Y_n)$</span>; then
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                sampling <span class="inline-math">$Y_{n+1} \sim f_{Y\mid X}(X_{n+1})$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            Therefore the Markov density is
+                            <span class="display-math">$$ \begin{align*}
+                                k((x, y), (x&#x27;,y&#x27;)) = f_{Y\mid X}(y&#x27;\mid x&#x27;) f_{X\mid Y}(x&#x27;\mid y)
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            Then <span class="inline-math">$f_{XY}$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant distribution</a> of <span class="inline-math">$(X_n, Y_n)_{n\geq 1}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Gibbs-sampling.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                This is efficient when <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> are approximately independent.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Metropolis-Hastings)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-Metropolis-Hastings.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            We wish to sample <span class="inline-math">$X$</span> with a density <span class="inline-math">$f$</span> in <span class="inline-math">$\mathcal{X}$</span>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$q(t,s)$</span> be a Markov kernel density in <span class="inline-math">$\mathcal{X}$</span> (which is easy to compute),
+                            called the <em>proposal kernel density</em>.
+                            Given a initial state <span class="inline-math">$X_0\in \mathcal{X}$</span>,
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                draw a proposal <span class="inline-math">$S_n\sim q(X_n, \cdot)$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                take
+                                <span class="display-math">$$ \begin{align*}
+                                X_{n+1} := \begin{cases}
+                                    S_n, &amp;\text{if $A_n=1$}, \\
+                                    X_n, &amp;\text{if $A_n = 0$}
+                                \end{cases}
+                                \end{align*} $$</span>
+                                where <span class="inline-math">$A_n \sim{}$</span><a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Bernoulli-distribution.html"><span class="inline-math">$\op{Bern}$</span></a><span class="inline-math">$(a(X_n, S_n))$</span> and <span class="inline-math">$a$</span> is the <em>acceptance probability</em>
+                                <span class="display-math">$$ \begin{align*}
+                                a(t,s) = \min\left\{1, \frac{f(s) q(s,t)}{f(t) q(t,s)}\right\}.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            If <span class="inline-math">$f(t) &gt; 0$</span> and <span class="inline-math">$q(t,s) &gt; 0$</span> for all <span class="inline-math">$t,s$</span>,
+                            then <span class="inline-math">$f$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant distribution</a> of <span class="inline-math">$(X_n)_{n\geq 0}$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Metropolis-Hastings.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Non-parametric inference
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Non-parametric-inference.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (jackknife estimator)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-jackknife-estimator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span>.
+                            Let <span class="inline-math">$T_n := T(X_1, \ldots, X_n)$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a> of <span class="inline-math">$θ$</span>,
+                            and write <span class="inline-math">$T_{(-j)} := T(X_1, \ldots, X_{j-1}, X_{j+1}, \ldots, X_n)$</span>.
+                        </p>
+                        <p>
+                            The <em>jackknife bias estimate</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                \hat B_n := (n-1)\left(\frac{1}{n} \sum_{j=1}^{n} T_{(-j)} - T_n\right)
+                            \end{align*} $$</span>
+                            and the <em>jackknife estimator</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                \tilde T_{\text{JACK}} := T_n - \hat B_n = nT_n - \frac{n-1}{n} \sum_{j=1}^{n} T_{(-j)}.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (bias of jackknife estimator)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-bias-of-jackknife-estimator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$T_1(X_1), T_2(X_1, X_2), \ldots$</span> be a sequence of estimators of <span class="inline-math">$θ$</span>
+                            based on iid sample <span class="inline-math">$X_1, X_2, \ldots$</span> of <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            If the bias of <span class="inline-math">$T_n$</span> follows
+                            <span class="display-math">$$ \begin{align*}
+                                \expect_θ[T_n] - θ = \frac{a}{n} + \frac{b}{n^2} + O\left(\frac{1}{n^3}\right),
+                            \end{align*} $$</span>
+                            then the bias of the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-jackknife-estimator.html">jackknife estimator</a> <span class="inline-math">$\tilde T_\text{JACK}$</span> follows
+                            <span class="display-math">$$ \begin{align*}
+                                \expect_θ[\tilde T_{\text{JACK}}] - θ = O\left(\frac{1}{n^2}\right).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-bias-of-jackknife-estimator.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$θ = g(\expect[X])$</span> for some <span class="inline-math">$g: \R^p \to \R$</span> is a smooth,
+                                then <span class="inline-math">$T_n(X_1, \ldots, X_n) = g(\overline{X_n})$</span> satisfies the hypothesis.
+                                (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-bias-of-jackknife-estimator.html">Informal derivation</a>)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (empirical distribution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-empirical-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X_1, \ldots, X_n$</span> be iid copies of <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            The <em>empirical distribution</em> <span class="inline-math">$\mathbb{P}_n$</span> is the
+                            random discrete distribution that puts a mass of <span class="inline-math">$1/n$</span> at each <span class="inline-math">$X_i$</span>:
+                            <span class="display-math">$$ \begin{align*}
+                                \mathbb{P}_n(A) = \frac{1}{n} \sum_{i=1}^{n} \mathbb{1}_A(X_i).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            A sample <span class="inline-math">$X_1^\ast, \ldots, X_n^\ast\mid X_1, \ldots, X_n \sim \mathbb{P}_n$</span> iid
+                            is known as a <em>bootstrap resample</em>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (quantile function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-quantile-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$F:\R\to [0,1]$</span> be a <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-distribution-function.html">distribution function</a>.
+                            The <em>quantile function</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                F\inv: (0,1)&amp;\to \R \\
+                                p &amp;\mapsto \inf \sb{t\in \R}{F(t)\geq p}.
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                <span class="inline-math">$F\inv(p) \leq t$</span> iff <span class="inline-math">$p\leq F(t)$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$U\sim U[0,1]$</span>, then <span class="inline-math">$F\inv(U) \sim F$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$F, F_1, F_2, \ldots$</span> are distribution functions,
+                                <span class="inline-math">$F$</span> is continuous and strictly increasing,
+                                and <span class="inline-math">$F_n(t)\to F(t)$</span> for all <span class="inline-math">$t\in \R$</span>,
+                                then <span class="inline-math">$F_n\inv(p) \to F\inv(p)$</span> for all <span class="inline-math">$p\in (0,1)$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Glivenko-Cantelli, empirical distribution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Glivenko-Cantelli-empirical-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$X\in \R$</span>, and let <span class="inline-math">$F$</span> be the distribution functions of <span class="inline-math">$X$</span>.
+                            For iid samples <span class="inline-math">$X_1, \ldots, X_n$</span> of <span class="inline-math">$X$</span>,
+                            let <span class="inline-math">$\hat F_n$</span> be the distribution function of the empirical distribution.
+                        </p>
+                        <p>
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \sup_{t\in \R} |\hat F_n(t) - F_n(t)| \xrightarrow{a.s.} 0.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Glivenko-Cantelli-for-continous-F.html">Proof for a continuous <span class="inline-math">$F$</span></a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Kolmogorov-Smirnov, empirical distribution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Kolmogorov-Smirnov-empirical-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Glivenko-Cantelli-empirical-distribution.html">Context</a>)
+                            If <span class="inline-math">$F$</span> is continuous, then
+                            <span class="display-math">$$ \begin{align*}
+                                \sqrt{n} \sup_{t\in \R} |\hat F_n(t) - F(t)| \xrightarrow{d} K
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$K$</span> is the <em>Kolmogorov distribution</em> (a continuous distribution).
+                        </p>
+                        <blockquote>
+                            <p>
+                                Note <span class="inline-math">$\sup_{t\in \R} |\hat F_n(t) - F(t)|$</span> is identical for any continuous <span class="inline-math">$F$</span>:
+                                <span class="display-math">$$ \begin{align*}
+                                    \sup_{t\in \R}|\hat F_n(t) - F(t)| ={}&amp; \sup_{p\in (0,1)} |\hat F_n(F\inv(p)) - F(F\inv(p))| \\
+                                    ={}&amp; \sup_{p\in (0,1)} \left|\frac{1}{n} \sum_{i=1}^{n} \mathbb{1}_{\{X_i\ast \leq F\inv(p)\}} - p\right| \\
+                                    ={}&amp; \sup_{p\in (0,1)} \left|\frac{1}{n} \sum_{i=1}^{n} \mathbb{1}_{\set{F(X_i) \leq p}} - p\right| \\
+                                    \stackrel{(d)}={}&amp; \sup_{p\in (0,1)}\left|\frac{1}{n} \sum_{i=1}^{n} \mathbb{1}_{\set{U_i \leq p}} - p\right| \tag{*}
+                                \end{align*} $$</span>
+                                since <span class="inline-math">$F(X_i)\sim U[0,1]$</span> iid.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                The <em>Kolmogorov-Smirnov <span class="inline-math">$(1-α)$</span>-confidence band</em> is
+                                <span class="display-math">$$ \begin{align*}
+                                    \hat C_n = \sb{\text{distribution function }G}{\hat F_n(t) - \frac{δ_n}{\sqrt{n}} \leq G(t) \leq \hat F_n(t) + \frac{δ_n}{\sqrt{n}} \; \forall t\in \R}
+                                \end{align*} $$</span>
+                                where <span class="inline-math">$δ_n$</span> is the upper <span class="inline-math">$α$</span> quantile of <span class="inline-math">$(*)$</span>.
+                                Alternatively, if we set <span class="inline-math">$δ_n$</span> to be the upper <span class="inline-math">$α$</span> quantile of <span class="inline-math">$K$</span>,
+                                then <span class="inline-math">$\hat C_n$</span> is an asymptotic <span class="inline-math">$(1-α)$</span>-confidence band.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (bootstrap confidence interval)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-bootstrap-confidence-interval.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span>,
+                            and let <span class="inline-math">$\hat θ_n = T(X_1, \ldots, X_n)$</span>
+                            be an estimator for an unknown parameter <span class="inline-math">$θ\in \R$</span>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$X_1^\ast, \ldots, X_n^\ast$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-empirical-distribution.html">bootstrap resample</a> of <span class="inline-math">$X_1, \ldots, X_n$</span>.
+                            Letting <span class="inline-math">$\hat F_n$</span> be the random distribution function of <span class="inline-math">$\sqrt{n}(T(X_1^\ast, \ldots, X_n^\ast) - \hat θ_n)$</span>,
+                            define
+                            <span class="display-math">$$ \begin{align*}
+                                \hat C_n = \sb{θ\in \R}{\hat l_n \leq \sqrt{n}(\hat θ_n - θ) \leq \hat u_n}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\hat l_n = \hat F_n\inv(α/2)$</span> and <span class="inline-math">$\hat u_n = \hat F_n(1 - α/2)$</span> are random <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-quantile-function.html">quantiles</a>.
+                        </p>
+                        <p>
+                            Assume
+                        </p>
+                        <ol start="1">
+                        <li>
+                            <p>
+                                <span class="inline-math">$\sqrt{n}(\hat θ_n - θ) \xrightarrow{d} F$</span> for some distribution <span class="inline-math">$F$</span>; and
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                <span class="inline-math">$\sup_{t\in \R}|\hat F_n(t) - F(t)| \xrightarrow{a.s.} 0$</span>.
+                            </p>
+                            
+                        </li>
+                        </ol>
+                        <p>
+                            Then <span class="inline-math">$\hat C_n$</span> is an asymptotic <span class="inline-math">$(1-α)$</span>-<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-confidence-interval-region.html">confidence interval</a>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Berry-Esseen)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Berry-Esseen.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            (Non-examinable)
+                        </p>
+                        <p>
+                            Suppose <span class="inline-math">$Z_1, Z_2, \ldots$</span> are iid with mean <span class="inline-math">$μ$</span>
+                            and variance <span class="inline-math">$σ^2$</span>.
+                            Then for all <span class="inline-math">$δ\in (0,1]$</span>,
+                            <span class="display-math">$$ \begin{align*}
+                                \sup_{t\in \R} |\prob(\sqrt{n}(\overline{Z_n} - μ) \leq t) - Φ(t/σ)| \leq \frac{8 \expect[|Z_1 - μ|^{2+δ}]}{σ^{2+δ} n^{δ/2}}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$Φ$</span> is the distribution function of <span class="inline-math">$N(0,1)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (convergence of bootstrap distribution for the mean)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-convergence-of-bootstrap-distribution-for-the-mean.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X\in \R$</span>.
+                            Suppose <span class="inline-math">$μ = \expect[X]$</span>, <span class="inline-math">$σ^2 = \var[X_1] &gt; 0$</span>
+                            and <span class="inline-math">$\expect[|X - θ|^{2 + δ}] &lt; \infty$</span> for some <span class="inline-math">$δ&gt;0$</span>.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                \sup_{t\in \R} |\hat F_n(t) - Φ(t/σ)| \xrightarrow{a.s.} 0
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$\hat F_n$</span> is defined <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-bootstrap-confidence-interval.html">here</a> with <span class="inline-math">$θ = \expect[X]$</span> and <span class="inline-math">$\hat θ_n = \overline{X_n}$</span>,
+                            and <span class="inline-math">$Φ$</span> is the distribution function of <span class="inline-math">$N(0,1)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-convergence-of-bootstrap-distribution-for-the-mean.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>

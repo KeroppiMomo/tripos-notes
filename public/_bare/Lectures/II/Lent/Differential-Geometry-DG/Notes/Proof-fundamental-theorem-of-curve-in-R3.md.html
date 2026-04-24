@@ -1,0 +1,43 @@
+<p>
+    By ODE theory,
+    the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-Frenet-formulae.html">linear system</a>
+    <span class="display-math">$$ \begin{align*}
+        \pmat{t&#x27;(s) \\ n&#x27;(s) \\ b&#x27;(s)} ={}&amp; \underbrace{\pmat{&amp; k(s) &amp; \\ -k(s) &amp; &amp; -τ(s) \\ &amp;τ(s)&amp;}}_{Ω(s)}\pmat{t(s) \\ n(s) \\ b(s)} \\
+        \pmat{t(s_0) \\ n(s_0) \\ b(s_0)} ={}&amp; \pmat{t_0 \\ n_0 \\ b_0}
+    \end{align*} \tag{*}$$</span>
+    has a unique solution on <span class="inline-math">$I$</span>.
+</p>
+<blockquote>
+    <p>
+        We claim <span class="inline-math">$(t(s), n(s), b(s))$</span> is an orthonormal basis for all <span class="inline-math">$s$</span>.
+        Form the matrix <span class="inline-math">$F = \pmat{t^T \\ n^T \\ b^T}$</span>,
+        so <span class="inline-math">$G := F F^T = \pmat{\langle t, t\rangle &amp; \langle t, n\rangle &amp; \langle t, b\rangle \\ \langle n,t\rangle &amp; \langle n,n\rangle &amp; \langle n, b\rangle \\ \langle b, t\rangle &amp; \langle b, n\rangle &amp; \langle b,b\rangle}$</span>.
+        Since <span class="inline-math">$F&#x27; = ΩF$</span>, we have
+        <span class="display-math">$$ \begin{align*}
+            \begin{cases}
+                G&#x27; = F&#x27;F^T + F(F&#x27;)^T = ΩFF^T + FF^T Ω^T = ΩFF^T - FF^TΩ = ΩG - GΩ \\
+                G(s_0) = I
+            \end{cases}
+        \end{align*} $$</span>
+        as <span class="inline-math">$Ω^T = -Ω$</span> and <span class="inline-math">$(t_0, n_0, b_0)$</span> is an orthonormal basis.
+    </p>
+    <p>
+        Note <span class="inline-math">$G(s) = I$</span> constant is a solution, so by uniqueness,
+        <span class="inline-math">$(t, n, b)$</span> is an orthonormal basis for all <span class="inline-math">$s$</span>.
+    </p>
+    
+</blockquote>
+<p>
+    Then take
+    <span class="display-math">$$ \begin{align*}
+        α(s) := α_0 + \int_{s_0}^{s} t(\tilde s) \d \tilde s.
+    \end{align*} $$</span>
+</p>
+<p>
+    Let <span class="inline-math">$\tilde α$</span> be another curve with curvature <span class="inline-math">$k$</span> and torsion <span class="inline-math">$τ$</span>.
+    Take <span class="inline-math">$R\in \op{SO}(3)$</span> such that <span class="inline-math">$R\pmat{t(s_0) \\ n(s_0) \\ b(s_0)} = \pmat{\tilde t(s_0) \\ \tilde n(s_0) \\ \tilde b(s_0)}$</span>
+    and <span class="inline-math">$v = \tilde α(s_0) - α(s_0)$</span>.
+    Then <span class="inline-math">$R\pmat{t \\ n \\ b}$</span> and <span class="inline-math">$\pmat{\tilde t \\ \tilde n \\ \tilde b}$</span> solve
+    the same system <span class="inline-math">$(*)$</span>, so equal by uniqueness.
+    <span class="inline-math">$\tilde α$</span> and <span class="inline-math">$R \circ α + v$</span> are therefore equal.
+</p>

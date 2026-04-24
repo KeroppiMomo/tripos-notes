@@ -1,0 +1,48 @@
+<p>
+    Let <span class="inline-math">$α$</span> be parametrised by arc length, so <span class="inline-math">$α: [0,l]\to \R^2$</span> with <span class="inline-math">$l = \op{length}(α)$</span>.
+    Write <span class="inline-math">$α(s) = (x(s), y(s))$</span>.
+</p>
+<p>
+    By translating,
+    WLOG assume <span class="inline-math">$\int_{0}^{l} x(s) \d s = 0 = \int_{0}^{l} y(s) \d s$</span>.
+</p>
+<p>
+    <span class="display-math">$$ \begin{align*}
+        2\op{area}(A) ={}&amp; \iint_{A} \pdd{x}x + \pdd{y}y  \d x\d y \\
+        ={}&amp; \int_0^l \langle (x,y), n\rangle \d s &amp;&amp;\text{divergence theorem}\\
+        \leq{}&amp; \int_0^l \|(x,y)\| \d s \\
+        \leq{}&amp; \left(\int_0^l (x^2 + y^2) \d s \cdot \int_{0}^{l} 1 \d s\right)^{1/2} &amp;&amp;\text{Cauchy-Schwarz} \\
+        \leq{}&amp; \sqrt{l} \sqrt{\frac{l^2}{4π^2} \int_{0}^{l} \underbrace{(\dot x^2 + \dot y^2)}_{\|\dot α(s)\|^2 = 1} \d s} &amp;&amp;(*) \\
+        ={}&amp; \frac{l^2}{2π^2}.
+    \end{align*} $$</span>
+    (<a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Theorem-divergence-theorem.html">Divergence theorem</a>, <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Cauchy-Schwarz.html">Cauchy-Schwarz</a>)
+    If equality holds, then Cauchy-Schwarz implies <span class="inline-math">$x^2 + y^2$</span> is constant,
+    so <span class="inline-math">$α$</span> is a constant.
+</p>
+<p>
+    <span class="inline-math">$(*)$</span> is due to Wirtinger's inequality:
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Wirtinger's inequality)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Lemma-Wirtinger-s-inequality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$f: \R\to \C$</span> be differentiable
+                and periodic with period <span class="inline-math">$L$</span>.
+            </p>
+            <p>
+                If <span class="inline-math">$\int_{0}^{L} f(x) \d x = 0$</span>, then
+                <span class="display-math">$$ \begin{align*}
+                    \int_{0}^{L} |f|^2 \d x \leq \frac{L^2}{4π^2} \int_{0}^{L} |f&#x27;|^2 \d x.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-Wirtinger-s-inequality.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

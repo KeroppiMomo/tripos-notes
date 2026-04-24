@@ -1,0 +1,210 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Kullback-Leibler divergence)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Kullback-Leibler-divergence.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$P_{θ_0}, P_θ$</span> be two laws on <span class="inline-math">$\mathcal{X}$</span> with densities <span class="inline-math">$f(\cdot , θ_0)$</span> and <span class="inline-math">$f(\cdot , θ)$</span>.
+                Suppose <span class="inline-math">$\expect_{θ_0}|\log(X, θ&#x27;)| &lt; \infty$</span> with <span class="inline-math">$X \sim P_{θ_0}$</span> for <span class="inline-math">$θ&#x27; = θ_0$</span> and <span class="inline-math">$θ$</span>.
+            </p>
+            <p>
+                The <em>Kullback-Leibler divergence</em> is
+                <span class="display-math">$$ \begin{align*}
+                    \op{KL}(P_{θ_0}, P_θ) := l(θ_0) - l(θ) = \int_{\mathcal{X}} f(x, θ_0) \log \frac{f(x, θ_0)}{f(x,θ)} \d x
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    l(θ&#x27;) := \expect_{θ_0}[\log f(X, θ&#x27;)] \qquad (X \sim P_{θ_0}).
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (true parameter maximises expectation of log likelihood)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-true-parameter-maximises-expectation-of-log-likelihood.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a statistical model,
+                with <span class="inline-math">$X \sim f(\cdot , θ_0)$</span>.
+            </p>
+            <p>
+                Suppose <span class="inline-math">$\expect_{θ_0}|\log (X, θ)|&lt;\infty$</span> for all <span class="inline-math">$θ\in Θ$</span>.
+                Then the true parameter <span class="inline-math">$θ_0$</span> maximises
+                <span class="display-math">$$ \begin{align*}
+                    l(θ) := \expect_{θ_0}\log(X, θ)
+                \end{align*} $$</span>
+                and hence minimises <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Kullback-Leibler-divergence.html"><span class="inline-math">$\op{KL}(P_{θ_0}, P_θ)$</span></a>.
+            </p>
+            <p>
+                Moreover if <span class="inline-math">$θ$</span> is <em>identifiable</em> (i.e. <span class="inline-math">$f(\cdot, θ) = f(\cdot, θ&#x27;) \iff θ = θ&#x27;$</span>),
+                then <span class="inline-math">$θ_0$</span> is the unique maximiser of <span class="inline-math">$l$</span> and hence the unique minimiser of <span class="inline-math">$\op{KL}(P_{θ_0}, P_θ)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-true-parameter-maximises-expectation-of-log-likelihood.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (score function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-score-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                <span class="inline-math">$Θ\subseteq \R^d$</span> and
+                <span class="inline-math">$X_1, \ldots, X_n$</span> be iid copies of <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                The <em>score function</em> is a random vector
+                <span class="display-math">$$ \begin{align*}
+                    S_n(θ) := \pdd{θ} l_n(θ) ={}&amp; \sum_{i=1}^{n} \pdd{θ} \log f(X_i, θ), \qquad θ \in \op{int}(Θ)
+                \end{align*} $$</span>
+                where <span class="inline-math">$l_n(θ) := \sum_{i=1}^{n} \log f(X_i, θ)$</span> is the log-likelihood function.
+            </p>
+            <blockquote>
+                <p>
+                    The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">maximum likelihood estimator</a> is a zero of <span class="inline-math">$S_n$</span>.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID mean -->
+                <p id="^mean">
+                    Under regularity conditions (namely <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span>),
+                    <span class="display-math">$$ \begin{align*}
+                        \expect_θ S_n(θ) = 0.
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-mean-of-score.html">Proof</a>)
+                </p>
+                
+                <!-- END BLOCK ID mean -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (Fisher information)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                <span class="inline-math">$Θ\subseteq \R^d$</span> and <span class="inline-math">$X\sim f(\cdot, θ)$</span> be a random variable.
+            </p>
+            <p>
+                The <em>Fisher information matrix</em> is
+                <span class="display-math">$$ \begin{align*}
+                    I(θ) := \expect_θ\left[\pdd{θ}\log f(X, θ) \; \pdd{θ^T} \log f(X, θ)\right] = \expect_θ[S(θ) \; S(θ)^T], \qquad θ\in \op{int}(Θ)
+                \end{align*} $$</span>
+                where <span class="inline-math">$S(θ) = \pdd{θ}\log f(X, θ)$</span> is the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-score-function.html">score</a>.
+            </p>
+            <blockquote>
+                <!-- BEGIN BLOCK ID variance -->
+                <p id="^variance">
+                    Under regularity conditions, (if <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span> then)
+                    <span class="display-math">$$ \begin{align*}
+                        I(θ) = \var(S(θ))
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Fisher-information-as-variance-of-score.html">Derivation</a>)
+                    and (if <span class="inline-math">$\int_{\mathcal{X}} \pdfxd{f}{θ_i}{θ_j} \d x = \pdxd{θ_i}{θ_j} \int_{\mathcal{X}} f \d x$</span> then)
+                    <span class="display-math">$$ \begin{align*}
+                        I(θ) = -\expect_θ\left[\pdd{θ} \pdd{θ^T} \log f(X, θ)\right].
+                    \end{align*} $$</span>
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Fisher-information-in-terms-of-second-partials.html">Derivation</a>)
+                </p>
+                
+                <!-- END BLOCK ID variance -->
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$X = (X_1, \ldots, X_n)$</span> and <span class="inline-math">$X_i \sim f(\cdot, θ)$</span> are iid, then
+                    under regularity conditions (if <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span> then)
+                    <span class="display-math">$$ \begin{align*}
+                        I_n(θ) := \expect_θ[S_n(θ) S_n(θ)^T] = n \, I(θ)
+                    \end{align*} $$</span>
+                    where <span class="inline-math">$S_n(θ) = \sum_{i=1}^{n} \pdd{θ} \log f(X_i, θ)$</span>.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-tensorisation-of-Fisher-information.html">Derivation</a>)
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Cramér–Rao)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Cramer-Rao.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                <span class="inline-math">$Θ\subseteq \R^d$</span>,
+                <span class="inline-math">$X_1, \ldots, X_n$</span> be iid random variables,
+                and <span class="inline-math">$\tilde Φ = \tilde Φ(X_1, \ldots, X_n)$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a>
+                of <span class="inline-math">$Φ = Φ(θ)\in \R^k$</span>, a differentiable function <span class="inline-math">$Θ\to \R^k$</span>.
+            </p>
+            <p>
+                Under regularity conditions,
+                <span class="display-math">$$ \begin{align*}
+                    \var_θ(\tilde Φ) \geq \frac{1}{n} \pdfd{\expect_θ[\tilde Φ]}{θ}(θ)^T \, I(θ)\inv \, \pdfd{\expect_θ[\tilde Φ]}{θ}(θ).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                In particular, if <span class="inline-math">$\tilde Φ$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-bias-of-estimator.html">unbiased</a>, then
+                <span class="display-math">$$ \begin{align*}
+                    \var_θ(\tilde Φ) \geq \frac{1}{n} \pdfd{Φ}{θ}(θ)^T \, I(θ)\inv \, \pdfd{Φ}{θ}(θ).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Cramer-Rao.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    However, non-regular estimators can have better asymptotic variance.
+                    For example, for <span class="inline-math">$\hat θ_n$</span> the maximum likelihood estimator in a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regular</a> parameter model,
+                    define the <em>Hodge's estimator</em>
+                    <span class="display-math">$$ \begin{align*}
+                        \tilde θ_n = \begin{cases}
+                            \hat θ_n, &amp;|\hat θ_n| \geq n^{-1/4}, \\
+                            \hat θ_n, &amp;|\hat θ_n|&lt;n^{-1/4}.
+                        \end{cases}
+                    \end{align*} $$</span>
+                </p>
+                <ul>
+                <li>
+                    <p>
+                        For <span class="inline-math">$θ_0 \neq 0$</span>, <span class="inline-math">$\tilde θ_n - \hat θ_n \xrightarrow{p} 0$</span> so <span class="inline-math">$\sqrt{n}(\tilde θ_n - θ_0) \xrightarrow{d} N(0, I\inv(θ_0))$</span>.
+                    </p>
+                    
+                </li><li>
+                    <p>
+                        For <span class="inline-math">$θ_0 = 0$</span>, <span class="inline-math">$\tilde θ_n \xrightarrow{d} δ_0$</span>.
+                    </p>
+                    
+                </li>
+                </ul>
+                <p>
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Hodge-s-estimator.html">Derivation</a>)
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>

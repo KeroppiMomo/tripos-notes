@@ -1,0 +1,38 @@
+<p>
+    To generate samples from a multivariate distribution <span class="inline-math">$(X,Y)$</span> with joint density <span class="inline-math">$f_{XY}$</span>,
+    let <span class="inline-math">$f_{X\mid Y}$</span> and <span class="inline-math">$f_{Y\mid X}$</span> be the conditional densities.
+</p>
+<p>
+    Given an initial state <span class="inline-math">$(X_1, Y_1)$</span>, form a Markov chain <span class="inline-math">$(X_n, Y_n)_{n\geq 1}$</span> by
+</p>
+<ol start="1">
+<li>
+    <p>
+        sampling <span class="inline-math">$X_{n+1}\sim f_{X\mid Y}(Y_n)$</span>; then
+    </p>
+    
+</li><li>
+    <p>
+        sampling <span class="inline-math">$Y_{n+1} \sim f_{Y\mid X}(X_{n+1})$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    Therefore the Markov density is
+    <span class="display-math">$$ \begin{align*}
+        k((x, y), (x&#x27;,y&#x27;)) = f_{Y\mid X}(y&#x27;\mid x&#x27;) f_{X\mid Y}(x&#x27;\mid y)
+    \end{align*} $$</span>
+</p>
+<p>
+    Then <span class="inline-math">$f_{XY}$</span> is an <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant distribution</a> of <span class="inline-math">$(X_n, Y_n)_{n\geq 1}$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Gibbs-sampling.html">Proof</a>
+</p>
+<blockquote>
+    <p>
+        This is efficient when <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> are approximately independent.
+    </p>
+    
+</blockquote>

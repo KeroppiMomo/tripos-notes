@@ -1,0 +1,25 @@
+<p>
+    Let <span class="inline-math">$Z_0 \sim N(0, I(θ_0)\inv)$</span> and let <span class="inline-math">$Φ_0$</span> be the cumulative distribution function of <span class="inline-math">$|Z_0|$</span>.
+</p>
+<p>
+    We claim <span class="inline-math">$R_n \xrightarrow{a.s.} Φ_0\inv(1-α)$</span>.
+    Since
+    <span class="display-math">$$ \begin{align*}
+        Φ_0(R_n) ={}&amp; \prob[|Z_0| \leq R_n] = \hat ϕ_n(C_n),
+    \end{align*} $$</span>
+    <span class="inline-math">$\hat ϕ_n(C_n) - π_n(C_n) \xrightarrow{a.s.} 0$</span> and <span class="inline-math">$π_n(C_n) = 1-α$</span>,
+    we get <span class="inline-math">$Φ_0(R_n) \xrightarrow{a.s.} 1-α$</span>.
+    Continuous mapping theorem then proves our claim.
+</p>
+<p>
+    Slutsky's lemma then implies
+    <span class="display-math">$$ \begin{align*}
+        \underbrace{\frac{Φ_0\inv(1-α)}{R_n}}_{\xrightarrow{a.s.} 1} \underbrace{\sqrt{n}(\hat θ_n - θ_0)}_{\xrightarrow{d} N(0, I(θ_0)\inv)} \xrightarrow{d}N(0, I(θ_0)\inv)
+    \end{align*} $$</span>
+    and so
+    <span class="display-math">$$ \begin{align*}
+        \prob_{θ_0}[θ_0\in C_n] ={}&amp; \prob_{θ_0}\left[\frac{Φ_0\inv(1-α)}{R_n}\sqrt{n}|\hat θ_n - θ_0| &lt; Φ_0\inv(1 - α)\right] \\
+        \to{}&amp; \prob_{θ_0}[|Z_0| &lt; Φ_0\inv(1-α)] \\
+        ={}&amp; 1-α.
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,26 @@
+<p>
+    Let <span class="inline-math">$(W_i, Z_i)_{i=1}^n$</span> be iid copies of <span class="inline-math">$(W, Z)$</span>, with <span class="inline-math">$W\in \R^m, Z \in \R^n$</span>.
+    Form the matrices <span class="inline-math">$\mathbf{W} = \pmat{W_1^T \\ \vdots \\ W_n^T}, \mathbf{Z} = \pmat{Z_1^T \\ \vdots \\Z_n^T}$</span>.
+</p>
+<p>
+    The <em>sample conditional variance</em> of <span class="inline-math">$W$</span> given <span class="inline-math">$Z$</span> is
+    <span class="display-math">$$ \begin{align*}
+        \hat Ω = \frac{1}{n}((I - P) \mathbf{W})^T ((I - P) \mathbf{W}) = \frac{1}{n}\mathbf{W}^T (I-P) \mathbf{W}
+    \end{align*} $$</span>
+    where <span class="inline-math">$P$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">projection matrix</a> onto the columns space of <span class="inline-math">$\pmat{\v 1 &amp; \mathbf{Z}}$</span>.
+</p>
+<p>
+    The <em>sample partial correlation</em> of <span class="inline-math">$W^{(j)}$</span> and <span class="inline-math">$W^{(k)}$</span> given <span class="inline-math">$Z$</span> is
+    <span class="display-math">$$ \begin{align*}
+        \hat ρ_{W^{(j)}, W^{(k)}\mid Z} = \frac{\hat Ω_{jk}}{\sqrt{\hat Ω_{jj} \hat Ω_{kk}}} = \frac{((I - P)\mathbf{W}^{(j)})^T ((I-P) \mathbf{W}^{(k)})}{\|(I-P)\mathbf{W}^{(j)}\| \|(I - P) \mathbf{W}^{(k)}\|}.
+    \end{align*} $$</span>
+</p>
+<blockquote>
+    <p>
+        If <span class="inline-math">$(W,Z)$</span> is jointly Gaussian,
+        then <span class="inline-math">$\hat Ω$</span> is the maximum likelihood estimator of <span class="inline-math">$\var(W\mid Z)$</span>
+        and <span class="inline-math">$\hat ρ_{W^{(j)}, W^{(k)}\mid Z}$</span> is the maximum likelihood estimator of <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-conditional-independence-partial-correlation.html"><span class="inline-math">$ρ_{W^{(j)},W^{(k)}\mid Z}$</span></a>.
+        (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-sample-conditional-variance-sample-partial-correlation.html">Proof</a>)
+    </p>
+    
+</blockquote>

@@ -1,0 +1,21 @@
+<p>
+    Suppose <span class="inline-math">$\expect[X_1] = μ\in \R^p$</span>,
+    and we wish to estimate <span class="inline-math">$θ = g(μ)$</span> for some <span class="inline-math">$g: \R^p \to \R$</span> smooth.
+</p>
+<p>
+    Consider the estimator
+    <span class="display-math">$$ \begin{align*}
+        \hat θ = T(X_1, \ldots, X_n) = g(\bar X_n).
+    \end{align*} $$</span>
+    Then, by a Taylor expansion,
+    <span class="display-math">$$ \begin{align*}
+        \hat θ_n - θ = g(\bar X_n) - g(μ) \approx ∇g(μ)^T (\bar X_n - μ) + \frac{1}{2}(\bar X_n - μ)^T ∇^2 g(μ) (\tilde X_n - μ).
+    \end{align*} $$</span>
+    Taking expectation,
+    <span class="display-math">$$ \begin{align*}
+        \expect\hat θ_n - θ \approx{}&amp; \frac{1}{2} \expect[\tr((\bar X_n - μ)(\tilde X_n - μ)^T) ∇^2 g(μ)] \\
+        ={}&amp; \frac{1}{2} \tr(\expect[(\tilde X_n - μ)(\tilde X_n-μ)^T] ∇^2 g(μ)) \\
+        ={}&amp; \frac{1}{2} \tr\left(\frac{\var X_1}{n} ∇^2 g(μ)\right) \\
+        ={}&amp; O(1/n).
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,74 @@
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (Stein's lemma, normal random variable)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Lemma-Stein-s-lemma-normal-random-variable.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X \sim{}$</span><a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Normal-distribution.html"><span class="inline-math">$N(μ, σ^2)$</span></a> and <span class="inline-math">$g: \R\to \R$</span> be a bounded differentiable function.
+            </p>
+            <p>
+                If <span class="inline-math">$\expect|g&#x27;(X)|&lt;\infty$</span>, then
+                <span class="display-math">$$ \begin{align*}
+                    \expect[(X - μ) \, g(X)] = σ^2 \expect[g&#x27;(X)].
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Stein-s-lemma-normal-random-variable.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    The operator <span class="inline-math">$\mathcal{A}: g \mapsto (x-μ)g - g&#x27;$</span> is known as a <em>Stein operator</em>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    Expand
+    <span class="display-math">$$ \begin{align*}
+        R(δ^\text{JS}, θ) ={}&amp; \expect_θ\left[\left\|X - θ - \frac{p-2}{\|X\|^2}X\right\|^2\right] \\
+        ={}&amp; \expect_θ[\|X - θ\|^2] + (p-2)^2 \expect_θ\left[\frac{1}{\|X\|^2}\right] - 2(p-2) \expect_θ\left[\frac{X^T(X - θ)}{\|X\|^2}\right].
+    \end{align*} $$</span>
+</p>
+<p>
+    The first term is <span class="inline-math">$p$</span>, since <span class="inline-math">$\|X - θ\|^2\sim χ_p^2$</span>.
+</p>
+<p>
+    We focus on the third term.
+    (Here <span class="inline-math">$X_j$</span> denotes the <span class="inline-math">$j$</span>-th component of the vector <span class="inline-math">$X$</span>.)
+    <span class="display-math">$$ \begin{align*}
+        \expect_θ\left[\frac{X^T(X - θ)}{\|X\|^2}\right] ={}&amp; \sum_{j=1}^{p} \expect_θ\left[(X_j - θ_j)\cdot \frac{X_j}{\|X\|^2}\right] \\
+        ={}&amp; \sum_{j=1}^{p} \expect_θ\left[\pdd{X_j} \frac{X_j}{\|X\|^2}\right] \tag{*}\\
+        ={}&amp; \sum_{j=1}^{p} \expect_θ\left[\frac{\|X\|^2 - 2X_j^2}{\|X\|^4}\right] \\
+        ={}&amp; \expect_θ\left[\frac{p\|X\|^2 - 2\|X\|^2}{\|X\|^4}\right] \\
+        ={}&amp; (p-2)\expect_θ\left[\frac{1}{\|X\|^2}\right]
+    \end{align*} $$</span>
+    so it suffices to justify <span class="inline-math">$(*)$</span>.
+</p>
+<p>
+    Write
+    <span class="display-math">$$ \begin{align*}
+        g_j(x) := \frac{x}{X_1^2 + \ldots + X_{j-1}^2 + x^2 + X_{j+1}^2 + \ldots + X_p^2}
+    \end{align*} $$</span>
+    a random function depending on <span class="inline-math">$X_{(-j)} := (X_1, \ldots, X_{j-1}, X_{j+1}, \ldots, X_p)$</span>.
+    Note unless <span class="inline-math">$X_{(-j)} = 0$</span> (which has probability 0),
+    <span class="inline-math">$g_j$</span> is a bounded differentiable function,
+    and
+    <span class="display-math">$$ \begin{align*}
+        g_j&#x27;(x) = \frac{(\sum_{i\neq j} X_i^2 + x^2) - 2x^2}{(\sum_{i\neq j} X_i^2 + x^2)^2}
+    \end{align*} $$</span>
+    is also a bounded function,
+    so Stein's lemma applies.
+    By the law of total expectation,
+    <span class="display-math">$$ \begin{align*}
+        \expect_θ\left[(X_j - θ_j) g_j(X_j)\right]
+        ={}&amp; \expect_θ[\expect_θ[(X_j - θ_j) g(X_j) \mid X_{(-j)}]] \\
+        ={}&amp; \expect_θ[\expect_θ[g_j&#x27;(X_j)]\mid X_{(-j)}] \\
+        ={}&amp; \expect_θ[g_j&#x27;(X_j)]
+    \end{align*} $$</span>
+    and so <span class="inline-math">$(*)$</span> is valid.
+</p>

@@ -1,0 +1,261 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (curve on manifold, regular, closed, simple)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curve-on-manifold-regular-closed-simple.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-abstract-manifold.html">smooth manifold</a>.
+            </p>
+            <p>
+                A <em>(smooth) curve</em> is a smooth function <span class="inline-math">$α: I\to X$</span>
+                where <span class="inline-math">$I\subseteq \R$</span> is an interval
+                (so <span class="inline-math">$(a,b), [a,b], (a,b], [a,b)$</span>
+                where <span class="inline-math">$a,b$</span> can be <span class="inline-math">$\pm \infty$</span>).
+            </p>
+            <p>
+                We say <span class="inline-math">$α$</span> is <em>regular</em> if <span class="inline-math">$α$</span> is an <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-differential-map-immersion-submersion.html">immersion</a>,
+                i.e. <span class="inline-math">$α&#x27;(t) \neq 0$</span> for all <span class="inline-math">$t\in I$</span>.
+            </p>
+            <p>
+                We say <span class="inline-math">$α$</span> is <em>closed</em> if <span class="inline-math">$I = [a,b]$</span> is a closed interval
+                and <span class="inline-math">$α^{(k)}(a) = α^{(k)}(b)$</span> for all <span class="inline-math">$k=0,1,2,\ldots$</span>.
+            </p>
+            <p>
+                We say <span class="inline-math">$α$</span> is <em>simple</em> if whenever <span class="inline-math">$α(t) = α(t&#x27;)$</span>,
+                <span class="inline-math">$t$</span> and <span class="inline-math">$t&#x27;$</span> are at the endpoints of <span class="inline-math">$I$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (arc length of a curve)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-arc-length-of-a-curve.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\v x(t)$</span> be a curve.
+                For some starting point <span class="inline-math">$t_0$</span>, the arc length <span class="inline-math">$s(t)$</span> is the (signed) distance from <span class="inline-math">$t_0$</span> to <span class="inline-math">$t$</span>,
+                <span class="display-math">$$ s(t) = \int_{t_0}^t |\dv x(t&#x27;)|\,dt&#x27;. $$</span>
+            </p>
+            <blockquote>
+                <p>
+                    The arc length between two points on a curve is independent of the choice of parametrisation. (<a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Proof-arc-length-independent-of-parametrisation.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$\v x$</span> is <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-regular-parametrisation.html">regular</a>,
+                    then <span class="inline-math">$s&#x27;(t) = |\dot{\v x}(t)| &gt; 0$</span>, so <span class="inline-math">$s$</span> is invertible by the <a href="/tripos-notes/Lectures/IA/Lent/Analysis-I-An/Notes/Theorem-inverse-function-theorem-on-R.html">inverse function theorem</a>.
+                    Using <span class="inline-math">$s$</span> to parametrise the curve i.e. <span class="inline-math">$\v x(s)$</span>, the tangent vector has unit norm:
+                    <span class="display-math">$$ \bigg|\dvd xs\bigg| = \frac{|d\v x/dt|}{ds/dt} = 1. $$</span>
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (curvature of a curve)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-curvature-of-a-curve.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\v x(s)$</span> be a parametrisation by the arc length.
+                The curvature is
+                <span class="display-math">$$ \kappa(s) = \bigg|\dvd[2]xs\bigg| = \bigg|\dvd ts\bigg| $$</span>
+                where <span class="inline-math">$\v t = d\v x/ds$</span> is the unit tangent vector.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (principal normal)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-principal-normal.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\v x(s)$</span> be a curve,
+                and suppose <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-curvature-of-a-curve.html"><span class="inline-math">$κ(s)$</span></a><span class="inline-math">${}\neq 0$</span> at some <span class="inline-math">$s$</span>.
+                The principal normal at a point <span class="inline-math">$\v x(s)$</span> is
+                <span class="display-math">$$ \v n = \frac1\kappa\dvd[2]xs = \frac1\kappa\dvd ts. $$</span>
+                <span class="inline-math">$1/\kappa$</span> ensures this is a unit vector.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (osculating plane)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-osculating-plane.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                The plane spanned by <span class="inline-math">$\v t$</span> and <span class="inline-math">$\v n$</span> is called the <em>osculating plane</em>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (binormal)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-binormal.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For curves in <span class="inline-math">$\R^3$</span>, define the binormal as
+                <span class="display-math">$$ \v b = \v t\times\v n. $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (torsion)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-torsion.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For a curve in <span class="inline-math">$\R^3$</span>, the torsion <span class="inline-math">$\tau(s)$</span> is defined as
+                <span class="display-math">$$ \dvd bs = -\tau\v n. $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Derivation-that-change-in-binormal-vector-is-along-normal.html">Derivation that change in b is parallel to n</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Frenet formulae)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-Frenet-formulae.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$α(s)$</span> be a curve parametrised by arc length.
+                Its <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-tangent-vector.html">tangent <span class="inline-math">$t$</span></a>, <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-principal-normal.html">normal <span class="inline-math">$n$</span></a> and <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-binormal.html">binormal <span class="inline-math">$b$</span></a>
+                satisfy the ordinary differential equation
+                (called the Frenet formulae)
+                <span class="display-math">$$ \begin{align*}
+                    \pmat{t&#x27;(s) \\ n&#x27;(s) \\ b&#x27;(s)} = \pmat{&amp; k(s) &amp; \\ -k(s) &amp; &amp; -τ(s) \\ &amp;τ(s)&amp;}\pmat{t(s) \\ n(s) \\ b(s)}
+                \end{align*} $$</span>
+                where <span class="inline-math">$k$</span> is the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-curvature-of-a-curve.html">curvature</a> and <span class="inline-math">$τ$</span> is the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-torsion.html">torsion</a>.
+            </p>
+            <p>
+                The right-handed orthonormal basis <span class="inline-math">$(t, n, b)$</span> is called the <em>Frenet frame</em> associated to <span class="inline-math">$α$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (fundamental theorem of curve in R3)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-fundamental-theorem-of-curve-in-R3.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$I\subseteq  \R$</span> be an interval
+                and <span class="inline-math">$k, τ: I\to \R$</span> be smooth functions.
+                Suppose <span class="inline-math">$k&gt;0$</span>.
+            </p>
+            <p>
+                Given any <span class="inline-math">$s_0\in I$</span>, any <span class="inline-math">$α_0\in \R^3$</span> and any right-handed orthonormal basis <span class="inline-math">$\set{t_0, n_0, b_0}$</span> of <span class="inline-math">$\R^3$</span>,
+                there exists a curve <span class="inline-math">$α: I\to \R^3$</span>
+                such that its curvature is <span class="inline-math">$k$</span>,
+                its torsion is <span class="inline-math">$τ$</span>,
+                <span class="inline-math">$α(s_0) = α_0$</span>, and
+                <span class="inline-math">$\set{t_0, n_0, b_0}$</span> is the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-Frenet-formulae.html">Frenet frame</a> at <span class="inline-math">$s_0$</span>.
+            </p>
+            <p>
+                Moreover, if <span class="inline-math">$\tilde α: I\to \R^3$</span> is another curve
+                with curvature <span class="inline-math">$k$</span> and torsion <span class="inline-math">$τ$</span>,
+                then there exists <span class="inline-math">$R\in{}$</span><a href="/tripos-notes/Lectures/IA/Michaelmas/Groups-Gp/Definition-special-orthogonal-group.html"><span class="inline-math">$\op{SO}(3)$</span></a> and <span class="inline-math">$v\in \R^3$</span>
+                such that <span class="inline-math">$\tilde α = R \circ α + v$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-fundamental-theorem-of-curve-in-R3.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (curvature of plane curve)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-of-plane-curve.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$α: I\to \R^2$</span> be a planar curve, parametrised by arc length.
+                Let <span class="inline-math">$n: I\to \R^2$</span> be a unit normal vector
+                (i.e. orthogonal to <span class="inline-math">$\dot α$</span>) that varies smoothly.
+            </p>
+            <p>
+                The <em>(signed) curvature</em> <span class="inline-math">$k_\text{signed}$</span> is defined that
+                <span class="display-math">$$ \begin{align*}
+                    \ddot α(s) = k_\text{signed}(s) \,n(s).
+                \end{align*} $$</span>
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$|k_\text{signed}|$</span> coincides with the <a href="/tripos-notes/Lectures/IA/Lent/Vector-Calculus-VC/Notes/Definition-curvature-of-a-curve.html">curvature</a> as a curve in <span class="inline-math">$\R^3$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Jordan curve theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-Jordan-curve-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$α: I\to \R^2$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curve-on-manifold-regular-closed-simple.html">simple closed curve</a> in <span class="inline-math">$\R^2$</span>,
+                then there exists <span class="inline-math">$U \subset \R^2$</span>
+                such that <span class="inline-math">$U \cup α(I)$</span>
+                is a compact manifold with boundary,
+                homeomorphic to the unit disc <span class="inline-math">$D^2$</span>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (isoperimetric inequality)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-isoperimetric-inequality.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$α:I\to \R^2$</span> be a simple closed curve in <span class="inline-math">$\R^2$</span>
+                and <span class="inline-math">$A$</span> be the region it <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-Jordan-curve-theorem.html">bounds</a>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \op{length}(α)^2 \leq 4\pi \op{area}(A)
+                \end{align*} $$</span>
+                with equality iff <span class="inline-math">$α$</span> is a circle.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-isoperimetric-inequality.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

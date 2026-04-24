@@ -1,0 +1,45 @@
+<p>
+    Apply Berry-Esseen to <span class="inline-math">$X_1^\ast, \ldots, X_n^\ast \mid X_1, \ldots, X_n\sim \mathbb{P}_n$</span>.
+    We have
+    <span class="display-math">$$ \begin{align*}
+        \expect[X_1^\ast] ={}&amp; \overline{X_n}, \\
+        \var[X_1^\ast] ={}&amp; \hat σ_n^2
+    \end{align*} $$</span>
+    where
+    <span class="display-math">$$ \begin{align*}
+        \hat σ_n^2 := \frac{1}{n}\sum_{i=1}^{n} (X_i - \overline{X_n})^2.
+    \end{align*} $$</span>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \sup_{t\in \R} |\underbrace{\prob[\sqrt{n}(\overline{X_n^\ast} - \overline{X_n}) \leq t \mid X_1, \ldots, X_n]}_{\hat F_n(t)} - Φ(t/\hat σ_n)|
+        &amp;\leq \frac{8\expect[|X_1^\ast - \overline{X_n}|^{2+δ}\mid X_1, \ldots, X_n]}{\hat σ_{n}^{2+δ} n^{δ/2}} \\
+        &amp;= \frac{\frac{8}{n} \sum_{i=1}^{n} |X_i - \overline{X_n}|^{2+δ}}{\hat σ_n^{2+δ } n^{δ/2}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    We want to show RHS <span class="inline-math">$\xrightarrow{a.s.} 0$</span>.
+    Note
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{n}\sum_{i=1}^{n} |X_i - \overline{X_n}|^{2+δ} &amp;\leq \frac{1}{n}\sum_{i=1}^{n} (2\max\{|X_i - θ|, |\overline{X_n}-θ|\})^{2+δ} \\
+        &amp;\leq 2^{2+δ} \cdot \underbrace{\frac{1}{n} \sum_{i=1}^{n} |X_i - θ|^{2+δ}}_{\xrightarrow{a.s.} \expect[|X - θ|^{2+δ}]} + 2^{2+δ} \underbrace{|\overline{X_n} - θ|}_{\xrightarrow{a.s.} 0}
+    \end{align*} $$</span>
+    by the strong law of large numbers.
+    Moreover
+    <span class="display-math">$$ \begin{align*}
+        \hat σ_n^2 = \underbrace{\frac{1}{n}\sum_{i=1}^{n} (X_i - θ)^2}_{\xrightarrow{a.s.} σ^2} + \underbrace{(\overline{X_n} - θ)^2}_{\xrightarrow{a.s.}0} \xrightarrow{a.s.} σ^2.
+    \end{align*} $$</span>
+    Therefore RHS <span class="inline-math">$\xrightarrow{a.s.} 0$</span> since <span class="inline-math">$n^{δ/2}\to \infty$</span>.
+</p>
+<p>
+    Finally since
+    <span class="display-math">$$ \begin{align*}
+        \sup_{t\in \R} |\hat F_n(t) - Φ(t/σ)| \leq \sup_{t\in \R} |\hat F_n(t) - Φ(t/\hat σ_n)| + \underbrace{\sup_{t\in \R}\left|Φ(t/σ) - Φ(t/\hat σ_n)\right|}_{(*)}
+    \end{align*} $$</span>
+    it suffices to show <span class="inline-math">$(*) \xrightarrow{a.s.} 0$</span>.
+    By the mean value theorem, there exists <span class="inline-math">$\tilde σ$</span> such that
+    <span class="display-math">$$ \begin{align*}
+        \sup_{t} |Φ(t/σ) - Φ(t/\hat σ_n)| ={}&amp; \left|\frac{1}{σ} - \frac{1}{\hat σ_n}\right| \sup_{t} |t| |Φ&#x27;(t/\tilde σ)| \\
+        \leq{}&amp; \underbrace{\left|\frac{1}{σ} - \frac{1}{\hat σ_n}\right|}_{\xrightarrow{a.s.} 0} \underbrace{\sup_{\tilde σ&gt;0, t} \frac{|t|^2/|\tilde σ|}{\sqrt{2π}} \exp\left(-\frac{1}{2} \frac{t^2}{\tilde σ^2}\right)}_{&lt;\infty}
+    \end{align*} $$</span>
+    so we are done.
+</p>

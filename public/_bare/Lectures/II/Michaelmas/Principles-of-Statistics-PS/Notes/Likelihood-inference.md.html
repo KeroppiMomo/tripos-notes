@@ -1,0 +1,559 @@
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Maximum likelihood estimator
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Maximum-likelihood-estimator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (maximum likelihood estimator)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The <em>likelihood</em> of <span class="inline-math">$θ$</span> at the observed data <span class="inline-math">$X$</span>
+                            is <span class="inline-math">$L_X: θ \mapsto p(X; θ)$</span>, viewed as a function of <span class="inline-math">$θ$</span>.
+                        </p>
+                        <p>
+                            The <em>maximum likelihood estimator</em> (MLE) of <span class="inline-math">$θ$</span>
+                            is the value of <span class="inline-math">$θ$</span> that maximises <span class="inline-math">$L_X$</span>, i.e.
+                            <span class="display-math">$$ \begin{align*}
+                                \hat θ_{\text{MLE}} = \arg\max_{θ\in Θ} L_X(θ),
+                            \end{align*} $$</span>
+                            which is an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a> for <span class="inline-math">$θ$</span> (a function of <span class="inline-math">$X$</span>).
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                Properties:
+            </p>
+            <ul>
+            <li>
+                <p>
+                    <span class="inline-math">$\hat θ_{\text{MLE}}$</span> is a function of any <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-sufficient-statistic.html">sufficient statistic</a>. (<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Derivation-MLE-is-a-function-of-sufficient-statistic.html">Derivation</a>)
+                </p>
+                
+            </li><li>
+                <p>
+                    Under a bijection <span class="inline-math">$h$</span>, the MLE for <span class="inline-math">$η = h(θ)$</span> is <span class="inline-math">$\hat η_{\text{MLE}} = h(\hat θ_{\text{MLE}})$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Under certain conditions, the MLE is asymptotically normal: <span class="inline-math">$\sqrt{n}(\hat θ_{\text{MLE}} - θ) \xrightarrow{d} N(0, I\inv)$</span>
+                    where <span class="inline-math">$I$</span> is the Fisher information matrix.
+                </p>
+                
+            </li>
+            </ul>
+            <div class="markdown-callout" data-callout="principle">
+                <div class="markdown-callout-title">
+                    <i data-lucide="file-text"></i>
+                    <div class="markdown-callout-title-inner">Likelihood principle</div>
+                </div>
+                <div class="markdown-callout-content">
+                    <p>
+                        All information about <span class="inline-math">$θ$</span>
+                        obtained from an experiment with data <span class="inline-math">$X$</span>
+                        is contained in the likelihood function of <span class="inline-math">$θ$</span> given <span class="inline-math">$X$</span>.
+                    </p>
+                    
+                </div>
+            </div><p>
+                This is stronger than the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Sufficient-statistics.html">sufficiency principle</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Information geometry
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Information-geometry.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Kullback-Leibler divergence)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Kullback-Leibler-divergence.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$P_{θ_0}, P_θ$</span> be two laws on <span class="inline-math">$\mathcal{X}$</span> with densities <span class="inline-math">$f(\cdot , θ_0)$</span> and <span class="inline-math">$f(\cdot , θ)$</span>.
+                            Suppose <span class="inline-math">$\expect_{θ_0}|\log(X, θ&#x27;)| &lt; \infty$</span> with <span class="inline-math">$X \sim P_{θ_0}$</span> for <span class="inline-math">$θ&#x27; = θ_0$</span> and <span class="inline-math">$θ$</span>.
+                        </p>
+                        <p>
+                            The <em>Kullback-Leibler divergence</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                \op{KL}(P_{θ_0}, P_θ) := l(θ_0) - l(θ) = \int_{\mathcal{X}} f(x, θ_0) \log \frac{f(x, θ_0)}{f(x,θ)} \d x
+                            \end{align*} $$</span>
+                            where
+                            <span class="display-math">$$ \begin{align*}
+                                l(θ&#x27;) := \expect_{θ_0}[\log f(X, θ&#x27;)] \qquad (X \sim P_{θ_0}).
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (true parameter maximises expectation of log likelihood)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-true-parameter-maximises-expectation-of-log-likelihood.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a statistical model,
+                            with <span class="inline-math">$X \sim f(\cdot , θ_0)$</span>.
+                        </p>
+                        <p>
+                            Suppose <span class="inline-math">$\expect_{θ_0}|\log (X, θ)|&lt;\infty$</span> for all <span class="inline-math">$θ\in Θ$</span>.
+                            Then the true parameter <span class="inline-math">$θ_0$</span> maximises
+                            <span class="display-math">$$ \begin{align*}
+                                l(θ) := \expect_{θ_0}\log(X, θ)
+                            \end{align*} $$</span>
+                            and hence minimises <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Kullback-Leibler-divergence.html"><span class="inline-math">$\op{KL}(P_{θ_0}, P_θ)$</span></a>.
+                        </p>
+                        <p>
+                            Moreover if <span class="inline-math">$θ$</span> is <em>identifiable</em> (i.e. <span class="inline-math">$f(\cdot, θ) = f(\cdot, θ&#x27;) \iff θ = θ&#x27;$</span>),
+                            then <span class="inline-math">$θ_0$</span> is the unique maximiser of <span class="inline-math">$l$</span> and hence the unique minimiser of <span class="inline-math">$\op{KL}(P_{θ_0}, P_θ)$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-true-parameter-maximises-expectation-of-log-likelihood.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (score function)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-score-function.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                            <span class="inline-math">$Θ\subseteq \R^d$</span> and
+                            <span class="inline-math">$X_1, \ldots, X_n$</span> be iid copies of <span class="inline-math">$X$</span>.
+                        </p>
+                        <p>
+                            The <em>score function</em> is a random vector
+                            <span class="display-math">$$ \begin{align*}
+                                S_n(θ) := \pdd{θ} l_n(θ) ={}&amp; \sum_{i=1}^{n} \pdd{θ} \log f(X_i, θ), \qquad θ \in \op{int}(Θ)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$l_n(θ) := \sum_{i=1}^{n} \log f(X_i, θ)$</span> is the log-likelihood function.
+                        </p>
+                        <blockquote>
+                            <p>
+                                The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">maximum likelihood estimator</a> is a zero of <span class="inline-math">$S_n$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID mean -->
+                            <p id="^mean">
+                                Under regularity conditions (namely <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span>),
+                                <span class="display-math">$$ \begin{align*}
+                                    \expect_θ S_n(θ) = 0.
+                                \end{align*} $$</span>
+                                (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-mean-of-score.html">Proof</a>)
+                            </p>
+                            
+                            <!-- END BLOCK ID mean -->
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (Fisher information)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                            <span class="inline-math">$Θ\subseteq \R^d$</span> and <span class="inline-math">$X\sim f(\cdot, θ)$</span> be a random variable.
+                        </p>
+                        <p>
+                            The <em>Fisher information matrix</em> is
+                            <span class="display-math">$$ \begin{align*}
+                                I(θ) := \expect_θ\left[\pdd{θ}\log f(X, θ) \; \pdd{θ^T} \log f(X, θ)\right] = \expect_θ[S(θ) \; S(θ)^T], \qquad θ\in \op{int}(Θ)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$S(θ) = \pdd{θ}\log f(X, θ)$</span> is the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-score-function.html">score</a>.
+                        </p>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID variance -->
+                            <p id="^variance">
+                                Under regularity conditions, (if <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span> then)
+                                <span class="display-math">$$ \begin{align*}
+                                    I(θ) = \var(S(θ))
+                                \end{align*} $$</span>
+                                (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Fisher-information-as-variance-of-score.html">Derivation</a>)
+                                and (if <span class="inline-math">$\int_{\mathcal{X}} \pdfxd{f}{θ_i}{θ_j} \d x = \pdxd{θ_i}{θ_j} \int_{\mathcal{X}} f \d x$</span> then)
+                                <span class="display-math">$$ \begin{align*}
+                                    I(θ) = -\expect_θ\left[\pdd{θ} \pdd{θ^T} \log f(X, θ)\right].
+                                \end{align*} $$</span>
+                                (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Fisher-information-in-terms-of-second-partials.html">Derivation</a>)
+                            </p>
+                            
+                            <!-- END BLOCK ID variance -->
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$X = (X_1, \ldots, X_n)$</span> and <span class="inline-math">$X_i \sim f(\cdot, θ)$</span> are iid, then
+                                under regularity conditions (if <span class="inline-math">$\int_{\mathcal{X}} \pdfd{f}{θ} \d x = \pdd{θ} \int_{\mathcal{X}} f \d x$</span> then)
+                                <span class="display-math">$$ \begin{align*}
+                                    I_n(θ) := \expect_θ[S_n(θ) S_n(θ)^T] = n \, I(θ)
+                                \end{align*} $$</span>
+                                where <span class="inline-math">$S_n(θ) = \sum_{i=1}^{n} \pdd{θ} \log f(X_i, θ)$</span>.
+                                (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-tensorisation-of-Fisher-information.html">Derivation</a>)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Theorem (Cramér–Rao)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Cramer-Rao.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                            <span class="inline-math">$Θ\subseteq \R^d$</span>,
+                            <span class="inline-math">$X_1, \ldots, X_n$</span> be iid random variables,
+                            and <span class="inline-math">$\tilde Φ = \tilde Φ(X_1, \ldots, X_n)$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a>
+                            of <span class="inline-math">$Φ = Φ(θ)\in \R^k$</span>, a differentiable function <span class="inline-math">$Θ\to \R^k$</span>.
+                        </p>
+                        <p>
+                            Under regularity conditions,
+                            <span class="display-math">$$ \begin{align*}
+                                \var_θ(\tilde Φ) \geq \frac{1}{n} \pdfd{\expect_θ[\tilde Φ]}{θ}(θ)^T \, I(θ)\inv \, \pdfd{\expect_θ[\tilde Φ]}{θ}(θ).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            In particular, if <span class="inline-math">$\tilde Φ$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-bias-of-estimator.html">unbiased</a>, then
+                            <span class="display-math">$$ \begin{align*}
+                                \var_θ(\tilde Φ) \geq \frac{1}{n} \pdfd{Φ}{θ}(θ)^T \, I(θ)\inv \, \pdfd{Φ}{θ}(θ).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Cramer-Rao.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                However, non-regular estimators can have better asymptotic variance.
+                                For example, for <span class="inline-math">$\hat θ_n$</span> the maximum likelihood estimator in a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regular</a> parameter model,
+                                define the <em>Hodge's estimator</em>
+                                <span class="display-math">$$ \begin{align*}
+                                    \tilde θ_n = \begin{cases}
+                                        \hat θ_n, &amp;|\hat θ_n| \geq n^{-1/4}, \\
+                                        \hat θ_n, &amp;|\hat θ_n|&lt;n^{-1/4}.
+                                    \end{cases}
+                                \end{align*} $$</span>
+                            </p>
+                            <ul>
+                            <li>
+                                <p>
+                                    For <span class="inline-math">$θ_0 \neq 0$</span>, <span class="inline-math">$\tilde θ_n - \hat θ_n \xrightarrow{p} 0$</span> so <span class="inline-math">$\sqrt{n}(\tilde θ_n - θ_0) \xrightarrow{d} N(0, I\inv(θ_0))$</span>.
+                                </p>
+                                
+                            </li><li>
+                                <p>
+                                    For <span class="inline-math">$θ_0 = 0$</span>, <span class="inline-math">$\tilde θ_n \xrightarrow{d} δ_0$</span>.
+                                </p>
+                                
+                            </li>
+                            </ul>
+                            <p>
+                                (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-Hodge-s-estimator.html">Derivation</a>)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (consistency of MLE)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-consistency-of-MLE.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a statistical model,
+                with true parameter <span class="inline-math">$θ_0$</span> for <span class="inline-math">$X$</span>.
+                Let <span class="inline-math">$\hat θ_n$</span> be the maximum likelihood estimator based on <span class="inline-math">$X_1, \ldots, X_n$</span> iid copies of <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                Suppose
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$Θ$</span> is compact;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$θ\mapsto f(x, θ)$</span> is continuous as <span class="inline-math">$x\in \mathcal{X}$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$f(x,θ) &gt; 0$</span> for all <span class="inline-math">$x\in \mathcal{X}, θ\in Θ$</span>;
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\expect \sup_{θ\in Θ}|\log f(X, θ)| &lt; \infty$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    identifiability: <span class="inline-math">$f(\cdot, θ) = f(\cdot, θ&#x27;)\iff θ = θ&#x27;$</span>;
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Then the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-maximum-likelihood-estimator.html">maximum likelihood estimator</a> <span class="inline-math">$\hat θ_n$</span> exists and is <em>consistent</em>, i.e.
+                <span class="display-math">$$ \begin{align*}
+                    \hat θ_n \xrightarrow{p} θ_0 \qquad \text{as $n\to \infty$}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-consistency-of-MLE.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (asymptotic normality of MLE)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-asymptotic-normality-of-MLE.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                and <span class="inline-math">$θ_0$</span> be the true parameter of <span class="inline-math">$X$</span>.
+                Let <span class="inline-math">$\hat θ_n$</span> be the maximum likelihood estimator based on <span class="inline-math">$X_1, \ldots, X_n$</span> iid copies of <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                Under <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regularity conditions</a>,
+                <span class="display-math">$$ \begin{align*}
+                    \sqrt{n}(\hat θ_n - θ_0) \xrightarrow{d} N(0, I(θ_0)\inv)
+                \end{align*} $$</span>
+                where <span class="inline-math">$I(θ_0)$</span> is the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html">Fisher information matrix</a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-asymptotic-normality-of-MLE.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    This shows <span class="inline-math">$\hat θ_n$</span> achieves the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Cramer-Rao.html">Cramér-Rao lower bound</a> asymptotically.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (delta method)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-delta-method.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$\hat θ_n$</span> is a sequence of estimators in <span class="inline-math">$Θ\subseteq \R^d$</span> satisfying
+                <span class="display-math">$$ \begin{align*}
+                    r_n(\hat θ_n - θ_0) \xrightarrow{d} Z
+                \end{align*} $$</span>
+                for some deterministic <span class="inline-math">$r_n \to \infty$</span>.
+            </p>
+            <p>
+                For a continuously differentiable function <span class="inline-math">$Φ: Θ \to \R^k$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    r_n(Φ(\hat θ_n) - Φ(θ_0)) \xrightarrow{d} \pdfd{Φ}{θ^T}(θ_0) \cdot Z.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-delta-method.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$\hat θ_n$</span> is the maximum likelihood estimator in a regular model, <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-asymptotic-normality-of-MLE.html">then</a>
+                    <span class="display-math">$$ \begin{align*}
+                        \sqrt{n}(Φ(\hat θ_n) - Φ(θ_n)) \xrightarrow{d}N\Bigl(0, \pdfd{Φ}{θ^T}(θ_0)\; I(θ_0)\inv \;\pdfd{Φ}{θ}(θ_0)\Bigr)
+                    \end{align*} $$</span>
+                    and hence the <em>plug-in MLE</em> <span class="inline-math">$Φ(\hat θ_n)$</span> achieves the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Cramer-Rao.html">Cramér-Rao lower bound</a> asymptotically.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Lemma (observed Fisher information)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Lemma-observed-Fisher-information.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-statistical-model.html">statistical model</a>,
+                <span class="inline-math">$Θ \subseteq \R^p$</span>,
+                and <span class="inline-math">$X_1, X_2, \ldots$</span> are iid copies of <span class="inline-math">$X$</span> with true parameter <span class="inline-math">$θ_0$</span>.
+            </p>
+            <p>
+                Define the <em>observed <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html">Fisher information</a></em> matrix
+                <span class="display-math">$$ \begin{align*}
+                    i_n(θ) = \frac{1}{n} \sum_{i=1}^{n} \pdd{θ} \log f(X_i, θ) \pdd{θ^T} \log f(X_i, θ)
+                \end{align*} $$</span>
+                or
+                <span class="display-math">$$ \begin{align*}
+                    j_n(θ) = -\frac{1}{n} \sum_{i=1}^{n} \pdd{θ} \pdd{θ^T} \log f(X_i, θ).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Under <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regularity conditions</a>, if <span class="inline-math">$\hat θ_n$</span> is the maximum likelihood estimator,
+                <span class="display-math">$$ \begin{align*}
+                    i_n(\hat θ_n) \xrightarrow{p} I(θ_0), \qquad j_n(\hat θ_n) \xrightarrow{p} I(θ_0).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-observed-Fisher-information.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Wald confidence set)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Wald-confidence-set.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$\sb{f(\cdot ,θ)}{θ\in Θ}$</span> be a statistical model,
+                <span class="inline-math">$Θ \subseteq \R^p$</span>,
+                and <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span> with true parameter <span class="inline-math">$θ_0$</span>.
+            </p>
+            <p>
+                Assume <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Regularity-conditions-for-asymptotic-normality-of-the-MLE.html">regularity conditions</a>.
+                Let <span class="inline-math">$\hat θ_n$</span> be the maximum likelihood estimator based on <span class="inline-math">$X_1, \ldots, X_n$</span>.
+                Choose any estimator <span class="inline-math">$\hat I_n\xrightarrow{p}{}$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Fisher-information.html"><span class="inline-math">$I(θ_0)$</span></a>
+                (such as <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Lemma-observed-Fisher-information.html"><span class="inline-math">$i_n(\hat θ_n)$</span>, <span class="inline-math">$j_n(\hat θ_n)$</span></a>, <span class="inline-math">$I(\hat θ_n)$</span>).
+            </p>
+            <ul>
+            <li>
+                <p>
+                    For all <span class="inline-math">$j = 1, \ldots, p$</span>,
+                    <span class="display-math">$$ \begin{align*}
+                    \frac{\sqrt{n}(\hat θ_{n,j} - θ_{0,j})}{\sqrt{(\hat I_n\inv)_{jj}}} \xrightarrow{d} N(0,1) \qquad 
+                    \end{align*} $$</span>
+                    so there is an asymptotically <span class="inline-math">$(1-α)$</span>-<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-confidence-interval-region.html">confidence interval</a> for <span class="inline-math">$θ_{0,j}$</span>
+                    <span class="display-math">$$ \begin{align*}
+                    \left[\hat θ_{n,j} - \frac{z_α \sqrt{(\hat I_n\inv)_{jj}}}{\sqrt{n}}, \hat θ_{n,j} + \frac{z_α \sqrt{(\hat I_n\inv)_{jj}}}{\sqrt{n}}\right]
+                    \end{align*} $$</span>
+                    where <span class="inline-math">$z_α$</span> is the upper <span class="inline-math">$α/2$</span>-quantile of a <span class="inline-math">$N(0,1)$</span> distribution.
+                </p>
+                
+            </li><li>
+                <p>
+                    Moreover
+                    <span class="display-math">$$ \begin{align*}
+                    n(\hat θ_n - θ_0)^T \hat I_n (\hat θ_n - θ_0) \xrightarrow{d} χ_p^2,
+                    \end{align*} $$</span>
+                    so there is an asymptotically <span class="inline-math">$(1-α)$</span>-confidence set for <span class="inline-math">$θ_0$</span>
+                    <span class="display-math">$$ \begin{align*}
+                    \sb{θ}{n(\hat θ_n - θ)^T \hat I_n(\hat θ_n - θ) \leq ξ_α}
+                    \end{align*} $$</span>
+                    where <span class="inline-math">$ξ_α$</span> is the upper <span class="inline-math">$α$</span> quantile of the <span class="inline-math">$χ_p^2$</span> distribution.
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Wald-confidence-set.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    This gives tests for simple null hypotheses regarding <span class="inline-math">$θ_{0,j}$</span> or <span class="inline-math">$θ_0$</span>
+                    with asymptotic size <span class="inline-math">$α$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (generalised likelihood ratio test)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose the data <span class="inline-math">$X$</span> follows <span class="inline-math">$p(x; θ)$</span> where <span class="inline-math">$θ$</span> is unknown.
+                Let <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_0$</span></a><span class="inline-math">$: θ \in Θ_0$</span> and <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-hypothesis-test.html"><span class="inline-math">$H_1$</span></a><span class="inline-math">$: θ \in Θ_1$</span> be hypotheses.
+            </p>
+            <p>
+                The <em>generalised likelihood ratio statistic</em> is
+                <span class="display-math">$$ \begin{align*}
+                    Λ(X) = \frac{\sup_{θ\in Θ_0 \cup Θ_1} L_X(θ)}{\sup_{θ\in Θ_0} L_X(θ)} = \frac{\sup_{θ\in Θ_0\cup Θ_1} p(X; θ)}{\sup_{θ\in Θ_0} p(X; θ)}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                A <em>generalised likelihood ratio test</em> is a test of the form
+                <span class="display-math">$$ \begin{align*}
+                    T(X) = 1_{\set{Λ(X) &gt; c}}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Wilks' theorem)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Theorem-Wilks-theorem.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$Θ_0\subseteq Θ_1$</span>,
+                and let <span class="inline-math">$Λ(X)$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-generalised-likelihood-ratio-test.html">generalised likelihood ratio test</a>
+                for testing <span class="inline-math">$H_0: θ\in Θ_0$</span> against <span class="inline-math">$H_1: θ\in Θ_1\setminus Θ_0$</span>.
+            </p>
+            <p>
+                Under regularity conditions, we have
+                <span class="display-math">$$ \begin{align*}
+                    2\log Λ(X) \xrightarrow{d} χ_{d_1-d_0}^2 \quad \text{as $n\to \infty$ under $H_0$}
+                \end{align*} $$</span>
+                where <span class="inline-math">$d_1, d_0$</span> are the degrees of freedom (number of free parameters) of <span class="inline-math">$H_1$</span> and <span class="inline-math">$H_0$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Wilks-theorem-for-simple-null-hypothesis.html">Proof for simple null hypothesis</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

@@ -1,0 +1,26 @@
+<p>
+    <a href="/tripos-notes/Lectures/IA/Michaelmas/Differential-Equations-DE/Theorem-Taylor-theorem.html">Taylor expand</a> to give
+    <span class="display-math">$$ \begin{align*}
+        (Φ(\hat θ_n) - Φ(θ_0))_i = \pdfd{Φ_i}{θ^T}(θ^{(i)})\cdot (\hat θ_n - θ_0)
+    \end{align*} $$</span>
+    for some <span class="inline-math">$θ^{(i)}$</span> on the line segment between <span class="inline-math">$θ_0$</span> and <span class="inline-math">$\hat θ_n$</span>.
+</p>
+<p>
+    We claim <span class="inline-math">$\hat θ_n \xrightarrow{p} θ_0$</span>.
+    Fix <span class="inline-math">$ε&gt;0$</span> and <span class="inline-math">$δ&gt;0$</span>.
+    Since <span class="inline-math">$r_n(\hat θ_n - θ_0)$</span> converges in distribution,
+    it is bounded in probability,
+    so there exists <span class="inline-math">$M&gt;0$</span> such that <span class="inline-math">$\prob(|r_n (\hat θ_n - θ_0)| &lt; M) &lt; δ$</span>
+    for all sufficiently large <span class="inline-math">$n$</span>.
+    Since <span class="inline-math">$M/r_n &lt; ε$</span> for all sufficiently large <span class="inline-math">$n$</span>, we get
+    <span class="inline-math">$\prob(|\hat θ_n - θ_0|&lt;ε)&lt;δ$</span> for all sufficiently large <span class="inline-math">$n$</span>, as claimed.
+</p>
+<p>
+    Therefore, <span class="inline-math">$θ^{(i)}\xrightarrow{p}θ_0$</span> as well,
+    and by the continuous mapping theorem,
+    <span class="inline-math">$\pdfd{Φ_i}{θ}(θ^{(i)}) \xrightarrow{p} \pdfd{Φ_i}{θ}(θ_0)$</span>.
+    Hence by Slutsky's,
+    <span class="display-math">$$ \begin{align*}
+        r_n(Φ(\hat θ_n) - Φ(θ_0))_i = \pdfd{Φ_i}{θ^T}(θ^{(i)}) \cdot r_n(\hat θ_n - θ_0) \xrightarrow{d} \pdfd{Φ_i}{θ^T}(θ^i) \cdot Z.
+    \end{align*} $$</span>
+</p>

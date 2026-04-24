@@ -1,0 +1,50 @@
+<p>
+    Let <span class="inline-math">$x\in f\inv(y)$</span>.
+    If <span class="inline-math">$x\not\in \op{int}(X)$</span> (which is a manifold without boundary),
+    the <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Theorem-preimage-theorem.html">preimage theorem for manifolds without boundary</a>
+    shows <span class="inline-math">$x$</span> has a neighbourhood in <span class="inline-math">$f\inv(y)$</span> diffeomorphic to <span class="inline-math">$\R^{m - n}$</span>,
+    where <span class="inline-math">$\dim X = m$</span> and <span class="inline-math">$\dim Y = n$</span>.
+    So it remains to consider <span class="inline-math">$x\in f\inv(y) \cap \partial X$</span>.
+    Working in a local chart near <span class="inline-math">$x$</span> and <span class="inline-math">$y$</span>,
+    WLOG assume <span class="inline-math">$X = \mathbb{H}^m$</span> and <span class="inline-math">$Y = \R^n$</span>.
+</p>
+<p>
+    Since <span class="inline-math">$f$</span> is smooth at <span class="inline-math">$x$</span>,
+    by <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-smooth-functions-diffeomorphism.html">definition</a>
+    there exists a smooth function <span class="inline-math">$F: V\to \R^n$</span>
+    where <span class="inline-math">$V$</span> is an open neighbourhood of <span class="inline-math">$x$</span> in <span class="inline-math">$\R^m$</span>
+    and <span class="inline-math">$F|_{V \cap \mathbb{H}^m} = f|_V$</span>.
+    <span class="inline-math">$y$</span> is a regular value of <span class="inline-math">$f$</span>,
+    so <span class="inline-math">$\d F_x = \d f_x$</span> is surjective.
+    By shrinking <span class="inline-math">$V$</span>, we can assume <span class="inline-math">$\d F_z$</span> is surjective for all <span class="inline-math">$z\in V$</span>,
+    so <span class="inline-math">$y$</span> is also a regular value of <span class="inline-math">$F$</span>.
+</p>
+<p>
+    By the preimage theorem, <span class="inline-math">$F\inv(y)\subseteq V$</span>
+    is a manifold of dimension <span class="inline-math">$m-n$</span>.
+    Moreover
+    <span class="display-math">$$ \begin{align*}
+        f\inv(y) \cap V = F\inv(y) \cap \mathbb{H}^m = π|_{F\inv(y)}\inv([0,\infty))
+    \end{align*} $$</span>
+    where <span class="inline-math">$π: \R^m \to \R: (x_1, \ldots, x_m) \mapsto x_m$</span> is the projection map onto the last component.
+    From our <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Lemma-superlevel-set-as-manifold-with-boundary.html">previous result about superlevel sets</a>,
+    it suffices to show <span class="inline-math">$0$</span> is a regular value of <span class="inline-math">$π|_{F\inv(y)}$</span>,
+    since then we can conclude
+    <span class="display-math">$$\dim f\inv(y) = \dim (f\inv(y) \cap V) = \dim F\inv(y) = n - m$$</span>
+    and
+    <span class="display-math">$$\partial(f\inv(y) \cap V) = π\inv|_{F\inv(y)}(0) = F\inv(y) \cap \partial\mathbb{H}^m = f\inv(y) \cap \partial \mathbb{H}^m.$$</span>
+</p>
+<p>
+    To show <span class="inline-math">$0$</span> is a regular value of <span class="inline-math">$π|_{F\inv(y)}$</span>,
+    let <span class="inline-math">$z \in π|_{F\inv(y)}\inv(0) = F\inv(y) \cap \partial \mathbb{H}^m$</span>,
+    and we need to check <span class="inline-math">$\d(π|_{F\inv(y)})_z = (\d π_z)|_{T_z F\inv(y)}$</span> is surjective.
+    As <span class="inline-math">$\d π_z = π: \R^m \to \R$</span>,
+    this is equivalent to showing
+    <span class="display-math">$$ \begin{align*}
+        T_z F\inv(y) \not \subseteq \ker \d π_z = T_z \partial\mathbb{H}^m.
+    \end{align*} $$</span>
+    The preimage theorem tells us <span class="inline-math">$T_z F\inv(y) = \ker \d F_z = \ker \d f_z$</span>,
+    and our hypothesis that <span class="inline-math">$y$</span> is a regular value of <span class="inline-math">$f|_{\partial \mathbb{H}^m}: \partial \mathbb{H}^m \to \R^n$</span>
+    implies <span class="inline-math">$(\d f|_{\partial \mathbb{H}^m})_z = (\d f_z)|_{T_z \partial\mathbb{H}^m}$</span> is surjective.
+    Therefore <span class="inline-math">$\ker \d f_z \not \subseteq T_z \partial \mathbb{H}^m$</span>.
+</p>

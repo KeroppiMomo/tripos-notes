@@ -1,0 +1,21 @@
+<p>
+    Let <span class="inline-math">$M = Σ_{12} Σ_{22}\inv$</span>.
+    Note
+    <span class="display-math">$$ \begin{align*}
+        \cov(W, Y - MW) = \cov(W,Y) - \cov(W, W)M^T = Σ_{21} - Σ_{22} M^T = 0
+    \end{align*} $$</span>
+    and since <span class="inline-math">$(W, Y - MW)$</span> is jointly Gaussian,
+    <span class="inline-math">$W$</span> and <span class="inline-math">$Y - MW$</span> are independent.
+    <span class="inline-math">$Y - MW$</span> is Gaussian <span class="inline-math">$N(\tilde μ, \tilde Σ)$</span> with
+    <span class="display-math">$$ \begin{align*}
+        \tilde μ ={}&amp; \expect[Y - MW] = μ_1 - Σ_{12} Σ_{22}\inv μ_2, \\
+        \tilde Σ ={}&amp; \var[Y - MW] = Σ_{11} - Σ_{12} M^T - MΣ_{21} + MΣ_{22}M^T = Σ_{11} - Σ_{12} Σ_{22}\inv Σ_{21}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore as <span class="inline-math">$Y = MW + (Y - MW)$</span>,
+    <span class="display-math">$$ \begin{align*}
+        Y\mid W = w \sim N(Mw + \tilde μ, \tilde Σ)
+    \end{align*} $$</span>
+    as required.
+</p>

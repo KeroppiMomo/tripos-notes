@@ -1,0 +1,59 @@
+<p>
+    (Not yet reviewed)
+</p>
+<p>
+    We will only show the case <span class="inline-math">$X_i \sim N(θ, 1)$</span> iid,
+    and the prior is <span class="inline-math">$θ\sim N(0,1)$</span>.
+</p>
+<p>
+    As <span class="inline-math">$π_n$</span> and <span class="inline-math">$\hat ϕ_n$</span> are probability densities,
+    <span class="display-math">$$ \begin{align*}
+        \int_{Θ} π_n(θ) - \hat ϕ_n(θ) \d θ = 1 - 1 = 0.
+    \end{align*} $$</span>
+    Letting <span class="inline-math">$(\cdot )_+ = \max(\cdot , 0)$</span> and <span class="inline-math">$(\cdot)_- = \min(\cdot ,0)$</span>, we can write it as
+    <span class="display-math">$$ \begin{align*}
+        0 = \int_{Θ} (π_n(θ) - \hat ϕ_n(θ))_+ \d θ + \int_{Θ} (π_n(θ) - \hat ϕ(θ))_- \d θ.
+    \end{align*} $$</span>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \int_{\R^p} |\hat ϕ_n(θ) - π_n(θ)| \d θ ={}&amp; \int_{Θ} (\hat ϕ_n(θ) - π_n(θ))_+ \d θ - \int_{Θ} (\hat ϕ_n(θ) - π_n(θ))_- \d  \\
+        ={}&amp; 2 \int_{Θ} (\hat ϕ_n(θ) - π_n(θ))_+ \d θ \\
+        ={}&amp; 2 \int_{Θ} \left(1 - \frac{π_n(θ)}{\hat ϕ_n(θ)}\right)_+ \hat ϕ_n(θ) \d θ.
+    \end{align*} $$</span>
+</p>
+<p>
+    Using our assumed settings, we have
+    <span class="display-math">$$ \begin{align*}
+        \frac{π_n(θ)}{\hat ϕ_n(θ)} = \frac{\frac{1}{\sqrt{2π/(n+1)}}\exp(-\frac{n+1}{2} (θ - \overline{θ_n})^2)}{\frac{1}{\sqrt{2π/n}} \exp(-\frac{n}{2}(θ - \hat θ_n)^2)}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Substituting <span class="inline-math">$v = \sqrt{n}(θ - \hat θ_n)$</span> and <span class="inline-math">$\d v = \sqrt{n} \d θ$</span>,
+    <span class="display-math">$$ \begin{align*}
+        2 \|π_n - \hat ϕ_n\|_{TV} = 2 \int \left(\underbrace{1 - \sqrt{\frac{n+1}{n}} \exp\left(-\frac{n+1}{2n}(v + \sqrt{n}(\hat θ_n - \overline{θ_n}))^2 + \frac{v^2}{2}\right)}_{F_n(v)}\right)_+ \times \frac{1}{2π}\exp(-v^2/2) \d v
+    \end{align*} $$</span>
+</p>
+<p>
+    Claim: for all <span class="inline-math">$v\in \R$</span>, <span class="inline-math">$F_n(v) \xrightarrow{a.s.} 0$</span>.
+</p>
+<p>
+    We saw previously that
+    <span class="display-math">$$ \begin{align*}
+        \sqrt{n}(\overline{θ_n} - \hat θ_n) = -\frac{\sqrt{n}}{n+1} \overline{X_n} \xrightarrow{a.s.} 0
+    \end{align*} $$</span>
+    as <span class="inline-math">$\overline{X_n} \xrightarrow{a.s.} θ_0$</span> by the strong law of large numbers, and <span class="inline-math">$-\sqrt{n}/(n+1)\to 0$</span>.
+</p>
+<p>
+    This implies by the continuous mapping theorem
+    that <span class="inline-math">$F_n(v) \xrightarrow{a.s.} 0$</span>.
+</p>
+<p>
+    Note <span class="inline-math">$|(F_n(v))_+| \leq 1$</span>,
+    which is integrable under <span class="inline-math">$\frac{1}{\sqrt{2π}}e^{-v^2/2}\d v$</span> (<span class="inline-math">$\int_{-\infty}^{\infty}  1 \frac{e^{-v^2/2}}{\sqrt{2π}} \d v =1$</span>).
+    Hence by the dominated convergence theorem,
+    <span class="display-math">$$ \begin{align*}
+        \lim_{n\to \infty} \int_{-\infty}^{\infty} (F_n(v))_+ \frac{e^{-v^2/2}}{\sqrt{2π}} \d v = \int_{-\infty}^{\infty} \lim_{n\to \infty} (F_n(v))_+ \frac{e^{-v^2/2}}{\sqrt{2π}} \d v = 0
+    \end{align*} $$</span>
+    almost surely.
+    Hence <span class="inline-math">$\|π_n - \hat ϕ_n\|_{TV} \xrightarrow{a.s.} 0$</span> as <span class="inline-math">$n\to \infty$</span>.
+</p>

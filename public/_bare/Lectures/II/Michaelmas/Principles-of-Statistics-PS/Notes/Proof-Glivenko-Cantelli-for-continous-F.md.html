@@ -1,0 +1,34 @@
+<p>
+    By the strong law of large numbers, <span class="inline-math">$\hat F_n(t) \xrightarrow{a.s.} F(t)$</span> for all <span class="inline-math">$t\in \R$</span>.
+</p>
+<p>
+    Fix <span class="inline-math">$m\in \N$</span>.
+    Since <span class="inline-math">$F$</span> is continuous and increasing, let
+    <span class="display-math">$$ \begin{align*}
+        -\infty = t_0 &lt; t_1 &lt; \ldots &lt; t_{m-1} &lt; t_m = \infty
+    \end{align*} $$</span>
+    such that <span class="inline-math">$F(t_i) - F(t_{i-1}) = 1/m$</span>.
+</p>
+<p>
+    Then for any <span class="inline-math">$t\in \R$</span>, there exists <span class="inline-math">$j$</span> such that <span class="inline-math">$t\in [t_{j-1}, t_j]$</span>,
+    so
+    <span class="display-math">$$ \begin{align*}
+        \hat F_n(t) - F(t) &amp;\leq \hat F_n(t_j) - F(t_{j-1}) = \hat F_n(t_j) - F(t_j) + \frac{1}{m}, \\
+        \hat F_n(t) - F(t) &amp;\geq \hat F_n(t_{j-1}) - F(t_j) = \hat F_n(t_{j-1}) - F(t_{j-1}) - \frac{1}{m}.
+    \end{align*} $$</span>
+    Thus
+    <span class="display-math">$$ \begin{align*}
+        \sup_{t\in \R} |\hat F_n(t) - F(t)| \leq \underbrace{\sup_{j=0,\ldots,m} |\hat F_n(t_j) - F(t_j)|}_{\xrightarrow{a.s.} 0} + \frac{1}{m}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore almost surely
+    <span class="display-math">$$ \begin{align*}
+        \limsup_{n\to \infty} \sup_{t\in \R}|\hat F_n(t) - F(t)| \leq \frac{1}{m}.
+    \end{align*} $$</span>
+    Let <span class="inline-math">$E_m$</span> be the event where this holds.
+    Then in <span class="inline-math">$\bigcap_{m\in \N} E_m$</span>, which has probability 1,
+    <span class="display-math">$$ \begin{align*}
+        \sup_{t\in \R} |\hat F_n(t) - F(t)| \to 0.
+    \end{align*} $$</span>
+</p>

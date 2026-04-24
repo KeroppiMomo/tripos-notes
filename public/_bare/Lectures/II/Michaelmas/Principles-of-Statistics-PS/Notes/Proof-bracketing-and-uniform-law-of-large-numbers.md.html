@@ -1,0 +1,32 @@
+<p>
+    (Non-examinable)
+</p>
+<p>
+    Take any <span class="inline-math">$ε&gt;0$</span>.
+    Take <span class="inline-math">$N(ε/3)$</span> brackets <span class="inline-math">$[\underline{h_j}, \overline{h_j}]$</span>
+    covering <span class="inline-math">$\mathcal{H}$</span>.
+    Then on an event <span class="inline-math">$A$</span> with <span class="inline-math">$\prob(A) = 1$</span>,
+    for all <span class="inline-math">$ω\in A$</span>,
+    there exists <span class="inline-math">$n_0(ω)$</span> such that for all <span class="inline-math">$n&gt;n_0(ω_{0})$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \max_{g\in \set{\underline{h_1}, \overline{h_1}, \ldots, \underline{h_N}, \overline{h_N}}} \left|\frac{1}{n} \sum_{i=1}^{n} g(X_i(ω)) - \expect g(X)\right| \xrightarrow{n\to \infty} 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Take <span class="inline-math">$h\in \mathcal{H}$</span> arbitrary.
+    On the event <span class="inline-math">$A$</span>,
+    there exists <span class="inline-math">$j$</span> such that <span class="inline-math">$n&gt;n_0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{n} \sum_{i=1}^{n} h(X_i) - \expect h(X) \leq{}&amp; \frac{1}{n} \sum_{i=1}^{n} \overline{h_j}(X_i) - \expect h(X) \\
+        ={}&amp; \underbrace{\frac{1}{n} \sum_{i=1}^{n} \overline{h_j}(X_i) - \expect \overline{h_j}(X)}_{&lt;ε/3} + \underbrace{\expect \overline{h_j}(X) - \expect h(X)}_{&lt;ε/3 \text{ by hypothesis 3}} \\
+        &lt;{}&amp; ε.
+    \end{align*} $$</span>
+    A similar argument but using <span class="inline-math">$\underline{h_j}$</span> yields that
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{n} \sum_{i}^{n} h(X_i) - \expect h(X) &gt; -ε.
+    \end{align*} $$</span>
+    So we conclude that with probability 1,
+    <span class="display-math">$$ \begin{align*}
+        \sup_{h\in \mathcal{H}} \left|\frac{1}{n} \sum_{i=1}^{n} h(X_i) - \expect h(X)\right| \xrightarrow{n\to \infty}0.
+    \end{align*} $$</span>
+</p>

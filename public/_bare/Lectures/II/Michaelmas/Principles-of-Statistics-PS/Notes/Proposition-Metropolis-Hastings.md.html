@@ -1,0 +1,38 @@
+<p>
+    We wish to sample <span class="inline-math">$X$</span> with a density <span class="inline-math">$f$</span> in <span class="inline-math">$\mathcal{X}$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$q(t,s)$</span> be a Markov kernel density in <span class="inline-math">$\mathcal{X}$</span> (which is easy to compute),
+    called the <em>proposal kernel density</em>.
+    Given a initial state <span class="inline-math">$X_0\in \mathcal{X}$</span>,
+</p>
+<ol start="1">
+<li>
+    <p>
+        draw a proposal <span class="inline-math">$S_n\sim q(X_n, \cdot)$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        take
+        <span class="display-math">$$ \begin{align*}
+        X_{n+1} := \begin{cases}
+            S_n, &amp;\text{if $A_n=1$}, \\
+            X_n, &amp;\text{if $A_n = 0$}
+        \end{cases}
+        \end{align*} $$</span>
+        where <span class="inline-math">$A_n \sim{}$</span><a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Bernoulli-distribution.html"><span class="inline-math">$\op{Bern}$</span></a><span class="inline-math">$(a(X_n, S_n))$</span> and <span class="inline-math">$a$</span> is the <em>acceptance probability</em>
+        <span class="display-math">$$ \begin{align*}
+        a(t,s) = \min\left\{1, \frac{f(s) q(s,t)}{f(t) q(t,s)}\right\}.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ol>
+<p>
+    If <span class="inline-math">$f(t) &gt; 0$</span> and <span class="inline-math">$q(t,s) &gt; 0$</span> for all <span class="inline-math">$t,s$</span>,
+    then <span class="inline-math">$f$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Markov-Chain-MC/Notes/Definition-invariant-measure.html">invariant distribution</a> of <span class="inline-math">$(X_n)_{n\geq 0}$</span>.
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Metropolis-Hastings.html">Proof</a>
+</p>

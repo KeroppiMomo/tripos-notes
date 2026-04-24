@@ -1,0 +1,27 @@
+<p>
+    Let <span class="inline-math">$(X_i, Y_i, Z_i)_{i=1}^n$</span> be iid copies of <span class="inline-math">$(X,Y,Z)$</span>
+    where <span class="inline-math">$X\in \R$</span>, <span class="inline-math">$Y\in \R$</span>, <span class="inline-math">$Z\in \R^p$</span>.
+    Form the matrices <span class="inline-math">$\mathbf{X} = \pmat{X_1 \\ \vdots \\X_n}$</span>,
+    <span class="inline-math">$\mathbf{Y} = \pmat{Y_1 \\ \vdots \\ Y_n}$</span>,
+    <span class="inline-math">$\mathbf{Z} = \pmat{Z_1^T \\ \vdots \\Z_n^T}$</span>.
+</p>
+<p>
+    Assuming <span class="inline-math">$\pmat{\v 1 &amp; \mathbf{X} &amp; \mathbf{Z}}$</span> has full column rank,
+    let <span class="inline-math">$P_0$</span>, <span class="inline-math">$P$</span> be the orthogonal projection matrices
+    onto <span class="inline-math">$\op{Col}\pmat{1 &amp; \mathbf{Z}}$</span> and <span class="inline-math">$\op{Col}\pmat{1 &amp; \mathbf{X} &amp; \mathbf{Z}}$</span>.
+</p>
+<p>
+    Then the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-sample-conditional-variance-sample-partial-correlation.html">sample partial correlation</a> is given by
+    <span class="display-math">$$ \begin{align*}
+        \hat ρ_{X,Y\mid Z} = \frac{\|(P - P_0) \mathbf{Y}\|}{\|(I-P_0) \mathbf{Y}\|}.
+    \end{align*} $$</span>
+</p>
+<p>
+    The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test.html"><span class="inline-math">$F$</span>-statistic</a> is then
+    <span class="display-math">$$ \begin{align*}
+        \frac{\|(P - P_0) \mathbf{Y}\|^2}{\|(I-P)\mathbf{Y}\|^2/(n-p-2)} = (n-p-2)\frac{\hat ρ_{X,Y\mid Z}^2}{1 - \hat ρ_{X,Y\mid Z}^2}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-F-statistic-in-terms-of-sample-partial-correlation.html">Proof</a>
+</p>

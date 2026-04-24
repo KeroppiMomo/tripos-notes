@@ -1,0 +1,15 @@
+<p>
+    Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span>.
+    Let <span class="inline-math">$T_n := T(X_1, \ldots, X_n)$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a> of <span class="inline-math">$θ$</span>,
+    and write <span class="inline-math">$T_{(-j)} := T(X_1, \ldots, X_{j-1}, X_{j+1}, \ldots, X_n)$</span>.
+</p>
+<p>
+    The <em>jackknife bias estimate</em> is
+    <span class="display-math">$$ \begin{align*}
+        \hat B_n := (n-1)\left(\frac{1}{n} \sum_{j=1}^{n} T_{(-j)} - T_n\right)
+    \end{align*} $$</span>
+    and the <em>jackknife estimator</em> is
+    <span class="display-math">$$ \begin{align*}
+        \tilde T_{\text{JACK}} := T_n - \hat B_n = nT_n - \frac{n-1}{n} \sum_{j=1}^{n} T_{(-j)}.
+    \end{align*} $$</span>
+</p>

@@ -1,0 +1,54 @@
+<p>
+    Note <span class="inline-math">$\overline{X_n}$</span> has constant risk:
+    <span class="display-math">$$ \begin{align*}
+        R(\overline{X_n}, θ) = \expect_θ[(\overline{X_n} - θ)^2] = \var_θ[\overline{X_n}] = 1/n
+    \end{align*} $$</span>
+    so <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-admissible-rule.html#^minimax">admissible implies minimax</a>.
+</p>
+<p>
+    Let <span class="inline-math">$δ$</span> be another estimator,
+    and suppose <span class="inline-math">$R(δ, θ) \leq 1/n$</span> for all <span class="inline-math">$θ\in Θ$</span>.
+    By <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Proposition-bias-variance-decomposition.html">bias-variance decomposition</a>,
+    <span class="display-math">$$ \begin{align*}
+        R(δ,θ) = \expect_θ[(δ - θ)^2] = B(θ)^2 + \var_θ[δ(X)]
+    \end{align*} $$</span>
+    where <span class="inline-math">$B(θ) := \expect_θ[δ(X)] - θ$</span> is the bias.
+    And by <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Cramer-Rao.html">Cramér-Rao</a>,
+    <span class="display-math">$$ \begin{align*}
+        \var_θ[δ(X)] \geq \frac{(\dd{θ}\expect[δ(X)])^2}{n \,I(θ)} = \frac{(B&#x27;(θ) + 1)^2}{n\, I(θ)}.
+    \end{align*} $$</span>
+    Computing the Fisher information <span class="inline-math">$I(θ)$</span> to be
+    <span class="display-math">$$ \begin{align*}
+        I(θ) ={}&amp; -\expect_θ\left[\pdd[2]{θ}\left(-\log \sqrt{2π} - \frac{1}{2}(X - θ)^2\right)\right] = 1,
+    \end{align*} $$</span>
+    we combine all of the above to get
+    <span class="display-math">$$ \begin{align*}
+        B(θ)^2 + \frac{1}{n}(B&#x27;(θ) + 1)^2 \leq \frac{1}{n}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now we analyse this inequality:
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$B&#x27;(θ) \leq 0$</span> so <span class="inline-math">$B$</span> is decreasing.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$B$</span> is bounded.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Therefore there exists <span class="inline-math">$θ_n \nearrow \infty$</span> and <span class="inline-math">$\tilde θ_n\searrow \infty$</span>
+    such that <span class="inline-math">$B&#x27;(θ_n)\to 0$</span> and <span class="inline-math">$B&#x27;(\tilde θ_n)\to 0$</span>.
+    Then <span class="inline-math">$B(θ_n) \to 0$</span> and <span class="inline-math">$B(θ_n) \to 0$</span> by the inequality,
+    so <span class="inline-math">$B \equiv 0$</span> by monotonicity.
+</p>
+<p>
+    Hence <span class="inline-math">$R(δ,θ) = 1/n = R(\overline{X_n}, θ)$</span>,
+    and so <span class="inline-math">$\overline{X_n}$</span> is admissible.
+</p>

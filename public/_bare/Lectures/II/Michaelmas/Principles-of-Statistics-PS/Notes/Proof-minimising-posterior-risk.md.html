@@ -1,0 +1,14 @@
+<p>
+    Using Bayes' theorem <span class="inline-math">$f(x\mid θ) π(θ) = π(θ\mid x) m(x)$</span> where <span class="inline-math">$m(x) = \int_Θ f(x\mid θ) π(θ) \d θ$</span> is the marginal distribution,
+    expand the <span class="inline-math">$π$</span>-Bayes risk as
+    <span class="display-math">$$ \begin{align*}
+        R_π(δ) ={}&amp; \int_{Θ} \int_{\mathcal{X}} L(δ(x), θ) f(x\mid θ) π(θ) \d x \d θ \\
+        ={}&amp; \int_{\mathcal{X}} \int_{Θ} L(δ(x), θ) π(θ\mid x) \d θ \; m(x) \d x \\
+        ={}&amp; \int_{\mathcal{X}} \expect_π[L(δ(x), θ)\mid x] \, \underbrace{m(x)}_{\geq 0} \d x.
+    \end{align*} $$</span>
+</p>
+<p>
+    Hypothesis says <span class="inline-math">$\expect_π[L(δ(x), θ)\mid x] \leq \expect_π[L(δ&#x27;(x), θ)\mid x]$</span>
+    for any <span class="inline-math">$x\in \mathcal{X}$</span> and any decision rule <span class="inline-math">$δ&#x27;$</span>,
+    so <span class="inline-math">$R_π(δ)\leq R_π(δ&#x27;)$</span>.
+</p>

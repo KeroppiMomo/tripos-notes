@@ -1,0 +1,26 @@
+<p>
+    The Markov kernel is
+    <span class="display-math">$$ \begin{align*}
+        K(t,B) ={}&amp; \prob[X_{n+1}\in B \mid X_n = t] \\
+        ={}&amp;\prob[X_{n+1}\in B, A_{n}=1\mid X_n = t] + \prob[X_{n+1}\in B, A_n = 0\mid X_n = t] \\
+        ={}&amp; \int_{B} a(t,s) \,q(t,s) \d s + \mathbb{1}_{\set{t\in B}} \int_{\mathcal{X}} (1-a(t,s)) \, q(t,s) \d s
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \int_{\mathcal{X}} K(t,B) f(t) \d t ={}&amp; \int_{\mathcal{X}} \int_{B} a(t,s) q(t,s) f(t) \d s \d t + \int_{B} \int_{\mathcal{X}} (1-a(t,s)) q(t,s) f(t) \d s \d t.
+    \end{align*} $$</span>
+</p>
+<p>
+    We compute the first term
+    <span class="display-math">$$ \begin{align*}
+        \int_{\mathcal{X}} \int_{B} a(t,s)q(t,s) f(t)\d s \d t={}&amp; \int_{\mathcal{X}} \int_{B} \min\set{q(t,s)f(t), q(s,t)f(s)} \d s \d t \\
+        ={}&amp; \int_{\mathcal{X}} \int_{B} a(s,t) q(s,t) f(s) \d s \d t \\
+        ={}&amp; \int_{B} \int_{\mathcal{X}} a(s,t) q(s,t) f(s) \d t \d s.
+    \end{align*} $$</span>
+    Renaming <span class="inline-math">$t$</span> as <span class="inline-math">$s$</span> and <span class="inline-math">$s$</span> as <span class="inline-math">$t$</span>, we get
+    <span class="display-math">$$ \begin{align*}
+        \int_{\mathcal{X}} K(t,B) f(t)\d t ={}&amp; \int_{B} \int_{\mathcal{X}} q(t,s)f(t) \d s \d t \\
+        ={}&amp;\int_{B} f(t) \d t
+    \end{align*} $$</span>
+    as required.
+</p>

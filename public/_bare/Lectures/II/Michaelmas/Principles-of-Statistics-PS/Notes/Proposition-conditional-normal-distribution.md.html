@@ -1,0 +1,30 @@
+<p>
+    Let <span class="inline-math">$Y\in \R^m, W\in \R^n$</span> be jointly <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-Gaussian-random-variables.html">Gaussian</a>
+    <span class="display-math">$$ \begin{align*}
+        \pmat{Y \\ W} \sim N\left(\pmat{μ_1 \\ μ_2}, \pmat{Σ_{11} &amp; Σ_{12} \\ Σ_{21} &amp; Σ_{22}}\right)
+    \end{align*} $$</span>
+    where <span class="inline-math">$Σ = \pmat{Σ_{11} &amp; Σ_{12} \\ Σ_{21} &amp; Σ_{22}}$</span> is positive definite.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        Y \mid W = w \sim N(μ_1 + Σ_{12} Σ_{22}\inv(w - μ_2),\;  Σ_{11} - Σ_{12} Σ_{22}\inv Σ_{21}).
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-conditional-normal-distribution.html">Proof</a>
+</p>
+<blockquote>
+    <p>
+        Therefore
+        <span class="display-math">$$ \begin{align*}
+            Y = μ_1 + Σ_{12} Σ_{22}\inv(W - μ_2) + ε
+        \end{align*} $$</span>
+        where <span class="inline-math">$ε\sim N(0, Σ_{11} - Σ_{12} Σ_{22}\inv Σ_{21})$</span> and <span class="inline-math">$W$</span> are independent.
+    </p>
+    
+</blockquote>
+<blockquote>
+    <p>
+        Note <span class="inline-math">$\var(Y \mid Z) = Σ_{11} - Σ_{12} Σ_{22}\inv Σ_{21}$</span> does not depend on <span class="inline-math">$Z$</span>.
+    </p>
+    
+</blockquote>

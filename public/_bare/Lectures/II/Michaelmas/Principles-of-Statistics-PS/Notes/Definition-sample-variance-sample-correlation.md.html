@@ -1,0 +1,34 @@
+<p>
+    Let <span class="inline-math">$X_1, \ldots, X_n$</span> be iid copies of
+    a square integrable random vector <span class="inline-math">$X = (X^{(1)}, \ldots, X^{(p)})$</span> in <span class="inline-math">$\R^p$</span>.
+    Form the matrix <span class="inline-math">$\mathbf{X} = \pmat{X_1^T \\ \vdots \\ X_n^T}$</span>.
+</p>
+<p>
+    Define the <em>sample variance</em>
+    <span class="display-math">$$ \begin{align*}
+        \hat Σ := \frac{1}{n} \sum_{i=1}^{n} (X_i - \overline{X_n})(X_i - \overline{X_n})^T = \frac{1}{n}((I - P)\mathbf{X})^T((I-P)\mathbf{X}) = \frac{1}{n}\mathbf{X}^T (I-P) \mathbf{X}
+    \end{align*} $$</span>
+    where <span class="inline-math">$P = \frac{1}{n} \v 1 \v 1^T$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">projection matrix</a>
+    onto <span class="inline-math">$\mathbf{1} = (1, \ldots, 1)^T\in \R^p$</span>.
+</p>
+<p>
+    Define the <em>sample correlation</em>
+    <span class="display-math">$$ \begin{align*}
+        \hat ρ_{jk} := \frac{\hat Σ_{jk}}{\sqrt{\hat Σ_{jj} \hat Σ_{kk}}} = \frac{((I-P)\mathbf{X}^{(j)})^T((I-P) \mathbf{X}^{(k)})}{\|(I-P) \mathbf{X}^{(j)}\| \|(I-P) \mathbf{X}^{(k)}\|} = \frac{\sum_{i} (X_i^{(j)} - \overline{X_n}^{(j)})(X_i^{(k)} - \overline{X_n}^{(k)})}{\sqrt{\sum_{i} (X_i^{(j)} - \overline{X_n}^{(j)})^2 \cdot \sum_{i} (X_i^{(k)} - \overline{X_n}^{(k)})^2}}.
+    \end{align*} $$</span>
+</p>
+<blockquote>
+    <p>
+        In a model <span class="inline-math">$X \sim N(μ, Σ)$</span>,
+        <span class="inline-math">$\hat Σ$</span> is the maximum likelihood estimator of <span class="inline-math">$Σ$</span>,
+        and <span class="inline-math">$\hat ρ_{jk}$</span> is the maximum likelihood estimator of <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-correlation.html"><span class="inline-math">$\op{corr}(X^{(j)}, X^{(k)})$</span></a>.
+    </p>
+    
+</blockquote>
+<blockquote>
+    <p>
+        In general, <span class="inline-math">$\hat Σ \xrightarrow{p} \var(X)$</span> by the <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-strong-law-of-large-numbers.html">strong law of large numbers</a>,
+        and <span class="inline-math">$\sqrt{n}(\hat Σ - \var(X))$</span> converges in distribution to a normal by the <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-central-limit-theorem.html">central limit theorem</a>.
+    </p>
+    
+</blockquote>

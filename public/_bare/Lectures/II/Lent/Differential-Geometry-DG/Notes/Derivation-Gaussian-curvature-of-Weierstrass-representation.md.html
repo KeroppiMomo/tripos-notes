@@ -1,0 +1,49 @@
+
+<h1>Proof 1</h1>
+
+<p>
+    Using <span class="inline-math">$λ^2 = \left(\frac{1}{2}|f|(1+|g|^2)\right)^2$</span>,
+    we plug into the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Theorem-theorema-egregium.html">formula</a> for isothermal coordinates
+    to get
+    <span class="display-math">$$ \begin{align*}
+        K ={}&amp; {-\frac{1}{λ^2} ∇(\log λ)} \\
+        ={}&amp; -\frac{1}{|f|^2(1 + |g|^2)^2} ∇\bigl(\log |f| + \log (1 + |g|^2)\bigr).
+    \end{align*} $$</span>
+</p>
+<p>
+    Note <span class="inline-math">$\log |f|$</span> is harmonic because <span class="inline-math">$f$</span> is holomorphic
+    (<span class="inline-math">$\log |f| = \Re \log f$</span> is the real part of a holomorphic function).
+    Computing the second term gives our formula.
+</p>
+
+<h1>Proof 2</h1>
+
+<p>
+    We showed
+    <span class="display-math">$$ \begin{align*}
+        N = π\inv \circ g \circ ϕ\inv
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        \d N = \d π\inv \circ \d g \circ \d ϕ\inv
+    \end{align*} $$</span>
+    Note every map here is conformal:
+    <span class="inline-math">$ϕ$</span> is isothermal and <span class="inline-math">$π$</span> is conformal.
+    Therefore we can choose any orthonormal basis to compute the determinant of their matrices,
+    and their product equals <span class="inline-math">$\det \d N$</span> up to a sign due to orientation.
+</p>
+<p>
+    <span class="display-math">$$ \begin{align*}
+        \det [\d ϕ\inv] ={}&amp; \det \pmat{E \\ &amp;G}\inv = λ^{-4} = \left(\frac{1}{2} |f| (1 + |g|^2)\right)^{-2}, \\
+        \det [\d g] ={}&amp; \det \pmat{\Re g&#x27; &amp; -\Im g&#x27; \\ \Im g&#x27; &amp; \Re g&#x27;} = |g&#x27;|^2, \\
+        \det [\d π\inv] ={}&amp; \frac{4}{(1 + |g|^2)^2}
+    \end{align*} $$</span>
+    so
+    <span class="display-math">$$ \begin{align*}
+        K = \det \d N = \pm\det[\d ϕ\inv] \det [\d g] \det [\d π\inv] = \pm \frac{16 |g&#x27;|^2}{|f|^2 (1 + |g|^2)^4}.
+    \end{align*} $$</span>
+</p>
+<p>
+    As the mean curvature is 0, the principal curvatures opposite sign,
+    so <span class="inline-math">$K &lt; 0$</span>.
+</p>

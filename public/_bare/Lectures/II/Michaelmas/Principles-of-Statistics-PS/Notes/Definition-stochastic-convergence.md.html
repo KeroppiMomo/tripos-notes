@@ -1,0 +1,85 @@
+<p>
+    Let <span class="inline-math">$(X_n: n\in \N)$</span>, <span class="inline-math">$X$</span> be random vectors in <span class="inline-math">$\R^k$</span>,
+    defined on the same probability space <span class="inline-math">$(Ω, \mathcal{A}, \mathcal{P})$</span>.
+</p>
+<p>
+    We say that <span class="inline-math">$X_n$</span> converges to <span class="inline-math">$X$</span> <em>almost surely</em> or <span class="inline-math">$X_n \xrightarrow{\text{a.s.}} X$</span> as <span class="inline-math">$n\to\infty$</span> if
+    <span class="display-math">$$ \begin{align*}
+        \prob(\|X_n - X\|_2 \to 0 \text{ as } n\to \infty)\equiv \prob(w\in Ω : \|X_n(ω) - X(ω)\|_2 \to 0 \text{ as }n\to \infty) = 1.
+    \end{align*} $$</span>
+</p>
+<p>
+    We say that <span class="inline-math">$X_n$</span> converges to <span class="inline-math">$X$</span> <em>in probability</em> or <span class="inline-math">$X_n \xrightarrow{p} X$</span> as <span class="inline-math">$n\to \infty$</span>
+    if for all <span class="inline-math">$ε&gt;0$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \prob(\|X_n - X\|_2 &gt; ε) \to 0 \qquad \text{as }n\to \infty.
+    \end{align*} $$</span>
+</p>
+<p>
+    We say that <span class="inline-math">$X_n$</span> converges <em>in distribution</em> to <span class="inline-math">$X$</span>
+    or <span class="inline-math">$X_n \xrightarrow{d} X$</span> if
+    <span class="display-math">$$ \begin{align*}
+        \prob(X_n \preceq t) \to \prob(X\preceq t) \qquad n\to \infty
+    \end{align*} $$</span>
+    (writing <span class="inline-math">$X \preceq t$</span> for a partial order <span class="inline-math">$X_1 \leq t_1, \ldots, X_k \leq t_k$</span>)
+    for all <span class="inline-math">$t$</span> where the map <span class="inline-math">$t \mapsto \prob(X\preceq t)$</span> is continuous.
+</p>
+<blockquote>
+    <p>
+        Facts:
+    </p>
+    <ol start="1">
+    <li>
+        <p>
+            <span class="inline-math">$X_n \xrightarrow{a.s.} X \implies X_n\xrightarrow{p} X \implies X_n \xrightarrow{d} X$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            Continuous mapping theorem: if <span class="inline-math">$(X_n), X$</span> take values in <span class="inline-math">$\mathcal{X}\subseteq \R^n$</span>
+            and <span class="inline-math">$g: \mathcal{X}\to \R$</span> is continuous, then <span class="inline-math">$X_n \xrightarrow{a.s./p/d} X \implies g(X_n) \xrightarrow{a.s./p/d} g(X)$</span>.
+        </p>
+        
+    </li><li>
+        <p>
+            Slutsky's lemma: suppose that <span class="inline-math">$X_n \xrightarrow{d} X, Y_n \xrightarrow{d} c$</span>
+            where <span class="inline-math">$c\in \R$</span> is deterministic.
+        </p>
+        <ol start="1">
+        <li>
+            <p>
+                <span class="inline-math">$Y_n \xrightarrow{p} c$</span>.
+            </p>
+            
+        </li><li>
+            <p>
+                <span class="inline-math">$X_n + Y_n \xrightarrow{d} X+c$</span>.
+            </p>
+            
+        </li><li>
+            <p>
+                <span class="inline-math">$X_n Y_n \xrightarrow{d} Xc$</span>. Also <span class="inline-math">$X_n/Y_n \xrightarrow{d} X/c$</span> if <span class="inline-math">$c\neq 0$</span>.
+            </p>
+            
+        </li><li>
+            <p>
+                If <span class="inline-math">$(A_n)$</span> is a sequence of matrices such that
+                <span class="inline-math">$(A_n)_{ij} \xrightarrow{p} A_{ij}$</span> for all <span class="inline-math">$i,j$</span>
+                where <span class="inline-math">$A = (A_{ij})$</span> is deterministic,
+                then <span class="inline-math">$A_n X_n \xrightarrow{d} AX$</span>.
+            </p>
+            
+        </li>
+        </ol>
+        
+    </li><li>
+        <p>
+            If <span class="inline-math">$X_n \xrightarrow{d} X$</span>, then <span class="inline-math">$X$</span> is <em>bounded in probability</em> denoted <span class="inline-math">$X_n = O_\prob(1)$</span>,
+            i.e. for all <span class="inline-math">$ε&gt;0$</span>, there exists <span class="inline-math">$M(ε)&lt;\infty$</span> and integer <span class="inline-math">$N&lt;\infty$</span>
+            such that <span class="inline-math">$\prob(\|X_n\|_2 &gt; M(ε)) &lt; ε$</span> for all <span class="inline-math">$n\geq N$</span>.
+        </p>
+        
+    </li>
+    </ol>
+    
+</blockquote>

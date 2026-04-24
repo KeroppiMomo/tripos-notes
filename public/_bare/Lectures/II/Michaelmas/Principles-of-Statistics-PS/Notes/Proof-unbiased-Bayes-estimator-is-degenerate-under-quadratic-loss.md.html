@@ -1,0 +1,29 @@
+<p>
+    We <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-minimising-posterior-risk.html#^quadratic">know</a>
+    <span class="display-math">$$ \begin{align*}
+        δ(x) = \expect[θ\mid x], \qquad \expect[δ(X)\mid θ] = θ.
+    \end{align*} $$</span>
+    It suffices to show
+    <span class="display-math">$$ \begin{align*}
+        \expect[(δ(X) - θ)^2] = 0.
+    \end{align*} $$</span>
+</p>
+<p>
+    Expand
+    <span class="display-math">$$ \begin{align*}
+        \expect[(δ(X) - θ)^2] = \expect[θ^2] - 2\expect[δ(X) θ] + \expect[δ(X)^2].
+    \end{align*} $$</span>
+    Mess around with it:
+    <span class="display-math">$$ \begin{align*}
+        \expect[δ(X)^2] ={}&amp; \expect[δ(X) \cdot \expect[θ\mid X]] &amp;&amp;\text{$π$-Bayes rule}\\
+        ={}&amp; \expect[\expect[δ(X) θ\mid X]] \\
+        ={}&amp; \expect[δ(X)θ] &amp;&amp;\text{total expectation}
+    \end{align*} $$</span>
+    and
+    <span class="display-math">$$ \begin{align*}
+        \expect[δ(X) θ] ={}&amp; \expect[\expect[δ(X) θ \mid θ]] &amp;&amp;\text{total expectation} \\
+        ={}&amp; \expect[\expect[δ(X) \expect[δ(X)\mid θ]\mid θ]] &amp;&amp;\text{unbiasedness} \\
+        ={}&amp; \expect[\expect[δ(X) \mid θ]^2] \\
+        ={}&amp; \expect[θ^2] &amp;&amp;\text{unbiasedness}.
+    \end{align*} $$</span>
+</p>

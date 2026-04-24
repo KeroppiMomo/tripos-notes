@@ -1,0 +1,325 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (classification problem, Bayes classifier)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-classification-problem-Bayes-classifier.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Consider a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">regression problem</a> with <span class="inline-math">$X\in \mathcal{X}$</span> and <span class="inline-math">$Y\in \set{0,1}$</span>.
+                Assume <span class="inline-math">$X\mid Y = 0$</span> has density <span class="inline-math">$f_0$</span> and <span class="inline-math">$X\mid Y = 1$</span> has density <span class="inline-math">$f_1$</span>.
+                Suppose <span class="inline-math">$π$</span> is prior on <span class="inline-math">$Y$</span>, with <span class="inline-math">$π_0 = \prob[Y = 0]$</span> and <span class="inline-math">$π_1 = \prob[Y = 1]$</span>.
+            </p>
+            <p>
+                The <em>regression function</em> is
+                <span class="display-math">$$ \begin{align*}
+                    η(x) := \prob[Y = 1 \mid X = x] = \frac{π_1 f_1(x)}{π_0 f_0(x) + π_1 f_1(x)}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                A <em>classifier</em> is a decision rule <span class="inline-math">$δ: \mathcal{X} \to \set{0,1}$</span>.
+            </p>
+            <p>
+                The <em>0-1 loss</em> is
+                <span class="display-math">$$ \begin{align*}
+                    L(δ(X), Y) = \mathbb{1}_{\set{δ(X) \neq Y}}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                A classifier <span class="inline-math">$δ$</span> is a <em>Bayes classifier</em> if it is a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html"><span class="inline-math">$π$</span>-Bayes rule</a>,
+                i.e. it minimises the <span class="inline-math">$π$</span>-Bayes risk
+                <span class="display-math">$$ \begin{align*}
+                    R_π(δ) = \prob[δ(X) \neq Y].
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Bayes classifier)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-Bayes-classifier.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                A <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-classification-problem-Bayes-classifier.html">Bayes classifier</a>
+                is given by
+                <span class="display-math">$$ \begin{align*}
+                    δ_π(x) = \begin{cases}
+                        1, &amp;\text{if $\frac{π_1 f_1(x)}{π_0 f_0(x)}&gt;1$}, \\
+                        0, &amp;\text{otherwise}.
+                    \end{cases}
+                \end{align*} $$</span>
+            </p>
+            <p>
+                If <span class="inline-math">$\prob[\frac{π_1 f_1(X)}{π_0 f_0(X)} = 1] = 0$</span>,
+                then any Bayes classifier <span class="inline-math">$δ$</span> satisfies <span class="inline-math">$δ(X) = δ_π(X)$</span> almost surely.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Bayes-classifier.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Correlation
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Correlation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (correlation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-correlation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            The correlation of two square-integrable random variables <span class="inline-math">$X,Y$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                \op{corr}(X,Y) = \frac{\cov(X,Y)}{\sqrt{\var(X)}\sqrt{\var(Y)}}.
+                            \end{align*} $$</span>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (sample variance, sample correlation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-sample-variance-sample-correlation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X_1, \ldots, X_n$</span> be iid copies of
+                            a square integrable random vector <span class="inline-math">$X = (X^{(1)}, \ldots, X^{(p)})$</span> in <span class="inline-math">$\R^p$</span>.
+                            Form the matrix <span class="inline-math">$\mathbf{X} = \pmat{X_1^T \\ \vdots \\ X_n^T}$</span>.
+                        </p>
+                        <p>
+                            Define the <em>sample variance</em>
+                            <span class="display-math">$$ \begin{align*}
+                                \hat Σ := \frac{1}{n} \sum_{i=1}^{n} (X_i - \overline{X_n})(X_i - \overline{X_n})^T = \frac{1}{n}((I - P)\mathbf{X})^T((I-P)\mathbf{X}) = \frac{1}{n}\mathbf{X}^T (I-P) \mathbf{X}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$P = \frac{1}{n} \v 1 \v 1^T$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">projection matrix</a>
+                            onto <span class="inline-math">$\mathbf{1} = (1, \ldots, 1)^T\in \R^p$</span>.
+                        </p>
+                        <p>
+                            Define the <em>sample correlation</em>
+                            <span class="display-math">$$ \begin{align*}
+                                \hat ρ_{jk} := \frac{\hat Σ_{jk}}{\sqrt{\hat Σ_{jj} \hat Σ_{kk}}} = \frac{((I-P)\mathbf{X}^{(j)})^T((I-P) \mathbf{X}^{(k)})}{\|(I-P) \mathbf{X}^{(j)}\| \|(I-P) \mathbf{X}^{(k)}\|} = \frac{\sum_{i} (X_i^{(j)} - \overline{X_n}^{(j)})(X_i^{(k)} - \overline{X_n}^{(k)})}{\sqrt{\sum_{i} (X_i^{(j)} - \overline{X_n}^{(j)})^2 \cdot \sum_{i} (X_i^{(k)} - \overline{X_n}^{(k)})^2}}.
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                In a model <span class="inline-math">$X \sim N(μ, Σ)$</span>,
+                                <span class="inline-math">$\hat Σ$</span> is the maximum likelihood estimator of <span class="inline-math">$Σ$</span>,
+                                and <span class="inline-math">$\hat ρ_{jk}$</span> is the maximum likelihood estimator of <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-correlation.html"><span class="inline-math">$\op{corr}(X^{(j)}, X^{(k)})$</span></a>.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                In general, <span class="inline-math">$\hat Σ \xrightarrow{p} \var(X)$</span> by the <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-strong-law-of-large-numbers.html">strong law of large numbers</a>,
+                                and <span class="inline-math">$\sqrt{n}(\hat Σ - \var(X))$</span> converges in distribution to a normal by the <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Theorem-central-limit-theorem.html">central limit theorem</a>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (conditional independence, partial correlation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-conditional-independence-partial-correlation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Given random vectors <span class="inline-math">$X, Y, Z$</span>,
+                            we say that <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> are <em>conditionally independent</em> given <span class="inline-math">$Z$</span>
+                            (or <span class="inline-math">$X \perp\!\!\!\perp Y \mid Z$</span>)
+                            if
+                            <span class="display-math">$$ \begin{align*}
+                                f_{XY\mid Z}(x,y\mid z) = f_{X\mid Z}(x \mid z) f_{Y\mid Z}(y\mid z).
+                            \end{align*} $$</span>
+                            Equivalently,
+                            <span class="display-math">$$ \begin{align*}
+                                X \perp\!\!\!\perp Y \mid Z \iff f_{X\mid Y, Z}(x\mid y,z) = m(x,z)
+                            \end{align*} $$</span>
+                            for some function <span class="inline-math">$m$</span>, whenever <span class="inline-math">$f_{Y,Z}(y,z) &gt; 0$</span>.
+                        </p>
+                        <p>
+                            The <em>partial correlation</em> of <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> given <span class="inline-math">$Z$</span>
+                            is the correlation of <span class="inline-math">$X$</span> and <span class="inline-math">$Y$</span> in the conditional density
+                            <span class="inline-math">$f_{X,Y\mid Z}(\cdot ,\cdot \mid z)$</span>:
+                            <span class="display-math">$$ \begin{align*}
+                                ρ_{X,Y\mid Z}(z) = \frac{\cov(X,Y\mid Z = z)}{\sqrt{\var(X\mid Z=z) \var(Y\mid Z = z)}}.
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$X,Y$</span> are conditionally independent given <span class="inline-math">$Z$</span>, then <span class="inline-math">$ρ_{X,Y\mid Z} \equiv 0$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (conditional normal distribution)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-conditional-normal-distribution.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Y\in \R^m, W\in \R^n$</span> be jointly <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-Gaussian-random-variables.html">Gaussian</a>
+                            <span class="display-math">$$ \begin{align*}
+                                \pmat{Y \\ W} \sim N\left(\pmat{μ_1 \\ μ_2}, \pmat{Σ_{11} &amp; Σ_{12} \\ Σ_{21} &amp; Σ_{22}}\right)
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$Σ = \pmat{Σ_{11} &amp; Σ_{12} \\ Σ_{21} &amp; Σ_{22}}$</span> is positive definite.
+                            Then
+                            <span class="display-math">$$ \begin{align*}
+                                Y \mid W = w \sim N(μ_1 + Σ_{12} Σ_{22}\inv(w - μ_2),\;  Σ_{11} - Σ_{12} Σ_{22}\inv Σ_{21}).
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-conditional-normal-distribution.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                Therefore
+                                <span class="display-math">$$ \begin{align*}
+                                    Y = μ_1 + Σ_{12} Σ_{22}\inv(W - μ_2) + ε
+                                \end{align*} $$</span>
+                                where <span class="inline-math">$ε\sim N(0, Σ_{11} - Σ_{12} Σ_{22}\inv Σ_{21})$</span> and <span class="inline-math">$W$</span> are independent.
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                Note <span class="inline-math">$\var(Y \mid Z) = Σ_{11} - Σ_{12} Σ_{22}\inv Σ_{21}$</span> does not depend on <span class="inline-math">$Z$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (sample conditional variance, sample partial correlation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-sample-conditional-variance-sample-partial-correlation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(W_i, Z_i)_{i=1}^n$</span> be iid copies of <span class="inline-math">$(W, Z)$</span>, with <span class="inline-math">$W\in \R^m, Z \in \R^n$</span>.
+                            Form the matrices <span class="inline-math">$\mathbf{W} = \pmat{W_1^T \\ \vdots \\ W_n^T}, \mathbf{Z} = \pmat{Z_1^T \\ \vdots \\Z_n^T}$</span>.
+                        </p>
+                        <p>
+                            The <em>sample conditional variance</em> of <span class="inline-math">$W$</span> given <span class="inline-math">$Z$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                \hat Ω = \frac{1}{n}((I - P) \mathbf{W})^T ((I - P) \mathbf{W}) = \frac{1}{n}\mathbf{W}^T (I-P) \mathbf{W}
+                            \end{align*} $$</span>
+                            where <span class="inline-math">$P$</span> is the <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-orthogonal-projection-matrix.html">projection matrix</a> onto the columns space of <span class="inline-math">$\pmat{\v 1 &amp; \mathbf{Z}}$</span>.
+                        </p>
+                        <p>
+                            The <em>sample partial correlation</em> of <span class="inline-math">$W^{(j)}$</span> and <span class="inline-math">$W^{(k)}$</span> given <span class="inline-math">$Z$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                \hat ρ_{W^{(j)}, W^{(k)}\mid Z} = \frac{\hat Ω_{jk}}{\sqrt{\hat Ω_{jj} \hat Ω_{kk}}} = \frac{((I - P)\mathbf{W}^{(j)})^T ((I-P) \mathbf{W}^{(k)})}{\|(I-P)\mathbf{W}^{(j)}\| \|(I - P) \mathbf{W}^{(k)}\|}.
+                            \end{align*} $$</span>
+                        </p>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$(W,Z)$</span> is jointly Gaussian,
+                                then <span class="inline-math">$\hat Ω$</span> is the maximum likelihood estimator of <span class="inline-math">$\var(W\mid Z)$</span>
+                                and <span class="inline-math">$\hat ρ_{W^{(j)}, W^{(k)}\mid Z}$</span> is the maximum likelihood estimator of <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-conditional-independence-partial-correlation.html"><span class="inline-math">$ρ_{W^{(j)},W^{(k)}\mid Z}$</span></a>.
+                                (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-sample-conditional-variance-sample-partial-correlation.html">Proof</a>)
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (F statistic in terms of sample partial correlation)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proposition-F-statistic-in-terms-of-sample-partial-correlation.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$(X_i, Y_i, Z_i)_{i=1}^n$</span> be iid copies of <span class="inline-math">$(X,Y,Z)$</span>
+                            where <span class="inline-math">$X\in \R$</span>, <span class="inline-math">$Y\in \R$</span>, <span class="inline-math">$Z\in \R^p$</span>.
+                            Form the matrices <span class="inline-math">$\mathbf{X} = \pmat{X_1 \\ \vdots \\X_n}$</span>,
+                            <span class="inline-math">$\mathbf{Y} = \pmat{Y_1 \\ \vdots \\ Y_n}$</span>,
+                            <span class="inline-math">$\mathbf{Z} = \pmat{Z_1^T \\ \vdots \\Z_n^T}$</span>.
+                        </p>
+                        <p>
+                            Assuming <span class="inline-math">$\pmat{\v 1 &amp; \mathbf{X} &amp; \mathbf{Z}}$</span> has full column rank,
+                            let <span class="inline-math">$P_0$</span>, <span class="inline-math">$P$</span> be the orthogonal projection matrices
+                            onto <span class="inline-math">$\op{Col}\pmat{1 &amp; \mathbf{Z}}$</span> and <span class="inline-math">$\op{Col}\pmat{1 &amp; \mathbf{X} &amp; \mathbf{Z}}$</span>.
+                        </p>
+                        <p>
+                            Then the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-sample-conditional-variance-sample-partial-correlation.html">sample partial correlation</a> is given by
+                            <span class="display-math">$$ \begin{align*}
+                                \hat ρ_{X,Y\mid Z} = \frac{\|(P - P_0) \mathbf{Y}\|}{\|(I-P_0) \mathbf{Y}\|}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            The <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/F-test.html"><span class="inline-math">$F$</span>-statistic</a> is then
+                            <span class="display-math">$$ \begin{align*}
+                                \frac{\|(P - P_0) \mathbf{Y}\|^2}{\|(I-P)\mathbf{Y}\|^2/(n-p-2)} = (n-p-2)\frac{\hat ρ_{X,Y\mid Z}^2}{1 - \hat ρ_{X,Y\mid Z}^2}.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-F-statistic-in-terms-of-sample-partial-correlation.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Principal component analysis
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Principal-component-analysis.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X_1, \ldots, X_n$</span> be iid copies of a random vector <span class="inline-math">$X\in \R^p$</span>.
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    Construct <span class="inline-math">$\hat Σ = \frac{1}{n} \sum_{i=1}^{n} (X_i - \overline{X_n}) (X_i - \overline{X_n})^T$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    Find the first <span class="inline-math">$k$</span> eigenvectors <span class="inline-math">$\hat v_1, \ldots, \hat v_k$</span> of <span class="inline-math">$\hat Σ$</span> with largest magnitude of eigenvalue.
+                </p>
+                
+            </li><li>
+                <p>
+                    Project the samples onto these vectors
+                    <span class="display-math">$$ \begin{align*}
+                    \pmat{X_1^T \\ \vdots \\ X_n^T}\pmat{\hat v_1 &amp; \ldots &amp;\hat v_k}.
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ol>
+            
+        </div>
+    </div>
+</p>

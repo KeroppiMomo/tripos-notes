@@ -1,0 +1,33 @@
+<p>
+    Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span>,
+    and let <span class="inline-math">$\hat θ_n = T(X_1, \ldots, X_n)$</span>
+    be an estimator for an unknown parameter <span class="inline-math">$θ\in \R$</span>.
+</p>
+<p>
+    Let <span class="inline-math">$X_1^\ast, \ldots, X_n^\ast$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-empirical-distribution.html">bootstrap resample</a> of <span class="inline-math">$X_1, \ldots, X_n$</span>.
+    Letting <span class="inline-math">$\hat F_n$</span> be the random distribution function of <span class="inline-math">$\sqrt{n}(T(X_1^\ast, \ldots, X_n^\ast) - \hat θ_n)$</span>,
+    define
+    <span class="display-math">$$ \begin{align*}
+        \hat C_n = \sb{θ\in \R}{\hat l_n \leq \sqrt{n}(\hat θ_n - θ) \leq \hat u_n}
+    \end{align*} $$</span>
+    where <span class="inline-math">$\hat l_n = \hat F_n\inv(α/2)$</span> and <span class="inline-math">$\hat u_n = \hat F_n(1 - α/2)$</span> are random <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-quantile-function.html">quantiles</a>.
+</p>
+<p>
+    Assume
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$\sqrt{n}(\hat θ_n - θ) \xrightarrow{d} F$</span> for some distribution <span class="inline-math">$F$</span>; and
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\sup_{t\in \R}|\hat F_n(t) - F(t)| \xrightarrow{a.s.} 0$</span>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    Then <span class="inline-math">$\hat C_n$</span> is an asymptotic <span class="inline-math">$(1-α)$</span>-<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-confidence-interval-region.html">confidence interval</a>.
+</p>

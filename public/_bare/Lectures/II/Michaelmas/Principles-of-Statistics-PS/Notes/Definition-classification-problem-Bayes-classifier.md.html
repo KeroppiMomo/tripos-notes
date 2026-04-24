@@ -1,0 +1,27 @@
+<p>
+    Consider a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">regression problem</a> with <span class="inline-math">$X\in \mathcal{X}$</span> and <span class="inline-math">$Y\in \set{0,1}$</span>.
+    Assume <span class="inline-math">$X\mid Y = 0$</span> has density <span class="inline-math">$f_0$</span> and <span class="inline-math">$X\mid Y = 1$</span> has density <span class="inline-math">$f_1$</span>.
+    Suppose <span class="inline-math">$π$</span> is prior on <span class="inline-math">$Y$</span>, with <span class="inline-math">$π_0 = \prob[Y = 0]$</span> and <span class="inline-math">$π_1 = \prob[Y = 1]$</span>.
+</p>
+<p>
+    The <em>regression function</em> is
+    <span class="display-math">$$ \begin{align*}
+        η(x) := \prob[Y = 1 \mid X = x] = \frac{π_1 f_1(x)}{π_0 f_0(x) + π_1 f_1(x)}.
+    \end{align*} $$</span>
+</p>
+<p>
+    A <em>classifier</em> is a decision rule <span class="inline-math">$δ: \mathcal{X} \to \set{0,1}$</span>.
+</p>
+<p>
+    The <em>0-1 loss</em> is
+    <span class="display-math">$$ \begin{align*}
+        L(δ(X), Y) = \mathbb{1}_{\set{δ(X) \neq Y}}.
+    \end{align*} $$</span>
+</p>
+<p>
+    A classifier <span class="inline-math">$δ$</span> is a <em>Bayes classifier</em> if it is a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Bayes-risk-Bayes-rule.html"><span class="inline-math">$π$</span>-Bayes rule</a>,
+    i.e. it minimises the <span class="inline-math">$π$</span>-Bayes risk
+    <span class="display-math">$$ \begin{align*}
+        R_π(δ) = \prob[δ(X) \neq Y].
+    \end{align*} $$</span>
+</p>

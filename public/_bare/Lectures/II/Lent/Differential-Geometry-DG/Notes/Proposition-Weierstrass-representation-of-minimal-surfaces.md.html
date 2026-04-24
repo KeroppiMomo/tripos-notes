@@ -1,0 +1,94 @@
+<p>
+    Let <span class="inline-math">$ϕ: U\to V$</span> be a local parametrisation of a surface in <span class="inline-math">$\R^3$</span>,
+    and write <span class="inline-math">$ϕ(u,v) = (x(u,v), y(u,v), z(u,v))$</span>.
+    Suppose <span class="inline-math">$U\subseteq \R^2 \simeq \C$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-domain.html">domain</a> in the complex plane.
+</p>
+<p>
+    Define the complex functions
+    <span class="display-math">$$ \begin{align*}
+        ϕ_1 = x_u - i x_v, \qquad ϕ_2 = y_u - i y_v, \qquad ϕ_3 = z_u - iz_v.
+    \end{align*} $$</span>
+</p>
+<ol start="1">
+<li>
+    <p>
+        We have
+        <span class="display-math">$$ \begin{align*}
+            ϕ_1^2 + ϕ_2^2 + ϕ_3^2 ={}&amp; (E - G) - 2iF, \\
+        \end{align*} $$</span>
+        so <span class="inline-math">$ϕ$</span> is <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/Definition-first-fundamental-form.html">isothermal</a> iff
+        <span class="display-math">$$ \begin{align*}
+            ϕ_1^2 + ϕ_2^2 + ϕ_3^2 = 0.
+        \end{align*} $$</span>
+    </p>
+    <p>
+        If <span class="inline-math">$ϕ$</span> is isothermal, <span class="inline-math">$ϕ$</span> is <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proposition-minimal-surface.html">minimal</a> iff
+        <span class="inline-math">$ϕ_1$</span>, <span class="inline-math">$ϕ_2$</span>, <span class="inline-math">$ϕ_3$</span> are all <a href="/tripos-notes/Lectures/IB/Lent/Complex-Analysis-CA/Notes/Definition-complex-differentiation-holomorphic-entire.html">holomorphic</a>,
+    </p>
+    <p>
+        In this case
+        <span class="display-math">$$ \begin{align*}
+            x(u,v) ={}&amp; x(u_0, v_0) + \Re \int_{(u_0, v_0)}^{(u,v)} ϕ_1 \d ζ, \\
+            y(u,v) ={}&amp; y(u_0, v_0) + \Re \int_{(u_0, v_0)}^{(u,v)} ϕ_2 \d ζ, \\
+            z(u,v) ={}&amp; z(u_0, v_0) + \Re \int_{(u_0, v_0)}^{(u,v)} ϕ_3 \d ζ
+        \end{align*} $$</span>
+        where the path of integration in <span class="inline-math">$U$</span> is arbitrary.
+    </p>
+    
+</li><li>
+    <p>
+        For any <span class="inline-math">$f$</span> holomorphic and <span class="inline-math">$g$</span> meromorphic on <span class="inline-math">$U$</span>,
+        given that <span class="inline-math">$fg^2$</span> is holomorphic on <span class="inline-math">$U$</span>
+        (i.e. if <span class="inline-math">$z\in U$</span> is a pole of <span class="inline-math">$g$</span> of order <span class="inline-math">$k$</span>,
+        then <span class="inline-math">$z$</span> is a zero of <span class="inline-math">$f$</span> of order <span class="inline-math">$\geq 2k$</span>),
+        then
+        <span class="display-math">$$ \begin{align*}
+            ϕ_1 = \frac{1}{2}f(1-g^2), \qquad ϕ_2 = \frac{i}{2}f(1 + g^2), \qquad ϕ_3 = fg
+        \end{align*} $$</span>
+        are holomorphic functions on <span class="inline-math">$U$</span> satisfying <span class="inline-math">$ϕ_1^2 + ϕ_2^2 + ϕ_3^2 = 0$</span>.
+    </p>
+    <p>
+        Conversely, if <span class="inline-math">$ϕ_1, ϕ_2, ϕ_3$</span> are holomorphic functions on <span class="inline-math">$U$</span> satisfying <span class="inline-math">$ϕ_1^2 + ϕ_2^2 + ϕ_3^2 = 0$</span>,
+        then either <span class="inline-math">$ϕ_1 = iϕ_2$</span> and <span class="inline-math">$ϕ_3 = 0$</span>,
+        or <span class="inline-math">$(ϕ_1, ϕ_2, ϕ_3)$</span> are of the above form,
+        called the <em>Weierstrass representation</em>.
+    </p>
+    
+</li>
+</ol>
+<p>
+    <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Proof-Weierstrass-representation-of-minimal-surfaces.html">Proof</a>
+</p>
+<blockquote>
+    <p>
+        In the Weierstrass representation, the first fundamental form is given by
+        <span class="display-math">$$ \begin{align*}
+            λ^2 = E = G = \left(\frac{1}{2}|f| (1 + |g|^2)\right)^2, \qquad F = 0.
+        \end{align*} $$</span>
+        (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-first-fundamental-form-of-Weierstrass-representation.html">Derivation</a>)
+    </p>
+    
+</blockquote>
+<blockquote>
+    <p>
+        Letting <span class="inline-math">$π: S^2 \to \C_\infty$</span> be the <a href="/tripos-notes/Lectures/IB/Lent/Geometry-Geo/Notes/The-sphere-as-a-topological-surface.html">stereographic projection</a>
+        (i.e. <span class="inline-math">$π\inv(z) = \frac{(2\Re z, 2 \Im z, |z|^2 - 1)}{|z|^2 + 1}$</span>),
+        we have
+        <span class="display-math">$$ \begin{align*}
+            g = π \circ N
+        \end{align*} $$</span>
+        so <span class="inline-math">$N: U \to S^2$</span> is an <a href="/tripos-notes/Lectures/II/Lent/Riemann-Surfaces-RS/Notes/Definition-analytic-map-on-Riemann-surfaces.html">analytic map</a> of Riemann surfaces.
+        (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-Gauss-map-of-Weierstrass-representation-is-holomorphic.html">Derivation</a>)
+    </p>
+    
+</blockquote>
+<blockquote>
+    <p>
+        The <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-curvature-on-surface-in-R3.html">Gaussian curvature</a> is
+        <span class="display-math">$$ \begin{align*}
+            K = -\frac{16|g&#x27;|^2}{|f|^2 (1 + |g|^2)^4}.
+        \end{align*} $$</span>
+        (<a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Derivation-Gaussian-curvature-of-Weierstrass-representation.html">Derivation</a>)
+    </p>
+    
+</blockquote>

@@ -1,0 +1,280 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (jackknife estimator)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-jackknife-estimator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span>.
+                Let <span class="inline-math">$T_n := T(X_1, \ldots, X_n)$</span> be an <a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-estimator.html">estimator</a> of <span class="inline-math">$θ$</span>,
+                and write <span class="inline-math">$T_{(-j)} := T(X_1, \ldots, X_{j-1}, X_{j+1}, \ldots, X_n)$</span>.
+            </p>
+            <p>
+                The <em>jackknife bias estimate</em> is
+                <span class="display-math">$$ \begin{align*}
+                    \hat B_n := (n-1)\left(\frac{1}{n} \sum_{j=1}^{n} T_{(-j)} - T_n\right)
+                \end{align*} $$</span>
+                and the <em>jackknife estimator</em> is
+                <span class="display-math">$$ \begin{align*}
+                    \tilde T_{\text{JACK}} := T_n - \hat B_n = nT_n - \frac{n-1}{n} \sum_{j=1}^{n} T_{(-j)}.
+                \end{align*} $$</span>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (bias of jackknife estimator)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-bias-of-jackknife-estimator.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$T_1(X_1), T_2(X_1, X_2), \ldots$</span> be a sequence of estimators of <span class="inline-math">$θ$</span>
+                based on iid sample <span class="inline-math">$X_1, X_2, \ldots$</span> of <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                If the bias of <span class="inline-math">$T_n$</span> follows
+                <span class="display-math">$$ \begin{align*}
+                    \expect_θ[T_n] - θ = \frac{a}{n} + \frac{b}{n^2} + O\left(\frac{1}{n^3}\right),
+                \end{align*} $$</span>
+                then the bias of the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-jackknife-estimator.html">jackknife estimator</a> <span class="inline-math">$\tilde T_\text{JACK}$</span> follows
+                <span class="display-math">$$ \begin{align*}
+                    \expect_θ[\tilde T_{\text{JACK}}] - θ = O\left(\frac{1}{n^2}\right).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-bias-of-jackknife-estimator.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$θ = g(\expect[X])$</span> for some <span class="inline-math">$g: \R^p \to \R$</span> is a smooth,
+                    then <span class="inline-math">$T_n(X_1, \ldots, X_n) = g(\overline{X_n})$</span> satisfies the hypothesis.
+                    (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Derivation-bias-of-jackknife-estimator.html">Informal derivation</a>)
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (empirical distribution)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-empirical-distribution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X_1, \ldots, X_n$</span> be iid copies of <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                The <em>empirical distribution</em> <span class="inline-math">$\mathbb{P}_n$</span> is the
+                random discrete distribution that puts a mass of <span class="inline-math">$1/n$</span> at each <span class="inline-math">$X_i$</span>:
+                <span class="display-math">$$ \begin{align*}
+                    \mathbb{P}_n(A) = \frac{1}{n} \sum_{i=1}^{n} \mathbb{1}_A(X_i).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                A sample <span class="inline-math">$X_1^\ast, \ldots, X_n^\ast\mid X_1, \ldots, X_n \sim \mathbb{P}_n$</span> iid
+                is known as a <em>bootstrap resample</em>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (quantile function)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-quantile-function.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$F:\R\to [0,1]$</span> be a <a href="/tripos-notes/Lectures/IA/Lent/Probability-Pr/Notes/Definition-distribution-function.html">distribution function</a>.
+                The <em>quantile function</em> is
+                <span class="display-math">$$ \begin{align*}
+                    F\inv: (0,1)&amp;\to \R \\
+                    p &amp;\mapsto \inf \sb{t\in \R}{F(t)\geq p}.
+                \end{align*} $$</span>
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$F\inv(p) \leq t$</span> iff <span class="inline-math">$p\leq F(t)$</span>.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$U\sim U[0,1]$</span>, then <span class="inline-math">$F\inv(U) \sim F$</span>.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    If <span class="inline-math">$F, F_1, F_2, \ldots$</span> are distribution functions,
+                    <span class="inline-math">$F$</span> is continuous and strictly increasing,
+                    and <span class="inline-math">$F_n(t)\to F(t)$</span> for all <span class="inline-math">$t\in \R$</span>,
+                    then <span class="inline-math">$F_n\inv(p) \to F\inv(p)$</span> for all <span class="inline-math">$p\in (0,1)$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Glivenko-Cantelli, empirical distribution)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Glivenko-Cantelli-empirical-distribution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Suppose <span class="inline-math">$X\in \R$</span>, and let <span class="inline-math">$F$</span> be the distribution functions of <span class="inline-math">$X$</span>.
+                For iid samples <span class="inline-math">$X_1, \ldots, X_n$</span> of <span class="inline-math">$X$</span>,
+                let <span class="inline-math">$\hat F_n$</span> be the distribution function of the empirical distribution.
+            </p>
+            <p>
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \sup_{t\in \R} |\hat F_n(t) - F_n(t)| \xrightarrow{a.s.} 0.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-Glivenko-Cantelli-for-continous-F.html">Proof for a continuous <span class="inline-math">$F$</span></a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Kolmogorov-Smirnov, empirical distribution)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Kolmogorov-Smirnov-empirical-distribution.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                (<a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Glivenko-Cantelli-empirical-distribution.html">Context</a>)
+                If <span class="inline-math">$F$</span> is continuous, then
+                <span class="display-math">$$ \begin{align*}
+                    \sqrt{n} \sup_{t\in \R} |\hat F_n(t) - F(t)| \xrightarrow{d} K
+                \end{align*} $$</span>
+                where <span class="inline-math">$K$</span> is the <em>Kolmogorov distribution</em> (a continuous distribution).
+            </p>
+            <blockquote>
+                <p>
+                    Note <span class="inline-math">$\sup_{t\in \R} |\hat F_n(t) - F(t)|$</span> is identical for any continuous <span class="inline-math">$F$</span>:
+                    <span class="display-math">$$ \begin{align*}
+                        \sup_{t\in \R}|\hat F_n(t) - F(t)| ={}&amp; \sup_{p\in (0,1)} |\hat F_n(F\inv(p)) - F(F\inv(p))| \\
+                        ={}&amp; \sup_{p\in (0,1)} \left|\frac{1}{n} \sum_{i=1}^{n} \mathbb{1}_{\{X_i\ast \leq F\inv(p)\}} - p\right| \\
+                        ={}&amp; \sup_{p\in (0,1)} \left|\frac{1}{n} \sum_{i=1}^{n} \mathbb{1}_{\set{F(X_i) \leq p}} - p\right| \\
+                        \stackrel{(d)}={}&amp; \sup_{p\in (0,1)}\left|\frac{1}{n} \sum_{i=1}^{n} \mathbb{1}_{\set{U_i \leq p}} - p\right| \tag{*}
+                    \end{align*} $$</span>
+                    since <span class="inline-math">$F(X_i)\sim U[0,1]$</span> iid.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    The <em>Kolmogorov-Smirnov <span class="inline-math">$(1-α)$</span>-confidence band</em> is
+                    <span class="display-math">$$ \begin{align*}
+                        \hat C_n = \sb{\text{distribution function }G}{\hat F_n(t) - \frac{δ_n}{\sqrt{n}} \leq G(t) \leq \hat F_n(t) + \frac{δ_n}{\sqrt{n}} \; \forall t\in \R}
+                    \end{align*} $$</span>
+                    where <span class="inline-math">$δ_n$</span> is the upper <span class="inline-math">$α$</span> quantile of <span class="inline-math">$(*)$</span>.
+                    Alternatively, if we set <span class="inline-math">$δ_n$</span> to be the upper <span class="inline-math">$α$</span> quantile of <span class="inline-math">$K$</span>,
+                    then <span class="inline-math">$\hat C_n$</span> is an asymptotic <span class="inline-math">$(1-α)$</span>-confidence band.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (bootstrap confidence interval)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-bootstrap-confidence-interval.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X$</span>,
+                and let <span class="inline-math">$\hat θ_n = T(X_1, \ldots, X_n)$</span>
+                be an estimator for an unknown parameter <span class="inline-math">$θ\in \R$</span>.
+            </p>
+            <p>
+                Let <span class="inline-math">$X_1^\ast, \ldots, X_n^\ast$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-empirical-distribution.html">bootstrap resample</a> of <span class="inline-math">$X_1, \ldots, X_n$</span>.
+                Letting <span class="inline-math">$\hat F_n$</span> be the random distribution function of <span class="inline-math">$\sqrt{n}(T(X_1^\ast, \ldots, X_n^\ast) - \hat θ_n)$</span>,
+                define
+                <span class="display-math">$$ \begin{align*}
+                    \hat C_n = \sb{θ\in \R}{\hat l_n \leq \sqrt{n}(\hat θ_n - θ) \leq \hat u_n}
+                \end{align*} $$</span>
+                where <span class="inline-math">$\hat l_n = \hat F_n\inv(α/2)$</span> and <span class="inline-math">$\hat u_n = \hat F_n(1 - α/2)$</span> are random <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-quantile-function.html">quantiles</a>.
+            </p>
+            <p>
+                Assume
+            </p>
+            <ol start="1">
+            <li>
+                <p>
+                    <span class="inline-math">$\sqrt{n}(\hat θ_n - θ) \xrightarrow{d} F$</span> for some distribution <span class="inline-math">$F$</span>; and
+                </p>
+                
+            </li><li>
+                <p>
+                    <span class="inline-math">$\sup_{t\in \R}|\hat F_n(t) - F(t)| \xrightarrow{a.s.} 0$</span>.
+                </p>
+                
+            </li>
+            </ol>
+            <p>
+                Then <span class="inline-math">$\hat C_n$</span> is an asymptotic <span class="inline-math">$(1-α)$</span>-<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-confidence-interval-region.html">confidence interval</a>.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (Berry-Esseen)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-Berry-Esseen.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                (Non-examinable)
+            </p>
+            <p>
+                Suppose <span class="inline-math">$Z_1, Z_2, \ldots$</span> are iid with mean <span class="inline-math">$μ$</span>
+                and variance <span class="inline-math">$σ^2$</span>.
+                Then for all <span class="inline-math">$δ\in (0,1]$</span>,
+                <span class="display-math">$$ \begin{align*}
+                    \sup_{t\in \R} |\prob(\sqrt{n}(\overline{Z_n} - μ) \leq t) - Φ(t/σ)| \leq \frac{8 \expect[|Z_1 - μ|^{2+δ}]}{σ^{2+δ} n^{δ/2}}
+                \end{align*} $$</span>
+                where <span class="inline-math">$Φ$</span> is the distribution function of <span class="inline-math">$N(0,1)$</span>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (convergence of bootstrap distribution for the mean)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-convergence-of-bootstrap-distribution-for-the-mean.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X_1, X_2, \ldots$</span> be iid copies of <span class="inline-math">$X\in \R$</span>.
+                Suppose <span class="inline-math">$μ = \expect[X]$</span>, <span class="inline-math">$σ^2 = \var[X_1] &gt; 0$</span>
+                and <span class="inline-math">$\expect[|X - θ|^{2 + δ}] &lt; \infty$</span> for some <span class="inline-math">$δ&gt;0$</span>.
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    \sup_{t\in \R} |\hat F_n(t) - Φ(t/σ)| \xrightarrow{a.s.} 0
+                \end{align*} $$</span>
+                where <span class="inline-math">$\hat F_n$</span> is defined <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Theorem-bootstrap-confidence-interval.html">here</a> with <span class="inline-math">$θ = \expect[X]$</span> and <span class="inline-math">$\hat θ_n = \overline{X_n}$</span>,
+                and <span class="inline-math">$Φ$</span> is the distribution function of <span class="inline-math">$N(0,1)$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-convergence-of-bootstrap-distribution-for-the-mean.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

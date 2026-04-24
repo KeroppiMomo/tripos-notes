@@ -1,0 +1,18 @@
+<p>
+    Let <span class="inline-math">$X$</span> have density <span class="inline-math">$f$</span>, and we wish to estimate <span class="inline-math">$\expect g(X)$</span>.
+    However <span class="inline-math">$f$</span> is hard to sample.
+</p>
+<p>
+    Let <span class="inline-math">$\tilde f$</span> be a density which is easy to sample.
+    Then since
+    <span class="display-math">$$ \begin{align*}
+        \expect_{X\sim f}[g(X)] = \expect_{X\sim \tilde f}\left[g(X) \cdot \frac{f(X)}{\tilde f(X)}\right],
+    \end{align*} $$</span>
+    we can sample <span class="inline-math">$X_1, X_2, \ldots \sim \tilde f$</span> iid and use the <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-Monte-Carlo-estimator.html">Monte Carlo estimator</a>
+    <span class="display-math">$$ \begin{align*}
+        \hat I_\text{IS} = \frac{1}{n} \sum_{i=1}^{n} g(X_i) \frac{f(X_i)}{\tilde f(X_i)} \xrightarrow{a.s.} \expect_{X\sim f}[g(X)].
+    \end{align*} $$</span>
+</p>
+<p>
+    This works best when <span class="inline-math">$\tilde f \propto fg$</span> approximately, since <span class="inline-math">$\var\hat I_{\text{IS}} = \var_{X\sim \tilde f}(\frac{g(X)f(X)}{\tilde f(X)})$</span>.
+</p>
