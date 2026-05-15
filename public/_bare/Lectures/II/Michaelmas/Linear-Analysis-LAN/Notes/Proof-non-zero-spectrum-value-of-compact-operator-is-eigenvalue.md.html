@@ -1,0 +1,79 @@
+<p>
+    <a href="https://en.wikipedia.org/wiki/Spectral_theory_of_compact_operators#Compact_operators">Source</a>
+</p>
+<p>
+    Suppose <span class="inline-math">$T$</span> is compact and let <span class="inline-math">$λ\neq 0$</span>.
+</p>
+
+<h1><span class="inline-math">$\ker (λ\id - T)$</span> is finite-dimensional</h1>
+
+<p>
+    Let <span class="inline-math">$N_λ := \ker(λ\id - T)$</span>, which is closed hence a Banach space.
+    Then <span class="inline-math">$T|_{N_λ}: N_λ \to N_λ$</span> and is still compact.
+    But this is given by <span class="inline-math">$x\mapsto λx$</span>,
+    so <span class="inline-math">$\overline{TB_{N_λ}} = λB_{N_λ}$</span> is compact.
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-finite-dimensional-normed-space-iff-unit-ball-is-compact.html">Therefore</a> <span class="inline-math">$N_λ$</span> is finite-dimensional.
+</p>
+
+<h1><span class="inline-math">$\im(λ \id - T)$</span> is closed</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Corollary-norming-functional.html#^complement">Since</a>
+    <span class="inline-math">$X$</span> is Banach and <span class="inline-math">$\ker(λ\id - T)$</span> is finite-dimensional,
+    there is a closed subspace <span class="inline-math">$M$</span> such that <span class="inline-math">$X = \ker(λ\id - T) \oplus M$</span>.
+    Then <span class="inline-math">$(λ\id - T)|_M: M\to \im(λ\id - T)$</span> is a continuous linear bijection.
+</p>
+<p>
+    If <span class="inline-math">$\im(λ\id - T)$</span> is not closed, then <span class="inline-math">$(λ \id - T)|_M$</span> cannot be an isomorphism,
+    meaning there is a sequence <span class="inline-math">$(x_n)_{n\in \N}$</span> in <span class="inline-math">$M$</span>
+    with <span class="inline-math">$\|x_n\| = 1$</span>
+    such that <span class="inline-math">$(λ\id - T)(x_n) \to 0$</span>.
+    As with the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proof-non-zero-approximate-eigenvalue-of-compact-operator-is-eigenvalue.html">previous proof</a>,
+    As <span class="inline-math">$T$</span> is compact,
+    extract a subsequence <span class="inline-math">$(x_{n_k})_k$</span> such that <span class="inline-math">$Tx_{n_k} \to x$</span> for some <span class="inline-math">$x\in X$</span>.
+    This implies
+    <span class="display-math">$$ \begin{align*}
+        λx_{n_k} = \underbrace{(λ\id - T)x_{n_k}}_{0} + \underbrace{Tx_{n_k}}_{x} \to x
+    \end{align*} $$</span>
+    so <span class="inline-math">$x\in M$</span>.
+    However from <span class="inline-math">$(λ\id - T)(x_{n_k})\to 0$</span>, we see <span class="inline-math">$x\in \ker (λ\id - T)$</span>,
+    so <span class="inline-math">$x\in M \cap \ker(λ \id - T) = \set{0}$</span>.
+    This contradicts with <span class="inline-math">$\|x_{n_k}\| = 1$</span>.
+</p>
+
+<h1>If <span class="inline-math">$λ\id - T$</span> is injective, then <span class="inline-math">$λ\id - T$</span> is surjective</h1>
+
+<p>
+    The result follows form this claim,
+    because a <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-inversion-theorem.html">continuous linear bijection is an isomorphism</a>,
+    so if <span class="inline-math">$λ$</span> is not an eigenvalue, then <span class="inline-math">$λ$</span> is not in the spectrum.
+</p>
+<p>
+    Define
+    <span class="display-math">$$ \begin{align*}
+        Y_n := \im (λ\id - T)^n.
+    \end{align*} $$</span>
+    Suppose <span class="inline-math">$λ \id - T$</span> is not surjective,
+    so <span class="inline-math">$Y_1$</span> is a proper closed subspace of <span class="inline-math">$X$</span> (so a Banach space).
+    Then by induction, <span class="inline-math">$Y_n = \im ((λ\id - T)|_{Y_{n-1}})$</span>
+    is closed (because <span class="inline-math">$T|_{Y_{n-1}}$</span> is still compact)
+    and proper in <span class="inline-math">$Y_{n-1}$</span> (because <span class="inline-math">$λ\id - T$</span> is injective: <span class="inline-math">$Y_{n-2}\hookrightarrow Y_{n-1}$</span> and <span class="inline-math">$Y_{n-1} \hookrightarrow Y_n$</span>).
+    Therefore we form a strictly descending chain of closed subspaces
+    <span class="display-math">$$ \begin{align*}
+        X \supsetneq Y_1 \supsetneq Y_2 \supsetneq  \ldots.
+    \end{align*} $$</span>
+</p>
+<p>
+    Now apply <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-Riesz-s-lemma.html">Riesz's lemma</a>:
+    let <span class="inline-math">$y_n\in Y_n$</span> be such that <span class="inline-math">$d(y_n, Y_{n+1}) \geq |λ|/2$</span>.
+    We claim that <span class="inline-math">$\|Ty_n - Ty_m\| \geq 1/2$</span> for all <span class="inline-math">$n\neq m$</span>,
+    contradicting with the compactness of <span class="inline-math">$T$</span>.
+</p>
+<p>
+    Indeed, suppose <span class="inline-math">$m&lt;n$</span>.
+    We have
+    <span class="display-math">$$ \begin{align*}
+        \|Ty_n - Ty_m\| ={}&amp; \|\underbrace{(λ\id - T)y_m}_{\in Y_{m+1}} - \underbrace{(λ\id - T)y_n}_{\in Y_{n+1}} + \underbrace{λy_n}_{\in Y_n} - \underbrace{λy_m}_{\in Y_m}\| \geq |λ|/2.
+    \end{align*} $$</span>
+    becauase by construction, <span class="inline-math">$d(y_m, Y_{m+1}) \geq 1/2$</span>, and the first three terms are in <span class="inline-math">$Y_{m+1}$</span>.
+</p>

@@ -1,0 +1,346 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (rational map)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-rational-map.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X \subseteq \mathbb{P}^n$</span>
+                be an <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-irreducible-topological-space.html">irreducible</a> <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-quasiprojective-variety.html">quasiprojective variety</a>.
+            </p>
+            <p>
+                For any polynomials <span class="inline-math">$F_0, F_1, \ldots, F_m \in k[x_0, x_1, \ldots, x_n]$</span>
+                all homogeneous and having the same degree,
+                if not all <span class="inline-math">$F_i$</span> is in <span class="inline-math">$I(X)$</span>, then
+                <span class="display-math">$$ \begin{align*}
+                    F: X \setminus Z(F_0, \ldots, F_m) &amp;\to \mathbb{P}^m \\
+                    \v x &amp;\mapsto (F_0(\v x) : \ldots : F_m(\v x))
+                \end{align*} $$</span>
+                is a well-defined function on an <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-quasiprojective-variety.html">open dense subset</a> of <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                Such two <span class="inline-math">$F, G$</span> are said to determine the same rational map
+                if they agree on an open dense subset.
+                A <em>rational map</em> is an equivalence class of maps of this form,
+                denoted <span class="inline-math">$ϕ: X \dashrightarrow \mathbb{P}^m$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$ϕ$</span> is <em>regular</em> at a point <span class="inline-math">$P\in X$</span>
+                if there is a representative <span class="inline-math">$(F_0 : \ldots : F_m)$</span> of <span class="inline-math">$ϕ$</span>
+                such that <span class="inline-math">$F_0(P), \ldots, F_m(P)$</span> are not all zero.
+                The <em>domain</em> of <span class="inline-math">$ϕ$</span> is the set of regular points.
+            </p>
+            <p>
+                If <span class="inline-math">$Y \subseteq \mathbb{P}^m$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-quasiprojective-variety.html">quasiprojective variety</a>,
+                we write <span class="inline-math">$F: X \dashrightarrow Y$</span> is a rational map
+                if <span class="inline-math">$F$</span> takes values in <span class="inline-math">$Y$</span> on its domain.
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$(F_0 : \ldots : F_m)$</span> and <span class="inline-math">$(G_0 : \ldots : G_m)$</span> determine the same rational map
+                    iff <span class="inline-math">$F_i G_j - G_j F_i \in I(X)$</span> for all <span class="inline-math">$i,j$</span>.
+                    >
+                    In the case <span class="inline-math">$X = \mathbb{P}^n$</span>, this happens iff <span class="inline-math">$F_i = h\cdot G_i$</span> for some <span class="inline-math">$h\in k[x_0, \ldots, x_n]$</span>.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    A <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-function-field-of-projective-algebraic-set.html">rational function</a>
+                    <span class="inline-math">$f/g\in k[X]$</span> on <span class="inline-math">$X$</span>
+                    is the same as a rational map <span class="inline-math">$(g : f): X\dashrightarrow \mathbb{A}^1 \subseteq \mathbb{P}^1$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (morphism between quasiprojective varieties)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-morphism-between-quasiprojective-varieties.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X, Y$</span> be quasiprojective varieties, with
+                <span class="inline-math">$X \subseteq \mathbb{P}^n$</span> irreducible and <span class="inline-math">$Y \subseteq \mathbb{P}^m$</span>.
+            </p>
+            <p>
+                A <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-rational-map.html">rational map</a> <span class="inline-math">$ϕ: X\dashrightarrow Y$</span>
+                is a <em>morphism</em> <span class="inline-math">$ϕ: X\to Y$</span>
+                if <span class="inline-math">$ϕ$</span> is regular at all points of <span class="inline-math">$X$</span>, i.e. the domain of <span class="inline-math">$ϕ$</span> is <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$ϕ: X\to Y$</span> is an <em>isomorphism</em> if it has a two-sided inverse
+                which is also a morphism.
+            </p>
+            <blockquote>
+                <p>
+                    Suppose <span class="inline-math">$X,Y$</span> are irreducible projective varieties and <span class="inline-math">$X_0, Y_0$</span> are some affine patches.
+                    If a morphism <span class="inline-math">$f: X\to Y$</span> sends <span class="inline-math">$X_0$</span> to <span class="inline-math">$Y_0$</span>,
+                    then the restriction <span class="inline-math">$f: X_0\to Y_0$</span> is also a <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-morphism-between-affine-algebraic-sets.html">morphism</a>.
+                    (<a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-morphism-between-projective-varieties-descends-to-morphism-between-affine-patches.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-example">
+        <div class="markdown-embed-title">
+            Examples of maps between quasiprojective varieties
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Examples-of-maps-between-quasiprojective-varieties.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Projective projection
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Projective-projection.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Applying a change of coordinates, assume <span class="inline-math">$P = (0:\ldots:0:1)\in \mathbb{P}^n$</span>.
+                            The <em>projection from <span class="inline-math">$P$</span></em>
+                            is the <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-rational-map.html">rational map</a>
+                            <span class="display-math">$$ \begin{align*}
+                                \mathbb{P}^n &amp;\dashrightarrow \mathbb{P}^{n-1} \\
+                                (x_0 : \ldots : x_{n}) &amp;\mapsto (x_0 : \ldots : x_{n-1}),
+                            \end{align*} $$</span>
+                            which is defined everywhere except <span class="inline-math">$P$</span>.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$Q \neq P$</span> in <span class="inline-math">$\mathbb{P}^n$</span>
+                            and <span class="inline-math">$Q = (q_0 : \ldots : q_n)$</span>,
+                            then the line through <span class="inline-math">$P$</span> and <span class="inline-math">$Q$</span> is
+                            <span class="display-math">$$ \begin{align*}
+                                \mathbb{P}^1 &amp;\to \mathbb{P}^n\\
+                                (t:u) &amp;\mapsto (t q_0 : t q_1 : \ldots : t q_{n-1} : tq_n + u),
+                            \end{align*} $$</span>
+                            which is collapsed to a point.
+                            We can identify <span class="inline-math">$\mathbb{P}^{n-1}$</span> with <span class="inline-math">$\set{x_n = 0}$</span> in <span class="inline-math">$\mathbb{P}^n$</span>.
+                        </p>
+                        <p>
+                            This is a well-defined <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-morphism-between-quasiprojective-varieties.html">morphism</a> on any subvariety <span class="inline-math">$X \subseteq \mathbb{P}^n$</span>
+                            with <span class="inline-math">$P \not\in X$</span>.
+                            If <span class="inline-math">$Z(F)$</span> is a hypersurface,
+                            then if <span class="inline-math">$R = (r_0 : \ldots : r_{n-1})\in \mathbb{P}^{n-1}$</span>
+                            then the preimage of <span class="inline-math">$R$</span> in <span class="inline-math">$Z(F)$</span>
+                            is given by the locus where <span class="inline-math">$F(r_0 : \ldots : r_{n-1} : x_n) = 0$</span>,
+                            which is a union of at most <span class="inline-math">$\deg F$</span> many points in <span class="inline-math">$Z(F)$</span>
+                            (using <span class="inline-math">$P \not\in Z(F)$</span>).
+                        </p>
+                        <p>
+                            However it can be possible that its restriction to a subvariety containing <span class="inline-math">$P$</span> is a morphism:
+                            consider <span class="inline-math">$π: C := Z(x_0 x_2 - x_1^2) \dashrightarrow \mathbb{P}^1, (x_0 : x_1 : x_2) \mapsto (x_0 : x_1)$</span>,
+                            a projection from <span class="inline-math">$P = (0,0,1)$</span>.
+                            The other representation is <span class="inline-math">$(x_1 : x_2)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed">
+                    <div class="markdown-embed-title">
+                        Veronese embedding
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Veronese-embedding.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$n,d \geq 1$</span> and <span class="inline-math">$N = \pmat{n+d\\n} - 1$</span>.
+                            Consider the <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-morphism-between-quasiprojective-varieties.html">morphism</a>
+                            <span class="display-math">$$ \begin{align*}
+                                ν_d: \mathbb{P}^n &amp;\to \mathbb{P}^N \\
+                                (x_0 : \ldots : x_n) &amp;\mapsto (x_0^d : x_0^{d-1} x_1 : x_0^{d-1} x_2 : \ldots : x_n^d) \in \mathbb{P}^N
+                            \end{align*} $$</span>
+                            It is injective,
+                            called the <em><span class="inline-math">$d$</span>-uple or <span class="inline-math">$d$</span>-th Veronese embedding</em>.
+                            <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-morphisms-of-projective-varieties-are-closed.html">In fact</a> <span class="inline-math">$ν_d(\mathbb{P}^n)$</span> is a projective variety in <span class="inline-math">$\mathbb{P}^N$</span>,
+                            and so <span class="inline-math">$ν_d : \mathbb{P}^n \to ν_d(\mathbb{P}^n)$</span> is an isomorphism.
+                        </p>
+                        <p>
+                            We can think of the zero locus of a degree-<span class="inline-math">$d$</span> polynomial
+                            as the intersection of a linear subspace and <span class="inline-math">$ν_d(\mathbb{P}^n)$</span>.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (Segre embedding)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-Segre-embedding.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$m,n\geq 1$</span>, <span class="inline-math">$N = nm + n + m = (n+1)(m+1)-1$</span>.
+                            Write <span class="inline-math">$x_0, \ldots, x_n$</span> for the coordinates in <span class="inline-math">$\mathbb{P}^n$</span>,
+                            <span class="inline-math">$y_0, \ldots, y_m$</span> for the coordinates in <span class="inline-math">$\mathbb{P}^m$</span>,
+                            and <span class="inline-math">$z_{00}, \ldots, z_{0m}, \ldots, z_{n0}, \ldots, z_{nm}$</span> for the coordinates in <span class="inline-math">$\mathbb{P}^N$</span>.
+                        </p>
+                        <p>
+                            The <em>Segre embedding</em>
+                            <span class="display-math">$$ \begin{align*}
+                                σ_{n,m}: \mathbb{P}^n \times \mathbb{P}^m &amp;\to \mathbb{P}^N \\
+                                ((x_0 : \ldots : x_n) , (y_0 : \ldots : y_m)) &amp;\mapsto (x_0 y_0 : \ldots : x_0 y_m : \ldots : x_n y_0 : \ldots : x_n y_m)
+                            \end{align*} $$</span>
+                            is a bijection <span class="inline-math">$σ_{n,m}: \mathbb{P}^n \times \mathbb{P}^m \to Σ_{n,m}$</span> where
+                            <span class="display-math">$$ \begin{align*}
+                                Σ_{n,m} = Z(z_{ij}z_{pq} - z_{iq} z_{pj} \mid 0\leq i,p\leq n, \; 0\leq j,q\leq m,\; i\neq p, \; j\neq q)
+                            \end{align*} $$</span>
+                            is an <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-irreducible-topological-space.html">irreducible</a> <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-projective-zero-locus-projective-algebraic-set.html">projective variety</a>.
+                        </p>
+                        <p>
+                            This identification defines a <em>Zariski topology</em> on <span class="inline-math">$\mathbb{P}^n \times \mathbb{P}^m$</span>,
+                            with projection maps
+                            <span class="display-math">$$ \begin{align*}
+                                π_1: Σ_{n,m} &amp;\to \mathbb{P}^n &amp; π_2: Σ_{n,m} &amp;\to \mathbb{P}^m \\
+                                \v z &amp;\mapsto (z_{0j} : \ldots : z_{nj}) \quad \forall j, &amp; \v z &amp;\mapsto (z_{i0} : \ldots : z_{im}) \quad \forall i.
+                            \end{align*} $$</span>
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-Segre-embedding.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (quasiprojective varieties are separated)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-quasiprojective-varieties-are-separated.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Any <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-quasiprojective-variety.html">quasiprojective variety</a> <span class="inline-math">$X$</span> is <em>separated</em>,
+                i.e. <span class="inline-math">$Δ_X := \sb{(x,x)}{x\in X}$</span>
+                is <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-Segre-embedding.html">closed</a> in <span class="inline-math">$X \times X$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-quasiprojective-varieties-are-separated.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (projective varieties are complete)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Theorem-projective-varieties-are-complete.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Any irreducible projective variety <span class="inline-math">$X$</span> is <em>complete</em>,
+                i.e. for any algebraic variety <span class="inline-math">$Y$</span>,
+                the projection map <span class="inline-math">$π_2: X \times Y\to Y$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-Segre-embedding.html">closed</a> map.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (morphisms of projective varieties are closed)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-morphisms-of-projective-varieties-are-closed.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Any <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-morphism-between-quasiprojective-varieties.html">morphism</a>
+                <span class="inline-math">$f: X\to Y$</span> of irreducible projective varieties
+                is a closed map.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-morphisms-of-projective-varieties-are-closed.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (regular rational function on irreducible projective variety is constant)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-regular-rational-function-on-irreducible-projective-variety-is-constant.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be an irreducible projective variety.
+            </p>
+            <p>
+                If <span class="inline-math">$f\in k(X)$</span> is a <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-function-field-of-projective-algebraic-set.html">rational function</a>
+                which is <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-local-ring-of-projective-variety.html">regular</a> at all points,
+                then <span class="inline-math">$f$</span> is constant, i.e
+                <span class="display-math">$$ \begin{align*}
+                    \bigcap_{x\in X} O_{X,x} = k.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-regular-rational-function-on-irreducible-projective-variety-is-constant.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    Compare with the <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Lemma-regular-rational-function-on-affine-variety.html">affine case</a>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (dominant, birational rational map)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dominant-birational-rational-map.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$ϕ: X\dashrightarrow Y$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-rational-map.html">rational map</a>.
+            </p>
+            <p>
+                <span class="inline-math">$ϕ$</span> is said to be <em>dominant</em> if <span class="inline-math">$ϕ(X)$</span> is dense in <span class="inline-math">$Y$</span>.
+            </p>
+            <p>
+                <span class="inline-math">$ϕ$</span> is said to be <em>birational</em>
+                if it has a two-sided dominant rational inverse.
+                Equivalently,
+                there are open (dense) sets <span class="inline-math">$U\subseteq X$</span> and <span class="inline-math">$V \subseteq Y$</span>
+                such that <span class="inline-math">$ϕ|_X : X \to Y$</span> is an isomorphism.
+                If such <span class="inline-math">$ϕ$</span> exists, we say <span class="inline-math">$X, Y$</span> are <em>birational</em>.
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (dominant rational map and function field extension)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Theorem-dominant-rational-map-and-function-field-extension.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X,Y$</span> be irreducible quasiprojective varieties.
+                The pullback of <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dominant-birational-rational-map.html">dominant rational maps</a> gives bijections
+                <span class="display-math">$$ \begin{align*}
+                    \set{\text{dominant rational maps $X \dashrightarrow Y$}} &amp;\xrightarrow{\sim} \set{\text{field embedding $k(Y)\hookrightarrow k(X)$}} \\
+                    \set{\text{birational rational maps $X \dashrightarrow Y$}} &amp;\xrightarrow{\sim} \set{\text{field isomorphism $k(Y) \xrightarrow{\sim} k(X)$}} \\
+                    ϕ &amp;\mapsto ϕ^\ast = (g \mapsto g \circ ϕ).
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-dominant-rational-map-and-function-field-extension.html">Proof</a>
+                TODO
+            </p>
+            
+        </div>
+    </div>
+</p>

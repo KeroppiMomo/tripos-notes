@@ -1,0 +1,30 @@
+<p>
+    Define the <em>Fejér kernel</em>
+    <span class="display-math">$$ \begin{align*}
+        K_N(t) := \frac{1}{N+1} \sum_{n=0}^{N} D_n(t) = \begin{cases}
+            \displaystyle\frac{1}{N+1} \left(\frac{\sin \frac{N+1}{2}t}{\sin \frac{1}{2}t}\right)^2, &amp;t\not\in 2π\Z, \\
+            N+1, &amp;t\in 2π\Z
+        \end{cases}
+    \end{align*} $$</span>
+    where <span class="inline-math">$D_n$</span> is the <span class="inline-math">$n$</span>-th <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-Dirichlet-kernel.html">Dirichlet kernel</a>,
+    and write for <span class="inline-math">$f\in C(\mathbb{T})$</span>
+    <span class="display-math">$$ \begin{align*}
+        σ_N(f) := f * K_N = \frac{1}{N+1}\sum_{n=0}^{N} S_n(f) = \frac{1}{N+1}\sum_{n=0}^{N} \sum_{k=-n}^{n} \hat f_k e^{ikt}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Then <span class="inline-math">$K_N$</span> is an approximate identity, so
+    <span class="display-math">$$ \begin{align*}
+        σ_N(f) \tto f \qquad \text{in $C(\mathbb{T})$}.
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proof-Fejer-kernel.html">Proof</a>
+</p>
+<blockquote>
+    <p>
+        This demonstrates the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-Stone-Weierstrass.html">Stone-Weierstrass theorem</a>:
+        the trigonometric polynomials <span class="inline-math">$\set{\sum_{n=-N}^{N} a_n e^{int}}$</span> is dense in <span class="inline-math">$C(\mathbb{T})$</span>.
+    </p>
+    
+</blockquote>

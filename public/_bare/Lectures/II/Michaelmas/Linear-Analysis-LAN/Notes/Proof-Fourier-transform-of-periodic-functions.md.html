@@ -1,0 +1,97 @@
+
+<h1>Riemann-Lebesgue lemma</h1>
+
+<p>
+    Let <span class="inline-math">$f\in C(\mathbb{T})$</span>,
+    and we need to show <span class="inline-math">$\hat f_n \to 0$</span> as <span class="inline-math">$|n|\to \infty$</span>.
+</p>
+<p>
+    Fix <span class="inline-math">$ε&gt;0$</span>.
+    By the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-Fejer-kernel.html">Fejér kernel</a>
+    or the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-Stone-Weierstrass.html">Stone-Weierstrass theorem</a>,
+    find a trigonometric function <span class="inline-math">$g(t) = \sum_{n=-N}^{N} a_n e^{int}$</span>
+    such that
+    <span class="display-math">$$ \begin{align*}
+        \|f - g\|_{\infty} &lt; ε.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note a simple calculation shows
+    <span class="display-math">$$ \begin{align*}
+        \hat g_n = \begin{cases}
+            a_n, &amp;\text{if $-N&lt;n&lt;N$}, \\
+            0, &amp;\text{otherwise}.
+        \end{cases}
+    \end{align*} $$</span>
+</p>
+<p>
+    Moreover observing that <span class="inline-math">$|\hat h_n| \leq  \frac{1}{2π}\int_{-π}^{π} |h(t) e^{-int}| \d t \leq \|h\|_\infty$</span>,
+    we have
+    <span class="display-math">$$ \begin{align*}
+        |\hat f_n - \hat g_n| \leq \|f - g\|_\infty &lt; ε
+    \end{align*} $$</span>
+    so <span class="inline-math">$|\hat f_n| &lt; ε$</span> for all <span class="inline-math">$|n|&gt;N$</span>.
+</p>
+
+<h1>Bounded linear map</h1>
+
+<p>
+    Linearity is clear.
+</p>
+<p>
+    We just observed <span class="inline-math">$|\hat f_n| \leq \|f\|_\infty$</span>,
+    so <span class="inline-math">$\|\mathcal{F}\| \leq 1$</span>.
+    Setting <span class="inline-math">$f = 1$</span> shows <span class="inline-math">$\|\mathcal{F}\| = 1$</span>.
+</p>
+
+<h1>Injectivity</h1>
+
+<p>
+    Suppose <span class="inline-math">$f\in C(\mathbb{T})$</span> has <span class="inline-math">$\hat f_n = 0$</span> for all <span class="inline-math">$n\in \Z$</span>.
+    Fix <span class="inline-math">$ε&gt;0$</span> and let <span class="inline-math">$g(t) = \sum_{n=-N}^{N} a_n e^{int}$</span> be a trigonometric polynomial
+    with <span class="inline-math">$\|f - g\|_\infty &lt; ε$</span>.
+</p>
+<p>
+    Then on one hand
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{2π} \int_{-π}^{π} f\bar g \d t = \sum_{n=-N}^{N} \bar a_n\cdot \underbrace{\frac{1}{2π}\int_{-π}^{π} f(t) e^{-int} \d t}_{\hat f_n} = 0
+    \end{align*} $$</span>
+    and on the other hand
+    <span class="display-math">$$ \begin{align*}
+        \left|\frac{1}{2π} \int_{-π}^{π} f\bar g \d t - \frac{1}{2π}\int_{-π}^{π} |f|^2 \d t\right| \leq{}&amp; \frac{1}{2π}\int_{-π}^{π} |f||\bar g - \bar f| \d t \leq \frac{ε \|f\|_\infty}{2π}.
+    \end{align*} $$</span>
+    Since <span class="inline-math">$ε&gt;0$</span> is arbitrary, we get
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{2π}\int_{-π}^{π} |f|^2 \d t= 0
+    \end{align*} $$</span>
+    and since <span class="inline-math">$f$</span> is continuous, we have <span class="inline-math">$f = 0$</span>.
+</p>
+
+<h1>Failure of surjectivity</h1>
+
+<p>
+    Suppose <span class="inline-math">$\mathcal{F}$</span> is surjective, so a continuous linear bijection.
+    Since <span class="inline-math">$C(\mathbb{T})$</span> and <span class="inline-math">$c_0(\Z)$</span> are Banach spaces,
+    by the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-inversion-theorem.html">inversion theorem</a>,
+    <span class="inline-math">$\mathcal{F}\inv$</span> is continuous.
+</p>
+<p>
+    However, consider <span class="inline-math">$a^{(k)}\in c_0(\Z)$</span> given by
+    <span class="display-math">$$ \begin{align*}
+        a_n^{(k)} := \begin{cases}
+            1, &amp;|n|\leq k, \\
+            0, &amp;\text{otherwise},
+        \end{cases}
+    \end{align*} $$</span>
+    which has norm <span class="inline-math">$1$</span>.
+    Then
+    <span class="display-math">$$ \begin{align*}
+        \mathcal{F}\inv(a^{(k)}) = \sum_{n=-k}^{k} e^{int}
+    \end{align*} $$</span>
+    which attains <span class="inline-math">$2k+1$</span> at <span class="inline-math">$t=0$</span>.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \|\mathcal{F}\inv\| \geq 2k+1
+    \end{align*} $$</span>
+    for all <span class="inline-math">$k$</span>, contradicting boundedness.
+</p>

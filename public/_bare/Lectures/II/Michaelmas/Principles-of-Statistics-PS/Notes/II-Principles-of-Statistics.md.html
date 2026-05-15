@@ -535,7 +535,7 @@
                                             <span class="display-math">$$ \begin{align*}
                                                 \tilde θ_n = \begin{cases}
                                                     \hat θ_n, &amp;|\hat θ_n| \geq n^{-1/4}, \\
-                                                    \hat θ_n, &amp;|\hat θ_n|&lt;n^{-1/4}.
+                                                    0, &amp;|\hat θ_n|&lt;n^{-1/4}.
                                                 \end{cases}
                                             \end{align*} $$</span>
                                         </p>
@@ -1395,7 +1395,7 @@
                                         Under the quadratic <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-loss-risk.html">loss</a> <span class="inline-math">$L(δ,θ) = (δ - θ)^2$</span>,
                                         its risk is
                                         <span class="display-math">$$ \begin{align*}
-                                            R(δ^\text{JS}, θ) = p - (p-2) \expect_θ\left[\frac{1}{\|X\|^2}\right]
+                                            R(δ^\text{JS}, θ) = p - (p-2)^2 \expect_θ\left[\frac{1}{\|X\|^2}\right]
                                         \end{align*} $$</span>
                                         so <span class="inline-math">$δ^\text{JS}$</span> <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Definition-admissible-rule.html">dominates</a> the maximum likelihood estimator <span class="inline-math">$X$</span> for <span class="inline-math">$p\geq 3$</span>.
                                     </p>
@@ -2187,12 +2187,15 @@
                             
                         </blockquote>
                         <blockquote>
-                            <p>
+                            <!-- BEGIN BLOCK ID limit -->
+                            <p id="^limit">
                                 If <span class="inline-math">$F, F_1, F_2, \ldots$</span> are distribution functions,
                                 <span class="inline-math">$F$</span> is continuous and strictly increasing,
                                 and <span class="inline-math">$F_n(t)\to F(t)$</span> for all <span class="inline-math">$t\in \R$</span>,
                                 then <span class="inline-math">$F_n\inv(p) \to F\inv(p)$</span> for all <span class="inline-math">$p\in (0,1)$</span>.
                             </p>
+                            
+                            <!-- END BLOCK ID limit -->
                             
                         </blockquote>
                         
@@ -2298,13 +2301,16 @@
                             
                         </li><li>
                             <p>
-                                <span class="inline-math">$\sup_{t\in \R}|\hat F_n(t) - F(t)| \xrightarrow{a.s.} 0$</span>.
+                                <span class="inline-math">$\hat F_n(t) \xrightarrow{p} F(t)$</span>.
                             </p>
                             
                         </li>
                         </ol>
                         <p>
                             Then <span class="inline-math">$\hat C_n$</span> is an asymptotic <span class="inline-math">$(1-α)$</span>-<a href="/tripos-notes/Lectures/IB/Lent/Statistics-St/Notes/Definition-confidence-interval-region.html">confidence interval</a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Michaelmas/Principles-of-Statistics-PS/Notes/Proof-bootstrap-confidence-interval.html">Proof</a>
                         </p>
                         
                     </div>

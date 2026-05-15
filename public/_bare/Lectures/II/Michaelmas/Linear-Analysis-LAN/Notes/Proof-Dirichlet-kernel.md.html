@@ -1,0 +1,38 @@
+<p>
+    <span class="inline-math">$\sum_{n=-N}^{N} e^{int} = \sin(N+\frac{1}{2})t / \sin \frac{1}{2}t$</span>
+    follows from the geometric sum formula:
+    <span class="display-math">$$ \begin{align*}
+        \sum_{n=-N}^{N} e^{int} ={}&amp; \frac{e^{-iNt} (e^{i(2N+1)t} - 1)}{e^{it} - 1} \\
+        ={}&amp; \frac{e^{i(N+\frac{1}{2})t} - e^{-i(N+\frac{1}{2})t}}{e^{\frac{1}{2}it} - e^{-\frac{1}{2}it}} \\
+        ={}&amp; \frac{\sin (N+\frac{1}{2})t}{\sin \frac{1}{2}t}.
+    \end{align*} $$</span>
+</p>
+<p>
+    Note <span class="inline-math">$D_N(f)$</span> is even.
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        T_N(f) = \frac{1}{2π}\int_{-π}^{π} f(s) D_N(s) \d s.
+    \end{align*} $$</span>
+    Clearly <span class="inline-math">$S_N$</span> is linear.
+</p>
+<p>
+    For boundedness, note
+    <span class="display-math">$$ \begin{align*}
+        \|T_N(f)\| \leq \frac{1}{2π}\int_{-π}^{π} |f(s)||D_N(s)| \d s \leq \|f\|_\infty \cdot \frac{1}{2π} \int_{-π}^{π} |D_N(s)| \d s
+    \end{align*} $$</span>
+    and the integral is finite.
+</p>
+<p>
+    To show <span class="inline-math">$\|T_N(f)\| \geq \frac{1}{2π} \int_{-π}^{π} |D_N(s)| \d s$</span>,
+    take <span class="inline-math">$f$</span> to be a continuous approximation of <span class="inline-math">$\sign D_N$</span>.
+</p>
+<p>
+    To show <span class="inline-math">$\int_{-π}^{π} |D_N(s)| \d s$</span>, note
+    on <span class="inline-math">$[\frac{2k}{2N+1}π, \frac{2(k+1)}{2N+1}π]$</span>,
+    <span class="inline-math">$|\sin(\frac{2N+1}{2} θ)| \geq \sqrt{2}/2$</span> half the time,
+    and <span class="inline-math">$|\sin(θ)/2| \leq |θ/2| \leq C \frac{k}{N}$</span>.
+    So
+    <span class="display-math">$$ \begin{align*}
+        \frac{1}{2π} \int_{-π}^{π} |D_N(θ)| \d θ \geq C\cdot \log N \to \infty.
+    \end{align*} $$</span>
+</p>

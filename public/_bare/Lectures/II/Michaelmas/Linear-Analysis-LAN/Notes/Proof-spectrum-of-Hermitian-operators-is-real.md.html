@@ -1,0 +1,36 @@
+<p>
+    We need to show that <span class="inline-math">$λ \id - T$</span> is invertible for any <span class="inline-math">$λ\in \C\setminus \R$</span>.
+    Let <span class="inline-math">$δ = |\op{Im}(λ)| &gt; 0$</span>.
+</p>
+<p>
+    Note <span class="inline-math">$\langle Tx, x\rangle\in \R$</span> since
+    <span class="display-math">$$ \begin{align*}
+        \langle Tx, x\rangle = \langle x, T^\ast x\rangle = \langle x, Tx\rangle = \overline{\langle Tx, x\rangle}
+    \end{align*} $$</span>
+    so by <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Lemma-Cauchy-Schwarz.html">Cauchy-Schwarz</a>, for <span class="inline-math">$\|x\|=1$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \|(λ\id - T)x\| \geq |\langle (λ \id - T)x, x\rangle| = |λ - \underbrace{\langle Tx, x\rangle}_{\in \R}| \geq δ.
+    \end{align*} $$</span>
+</p>
+<p>
+    Then <span class="inline-math">$λ\id - T: H\to Y := \im(λ\id - T)$</span> is an isomorphism.
+    Since <span class="inline-math">$H$</span> is complete, <span class="inline-math">$Y$</span> is complete and thus closed in <span class="inline-math">$H$</span>.
+</p>
+<p>
+    Therefore <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-orthogonal-complement-in-Hilbert-space.html"><span class="inline-math">$H = Y \oplus Y^\perp$</span></a>.
+    If <span class="inline-math">$y\in Y^\perp$</span>, then
+    <span class="inline-math">$\langle (λ\id - T)y, y\rangle = 0$</span>.
+    But we showed above that <span class="inline-math">$|\langle (λ \id - T)y, y\rangle| \geq δ\|y\|^2$</span>,
+    so <span class="inline-math">$y = 0$</span>.
+    Thus <span class="inline-math">$Y = H$</span>
+    and <span class="inline-math">$T: H\to H$</span> is an isomorphism.
+</p>
+
+<h1>Special case if <span class="inline-math">$T$</span> is compact</h1>
+
+<p>
+    We showed <span class="inline-math">$\partial σ(T)$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-point-spectrum-approximate-point-spectrum.html#^boundary"><span class="inline-math">${}\subseteq{}$</span></a><span class="inline-math">$σ_\text{ap}(T)$</span><a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-non-zero-approximate-eigenvalue-of-compact-operator-is-eigenvalue.html"><span class="inline-math">${}\subseteq{}$</span></a><span class="inline-math">$σ_p(T) \cup \set{0}$</span>.
+    Since <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-eigenvalues-of-Hermitian-matrix-is-real.html">eigenvalues of <span class="inline-math">$T$</span></a> are real,
+    <span class="inline-math">$\partial σ(T) \subseteq \R$</span>.
+    Thus <span class="inline-math">$σ(T) \subseteq \R$</span>.
+</p>

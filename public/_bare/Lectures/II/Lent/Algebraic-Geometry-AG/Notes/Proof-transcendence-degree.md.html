@@ -1,37 +1,39 @@
 <p>
-    (Not yet reviewed)
+    From a finite set which generate <span class="inline-math">$L/K$</span>,
+    extract a maximally algebraically independent set <span class="inline-math">$x_1, \ldots, x_n$</span>.
+    Then <span class="inline-math">$L/K(x_1, \ldots, x_n)$</span> is finite, so <span class="inline-math">$x_1, \ldots, x_n$</span> is a transcendence basis.
 </p>
 <p>
-    Suppose <span class="inline-math">$κ/K$</span> is a finitely generated field extension by <span class="inline-math">$x_1, \ldots, x_n$</span>.
-    Then there exists <span class="inline-math">$κ_0 = K(x_1, \ldots, x_1)$</span> pure transcendental
-    such that <span class="inline-math">$κ_0 \subset κ$</span> is finite.
-    And you can take <span class="inline-math">$x_1, \ldots, x_m$</span> to
-    be the maximal set of algebraically independent elements.
+    We will show that two transcendence bases <span class="inline-math">$\set{x_1, \ldots, x_n}$</span> and <span class="inline-math">$\set{y_1, \ldots, y_m}$</span> of <span class="inline-math">$L/K$</span>
+    have the same length.
+    WLOG suppose <span class="inline-math">$m\geq n$</span>.
+    Let <span class="inline-math">$K_0 := K(x_1, \ldots, x_n)$</span>.
 </p>
-<blockquote>
+<ul>
+<li>
     <p>
-        Let <span class="inline-math">$x_1, \ldots, x_n$</span> and <span class="inline-math">$y_1, \ldots, y_m$</span> be transcendence bases for
-        a finitely generated field extension <span class="inline-math">$K/k$</span>, then <span class="inline-math">$n=m$</span>.
-    </p>
-    <p>
-        Therefore transcendence degree is well-defined.
+        <span class="inline-math">$y_1\in L$</span> is algebraic over <span class="inline-math">$K_0$</span>, <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-minimal-polynomial-with-algebraically-independent-set.html">so</a>
+        there exists a minimal polynomial <span class="inline-math">$f_1$</span> over <span class="inline-math">$K$</span> such that <span class="inline-math">$f_1(x_1, \ldots, x_n, y_1) = 0$</span>.
+        <span class="inline-math">$f_1$</span> involves some <span class="inline-math">$x_i$</span>, WLOG say <span class="inline-math">$x_1$</span>, so
+        <span class="inline-math">$\{y_1, x_2, \ldots, x_n\}$</span> is algebraically independent.
+        As <span class="inline-math">$x_1$</span> is algebraic over <span class="inline-math">$K_1 := K(y_1, x_2, \ldots, x_n)$</span> (because of <span class="inline-math">$f_1$</span>),
+        <span class="inline-math">$L/K_0(y_1)/K_1$</span> is a tower of finite extensions, <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-tower-law.html">so</a> <span class="inline-math">$L/K_1$</span> is finite.
     </p>
     
-</blockquote>
+</li><li>
+    <p>
+        By induction assume <span class="inline-math">$\{y_1, \ldots, y_{i-1}, x_{i}, \ldots, x_n\}$</span> is a transcendence basis for <span class="inline-math">$L/K$</span>.
+        <span class="inline-math">$y_{i}$</span> is algebraic over <span class="inline-math">$K_{i-1} := K(y_1, \ldots, y_{i-1}, x_{i}, \ldots, x_n)$</span>,
+        so it has a minimal polynomial <span class="inline-math">$f_i$</span>.
+        <span class="inline-math">$f_i$</span> must involve some <span class="inline-math">$x_j$</span>, because otherwise <span class="inline-math">$f_i(y_1, \ldots, y_{i-1}, x_{i}, \ldots, x_n, y_i)=0$</span>
+        is a non-trivial algebraic relation involving only the <span class="inline-math">$y_j$</span>'s, which contradicts algebraic independence of <span class="inline-math">$\{y_1, \ldots, y_m\}$</span>.
+        WLOG say <span class="inline-math">$f_i$</span> involves <span class="inline-math">$x_i$</span>, so
+        <span class="inline-math">$\set{y_1, \ldots, y_{i-1}, y_i, x_{i+1}, \ldots, x_n}$</span> is a transcendence basis.
+    </p>
+    
+</li>
+</ul>
 <p>
-    <em>Proof</em>.
-    Suppose not, WLOG <span class="inline-math">$m&gt;n$</span>.
-    <span class="inline-math">$y_1$</span> is algebraic over <span class="inline-math">$k(x_1, \ldots, x_n)$</span>,
-    so has some minimal polynomial <span class="inline-math">$f_1$</span> by some proposition.
-    This <span class="inline-math">$f_1$</span> involves some <span class="inline-math">$x_i$</span>
-    so we replace <span class="inline-math">$x_i$</span> with <span class="inline-math">$y_1$</span>
-    and consider the algebraically independent set <span class="inline-math">$x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n, y_1$</span>.
-    Since <span class="inline-math">$x_1$</span> is algebraic over <span class="inline-math">$k(x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n, y_1)$</span>,
-    <span class="inline-math">$y_2$</span> is algebraic over <span class="inline-math">$k(x_i, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n, y)$</span>.
-    Find minimum polynomial <span class="inline-math">$f_2$</span> and proceed in this way,
-    noting some new <span class="inline-math">$x_i$</span> must be involved in <span class="inline-math">$f_i$</span>
-    for <span class="inline-math">$i\leq n$</span> (because <span class="inline-math">$y_1, \ldots, y_m$</span> are algebraically independent).
-    So we conclude that <span class="inline-math">$x_1, \ldots, x_n$</span> are algebraic over <span class="inline-math">$k(y_1, \ldots, y_n)$</span>.
-    As each <span class="inline-math">$y_{n+1}, \ldots, y_m$</span> is algebraic over <span class="inline-math">$k(x_1, \ldots, x_n)$</span>,
-    they are also algebraic over <span class="inline-math">$k(y_1, \ldots, y_n)$</span>, and so <span class="inline-math">$m=n$</span>.
+    In the end we find a transcendence basis <span class="inline-math">$\set{y_1, \ldots, y_n}$</span>,
+    which by algebraic independence implies <span class="inline-math">$n=m$</span>.
 </p>

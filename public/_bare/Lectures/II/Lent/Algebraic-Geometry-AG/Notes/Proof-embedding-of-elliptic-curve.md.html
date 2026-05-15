@@ -1,0 +1,93 @@
+
+<h1>Very ample</h1>
+
+<p>
+    <span class="inline-math">$3P_0$</span> is very ample <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Theorem-condition-for-very-ample-divisor.html">as</a> <span class="inline-math">$\deg 3P_0 \geq 3$</span>,
+    meaning <span class="inline-math">$ϕ_{3P_0}$</span> is an isomorphism onto its image.
+</p>
+
+<h1>Isomorphic to cubic</h1>
+
+<p>
+    <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-elliptic-curve.html#^functions">Recall</a> <span class="inline-math">$l(D) = \deg(D)$</span> for any divisor <span class="inline-math">$D$</span> with <span class="inline-math">$\deg D&gt;0$</span>.
+</p>
+<ul>
+<li>
+    <p>
+        <span class="inline-math">$L(P_0) = k$</span> has a basis <span class="inline-math">$\set{1}$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$L(2P_0)$</span> has a basis <span class="inline-math">$\set{1, x}$</span> for some <span class="inline-math">$x\in l(2P_0)\setminus l(P_0)$</span>,
+        meaning <span class="inline-math">$x$</span> must have a double pole at <span class="inline-math">$P_0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$L(3P_0)$</span> has a basis <span class="inline-math">$\set{1, x, y}$</span> for some <span class="inline-math">$y\in l(3P_0) \setminus l(2P_0)$</span>,
+        meaning <span class="inline-math">$y$</span> must have a triple pole at <span class="inline-math">$P_0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$L(4P_0)$</span> has a basis <span class="inline-math">$\set{1, x, y, x^2}$</span> as <span class="inline-math">$x^2$</span> has an order-4 pole at <span class="inline-math">$P_0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$L(5P_0)$</span> has a basis <span class="inline-math">$\set{1, x, y, x^2, xy}$</span> as <span class="inline-math">$xy$</span> has an order-5 pole at <span class="inline-math">$P_0$</span>.
+    </p>
+    
+</li>
+</ul>
+<p>
+    Now <span class="inline-math">$L(6P_0)$</span> contains <span class="inline-math">$\set{1, x, y, x^2, xy, x^3, y^2}$</span> with <span class="inline-math">$x^3$</span> and <span class="inline-math">$y^2$</span> both having an order-6 pole at <span class="inline-math">$P_0$</span>,
+    but <span class="inline-math">$L(6P_0)$</span> has dimension 6.
+    Therefore there must have a linear relation
+    <span class="display-math">$$ \begin{align*}
+        a_1 + a_2x + a_3y + a_4 x^2 + a_5 xy + a_6x^3 + a_7 y^2 = 0
+    \end{align*} $$</span>
+    where <span class="inline-math">$a_6, a_7 \neq 0$</span>.
+    By a change of basis, we can set <span class="inline-math">$a_3 = 0$</span> (by absorbing into the <span class="inline-math">$xy$</span> term)
+    and <span class="inline-math">$a_5 = 0$</span> (by completing the square with the <span class="inline-math">$y^2$</span> term).
+    Factoring and homogenising, we get
+    <span class="display-math">$$ \begin{align*}
+        F(x,y,z) := y^2 z - \prod_{i=1}^{3} (x - λ_i z) = 0
+    \end{align*} $$</span>
+    satisfies <span class="inline-math">$F(x,y,1)$</span>
+    for <span class="inline-math">$λ_1, λ_2, λ_3\in k$</span> after some scaling.
+</p>
+<p>
+    The embedding <span class="inline-math">$ϕ_{3P_0}$</span> is given by
+    <span class="display-math">$$ \begin{align*}
+        ϕ_{3P_0} = (x : y : 1) : E &amp;\to \mathbb{P}^2 \\
+    \end{align*} $$</span>
+    so its image lies in <span class="inline-math">$Z(F(x_1,x_2,x_3))\subseteq  \mathbb{P}^2$</span>.
+</p>
+<p>
+    <span class="inline-math">$\dim ϕ_{3P_0}(E) = 1 = \dim Z(F)$</span>, so as <span class="inline-math">$ϕ_{3P_0}(E)$</span> is a closed irreducible subvariety,
+    <span class="inline-math">$ϕ_{3P_0}(E)$</span> is an irreducible component of <span class="inline-math">$Z(F)$</span>.
+    If <span class="inline-math">$Z(F)$</span> is reducible, then <span class="inline-math">$ϕ_{3P_0}(E)$</span> is either a quadric surface or a hyperplane.
+    This is impossible as a quadric surface or a hypersurface is birational (so isomorphic) to <span class="inline-math">$\mathbb{P}^1$</span>,
+    which has genus <span class="inline-math">$0\neq 1$</span>.
+    Hence <span class="inline-math">$ϕ_{3P_0}: E \to Z(F)$</span> is an isomorphism.
+</p>
+
+<h1>Group law</h1>
+
+<p>
+    We have
+    <span class="display-math">$$ \begin{align*}
+        P + Q + R = P_0 &amp;\iff [P-P_0] + [Q-P_0] + [R-P_0] = 0 \\
+        &amp;\iff P + Q + R - 3P_0 = \op{div}(f) \qquad \text{for some $f\in k(E)$}.
+    \end{align*} $$</span>
+    Here we must have <span class="inline-math">$f\in L(3P_0)$</span>, so
+    <span class="display-math">$$ \begin{align*}
+        f = L(1, x, y) = \frac{ϕ_{3P_0}^\ast L(x_1, x_2, x_3)}{ϕ_{3P_0}^\ast x_3}
+    \end{align*} $$</span>
+    for some linear form <span class="inline-math">$L$</span>.
+    Therefore <span class="inline-math">$\op{div}(ϕ_{3P_0}^\ast L(x_1, x_2, x_3)) = P+Q+R$</span>,
+    meaning <span class="inline-math">$ϕ_{3P_0}(P)$</span>, <span class="inline-math">$ϕ_{3P_0}(Q)$</span> and <span class="inline-math">$ϕ_{3P_0}(R)$</span> lie
+    on the line <span class="inline-math">$L$</span>.
+</p>

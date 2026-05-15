@@ -1,18 +1,24 @@
 <p>
-    (Not yet reviewed)
+    <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-dimension-and-transcendence-degree-of-function-field.html">Recall</a> dimension equals transcendence degree of the function field.
 </p>
 <p>
+    By restricting to an affine patch (which <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-function-field-of-affine-patch.html">does not change the function field</a> so dimension),
     WLOG assume <span class="inline-math">$Y\subseteq Z\subseteq \mathbb{A}^r$</span> are affine.
-    Let <span class="inline-math">$z_1, \ldots, z_n$</span> be a transcendence basis for <span class="inline-math">$k(Z)$</span>.
-    WLOG, by cancelling denominators, assume these are in <span class="inline-math">$A(Z)$</span>.
-    There exists some polynomial <span class="inline-math">$g\in I(Y) \setminus I(Z)$</span>.
-    Then <span class="inline-math">$z_1, \ldots, z_n, g$</span> is not algebraically independent (by transcendence degree)
-    in <span class="inline-math">$k(Z)$</span>,
-    so there exists <span class="inline-math">$f$</span> a polynomial with <span class="inline-math">$f(z_1, \ldots, z_n, g) = 0$</span> in <span class="inline-math">$A(Z)$</span>
-    Since <span class="inline-math">$f$</span> is irreducible, <span class="inline-math">$g\not\mid f$</span>,
-    so as a single-variable polynomial in <span class="inline-math">$(n+1)$</span>-st coordinates,
-    <span class="inline-math">$f$</span> has non-zero constant term.
-    So in <span class="inline-math">$A(Y)$</span>, since <span class="inline-math">$g = 0$</span>,
-    we have algebraic relation on <span class="inline-math">$z_1, \ldots, z_n$</span>.
-    So <span class="inline-math">$\op{trdeg}_k k(Y) &lt; n$</span> as needed.
+</p>
+<p>
+    Let <span class="inline-math">$y_1, \ldots, y_n\in k(Y)$</span> be a transcendence basis of <span class="inline-math">$k(Y)/k$</span>,
+    and by clearing denominators, WLOG assume <span class="inline-math">$y_1, \ldots, y_n\in A(Y)$</span>.
+    Viewing in <span class="inline-math">$A(Z)$</span>, <span class="inline-math">$y_1, \ldots, y_n\in A(Z)$</span> is still algebraically independent.
+    Suppose <span class="inline-math">$\op{trdeg}_k Y = \op{trdeg}_k Z$</span>, so <span class="inline-math">$y_1, \ldots, y_n$</span> is a transcendence basis of <span class="inline-math">$k(X)/k$</span>.
+</p>
+<p>
+    As <span class="inline-math">$Y\subsetneq Z$</span>, there exists some <span class="inline-math">$g\in I(Y)\setminus I(Z)$</span>.
+    Viewing in <span class="inline-math">$k(Z)$</span>, <span class="inline-math">$g\neq 0$</span> ,
+    so there exists a minimal polynomial <span class="inline-math">$f\in k[Y_1, \ldots, Y_n, T]$</span>
+    such that
+    <span class="display-math">$$f(y_1, \ldots, y_n, g) = 0 \qquad \text{in }k(Z).$$</span>
+    Now viewing this in <span class="inline-math">$k(Y)$</span>, we get
+    <span class="display-math">$$f(y_1, \ldots, y_n, 0) = 0 \qquad \text{in }k(Y),$$</span>
+    which is a non-zero algebraic relation as <span class="inline-math">$T \not\mid f$</span> by irreducibility.
+    This contradicts that <span class="inline-math">$y_1, \ldots, y_n$</span> are algebraically independent.
 </p>

@@ -1,0 +1,145 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (complex Fourier series)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                For an <span class="inline-math">$L$</span>-periodic function <span class="inline-math">$f: \R\to\C$</span>, define the <em>complex Fourier series</em>
+                <span class="display-math">$$ \begin{align*}
+                    \sum_{n\in\Z} \hat f_n e^{2\pi in\theta/L}
+                \end{align*} $$</span>
+                where
+                <span class="display-math">$$ \begin{align*}
+                    \hat f_n = \frac{1}{L} \int_{0}^{L} f(\theta) e^{-2\pi in\theta/L} \d \theta
+                \end{align*} $$</span>
+                and we call <span class="inline-math">$\set{\hat f_n}$</span> the <em>complex Fourier coefficients</em> of <span class="inline-math">$f$</span>.
+            </p>
+            <p>
+                We write
+                <span class="display-math">$$ \begin{align*}
+                    f(\theta) \sim \sum_{n\in\Z} \hat f_n e^{2\pi in\theta/L}
+                \end{align*} $$</span>
+                to mean the series on the right is the complex Fourier series of the <span class="inline-math">$L$</span>-periodic function on the left.
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Dirichlet kernel)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-Dirichlet-kernel.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Define the <em>Dirichlet kernel</em>
+                <span class="display-math">$$ \begin{align*}
+                    D_N(t) := \sum_{n=-N}^{N} e^{int} = \begin{cases}
+                        \displaystyle\frac{\sin(N + \frac{1}{2})t}{\sin \frac{1}{2}t}, &amp;t\not\in 2π\Z, \\
+                        2N+1, &amp;t\in 2π\Z
+                    \end{cases}
+                \end{align*} $$</span>
+                so that writing <span class="inline-math">$\hat f_n = \frac{1}{2π} \int_{-π}^{π} f(t)e^{-int} \d t$</span> for the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">Fourier coefficients</a>,
+                <span class="display-math">$$ \begin{align*}
+                    S_N(f) := \sum_{n=-N}^{N} \hat f_n e^{int} = \frac{1}{2π}\int_{-π}^{π} f(s) D_N(t-s) \d s \equiv f * D_N
+                \end{align*} $$</span>
+                where <span class="inline-math">$f\in C(\mathbb{T})$</span> and <span class="inline-math">$\mathbb{T} = \R/\Z \isom \sb{z\in \C}{|z|=1}$</span>.
+            </p>
+            <p>
+                Then
+                <span class="display-math">$$ \begin{align*}
+                    T_N: C(\mathbb{T}) &amp;\to \C \\
+                    f &amp; \mapsto S_N(f)(0) = \frac{1}{2π} \int_{-π}^{π} f(s) D_N(-s) \d s
+                \end{align*} $$</span>
+                is a <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-dual-normed-space.html">bounded linear functional</a>,
+                and
+                <span class="display-math">$$ \begin{align*}
+                    \|T_N\| = \frac{1}{2π}\int_{-π}^{π} |D_N(s)| \d s \to \infty.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proof-Dirichlet-kernel.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    Therefore by the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-principle-of-uniform-boundedness.html">principle of uniform boundedness</a>,
+                    there exists <span class="inline-math">$f\in C(\mathbb{T})$</span> such that <span class="inline-math">$(T_N(f))_{N\geq 1}$</span> does not converge.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Fejér kernel)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-Fejer-kernel.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Define the <em>Fejér kernel</em>
+                <span class="display-math">$$ \begin{align*}
+                    K_N(t) := \frac{1}{N+1} \sum_{n=0}^{N} D_n(t) = \begin{cases}
+                        \displaystyle\frac{1}{N+1} \left(\frac{\sin \frac{N+1}{2}t}{\sin \frac{1}{2}t}\right)^2, &amp;t\not\in 2π\Z, \\
+                        N+1, &amp;t\in 2π\Z
+                    \end{cases}
+                \end{align*} $$</span>
+                where <span class="inline-math">$D_n$</span> is the <span class="inline-math">$n$</span>-th <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-Dirichlet-kernel.html">Dirichlet kernel</a>,
+                and write for <span class="inline-math">$f\in C(\mathbb{T})$</span>
+                <span class="display-math">$$ \begin{align*}
+                    σ_N(f) := f * K_N = \frac{1}{N+1}\sum_{n=0}^{N} S_n(f) = \frac{1}{N+1}\sum_{n=0}^{N} \sum_{k=-n}^{n} \hat f_k e^{ikt}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                Then <span class="inline-math">$K_N$</span> is an approximate identity, so
+                <span class="display-math">$$ \begin{align*}
+                    σ_N(f) \tto f \qquad \text{in $C(\mathbb{T})$}.
+                \end{align*} $$</span>
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proof-Fejer-kernel.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    This demonstrates the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-Stone-Weierstrass.html">Stone-Weierstrass theorem</a>:
+                    the trigonometric polynomials <span class="inline-math">$\set{\sum_{n=-N}^{N} a_n e^{int}}$</span> is dense in <span class="inline-math">$C(\mathbb{T})$</span>.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (Fourier transform of periodic functions)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proposition-Fourier-transform-of-periodic-functions.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Taking the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">Fourier coefficients</a>
+                gives rise to a well-defined <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-bounded-linear-maps.html">bounded linear map</a>
+                <span class="display-math">$$ \begin{align*}
+                    \mathcal{F}: C(\mathbb{T}) &amp;\to c_0(\Z) := \sb{\text{sequence $(a_n)_{n\in \Z}$ in $\C$}}{a_n\to 0 \text{ as $|n|\to \infty$}} \\
+                    f &amp;\mapsto (\hat f_n)_{n\in \Z},
+                \end{align*} $$</span>
+                known as the <em>Fourier transform</em>.
+                The fact <span class="inline-math">$\mathcal{F}(f) \in c_0(\Z)$</span> is known as the <em>Riemann-Lebesgue lemma</em>.
+            </p>
+            <p>
+                It has norm <span class="inline-math">$\|\mathcal{F}\| = 1$</span>.
+                <span class="inline-math">$\mathcal{F}$</span> is injective but not surjective.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proof-Fourier-transform-of-periodic-functions.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>

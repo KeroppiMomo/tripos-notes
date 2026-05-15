@@ -1,0 +1,36 @@
+<p>
+    Let <span class="inline-math">$Y_n = \sqrt{n}(\hat θ_n - θ)$</span> and <span class="inline-math">$Y\sim F$</span>, so <span class="inline-math">$Y_n \xrightarrow{d} Y$</span> by condition 1.
+</p>
+<p>
+    We claim <span class="inline-math">$\hat F_n\inv(p) \xrightarrow{p} F\inv(p)=: x$</span> for any <span class="inline-math">$p\in (0,1)$</span>.
+    Fix <span class="inline-math">$ε&gt;0$</span>.
+    As <span class="inline-math">$F$</span> is strictly increasing, <span class="inline-math">$δ^+ := F(x+ε) - F(x) &gt; 0$</span> and <span class="inline-math">$δ^- := F(x) - F(x-ε)&gt; 0$</span>.
+    Using condition 2, the event <span class="inline-math">$E^{\pm}_n := \{|\hat F_n(x\pm ε) - F(x\pm ε)| &lt; δ_\pm\}$</span>
+    has probability <span class="inline-math">$\prob(E^{\pm}_n) \to 1$</span>.
+    Note in <span class="inline-math">$E^+_n \cap E^-_n$</span>,
+    <span class="display-math">$$ \begin{align*}
+        \hat F_n(x-ε) &lt; F(x-ε) + δ^- = F(x) = F(x+ε) + δ^+ &lt; \hat F_n(x+ε).
+    \end{align*} $$</span>
+    Since <span class="inline-math">$F$</span> is continuous, <span class="inline-math">$F\inv(x) = F\inv(F(p)) = p$</span>, so <span class="inline-math">$x-ε \leq \hat F_n\inv(p) \leq x+ ε$</span>.
+    Therefore <span class="inline-math">$\prob[|\hat F_n\inv(p) - F\inv(p)| &lt; ε] \geq \prob(E_n^+ \cap E_n^-)\to 1$</span>,
+    as claimed.
+</p>
+<p>
+    This shows <span class="inline-math">$\hat l_n \xrightarrow{p} l := F\inv(α/2)$</span> and <span class="inline-math">$\hat u_n \xrightarrow{p} u := F\inv(1-α/2)$</span>.
+    Then by Slutsky,
+    <span class="display-math">$$ \begin{align*}
+        Y_n - \hat l_n \xrightarrow{p} Y - l, \qquad Y_n - \hat u_n \xrightarrow{p} Y - u
+    \end{align*} $$</span>
+    so since <span class="inline-math">$F$</span> is continuous,
+    <span class="display-math">$$ \begin{align*}
+        \prob[Y_n \geq \hat l_n] \to \prob[Y\geq l], \qquad \prob[Y_n \leq  \hat u_n] \to \prob[Y \leq  u].
+    \end{align*} $$</span>
+</p>
+<p>
+    Therefore
+    <span class="display-math">$$ \begin{align*}
+        \prob[\hat l_n \leq Y_n\leq \hat u_n] ={}&amp; \prob[Y_n \geq \hat l_n] + \prob[Y_n \leq \hat u_n] - 1 \\
+        \to{}&amp; \prob[Y \geq l] + \prob[Y \leq u] - 1 \\
+        ={}&amp; \prob[l\leq Y\leq u] = 1-α.
+    \end{align*} $$</span>
+</p>

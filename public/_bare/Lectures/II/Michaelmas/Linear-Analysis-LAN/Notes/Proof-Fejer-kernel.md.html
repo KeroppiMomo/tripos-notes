@@ -1,0 +1,39 @@
+<p>
+    Computation:
+    <span class="display-math">$$ \begin{align*}
+        K_N(t) ={}&amp; \frac{1}{N+1} \sum_{n=0}^{N} \frac{e^{-int}(e^{i(2n+1)t} - 1)}{e^{it} - 1} \\
+        ={}&amp; \frac{1}{N+1} \frac{1}{e^{it} - 1} \sum_{n=0}^{N} (e^{i(n+1)t} - e^{-int}) \\
+        ={}&amp; \frac{1}{N+1} \frac{1}{e^{it} - 1} \left(\frac{e^{it}(e^{i(N+1)t} - 1)}{e^{it}-1} - \frac{e^{-i(N+1)t} - 1}{e^{-it} - 1}\right) \\
+        ={}&amp; \frac{1}{N+1} \frac{e^{i(N+2)t} - e^{it} - e^{it} + e^{-iNt}}{(e^{it} - 1)^2} \\
+        ={}&amp; \frac{1}{N+1} \frac{(e^{i\frac{N+1}{2}t} - e^{-i\frac{N+1}{2}t})^2}{(e^{i \frac{1}{2}t} - e^{-i \frac{1}{2}t})^2} \\
+        ={}&amp; \frac{1}{N+1} \left(\frac{\sin \frac{N+1}{2}t}{\sin \frac{1}{2}t}\right)^2.
+    \end{align*} $$</span>
+</p>
+<p>
+    <span class="inline-math">$K_N$</span> is an approximate identity:
+</p>
+<ol start="1">
+<li>
+    <p>
+        <span class="inline-math">$K_N \geq 0$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        <span class="inline-math">$\frac{1}{2π}\int_{-π}^{π} K_N(t) \d t = \frac{1}{N+1} \sum_{n=0}^{N} \frac{1}{2π} \int_{-π}^{π} D_n(t) \d t = 1$</span>.
+    </p>
+    
+</li><li>
+    <p>
+        For any <span class="inline-math">$δ&gt;0$</span>, <span class="inline-math">$K_N$</span> converges uniformly to <span class="inline-math">$0$</span> on <span class="inline-math">$[-π, π] \setminus [-δ, δ]$</span>,
+        because
+        <span class="display-math">$$ \begin{align*}
+        |K_N(t)| \leq \frac{1}{N+1} \frac{1}{(\sin \frac{1}{2}δ)^2} \to 0.
+        \end{align*} $$</span>
+    </p>
+    
+</li>
+</ol>
+<p>
+    Therefore <span class="inline-math">$f*K_N\to f$</span>.
+</p>

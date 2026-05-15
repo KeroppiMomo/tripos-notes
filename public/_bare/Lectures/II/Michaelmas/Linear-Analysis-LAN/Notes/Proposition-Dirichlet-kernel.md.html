@@ -1,0 +1,36 @@
+<p>
+    Define the <em>Dirichlet kernel</em>
+    <span class="display-math">$$ \begin{align*}
+        D_N(t) := \sum_{n=-N}^{N} e^{int} = \begin{cases}
+            \displaystyle\frac{\sin(N + \frac{1}{2})t}{\sin \frac{1}{2}t}, &amp;t\not\in 2π\Z, \\
+            2N+1, &amp;t\in 2π\Z
+        \end{cases}
+    \end{align*} $$</span>
+    so that writing <span class="inline-math">$\hat f_n = \frac{1}{2π} \int_{-π}^{π} f(t)e^{-int} \d t$</span> for the <a href="/tripos-notes/Lectures/IB/Michaelmas/Methods-Me/Notes/Definition-complex-Fourier-series.html">Fourier coefficients</a>,
+    <span class="display-math">$$ \begin{align*}
+        S_N(f) := \sum_{n=-N}^{N} \hat f_n e^{int} = \frac{1}{2π}\int_{-π}^{π} f(s) D_N(t-s) \d s \equiv f * D_N
+    \end{align*} $$</span>
+    where <span class="inline-math">$f\in C(\mathbb{T})$</span> and <span class="inline-math">$\mathbb{T} = \R/\Z \isom \sb{z\in \C}{|z|=1}$</span>.
+</p>
+<p>
+    Then
+    <span class="display-math">$$ \begin{align*}
+        T_N: C(\mathbb{T}) &amp;\to \C \\
+        f &amp; \mapsto S_N(f)(0) = \frac{1}{2π} \int_{-π}^{π} f(s) D_N(-s) \d s
+    \end{align*} $$</span>
+    is a <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Definition-dual-normed-space.html">bounded linear functional</a>,
+    and
+    <span class="display-math">$$ \begin{align*}
+        \|T_N\| = \frac{1}{2π}\int_{-π}^{π} |D_N(s)| \d s \to \infty.
+    \end{align*} $$</span>
+</p>
+<p>
+    <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Proof-Dirichlet-kernel.html">Proof</a>
+</p>
+<blockquote>
+    <p>
+        Therefore by the <a href="/tripos-notes/Lectures/II/Michaelmas/Linear-Analysis-LAN/Notes/Theorem-principle-of-uniform-boundedness.html">principle of uniform boundedness</a>,
+        there exists <span class="inline-math">$f\in C(\mathbb{T})$</span> such that <span class="inline-math">$(T_N(f))_{N\geq 1}$</span> does not converge.
+    </p>
+    
+</blockquote>

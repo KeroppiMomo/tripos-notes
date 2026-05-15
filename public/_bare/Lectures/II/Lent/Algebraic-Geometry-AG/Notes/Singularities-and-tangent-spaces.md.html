@@ -1,0 +1,514 @@
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (tangent space of varieties)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-tangent-space-of-varieties.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X \subseteq \mathbb{A}^n$</span> be an affine algebraic set and <span class="inline-math">$P\in X$</span> be a point.
+                The <em>affine tangent space</em> of <span class="inline-math">$X$</span> at <span class="inline-math">$P$</span>
+                is the <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Definition-vector-space.html">vector space</a>
+                <span class="display-math">$$ \begin{align*}
+                    T_{X,P} ={}&amp; \sb{(v_1, \ldots, v_n)\in k^n}{\sum_{i=1}^{n} \pdfd{f}{x_i}(P)\cdot v_i = 0 \quad \text{for all $f\in I(V)$}} \\
+                    ={}&amp; \sb{\v v\in k^n}{\d f_P(\v v) = 0 \quad \text{for all $f\in I(V)$}}.
+                \end{align*} $$</span>
+                (<a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-ideal-of-subset-of-affine-space.html"><span class="inline-math">$I(V)$</span></a>)
+            </p>
+            <p>
+                Let <span class="inline-math">$X\subseteq \mathbb{P}^n$</span> be an <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-irreducible-topological-space.html">irreducible</a> <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-quasiprojective-variety.html">quasiprojective variety</a>, <span class="inline-math">$P\in X$</span>.
+                The <em>tangent space to <span class="inline-math">$X$</span> at <span class="inline-math">$P$</span></em>
+                is <span class="inline-math">$T_{X_i, P}$</span> for any standard affine open <span class="inline-math">$X_i = X \cap \set{x_i \neq 0}$</span>
+                containing <span class="inline-math">$P$</span>.
+            </p>
+            <blockquote>
+                <!-- BEGIN BLOCK ID jacob -->
+                <p id="^jacob">
+                    If <span class="inline-math">$X\subseteq \mathbb{A}^n$</span> is affine and <span class="inline-math">$I(X) = (f_1, \ldots, f_r)$</span>, then by <a href="/tripos-notes/Lectures/IA/Michaelmas/Vectors-and-Matrices-VM/Theorem-rank-nullity.html">rank-nullity</a>
+                    <span class="display-math">$$ \begin{align*}
+                        \dim T_{X,P} = n - \op{rank}(J_P)
+                    \end{align*} $$</span>
+                    where <span class="inline-math">$J_P = (\pdfd{f_i}{x_j}(P))_{i,j}$</span> is the Jacobian matrix.
+                </p>
+                
+                <!-- END BLOCK ID jacob -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Proposition (cotangent space as linearisation)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-cotangent-space-as-linearisation.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X\subseteq \mathbb{A}^n$</span> be an irreducible affine variety and <span class="inline-math">$P\in X$</span>.
+                There is a natural isomorphism of <span class="inline-math">$k$</span>-vector spaces
+                <span class="display-math">$$ \begin{align*}
+                    \mathfrak{m}_P/\mathfrak{m}_P^2 &amp;\xrightarrow{\sim} (T_{X,P})^\ast \\
+                    f + \mathfrak{m}_P^2 &amp;\mapsto \d f_P|_{T_{X,P}}
+                \end{align*} $$</span>
+                where <span class="inline-math">$\mathfrak{m}_P = (x_1 - x_1(P), \ldots, x_n - x_n(P))$</span>
+                is the maximal ideal in <span class="inline-math">$A(X)$</span> (<a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-localisation-of-ring-at-prime-ideal.html">or <span class="inline-math">$O_{X,P}$</span></a>),
+                and <span class="inline-math">$(T_{X,P})^\ast$</span> is the <a href="/tripos-notes/Lectures/IB/Michaelmas/Linear-Algebra-LA/Notes/Definition-dual-vector-space.html">dual</a> of <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-tangent-space.html"><span class="inline-math">$T_{X,P}$</span></a>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-cotangent-space-as-linearisation.html">Proof</a>
+            </p>
+            <blockquote>
+                <p>
+                    Defining the tangent space of a projective variety this way does
+                    not require taking affine patches as the local ring <span class="inline-math">$O_{X,P}$</span>
+                    does not depend on affine patches.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (derivative of rational map)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-derivative-of-rational-map.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$ϕ: X\dashrightarrow Y$</span> be a rational map
+                between quasiprojective varieties <span class="inline-math">$X \subseteq \mathbb{P}^n$</span> and <span class="inline-math">$Y \subseteq \mathbb{P}^m$</span>,
+                and let <span class="inline-math">$P\in X$</span> be in the domain of <span class="inline-math">$ϕ$</span>.
+                Consider affine patches <span class="inline-math">$X_0 = X \cap \set{x_0 \neq 0}$</span> containing <span class="inline-math">$P$</span>
+                and <span class="inline-math">$Y \cap \set{y_0 \neq 0}$</span> containing <span class="inline-math">$ϕ(P)$</span>.
+                Choosing any representative <span class="inline-math">$(F_0 : \ldots : F_m)$</span> of <span class="inline-math">$ϕ$</span> defined at <span class="inline-math">$P$</span>.
+                Let <span class="inline-math">$f_i(x_1, \ldots, x_n) = F_i(1, x_1, \ldots, x_n) / F_0(1, x_1, \ldots, x_n)$</span>.
+            </p>
+            <p>
+                The <em>derivative</em> or <em>linearisation</em> of <span class="inline-math">$ϕ$</span> at <span class="inline-math">$P$</span> is
+                the linear map
+                <span class="display-math">$$ \begin{align*}
+                    \d ϕ_P: T_{X,P} &amp;\to T_{Y,ϕ(P)}, \\
+                    (v_1, \ldots, v_n) &amp;\mapsto \left(\sum_{i=1}^{n} \pdfd{f_1}{x_i}(P) \cdot v_i, \ldots, \sum_{i=1}^{n} \pdfd{f_m}{x_i}(P)\cdot v_i\right).
+                \end{align*} $$</span>
+            </p>
+            <blockquote>
+                <p>
+                    Indeed <span class="inline-math">$\d ϕ_P(T_{X,P}) \subseteq T_{Y,ϕ(P)}$</span>. (<a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-image-of-derivative-of-rational-map.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$\d ϕ_P$</span> is independent of the choice of representative of <span class="inline-math">$ϕ$</span>. (<a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-derivative-of-rational-map-indepedent-of-representative-of-rational-map.html">Proof</a>)
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <p>
+                    Chain rule holds: <span class="inline-math">$\d (ψ \circ ϕ)_P = \d ψ_{ϕ(P)} \circ \d ϕ_P$</span>
+                    if <span class="inline-math">$ψ: Y \dashrightarrow Z$</span> is rational and regular at <span class="inline-math">$ϕ(P)$</span>.
+                </p>
+                
+            </blockquote>
+            <blockquote>
+                <!-- BEGIN BLOCK ID isom -->
+                <p id="^isom">
+                    <span class="inline-math">$\d ϕ_P$</span> is an isomorphism of vector spaces
+                    if <span class="inline-math">$ϕ$</span> is birational and <span class="inline-math">$ϕ\inv$</span> is regular at <span class="inline-math">$ϕ(P)$</span>.
+                </p>
+                
+                <!-- END BLOCK ID isom -->
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-definition">
+        <div class="markdown-embed-title">
+            Definition (dimension, smooth points on variety)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dimension-smooth-points-on-variety.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-quasiprojective-variety.html">quasiprojective variety</a>.
+            </p>
+            <ul>
+            <li>
+                <p>
+                    If <span class="inline-math">$X$</span> is irreducible, its <em>dimension</em> is the minimum <a href="/tripos-notes/Lectures/II/Lent/Differential-Geometry-DG/Notes/Definition-tangent-space.html">tangent space</a> dimension
+                    <span class="display-math">$$ \begin{align*}
+                        \dim X := \min \sb{\dim T_{X,P}}{P\in X}.
+                    \end{align*} $$</span>
+                </p>
+                <p>
+                    A point <span class="inline-math">$P\in X$</span> is <em>smooth</em> or <em>non-singular</em>
+                    if <span class="inline-math">$\dim T_{X,P} = \dim X$</span>.
+                    Otherwise we say <span class="inline-math">$P$</span> is <em>singular</em>.
+                    Write <span class="inline-math">$X^{\text{sm}}$</span> for the set of smooth points of <span class="inline-math">$X$</span>.
+                </p>
+                
+            </li><li>
+                <p>
+                    If <span class="inline-math">$X$</span> is reducible with irreducible components <span class="inline-math">$X_1, \ldots, X_m$</span>,
+                    the <em>dimension</em> of <span class="inline-math">$X$</span> is
+                    <span class="display-math">$$ \begin{align*}
+                        \dim X := \max_i \dim X_i.
+                    \end{align*} $$</span>
+                </p>
+                <p>
+                    A point <span class="inline-math">$P\in X$</span> is <em>smooth</em> if <span class="inline-math">$P$</span> lies on <span class="inline-math">$X_i$</span> for a unique <span class="inline-math">$i$</span>
+                    and <span class="inline-math">$P$</span> is a smooth point of <span class="inline-math">$X_i$</span>, i.e.
+                    <span class="display-math">$$ \begin{align*}
+                        X^\text{sm} := \bigcup_{i=1}^{m} \Bigl(X_i^\text{sm} \setminus \bigcup_{\substack{j=1: \\ j\neq i}}^{m} X_i\Bigr).
+                    \end{align*} $$</span>
+                </p>
+                
+            </li>
+            </ul>
+            <p>
+                We say <span class="inline-math">$X$</span> is <em>smooth</em> if it has no singular points.
+            </p>
+            <blockquote>
+                <p>
+                    <span class="inline-math">$Z(f) \subseteq \mathbb{A}^2$</span> with <span class="inline-math">$f$</span> non-constant is 1-dimensional.
+                </p>
+                
+            </blockquote>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Theorem (set of smooth points is open and dense)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Theorem-set-of-smooth-points-is-open-and-dense.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                Let <span class="inline-math">$X$</span> be a quasiprojective variety.
+            </p>
+            <p>
+                The set <span class="inline-math">$X^\text{sm}$</span> of <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dimension-smooth-points-on-variety.html">smooth points</a> of <span class="inline-math">$X$</span> is open and dense in <span class="inline-math">$X$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-set-of-smooth-points-is-open-and-dense.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+    <div class="markdown-embed embed-result">
+        <div class="markdown-embed-title">
+            Corollary (dimension of birational varieties)
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-dimension-of-birational-varieties.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                If <span class="inline-math">$X, Y$</span> are <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dominant-birational-rational-map.html">birational</a> quasiprojective varieties,
+                then <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dimension-smooth-points-on-variety.html"><span class="inline-math">$\dim{}$</span></a><span class="inline-math">$X = \dim Y$</span>.
+            </p>
+            <p>
+                <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-dimension-of-birational-varieties.html">Proof</a>
+            </p>
+            
+        </div>
+    </div>
+</p>
+<p>
+    <div class="markdown-embed">
+        <div class="markdown-embed-title">
+            Dimension from function field
+            <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Dimension-from-function-field.html">open_in_new</a>
+        </div>
+        <div class="markdown-embed-content">
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (algebraic element, minimal polynomial, transcendental element, algebraic extension)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-algebraic-element-minimal-polynomial-transcendental-element-algebraic-extension.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Suppose <span class="inline-math">$L/K$</span> is a field extension, and <span class="inline-math">$α\in L$</span>.
+                        </p>
+                        <p>
+                            Let <span class="inline-math">$ϕ: K[X] \to L$</span> be the evaluation homomorphism
+                            <span class="inline-math">$ϕ(\sum_{i} c_iX^i) = \sum_{i} c_i α^i$</span>.
+                            (Recall <span class="inline-math">$K[X]$</span> is a <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-polynomial-ring-of-UFD-is-UFD.html">PID</a>.)
+                        </p>
+                        <ul>
+                        <li>
+                            <p>
+                                Say <span class="inline-math">$α$</span> is <em>algebraic over <span class="inline-math">$K$</span></em> if <span class="inline-math">$\ker ϕ\neq (0)$</span>.
+                            </p>
+                            <p>
+                                In this case,
+                                the <em>minimal polynomial of <span class="inline-math">$α$</span> over <span class="inline-math">$K$</span></em>
+                                is the unique monic polynomial <span class="inline-math">$f$</span> such that <span class="inline-math">$\ker ϕ = (f)$</span>.
+                            </p>
+                            <p>
+                                Say <span class="inline-math">$α$</span> is <em>transcendental over <span class="inline-math">$K$</span></em> if <span class="inline-math">$\ker ϕ = (0)$</span>.
+                            </p>
+                            
+                        </li><li>
+                            <p>
+                                Say <span class="inline-math">$L/K$</span> is <em>algebraic</em> if every <span class="inline-math">$α\in L$</span> is algebraic over <span class="inline-math">$K$</span>.
+                            </p>
+                            
+                        </li>
+                        </ul>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$α$</span> is algebraic and <span class="inline-math">$f$</span> is its minimal polynomial over <span class="inline-math">$K$</span>,
+                                then the <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Theorem-first-isomorphism-theorem-for-rings.html">first isomorphism theorem</a>
+                                implies
+                                <span class="display-math">$$ \begin{align*}
+                                    K(α) = K[α] \isom K[X]/(f).
+                                \end{align*} $$</span>
+                                so <span class="inline-math">$K[α]$</span> is a field.
+                            </p>
+                            <p>
+                                Moreover the basis <span class="inline-math">$\set{1 + (f), X + (f), \ldots, X^{\deg f - 1} + (f)}$</span> of <span class="inline-math">$K[X]/(f)$</span> shows that
+                                <span class="display-math">$$ \begin{align*}
+                                    [K(α) : K] = \deg f.
+                                \end{align*} $$</span>
+                            </p>
+                            
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                If <span class="inline-math">$α$</span> is transcendental, then <span class="inline-math">$K[α] \isom K[X]$</span> and <span class="inline-math">$K(α) \isom K(X)$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (algebraic independence, pure transcendental extension)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-algebraic-independence-pure-transcendental-extension.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$L/K$</span> be a <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-field-extension.html">field extension</a>.
+                        </p>
+                        <p>
+                            A finite set <span class="inline-math">$x_1, \ldots, x_n\in L$</span>
+                            is <em>algebraically independent</em> over <span class="inline-math">$K$</span> if
+                            there is no non-zero polynomial <span class="inline-math">$f\in k[X_1, \ldots, X_n]$</span>
+                            such that <span class="inline-math">$f(x_1, \ldots, x_n) = 0$</span>.
+                            Equivalently, if the <span class="inline-math">$k$</span>-algebra homomorphism
+                            <span class="display-math">$$ \begin{align*}
+                                ϕ: k[X_1, \ldots, X_n] &amp;\to L \\
+                                X_i &amp;\mapsto x_i
+                            \end{align*} $$</span>
+                            is injective.
+                        </p>
+                        <p>
+                            Say <span class="inline-math">$L/K$</span> is <em>pure transcendental</em>
+                            if an algebraically independent set <span class="inline-math">$x_1, \ldots, x_n\in L$</span>
+                            exists such that <span class="inline-math">$L = K(x_1, \ldots, x_n)$</span>,
+                            or equivalently
+                            <span class="display-math">$$ \begin{align*}
+                                Φ: k(X_1, \ldots, X_n) &amp;\to L \\
+                                X_i &amp;\mapsto x_i
+                            \end{align*} $$</span>
+                            is a field isomorphism.
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (minimal polynomial with algebraically independent set)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-minimal-polynomial-with-algebraically-independent-set.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$K = k(x_1, \ldots, x_n)$</span> and <span class="inline-math">$L/K$</span> be a field extension.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$x_1, \ldots, x_n$</span> are <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-algebraic-independence-pure-transcendental-extension.html">algebraically independent</a> over <span class="inline-math">$k$</span>
+                            and <span class="inline-math">$x_{n+1}\in L$</span> is <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-algebraic-element-minimal-polynomial-transcendental-element-algebraic-extension.html">algebraic</a> over <span class="inline-math">$K$</span>, then
+                            the kernel <span class="inline-math">$I$</span> of the <span class="inline-math">$k$</span>-algebra homomorphism
+                            <span class="display-math">$$ \begin{align*}
+                                k[t_1, \ldots, t_n, t_{n+1}] &amp;\to L \\
+                                t_i &amp;\mapsto x_i
+                            \end{align*} $$</span>
+                            is a <a href="/tripos-notes/Lectures/IB/Lent/Groups-Rings-and-Modules-GRM/Notes/Definition-ideal-generated-by-a-set-principal-ideal.html">principal ideal</a>
+                            generated by an irreducible polynomial <span class="inline-math">$f\in k[t_1, \ldots, t_n, t_{n+1}]$</span>,
+                            called the <em>minimal polynomial</em>.
+                        </p>
+                        <p>
+                            Moreover if <span class="inline-math">$f$</span> contains the variable <span class="inline-math">$t_i$</span> (<span class="inline-math">$i = 1,\ldots, n$</span>),
+                            then <span class="inline-math">$x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n, x_{n+1}$</span> are algebraically independent.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-minimal-polynomial-with-algebraically-independent-set.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-definition">
+                    <div class="markdown-embed-title">
+                        Definition (transcendence basis, degree)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-transcendence-basis-degree.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$L/K$</span> be a field extension.
+                        </p>
+                        <p>
+                            A finite set <span class="inline-math">$x_1, \ldots, x_n\in L$</span>
+                            is a <em>transcendence basis</em> over <span class="inline-math">$K$</span>
+                            if it is a maximal algebraically independent set,
+                            i.e. they are <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-algebraic-independence-pure-transcendental-extension.html">algebraically independent</a>
+                            and <span class="inline-math">$L/K(x_1, \ldots, x_n)$</span> is an <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Definition-algebraic-element-minimal-polynomial-transcendental-element-algebraic-extension.html">algebraic extension</a>.
+                        </p>
+                        <p>
+                            In this case say the <em>transcendence degree</em> of <span class="inline-math">$L/K$</span> is <span class="inline-math">$\op{trdeg}_K(L) = n$</span>.
+                        </p>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID finite-generation -->
+                            <p id="^finite-generation">
+                                If <span class="inline-math">$L/K$</span> is finitely generated, then
+                                transcendence degree is well-defined, i.e.
+                                a transcendence basis exists, and
+                                any two transcendence basis has the same length.
+                                (<a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-transcendence-degree.html">Proof</a>)
+                                >
+                                Moreover <span class="inline-math">$L/K(x_1, \ldots, x_n)$</span> is algebraic and still finitely generated,
+                                so finite.
+                                Thus by the <a href="/tripos-notes/Lectures/II/Michaelmas/Galois-Theory-GT/Notes/Theorem-primitive-element.html">primitive element theorem</a> (assuming <span class="inline-math">$\op{char}(K) = 0$</span>),
+                                there is <span class="inline-math">$y\in L$</span> such that <span class="inline-math">$L = K(x_1, \ldots, x_n, y)$</span>.
+                            </p>
+                            
+                            <!-- END BLOCK ID finite-generation -->
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (birational to hypersurface)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-birational-to-hypersurface.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Every irreducible <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-quasiprojective-variety.html">quasiprojective variety</a>
+                            is <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dominant-birational-rational-map.html">birational</a>
+                            to a hypersurface, i.e. <span class="inline-math">$Z(f)$</span> for some non-constant irreducible <span class="inline-math">$f$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-birational-to-hypersurface.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (dimension and transcendence degree of function field)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-dimension-and-transcendence-degree-of-function-field.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            For any irreducible quasiprojective variety <span class="inline-math">$X$</span>,
+                            <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dimension-smooth-points-on-variety.html"><span class="inline-math">$\dim X$</span></a><span class="inline-math">${}={}$</span><a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-transcendence-basis-degree.html"><span class="inline-math">$\op{trdeg}_k{}$</span></a><a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-function-field-of-projective-algebraic-set.html"><span class="inline-math">$k(X)$</span></a>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-dimension-and-transcendence-degree-of-function-field.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <p>
+                                If there exists <span class="inline-math">$f: X\dashrightarrow Y$</span> a dominant rational map,
+                                then it <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Theorem-dominant-rational-map-and-function-field-extension.html">induces</a> a field embedding <span class="inline-math">$f^\ast: k(Y) \hookrightarrow k(X)$</span>.
+                                The transcendence basis of <span class="inline-math">$k(Y)$</span> remains algebraically independent under <span class="inline-math">$f^\ast$</span>,
+                                so <span class="inline-math">$\dim(X) \geq \dim(Y)$</span>.
+                            </p>
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (dimension of product variety)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-dimension-of-product-variety.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$X, Y$</span> be irreducible varieties.
+                            Then <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dimension-smooth-points-on-variety.html"><span class="inline-math">$\dim{}$</span></a><span class="inline-math">$($</span><a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-Segre-embedding.html"><span class="inline-math">$X \times Y$</span></a><span class="inline-math">$) = \dim X + \dim Y$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-dimension-of-product-variety.html">Proof</a>
+                            TODO
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Corollary (dimension of closed subvariety)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-dimension-of-closed-subvariety.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            Let <span class="inline-math">$Y \subset  Z$</span> be irreducible affine or projective varieties.
+                        </p>
+                        <p>
+                            If <span class="inline-math">$Y\neq Z$</span>, then <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dimension-smooth-points-on-variety.html"><span class="inline-math">$\dim{}$</span></a><span class="inline-math">$Y &lt; \dim Z$</span>.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-dimension-of-closed-subvariety.html">Proof</a>
+                        </p>
+                        
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="markdown-embed embed-result">
+                    <div class="markdown-embed-title">
+                        Proposition (variety of dimension 0)
+                        <a class="markdown-embed-open" title="Open" href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proposition-variety-of-dimension-0.html">open_in_new</a>
+                    </div>
+                    <div class="markdown-embed-content">
+                        <p>
+                            If <span class="inline-math">$X$</span> is an affine or projective variety of <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-dimension-smooth-points-on-variety.html">dimension</a> 0,
+                            then <span class="inline-math">$X$</span> is a finite set of points.
+                        </p>
+                        <p>
+                            <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Proof-variety-of-dimension-0.html">Proof</a>
+                        </p>
+                        <blockquote>
+                            <!-- BEGIN BLOCK ID curve -->
+                            <p id="^curve">
+                                <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Corollary-dimension-of-closed-subvariety.html">Therefore</a> a proper closed subvariety of a
+                                (possibly affine, possibly singular) <a href="/tripos-notes/Lectures/II/Lent/Algebraic-Geometry-AG/Notes/Definition-algebraic-curve.html">curve</a> is a finite union of points.
+                            </p>
+                            
+                            <!-- END BLOCK ID curve -->
+                            
+                        </blockquote>
+                        
+                    </div>
+                </div>
+            </p>
+            
+        </div>
+    </div>
+</p>
